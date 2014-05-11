@@ -1,0 +1,369 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <title>yaasita/blog</title>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/main.css" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/main.js" type="text/javascript"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-37419565-1', 'yaasita.github.io');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <header>
+    <h1><a href="/"># cd ~/yaasita<span class="blinking">_</span></a></h1>
+      <h2>普段思った事とか・・・メモ帳、チラ裏</h2>
+    </header>
+    <hr class="spliter">
+    
+    <div id="container">
+      <div id="main" role="main">
+            <div class="article-body">
+    <div class="title">
+  2007/09/05
+  <p>
+    <a href="/2007/09/05/13954.html">Irvineで画像ダウンロードできない場合の対処</a>
+  </p>
+</div>
+
+    Irvineで画像をまとめて落とそうとしても落とせない場合があります。<br />もし、普通のブラウザで画像を表示できるのならリクエストヘッダを書き換えることでダウンロードできるはずです。<br />まず、フォルダ設定→HTTP(2)からUserAgentを<br />Mozilla/5.0 (Windows; U; Windows NT 5.1; ja; rv:1.8.1.1) Gecko/20061204 Firefox/2.0.0.1<br />などそれらしいものに変えます。<br />それでもダウンロードできない場合はその下で設定できるRefererやCookieを変えてください。<br />ここまで設定しても出来ない場合は<br />フォルダ設定→スクリプト→イベントのOnHttpRequest→HTTPヘッダの変更にチェックし編集ボタン<br />でリクエストヘッダを書き換えます。<br />  headers['Accept'] = 'image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, application/msword, */*';<br />このようなヘッダを追加するとうまくいくかも知れません。
+
+
+    <div class="tag-box">
+      <a href="/tags/soft.html">soft</a>
+      <a href="/tags/net.html">, net</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2007/09/05/13954.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2007/09/03
+  <p>
+    <a href="/2007/09/03/13975.html">WikiScannerを使う</a>
+  </p>
+</div>
+
+    <a href="http://wikiscanner.virgil.gr/index_JA.php">WikiScanner</a>を使う場合その組織のIPアドレス範囲を知る必要があります。<br />そのIPアドレス範囲を特定→WikiScannerでの指定までの手順を説明します。<br />ここでは例としてクラスBのアドレスを１つ取得している<a href="http://www.chuo-u.ac.jp/">中央大学</a>で説明します。<br />まず、<a href="http://whois.nic.ad.jp/cgi-bin/whois_gw">JPNIC Whois</a>に行き、検索タイプを上から3つ目の「ネットワーク情報(組織名、Organization)」にチェックし中央大学を検索します。<pre><blockquote>Network Information: [ネットワーク情報]<br />a. [IPネットワークアドレス]     133.91.0.0/16<br />b. [ネットワーク名]             CHUO-NET<br />f. [組織名]                     中央大学</blockquote><br /></pre><div style="text-align: left;">この様な結果が出ると思います。これよりIPアドレス範囲が分かったので、<br /><a href="http://wikiscanner.virgil.gr/index_JA.php">WikiScanner</a>の<b>IP Rangeで特定してください</b>に133.91.0.0-133.91.255.255と入力して検索をかければ中央大学から編集したページ一覧が表示されると思います。<br /><br />以下参考<br /><br /><a href="http://wikiscanner.virgil.gr/f_JA.php?ip1=133.91.0.0-255.255&amp;ip2=&amp;amp;ip3=&amp;ip4=">中央大学</a><br /><a href="http://wikiscanner.virgil.gr/f_JA.php?ip1=133.14.0.0-133.14.255.255&amp;amp;ip2=133.20.0.0-133.20.255.255&amp;ip3=&amp;amp;ip4=">東京電機大学</a><br /><a href="http://wikiscanner.virgil.gr/f_JA.php?ip1=133.72.0.0-255.255&amp;ip2=&amp;amp;amp;amp;amp;amp;amp;amp;ip3=&amp;ip4=">神奈川大学</a><br /><a href="http://wikiscanner.virgil.gr/f_JA.php?ip1=150.7.0.0-255.255&amp;amp;amp;amp;amp;amp;amp;ip2=&amp;ip3=&amp;amp;ip4=">東海大学</a><br /><a href="http://wikiscanner.virgil.gr/f_JA.php?ip1=133.26.0.0-255.255&amp;ip2=202.249.0.32-63&amp;amp;amp;amp;amp;amp;amp;ip3=&amp;ip4=">明治大学</a><br /><a href="http://wikiscanner.virgil.gr/f_JA.php?ip1=133.9.0.0-255.255&amp;amp;amp;amp;amp;amp;ip2=&amp;ip3=&amp;amp;ip4=">早稲田大学</a><br /><br /></div>
+
+
+    <div class="tag-box">
+      <a href="/tags/net.html">net</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2007/09/03/13975.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2007/08/30
+  <p>
+    <a href="/2007/08/30/13995.html">CPU切替器は何が良いか</a>
+  </p>
+</div>
+
+    coregaのCG-PC2KVMAS<br />切替は早いけどたまにマウスのポインタが引っかかる<br />キーボードのレスポンスが悪い気がする<br /><br />サンワサプライのSW-KVM2CPA<br />マウスが引っかかる事は無いし、キーボードのレスポンスも良いかもしれない
+
+
+    <div class="tag-box">
+      <a href="/tags/hard.html">hard</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2007/08/30/13995.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2007/08/29
+  <p>
+    <a href="/2007/08/29/14015.html">ポートマッピングでブロードキャストアドレスを指定できるルーター</a>
+  </p>
+</div>
+
+    WOLをインターネット越しに使おうとしたときに気になるのは<br />そのポート転送先アドレスにブロードキャストアドレスを指定できるかどうかだと思います。<br />コレガのCG-WLBARGPは192.168.0.255を転送先に選ぶとエラーが出てしまい<br />IO-DATAのNP-BBRPはブロードキャストアドレスを指定はできますが、<br />192.168.0.255を探すARP要求を出してしまいうまくいきませんでした。<br />NETGEARのWGU624も駄目でした。<br />NECのAtermシリーズは出来るみたいです。PA-BR1500Hは確認しました。
+
+
+    <div class="tag-box">
+      <a href="/tags/net.html">net</a>
+      <a href="/tags/hard.html">, hard</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2007/08/29/14015.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2007/08/15
+  <p>
+    <a href="/2007/08/15/14036.html">MACアドレスを任意のものに変える</a>
+  </p>
+</div>
+
+    <span style="font-weight: bold;">WindowsXPでは</span><br />コントロールパネル→システム→ハードウェアタブのデバイスマネージャをクリック<br />→ネットワークアダプタの項を展開し変更するNICを選び右クリック→プロパティ<br />→詳細設定タブのNetworkaddressをクリックし変更する。<br />（NICによっては使用できないかもしれません）<br /><br /><span style="font-weight: bold;">Linuxでは</span><br />ifconfig LANインタフェース名 hw ether MACアドレス<br /><br />例）<br /># ifdown eth0<br /># ifconfig eth1 hw ether aa:aa:aa:aa:aa:aa<br /># ifup eth0
+
+
+    <div class="tag-box">
+      <a href="/tags/crack.html">crack</a>
+      <a href="/tags/linux.html">, linux</a>
+      <a href="/tags/windows.html">, windows</a>
+      <a href="/tags/net.html">, net</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2007/08/15/14036.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2007/08/15
+  <p>
+    <a href="/2007/08/15/14059.html">ノートPCのHDD交換方法</a>
+  </p>
+</div>
+
+    <a href="http://www.iodata.jp/support/service/hd/sotec/wb3/wb3.html">http://www.iodata.jp/support/service/hd/sotec/wb3/wb3.html</a>
+
+
+    <div class="tag-box">
+      <a href="/tags/hard.html">hard</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2007/08/15/14059.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2007/08/10
+  <p>
+    <a href="/2007/08/10/14079.html">幽遊白書2裏技</a>
+  </p>
+</div>
+
+    <a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_51uwrZcw3_U/SHg1YQ_96JI/AAAAAAAAAGM/1vyNajxpOAY/s1600-h/yuhaku.jpg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;" src="http://1.bp.blogspot.com/_51uwrZcw3_U/SHg1YQ_96JI/AAAAAAAAAGM/1vyNajxpOAY/s320/yuhaku.jpg" border="0" alt=""id="BLOGGER_PHOTO_ID_5221982458932488338" /></a>
+
+
+    <div class="tag-box">
+      <a href="/tags/game.html">game</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2007/08/10/14079.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2007/08/09
+  <p>
+    <a href="/2007/08/09/14100.html">Beryl,Compiz環境でGNOME付箋紙をクリックするとデスクが回ってしまう</a>
+  </p>
+</div>
+
+    <a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_51uwrZcw3_U/RrqvmoN99lI/AAAAAAAAAA8/2-ZBgWU7boU/s1600-h/Screenshot.png"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer;" src="http://4.bp.blogspot.com/_51uwrZcw3_U/RrqvmoN99lI/AAAAAAAAAA8/2-ZBgWU7boU/s320/Screenshot.png" alt="" id="BLOGGER_PHOTO_ID_5096579006489032274" border="0" /></a><br />右クリック→設定→付箋紙を全てのワークスペースに貼り付けるのチェックを外す
+
+
+    <div class="tag-box">
+      <a href="/tags/linux.html">linux</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2007/08/09/14100.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2007/08/08
+  <p>
+    <a href="/2007/08/08/14121.html">Winodws環境でFTPサーバーを立てるとき</a>
+  </p>
+</div>
+
+    <a href="http://nekosogi.sytes.net/wiki/">nekosogiftpd</a>が良いらしいです。NAPT越えが出来ます。<br />NAPT超えをするためにはグローバルIPの確認が必要です。<br />このソフトはグローバルIP確認のために起動時に<br />http://nekosogi.sytes.net/regist/check_ip.cgi<br />を見に行きます。<br />リクエストがGETではなくPOSTで<br /><div style="text-align: left;"><blockquote>POST /regist/check_ip.cgi HTTP/1.0<br />User-Agent: nekosogiftpd<br />Content-Length: 23<br />Host: nekosogi.sytes.net<br />Connection: close<br /><br />ma=0003FF18E38F&amp;amp;ver=205</blockquote>というデータを送ってました。ブラウザでリクエスト（当然GET）すると<br /><blockquote>global_ip�222.225.115.51�dialog�nekosogiftpd ver2.05がリリースしています。 アップデートをお願いいたします。�</blockquote>と出たので、バージョン情報でも送っているのかもしれません。多分、ver=205がそれでしょう。<br />ma=0003FF18E38Fは謎です。<br />もしドメインを取得しているのなら<a href="http://nekosogi.sytes.net/Plugin/pitifulnat.html">PitifulNat</a>というプラグインで名前解決によるグローバルIPの取得が可能です。<br /><br /><br /></div>
+
+
+    <div class="tag-box">
+      <a href="/tags/windows.html">windows</a>
+      <a href="/tags/soft.html">, soft</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2007/08/08/14121.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2007/08/06
+  <p>
+    <a href="/2007/08/06/14142.html">vsftpdのレジューム機能について</a>
+  </p>
+</div>
+
+    <span class="blsp-spelling-error" id="SPELLING_ERROR_0">vsftpd</span>は<span class="blsp-spelling-error" id="SPELLING_ERROR_1">proftpd</span>のように明示的にレジューム機能の可否を書けません。<br />レジューム機能はデフォルトで有効になっていて無効には出来ません。<br />アップロード、ダウンロード、アスキーモード、バイナリモード<br />に関わらずレジュームが出来ます。
+
+
+    <div class="tag-box">
+      <a href="/tags/soft.html">soft</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2007/08/06/14142.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+
+  <p class="page">Page 81 of 82</p>
+
+    <p class="prev-page"><a href="/page/80/">Previous page</a></p>
+
+    <p class="next-page"><a href="/page/82/">Next page</a></p>
+<div class="clear"></div>
+
+      </div>
+    
+      <aside>
+        <h2>Author</h2>
+        yaasita: SIerから脱出した人<br />
+        <ul>
+          <li><a href="https://github.com/yaasita/">github</a></li>
+          <li><a href="https://twitter.com/yaasita">twitter</a></li>
+          <li><a href="http://yaasita.tumblr.com/">tumblr</a></li>
+        </ul>
+        <h2>Search</h2>
+        <form action="//google.co.jp/search" method="get">
+          <fieldset role="search">
+            <input type="hidden" name="noj" value="1" />
+            <input type="hidden" name="q" value="site:yaasita.github.io" />
+            <input class="search" type="text" name="q" results="0" placeholder="このブログを検索"/>
+          </fieldset>
+        </form>
+        <h2>Tags</h2>
+        <ul>
+            <li><a href="/tags/program.html">program (117)</a></li>
+            <li><a href="/tags/soft.html">soft (367)</a></li>
+            <li><a href="/tags/linux.html">linux (321)</a></li>
+            <li><a href="/tags/hard.html">hard (34)</a></li>
+            <li><a href="/tags/net.html">net (175)</a></li>
+            <li><a href="/tags/crack.html">crack (20)</a></li>
+            <li><a href="/tags/game.html">game (57)</a></li>
+            <li><a href="/tags/rule.html">rule (14)</a></li>
+            <li><a href="/tags/windows.html">windows (54)</a></li>
+            <li><a href="/tags/life.html">life (61)</a></li>
+        </ul>
+        <h2>Archive</h2>
+          <h3><a href="/2016.html">2016 (23)</a></h3>
+            <ul>
+                <li class="month" onclick="display_toggle('12');"><span id="li-12">►  </span>12月 (1)</li>
+                <ul class="kiji" id="ul-12">
+                    <li><a href="/2016/12/03/google-cloud-dns.html">GCPの Cloud DNSでグルーレコード</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('11');"><span id="li-11">►  </span>11月 (2)</li>
+                <ul class="kiji" id="ul-11">
+                    <li><a href="/2016/11/25/value-domain.html">VALUE-DOMAINでグルーレコード追加</a></li>
+                    <li><a href="/2016/11/20/aws-vm-import.html">AWSへVMイメージごと移動する手順</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('10');"><span id="li-10">►  </span>10月 (2)</li>
+                <ul class="kiji" id="ul-10">
+                    <li><a href="/2016/10/31/flets-dns.html">フレッツのDNS挙動</a></li>
+                    <li><a href="/2016/10/22/smart-phone.html">最近買ったスマホ</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('9');"><span id="li-9">►  </span>9月 (2)</li>
+                <ul class="kiji" id="ul-9">
+                    <li><a href="/2016/09/10/update-notify.html">更新通知のbashrc</a></li>
+                    <li><a href="/2016/09/04/nepu.html">超次元アクション ネプテューヌU</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('8');"><span id="li-8">►  </span>8月 (1)</li>
+                <ul class="kiji" id="ul-8">
+                    <li><a href="/2016/08/27/smplayer.html">smplayerでリピート再生</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('7');"><span id="li-7">►  </span>7月 (1)</li>
+                <ul class="kiji" id="ul-7">
+                    <li><a href="/2016/07/31/aws-vpn.html">AWSのVPNまわり</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('6');"><span id="li-6">►  </span>6月 (2)</li>
+                <ul class="kiji" id="ul-6">
+                    <li><a href="/2016/06/22/s3fs.html">s3fs使う</a></li>
+                    <li><a href="/2016/06/11/deep-learning.html">やる夫で学ぶ機械学習シリーズ</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('5');"><span id="li-5">►  </span>5月 (2)</li>
+                <ul class="kiji" id="ul-5">
+                    <li><a href="/2016/05/10/sengoku-musou.html">戦国無双クロニクル3(Vita)攻略</a></li>
+                    <li><a href="/2016/05/04/botbot-me.html">IRCのログを記録するbotbot.me</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('4');"><span id="li-4">►  </span>4月 (3)</li>
+                <ul class="kiji" id="ul-4">
+                    <li><a href="/2016/04/25/netdata.html">リアルタイム監視ソフトnetdata</a></li>
+                    <li><a href="/2016/04/25/syncthing.html">ファイル同期ソフトSyncthing</a></li>
+                    <li><a href="/2016/04/24/git-it.html">Git-itやってみた</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('3');"><span id="li-3">►  </span>3月 (1)</li>
+                <ul class="kiji" id="ul-3">
+                    <li><a href="/2016/03/26/hdd_bad_sector.html">HDDの不良セクタ埋める</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('2');"><span id="li-2">►  </span>2月 (2)</li>
+                <ul class="kiji" id="ul-2">
+                    <li><a href="/2016/02/21/mojolicious.html">Mojoliciousのwebsocket回り</a></li>
+                    <li><a href="/2016/02/15/ff10-2.html">ff10-2</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('1');"><span id="li-1">►  </span>1月 (4)</li>
+                <ul class="kiji" id="ul-1">
+                    <li><a href="/2016/01/25/dame-engineer.html">下位10%のダメなエンジニアシリーズ</a></li>
+                    <li><a href="/2016/01/24/link.html">リンク</a></li>
+                    <li><a href="/2016/01/11/factor.html">素因数分解の話</a></li>
+                    <li><a href="/2016/01/06/acpi.html">systemdでの電源管理</a></li>
+                </ul>
+            </ul>
+          <h3><a href="/2015.html">2015 (25)</a></h3>
+          <h3><a href="/2014.html">2014 (88)</a></h3>
+          <h3><a href="/2013.html">2013 (73)</a></h3>
+          <h3><a href="/2012.html">2012 (71)</a></h3>
+          <h3><a href="/2011.html">2011 (83)</a></h3>
+          <h3><a href="/2010.html">2010 (122)</a></h3>
+          <h3><a href="/2009.html">2009 (151)</a></h3>
+          <h3><a href="/2008.html">2008 (119)</a></h3>
+          <h3><a href="/2007.html">2007 (63)</a></h3>
+      </aside>
+    </div>
+    <div class="clear"></div>
+    <hr class="spliter">
+    <footer>
+    Copyright &copy; 2016 - yaasita - Powered by <a href="http://middlemanapp.com/jp/">middleman</a>
+    </footer>
+    <script src="http://platform.tumblr.com/v1/share.js"></script>
+    <script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'yaasita'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+  </body>
+</html>

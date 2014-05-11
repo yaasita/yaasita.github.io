@@ -1,0 +1,634 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <title>yaasita/blog</title>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/main.css" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/main.js" type="text/javascript"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-37419565-1', 'yaasita.github.io');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <header>
+    <h1><a href="/"># cd ~/yaasita<span class="blinking">_</span></a></h1>
+      <h2>普段思った事とか・・・メモ帳、チラ裏</h2>
+    </header>
+    <hr class="spliter">
+    
+    <div id="container">
+      <div id="main" role="main">
+            <div class="article-body">
+    <div class="title">
+  2016/12/03
+  <p>
+    <a href="/2016/12/03/google-cloud-dns.html">GCPの Cloud DNSでグルーレコード</a>
+  </p>
+</div>
+
+    <p>Google Cloud Platform のDNSでグルーレコード作るときは<br>
+こんな感じでNS指定したあとに、Aレコード追加すればグルーレコード(Glue Record)に追加してくれるようだ</p>
+
+<p><img alt="gcp" src="http://68.media.tumblr.com/b316f08942ffb999860abca6d9f5d5aa/tumblr_ohm57cZVtD1riy4fno1_1280.png" /></p>
+
+<pre><code>; &lt;&lt;&gt;&gt; DiG 9.9.5-9+deb8u8-Debian &lt;&lt;&gt;&gt; +norec @ns-cloud-d1.googledomains.com. name.yaasita.xyz. a
+; (2 servers found)
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 39015
+;; flags: qr; QUERY: 1, ANSWER: 0, AUTHORITY: 2, ADDITIONAL: 3
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;name.yaasita.xyz.              IN      A
+
+;; AUTHORITY SECTION:
+name.yaasita.xyz.       300     IN      NS      ns1.name.yaasita.xyz.
+name.yaasita.xyz.       300     IN      NS      ns2.name.yaasita.xyz.
+
+;; ADDITIONAL SECTION:
+ns1.name.yaasita.xyz.   300     IN      A       192.168.0.1
+ns2.name.yaasita.xyz.   300     IN      A       192.168.0.2
+
+;; Query time: 143 msec
+;; SERVER: 216.239.32.109#53(216.239.32.109)
+;; WHEN: Sat Dec 03 23:23:55 JST 2016
+;; MSG SIZE  rcvd: 113
+</code></pre>
+
+    <div class="tag-box">
+      <a href="/tags/net.html">net</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2016/12/03/google-cloud-dns.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2016/11/25
+  <p>
+    <a href="/2016/11/25/value-domain.html">VALUE-DOMAINでグルーレコード追加</a>
+  </p>
+</div>
+
+    <p>VALUE-DOMAIN バリュードメインの権威DNSサーバを使いつつ<br>
+レコードにグルーレコードを追加する方法</p>
+
+<p>BINDみたくこんな感じにやる</p>
+
+<pre><code>ns cloud cloud.example.net.
+a cloud.example.net. 123.123.123.123
+</code></pre>
+
+<p>上位の権威サーバにグルーレコードを設定する場合は<br>
+下記参照<br>
+<a href="https://www.value-domain.com/userguide/manual/othermodns/">https://www.value-domain.com/userguide/manual/othermodns/</a></p>
+
+    <div class="tag-box">
+      <a href="/tags/net.html">net</a>
+      <a href="/tags/rule.html">, rule</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2016/11/25/value-domain.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2016/11/20
+  <p>
+    <a href="/2016/11/20/aws-vm-import.html">AWSへVMイメージごと移動する手順</a>
+  </p>
+</div>
+
+    <h2 id="手順">手順</h2>
+
+<p>img作る前に以下を確認しておく</p>
+
+<ul>
+<li>DHCPを有効にしている</li>
+<li>iptablesを無効に</li>
+<li>rawでイメージを作っておく</li>
+</ul>
+
+<p>次に以下のコマンドでインポート</p>
+
+<pre><code># hoge-importってバケット作ったとする
+# 最初にimgをS3に上げておく
+aws s3 cp hoge.img s3://hoge-import/hoge.img
+
+# IAM周りを準備
+aws iam create-role --role-name vmimport --assume-role-policy-document file://trust-policy.json
+aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json
+
+# インポートタスク開始
+aws ec2 import-image --description &quot;hoge server&quot; --disk-containers file://containers.json
+
+# 進捗見る
+aws ec2 describe-import-image-tasks
+</code></pre>
+
+<p>使ったjsonファイル</p>
+
+<script src="https://gist.github.com/yaasita/a707461e7b3a07bb64e8717cf5fbdcd0.js"></script>
+
+<h2 id="参考リンク">参考リンク</h2>
+
+<ul>
+<li><a href="http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats">http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html">http://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html</a></li>
+</ul>
+
+    <div class="tag-box">
+      <a href="/tags/net.html">net</a>
+      <a href="/tags/linux.html">, linux</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2016/11/20/aws-vm-import.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2016/10/31
+  <p>
+    <a href="/2016/10/31/flets-dns.html">フレッツのDNS挙動</a>
+  </p>
+</div>
+
+    <p><a href="https://www.softel.co.jp/blogs/tech/archives/5075">NSレコードに指定したホスト名にCNAMEを持たせてはいけない</a><br>
+という話は有名だがどのように挙動が変わるか見てみる</p>
+
+<h1 id="準備">準備</h1>
+
+<p>yaasita.ml. の権威サーバは ns1.aws.yaasita.net. にしておく<br>
+NSで指定されてるサーバは CNAMEとして aws.yaasita.net. に設定しておく</p>
+
+<pre><code>; &lt;&lt;&gt;&gt; DiG 9.9.5-9+deb8u7-Debian &lt;&lt;&gt;&gt; +norec @aws.yaasita.net. ns1.aws.yaasita.net. a
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 31880
+;; flags: qr aa; QUERY: 1, ANSWER: 2, AUTHORITY: 1, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;ns1.aws.yaasita.net.           IN      A
+
+;; ANSWER SECTION:
+ns1.aws.yaasita.net.    60      IN      CNAME   aws.yaasita.net.
+aws.yaasita.net.        60      IN      A       54.159.240.111
+
+;; AUTHORITY SECTION:
+aws.yaasita.net.        60      IN      NS      aws.yaasita.net.
+
+;; Query time: 205 msec
+;; SERVER: 54.159.240.111#53(54.159.240.111)
+;; WHEN: Mon Oct 31 00:53:20 JST 2016
+;; MSG SIZE  rcvd: 92
+</code></pre>
+
+<h1 id="fletsのdnsキャッシュサーバ-210-130-1-1-の場合">FletsのDNSキャッシュサーバ(210.130.1.1)の場合</h1>
+
+<p>CNAMEとともにAレコードを返しているのでIPアドレスは取得可能だが、フレッツ側はエラーとなる<br>
+この時点でエラーとなり hoge.yaasita.ml. のクエリ事態を発行しない</p>
+
+<pre><code>; &lt;&lt;&gt;&gt; DiG 9.9.5-9+deb8u7-Debian &lt;&lt;&gt;&gt; @210.130.0.1 hoge.yaasita.ml. a
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: SERVFAIL, id: 28051
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
+;; QUESTION SECTION:
+;hoge.yaasita.ml.               IN      A
+
+;; Query time: 360 msec
+;; SERVER: 210.130.0.1#53(210.130.0.1)
+;; WHEN: Mon Oct 31 00:56:16 JST 2016
+;; MSG SIZE  rcvd: 44
+</code></pre>
+
+<h1 id="google-8-8-8-8-dnsキャッシューサーバの場合">Google(8.8.8.8)DNSキャッシューサーバの場合</h1>
+
+<p>この場合、上記Aレコードを取得した後にCNAMEでも処理を続行し、<br>
+hoge.yaasita.ml. の名前解決を行う<br>
+フレッツと違い最終的なIPアドレスを取得可能</p>
+
+<pre><code>; &lt;&lt;&gt;&gt; DiG 9.9.5-9+deb8u7-Debian &lt;&lt;&gt;&gt; @8.8.8.8 hoge.yaasita.ml. a
+; (1 server found)
+;; global options: +cmd
+;; Got answer:
+;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 54911
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 512
+;; QUESTION SECTION:
+;hoge.yaasita.ml.               IN      A
+
+;; ANSWER SECTION:
+hoge.yaasita.ml.        59      IN      A       54.159.240.111
+
+;; Query time: 671 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8)
+;; WHEN: Mon Oct 31 00:58:23 JST 2016
+;; MSG SIZE  rcvd: 60
+</code></pre>
+
+<h1 id="シーケンス図">シーケンス図</h1>
+
+<p><img alt="google" src="http://67.media.tumblr.com/1acfd39dc50a194dedb3c315956d4c41/tumblr_ofvbwq0oXY1riy4fno2_500.png" /></p>
+
+<p><img alt="flets" src="http://65.media.tumblr.com/9a455e1cb541b4fceca47c611716ab15/tumblr_ofvbwq0oXY1riy4fno1_500.png" /></p>
+
+<p><a href="http://yaasita.tumblr.com/post/152512953297">http://yaasita.tumblr.com/post/152512953297</a></p>
+
+<h1 id="ちなみに">ちなみに</h1>
+
+<p>unbound 1.4.22 ( debian 8 )でもGoogleと同じようにCNAMEでもOKだった</p>
+
+    <div class="tag-box">
+      <a href="/tags/net.html">net</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2016/10/31/flets-dns.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2016/10/22
+  <p>
+    <a href="/2016/10/22/smart-phone.html">最近買ったスマホ</a>
+  </p>
+</div>
+
+    <pre><code>エイスース SIMフリースマートフォン 
+ZenFone 2 Laser（Qualcomm Snapdragon 410/メモリ 2GB）
+16GB ブラック ZE500KL-BK16
+</code></pre>
+
+<p>18,672円だった</p>
+
+<p>Androidは6.0.1まで上がった</p>
+
+    <div class="tag-box">
+      <a href="/tags/hard.html">hard</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2016/10/22/smart-phone.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2016/09/10
+  <p>
+    <a href="/2016/09/10/update-notify.html">更新通知のbashrc</a>
+  </p>
+</div>
+
+    <p>こんな感じで、更新を促す</p>
+
+<script src="https://gist.github.com/yaasita/f5c755e6c5ed0cdb1f294f37fe4e4642.js"></script>
+
+    <div class="tag-box">
+      <a href="/tags/program.html">program</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2016/09/10/update-notify.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2016/09/04
+  <p>
+    <a href="/2016/09/04/nepu.html">超次元アクション ネプテューヌU</a>
+  </p>
+</div>
+
+    <p>Vita版のやつ</p>
+
+<h1 id="ギョウ界チ武道会">ギョウ界チ武道会</h1>
+
+<p>クリアしたキャラ</p>
+
+<ul>
+<li>ネプチューヌ</li>
+<li>ノワール</li>
+<li>ブラン</li>
+<li>ベール</li>
+<li>ネプギア</li>
+<li>ユニ</li>
+<li>ロム</li>
+<li>ラム</li>
+<li>デンゲキコ</li>
+<li>パープルハート</li>
+<li>ブラックハート</li>
+<li>ホワイトハート</li>
+<li>グリーンハート</li>
+<li>パープルシスター</li>
+<li>ブラックシスター</li>
+<li>ホワイトシスター(左)</li>
+<li>ホワイトシスター(右)</li>
+<li>ファミ通</li>
+</ul>
+
+<p>-&gt; 取得したアイテムで審議判定できる<br>
+<a href="http://catmiimi.com/nepu_military">http://catmiimi.com/nepu_military</a></p>
+
+<h1 id="参考リンク">参考リンク</h1>
+
+<p><a href="http://catmiimi.com/nepu">http://catmiimi.com/nepu</a></p>
+
+    <div class="tag-box">
+      <a href="/tags/game.html">game</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2016/09/04/nepu.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2016/08/27
+  <p>
+    <a href="/2016/08/27/smplayer.html">smplayerでリピート再生</a>
+  </p>
+</div>
+
+    <p>ずっとループして再生</p>
+
+<ul>
+<li>再生(P) → A-Bセクション(A) → 繰り返し(R)</li>
+</ul>
+
+    <div class="tag-box">
+      <a href="/tags/soft.html">soft</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2016/08/27/smplayer.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2016/07/31
+  <p>
+    <a href="/2016/07/31/aws-vpn.html">AWSのVPNまわり</a>
+  </p>
+</div>
+
+    <p>よくある質問<br>
+対応機器<br>
+<a href="http://aws.amazon.com/jp/vpc/faqs/">http://aws.amazon.com/jp/vpc/faqs/</a></p>
+
+<p>ハードウェアVPN接続<br>
+- 1つの仮想プライベートゲートウェイあたり10接続<br>
+<a href="http://docs.aws.amazon.com/ja_jp/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html">http://docs.aws.amazon.com/ja_jp/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html</a><br>
+<a href="http://dev.classmethod.jp/cloud/aws/vpc-connect-hardware-vpn/">http://dev.classmethod.jp/cloud/aws/vpc-connect-hardware-vpn/</a></p>
+
+    <div class="tag-box">
+      <a href="/tags/net.html">net</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2016/07/31/aws-vpn.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2016/06/22
+  <p>
+    <a href="/2016/06/22/s3fs.html">s3fs使う</a>
+  </p>
+</div>
+
+    <p>s3fsはamazon S3をファイルしすてむのように使うやつ<br>
+ただ遅い</p>
+
+<p>基本ここ見てやる<br>
+<a href="https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes">https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes</a></p>
+
+<p>今回はCeontOS6を対象</p>
+
+<pre><code># paco入れておく
+yum install paco
+
+# コンパイルに必要なもの入れる
+yum install -y gcc libstdc++-devel gcc-c++ curl-devel libxml2-devel openssl-devel mailcap
+
+# fuse
+wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.8.5.tar.gz
+./configure 
+make
+paco -lD &#39;make install&#39;
+
+# /usr/local/lib 追記
+vi /etc/ld.so.conf
+ldconfig
+
+# s3fs
+wget http://s3fs.googlecode.com/files/s3fs-1.74.tar.gz
+tar xvaf s3fs-1.74.tar.gz
+cd s3fs-1.74/ 
+autoreconf --install 
+export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig 
+./configure --prefix=/usr
+make
+paco -lD &#39;make install&#39;
+
+# mount
+s3fs hoge-bucket /s3 -o rw,allow_other,uid=501,gid=501,default_acl=public-read
+su - apps
+cd /s3
+date &gt; date.txt
+# http://hoge-bucket.s3.amazonaws.com/date.txt =&gt; 見れる(｀・ω・´)v
+
+# なんかエラーになるとき再起動時とか
+Transport endpoint is not connected
+umount /s3
+mount /s3
+
+# パーミッションの制御
+x-amz-meta-modeってメタデータでやってるぽい
+aws s3 sync /s3/test s3://hoge-bucket/test --delete --metadata  &quot;mode=33279&quot; --size-only
+</code></pre>
+
+<p>今はこれより早い goofys なるものもあるらしい</p>
+
+<ul>
+<li><a href="https://github.com/kahing/goofys">https://github.com/kahing/goofys</a></li>
+<li><a href="http://dev.classmethod.jp/cloud/aws/how-to-use-s3fs-goofys/">http://dev.classmethod.jp/cloud/aws/how-to-use-s3fs-goofys/</a></li>
+</ul>
+
+    <div class="tag-box">
+      <a href="/tags/net.html">net</a>
+      <a href="/tags/soft.html">, soft</a>
+      <a href="/tags/program.html">, program</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2016/06/22/s3fs.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+
+  <p class="page">Page 1 of 82</p>
+
+    <p class="prev-page"></p>
+
+    <p class="next-page"><a href="/page/2/">Next page</a></p>
+<div class="clear"></div>
+
+      </div>
+    
+      <aside>
+        <h2>Author</h2>
+        yaasita: SIerから脱出した人<br />
+        <ul>
+          <li><a href="https://github.com/yaasita/">github</a></li>
+          <li><a href="https://twitter.com/yaasita">twitter</a></li>
+          <li><a href="http://yaasita.tumblr.com/">tumblr</a></li>
+        </ul>
+        <h2>Search</h2>
+        <form action="//google.co.jp/search" method="get">
+          <fieldset role="search">
+            <input type="hidden" name="noj" value="1" />
+            <input type="hidden" name="q" value="site:yaasita.github.io" />
+            <input class="search" type="text" name="q" results="0" placeholder="このブログを検索"/>
+          </fieldset>
+        </form>
+        <h2>Tags</h2>
+        <ul>
+            <li><a href="/tags/program.html">program (117)</a></li>
+            <li><a href="/tags/soft.html">soft (367)</a></li>
+            <li><a href="/tags/linux.html">linux (321)</a></li>
+            <li><a href="/tags/hard.html">hard (34)</a></li>
+            <li><a href="/tags/net.html">net (175)</a></li>
+            <li><a href="/tags/crack.html">crack (20)</a></li>
+            <li><a href="/tags/game.html">game (57)</a></li>
+            <li><a href="/tags/rule.html">rule (14)</a></li>
+            <li><a href="/tags/windows.html">windows (54)</a></li>
+            <li><a href="/tags/life.html">life (61)</a></li>
+        </ul>
+        <h2>Archive</h2>
+          <h3><a href="/2016.html">2016 (23)</a></h3>
+            <ul>
+                <li class="month" onclick="display_toggle('12');"><span id="li-12">►  </span>12月 (1)</li>
+                <ul class="kiji" id="ul-12">
+                    <li><a href="/2016/12/03/google-cloud-dns.html">GCPの Cloud DNSでグルーレコード</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('11');"><span id="li-11">►  </span>11月 (2)</li>
+                <ul class="kiji" id="ul-11">
+                    <li><a href="/2016/11/25/value-domain.html">VALUE-DOMAINでグルーレコード追加</a></li>
+                    <li><a href="/2016/11/20/aws-vm-import.html">AWSへVMイメージごと移動する手順</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('10');"><span id="li-10">►  </span>10月 (2)</li>
+                <ul class="kiji" id="ul-10">
+                    <li><a href="/2016/10/31/flets-dns.html">フレッツのDNS挙動</a></li>
+                    <li><a href="/2016/10/22/smart-phone.html">最近買ったスマホ</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('9');"><span id="li-9">►  </span>9月 (2)</li>
+                <ul class="kiji" id="ul-9">
+                    <li><a href="/2016/09/10/update-notify.html">更新通知のbashrc</a></li>
+                    <li><a href="/2016/09/04/nepu.html">超次元アクション ネプテューヌU</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('8');"><span id="li-8">►  </span>8月 (1)</li>
+                <ul class="kiji" id="ul-8">
+                    <li><a href="/2016/08/27/smplayer.html">smplayerでリピート再生</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('7');"><span id="li-7">►  </span>7月 (1)</li>
+                <ul class="kiji" id="ul-7">
+                    <li><a href="/2016/07/31/aws-vpn.html">AWSのVPNまわり</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('6');"><span id="li-6">►  </span>6月 (2)</li>
+                <ul class="kiji" id="ul-6">
+                    <li><a href="/2016/06/22/s3fs.html">s3fs使う</a></li>
+                    <li><a href="/2016/06/11/deep-learning.html">やる夫で学ぶ機械学習シリーズ</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('5');"><span id="li-5">►  </span>5月 (2)</li>
+                <ul class="kiji" id="ul-5">
+                    <li><a href="/2016/05/10/sengoku-musou.html">戦国無双クロニクル3(Vita)攻略</a></li>
+                    <li><a href="/2016/05/04/botbot-me.html">IRCのログを記録するbotbot.me</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('4');"><span id="li-4">►  </span>4月 (3)</li>
+                <ul class="kiji" id="ul-4">
+                    <li><a href="/2016/04/25/netdata.html">リアルタイム監視ソフトnetdata</a></li>
+                    <li><a href="/2016/04/25/syncthing.html">ファイル同期ソフトSyncthing</a></li>
+                    <li><a href="/2016/04/24/git-it.html">Git-itやってみた</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('3');"><span id="li-3">►  </span>3月 (1)</li>
+                <ul class="kiji" id="ul-3">
+                    <li><a href="/2016/03/26/hdd_bad_sector.html">HDDの不良セクタ埋める</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('2');"><span id="li-2">►  </span>2月 (2)</li>
+                <ul class="kiji" id="ul-2">
+                    <li><a href="/2016/02/21/mojolicious.html">Mojoliciousのwebsocket回り</a></li>
+                    <li><a href="/2016/02/15/ff10-2.html">ff10-2</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('1');"><span id="li-1">►  </span>1月 (4)</li>
+                <ul class="kiji" id="ul-1">
+                    <li><a href="/2016/01/25/dame-engineer.html">下位10%のダメなエンジニアシリーズ</a></li>
+                    <li><a href="/2016/01/24/link.html">リンク</a></li>
+                    <li><a href="/2016/01/11/factor.html">素因数分解の話</a></li>
+                    <li><a href="/2016/01/06/acpi.html">systemdでの電源管理</a></li>
+                </ul>
+            </ul>
+          <h3><a href="/2015.html">2015 (25)</a></h3>
+          <h3><a href="/2014.html">2014 (88)</a></h3>
+          <h3><a href="/2013.html">2013 (73)</a></h3>
+          <h3><a href="/2012.html">2012 (71)</a></h3>
+          <h3><a href="/2011.html">2011 (83)</a></h3>
+          <h3><a href="/2010.html">2010 (122)</a></h3>
+          <h3><a href="/2009.html">2009 (151)</a></h3>
+          <h3><a href="/2008.html">2008 (119)</a></h3>
+          <h3><a href="/2007.html">2007 (63)</a></h3>
+      </aside>
+    </div>
+    <div class="clear"></div>
+    <hr class="spliter">
+    <footer>
+    Copyright &copy; 2016 - yaasita - Powered by <a href="http://middlemanapp.com/jp/">middleman</a>
+    </footer>
+    <script src="http://platform.tumblr.com/v1/share.js"></script>
+    <script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'yaasita'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+  </body>
+</html>

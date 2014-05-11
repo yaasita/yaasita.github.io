@@ -1,0 +1,372 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <title>yaasita/blog</title>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/main.css" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/main.js" type="text/javascript"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-37419565-1', 'yaasita.github.io');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <header>
+    <h1><a href="/"># cd ~/yaasita<span class="blinking">_</span></a></h1>
+      <h2>普段思った事とか・・・メモ帳、チラ裏</h2>
+    </header>
+    <hr class="spliter">
+    
+    <div id="container">
+      <div id="main" role="main">
+            <div class="article-body">
+    <div class="title">
+  2011/04/18
+  <p>
+    <a href="/2011/04/18/4319.html">よく使うCGIスクリプト</a>
+  </p>
+</div>
+
+    無料で使えてとても助かってる<br /><br />フォトアルバム <br />pipipiga<br />UTF-8用のファイルとか用意していてくれる<br /><a href="http://popilol.lolipop.jp/NiconicoPHP/">http://popilol.lolipop.jp/NiconicoPHP/</a><br /><br /><a href="http://flashrave.org/dl/fuploader/index.html">Fuploader</a><br />FLASHで出来てる　アップローダ<br />100Mまでアップロード可能<br /><a href="http://www.yumemaboroshi.net/cgi4905/">http://www.yumemaboroshi.net/cgi4905/</a><br /><br />UTF-8+LFへの変換は<br /><pre>nkf -w8 -Lu ファイル名</pre>でOK<br /><br />wikiは<a href="http://pukiwiki.sourceforge.jp/">PukiWiki</a>が設置が簡単で良いと思う
+
+
+    <div class="tag-box">
+      <a href="/tags/linux.html">linux</a>
+      <a href="/tags/soft.html">, soft</a>
+      <a href="/tags/program.html">, program</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2011/04/18/4319.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2011/04/17
+  <p>
+    <a href="/2011/04/17/4341.html">lighttpdでアクセス制御</a>
+  </p>
+</div>
+
+    こんな感じで指定すると<br />/upload配下以外はユーザー認証が必要<br /><pre>     $HTTP["url"] !~ "^/upload" {<br />     auth.require                 = (<br />                   "" =><br />                                    (<br />                    "method"  => "basic",<br />                    "realm"   => "wolzone",<br />                    "require" => "valid-user"<br />                                      )<br /><br />                                  )<br />  }<br /></pre><br />参考リンク<br /><a href="http://redmine.lighttpd.net/wiki/lighttpd/Docs:Configuration">lighttpdの記述方法</a><br /><a href="http://redmine.lighttpd.net/wiki/1/Docs:ModAuth">lighttpdのmod_auth使用方法</a>
+
+
+    <div class="tag-box">
+      <a href="/tags/linux.html">linux</a>
+      <a href="/tags/soft.html">, soft</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2011/04/17/4341.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2011/04/12
+  <p>
+    <a href="/2011/04/12/4362.html">ターミナルが256色をサポートしているかテストするには？</a>
+  </p>
+</div>
+
+    <a href="http://vimwiki.net/?tips%2F70">http://vimwiki.net/?tips%2F70</a><br />↑の256colors2.plっていうスクリプトを動かせばよいらしい
+
+
+    <div class="tag-box">
+      <a href="/tags/linux.html">linux</a>
+      <a href="/tags/soft.html">, soft</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2011/04/12/4362.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2011/04/11
+  <p>
+    <a href="/2011/04/11/4383.html">bug.nを試してみた</a>
+  </p>
+</div>
+
+    <a href="http://rdt17.blogspot.com/2011/04/debiandwm.html">前回</a>Dwmにはまったので<br />Windowsでも出来ないか探してみたらあった<br /><a href="http://www.autohotkey.net/~joten/">bug.n</a>というらしい<br /><br />使い方はLinuxの時とほぼ同じ<br />※（Winは左Windowsキー）<br /><br /><i>アクティブウィンドウの切り替え</i><br /><pre>Win+↑<br />Win+↓<br /></pre><br /><i>ウィンドウのリサイズ</i><br /><pre>Win+←<br />Win+→<br /></pre><br /><i>ウィンドウのクローズ</i><br /><pre>Win+c<br /></pre><br /><i>分割の縦横切り替え</i><br /><pre>Win+Ctrl+Tab<br /></pre><br /><i>タイトルバーの表示非表示</i><br /><pre>Win+Shift+d<br /></pre><br /><i>ウィンドウの入れ替え</i><br /><pre>Win+Shift+Enter<br /></pre><br /><i>マスターウィンドウの左右切り替え</i><br /><pre>Win+Ctrl+Enter<br /></pre><br /><i>よく分からないけどレイアウトの変更</i><br /><pre>Win+Ctrl+←<br />Win+Ctrl+→<br /></pre><br /><br /><i>タスクバーの表示非表示</i><br /><pre>Win+Space<br /></pre><br /><i>bug.nの終了</i><br /><pre>Win+Shift+q<br /></pre><br />参考リンク<br /><a href="http://sourceforge.jp/projects/tilingwm/wiki/FrontPage">http://sourceforge.jp/projects/tilingwm/wiki/FrontPage</a>
+
+
+    <div class="tag-box">
+      <a href="/tags/windows.html">windows</a>
+      <a href="/tags/soft.html">, soft</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2011/04/11/4383.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2011/04/11
+  <p>
+    <a href="/2011/04/11/4404.html">Linuxで使える軽い画像ビューワ</a>
+  </p>
+</div>
+
+    使いやすくて軽い画像ビューワー<br /><h2>xzgv</h2>というらしい<br />画像フォルダで<br /><pre>xzgv *<br /></pre>で起動して<br /><br />shift-z　ファイル一覧表示<br />z　Windowsにフィット<br />Space　次の画像へ<br />b　前の画像へ<br />矢印キー　画像を任意の方向へスクロール<br />s　画像をズームイン<br />S　画像をズームアウト<br /><br /><h2>mirage</h2>基本はマウスで出来る<br />F2で画像をリネームできるのがポイント
+
+
+    <div class="tag-box">
+      <a href="/tags/linux.html">linux</a>
+      <a href="/tags/soft.html">, soft</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2011/04/11/4404.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2011/04/11
+  <p>
+    <a href="/2011/04/11/4425.html">Dwmのステータスバーと壁紙を変更してみる</a>
+  </p>
+</div>
+
+    デフォルトのステータスバーはあまりにそっけないので変更してみた<br />下記参考リンクを参照すれば分かると思うけど<br />Dwmの上のバーの右上はxsetroot -nameで示される名前を表示しているので<br />~/.xsessionrcにこんな感じのスクリプトを書いてやる<br />※.xsessionrcはXのセッション開始時に読み込まれる詳しくは/etc/X11/Xsession参照<br /><br />~/.xsessionrc<br /><pre>#!/bin/bash<br />xsetroot -solid DarkSlateBlue<br />hsetroot -full /usr/share/lxde/wallpapers/block.jpg<br />while true<br />        do<br />        DATE=`date +"%Y/%m/%d %H:%M"`<br />        xsetroot -name "$DATE" || exit<br />        sleep 30s<br />done &amp;<br /></pre><br />xsetroot は背景色の設定（ここでは下の行で壁紙を設定してるから意味無いけど・・・）<br />hsetroot が壁紙の設定hsetroot をインストールする必要はある<br /><br />参考リンク<br /><a href="http://en.gentoo-wiki.com/wiki/Dwm">ステータスバーの変更について</a><br /><br />参考記事<br /><a href="http://rdt17.blogspot.com/2011/05/xsessionrc.html">xsessionrcのプロセス制御</a>
+
+
+    <div class="tag-box">
+      <a href="/tags/linux.html">linux</a>
+      <a href="/tags/soft.html">, soft</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2011/04/11/4425.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2011/04/11
+  <p>
+    <a href="/2011/04/11/4446.html">Debianのデスクトップ環境をDwmに変更してみた</a>
+  </p>
+</div>
+
+    軽量と言われるLXDEだけどやはり10年前のノートPCだと重いと感じてきたので変更する<br />変更するのはウィンドウマネージャの<a href="http://ja.wikipedia.org/wiki/Dwm_%28%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%29">Dwm</a><br /><br />インストールはaptとかでさくっとできるはず<br />デフォルトのMod1キーはAltキーなのでいつもAltキーが必要です<br />起動して左上に表示されている１～９の数字は仮想デスクトップでここではタグと呼びます<br />基本操作は以下のとおり<br /><br /><i>uxtermの起動</i><br /><pre>Alt+Shift+Return</pre><br /><i>ウィンドウ間のフォーカスを切り替え</i><br /><pre>Alt+j<br />Alt+k<br /></pre><br /><i>ウィンドウのサイズ変更</i><br /><pre>Alt+h<br />Alt+l<br /></pre><br /><i>フォーカスされているウィンドウを閉じる</i><br /><pre>Alt+Shift+c</pre><br /><i>6番目のタグへ移動</i><br /><pre>Alt+6</pre><br /><i>全てのタグを選択(全ウィンドウが表示されます)</i><br /><pre>Alt+0</pre><br /><i>現在フォーカスされているウィンドウを4番目のタグへ移動</i><br /><pre>Alt+Shift+4</pre><br /><i>ウィンドウの入れ替え</i><br /><pre>Alt+Return</pre><br /><i>前回選択してたタグへ移動</i><br /><pre>Alt+Tab</pre><br /><i>上のバーの表示／非表示切り替え</i><br /><pre>Alt+b</pre><br /><i>ウィンドウをタイル表示（重ならないように配置）</i><br /><pre>Alt+t</pre><br /><i>フローティングレイアウト表示へ（重なって表示）</i><br /><pre>Alt+f</pre>※Alt押しながらマウスで移動できます<br /><br /><i>常に最大化表示（ひとつのウィンドウが最大化表示）</i><br /><pre>Alt+m</pre><br /><i>Dwmを終了</i><br /><pre>Alt+Shift+q</pre><br />その他詳しいことは<br /><pre>man dwm</pre><br />ステータスバーを変えるには<a href="http://rdt17.blogspot.com/2011/04/dwm.html">こちら</a><br /><br />参考リンク<br /><a href="http://sourceforge.jp/projects/tilingwm/wiki/FrontPage">http://sourceforge.jp/projects/tilingwm/wiki/FrontPage</a>
+
+
+    <div class="tag-box">
+      <a href="/tags/linux.html">linux</a>
+      <a href="/tags/soft.html">, soft</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2011/04/11/4446.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2011/04/04
+  <p>
+    <a href="/2011/04/04/4467.html">風来のシレン改造コード</a>
+  </p>
+</div>
+
+    チートコード<a href="http://homepage3.nifty.com/game-sfccode/furai_no_shiren.html"><br />http://homepage3.nifty.com/game-sfccode/furai_no_shiren.html</a>
+
+
+    <div class="tag-box">
+      <a href="/tags/game.html">game</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2011/04/04/4467.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2011/04/03
+  <p>
+    <a href="/2011/04/03/4487.html">コンソールの表示行を変更する</a>
+  </p>
+</div>
+
+    <pre>stty rows 56</pre>こんな感じで打てば<br />表示される行数を変更できる<br /><br />ただ<br />どうやって起動時に設定するかが課題<br /><br /><br />参考リンク<br /><a href="http://rdt17.blogspot.com/2009/12/bash.html">sttyのほかの使い方</a><br /><a href="http://www.linuxquestions.org/questions/debian-26/stty-command-in-etc-rc-local-814414/">起動時に有効にする方法？</a>
+
+
+    <div class="tag-box">
+      <a href="/tags/linux.html">linux</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2011/04/03/4487.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2011/04/02
+  <p>
+    <a href="/2011/04/02/4528.html">DebianにOperaをインストール</a>
+  </p>
+</div>
+
+    <a href="http://wiki.debian.org/Opera">このとおり</a>やれば出来た<br /><br />/etc/apt/sources.listにリポジトリを追加<br /><pre>deb http://deb.opera.com/opera squeeze non-free<br /></pre><br />以下のコマンドを実行<br /><pre>aptitude update<br />wget -O - http://deb.opera.com/archive.key | apt-key add -<br />aptitude update<br />aptitude install opera<br /></pre><br /><br />apt-keyについては<br />以下を参照<br />基本的にはapt-key updateでいいはず<br /><a href="http://debian.fam.cx/index.php?AptGet#secapt">http://debian.fam.cx/index.php?AptGet#secapt</a>
+
+
+    <div class="tag-box">
+      <a href="/tags/linux.html">linux</a>
+      <a href="/tags/soft.html">, soft</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2011/04/02/4528.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+
+  <p class="page">Page 34 of 82</p>
+
+    <p class="prev-page"><a href="/page/33/">Previous page</a></p>
+
+    <p class="next-page"><a href="/page/35/">Next page</a></p>
+<div class="clear"></div>
+
+      </div>
+    
+      <aside>
+        <h2>Author</h2>
+        yaasita: SIerから脱出した人<br />
+        <ul>
+          <li><a href="https://github.com/yaasita/">github</a></li>
+          <li><a href="https://twitter.com/yaasita">twitter</a></li>
+          <li><a href="http://yaasita.tumblr.com/">tumblr</a></li>
+        </ul>
+        <h2>Search</h2>
+        <form action="//google.co.jp/search" method="get">
+          <fieldset role="search">
+            <input type="hidden" name="noj" value="1" />
+            <input type="hidden" name="q" value="site:yaasita.github.io" />
+            <input class="search" type="text" name="q" results="0" placeholder="このブログを検索"/>
+          </fieldset>
+        </form>
+        <h2>Tags</h2>
+        <ul>
+            <li><a href="/tags/program.html">program (117)</a></li>
+            <li><a href="/tags/soft.html">soft (367)</a></li>
+            <li><a href="/tags/linux.html">linux (321)</a></li>
+            <li><a href="/tags/hard.html">hard (34)</a></li>
+            <li><a href="/tags/net.html">net (175)</a></li>
+            <li><a href="/tags/crack.html">crack (20)</a></li>
+            <li><a href="/tags/game.html">game (57)</a></li>
+            <li><a href="/tags/rule.html">rule (14)</a></li>
+            <li><a href="/tags/windows.html">windows (54)</a></li>
+            <li><a href="/tags/life.html">life (61)</a></li>
+        </ul>
+        <h2>Archive</h2>
+          <h3><a href="/2016.html">2016 (23)</a></h3>
+            <ul>
+                <li class="month" onclick="display_toggle('12');"><span id="li-12">►  </span>12月 (1)</li>
+                <ul class="kiji" id="ul-12">
+                    <li><a href="/2016/12/03/google-cloud-dns.html">GCPの Cloud DNSでグルーレコード</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('11');"><span id="li-11">►  </span>11月 (2)</li>
+                <ul class="kiji" id="ul-11">
+                    <li><a href="/2016/11/25/value-domain.html">VALUE-DOMAINでグルーレコード追加</a></li>
+                    <li><a href="/2016/11/20/aws-vm-import.html">AWSへVMイメージごと移動する手順</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('10');"><span id="li-10">►  </span>10月 (2)</li>
+                <ul class="kiji" id="ul-10">
+                    <li><a href="/2016/10/31/flets-dns.html">フレッツのDNS挙動</a></li>
+                    <li><a href="/2016/10/22/smart-phone.html">最近買ったスマホ</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('9');"><span id="li-9">►  </span>9月 (2)</li>
+                <ul class="kiji" id="ul-9">
+                    <li><a href="/2016/09/10/update-notify.html">更新通知のbashrc</a></li>
+                    <li><a href="/2016/09/04/nepu.html">超次元アクション ネプテューヌU</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('8');"><span id="li-8">►  </span>8月 (1)</li>
+                <ul class="kiji" id="ul-8">
+                    <li><a href="/2016/08/27/smplayer.html">smplayerでリピート再生</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('7');"><span id="li-7">►  </span>7月 (1)</li>
+                <ul class="kiji" id="ul-7">
+                    <li><a href="/2016/07/31/aws-vpn.html">AWSのVPNまわり</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('6');"><span id="li-6">►  </span>6月 (2)</li>
+                <ul class="kiji" id="ul-6">
+                    <li><a href="/2016/06/22/s3fs.html">s3fs使う</a></li>
+                    <li><a href="/2016/06/11/deep-learning.html">やる夫で学ぶ機械学習シリーズ</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('5');"><span id="li-5">►  </span>5月 (2)</li>
+                <ul class="kiji" id="ul-5">
+                    <li><a href="/2016/05/10/sengoku-musou.html">戦国無双クロニクル3(Vita)攻略</a></li>
+                    <li><a href="/2016/05/04/botbot-me.html">IRCのログを記録するbotbot.me</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('4');"><span id="li-4">►  </span>4月 (3)</li>
+                <ul class="kiji" id="ul-4">
+                    <li><a href="/2016/04/25/netdata.html">リアルタイム監視ソフトnetdata</a></li>
+                    <li><a href="/2016/04/25/syncthing.html">ファイル同期ソフトSyncthing</a></li>
+                    <li><a href="/2016/04/24/git-it.html">Git-itやってみた</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('3');"><span id="li-3">►  </span>3月 (1)</li>
+                <ul class="kiji" id="ul-3">
+                    <li><a href="/2016/03/26/hdd_bad_sector.html">HDDの不良セクタ埋める</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('2');"><span id="li-2">►  </span>2月 (2)</li>
+                <ul class="kiji" id="ul-2">
+                    <li><a href="/2016/02/21/mojolicious.html">Mojoliciousのwebsocket回り</a></li>
+                    <li><a href="/2016/02/15/ff10-2.html">ff10-2</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('1');"><span id="li-1">►  </span>1月 (4)</li>
+                <ul class="kiji" id="ul-1">
+                    <li><a href="/2016/01/25/dame-engineer.html">下位10%のダメなエンジニアシリーズ</a></li>
+                    <li><a href="/2016/01/24/link.html">リンク</a></li>
+                    <li><a href="/2016/01/11/factor.html">素因数分解の話</a></li>
+                    <li><a href="/2016/01/06/acpi.html">systemdでの電源管理</a></li>
+                </ul>
+            </ul>
+          <h3><a href="/2015.html">2015 (25)</a></h3>
+          <h3><a href="/2014.html">2014 (88)</a></h3>
+          <h3><a href="/2013.html">2013 (73)</a></h3>
+          <h3><a href="/2012.html">2012 (71)</a></h3>
+          <h3><a href="/2011.html">2011 (83)</a></h3>
+          <h3><a href="/2010.html">2010 (122)</a></h3>
+          <h3><a href="/2009.html">2009 (151)</a></h3>
+          <h3><a href="/2008.html">2008 (119)</a></h3>
+          <h3><a href="/2007.html">2007 (63)</a></h3>
+      </aside>
+    </div>
+    <div class="clear"></div>
+    <hr class="spliter">
+    <footer>
+    Copyright &copy; 2016 - yaasita - Powered by <a href="http://middlemanapp.com/jp/">middleman</a>
+    </footer>
+    <script src="http://platform.tumblr.com/v1/share.js"></script>
+    <script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'yaasita'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+  </body>
+</html>

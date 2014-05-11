@@ -1,0 +1,374 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
+    <title>yaasita/blog</title>
+    <link rel="alternate" type="application/atom+xml" title="Atom Feed" href="/feed.xml" />
+    <link href="/stylesheets/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/main.css" rel="stylesheet" type="text/css" />
+    <script src="/javascripts/main.js" type="text/javascript"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-37419565-1', 'yaasita.github.io');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  <body>
+    <header>
+    <h1><a href="/"># cd ~/yaasita<span class="blinking">_</span></a></h1>
+      <h2>普段思った事とか・・・メモ帳、チラ裏</h2>
+    </header>
+    <hr class="spliter">
+    
+    <div id="container">
+      <div id="main" role="main">
+            <div class="article-body">
+    <div class="title">
+  2011/02/25
+  <p>
+    <a href="/2011/02/25/4736.html">cronの各処理の実行時間を測定してみた</a>
+  </p>
+</div>
+
+    なんかcron.dailyの実行がやけに重いなーとおもったので各スクリプトのどの処理が重いか調べてみた<br /><br />1.timeプログラムのインストール<br />まずtimeプログラムが必要ですbashからなら普通に打てるのですがbinに入っているものじゃないとエラーになったのでインストール<br />debianならtimeパッケージをインストールすれば/usr/bin/timeが出来ました<br /><br />2.実行時間測定スクリプトの作成<br />次に/tmpに以下のスクリプトを置き<br /><br />time.pl<br /><pre>#!/usr/bin/perl<br />use strict;<br />use warnings;<br />use feature qw(say);<br />use Time::HiRes;<br /><br />my $runpg=shift;<br />say "### $runpg START ### ",Time::HiRes::time;<br />system "/usr/bin/time $runpg" and die $!;<br />say "### $runpg END   ### ",Time::HiRes::time;<br /></pre><br />3.anacrontabの編集<br />/etc/anacrontabを編集（/etc/crontabの人はそちらを)<br /><pre>#  1   5   cron.daily   nice run-parts -v /etc/cron.daily<br />  1   5   cron.daily   nice run-parts --list /etc/cron.daily | xargs -i /tmp/time.pl {}<br /></pre>ポイントはrun-partsを--listにして実行ファイル一覧を出力させてそれを引数として実行時間を計るプログラムに渡す
+
+
+    <div class="tag-box">
+      <a href="/tags/linux.html">linux</a>
+      <a href="/tags/program.html">, program</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2011/02/25/4736.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2011/02/13
+  <p>
+    <a href="/2011/02/13/4757.html">ミュウツーはなかまたちとﾎﾟｹﾓﾝﾏｽﾀｰをめざすようだシリーズまとめ</a>
+  </p>
+</div>
+
+    とりあえず一覧にしてみた<br /><br /><br /><ul><li><a href="http://himasoku123.blog61.fc2.com/blog-entry-231.html">その09</a></li><li><a href="http://himasoku123.blog61.fc2.com/blog-entry-253.html">その10</a></li><li><a href="http://himasoku123.blog61.fc2.com/blog-entry-255.html">その11</a></li><li><a href="http://himasoku123.blog61.fc2.com/blog-entry-289.html">その12</a></li><li><a href="http://blog.livedoor.jp/himasoku123/archives/51285280.html">その13</a></li><li><a href="http://blog.livedoor.jp/himasoku123/archives/51285303.html">その14</a></li><li><a href="http://himasoku123.blog61.fc2.com/blog-entry-321.html">その15</a></li><li><a href="http://blog.livedoor.jp/himasoku123/archives/51428642.html">その28</a></li><li><a href="http://blog.livedoor.jp/himasoku123/archives/51499503.html">その29</a></li><li><a href="http://blog.livedoor.jp/himasoku123/archives/51512835.html">その30</a></li><li><a href="http://blog.livedoor.jp/himasoku123/archives/51533032.html">その31</a></li><li><a href="http://blog.livedoor.jp/himasoku123/archives/51544202.html">その32</a></li><li><a href="http://blog.livedoor.jp/himasoku123/archives/51558101.html">その33</a></li><li><a href="http://blog.livedoor.jp/himasoku123/archives/51576076.html">その34</a></li><li><a href="http://blog.livedoor.jp/himasoku123/archives/51600829.html">その35</a></li></ul><br />作者様ブログ<br /><a href="http://syakuroku.blog64.fc2.com/blog-category-2.html">二尺足ラズ</a><br />(現時点で最新は35みたい)
+
+
+    <div class="tag-box">
+      <a href="/tags/life.html">life</a>
+      <a href="/tags/net.html">, net</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2011/02/13/4757.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2011/02/06
+  <p>
+    <a href="/2011/02/06/4778.html">tinyhoneypotを使ってみる</a>
+  </p>
+</div>
+
+    aptかなんかでインストールコマンドは→thpot<br /><br />thpotはxinetdかinetdを通してでも起動できます<br />接続とセッションを通しての命令は全てログに記録されます<br />以下のどれかの引数を与えてサービスを起動します<br />shell, ftp, http, mssql, smtp, pop3 ,ssh<br /><br />ドキュメントは以下<br />/usr/share/doc/tinyhoneypot
+
+
+    <div class="tag-box">
+      <a href="/tags/crack.html">crack</a>
+      <a href="/tags/linux.html">, linux</a>
+      <a href="/tags/soft.html">, soft</a>
+      <a href="/tags/net.html">, net</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2011/02/06/4778.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2011/01/30
+  <p>
+    <a href="/2011/01/30/4801.html">perl日本語ドキュメント</a>
+  </p>
+</div>
+
+    <a href="http://pjp.64p.org/">http://pjp.64p.org/</a>
+
+
+    <div class="tag-box">
+      <a href="/tags/program.html">program</a>
+      <a href="/tags/net.html">, net</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2011/01/30/4801.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2011/01/22
+  <p>
+    <a href="/2011/01/22/4843.html">Linuxで使える（割と）高機能なエディタ</a>
+  </p>
+</div>
+
+    普段はgvimを使ってるけど長い行を開いたりすると重いので<br /><a href="http://tarot.freeshell.org/leafpad/">Leafpad</a>以上でgvim以下のエディタを探してたら<br /><a href="http://editra.org/">Editra</a>というエディタを発見<br /><br />スクリーンショットは<a href="http://editra.org/preview">こちら</a><br /><br />特徴は<br />・マルチプラットフォーム（Windows,Linux,MacOS)<br />・60以上のプログラミング言語対応のシンタックスハイライト<br />・タブで使える<br />・日本語化されている<br />・軽い<br />・viモード搭載（環境設定→ドキュメント→コードタブ→「viエミュレーションを有効にする」にチェック
+
+
+    <div class="tag-box">
+      <a href="/tags/linux.html">linux</a>
+      <a href="/tags/soft.html">, soft</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2011/01/22/4843.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2011/01/22
+  <p>
+    <a href="/2011/01/22/4822.html">ctagsを使ってみる</a>
+  </p>
+</div>
+
+    タグファイル(tags)を作ればCtrl+]で飛べる<br /><br />使い方は<br /><pre>ctags --language-force=perl hoge.pl<br /></pre>こうすれば同じ場所にtagsファイルが作られる<br /><br />基本的には拡張子で判断してくれるらしいから<br />--language-forceは不要かも<br />対応言語は以下のコマンドで出力できる<br /><pre>ctags --list-languages</pre><br />ちなみにcscopeというC言語専用だけど高機能な解析ツールもあるらしい・・・<br /><br />参考リンク<br /><a href="http://hp.vector.co.jp/authors/VA025040/ctags/ctags_j.html">http://hp.vector.co.jp/authors/VA025040/ctags/ctags_j.html</a>
+
+
+    <div class="tag-box">
+      <a href="/tags/soft.html">soft</a>
+      <a href="/tags/program.html">, program</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2011/01/22/4822.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2011/01/17
+  <p>
+    <a href="/2011/01/17/4864.html">radikoを聞くperlスクリプト書いた</a>
+  </p>
+</div>
+
+    ポイントはforkして指定した時間で落とすこと<br /><br /><br /><pre style="height:400px;" >#!/usr/bin/perl<br />################################################<br /># radiko を聞くスクリプト<br /># 引数で制御する<br />#<br /># ヘルプを表示するにはh<br /># radiko.pl -h<br />################################################<br />use strict;<br />use warnings;<br />use Getopt::Std;<br /><br />my %opt;<br />getopts("hc:f:t:",\%opt);<br /><br />if (exists $opt{h}){<br />print << "HELP";<br />usage: radiko.pl [-h] [-c channel] [-f outfile] [-t playtime]<br />-h<br /> print this message<br /><br />-c channel<br /> select play channel<br /> default: LFR<br /> * FMT  TOKYO FM<br /> * FMJ  J-WAVE<br /> * LFR  nippon housou<br /> * TBS  TBS radio<br /><br />-f outfile<br /> default: /tmp/channel.flv<br /><br />-t playtime<br /> default: 1 hour<br />HELP<br />exit;<br />}<br /><br />my $CHANNEL;<br />if (exists $opt{c}){<br /> $CHANNEL=$opt{c};<br />}<br />else {<br /> $CHANNEL="LFR";<br />}<br /><br />my $OUTFILE;<br />if (exists $opt{f}){<br /> $OUTFILE=$opt{f};<br />}<br />else{<br /> $OUTFILE="/tmp/$CHANNEL.flv";<br />}<br /><br />my $PLAYTIME;<br />if (exists $opt{t}){<br /> $PLAYTIME=$opt{t} * 60 * 60;<br />}<br />else{<br /> $PLAYTIME= 1 * 60 * 60;<br />}<br /><br />unlink $OUTFILE if -e $OUTFILE;<br /><br />my $com = << "CMD";<br />rtmpdump -v -e -s 'http://radiko.jp/player/swf/player_2.0.1.00.swf' \\<br />-r 'rtmpe://radiko.smartstream.ne.jp/$CHANNEL/_defInst_' \\<br />--playpath 'simul-stream?ucid=1dbab2acb98174787146465a40ba9eba' \\<br />-p 'http://radiko.jp/player/player.html' \\<br />-f 'WIN 10,1,102,64' \\<br />-o $OUTFILE<br />CMD<br /><br />print "${com}\nplaytime=$PLAYTIME\n";<br /><br />my $pid=fork;<br />die $! unless defined $pid;<br />print $pid;<br /><br />if ($pid){<br /> sleep $PLAYTIME;<br /> kill 9,$pid;<br />}<br />else{<br /> exec "$com";<br />}<br /><br /></pre>
+
+
+    <div class="tag-box">
+      <a href="/tags/linux.html">linux</a>
+      <a href="/tags/program.html">, program</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2011/01/17/4864.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2011/01/16
+  <p>
+    <a href="/2011/01/16/4885.html">デビルメイクライ3攻略リンク集</a>
+  </p>
+</div>
+
+    丁寧な攻略チャートがある<br /><a href="http://dmc-labo.secret.jp/DMC-Labo.html">http://dmc-labo.secret.jp/DMC-Labo.html</a><br /><a href="http://www.geocities.jp/no0sloter/devil/devilwapons.html"><br />武器アクション</a><br /><a href="http://www.geocities.jp/no0sloter/devil/devilstyle.html">スタイルアクション</a><br /><br /><a href="http://www.geocities.jp/no0sloter/devil/index.html">http://www.geocities.jp/no0sloter/devil/index.html</a><br /><br /><a href="http://karasuya.fool.jp/dmc3/10.html">MISSION 13のパズル解答</a><br /><br />スペシャルエディションの裏技<br />　タイトル画面でL1L2R1R2を押したまま十字キー上と左を押しながら左スティックを右下に入れる<br /><br />バジールのコシュチューム一覧<br />・普通のバジール<br />・上半身軽装のバジール<br />・魔人化無制限のバジール（幻影剣は減る）<br />・ネロアンジェロに返信できるバジール<br />・ネロアンジェロ無制限のバジール（幻影剣も無制限）
+
+
+    <div class="tag-box">
+      <a href="/tags/game.html">game</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2011/01/16/4885.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2011/01/16
+  <p>
+    <a href="/2011/01/16/4905.html">iptablesまとめ</a>
+  </p>
+</div>
+
+    よく忘れるのでメモ<br /><br /><h2>ルールの表示</h2>例）natテーブルのルールを表示<br />因みにfilterテーブルなら省略可<br /><pre>iptables -t nat -L</pre><br /><h2>ルールの追加</h2>例）80番ポートへのアクセスを遮断<br /><pre>iptables -A OUTPUT -p tcp --dport 80 -j DROP</pre><br /><h2>ルールの削除</h2><pre>iptables -D INPUT 3</pre><br /><h2>パケット転送</h2>80番ポートのアドレスを192.168.0.4:4000へ転送<br /><pre>iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to 192.168.0.4:4000
+<br /></pre><br />参考リンク<br /><a href="http://rdt17.blogspot.com/2008/12/iptables.html">iptablesで設定したルールを再起動後も反映したい</a><br /><a href="http://wiki.bit-hive.com/tomizoo/pg/iptables%A4%CB%A4%E8%A4%EB%A5%D5%A5%A3%A5%EB%A5%BF%C0%DF%C4%EA">iptablesによるフィルタ設定</a>
+
+
+    <div class="tag-box">
+      <a href="/tags/linux.html">linux</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2011/01/16/4905.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+  <div class="article-body">
+    <div class="title">
+  2011/01/16
+  <p>
+    <a href="/2011/01/16/4926.html">任意のIPを作って送れるソフト</a>
+  </p>
+</div>
+
+    <a href="http://www.earth.li/projectpurple/progs/sendip.html">sendip</a><br /><br />debianならリポジトリにある<br /><br />例）memo.txtの内容をtcpで送る<br /><pre>sendip -d memo.txt -p ipv4 -p tcp 192.168.0.3</pre><br />参考リンク<br /><a href="http://masy.families.jp/diary/?200010c">http://masy.families.jp/diary/?200010c</a>
+
+
+    <div class="tag-box">
+      <a href="/tags/linux.html">linux</a>
+      <a href="/tags/soft.html">, soft</a>
+</div>
+
+    <hr class="spliter2">
+    <div class="comment-link">
+      <a href="/2011/01/16/4926.html#disqus_thread">Comment</a>
+  </div>
+  </div>
+
+  <p class="page">Page 36 of 82</p>
+
+    <p class="prev-page"><a href="/page/35/">Previous page</a></p>
+
+    <p class="next-page"><a href="/page/37/">Next page</a></p>
+<div class="clear"></div>
+
+      </div>
+    
+      <aside>
+        <h2>Author</h2>
+        yaasita: SIerから脱出した人<br />
+        <ul>
+          <li><a href="https://github.com/yaasita/">github</a></li>
+          <li><a href="https://twitter.com/yaasita">twitter</a></li>
+          <li><a href="http://yaasita.tumblr.com/">tumblr</a></li>
+        </ul>
+        <h2>Search</h2>
+        <form action="//google.co.jp/search" method="get">
+          <fieldset role="search">
+            <input type="hidden" name="noj" value="1" />
+            <input type="hidden" name="q" value="site:yaasita.github.io" />
+            <input class="search" type="text" name="q" results="0" placeholder="このブログを検索"/>
+          </fieldset>
+        </form>
+        <h2>Tags</h2>
+        <ul>
+            <li><a href="/tags/program.html">program (117)</a></li>
+            <li><a href="/tags/soft.html">soft (367)</a></li>
+            <li><a href="/tags/linux.html">linux (321)</a></li>
+            <li><a href="/tags/hard.html">hard (34)</a></li>
+            <li><a href="/tags/net.html">net (175)</a></li>
+            <li><a href="/tags/crack.html">crack (20)</a></li>
+            <li><a href="/tags/game.html">game (57)</a></li>
+            <li><a href="/tags/rule.html">rule (14)</a></li>
+            <li><a href="/tags/windows.html">windows (54)</a></li>
+            <li><a href="/tags/life.html">life (61)</a></li>
+        </ul>
+        <h2>Archive</h2>
+          <h3><a href="/2016.html">2016 (23)</a></h3>
+            <ul>
+                <li class="month" onclick="display_toggle('12');"><span id="li-12">►  </span>12月 (1)</li>
+                <ul class="kiji" id="ul-12">
+                    <li><a href="/2016/12/03/google-cloud-dns.html">GCPの Cloud DNSでグルーレコード</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('11');"><span id="li-11">►  </span>11月 (2)</li>
+                <ul class="kiji" id="ul-11">
+                    <li><a href="/2016/11/25/value-domain.html">VALUE-DOMAINでグルーレコード追加</a></li>
+                    <li><a href="/2016/11/20/aws-vm-import.html">AWSへVMイメージごと移動する手順</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('10');"><span id="li-10">►  </span>10月 (2)</li>
+                <ul class="kiji" id="ul-10">
+                    <li><a href="/2016/10/31/flets-dns.html">フレッツのDNS挙動</a></li>
+                    <li><a href="/2016/10/22/smart-phone.html">最近買ったスマホ</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('9');"><span id="li-9">►  </span>9月 (2)</li>
+                <ul class="kiji" id="ul-9">
+                    <li><a href="/2016/09/10/update-notify.html">更新通知のbashrc</a></li>
+                    <li><a href="/2016/09/04/nepu.html">超次元アクション ネプテューヌU</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('8');"><span id="li-8">►  </span>8月 (1)</li>
+                <ul class="kiji" id="ul-8">
+                    <li><a href="/2016/08/27/smplayer.html">smplayerでリピート再生</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('7');"><span id="li-7">►  </span>7月 (1)</li>
+                <ul class="kiji" id="ul-7">
+                    <li><a href="/2016/07/31/aws-vpn.html">AWSのVPNまわり</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('6');"><span id="li-6">►  </span>6月 (2)</li>
+                <ul class="kiji" id="ul-6">
+                    <li><a href="/2016/06/22/s3fs.html">s3fs使う</a></li>
+                    <li><a href="/2016/06/11/deep-learning.html">やる夫で学ぶ機械学習シリーズ</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('5');"><span id="li-5">►  </span>5月 (2)</li>
+                <ul class="kiji" id="ul-5">
+                    <li><a href="/2016/05/10/sengoku-musou.html">戦国無双クロニクル3(Vita)攻略</a></li>
+                    <li><a href="/2016/05/04/botbot-me.html">IRCのログを記録するbotbot.me</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('4');"><span id="li-4">►  </span>4月 (3)</li>
+                <ul class="kiji" id="ul-4">
+                    <li><a href="/2016/04/25/netdata.html">リアルタイム監視ソフトnetdata</a></li>
+                    <li><a href="/2016/04/25/syncthing.html">ファイル同期ソフトSyncthing</a></li>
+                    <li><a href="/2016/04/24/git-it.html">Git-itやってみた</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('3');"><span id="li-3">►  </span>3月 (1)</li>
+                <ul class="kiji" id="ul-3">
+                    <li><a href="/2016/03/26/hdd_bad_sector.html">HDDの不良セクタ埋める</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('2');"><span id="li-2">►  </span>2月 (2)</li>
+                <ul class="kiji" id="ul-2">
+                    <li><a href="/2016/02/21/mojolicious.html">Mojoliciousのwebsocket回り</a></li>
+                    <li><a href="/2016/02/15/ff10-2.html">ff10-2</a></li>
+                </ul>
+                <li class="month" onclick="display_toggle('1');"><span id="li-1">►  </span>1月 (4)</li>
+                <ul class="kiji" id="ul-1">
+                    <li><a href="/2016/01/25/dame-engineer.html">下位10%のダメなエンジニアシリーズ</a></li>
+                    <li><a href="/2016/01/24/link.html">リンク</a></li>
+                    <li><a href="/2016/01/11/factor.html">素因数分解の話</a></li>
+                    <li><a href="/2016/01/06/acpi.html">systemdでの電源管理</a></li>
+                </ul>
+            </ul>
+          <h3><a href="/2015.html">2015 (25)</a></h3>
+          <h3><a href="/2014.html">2014 (88)</a></h3>
+          <h3><a href="/2013.html">2013 (73)</a></h3>
+          <h3><a href="/2012.html">2012 (71)</a></h3>
+          <h3><a href="/2011.html">2011 (83)</a></h3>
+          <h3><a href="/2010.html">2010 (122)</a></h3>
+          <h3><a href="/2009.html">2009 (151)</a></h3>
+          <h3><a href="/2008.html">2008 (119)</a></h3>
+          <h3><a href="/2007.html">2007 (63)</a></h3>
+      </aside>
+    </div>
+    <div class="clear"></div>
+    <hr class="spliter">
+    <footer>
+    Copyright &copy; 2016 - yaasita - Powered by <a href="http://middlemanapp.com/jp/">middleman</a>
+    </footer>
+    <script src="http://platform.tumblr.com/v1/share.js"></script>
+    <script type="text/javascript" src="http://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'yaasita'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+    </script>
+  </body>
+</html>
