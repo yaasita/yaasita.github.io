@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="Hugo 0.19-DEV" />
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~/yaasita" />
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+    <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
+    
+    <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>XenをDebian squeezeにインストールしてみる | # cd ~/yaasita</title>
+  </head>
+  <body>
+    <div id="wrap">
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-37419565-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+      <header class="site-header">
+        <div class="site-header-left">
+          <a class="site-header-title" href="https://yaasita.github.io/"># cd ~/yaasita</a>
+        </div>
+      </header>
+      <div class="container">
+        <div id="main">
+
+<div class="article">
+  <header>
+    <div class="article-header">
+      <h1>XenをDebian squeezeにインストールしてみる</h1>
+      <div class="article-meta">
+        <span class="posttime">2010/11/23 00:00</span>
+      </div>
+    </div>
+  </header>
+  <div class="content">
+    はやっている様なのでXenを使ってみた<br />基本的には<a href="http://wiki.debian.org/Xen#XenonTesting.2BAC8-SqueezeandonUnstable.2BAC8-SidasDom0.2CtocreateamultitudeofDomU.27s">Debian Wiki</a>の通りやればOK<br /><br />1.必要なパッケージのインストール<br />amd64じゃなかったら686とか自分のPCに合わせる<br />bridge-utils debootstrapも忘れずに<br /><pre>aptitude -P install xen-hypervisor-4.0-amd64 linux-image-xen-amd64 xen-tools</pre><br />2.grubの起動順位、設定の変更？<br />なんか知らんがこうするといいらしい<br /><pre>mv -i /etc/grub.d/10_linux /etc/grub.d/50_linux<br />update-grub2<br />echo "" >> /etc/default/grub<br />echo "# Disable OS prober to prevent virtual machines on logical volumes from appearing in the boot menu." >> /etc/default/grub<br />echo "GRUB_DISABLE_OS_PROBER=true" >> /etc/default/grub<br />update-grub2<br /></pre><br />3./etc/default/xendomainsを編集して状態保存を無効化<br /><pre>XENDOMAINS_RESTORE=false<br />XENDOMAINS_SAVE=""<br /></pre><br />4.ネットワークブリッジの設定<br />/etc/xen/xend-config.sxpを編集<br />以下の行のコメントアウトを解除<br /><pre>(network-script network-bridge)<br /></pre><br />5.VMイメージ作成する際のデフォルト値を設定<br /><br />今回はLVM上にイメージファイルを作らないのでdir を指定<br />ここで設定しなくても全部コマンドラインでやるのも可→<a href="http://d.hatena.ne.jp/trashsuite/20080912/1221218298">参考リンク</a><br />pygrubっていうのはdom0からカーネルを一々VM上に持っていかなくても済む<br />仕組み　→　<a href="http://www.valinux.co.jp/contents/tech/techlib/xen/xen_sp_0703.html">参考リンク</a><br /><pre>dir = /home/xen<br />size   = 4Gb      # Disk image size.<br />memory = 32Mb    # Memory size<br />swap   = 128Mb    # Swap size<br /># noswap = 1      # Don't use swap at all for the new system.<br />fs     = ext3     # use the EXT3 filesystem for the disk image.<br />dist   = `xt-guess-suite-and-mirror --suite` # Default distribution to install.<br />image  = sparse   # Specify sparse vs. full disk images.<br /><br />gateway    = 192.168.0.1<br />netmask    = 255.255.255.0<br />broadcast  = 192.168.0.255<br /><br />#パスワード作成時に対話的に尋ねる<br />passwd = 1<br /><br />mirror = `xt-guess-suite-and-mirror --mirror`<br />mirror_maverick = http://archive.ubuntu.com/ubuntu<br /><br />ext3_options     = noatime,nodiratime,errors=remount-ro<br /><br />pygrub=1<br /></pre><br />6.イメージファイルの作成<br />Debian GNU/Linux, with Linux 2.6.32-5-xen-686<br />で再起動<br />以下のコマンドを実行<br /><pre>xen-create-image --hostname test1 --ip 192.168.0.20 --scsi --vcpus 1 --pygrub --dist lenny<br /></pre><br />7.Xenで起動<br />Debian GNU/Linux, with Linux 2.6.32-5-xen-686 and XEN 4.0-i386<br />で起動<br />以下のコマンドを投入<br /><pre>xm create /etc/xen/test1.cfg -c<br /></pre><br />GRUBメニューまではいったが、<br />なぜかメモリエラーでカーネルパニックしたOTZ<br />流石に256MのノートPCじゃ駄目だったかも今回はここまで<br /><br /><br />※<br />あと不要なVMイメージは<br />xen-delete-image<br />ってコマンドで削除するといいかも<br />xen-list-images<br />で一覧を見れる<br /><br />参考リンク<br /><a href="http://www.valinux.co.jp/contents/tech/techlib/xen/xen_sp_01.html">http://www.valinux.co.jp/contents/tech/techlib/xen/xen_sp_01.html</a><br /><a href="http://rayearth.homelinux.net/pukiwiki/?Debian%2FXen">http://rayearth.homelinux.net/pukiwiki/?Debian%2FXen</a><br /><a href="http://www.cs.is.noda.tus.ac.jp/~tatsuya/master_wiki/index.php?Xen%20on%20Debian">http://www.cs.is.noda.tus.ac.jp/~tatsuya/master_wiki/index.php?Xen%20on%20Debian</a><br /><a href="http://d.hatena.ne.jp/fujisan3776/20090309/1236576002">http://d.hatena.ne.jp/fujisan3776/20090309/1236576002</a><br /><a href="http://pocketstudio.jp/linux/?Xen%2FXenFaq%20-%20Xen%20%B8%F8%BC%B0%20Wiki%20%C6%FC%CB%DC%B8%EC%CC%F5">http://pocketstudio.jp/linux/?Xen%2FXenFaq%20-%20Xen%20%B8%F8%BC%B0%20Wiki%20%C6%FC%CB%DC%B8%EC%CC%F5</a>
+
+
+  </div>
+  <footer>
+    <div class="article-footer">
+      
+<div class="tags">
+  <ul>
+    
+    <li>
+        <a href="/categories/linux">linux</a>
+    </li>
+    
+    <li>
+        <a href="/categories/soft">soft</a>
+    </li>
+    
+  </ul>
+</div>
+
+
+      
+      
+<div id="share-buttons">
+  <ul>
+    
+    <li>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="yaasita">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </li>
+    
+    
+    
+    <li>
+      <a href="http://b.hatena.ne.jp/entry/https://yaasita.github.io/2010/11/23/5324/" class="hatena-bookmark-button" data-hatena-bookmark-title="XenをDebian squeezeにインストールしてみる" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+    </li>
+    
+    
+    
+    <li>
+        <a class="tumblr-share-button" data-color="blue" data-notes="right" href="https://embed.tumblr.com/share"></a> <script>!function(d,s,id){var js,ajs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://assets.tumblr.com/share-button.js";ajs.parentNode.insertBefore(js,ajs);}}(document, "script", "tumblr-js");</script>
+    </li>
+  </ul>
+</div>
+
+
+      
+      <div id="disqus_thread"></div>
+      <script>
+      var disqus_config = function () {
+      
+      this.page.identifier = "https:\/\/yaasita.github.io\/2010\/11\/23\/5324"; 
+      };
+      (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = '//yaasita.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      
+      
+      <div id="pagenavigation-next-prev">
+        
+        <div id="pagenavigation-next">
+          <span class="pagenav-label">Previous</span>
+          <a href="https://yaasita.github.io/2010/11/23/5303">smbclientで共有リストを表示させる</a>
+        </div>
+        
+        
+        <div id="pagenavigation-prev">
+          <span class="pagenav-label">Next</span>
+          <a href="https://yaasita.github.io/2010/11/28/5259">Debian squeezeにtightvncをインストール</a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </footer>
+</div>
+        </div>
+        <div class="sidebar">
+  
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Author</span>
+    </div>
+    <div id="author">
+      <span>yaasita: SIerから脱出した人</span>
+      <div>
+        
+        <a href="https://twitter.com/yaasita"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+        
+        
+        <a href="https://github.com/yaasita"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
+        
+        
+        
+        <a href="https://yaasita.tumblr.com/"><i class="fa fa-tumblr-square fa-2x" aria-hidden="true"></i></a>
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Search</span>
+    </div>
+    <div id="search">
+        <form action="//google.co.jp/search" method="get">
+            <fieldset role="search">
+                <input type="hidden" name="noj" value="1">
+                <input type="hidden" name="q" value="site:yaasita.github.io">
+                <input class="search" type="text" name="q" results="0" placeholder="このブログを検索">
+            </fieldset>
+        </form>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Categories</span>
+    </div>
+    <div class="categories">
+      <ul>
+        
+        <li>
+          <a href="/categories/crack"><span></span>crack (20)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/game"><span></span>game (57)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/hard"><span></span>hard (34)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/life"><span></span>life (61)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/linux"><span></span>linux (321)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/net"><span></span>net (176)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/program"><span></span>program (118)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/rule"><span></span>rule (14)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/soft"><span></span>soft (367)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/windows"><span></span>windows (54)</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Archive</span>
+    </div>
+    <div class="categories">
+      <ul id="archives">
+        
+        <li>
+          <a href="/archives/2007"><span></span>2007 (63)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2008"><span></span>2008 (119)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2009"><span></span>2009 (151)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2010"><span></span>2010 (122)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2011"><span></span>2011 (83)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2012"><span></span>2012 (71)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2013"><span></span>2013 (73)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2014"><span></span>2014 (88)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2015"><span></span>2015 (25)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2016"><span></span>2016 (23)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2017"><span></span>2017 (1)</a>
+        </li>
+        
+      </ul>
+    </div>
+    <script>
+        (function () {
+            var reverse = [];
+            var elm1 = document.querySelector('#archives').querySelectorAll("li");
+            var i=0;
+            for(i=0;i<=elm1.length-1;i++){reverse.unshift(elm1[i].innerHTML)}
+            for(i=0;i<=elm1.length-1;i++){elm1[i].innerHTML=reverse[i]}
+        })();
+    </script>
+  </div>
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>RSS</span>
+    </div>
+    <div id="rss">
+      <a href="https://yaasita.github.io/index.xml" type="application/rss+xml" target="_blank">
+        <i class="fa fa-rss-square fa-2x" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+      </div>
+      <footer>
+        <div id="site-footer-wrap">
+          <div id="site-footer">
+            <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
+            <span>
+              
+              Copyright (c) 2017, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+

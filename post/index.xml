@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on # cd ~/yaasita</title>
+    <link>https://yaasita.github.io/post/index.xml</link>
+    <description>Recent content in Posts on # cd ~/yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Thu, 05 Jan 2017 04:50:10 +0900</lastBuildDate>
+    <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>blogをmiddlemanからhugoに移行した</title>
+      <link>https://yaasita.github.io/2017/01/05/middleman2hugo</link>
+      <pubDate>Thu, 05 Jan 2017 04:50:10 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/05/middleman2hugo</guid>
+      <description> 使ってみた感想  ビルドはmiddlemanで10分かかってたけど1秒になった
+ themeはgeppakuというのを使用 シンプルで良い
+ Tumblrリンクのプルリクエストも快くマージしてくれた感謝m(_ _)m
+  pagination 周りの部分はちょっとページ数が多いとカラム落ちしたり苦しかったので書き直した
+ taxonomiesを追加して、年別のアーカイブページを作成
+ アーカイブページを逆順にする対応はなぜかうまくいかなかったので後で調査する
+ とりあえずJavaScriptで逆順にした &amp;gt; gist
+  hugo serverのライブリロードがとっても良い(ブラウザも自動更新)
+ ただしpagination周りで変な書き方するとサーバごと落ちる
+  DISQUS周りはちょっとカスタマイズした
+ なぜかデフォルトだと読み込まなかったので
+  markdown周りはほぼ設定ファイルで完結
+ 今回の設定はこんな感じ
+  middleman時代のリンクを維持するためにUglyURLs設定したけどcategoriesとかリンク切れが面倒だったので中止
+ 参考: http://wdkk.co.jp/note/2015/0824-hugo-public/
+  Highlight.js今回無効にした過去分のcodeブロックが微妙になったので
+  総評
+Static Site Generatorはとても良い
+移行するにも、更新するにもメンテがすごく楽
+移行スクリプト 基本的にはファイル名にある時間のデータをTOMLに直して終わり
+/home/yamasitaにhugo,middlemanのディレクトリがある前提
+ 参考リンク  middleman
+ hugo
+  </description>
+    </item>
+    
+    <item>
+      <title>GCPの Cloud DNSでグルーレコード</title>
+      <link>https://yaasita.github.io/2016/12/03/google-cloud-dns</link>
+      <pubDate>Sat, 03 Dec 2016 23:22:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/12/03/google-cloud-dns</guid>
+      <description>Google Cloud Platform のDNSでグルーレコード作るときは
+こんな感じでNS指定したあとに、Aレコード追加すればグルーレコード(Glue Record)に追加してくれるようだ
+; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.9.5-9+deb8u8-Debian &amp;lt;&amp;lt;&amp;gt;&amp;gt; +norec @ns-cloud-d1.googledomains.com. name.yaasita.xyz. a ; (2 servers found) ;; global options: +cmd ;; Got answer: ;; -&amp;gt;&amp;gt;HEADER&amp;lt;&amp;lt;- opcode: QUERY, status: NOERROR, id: 39015 ;; flags: qr; QUERY: 1, ANSWER: 0, AUTHORITY: 2, ADDITIONAL: 3 ;; OPT PSEUDOSECTION: ; EDNS: version: 0, flags:; udp: 512 ;; QUESTION SECTION: ;name.yaasita.xyz. IN A ;; AUTHORITY SECTION: name.yaasita.xyz. 300 IN NS ns1.name.yaasita.xyz. name.yaasita.xyz. 300 IN NS ns2.</description>
+    </item>
+    
+    <item>
+      <title>VALUE-DOMAINでグルーレコード追加</title>
+      <link>https://yaasita.github.io/2016/11/25/value-domain</link>
+      <pubDate>Fri, 25 Nov 2016 01:31:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/11/25/value-domain</guid>
+      <description>VALUE-DOMAIN バリュードメインの権威DNSサーバを使いつつ
+レコードにグルーレコードを追加する方法
+BINDみたくこんな感じにやる
+ns cloud cloud.example.net. a cloud.example.net. 123.123.123.123  上位の権威サーバにグルーレコードを設定する場合は
+下記参照
+https://www.value-domain.com/userguide/manual/othermodns/</description>
+    </item>
+    
+    <item>
+      <title>AWSへVMイメージごと移動する手順</title>
+      <link>https://yaasita.github.io/2016/11/20/aws-vm-import</link>
+      <pubDate>Sun, 20 Nov 2016 20:45:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/11/20/aws-vm-import</guid>
+      <description> 手順 img作る前に以下を確認しておく
+ DHCPを有効にしている
+ iptablesを無効に
+ rawでイメージを作っておく
+  次に以下のコマンドでインポート
+# hoge-importってバケット作ったとする # 最初にimgをS3に上げておく aws s3 cp hoge.img s3://hoge-import/hoge.img # IAM周りを準備 aws iam create-role --role-name vmimport --assume-role-policy-document file://trust-policy.json aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json # インポートタスク開始 aws ec2 import-image --description &amp;quot;hoge server&amp;quot; --disk-containers file://containers.json # 進捗見る aws ec2 describe-import-image-tasks  使ったjsonファイル
+ 参考リンク  http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats
+ http://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html
+  </description>
+    </item>
+    
+    <item>
+      <title>フレッツのDNS挙動</title>
+      <link>https://yaasita.github.io/2016/10/31/flets-dns</link>
+      <pubDate>Mon, 31 Oct 2016 00:42:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/10/31/flets-dns</guid>
+      <description>NSレコードに指定したホスト名にCNAMEを持たせてはいけない
+という話は有名だがどのように挙動が変わるか見てみる
+準備 yaasita.ml. の権威サーバは ns1.aws.yaasita.net. にしておく
+NSで指定されてるサーバは CNAMEとして aws.yaasita.net. に設定しておく
+; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.9.5-9+deb8u7-Debian &amp;lt;&amp;lt;&amp;gt;&amp;gt; +norec @aws.yaasita.net. ns1.aws.yaasita.net. a ; (1 server found) ;; global options: +cmd ;; Got answer: ;; -&amp;gt;&amp;gt;HEADER&amp;lt;&amp;lt;- opcode: QUERY, status: NOERROR, id: 31880 ;; flags: qr aa; QUERY: 1, ANSWER: 2, AUTHORITY: 1, ADDITIONAL: 1 ;; OPT PSEUDOSECTION: ; EDNS: version: 0, flags:; udp: 4096 ;; QUESTION SECTION: ;ns1.aws.yaasita.net. IN A ;; ANSWER SECTION: ns1.</description>
+    </item>
+    
+    <item>
+      <title>最近買ったスマホ</title>
+      <link>https://yaasita.github.io/2016/10/22/smart-phone</link>
+      <pubDate>Sat, 22 Oct 2016 22:54:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/10/22/smart-phone</guid>
+      <description>エイスース SIMフリースマートフォン
+ZenFone 2 Laser（Qualcomm Snapdragon 410/メモリ 2GB）
+16GB ブラック ZE500KL-BK16
+18,672円だった
+Androidは6.0.1まで上がった</description>
+    </item>
+    
+    <item>
+      <title>更新通知のbashrc</title>
+      <link>https://yaasita.github.io/2016/09/10/update-notify</link>
+      <pubDate>Sat, 10 Sep 2016 12:52:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/09/10/update-notify</guid>
+      <description>こんな感じで、更新を促す
+ </description>
+    </item>
+    
+    <item>
+      <title>超次元アクション ネプテューヌU</title>
+      <link>https://yaasita.github.io/2016/09/04/nepu</link>
+      <pubDate>Sun, 04 Sep 2016 03:13:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/09/04/nepu</guid>
+      <description>Vita版のやつ
+ギョウ界チ武道会 クリアしたキャラ
+ ネプチューヌ
+ ノワール
+ ブラン
+ ベール
+ ネプギア
+ ユニ
+ ロム
+ ラム
+ デンゲキコ
+ パープルハート
+ ブラックハート
+ ホワイトハート
+ グリーンハート
+ パープルシスター
+ ブラックシスター
+ ホワイトシスター(左)
+ ホワイトシスター(右)
+ ファミ通
+  -&amp;gt; 取得したアイテムで審議判定できる
+http://catmiimi.com/nepu_military
+参考リンク http://catmiimi.com/nepu</description>
+    </item>
+    
+    <item>
+      <title>smplayerでリピート再生</title>
+      <link>https://yaasita.github.io/2016/08/27/smplayer</link>
+      <pubDate>Sat, 27 Aug 2016 14:33:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/08/27/smplayer</guid>
+      <description>ずっとループして再生
+ 再生(P) → A-Bセクション(A) → 繰り返し&amp;reg;
+  </description>
+    </item>
+    
+    <item>
+      <title>AWSのVPNまわり</title>
+      <link>https://yaasita.github.io/2016/07/31/aws-vpn</link>
+      <pubDate>Sun, 31 Jul 2016 00:36:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/07/31/aws-vpn</guid>
+      <description>よくある質問
+対応機器
+http://aws.amazon.com/jp/vpc/faqs/
+ハードウェアVPN接続
+- 1つの仮想プライベートゲートウェイあたり10接続
+http://docs.aws.amazon.com/ja_jp/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html
+http://dev.classmethod.jp/cloud/aws/vpc-connect-hardware-vpn/</description>
+    </item>
+    
+    <item>
+      <title>s3fs使う</title>
+      <link>https://yaasita.github.io/2016/06/22/s3fs</link>
+      <pubDate>Wed, 22 Jun 2016 13:40:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/06/22/s3fs</guid>
+      <description>s3fsはamazon S3をファイルしすてむのように使うやつ
+ただ遅い
+基本ここ見てやる
+https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes
+今回はCeontOS6を対象
+# paco入れておく yum install paco # コンパイルに必要なもの入れる yum install -y gcc libstdc++-devel gcc-c++ curl-devel libxml2-devel openssl-devel mailcap # fuse wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.8.5.tar.gz ./configure make paco -lD &#39;make install&#39; # /usr/local/lib 追記 vi /etc/ld.so.conf ldconfig # s3fs wget http://s3fs.googlecode.com/files/s3fs-1.74.tar.gz tar xvaf s3fs-1.74.tar.gz cd s3fs-1.74/ autoreconf --install export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure --prefix=/usr make paco -lD &#39;make install&#39; # mount s3fs hoge-bucket /s3 -o rw,allow_other,uid=501,gid=501,default_acl=public-read su - apps cd /s3 date &amp;gt; date.</description>
+    </item>
+    
+    <item>
+      <title>やる夫で学ぶ機械学習シリーズ</title>
+      <link>https://yaasita.github.io/2016/06/11/deep-learning</link>
+      <pubDate>Sat, 11 Jun 2016 23:55:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/06/11/deep-learning</guid>
+      <description>http://tkengo.github.io/blog/2016/06/06/yaruo-machine-learning0/</description>
+    </item>
+    
+    <item>
+      <title>戦国無双クロニクル3(Vita)攻略</title>
+      <link>https://yaasita.github.io/2016/05/10/sengoku-musou</link>
+      <pubDate>Tue, 10 May 2016 00:36:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/05/10/sengoku-musou</guid>
+      <description>攻略サイト
+http://goo.gl/bAfbfX
+この全武将お手軽さ評価づけが参考になる
+http://goo.gl/uenJG4</description>
+    </item>
+    
+    <item>
+      <title>IRCのログを記録するbotbot.me</title>
+      <link>https://yaasita.github.io/2016/05/04/botbot-me</link>
+      <pubDate>Wed, 04 May 2016 23:10:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/05/04/botbot-me</guid>
+      <description>https://botbot.me/
+botbot.meはIRCに参加させることでログを取って
+公開できるbotだ
+便利そう</description>
+    </item>
+    
+    <item>
+      <title>リアルタイム監視ソフトnetdata</title>
+      <link>https://yaasita.github.io/2016/04/25/netdata</link>
+      <pubDate>Mon, 25 Apr 2016 23:24:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/04/25/netdata</guid>
+      <description>https://github.com/firehol/netdata
+インストール
+https://github.com/firehol/netdata/wiki/Installation
+# 起動 /usr/sbin/netdata # 見てみる http://192.168.0.38:19999/  </description>
+    </item>
+    
+  </channel>
+</rss>

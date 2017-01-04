@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="Hugo 0.19-DEV" />
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~/yaasita" />
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+    <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
+    
+    <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>rep2をLinuxにインストール | # cd ~/yaasita</title>
+  </head>
+  <body>
+    <div id="wrap">
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-37419565-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+      <header class="site-header">
+        <div class="site-header-left">
+          <a class="site-header-title" href="https://yaasita.github.io/"># cd ~/yaasita</a>
+        </div>
+      </header>
+      <div class="container">
+        <div id="main">
+
+<div class="article">
+  <header>
+    <div class="article-header">
+      <h1>rep2をLinuxにインストール</h1>
+      <div class="article-meta">
+        <span class="posttime">2007/11/25 00:00</span>
+      </div>
+    </div>
+  </header>
+  <div class="content">
+    
+
+<h2 id="インストール">インストール</h2>
+
+<p><a href="http://akid.s17.xrea.com/">公式サイト</a>からrep2をダウンロード</p>
+
+<p>以下パッケージのインストール</p>
+
+<pre><code>apt-get install php5 php-http-request php5-gd php-pear php-compat
+</code></pre>
+
+<p>※<a href="http://akid.s17.xrea.com/p2puki/index.phtml?DebianGNU%2FLinux%A4%C7%A4%CE%A5%A4%A5%F3%A5%B9%A5%C8%A1%BC%A5%EB">公式</a>にはこう書いてある</p>
+
+<blockquote>
+<p>aptitude install apache2-mpm-prefork php5 php-pear php-compat php-http-request php-pager php-file php5-curl curl unzip</p>
+</blockquote>
+
+<p>必要なpearパッケージも</p>
+
+<pre><code>pear install Net_UserAgent_Mobile
+</code></pre>
+
+<p>※なかったらpear search Net_UserAgent_Mobileとかで検索してみる</p>
+
+<p>リポジトリにPHP_Compatが無かった場合は追加で以下のコマンド</p>
+
+<pre><code>pear install PHP_Compat
+</code></pre>
+
+<p>それ以外は公式サイト見てやる<br />
+公式サイトの説明文</p>
+
+<blockquote>
+<ol>
+<li>サーバを立ち上げて、PHPが動くようにする。PEARも忘れずに（下記参照）<br /></li>
+<li>rep2ディレクトリをサーバからアクセスできる所（「~/Sites」とか）へ置く。<br /></li>
+<li>rep2ディレクトリの中にデータ保存用のディレクトリを作成する。（デフォルトでは「data」ディレクトリ）<br /></li>
+<li>データ保存用ディレクトリのパーミッションを「707」（または777）にする。<br /></li>
+<li>必要に応じて、 conf/conf_admin.inc.php などのconfファイルをテキストエディタで開いて設定編集。<br /></li>
+<li>ブラウザから、<br />
+<a href="http://127.0.0.1/~(ユーザ名)/rep2/index.php">http://127.0.0.1/~(ユーザ名)/rep2/index.php</a><br />
+てな具合にrep2ディレクトリへアクセス。<br />
+<br /></li>
+</ol>
+
+<p>※PHPが確かに動いていることを確かめたい時は？<br />
+<a href="http://127.0.0.1/~(ユーザ名)/rep2/phpinfo.php">http://127.0.0.1/~(ユーザ名)/rep2/phpinfo.php</a><br />
+てなとこにアクセスしてみて下さい。<br />
+ずらずらーっとPHPの環境情報が表示されたならば、PHPは正常に動作しています。<br />
+（確認ができましたら、phpinfo.php はもう必要ないので削除しても構いません）</p>
+
+<p>これで動くはずです。動かなかった場合はエラーを見て判断してください。</p>
+</blockquote>
+
+<h2 id="設定">設定</h2>
+
+<p>conf/conf_hostcheck.php<br />
+を編集してグローバルIP側からの接続でもrep2を利用できるようにします。</p>
+
+<p>29行目付近 customを1に設定</p>
+
+<pre><code>// ユーザー設定
+'custom'    =&gt; 1,
+</code></pre>
+
+<p>36行目付近を以下のように設定</p>
+
+<pre><code>$GLOBALS['_HOSTCHKCONF']['custom_allowed_host'] = array(
+'0.0.0.0' =&gt; 0,
+);
+</code></pre>
+
+<p>なんかapacheのdeflateと相性悪いらしくスマホで検索するとContent-Encodingエラーになる<br />
+conf/conf_admin.inc.php</p>
+
+<pre><code>$_conf['enable_ob_gzhandler'] = 0; // gzip圧縮転送を有効にするか（※有効にすると逐次表示ができなくなる）（する:1, しない:0, 携帯だけ:2）
+</code></pre>
+
+<h2 id="参考リンク">参考リンク</h2>
+
+<ul>
+<li><a href="http://yaasita.github.io/2010/04/25/6959.html">rep2をオンメモリーにして高速化2</a><br /></li>
+<li><a href="http://yaasita.github.io/2009/12/20/7633.html">rep2の過去ログをtmpreaperを使って整理</a><br /></li>
+<li><a href="http://yaasita.github.io/2009/12/12/7717.html">携帯でrep2見てるときに外部リンクを通勤ブラウザ以外に設定する</a><br />
+<br /></li>
+</ul>
+
+  </div>
+  <footer>
+    <div class="article-footer">
+      
+<div class="tags">
+  <ul>
+    
+    <li>
+        <a href="/categories/linux">linux</a>
+    </li>
+    
+    <li>
+        <a href="/categories/soft">soft</a>
+    </li>
+    
+  </ul>
+</div>
+
+
+      
+      
+<div id="share-buttons">
+  <ul>
+    
+    <li>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="yaasita">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </li>
+    
+    
+    
+    <li>
+      <a href="http://b.hatena.ne.jp/entry/https://yaasita.github.io/2007/11/25/13311/" class="hatena-bookmark-button" data-hatena-bookmark-title="rep2をLinuxにインストール" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+    </li>
+    
+    
+    
+    <li>
+        <a class="tumblr-share-button" data-color="blue" data-notes="right" href="https://embed.tumblr.com/share"></a> <script>!function(d,s,id){var js,ajs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://assets.tumblr.com/share-button.js";ajs.parentNode.insertBefore(js,ajs);}}(document, "script", "tumblr-js");</script>
+    </li>
+  </ul>
+</div>
+
+
+      
+      <div id="disqus_thread"></div>
+      <script>
+      var disqus_config = function () {
+      
+      this.page.identifier = "https:\/\/yaasita.github.io\/2007\/11\/25\/13311"; 
+      };
+      (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = '//yaasita.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      
+      
+      <div id="pagenavigation-next-prev">
+        
+        <div id="pagenavigation-next">
+          <span class="pagenav-label">Previous</span>
+          <a href="https://yaasita.github.io/2007/11/24/13332">MinGWをWindowsにインストールする</a>
+        </div>
+        
+        
+        <div id="pagenavigation-prev">
+          <span class="pagenav-label">Next</span>
+          <a href="https://yaasita.github.io/2007/11/25/13290">URLの書式</a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </footer>
+</div>
+        </div>
+        <div class="sidebar">
+  
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Author</span>
+    </div>
+    <div id="author">
+      <span>yaasita: SIerから脱出した人</span>
+      <div>
+        
+        <a href="https://twitter.com/yaasita"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+        
+        
+        <a href="https://github.com/yaasita"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
+        
+        
+        
+        <a href="https://yaasita.tumblr.com/"><i class="fa fa-tumblr-square fa-2x" aria-hidden="true"></i></a>
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Search</span>
+    </div>
+    <div id="search">
+        <form action="//google.co.jp/search" method="get">
+            <fieldset role="search">
+                <input type="hidden" name="noj" value="1">
+                <input type="hidden" name="q" value="site:yaasita.github.io">
+                <input class="search" type="text" name="q" results="0" placeholder="このブログを検索">
+            </fieldset>
+        </form>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Categories</span>
+    </div>
+    <div class="categories">
+      <ul>
+        
+        <li>
+          <a href="/categories/crack"><span></span>crack (20)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/game"><span></span>game (57)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/hard"><span></span>hard (34)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/life"><span></span>life (61)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/linux"><span></span>linux (321)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/net"><span></span>net (176)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/program"><span></span>program (118)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/rule"><span></span>rule (14)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/soft"><span></span>soft (367)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/windows"><span></span>windows (54)</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Archive</span>
+    </div>
+    <div class="categories">
+      <ul id="archives">
+        
+        <li>
+          <a href="/archives/2007"><span></span>2007 (63)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2008"><span></span>2008 (119)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2009"><span></span>2009 (151)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2010"><span></span>2010 (122)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2011"><span></span>2011 (83)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2012"><span></span>2012 (71)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2013"><span></span>2013 (73)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2014"><span></span>2014 (88)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2015"><span></span>2015 (25)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2016"><span></span>2016 (23)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2017"><span></span>2017 (1)</a>
+        </li>
+        
+      </ul>
+    </div>
+    <script>
+        (function () {
+            var reverse = [];
+            var elm1 = document.querySelector('#archives').querySelectorAll("li");
+            var i=0;
+            for(i=0;i<=elm1.length-1;i++){reverse.unshift(elm1[i].innerHTML)}
+            for(i=0;i<=elm1.length-1;i++){elm1[i].innerHTML=reverse[i]}
+        })();
+    </script>
+  </div>
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>RSS</span>
+    </div>
+    <div id="rss">
+      <a href="https://yaasita.github.io/index.xml" type="application/rss+xml" target="_blank">
+        <i class="fa fa-rss-square fa-2x" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+      </div>
+      <footer>
+        <div id="site-footer-wrap">
+          <div id="site-footer">
+            <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
+            <span>
+              
+              Copyright (c) 2017, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+

@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2011 on # cd ~/yaasita</title>
+    <link>https://yaasita.github.io/archives/2011/index.xml</link>
+    <description>Recent content in 2011 on # cd ~/yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="/archives/2011/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>マザーボードのチップセットとかCPU情報をLinuxで取得する</title>
+      <link>https://yaasita.github.io/2011/12/31/3257</link>
+      <pubDate>Sat, 31 Dec 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/12/31/3257</guid>
+      <description>lshwというユーティリティがあった
+aptでインストールできた
+参考リンク
+PCのハードウェア情報を表示するには </description>
+    </item>
+    
+    <item>
+      <title>SIerは滅びぬ！何度でも蘇るさ！</title>
+      <link>https://yaasita.github.io/2011/12/25/3279</link>
+      <pubDate>Sun, 25 Dec 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/12/25/3279</guid>
+      <description>受託開発をするSIerがヤバイよ的な話はよく聞く話でSIer内部でそんな話もチラホラと聞くようになりました。
+（ヤバイ理由は人月換算とか多重請負とかいろいろ言われてます）
+でも結局のところこの先もSIerは生き残るよねっていうのが僕の見解。
+もう何十年もこんな感じでやってきたから引くに引けないんですよ。
+これは知人から聞いた話なんですが、ある大企業システムのIT部門の人は
+本当にそのシステムを使っているユーザーから改善案を聞いて直すということを
+しないらしいです。
+仕様変更・機能追加はそのIT部門の上司の思いつきらしいですｗ
+当然、普段から使っているユーザーの要望ではないので、どんどん使いにくくなってる
+＋いらない機能ばかり増えてるみたいですがｗ
+で、こういう話って大企業とかだと結構ある話みたいです。
+ユーザーが沢山いるシステムだと一人一人にヒアリングするのが面倒だし、
+俺は（IT部門だから）そのシステム使わない。上司が言ったとおりの
+仕様で発注出せばいいやーみたいに考えるのでしょう。
+他に優秀なパッケージソフトがあっても買いません。
+今まで、大手SIerに頼んでたんだから、今更、どこぞの中小企業と取引なんて
+したくない。なぜなら稟議を通すときに説明を求められて面倒だからｗ
+で糞システムをアホみたいな価格で買ってくるんです。
+IT部門の人は会社の利益向上というよりも自分が面倒な思いをしなければいいやと
+思ってるんですね。
+自分がシステムを使わないから当事者意識が希薄なんです。
+IT部門という独立した部署を持てる大企業で起こりがちな気もします。
+酷いときには今期の予算は1000万円だけど発注は500万しかしてなかったなぁ・・・
+（予算をある程度余らせるとそれはそれで怒られるらしいｗ）
+と気づいたIT部門の人はSIerとこんな交渉もします。
+IT部門　「大手SIerさんこの案件500万から800万に値上げしてもいいすよ」
+大手SIer「ヽ(´▽｀)ノﾜｰｲ喜んで！ではこの案件は800万で見積もりします♪」
+なんてこともやってます。
+こんな事をよく続けてられるなと最初は思いました。
+普通は他社との競争原理が働き淘汰されていくようにも思えます。
+でも、大手SIerと大企業、公共団体、銀行ってズブズブの関係だって知ってました？
+見渡せば部長クラスの人は元顧客側のお偉いさんだったり、
+今、顧客の立場として発注してるのは大手SIerから出向している人だったりｗ
+結局みんな身内でお金を回してるんじゃないかと思うくらいですｗ
+こんな感じで何十年も回してるから、
+もう良いやって思ってるんです。
+顧客側も今更内製とか顧客がプロジェクトに参加するなんてことはしないでしょう
+IT部門の人からすれば自分は使わないのだから丸投げできる大手SIerの方が良いに決まってます。
+「面倒だから」・「今までそうやってきたから」を変えるには本当に経営危機とかにならない
+限り無理でしょう。
+結局こんな感じでSIerは続いていきます。
+大手SIerは人を手配し、誰も見ないような品質項目やExcel資料を作るのに必死になっています。
+中堅SIerは、そこら辺の人をSEに見立てて大手SIerに売り飛ばすだけです。
+プログラマーは何十にも中間搾取されているので雀の涙ほどの給料で働きます。
+みな実際はユーザーの利便性をそこなう糞システムだと知らずに日々残業をします。
+きっとこの状況はこの先もずっと変わらないんだろうな（;´ー｀）
+でも結局これってIT業界だけじゃなくてどこの業界も同じようなものじゃないでしょうか？
+世の中なんてこんなものですよね
+参考リンク
+久々のSI業界
+日本のIT業界の問題点
+笑ってはいけないSIer </description>
+    </item>
+    
+    <item>
+      <title>携帯開発の実態（笑わないプログラマ）</title>
+      <link>https://yaasita.github.io/2011/12/24/3299</link>
+      <pubDate>Sat, 24 Dec 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/12/24/3299</guid>
+      <description>例の軍曹のデスマーチ話です
+ 前編
+ 後編
+  </description>
+    </item>
+    
+    <item>
+      <title>freenetをLinux環境にインストール</title>
+      <link>https://yaasita.github.io/2011/12/19/3319</link>
+      <pubDate>Mon, 19 Dec 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/12/19/3319</guid>
+      <description>公式ページからDownloadを選択「Linux etc」をクリックnew_installer_offline_1405.jarをダウンロードして
+↓のコマンドでインストール
+java -jar new_installer_offline.jar
+インストールするディレクトリを聞かれるので適当に答えればOK
+run.shが起動とか終了の時に使うシェル
+START引数で起動、STOP引数で停止かな </description>
+    </item>
+    
+    <item>
+      <title>Googleのキーボードショートカット検索が終わってた</title>
+      <link>https://yaasita.github.io/2011/12/04/3341</link>
+      <pubDate>Sun, 04 Dec 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/12/04/3341</guid>
+      <description>前に書いたキーボードショートカットサービスが終了していた
+今はAccessible Viewというサービスになってるみたい
+操作方法はキーボードショートカット時代と同じ
+音が出るようになったみたいだけど・・・
+使いたい人はお試しあれ
+https://www.google.com/webhp?esrch=Axs </description>
+    </item>
+    
+    <item>
+      <title>HJSplitって何だ？</title>
+      <link>https://yaasita.github.io/2011/11/06/3361</link>
+      <pubDate>Sun, 06 Nov 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/11/06/3361</guid>
+      <description>ファイルを分割＆結合してくれるソフトです
+主に海外のダウンロードサイトなどで目にします。
+公式サイトはこちら
+そこからLinux版とWinodws版が選べます
+今回はLinux版を使います
+公式ページからtarファイルを拾ってきて解凍すればOK
+その中にあるhjsplitを蹴れば実行されますXが動いている＋GTKが入っていれば多分大丈夫
+※まあLinuxならcatでつなげてもいいと思う </description>
+    </item>
+    
+    <item>
+      <title>FXで使えるチャート</title>
+      <link>https://yaasita.github.io/2011/11/04/3383</link>
+      <pubDate>Fri, 04 Nov 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/11/04/3383</guid>
+      <description>ここにいろいろあった
+http://www.fxcm.co.jp/tools/chart.html
+その中でも↓が使いやすかったかも
+http://www.dailyfx.com/charts/netdaniachart/ </description>
+    </item>
+    
+    <item>
+      <title>iotop日本語man</title>
+      <link>https://yaasita.github.io/2011/10/30/3403</link>
+      <pubDate>Sun, 30 Oct 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/10/30/3403</guid>
+      <description>iotopを最近使ってたから日本語訳にしてみた
+結構意訳になってる
+IOTOP(1)&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;  IOTOP(1)
+
+
+NAME
+iotop - シンプルなIOモニター
+SYNOPSIS
+iotop [OPTIONS]
+DESCRIPTION
+iotopはLinuxカーネルからI/O使用情報を取得し(カーネル2.6.20以上を必要とします)、
+プロセス・スレッド毎にI/O使用状況を表示します。
+カーネルのビルドオプションに以下を含める必要があります。
+CONFIG_TASK_DELAY_ACCT, CONFIG_TASK_IO_ACCOUNTING, CONFIG_TASKSTATS and CONFIG_VM_EVENT_COUNTERS
+iotopはI/Oのプロセス/スレッドごとのI/O帯域を表示間隔毎に表示します。
+また、プロセスがI/Oの処理によって待たせれている時間の割合も表示します。
+各プロセスについてI/Oの優先度(クラス/レベル)が表示されます。
+加えて、表示間隔の間に読み書きされた総I/O帯域は一番上に表示されます。
+左矢印、右矢印キーを使うとソート項目を変更できます。rでソート順を逆転できます。
+oで--onlyオプションの有効、無効を切り替えられます。(IOを使用しているプロセスだけを表示するかどうか)
+pで--processesオプションの有効、無効を切り替えられます。(プロセスのみを表示してスレッドは表示しないかどうか)
+aで--accumulatedオプションの有効、無効を切り替えられます。(IOの累積値表示に切り替えるかどうか)
+qで終了します。
+iでスレッド/プロセスの優先度を変更できます。
+その他のキーを押すと最新の情報に更新できます。
+OPTIONS
+--version
+バージョンを表示し終了します。
+-h, --help
+使用方法を表示し、終了します。
+-o, --only
+実際にI/Oを使用しているプロセス/スレッドのみを表示します。これはoを押すことで
+表示中にも切り替えることができます。
+-b, --batch
+対話的な表示でなくなります。(バッチモード)これは状態を記録するときに便利です。
+-n NUM, --iter=NUM
+自動的に終了する時間を指定します。(デフォルトでは自動的に終了しません。)
+これはバッチモードで役に立ちます。
+-d SEC, --delay=SEC
+表示間隔を設定します。(デフォルトは1秒)　1.1秒のような少数も指定可能です。
+-p PID, --pid=PID
+表示するプロセスIDを指定します。(デフォルトは全て表示します)
+-u USER, --user=USER
+表示するユーザーIDを指定します。(デフォルトは全て表示します)
+-P, --processes
+プロセスのみ表示します。通常は全てのスレッドを表示します。
+-a, --accumulated</description>
+    </item>
+    
+    <item>
+      <title>LinuxでrootのGUIウィンドウを開きたいとき</title>
+      <link>https://yaasita.github.io/2011/10/11/3424</link>
+      <pubDate>Tue, 11 Oct 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/10/11/3424</guid>
+      <description>sudoでrootになってからXアプリを起動してもDisplayのオープンに失敗するので
+gksuでrootターミナルを開いてからやるとOK </description>
+    </item>
+    
+    <item>
+      <title>postfixでメールフィルタを設定</title>
+      <link>https://yaasita.github.io/2011/09/25/3445</link>
+      <pubDate>Sun, 25 Sep 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/09/25/3445</guid>
+      <description>1.main.cfに以下を追加
+content_filter=filter:dummy
+2.master.cfに以下を追加
+filter unix - n n - - pipe
+flags=Rq user=hogeuser argv=/tmp/filter.pl $recipient
+※$recipientは受信者が引数に渡される
+参考リンク
+Postfix キューに入った後のコンテンツフィルタ
+Postfix設定パラメータ </description>
+    </item>
+    
+    <item>
+      <title>マーブルvsカプコン2(MARVEL VS. CAPCOM 2 NEW AGE OF HEROES)</title>
+      <link>https://yaasita.github.io/2011/08/27/3467</link>
+      <pubDate>Sat, 27 Aug 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/08/27/3467</guid>
+      <description>通称マブカプ2
+まとめ
+クソゲーまとめ @ ウィキ
+MARVEL　VS　CAPCOM２　攻略
+コマンド</description>
+    </item>
+    
+    <item>
+      <title>Linuxでスキャナを使うには</title>
+      <link>https://yaasita.github.io/2011/08/21/3487</link>
+      <pubDate>Sun, 21 Aug 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/08/21/3487</guid>
+      <description>
+aptか何かでsaneとxsaneをインストール
+sane-find-scannerで検索
+/etc/sane.d/mustek_usb.confを編集
+以下の行だけ有効化
+option max_block_size 1024 usb 0x04b8 0x010a /dev/usb/scanner0 
+あとはrootでログインしてxsaneをメニューから選択すればできた
+ちなみに試したのはEpsonのGT-8700
+参考リンク
+http://samidarehetima.blog9.fc2.com/blog-entry-8.html
+検索した結果 </description>
+    </item>
+    
+    <item>
+      <title>atコマンドの実行内容（実際に発行するコマンド）を知りたい</title>
+      <link>https://yaasita.github.io/2011/08/20/3512</link>
+      <pubDate>Sat, 20 Aug 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/08/20/3512</guid>
+      <description>at -c job ... だそうです。
+参考リンク
+http://okwave.jp/qa/q5599261.html </description>
+    </item>
+    
+    <item>
+      <title>WindowsでもMplayerを使う</title>
+      <link>https://yaasita.github.io/2011/08/14/3533</link>
+      <pubDate>Sun, 14 Aug 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/08/14/3533</guid>
+      <description>Mplayerはオープンソースのメディアプレイヤー
+公式サイトからDownloadと進んで
+「MPlayer SVN Windows with SMPlayer GUI (recommended)」をえらんだ
+最初に設定したのは以下の通り
+GeneralMedia Settingで「Remember Settings for all files」を外した
+Screenshotsの場所を変更
+※これはファイル毎に再生ポジションを記憶してくれたりする
+設定ファイルはC:\Documents and Settings\hoge\.smplayerにある
+InterfaceRecent filesを20に変更
+Instancesタブで一つのウィンドウしか開かないようにした
+File types関連付けする拡張子にチェック
+あと注意しなければならないことは
+マルチディスプレイだと左のウィンドウに移動したときに
+Video→Screenをえらんでディスプレイ先を切り替えること</description>
+    </item>
+    
+    <item>
+      <title>lighttpdでバーチャルホスト設定</title>
+      <link>https://yaasita.github.io/2011/08/13/3554</link>
+      <pubDate>Sat, 13 Aug 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/08/13/3554</guid>
+      <description>lighttpd.confを少しいじるだけで出来た
+以下のように設定した
+hogehoge.netのホスト(HTTP_HOST)またはプライベートIPで指定してきたら
+/var/wwwを見せる
+それ以外なら/var/www2を見せる
+という制御にした
+server.document-root = &#34;/var/www2&#34; $HTTP[&#34;host&#34;] == &#34;hogehoge.net&#34; { server.document-root = &#34;/var/www&#34; } else $HTTP[&#34;host&#34;] == &#34;192.168.0.4&#34; { server.document-root = &#34;/var/www&#34; } 
+今回はドキュメントルート以外は全部同じ設定にしてあるので、conf-enabled/05-auth.confとかも同じ設定になるので注意 </description>
+    </item>
+    
+  </channel>
+</rss>

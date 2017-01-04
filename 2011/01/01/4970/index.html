@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="Hugo 0.19-DEV" />
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~/yaasita" />
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+    <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
+    
+    <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>tmuxを試してみた | # cd ~/yaasita</title>
+  </head>
+  <body>
+    <div id="wrap">
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-37419565-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+      <header class="site-header">
+        <div class="site-header-left">
+          <a class="site-header-title" href="https://yaasita.github.io/"># cd ~/yaasita</a>
+        </div>
+      </header>
+      <div class="container">
+        <div id="main">
+
+<div class="article">
+  <header>
+    <div class="article-header">
+      <h1>tmuxを試してみた</h1>
+      <div class="article-meta">
+        <span class="posttime">2011/01/01 00:00</span>
+      </div>
+    </div>
+  </header>
+  <div class="content">
+    <h2>tmuxの考え方</h2>セッション・・・複数のウィンドウを持つ固まり<br />ウィンドウ・・・複数のペインを持つ1画面<br />ペイン・・・いわゆる操作できる端末<br /><br /><h2>プレフィックスキー</h2>全てプレフィックスキー(デフォルトはC-b)を押した後に入力する<br /><br />※ $で始まるものはコマンド操作<br />それ以外はプレフィックスキー後に入力する<br /><h2>セッション操作</h2><br />hogesessionというセッション名で作成<br /><pre>$ tmux new -s hogesession</pre><br />セッション選択<br /><pre>:choose-session</pre><br />セッション一覧を表示<br /><pre>$ tmux ls</pre><br />hogeセッションにアタッチ<br /><pre>$ tmux a -t hoge</pre><br /><h2>ウィンドウ操作</h2>windowのリネーム <br /><pre>,</pre>※:set-window-option automatic-rename onにするとデフォルトになる<br /><br />新しいwindowの作成<br /><pre>c</pre><br />windowの数字選択指定<br /><pre>0～9</pre><br />windowの数字を変更<br /><pre>.</pre><br />ウィンドウを8番へ移動<br /><pre>move-window -t 8</pre><br />ウィンドウ選択<br /><pre>:choose-window</pre><br />ウィンドウの入れ替え(1と入れ替える)<br /><pre>swap-window -t 1</pre><br /><h2>ペインpane操作</h2><br />ペインの入れ替え<br /><pre>{</pre><pre>}</pre><br />pane番号表示<br /><pre>q</pre><br />レイアウト変更<br /><pre>SPACE</pre><br />上下左右サイズ変更<br /><pre>+</pre><pre>-</pre><pre>&amp;lt;</pre><pre>&amp;gt;</pre><br />ペインの入力同期 on/off<br /><pre>:set-window-option synchronize-panes on</pre><pre>:set-window-option synchronize-panes off</pre><br />ペインを:1ウィンドウから一枚もらってくる<br /><pre>:join-pane -s :1</pre><br />ペインを:1ウィンドウに移す<br /><pre>:join-pane -dt :1</pre>※:1.3という指定にすればペイン番号3指定<br /><br /><h2>その他操作</h2><br />コピーバッファの選択<br /><pre>=</pre><br />コピーバッファを一覧を表示<br /><pre>lsb</pre><br />コピーバッファの1番をペースト<br /><pre>paste-buffer -b 1</pre><br />時計表示<br /><pre>t</pre><br /><h2>screenと比べて</h2><ul><li>画面分割の制御が楽（上下左右のリサイズが楽）</li><li>画面表示が崩れない気がする</li><li>軽い気がする </li><li>screenに比べて設定ファイルが分かりやすい気がする　<a href="http://rdt17.blogspot.com/2010/07/screen.html">※</a></li><li>ウィンドウの中に画面分割のペインが紐付いているので管理が楽(分割された画面で画面が変わってしまうこちらはウィンドウの分割状態をそのまま保持できるため)</li><li>クラサバ志向なので他人がすでにアタッチしているセッションに参加できる（2人で同じ端末をみれる何気にすごい）</li><li>コピーバッファが何個も持てる</li></ul><br /><br /><h2>自分の設定</h2><pre>#key<br />bind s split-window -v<br />bind v split-window -h<br />bind j select-pane -D<br />bind k select-pane -U<br />bind h select-pane -L<br />bind l select-pane -R<br />bind -r < resize-pane -L 1<br />bind -r > resize-pane -R 1<br />bind -r - resize-pane -D 1<br />bind -r + resize-pane -U 1<br />bind : command-prompt<br />bind C-i select-pane -t :.+<br />bind Escape copy-mode<br />setw -g mode-keys vi<br />set -g prefix C-a<br />bind C-a send-prefix<br /><br />#option<br />set -g display-time 6000<br />set -g status-interval 30<br />set -g mouse-select-pane on<br /><br />#status line<br />set -g status-right "#(uptime|cut -d, -f 3 | cut -d: -f 2) %Y/%m/%d (%a) %p %I:%M"<br />setw -g window-status-format "#I:#W"<br />setw -g window-status-current-format "#I:#W_#P"<br />set -g status-bg black<br />set -g status-fg cyan<br />set -g status-left-fg black<br />set -g status-left-bg magenta<br />set -g status-right-fg black<br />set -g status-right-bg green<br />set-window-option -g window-status-current-attr bright,reverse<br />set-window-option -g window-status-current-bg cyan<br />set-window-option -g window-status-current-fg black<br /><br />#window<br />new -s def -n rss_log "tail.pl /var/log/rss.log"<br />splitw -h 'cd /var/log ; tailf allevent &amp; tailf samba/log.nmbd &amp;tailf samba/log.smbd &amp; tailf lighttpd/access.log  '<br />neww<br /></pre><br /><br /><h2>参考リンク</h2><a href="http://bytebucket.org/ns9tks/tmux-ja/wiki/tmux-ja.html">日本語man</a><br /><a href="http://hagio.org/wiki/index.php/Tmux">WikiNote</a><br />
+
+
+  </div>
+  <footer>
+    <div class="article-footer">
+      
+<div class="tags">
+  <ul>
+    
+    <li>
+        <a href="/categories/linux">linux</a>
+    </li>
+    
+    <li>
+        <a href="/categories/soft">soft</a>
+    </li>
+    
+  </ul>
+</div>
+
+
+      
+      
+<div id="share-buttons">
+  <ul>
+    
+    <li>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="yaasita">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </li>
+    
+    
+    
+    <li>
+      <a href="http://b.hatena.ne.jp/entry/https://yaasita.github.io/2011/01/01/4970/" class="hatena-bookmark-button" data-hatena-bookmark-title="tmuxを試してみた" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+    </li>
+    
+    
+    
+    <li>
+        <a class="tumblr-share-button" data-color="blue" data-notes="right" href="https://embed.tumblr.com/share"></a> <script>!function(d,s,id){var js,ajs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://assets.tumblr.com/share-button.js";ajs.parentNode.insertBefore(js,ajs);}}(document, "script", "tumblr-js");</script>
+    </li>
+  </ul>
+</div>
+
+
+      
+      <div id="disqus_thread"></div>
+      <script>
+      var disqus_config = function () {
+      
+      this.page.identifier = "https:\/\/yaasita.github.io\/2011\/01\/01\/4970"; 
+      };
+      (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = '//yaasita.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      
+      
+      <div id="pagenavigation-next-prev">
+        
+        <div id="pagenavigation-next">
+          <span class="pagenav-label">Previous</span>
+          <a href="https://yaasita.github.io/2010/12/26/5011">Bloggerのテンプレートを変更してみる</a>
+        </div>
+        
+        
+        <div id="pagenavigation-prev">
+          <span class="pagenav-label">Next</span>
+          <a href="https://yaasita.github.io/2011/01/01/4991">Bloogerのドラフト版ダッシュボード</a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </footer>
+</div>
+        </div>
+        <div class="sidebar">
+  
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Author</span>
+    </div>
+    <div id="author">
+      <span>yaasita: SIerから脱出した人</span>
+      <div>
+        
+        <a href="https://twitter.com/yaasita"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+        
+        
+        <a href="https://github.com/yaasita"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
+        
+        
+        
+        <a href="https://yaasita.tumblr.com/"><i class="fa fa-tumblr-square fa-2x" aria-hidden="true"></i></a>
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Search</span>
+    </div>
+    <div id="search">
+        <form action="//google.co.jp/search" method="get">
+            <fieldset role="search">
+                <input type="hidden" name="noj" value="1">
+                <input type="hidden" name="q" value="site:yaasita.github.io">
+                <input class="search" type="text" name="q" results="0" placeholder="このブログを検索">
+            </fieldset>
+        </form>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Categories</span>
+    </div>
+    <div class="categories">
+      <ul>
+        
+        <li>
+          <a href="/categories/crack"><span></span>crack (20)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/game"><span></span>game (57)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/hard"><span></span>hard (34)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/life"><span></span>life (61)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/linux"><span></span>linux (321)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/net"><span></span>net (176)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/program"><span></span>program (118)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/rule"><span></span>rule (14)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/soft"><span></span>soft (367)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/windows"><span></span>windows (54)</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Archive</span>
+    </div>
+    <div class="categories">
+      <ul id="archives">
+        
+        <li>
+          <a href="/archives/2007"><span></span>2007 (63)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2008"><span></span>2008 (119)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2009"><span></span>2009 (151)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2010"><span></span>2010 (122)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2011"><span></span>2011 (83)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2012"><span></span>2012 (71)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2013"><span></span>2013 (73)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2014"><span></span>2014 (88)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2015"><span></span>2015 (25)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2016"><span></span>2016 (23)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2017"><span></span>2017 (1)</a>
+        </li>
+        
+      </ul>
+    </div>
+    <script>
+        (function () {
+            var reverse = [];
+            var elm1 = document.querySelector('#archives').querySelectorAll("li");
+            var i=0;
+            for(i=0;i<=elm1.length-1;i++){reverse.unshift(elm1[i].innerHTML)}
+            for(i=0;i<=elm1.length-1;i++){elm1[i].innerHTML=reverse[i]}
+        })();
+    </script>
+  </div>
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>RSS</span>
+    </div>
+    <div id="rss">
+      <a href="https://yaasita.github.io/index.xml" type="application/rss+xml" target="_blank">
+        <i class="fa fa-rss-square fa-2x" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+      </div>
+      <footer>
+        <div id="site-footer-wrap">
+          <div id="site-footer">
+            <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
+            <span>
+              
+              Copyright (c) 2017, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+

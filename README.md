@@ -1,3 +1,8 @@
-# middlemanで作ったBlog
+# hugoで作ったブログ
 
-+ [yaasita.github.io](http://yaasita.github.io/)
+* https://yaasita.github.io/
+
+## 使用テーマ
+
+- (c) [masa0221/hugo-theme-geppaku](https://github.com/masa0221/hugo-theme-geppaku)
+

@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2008 on # cd ~/yaasita</title>
+    <link>https://yaasita.github.io/archives/2008/index.xml</link>
+    <description>Recent content in 2008 on # cd ~/yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="/archives/2008/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>iptablesで設定したルールを再起動後も反映したい</title>
+      <link>https://yaasita.github.io/2008/12/31/10585</link>
+      <pubDate>Wed, 31 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/31/10585</guid>
+      <description>どこに書けばいいのでしょうか？　＞ Debian , Ubuntu
+正解は/etc/network/if-pre-up.d
+iptables-restoreコマンドをうまいこと駆使してやってください
+まあ後はiptablesのメモ
+最初に決めるルールINPUTは入ってくパケットOUTPUTは出て行くパケット
+FORWARDは転送するパケット
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+全てのルールをクリア
+iptables -F
+すべてのユーザー定義もクリア
+iptables -X
+パケットカウンタもクリアしたいなら
+iptables -Z iptables -A INPUT -p tcp --dport 4000:4999 -s ! 192.168.0.0/24 -j DROP
+↑の例だと192.168.0.0/24以外のネットワークから来たパケットで4000から4999ポートを指定
+しているものを削除
+※注意 --dportは-p tcpが指定されていない場合は使えない（udpでも良いけど)
+現在のルールを表示
+iptables -L
+最終的にはこんな感じで
+#!/bin/bash
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -F
+#iptables -A INPUT -p tcp --dport 4000:4999 -s !</description>
+    </item>
+    
+    <item>
+      <title>携帯端末以外のIPを制限するhtaccessを簡単生成</title>
+      <link>https://yaasita.github.io/2008/12/31/10607</link>
+      <pubDate>Wed, 31 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/31/10607</guid>
+      <description>http://www.dspt.net/tools/mobile_ip/ </description>
+    </item>
+    
+    <item>
+      <title>Drupalをubuntu8.10にインストール</title>
+      <link>https://yaasita.github.io/2008/12/25/10628</link>
+      <pubDate>Thu, 25 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/25/10628</guid>
+      <description>１．環境設定
+LAMP入れとけばおｋ
+２．mySQLでテーブル作成
+# mysql -u root -p
+mysql&amp;amp;gt; create database drupal;
+↑データベース名
+mysql&amp;amp;gt; grant select,insert,update,delete,create,drop,index,alter,create temporary　tables,lock tables on drupal.* to root@localhost identified by &#39;drupal&#39;;
+↑の例だとrootってユーザーでパスワードはdrupal
+mysql&amp;amp;gt; flush privileges;
+３．webからごにょごにょ設定
+http://drupal.jp/drupal6/quick_start </description>
+    </item>
+    
+    <item>
+      <title>WMP11でWindows Live Messengerに再生曲表示</title>
+      <link>https://yaasita.github.io/2008/12/24/10671</link>
+      <pubDate>Wed, 24 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/24/10671</guid>
+      <description>なんか手順が変わってた
+Windows Live Messenger は、現在、自分の聞いている曲をメンバーにお知らせできる機能があります。
+しかし、Messenger の設定で表示するようにしたつもりなのですが、表示されていないのに気がつきました。
+iTunesでは自動的に再生している曲を表示してくれますが、Windows XP のWindows Media Playerの場合は、Windows Live Messenger だけでなく、Windows Media Playerでも設定する必要があります。
+まずは、Windows Live Messenger を下記のように設定します。
+1. 「メニューを表示します」アイコンをクリックして表示されるメニューより「ツール」の 「オプション」をクリックします。
+2. 「オプション」が表示されるので、左側の欄にある「個人設定」をクリックします。
+3. 「表示名」の下にある「Windows Media Player の音楽情報を表示メッセージで公開する」にチェックをつけます。
+4. 「OK」をクリックします。
+Windows Live Messenger の設定が完了したら、Windows Media Player と Windows Live Messenger を連携させましょう。
+Windows Media Player で下記のように設定します。なお、Windows Media Playerのバージョンによって、少し設定方法が違いますので、ご注意ください。
+Windows Media Player 11の場合
+1. Windows Media Player を起動します。
+2. 「プレイビュー」の下の▼ボタンをクリックし、「プラグイン」から「オプション」をクリックします。
+3. 左側の欄にある「バックグラウンド」をクリックします。
+4. 右側に「Windows Live Messenger ミュージック プラグイン」が表示されますので、チェックをつけます。
+5. 「OK」をクリックします。</description>
+    </item>
+    
+    <item>
+      <title>auのUA</title>
+      <link>https://yaasita.github.io/2008/12/24/10650</link>
+      <pubDate>Wed, 24 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/24/10650</guid>
+      <description>携帯のUserAgentを知りたいなーってときにすぐ出てこないのでメモ
+KDDI-KC37 UP.Browser/6.2.0.11.1.2.2e (GUI) MMP/2.0 </description>
+    </item>
+    
+    <item>
+      <title>決済用普通預金ってのがあるらしい</title>
+      <link>https://yaasita.github.io/2008/12/23/10691</link>
+      <pubDate>Tue, 23 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/23/10691</guid>
+      <description>利息はつかないけど、全額保障されるらしい
+ペイオフで保障されるのは1000万までだから金持ちの人はいいんじゃないかな </description>
+    </item>
+    
+    <item>
+      <title>.bashrcを作っても読み込まないよー＞＜</title>
+      <link>https://yaasita.github.io/2008/12/21/10753</link>
+      <pubDate>Sun, 21 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/21/10753</guid>
+      <description>そんなときは.profileを作ればいいのさ
+こんな感じで・・・
+# ~/.profile: executed by the command interpreter for login shells.
+# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
+# exists.
+# see /usr/share/doc/bash/examples/startup-files for examples.
+# the files are located in the bash-doc package.
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+#umask 022
+# if running bash
+if [ -n &#34;</description>
+    </item>
+    
+    <item>
+      <title>ubuntu8.10にはgnump3dパッケージが無いんだ</title>
+      <link>https://yaasita.github.io/2008/12/21/10732</link>
+      <pubDate>Sun, 21 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/21/10732</guid>
+      <description>やあ （´・ω・｀) ようこそ、Ubuntu8.10へ。
+うん、「また」なんだ。
+つーわけでgnump3dを入れるとなると自分でソースからビルドするか、debパッケージを探すかになります。
+http://packages.ubuntu.com/
+しょうがないので↑から適当に選ぶ「Search package directories」にgnump3dを入れて、Distributionは一個前のhardyを選択
+一個前だとあるんだね・・・なんでレポジトリから消えたかは知らないけど・・・・
+http://packages.ubuntu.com/hardy/gnump3d
+まあダウンロードしたらGUIからでもdebファイルをインストールすると良いよ。GUI無い人はこんな感じでインストールすると良いんじゃない？
+# dpkg -i gnump3d_3.0-2_all.deb
+参考リンク
+debパッケージをインストールする </description>
+    </item>
+    
+    <item>
+      <title>ここら辺でsquidのconfをまとめようか</title>
+      <link>https://yaasita.github.io/2008/12/21/10711</link>
+      <pubDate>Sun, 21 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/21/10711</guid>
+      <description>acl all src all
+acl manager proto cache_object
+acl localhost src 127.0.0.1/32
+acl to_localhost dst 127.0.0.0/8
+acl localnet src 10.0.0.0/8 # RFC1918 possible internal network
+acl localnet src 172.16.0.0/12 # RFC1918 possible internal network
+acl localnet src 192.168.0.0/16 # RFC1918 possible internal network
+acl SSL_ports port 443 # https
+acl SSL_ports port 563 # snews
+acl SSL_ports port 873 # rsync
+acl Safe_ports port 80 # http
+acl Safe_ports port 21 # ftp</description>
+    </item>
+    
+    <item>
+      <title>manコマンドの出力をtxtにする</title>
+      <link>https://yaasita.github.io/2008/12/19/10793</link>
+      <pubDate>Fri, 19 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/19/10793</guid>
+      <description>man uptime | col -bfx &amp;amp;lt; uptime.txt
+こんな感じでおｋ </description>
+    </item>
+    
+    <item>
+      <title>なんか軽くて良い音楽プレイヤーがあるらしい</title>
+      <link>https://yaasita.github.io/2008/12/19/10773</link>
+      <pubDate>Fri, 19 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/19/10773</guid>
+      <description>今までMPC使ってたけどこれもいいかもね
+Fittle
+まとめwiki </description>
+    </item>
+    
+    <item>
+      <title>FLASH版CookieみたいなSharedObjectについて</title>
+      <link>https://yaasita.github.io/2008/12/14/10834</link>
+      <pubDate>Sun, 14 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/14/10834</guid>
+      <description>とあるゲームをやっていたときにふと思ったのでメモ。
+ゲームをプレイしてある面で止める→次にブラウザ立ち上げてみる→続きからPLAYできる→Cookieを消してみる→続きから出来る
+なぜ？それはFLASHのSharedObjectというデータを読み込んでいるからなのさ
+どこに保存されているの？
+WindowsXPなら
+C:\Documents and Settings\＜ユーザー名＞\Application Data\Macromedia\Flash Player\#SharedObjects
+とかだな多分
+Linuxなら
+/home/username/.macromedia/Flash_Player/とか探せばいいみたいね
+参考リンク
+http://www.gravity-works.jp/gravica/web/000077.shtml </description>
+    </item>
+    
+    <item>
+      <title>今日覚えた四字熟語</title>
+      <link>https://yaasita.github.io/2008/12/14/10814</link>
+      <pubDate>Sun, 14 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/14/10814</guid>
+      <description>・朝三暮四
+目先のことしか見えてないこと
+・八面六臂
+なんかすごい活躍
+参考リンク
+http://contest2004.thinkquest.jp/tqj2004/70237/t/tyousan.html </description>
+    </item>
+    
+    <item>
+      <title>cshの限界について</title>
+      <link>https://yaasita.github.io/2008/12/07/10856</link>
+      <pubDate>Sun, 07 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/07/10856</guid>
+      <description>配列を参照するのにforeach文というものがあります
+これはperlとかphpにあったりします。そんでcshにもあるのですが・・・
+なぜかcshのforeach文に指定できる配列数の上限は997なのです
+この997配列がMAXというのはOSやハードウェアの仕様によらずに、どの環境でも同じでした。
+つまりcshの言語仕様ってことらしい。なぜ？？なんでだろーなんでだろー
+いろいろなシェル（一部perlで検証してみた）
+イナバの物置風にforeachの捌ける配列MAXを探す
+※スクリプト中に使われるファイル（list.txt,list2.txt)は複数行あるテキストファイルです。このファイルに例えば3行あれば3個の配列を用意します（空行は除く）。
+つまりcshが997が限界なのかを検証するには997行のファイルと998行のファイルを用意すればいいのです。
+まずはbash　全然平気
+
+#!/bin/bash
+array=(`cat list.txt`)
+for line in ${array[@]}
+do
+echo $line
+done
+echo &#34;やっぱりbash ${#array[@]} 人のっても大丈夫&#34;
+
+続いてzsh　まあbashの強化版だし平気みたい
+
+#!/usr/bin/zsh
+array=(`cat list.txt`)
+for line in ${array[@]}
+do
+echo $line
+done
+echo &#34;やっぱりzsh ${#array[@]} 人のっても大丈夫&#34;
+
+cshとは違うのだよcshとは　みたいな感じで余裕でクリア
+
+#!/bin/tcsh
+set array=`cat list.txt`
+foreach i ($array)
+echo $i
+end
+echo &#34;やっぱりtcsh ${#array} 人乗っても大丈夫&#34;
+
+流石perlだどんな配列でもなんとも無いぜ！
+
+#!/usr/bin/perl
+open (FH,&#34;list.txt&#34;);</description>
+    </item>
+    
+    <item>
+      <title>Firefoxの拡張 backword を試す</title>
+      <link>https://yaasita.github.io/2008/12/06/10876</link>
+      <pubDate>Sat, 06 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/06/10876</guid>
+      <description>backwordはなんかホップアップで単語の意味を表示してくれる拡張みたいです。
+Googleツールバーにも同様の機能があるらしいけど分からん・・・・
+ココからインストールして
+適当に設定する。
+アドオンから設定→DictionaryをGoogle - Japaneseに設定
+さらに検索するにはホップアップから虫眼鏡マークをクリックするんだけどそれにつかうサイトをSearch Webに書くエキサイトが良いと思うので
+http://www.excite.co.jp/dictionary/english_japanese/?search=
+と書いておこうか
+そういやこの拡張いれればDictionarySearchいらんな
+**一応設定メモ
+Setting Ⅰ
+Dictionary → 表示に使う辞書
+Show phonetics(rarely hang on Firefox) → 読み方？を示すのかな？なんかたまにFirefoxがハングするとか書いてあるので触らない
+Search Web → 虫眼鏡マークのなんとか・・・↑の方に既に書いた
+Setting Ⅱ
+Use Storage →　検索した単語をローカルにキャッシュするかどうかC:\Documents and Settings\Admin\Application Data\Mozilla\Firefox\Profiles\hogehoge.default\backwordの中に保存されてるみたいよ あと右下の有効、無効を切り替えるマークを右クリック→Pages→
+Review Page of Local Storageで自分のキャッシュが見れるお
+Automatically back word and context　→　ポップアップにあらわれるメニューがごちゃごちゃと増える
+あとは良く分からん
+参考リンク
+発音も分かる無料マウスオーバー辞書なFirefox拡張「backword」 </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Rule on # cd ~/yaasita</title>
+    <link>https://yaasita.github.io/categories/rule/index.xml</link>
+    <description>Recent content in Rule on # cd ~/yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="/categories/rule/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>VALUE-DOMAINでグルーレコード追加</title>
+      <link>https://yaasita.github.io/2016/11/25/value-domain</link>
+      <pubDate>Fri, 25 Nov 2016 01:31:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/11/25/value-domain</guid>
+      <description>VALUE-DOMAIN バリュードメインの権威DNSサーバを使いつつ
+レコードにグルーレコードを追加する方法
+BINDみたくこんな感じにやる
+ns cloud cloud.example.net. a cloud.example.net. 123.123.123.123  上位の権威サーバにグルーレコードを設定する場合は
+下記参照
+https://www.value-domain.com/userguide/manual/othermodns/</description>
+    </item>
+    
+    <item>
+      <title>初めての暗号化メール</title>
+      <link>https://yaasita.github.io/2014/07/01/thunderbird-pgp</link>
+      <pubDate>Tue, 01 Jul 2014 23:36:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/07/01/thunderbird-pgp</guid>
+      <description> はじめての暗号化メール (Thunderbird編)
+  </description>
+    </item>
+    
+    <item>
+      <title>tumblrのAPI回り</title>
+      <link>https://yaasita.github.io/2014/06/08/tumblr_api</link>
+      <pubDate>Sun, 08 Jun 2014 23:19:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/06/08/tumblr_api</guid>
+      <description>手順  アプリを登録
+OAuth Consumer KeyとSecret Keyを作る
+ アクセストークンリクエスト
+#!/usr/bin/env ruby require &#39;oauth&#39; require &#39;oauth/consumer&#39; @consumer=OAuth::Consumer.new( &amp;quot;consumer key&amp;quot;,&amp;quot;secret key&amp;quot;, { :site =&amp;gt; &#39;http://www.tumblr.com&#39;, :request_token_path =&amp;gt; &#39;/oauth/request_token&#39;, :authorize_path =&amp;gt; &#39;/oauth/authorize&#39;, :access_token_path =&amp;gt; &#39;/oauth/access_token&#39;, :http_method =&amp;gt; :get } ) @request_token=@consumer.get_request_token put @request_token.authorize_url  リクエストトークンを踏む
+ コールバックされる
+ verifirerをメモる
+@access_token = @request_token.get_access_token(:oauth_verifier =&amp;gt; verifier ) puts @access_token.token puts @access_token.secret   APIによってはOauthリクエスト署名いらいないやつもある
+(api_keyのみでOK)
+curl http://api.tumblr.com/v2/blog/yaasita.tumblr.com/info?api_key=xxxxxxxxxxxxxxx  参考リンク  Tumblr API日本語版
+ RubyでTumblrのOAuth認証のアクセストークンを得る手順</description>
+    </item>
+    
+    <item>
+      <title>DNS関連のためになるPDF</title>
+      <link>https://yaasita.github.io/2014/05/14/dns</link>
+      <pubDate>Wed, 14 May 2014 01:06:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/05/14/dns</guid>
+      <description> DNSサーバーの引っ越し - JPRS
+ DNS 浸透の都市伝説を斬る
+  </description>
+    </item>
+    
+    <item>
+      <title>opensslでstarttlsのSMTPをコマンド実行</title>
+      <link>https://yaasita.github.io/2013/04/12/1030</link>
+      <pubDate>Fri, 12 Apr 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/04/12/1030</guid>
+      <description>こんな感じでやってみよう
+openssl s_client -starttls smtp -crlf -quiet -connect email-smtp.us-east-1.amazonaws.com:587
+
+expectで送る場合はこんな感じ
+ </description>
+    </item>
+    
+    <item>
+      <title>opensslでSMTPするとRENEGOTIATINGになる</title>
+      <link>https://yaasita.github.io/2013/04/01/1175</link>
+      <pubDate>Mon, 01 Apr 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/04/01/1175</guid>
+      <description>
+なるほどこういうことか
+openssl s_client -quiet -connect
+みたいに-quietつければいいみたい
+http://backslash.ddo.jp/wordpress/archives/434 </description>
+    </item>
+    
+    <item>
+      <title>自然対数(log)の割り算で任意底の対数計算</title>
+      <link>https://yaasita.github.io/2013/03/30/1196</link>
+      <pubDate>Sat, 30 Mar 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/03/30/1196</guid>
+      <description>
+例えば512は2の何乗か調べる場合は
+（この場合底はe）
+log512/log2 = log2^9/log2 = 9log2/log2 = 9
+http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1262091227
+http://ab.sinryow.net/lesson/shisu.html </description>
+    </item>
+    
+    <item>
+      <title>digコマンドを理解する</title>
+      <link>https://yaasita.github.io/2013/01/05/1624</link>
+      <pubDate>Sat, 05 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/05/1624</guid>
+      <description>* usage
+dig [@server] domain [query-type]
+
+* query-type
+a (Aレコード)
+any (任意の情報)
+mx (MXレコード)
+ns (NSレコード)
+soa (SOAレコード)
+hinfo (HINFOレコード)
+axfr (ゾーン転送)
+txt (TXTレコード)
+
+* status
+NOERROR (正常)
+NXDOMAIN (ドメインは存在しない)
+SERVFAIL (サーバの応答エラー)
+
+* flags
+qr (クエリの回答)
+aa (権威ある回答)
+tc (TCPフォールバック)
+ra (フルサービスリゾルバ)
+rd (再帰要求,+norecオプションで消える)
+
+参考リンク
+http://d.hatena.ne.jp/japanrock_pg/20090410/1239355230
+http://www.syon.co.jp/syontech/tech002.html</description>
+    </item>
+    
+    <item>
+      <title>プライベートIPアドレスの覚え方</title>
+      <link>https://yaasita.github.io/2010/10/24/5446</link>
+      <pubDate>Sun, 24 Oct 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/10/24/5446</guid>
+      <description>2進数で考えると覚えやすい
+まずはクラスの覚え方
+クラスA(最初が0で始まるのがAクラス)
+10進数： 0.0.0.0-127.255.255.255
+2進数： 00000000.00000000.00000000.00000000-01111111.11111111.11111111.11111111 クラスB(最初が10ならクラスB)
+10進数： 128.0.0.0-191.255.255.255
+2進数： 10000000.00000000.00000000.00000000-10111111.11111111.11111111.11111111 
+クラスC(最初が110ならクラスC)
+10進数： 192.0.0.0-223.255.255.255
+2進数： 11000000.00000000.00000000.00000000-11011111.11111111.11111111.11111111 
+でプライベートIP
+クラスA
+10進数： 10.0.0.0-10.255.255.255/8
+2進数： 00001010.00000000.00000000.00000000-00001010.11111111.11111111.11111111 subnet： 11111111.00000000.00000000.00000000-11111111.00000000.00000000.00000000 
+クラスB
+10進数： 172.16.0.0-172.31.255.255/12
+2進数： 10101100.00010000.00000000.00000000-10101100.00011111.11111111.11111111 subnet： 11111111.11110000.00000000.00000000-11111111.11110000.00000000.00000000 
+クラスC
+10進数： 192.168.0.0-192.168.255.255/16
+2進数： 11000000.10101000.00000000.00000000-11000000.10101000.11111111.11111111
+subnet： 11111111.11111111.00000000.00000000-11111111.11111111.00000000.00000000
+ </description>
+    </item>
+    
+    <item>
+      <title>crontabに書いてあるdomとdowは何の略？</title>
+      <link>https://yaasita.github.io/2010/10/03/5652</link>
+      <pubDate>Sun, 03 Oct 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/10/03/5652</guid>
+      <description>dow・・・Day Of Week
+dom・・・Day of Month </description>
+    </item>
+    
+    <item>
+      <title>SQLの解説サイト</title>
+      <link>https://yaasita.github.io/2009/09/07/8655</link>
+      <pubDate>Mon, 07 Sep 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/09/07/8655</guid>
+      <description>ためになりそうだからメモ
+http://www.techscore.com/tech/sql/ </description>
+    </item>
+    
+    <item>
+      <title>携帯端末以外のIPを制限するhtaccessを簡単生成</title>
+      <link>https://yaasita.github.io/2008/12/31/10607</link>
+      <pubDate>Wed, 31 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/31/10607</guid>
+      <description>http://www.dspt.net/tools/mobile_ip/ </description>
+    </item>
+    
+    <item>
+      <title>telnetでSMTPコマンド叩いてメール送信</title>
+      <link>https://yaasita.github.io/2008/09/07/11328</link>
+      <pubDate>Sun, 07 Sep 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/09/07/11328</guid>
+      <description>↓を参考にどうぞ
+http://ash.jp/net/telnet_smtp.htm </description>
+    </item>
+    
+    <item>
+      <title>ASCIIコードで\x0cって何を表すか？</title>
+      <link>https://yaasita.github.io/2008/04/29/12531</link>
+      <pubDate>Tue, 29 Apr 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/04/29/12531</guid>
+      <description>ASCIIコード
+改ページだそうです
+参考リンク
+http://www12.plala.or.jp/mz80k2/electronics/ascii/ascii.html </description>
+    </item>
+    
+  </channel>
+</rss>

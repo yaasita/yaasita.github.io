@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2012 on # cd ~/yaasita</title>
+    <link>https://yaasita.github.io/archives/2012/index.xml</link>
+    <description>Recent content in 2012 on # cd ~/yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="/archives/2012/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>起動後一定時間経ったら○○の処理をする</title>
+      <link>https://yaasita.github.io/2012/12/27/1805</link>
+      <pubDate>Thu, 27 Dec 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/12/27/1805</guid>
+      <description>というスクリプトの例
+uptimeから取ってくる
+以下は3時間経ったらhoge.shを実行する
+ </description>
+    </item>
+    
+    <item>
+      <title>unboundのインストールと初期設定</title>
+      <link>https://yaasita.github.io/2012/12/24/1826</link>
+      <pubDate>Mon, 24 Dec 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/12/24/1826</guid>
+      <description>1.インストール
+普通にaptで入れる
+2.初期設定
+unbound.conf
+interface: 0.0.0.0
+access-control: 192.168.0.0/24 allow
+
+3.レコード設定
+local-data: &#34;hoge.net. IN A 192.168.0.4&#34;
+local-data: &#34;hoge.net. IN MX 10 hoge.net.&#34;
+local-data-ptr: &#34;192.168.0.4 hoge.net.&#34;
+※ hoge.netのAレコードを設定してしまうと、hoge.netのMXレコードを
+本物のDNSに問い合わせないで無しで返してしまうので注意
+4.ulimitの設定
+warningsがうるさいなら
+ulimit -n 4140
+を/etc/init.d/unboundの頭の方に書いておくと良いんじゃないでしょうか？ </description>
+    </item>
+    
+    <item>
+      <title>Debianにpostfixadminをインストール</title>
+      <link>https://yaasita.github.io/2012/12/23/1848</link>
+      <pubDate>Sun, 23 Dec 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/12/23/1848</guid>
+      <description>1.インストール
+# apt-get install postfixadmin
+
+2.Webサーバ設定
+/etc/postfixadminに設定ファイルがあるのでリンクを張る
+今回はlighttpdで
+# ln -s /etc/postfixadmin/lighttpd.conf /etc/lighttpd/conf-enabled/60-postfixadmin.conf
+# /etc/init.d/lighttpd restart
+
+3.初期セットアップ
+http://yourdomain.com/postfixadmin/setup.php
+にアクセスしてセットアップ
+初期パスワードとadminアカウントを作成
+4.その他の設定
+/usr/share/doc/postfixadmin/DOCUMENTS
+↑を読む</description>
+    </item>
+    
+    <item>
+      <title>動画でプログラミングを学べるサイト</title>
+      <link>https://yaasita.github.io/2012/12/21/1869</link>
+      <pubDate>Fri, 21 Dec 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/12/21/1869</guid>
+      <description>ドットインストール
+http://dotinstall.com/ </description>
+    </item>
+    
+    <item>
+      <title>ビルドするためにインストールするパッケージをまとめて</title>
+      <link>https://yaasita.github.io/2012/12/19/1889</link>
+      <pubDate>Wed, 19 Dec 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/12/19/1889</guid>
+      <description>入れる方法は
+↓みたいにする
+この例だとvimに必要なパッケージ
+apt-get build-dep vim
+
+http://vim-jp.org/docs/build_linux.html </description>
+    </item>
+    
+    <item>
+      <title>AutoHotkeyを使ってTeraTerm &#43; vimを快適にする</title>
+      <link>https://yaasita.github.io/2012/11/25/1951</link>
+      <pubDate>Sun, 25 Nov 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/11/25/1951</guid>
+      <description>
+Esc押したらIMEをオフにしてくれれば良いので以下のような設定にした
+あと、無変換キー＋Rでsudoしてくれる設定も追加しておいた
+AutoHotkey.ahk
+
+注意点としてはEscがEscを再帰的に呼んで無限ループするので、Escの頭に$を付ける必要があること
+IMEのOn/Offの切り替えはえらい人がスクリプトを作ってくれていたので、そっちからコピペ
+http://www6.atwiki.jp/eamat/pub/MyScript/Lib/
+参考リンク
+https://sites.google.com/site/autohotkeyjp/reference/AutoHotkey_L/index </description>
+    </item>
+    
+    <item>
+      <title>Web上でプログラミングの勉強が出来るサイト</title>
+      <link>https://yaasita.github.io/2012/11/25/1910</link>
+      <pubDate>Sun, 25 Nov 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/11/25/1910</guid>
+      <description>
+http://www.codecademy.com
+http://www.codeschool.com/ </description>
+    </item>
+    
+    <item>
+      <title>雨の音を流してくれるサイト</title>
+      <link>https://yaasita.github.io/2012/11/25/1931</link>
+      <pubDate>Sun, 25 Nov 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/11/25/1931</guid>
+      <description>
+http://www.rainymood.com/
+http://raining.fm/
+参考リンク
+http://www.lifehacker.jp/2012/08/120820_raining_fm.html </description>
+    </item>
+    
+    <item>
+      <title>teratermインストール後にやることメモ</title>
+      <link>https://yaasita.github.io/2012/11/24/1971</link>
+      <pubDate>Sat, 24 Nov 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/11/24/1971</guid>
+      <description>Teratermが新しくなっていたので、ここでまとめておく
+1.TERATERM.INI
+ 2.KEYBOARD.CNF
+https://raw.github.com/gist/4140449/2bad78bfe24a407764f13c7055fc0ed452f1affd/KEYBOARD.CNF
+3.テーマファイル
+テーマファイルとかあればhttps://raw.github.com/gist/4140449/91748dba84035a7a0f0ac7dfa8b8ec480b8ed93c/yamasita.ini </description>
+    </item>
+    
+    <item>
+      <title>phpでctagsを使う</title>
+      <link>https://yaasita.github.io/2012/11/22/1990</link>
+      <pubDate>Thu, 22 Nov 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/11/22/1990</guid>
+      <description>
+phpが入ってるディレクトリで
+ctags -a -R --langmap=PHP:.php --php-types=c+f+d+v+i .
+
+でOKみたい
+↓で種類みれる
+ctags --list-kinds=php
+
+こうすればtagsファイルが作られる
+参考リンク
+http://blog.veryposi.info/programing/php/php-ctags-vim/ </description>
+    </item>
+    
+    <item>
+      <title>2012版 Firefox Thunderbird 使ってるアドオンまとめ</title>
+      <link>https://yaasita.github.io/2012/11/03/2009</link>
+      <pubDate>Sat, 03 Nov 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/11/03/2009</guid>
+      <description>FirefoxautotranslatorVideo DownloadHelperelasticfox-ec2tagFirebugFireMobileSimulatorLiveNavigate UpNicoFoxPersonas PlusQuickJavaScrapBookTomblooViewSourceWithVimiumテキストリンク
+ThunderbirdDisplay Mail User AgentLightningMailHops</description>
+    </item>
+    
+    <item>
+      <title>screenfetch</title>
+      <link>https://yaasita.github.io/2012/10/28/2029</link>
+      <pubDate>Sun, 28 Oct 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/10/28/2029</guid>
+      <description>
+bashで出来たシステムモニタ
+各ディストリのマークとか出る </description>
+    </item>
+    
+    <item>
+      <title>tumblrのショートカットキー</title>
+      <link>https://yaasita.github.io/2012/10/20/2051</link>
+      <pubDate>Sat, 20 Oct 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/10/20/2051</guid>
+      <description>ダッシュボードで使えるよ j（ジェイ） 次のpostへ移動 k（ケー） 前のpostへ移動
+l（エル） like / like解除 n（エヌ） notesを開く / 閉じる r（アール） reblog（別ウィンドウが開く）
+R（Shift＋アール） 即時reblog
+E（Shift＋イー） キュー（投稿予約）へreblog
+スペース 動画再生？（未確認）
+カーソルキー左 前のページへ カーソルキー右 次のページへ
+z+tab 切り替え
+http://dara-j.asablo.jp/blog/2012/10/17/6605357&amp;amp;nbsp;
+http://www.tumblr.com/tips#keyboard_shortcuts </description>
+    </item>
+    
+    <item>
+      <title>xsetで省電力モードを解除</title>
+      <link>https://yaasita.github.io/2012/10/16/2070</link>
+      <pubDate>Tue, 16 Oct 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/10/16/2070</guid>
+      <description>現在の設定を確認 xset q
+DPMSを無効化
+xset -dpmsxset dpms force off
+DPMSを有効化
+xset +dpms スタンバイ、サスペンド、パワーオフ時間を設定（有効化時しか意味は無い）
+xset dpms 300 600 900
+参考リンク
+http://kakurasan.ehoh.net/summary/xset.cmd.term.html
+http://www.atmarkit.co.jp/flinux/rensai/linuxtips/254usedpmsx3x.html</description>
+    </item>
+    
+    <item>
+      <title>tumblrのリンクと要素まとめ（使う分だけ）</title>
+      <link>https://yaasita.github.io/2012/10/11/2089</link>
+      <pubDate>Thu, 11 Oct 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/10/11/2089</guid>
+      <description>
+自分がフォローしている人をブログに表示する
+HTMLの編集からどうぞ
+ following
+&amp;amp;lt;div&amp;amp;gt;
+{block:Followed} &amp;amp;lt;a href=&#34;{FollowedURL}&#34;&amp;amp;gt;&amp;amp;lt;img src=&#34;{FollowedPortraitURL-48}&#34;/&amp;amp;gt;&amp;amp;lt;/a&amp;amp;gt;
+{/block:Followed}
+&amp;amp;lt;/div&amp;amp;gt;
+{/block:Following}
+
+リンク
+(hogeをユーザ名に変更すること)
+アーカイブ（http://hoge.tumblr.com/archive）ランダム表示（http://hoge.tumblr.com/random）RSS（http://hoge.tumblr.com/rss）携帯向け簡易表示（http://hoge.tumblr.com/mobile）Like一覧（http://www.tumblr.com/liked/by/hoge）ログイン時有効リンク
+自分がフォローしている人一覧（http://www.tumblr.com/following）自分をフォローしている人一覧（http://www.tumblr.com/followers）
+参考リンク
+http://tagblr.tumblr.com/post/340724562 
+http://ryo-skd.tumblr.com/post/311289824/tumblr-tumblr-nplll-mutter </description>
+    </item>
+    
+  </channel>
+</rss>

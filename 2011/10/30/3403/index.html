@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="Hugo 0.19-DEV" />
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~/yaasita" />
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+    <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
+    
+    <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>iotop日本語man | # cd ~/yaasita</title>
+  </head>
+  <body>
+    <div id="wrap">
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-37419565-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+      <header class="site-header">
+        <div class="site-header-left">
+          <a class="site-header-title" href="https://yaasita.github.io/"># cd ~/yaasita</a>
+        </div>
+      </header>
+      <div class="container">
+        <div id="main">
+
+<div class="article">
+  <header>
+    <div class="article-header">
+      <h1>iotop日本語man</h1>
+      <div class="article-meta">
+        <span class="posttime">2011/10/30 00:00</span>
+      </div>
+    </div>
+  </header>
+  <div class="content">
+    iotopを最近使ってたから日本語訳にしてみた<br />結構意訳になってる<br /><br /><br /><b>IOTOP(1)</b>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; <b> IOTOP(1)</b><br /><br /><br /><b><br /></b><br /><b>NAME</b><br />iotop - シンプルなIOモニター<br /><br /><b>SYNOPSIS</b><br />iotop [OPTIONS]<br /><br /><b>DESCRIPTION</b><br />iotopはLinuxカーネルからI/O使用情報を取得し(カーネル2.6.20以上を必要とします)、<br />プロセス・スレッド毎にI/O使用状況を表示します。<br /><br />カーネルのビルドオプションに以下を含める必要があります。<br />CONFIG_TASK_DELAY_ACCT, CONFIG_TASK_IO_ACCOUNTING, CONFIG_TASKSTATS and  CONFIG_VM_EVENT_COUNTERS<br /><br />iotopはI/Oのプロセス/スレッドごとのI/O帯域を表示間隔毎に表示します。<br />また、プロセスがI/Oの処理によって待たせれている時間の割合も表示します。<br />各プロセスについてI/Oの優先度(クラス/レベル)が表示されます。<br />加えて、表示間隔の間に読み書きされた総I/O帯域は一番上に表示されます。<br /><br />左矢印、右矢印キーを使うとソート項目を変更できます。rでソート順を逆転できます。<br />oで--onlyオプションの有効、無効を切り替えられます。(IOを使用しているプロセスだけを表示するかどうか)<br />pで--processesオプションの有効、無効を切り替えられます。(プロセスのみを表示してスレッドは表示しないかどうか)<br />aで--accumulatedオプションの有効、無効を切り替えられます。(IOの累積値表示に切り替えるかどうか)<br />qで終了します。<br />iでスレッド/プロセスの優先度を変更できます。<br />その他のキーを押すと最新の情報に更新できます。<br /><br /><b>OPTIONS</b><br />--version<br />バージョンを表示し終了します。<br /><br />-h, --help<br />使用方法を表示し、終了します。<br /><br />-o, --only<br />実際にI/Oを使用しているプロセス/スレッドのみを表示します。これはoを押すことで<br />表示中にも切り替えることができます。<br /><br />-b, --batch<br />対話的な表示でなくなります。(バッチモード)これは状態を記録するときに便利です。<br /><br />-n NUM, --iter=NUM<br />自動的に終了する時間を指定します。(デフォルトでは自動的に終了しません。)<br />これはバッチモードで役に立ちます。<br /><br />-d SEC, --delay=SEC<br />表示間隔を設定します。(デフォルトは1秒)　1.1秒のような少数も指定可能です。<br /><br />-p PID, --pid=PID<br />表示するプロセスIDを指定します。(デフォルトは全て表示します)<br /><br />-u USER, --user=USER<br />表示するユーザーIDを指定します。(デフォルトは全て表示します)<br /><br />-P, --processes<br />プロセスのみ表示します。通常は全てのスレッドを表示します。<br /><br />-a, --accumulated<br />I/O帯域幅の代わりにI/Oの累積値を表示します。<br />iotopを実行してから、プロセスが使用したI/Oの量を示します。<br /><br />-k, --kilobytes<br />人間が読みやすい表記の変わりにキロバイト表示にします。<br />このオプションはバッチモードの出力をスクリプトが処理するときに役立ちます。<br />通常は最適な単位を選択して表示しますが、このオプションが指定されると<br />常にキロバイト表示となります。<br /><br />-t, --time<br />各出力行にタイムスタンプを加えます。(このオプションは--batchオプションを含みます)<br />タイムスタンプは行の先頭に置かれます。<br /><br />-q, --quiet<br />ヘッダ行を取り除きます。(このオプションは--batchオプションを含みます)<br />このオプションはヘッダの非表示のレベルによって最高3回まで指定できます。<br />-q     カラム行は最初に表示されるだけです<br />-qq    カラム行は出力されません<br />-qqq   I/Oの合計値も出力されません<br /><br /><b>SEE ALSO</b><br />ionice(1), top(1), vmstat(1)<br /><br /><b>AUTHOR</b><br />iotop was written by Guillaume Chazarain.<br /><br />This manual page was started by Paul Wise for  the  Debian  project<br />and is placed in the public domain.<br /><br />April 2009                        IOTOP(1)
+
+
+  </div>
+  <footer>
+    <div class="article-footer">
+      
+<div class="tags">
+  <ul>
+    
+    <li>
+        <a href="/categories/linux">linux</a>
+    </li>
+    
+    <li>
+        <a href="/categories/soft">soft</a>
+    </li>
+    
+  </ul>
+</div>
+
+
+      
+      
+<div id="share-buttons">
+  <ul>
+    
+    <li>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="yaasita">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </li>
+    
+    
+    
+    <li>
+      <a href="http://b.hatena.ne.jp/entry/https://yaasita.github.io/2011/10/30/3403/" class="hatena-bookmark-button" data-hatena-bookmark-title="iotop日本語man" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+    </li>
+    
+    
+    
+    <li>
+        <a class="tumblr-share-button" data-color="blue" data-notes="right" href="https://embed.tumblr.com/share"></a> <script>!function(d,s,id){var js,ajs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://assets.tumblr.com/share-button.js";ajs.parentNode.insertBefore(js,ajs);}}(document, "script", "tumblr-js");</script>
+    </li>
+  </ul>
+</div>
+
+
+      
+      <div id="disqus_thread"></div>
+      <script>
+      var disqus_config = function () {
+      
+      this.page.identifier = "https:\/\/yaasita.github.io\/2011\/10\/30\/3403"; 
+      };
+      (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = '//yaasita.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      
+      
+      <div id="pagenavigation-next-prev">
+        
+        <div id="pagenavigation-next">
+          <span class="pagenav-label">Previous</span>
+          <a href="https://yaasita.github.io/2011/10/11/3424">LinuxでrootのGUIウィンドウを開きたいとき</a>
+        </div>
+        
+        
+        <div id="pagenavigation-prev">
+          <span class="pagenav-label">Next</span>
+          <a href="https://yaasita.github.io/2011/11/04/3383">FXで使えるチャート</a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </footer>
+</div>
+        </div>
+        <div class="sidebar">
+  
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Author</span>
+    </div>
+    <div id="author">
+      <span>yaasita: SIerから脱出した人</span>
+      <div>
+        
+        <a href="https://twitter.com/yaasita"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+        
+        
+        <a href="https://github.com/yaasita"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
+        
+        
+        
+        <a href="https://yaasita.tumblr.com/"><i class="fa fa-tumblr-square fa-2x" aria-hidden="true"></i></a>
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Search</span>
+    </div>
+    <div id="search">
+        <form action="//google.co.jp/search" method="get">
+            <fieldset role="search">
+                <input type="hidden" name="noj" value="1">
+                <input type="hidden" name="q" value="site:yaasita.github.io">
+                <input class="search" type="text" name="q" results="0" placeholder="このブログを検索">
+            </fieldset>
+        </form>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Categories</span>
+    </div>
+    <div class="categories">
+      <ul>
+        
+        <li>
+          <a href="/categories/crack"><span></span>crack (20)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/game"><span></span>game (57)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/hard"><span></span>hard (34)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/life"><span></span>life (61)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/linux"><span></span>linux (321)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/net"><span></span>net (176)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/program"><span></span>program (118)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/rule"><span></span>rule (14)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/soft"><span></span>soft (367)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/windows"><span></span>windows (54)</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Archive</span>
+    </div>
+    <div class="categories">
+      <ul id="archives">
+        
+        <li>
+          <a href="/archives/2007"><span></span>2007 (63)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2008"><span></span>2008 (119)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2009"><span></span>2009 (151)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2010"><span></span>2010 (122)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2011"><span></span>2011 (83)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2012"><span></span>2012 (71)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2013"><span></span>2013 (73)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2014"><span></span>2014 (88)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2015"><span></span>2015 (25)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2016"><span></span>2016 (23)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2017"><span></span>2017 (1)</a>
+        </li>
+        
+      </ul>
+    </div>
+    <script>
+        (function () {
+            var reverse = [];
+            var elm1 = document.querySelector('#archives').querySelectorAll("li");
+            var i=0;
+            for(i=0;i<=elm1.length-1;i++){reverse.unshift(elm1[i].innerHTML)}
+            for(i=0;i<=elm1.length-1;i++){elm1[i].innerHTML=reverse[i]}
+        })();
+    </script>
+  </div>
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>RSS</span>
+    </div>
+    <div id="rss">
+      <a href="https://yaasita.github.io/index.xml" type="application/rss+xml" target="_blank">
+        <i class="fa fa-rss-square fa-2x" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+      </div>
+      <footer>
+        <div id="site-footer-wrap">
+          <div id="site-footer">
+            <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
+            <span>
+              
+              Copyright (c) 2017, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+

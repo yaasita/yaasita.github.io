@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="Hugo 0.19-DEV" />
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~/yaasita" />
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    
+    <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
+    
+    <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>sudoku(数独)の日本語man | # cd ~/yaasita</title>
+  </head>
+  <body>
+    <div id="wrap">
+      
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-37419565-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+      <header class="site-header">
+        <div class="site-header-left">
+          <a class="site-header-title" href="https://yaasita.github.io/"># cd ~/yaasita</a>
+        </div>
+      </header>
+      <div class="container">
+        <div id="main">
+
+<div class="article">
+  <header>
+    <div class="article-header">
+      <h1>sudoku(数独)の日本語man</h1>
+      <div class="article-meta">
+        <span class="posttime">2011/08/12 00:00</span>
+      </div>
+    </div>
+  </header>
+  <div class="content">
+    Linux用のsudokuゲームの日本語manです<br /><br /><br /><br /><h1>NAME</h1>sudoku - 数独ゲーム<br /><br /><h1>SYNOPSIS</h1>(ゲームを始める)<br />sudoku [options] ...  [&amp;lt;filename&amp;gt;]<br /><br />(問題を作成)<br />sudoku -g [&amp;lt;num&amp;gt;] [options] ...<br /><br />(問題を解く)<br />sudoku -v [options] ...<br /><br />(難易度を計算)<br />sudoku -s [options] ...<br /><br /><h1>DESCRIPTION</h1>The  sudoku board game is played on a 9x9 grid, divided into rows, columns, and<br />9 blocks of 3x3 squares. The objective is to fill the empty  squares  with  the<br />digits 1-9, so that each row, column, and block contains each of the digits 1-9<br />(and hence, it is not possible for any digit to appear twice in the  same  row,<br />column or block).<br /><br /><h1>GAME INTERFACE</h1>数独は、単純なテキスト・インターフェース（curses(3) ライブラリを使用）です。<br />ゲームを開始すると使用できるキー入力の説明と共に中央に問題が表示されます。 <br />カーソルは矢印キーかviのキーバインドで動かすことが出来ます。<br />正方形のマスに（最初から数値が入っているマスを除き）対応する数値を<br />入力します。0か.キーを入力すると消すことが出来ます。<br /><br /><h2>Generating a New Board</h2>新しい問題はnキーを押すことで表示できます。新しい問題はランダムに生成されたものか<br />すでに用意された問題ファイルから表示されます。<br />-nコマンドが渡された場合はすでに用意されている問題ファイルからのみ表示します。<br /><br /><h2>Entering a Custom Board</h2>独自の問題を解くことも出来ます。(例えばインターネットや新聞で見つけた問題)<br />まずcキーを押して問題をクリアし、初期値を入力します。<br />その後、fキーを押すことで問題を固定できます。<br />固定した値は変更できなくなります。<br /><br /><h2>Hints</h2>このプログラムでは問題を解くための支援をするヒント機能が存在します。<br />それは次に入力できるマスの領域をハイライトします。<br />繰り返しヒントを使用すると入力すべき値まで教えてくれます。<br /><br />たまにヒントが不可解な場合があります。例えば以下のように<br /><pre>v v v
+<br />. . 7 | . . 9 | . . .
+<br />9 . 6 | 7 4 . | . 1 5
+<br />. . 2 | 5 1 . | . . .
+<br />-------+-------+-------
+<br />&amp;gt;  6 . 5 | . 7 . | . . 8  &amp;lt;    &amp;gt;&amp;lt;v^の文字で示されるエリアがヒントです。
+<br />&amp;gt;  . 7 . | . . . | . 3 .  &amp;lt;    
+<br />&amp;gt;  8 . . | . . . | 7 . 6  &amp;lt;
+<br />-------+-------+-------
+<br />. . . | . 6 7 | 8 . .
+<br />7 4 . | . 5 . | 9 6 2
+<br />. 6 . | 4 . . | . . .
+<br />^ ^ ^
+<br /></pre><br />ヒントは「3の数字を試して下さい」と表示しますが、<br />この3という数字がどのマスに入るかは明白ではありません。<br /><br /><h1>OPTIONS</h1>-c&amp;lt;class&amp;gt;<br />指定された難易度の問題が作成します。<br />指定できる難易度は"very easy", "easy", "medium", "hard", "fiendish"です<br /><br />-d     <br />問題を解くまでの入力方法を示します。必ず-vオプションと共に使用してください。<br /><br />-f&amp;lt;format&amp;gt;<br />問題を保存する時の出力形式を指定します。サポートされている形式は以下の通り：<br />standard  デフォルトのフォーマット;省略形std<br />compact   小さなテキストフォーマット<br />csv       CSV出力, スプレッドシートなどでインポートする場合に適しています。<br />postscriptps はショートカットです。<br />html      シンプルなHTML出力です。<br /><br />-g[&amp;lt;num&amp;gt;]<br />&amp;lt;num&amp;gt;で指定された数だけ問題を作成します。(指定がなければ1問)問題は標準出力に出力されます。<br /><br />-n     <br />ランダムに問題を作成しません。このオプションを使用する場合問題ファイルを指定する必要があります。<br /><br />-r<br />途中でのセーブを認めない制限されたモードで起動します。<br /><br />-s     <br />指定される問題ファイルの難易度を計算します。-vオプションと共に使用することが出来ます。<br /><br /><br />-t&amp;lt;filename&amp;gt;<br />デフォルトで使用するテンプレートファイルの変わりにオプションでしていした&amp;lt;filename&amp;gt;ファイルが使用されます。<br /><br />-v<br />問題ファイルを解いた状態で標準出力に出力します。<br /><br />&amp;lt;filename&amp;gt;<br />問題ファイル名を指定します。<br /><br /><br /><br /><h1>ENVIRONMENT</h1>このプログラムは環境変数を使用しません。<br /><br /><h1>FILES</h1>/usr/share/sudoku/template<br />Template file for generating new sudoku boards.<br /><br />/usr/share/sudoku/precanned<br />Optional file, containing `precanned' sudoku boards.<br /><br /><h1>FILE FORMATS</h1>/usr/share/sudoku/template<br />The template file contains a sequence of patterns that are used for generating new sudoku boards. Each pattern is started by a line with a leading<br />`%' character, and consists of 9 lines of 9 characters. The character `.' represents a square that is initially blank, and the character `*'  rep‐<br />resents a square with a digit that is initially displayed.<br /><br /><h2>Compact text フォーマット</h2>このフォーマットはテンプレートファイルのフォーマットと似ていますが、<br />ゲーム盤の表現を含むところが違います。<br />それぞれのゲーム盤（問題）は%を含む文字と共に始まります。%の後には<br />その問題のタイトルが書かれています。<br />その後に9x9の文字が書かれています。<br />"."が空の値、"1-9"までの値がその問題で最初から与えられている値です。<br />sudokuプログラムはこのフォーマットの問題ファイルを読むことができます。<br />-fcompactオプションを指定すれば保存時にこのフォーマットで出力されます。<br /><br /><h2>Standard text フォーマット</h2>このフォーマットは小さなテキストフォーマットに似ていますが、<br />ブロックを区切る文字が付加されています。<br />sudokuプログラムはこの形式で保存された問題ファイルを読むことが出来ます。<br />また、-fオプションを指定しない場合はデフォルトでこの形式を使い出力します。<br /><br /><h2>CSVフォーマット</h2>このフォーマットはスプレッドシートにインポートするときに役立ちます。<br />それは9行のカンマで区切られたファイルです。<br />それぞれ、ブランクか数字が入っています。<br />sudokuプログラムはこのファイルを読み込むことが出来ません。<br />-fcsvオプションを指定した場合に出力できます。<br />standardフォーマットやcompact textフォーマットとは異なり<br />各問題を区切る行がないため、実際保存できる問題数は1問だけです。<br /><br /><h2>Postscript フォーマット</h2>このフォーマットは、問題ファイルを印刷する時に役立ちます。<br />sudokuプログラムはこのフォーマットを読み込むことは出来ません。<br />-fpostscriptオプションを指定した場合、このフォーマットで出力します。<br />standardフォーマットやcompact textフォーマットとは異なり複数の問題を<br />ひとつのファイルに保存できません。<br /><br /><h2>HTML フォーマット</h2>このフォーマットは、問題ファイルを印刷する時に役立ちます。<br />sudokuプログラムはこのフォーマットを読み込むことは出来ません。<br />--fhtmlオプションを指定した場合、このフォーマットで出力します。<br />standardフォーマットやcompact textフォーマットとは異なり複数の問題を<br />ひとつのファイルに保存できません。<br /><br /><h1>SEE ALSO</h1>There  are  a large number of websites dedicated to the sudoku puzzle that can be found easily using a search engine.  Some of these sites provide<br />game boards that can be challenging to solve, and others provide strategies for finding moves.<br /><br /><h1>DIAGNOSTICS</h1>There are limited diagnostics available when an error occurs.<br /><br /><h1>COPYRIGHT</h1>This manual page, and all associated files, have been placed into the public domain by Michael Kennett, July 2005. They may be used by anybody for<br />any purpose whatsoever, however NO WARRANTY, of any sort, applies to this work.<br />
+
+
+  </div>
+  <footer>
+    <div class="article-footer">
+      
+<div class="tags">
+  <ul>
+    
+    <li>
+        <a href="/categories/linux">linux</a>
+    </li>
+    
+    <li>
+        <a href="/categories/soft">soft</a>
+    </li>
+    
+    <li>
+        <a href="/categories/game">game</a>
+    </li>
+    
+  </ul>
+</div>
+
+
+      
+      
+<div id="share-buttons">
+  <ul>
+    
+    <li>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="yaasita">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </li>
+    
+    
+    
+    <li>
+      <a href="http://b.hatena.ne.jp/entry/https://yaasita.github.io/2011/08/12/3583/" class="hatena-bookmark-button" data-hatena-bookmark-title="sudoku(数独)の日本語man" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+    </li>
+    
+    
+    
+    <li>
+        <a class="tumblr-share-button" data-color="blue" data-notes="right" href="https://embed.tumblr.com/share"></a> <script>!function(d,s,id){var js,ajs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://assets.tumblr.com/share-button.js";ajs.parentNode.insertBefore(js,ajs);}}(document, "script", "tumblr-js");</script>
+    </li>
+  </ul>
+</div>
+
+
+      
+      <div id="disqus_thread"></div>
+      <script>
+      var disqus_config = function () {
+      
+      this.page.identifier = "https:\/\/yaasita.github.io\/2011\/08\/12\/3583"; 
+      };
+      (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = '//yaasita.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      
+      
+      <div id="pagenavigation-next-prev">
+        
+        <div id="pagenavigation-next">
+          <span class="pagenav-label">Previous</span>
+          <a href="https://yaasita.github.io/2011/08/11/3658">KDMのセッション選択の制御とかの話</a>
+        </div>
+        
+        
+        <div id="pagenavigation-prev">
+          <span class="pagenav-label">Next</span>
+          <a href="https://yaasita.github.io/2011/08/12/3618">/etc/init.dに作った起動スクリプトのリンク設定とか</a>
+        </div>
+        
+      </div>
+      
+    </div>
+  </footer>
+</div>
+        </div>
+        <div class="sidebar">
+  
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Author</span>
+    </div>
+    <div id="author">
+      <span>yaasita: SIerから脱出した人</span>
+      <div>
+        
+        <a href="https://twitter.com/yaasita"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+        
+        
+        <a href="https://github.com/yaasita"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
+        
+        
+        
+        <a href="https://yaasita.tumblr.com/"><i class="fa fa-tumblr-square fa-2x" aria-hidden="true"></i></a>
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Search</span>
+    </div>
+    <div id="search">
+        <form action="//google.co.jp/search" method="get">
+            <fieldset role="search">
+                <input type="hidden" name="noj" value="1">
+                <input type="hidden" name="q" value="site:yaasita.github.io">
+                <input class="search" type="text" name="q" results="0" placeholder="このブログを検索">
+            </fieldset>
+        </form>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Categories</span>
+    </div>
+    <div class="categories">
+      <ul>
+        
+        <li>
+          <a href="/categories/crack"><span></span>crack (20)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/game"><span></span>game (57)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/hard"><span></span>hard (34)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/life"><span></span>life (61)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/linux"><span></span>linux (321)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/net"><span></span>net (176)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/program"><span></span>program (118)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/rule"><span></span>rule (14)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/soft"><span></span>soft (367)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/windows"><span></span>windows (54)</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Archive</span>
+    </div>
+    <div class="categories">
+      <ul id="archives">
+        
+        <li>
+          <a href="/archives/2007"><span></span>2007 (63)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2008"><span></span>2008 (119)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2009"><span></span>2009 (151)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2010"><span></span>2010 (122)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2011"><span></span>2011 (83)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2012"><span></span>2012 (71)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2013"><span></span>2013 (73)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2014"><span></span>2014 (88)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2015"><span></span>2015 (25)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2016"><span></span>2016 (23)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2017"><span></span>2017 (1)</a>
+        </li>
+        
+      </ul>
+    </div>
+    <script>
+        (function () {
+            var reverse = [];
+            var elm1 = document.querySelector('#archives').querySelectorAll("li");
+            var i=0;
+            for(i=0;i<=elm1.length-1;i++){reverse.unshift(elm1[i].innerHTML)}
+            for(i=0;i<=elm1.length-1;i++){elm1[i].innerHTML=reverse[i]}
+        })();
+    </script>
+  </div>
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>RSS</span>
+    </div>
+    <div id="rss">
+      <a href="https://yaasita.github.io/index.xml" type="application/rss+xml" target="_blank">
+        <i class="fa fa-rss-square fa-2x" aria-hidden="true"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+      </div>
+      <footer>
+        <div id="site-footer-wrap">
+          <div id="site-footer">
+            <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
+            <span>
+              
+              Copyright (c) 2017, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+

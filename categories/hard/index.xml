@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hard on # cd ~/yaasita</title>
+    <link>https://yaasita.github.io/categories/hard/index.xml</link>
+    <description>Recent content in Hard on # cd ~/yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="/categories/hard/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>最近買ったスマホ</title>
+      <link>https://yaasita.github.io/2016/10/22/smart-phone</link>
+      <pubDate>Sat, 22 Oct 2016 22:54:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/10/22/smart-phone</guid>
+      <description>エイスース SIMフリースマートフォン
+ZenFone 2 Laser（Qualcomm Snapdragon 410/メモリ 2GB）
+16GB ブラック ZE500KL-BK16
+18,672円だった
+Androidは6.0.1まで上がった</description>
+    </item>
+    
+    <item>
+      <title>HDDの不良セクタ埋める</title>
+      <link>https://yaasita.github.io/2016/03/26/hdd_bad_sector</link>
+      <pubDate>Sat, 26 Mar 2016 00:43:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/03/26/hdd_bad_sector</guid>
+      <description>HDDの不良セクタ代替処理を自動化
+Reallocated_Sector_Ctが残ってれば使える手法
+https://github.com/yaasita/hdd_badsector
+使い方
+smartctl -a /dev/sdc | ./hdd_check.pl /dev/sdc  </description>
+    </item>
+    
+    <item>
+      <title>systemdでの電源管理</title>
+      <link>https://yaasita.github.io/2016/01/06/acpi</link>
+      <pubDate>Wed, 06 Jan 2016 00:47:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/01/06/acpi</guid>
+      <description>Arch Linuxのwikiが詳しかった
+/etc/systemd/logind.conf
+あたりを直す
+ノートPC閉じたときのSuspendを止めたかったから↓みたいにした
+HandleSuspendKey=ignore HandleLidSwitch=ignore  </description>
+    </item>
+    
+    <item>
+      <title>RAID5のリビルド中にもう一個壊れるってやつ</title>
+      <link>https://yaasita.github.io/2015/10/17/raid5_fail</link>
+      <pubDate>Sat, 17 Oct 2015 16:52:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/10/17/raid5_fail</guid>
+      <description>リビルド中にもう一個壊れてRAID5が終わった話
+/dev/md0: Version : 1.2 Creation Time : Fri Jan 6 12:24:44 2012 Raid Level : raid5 Array Size : 5860535808 (5589.04 GiB 6001.19 GB) Used Dev Size : 1953511936 (1863.01 GiB 2000.40 GB) Raid Devices : 4 Total Devices : 4 Persistence : Superblock is persistent Update Time : Sat Oct 17 16:59:57 2015 State : clean, FAILED Active Devices : 2 Working Devices : 3 Failed Devices : 1 Spare Devices : 1 Layout : left-symmetric Chunk Size : 512K Name : hoge:0 UUID : 55b9d6ea:4627c873:a0bcab05:a4f0c25d Events : 6755 Number Major Minor RaidDevice State 5 8 49 0 active sync /dev/sdd1 2 0 0 2 removed 2 8 33 2 active sync /dev/sdc1 6 0 0 6 removed 4 8 1 - faulty /dev/sda1 6 8 17 - spare /dev/sdb1  HDD一台が壊れたので /dev/sdb1を追加中にアレイの構成Diskがもう一個壊れた</description>
+    </item>
+    
+    <item>
+      <title>最近買ったスマホ</title>
+      <link>https://yaasita.github.io/2015/07/26/xperia</link>
+      <pubDate>Sun, 26 Jul 2015 02:29:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/07/26/xperia</guid>
+      <description>EXPANSYSで買った
+Sony Xperia E4g E2003 (Unlocked LTE, 8GB, White) 18,737円  SIMフリーはIIJ MIO
+IIJ IIJmio SIM ウェルカムパック microSIM ( SMS 機能付き ) 版 1,900円  </description>
+    </item>
+    
+    <item>
+      <title>MACアドレスのベンダーを調べる</title>
+      <link>https://yaasita.github.io/2014/08/25/mac-address-search</link>
+      <pubDate>Mon, 25 Aug 2014 23:54:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/08/25/mac-address-search</guid>
+      <description>http://standards.ieee.org/develop/regauth/oui/public.html
+MACアドレスの上位3バイトを検索窓に入れる
+例) 00-22-68</description>
+    </item>
+    
+    <item>
+      <title>HDDの故障が疑われるときにやったこと</title>
+      <link>https://yaasita.github.io/2014/08/16/hdd-fail</link>
+      <pubDate>Sat, 16 Aug 2014 19:10:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/08/16/hdd-fail</guid>
+      <description>なんかrsyncでバックアップしようとすると以下のエラーが出るようになった
+rsync: read errors mapping &amp;quot;/home/yamasita/Desktop/hogehoge.dat&amp;quot;: Input/output error (5) ERROR: /home/yamasita/Desktop/hogehoge.dat failed verification -- update discarded.  まずbadblocksで調べてみる
+badblocks /home/yamasita/Desktop/hogehoge.dat  ダメそう
+とりあえず、fsckをかけてみる
+/のパーティションなのでfsckの間隔を調整
+dumpe2fs -h /dev/sda1 | egrep -i &#39;check|mount count&#39; tune2fs -i 30d /dev/sda1  これでとりあえず不良セクタ退避させた
+過去記事
+HDDが故障したときにやったこと
+参考リンク
+http://nfolamp.wordpress.com/2010/10/25/dumpe2fstune2fs-manipulating-the-ext-fs-auto-check-parameters/</description>
+    </item>
+    
+    <item>
+      <title>itunes入れるとDVDドライブが認識しない</title>
+      <link>https://yaasita.github.io/2014/07/12/itunes-dvd-device</link>
+      <pubDate>Sat, 12 Jul 2014 23:54:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/07/12/itunes-dvd-device</guid>
+      <description>レジストリの以下のキーを消すとうまくいった
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E965-E325-11CE-BFC1-08002BE10318}  http://michisugara.jp/archives/2013/op_drive_failure.html</description>
+    </item>
+    
+    <item>
+      <title>hardware checkコマンド</title>
+      <link>https://yaasita.github.io/2014/05/25/hardware_check</link>
+      <pubDate>Sun, 25 May 2014 15:20:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/05/25/hardware_check</guid>
+      <description> lshwだけじゃない
+PC構成を把握するコマンド
+ハードウェアチェックコマンド  hwinfo --short hdparm -i /dev/sda inxi -Fx lsscsi  lsscsiがいい感じ
+参考リンク  http://www.binarytides.com/linux-commands-hardware-info/
+  </description>
+    </item>
+    
+    <item>
+      <title>無線LANとサスペンド機能の有効化</title>
+      <link>https://yaasita.github.io/2014/03/09/145</link>
+      <pubDate>Sun, 09 Mar 2014 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/03/09/145</guid>
+      <description>以下のパッケージとかを入れる
+firmware-linux-nonfree
+firmware-realtek
+lspci
+とか使ってハードウェアを調べること </description>
+    </item>
+    
+    <item>
+      <title>smartdでHDD監視</title>
+      <link>https://yaasita.github.io/2013/08/29/494</link>
+      <pubDate>Thu, 29 Aug 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/08/29/494</guid>
+      <description>
+インストール
+apt-get install smartmontools
+
+/etc/default/smartmontoolsの以下の行を有効にする
+start_smartd=yes
+
+/etc/smartd.confを編集
+DEVICESCANをコメントアウトして設定を書く
+#DEVICESCAN -d removable -n standby -m root -M exec /usr/share/smartmontools/smartd-runner
+/dev/sda -a -d sat -o on -S on -s (S/../.././02|L/../../6/03) -m hoge@example.com
+
+こうするとメールのテストができるらしい
+/dev/sda -a -d sat -o on -S on -s (S/../.././02|L/../../6/03) -m hoge@example.com -M test
+
+参考リンク
+http://www.geocities.jp/sugachan1973/doc/funto57.html </description>
+    </item>
+    
+    <item>
+      <title>Debian WheezyにRTL8111/8168Bのドライバインストール</title>
+      <link>https://yaasita.github.io/2013/08/25/515</link>
+      <pubDate>Sun, 25 Aug 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/08/25/515</guid>
+      <description>Realtekのドライバはインストールしておいたほうがいいみたい
+firmware-realtekってのがnon-freeにあったからaptで入る
+ethtool -i eth0
+lspci | grep Realtek
+
+参考リンク
+http://cskimura.blogspot.jp/2010/06/rtl81118168b-on-debian.html </description>
+    </item>
+    
+    <item>
+      <title>LinuxでWake On Lanを設定する</title>
+      <link>https://yaasita.github.io/2013/08/18/556</link>
+      <pubDate>Sun, 18 Aug 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/08/18/556</guid>
+      <description>WOLの設定は以下参照
+http://80286.blog62.fc2.com/blog-entry-37.html </description>
+    </item>
+    
+    <item>
+      <title>X環境でのDPMS</title>
+      <link>https://yaasita.github.io/2013/04/20/989</link>
+      <pubDate>Sat, 20 Apr 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/04/20/989</guid>
+      <description>xset -q
+で確認
+xset dpms 0 0 0 とかで設定できるのか
+なるほどね
+参考リンク
+https://forums.ubuntulinux.jp/viewtopic.php?id=1732 </description>
+    </item>
+    
+    <item>
+      <title>Huawei 新モデル E586 モバイル</title>
+      <link>https://yaasita.github.io/2013/01/29/1483</link>
+      <pubDate>Tue, 29 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/29/1483</guid>
+      <description>を買ってみた
+所謂、SIMフリーの無線LANルータ </description>
+    </item>
+    
+  </channel>
+</rss>

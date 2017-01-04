@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2009 on # cd ~/yaasita</title>
+    <link>https://yaasita.github.io/archives/2009/index.xml</link>
+    <description>Recent content in 2009 on # cd ~/yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="/archives/2009/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>最近、Mercurial について勉強しているのでメモ</title>
+      <link>https://yaasita.github.io/2009/12/26/7511</link>
+      <pubDate>Sat, 26 Dec 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/12/26/7511</guid>
+      <description>リンクメモ
+日本語チュートリアル
+GUIツールのTortoiseHg
+TortoiseHgの日本語Wiki
+オラ本のPDFを配布してるとこ </description>
+    </item>
+    
+    <item>
+      <title>Bingで萌えキャンペーン</title>
+      <link>https://yaasita.github.io/2009/12/24/7551</link>
+      <pubDate>Thu, 24 Dec 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/12/24/7551</guid>
+      <description>http://campaign.live.jp/bing/
+検索しまくるとなんか壁紙とかもらえるらしい </description>
+    </item>
+    
+    <item>
+      <title>Debian でIPアドレスを固定にする</title>
+      <link>https://yaasita.github.io/2009/12/24/7531</link>
+      <pubDate>Thu, 24 Dec 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/12/24/7531</guid>
+      <description>/etc/network/interfacesを編集する
+下みたいになっているのを
+# The loopback network interface
+auto lo
+iface lo inet loopback
+# The primary network interface
+allow-hotplug eth0
+iface eth0 inet dhcp
+↓の様に直す（192.168.0.11）にする場合
+# The loopback network interface
+auto lo
+iface lo inet loopback
+# The primary network interface
+allow-hotplug eth0
+iface eth0 inet static
+address 192.168.0.11
+netmask 255.255.255.0
+gateway 192.168.0.1
+直したら
+#ifdown eth0
+#ifup eth0
+でおｋ
+# /etc/init.d/networking restart
+でもいけるがその場合は↓を書いておくこと(ifup -aの対象となる)
+auto eth0
+※VirtualPCではallow-hotplugはコメントアウトしておいた方がよさげ
+参考リンク
+http://asaasa.tk/wiki/?Debian%2FSettings%2FStaticIP </description>
+    </item>
+    
+    <item>
+      <title>mp3のエンコードが出来るプレイヤーみたいなソフトって？？</title>
+      <link>https://yaasita.github.io/2009/12/23/7572</link>
+      <pubDate>Wed, 23 Dec 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/12/23/7572</guid>
+      <description>SCMPXです </description>
+    </item>
+    
+    <item>
+      <title>screenで開始するときの初期画面を表示しない</title>
+      <link>https://yaasita.github.io/2009/12/23/7592</link>
+      <pubDate>Wed, 23 Dec 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/12/23/7592</guid>
+      <description>免責事項とかCopyrightとかを表示しないようにするには
+~/.screenrcに
+startup_message offと書いておく </description>
+    </item>
+    
+    <item>
+      <title>Debian LennyをVirtualPC2007へインストール</title>
+      <link>https://yaasita.github.io/2009/12/20/7654</link>
+      <pubDate>Sun, 20 Dec 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/12/20/7654</guid>
+      <description>試した環境は以下の通り
+VirtualPC 6.0.156.0
+Debian Lenny 最小のCDイメージ　バージョンは5.0.3
+↓のサイトとかを参考にするとどうやらインストール時にパラメータを追加しないといけないらしいので
+http://hiro-system.blog.ocn.ne.jp/blog/2009/03/debian_lennyvir_5b2e.html
+インストール時にquit を取ってから&#34;noreplace-paravirt vga=791 clock=pit&#34;を追加する
+（インストール時はまだ日本語配列ではないので=イコールのタイプには注意する）
+参考リンクには/boot/grub/menu.lstを編集、update-grubするようなことが書いてあるけどなんかインストール時に指定したパラメータが有効になって既にmenu.lstに反映されていたので省く。あとGUIも使わないのでそこら辺も無視した。
+参考リンク
+Debian Wiki </description>
+    </item>
+    
+    <item>
+      <title>bashで端末ロック機能を解除する</title>
+      <link>https://yaasita.github.io/2009/12/20/7613</link>
+      <pubDate>Sun, 20 Dec 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/12/20/7613</guid>
+      <description>Ctrl+Sを押すと端末がロックしてしまうのが不便だと感じたら
+↓を.bashrcなどに書いておく
+stty stop undef
+参考リンク
+http://www.mazn.net/blog/2007/12/17/42.html </description>
+    </item>
+    
+    <item>
+      <title>rep2の過去ログをtmpreaperを使って整理</title>
+      <link>https://yaasita.github.io/2009/12/20/7633</link>
+      <pubDate>Sun, 20 Dec 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/12/20/7633</guid>
+      <description>OpenJaneとかにはDAT落ちしたものを整理（削除）する機能があるけどrep2にはないのでtmpreaperで実装する
+やり方はrep2/data直下にあるファイルはお気に入りとかなんで削除しない
+それ以外は削除するっていう方法で行う
+↓みたいなのをcronとかに保存しておけばいいんじゃないかな
+#!/usr/bin/perl
+use strict;
+use warnings;
+#### Initial Setting ###############
+our $DAT_DIR=&#34;/var/www/rep2/data&#34;;
+####################################
+chdir ($DAT_DIR) or die $!;
+unless ($DAT_DIR=~/\/$/){
+$DAT_DIR.=&#34;/&#34;; #最後が/で終わってなかったら付け足す
+}
+opendir (DIR,$DAT_DIR) or die $!;
+my @dir=readdir DIR;
+my @fdir;
+for (@dir){
+push (@fdir,$_) if -f $_;
+}
+closedir DIR;
+my $command;
+$command = &amp;amp;lt;&amp;amp;lt; &#39;PRE&#39;;
+nice -n10 tmpreaper --delay=30 --mtime-dir --symlinks 7d \
+--showdeleted \
+--mtime \
+PRE
+for (@fdir){
+$command.=&#34;--protect &#39;$DAT_DIR&#34;.$_.&#34;&#39; \\\n&#34;;</description>
+    </item>
+    
+    <item>
+      <title>Thunderbird3も出たことなのでコレクションを作っておく</title>
+      <link>https://yaasita.github.io/2009/12/13/7696</link>
+      <pubDate>Sun, 13 Dec 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/12/13/7696</guid>
+      <description>Thunderbirdの方のコレクション
+俺のアドオン（雷鳥）
+Firefoxの方のコレクション
+俺のアドオン（火狐） </description>
+    </item>
+    
+    <item>
+      <title>天気予報をical形式で配信してるところ</title>
+      <link>https://yaasita.github.io/2009/12/13/7676</link>
+      <pubDate>Sun, 13 Dec 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/12/13/7676</guid>
+      <description>iCal天気
+通常のicsの他にGoogle用とMac用も配ってる </description>
+    </item>
+    
+    <item>
+      <title>携帯でrep2見てるときに外部リンクを通勤ブラウザ以外に設定する</title>
+      <link>https://yaasita.github.io/2009/12/12/7717</link>
+      <pubDate>Sat, 12 Dec 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/12/12/7717</guid>
+      <description>通勤ブラウザは重いしイマイチ使い勝手が良くなかったのでGoogleのGWT(Google Wireless Transcoder)を使う
+rep2/lib/ShowThreadK.php を編集すればおｋ
+650行目あたりの
+// 通勤ブラウザ
+if ($_conf[&#39;k_use_tsukin&#39;]) {
+$tsukin_url = &#39;http://www.sjk.co.jp/c/w.exe?y=&#39; . urlencode($url);
+if ($_conf[&#39;through_ime&#39;]) {
+$tsukin_url = P2Util::throughIme($tsukin_url);
+}
+$ext_pre_hts[] = &#39;&amp;amp;lt;a href=&#34;&#39; . hs($tsukin_url) . &#39;&#34;&amp;amp;gt;通&amp;amp;lt;/a&amp;amp;gt;&#39;;
+}
+↑を↓の様に変更
+// 通勤ブラウザ
+if ($_conf[&#39;k_use_tsukin&#39;]) {
+// $tsukin_url = &#39;http://www.sjk.co.jp/c/w.exe?y=&#39; . urlencode($url);
+$tsukin_url = &#39;http://www.google.co.jp/gwt/x?u=&#39; . urlencode($url);
+if ($_conf[&#39;through_ime&#39;]) {
+$tsukin_url = P2Util::throughIme($tsukin_url);
+}
+// $ext_pre_hts[] = &#39;&amp;amp;lt;a href=&#34;&#39; . hs($tsukin_url) . &#39;&#34;&amp;amp;gt;通&amp;amp;lt;/a&amp;amp;gt;&#39;;
+$ext_pre_hts[] = &#39;&amp;amp;lt;a href=&#34;&#39; . hs($tsukin_url) .</description>
+    </item>
+    
+    <item>
+      <title>DovecotのTrashフォルダはどこにあるのか？</title>
+      <link>https://yaasita.github.io/2009/12/06/7759</link>
+      <pubDate>Sun, 06 Dec 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/12/06/7759</guid>
+      <description>それぞれ~/Maildirの中のドットファイルでしたls -aしたら見つかります
+/Maildir/.Sent
+/Maildir/.Trash
+/Maildir/.Drafts
+/Maildir/.Junk </description>
+    </item>
+    
+    <item>
+      <title>Windowsのコマンドプロンプト(DOS窓)でディレクトリコピー</title>
+      <link>https://yaasita.github.io/2009/12/06/7800</link>
+      <pubDate>Sun, 06 Dec 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/12/06/7800</guid>
+      <description>フォルダの再帰的なコピーには
+xcopyを使いましょう
+xcopy /?で詳しくみれます
+例）E:ppmというディレクトリを再帰的に全部コピー
+xcopy /E /I /Y E:\ppm D:\ppm_backup\ppm2
+参考リンク
+http://www5.ocn.ne.jp/~m-shin/windows/windows-bat-xcopy.html </description>
+    </item>
+    
+    <item>
+      <title>Windowsのコマンドプロンプト(DOS窓)でディレクトリ削除</title>
+      <link>https://yaasita.github.io/2009/12/06/7780</link>
+      <pubDate>Sun, 06 Dec 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/12/06/7780</guid>
+      <description>ディレクトリごと再帰的に削除するには
+rmdirコマンドを使います
+UNIXでいうところのrm -rみたいな
+rmdir /S /Q hogedir
+参考リンク
+http://sonic64.com/2006-04-05.html </description>
+    </item>
+    
+    <item>
+      <title>perlモジュールを作るための雛形を作る h2xs コマンド</title>
+      <link>https://yaasita.github.io/2009/12/06/7820</link>
+      <pubDate>Sun, 06 Dec 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/12/06/7820</guid>
+      <description>↓みたいな感じで雛形を作る
+h2xs -X -A HogeModule
+参考リンク
+http://torus.jp/memo/x200311/PerlModule.rd.html
+モジュールの最後にPODも追加してくれて便利
+__END__
+# Below is stub documentation for your module. You&#39;d better edit it!
+=head1 NAME
+HogeModule - Perl extension for blah blah blah
+=head1 SYNOPSIS
+use HogeModule;
+blah blah blah
+=head1 DESCRIPTION
+Stub documentation for Okyama, created by h2xs. It looks like the
+author of the extension was negligent enough to leave the stub
+unedited.
+Blah blah blah.
+=head2 EXPORT
+None by default.</description>
+    </item>
+    
+  </channel>
+</rss>

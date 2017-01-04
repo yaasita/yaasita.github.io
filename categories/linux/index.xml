@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on # cd ~/yaasita</title>
+    <link>https://yaasita.github.io/categories/linux/index.xml</link>
+    <description>Recent content in Linux on # cd ~/yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AWSへVMイメージごと移動する手順</title>
+      <link>https://yaasita.github.io/2016/11/20/aws-vm-import</link>
+      <pubDate>Sun, 20 Nov 2016 20:45:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/11/20/aws-vm-import</guid>
+      <description> 手順 img作る前に以下を確認しておく
+ DHCPを有効にしている
+ iptablesを無効に
+ rawでイメージを作っておく
+  次に以下のコマンドでインポート
+# hoge-importってバケット作ったとする # 最初にimgをS3に上げておく aws s3 cp hoge.img s3://hoge-import/hoge.img # IAM周りを準備 aws iam create-role --role-name vmimport --assume-role-policy-document file://trust-policy.json aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json # インポートタスク開始 aws ec2 import-image --description &amp;quot;hoge server&amp;quot; --disk-containers file://containers.json # 進捗見る aws ec2 describe-import-image-tasks  使ったjsonファイル
+ 参考リンク  http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats
+ http://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html
+  </description>
+    </item>
+    
+    <item>
+      <title>systemdでの電源管理</title>
+      <link>https://yaasita.github.io/2016/01/06/acpi</link>
+      <pubDate>Wed, 06 Jan 2016 00:47:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/01/06/acpi</guid>
+      <description>Arch Linuxのwikiが詳しかった
+/etc/systemd/logind.conf
+あたりを直す
+ノートPC閉じたときのSuspendを止めたかったから↓みたいにした
+HandleSuspendKey=ignore HandleLidSwitch=ignore  </description>
+    </item>
+    
+    <item>
+      <title>docker composeインストール</title>
+      <link>https://yaasita.github.io/2015/12/31/compose</link>
+      <pubDate>Thu, 31 Dec 2015 18:16:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/12/31/compose</guid>
+      <description>docker-composeもcheckinstallでdebパッケージにしといた
+https://goo.gl/MKXvhm
+Makefile
+install: chmod +x bin/docker-compose cp bin/docker-compose /usr/local/bin/ cp bash/docker-compose /etc/bash_completion.d/  </description>
+    </item>
+    
+    <item>
+      <title>checkinstallでdocker-machineをパッケージに</title>
+      <link>https://yaasita.github.io/2015/12/30/checkinstall</link>
+      <pubDate>Wed, 30 Dec 2015 03:16:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/12/30/checkinstall</guid>
+      <description>debパッケージにするとアンインストールが楽になる
+ https://github.com/docker/machine
+ https://goo.gl/X5Njaz
+  以下のMakefileを作ってcheckinstallコマンドでおｋ
+bash補完はこの辺
+docker-machine-0.5.5/ ├── Makefile ├── docker-machine ├── docker-machine-prompt.bash ├── docker-machine-wrapper.bash └── docker-machine.bash  Makefile
+ </description>
+    </item>
+    
+    <item>
+      <title>RAID5のリビルド中にもう一個壊れるってやつ</title>
+      <link>https://yaasita.github.io/2015/10/17/raid5_fail</link>
+      <pubDate>Sat, 17 Oct 2015 16:52:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/10/17/raid5_fail</guid>
+      <description>リビルド中にもう一個壊れてRAID5が終わった話
+/dev/md0: Version : 1.2 Creation Time : Fri Jan 6 12:24:44 2012 Raid Level : raid5 Array Size : 5860535808 (5589.04 GiB 6001.19 GB) Used Dev Size : 1953511936 (1863.01 GiB 2000.40 GB) Raid Devices : 4 Total Devices : 4 Persistence : Superblock is persistent Update Time : Sat Oct 17 16:59:57 2015 State : clean, FAILED Active Devices : 2 Working Devices : 3 Failed Devices : 1 Spare Devices : 1 Layout : left-symmetric Chunk Size : 512K Name : hoge:0 UUID : 55b9d6ea:4627c873:a0bcab05:a4f0c25d Events : 6755 Number Major Minor RaidDevice State 5 8 49 0 active sync /dev/sdd1 2 0 0 2 removed 2 8 33 2 active sync /dev/sdc1 6 0 0 6 removed 4 8 1 - faulty /dev/sda1 6 8 17 - spare /dev/sdb1  HDD一台が壊れたので /dev/sdb1を追加中にアレイの構成Diskがもう一個壊れた</description>
+    </item>
+    
+    <item>
+      <title>handbrakeでISOをエンコード</title>
+      <link>https://yaasita.github.io/2015/08/25/handbrake</link>
+      <pubDate>Tue, 25 Aug 2015 00:32:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/08/25/handbrake</guid>
+      <description>Linuxで動画のエンコード/リッピングするとき
+apt-get handbreak  handbrake-gtk
+で起動して、左側のソース選んで
+開始でOK
+あんま難しくない
+http://yaasita.tumblr.com/post/127482624497</description>
+    </item>
+    
+    <item>
+      <title>saslauthd-debian</title>
+      <link>https://yaasita.github.io/2015/07/26/saslauthd-debian</link>
+      <pubDate>Sun, 26 Jul 2015 02:42:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/07/26/saslauthd-debian</guid>
+      <description>なんか Debian Jessie(8.1)のsaslauthdのsystemd定義が書かれてない気がする
+なので自動起動に設定したかったら自分で書く感じで
+/etc/systemd/system/saslauthd.service
+ みたいな定義を書いて
+systemctl daemon-reload systemctl enable saslauthd.service systemctl start saslauthd.service  </description>
+    </item>
+    
+    <item>
+      <title>Linuxでスクリーンショット取る</title>
+      <link>https://yaasita.github.io/2015/04/18/linux-screenshot</link>
+      <pubDate>Sat, 18 Apr 2015 02:03:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/04/18/linux-screenshot</guid>
+      <description>shutterというのがよさ気
+apt-get install shutter  http://www.xmisao.com/2014/02/07/get-screenshot-on-linux-by-shutter.html
+他にxwd使う方法もある
+# クリックしたウィンドウ xwd | convert - hoge.png xwd -root | convert - desktop.png  http://www.xmisao.com/2013/09/17/linux-xwindow-screenshot.html</description>
+    </item>
+    
+    <item>
+      <title>Linuxのクリップボードマネージャ</title>
+      <link>https://yaasita.github.io/2015/04/18/linux-clipboard-manager</link>
+      <pubDate>Sat, 18 Apr 2015 01:31:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/04/18/linux-clipboard-manager</guid>
+      <description>diodon apt-get install diodon  初期設定はCtrl + Alt + vで呼び出し
+Preferenceから以下の設定を直した
+ Automatically paste selected item
+ 自動ペーストをやめる
+  PluginsのApplication Indicatorのチェックを外す
+  なんかCtrl-Vが使えなくなったりするので使うのやめた
+klipper KDEのやつ
+apt-get install klipper  初期はShift+Zになってるので設定からなおす
+全般の選択とクリップボード→選択を無視する
+ってやつやると選択しただけでクリップボードに入るのを抑止
+できる</description>
+    </item>
+    
+    <item>
+      <title>Linuxのターミナルで出来るマリオらしい</title>
+      <link>https://yaasita.github.io/2015/04/13/linux-terminal-game</link>
+      <pubDate>Mon, 13 Apr 2015 00:24:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/04/13/linux-terminal-game</guid>
+      <description>すごいなこれ
+まさかの？Linuxターミナル上でプレイする『スーパーマリオブラザーズ』</description>
+    </item>
+    
+    <item>
+      <title>LinuxでPDF編集ソフトまとめ</title>
+      <link>https://yaasita.github.io/2015/01/04/linux-pdf</link>
+      <pubDate>Sun, 04 Jan 2015 00:17:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/01/04/linux-pdf</guid>
+      <description>libreoffice-pdfimport libreofficeでPDF編集できる
+なんか変なところで逆さまになったり微妙だった
+でもUIはLibreofficeの感覚で使えるので今後に期待
+pdfchain pdftkのGUIフロントエンド
+コマンドラインでやった方が良いかな
+pdfmod LinuxでPDF編集するならこれが一番いいかもしれない
+ページの入れ替え、回転とかできる
+左サイドバーにページ一覧が出たらよかったなぁ
+pdfsam Javaで動くGUIのPDF編集ソフト
+なんか難しくてよくわからなかった
+pdfshuffler pdfmodに似てる感じのPDF編集ソフトこっちも直感的で使いやすい
+pdfmodに比べて重い気がする
+機能も若干少な目
+pdftk コマンドライン(CUI)で使うPDF編集ソフト
+結合とかはGUIだとうまくできないので、こっちでやった方が良さげ</description>
+    </item>
+    
+    <item>
+      <title>modern.ieのVMファイルの解凍</title>
+      <link>https://yaasita.github.io/2014/09/23/modern-ie</link>
+      <pubDate>Tue, 23 Sep 2014 22:18:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/09/23/modern-ie</guid>
+      <description>モダンIEというIEテスト用のVM配ってるサイト
+sfxの解凍はunrarでできた
+unrar e IE11.Win7.ForLinuxVirtualBox.part1.sfx  https://www.modern.ie/ja-jp
+Windows7の日本語化について
+ WindowsUpdateでオプション選択してLanguage Pack入れる
+ コントロールパネルの Clock, Language, and Regionを選択
+ TimeZone変更
+  http://qiita.com/hnakamur/items/5f2f9e817dd0de60abb2</description>
+    </item>
+    
+    <item>
+      <title>teraterm越しに特殊キーを送る</title>
+      <link>https://yaasita.github.io/2014/08/24/teraterm-keycode</link>
+      <pubDate>Sun, 24 Aug 2014 23:40:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/08/24/teraterm-keycode</guid>
+      <description>キーをどこで奪われてるのかまず探す
+teratem -&amp;gt; bash -&amp;gt; app  teratemでキーを取られているならKEYBOARD.CNFの末尾に以下のように追記する
+User(連番)で追記する書式についてはteratemのヘルプ参照
+User3=1037,0,$1E User4=1040,0,$11  この例だとUser3でvimの副ファイル切り替え(:h ctrl-^)を出来るようにしている
+User4ではDockerのデタッチに使うCtrl-qを通している
+Ctrl-qについてはbash側でも取られるのでそっちも変更する
+# キー設定を参照 # stopに割り当てられてるのが分かる stty -a # startをundefにする(ついでにstopも) stty start undef stty stop undef  </description>
+    </item>
+    
+    <item>
+      <title>検証環境の作り方</title>
+      <link>https://yaasita.github.io/2014/08/13/kensyou</link>
+      <pubDate>Wed, 13 Aug 2014 02:53:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/08/13/kensyou</guid>
+      <description> 検証環境の作り方
+ 元ファイル
+  </description>
+    </item>
+    
+    <item>
+      <title>gvfsのオートマウントを止める</title>
+      <link>https://yaasita.github.io/2014/07/05/gvfs-mount</link>
+      <pubDate>Sat, 05 Jul 2014 23:40:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/07/05/gvfs-mount</guid>
+      <description>/home/user/.gvfsになんか自動でマウントされるのを止める
+rm -rf ~/.local/share/gvfs*  面倒だったので以下で対処した
+rm -rf ~/.local  多分、gnome関連パッケージのせい</description>
+    </item>
+    
+  </channel>
+</rss>

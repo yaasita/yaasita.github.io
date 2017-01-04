@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2010 on # cd ~/yaasita</title>
+    <link>https://yaasita.github.io/archives/2010/index.xml</link>
+    <description>Recent content in 2010 on # cd ~/yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="/archives/2010/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Bloggerのテンプレートを変更してみる</title>
+      <link>https://yaasita.github.io/2010/12/26/5011</link>
+      <pubDate>Sun, 26 Dec 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/12/26/5011</guid>
+      <description>テンプレートデザイナー等の新機能が使えるらしいので変えます</description>
+    </item>
+    
+    <item>
+      <title>rsyncのinclude,excludeで注意すること</title>
+      <link>https://yaasita.github.io/2010/12/26/5031</link>
+      <pubDate>Sun, 26 Dec 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/12/26/5031</guid>
+      <description>とりあえず3点
+1.--excludeする前に--includeしておかないと意味が無い
+2.あるフォルダ配下のファイルを対象にしたかった場合はフォルダ自体もincludeする
+3.include,excludeは同期元ファイルからの相対パス
+で例を使って説明します
+以下の場合を想定
+.
+|-- dst
+`-- src
+|-- ABC
+| |-- A
+| |-- B
+| `-- C
+|-- a
+|-- b
+|-- c
+|-- d
+|-- e
+`-- f
+
+まずsrcフォルダからdstフォルダへ同期するとします
+1の注意点から
+↓のようにやっても何一つ同期されません。最初に全部弾いているので駄目
+rsync -av --delete-excluded --exclude=&#34;*&#34; --include=&#34;a&#34; src/ dst/
+下記のようにexcludeを後に置けばすればaだけ同期できます
+rsync -av --delete-excluded --include=&#34;a&#34; --exclude=&#34;*&#34; src/ dst/
+
+2の注意点について
+ABCディレクトリ配下のみ同期したい場合
+こうしてもうまくいきません(excludeで全部弾かれてしまいます)
+rsync -av --delete-excluded --include=&#34;ABC/*&#34; --exclude=&#34;*&#34; src/ dst/
+ABC配下のみ同期したい場合はまずABCをincludeします
+↓のようにやればOK
+rsync -av --delete-excluded --include=&#34;ABC&#34; --include=&#34;</description>
+    </item>
+    
+    <item>
+      <title>Frozen BubbleのFLASH版</title>
+      <link>https://yaasita.github.io/2010/12/25/5052</link>
+      <pubDate>Sat, 25 Dec 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/12/25/5052</guid>
+      <description>Frozen BubbleのFLASH版があったのでメモ
+http://www.gamefz.com/a.asp?id=2420 </description>
+    </item>
+    
+    <item>
+      <title>紙飛行機を飛ばすゲーム</title>
+      <link>https://yaasita.github.io/2010/12/24/5072</link>
+      <pubDate>Fri, 24 Dec 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/12/24/5072</guid>
+      <description>紙飛行機を飛ばすゲーム
+http://armorgames.com/play/7598/flight
+←→　角度調節 SPACE ジェット噴射 R レインボースター  参考リンク
+http://blog.livedoor.jp/lkrejg/archives/65520026.html</description>
+    </item>
+    
+    <item>
+      <title>multitailを調べてみる</title>
+      <link>https://yaasita.github.io/2010/12/20/5092</link>
+      <pubDate>Mon, 20 Dec 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/12/20/5092</guid>
+      <description>multitail messages -I syslog.1
+-I でファイルをひとつのウィンドウに混ぜて表示
+multitail -l &#39;ping hoge&#39; -L &#39;ping foo&#39;
+外部プログラムなら-Lで混ぜて表示
+-cSオプションで組み込みのカラースキームを適用
+表示している最中に
+tでステータス表示
+Tでログファイルを空にする
+hでヘルプ
+下記エラーが出たらウィンドウが小さいのが原因なので大きくすればOK
+A problem occured at line 511 in function mynewwin (from file term.c):
+Failed to create window with dimensions 54x9 at offset -27,-4 (terminal size: 76,24)
+Binary build at Dec 10 2009 23:58:27
+
+参考リンク
+http://www.kichise.com/modules/pico/other/multitail.html
+http://www.vanheusden.com/multitail/  </description>
+    </item>
+    
+    <item>
+      <title>teraterm &#43; screenだとマウスのスクロールが出来ない？</title>
+      <link>https://yaasita.github.io/2010/12/20/5113</link>
+      <pubDate>Mon, 20 Dec 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/12/20/5113</guid>
+      <description>解決策
+Ctrlを押しながらマウスホイールをまわす TERATERM.INIのTranslateWheelToCursorをoffにする
+参考リンク
+http://d.hatena.ne.jp/orangeclover/20100406/1270564074 </description>
+    </item>
+    
+    <item>
+      <title>CUIでRSSを見てみる</title>
+      <link>https://yaasita.github.io/2010/12/19/5135</link>
+      <pubDate>Sun, 19 Dec 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/12/19/5135</guid>
+      <description>下記参考リンクがすごい参考になったのでちょっとずつ試してみた
+* Newsbeuter
+適当にRSSへのURLを書いたテキストを用意(ex.url.txt)
+url.txtは一行一URLにしておいた
+newsbeuter -u url.txtで起動
+RでリロードしてからENTERで適当に読める
+
+インターフェイスはmuttに似ているなんかメールを読むようにRSSを読める既読未読とか分かるし、マーク、検索とか出来て便利前回読んだ時の状態を~/.newsbeuterに保存しているのでまた読み返すときも便利かもしれないsを押すと記事を保存できたりする
+* Snownews 
+squeezeにパッケージが無かったのでレビュー出来なかった・・・
+lennyならある模様
+* Canto (旧NRSS)
+squeezeにはNRSSもcantoもあるけど公式サイト見るとCantoへ誘導されるのでこっちを使ってみる
+何も考えずに下記のコマンドを打つと.cantoが出来る
+canto.canto以下にconf.py.exampleが出来ているのでconf.pyへリネーム後
+好きなURLへ変更すれば使える
+jkで上下移動　SPACEで記事を読める
+
+デフォルトでviキーバインドシンプルな外観gでブラウザに渡すことも出来たりするフィードを更新するときはcanto-fetchコマンドを使う
+* rsstail
+↓こんな感じで使ってる
+rsstail -ldpcHvu http://blog.livedoor.jp/dqnplus/index.rdf-l でリンクを表示
+-d　で説明
+-p　で記事の日付
+-c でコメント表示
+-H でHTMLタグを除去
+-v 冗長オプション
+-u に続いてURLを与える
+multitailでまとめるには
+multitail -cS rsstail -l &#34;rsstail -lpcHvu http://aerial.deko8.jp/feed_ranking1d.xml&#34; -cS　rsstail -L &#34;rsstail -lpcHvu http://feeds.feedburner.com/hatena/b/hotentry&#34;
+でいけると思ったけど文字化けして駄目だった
+しょうがないから各RSSを追記リダイレクト(rsstail -u http://hoge.jp/rss.xml &amp;amp;gt;&amp;amp;gt; /tmp/rss.log)でそのファイルを眺めてる
+* まとめ
+newsbeuter →　メールを読むようにじっくり読みたい人向け</description>
+    </item>
+    
+    <item>
+      <title>bashrcが読み込まれない？</title>
+      <link>https://yaasita.github.io/2010/12/11/5157</link>
+      <pubDate>Sat, 11 Dec 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/12/11/5157</guid>
+      <description>useraddでテスト用のアカウント作ったら読み込まれてたので
+何でだろうとおもったら下のページに書いてあった
+ようはprofileとかなければ呼ばれないらしい
+http://blog.jojo.jp/?eid=1013034
+呼ばれ方
+~/.profile - ~/.bashrc </description>
+    </item>
+    
+    <item>
+      <title>CPUの温度とかを参照するには</title>
+      <link>https://yaasita.github.io/2010/12/10/5198</link>
+      <pubDate>Fri, 10 Dec 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/12/10/5198</guid>
+      <description>/proc/acpi/thermal_zone/THRM
+とよい
+temperatureとか・・・ </description>
+    </item>
+    
+    <item>
+      <title>CUIでmp3等を再生</title>
+      <link>https://yaasita.github.io/2010/12/10/5218</link>
+      <pubDate>Fri, 10 Dec 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/12/10/5218</guid>
+      <description>mplayer で出来た
+→　←　でseek
+0 9 / * で音量操作
+p　で一時停止
+m　でミュート
+q　で抜ける
+I　でタイトル表示
+mplayer -playlist hoge.lst
+hoge.lstにはプレイリストを記述（一行に1ファイル） </description>
+    </item>
+    
+    <item>
+      <title>screenでウィンドウ番号を入れ替える</title>
+      <link>https://yaasita.github.io/2010/12/10/5177</link>
+      <pubDate>Fri, 10 Dec 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/12/10/5177</guid>
+      <description>Ctrl-a押してから:number [n]
+で出来るらしい
+参考リンク
+http://d.hatena.ne.jp/riskn/20070430/1177961903 </description>
+    </item>
+    
+    <item>
+      <title>DebianのsqueezeにしたらUUIDでfstabが設定されてた</title>
+      <link>https://yaasita.github.io/2010/12/04/5239</link>
+      <pubDate>Sat, 04 Dec 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/12/04/5239</guid>
+      <description>以下UUIDの調べ方
+1./devを見る
+ls -l /dev/disk/by-uuid
+2.blkidコマンドで見る
+blkidvol_idは無くなったらしい
+参考リンク
+http://ankyo.blog.so-net.ne.jp/2010-01-26 </description>
+    </item>
+    
+    <item>
+      <title>Debian squeezeで音が出ない</title>
+      <link>https://yaasita.github.io/2010/11/28/5283</link>
+      <pubDate>Sun, 28 Nov 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/11/28/5283</guid>
+      <description>alsaconfが無くなったらしい
+alsactl initでできるらしい
+参考リンク
+http://d.hatena.ne.jp/toromoti/20100610/1276167033 </description>
+    </item>
+    
+    <item>
+      <title>Debian squeezeにtightvncをインストール</title>
+      <link>https://yaasita.github.io/2010/11/28/5259</link>
+      <pubDate>Sun, 28 Nov 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/11/28/5259</guid>
+      <description>tightvncserver(vncserver)で起動
+(XvncだけでXだけを起動することも出来るが普通は使用しない vncserverがラッパーになっている)
+Xvncのオプションも使えるので
+こんな感じで起動
+tightvncserver :5 -geometry 1280x1024 -depth 16 -rfbport 6000ディスプレイ番号5番で画面は1280x1024、色深度16ビット、ポート6000で待機
+終了はこんな感じ
+tightvncserver -kill :5
+パスワードはvncpasswd等で作成しておく
+あとはつなげればOK 
+ちなみにvncpasswdでパスワードを作る際に短すぎるとエラーになる
+家で使うので1文字のパスワードでも良いというのなら
+こんな感じで-fオプションを使って標準入力から受け取るようにすればOK
+-fオプションで起動→aを入力後にCtrl-Dで終了
+user@squeeze:~/.vnc$ vncpasswd -f  passwd a user@squeeze:~/.vnc$  </description>
+    </item>
+    
+    <item>
+      <title>XenをDebian squeezeにインストールしてみる</title>
+      <link>https://yaasita.github.io/2010/11/23/5324</link>
+      <pubDate>Tue, 23 Nov 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/11/23/5324</guid>
+      <description>はやっている様なのでXenを使ってみた
+基本的にはDebian Wikiの通りやればOK
+1.必要なパッケージのインストール
+amd64じゃなかったら686とか自分のPCに合わせる
+bridge-utils debootstrapも忘れずに
+aptitude -P install xen-hypervisor-4.0-amd64 linux-image-xen-amd64 xen-tools
+2.grubの起動順位、設定の変更？
+なんか知らんがこうするといいらしい
+mv -i /etc/grub.d/10_linux /etc/grub.d/50_linux
+update-grub2
+echo &#34;&#34;  /etc/default/grub
+echo &#34;# Disable OS prober to prevent virtual machines on logical volumes from appearing in the boot menu.&#34;  /etc/default/grub
+echo &#34;GRUB_DISABLE_OS_PROBER=true&#34;  /etc/default/grub
+update-grub2
+
+3./etc/default/xendomainsを編集して状態保存を無効化
+XENDOMAINS_RESTORE=false
+XENDOMAINS_SAVE=&#34;&#34;
+
+4.ネットワークブリッジの設定
+/etc/xen/xend-config.sxpを編集
+以下の行のコメントアウトを解除
+(network-script network-bridge)
+
+5.VMイメージ作成する際のデフォルト値を設定
+今回はLVM上にイメージファイルを作らないのでdir を指定
+ここで設定しなくても全部コマンドラインでやるのも可→参考リンク
+pygrubっていうのはdom0からカーネルを一々VM上に持っていかなくても済む
+仕組み　→　参考リンク
+dir = /home/xen</description>
+    </item>
+    
+  </channel>
+</rss>

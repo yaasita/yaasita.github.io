@@ -1,0 +1,330 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Crack on # cd ~/yaasita</title>
+    <link>https://yaasita.github.io/categories/crack/index.xml</link>
+    <description>Recent content in Crack on # cd ~/yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="/categories/crack/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ettercapで中間者攻撃（MITM）</title>
+      <link>https://yaasita.github.io/2013/01/20/1503</link>
+      <pubDate>Sun, 20 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/20/1503</guid>
+      <description>やり方は簡単
+以下のようにして192.168.0.2,192.168.0.11間のメッセージに割り込める
+ettercap -Tq -M arp /192.168.0.2/ /192.168.0.11/
+インターフェイスは-Tのテキスト、-Cのcurses、-GのGtkと選べる
+tcpflowで覗いてみる
+tcpflow -cse -i eth0 dst port 80
+-c コンソールに出力
+-s 印字できないもじは.へ変換
+-e カラー表示
+-i インターフェイス指定</description>
+    </item>
+    
+    <item>
+      <title>Linuxでtorを使ってみる</title>
+      <link>https://yaasita.github.io/2012/01/31/3068</link>
+      <pubDate>Tue, 31 Jan 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/01/31/3068</guid>
+      <description>Torは匿名のプロキシとして動作する
+インストール
+apt-get install tor
+
+/etc/tor/torrcを編集
+SocksListenAddress 192.168.0.4(Torが入っているサーバーのアドレス)
+を追加
+## Replace this with &#34;SocksPort 0&#34; if you plan to run Tor only as a
+## relay, and not make any local application connections yourself.
+SocksPort 9050 # what port to open for local application connections
+SocksListenAddress 127.0.0.1 # accept connections only from localhost
+SocksListenAddress 192.168.0.4
+
+あとは再起動でOK
+killall tor
+tor
+
+これで192.168.0.2から接続できた
+SocksPolicyは何も設定しなければ全て許可 </description>
+    </item>
+    
+    <item>
+      <title>ハッシュ解析の常套手段レインボーテーブル</title>
+      <link>https://yaasita.github.io/2011/05/11/4006</link>
+      <pubDate>Wed, 11 May 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/05/11/4006</guid>
+      <description>レインボーテーブルとはあらかじめ作っておいたハッシュテーブルと平分の対応表を照らし合わせ、平分を得るテクニックらしいです。
+チェインと呼ばれる単位に集約されているので、テーブルの容量が少なくてすむ利点があります。
+ソフトはここら辺からどうぞ
+http://project-rainbowcrack.com/index.htm
+参考リンク
+http://backslash.ddo.jp/wordpress/index.php/archives/584 </description>
+    </item>
+    
+    <item>
+      <title>LANの盗聴について</title>
+      <link>https://yaasita.github.io/2011/05/10/4046</link>
+      <pubDate>Tue, 10 May 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/05/10/4046</guid>
+      <description> 昔、調べたことがあったのでメモ
+有線LANの盗聴にはいくつか種類があって調べた限りだと以下の方法がある
+以下の方法の殆どを行えるソフトはettercapがあるman ettercapとやるだけで勉強になる
+→MAC Floodはdsniffの中にあるmacofを使うと良いかも
+ ARP Spoofing
+ ICMP Redirect
+ DHCP Spoofing
+ Port Stealing
+ MAC Flood
+  APR Spoofing 偽のARP応答を返すことでARPテーブルを変更し中間者攻撃を行う手法
+ARP Spoofingについてはこちらが参考になる
+ICMP Redirect ICMPリダイレクトを使って経路情報を書き換え
+DHCP Spoofing DHCPを使ってIPアドレスを振るときにGWを盗聴できるように変更
+Port Stealing L2スイッチのポート情報を書き換えることでパケットをこちらに流すようにする
+MAC Flood L2スイッチのMACテーブルを溢れさせて馬鹿ハブにして盗聴する荒業
+参考リンク  LAN内の盗聴とその予防
+ スプーフィング
+ MACアドレス書き換えで通信傍受！
+ ARPスプーフィングで通信傍受！
+ ファイアウォール/IDS の回避とスプーフィング
+ オキテ破りにトライ！　ネットワーク実験室
+ 見えざる脅威，ネットワーク盗聴を見つけ出す
+ 社内の盗聴者を見つけ出すフリーツール「PromiScan」の使い方
+ 社内LANが危ない? 今どきの社内セキュリティ対策
+ 外部からの攻撃
+ SwitchingHubの特性を利用して盗聴する！
+  </description>
+    </item>
+    
+    <item>
+      <title>fork爆弾を試してみる</title>
+      <link>https://yaasita.github.io/2011/05/08/4129</link>
+      <pubDate>Sun, 08 May 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/05/08/4129</guid>
+      <description>sleepだけなら大丈夫かな？と思って以下のスクリプトを実行してみた
+→結果すぐに応答なしになってkillallも効かない状態に＼(^o^)／
+電源を切るしかなくなった
+#!/bin/bash
+while :; do
+$0 &amp;amp;
+sleep 10m
+done &amp;amp;
+
+詳しくはWikipediaで </description>
+    </item>
+    
+    <item>
+      <title>tinyhoneypotを使ってみる</title>
+      <link>https://yaasita.github.io/2011/02/06/4778</link>
+      <pubDate>Sun, 06 Feb 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/02/06/4778</guid>
+      <description>aptかなんかでインストールコマンドは→thpot
+thpotはxinetdかinetdを通してでも起動できます
+接続とセッションを通しての命令は全てログに記録されます
+以下のどれかの引数を与えてサービスを起動します
+shell, ftp, http, mssql, smtp, pop3 ,ssh
+ドキュメントは以下
+/usr/share/doc/tinyhoneypot </description>
+    </item>
+    
+    <item>
+      <title>ライブカメラを検索する</title>
+      <link>https://yaasita.github.io/2010/02/21/7286</link>
+      <pubDate>Sun, 21 Feb 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/02/21/7286</guid>
+      <description>inurl:ViewerFrame?Mode=で検索
+2ch記事
+ちょｗグーグルで「inurl:ViewerFrame?Mode= 」って検索してみｗｗｗ </description>
+    </item>
+    
+    <item>
+      <title>なんか知らないがROM配ってるサイト</title>
+      <link>https://yaasita.github.io/2009/09/06/8695</link>
+      <pubDate>Sun, 06 Sep 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/09/06/8695</guid>
+      <description>http://ja.nitroroms.com/roms </description>
+    </item>
+    
+    <item>
+      <title>sonb32drv.dllってウィルスに感染してた</title>
+      <link>https://yaasita.github.io/2009/06/14/9342</link>
+      <pubDate>Sun, 14 Jun 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/06/14/9342</guid>
+      <description>／(＾o＾)＼ナンテコッタイ
+つーことで対処法
+とりあえずC:\WINDOWS\system32\sonb32drv.dllを削除
+つーかこの話って2008年の6月くらいの話です・・・
+どんだけウィルススキャンさぼってたんだ(；・∀・)
+↓はググって分かったこと
+・感染経路は？
+どうもXREAの広告らしい
+感染はFlash Playerの脆弱性により行われる
+バージョンが9．0．124より古いと危ないとのこと
+http://d.hatena.ne.jp/soundwing/20080614
+・ウィルスの活動は？
+IEの場合
+C:\Documents and Settings\ユーザー名\Local Settings\Temporary Internet Files\
+あたりにtaa.gifを作成後orz.exeという実行ファイルに展開されるそうです
+場所は%Temp%\orz.exeかな？
+http://www.symantec.com/ja/jp/security_response/writeup.jsp?docid=2008-052714-3021-99&amp;amp;amp;tabid=2
+→対処方はtaa.gif、orz.exeを消す
+sonb32drv.dllを作成されます
+→対処方はsonb32drv.dllを消す
+C:\WINDOWS\system32\drivers\etc\hostsを削除されます
+→対処方はhosts.msnをコピーしhostsにリネームする
+まあhostsファイルはデフォルトでlocalhostしか書いてないので以下の内容のファイルでもok
+127.0.0.1 localhost
+以下のレジストリを追加されます
+HKEY_CLASSES_ROOT\CLSID\{F60A0B68-AF3A-C1D2-CD09-5A81AE36D2BA}
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellExecuteHooks\{F60A0B68-AF3A-C1D2-CD09-5A81AE36D2BA}
+→対処方は上記のレジストリを削除
+http://www.trendmicro.co.jp/vinfo/virusencyclo/default5.asp?VName=TROJ_GAMETHIEF.M&amp;amp;VSect=Sn
+・被害は？
+このプログラムはキーロガーのようです
+プレイオンライン、mixi、Windowsメッセンジャーなどのアカウントハック
+に遇うかもしれません・・・・
+・その他の情報
+カスペでは
+Trojan-PSW.Win32.Nilage.djl
+という名前らしい
+Flashのバージョンを上げると勝手に削除してくれるぽい
+sonb32drv.dllを削除してくれる場合があるらしい
+http://qanda.rakuten.ne.jp/qa4097191.html
+その所為なのか自分の環境には↓のレジストリが既に無かった
+HKEY_CLASSES_ROOT\CLSID\{F60A0B68-AF3A-C1D2-CD09-5A81AE36D2BA}
+↓はあった（汗
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellExecuteHooks\{F60A0B68-AF3A-C1D2-CD09-5A81AE36D2BA} まあ直接は関係ないけど
+レジストリの掃除にクリーンアップセンターを使うとかね
+(上記のレジストリは削除できませんでしたｗ)
+http://onecare.live.com/site/ja-jp/center/cleanup.htm </description>
+    </item>
+    
+    <item>
+      <title>PDFのパスワードを解析するソフトpdfcrack</title>
+      <link>https://yaasita.github.io/2009/04/19/9704</link>
+      <pubDate>Sun, 19 Apr 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/04/19/9704</guid>
+      <description>Debian(lenny)のレポジトリにありました。
+aptで簡単インストール。
+使い方は
+pdfcrack hoge.pdf
+みたいに使う
+途中でCtrl+Cで止めてもカレントディレクトリにsavedstate.savが出来るから
+また再開したいときには
+pdfcrack -l savedstate.sav hoge.pdf
+みたいな感じで
+参考リンク
+http://gigazine.net/index.php?/news/comments/20090219_pdfcrack/ </description>
+    </item>
+    
+    <item>
+      <title>オラバウトが閉鎖されちゃうよー｡･ﾟ･(ﾉд`)･ﾟ･｡</title>
+      <link>https://yaasita.github.io/2009/04/15/9765</link>
+      <pubDate>Wed, 15 Apr 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/04/15/9765</guid>
+      <description>そんなあなたに
+シナバウト
+http://www.alabout.com/
+オラバウトNEXT
+http://gazouch.net/allabout/
+ヨロバウト
+http://reafin.net/
+オラバウト跡地
+http://www.genie.x0.com/alabout/closed.phtml </description>
+    </item>
+    
+    <item>
+      <title>解析テンプレ</title>
+      <link>https://yaasita.github.io/2008/10/24/11060</link>
+      <pubDate>Fri, 24 Oct 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/10/24/11060</guid>
+      <description>定番解析ソフトと解析勉強サイト
+●デバッガ OllyDbg
+Digital Travesiaで再配布
+●プロセスメモリエディタ兼デバッガ スペシャルねこまんま57号
+http://www.vector.co.jp/soft/win95/hardware/se254476.html
+●プロセスメモリエディタ兼デバッガ うさみみハリケーン
+http://hp.vector.co.jp/authors/VA028184/
+●ヘキサエディタ Stirling
+http://www.vector.co.jp/soft/win95/util/se079072.html
+●PCゲーム解析指南+OllyDbg日本語化パッチ Digital Travesia
+http://hp.vector.co.jp/authors/VA028184/
+参考書
+・解析魔法少女美咲ちゃん マジカル・オープン!
+ISBN:4-7980-0853-2 2,730円 A5判 280 頁
+・クラッカー・プログラム大全―禁断のシリアルナンバー解析テクニック
+ISBN:4-88718-746-7 2625円 A5判 304頁
+・はじめて読む8086
+ISBN:4871482456 1,682円 286頁
+購入回避推奨
+ゲーム解析スレ・書評サイト等で酷評されている参考書
+・いまどきのアセンブラプログラミング [橋本和明(著)]
+・いまどきのアセンブラの教科書 [橋本和明(著)]
+・アセンブラ読本 for Game ゼロからはじめるゲーム改造 [橋本和明(著)] </description>
+    </item>
+    
+    <item>
+      <title>nmapを使う</title>
+      <link>https://yaasita.github.io/2008/03/31/12673</link>
+      <pubDate>Mon, 31 Mar 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/03/31/12673</guid>
+      <description>nmap -sS -P0 -T2 -p 1-65535 -oN kaons.txt -r -v -sV hoge.co.jp
+-sS　ステルススキャン
+-P0 ホストの発見を省略する（確実にそのホストが存在していると分かっている場合はこれを使用する）
+-T2 スキャン速度。T1、T2、T3、T4、T5と早くなっていく。T5は高速回線が望ましい。
+-p ポートスキャンする範囲↑の例では1から65535番まで(全部)
+-oN 出力するファイル
+-r ランダムにスキャンしない
+-v 冗長オプション。多くの情報を出力する。
+-sV そのポートで使用されているアプリを特定する
+-O OSを特定する
+※注意
+家庭用のブロードバンドルーターを使っている人はスキャン速度をT3以下にしないと落ちる場合があります。 </description>
+    </item>
+    
+    <item>
+      <title>School Days LxHの動画を抽出する</title>
+      <link>https://yaasita.github.io/2008/01/20/12983</link>
+      <pubDate>Sun, 20 Jan 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/01/20/12983</guid>
+      <description>まずDVDの読めるPCでディスクを検索します。
+次にMV.AFSという1.15GBくらいのファイルがあるのでHDDにコピーします。
+この中にpssファイルがアーカイブされているので抽出します。
+こちらで配布されているAFS Cutter Ver.1.00を使ってPSSファイルを抽出します。抽出したファイルはbinという拡張子になっていますがPSSファイルです。再生はVLCプレイヤーなどで出来ます。
+ゲームで使われていないムービーは
+AFS_0836・・・niceboatと書かれた延々と続くスタッフロール
+AFS_0855・・・工事中でちゅ!と書かれた世界の落書き
+参考
+http://freeuse.ddo.jp/contents/game/ps2/ps2mov.html </description>
+    </item>
+    
+    <item>
+      <title>昔、流行った地下ゲーム</title>
+      <link>https://yaasita.github.io/2007/12/31/13045</link>
+      <pubDate>Mon, 31 Dec 2007 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2007/12/31/13045</guid>
+      <description>ブラックユーモア溢れるゲームたちです。
+倉庫番はHDDがフォーマットされる可能性があります。
+WindowsXP環境では平気でした。
+http://www.hehehe.net/game/ </description>
+    </item>
+    
+  </channel>
+</rss>

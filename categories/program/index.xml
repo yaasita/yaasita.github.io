@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Program on # cd ~/yaasita</title>
+    <link>https://yaasita.github.io/categories/program/index.xml</link>
+    <description>Recent content in Program on # cd ~/yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>blogをmiddlemanからhugoに移行した</title>
+      <link>https://yaasita.github.io/2017/01/05/middleman2hugo</link>
+      <pubDate>Thu, 05 Jan 2017 04:50:10 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/05/middleman2hugo</guid>
+      <description> 使ってみた感想  ビルドはmiddlemanで10分かかってたけど1秒になった
+ themeはgeppakuというのを使用 シンプルで良い
+ Tumblrリンクのプルリクエストも快くマージしてくれた感謝m(_ _)m
+  pagination 周りの部分はちょっとページ数が多いとカラム落ちしたり苦しかったので書き直した
+ taxonomiesを追加して、年別のアーカイブページを作成
+ アーカイブページを逆順にする対応はなぜかうまくいかなかったので後で調査する
+ とりあえずJavaScriptで逆順にした &amp;gt; gist
+  hugo serverのライブリロードがとっても良い(ブラウザも自動更新)
+ ただしpagination周りで変な書き方するとサーバごと落ちる
+  DISQUS周りはちょっとカスタマイズした
+ なぜかデフォルトだと読み込まなかったので
+  markdown周りはほぼ設定ファイルで完結
+ 今回の設定はこんな感じ
+  middleman時代のリンクを維持するためにUglyURLs設定したけどcategoriesとかリンク切れが面倒だったので中止
+ 参考: http://wdkk.co.jp/note/2015/0824-hugo-public/
+  Highlight.js今回無効にした過去分のcodeブロックが微妙になったので
+  総評
+Static Site Generatorはとても良い
+移行するにも、更新するにもメンテがすごく楽
+移行スクリプト 基本的にはファイル名にある時間のデータをTOMLに直して終わり
+/home/yamasitaにhugo,middlemanのディレクトリがある前提
+ 参考リンク  middleman
+ hugo
+  </description>
+    </item>
+    
+    <item>
+      <title>更新通知のbashrc</title>
+      <link>https://yaasita.github.io/2016/09/10/update-notify</link>
+      <pubDate>Sat, 10 Sep 2016 12:52:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/09/10/update-notify</guid>
+      <description>こんな感じで、更新を促す
+ </description>
+    </item>
+    
+    <item>
+      <title>s3fs使う</title>
+      <link>https://yaasita.github.io/2016/06/22/s3fs</link>
+      <pubDate>Wed, 22 Jun 2016 13:40:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/06/22/s3fs</guid>
+      <description>s3fsはamazon S3をファイルしすてむのように使うやつ
+ただ遅い
+基本ここ見てやる
+https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes
+今回はCeontOS6を対象
+# paco入れておく yum install paco # コンパイルに必要なもの入れる yum install -y gcc libstdc++-devel gcc-c++ curl-devel libxml2-devel openssl-devel mailcap # fuse wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.8.5.tar.gz ./configure make paco -lD &#39;make install&#39; # /usr/local/lib 追記 vi /etc/ld.so.conf ldconfig # s3fs wget http://s3fs.googlecode.com/files/s3fs-1.74.tar.gz tar xvaf s3fs-1.74.tar.gz cd s3fs-1.74/ autoreconf --install export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure --prefix=/usr make paco -lD &#39;make install&#39; # mount s3fs hoge-bucket /s3 -o rw,allow_other,uid=501,gid=501,default_acl=public-read su - apps cd /s3 date &amp;gt; date.</description>
+    </item>
+    
+    <item>
+      <title>やる夫で学ぶ機械学習シリーズ</title>
+      <link>https://yaasita.github.io/2016/06/11/deep-learning</link>
+      <pubDate>Sat, 11 Jun 2016 23:55:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/06/11/deep-learning</guid>
+      <description>http://tkengo.github.io/blog/2016/06/06/yaruo-machine-learning0/</description>
+    </item>
+    
+    <item>
+      <title>HDDの不良セクタ埋める</title>
+      <link>https://yaasita.github.io/2016/03/26/hdd_bad_sector</link>
+      <pubDate>Sat, 26 Mar 2016 00:43:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/03/26/hdd_bad_sector</guid>
+      <description>HDDの不良セクタ代替処理を自動化
+Reallocated_Sector_Ctが残ってれば使える手法
+https://github.com/yaasita/hdd_badsector
+使い方
+smartctl -a /dev/sdc | ./hdd_check.pl /dev/sdc  </description>
+    </item>
+    
+    <item>
+      <title>Mojoliciousのwebsocket回り</title>
+      <link>https://yaasita.github.io/2016/02/21/mojolicious</link>
+      <pubDate>Sun, 21 Feb 2016 02:29:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/02/21/mojolicious</guid>
+      <description>websocketの開いてもデフォルト15秒でタイムアウトするのが嫌なら
+↓みたいな感じでtimeout伸ばす
+Mojo::IOLoop-&amp;gt;stream($self-&amp;gt;tx-&amp;gt;connection)-&amp;gt;timeout(300);    参考リンク
+ http://kazuph.hateblo.jp/entry/20120310/1331395725
+ https://github.com/yuki-kimoto/mojolicious-guides-japanese/wiki
+  </description>
+    </item>
+    
+    <item>
+      <title>下位10%のダメなエンジニアシリーズ</title>
+      <link>https://yaasita.github.io/2016/01/25/dame-engineer</link>
+      <pubDate>Mon, 25 Jan 2016 00:23:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/01/25/dame-engineer</guid>
+      <description>パズル1  http://tango-ruby.hatenablog.com/entry/2015/11/30/122814
+ http://challenge-your-limits.herokuapp.com/
+  答え
+curl http://challenge-your-limits.herokuapp.com/call/me # getだめだよって怒られる curl -F &amp;quot;hoge=hoge&amp;quot; http://challenge-your-limits.herokuapp.com/call/me # 適当にPOSTすると正しいURLを教えてくれる curl -F &amp;quot;name=hoge&amp;quot; -F &amp;quot;email=huga@hoge.com&amp;quot; \ http://challenge-your-limits.herokuapp.com/challenge_users # あとはこんな感じで  パズル2  http://tango-ruby.hatenablog.com/entry/2015/12/28/212010
+ http://challenge-your-limits2.herokuapp.com/
+  答え
+curl http://challenge-your-limits2.herokuapp.com/call/my/APIs # メソッドが違うらしい curl -X DELETE http://challenge-your-limits2.herokuapp.com/call/my/APIs # いろいろ試すとDELETEで通る curl http://challenge-your-limits2.herokuapp.com/c2_users/12/hacker_apply # 案内されたURLにリクエストするとなんか違うらしい curl http://challenge-your-limits2.herokuapp.com/help/me/out # とりあえず登録 curl -F &amp;quot;username=yaasita&amp;quot; -F &#39;email=hoge1@example.com&#39; \ http://challenge-your-limits2.heroku/app.com/c2_users/ # 帰ってきた値でBASIC認証 curl --user yaasita:uRd4yy-imPbHBR4W http://challenge-your-limits2.herokuapp.com/c2_users/10 # あとは帰ってきた文字列をBASE64デコード  パズル3  http://tango-ruby.</description>
+    </item>
+    
+    <item>
+      <title>素因数分解の話</title>
+      <link>https://yaasita.github.io/2016/01/11/factor</link>
+      <pubDate>Mon, 11 Jan 2016 02:20:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/01/11/factor</guid>
+      <description>素因数分解してくれるサービス
+http://factordb.com/
+自分のSSH鍵がリストされてないか確認してみる
+# 公開鍵の modulus ssh-keygen -m PKCS8 -e -f authorized_keys &amp;gt; kagi openssl rsa -pubin -inform PEM -text -noout &amp;lt; kagi &amp;gt; modulus # 秘密鍵の modulus とか prime1, prime2の確認 openssl rsa -text -noout -in ~/.ssh/id_rsa  こんな感じのスクリプトで10進数にすればOK
+perlで大きめの数値計算する例も
+ 載ってない一安心
+ http://goo.gl/Qqaed5
+ http://goo.gl/yKVyUH
+ 参考リンク
+ TeslaCrypt（vvvウイルス）によって暗号化されたファイルの復号手順メモ
+   </description>
+    </item>
+    
+    <item>
+      <title>ISUCON5で惨敗した件</title>
+      <link>https://yaasita.github.io/2015/09/30/isucon5</link>
+      <pubDate>Wed, 30 Sep 2015 00:38:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/09/30/isucon5</guid>
+      <description>ISUCON5に参加してきました
+T・D・U！T・D・U！という名前で出てみました
+最高スコアは5000ちょっとでしたOTZ
+感想  ISUCON
+ 会社以外の人ととチーム組むと他社の事情とか聞けて結構良いかもしれない
+ idobata,GCE(Google Compute Engine)とか使ったことなかったからいい機会だったかも
+ VM渡されて時間内に早くするんだ！って競技はルールも分かりやすくて面白い
+ 惨敗だったけど楽しかったし勉強になった
+  GCP(Google Cloud Platform)
+ なんかAWS慣れてる所為もあるんだろうけど結構手間取った
+ ついでに触ったGoogle Cloud DNSはRoute53の方が高機能かな～
+ あらかじめユーザ名＋鍵登録しておけばインスタンス立ち上げ時にユーザ作って鍵設定までしてくれて便利(小並感
+  idobata
+ slackと違って1ユーザのアカウントをチーム内で共有するみたいな感じなので
+ 会社内のチャット→slack
+ 会社を跨いだメンバーとのやり取り→idobataみたいな感じがよいのかな
+  ちょっとISUCON中は重かったけどこれからに期待
+   反省  最初に落ち着いて計測してみたほうが良かったかも
+ 制限時間があるから焦って、手当たり次第に対応してたけどもっと計測に時間とってやることやらない事決めてから取り掛かれば良かったかも
+  troterにほぼ任せちゃったので。。。
+  役割決めないとだったな
+ お前これやる、俺これやる的な話してから取り掛かるべきだったかも
+  やっぱコード読まなきゃダメ
+ パラメータチューニングとかでもちょっとはスコア上がるけど、ロジック見て良い感じの実装にするのは必須ですた
+ 例年 sinatraアプリらしいので一個くらいは作ってから望むべきだったかも
+   参考リンク  ISUCON5の予選に参加して惨敗してきました #isucon</description>
+    </item>
+    
+    <item>
+      <title>コードを書いて実力判定</title>
+      <link>https://yaasita.github.io/2015/06/06/codeeval</link>
+      <pubDate>Sat, 06 Jun 2015 21:50:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/06/06/codeeval</guid>
+      <description>コード書くと評価してくれるようなサービス
+https://www.codeeval.com/browse/1/</description>
+    </item>
+    
+    <item>
+      <title>簡易監視スクリプト</title>
+      <link>https://yaasita.github.io/2015/06/02/kanshi</link>
+      <pubDate>Tue, 02 Jun 2015 00:02:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/06/02/kanshi</guid>
+      <description>自分で自分を監視するperlスクリプト
+https://github.com/yaasita/kanshi-self</description>
+    </item>
+    
+    <item>
+      <title>Meteor チュートリアル 01</title>
+      <link>https://yaasita.github.io/2015/05/10/meteor-tutorial01</link>
+      <pubDate>Sun, 10 May 2015 00:28:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/05/10/meteor-tutorial01</guid>
+      <description>話題のMeteorを触ってみた
+discovermeteorっていうチュートリアル本があるのでやってみる
+なんか原文は有料になってる気がするけど翻訳版は読めるみたい
+http://ja.discovermeteor.com/
+とりあえず最初の方だけ
+Getting Started インストール
+途中でsudoするので出来るようにしておく
+curl https://install.meteor.com | sh  最初に以下のコマンドを発行して作る
+meteor create microscope  ちなみにこの.meteor/.gitignoreに書かれてる
+.meteor/.local/の中を消せばリセットされる
+パッケージの追加
+meteor add mizzao:bootstrap-3 meteor add underscore  ディレクトリ追加
+mkdir server client public lib  実行について
+ server =&amp;gt; サーバ上でのみ実行
+ client =&amp;gt; クライアント上でのみ実行
+ それ以外はどちらでも動く
+ publicには静的ファイルを置く
+ libはどのファイルよりも先に実行される
+ main.*というファイル名は一番最後に実行される
+  CSSを追加
+mkdir client/stylesheets vi client/stylesheets/style.css  https://github.com/yaasita/meteor-microscope/tree/88cc746c372b13dae6a669c014c764320a8e776e
+Deployment deployしてみる
+meteor deploy yaasita.meteor.com  なんかこれでできるぽい</description>
+    </item>
+    
+    <item>
+      <title>chromeのキャッシュから画像引っ張って保存する</title>
+      <link>https://yaasita.github.io/2014/11/15/chrome-chache-jpg</link>
+      <pubDate>Sat, 15 Nov 2014 22:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/11/15/chrome-chache-jpg</guid>
+      <description>キャッシュはC:\Users\hogeuser\AppData\Local\Google\Chrome\User Data\Default\Cacheに保存されている
+そっから引っ張ってきてLinuxとかで以下のコマンドで変換する
+file f_000* | grep JPEG | perl -F: -nlae &#39;print $F[0]&#39; | xargs -i mv {} {}.jpg  Twitterの画像引っ張って来るためにやった
+本当はキャッシュを削除して該当のページだけを見てから保存する方法がいいのかも</description>
+    </item>
+    
+    <item>
+      <title>jQuery File Uploadをリバースプロキシ下で使う</title>
+      <link>https://yaasita.github.io/2014/10/21/jquery-file-upload-patch</link>
+      <pubDate>Tue, 21 Oct 2014 01:08:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/10/21/jquery-file-upload-patch</guid>
+      <description>デフォルトだとHTTP_X_FORWARDED_HOST等のヘッダは解釈してくれないので、
+以下のような設定にしてHOSTヘッダも化かす(apacheの場合)
+ProxyPreserveHost On ProxyPass / http://hoge.example.com/ ProxyPassReverse / http://hoge.example.com/  HTTP_X_FORWARDED_HOSTも解釈して欲しかったら以下のようなパッチを当てる
+
+パッチの当て方
+patch -p0 &amp;lt; rproxy.patch  </description>
+    </item>
+    
+    <item>
+      <title>ワークツリー付きのgit共有リポジトリ</title>
+      <link>https://yaasita.github.io/2014/10/20/work-tree-git</link>
+      <pubDate>Mon, 20 Oct 2014 01:21:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/10/20/work-tree-git</guid>
+      <description>作ったリポジトリを横断的に検索したいときbareリポジトリだと
+検索しにくいので、Work Tree付きの共有リポジトリ作った
+ついでに、bitbucketのリポジトリもローカルに持ってきたときのメモ
+ 関連
+gitでbareじゃない共有リポジトリを作る</description>
+    </item>
+    
+  </channel>
+</rss>

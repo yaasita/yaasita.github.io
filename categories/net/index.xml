@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Net on # cd ~/yaasita</title>
+    <link>https://yaasita.github.io/categories/net/index.xml</link>
+    <description>Recent content in Net on # cd ~/yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>blogをmiddlemanからhugoに移行した</title>
+      <link>https://yaasita.github.io/2017/01/05/middleman2hugo</link>
+      <pubDate>Thu, 05 Jan 2017 04:50:10 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/05/middleman2hugo</guid>
+      <description> 使ってみた感想  ビルドはmiddlemanで10分かかってたけど1秒になった
+ themeはgeppakuというのを使用 シンプルで良い
+ Tumblrリンクのプルリクエストも快くマージしてくれた感謝m(_ _)m
+  pagination 周りの部分はちょっとページ数が多いとカラム落ちしたり苦しかったので書き直した
+ taxonomiesを追加して、年別のアーカイブページを作成
+ アーカイブページを逆順にする対応はなぜかうまくいかなかったので後で調査する
+ とりあえずJavaScriptで逆順にした &amp;gt; gist
+  hugo serverのライブリロードがとっても良い(ブラウザも自動更新)
+ ただしpagination周りで変な書き方するとサーバごと落ちる
+  DISQUS周りはちょっとカスタマイズした
+ なぜかデフォルトだと読み込まなかったので
+  markdown周りはほぼ設定ファイルで完結
+ 今回の設定はこんな感じ
+  middleman時代のリンクを維持するためにUglyURLs設定したけどcategoriesとかリンク切れが面倒だったので中止
+ 参考: http://wdkk.co.jp/note/2015/0824-hugo-public/
+  Highlight.js今回無効にした過去分のcodeブロックが微妙になったので
+  総評
+Static Site Generatorはとても良い
+移行するにも、更新するにもメンテがすごく楽
+移行スクリプト 基本的にはファイル名にある時間のデータをTOMLに直して終わり
+/home/yamasitaにhugo,middlemanのディレクトリがある前提
+ 参考リンク  middleman
+ hugo
+  </description>
+    </item>
+    
+    <item>
+      <title>GCPの Cloud DNSでグルーレコード</title>
+      <link>https://yaasita.github.io/2016/12/03/google-cloud-dns</link>
+      <pubDate>Sat, 03 Dec 2016 23:22:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/12/03/google-cloud-dns</guid>
+      <description>Google Cloud Platform のDNSでグルーレコード作るときは
+こんな感じでNS指定したあとに、Aレコード追加すればグルーレコード(Glue Record)に追加してくれるようだ
+; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.9.5-9+deb8u8-Debian &amp;lt;&amp;lt;&amp;gt;&amp;gt; +norec @ns-cloud-d1.googledomains.com. name.yaasita.xyz. a ; (2 servers found) ;; global options: +cmd ;; Got answer: ;; -&amp;gt;&amp;gt;HEADER&amp;lt;&amp;lt;- opcode: QUERY, status: NOERROR, id: 39015 ;; flags: qr; QUERY: 1, ANSWER: 0, AUTHORITY: 2, ADDITIONAL: 3 ;; OPT PSEUDOSECTION: ; EDNS: version: 0, flags:; udp: 512 ;; QUESTION SECTION: ;name.yaasita.xyz. IN A ;; AUTHORITY SECTION: name.yaasita.xyz. 300 IN NS ns1.name.yaasita.xyz. name.yaasita.xyz. 300 IN NS ns2.</description>
+    </item>
+    
+    <item>
+      <title>VALUE-DOMAINでグルーレコード追加</title>
+      <link>https://yaasita.github.io/2016/11/25/value-domain</link>
+      <pubDate>Fri, 25 Nov 2016 01:31:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/11/25/value-domain</guid>
+      <description>VALUE-DOMAIN バリュードメインの権威DNSサーバを使いつつ
+レコードにグルーレコードを追加する方法
+BINDみたくこんな感じにやる
+ns cloud cloud.example.net. a cloud.example.net. 123.123.123.123  上位の権威サーバにグルーレコードを設定する場合は
+下記参照
+https://www.value-domain.com/userguide/manual/othermodns/</description>
+    </item>
+    
+    <item>
+      <title>AWSへVMイメージごと移動する手順</title>
+      <link>https://yaasita.github.io/2016/11/20/aws-vm-import</link>
+      <pubDate>Sun, 20 Nov 2016 20:45:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/11/20/aws-vm-import</guid>
+      <description> 手順 img作る前に以下を確認しておく
+ DHCPを有効にしている
+ iptablesを無効に
+ rawでイメージを作っておく
+  次に以下のコマンドでインポート
+# hoge-importってバケット作ったとする # 最初にimgをS3に上げておく aws s3 cp hoge.img s3://hoge-import/hoge.img # IAM周りを準備 aws iam create-role --role-name vmimport --assume-role-policy-document file://trust-policy.json aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json # インポートタスク開始 aws ec2 import-image --description &amp;quot;hoge server&amp;quot; --disk-containers file://containers.json # 進捗見る aws ec2 describe-import-image-tasks  使ったjsonファイル
+ 参考リンク  http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats
+ http://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html
+  </description>
+    </item>
+    
+    <item>
+      <title>フレッツのDNS挙動</title>
+      <link>https://yaasita.github.io/2016/10/31/flets-dns</link>
+      <pubDate>Mon, 31 Oct 2016 00:42:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/10/31/flets-dns</guid>
+      <description>NSレコードに指定したホスト名にCNAMEを持たせてはいけない
+という話は有名だがどのように挙動が変わるか見てみる
+準備 yaasita.ml. の権威サーバは ns1.aws.yaasita.net. にしておく
+NSで指定されてるサーバは CNAMEとして aws.yaasita.net. に設定しておく
+; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.9.5-9+deb8u7-Debian &amp;lt;&amp;lt;&amp;gt;&amp;gt; +norec @aws.yaasita.net. ns1.aws.yaasita.net. a ; (1 server found) ;; global options: +cmd ;; Got answer: ;; -&amp;gt;&amp;gt;HEADER&amp;lt;&amp;lt;- opcode: QUERY, status: NOERROR, id: 31880 ;; flags: qr aa; QUERY: 1, ANSWER: 2, AUTHORITY: 1, ADDITIONAL: 1 ;; OPT PSEUDOSECTION: ; EDNS: version: 0, flags:; udp: 4096 ;; QUESTION SECTION: ;ns1.aws.yaasita.net. IN A ;; ANSWER SECTION: ns1.</description>
+    </item>
+    
+    <item>
+      <title>AWSのVPNまわり</title>
+      <link>https://yaasita.github.io/2016/07/31/aws-vpn</link>
+      <pubDate>Sun, 31 Jul 2016 00:36:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/07/31/aws-vpn</guid>
+      <description>よくある質問
+対応機器
+http://aws.amazon.com/jp/vpc/faqs/
+ハードウェアVPN接続
+- 1つの仮想プライベートゲートウェイあたり10接続
+http://docs.aws.amazon.com/ja_jp/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html
+http://dev.classmethod.jp/cloud/aws/vpc-connect-hardware-vpn/</description>
+    </item>
+    
+    <item>
+      <title>s3fs使う</title>
+      <link>https://yaasita.github.io/2016/06/22/s3fs</link>
+      <pubDate>Wed, 22 Jun 2016 13:40:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/06/22/s3fs</guid>
+      <description>s3fsはamazon S3をファイルしすてむのように使うやつ
+ただ遅い
+基本ここ見てやる
+https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes
+今回はCeontOS6を対象
+# paco入れておく yum install paco # コンパイルに必要なもの入れる yum install -y gcc libstdc++-devel gcc-c++ curl-devel libxml2-devel openssl-devel mailcap # fuse wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.8.5.tar.gz ./configure make paco -lD &#39;make install&#39; # /usr/local/lib 追記 vi /etc/ld.so.conf ldconfig # s3fs wget http://s3fs.googlecode.com/files/s3fs-1.74.tar.gz tar xvaf s3fs-1.74.tar.gz cd s3fs-1.74/ autoreconf --install export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure --prefix=/usr make paco -lD &#39;make install&#39; # mount s3fs hoge-bucket /s3 -o rw,allow_other,uid=501,gid=501,default_acl=public-read su - apps cd /s3 date &amp;gt; date.</description>
+    </item>
+    
+    <item>
+      <title>IRCのログを記録するbotbot.me</title>
+      <link>https://yaasita.github.io/2016/05/04/botbot-me</link>
+      <pubDate>Wed, 04 May 2016 23:10:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/05/04/botbot-me</guid>
+      <description>https://botbot.me/
+botbot.meはIRCに参加させることでログを取って
+公開できるbotだ
+便利そう</description>
+    </item>
+    
+    <item>
+      <title>Git-itやってみた</title>
+      <link>https://yaasita.github.io/2016/04/24/git-it</link>
+      <pubDate>Sun, 24 Apr 2016 02:05:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/04/24/git-it</guid>
+      <description>日本語も選択できるElectron製のアプリで
+ステップバイステップで勉強できる
+ここのリリースページからバイナリを落として実行する
+https://github.com/jlord/git-it-electron
+結果
+http://yaasita.github.io/patchwork/
+参考リンク
+ Git-it – 手を動かしながら習得できる日本語対応のGit/GitHub学習アプリ
+ http://www.softantenna.com/wp/review/git-it/
+  プルリク練習用のリポジトリ
+ https://github.com/jlord/patchwork
+  結果確認
+ http://jlord.us/patchwork/
+   </description>
+    </item>
+    
+    <item>
+      <title>下位10%のダメなエンジニアシリーズ</title>
+      <link>https://yaasita.github.io/2016/01/25/dame-engineer</link>
+      <pubDate>Mon, 25 Jan 2016 00:23:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/01/25/dame-engineer</guid>
+      <description>パズル1  http://tango-ruby.hatenablog.com/entry/2015/11/30/122814
+ http://challenge-your-limits.herokuapp.com/
+  答え
+curl http://challenge-your-limits.herokuapp.com/call/me # getだめだよって怒られる curl -F &amp;quot;hoge=hoge&amp;quot; http://challenge-your-limits.herokuapp.com/call/me # 適当にPOSTすると正しいURLを教えてくれる curl -F &amp;quot;name=hoge&amp;quot; -F &amp;quot;email=huga@hoge.com&amp;quot; \ http://challenge-your-limits.herokuapp.com/challenge_users # あとはこんな感じで  パズル2  http://tango-ruby.hatenablog.com/entry/2015/12/28/212010
+ http://challenge-your-limits2.herokuapp.com/
+  答え
+curl http://challenge-your-limits2.herokuapp.com/call/my/APIs # メソッドが違うらしい curl -X DELETE http://challenge-your-limits2.herokuapp.com/call/my/APIs # いろいろ試すとDELETEで通る curl http://challenge-your-limits2.herokuapp.com/c2_users/12/hacker_apply # 案内されたURLにリクエストするとなんか違うらしい curl http://challenge-your-limits2.herokuapp.com/help/me/out # とりあえず登録 curl -F &amp;quot;username=yaasita&amp;quot; -F &#39;email=hoge1@example.com&#39; \ http://challenge-your-limits2.heroku/app.com/c2_users/ # 帰ってきた値でBASIC認証 curl --user yaasita:uRd4yy-imPbHBR4W http://challenge-your-limits2.herokuapp.com/c2_users/10 # あとは帰ってきた文字列をBASE64デコード  パズル3  http://tango-ruby.</description>
+    </item>
+    
+    <item>
+      <title>リンク</title>
+      <link>https://yaasita.github.io/2016/01/24/link</link>
+      <pubDate>Sun, 24 Jan 2016 02:15:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/01/24/link</guid>
+      <description> 監視カメラまとめ
+ http://www.insecam.org/en/bycountry/JP/
+  SIはやめておけ
+ http://anond.hatelabo.jp/20160123131828
+ バックアップ
+   </description>
+    </item>
+    
+    <item>
+      <title>素因数分解の話</title>
+      <link>https://yaasita.github.io/2016/01/11/factor</link>
+      <pubDate>Mon, 11 Jan 2016 02:20:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/01/11/factor</guid>
+      <description>素因数分解してくれるサービス
+http://factordb.com/
+自分のSSH鍵がリストされてないか確認してみる
+# 公開鍵の modulus ssh-keygen -m PKCS8 -e -f authorized_keys &amp;gt; kagi openssl rsa -pubin -inform PEM -text -noout &amp;lt; kagi &amp;gt; modulus # 秘密鍵の modulus とか prime1, prime2の確認 openssl rsa -text -noout -in ~/.ssh/id_rsa  こんな感じのスクリプトで10進数にすればOK
+perlで大きめの数値計算する例も
+ 載ってない一安心
+ http://goo.gl/Qqaed5
+ http://goo.gl/yKVyUH
+ 参考リンク
+ TeslaCrypt（vvvウイルス）によって暗号化されたファイルの復号手順メモ
+   </description>
+    </item>
+    
+    <item>
+      <title>IIJ(MIO SIM)のIPアドレス帯</title>
+      <link>https://yaasita.github.io/2015/07/20/iij-ip</link>
+      <pubDate>Mon, 20 Jul 2015 20:38:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/07/20/iij-ip</guid>
+      <description>調べた限りだとこんな感じ</description>
+    </item>
+    
+    <item>
+      <title>コードを書いて実力判定</title>
+      <link>https://yaasita.github.io/2015/06/06/codeeval</link>
+      <pubDate>Sat, 06 Jun 2015 21:50:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/06/06/codeeval</guid>
+      <description>コード書くと評価してくれるようなサービス
+https://www.codeeval.com/browse/1/</description>
+    </item>
+    
+    <item>
+      <title>オンライン囲碁ゲームCOSUMI</title>
+      <link>https://yaasita.github.io/2015/06/01/igo</link>
+      <pubDate>Mon, 01 Jun 2015 00:01:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/06/01/igo</guid>
+      <description>やってみた
+5路盤しか勝てない
+結果</description>
+    </item>
+    
+  </channel>
+</rss>

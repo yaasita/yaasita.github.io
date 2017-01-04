@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Soft on # cd ~/yaasita</title>
+    <link>https://yaasita.github.io/categories/soft/index.xml</link>
+    <description>Recent content in Soft on # cd ~/yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <atom:link href="/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>smplayerでリピート再生</title>
+      <link>https://yaasita.github.io/2016/08/27/smplayer</link>
+      <pubDate>Sat, 27 Aug 2016 14:33:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/08/27/smplayer</guid>
+      <description>ずっとループして再生
+ 再生(P) → A-Bセクション(A) → 繰り返し&amp;reg;
+  </description>
+    </item>
+    
+    <item>
+      <title>s3fs使う</title>
+      <link>https://yaasita.github.io/2016/06/22/s3fs</link>
+      <pubDate>Wed, 22 Jun 2016 13:40:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/06/22/s3fs</guid>
+      <description>s3fsはamazon S3をファイルしすてむのように使うやつ
+ただ遅い
+基本ここ見てやる
+https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes
+今回はCeontOS6を対象
+# paco入れておく yum install paco # コンパイルに必要なもの入れる yum install -y gcc libstdc++-devel gcc-c++ curl-devel libxml2-devel openssl-devel mailcap # fuse wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.8.5.tar.gz ./configure make paco -lD &#39;make install&#39; # /usr/local/lib 追記 vi /etc/ld.so.conf ldconfig # s3fs wget http://s3fs.googlecode.com/files/s3fs-1.74.tar.gz tar xvaf s3fs-1.74.tar.gz cd s3fs-1.74/ autoreconf --install export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure --prefix=/usr make paco -lD &#39;make install&#39; # mount s3fs hoge-bucket /s3 -o rw,allow_other,uid=501,gid=501,default_acl=public-read su - apps cd /s3 date &amp;gt; date.</description>
+    </item>
+    
+    <item>
+      <title>リアルタイム監視ソフトnetdata</title>
+      <link>https://yaasita.github.io/2016/04/25/netdata</link>
+      <pubDate>Mon, 25 Apr 2016 23:24:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/04/25/netdata</guid>
+      <description>https://github.com/firehol/netdata
+インストール
+https://github.com/firehol/netdata/wiki/Installation
+# 起動 /usr/sbin/netdata # 見てみる http://192.168.0.38:19999/  </description>
+    </item>
+    
+    <item>
+      <title>ファイル同期ソフトSyncthing</title>
+      <link>https://yaasita.github.io/2016/04/25/syncthing</link>
+      <pubDate>Mon, 25 Apr 2016 23:16:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/04/25/syncthing</guid>
+      <description>ファイル同期ソフトSyncthingを試してみる
+公式
+https://syncthing.net/
+Go言語で出来ていてクロスプラットフォーム
+Androidでも動く
+同様のソフトにBitTorrent Syncがあるみたいだけどこっちのほうが良さそう
+（同期ディレクトリに上限がないため）
+こんな感じ
+./syncthing -gui-address=&amp;quot;192.168.0.10:3184&amp;quot; -no-browser  </description>
+    </item>
+    
+    <item>
+      <title>Git-itやってみた</title>
+      <link>https://yaasita.github.io/2016/04/24/git-it</link>
+      <pubDate>Sun, 24 Apr 2016 02:05:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/04/24/git-it</guid>
+      <description>日本語も選択できるElectron製のアプリで
+ステップバイステップで勉強できる
+ここのリリースページからバイナリを落として実行する
+https://github.com/jlord/git-it-electron
+結果
+http://yaasita.github.io/patchwork/
+参考リンク
+ Git-it – 手を動かしながら習得できる日本語対応のGit/GitHub学習アプリ
+ http://www.softantenna.com/wp/review/git-it/
+  プルリク練習用のリポジトリ
+ https://github.com/jlord/patchwork
+  結果確認
+ http://jlord.us/patchwork/
+   </description>
+    </item>
+    
+    <item>
+      <title>素因数分解の話</title>
+      <link>https://yaasita.github.io/2016/01/11/factor</link>
+      <pubDate>Mon, 11 Jan 2016 02:20:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/01/11/factor</guid>
+      <description>素因数分解してくれるサービス
+http://factordb.com/
+自分のSSH鍵がリストされてないか確認してみる
+# 公開鍵の modulus ssh-keygen -m PKCS8 -e -f authorized_keys &amp;gt; kagi openssl rsa -pubin -inform PEM -text -noout &amp;lt; kagi &amp;gt; modulus # 秘密鍵の modulus とか prime1, prime2の確認 openssl rsa -text -noout -in ~/.ssh/id_rsa  こんな感じのスクリプトで10進数にすればOK
+perlで大きめの数値計算する例も
+ 載ってない一安心
+ http://goo.gl/Qqaed5
+ http://goo.gl/yKVyUH
+ 参考リンク
+ TeslaCrypt（vvvウイルス）によって暗号化されたファイルの復号手順メモ
+   </description>
+    </item>
+    
+    <item>
+      <title>docker composeインストール</title>
+      <link>https://yaasita.github.io/2015/12/31/compose</link>
+      <pubDate>Thu, 31 Dec 2015 18:16:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/12/31/compose</guid>
+      <description>docker-composeもcheckinstallでdebパッケージにしといた
+https://goo.gl/MKXvhm
+Makefile
+install: chmod +x bin/docker-compose cp bin/docker-compose /usr/local/bin/ cp bash/docker-compose /etc/bash_completion.d/  </description>
+    </item>
+    
+    <item>
+      <title>checkinstallでdocker-machineをパッケージに</title>
+      <link>https://yaasita.github.io/2015/12/30/checkinstall</link>
+      <pubDate>Wed, 30 Dec 2015 03:16:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/12/30/checkinstall</guid>
+      <description>debパッケージにするとアンインストールが楽になる
+ https://github.com/docker/machine
+ https://goo.gl/X5Njaz
+  以下のMakefileを作ってcheckinstallコマンドでおｋ
+bash補完はこの辺
+docker-machine-0.5.5/ ├── Makefile ├── docker-machine ├── docker-machine-prompt.bash ├── docker-machine-wrapper.bash └── docker-machine.bash  Makefile
+ </description>
+    </item>
+    
+    <item>
+      <title>handbrakeでISOをエンコード</title>
+      <link>https://yaasita.github.io/2015/08/25/handbrake</link>
+      <pubDate>Tue, 25 Aug 2015 00:32:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/08/25/handbrake</guid>
+      <description>Linuxで動画のエンコード/リッピングするとき
+apt-get handbreak  handbrake-gtk
+で起動して、左側のソース選んで
+開始でOK
+あんま難しくない
+http://yaasita.tumblr.com/post/127482624497</description>
+    </item>
+    
+    <item>
+      <title>saslauthd-debian</title>
+      <link>https://yaasita.github.io/2015/07/26/saslauthd-debian</link>
+      <pubDate>Sun, 26 Jul 2015 02:42:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/07/26/saslauthd-debian</guid>
+      <description>なんか Debian Jessie(8.1)のsaslauthdのsystemd定義が書かれてない気がする
+なので自動起動に設定したかったら自分で書く感じで
+/etc/systemd/system/saslauthd.service
+ みたいな定義を書いて
+systemctl daemon-reload systemctl enable saslauthd.service systemctl start saslauthd.service  </description>
+    </item>
+    
+    <item>
+      <title>MySQLの地図情報</title>
+      <link>https://yaasita.github.io/2015/05/31/mysql-gis</link>
+      <pubDate>Sun, 31 May 2015 01:58:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/05/31/mysql-gis</guid>
+      <description>MySQLのGIS回り
+こんな感じで使うぽい
+# インサート insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;旭鮨総本店 新宿住友ビル50F店&#39; ,GeomFromText(&#39;POINT(35.691421 139.692595)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;久兵衛 京王プラザホテル店&#39; ,GeomFromText(&#39;POINT(35.689685 13 9.694664)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;白金寿司&#39; ,GeomFromText(&#39;POINT(35.693417 139.687282)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;喜与し&#39; ,GeomFromText(&#39;POINT(35.692192 139.742396)&#39;) ); # 現在の位置から近い順に表示 コンシェリア西新宿= 35.692777 139.687362 select shop_name, GLength( GeomFromText( concat(&#39;LineString(35.</description>
+    </item>
+    
+    <item>
+      <title>Meteor チュートリアル 01</title>
+      <link>https://yaasita.github.io/2015/05/10/meteor-tutorial01</link>
+      <pubDate>Sun, 10 May 2015 00:28:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/05/10/meteor-tutorial01</guid>
+      <description>話題のMeteorを触ってみた
+discovermeteorっていうチュートリアル本があるのでやってみる
+なんか原文は有料になってる気がするけど翻訳版は読めるみたい
+http://ja.discovermeteor.com/
+とりあえず最初の方だけ
+Getting Started インストール
+途中でsudoするので出来るようにしておく
+curl https://install.meteor.com | sh  最初に以下のコマンドを発行して作る
+meteor create microscope  ちなみにこの.meteor/.gitignoreに書かれてる
+.meteor/.local/の中を消せばリセットされる
+パッケージの追加
+meteor add mizzao:bootstrap-3 meteor add underscore  ディレクトリ追加
+mkdir server client public lib  実行について
+ server =&amp;gt; サーバ上でのみ実行
+ client =&amp;gt; クライアント上でのみ実行
+ それ以外はどちらでも動く
+ publicには静的ファイルを置く
+ libはどのファイルよりも先に実行される
+ main.*というファイル名は一番最後に実行される
+  CSSを追加
+mkdir client/stylesheets vi client/stylesheets/style.css  https://github.com/yaasita/meteor-microscope/tree/88cc746c372b13dae6a669c014c764320a8e776e
+Deployment deployしてみる
+meteor deploy yaasita.meteor.com  なんかこれでできるぽい</description>
+    </item>
+    
+    <item>
+      <title>Linuxでスクリーンショット取る</title>
+      <link>https://yaasita.github.io/2015/04/18/linux-screenshot</link>
+      <pubDate>Sat, 18 Apr 2015 02:03:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/04/18/linux-screenshot</guid>
+      <description>shutterというのがよさ気
+apt-get install shutter  http://www.xmisao.com/2014/02/07/get-screenshot-on-linux-by-shutter.html
+他にxwd使う方法もある
+# クリックしたウィンドウ xwd | convert - hoge.png xwd -root | convert - desktop.png  http://www.xmisao.com/2013/09/17/linux-xwindow-screenshot.html</description>
+    </item>
+    
+    <item>
+      <title>Linuxのクリップボードマネージャ</title>
+      <link>https://yaasita.github.io/2015/04/18/linux-clipboard-manager</link>
+      <pubDate>Sat, 18 Apr 2015 01:31:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/04/18/linux-clipboard-manager</guid>
+      <description>diodon apt-get install diodon  初期設定はCtrl + Alt + vで呼び出し
+Preferenceから以下の設定を直した
+ Automatically paste selected item
+ 自動ペーストをやめる
+  PluginsのApplication Indicatorのチェックを外す
+  なんかCtrl-Vが使えなくなったりするので使うのやめた
+klipper KDEのやつ
+apt-get install klipper  初期はShift+Zになってるので設定からなおす
+全般の選択とクリップボード→選択を無視する
+ってやつやると選択しただけでクリップボードに入るのを抑止
+できる</description>
+    </item>
+    
+    <item>
+      <title>boxesっていうソフト</title>
+      <link>https://yaasita.github.io/2015/03/29/boxes</link>
+      <pubDate>Sun, 29 Mar 2015 03:06:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/03/29/boxes</guid>
+      <description>vimでも使える
+apt-get install boxes  Visual Modeで選択して
+!boxes -d shell  とかやる
+参考リンク 毎日のスクリプト作成にちょっとしたコダワリを加えるboxes</description>
+    </item>
+    
+  </channel>
+</rss>
