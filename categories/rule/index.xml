@@ -33,7 +33,7 @@ MUA(thunderbird等) -&amp;gt; 送信側MTA(postfix等) -&amp;gt; 受信側MTA(po
 envelope toには存在するがそもそもBccヘッダなんてものを書かない
 postfix postfixもデフォルトではBccヘッダは落とすようになっている
 しかしこの設定を変更すればBccヘッダを落とさないでそのまま配送される
-message_drop_headers = bcc, content-length, resent-bcc, return-path  まとめ 送信時点で見られちゃいけないヘッダをMTAに渡して、多分消してくれるだろうと期待して送信するのはあまりよくないと思う
+message_drop_headers = bcc, content-length, resent-bcc, return-path  まとめ 本来見られちゃいけないヘッダをMTAに渡して、多分消してくれるだろうと期待するのはあまりよくないと思う
 具体的にはBccヘッダまで綺麗に書いて sendmail -t で送るよりはちゃんとenvelope to を指定して送った方が安全度高い
 要するにthunderbirdみたいに送るべき</description>
     </item>
