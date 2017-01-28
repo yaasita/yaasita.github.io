@@ -1,12 +1,60 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Net on # cd ~/yaasita</title>
+    <title># cd ~yaasita</title>
     <link>https://yaasita.github.io/categories/net/index.xml</link>
-    <description>Recent content in Net on # cd ~/yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
     <atom:link href="/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>hostとdigコマンドの挙動が違う時</title>
+      <link>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different</link>
+      <pubDate>Fri, 27 Jan 2017 01:52:29 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different</guid>
+      <description>名前を引くときにhostコマンドでは返ってくるがdigだとおかしくなるときがある
+こんな感じにすれば同じになる
+host example.net. dig +nodnssec +noedns +noadflag example.net. a  WN-G300GRはadビット立ててると応答すらしないらしい</description>
+    </item>
+    
+    <item>
+      <title>GMOのConoha VPS使ってみた</title>
+      <link>https://yaasita.github.io/2017/01/22/conoha-vps</link>
+      <pubDate>Sun, 22 Jan 2017 23:51:14 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/22/conoha-vps</guid>
+      <description>非常に良い
+さくらVPSより良いかもしれない
+ DNSサーバ無料
+ OP25B無し
+ SSD 20GB
+ 初期費用なし
+ 転送量無制限
+ 時間課金方式と月額方式のハイブリット
+  今はコンテナ技術でサクッと移動できちゃうので、
+安いクラウドサービス渡り歩くのも良いと思った</description>
+    </item>
+    
+    <item>
+      <title>BCCヘッダを落とすのは誰か</title>
+      <link>https://yaasita.github.io/2017/01/22/who_drops_bccheader</link>
+      <pubDate>Sun, 22 Jan 2017 00:48:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/22/who_drops_bccheader</guid>
+      <description>BCCヘッダは転送しないで、MTA側で消されるというのは有名な話だけど
+実際どんな感じなのか
+まずメーラーでBCCを指定して送ったとする
+この時BCCヘッダはどのタイミングで消えるか？という問題
+MUA(thunderbird等) -&amp;gt; 送信側MTA(postfix等) -&amp;gt; 受信側MTA(postfix等)  thunderbird まずthunderbirdからBCCで送信した場合はそもそもBccヘッダはつけない(Icedove/45.6.0で検証)
+envelope toには存在するがそもそもBccヘッダなんてものを書かない
+postfix postfixもデフォルトではBccヘッダは落とすようになっている
+しかしこの設定を変更すればBccヘッダを落とさないでそのまま配送される
+message_drop_headers = bcc, content-length, resent-bcc, return-path  まとめ 送信時点で見られちゃいけないヘッダをMTAに渡して、多分消してくれるだろうと期待して送信するのはあまりよくないと思う
+具体的にはBccヘッダまで綺麗に書いて sendmail -t で送るよりはちゃんとenvelope to を指定して送った方が安全度高い
+要するにthunderbirdみたいに送るべき</description>
+    </item>
     
     <item>
       <title>blogをmiddlemanからhugoに移行した</title>
@@ -234,6 +282,36 @@ https://www.codeeval.com/browse/1/</description>
       <description>やってみた
 5路盤しか勝てない
 結果</description>
+    </item>
+    
+    <item>
+      <title>sshuttleで簡易VPN</title>
+      <link>https://yaasita.github.io/2015/03/15/sshuttle</link>
+      <pubDate>Sun, 15 Mar 2015 03:32:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/03/15/sshuttle</guid>
+      <description>こんな感じで接続する
+sshuttle -r hogeuser@hoge-server 10.0.0.0/16 --dns  bash-completionが利かないのが不便なので、
+sshなりを流用すればOK
+これでいい感じにiptablesを設定してNAT通ししてくれる
+便利</description>
+    </item>
+    
+    <item>
+      <title>vim-adventures</title>
+      <link>https://yaasita.github.io/2014/12/21/vim-adventures</link>
+      <pubDate>Sun, 21 Dec 2014 04:50:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/12/21/vim-adventures</guid>
+      <description>vim-adventures 攻略情報 level1  海のところはカーソルを右端に置いてjで下に行けば越えられる
+ j,k移動は現在行の位置と同じ縦位置に移動しようとするということがわかればOKそう
+   level2  w,bとかとって適当に宝箱取る
+ 30秒以内に島を渡ってxキーとる
+ スタート地点付近の宝箱をBキーで取る
+  level3  なんか間違った英文をxキーを使って削除して鍵GET
+ その後スタート地点付近にある宝箱取って終わり
+  https://github.com/yaasita/bpsvim/wiki/vim-adventures
+http://vim-adventures.com/</description>
     </item>
     
   </channel>

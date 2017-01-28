@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Linux on # cd ~/yaasita</title>
+    <title># cd ~yaasita</title>
     <link>https://yaasita.github.io/categories/linux/index.xml</link>
-    <description>Recent content in Linux on # cd ~/yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
     <atom:link href="/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
@@ -217,6 +217,73 @@ Ctrl-qについてはbash側でも取られるのでそっちも変更する
       <description>/home/user/.gvfsになんか自動でマウントされるのを止める
 rm -rf ~/.local/share/gvfs*  面倒だったので以下で対処した
 rm -rf ~/.local  多分、gnome関連パッケージのせい</description>
+    </item>
+    
+    <item>
+      <title>Debianで自動アップデート設定</title>
+      <link>https://yaasita.github.io/2014/07/03/unattended-upgrades</link>
+      <pubDate>Thu, 03 Jul 2014 23:54:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/07/03/unattended-upgrades</guid>
+      <description>apt-get install unattended-upgrades
+/etc/apt/apt.conf.d/50unattended-upgrades
+Unattended-Upgrade::Origins-Pattern { &amp;quot;o=Debian,n=jessie&amp;quot;; &amp;quot;o=Debian,n=jessie-updates&amp;quot;; &amp;quot;o=Debian,n=jessie-proposed-updates&amp;quot;; &amp;quot;o=Debian,n=jessie,l=Debian-Security&amp;quot;; &amp;quot;origin=Debian,archive=${distro_codename},label=Debian-Security&amp;quot;; }; Unattended-Upgrade::Package-Blacklist { };  /etc/apt/apt.conf.d/10periodicにAPT::Periodic::Unattended-Upgrade &amp;quot;1&amp;quot;;を追加
+APT::Periodic::Update-Package-Lists &amp;quot;1&amp;quot;; APT::Periodic::Unattended-Upgrade &amp;quot;1&amp;quot;; APT::Periodic::Download-Upgradeable-Packages &amp;quot;0&amp;quot;; APT::Periodic::AutocleanInterval &amp;quot;0&amp;quot;; APT::Periodic::RandomSleep &amp;quot;0&amp;quot;;  再起動をしなきゃいけないアップデートは以下を有効にするらしい
+再起動が必要なら/var/run/reboot-requiredが作られるのか
+// Automatically reboot *WITHOUT CONFIRMATION* if // the file /var/run/reboot-required is found after the upgrade //Unattended-Upgrade::Automatic-Reboot &amp;quot;false&amp;quot;;  参考リンク
+ http://orangain.hatenablog.com/entry/unattended-upgrades
+  </description>
+    </item>
+    
+    <item>
+      <title>cgroupでcpuリミットをあてる</title>
+      <link>https://yaasita.github.io/2014/06/22/cgroup-cpu-limit</link>
+      <pubDate>Sun, 22 Jun 2014 15:57:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/06/22/cgroup-cpu-limit</guid>
+      <description>microインスタンスはstealの関係でCPUリミットを設定するとよいらしい
+microインスタンスはlimitかけると大きくパフォーマンスが向上する
+なのでやってみました
+環境はt1.micro (ubuntu 14.04)
+cgcreate -g cpu:ruby cgexec -g cpu:ruby ./install_ruby.sh cgset -r cpu.cfs_quota_us=250000 ruby cgset -r cpu.cfs_period_us=1000000 ruby # 確認 cd /sys/fs/cgroup ls cpu/ruby cat cpu/ruby/tasks cgget -r cpu.cfs_quota_us -r cpu.cfs_period_us ruby  参考リンク
+ cgroup について理解する
+ cgroup でメモリと走行時間に制限を加える
+  </description>
+    </item>
+    
+    <item>
+      <title>非推奨になったネットワークコマンド</title>
+      <link>https://yaasita.github.io/2014/06/17/deprecated_network_cmd</link>
+      <pubDate>Tue, 17 Jun 2014 01:13:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/06/17/deprecated_network_cmd</guid>
+      <description>Deprecated command Replacement command(s)     arp ip n (ip neighbor)   ifconfig ip a (ip addr), ip link, ip -s (ip -stats)   iptunnel ip tunnel   iwconfig iw   nameif ip link, ifrename   netstat ss, ip route (for netstat-r), ip -s link (for netstat -i), ip maddr (for netstat-g)   route ip r (ip route)     http://understeer.</description>
+    </item>
+    
+    <item>
+      <title>unite.vimみたいなpercol</title>
+      <link>https://yaasita.github.io/2014/06/12/percol</link>
+      <pubDate>Thu, 12 Jun 2014 23:22:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/06/12/percol</guid>
+      <description> これ使うとシェルでもuniteみたいなインターフェイスで検索できる
+公式サイト
+インストール apt-get install python-pip pip install percol  設定 ~/.bashrc
+ ~/.percol.d/rc.pyはREADMEのコピペ
+参考リンク
+ bashでもpercolをイイ感じに使う方法
+  </description>
+    </item>
+    
+    <item>
+      <title>ディレクトリ間の差分を取ってくれるソフト</title>
+      <link>https://yaasita.github.io/2014/06/03/dir_diff</link>
+      <pubDate>Tue, 03 Jun 2014 18:50:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/06/03/dir_diff</guid>
+      <description>apt-get install meld
+参考リンク
+http://baker-street.jugem.jp/?eid=164</description>
     </item>
     
   </channel>

@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Life on # cd ~/yaasita</title>
+    <title># cd ~yaasita</title>
     <link>https://yaasita.github.io/categories/life/index.xml</link>
-    <description>Recent content in Life on # cd ~/yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
     <atom:link href="/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>MacBook買ったのでサポートお願いした</title>
+      <link>https://yaasita.github.io/2017/01/09/mac-personal-setup</link>
+      <pubDate>Mon, 09 Jan 2017 16:27:40 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/09/mac-personal-setup</guid>
+      <description>13インチ MacBook Air 1.6GHzデュアルコアIntel Core i5 整備済製品 (\84,000)で買ったのでパーソナルセットアップをお願いしてみた
+時間は30分だったけど、電話でいろいろ質問できて良い
+http://www.apple.com/jp/retail/personalsetup/</description>
+    </item>
     
     <item>
       <title>リンク</title>
@@ -267,6 +278,73 @@ IT部門の人からすれば自分は使わないのだから丸投げできる
  前編
  後編
   </description>
+    </item>
+    
+    <item>
+      <title>FXで使えるチャート</title>
+      <link>https://yaasita.github.io/2011/11/04/3383</link>
+      <pubDate>Fri, 04 Nov 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/11/04/3383</guid>
+      <description>ここにいろいろあった
+http://www.fxcm.co.jp/tools/chart.html
+その中でも↓が使いやすかったかも
+http://www.dailyfx.com/charts/netdaniachart/ </description>
+    </item>
+    
+    <item>
+      <title>弾を光らせて軌跡を作り見やすくする曳光弾</title>
+      <link>https://yaasita.github.io/2011/07/01/3761</link>
+      <pubDate>Fri, 01 Jul 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/07/01/3761</guid>
+      <description>曳光弾というらしい
+これにより弾の軌道が分かるんだと・・・
+参考リンク
+http://karapaia.livedoor.biz/archives/51767062.html
+http://www.nicovideo.jp/watch/sm14657423 </description>
+    </item>
+    
+    <item>
+      <title>モンロー/ノイマン効果とは</title>
+      <link>https://yaasita.github.io/2011/05/29/3863</link>
+      <pubDate>Sun, 29 May 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/05/29/3863</guid>
+      <description>円形に配置した爆発物が爆発すると中央部にエネルギーが集中してどうたらこうたら・・・
+魔法少女まどか☆マギカの１１話参考とのこと
+参考リンク
+ほむほむ11話戦闘シーン
+モンロー/ノイマン効果(Wikipedia) </description>
+    </item>
+    
+    <item>
+      <title>ブログランキングサイトまとめ</title>
+      <link>https://yaasita.github.io/2011/03/20/4633</link>
+      <pubDate>Sun, 20 Mar 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/03/20/4633</guid>
+      <description>・TopHatenar
+国内のサイトで比較できるので分かりやすい
+グラフとかも出て自分の順位が把握しやすい
+登録までに1日かかる
+このブログの結果
+・BlogChart
+レーダーチャートで表示してくれる
+分かりやすいLv表示
+このブログの結果
+・ウェブク
+ドメインの価値を表示してくれる
+表示単位はドメイン
+このブログの結果
+・ブログ戦闘力チェッカー
+ブログを戦闘力で例えてくれる
+ドラゴンボールが好きな人は分かりやすい？
+TopHatenarのデータを使っているのでTopHatenarへの登録が必要
+このブログの結果
+過去の記事
+あなたのドメインの価値を教えてくれるサイト 
+BlogChartってサイトでこのBlogのレベルを測定してみる  </description>
     </item>
     
   </channel>

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2007 on # cd ~/yaasita</title>
+    <title># cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2007/index.xml</link>
-    <description>Recent content in 2007 on # cd ~/yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
     <atom:link href="/archives/2007/index.xml" rel="self" type="application/rss+xml" />
     
@@ -251,6 +251,75 @@ http://127.0.0.1/~(ユーザ名)/rep2/phpinfo.php
 （確認ができましたら、phpinfo.php はもう必要ないので削除しても構いません）
 これで動くはずです。動かなかった場合はエラーを見て判断してください。
  設定 conf/conf_hostcheck.</description>
+    </item>
+    
+    <item>
+      <title>MinGWをWindowsにインストールする</title>
+      <link>https://yaasita.github.io/2007/11/24/13332</link>
+      <pubDate>Sat, 24 Nov 2007 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2007/11/24/13332</guid>
+      <description>フリーのC/C++コンパイラのインストールメモです。
+まずhttp://www.mingw.org/に行きダウンロードします。
+ダウンロードはsourceforgeから行ってください。現時点で最新版のAutomated MinGW InstallerのMinGW-5.1.3をダウンロードします。このダウンロードしたexeを実行すると自動的にダウンロードとインストールが行えます。
+
+途中、↑のようにダウンロードするバージョンを聞かれますが、currentを選択すればいいでしょう。
+インストールをC:\MinGW\にした場合はC:\MinGW\binにPATHを設定します。この時、PATH=C:\MinGW\bin;%system%....
+の様に先頭にしておけば検索が早くなり結果的に早くコンパイルできるはずです。 </description>
+    </item>
+    
+    <item>
+      <title>x11vncの設定を保存するには</title>
+      <link>https://yaasita.github.io/2007/11/18/13354</link>
+      <pubDate>Sun, 18 Nov 2007 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2007/11/18/13354</guid>
+      <description>前回の設定では長いオプションをいちいち入力する必要がありましたが
+rcファイルを作りオプションを保存することができます。
+設定ファイルは~/.x11vncrcとして保存します。
+前回の設定を保存するなら
+-forever
+-rfbauth /home/hogehoge/.vnc/passwd
+-rfbport 5000
+-display :00
+のように書いて保存します。#を入れるとそれ以降の文字はコメントとして扱われます。
+もし.x11vncrcを読み込みたくないなら
+-norc
+オプションを付けて下さい。 </description>
+    </item>
+    
+    <item>
+      <title>Linuxでビープ音を消す</title>
+      <link>https://yaasita.github.io/2007/11/17/13375</link>
+      <pubDate>Sat, 17 Nov 2007 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2007/11/17/13375</guid>
+      <description>コンソールを含めて、いかなる場合もビープ音を鳴らしたくない場合は、次のコマンドを実行します。
+$ sudo rmmod pcspkr
+再起動後もビープ音を鳴らしたくなければ、/etc/modprobe.d/blacklistに次の行を加えます。
+
+blacklist pcspkr
+だそうです
+https://wiki.ubuntulinux.jp/UbuntuTips/Hardware/StopBeepSound </description>
+    </item>
+    
+    <item>
+      <title>中国系P2Pテレビを視聴するには？</title>
+      <link>https://yaasita.github.io/2007/11/12/13395</link>
+      <pubDate>Mon, 12 Nov 2007 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2007/11/12/13395</guid>
+      <description>https://wiki.ubuntulinux.jp/UbuntuTips/Application/P2Ptv </description>
+    </item>
+    
+    <item>
+      <title>ubuntu7.10にApache2を入れる</title>
+      <link>https://yaasita.github.io/2007/11/11/13417</link>
+      <pubDate>Sun, 11 Nov 2007 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2007/11/11/13417</guid>
+      <description>ファイル名が日本語の場合、Indexが文字化けする場合は/etc/apache2/conf.d/charset をUTF-8がデフォルトになるように書き換える。
+Indexの細かい指定は/etc/apache2/mods-available/autoindex.conf で設定する。 </description>
     </item>
     
   </channel>

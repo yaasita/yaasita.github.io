@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2009 on # cd ~/yaasita</title>
+    <title># cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2009/index.xml</link>
-    <description>Recent content in 2009 on # cd ~/yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
     <atom:link href="/archives/2009/index.xml" rel="self" type="application/rss+xml" />
     
@@ -273,6 +273,165 @@ unedited.
 Blah blah blah.
 =head2 EXPORT
 None by default.</description>
+    </item>
+    
+    <item>
+      <title>メールをCUIで読むソフト mutt</title>
+      <link>https://yaasita.github.io/2009/12/06/7738</link>
+      <pubDate>Sun, 06 Dec 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/12/06/7738</guid>
+      <description>インストールはDebian Lennyならaptitudeで簡単に入る
+そんで使い方
+基本的な使い方とかはこことか見れば大体分かる
+Maildirを指定して
+mutt -f ~/Maildirこれでとりあえず見れる
+メールボックスとかは一々指定するのは面倒なので~/.muttrcを作成して
+set folder=&#34;~/Maildir&#34;
+set spoolfile=&#34;~/Maildir&#34;
+set keep_flagged=yes
+set mbox=&#34;&#34;
+set postponed=&#34;/tmp/postponed&#34;
+set sort=&#34;reverse-date-received&#34;
+↑みたいなのを書いておく意味はここら辺を見るとわかるかも
+設定ファイルを書けば以降はmuttのみで起動できる
+mutt操作方法
+PageUpとPageDownで次とか後のメールを選択（vim風にjkでもできるけど削除が選択できない）
+?でヘルプ
+mで新規メール作成
+参考リンク
+http://www.emaillab.org/mutt/whatis.html </description>
+    </item>
+    
+    <item>
+      <title>postfixでOP25B対策</title>
+      <link>https://yaasita.github.io/2009/12/05/7861</link>
+      <pubDate>Sat, 05 Dec 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/12/05/7861</guid>
+      <description>OP25Bを実施しているISPの場合、25番ポートへの出力が制限されているからリレーしてもらうように設定する
+/etc/postfix/main.cfを編集 (hoge.ne.jpがSMPTサーバーだとする）
+ispauthはユーザー名とパスワードを書くファイル名前はなんでもOK
+relayhost = [hoge.ne.jp]:587
+smtp_sasl_auth_enable = yes
+smtp_sasl_password_maps = hash:/etc/postfix/ispauth
+smtp_sasl_security_options = noanonymous
+smtp_sasl_mechanism_filter = cram-md5,login,plain
+ispauthには以下のようなものを書く
+[プロバイダのSMTPサーバー]:587 プロバイダのユーザーID:プロバイダのパスワード
+サーバーがhoge.ne.jp、ログインIDがfoobar、パスワードがbuzzだった場合は以下のように書く
+[hoge.ne.jp]:587 foobar:buzz
+
+そんで以下のコマンド投入
+chmod 640 /etc/postfix/ispauth
+postmap /etc/postfix/ispauth
+/etc/rc.d/init.d/postfix restart
+参考リンク
+http://centos.server-manual.com/postfix_op25b.html
+smtp_sasl_mechanism_filterはそのSMPTサーバーが使っているものにあわせるのでそれを確認する
+telnet hoge.ne.jp 587
+EHLO hoge.ne.jp
+↓みたいなのが出たら↑の設定でOK
+250-AUTH CRAM-MD5 PLAIN LOGIN
+参考リンク
+http://www.aconus.com/~oyaji/mail2/op25b.htm
+※注意 SMTP認証を使う場合はlibsasl2-modulesがインストールされていることを確認してください
+
+どうしても出来なかったら↓みたいな感じでパケットキャプチャー→Wiresharkで見て考える感じで
+tcpdump -s 1500 ip host ?.?.?.? -w out.cap
+ </description>
+    </item>
+    
+    <item>
+      <title>定期的に/tmpを掃除してくれるソフトtmpreaper</title>
+      <link>https://yaasita.github.io/2009/12/05/7840</link>
+      <pubDate>Sat, 05 Dec 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/12/05/7840</guid>
+      <description>Debian Lennyで試した。
+Red hat系だとtmpwatchとかあるみたいだけど無いのでこれを使う
+まずはaptitudeでインストール
+インストールすると/etc/cron.daily/tmpreaperが作成される
+これによって毎日cronで実行される
+設定はこれをいじってもできるが基本的には
+/etc/tmpreaper.confをいじる
+まずはワーニングが出るので13行目あたりにあるSHOWWARNINGをコメント化する
+#SHOWWARNING=true
+
+次にオプションを設定する各オプションの意味は以下の通り
+TMPREAPER_TIME・・・どのくらいアクセスがないファイルを削除するか？設定値はデフォルトで7dつまり7d以上アクセスがないと削除
+TMPREAPER_PROTECT_EXTRA・・・削除しては駄目な名前を指定
+TMPREAPER_DIRS・・・削除の対象とするディレクトリ　デフォルトは/tmpのみ 複数指定するときはスペースで区切る　例）TMPREAPER_DIRS=&#39;/tmp/. /var/tmp/.&#39;
+TMPREAPER_DELAY・・・実行するまで待つ時間　デフォルトは256秒
+TMPREAPER_ADDITIONALOPTIONS・・・他に指定したいオプションがある場合はこここに入れる他のオプションはmanを参照
+あと/etc/cron.daily/tmpreaper見れば分かるけど
+デフォルトで
+以下のオプションが設定されている。ヤバイファイルは消えないようにしているようだ
+--protect &#39;/tmp/.X*-{lock,unix,unix/*}&#39; \
+--protect &#39;/tmp/.ICE-{unix,unix/*}&#39; \
+--protect &#39;/tmp/.iroha_{unix,unix/*}&#39; \
+--protect &#39;/tmp/.ki2-{unix,unix/*}&#39; \
+--protect &#39;/tmp/lost+found&#39; \
+--protect &#39;/tmp/journal.dat&#39; \
+--protect &#39;/tmp/quota.{user,group}&#39; \
+
+※注意
+デフォルトのシェルだと--ctimeが設定されています↓みたいに
+nice -n10 tmpreaper --delay=$TMPREAPER_DELAY --mtime-dir --symlinks $TMPREAPER_TIME \
+$TMPREAPER_ADDITIONALOPTIONS \
+--ctime \
+これだとcronでlocateのDBを作っているので、アクセスタイムが更新され
+いつまで経っても削除されません。（ctimeオプションはatime+ctimeのチェックをします）
+用途によってはここを--mtimeに変更してもいいと思います
+ </description>
+    </item>
+    
+    <item>
+      <title>dovecotでQuota設定</title>
+      <link>https://yaasita.github.io/2009/12/01/7882</link>
+      <pubDate>Tue, 01 Dec 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/12/01/7882</guid>
+      <description>メールの容量を制限する（クォータの設定）するには？
+Plugin settingsの部分に以下を追記
+↓がグローバルなクォータ設定（ユーザー個別に設定すればそちらが優先される）
+参考リンク→http://wiki.dovecot.org/Quota/1.0
+plugin {
+quota = maildir:storage=10240:messages=1000
+}
+上記の設定後
+protocol imapに次の文を追記
+参考リンク→http://wiki.dovecot.org/Quota/1.0
+protocol imap {
+mail_plugins = quota imap_quota
+}
+Thunderbirdで試すとクォータが有効なら↓のようなメッセージが出る
+
+で、クォータ当てただけじゃ不便だから古いメッセージから自動で削除してくれるように設定するにはTrashプラグインを使う
+protocol imap {
+mail_plugins = quota imap_quota trash
+}
+plugin {
+quota = maildir:storage=10240:messages=1000
+trash = trash = /etc/dovecot/dovecot-trash.conf
+}
+さっき指定したdovecot-trash.conf　(無ければ作る）　を編集する
+↓はTrashだけ削除の対象とする例
+1 Trash
+↑のファイルを1行つくればOK </description>
+    </item>
+    
+    <item>
+      <title>Windowsのソースコードのステップ数（目安）</title>
+      <link>https://yaasita.github.io/2009/11/30/7904</link>
+      <pubDate>Mon, 30 Nov 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/11/30/7904</guid>
+      <description>こんな感じらしい
+Windows NT⇒400万行
+Windows 95⇒1,500万行
+Windows XP⇒3,500万行
+Windows Vista⇒5,000万行http://blog.development-network.net/ung/2006/10/post_54.html </description>
     </item>
     
   </channel>

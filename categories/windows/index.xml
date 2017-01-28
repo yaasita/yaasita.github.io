@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Windows on # cd ~/yaasita</title>
+    <title># cd ~yaasita</title>
     <link>https://yaasita.github.io/categories/windows/index.xml</link>
-    <description>Recent content in Windows on # cd ~/yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
     <atom:link href="/categories/windows/index.xml" rel="self" type="application/rss+xml" />
     
@@ -232,6 +232,119 @@ ctclもなかなか良い感じだけど
 切替の早さはufsかなぁ・・・
 参考リンク
 http://d.hatena.ne.jp/ampll/20090602/1243924925 </description>
+    </item>
+    
+    <item>
+      <title>bug.nを試してみた</title>
+      <link>https://yaasita.github.io/2011/04/11/4383</link>
+      <pubDate>Mon, 11 Apr 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/04/11/4383</guid>
+      <description>前回Dwmにはまったので
+Windowsでも出来ないか探してみたらあった
+bug.nというらしい
+使い方はLinuxの時とほぼ同じ
+※（Winは左Windowsキー）
+アクティブウィンドウの切り替え
+Win+↑
+Win+↓
+
+ウィンドウのリサイズ
+Win+←
+Win+→
+
+ウィンドウのクローズ
+Win+c
+
+分割の縦横切り替え
+Win+Ctrl+Tab
+
+タイトルバーの表示非表示
+Win+Shift+d
+
+ウィンドウの入れ替え
+Win+Shift+Enter
+
+マスターウィンドウの左右切り替え
+Win+Ctrl+Enter
+
+よく分からないけどレイアウトの変更
+Win+Ctrl+←
+Win+Ctrl+→
+
+タスクバーの表示非表示
+Win+Space
+
+bug.nの終了
+Win+Shift+q
+
+参考リンク
+http://sourceforge.jp/projects/tilingwm/wiki/FrontPage </description>
+    </item>
+    
+    <item>
+      <title>rsyncのWindows版 cwRsyncを試す</title>
+      <link>https://yaasita.github.io/2011/03/22/4612</link>
+      <pubDate>Tue, 22 Mar 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/03/22/4612</guid>
+      <description>公式サイトからリンクを辿ってcwRsync_4.0.4_Installer.zip をダウンロード＆インストール今回は最小構成でインストール
+Secure Channel Wrapperは入れなかった
+PATHに&#34;C:\Program Files\cwRsync\bin&#34;を追加
+あとはrsyncコマンドがつかえるので使用する今回はネットワークドライブからローカルへ同期してみた
+例）Nドライブ→Cドライブのtestフォルダを同期
+rsync -av --delete /cygdrive/n/backup/Firefox/ /cygdrive/c/test/
+※心配なら-nオプションを付けて挙動を確認すると良いかも
+参考リンク
+http://satospo.sakura.ne.jp/blog_archives/tech/tool/cwrsync.html </description>
+    </item>
+    
+    <item>
+      <title>teraterm &#43; screenだとマウスのスクロールが出来ない？</title>
+      <link>https://yaasita.github.io/2010/12/20/5113</link>
+      <pubDate>Mon, 20 Dec 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/12/20/5113</guid>
+      <description>解決策
+Ctrlを押しながらマウスホイールをまわす TERATERM.INIのTranslateWheelToCursorをoffにする
+参考リンク
+http://d.hatena.ne.jp/orangeclover/20100406/1270564074 </description>
+    </item>
+    
+    <item>
+      <title>smbmountでWindowsの共有フォルダをマウントする</title>
+      <link>https://yaasita.github.io/2010/05/09/6733</link>
+      <pubDate>Sun, 09 May 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/05/09/6733</guid>
+      <description>想定する環境はSoukoドライブがフルアクセスで共有されている場合
+コマンドラインからマウントするなら↓
+smbmount //192.168.0.2/souko\ \(S\)/Linux/dump /mnt -o sec=none
+/etc/fstabに書くなら↓
+//192.168.0.2/souko\040(S)/Linux/dump /mnt smbfs rw,defaults,sec=none 0 0
+ちなみに前回の時にはオプションに-o guestってやってたけどこれだと「Warning: mapping &#39;guest&#39; to &#39;guest,sec=none&#39;」というwarningが出るので直した
+あとfstabのファイルパス中にスペースを入れる場合は\040と記述すればおｋ
+man fstabより抜粋
+ 2 番目のフィールド (fs_file) は、ファイルシステムのマウントポイントを記
+述する。スワップパーティションの場合、このフィールドは ‘none’ と明記 す
+る必要がある。マウントポイントに含まれている空白は、‘\040’ のようにエス
+ケープできる。
+
+参考リンク
+http://d.hatena.ne.jp/adsaria/20080114/1200328063
+http://ksugita.blog62.fc2.com/blog-entry-23.html </description>
+    </item>
+    
+    <item>
+      <title>レジストリまで追跡して確実にアンインストール　Revo Uninstaller</title>
+      <link>https://yaasita.github.io/2010/05/03/6876</link>
+      <pubDate>Mon, 03 May 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/05/03/6876</guid>
+      <description>Revo Uninstaller
+というらしい
+参考リンク
+http://www.forest.impress.co.jp/article/2007/05/29/revouninst.html </description>
     </item>
     
   </channel>

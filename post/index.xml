@@ -1,13 +1,164 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on # cd ~/yaasita</title>
+    <title># cd ~yaasita</title>
     <link>https://yaasita.github.io/post/index.xml</link>
-    <description>Recent content in Posts on # cd ~/yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 05 Jan 2017 04:50:10 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 27 Jan 2017 01:52:29 +0900</lastBuildDate>
     <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>hostとdigコマンドの挙動が違う時</title>
+      <link>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different</link>
+      <pubDate>Fri, 27 Jan 2017 01:52:29 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different</guid>
+      <description>名前を引くときにhostコマンドでは返ってくるがdigだとおかしくなるときがある
+こんな感じにすれば同じになる
+host example.net. dig +nodnssec +noedns +noadflag example.net. a  WN-G300GRはadビット立ててると応答すらしないらしい</description>
+    </item>
+    
+    <item>
+      <title>GMOのConoha VPS使ってみた</title>
+      <link>https://yaasita.github.io/2017/01/22/conoha-vps</link>
+      <pubDate>Sun, 22 Jan 2017 23:51:14 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/22/conoha-vps</guid>
+      <description>非常に良い
+さくらVPSより良いかもしれない
+ DNSサーバ無料
+ OP25B無し
+ SSD 20GB
+ 初期費用なし
+ 転送量無制限
+ 時間課金方式と月額方式のハイブリット
+  今はコンテナ技術でサクッと移動できちゃうので、
+安いクラウドサービス渡り歩くのも良いと思った</description>
+    </item>
+    
+    <item>
+      <title>BCCヘッダを落とすのは誰か</title>
+      <link>https://yaasita.github.io/2017/01/22/who_drops_bccheader</link>
+      <pubDate>Sun, 22 Jan 2017 00:48:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/22/who_drops_bccheader</guid>
+      <description>BCCヘッダは転送しないで、MTA側で消されるというのは有名な話だけど
+実際どんな感じなのか
+まずメーラーでBCCを指定して送ったとする
+この時BCCヘッダはどのタイミングで消えるか？という問題
+MUA(thunderbird等) -&amp;gt; 送信側MTA(postfix等) -&amp;gt; 受信側MTA(postfix等)  thunderbird まずthunderbirdからBCCで送信した場合はそもそもBccヘッダはつけない(Icedove/45.6.0で検証)
+envelope toには存在するがそもそもBccヘッダなんてものを書かない
+postfix postfixもデフォルトではBccヘッダは落とすようになっている
+しかしこの設定を変更すればBccヘッダを落とさないでそのまま配送される
+message_drop_headers = bcc, content-length, resent-bcc, return-path  まとめ 送信時点で見られちゃいけないヘッダをMTAに渡して、多分消してくれるだろうと期待して送信するのはあまりよくないと思う
+具体的にはBccヘッダまで綺麗に書いて sendmail -t で送るよりはちゃんとenvelope to を指定して送った方が安全度高い
+要するにthunderbirdみたいに送るべき</description>
+    </item>
+    
+    <item>
+      <title>新旧リダイレクト</title>
+      <link>https://yaasita.github.io/2017/01/16/redirect-githubpage</link>
+      <pubDate>Mon, 16 Jan 2017 23:36:18 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/16/redirect-githubpage</guid>
+      <description> middlemanからの移行に際してリンクが壊れまくった
+GoogleのSearch Console
+https://yaasita.tumblr.com/post/155945715637 
+とりあえずJavaScriptで新URL案内すればいいか
+ こんな感じ
+https://yaasita.tumblr.com/post/155945774152 
+旧ページ  記事ページ
+ https://yaasita.github.io/2010/08/30/5917.html
+  タグページ
+ https://yaasita.github.io/tags/soft.html
+  年ページ
+ https://yaasita.github.io/2008.html
+   </description>
+    </item>
+    
+    <item>
+      <title>ore_markdownを画像埋め込みに対応させた</title>
+      <link>https://yaasita.github.io/2017/01/15/ore_markdown_update2</link>
+      <pubDate>Sun, 15 Jan 2017 02:47:40 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/15/ore_markdown_update2</guid>
+      <description>またore_markdown-goの修正
+こんな感じに画像データをBase64にして埋め込めばHTMLファイル一枚で完結しそうだったので修正した
+&amp;lt;img src=&amp;quot;data:image/png;base64,(base64文字列)&amp;quot; alt=&amp;quot;img1&amp;quot;&amp;gt;  修正内容
+吐き出されたHTMLの例
+https://gist.githubusercontent.com/yaasita/d9b55cff5e52197adf4840cf702e5bd6/raw/c6a3c2f96f4360ad3fa526c6c5ae5302acd26769/preview.html
+保存してHTMLを表示させれば画像がみれるはず</description>
+    </item>
+    
+    <item>
+      <title>MacBook買ったのでサポートお願いした</title>
+      <link>https://yaasita.github.io/2017/01/09/mac-personal-setup</link>
+      <pubDate>Mon, 09 Jan 2017 16:27:40 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/09/mac-personal-setup</guid>
+      <description>13インチ MacBook Air 1.6GHzデュアルコアIntel Core i5 整備済製品 (\84,000)で買ったのでパーソナルセットアップをお願いしてみた
+時間は30分だったけど、電話でいろいろ質問できて良い
+http://www.apple.com/jp/retail/personalsetup/</description>
+    </item>
+    
+    <item>
+      <title>ansibleで作ったロール</title>
+      <link>https://yaasita.github.io/2017/01/09/my-ansible-role</link>
+      <pubDate>Mon, 09 Jan 2017 16:24:41 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/09/my-ansible-role</guid>
+      <description>成果物  ec2でスワップファイル置くとかするやつ
+ https://github.com/yaasita/ansible_role_amazon-ec2
+  aptのproxy設定
+ https://github.com/yaasita/ansible_role_apt-proxy
+  ブラックホールメールサーバ作るときの設定
+ https://github.com/yaasita/ansible_role_blackhole-postfix
+  adminユーザ作るとき
+ https://github.com/yaasita/ansible_role_admin-server
+  centosでよくやる設定
+ https://github.com/yaasita/ansible_role_common_centos
+  Ubuntuでよくやる設定
+ https://github.com/yaasita/ansible_role_common_ubuntu
+  Dockerコンテナにするときによくやる設定
+ https://github.com/yaasita/ansible_role_docker-care
+  munin-node入れるとき
+ https://github.com/yaasita/ansible_role_munin
+  mysql
+ https://github.com/yaasita/ansible_role_mysql
+  nagios nrpe
+ https://github.com/yaasita/ansible_role_nagios-nrpe
+  ネットワーク設定
+ https://github.com/yaasita/ansible_role_network
+  proxy設定(主にaptの)
+ https://github.com/yaasita/ansible_role_proxy
+  railsの初期設定
+ https://github.com/yaasita/ansible_role_rails
+  rbenv</description>
+    </item>
+    
+    <item>
+      <title>ore_markdownをGo言語で書き直した</title>
+      <link>https://yaasita.github.io/2017/01/06/ore_markdown_to_golang</link>
+      <pubDate>Fri, 06 Jan 2017 15:44:33 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/06/ore_markdown_to_golang</guid>
+      <description> 久々に ore_markdownを書き直した
+感想とか  Ruby(Gem: github-markdown)→Go(russross/blackfriday)で書き直し
+ スタティックファイルもgo-bindataでバイナリに閉じ込めた
+ OS間の違いを意識するのがめんどくさいのでVimでの判定は全部やめてGo側に寄せた
+ 早くて良い
+  成果物とかライブラリ  作ったもの
+ https://github.com/yaasita/ore_markdown
+ https://github.com/yaasita/ore_markdown-go
+  blackfriday
+ https://github.com/russross/blackfriday
+ https://godoc.org/github.com/russross/blackfriday
+  go-bindata
+ https://github.com/jteeuwen/go-bindata
+   </description>
+    </item>
     
     <item>
       <title>blogをmiddlemanからhugoに移行した</title>
@@ -197,42 +348,6 @@ https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes
       
       <guid>https://yaasita.github.io/2016/06/11/deep-learning</guid>
       <description>http://tkengo.github.io/blog/2016/06/06/yaruo-machine-learning0/</description>
-    </item>
-    
-    <item>
-      <title>戦国無双クロニクル3(Vita)攻略</title>
-      <link>https://yaasita.github.io/2016/05/10/sengoku-musou</link>
-      <pubDate>Tue, 10 May 2016 00:36:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/05/10/sengoku-musou</guid>
-      <description>攻略サイト
-http://goo.gl/bAfbfX
-この全武将お手軽さ評価づけが参考になる
-http://goo.gl/uenJG4</description>
-    </item>
-    
-    <item>
-      <title>IRCのログを記録するbotbot.me</title>
-      <link>https://yaasita.github.io/2016/05/04/botbot-me</link>
-      <pubDate>Wed, 04 May 2016 23:10:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/05/04/botbot-me</guid>
-      <description>https://botbot.me/
-botbot.meはIRCに参加させることでログを取って
-公開できるbotだ
-便利そう</description>
-    </item>
-    
-    <item>
-      <title>リアルタイム監視ソフトnetdata</title>
-      <link>https://yaasita.github.io/2016/04/25/netdata</link>
-      <pubDate>Mon, 25 Apr 2016 23:24:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/04/25/netdata</guid>
-      <description>https://github.com/firehol/netdata
-インストール
-https://github.com/firehol/netdata/wiki/Installation
-# 起動 /usr/sbin/netdata # 見てみる http://192.168.0.38:19999/  </description>
     </item>
     
   </channel>

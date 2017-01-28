@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2011 on # cd ~/yaasita</title>
+    <title># cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2011/index.xml</link>
-    <description>Recent content in 2011 on # cd ~/yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
     <atom:link href="/archives/2011/index.xml" rel="self" type="application/rss+xml" />
     
@@ -309,6 +309,91 @@ hogehoge.netのホスト(HTTP_HOST)またはプライベートIPで指定して�
 という制御にした
 server.document-root = &#34;/var/www2&#34; $HTTP[&#34;host&#34;] == &#34;hogehoge.net&#34; { server.document-root = &#34;/var/www&#34; } else $HTTP[&#34;host&#34;] == &#34;192.168.0.4&#34; { server.document-root = &#34;/var/www&#34; } 
 今回はドキュメントルート以外は全部同じ設定にしてあるので、conf-enabled/05-auth.confとかも同じ設定になるので注意 </description>
+    </item>
+    
+    <item>
+      <title>/etc/init.dに作った起動スクリプトのリンク設定とか</title>
+      <link>https://yaasita.github.io/2011/08/12/3618</link>
+      <pubDate>Fri, 12 Aug 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/08/12/3618</guid>
+      <description>起動時、終了時等のランレベルが変更されたときに走るスクリプトは/etc/init.dに
+格納するが、rc0.d/～rc6.d/のディレクトリにリンクを張る必要がある
+昔は手動でやっていたが、今は決まった書式でコメントを書いておけば自動的にアップデートしてくれるらしい
+update-rc.dというコマンドで行える
+ヘッダさえちゃんと書けばinsservというコマンドを打つだけで全スクリプトのリンクが張られる
+詳しくは/etc/init.d/READMEを見れば分かる
+関連記事
+init.d/とか各ランレベルごとの起動スクリプトについて
+rep2をオンメモリーにして高速化2  </description>
+    </item>
+    
+    <item>
+      <title>sudoku(数独)の日本語man</title>
+      <link>https://yaasita.github.io/2011/08/12/3583</link>
+      <pubDate>Fri, 12 Aug 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/08/12/3583</guid>
+      <description>Linux用のsudokuゲームの日本語manです
+NAMEsudoku - 数独ゲーム
+SYNOPSIS(ゲームを始める)
+sudoku [options] ... [&amp;amp;lt;filename&amp;amp;gt;]
+(問題を作成)
+sudoku -g [&amp;amp;lt;num&amp;amp;gt;] [options] ...
+(問題を解く)
+sudoku -v [options] ...
+(難易度を計算)
+sudoku -s [options] ...
+DESCRIPTIONThe sudoku board game is played on a 9x9 grid, divided into rows, columns, and
+9 blocks of 3x3 squares. The objective is to fill the empty squares with the
+digits 1-9, so that each row, column, and block contains each of the digits 1-9</description>
+    </item>
+    
+    <item>
+      <title>KDMのセッション選択の制御とかの話</title>
+      <link>https://yaasita.github.io/2011/08/11/3658</link>
+      <pubDate>Thu, 11 Aug 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/08/11/3658</guid>
+      <description>現在、Xにログインするときに使用するディスプレイマネージャにはKDMを使用している
+このKDMのセッション制御についてメモしておく
+・ログイン時にセッションをDefaultを選んでログインする
+→.xinitrc .xsessionに書いたデフォルトセッションが開始される
+（詳しくはここら辺参照）
+・その他のセッションを明示的にえらんでログインする
+→.xinitrc .xsessionは無視されてえらんだセッションが開始される
+参考リンク
+KDMハンドブック
+テーマ </description>
+    </item>
+    
+    <item>
+      <title>KDMの設定をGUIで行う</title>
+      <link>https://yaasita.github.io/2011/08/11/3638</link>
+      <pubDate>Thu, 11 Aug 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/08/11/3638</guid>
+      <description>今まで：kcontrol
+これから：systemsettings
+だそうです
+参照
+なのでsystemsettingsをインストールしたらそこから設定してみよう
+Advancedタブ→LoginManagerで設定できる
+日本語がいいならついでにkde-l10n-jaを入れておくと良いかも </description>
+    </item>
+    
+    <item>
+      <title>LinuxでHDDの使用率を調べるには？</title>
+      <link>https://yaasita.github.io/2011/08/11/3678</link>
+      <pubDate>Thu, 11 Aug 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/08/11/3678</guid>
+      <description>HDDの各フォルダの使用量を調べる方法について調べた
+duコマンドで計ってもいいけど
+Baobabってコマンドでもいいかも
+参考リンク
+ハードディスク使用率をグラフィカルに表示するには
+ディレクトリやディスクの使用量を調べるには </description>
     </item>
     
   </channel>

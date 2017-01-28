@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Game on # cd ~/yaasita</title>
+    <title># cd ~yaasita</title>
     <link>https://yaasita.github.io/categories/game/index.xml</link>
-    <description>Recent content in Game on # cd ~/yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
     <atom:link href="/categories/game/index.xml" rel="self" type="application/rss+xml" />
     
@@ -251,6 +251,95 @@ http://gamegaz.com/2013010310456/ </description>
       
       <guid>https://yaasita.github.io/2012/09/02/2253</guid>
       <description>http://sakray06.blog.so-net.ne.jp/2012-06-12</description>
+    </item>
+    
+    <item>
+      <title>マーブルvsカプコン2(MARVEL VS. CAPCOM 2 NEW AGE OF HEROES)</title>
+      <link>https://yaasita.github.io/2011/08/27/3467</link>
+      <pubDate>Sat, 27 Aug 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/08/27/3467</guid>
+      <description>通称マブカプ2
+まとめ
+クソゲーまとめ @ ウィキ
+MARVEL　VS　CAPCOM２　攻略
+コマンド</description>
+    </item>
+    
+    <item>
+      <title>sudoku(数独)の日本語man</title>
+      <link>https://yaasita.github.io/2011/08/12/3583</link>
+      <pubDate>Fri, 12 Aug 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/08/12/3583</guid>
+      <description>Linux用のsudokuゲームの日本語manです
+NAMEsudoku - 数独ゲーム
+SYNOPSIS(ゲームを始める)
+sudoku [options] ... [&amp;amp;lt;filename&amp;amp;gt;]
+(問題を作成)
+sudoku -g [&amp;amp;lt;num&amp;amp;gt;] [options] ...
+(問題を解く)
+sudoku -v [options] ...
+(難易度を計算)
+sudoku -s [options] ...
+DESCRIPTIONThe sudoku board game is played on a 9x9 grid, divided into rows, columns, and
+9 blocks of 3x3 squares. The objective is to fill the empty squares with the
+digits 1-9, so that each row, column, and block contains each of the digits 1-9</description>
+    </item>
+    
+    <item>
+      <title>FF12攻略まとめ</title>
+      <link>https://yaasita.github.io/2011/07/16/3699</link>
+      <pubDate>Sat, 16 Jul 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/07/16/3699</guid>
+      <description>まとめWiki
+Final Fantasy XII WIKI
+FF12攻略情報-ZAPAnet
+武器・防具について
+武器の特徴
+武器・防具の入手方法
+防具リスト
+武器リスト
+ライセンス
+ライセンスボードの位置
+技・魔法
+技・魔法入手場所
+サブイベント</description>
+    </item>
+    
+    <item>
+      <title>ヨッシーのクッキー裏技</title>
+      <link>https://yaasita.github.io/2011/06/05/3802</link>
+      <pubDate>Sun, 05 Jun 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/06/05/3802</guid>
+      <description>
+強いCPUと戦える </description>
+    </item>
+    
+    <item>
+      <title>Linuxの面白そうなゲーム</title>
+      <link>https://yaasita.github.io/2011/05/22/3925</link>
+      <pubDate>Sun, 22 May 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/05/22/3925</guid>
+      <description>全てaptでインストールできる
+sudoku - コンソールでできる数独
+xshogi - 将棋ゲーム　軽くて良い感じ
+kraptor - シューティングゲーム
+ltris - 軽いテトリス
+netris　- コンソール版のテトリス
+viruskiller - シューティングゲーム？（動作せず）
+xblast - ボンバーマンのクローン
+flobopuyo - ぷよぷよのクローン
+xfireworks - デスクトップに花火が出る
+xfishtank - デスクトップが水族館みたいになる
+xpenguins - デスクトップにペンギンが出る
+xsol - ただのソリティア
+参考リンク
+http://www10.atwiki.jp/gleaning/pages/32.html
+http://penguin.tantin.jp/mori/category.html#af0d8275 </description>
     </item>
     
   </channel>

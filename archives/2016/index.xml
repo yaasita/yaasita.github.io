@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2016 on # cd ~/yaasita</title>
+    <title># cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2016/index.xml</link>
-    <description>Recent content in 2016 on # cd ~/yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
     <atom:link href="/archives/2016/index.xml" rel="self" type="application/rss+xml" />
     
@@ -217,6 +217,80 @@ Androidでも動く
 （同期ディレクトリに上限がないため）
 こんな感じ
 ./syncthing -gui-address=&amp;quot;192.168.0.10:3184&amp;quot; -no-browser  </description>
+    </item>
+    
+    <item>
+      <title>Git-itやってみた</title>
+      <link>https://yaasita.github.io/2016/04/24/git-it</link>
+      <pubDate>Sun, 24 Apr 2016 02:05:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/04/24/git-it</guid>
+      <description>日本語も選択できるElectron製のアプリで
+ステップバイステップで勉強できる
+ここのリリースページからバイナリを落として実行する
+https://github.com/jlord/git-it-electron
+結果
+http://yaasita.github.io/patchwork/
+参考リンク
+ Git-it – 手を動かしながら習得できる日本語対応のGit/GitHub学習アプリ
+ http://www.softantenna.com/wp/review/git-it/
+  プルリク練習用のリポジトリ
+ https://github.com/jlord/patchwork
+  結果確認
+ http://jlord.us/patchwork/
+   </description>
+    </item>
+    
+    <item>
+      <title>HDDの不良セクタ埋める</title>
+      <link>https://yaasita.github.io/2016/03/26/hdd_bad_sector</link>
+      <pubDate>Sat, 26 Mar 2016 00:43:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/03/26/hdd_bad_sector</guid>
+      <description>HDDの不良セクタ代替処理を自動化
+Reallocated_Sector_Ctが残ってれば使える手法
+https://github.com/yaasita/hdd_badsector
+使い方
+smartctl -a /dev/sdc | ./hdd_check.pl /dev/sdc  </description>
+    </item>
+    
+    <item>
+      <title>Mojoliciousのwebsocket回り</title>
+      <link>https://yaasita.github.io/2016/02/21/mojolicious</link>
+      <pubDate>Sun, 21 Feb 2016 02:29:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/02/21/mojolicious</guid>
+      <description>websocketの開いてもデフォルト15秒でタイムアウトするのが嫌なら
+↓みたいな感じでtimeout伸ばす
+Mojo::IOLoop-&amp;gt;stream($self-&amp;gt;tx-&amp;gt;connection)-&amp;gt;timeout(300);    参考リンク
+ http://kazuph.hateblo.jp/entry/20120310/1331395725
+ https://github.com/yuki-kimoto/mojolicious-guides-japanese/wiki
+  </description>
+    </item>
+    
+    <item>
+      <title>ff10-2</title>
+      <link>https://yaasita.github.io/2016/02/15/ff10-2</link>
+      <pubDate>Mon, 15 Feb 2016 01:13:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/02/15/ff10-2</guid>
+      <description>FF10-2ラストミッション攻略ページ
+http://hrs-game.main.jp/ff10-2_hd/last_mission/chapter_1.html</description>
+    </item>
+    
+    <item>
+      <title>下位10%のダメなエンジニアシリーズ</title>
+      <link>https://yaasita.github.io/2016/01/25/dame-engineer</link>
+      <pubDate>Mon, 25 Jan 2016 00:23:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/01/25/dame-engineer</guid>
+      <description>パズル1  http://tango-ruby.hatenablog.com/entry/2015/11/30/122814
+ http://challenge-your-limits.herokuapp.com/
+  答え
+curl http://challenge-your-limits.herokuapp.com/call/me # getだめだよって怒られる curl -F &amp;quot;hoge=hoge&amp;quot; http://challenge-your-limits.herokuapp.com/call/me # 適当にPOSTすると正しいURLを教えてくれる curl -F &amp;quot;name=hoge&amp;quot; -F &amp;quot;email=huga@hoge.com&amp;quot; \ http://challenge-your-limits.herokuapp.com/challenge_users # あとはこんな感じで  パズル2  http://tango-ruby.hatenablog.com/entry/2015/12/28/212010
+ http://challenge-your-limits2.herokuapp.com/
+  答え
+curl http://challenge-your-limits2.herokuapp.com/call/my/APIs # メソッドが違うらしい curl -X DELETE http://challenge-your-limits2.herokuapp.com/call/my/APIs # いろいろ試すとDELETEで通る curl http://challenge-your-limits2.herokuapp.com/c2_users/12/hacker_apply # 案内されたURLにリクエストするとなんか違うらしい curl http://challenge-your-limits2.herokuapp.com/help/me/out # とりあえず登録 curl -F &amp;quot;username=yaasita&amp;quot; -F &#39;email=hoge1@example.com&#39; \ http://challenge-your-limits2.heroku/app.com/c2_users/ # 帰ってきた値でBASIC認証 curl --user yaasita:uRd4yy-imPbHBR4W http://challenge-your-limits2.herokuapp.com/c2_users/10 # あとは帰ってきた文字列をBASE64デコード  パズル3  http://tango-ruby.</description>
     </item>
     
   </channel>

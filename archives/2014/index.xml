@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2014 on # cd ~/yaasita</title>
+    <title># cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2014/index.xml</link>
-    <description>Recent content in 2014 on # cd ~/yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
     <atom:link href="/archives/2014/index.xml" rel="self" type="application/rss+xml" />
     
@@ -63,7 +63,9 @@ file f_000* | grep JPEG | perl -F: -nlae &#39;print $F[0]&#39; | xargs -i mv {} 
       
       <guid>https://yaasita.github.io/2014/10/30/onenote-autocorrect</guid>
       <description>ファイル⇒オプション開いて
-文章校正⇒オートコレクトのオプション</description>
+文章校正⇒オートコレクトのオプション
+https://yaasita.tumblr.com/post/101260507767 
+https://yaasita.tumblr.com/post/101260507767</description>
     </item>
     
     <item>
@@ -180,6 +182,70 @@ Windows7の日本語化について
  コントロールパネルの Clock, Language, and Regionを選択
  TimeZone変更
   http://qiita.com/hnakamur/items/5f2f9e817dd0de60abb2</description>
+    </item>
+    
+    <item>
+      <title>squirrelmailっていうWebメールクライアント</title>
+      <link>https://yaasita.github.io/2014/09/21/squirrelmail</link>
+      <pubDate>Sun, 21 Sep 2014 01:56:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/09/21/squirrelmail</guid>
+      <description> いわゆるweb mailソフト
+IMAPしか対応してないけど、localhost以外のメールも読める
+Dockerイメージにしてみた
+https://registry.hub.docker.com/u/yaasita/docker-squirrelmail/
+sshで入って以下のコマンドで設定できる
+/etc/squirrelmail/conf.pl  設定箇所  IMAPの接続情報
+ IMAPのTLS接続の有無
+ 2. Server Settings =&amp;gt; A. Update IMAP Settings
+  言語
+ 10. Languages
+ 1. Default Language =&amp;gt; ja_JP
+ 2. Default Charset =&amp;gt; iso-2022-jp
+    参考リンク  http://centossrv.com/squirrelmail.shtml
+  </description>
+    </item>
+    
+    <item>
+      <title>闇SIer</title>
+      <link>https://yaasita.github.io/2014/09/11/yami_sier</link>
+      <pubDate>Thu, 11 Sep 2014 02:53:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/09/11/yami_sier</guid>
+      <description> 闇SIer
+ 元ファイル
+  </description>
+    </item>
+    
+    <item>
+      <title>自分の声を遅れて聞こえさせて話し難くなる</title>
+      <link>https://yaasita.github.io/2014/08/31/speech-jammer</link>
+      <pubDate>Sun, 31 Aug 2014 02:22:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/08/31/speech-jammer</guid>
+      <description>SpeechJammerLiteというらしい
+https://sites.google.com/site/qurihara/home/speechjammer/lt</description>
+    </item>
+    
+    <item>
+      <title>3Dのパズルゲーム？</title>
+      <link>https://yaasita.github.io/2014/08/31/blueprint3d</link>
+      <pubDate>Sun, 31 Aug 2014 00:42:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/08/31/blueprint3d</guid>
+      <description>3Dのパーツを重ねて絵にするゲーム
+Blueprint3D
+http://armorgames.com/play/12557/blueprint3d</description>
+    </item>
+    
+    <item>
+      <title>簡易Radiko録音スクリプトらしい</title>
+      <link>https://yaasita.github.io/2014/08/27/radiko-recording</link>
+      <pubDate>Wed, 27 Aug 2014 00:49:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/08/27/radiko-recording</guid>
+      <description>らしい
+https://gist.github.com/matchy2/3956266</description>
     </item>
     
   </channel>

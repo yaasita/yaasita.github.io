@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Hard on # cd ~/yaasita</title>
+    <title># cd ~yaasita</title>
     <link>https://yaasita.github.io/categories/hard/index.xml</link>
-    <description>Recent content in Hard on # cd ~/yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
     <atom:link href="/categories/hard/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>MacBook買ったのでサポートお願いした</title>
+      <link>https://yaasita.github.io/2017/01/09/mac-personal-setup</link>
+      <pubDate>Mon, 09 Jan 2017 16:27:40 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/09/mac-personal-setup</guid>
+      <description>13インチ MacBook Air 1.6GHzデュアルコアIntel Core i5 整備済製品 (\84,000)で買ったのでパーソナルセットアップをお願いしてみた
+時間は30分だったけど、電話でいろいろ質問できて良い
+http://www.apple.com/jp/retail/personalsetup/</description>
+    </item>
     
     <item>
       <title>最近買ったスマホ</title>
@@ -205,6 +216,65 @@ https://forums.ubuntulinux.jp/viewtopic.php?id=1732 </description>
       <guid>https://yaasita.github.io/2013/01/29/1483</guid>
       <description>を買ってみた
 所謂、SIMフリーの無線LANルータ </description>
+    </item>
+    
+    <item>
+      <title>PCを破棄したくなったら</title>
+      <link>https://yaasita.github.io/2013/01/02/1705</link>
+      <pubDate>Wed, 02 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/02/1705</guid>
+      <description>ごみパソに送りつけると良いらしい
+http://www.53pc.com/hikitori/index.html </description>
+    </item>
+    
+    <item>
+      <title>HDDが故障したときにやったこと</title>
+      <link>https://yaasita.github.io/2012/03/11/2962</link>
+      <pubDate>Sun, 11 Mar 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/03/11/2962</guid>
+      <description>/dev/sddが故障を検地 (S.M.A.R.T)
+まずはsmartのセルフテストをやってみる
+smartctl -t long /dev/sdd  badblocksでHDDをチェック
+今回は読み込みチェックだけやった
+badblocks -s -v /dev/hda  書き込みチェックもやるなら↓
+badblocks -s -v -n /dev/hda
+-s 進捗状況表示
+-v 詳細表示
+-n 非破壊テスト
+http://nabe.blog.abk.nu/0245
+ファイルシステムが壊れてそうなら
+fsck
+を使うこと</description>
+    </item>
+    
+    <item>
+      <title>/dev/disk/by-uuidに無いHDDがある？</title>
+      <link>https://yaasita.github.io/2012/01/06/3236</link>
+      <pubDate>Fri, 06 Jan 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/01/06/3236</guid>
+      <description>答え
+mkfsでフォーマットしてないからです。
+フォーマットすれば出ます。
+ファイルシステム単位につけるものらしいね
+だからmkfsしなおしたら変わります
+ご注意を
+参考リンク
+http://manual.aptosid.com/ja/part-uuid-ja.htm </description>
+    </item>
+    
+    <item>
+      <title>マザーボードのチップセットとかCPU情報をLinuxで取得する</title>
+      <link>https://yaasita.github.io/2011/12/31/3257</link>
+      <pubDate>Sat, 31 Dec 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/12/31/3257</guid>
+      <description>lshwというユーティリティがあった
+aptでインストールできた
+参考リンク
+PCのハードウェア情報を表示するには </description>
     </item>
     
   </channel>

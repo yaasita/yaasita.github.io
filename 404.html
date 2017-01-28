@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="generator" content="Hugo 0.19-DEV" />
     <link rel="shortcut icon" href="/images/favicon.ico">
-    <link href="https://yaasita.github.io/404.html/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~/yaasita" />
+    <link href="https://yaasita.github.io/404.html/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     
@@ -13,7 +13,7 @@
     
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <title>404 Page not found | # cd ~/yaasita</title>
+    <title>404 Page not found | # cd ~yaasita</title>
   </head>
   <body>
     <div id="wrap">
@@ -30,14 +30,32 @@ ga('send', 'pageview');
 
       <header class="site-header">
         <div class="site-header-left">
-          <a class="site-header-title" href="https://yaasita.github.io/"># cd ~/yaasita</a>
+          <a class="site-header-title" href="https://yaasita.github.io/"># cd ~yaasita</a>
         </div>
       </header>
       <div class="container">
         <div id="main">
 
 <h1>404 Page Not Found!</h1>
-<span>Sorry, This page is not exist.</span>
+<span id="guess">Sorry, This page is not exist.</span>
+<script>
+(function () {
+    var url = window.location.href;
+    var guess_url = function(u) {
+          document.getElementById("guess").innerHTML = "もしかして？<br />" + '<a href="' + u + '">' + u + '</a>';
+    };
+    if (/20\d\d\/\d\d\/\d\d\/.+\.html/.test(url)){
+        guess_url(url.replace(/\.html$/,""));
+    }
+    else if (/20\d\d\.html/.test(url)){
+        guess_url(url.replace(/(20\d\d)\.html$/,"archives/$1"));
+    }
+    else if (/tags\/(\w+)\.html/.test(url)){
+        guess_url(url.replace(/tags\/(\w+).html$/,"categories/$1"));
+    }
+})();
+</script>
+
         </div>
         <div class="sidebar">
   
@@ -94,11 +112,11 @@ ga('send', 'pageview');
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (34)</a>
+          <a href="/categories/hard"><span></span>hard (35)</a>
         </li>
         
         <li>
-          <a href="/categories/life"><span></span>life (61)</a>
+          <a href="/categories/life"><span></span>life (62)</a>
         </li>
         
         <li>
@@ -106,19 +124,19 @@ ga('send', 'pageview');
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (176)</a>
+          <a href="/categories/net"><span></span>net (179)</a>
         </li>
         
         <li>
-          <a href="/categories/program"><span></span>program (118)</a>
+          <a href="/categories/program"><span></span>program (122)</a>
         </li>
         
         <li>
-          <a href="/categories/rule"><span></span>rule (14)</a>
+          <a href="/categories/rule"><span></span>rule (16)</a>
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (367)</a>
+          <a href="/categories/soft"><span></span>soft (368)</a>
         </li>
         
         <li>
@@ -131,7 +149,7 @@ ga('send', 'pageview');
   
   <div class="sidebar-content">
     <div class="sidebar-header">
-      <span>Archive</span>
+      <span>Archives</span>
     </div>
     <div class="categories">
       <ul id="archives">
@@ -177,7 +195,7 @@ ga('send', 'pageview');
         </li>
         
         <li>
-          <a href="/archives/2017"><span></span>2017 (1)</a>
+          <a href="/archives/2017"><span></span>2017 (9)</a>
         </li>
         
       </ul>

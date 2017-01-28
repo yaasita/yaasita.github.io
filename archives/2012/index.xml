@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2012 on # cd ~/yaasita</title>
+    <title># cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2012/index.xml</link>
-    <description>Recent content in 2012 on # cd ~/yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
     <atom:link href="/archives/2012/index.xml" rel="self" type="application/rss+xml" />
     
@@ -246,6 +246,88 @@ HTMLの編集からどうぞ
 参考リンク
 http://tagblr.tumblr.com/post/340724562 
 http://ryo-skd.tumblr.com/post/311289824/tumblr-tumblr-nplll-mutter </description>
+    </item>
+    
+    <item>
+      <title>twitterのbotを作る</title>
+      <link>https://yaasita.github.io/2012/10/09/2109</link>
+      <pubDate>Tue, 09 Oct 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/10/09/2109</guid>
+      <description>そんなに難しくないと思った・・・
+CONSUMER_KEYとCONSUMER_SECRETの取得 アプリの登録を行う
+このページから飛んで適当に入力する
+ユーザに許可してもらいアクセストークンをもらう スクリプト実行⇒authページ⇒許可を押す⇒数値をメモ⇒スクリプトに入力
+#!/usr/bin/env ruby # coding: utf-8 require &#39;rubygems&#39; require &#39;oauth&#39; OAUTH_CONSUMER_KEY=&#39;XXXXXXXXXXXXXXXXXXXXXXXXXX&#39; OAUTH_CONSUMER_SECRET=&#39;XXXXXXXXXXXXXXXXXXXXXXXX&#39; consumer = OAuth::Consumer.new( OAUTH_CONSUMER_KEY , OAUTH_CONSUMER_SECRET , { :site=&amp;amp;amp;gt;&amp;quot;http://twitter.com&amp;quot; }) #optprm = { :oauth_callback=&amp;amp;amp;gt;&amp;quot;（コールバック先のURL）&amp;quot; } request_token = consumer.get_request_token puts &amp;quot;Access this URL and approve =&amp;amp;amp;gt; #{request_token.authorize_url}&amp;quot; print &amp;quot;Input OAuth Verifier: &amp;quot; oauth_verifier = gets.chomp.strip access_token = request_token.get_access_token( :oauth_verifier =&amp;amp;amp;gt; oauth_verifier ) puts &amp;quot;Access token: #{access_token.token}&amp;quot; puts &amp;quot;Access token secret: #{access_token.secret}&amp;quot;  後はもらったアクセストークン＆コンシューマIDでスクリプトを書く twitter のgemでもoauthのgemでも簡単なことをやる場合はあんま変わんない感じ</description>
+    </item>
+    
+    <item>
+      <title>munin2.0が出てるらしい</title>
+      <link>https://yaasita.github.io/2012/10/02/2129</link>
+      <pubDate>Tue, 02 Oct 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/10/02/2129</guid>
+      <description>http://pocketstudio.jp/log3/2012/06/04/new-features-of-munin2/
+http://dozen.dip.jp/archives/212 </description>
+    </item>
+    
+    <item>
+      <title>ffmpegの使い方</title>
+      <link>https://yaasita.github.io/2012/09/30/2150</link>
+      <pubDate>Sun, 30 Sep 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/09/30/2150</guid>
+      <description>&amp;amp;nbsp;ffmpeg -i 入力ファイル 出力ファイル
+みたいな感じでOKらしい
+ffmpeg -i hoge.flv hoge.mp4
+でもいけた
+mp3のビットレート調整とかも出来る
+ffmpeg -i input.mp3 -ab 128k output.mp3
+http://d.hatena.ne.jp/takuya_1st/20120225/1330189927
+http://yosilove.blog.shinobi.jp/Entry/603/ </description>
+    </item>
+    
+    <item>
+      <title>rubyのバージョン管理 rbenv試してみた</title>
+      <link>https://yaasita.github.io/2012/09/26/2171</link>
+      <pubDate>Wed, 26 Sep 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/09/26/2171</guid>
+      <description>rvmとかあるらしいけど今回はrbenvを使ってみます 
+cd
+git clone git://github.com/sstephenson/rbenv.git .rbenv
+echo &#39;export PATH=&#34;$HOME/.rbenv/bin:$PATH&#34;&#39; &amp;amp;gt;&amp;amp;gt; ~/.bash_profile
+echo &#39;eval &#34;$(rbenv init -)&#34;&#39; &amp;amp;gt;&amp;amp;gt; ~/.bash_profile
+
+ここで、シェルのリスタート
+次にrbenv installが使えるようにbuildプラグインをインストール 
+mkdir -p ~/.rbenv/plugins
+cd ~/.rbenv/plugins
+git clone git://github.com/sstephenson/ruby-build.git
+
+これでrbenv installコマンドが使えるようになります
+インストールできるバージョンを確認 
+rbenv install -l
+ インストール 
+rbenv install 1.9.3-xxxxx
+ 使用中のバージョンを確認 
+rbenv versions
+ バージョンの切り替え 
+rbenv global 1.9.2-p290
+ リフレッシュ変更を反映 
+rbenv rehash
+ </description>
+    </item>
+    
+    <item>
+      <title>WindowsでS.M.A.R.T情報を取得</title>
+      <link>https://yaasita.github.io/2012/09/23/2191</link>
+      <pubDate>Sun, 23 Sep 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/09/23/2191</guid>
+      <description>Linuxだとsmartctlとかだけど、Windowsだとこれがいい感じ
+CrystalDiskInfo
+http://www.forest.impress.co.jp/lib/sys/hrdbnch/hardinfo/crdiskinfo.html </description>
     </item>
     
   </channel>

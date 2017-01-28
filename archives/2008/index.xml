@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2008 on # cd ~/yaasita</title>
+    <title># cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2008/index.xml</link>
-    <description>Recent content in 2008 on # cd ~/yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
     <atom:link href="/archives/2008/index.xml" rel="self" type="application/rss+xml" />
     
@@ -306,6 +306,101 @@ Automatically back word and context　→　ポップアップにあらわれる
 あとは良く分からん
 参考リンク
 発音も分かる無料マウスオーバー辞書なFirefox拡張「backword」 </description>
+    </item>
+    
+    <item>
+      <title>VirtualPCの設定ファイルとかの場所は？</title>
+      <link>https://yaasita.github.io/2008/11/30/10916</link>
+      <pubDate>Sun, 30 Nov 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/11/30/10916</guid>
+      <description>・使用しているバーチャルHDDは？
+VirtualPCコンソール→設定(T)→ハードディスクのバーチャルハードディスクファイルってのを見れば分かると思う
+・使用してるVirtualマシンは？（その他、復元ファイルなどは？）
+\Documents and Settings\ユーザー名\Application Data\Microsoft\Virtual PC\Virtual Machines
+を見ればいける </description>
+    </item>
+    
+    <item>
+      <title>％COMSPEC％→がcmd.exeを示すように・・・</title>
+      <link>https://yaasita.github.io/2008/11/30/10896</link>
+      <pubDate>Sun, 30 Nov 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/11/30/10896</guid>
+      <description>環境変数を列挙したページがあったようだ
+cd %APPDATA%
+とかやるとアプリケーションデータに行くと思うよ
+http://www.atmarkit.co.jp/fwin2k/win2ktips/267swchos/swchos.html </description>
+    </item>
+    
+    <item>
+      <title>ゲーム</title>
+      <link>https://yaasita.github.io/2008/11/28/10937</link>
+      <pubDate>Fri, 28 Nov 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/11/28/10937</guid>
+      <description>切って進めるゲーム(splitter)
+http://www.kongregate.com/games/EvgenyKarataev/splitter/
+ニコニコメーカー
+http://nm.dabun-doumei.com/
+splitter 解答
+http://jp.youtube.com/watch?v=PHF6WKd1MyU </description>
+    </item>
+    
+    <item>
+      <title>FFベンチをやってみた</title>
+      <link>https://yaasita.github.io/2008/11/26/10958</link>
+      <pubDate>Wed, 26 Nov 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/11/26/10958</guid>
+      <description>結果は3000くらい
+２ｃｈのテンプレに習って報告してみる
+構成
+【 .CPU.　】 AMD Athlon 64 3200+
+【 Mem 】 1GB DDR400
+【　M/B　】Albatron K8X890 Pro
+【　VGA 】GeForce 7300GS (AL-GF7300GS)
+【VGAﾄﾞﾗｲﾊﾞ】
+【　DirectX....】 DirectX9.0c
+【　Sound 】
+【 OS 】
+【 Ver . 】
+▼スコア
+【　.Low　】
+【　High　.】
+http://www.playonline.com/ff11/download/media/benchmark01.html </description>
+    </item>
+    
+    <item>
+      <title>apache2でWebDAV設定→Thunderbirdのカレンダー公開</title>
+      <link>https://yaasita.github.io/2008/10/26/10979</link>
+      <pubDate>Sun, 26 Oct 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/10/26/10979</guid>
+      <description>環境はDebian etch - apache2.2を想定
+１．a2enmodで必要なモジュール読み込む
+a2enmod webdav
+a2enmod dav_fs
+２．httpd.confに↓みたいに書いとけばok
+そんでまあcalってディレクトリ作ってパーミッションとか777にしとけば
+まあ間違いないだろう
+&amp;amp;lt;Directory /var/www/cal/&amp;amp;gt;
+Dav On
+Options Indexes
+AuthType Basic
+AuthName &#34;input webdav password!&#34;
+AuthUserFile &#34;/etc/apache2/pass&#34;
+Require valid-user
+Order allow,deny
+allow from all
+&amp;amp;lt;/Directory&amp;amp;gt;
+３．ロックファイルやらうんちゃらは
+/etc/apache2/mods-enabled
+にある
+dav_fs.conf
+で定義してあるから別に書かなくてもおｋ
+４．thunderbirdにlightningって拡張いれて
+新しいカレンダーでも作ってごにょごにょすれば良いですよ </description>
     </item>
     
   </channel>

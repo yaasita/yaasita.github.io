@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>2015 on # cd ~/yaasita</title>
+    <title># cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2015/index.xml</link>
-    <description>Recent content in 2015 on # cd ~/yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
     <atom:link href="/archives/2015/index.xml" rel="self" type="application/rss+xml" />
     
@@ -222,6 +222,91 @@ mkdir server client public lib  実行について
 mkdir client/stylesheets vi client/stylesheets/style.css  https://github.com/yaasita/meteor-microscope/tree/88cc746c372b13dae6a669c014c764320a8e776e
 Deployment deployしてみる
 meteor deploy yaasita.meteor.com  なんかこれでできるぽい</description>
+    </item>
+    
+    <item>
+      <title>Linuxでスクリーンショット取る</title>
+      <link>https://yaasita.github.io/2015/04/18/linux-screenshot</link>
+      <pubDate>Sat, 18 Apr 2015 02:03:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/04/18/linux-screenshot</guid>
+      <description>shutterというのがよさ気
+apt-get install shutter  http://www.xmisao.com/2014/02/07/get-screenshot-on-linux-by-shutter.html
+他にxwd使う方法もある
+# クリックしたウィンドウ xwd | convert - hoge.png xwd -root | convert - desktop.png  http://www.xmisao.com/2013/09/17/linux-xwindow-screenshot.html</description>
+    </item>
+    
+    <item>
+      <title>Linuxのクリップボードマネージャ</title>
+      <link>https://yaasita.github.io/2015/04/18/linux-clipboard-manager</link>
+      <pubDate>Sat, 18 Apr 2015 01:31:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/04/18/linux-clipboard-manager</guid>
+      <description>diodon apt-get install diodon  初期設定はCtrl + Alt + vで呼び出し
+Preferenceから以下の設定を直した
+ Automatically paste selected item
+ 自動ペーストをやめる
+  PluginsのApplication Indicatorのチェックを外す
+  なんかCtrl-Vが使えなくなったりするので使うのやめた
+klipper KDEのやつ
+apt-get install klipper  初期はShift+Zになってるので設定からなおす
+全般の選択とクリップボード→選択を無視する
+ってやつやると選択しただけでクリップボードに入るのを抑止
+できる</description>
+    </item>
+    
+    <item>
+      <title>Linuxのターミナルで出来るマリオらしい</title>
+      <link>https://yaasita.github.io/2015/04/13/linux-terminal-game</link>
+      <pubDate>Mon, 13 Apr 2015 00:24:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/04/13/linux-terminal-game</guid>
+      <description>すごいなこれ
+まさかの？Linuxターミナル上でプレイする『スーパーマリオブラザーズ』</description>
+    </item>
+    
+    <item>
+      <title>boxesっていうソフト</title>
+      <link>https://yaasita.github.io/2015/03/29/boxes</link>
+      <pubDate>Sun, 29 Mar 2015 03:06:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/03/29/boxes</guid>
+      <description>vimでも使える
+apt-get install boxes  Visual Modeで選択して
+!boxes -d shell  とかやる
+参考リンク 毎日のスクリプト作成にちょっとしたコダワリを加えるboxes</description>
+    </item>
+    
+    <item>
+      <title>ロックマンX5攻略</title>
+      <link>https://yaasita.github.io/2015/03/22/rockmanx5</link>
+      <pubDate>Sun, 22 Mar 2015 23:09:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/03/22/rockmanx5</guid>
+      <description>エンディング 以下の3種類
+ ゼロがプレイヤーキャラから外れていない状態で、エックスでクリア。
+ シャトル成功でOK
+  ゼロがプレイヤーキャラから外れている状態で、エックスでクリア。
+ エニグマ、シャトルどっちも失敗すればOK
+  ゼロでクリア。
+ シャトル成功でOK
+   ステージ攻略 クレッセント・グリズリー(左一番上)  サブタンク
+ 暴走トラックの途中に普通においてある
+  ライフアップ
+ 暴走トラック面中間の屋根の上(ファルコン or ガイアアーマ必須)
+  パーツ
+ ファルコン・フットパーツ
+ 暴走トラックから飛び降りてすぐ上の岩を壁蹴りで登る。
+  強化パーツ
+ ライフ: ショックアブソーバー
+ エナジー: ハイパーダッシュ
+   ボルト・クラーケン(左上から2番目)  弱点
+ クレッセントショット or 三日月斬
+  ライフアップ
+ ガイアアーマー必須
+ ステージ最後のトラップの上Vと書かれた箱をチャージショット
+  パーツ
+ ファルコン・ヘッドパーツ</description>
     </item>
     
   </channel>

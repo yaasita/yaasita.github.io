@@ -1,12 +1,47 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Soft on # cd ~/yaasita</title>
+    <title># cd ~yaasita</title>
     <link>https://yaasita.github.io/categories/soft/index.xml</link>
-    <description>Recent content in Soft on # cd ~/yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
     <atom:link href="/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ansibleで作ったロール</title>
+      <link>https://yaasita.github.io/2017/01/09/my-ansible-role</link>
+      <pubDate>Mon, 09 Jan 2017 16:24:41 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/09/my-ansible-role</guid>
+      <description>成果物  ec2でスワップファイル置くとかするやつ
+ https://github.com/yaasita/ansible_role_amazon-ec2
+  aptのproxy設定
+ https://github.com/yaasita/ansible_role_apt-proxy
+  ブラックホールメールサーバ作るときの設定
+ https://github.com/yaasita/ansible_role_blackhole-postfix
+  adminユーザ作るとき
+ https://github.com/yaasita/ansible_role_admin-server
+  centosでよくやる設定
+ https://github.com/yaasita/ansible_role_common_centos
+  Ubuntuでよくやる設定
+ https://github.com/yaasita/ansible_role_common_ubuntu
+  Dockerコンテナにするときによくやる設定
+ https://github.com/yaasita/ansible_role_docker-care
+  munin-node入れるとき
+ https://github.com/yaasita/ansible_role_munin
+  mysql
+ https://github.com/yaasita/ansible_role_mysql
+  nagios nrpe
+ https://github.com/yaasita/ansible_role_nagios-nrpe
+  ネットワーク設定
+ https://github.com/yaasita/ansible_role_network
+  proxy設定(主にaptの)
+ https://github.com/yaasita/ansible_role_proxy
+  railsの初期設定
+ https://github.com/yaasita/ansible_role_rails
+  rbenv</description>
+    </item>
     
     <item>
       <title>smplayerでリピート再生</title>
@@ -240,6 +275,66 @@ apt-get install klipper  初期はShift+Zになってるので設定からなお
 apt-get install boxes  Visual Modeで選択して
 !boxes -d shell  とかやる
 参考リンク 毎日のスクリプト作成にちょっとしたコダワリを加えるboxes</description>
+    </item>
+    
+    <item>
+      <title>sshuttleで簡易VPN</title>
+      <link>https://yaasita.github.io/2015/03/15/sshuttle</link>
+      <pubDate>Sun, 15 Mar 2015 03:32:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/03/15/sshuttle</guid>
+      <description>こんな感じで接続する
+sshuttle -r hogeuser@hoge-server 10.0.0.0/16 --dns  bash-completionが利かないのが不便なので、
+sshなりを流用すればOK
+これでいい感じにiptablesを設定してNAT通ししてくれる
+便利</description>
+    </item>
+    
+    <item>
+      <title>LinuxでPDF編集ソフトまとめ</title>
+      <link>https://yaasita.github.io/2015/01/04/linux-pdf</link>
+      <pubDate>Sun, 04 Jan 2015 00:17:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/01/04/linux-pdf</guid>
+      <description>libreoffice-pdfimport libreofficeでPDF編集できる
+なんか変なところで逆さまになったり微妙だった
+でもUIはLibreofficeの感覚で使えるので今後に期待
+pdfchain pdftkのGUIフロントエンド
+コマンドラインでやった方が良いかな
+pdfmod LinuxでPDF編集するならこれが一番いいかもしれない
+ページの入れ替え、回転とかできる
+左サイドバーにページ一覧が出たらよかったなぁ
+pdfsam Javaで動くGUIのPDF編集ソフト
+なんか難しくてよくわからなかった
+pdfshuffler pdfmodに似てる感じのPDF編集ソフトこっちも直感的で使いやすい
+pdfmodに比べて重い気がする
+機能も若干少な目
+pdftk コマンドライン(CUI)で使うPDF編集ソフト
+結合とかはGUIだとうまくできないので、こっちでやった方が良さげ</description>
+    </item>
+    
+    <item>
+      <title>chromeのキャッシュから画像引っ張って保存する</title>
+      <link>https://yaasita.github.io/2014/11/15/chrome-chache-jpg</link>
+      <pubDate>Sat, 15 Nov 2014 22:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/11/15/chrome-chache-jpg</guid>
+      <description>キャッシュはC:\Users\hogeuser\AppData\Local\Google\Chrome\User Data\Default\Cacheに保存されている
+そっから引っ張ってきてLinuxとかで以下のコマンドで変換する
+file f_000* | grep JPEG | perl -F: -nlae &#39;print $F[0]&#39; | xargs -i mv {} {}.jpg  Twitterの画像引っ張って来るためにやった
+本当はキャッシュを削除して該当のページだけを見てから保存する方法がいいのかも</description>
+    </item>
+    
+    <item>
+      <title>Onenoteでオートコレクトの設定</title>
+      <link>https://yaasita.github.io/2014/10/30/onenote-autocorrect</link>
+      <pubDate>Thu, 30 Oct 2014 00:19:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/10/30/onenote-autocorrect</guid>
+      <description>ファイル⇒オプション開いて
+文章校正⇒オートコレクトのオプション
+https://yaasita.tumblr.com/post/101260507767 
+https://yaasita.tumblr.com/post/101260507767</description>
     </item>
     
   </channel>

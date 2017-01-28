@@ -1,12 +1,42 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Rule on # cd ~/yaasita</title>
+    <title># cd ~yaasita</title>
     <link>https://yaasita.github.io/categories/rule/index.xml</link>
-    <description>Recent content in Rule on # cd ~/yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
     <atom:link href="/categories/rule/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>hostとdigコマンドの挙動が違う時</title>
+      <link>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different</link>
+      <pubDate>Fri, 27 Jan 2017 01:52:29 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different</guid>
+      <description>名前を引くときにhostコマンドでは返ってくるがdigだとおかしくなるときがある
+こんな感じにすれば同じになる
+host example.net. dig +nodnssec +noedns +noadflag example.net. a  WN-G300GRはadビット立ててると応答すらしないらしい</description>
+    </item>
+    
+    <item>
+      <title>BCCヘッダを落とすのは誰か</title>
+      <link>https://yaasita.github.io/2017/01/22/who_drops_bccheader</link>
+      <pubDate>Sun, 22 Jan 2017 00:48:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/22/who_drops_bccheader</guid>
+      <description>BCCヘッダは転送しないで、MTA側で消されるというのは有名な話だけど
+実際どんな感じなのか
+まずメーラーでBCCを指定して送ったとする
+この時BCCヘッダはどのタイミングで消えるか？という問題
+MUA(thunderbird等) -&amp;gt; 送信側MTA(postfix等) -&amp;gt; 受信側MTA(postfix等)  thunderbird まずthunderbirdからBCCで送信した場合はそもそもBccヘッダはつけない(Icedove/45.6.0で検証)
+envelope toには存在するがそもそもBccヘッダなんてものを書かない
+postfix postfixもデフォルトではBccヘッダは落とすようになっている
+しかしこの設定を変更すればBccヘッダを落とさないでそのまま配送される
+message_drop_headers = bcc, content-length, resent-bcc, return-path  まとめ 送信時点で見られちゃいけないヘッダをMTAに渡して、多分消してくれるだろうと期待して送信するのはあまりよくないと思う
+具体的にはBccヘッダまで綺麗に書いて sendmail -t で送るよりはちゃんとenvelope to を指定して送った方が安全度高い
+要するにthunderbirdみたいに送るべき</description>
+    </item>
     
     <item>
       <title>VALUE-DOMAINでグルーレコード追加</title>
