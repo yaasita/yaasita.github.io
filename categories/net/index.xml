@@ -9,6 +9,16 @@
     <atom:link href="/categories/net/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>FreenomのドメインはWebサイトないと消えちゃう</title>
+      <link>https://yaasita.github.io/2017/02/03/freenom-deletes-freely</link>
+      <pubDate>Fri, 03 Feb 2017 02:46:27 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/02/03/freenom-deletes-freely</guid>
+      <description>だそうです
+Dear yamasita yamasita, The Freenom Review Team has visited your website today. Unfortunately we have to say that today we cancelled your domain YAASITA.ML. The reason for the cancellation is that the website address you used for your free domain name was not accessible or did not follow the guidelines set in our terms and conditions. At this stage, anyone, including yourself, is able to (re)register the cancelled domain YAASITA.</description>
+    </item>
+    
+    <item>
       <title>hostとdigコマンドの挙動が違う時</title>
       <link>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different</link>
       <pubDate>Fri, 27 Jan 2017 01:52:29 +0900</pubDate>
@@ -51,7 +61,9 @@ MUA(thunderbird等) -&amp;gt; 送信側MTA(postfix等) -&amp;gt; 受信側MTA(po
 envelope toには存在するがそもそもBccヘッダなんてものを書かない
 postfix postfixもデフォルトではBccヘッダは落とすようになっている
 しかしこの設定を変更すればBccヘッダを落とさないでそのまま配送される
-message_drop_headers = bcc, content-length, resent-bcc, return-path  まとめ 本来見られちゃいけないヘッダをMTAに渡して、多分消してくれるだろうと期待するのはあまりよくないと思う
+message_drop_headers = bcc, content-length, resent-bcc, return-path   参考
+ http://www.postfix.org/postconf.5.html#message_drop_headers
+   まとめ 本来見られちゃいけないヘッダをMTAに渡して、多分消してくれるだろうと期待するのはあまりよくないと思う
 具体的にはBccヘッダまで綺麗に書いて sendmail -t で送るよりはちゃんとenvelope to を指定して送った方が安全度高い
 要するにthunderbirdみたいに送るべき</description>
     </item>
@@ -295,23 +307,6 @@ sshuttle -r hogeuser@hoge-server 10.0.0.0/16 --dns  bash-completionが利かな�
 sshなりを流用すればOK
 これでいい感じにiptablesを設定してNAT通ししてくれる
 便利</description>
-    </item>
-    
-    <item>
-      <title>vim-adventures</title>
-      <link>https://yaasita.github.io/2014/12/21/vim-adventures</link>
-      <pubDate>Sun, 21 Dec 2014 04:50:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2014/12/21/vim-adventures</guid>
-      <description>vim-adventures 攻略情報 level1  海のところはカーソルを右端に置いてjで下に行けば越えられる
- j,k移動は現在行の位置と同じ縦位置に移動しようとするということがわかればOKそう
-   level2  w,bとかとって適当に宝箱取る
- 30秒以内に島を渡ってxキーとる
- スタート地点付近の宝箱をBキーで取る
-  level3  なんか間違った英文をxキーを使って削除して鍵GET
- その後スタート地点付近にある宝箱取って終わり
-  https://github.com/yaasita/bpsvim/wiki/vim-adventures
-http://vim-adventures.com/</description>
     </item>
     
   </channel>
