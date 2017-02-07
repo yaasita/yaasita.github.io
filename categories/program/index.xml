@@ -9,6 +9,18 @@
     <atom:link href="/categories/program/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>閉じるボタンとVue.js</title>
+      <link>https://yaasita.github.io/2017/02/07/close-button-with-vuejs</link>
+      <pubDate>Tue, 07 Feb 2017 23:59:54 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/02/07/close-button-with-vuejs</guid>
+      <description>box並べて閉じるボタンつけて、押されたらDOM消して何かするみたいなよくあるインターフェイス
+Vue.js使って書いてみた
+すごい便利
+ </description>
+    </item>
+    
+    <item>
       <title>新旧リダイレクト</title>
       <link>https://yaasita.github.io/2017/01/16/redirect-githubpage</link>
       <pubDate>Mon, 16 Jan 2017 23:36:18 +0900</pubDate>
@@ -348,19 +360,6 @@ patch -p0 &amp;lt; rproxy.patch  </description>
 ついでに、bitbucketのリポジトリもローカルに持ってきたときのメモ
  関連
 gitでbareじゃない共有リポジトリを作る</description>
-    </item>
-    
-    <item>
-      <title>CGI(perl)でメール送る</title>
-      <link>https://yaasita.github.io/2014/10/13/mail-cgi</link>
-      <pubDate>Mon, 13 Oct 2014 22:42:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2014/10/13/mail-cgi</guid>
-      <description>CGIでメール送るときの例
-POSTされる文字コードがよくわからない場合は
-nkf通してヨロシクやってもらう
-CSRF対策は前の画面でセッション作っておけば良いです
- </description>
     </item>
     
   </channel>

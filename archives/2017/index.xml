@@ -9,6 +9,18 @@
     <atom:link href="/archives/2017/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>閉じるボタンとVue.js</title>
+      <link>https://yaasita.github.io/2017/02/07/close-button-with-vuejs</link>
+      <pubDate>Tue, 07 Feb 2017 23:59:54 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/02/07/close-button-with-vuejs</guid>
+      <description>box並べて閉じるボタンつけて、押されたらDOM消して何かするみたいなよくあるインターフェイス
+Vue.js使って書いてみた
+すごい便利
+ </description>
+    </item>
+    
+    <item>
       <title>FreenomのドメインはWebサイトないと消えちゃう</title>
       <link>https://yaasita.github.io/2017/02/03/freenom-deletes-freely</link>
       <pubDate>Fri, 03 Feb 2017 02:46:27 +0900</pubDate>
