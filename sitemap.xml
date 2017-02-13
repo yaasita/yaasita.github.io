@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yaasita.github.io/2017/02/14/add-rel-to-tumblr</loc>
+    <lastmod>2017-02-14T01:05:25+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yaasita.github.io/2017/02/07/close-button-with-vuejs</loc>
     <lastmod>2017-02-07T23:59:54+09:00</lastmod>
   </url>
@@ -4147,8 +4152,14 @@
   </url>
   
   <url>
+    <loc>https://yaasita.github.io/categories/</loc>
+    <lastmod>2017-02-14T01:05:25+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2017-02-07T23:59:54+09:00</lastmod>
+    <lastmod>2017-02-14T01:05:25+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4214,7 +4225,7 @@
   
   <url>
     <loc>https://yaasita.github.io/archives/2017/</loc>
-    <lastmod>2017-02-07T23:59:54+09:00</lastmod>
+    <lastmod>2017-02-14T01:05:25+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4266,7 +4277,7 @@
   
   <url>
     <loc>https://yaasita.github.io/post/</loc>
-    <lastmod>2017-02-07T23:59:54+09:00</lastmod>
+    <lastmod>2017-02-14T01:05:25+09:00</lastmod>
     <priority>0</priority>
   </url>
   
