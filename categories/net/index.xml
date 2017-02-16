@@ -9,6 +9,23 @@
     <atom:link href="/categories/net/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>relをtumblrテーマに加える</title>
+      <link>https://yaasita.github.io/2017/02/14/add-rel-to-tumblr</link>
+      <pubDate>Tue, 14 Feb 2017 01:05:25 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/02/14/add-rel-to-tumblr</guid>
+      <description>tumblrのテーマをDefaultにしてみた
+一点気になったのは
+リンクがこんな感じでrel属性が指定されてない
+&amp;lt;a href=&amp;quot;{PreviousPage}&amp;quot; class=&amp;quot;left&amp;quot;&amp;gt; &amp;lt;a rel=&amp;quot;next&amp;quot; href=&amp;quot;{NextPage}&amp;quot; class=&amp;quot;right&amp;quot;&amp;gt;  これだとvimiumの[[, ]]コマンドで辿れないのでそこだけ修正した
+ 修正後のテーマ
+ https://gist.github.com/yaasita/40831000ea20c85f20eeccaa7de5c9c3
+  参考リンク
+ rel=”next”とrel=”prev” の使い方
+   </description>
+    </item>
+    
+    <item>
       <title>FreenomのドメインはWebサイトないと消えちゃう</title>
       <link>https://yaasita.github.io/2017/02/03/freenom-deletes-freely</link>
       <pubDate>Fri, 03 Feb 2017 02:46:27 +0900</pubDate>
@@ -294,19 +311,6 @@ https://www.codeeval.com/browse/1/</description>
       <description>やってみた
 5路盤しか勝てない
 結果</description>
-    </item>
-    
-    <item>
-      <title>sshuttleで簡易VPN</title>
-      <link>https://yaasita.github.io/2015/03/15/sshuttle</link>
-      <pubDate>Sun, 15 Mar 2015 03:32:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/03/15/sshuttle</guid>
-      <description>こんな感じで接続する
-sshuttle -r hogeuser@hoge-server 10.0.0.0/16 --dns  bash-completionが利かないのが不便なので、
-sshなりを流用すればOK
-これでいい感じにiptablesを設定してNAT通ししてくれる
-便利</description>
     </item>
     
   </channel>

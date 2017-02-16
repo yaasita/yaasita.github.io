@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="generator" content="Hugo 0.19-DEV" />
     <link rel="shortcut icon" href="/images/favicon.ico">
-    <link href="https://yaasita.github.io/categories/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
+    <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     
@@ -13,7 +13,7 @@
     
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <title> | # cd ~yaasita</title>
+    <title>Vue.js内のメソッドはコロン省略しない方が良い | # cd ~yaasita</title>
   </head>
   <body>
     <div id="wrap">
@@ -36,48 +36,118 @@ ga('send', 'pageview');
       <div class="container">
         <div id="main">
 
-<div id="article-list">
-  
-  <div id="articles-list-header">
-    <h1>Archive: <span id="archive-value"></span></h1>
+<div class="article">
+  <header>
+    <div class="article-header">
+      <h1>Vue.js内のメソッドはコロン省略しない方が良い</h1>
+      <div class="article-meta">
+        <span class="posttime">2017/02/17 02:06</span>
+      </div>
+    </div>
+  </header>
+  <div class="content">
+    <p>InternetExplorer11で</p>
+
+<pre><code>SCRIPT1003: ':' がありません。
+</code></pre>
+
+<p>というエラーになるから</p>
+
+<pre><code>// OK
+var ok = new Vue({
+    el: '#example1',
+    data: {
+    },
+    methods: {
+        HogeMethod: function(){
+        }
+    }
+});
+
+// NG
+var ng = new Vue({
+    el: '#example2',
+    data: {
+    },
+    methods: {
+        HogeMethod(){
+        }
+    }
+});
+</code></pre>
+
+<p>chromeとかMicrosoft Edgeとかなら良いんだけどね</p>
+
   </div>
-  
-  
-  
-  <div class="article">
-    <h2><a href="https://yaasita.github.io/2017/02/14/add-rel-to-tumblr">relをtumblrテーマに加える</a></h2>
-    <div class="article-meta">
-      <span class="posttime">2017/02/14</span>
+  <footer>
+    <div class="article-footer">
       
 <div class="tags">
   <ul>
     
     <li>
-        <a href="/categories/"></a>
+        <a href="/categories/program">program</a>
     </li>
     
   </ul>
 </div>
 
 
-    </div>
-    <a href="https://yaasita.github.io/2017/02/14/add-rel-to-tumblr/#disqus_thread" class="comment">Comment</a>
-  </div>
-  
-  <nav>
-    <div id="pager">
       
-      <div class="page">
-          Page 1 of 1
+      
+<div id="share-buttons">
+  <ul>
+    
+    <li>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="yaasita">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </li>
+    
+    
+    
+    <li>
+      <a href="http://b.hatena.ne.jp/entry/https://yaasita.github.io/2017/02/17/do-not-omit-colon-in-vuejs/" class="hatena-bookmark-button" data-hatena-bookmark-title="Vue.js内のメソッドはコロン省略しない方が良い" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+    </li>
+    
+    
+    
+    <li>
+        <a class="tumblr-share-button" data-color="blue" data-notes="right" href="https://embed.tumblr.com/share"></a>
+        <script>!function(d,s,id){var js,ajs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://assets.tumblr.com/share-button.js";ajs.parentNode.insertBefore(js,ajs);}}(document, "script", "tumblr-js");</script>
+    </li>
+  </ul>
+</div>
+
+
+      
+      <div id="disqus_thread"></div>
+      <script>
+      var disqus_config = function () {
+      
+      this.page.identifier = "https:\/\/yaasita.github.io\/2017\/02\/17\/do-not-omit-colon-in-vuejs"; 
+      };
+      (function() { 
+      var d = document, s = d.createElement('script');
+      s.src = '//yaasita.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+      })();
+      </script>
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+      
+      
+      <div id="pagenavigation-next-prev">
+        
+        <div id="pagenavigation-next">
+          <span class="pagenav-label">Previous</span>
+          <a href="https://yaasita.github.io/2017/02/14/add-rel-to-tumblr">relをtumblrテーマに加える</a>
+        </div>
+        
+        
       </div>
-      <div class="page-previous">
-          
-      </div>
-      <div class="page-next">
-          
-      </div>
+      
     </div>
-  </nav>
+  </footer>
 </div>
         </div>
         <div class="sidebar">
@@ -127,10 +197,6 @@ ga('send', 'pageview');
       <ul>
         
         <li>
-          <a href="/categories/"><span></span> (1)</a>
-        </li>
-        
-        <li>
           <a href="/categories/crack"><span></span>crack (20)</a>
         </li>
         
@@ -151,11 +217,11 @@ ga('send', 'pageview');
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (180)</a>
+          <a href="/categories/net"><span></span>net (181)</a>
         </li>
         
         <li>
-          <a href="/categories/program"><span></span>program (123)</a>
+          <a href="/categories/program"><span></span>program (125)</a>
         </li>
         
         <li>
@@ -222,7 +288,7 @@ ga('send', 'pageview');
         </li>
         
         <li>
-          <a href="/archives/2017"><span></span>2017 (12)</a>
+          <a href="/archives/2017"><span></span>2017 (13)</a>
         </li>
         
       </ul>
@@ -242,7 +308,7 @@ ga('send', 'pageview');
       <span>RSS</span>
     </div>
     <div id="rss">
-      <a href="https://yaasita.github.io/categories/index.xml" type="application/rss+xml" target="_blank">
+      <a href="https://yaasita.github.io/index.xml" type="application/rss+xml" target="_blank">
         <i class="fa fa-rss-square fa-2x" aria-hidden="true"></i>
       </a>
     </div>
