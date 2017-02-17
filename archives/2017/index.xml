@@ -9,6 +9,17 @@
     <atom:link href="/archives/2017/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Vimのエンコード周り</title>
+      <link>https://yaasita.github.io/2017/02/17/vim-encodeing</link>
+      <pubDate>Fri, 17 Feb 2017 23:56:59 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/02/17/vim-encodeing</guid>
+      <description>下図参照
+https://yaasita.tumblr.com/post/157354717792
+      var tumblr_api = new Vue({ el: &#39;#tumblr-api&#39;, data: { tumblr_api_url: &#34;https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=157354717792&amp;api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&amp;jsonp=img.callback&#34;, } }); var img = new Vue({ el: &#39;#tumblr-image&#39;, data: { images: [ ], }, methods: { callback: function(data){ var photos = data.response.posts[0].photos; hoge = photos; for(var i=0;i</description>
+    </item>
+    
+    <item>
       <title>Vue.js内のメソッドはコロン省略しない方が良い</title>
       <link>https://yaasita.github.io/2017/02/17/do-not-omit-colon-in-vuejs</link>
       <pubDate>Fri, 17 Feb 2017 02:06:29 +0900</pubDate>

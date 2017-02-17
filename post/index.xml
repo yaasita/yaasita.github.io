@@ -6,8 +6,19 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 17 Feb 2017 02:06:29 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 17 Feb 2017 23:56:59 +0900</lastBuildDate>
     <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Vimのエンコード周り</title>
+      <link>https://yaasita.github.io/2017/02/17/vim-encodeing</link>
+      <pubDate>Fri, 17 Feb 2017 23:56:59 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/02/17/vim-encodeing</guid>
+      <description>下図参照
+https://yaasita.tumblr.com/post/157354717792
+      var tumblr_api = new Vue({ el: &#39;#tumblr-api&#39;, data: { tumblr_api_url: &#34;https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=157354717792&amp;api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&amp;jsonp=img.callback&#34;, } }); var img = new Vue({ el: &#39;#tumblr-image&#39;, data: { images: [ ], }, methods: { callback: function(data){ var photos = data.response.posts[0].photos; hoge = photos; for(var i=0;i</description>
+    </item>
     
     <item>
       <title>Vue.js内のメソッドはコロン省略しない方が良い</title>
@@ -320,37 +331,6 @@ Androidは6.0.1まで上がった</description>
       <guid>https://yaasita.github.io/2016/09/10/update-notify</guid>
       <description>こんな感じで、更新を促す
  </description>
-    </item>
-    
-    <item>
-      <title>超次元アクション ネプテューヌU</title>
-      <link>https://yaasita.github.io/2016/09/04/nepu</link>
-      <pubDate>Sun, 04 Sep 2016 03:13:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/09/04/nepu</guid>
-      <description>Vita版のやつ
-ギョウ界チ武道会 クリアしたキャラ
- ネプチューヌ
- ノワール
- ブラン
- ベール
- ネプギア
- ユニ
- ロム
- ラム
- デンゲキコ
- パープルハート
- ブラックハート
- ホワイトハート
- グリーンハート
- パープルシスター
- ブラックシスター
- ホワイトシスター(左)
- ホワイトシスター(右)
- ファミ通
-  -&amp;gt; 取得したアイテムで審議判定できる
-http://catmiimi.com/nepu_military
-参考リンク http://catmiimi.com/nepu</description>
     </item>
     
   </channel>

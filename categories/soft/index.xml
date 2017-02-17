@@ -9,6 +9,17 @@
     <atom:link href="/categories/soft/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Vimのエンコード周り</title>
+      <link>https://yaasita.github.io/2017/02/17/vim-encodeing</link>
+      <pubDate>Fri, 17 Feb 2017 23:56:59 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/02/17/vim-encodeing</guid>
+      <description>下図参照
+https://yaasita.tumblr.com/post/157354717792
+      var tumblr_api = new Vue({ el: &#39;#tumblr-api&#39;, data: { tumblr_api_url: &#34;https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=157354717792&amp;api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&amp;jsonp=img.callback&#34;, } }); var img = new Vue({ el: &#39;#tumblr-image&#39;, data: { images: [ ], }, methods: { callback: function(data){ var photos = data.response.posts[0].photos; hoge = photos; for(var i=0;i</description>
+    </item>
+    
+    <item>
       <title>ansibleで作ったロール</title>
       <link>https://yaasita.github.io/2017/01/09/my-ansible-role</link>
       <pubDate>Mon, 09 Jan 2017 16:24:41 +0900</pubDate>
@@ -323,18 +334,6 @@ pdftk コマンドライン(CUI)で使うPDF編集ソフト
 そっから引っ張ってきてLinuxとかで以下のコマンドで変換する
 file f_000* | grep JPEG | perl -F: -nlae &#39;print $F[0]&#39; | xargs -i mv {} {}.jpg  Twitterの画像引っ張って来るためにやった
 本当はキャッシュを削除して該当のページだけを見てから保存する方法がいいのかも</description>
-    </item>
-    
-    <item>
-      <title>Onenoteでオートコレクトの設定</title>
-      <link>https://yaasita.github.io/2014/10/30/onenote-autocorrect</link>
-      <pubDate>Thu, 30 Oct 2014 00:19:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2014/10/30/onenote-autocorrect</guid>
-      <description>ファイル⇒オプション開いて
-文章校正⇒オートコレクトのオプション
-https://yaasita.tumblr.com/post/101260507767 
-https://yaasita.tumblr.com/post/101260507767</description>
     </item>
     
   </channel>
