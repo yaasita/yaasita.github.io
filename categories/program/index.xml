@@ -9,6 +9,24 @@
     <atom:link href="/categories/program/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Vue.jsでドラッグ＆ドロップリスト</title>
+      <link>https://yaasita.github.io/2017/02/20/draggable-list</link>
+      <pubDate>Mon, 20 Feb 2017 23:17:28 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/02/20/draggable-list</guid>
+      <description> Vue.js 2.1.10でやってみる
+ 並び変え終わったらdragendで
+var request_url = &amp;quot;https://hogehogehoge&amp;quot; var req = new XMLHttpRequest(); req.open(&#39;POST&#39;, request_url, false); req.setRequestHeader(&amp;quot;Content-Type&amp;quot;, &amp;quot;application/json&amp;quot;); req.send(JSON.stringify(this.boxes));  とかやってどっかに飛ばす
+んで後ろ側で
+$sort_json = json_decode(file_get_contents(&amp;quot;php://input&amp;quot;),true);  とかやって受けた
+実際は毎回更新させるのは重いだろうし、交換したDOM二つだけをjsonに乗せるとか工夫の余地あり
+参考リンク  多分Vue.js 1 時代のやつ
+ Vue.jsのリストレンダリングとhtml5のドラッグ＆ドロップの実装
+  ネイティブ HTML5 ドラッグ＆ドロップ
+  </description>
+    </item>
+    
+    <item>
       <title>Vue.js内のメソッドはコロン省略しない方が良い</title>
       <link>https://yaasita.github.io/2017/02/17/do-not-omit-colon-in-vuejs</link>
       <pubDate>Fri, 17 Feb 2017 02:06:29 +0900</pubDate>
@@ -349,18 +367,6 @@ mkdir server client public lib  実行について
 mkdir client/stylesheets vi client/stylesheets/style.css  https://github.com/yaasita/meteor-microscope/tree/88cc746c372b13dae6a669c014c764320a8e776e
 Deployment deployしてみる
 meteor deploy yaasita.meteor.com  なんかこれでできるぽい</description>
-    </item>
-    
-    <item>
-      <title>chromeのキャッシュから画像引っ張って保存する</title>
-      <link>https://yaasita.github.io/2014/11/15/chrome-chache-jpg</link>
-      <pubDate>Sat, 15 Nov 2014 22:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2014/11/15/chrome-chache-jpg</guid>
-      <description>キャッシュはC:\Users\hogeuser\AppData\Local\Google\Chrome\User Data\Default\Cacheに保存されている
-そっから引っ張ってきてLinuxとかで以下のコマンドで変換する
-file f_000* | grep JPEG | perl -F: -nlae &#39;print $F[0]&#39; | xargs -i mv {} {}.jpg  Twitterの画像引っ張って来るためにやった
-本当はキャッシュを削除して該当のページだけを見てから保存する方法がいいのかも</description>
     </item>
     
   </channel>

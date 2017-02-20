@@ -6,8 +6,26 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 17 Feb 2017 23:56:59 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 20 Feb 2017 23:17:28 +0900</lastBuildDate>
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Vue.jsでドラッグ＆ドロップリスト</title>
+      <link>https://yaasita.github.io/2017/02/20/draggable-list</link>
+      <pubDate>Mon, 20 Feb 2017 23:17:28 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/02/20/draggable-list</guid>
+      <description> Vue.js 2.1.10でやってみる
+ 並び変え終わったらdragendで
+var request_url = &amp;quot;https://hogehogehoge&amp;quot; var req = new XMLHttpRequest(); req.open(&#39;POST&#39;, request_url, false); req.setRequestHeader(&amp;quot;Content-Type&amp;quot;, &amp;quot;application/json&amp;quot;); req.send(JSON.stringify(this.boxes));  とかやってどっかに飛ばす
+んで後ろ側で
+$sort_json = json_decode(file_get_contents(&amp;quot;php://input&amp;quot;),true);  とかやって受けた
+実際は毎回更新させるのは重いだろうし、交換したDOM二つだけをjsonに乗せるとか工夫の余地あり
+参考リンク  多分Vue.js 1 時代のやつ
+ Vue.jsのリストレンダリングとhtml5のドラッグ＆ドロップの実装
+  ネイティブ HTML5 ドラッグ＆ドロップ
+  </description>
+    </item>
     
     <item>
       <title>Vimのエンコード周り</title>
@@ -321,16 +339,6 @@ ZenFone 2 Laser（Qualcomm Snapdragon 410/メモリ 2GB）
 16GB ブラック ZE500KL-BK16
 18,672円だった
 Androidは6.0.1まで上がった</description>
-    </item>
-    
-    <item>
-      <title>更新通知のbashrc</title>
-      <link>https://yaasita.github.io/2016/09/10/update-notify</link>
-      <pubDate>Sat, 10 Sep 2016 12:52:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/09/10/update-notify</guid>
-      <description>こんな感じで、更新を促す
- </description>
     </item>
     
   </channel>

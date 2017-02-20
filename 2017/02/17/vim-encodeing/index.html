@@ -77,12 +77,6 @@ var img = new Vue({
             for(var i=0;i<=photos.length-1;i++){
                 this.images.push({imgpath: photos[i].original_size.url})
             }
-        },
-        mouseOver: function(event){
-            event.target.style.opacity=0.5;
-        },
-        mouseOut: function(event){
-            event.target.style.opacity=1;
         }
     }
 });
@@ -153,6 +147,11 @@ var img = new Vue({
           <a href="https://yaasita.github.io/2017/02/17/do-not-omit-colon-in-vuejs">Vue.js内のメソッドはコロン省略しない方が良い</a>
         </div>
         
+        
+        <div id="pagenavigation-prev">
+          <span class="pagenav-label">Next</span>
+          <a href="https://yaasita.github.io/2017/02/20/draggable-list">Vue.jsでドラッグ＆ドロップリスト</a>
+        </div>
         
       </div>
       
@@ -231,7 +230,7 @@ var img = new Vue({
         </li>
         
         <li>
-          <a href="/categories/program"><span></span>program (125)</a>
+          <a href="/categories/program"><span></span>program (126)</a>
         </li>
         
         <li>
@@ -298,7 +297,7 @@ var img = new Vue({
         </li>
         
         <li>
-          <a href="/archives/2017"><span></span>2017 (14)</a>
+          <a href="/archives/2017"><span></span>2017 (15)</a>
         </li>
         
       </ul>

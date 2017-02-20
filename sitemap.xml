@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yaasita.github.io/2017/02/20/draggable-list</loc>
+    <lastmod>2017-02-20T23:17:28+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yaasita.github.io/2017/02/17/vim-encodeing</loc>
     <lastmod>2017-02-17T23:56:59+09:00</lastmod>
   </url>
@@ -4163,7 +4168,7 @@
   
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2017-02-17T23:56:59+09:00</lastmod>
+    <lastmod>2017-02-20T23:17:28+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4229,7 +4234,7 @@
   
   <url>
     <loc>https://yaasita.github.io/archives/2017/</loc>
-    <lastmod>2017-02-17T23:56:59+09:00</lastmod>
+    <lastmod>2017-02-20T23:17:28+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4281,13 +4286,13 @@
   
   <url>
     <loc>https://yaasita.github.io/post/</loc>
-    <lastmod>2017-02-17T23:56:59+09:00</lastmod>
+    <lastmod>2017-02-20T23:17:28+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/categories/program/</loc>
-    <lastmod>2017-02-17T02:06:29+09:00</lastmod>
+    <lastmod>2017-02-20T23:17:28+09:00</lastmod>
     <priority>0</priority>
   </url>
   
