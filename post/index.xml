@@ -6,8 +6,32 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 20 Feb 2017 23:17:28 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 18 Mar 2017 23:56:51 +0900</lastBuildDate>
     <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AWSソリューションアーキテクト</title>
+      <link>https://yaasita.github.io/2017/03/18/aws-test</link>
+      <pubDate>Sat, 18 Mar 2017 23:56:51 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/03/18/aws-test</guid>
+      <description>なんか必要になったということで取ってきた
+総合スコア: 74% トピックレベルのスコア: 1.0 高可用性、コスト効率、耐障害性、スケーラブルなシステムの設計: 72% 2.0 実装/デプロイ: 83% 3.0 セキュリティ: 72% 4.0 トラブルシューティング: 80%  勉強につかったサイト
+https://aws.koiwaclub.com/
+細かい数字とか覚えるよりもどんなサービスなのかなーくらいが頭に入ってれば良さげ</description>
+    </item>
+    
+    <item>
+      <title>Vue.jsとモーダルウィンドウ</title>
+      <link>https://yaasita.github.io/2017/03/04/vuejs-modal</link>
+      <pubDate>Sat, 04 Mar 2017 02:29:40 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/03/04/vuejs-modal</guid>
+      <description> 参考実装 slotで後から要素を上書きすればOK
+ https://github.com/yaasita/vuejs-modal
+参考リンク  https://jp.vuejs.org/v2/examples/modal.html
+  </description>
+    </item>
     
     <item>
       <title>Vue.jsでドラッグ＆ドロップリスト</title>
@@ -16,6 +40,7 @@
       
       <guid>https://yaasita.github.io/2017/02/20/draggable-list</guid>
       <description> Vue.js 2.1.10でやってみる
+https://github.com/yaasita/vuejs-dad-box
  並び変え終わったらdragendで
 var request_url = &amp;quot;https://hogehogehoge&amp;quot; var req = new XMLHttpRequest(); req.open(&#39;POST&#39;, request_url, false); req.setRequestHeader(&amp;quot;Content-Type&amp;quot;, &amp;quot;application/json&amp;quot;); req.send(JSON.stringify(this.boxes));  とかやってどっかに飛ばす
 んで後ろ側で
@@ -313,32 +338,6 @@ https://www.value-domain.com/userguide/manual/othermodns/</description>
  参考リンク  http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats
  http://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html
   </description>
-    </item>
-    
-    <item>
-      <title>フレッツのDNS挙動</title>
-      <link>https://yaasita.github.io/2016/10/31/flets-dns</link>
-      <pubDate>Mon, 31 Oct 2016 00:42:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/10/31/flets-dns</guid>
-      <description>NSレコードに指定したホスト名にCNAMEを持たせてはいけない
-という話は有名だがどのように挙動が変わるか見てみる
-準備 yaasita.ml. の権威サーバは ns1.aws.yaasita.net. にしておく
-NSで指定されてるサーバは CNAMEとして aws.yaasita.net. に設定しておく
-; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.9.5-9+deb8u7-Debian &amp;lt;&amp;lt;&amp;gt;&amp;gt; +norec @aws.yaasita.net. ns1.aws.yaasita.net. a ; (1 server found) ;; global options: +cmd ;; Got answer: ;; -&amp;gt;&amp;gt;HEADER&amp;lt;&amp;lt;- opcode: QUERY, status: NOERROR, id: 31880 ;; flags: qr aa; QUERY: 1, ANSWER: 2, AUTHORITY: 1, ADDITIONAL: 1 ;; OPT PSEUDOSECTION: ; EDNS: version: 0, flags:; udp: 4096 ;; QUESTION SECTION: ;ns1.aws.yaasita.net. IN A ;; ANSWER SECTION: ns1.</description>
-    </item>
-    
-    <item>
-      <title>最近買ったスマホ</title>
-      <link>https://yaasita.github.io/2016/10/22/smart-phone</link>
-      <pubDate>Sat, 22 Oct 2016 22:54:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/10/22/smart-phone</guid>
-      <description>エイスース SIMフリースマートフォン
-ZenFone 2 Laser（Qualcomm Snapdragon 410/メモリ 2GB）
-16GB ブラック ZE500KL-BK16
-18,672円だった
-Androidは6.0.1まで上がった</description>
     </item>
     
   </channel>

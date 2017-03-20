@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yaasita.github.io/2017/03/18/aws-test</loc>
+    <lastmod>2017-03-18T23:56:51+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yaasita.github.io/2017/03/04/vuejs-modal</loc>
+    <lastmod>2017-03-04T02:29:40+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yaasita.github.io/2017/02/20/draggable-list</loc>
     <lastmod>2017-02-20T23:17:28+09:00</lastmod>
   </url>
@@ -4168,7 +4178,7 @@
   
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2017-02-20T23:17:28+09:00</lastmod>
+    <lastmod>2017-03-18T23:56:51+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4234,7 +4244,7 @@
   
   <url>
     <loc>https://yaasita.github.io/archives/2017/</loc>
-    <lastmod>2017-02-20T23:17:28+09:00</lastmod>
+    <lastmod>2017-03-18T23:56:51+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4268,7 +4278,7 @@
   
   <url>
     <loc>https://yaasita.github.io/categories/life/</loc>
-    <lastmod>2017-01-09T16:27:40+09:00</lastmod>
+    <lastmod>2017-03-18T23:56:51+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4286,13 +4296,13 @@
   
   <url>
     <loc>https://yaasita.github.io/post/</loc>
-    <lastmod>2017-02-20T23:17:28+09:00</lastmod>
+    <lastmod>2017-03-18T23:56:51+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/categories/program/</loc>
-    <lastmod>2017-02-20T23:17:28+09:00</lastmod>
+    <lastmod>2017-03-04T02:29:40+09:00</lastmod>
     <priority>0</priority>
   </url>
   

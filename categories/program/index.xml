@@ -9,12 +9,25 @@
     <atom:link href="/categories/program/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Vue.jsとモーダルウィンドウ</title>
+      <link>https://yaasita.github.io/2017/03/04/vuejs-modal</link>
+      <pubDate>Sat, 04 Mar 2017 02:29:40 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/03/04/vuejs-modal</guid>
+      <description> 参考実装 slotで後から要素を上書きすればOK
+ https://github.com/yaasita/vuejs-modal
+参考リンク  https://jp.vuejs.org/v2/examples/modal.html
+  </description>
+    </item>
+    
+    <item>
       <title>Vue.jsでドラッグ＆ドロップリスト</title>
       <link>https://yaasita.github.io/2017/02/20/draggable-list</link>
       <pubDate>Mon, 20 Feb 2017 23:17:28 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2017/02/20/draggable-list</guid>
       <description> Vue.js 2.1.10でやってみる
+https://github.com/yaasita/vuejs-dad-box
  並び変え終わったらdragendで
 var request_url = &amp;quot;https://hogehogehoge&amp;quot; var req = new XMLHttpRequest(); req.open(&#39;POST&#39;, request_url, false); req.setRequestHeader(&amp;quot;Content-Type&amp;quot;, &amp;quot;application/json&amp;quot;); req.send(JSON.stringify(this.boxes));  とかやってどっかに飛ばす
 んで後ろ側で
@@ -336,37 +349,6 @@ https://www.codeeval.com/browse/1/</description>
       <guid>https://yaasita.github.io/2015/06/02/kanshi</guid>
       <description>自分で自分を監視するperlスクリプト
 https://github.com/yaasita/kanshi-self</description>
-    </item>
-    
-    <item>
-      <title>Meteor チュートリアル 01</title>
-      <link>https://yaasita.github.io/2015/05/10/meteor-tutorial01</link>
-      <pubDate>Sun, 10 May 2015 00:28:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/05/10/meteor-tutorial01</guid>
-      <description>話題のMeteorを触ってみた
-discovermeteorっていうチュートリアル本があるのでやってみる
-なんか原文は有料になってる気がするけど翻訳版は読めるみたい
-http://ja.discovermeteor.com/
-とりあえず最初の方だけ
-Getting Started インストール
-途中でsudoするので出来るようにしておく
-curl https://install.meteor.com | sh  最初に以下のコマンドを発行して作る
-meteor create microscope  ちなみにこの.meteor/.gitignoreに書かれてる
-.meteor/.local/の中を消せばリセットされる
-パッケージの追加
-meteor add mizzao:bootstrap-3 meteor add underscore  ディレクトリ追加
-mkdir server client public lib  実行について
- server =&amp;gt; サーバ上でのみ実行
- client =&amp;gt; クライアント上でのみ実行
- それ以外はどちらでも動く
- publicには静的ファイルを置く
- libはどのファイルよりも先に実行される
- main.*というファイル名は一番最後に実行される
-  CSSを追加
-mkdir client/stylesheets vi client/stylesheets/style.css  https://github.com/yaasita/meteor-microscope/tree/88cc746c372b13dae6a669c014c764320a8e776e
-Deployment deployしてみる
-meteor deploy yaasita.meteor.com  なんかこれでできるぽい</description>
     </item>
     
   </channel>

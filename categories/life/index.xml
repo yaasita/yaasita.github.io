@@ -9,6 +9,18 @@
     <atom:link href="/categories/life/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>AWSソリューションアーキテクト</title>
+      <link>https://yaasita.github.io/2017/03/18/aws-test</link>
+      <pubDate>Sat, 18 Mar 2017 23:56:51 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/03/18/aws-test</guid>
+      <description>なんか必要になったということで取ってきた
+総合スコア: 74% トピックレベルのスコア: 1.0 高可用性、コスト効率、耐障害性、スケーラブルなシステムの設計: 72% 2.0 実装/デプロイ: 83% 3.0 セキュリティ: 72% 4.0 トラブルシューティング: 80%  勉強につかったサイト
+https://aws.koiwaclub.com/
+細かい数字とか覚えるよりもどんなサービスなのかなーくらいが頭に入ってれば良さげ</description>
+    </item>
+    
+    <item>
       <title>MacBook買ったのでサポートお願いした</title>
       <link>https://yaasita.github.io/2017/01/09/mac-personal-setup</link>
       <pubDate>Mon, 09 Jan 2017 16:27:40 +0900</pubDate>
@@ -316,35 +328,6 @@ http://www.nicovideo.jp/watch/sm14657423 </description>
 参考リンク
 ほむほむ11話戦闘シーン
 モンロー/ノイマン効果(Wikipedia) </description>
-    </item>
-    
-    <item>
-      <title>ブログランキングサイトまとめ</title>
-      <link>https://yaasita.github.io/2011/03/20/4633</link>
-      <pubDate>Sun, 20 Mar 2011 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2011/03/20/4633</guid>
-      <description>・TopHatenar
-国内のサイトで比較できるので分かりやすい
-グラフとかも出て自分の順位が把握しやすい
-登録までに1日かかる
-このブログの結果
-・BlogChart
-レーダーチャートで表示してくれる
-分かりやすいLv表示
-このブログの結果
-・ウェブク
-ドメインの価値を表示してくれる
-表示単位はドメイン
-このブログの結果
-・ブログ戦闘力チェッカー
-ブログを戦闘力で例えてくれる
-ドラゴンボールが好きな人は分かりやすい？
-TopHatenarのデータを使っているのでTopHatenarへの登録が必要
-このブログの結果
-過去の記事
-あなたのドメインの価値を教えてくれるサイト 
-BlogChartってサイトでこのBlogのレベルを測定してみる  </description>
     </item>
     
   </channel>

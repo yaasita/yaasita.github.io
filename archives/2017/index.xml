@@ -9,12 +9,37 @@
     <atom:link href="/archives/2017/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>AWSソリューションアーキテクト</title>
+      <link>https://yaasita.github.io/2017/03/18/aws-test</link>
+      <pubDate>Sat, 18 Mar 2017 23:56:51 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/03/18/aws-test</guid>
+      <description>なんか必要になったということで取ってきた
+総合スコア: 74% トピックレベルのスコア: 1.0 高可用性、コスト効率、耐障害性、スケーラブルなシステムの設計: 72% 2.0 実装/デプロイ: 83% 3.0 セキュリティ: 72% 4.0 トラブルシューティング: 80%  勉強につかったサイト
+https://aws.koiwaclub.com/
+細かい数字とか覚えるよりもどんなサービスなのかなーくらいが頭に入ってれば良さげ</description>
+    </item>
+    
+    <item>
+      <title>Vue.jsとモーダルウィンドウ</title>
+      <link>https://yaasita.github.io/2017/03/04/vuejs-modal</link>
+      <pubDate>Sat, 04 Mar 2017 02:29:40 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/03/04/vuejs-modal</guid>
+      <description> 参考実装 slotで後から要素を上書きすればOK
+ https://github.com/yaasita/vuejs-modal
+参考リンク  https://jp.vuejs.org/v2/examples/modal.html
+  </description>
+    </item>
+    
+    <item>
       <title>Vue.jsでドラッグ＆ドロップリスト</title>
       <link>https://yaasita.github.io/2017/02/20/draggable-list</link>
       <pubDate>Mon, 20 Feb 2017 23:17:28 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2017/02/20/draggable-list</guid>
       <description> Vue.js 2.1.10でやってみる
+https://github.com/yaasita/vuejs-dad-box
  並び変え終わったらdragendで
 var request_url = &amp;quot;https://hogehogehoge&amp;quot; var req = new XMLHttpRequest(); req.open(&#39;POST&#39;, request_url, false); req.setRequestHeader(&amp;quot;Content-Type&amp;quot;, &amp;quot;application/json&amp;quot;); req.send(JSON.stringify(this.boxes));  とかやってどっかに飛ばす
 んで後ろ側で
