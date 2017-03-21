@@ -9,6 +9,16 @@
     <atom:link href="/archives/2017/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>DockerでAUFSを使わない</title>
+      <link>https://yaasita.github.io/2017/03/21/do-not-use-aufs</link>
+      <pubDate>Tue, 21 Mar 2017 23:06:46 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/03/21/do-not-use-aufs</guid>
+      <description>Dockerでもsystemd-nspawnよろしくそのディレクトリで即座にコンテナ上げたいとき
+ 要するに /proc, /dev, /sys, /net あたりを外して全部bindしちゃえばよかった</description>
+    </item>
+    
+    <item>
       <title>AWSソリューションアーキテクト</title>
       <link>https://yaasita.github.io/2017/03/18/aws-test</link>
       <pubDate>Sat, 18 Mar 2017 23:56:51 +0900</pubDate>
@@ -17,7 +27,10 @@
       <description>なんか必要になったということで取ってきた
 総合スコア: 74% トピックレベルのスコア: 1.0 高可用性、コスト効率、耐障害性、スケーラブルなシステムの設計: 72% 2.0 実装/デプロイ: 83% 3.0 セキュリティ: 72% 4.0 トラブルシューティング: 80%  勉強につかったサイト
 https://aws.koiwaclub.com/
-細かい数字とか覚えるよりもどんなサービスなのかなーくらいが頭に入ってれば良さげ</description>
+細かい数字とか覚えるよりもどんなサービスなのかなーくらいが頭に入ってれば良さげ
+かかる費用は
+模擬試験＋本試験=2160+16200=18360円
+だった</description>
     </item>
     
     <item>

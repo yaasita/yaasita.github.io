@@ -9,6 +9,16 @@
     <atom:link href="/categories/soft/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>DockerでAUFSを使わない</title>
+      <link>https://yaasita.github.io/2017/03/21/do-not-use-aufs</link>
+      <pubDate>Tue, 21 Mar 2017 23:06:46 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/03/21/do-not-use-aufs</guid>
+      <description>Dockerでもsystemd-nspawnよろしくそのディレクトリで即座にコンテナ上げたいとき
+ 要するに /proc, /dev, /sys, /net あたりを外して全部bindしちゃえばよかった</description>
+    </item>
+    
+    <item>
       <title>Vimのエンコード周り</title>
       <link>https://yaasita.github.io/2017/02/17/vim-encodeing</link>
       <pubDate>Fri, 17 Feb 2017 23:56:59 +0900</pubDate>
@@ -322,18 +332,6 @@ pdfmodに比べて重い気がする
 機能も若干少な目
 pdftk コマンドライン(CUI)で使うPDF編集ソフト
 結合とかはGUIだとうまくできないので、こっちでやった方が良さげ</description>
-    </item>
-    
-    <item>
-      <title>chromeのキャッシュから画像引っ張って保存する</title>
-      <link>https://yaasita.github.io/2014/11/15/chrome-chache-jpg</link>
-      <pubDate>Sat, 15 Nov 2014 22:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2014/11/15/chrome-chache-jpg</guid>
-      <description>キャッシュはC:\Users\hogeuser\AppData\Local\Google\Chrome\User Data\Default\Cacheに保存されている
-そっから引っ張ってきてLinuxとかで以下のコマンドで変換する
-file f_000* | grep JPEG | perl -F: -nlae &#39;print $F[0]&#39; | xargs -i mv {} {}.jpg  Twitterの画像引っ張って来るためにやった
-本当はキャッシュを削除して該当のページだけを見てから保存する方法がいいのかも</description>
     </item>
     
   </channel>

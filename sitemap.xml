@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yaasita.github.io/2017/03/21/do-not-use-aufs</loc>
+    <lastmod>2017-03-21T23:06:46+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yaasita.github.io/2017/03/18/aws-test</loc>
     <lastmod>2017-03-18T23:56:51+09:00</lastmod>
   </url>
@@ -4178,7 +4183,7 @@
   
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2017-03-18T23:56:51+09:00</lastmod>
+    <lastmod>2017-03-21T23:06:46+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4244,7 +4249,7 @@
   
   <url>
     <loc>https://yaasita.github.io/archives/2017/</loc>
-    <lastmod>2017-03-18T23:56:51+09:00</lastmod>
+    <lastmod>2017-03-21T23:06:46+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4296,7 +4301,7 @@
   
   <url>
     <loc>https://yaasita.github.io/post/</loc>
-    <lastmod>2017-03-18T23:56:51+09:00</lastmod>
+    <lastmod>2017-03-21T23:06:46+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4314,7 +4319,7 @@
   
   <url>
     <loc>https://yaasita.github.io/categories/soft/</loc>
-    <lastmod>2017-02-17T23:56:59+09:00</lastmod>
+    <lastmod>2017-03-21T23:06:46+09:00</lastmod>
     <priority>0</priority>
   </url>
   
