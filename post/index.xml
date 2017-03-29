@@ -6,8 +6,24 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 21 Mar 2017 23:06:46 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 30 Mar 2017 01:46:13 +0900</lastBuildDate>
     <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Vimの副ファイル</title>
+      <link>https://yaasita.github.io/2017/03/30/vim-alternate-file</link>
+      <pubDate>Thu, 30 Mar 2017 01:46:13 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/03/30/vim-alternate-file</guid>
+      <description>なんか検索に引っかからないのでメモ
+英語で the alternate file ってやつを取るときは Ctrl-^コマンドでやる
+日本語配列だとCtrl-6かな
+日本語ヘルプだと代替ファイルって訳になってるけど
+E23: 副ファイルはありません  のエラーになるんだよな
+というわけで
+alternate file = 代替ファイル = 副ファイル
+という認識で</description>
+    </item>
     
     <item>
       <title>DockerでAUFSを使わない</title>
@@ -15,7 +31,8 @@
       <pubDate>Tue, 21 Mar 2017 23:06:46 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2017/03/21/do-not-use-aufs</guid>
-      <description>Dockerでもsystemd-nspawnよろしくそのディレクトリで即座にコンテナ上げたいとき
+      <description>AUFSっていうか/var/lib/dockerに置きたくないとかそういう話
+Dockerでもsystemd-nspawnよろしくそのディレクトリで即座にコンテナ上げたいとき
  要するに /proc, /dev, /sys, /net あたりを外して全部bindしちゃえばよかった</description>
     </item>
     
@@ -320,20 +337,6 @@ Static Site Generatorはとても良い
       <description>Google Cloud Platform のDNSでグルーレコード作るときは
 こんな感じでNS指定したあとに、Aレコード追加すればグルーレコード(Glue Record)に追加してくれるようだ
 ; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.9.5-9+deb8u8-Debian &amp;lt;&amp;lt;&amp;gt;&amp;gt; +norec @ns-cloud-d1.googledomains.com. name.yaasita.xyz. a ; (2 servers found) ;; global options: +cmd ;; Got answer: ;; -&amp;gt;&amp;gt;HEADER&amp;lt;&amp;lt;- opcode: QUERY, status: NOERROR, id: 39015 ;; flags: qr; QUERY: 1, ANSWER: 0, AUTHORITY: 2, ADDITIONAL: 3 ;; OPT PSEUDOSECTION: ; EDNS: version: 0, flags:; udp: 512 ;; QUESTION SECTION: ;name.yaasita.xyz. IN A ;; AUTHORITY SECTION: name.yaasita.xyz. 300 IN NS ns1.name.yaasita.xyz. name.yaasita.xyz. 300 IN NS ns2.</description>
-    </item>
-    
-    <item>
-      <title>VALUE-DOMAINでグルーレコード追加</title>
-      <link>https://yaasita.github.io/2016/11/25/value-domain</link>
-      <pubDate>Fri, 25 Nov 2016 01:31:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/11/25/value-domain</guid>
-      <description>VALUE-DOMAIN バリュードメインの権威DNSサーバを使いつつ
-レコードにグルーレコードを追加する方法
-BINDみたくこんな感じにやる
-ns cloud cloud.example.net. a cloud.example.net. 123.123.123.123  上位の権威サーバにグルーレコードを設定する場合は
-下記参照
-https://www.value-domain.com/userguide/manual/othermodns/</description>
     </item>
     
   </channel>
