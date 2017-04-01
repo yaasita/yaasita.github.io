@@ -9,6 +9,21 @@
     <atom:link href="/archives/2017/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>複数ファイルアップロードの実装</title>
+      <link>https://yaasita.github.io/2017/04/02/multiple-upload</link>
+      <pubDate>Sun, 02 Apr 2017 04:18:50 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/04/02/multiple-upload</guid>
+      <description>multiple指定してuploadフォーム作るときの話
+&amp;lt;input type=&amp;quot;file&amp;quot; name=&amp;quot;files&amp;quot; multiple /&amp;gt;  で複数ファイル選択できるが
+Perl CGIで受けるときに↓みたいにすると
+my @files = $q-&amp;gt;param(&#39;files&#39;); for my $filename (@files) { my $fn = decode(&amp;quot;UTF-8&amp;quot;, $filename); move($q-&amp;gt;tmpFileName($filename), &amp;quot;/path/to/dir&amp;quot;); }  Safari(iOS版で確認)はfilenameを全部同じにしてPOSTしてくるのでうまくいかない
+(AndroidとかはOK)
+なのでこんな感じにする
+my @fhs = $q-&amp;gt;upload(&#39;files&#39;); my %fname_count; for my $fh (@fhs){ my $out_filename = non_overlapping_filenames(&amp;quot;$fh&amp;quot;); my $io_handle = $fh-&amp;gt;handle; open (my $wr,&amp;quot;&amp;gt;&amp;quot;, $out_filename) or die $!; while (&amp;lt;$io_handle&amp;gt;){ print $wr $_; } close $wr; push(@result, decode(&amp;quot;UTF-8&amp;quot;,&amp;quot;$fh&amp;quot;)); }  あと古めのアンドロイドはmultiple指定しても複数ファイル選択ができない</description>
+    </item>
+    
+    <item>
       <title>Vimの副ファイル</title>
       <link>https://yaasita.github.io/2017/03/30/vim-alternate-file</link>
       <pubDate>Thu, 30 Mar 2017 01:46:13 +0900</pubDate>
