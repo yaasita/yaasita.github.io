@@ -9,6 +9,21 @@
     <atom:link href="/categories/program/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>ginを使ってechoをLiveReload</title>
+      <link>https://yaasita.github.io/2017/04/03/gin-live-reload</link>
+      <pubDate>Mon, 03 Apr 2017 00:05:20 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/04/03/gin-live-reload</guid>
+      <description> Golangのweb frame workの Echo のライブリロード
+ginがproxyしてくれるのでechoサーバのポートを教えてくれればよろしくリコンパイルしてくれる
+gin --appPort 8080 r go run server.go  CompileDaemonだとこんな感じか
+go get github.com/githubnemo/CompileDaemon CompileDaemon -command=&amp;quot;./run.sh&amp;quot; -include=&amp;quot;*.go&amp;quot;   参考リンク  https://github.com/codegangsta/gin
+ https://github.com/githubnemo/CompileDaemon
+ https://goo.gl/gp6L9z
+  </description>
+    </item>
+    
+    <item>
       <title>複数ファイルアップロードの実装</title>
       <link>https://yaasita.github.io/2017/04/02/multiple-upload</link>
       <pubDate>Sun, 02 Apr 2017 04:18:50 +0900</pubDate>
@@ -17,7 +32,7 @@
       <description>multiple指定してuploadフォーム作るときの話
 &amp;lt;input type=&amp;quot;file&amp;quot; name=&amp;quot;files&amp;quot; multiple /&amp;gt;  で複数ファイル選択できるが
 Perl CGIで受けるときに↓みたいにすると
-my @files = $q-&amp;gt;param(&#39;files&#39;); for my $filename (@files) { my $fn = decode(&amp;quot;UTF-8&amp;quot;, $filename); move($q-&amp;gt;tmpFileName($filename), &amp;quot;/path/to/dir&amp;quot;); }  Safari(iOS版で確認)はfilenameを全部同じにしてPOSTしてくるのでうまくいかない
+my @files = $q-&amp;gt;param(&#39;files&#39;); for my $filename (@files) { my $fn = decode(&amp;quot;UTF-8&amp;quot;, $filename); move($q-&amp;gt;tmpFileName($filename), &amp;quot;/path/to/dir&amp;quot;); }  iOSで選択するとfilenameが全部image.jpgでPOSTされてしまう可能性があるのでダメ
 (AndroidとかはOK)
 なのでこんな感じにする
 my @fhs = $q-&amp;gt;upload(&#39;files&#39;); my %fname_count; for my $fh (@fhs){ my $out_filename = non_overlapping_filenames(&amp;quot;$fh&amp;quot;); my $io_handle = $fh-&amp;gt;handle; open (my $wr,&amp;quot;&amp;gt;&amp;quot;, $out_filename) or die $!; while (&amp;lt;$io_handle&amp;gt;){ print $wr $_; } close $wr; push(@result, decode(&amp;quot;UTF-8&amp;quot;,&amp;quot;$fh&amp;quot;)); }  あと古めのアンドロイドはmultiple指定しても複数ファイル選択ができない</description>
@@ -344,16 +359,6 @@ T・D・U！T・D・U！という名前で出てみました
  パラメータチューニングとかでもちょっとはスコア上がるけど、ロジック見て良い感じの実装にするのは必須ですた
  例年 sinatraアプリらしいので一個くらいは作ってから望むべきだったかも
    参考リンク  ISUCON5の予選に参加して惨敗してきました #isucon</description>
-    </item>
-    
-    <item>
-      <title>コードを書いて実力判定</title>
-      <link>https://yaasita.github.io/2015/06/06/codeeval</link>
-      <pubDate>Sat, 06 Jun 2015 21:50:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/06/06/codeeval</guid>
-      <description>コード書くと評価してくれるようなサービス
-https://www.codeeval.com/browse/1/</description>
     </item>
     
   </channel>

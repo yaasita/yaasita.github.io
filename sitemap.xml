@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://yaasita.github.io/2017/04/03/gin-live-reload</loc>
+    <lastmod>2017-04-03T00:05:20+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yaasita.github.io/2017/04/02/multiple-upload</loc>
     <lastmod>2017-04-02T04:18:50+09:00</lastmod>
   </url>
@@ -4193,7 +4198,7 @@
   
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2017-04-02T04:18:50+09:00</lastmod>
+    <lastmod>2017-04-03T00:05:20+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4259,7 +4264,7 @@
   
   <url>
     <loc>https://yaasita.github.io/archives/2017/</loc>
-    <lastmod>2017-04-02T04:18:50+09:00</lastmod>
+    <lastmod>2017-04-03T00:05:20+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4311,13 +4316,13 @@
   
   <url>
     <loc>https://yaasita.github.io/post/</loc>
-    <lastmod>2017-04-02T04:18:50+09:00</lastmod>
+    <lastmod>2017-04-03T00:05:20+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/categories/program/</loc>
-    <lastmod>2017-04-02T04:18:50+09:00</lastmod>
+    <lastmod>2017-04-03T00:05:20+09:00</lastmod>
     <priority>0</priority>
   </url>
   

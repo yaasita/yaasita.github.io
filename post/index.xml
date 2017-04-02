@@ -6,8 +6,23 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 02 Apr 2017 04:18:50 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 03 Apr 2017 00:05:20 +0900</lastBuildDate>
     <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ginを使ってechoをLiveReload</title>
+      <link>https://yaasita.github.io/2017/04/03/gin-live-reload</link>
+      <pubDate>Mon, 03 Apr 2017 00:05:20 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/04/03/gin-live-reload</guid>
+      <description> Golangのweb frame workの Echo のライブリロード
+ginがproxyしてくれるのでechoサーバのポートを教えてくれればよろしくリコンパイルしてくれる
+gin --appPort 8080 r go run server.go  CompileDaemonだとこんな感じか
+go get github.com/githubnemo/CompileDaemon CompileDaemon -command=&amp;quot;./run.sh&amp;quot; -include=&amp;quot;*.go&amp;quot;   参考リンク  https://github.com/codegangsta/gin
+ https://github.com/githubnemo/CompileDaemon
+ https://goo.gl/gp6L9z
+  </description>
+    </item>
     
     <item>
       <title>複数ファイルアップロードの実装</title>
@@ -18,7 +33,7 @@
       <description>multiple指定してuploadフォーム作るときの話
 &amp;lt;input type=&amp;quot;file&amp;quot; name=&amp;quot;files&amp;quot; multiple /&amp;gt;  で複数ファイル選択できるが
 Perl CGIで受けるときに↓みたいにすると
-my @files = $q-&amp;gt;param(&#39;files&#39;); for my $filename (@files) { my $fn = decode(&amp;quot;UTF-8&amp;quot;, $filename); move($q-&amp;gt;tmpFileName($filename), &amp;quot;/path/to/dir&amp;quot;); }  Safari(iOS版で確認)はfilenameを全部同じにしてPOSTしてくるのでうまくいかない
+my @files = $q-&amp;gt;param(&#39;files&#39;); for my $filename (@files) { my $fn = decode(&amp;quot;UTF-8&amp;quot;, $filename); move($q-&amp;gt;tmpFileName($filename), &amp;quot;/path/to/dir&amp;quot;); }  iOSで選択するとfilenameが全部image.jpgでPOSTされてしまう可能性があるのでダメ
 (AndroidとかはOK)
 なのでこんな感じにする
 my @fhs = $q-&amp;gt;upload(&#39;files&#39;); my %fname_count; for my $fh (@fhs){ my $out_filename = non_overlapping_filenames(&amp;quot;$fh&amp;quot;); my $io_handle = $fh-&amp;gt;handle; open (my $wr,&amp;quot;&amp;gt;&amp;quot;, $out_filename) or die $!; while (&amp;lt;$io_handle&amp;gt;){ print $wr $_; } close $wr; push(@result, decode(&amp;quot;UTF-8&amp;quot;,&amp;quot;$fh&amp;quot;)); }  あと古めのアンドロイドはmultiple指定しても複数ファイル選択ができない</description>
@@ -309,38 +324,6 @@ http://www.apple.com/jp/retail/personalsetup/</description>
   go-bindata
  https://github.com/jteeuwen/go-bindata
    </description>
-    </item>
-    
-    <item>
-      <title>blogをmiddlemanからhugoに移行した</title>
-      <link>https://yaasita.github.io/2017/01/05/middleman2hugo</link>
-      <pubDate>Thu, 05 Jan 2017 04:50:10 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/01/05/middleman2hugo</guid>
-      <description> 使ってみた感想  ビルドはmiddlemanで10分かかってたけど1秒になった
- themeはgeppakuというのを使用 シンプルで良い
- Tumblrリンクのプルリクエストも快くマージしてくれた感謝m(_ _)m
-  pagination 周りの部分はちょっとページ数が多いとカラム落ちしたり苦しかったので書き直した
- taxonomiesを追加して、年別のアーカイブページを作成
- アーカイブページを逆順にする対応はなぜかうまくいかなかったので後で調査する
- とりあえずJavaScriptで逆順にした &amp;gt; gist
-  hugo serverのライブリロードがとっても良い(ブラウザも自動更新)
- ただしpagination周りで変な書き方するとサーバごと落ちる
-  DISQUS周りはちょっとカスタマイズした
- なぜかデフォルトだと読み込まなかったので
-  markdown周りはほぼ設定ファイルで完結
- 今回の設定はこんな感じ
-  middleman時代のリンクを維持するためにUglyURLs設定したけどcategoriesとかリンク切れが面倒だったので中止
- 参考: http://wdkk.co.jp/note/2015/0824-hugo-public/
-  Highlight.js今回無効にした過去分のcodeブロックが微妙になったので
-  総評
-Static Site Generatorはとても良い
-移行するにも、更新するにもメンテがすごく楽
-移行スクリプト 基本的にはファイル名にある時間のデータをTOMLに直して終わり
-/home/yamasitaにhugo,middlemanのディレクトリがある前提
- 参考リンク  middleman
- hugo
-  </description>
     </item>
     
   </channel>

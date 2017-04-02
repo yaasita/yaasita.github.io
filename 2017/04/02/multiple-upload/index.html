@@ -63,7 +63,7 @@ for my $filename (@files) {
 }
 </code></pre>
 
-<p>Safari(iOS版で確認)はfilenameを全部同じにしてPOSTしてくるのでうまくいかない<br />
+<p>iOSで選択するとfilenameが全部image.jpgでPOSTされてしまう可能性があるのでダメ<br />
 (AndroidとかはOK)<br />
 なのでこんな感じにする</p>
 
@@ -81,7 +81,8 @@ for my $fh (@fhs){
 }
 </code></pre>
 
-<p>あと古めのアンドロイドはmultiple指定しても複数ファイル選択ができない</p>
+<p>あと古めのアンドロイドはmultiple指定しても複数ファイル選択ができない<br />
+Andoroid4.0はダメだけど6.0だとOKだった</p>
 
 <h2 id="参考リンク">参考リンク</h2>
 
@@ -160,6 +161,11 @@ for my $fh (@fhs){
         </div>
         
         
+        <div id="pagenavigation-prev">
+          <span class="pagenav-label">Next</span>
+          <a href="https://yaasita.github.io/2017/04/03/gin-live-reload">ginを使ってechoをLiveReload</a>
+        </div>
+        
       </div>
       
     </div>
@@ -237,7 +243,7 @@ for my $fh (@fhs){
         </li>
         
         <li>
-          <a href="/categories/program"><span></span>program (128)</a>
+          <a href="/categories/program"><span></span>program (129)</a>
         </li>
         
         <li>
@@ -304,7 +310,7 @@ for my $fh (@fhs){
         </li>
         
         <li>
-          <a href="/archives/2017"><span></span>2017 (20)</a>
+          <a href="/archives/2017"><span></span>2017 (21)</a>
         </li>
         
       </ul>
