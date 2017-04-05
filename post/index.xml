@@ -11,10 +11,10 @@
     
     <item>
       <title>Google Cloud Shellのディレクトリ削除</title>
-      <link>https://yaasita.github.io/2017/04/06/deleting-gcp-shell-directory</link>
+      <link>https://yaasita.github.io/2017/04/06/deleting-gcp-shell-data</link>
       <pubDate>Thu, 06 Apr 2017 00:21:33 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/04/06/deleting-gcp-shell-directory</guid>
+      <guid>https://yaasita.github.io/2017/04/06/deleting-gcp-shell-data</guid>
       <description>120日で削除されるらしい
 It&#39;s been over 120 days since you opened Cloud Shell from the Google Cloud Platform console. In 7 days, your Cloud Shell home directory will be automatically scheduled for deletion.  </description>
     </item>
