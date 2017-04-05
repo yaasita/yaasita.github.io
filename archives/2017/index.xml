@@ -9,6 +9,16 @@
     <atom:link href="/archives/2017/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Google Cloud Shellのディレクトリ削除</title>
+      <link>https://yaasita.github.io/2017/04/06/gcp-shell-homedata</link>
+      <pubDate>Thu, 06 Apr 2017 00:21:33 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/04/06/gcp-shell-homedata</guid>
+      <description>120日で削除されるらしい
+It&#39;s been over 120 days since you opened Cloud Shell from the Google Cloud Platform console. In 7 days, your Cloud Shell home directory will be automatically scheduled for deletion.  </description>
+    </item>
+    
+    <item>
       <title>ginを使ってechoをLiveReload</title>
       <link>https://yaasita.github.io/2017/04/03/gin-live-reload</link>
       <pubDate>Mon, 03 Apr 2017 00:05:20 +0900</pubDate>
@@ -301,28 +311,6 @@ http://www.apple.com/jp/retail/personalsetup/</description>
   railsの初期設定
  https://github.com/yaasita/ansible_role_rails
   rbenv</description>
-    </item>
-    
-    <item>
-      <title>ore_markdownをGo言語で書き直した</title>
-      <link>https://yaasita.github.io/2017/01/06/ore_markdown_to_golang</link>
-      <pubDate>Fri, 06 Jan 2017 15:44:33 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/01/06/ore_markdown_to_golang</guid>
-      <description> 久々に ore_markdownを書き直した
-感想とか  Ruby(Gem: github-markdown)→Go(russross/blackfriday)で書き直し
- スタティックファイルもgo-bindataでバイナリに閉じ込めた
- OS間の違いを意識するのがめんどくさいのでVimでの判定は全部やめてGo側に寄せた
- 早くて良い
-  成果物とかライブラリ  作ったもの
- https://github.com/yaasita/ore_markdown
- https://github.com/yaasita/ore_markdown-go
-  blackfriday
- https://github.com/russross/blackfriday
- https://godoc.org/github.com/russross/blackfriday
-  go-bindata
- https://github.com/jteeuwen/go-bindata
-   </description>
     </item>
     
   </channel>

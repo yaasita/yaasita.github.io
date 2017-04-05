@@ -9,6 +9,16 @@
     <atom:link href="/categories/net/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Google Cloud Shellのディレクトリ削除</title>
+      <link>https://yaasita.github.io/2017/04/06/gcp-shell-homedata</link>
+      <pubDate>Thu, 06 Apr 2017 00:21:33 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/04/06/gcp-shell-homedata</guid>
+      <description>120日で削除されるらしい
+It&#39;s been over 120 days since you opened Cloud Shell from the Google Cloud Platform console. In 7 days, your Cloud Shell home directory will be automatically scheduled for deletion.  </description>
+    </item>
+    
+    <item>
       <title>relをtumblrテーマに加える</title>
       <link>https://yaasita.github.io/2017/02/14/add-rel-to-tumblr</link>
       <pubDate>Tue, 14 Feb 2017 01:05:25 +0900</pubDate>
@@ -300,17 +310,6 @@ perlで大きめの数値計算する例も
       <guid>https://yaasita.github.io/2015/06/06/codeeval</guid>
       <description>コード書くと評価してくれるようなサービス
 https://www.codeeval.com/browse/1/</description>
-    </item>
-    
-    <item>
-      <title>オンライン囲碁ゲームCOSUMI</title>
-      <link>https://yaasita.github.io/2015/06/01/igo</link>
-      <pubDate>Mon, 01 Jun 2015 00:01:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/06/01/igo</guid>
-      <description>やってみた
-5路盤しか勝てない
-結果</description>
     </item>
     
   </channel>
