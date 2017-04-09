@@ -9,6 +9,18 @@
     <atom:link href="/archives/2017/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>gpg鍵を変えた</title>
+      <link>https://yaasita.github.io/2017/04/09/update-gpg-key</link>
+      <pubDate>Sun, 09 Apr 2017 23:28:13 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/04/09/update-gpg-key</guid>
+      <description>https://keybase.io/yaasita
+有効期限を付けて1年毎に交換するのは止めよう
+keybase.ioの更新がめんどくさすぎる
+失効証明書だけ取っておいてどっか保存しておけば十分な気がしてきた</description>
+    </item>
+    
+    <item>
       <title>Google Cloud Shellのディレクトリ削除</title>
       <link>https://yaasita.github.io/2017/04/06/gcp-shell-homedata</link>
       <pubDate>Thu, 06 Apr 2017 00:21:33 +0900</pubDate>
@@ -276,41 +288,6 @@ https://gist.githubusercontent.com/yaasita/d9b55cff5e52197adf4840cf702e5bd6/raw/
       <description>13インチ MacBook Air 1.6GHzデュアルコアIntel Core i5 整備済製品 (\84,000)で買ったのでパーソナルセットアップをお願いしてみた
 時間は30分だったけど、電話でいろいろ質問できて良い
 http://www.apple.com/jp/retail/personalsetup/</description>
-    </item>
-    
-    <item>
-      <title>ansibleで作ったロール</title>
-      <link>https://yaasita.github.io/2017/01/09/my-ansible-role</link>
-      <pubDate>Mon, 09 Jan 2017 16:24:41 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/01/09/my-ansible-role</guid>
-      <description>成果物  ec2でスワップファイル置くとかするやつ
- https://github.com/yaasita/ansible_role_amazon-ec2
-  aptのproxy設定
- https://github.com/yaasita/ansible_role_apt-proxy
-  ブラックホールメールサーバ作るときの設定
- https://github.com/yaasita/ansible_role_blackhole-postfix
-  adminユーザ作るとき
- https://github.com/yaasita/ansible_role_admin-server
-  centosでよくやる設定
- https://github.com/yaasita/ansible_role_common_centos
-  Ubuntuでよくやる設定
- https://github.com/yaasita/ansible_role_common_ubuntu
-  Dockerコンテナにするときによくやる設定
- https://github.com/yaasita/ansible_role_docker-care
-  munin-node入れるとき
- https://github.com/yaasita/ansible_role_munin
-  mysql
- https://github.com/yaasita/ansible_role_mysql
-  nagios nrpe
- https://github.com/yaasita/ansible_role_nagios-nrpe
-  ネットワーク設定
- https://github.com/yaasita/ansible_role_network
-  proxy設定(主にaptの)
- https://github.com/yaasita/ansible_role_proxy
-  railsの初期設定
- https://github.com/yaasita/ansible_role_rails
-  rbenv</description>
     </item>
     
   </channel>

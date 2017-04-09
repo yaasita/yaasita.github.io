@@ -9,6 +9,18 @@
     <atom:link href="/categories/soft/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>gpg鍵を変えた</title>
+      <link>https://yaasita.github.io/2017/04/09/update-gpg-key</link>
+      <pubDate>Sun, 09 Apr 2017 23:28:13 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/04/09/update-gpg-key</guid>
+      <description>https://keybase.io/yaasita
+有効期限を付けて1年毎に交換するのは止めよう
+keybase.ioの更新がめんどくさすぎる
+失効証明書だけ取っておいてどっか保存しておけば十分な気がしてきた</description>
+    </item>
+    
+    <item>
       <title>Vimの副ファイル</title>
       <link>https://yaasita.github.io/2017/03/30/vim-alternate-file</link>
       <pubDate>Thu, 30 Mar 2017 01:46:13 +0900</pubDate>
@@ -313,19 +325,6 @@ apt-get install klipper  初期はShift+Zになってるので設定からなお
 apt-get install boxes  Visual Modeで選択して
 !boxes -d shell  とかやる
 参考リンク 毎日のスクリプト作成にちょっとしたコダワリを加えるboxes</description>
-    </item>
-    
-    <item>
-      <title>sshuttleで簡易VPN</title>
-      <link>https://yaasita.github.io/2015/03/15/sshuttle</link>
-      <pubDate>Sun, 15 Mar 2015 03:32:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/03/15/sshuttle</guid>
-      <description>こんな感じで接続する
-sshuttle -r hogeuser@hoge-server 10.0.0.0/16 --dns  bash-completionが利かないのが不便なので、
-sshなりを流用すればOK
-これでいい感じにiptablesを設定してNAT通ししてくれる
-便利</description>
     </item>
     
   </channel>

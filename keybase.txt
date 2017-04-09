@@ -1,0 +1,68 @@
+==================================================================
+https://keybase.io/yaasita
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://yaasita.github.io
+  * I am yaasita (https://keybase.io/yaasita) on keybase.
+  * I have a public key with fingerprint 34D9 5733 B84C B5F6 248F  CACC 6B92 4437 99E8 5084
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "0101d158464401924b9b90b4528a38c6836cf3ef878bb1fa3238e657dc4cb48d151a0a",
+            "fingerprint": "34d95733b84cb5f6248fcacc6b92443799e85084",
+            "host": "keybase.io",
+            "key_id": "6b92443799e85084",
+            "kid": "0101d158464401924b9b90b4528a38c6836cf3ef878bb1fa3238e657dc4cb48d151a0a",
+            "uid": "0f56890ad047a9066e43a5e3d78a8019",
+            "username": "yaasita"
+        },
+        "service": {
+            "hostname": "yaasita.github.io",
+            "protocol": "https:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1491748184,
+    "expire_in": 157680000,
+    "prev": "839b41a2aad223b782c6ce7508f36f26c925287ac32edf61fd5572d2ceb3a13b",
+    "seqno": 21,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v1
+
+owGtUltIFUEYPh5TUxMsuxH64BZGdZDdndnd2ROUkIL0kJoFBcVpZnZWN+3s6Zz1
+cjBFygwxQYSMShOyMiiLglMRCoVJWGgRdKdIyOxGN6Kgh2pW6yHosXkZ5p/v+/7v
+//jb0+I93riKjnzt0Kviprhbr4ln05uCLXUCsY2o4K8TKtjUxSoNFnECFZYh+AVR
+EiVDUhBUIRQlXYZEJ7pIoCIjDBBVEVCpCZiJNESIZGIgA8RURTMopAQiTpWwiAWf
+YFrBMhYOha2gw2UBNHRFA4AgDlNMVYbIpJhSlfAWEGi6zpAiIsiJ5XbEZXBzBEdY
+rmXzGn8Epuz9A/+ffVdNy5mKinQRGyLUsC6qKoMAKwwYGsKI67vACAsH8Q7G0VGM
+I5aDhXqfwIvVFmVuru4gfwNyyyynvIpMzxQK245N7Ur+Xe44oYjfpTvRkIuvYSTw
+WylArKDBs+SMahaOWHZQ8EscSR3LlZagLmkQSQj6BFYbssIsYLkIRVORyI/bh1Vz
+SQT0rQRKWMbYkGVANCRTlTKNp2gC1ZRVqss8LA1TIDPDVCXTUBRNNmTKCMASIII7
+3M6gLfhliRvFZVw0YpUFsVMVZkJ9Sktc5gxPnNeTmOB118yTkpz+Z/dWJyf9bCi5
+3LBs4knzpcFYw+mfeWsv5g6eX5E8mnC2cNJ2mkqv+5R9qzKP9S/tHJvrGzdf9IAT
+87Nbe1orX9acbFroHc24k9kZex76VOy5uVGpzfw2kHo7upgE193vL/qwoK/x2Tl7
+iHa9DXgPZuxqH1zaezS/8f0ZMZTWnbNm46nEG6PN+RXOkfahqs66hKexbfV0/Orx
+hyXx3/uulIT10qzhy9HDfV0zXy16khgfGygP+XJ2py5ZmdQ7tkGefDPxdaRl5/f0
+mrRZBVkj3cvvXetJbItlt224Mt7x+CP+Is3eX3T3UUtu85neOS8/d/Rf2C7OX38A
+WXvntT4Yzmsq3PtuaHPhnns/fgE=
+=hKLO
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/yaasita
+
+==================================================================
+
