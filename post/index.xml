@@ -6,8 +6,34 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 09 Apr 2017 23:28:13 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 06 May 2017 04:55:23 +0900</lastBuildDate>
     <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>テーマを簡素にしてtumblrを見たいとき</title>
+      <link>https://yaasita.github.io/2017/05/06/noneblr</link>
+      <pubDate>Sat, 06 May 2017 04:55:23 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/05/06/noneblr</guid>
+      <description>noneblrというサービスが良いかもしれない
+これでどんなBlogも一定のUIで見れる
+http://noneblr.com/
+こんな感じになる
+login押すと権限求められるけど怖いからそれはやってない</description>
+    </item>
+    
+    <item>
+      <title>Vue.jsのちょっとしたこと</title>
+      <link>https://yaasita.github.io/2017/04/14/vuejs-tips</link>
+      <pubDate>Fri, 14 Apr 2017 15:57:44 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/04/14/vuejs-tips</guid>
+      <description> v-on=&amp;ldquo;click&amp;rdquo;とmodelは一緒に使えない  watchで監視する
+ https://github.com/vuejs/vue/issues/1146
+   ある要素だけが繰り返すわけじゃないときはtemplateで挟むとよい &amp;lt;template v-for=&amp;quot;item in items&amp;quot;&amp;gt; &amp;lt;a&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;b&amp;gt;&amp;lt;/b&amp;gt; &amp;lt;/template&amp;gt;  https://jp.vuejs.org/v2/guide/list.html
+hash操作はリアクティブにならない https://jp.vuejs.org/v2/guide/reactivity.html
+vm.b = 2 // NG Vue.set(object, key, value) // OK  </description>
+    </item>
     
     <item>
       <title>gpg鍵を変えた</title>
@@ -18,7 +44,8 @@
       <description>https://keybase.io/yaasita
 有効期限を付けて1年毎に交換するのは止めよう
 keybase.ioの更新がめんどくさすぎる
-失効証明書だけ取っておいてどっか保存しておけば十分な気がしてきた</description>
+失効証明書だけ取っておいてどっか保存しておけば十分な気がしてきた
+ちなみに一回鍵消してもう一回連携やりなおしたら、Invitations が 24 まで増えたんだけどこれ無限増殖できるのでは・・・</description>
     </item>
     
     <item>
@@ -264,31 +291,6 @@ https://yaasita.tumblr.com/post/155945774152
   年ページ
  https://yaasita.github.io/2008.html
    </description>
-    </item>
-    
-    <item>
-      <title>ore_markdownを画像埋め込みに対応させた</title>
-      <link>https://yaasita.github.io/2017/01/15/ore_markdown_update2</link>
-      <pubDate>Sun, 15 Jan 2017 02:47:40 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/01/15/ore_markdown_update2</guid>
-      <description>またore_markdown-goの修正
-こんな感じに画像データをBase64にして埋め込めばHTMLファイル一枚で完結しそうだったので修正した
-&amp;lt;img src=&amp;quot;data:image/png;base64,(base64文字列)&amp;quot; alt=&amp;quot;img1&amp;quot;&amp;gt;  修正内容
-吐き出されたHTMLの例
-https://gist.githubusercontent.com/yaasita/d9b55cff5e52197adf4840cf702e5bd6/raw/c6a3c2f96f4360ad3fa526c6c5ae5302acd26769/preview.html
-保存してHTMLを表示させれば画像がみれるはず</description>
-    </item>
-    
-    <item>
-      <title>MacBook買ったのでサポートお願いした</title>
-      <link>https://yaasita.github.io/2017/01/09/mac-personal-setup</link>
-      <pubDate>Mon, 09 Jan 2017 16:27:40 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/01/09/mac-personal-setup</guid>
-      <description>13インチ MacBook Air 1.6GHzデュアルコアIntel Core i5 整備済製品 (\84,000)で買ったのでパーソナルセットアップをお願いしてみた
-時間は30分だったけど、電話でいろいろ質問できて良い
-http://www.apple.com/jp/retail/personalsetup/</description>
     </item>
     
   </channel>

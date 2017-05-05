@@ -9,6 +9,19 @@
     <atom:link href="/categories/program/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>Vue.jsのちょっとしたこと</title>
+      <link>https://yaasita.github.io/2017/04/14/vuejs-tips</link>
+      <pubDate>Fri, 14 Apr 2017 15:57:44 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/04/14/vuejs-tips</guid>
+      <description> v-on=&amp;ldquo;click&amp;rdquo;とmodelは一緒に使えない  watchで監視する
+ https://github.com/vuejs/vue/issues/1146
+   ある要素だけが繰り返すわけじゃないときはtemplateで挟むとよい &amp;lt;template v-for=&amp;quot;item in items&amp;quot;&amp;gt; &amp;lt;a&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;b&amp;gt;&amp;lt;/b&amp;gt; &amp;lt;/template&amp;gt;  https://jp.vuejs.org/v2/guide/list.html
+hash操作はリアクティブにならない https://jp.vuejs.org/v2/guide/reactivity.html
+vm.b = 2 // NG Vue.set(object, key, value) // OK  </description>
+    </item>
+    
+    <item>
       <title>ginを使ってechoをLiveReload</title>
       <link>https://yaasita.github.io/2017/04/03/gin-live-reload</link>
       <pubDate>Mon, 03 Apr 2017 00:05:20 +0900</pubDate>
@@ -325,40 +338,6 @@ perlで大きめの数値計算する例も
  参考リンク
  TeslaCrypt（vvvウイルス）によって暗号化されたファイルの復号手順メモ
    </description>
-    </item>
-    
-    <item>
-      <title>ISUCON5で惨敗した件</title>
-      <link>https://yaasita.github.io/2015/09/30/isucon5</link>
-      <pubDate>Wed, 30 Sep 2015 00:38:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/09/30/isucon5</guid>
-      <description>ISUCON5に参加してきました
-T・D・U！T・D・U！という名前で出てみました
-最高スコアは5000ちょっとでしたOTZ
-感想  ISUCON
- 会社以外の人ととチーム組むと他社の事情とか聞けて結構良いかもしれない
- idobata,GCE(Google Compute Engine)とか使ったことなかったからいい機会だったかも
- VM渡されて時間内に早くするんだ！って競技はルールも分かりやすくて面白い
- 惨敗だったけど楽しかったし勉強になった
-  GCP(Google Cloud Platform)
- なんかAWS慣れてる所為もあるんだろうけど結構手間取った
- ついでに触ったGoogle Cloud DNSはRoute53の方が高機能かな～
- あらかじめユーザ名＋鍵登録しておけばインスタンス立ち上げ時にユーザ作って鍵設定までしてくれて便利(小並感
-  idobata
- slackと違って1ユーザのアカウントをチーム内で共有するみたいな感じなので
- 会社内のチャット→slack
- 会社を跨いだメンバーとのやり取り→idobataみたいな感じがよいのかな
-  ちょっとISUCON中は重かったけどこれからに期待
-   反省  最初に落ち着いて計測してみたほうが良かったかも
- 制限時間があるから焦って、手当たり次第に対応してたけどもっと計測に時間とってやることやらない事決めてから取り掛かれば良かったかも
-  troterにほぼ任せちゃったので。。。
-  役割決めないとだったな
- お前これやる、俺これやる的な話してから取り掛かるべきだったかも
-  やっぱコード読まなきゃダメ
- パラメータチューニングとかでもちょっとはスコア上がるけど、ロジック見て良い感じの実装にするのは必須ですた
- 例年 sinatraアプリらしいので一個くらいは作ってから望むべきだったかも
-   参考リンク  ISUCON5の予選に参加して惨敗してきました #isucon</description>
     </item>
     
   </channel>
