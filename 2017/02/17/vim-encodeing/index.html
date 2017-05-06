@@ -46,41 +46,24 @@ ga('send', 'pageview');
     </div>
   </header>
   <div class="content">
-    <p>下図参照</p>
+    <p>下図参照<br />
+<a href="https://yaasita.tumblr.com/post/157354717792">https://yaasita.tumblr.com/post/157354717792</a></p>
 
-<p><a href="https://yaasita.tumblr.com/post/157354717792">https://yaasita.tumblr.com/post/157354717792</a></p>
+<p><a href="https://yaasita.tumblr.com/post/157354717792"><img id="vime0" src=""></a><br />
+<a href="https://yaasita.tumblr.com/post/157354717792"><img id="vime1" src=""></a><br />
+<a href="https://yaasita.tumblr.com/post/157354717792"><img id="vime2" src=""></a></p>
 
-<script src="/js/vue.min.js"></script>
-<script id="tumblr-api" v-bind:src="tumblr_api_url"></script>
-<div id="tumblr-image">
-    <div v-for="img in images">
-        <a v-bind:href="img.imgpath"><img v-bind:src="img.imgpath"></a>
-    </div>
-</div>
 <script>
-var tumblr_api = new Vue({
-    el: '#tumblr-api',
-    data: {
-        tumblr_api_url:  "https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=157354717792&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=img.callback",
+function callback(data){
+    gdata = data.response.posts[0].photos;
+    var photos = data.response.posts[0].photos;
+    for(var i=0;i<=photos.length-1;i++){
+        document.getElementById("vime" + i).parentNode.href = photos[i].original_size.url;
+        document.getElementById("vime" + i).src = photos[i].original_size.url;
     }
-});
-var img = new Vue({
-    el: '#tumblr-image',
-    data: {
-        images: [
-        ],
-    },
-    methods: {
-        callback: function(data){
-            var photos = data.response.posts[0].photos;
-            hoge = photos;
-            for(var i=0;i<=photos.length-1;i++){
-                this.images.push({imgpath: photos[i].original_size.url})
-            }
-        }
-    }
-});
+}
 </script>
+<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=157354717792&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
 
   </div>
   <footer>
@@ -226,11 +209,11 @@ var img = new Vue({
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (183)</a>
+          <a href="/categories/net"><span></span>net (184)</a>
         </li>
         
         <li>
-          <a href="/categories/program"><span></span>program (130)</a>
+          <a href="/categories/program"><span></span>program (131)</a>
         </li>
         
         <li>
@@ -297,7 +280,7 @@ var img = new Vue({
         </li>
         
         <li>
-          <a href="/archives/2017"><span></span>2017 (25)</a>
+          <a href="/archives/2017"><span></span>2017 (26)</a>
         </li>
         
       </ul>

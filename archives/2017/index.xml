@@ -9,6 +9,17 @@
     <atom:link href="/archives/2017/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>tumblrの画像を貼るときに直リンクしてはいけない</title>
+      <link>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr</link>
+      <pubDate>Sun, 07 May 2017 02:49:05 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr</guid>
+      <description>なぜか？画像のURLはたまに変わりリンク切れしてしまうから
+ちゃんとAPIを叩いて取得した方が良い
+ </description>
+    </item>
+    
+    <item>
       <title>テーマを簡素にしてtumblrを見たいとき</title>
       <link>https://yaasita.github.io/2017/05/06/noneblr</link>
       <pubDate>Sat, 06 May 2017 04:55:23 +0900</pubDate>
@@ -168,7 +179,10 @@ $sort_json = json_decode(file_get_contents(&amp;quot;php://input&amp;quot;),true
       <guid>https://yaasita.github.io/2017/02/17/vim-encodeing</guid>
       <description>下図参照
 https://yaasita.tumblr.com/post/157354717792
-      var tumblr_api = new Vue({ el: &#39;#tumblr-api&#39;, data: { tumblr_api_url: &#34;https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=157354717792&amp;api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&amp;jsonp=img.callback&#34;, } }); var img = new Vue({ el: &#39;#tumblr-image&#39;, data: { images: [ ], }, methods: { callback: function(data){ var photos = data.response.posts[0].photos; hoge = photos; for(var i=0;i</description>
+
+
+
+ function callback(data){ gdata = data.response.posts[0].photos; var photos = data.response.posts[0].photos; for(var i=0;i </description>
     </item>
     
     <item>
@@ -269,27 +283,6 @@ message_drop_headers = bcc, content-length, resent-bcc, return-path   参考
    まとめ 本来見られちゃいけないヘッダをMTAに渡して、多分消してくれるだろうと期待するのはあまりよくないと思う
 具体的にはBccヘッダまで綺麗に書いて sendmail -t で送るよりはちゃんとenvelope to を指定して送った方が安全度高い
 要するにthunderbirdみたいに送るべき</description>
-    </item>
-    
-    <item>
-      <title>新旧リダイレクト</title>
-      <link>https://yaasita.github.io/2017/01/16/redirect-githubpage</link>
-      <pubDate>Mon, 16 Jan 2017 23:36:18 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/01/16/redirect-githubpage</guid>
-      <description> middlemanからの移行に際してリンクが壊れまくった
-GoogleのSearch Console
-https://yaasita.tumblr.com/post/155945715637 
-とりあえずJavaScriptで新URL案内すればいいか
- こんな感じ
-https://yaasita.tumblr.com/post/155945774152 
-旧ページ  記事ページ
- https://yaasita.github.io/2010/08/30/5917.html
-  タグページ
- https://yaasita.github.io/tags/soft.html
-  年ページ
- https://yaasita.github.io/2008.html
-   </description>
     </item>
     
   </channel>

@@ -9,6 +9,17 @@
     <atom:link href="/categories/program/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>tumblrの画像を貼るときに直リンクしてはいけない</title>
+      <link>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr</link>
+      <pubDate>Sun, 07 May 2017 02:49:05 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr</guid>
+      <description>なぜか？画像のURLはたまに変わりリンク切れしてしまうから
+ちゃんとAPIを叩いて取得した方が良い
+ </description>
+    </item>
+    
+    <item>
       <title>Vue.jsのちょっとしたこと</title>
       <link>https://yaasita.github.io/2017/04/14/vuejs-tips</link>
       <pubDate>Fri, 14 Apr 2017 15:57:44 +0900</pubDate>
@@ -319,25 +330,6 @@ curl http://challenge-your-limits.herokuapp.com/call/me # getだめだよって�
  http://challenge-your-limits2.herokuapp.com/
   答え
 curl http://challenge-your-limits2.herokuapp.com/call/my/APIs # メソッドが違うらしい curl -X DELETE http://challenge-your-limits2.herokuapp.com/call/my/APIs # いろいろ試すとDELETEで通る curl http://challenge-your-limits2.herokuapp.com/c2_users/12/hacker_apply # 案内されたURLにリクエストするとなんか違うらしい curl http://challenge-your-limits2.herokuapp.com/help/me/out # とりあえず登録 curl -F &amp;quot;username=yaasita&amp;quot; -F &#39;email=hoge1@example.com&#39; \ http://challenge-your-limits2.heroku/app.com/c2_users/ # 帰ってきた値でBASIC認証 curl --user yaasita:uRd4yy-imPbHBR4W http://challenge-your-limits2.herokuapp.com/c2_users/10 # あとは帰ってきた文字列をBASE64デコード  パズル3  http://tango-ruby.</description>
-    </item>
-    
-    <item>
-      <title>素因数分解の話</title>
-      <link>https://yaasita.github.io/2016/01/11/factor</link>
-      <pubDate>Mon, 11 Jan 2016 02:20:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/01/11/factor</guid>
-      <description>素因数分解してくれるサービス
-http://factordb.com/
-自分のSSH鍵がリストされてないか確認してみる
-# 公開鍵の modulus ssh-keygen -m PKCS8 -e -f authorized_keys &amp;gt; kagi openssl rsa -pubin -inform PEM -text -noout &amp;lt; kagi &amp;gt; modulus # 秘密鍵の modulus とか prime1, prime2の確認 openssl rsa -text -noout -in ~/.ssh/id_rsa  こんな感じのスクリプトで10進数にすればOK
-perlで大きめの数値計算する例も
- 載ってない一安心
- http://goo.gl/Qqaed5
- http://goo.gl/yKVyUH
- 参考リンク
- TeslaCrypt（vvvウイルス）によって暗号化されたファイルの復号手順メモ
-   </description>
     </item>
     
   </channel>

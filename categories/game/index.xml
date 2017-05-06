@@ -164,7 +164,7 @@ vitaの場合はコンテンツ管理からアンインストールできた
       <pubDate>Sat, 28 Feb 2015 22:54:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2015/02/28/habitrpg</guid>
-      <description>公式 https://habitrpg.com/
+      <description>function callback(data){ var original_url = data.response.posts[0].photos[0].original_size.url; document.getElementById(&#34;habitimg&#34;).parentNode.href = original_url; document.getElementById(&#34;habitimg&#34;).src = original_url; }   公式 https://habitrpg.com/
 遊び方  アバター
  左上が自分のアバターで、クリックするとカスタマイズできる
   ライフゲージ
@@ -185,12 +185,7 @@ vitaの場合はコンテンツ管理からアンインストールできた
  毎日チェックできればお金と経験値が入る
  チェックできないとライフゲージが減る
   To-Dos(すべきこと)
- 1回限りの仕事
-  Rewards
- 溜まったお金はRewardsで使う
- 装備品とかご褒美を買える
-   感想 なんかまだよくわからないけど、機能がいっぱいあって楽しそう
-日本語のタスクも作れる</description>
+ 1回限りの仕事</description>
     </item>
     
     <item>

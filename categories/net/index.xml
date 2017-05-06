@@ -9,6 +9,17 @@
     <atom:link href="/categories/net/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>tumblrの画像を貼るときに直リンクしてはいけない</title>
+      <link>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr</link>
+      <pubDate>Sun, 07 May 2017 02:49:05 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr</guid>
+      <description>なぜか？画像のURLはたまに変わりリンク切れしてしまうから
+ちゃんとAPIを叩いて取得した方が良い
+ </description>
+    </item>
+    
+    <item>
       <title>テーマを簡素にしてtumblrを見たいとき</title>
       <link>https://yaasita.github.io/2017/05/06/noneblr</link>
       <pubDate>Sat, 06 May 2017 04:55:23 +0900</pubDate>
@@ -304,15 +315,6 @@ perlで大きめの数値計算する例も
  参考リンク
  TeslaCrypt（vvvウイルス）によって暗号化されたファイルの復号手順メモ
    </description>
-    </item>
-    
-    <item>
-      <title>IIJ(MIO SIM)のIPアドレス帯</title>
-      <link>https://yaasita.github.io/2015/07/20/iij-ip</link>
-      <pubDate>Mon, 20 Jul 2015 20:38:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/07/20/iij-ip</guid>
-      <description>調べた限りだとこんな感じ</description>
     </item>
     
   </channel>
