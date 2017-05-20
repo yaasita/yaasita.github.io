@@ -140,7 +140,9 @@ apt-get install klipper  初期はShift+Zになってるので設定からなお
       
       <guid>https://yaasita.github.io/2015/04/13/linux-terminal-game</guid>
       <description>すごいなこれ
-まさかの？Linuxターミナル上でプレイする『スーパーマリオブラザーズ』</description>
+
+まさかの？Linuxターミナル上でプレイする『スーパーマリオブラザーズ』
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
     <item>

@@ -96,7 +96,7 @@ T・D・U！T・D・U！という名前で出てみました</p>
 <li>troterにほぼ任せちゃったので。。。<br />
 
 <ul>
-<li><img src="https://40.media.tumblr.com/84a761184ba17607fee4ffc8bcc3631f/tumblr_nvg3yxXsni1riy4fno1_250.jpg" alt="zenbuaitu" /><br /></li>
+<li><a href="#"><img id="tumblr-img" src=""></a><br /></li>
 <li>役割決めないとだったな<br /></li>
 <li>お前これやる、俺これやる的な話してから取り掛かるべきだったかも<br /></li>
 </ul></li>
@@ -113,8 +113,20 @@ T・D・U！T・D・U！という名前で出てみました</p>
 <h1 id="参考リンク">参考リンク</h1>
 
 <ul>
-<li><a href="http://troter.hatenablog.jp/entry/20150929/1443523456">ISUCON5の予選に参加して惨敗してきました #isucon</a><br /></li>
+<li><a href="http://troter.hatenablog.jp/entry/20150929/1443523456">ISUCON5の予選に参加して惨敗してきました #isucon</a><br />
+<br />
+<br />
+<br /></li>
 </ul>
+
+<script>
+function callback(data){
+    var photos = data.response.posts[0].photos;
+    document.getElementById("tumblr-img").parentNode.href = photos[0].original_size.url;
+    document.getElementById("tumblr-img").src = photos[0].original_size.url;
+}
+</script>
+<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=130137035797&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
 
   </div>
   <footer>
@@ -244,7 +256,7 @@ T・D・U！T・D・U！という名前で出てみました</p>
       <ul>
         
         <li>
-          <a href="/categories/crack"><span></span>crack (20)</a>
+          <a href="/categories/crack"><span></span>crack (21)</a>
         </li>
         
         <li>
@@ -264,7 +276,7 @@ T・D・U！T・D・U！という名前で出てみました</p>
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (184)</a>
+          <a href="/categories/net"><span></span>net (185)</a>
         </li>
         
         <li>
@@ -335,7 +347,7 @@ T・D・U！T・D・U！という名前で出てみました</p>
         </li>
         
         <li>
-          <a href="/archives/2017"><span></span>2017 (26)</a>
+          <a href="/archives/2017"><span></span>2017 (27)</a>
         </li>
         
       </ul>

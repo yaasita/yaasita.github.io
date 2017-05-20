@@ -9,13 +9,34 @@
     <atom:link href="/categories/net/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>コピー禁止のWebサイトについて</title>
+      <link>https://yaasita.github.io/2017/05/21/web-copy-protect</link>
+      <pubDate>Sun, 21 May 2017 01:48:56 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/05/21/web-copy-protect</guid>
+      <description>コピー禁止のWordpressサイトが増えてきました
+ちょっと検索ワードをコピペするのに不便なので回避方法
+1. とりあえずJavaScriptをOFFる これで大半はOK wp-copyprotect って拡張だけならこれで大丈夫
+この仕組みの参考実装はこんな感じ
+https://gist.github.com/yaasita/7b07710840186561c76d7e5c4af28b2d
+chromeならURLバーの左をクリックしてJavaScriptをブロックで
+
+2. noscriptのタグを消す WP Content Copy Protection みたいなやつだと noscript タグの中に画面一杯に広げてコンテンツを見えなくするdivが入るので、chrome developers tools開いて &amp;lt;noscript&amp;gt;タグごと削除する
+Oops! It appears that you have disabled your Javascript. In order for you to see this page as it is meant to appear, we ask that you please re-enable your Javascript! みたいな文言はこれ
+
+3. cssでuser-selectをnoneにしている場合 chrome developers toolsでuser-select: text;書き換えてやる
+
+ function callback(data){ var photos = data.</description>
+    </item>
+    
+    <item>
       <title>tumblrの画像を貼るときに直リンクしてはいけない</title>
       <link>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr</link>
       <pubDate>Sun, 07 May 2017 02:49:05 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr</guid>
       <description>なぜか？画像のURLはたまに変わりリンク切れしてしまうから
-ちゃんとAPIを叩いて取得した方が良い
+ちゃんとAPIを叩いてポストIDから画像リンクを取得した方が良い
  </description>
     </item>
     
@@ -159,7 +180,8 @@ Static Site Generatorはとても良い
       <guid>https://yaasita.github.io/2016/12/03/google-cloud-dns</guid>
       <description>Google Cloud Platform のDNSでグルーレコード作るときは
 こんな感じでNS指定したあとに、Aレコード追加すればグルーレコード(Glue Record)に追加してくれるようだ
-; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.9.5-9+deb8u8-Debian &amp;lt;&amp;lt;&amp;gt;&amp;gt; +norec @ns-cloud-d1.googledomains.com. name.yaasita.xyz. a ; (2 servers found) ;; global options: +cmd ;; Got answer: ;; -&amp;gt;&amp;gt;HEADER&amp;lt;&amp;lt;- opcode: QUERY, status: NOERROR, id: 39015 ;; flags: qr; QUERY: 1, ANSWER: 0, AUTHORITY: 2, ADDITIONAL: 3 ;; OPT PSEUDOSECTION: ; EDNS: version: 0, flags:; udp: 512 ;; QUESTION SECTION: ;name.yaasita.xyz. IN A ;; AUTHORITY SECTION: name.yaasita.xyz. 300 IN NS ns1.name.yaasita.xyz. name.yaasita.xyz. 300 IN NS ns2.</description>
+
+; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.9.5-9+deb8u8-Debian &amp;lt;&amp;lt;&amp;gt;&amp;gt; +norec @ns-cloud-d1.googledomains.com. name.yaasita.xyz. a ; (2 servers found) ;; global options: +cmd ;; Got answer: ;; -&amp;gt;&amp;gt;HEADER&amp;lt;&amp;lt;- opcode: QUERY, status: NOERROR, id: 39015 ;; flags: qr; QUERY: 1, ANSWER: 0, AUTHORITY: 2, ADDITIONAL: 3 ;; OPT PSEUDOSECTION: ; EDNS: version: 0, flags:; udp: 512 ;; QUESTION SECTION: ;name.yaasita.xyz. IN A ;; AUTHORITY SECTION: name.yaasita.xyz. 300 IN NS ns1.name.yaasita.xyz. name.</description>
     </item>
     
     <item>
@@ -295,25 +317,6 @@ curl http://challenge-your-limits2.herokuapp.com/call/my/APIs # メソッドが�
   SIはやめておけ
  http://anond.hatelabo.jp/20160123131828
  バックアップ
-   </description>
-    </item>
-    
-    <item>
-      <title>素因数分解の話</title>
-      <link>https://yaasita.github.io/2016/01/11/factor</link>
-      <pubDate>Mon, 11 Jan 2016 02:20:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/01/11/factor</guid>
-      <description>素因数分解してくれるサービス
-http://factordb.com/
-自分のSSH鍵がリストされてないか確認してみる
-# 公開鍵の modulus ssh-keygen -m PKCS8 -e -f authorized_keys &amp;gt; kagi openssl rsa -pubin -inform PEM -text -noout &amp;lt; kagi &amp;gt; modulus # 秘密鍵の modulus とか prime1, prime2の確認 openssl rsa -text -noout -in ~/.ssh/id_rsa  こんな感じのスクリプトで10進数にすればOK
-perlで大きめの数値計算する例も
- 載ってない一安心
- http://goo.gl/Qqaed5
- http://goo.gl/yKVyUH
- 参考リンク
- TeslaCrypt（vvvウイルス）によって暗号化されたファイルの復号手順メモ
    </description>
     </item>
     

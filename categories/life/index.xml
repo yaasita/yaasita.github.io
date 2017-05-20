@@ -86,7 +86,8 @@ T・D・U！T・D・U！という名前で出てみました
    反省  最初に落ち着いて計測してみたほうが良かったかも
  制限時間があるから焦って、手当たり次第に対応してたけどもっと計測に時間とってやることやらない事決めてから取り掛かれば良かったかも
   troterにほぼ任せちゃったので。。。
-  役割決めないとだったな
+ 
+ 役割決めないとだったな
  お前これやる、俺これやる的な話してから取り掛かるべきだったかも
   やっぱコード読まなきゃダメ
  パラメータチューニングとかでもちょっとはスコア上がるけど、ロジック見て良い感じの実装にするのは必須ですた
@@ -132,9 +133,10 @@ http://hajimete-sangokushi.com/</description>
       <guid>https://yaasita.github.io/2014/05/26/itunes_books</guid>
       <description>手元のPDFをipadに転送したくていろいろ探したら
 下記画像みたいなブックという項目を出さないとダメみたい
+
 iTunesStoreでブック押したりなんかいろいろしたら出るようになった
 あとPDFを追加するときは以下のフォルダに置くと良いみたい（入れると自動的に消える）
-C:\Users\hogeuser\Music\iTunes\iTunes Media\iTunes に自動的に追加  </description>
+C:\Users\hogeuser\Music\iTunes\iTunes Media\iTunes に自動的に追加   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
     <item>

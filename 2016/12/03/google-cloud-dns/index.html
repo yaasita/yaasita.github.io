@@ -49,7 +49,7 @@ ga('send', 'pageview');
     <p>Google Cloud Platform のDNSでグルーレコード作るときは<br />
 こんな感じでNS指定したあとに、Aレコード追加すればグルーレコード(Glue Record)に追加してくれるようだ</p>
 
-<p><img src="https://68.media.tumblr.com/b316f08942ffb999860abca6d9f5d5aa/tumblr_ohm57cZVtD1riy4fno1_1280.png" alt="gcp" /></p>
+<p><a href="#"><img id="tumblr-img" src=""></a></p>
 
 <pre><code>; &lt;&lt;&gt;&gt; DiG 9.9.5-9+deb8u8-Debian &lt;&lt;&gt;&gt; +norec @ns-cloud-d1.googledomains.com. name.yaasita.xyz. a
 ; (2 servers found)
@@ -76,6 +76,15 @@ ns2.name.yaasita.xyz.   300     IN      A       192.168.0.2
 ;; WHEN: Sat Dec 03 23:23:55 JST 2016
 ;; MSG SIZE  rcvd: 113
 </code></pre>
+
+<script>
+function callback(data){
+    var photos = data.response.posts[0].photos;
+    document.getElementById("tumblr-img").parentNode.href = photos[0].original_size.url;
+    document.getElementById("tumblr-img").src = photos[0].original_size.url;
+}
+</script>
+<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=153987992117&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
 
   </div>
   <footer>
@@ -201,7 +210,7 @@ ns2.name.yaasita.xyz.   300     IN      A       192.168.0.2
       <ul>
         
         <li>
-          <a href="/categories/crack"><span></span>crack (20)</a>
+          <a href="/categories/crack"><span></span>crack (21)</a>
         </li>
         
         <li>
@@ -221,7 +230,7 @@ ns2.name.yaasita.xyz.   300     IN      A       192.168.0.2
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (184)</a>
+          <a href="/categories/net"><span></span>net (185)</a>
         </li>
         
         <li>
@@ -292,7 +301,7 @@ ns2.name.yaasita.xyz.   300     IN      A       192.168.0.2
         </li>
         
         <li>
-          <a href="/archives/2017"><span></span>2017 (26)</a>
+          <a href="/archives/2017"><span></span>2017 (27)</a>
         </li>
         
       </ul>

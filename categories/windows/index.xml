@@ -36,9 +36,10 @@ https://www2.mouse-jp.co.jp/ssl/user_support2/sc_faq_documents.asp?FaqID=13460</
       <guid>https://yaasita.github.io/2014/06/01/key_display</guid>
       <description>windows用のキーボード操作表示ソフト
 osdHotkey
+
 参考リンク
  押したキーを表示してくれるソフトのまとめ
-  </description>
+   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
     <item>

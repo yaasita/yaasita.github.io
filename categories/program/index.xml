@@ -15,7 +15,7 @@
       
       <guid>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr</guid>
       <description>なぜか？画像のURLはたまに変わりリンク切れしてしまうから
-ちゃんとAPIを叩いて取得した方が良い
+ちゃんとAPIを叩いてポストIDから画像リンクを取得した方が良い
  </description>
     </item>
     

@@ -6,8 +6,29 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 07 May 2017 02:49:05 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 21 May 2017 01:48:56 +0900</lastBuildDate>
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>コピー禁止のWebサイトについて</title>
+      <link>https://yaasita.github.io/2017/05/21/web-copy-protect</link>
+      <pubDate>Sun, 21 May 2017 01:48:56 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/05/21/web-copy-protect</guid>
+      <description>コピー禁止のWordpressサイトが増えてきました
+ちょっと検索ワードをコピペするのに不便なので回避方法
+1. とりあえずJavaScriptをOFFる これで大半はOK wp-copyprotect って拡張だけならこれで大丈夫
+この仕組みの参考実装はこんな感じ
+https://gist.github.com/yaasita/7b07710840186561c76d7e5c4af28b2d
+chromeならURLバーの左をクリックしてJavaScriptをブロックで
+
+2. noscriptのタグを消す WP Content Copy Protection みたいなやつだと noscript タグの中に画面一杯に広げてコンテンツを見えなくするdivが入るので、chrome developers tools開いて &amp;lt;noscript&amp;gt;タグごと削除する
+Oops! It appears that you have disabled your Javascript. In order for you to see this page as it is meant to appear, we ask that you please re-enable your Javascript! みたいな文言はこれ
+
+3. cssでuser-selectをnoneにしている場合 chrome developers toolsでuser-select: text;書き換えてやる
+
+ function callback(data){ var photos = data.</description>
+    </item>
     
     <item>
       <title>tumblrの画像を貼るときに直リンクしてはいけない</title>
@@ -16,7 +37,7 @@
       
       <guid>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr</guid>
       <description>なぜか？画像のURLはたまに変わりリンク切れしてしまうから
-ちゃんとAPIを叩いて取得した方が良い
+ちゃんとAPIを叩いてポストIDから画像リンクを取得した方が良い
  </description>
     </item>
     
@@ -263,27 +284,6 @@ host example.net. dig +nodnssec +noedns +noadflag example.net. a  WN-G300GRはad
  時間課金方式と月額方式のハイブリット
   今はコンテナ技術でサクッと移動できちゃうので、
 安いクラウドサービス渡り歩くのも良いと思った</description>
-    </item>
-    
-    <item>
-      <title>BCCヘッダを落とすのは誰か</title>
-      <link>https://yaasita.github.io/2017/01/22/who_drops_bccheader</link>
-      <pubDate>Sun, 22 Jan 2017 00:48:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/01/22/who_drops_bccheader</guid>
-      <description>BCCヘッダは転送しないで、MTA側で消されるというのは有名な話だけど
-実際どんな感じなのか
-まずメーラーでBCCを指定して送ったとする
-この時BCCヘッダはどのタイミングで消えるか？という問題
-MUA(thunderbird等) -&amp;gt; 送信側MTA(postfix等) -&amp;gt; 受信側MTA(postfix等)  thunderbird まずthunderbirdからBCCで送信した場合はそもそもBccヘッダはつけない(Icedove/45.6.0で検証)
-envelope toには存在するがそもそもBccヘッダなんてものを書かない
-postfix postfixもデフォルトではBccヘッダは落とすようになっている
-しかしこの設定を変更すればBccヘッダを落とさないでそのまま配送される
-message_drop_headers = bcc, content-length, resent-bcc, return-path   参考
- http://www.postfix.org/postconf.5.html#message_drop_headers
-   まとめ 本来見られちゃいけないヘッダをMTAに渡して、多分消してくれるだろうと期待するのはあまりよくないと思う
-具体的にはBccヘッダまで綺麗に書いて sendmail -t で送るよりはちゃんとenvelope to を指定して送った方が安全度高い
-要するにthunderbirdみたいに送るべき</description>
     </item>
     
   </channel>

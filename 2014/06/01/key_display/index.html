@@ -50,13 +50,24 @@ ga('send', 'pageview');
 
 <p><a href="http://www.romeosa.com/osdHotkey/help.html">osdHotkey</a></p>
 
-<p><img src="http://41.media.tumblr.com/eacdec96d672f110eb920d750a8b77a0/tumblr_n6g8ttdEvq1riy4fno1_1280.png" alt="osdHotkey" /></p>
+<p><a href="#"><img id="tumblr-img" src=""></a></p>
 
 <p>参考リンク</p>
 
 <ul>
-<li><a href="http://efcl.info/2009/0923/res1348/">押したキーを表示してくれるソフトのまとめ</a><br /></li>
+<li><a href="http://efcl.info/2009/0923/res1348/">押したキーを表示してくれるソフトのまとめ</a><br />
+<br />
+<br /></li>
 </ul>
+
+<script>
+function callback(data){
+    var photos = data.response.posts[0].photos;
+    document.getElementById("tumblr-img").parentNode.href = photos[0].original_size.url;
+    document.getElementById("tumblr-img").src = photos[0].original_size.url;
+}
+</script>
+<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=87408730652&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
 
   </div>
   <footer>
@@ -186,7 +197,7 @@ ga('send', 'pageview');
       <ul>
         
         <li>
-          <a href="/categories/crack"><span></span>crack (20)</a>
+          <a href="/categories/crack"><span></span>crack (21)</a>
         </li>
         
         <li>
@@ -206,7 +217,7 @@ ga('send', 'pageview');
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (184)</a>
+          <a href="/categories/net"><span></span>net (185)</a>
         </li>
         
         <li>
@@ -277,7 +288,7 @@ ga('send', 'pageview');
         </li>
         
         <li>
-          <a href="/archives/2017"><span></span>2017 (26)</a>
+          <a href="/archives/2017"><span></span>2017 (27)</a>
         </li>
         
       </ul>

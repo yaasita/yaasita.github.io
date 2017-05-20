@@ -9,6 +9,27 @@
     <atom:link href="/categories/crack/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>コピー禁止のWebサイトについて</title>
+      <link>https://yaasita.github.io/2017/05/21/web-copy-protect</link>
+      <pubDate>Sun, 21 May 2017 01:48:56 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/05/21/web-copy-protect</guid>
+      <description>コピー禁止のWordpressサイトが増えてきました
+ちょっと検索ワードをコピペするのに不便なので回避方法
+1. とりあえずJavaScriptをOFFる これで大半はOK wp-copyprotect って拡張だけならこれで大丈夫
+この仕組みの参考実装はこんな感じ
+https://gist.github.com/yaasita/7b07710840186561c76d7e5c4af28b2d
+chromeならURLバーの左をクリックしてJavaScriptをブロックで
+
+2. noscriptのタグを消す WP Content Copy Protection みたいなやつだと noscript タグの中に画面一杯に広げてコンテンツを見えなくするdivが入るので、chrome developers tools開いて &amp;lt;noscript&amp;gt;タグごと削除する
+Oops! It appears that you have disabled your Javascript. In order for you to see this page as it is meant to appear, we ask that you please re-enable your Javascript! みたいな文言はこれ
+
+3. cssでuser-selectをnoneにしている場合 chrome developers toolsでuser-select: text;書き換えてやる
+
+ function callback(data){ var photos = data.</description>
+    </item>
+    
+    <item>
       <title>ettercapで中間者攻撃（MITM）</title>
       <link>https://yaasita.github.io/2013/01/20/1503</link>
       <pubDate>Sun, 20 Jan 2013 00:00:00 +0900</pubDate>
@@ -412,21 +433,6 @@ ifconfig LANインタフェース名 hw ether MACアドレス
 # ifdown eth0
 # ifconfig eth1 hw ether aa:aa:aa:aa:aa:aa
 # ifup eth0 </description>
-    </item>
-    
-    <item>
-      <title>Firefoxでリファラを遮断したり、任意の文字列にするには</title>
-      <link>https://yaasita.github.io/2007/08/05/14162</link>
-      <pubDate>Sun, 05 Aug 2007 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2007/08/05/14162</guid>
-      <description>リファラの送信するかしないかの設定はabout:configから
-network.http.sendRefererHeader
-を変更する。値は0,1,2のいずれか。
-0→リファラを一切送信しない
-1→リンクを辿ってきた場合にのみリファラを送信
-2→デフォルトの設定。画像読み込み時もリファラを送信
-リファラを任意の文字列に設定するにはrefspoofという拡張をインストールすればいい。 </description>
     </item>
     
   </channel>

@@ -48,7 +48,18 @@ ga('send', 'pageview');
   <div class="content">
     <p>itunes開いて<code>iTunes Store</code>からナビリンクの購入済み</p>
 
-<p><img src="http://41.media.tumblr.com/5f2ad143b9a85f8776e4d78b9d1de402/tumblr_ncxofu5Yup1riy4fno1_1280.png" alt="itunes" /></p>
+<p><a href="https://yaasita.tumblr.com/post/99156026702">https://yaasita.tumblr.com/post/99156026702</a></p>
+
+<p><a href="#"><img id="tumblr-img" src=""></a></p>
+
+<script>
+function callback(data){
+    var photos = data.response.posts[0].photos;
+    document.getElementById("tumblr-img").parentNode.href = photos[0].original_size.url;
+    document.getElementById("tumblr-img").src = photos[0].original_size.url;
+}
+</script>
+<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=99156026702&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
 
   </div>
   <footer>
@@ -174,7 +185,7 @@ ga('send', 'pageview');
       <ul>
         
         <li>
-          <a href="/categories/crack"><span></span>crack (20)</a>
+          <a href="/categories/crack"><span></span>crack (21)</a>
         </li>
         
         <li>
@@ -194,7 +205,7 @@ ga('send', 'pageview');
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (184)</a>
+          <a href="/categories/net"><span></span>net (185)</a>
         </li>
         
         <li>
@@ -265,7 +276,7 @@ ga('send', 'pageview');
         </li>
         
         <li>
-          <a href="/archives/2017"><span></span>2017 (26)</a>
+          <a href="/archives/2017"><span></span>2017 (27)</a>
         </li>
         
       </ul>

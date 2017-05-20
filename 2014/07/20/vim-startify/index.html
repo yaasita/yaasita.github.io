@@ -48,7 +48,7 @@ ga('send', 'pageview');
   <div class="content">
     <p><a href="https://github.com/mhinz/vim-startify">https://github.com/mhinz/vim-startify</a></p>
 
-<p><img src="http://41.media.tumblr.com/76d5bd86a444c6a47150c9ee53244ccd/tumblr_n8z16klUt01riy4fno1_1280.png" alt="vim-startify" /></p>
+<p><a href="#"><img id="tumblr-img" src=""></a></p>
 
 <p>設定</p>
 
@@ -59,6 +59,15 @@ ga('send', 'pageview');
       \ map(['( ^ o ^ ) / &lt; vim '.v:version]+split(system('date'), '\n'),'&quot;   &quot;.v:val') + ['','']
     let g:startify_bookmarks = split(system('awk &quot;{print \$2}&quot; ~/.NERDTreeBookmarks'),'\n')
 </code></pre>
+
+<script>
+function callback(data){
+    var photos = data.response.posts[0].photos;
+    document.getElementById("tumblr-img").parentNode.href = photos[0].original_size.url;
+    document.getElementById("tumblr-img").src = photos[0].original_size.url;
+}
+</script>
+<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=92254893612&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
 
   </div>
   <footer>
@@ -184,7 +193,7 @@ ga('send', 'pageview');
       <ul>
         
         <li>
-          <a href="/categories/crack"><span></span>crack (20)</a>
+          <a href="/categories/crack"><span></span>crack (21)</a>
         </li>
         
         <li>
@@ -204,7 +213,7 @@ ga('send', 'pageview');
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (184)</a>
+          <a href="/categories/net"><span></span>net (185)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ ga('send', 'pageview');
         </li>
         
         <li>
-          <a href="/archives/2017"><span></span>2017 (26)</a>
+          <a href="/archives/2017"><span></span>2017 (27)</a>
         </li>
         
       </ul>

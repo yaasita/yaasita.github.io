@@ -155,7 +155,10 @@ CSRF対策は前の画面でセッション作っておけば良いです
       <pubDate>Sun, 05 Oct 2014 03:50:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2014/10/05/itunes-purchase</guid>
-      <description>itunes開いてiTunes Storeからナビリンクの購入済み</description>
+      <description>itunes開いてiTunes Storeからナビリンクの購入済み
+https://yaasita.tumblr.com/post/99156026702
+
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
     <item>

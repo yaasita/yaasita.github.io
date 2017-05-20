@@ -46,10 +46,20 @@ ga('send', 'pageview');
     </div>
   </header>
   <div class="content">
-    <p>すごいなこれ<br />
-<img src="https://40.media.tumblr.com/c1042cef4e23f0d1644c1b595cbac0d6/tumblr_nmp9kcqvvz1riy4fno1_540.jpg" alt="marik" /></p>
+    <p>すごいなこれ</p>
+
+<p><a href="#"><img id="tumblr-img" src=""></a></p>
 
 <p><a href="http://orebibou.com/2015/04/%E3%81%BE%E3%81%95%E3%81%8B%E3%81%AE%EF%BC%9Flinux%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB%E4%B8%8A%E3%81%A7%E3%83%97%E3%83%AC%E3%82%A4%E3%81%99%E3%82%8B%E3%80%8E%E3%82%B9%E3%83%BC%E3%83%91/">まさかの？Linuxターミナル上でプレイする『スーパーマリオブラザーズ』</a></p>
+
+<script>
+function callback(data){
+    var photos = data.response.posts[0].photos;
+    document.getElementById("tumblr-img").parentNode.href = photos[0].original_size.url;
+    document.getElementById("tumblr-img").src = photos[0].original_size.url;
+}
+</script>
+<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=116208635027&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
 
   </div>
   <footer>
@@ -179,7 +189,7 @@ ga('send', 'pageview');
       <ul>
         
         <li>
-          <a href="/categories/crack"><span></span>crack (20)</a>
+          <a href="/categories/crack"><span></span>crack (21)</a>
         </li>
         
         <li>
@@ -199,7 +209,7 @@ ga('send', 'pageview');
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (184)</a>
+          <a href="/categories/net"><span></span>net (185)</a>
         </li>
         
         <li>
@@ -270,7 +280,7 @@ ga('send', 'pageview');
         </li>
         
         <li>
-          <a href="/archives/2017"><span></span>2017 (26)</a>
+          <a href="/archives/2017"><span></span>2017 (27)</a>
         </li>
         
       </ul>
