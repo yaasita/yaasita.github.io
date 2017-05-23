@@ -9,6 +9,16 @@
     <atom:link href="/categories/net/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>絵文字探すときに</title>
+      <link>https://yaasita.github.io/2017/05/23/emoji</link>
+      <pubDate>Tue, 23 May 2017 23:24:02 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/05/23/emoji</guid>
+      <description>便利な emojipedia
+http://emojipedia.org/</description>
+    </item>
+    
+    <item>
       <title>コピー禁止のWebサイトについて</title>
       <link>https://yaasita.github.io/2017/05/21/web-copy-protect</link>
       <pubDate>Sun, 21 May 2017 01:48:56 +0900</pubDate>
@@ -26,7 +36,9 @@ Oops! It appears that you have disabled your Javascript. In order for you to see
 
 3. cssでuser-selectをnoneにしている場合 chrome developers toolsでuser-select: text;書き換えてやる
 
- function callback(data){ var photos = data.</description>
+とりあえずここまでやれば大抵コピーできるようになるはず
+参考リンク  コピペ禁止サイト
+ Webページの「コピペ禁止」を解除・回避するJavaScriptコード</description>
     </item>
     
     <item>
@@ -304,20 +316,6 @@ curl http://challenge-your-limits.herokuapp.com/call/me # getだめだよって�
  http://challenge-your-limits2.herokuapp.com/
   答え
 curl http://challenge-your-limits2.herokuapp.com/call/my/APIs # メソッドが違うらしい curl -X DELETE http://challenge-your-limits2.herokuapp.com/call/my/APIs # いろいろ試すとDELETEで通る curl http://challenge-your-limits2.herokuapp.com/c2_users/12/hacker_apply # 案内されたURLにリクエストするとなんか違うらしい curl http://challenge-your-limits2.herokuapp.com/help/me/out # とりあえず登録 curl -F &amp;quot;username=yaasita&amp;quot; -F &#39;email=hoge1@example.com&#39; \ http://challenge-your-limits2.heroku/app.com/c2_users/ # 帰ってきた値でBASIC認証 curl --user yaasita:uRd4yy-imPbHBR4W http://challenge-your-limits2.herokuapp.com/c2_users/10 # あとは帰ってきた文字列をBASE64デコード  パズル3  http://tango-ruby.</description>
-    </item>
-    
-    <item>
-      <title>リンク</title>
-      <link>https://yaasita.github.io/2016/01/24/link</link>
-      <pubDate>Sun, 24 Jan 2016 02:15:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/01/24/link</guid>
-      <description> 監視カメラまとめ
- http://www.insecam.org/en/bycountry/JP/
-  SIはやめておけ
- http://anond.hatelabo.jp/20160123131828
- バックアップ
-   </description>
     </item>
     
   </channel>

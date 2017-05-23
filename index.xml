@@ -6,8 +6,18 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 21 May 2017 01:48:56 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 23 May 2017 23:24:02 +0900</lastBuildDate>
     <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>絵文字探すときに</title>
+      <link>https://yaasita.github.io/2017/05/23/emoji</link>
+      <pubDate>Tue, 23 May 2017 23:24:02 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/05/23/emoji</guid>
+      <description>便利な emojipedia
+http://emojipedia.org/</description>
+    </item>
     
     <item>
       <title>コピー禁止のWebサイトについて</title>
@@ -27,7 +37,9 @@ Oops! It appears that you have disabled your Javascript. In order for you to see
 
 3. cssでuser-selectをnoneにしている場合 chrome developers toolsでuser-select: text;書き換えてやる
 
- function callback(data){ var photos = data.</description>
+とりあえずここまでやれば大抵コピーできるようになるはず
+参考リンク  コピペ禁止サイト
+ Webページの「コピペ禁止」を解除・回避するJavaScriptコード</description>
     </item>
     
     <item>
@@ -266,24 +278,6 @@ Dear yamasita yamasita, The Freenom Review Team has visited your website today. 
       <description>名前を引くときにhostコマンドでは返ってくるがdigだとおかしくなるときがある
 こんな感じにすれば同じになる
 host example.net. dig +nodnssec +noedns +noadflag example.net. a  WN-G300GRはadビット立ててると応答すらしないらしい</description>
-    </item>
-    
-    <item>
-      <title>GMOのConoha VPS使ってみた</title>
-      <link>https://yaasita.github.io/2017/01/22/conoha-vps</link>
-      <pubDate>Sun, 22 Jan 2017 23:51:14 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/01/22/conoha-vps</guid>
-      <description>非常に良い
-さくらVPSより良いかもしれない
- DNSサーバ無料
- OP25B無し
- SSD 20GB
- 初期費用なし
- 転送量無制限
- 時間課金方式と月額方式のハイブリット
-  今はコンテナ技術でサクッと移動できちゃうので、
-安いクラウドサービス渡り歩くのも良いと思った</description>
     </item>
     
   </channel>

@@ -26,7 +26,9 @@ Oops! It appears that you have disabled your Javascript. In order for you to see
 
 3. cssでuser-selectをnoneにしている場合 chrome developers toolsでuser-select: text;書き換えてやる
 
- function callback(data){ var photos = data.</description>
+とりあえずここまでやれば大抵コピーできるようになるはず
+参考リンク  コピペ禁止サイト
+ Webページの「コピペ禁止」を解除・回避するJavaScriptコード</description>
     </item>
     
     <item>
