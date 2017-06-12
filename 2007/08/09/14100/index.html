@@ -46,8 +46,21 @@ ga('send', 'pageview');
     </div>
   </header>
   <div class="content">
-    <a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_51uwrZcw3_U/RrqvmoN99lI/AAAAAAAAAA8/2-ZBgWU7boU/s1600-h/Screenshot.png"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer;" src="http://4.bp.blogspot.com/_51uwrZcw3_U/RrqvmoN99lI/AAAAAAAAAA8/2-ZBgWU7boU/s320/Screenshot.png" alt="" id="BLOGGER_PHOTO_ID_5096579006489032274" border="0" /></a><br />右クリック→設定→付箋紙を全てのワークスペースに貼り付けるのチェックを外す
+    <p><a href="#"><img id="tumblr-img" src=""></a></p>
 
+<script>
+function callback(data){
+    var photos = data.response.posts[0].photos;
+    document.getElementById("tumblr-img").parentNode.href = photos[0].original_size.url;
+    for(var i=0;i<photos[0].alt_sizes.length;i++){
+        if(photos[0].alt_sizes[i].width == 400){
+            document.getElementById("tumblr-img").src = photos[0].alt_sizes[i].url;
+            break;
+        }
+    }
+}
+</script>
+<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=161203274032&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
 
   </div>
   <footer>
@@ -177,7 +190,7 @@ ga('send', 'pageview');
         </li>
         
         <li>
-          <a href="/categories/game"><span></span>game (57)</a>
+          <a href="/categories/game"><span></span>game (58)</a>
         </li>
         
         <li>
@@ -264,7 +277,7 @@ ga('send', 'pageview');
         </li>
         
         <li>
-          <a href="/archives/2017"><span></span>2017 (28)</a>
+          <a href="/archives/2017"><span></span>2017 (29)</a>
         </li>
         
       </ul>

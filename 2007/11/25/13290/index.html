@@ -46,8 +46,16 @@ ga('send', 'pageview');
     </div>
   </header>
   <div class="content">
-    <a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://2.bp.blogspot.com/_51uwrZcw3_U/R0kORCfGEYI/AAAAAAAAACU/oXrSj9G9t-I/s1600-h/zu03.jpg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;" src="http://2.bp.blogspot.com/_51uwrZcw3_U/R0kORCfGEYI/AAAAAAAAACU/oXrSj9G9t-I/s320/zu03.jpg" border="0" alt=""id="BLOGGER_PHOTO_ID_5136652535880618370" /></a>
+    <p><a href="#"><img id="tumblr-img" src=""></a></p>
 
+<script>
+function callback(data){
+    var photos = data.response.posts[0].photos;
+    document.getElementById("tumblr-img").parentNode.href = photos[0].original_size.url;
+    document.getElementById("tumblr-img").src = photos[0].original_size.url;
+}
+</script>
+<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=161203204147&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
 
   </div>
   <footer>
@@ -177,7 +185,7 @@ ga('send', 'pageview');
         </li>
         
         <li>
-          <a href="/categories/game"><span></span>game (57)</a>
+          <a href="/categories/game"><span></span>game (58)</a>
         </li>
         
         <li>
@@ -264,7 +272,7 @@ ga('send', 'pageview');
         </li>
         
         <li>
-          <a href="/archives/2017"><span></span>2017 (28)</a>
+          <a href="/archives/2017"><span></span>2017 (29)</a>
         </li>
         
       </ul>

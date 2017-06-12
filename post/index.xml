@@ -6,8 +6,19 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 23 May 2017 23:24:02 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 13 Jun 2017 01:57:49 +0900</lastBuildDate>
     <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>vita向けSSL設定</title>
+      <link>https://yaasita.github.io/2017/06/13/vita-ssl</link>
+      <pubDate>Tue, 13 Jun 2017 01:57:49 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/06/13/vita-ssl</guid>
+      <description>TLSv1.1, TLSv1.2
+が使えないので、 TLSv1 を使うこと
+システムソフトウェア 3.65</description>
+    </item>
     
     <item>
       <title>絵文字探すときに</title>
@@ -267,17 +278,6 @@ Vue.js使って書いてみた
       <guid>https://yaasita.github.io/2017/02/03/freenom-deletes-freely</guid>
       <description>だそうです
 Dear yamasita yamasita, The Freenom Review Team has visited your website today. Unfortunately we have to say that today we cancelled your domain YAASITA.ML. The reason for the cancellation is that the website address you used for your free domain name was not accessible or did not follow the guidelines set in our terms and conditions. At this stage, anyone, including yourself, is able to (re)register the cancelled domain YAASITA.</description>
-    </item>
-    
-    <item>
-      <title>hostとdigコマンドの挙動が違う時</title>
-      <link>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different</link>
-      <pubDate>Fri, 27 Jan 2017 01:52:29 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different</guid>
-      <description>名前を引くときにhostコマンドでは返ってくるがdigだとおかしくなるときがある
-こんな感じにすれば同じになる
-host example.net. dig +nodnssec +noedns +noadflag example.net. a  WN-G300GRはadビット立ててると応答すらしないらしい</description>
     </item>
     
   </channel>

@@ -218,7 +218,8 @@ To:hogehoge &amp;amp;lt;yamaooo310@yahoo.co.jp&amp;amp;gt;
       <pubDate>Sun, 25 Nov 2007 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2007/11/25/13290</guid>
-      <description> </description>
+      <description>
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
     <item>
@@ -260,12 +261,13 @@ http://127.0.0.1/~(ユーザ名)/rep2/phpinfo.php
       
       <guid>https://yaasita.github.io/2007/11/24/13332</guid>
       <description>フリーのC/C++コンパイラのインストールメモです。
-まずhttp://www.mingw.org/に行きダウンロードします。
-ダウンロードはsourceforgeから行ってください。現時点で最新版のAutomated MinGW InstallerのMinGW-5.1.3をダウンロードします。このダウンロードしたexeを実行すると自動的にダウンロードとインストールが行えます。
+まず http://www.mingw.org/ に行きダウンロードします。
+ダウンロードは sourceforge から行ってください。現時点で最新版のAutomated MinGW InstallerのMinGW-5.1.3をダウンロードします。このダウンロードしたexeを実行すると自動的にダウンロードとインストールが行えます。
 
 途中、↑のようにダウンロードするバージョンを聞かれますが、currentを選択すればいいでしょう。
-インストールをC:\MinGW\にした場合はC:\MinGW\binにPATHを設定します。この時、PATH=C:\MinGW\bin;%system%....
-の様に先頭にしておけば検索が早くなり結果的に早くコンパイルできるはずです。 </description>
+インストールを C:\MinGW\ にした場合は C:\MinGW\bin にPATHを設定します。この時、PATH=C:\MinGW\bin;%system%....
+の様に先頭にしておけば検索が早くなり結果的に早くコンパイルできるはずです。
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
     <item>

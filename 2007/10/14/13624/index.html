@@ -46,7 +46,7 @@ ga('send', 'pageview');
     </div>
   </header>
   <div class="content">
-    <p><img src="http://4.bp.blogspot.com/_51uwrZcw3_U/RxDloF7xoOI/AAAAAAAAABU/83OcpZoBOa4/s1600/classic-r.png" alt="audacity" /></p>
+    <p><a href="#"><img id="tumblr-img1" src=""></a></p>
 
 <ol>
 <li><a href="http://audacityteam.org/vst/">http://audacityteam.org/vst/</a>に行ってVSTイネーブラーをダウンロードして下さい。<br />
@@ -61,12 +61,23 @@ ga('send', 'pageview');
 <p>Classic Reverbはコンサートホールにいるような残響音を作れます。<br />
 AC９７のサウンドエフェクトコンサートホールを参考にパラメータを決定するといいかもしれません。</p>
 
-<p><img src="http://2.bp.blogspot.com/_51uwrZcw3_U/RxDnHl7xoRI/AAAAAAAAABs/e_8XE9tOfeY/s1600/consert.png" alt="concert hall" /></p>
+<p><a href="#"><img id="tumblr-img2" src=""></a></p>
 
 <p>※VST=Virtual Studio Technology</p>
 
 <p>参考リンク<br />
 <a href="http://blog.livedoor.jp/mugen_blog/archives/cat_50030024.html">http://blog.livedoor.jp/mugen_blog/archives/cat_50030024.html</a></p>
+
+<script>
+function callback(data){
+    var photos = data.response.posts[0].photos;
+    document.getElementById("tumblr-img1").parentNode.href = photos[1].original_size.url;
+    document.getElementById("tumblr-img1").src = photos[1].original_size.url;
+    document.getElementById("tumblr-img2").parentNode.href = photos[0].original_size.url;
+    document.getElementById("tumblr-img2").src = photos[0].original_size.url;
+}
+</script>
+<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=161203012037&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
 
   </div>
   <footer>
@@ -196,7 +207,7 @@ AC９７のサウンドエフェクトコンサートホールを参考にパラ
         </li>
         
         <li>
-          <a href="/categories/game"><span></span>game (57)</a>
+          <a href="/categories/game"><span></span>game (58)</a>
         </li>
         
         <li>
@@ -283,7 +294,7 @@ AC９７のサウンドエフェクトコンサートホールを参考にパラ
         </li>
         
         <li>
-          <a href="/archives/2017"><span></span>2017 (28)</a>
+          <a href="/archives/2017"><span></span>2017 (29)</a>
         </li>
         
       </ul>

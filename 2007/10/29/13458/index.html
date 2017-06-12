@@ -46,8 +46,36 @@ ga('send', 'pageview');
     </div>
   </header>
   <div class="content">
-    Windows版の<a href="http://www.apache.org/dist/httpd/binaries/win32/apache_2.2.6-win32-x86-no_ssl.msi">Apache</a>は2.0系とは違いIndexオプションを指定しても下のように殺風景なものになります。<br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_51uwrZcw3_U/RyWpYnC3duI/AAAAAAAAAB8/BCUrhaIg9Qo/s1600-h/sabisii_index.png"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer;" src="http://1.bp.blogspot.com/_51uwrZcw3_U/RyWpYnC3duI/AAAAAAAAAB8/BCUrhaIg9Qo/s320/sabisii_index.png" alt="" id="BLOGGER_PHOTO_ID_5126689991094138594" border="0" /></a><br /><br />ファイルサイズや更新日時を表示する下図のような従来の見え方にするには<br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_51uwrZcw3_U/RyWrTXC3dvI/AAAAAAAAACE/iYNTSgtTPLU/s1600-h/motonohyouji_index.png"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer;" src="http://4.bp.blogspot.com/_51uwrZcw3_U/RyWrTXC3dvI/AAAAAAAAACE/iYNTSgtTPLU/s320/motonohyouji_index.png" alt="" id="BLOGGER_PHOTO_ID_5126692099923080946" border="0" /></a><br />httpd.confにInclude conf/extra/httpd-autoindex.confを追加します。Index表示の細かい指定は<br />C:\Program Files\Apache Software Foundation\Apache2.2\conf\extra\httpd-autoindex.conf<br />で設定します。<br /><br /><a href="http://www.geocities.jp/uesssu/soft/apache.htm">http://www.geocities.jp/uesssu/soft/apache.htm</a><br /><br />Apacheのバイナリをダウンロードするにはこちらからどうぞ<br /><a href="http://www.apache.org/dist/httpd/binaries/win32/">http://www.apache.org/dist/httpd/binaries/win32/</a>
+    <p>Windows版の <a href="http://www.apache.org/dist/httpd/binaries/win32/apache_2.2.6-win32-x86-no_ssl.msi">Apache</a> は2.0系とは違いIndexオプションを指定しても下のように殺風景なものになります。</p>
 
+<p><a href="#"><img id="tumblr-img1" src=""></a></p>
+
+<p>ファイルサイズや更新日時を表示する下図のような従来の見え方にするには</p>
+
+<p><a href="#"><img id="tumblr-img2" src=""></a></p>
+
+<p>httpd.confにInclude conf/extra/httpd-autoindex.confを追加します。Index表示の細かい指定は</p>
+
+<pre><code>C:\Program Files\Apache Software Foundation\Apache2.2\conf\extra\httpd-autoindex.conf
+</code></pre>
+
+<p>で設定します。</p>
+
+<p><a href="http://www.geocities.jp/uesssu/soft/apache.htm">http://www.geocities.jp/uesssu/soft/apache.htm</a></p>
+
+<p>Apacheのバイナリをダウンロードするにはこちらからどうぞ<br />
+<a href="http://www.apache.org/dist/httpd/binaries/win32/">http://www.apache.org/dist/httpd/binaries/win32/</a></p>
+
+<script>
+function callback(data){
+    var photos = data.response.posts[0].photos;
+    document.getElementById("tumblr-img1").parentNode.href = photos[0].original_size.url;
+    document.getElementById("tumblr-img1").src = photos[0].original_size.url;
+    document.getElementById("tumblr-img2").parentNode.href = photos[1].original_size.url;
+    document.getElementById("tumblr-img2").src = photos[1].original_size.url;
+}
+</script>
+<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=161203719607&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
 
   </div>
   <footer>
@@ -181,7 +209,7 @@ ga('send', 'pageview');
         </li>
         
         <li>
-          <a href="/categories/game"><span></span>game (57)</a>
+          <a href="/categories/game"><span></span>game (58)</a>
         </li>
         
         <li>
@@ -268,7 +296,7 @@ ga('send', 'pageview');
         </li>
         
         <li>
-          <a href="/archives/2017"><span></span>2017 (28)</a>
+          <a href="/archives/2017"><span></span>2017 (29)</a>
         </li>
         
       </ul>
