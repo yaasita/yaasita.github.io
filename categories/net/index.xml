@@ -9,6 +9,25 @@
     <atom:link href="/categories/net/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>AWSで監視してSlackに流す設定</title>
+      <link>https://yaasita.github.io/2017/06/22/aws-monitor</link>
+      <pubDate>Thu, 22 Jun 2017 04:17:15 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/06/22/aws-monitor</guid>
+      <description>EC2 -&amp;gt; CloudWatch -&amp;gt; SNS -&amp;gt; Lambda -&amp;gt; Slackみたいなよくある設定例
+
+Slack Customize Slack =&amp;gt; Custom Integrations から Incoming WebHooks 選んで適当にチャンネル選んで追加
+URLをメモっておく
+EC2 とりあえずaws cli入れて、この辺の監視スクリプトをcronに登録すればOK
+apt-get install awscli # カスタムメトリクス用スクリプト apt-get install unzip libwww-perl libdatetime-perl curl http://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.1.zip -O unzip CloudWatchMonitoringScripts-1.2.1.zip rm CloudWatchMonitoringScripts-1.2.1.zip cd aws-scripts-mon cp awscreds.template awscreds.conf vim awscreds.conf # keyIDとSecretKeyを書いておく  こんな感じのやつをcronに登録
+~/aws-scripts-mon/mon-put-instance-data.pl --mem-util --swap-util --disk-path=/ --disk-space-util --from-cron  んで即座に反映されるはず
+ カスタムメトリクスをパブリッシュする
+  CloudWatch ダッシュボード作ったりアラーム書いたりしておく
+通知はSNSのTopicsを指定する(後述)
+SNS Topicsを新しく作ってTopicネームくらいは適当に埋めておく後で、Lambda側で指定するのでTopicさえあればOK</description>
+    </item>
+    
+    <item>
       <title>絵文字探すときに</title>
       <link>https://yaasita.github.io/2017/05/23/emoji</link>
       <pubDate>Tue, 23 May 2017 23:24:02 +0900</pubDate>
@@ -301,21 +320,6 @@ http://yaasita.github.io/patchwork/
   結果確認
  http://jlord.us/patchwork/
    </description>
-    </item>
-    
-    <item>
-      <title>下位10%のダメなエンジニアシリーズ</title>
-      <link>https://yaasita.github.io/2016/01/25/dame-engineer</link>
-      <pubDate>Mon, 25 Jan 2016 00:23:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/01/25/dame-engineer</guid>
-      <description>パズル1  http://tango-ruby.hatenablog.com/entry/2015/11/30/122814
- http://challenge-your-limits.herokuapp.com/
-  答え
-curl http://challenge-your-limits.herokuapp.com/call/me # getだめだよって怒られる curl -F &amp;quot;hoge=hoge&amp;quot; http://challenge-your-limits.herokuapp.com/call/me # 適当にPOSTすると正しいURLを教えてくれる curl -F &amp;quot;name=hoge&amp;quot; -F &amp;quot;email=huga@hoge.com&amp;quot; \ http://challenge-your-limits.herokuapp.com/challenge_users # あとはこんな感じで  パズル2  http://tango-ruby.hatenablog.com/entry/2015/12/28/212010
- http://challenge-your-limits2.herokuapp.com/
-  答え
-curl http://challenge-your-limits2.herokuapp.com/call/my/APIs # メソッドが違うらしい curl -X DELETE http://challenge-your-limits2.herokuapp.com/call/my/APIs # いろいろ試すとDELETEで通る curl http://challenge-your-limits2.herokuapp.com/c2_users/12/hacker_apply # 案内されたURLにリクエストするとなんか違うらしい curl http://challenge-your-limits2.herokuapp.com/help/me/out # とりあえず登録 curl -F &amp;quot;username=yaasita&amp;quot; -F &#39;email=hoge1@example.com&#39; \ http://challenge-your-limits2.heroku/app.com/c2_users/ # 帰ってきた値でBASIC認証 curl --user yaasita:uRd4yy-imPbHBR4W http://challenge-your-limits2.herokuapp.com/c2_users/10 # あとは帰ってきた文字列をBASE64デコード  パズル3  http://tango-ruby.</description>
     </item>
     
   </channel>

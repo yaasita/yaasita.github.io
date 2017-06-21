@@ -9,14 +9,15 @@
     <atom:link href="/categories/game/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>vita向けSSL設定</title>
+      <title>PS vita向けSSL設定</title>
       <link>https://yaasita.github.io/2017/06/13/vita-ssl</link>
       <pubDate>Tue, 13 Jun 2017 01:57:49 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2017/06/13/vita-ssl</guid>
-      <description>TLSv1.1, TLSv1.2
+      <description>PlayStation Vitaの内蔵ブラウザは
+TLSv1.1, TLSv1.2
 が使えないので、 TLSv1 を使うこと
-システムソフトウェア 3.65</description>
+システムソフトウェア 3.65 時点</description>
     </item>
     
     <item>

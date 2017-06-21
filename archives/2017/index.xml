@@ -9,14 +9,34 @@
     <atom:link href="/archives/2017/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>vita向けSSL設定</title>
+      <title>AWSで監視してSlackに流す設定</title>
+      <link>https://yaasita.github.io/2017/06/22/aws-monitor</link>
+      <pubDate>Thu, 22 Jun 2017 04:17:15 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/06/22/aws-monitor</guid>
+      <description>EC2 -&amp;gt; CloudWatch -&amp;gt; SNS -&amp;gt; Lambda -&amp;gt; Slackみたいなよくある設定例
+
+Slack Customize Slack =&amp;gt; Custom Integrations から Incoming WebHooks 選んで適当にチャンネル選んで追加
+URLをメモっておく
+EC2 とりあえずaws cli入れて、この辺の監視スクリプトをcronに登録すればOK
+apt-get install awscli # カスタムメトリクス用スクリプト apt-get install unzip libwww-perl libdatetime-perl curl http://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.1.zip -O unzip CloudWatchMonitoringScripts-1.2.1.zip rm CloudWatchMonitoringScripts-1.2.1.zip cd aws-scripts-mon cp awscreds.template awscreds.conf vim awscreds.conf # keyIDとSecretKeyを書いておく  こんな感じのやつをcronに登録
+~/aws-scripts-mon/mon-put-instance-data.pl --mem-util --swap-util --disk-path=/ --disk-space-util --from-cron  んで即座に反映されるはず
+ カスタムメトリクスをパブリッシュする
+  CloudWatch ダッシュボード作ったりアラーム書いたりしておく
+通知はSNSのTopicsを指定する(後述)
+SNS Topicsを新しく作ってTopicネームくらいは適当に埋めておく後で、Lambda側で指定するのでTopicさえあればOK</description>
+    </item>
+    
+    <item>
+      <title>PS vita向けSSL設定</title>
       <link>https://yaasita.github.io/2017/06/13/vita-ssl</link>
       <pubDate>Tue, 13 Jun 2017 01:57:49 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2017/06/13/vita-ssl</guid>
-      <description>TLSv1.1, TLSv1.2
+      <description>PlayStation Vitaの内蔵ブラウザは
+TLSv1.1, TLSv1.2
 が使えないので、 TLSv1 を使うこと
-システムソフトウェア 3.65</description>
+システムソフトウェア 3.65 時点</description>
     </item>
     
     <item>
@@ -267,16 +287,6 @@ SCRIPT1003: &#39;:&#39; がありません。  というエラーになるから
 Vue.js使って書いてみた
 すごい便利
  https://github.com/yaasita/vuejs-close-button</description>
-    </item>
-    
-    <item>
-      <title>FreenomのドメインはWebサイトないと消えちゃう</title>
-      <link>https://yaasita.github.io/2017/02/03/freenom-deletes-freely</link>
-      <pubDate>Fri, 03 Feb 2017 02:46:27 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/02/03/freenom-deletes-freely</guid>
-      <description>だそうです
-Dear yamasita yamasita, The Freenom Review Team has visited your website today. Unfortunately we have to say that today we cancelled your domain YAASITA.ML. The reason for the cancellation is that the website address you used for your free domain name was not accessible or did not follow the guidelines set in our terms and conditions. At this stage, anyone, including yourself, is able to (re)register the cancelled domain YAASITA.</description>
     </item>
     
   </channel>
