@@ -2,18 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title># cd ~yaasita</title>
-    <link>https://yaasita.github.io/archives/2011/index.xml</link>
+    <link>https://yaasita.github.io/archives/2011/</link>
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="/archives/2011/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 31 Dec 2011 00:00:00 +0900</lastBuildDate>
+    <atom:link href="/archives/2011/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>マザーボードのチップセットとかCPU情報をLinuxで取得する</title>
-      <link>https://yaasita.github.io/2011/12/31/3257</link>
+      <link>https://yaasita.github.io/2011/12/31/3257/</link>
       <pubDate>Sat, 31 Dec 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/12/31/3257</guid>
+      <guid>https://yaasita.github.io/2011/12/31/3257/</guid>
       <description>lshwというユーティリティがあった
 aptでインストールできた
 参考リンク
@@ -22,10 +23,10 @@ PCのハードウェア情報を表示するには </description>
     
     <item>
       <title>SIerは滅びぬ！何度でも蘇るさ！</title>
-      <link>https://yaasita.github.io/2011/12/25/3279</link>
+      <link>https://yaasita.github.io/2011/12/25/3279/</link>
       <pubDate>Sun, 25 Dec 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/12/25/3279</guid>
+      <guid>https://yaasita.github.io/2011/12/25/3279/</guid>
       <description>受託開発をするSIerがヤバイよ的な話はよく聞く話でSIer内部でそんな話もチラホラと聞くようになりました。
 （ヤバイ理由は人月換算とか多重請負とかいろいろ言われてます）
 でも結局のところこの先もSIerは生き残るよねっていうのが僕の見解。
@@ -82,10 +83,10 @@ IT部門の人からすれば自分は使わないのだから丸投げできる
     
     <item>
       <title>携帯開発の実態（笑わないプログラマ）</title>
-      <link>https://yaasita.github.io/2011/12/24/3299</link>
+      <link>https://yaasita.github.io/2011/12/24/3299/</link>
       <pubDate>Sat, 24 Dec 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/12/24/3299</guid>
+      <guid>https://yaasita.github.io/2011/12/24/3299/</guid>
       <description>例の軍曹のデスマーチ話です
  前編
  後編
@@ -94,10 +95,10 @@ IT部門の人からすれば自分は使わないのだから丸投げできる
     
     <item>
       <title>freenetをLinux環境にインストール</title>
-      <link>https://yaasita.github.io/2011/12/19/3319</link>
+      <link>https://yaasita.github.io/2011/12/19/3319/</link>
       <pubDate>Mon, 19 Dec 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/12/19/3319</guid>
+      <guid>https://yaasita.github.io/2011/12/19/3319/</guid>
       <description>公式ページからDownloadを選択「Linux etc」をクリックnew_installer_offline_1405.jarをダウンロードして
 ↓のコマンドでインストール
 java -jar new_installer_offline.jar
@@ -108,10 +109,10 @@ START引数で起動、STOP引数で停止かな </description>
     
     <item>
       <title>Googleのキーボードショートカット検索が終わってた</title>
-      <link>https://yaasita.github.io/2011/12/04/3341</link>
+      <link>https://yaasita.github.io/2011/12/04/3341/</link>
       <pubDate>Sun, 04 Dec 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/12/04/3341</guid>
+      <guid>https://yaasita.github.io/2011/12/04/3341/</guid>
       <description>前に書いたキーボードショートカットサービスが終了していた
 今はAccessible Viewというサービスになってるみたい
 操作方法はキーボードショートカット時代と同じ
@@ -122,10 +123,10 @@ https://www.google.com/webhp?esrch=Axs </description>
     
     <item>
       <title>HJSplitって何だ？</title>
-      <link>https://yaasita.github.io/2011/11/06/3361</link>
+      <link>https://yaasita.github.io/2011/11/06/3361/</link>
       <pubDate>Sun, 06 Nov 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/11/06/3361</guid>
+      <guid>https://yaasita.github.io/2011/11/06/3361/</guid>
       <description>ファイルを分割＆結合してくれるソフトです
 主に海外のダウンロードサイトなどで目にします。
 公式サイトはこちら
@@ -138,10 +139,10 @@ https://www.google.com/webhp?esrch=Axs </description>
     
     <item>
       <title>FXで使えるチャート</title>
-      <link>https://yaasita.github.io/2011/11/04/3383</link>
+      <link>https://yaasita.github.io/2011/11/04/3383/</link>
       <pubDate>Fri, 04 Nov 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/11/04/3383</guid>
+      <guid>https://yaasita.github.io/2011/11/04/3383/</guid>
       <description>ここにいろいろあった
 http://www.fxcm.co.jp/tools/chart.html
 その中でも↓が使いやすかったかも
@@ -150,10 +151,10 @@ http://www.dailyfx.com/charts/netdaniachart/ </description>
     
     <item>
       <title>iotop日本語man</title>
-      <link>https://yaasita.github.io/2011/10/30/3403</link>
+      <link>https://yaasita.github.io/2011/10/30/3403/</link>
       <pubDate>Sun, 30 Oct 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/10/30/3403</guid>
+      <guid>https://yaasita.github.io/2011/10/30/3403/</guid>
       <description>iotopを最近使ってたから日本語訳にしてみた
 結構意訳になってる
 IOTOP(1)&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;  IOTOP(1)
@@ -205,20 +206,20 @@ OPTIONS
     
     <item>
       <title>LinuxでrootのGUIウィンドウを開きたいとき</title>
-      <link>https://yaasita.github.io/2011/10/11/3424</link>
+      <link>https://yaasita.github.io/2011/10/11/3424/</link>
       <pubDate>Tue, 11 Oct 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/10/11/3424</guid>
+      <guid>https://yaasita.github.io/2011/10/11/3424/</guid>
       <description>sudoでrootになってからXアプリを起動してもDisplayのオープンに失敗するので
 gksuでrootターミナルを開いてからやるとOK </description>
     </item>
     
     <item>
       <title>postfixでメールフィルタを設定</title>
-      <link>https://yaasita.github.io/2011/09/25/3445</link>
+      <link>https://yaasita.github.io/2011/09/25/3445/</link>
       <pubDate>Sun, 25 Sep 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/09/25/3445</guid>
+      <guid>https://yaasita.github.io/2011/09/25/3445/</guid>
       <description>1.main.cfに以下を追加
 content_filter=filter:dummy
 2.master.cfに以下を追加
@@ -232,10 +233,10 @@ Postfix設定パラメータ </description>
     
     <item>
       <title>マーブルvsカプコン2(MARVEL VS. CAPCOM 2 NEW AGE OF HEROES)</title>
-      <link>https://yaasita.github.io/2011/08/27/3467</link>
+      <link>https://yaasita.github.io/2011/08/27/3467/</link>
       <pubDate>Sat, 27 Aug 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/08/27/3467</guid>
+      <guid>https://yaasita.github.io/2011/08/27/3467/</guid>
       <description>通称マブカプ2
 まとめ
 クソゲーまとめ @ ウィキ
@@ -245,10 +246,10 @@ MARVEL　VS　CAPCOM２　攻略
     
     <item>
       <title>Linuxでスキャナを使うには</title>
-      <link>https://yaasita.github.io/2011/08/21/3487</link>
+      <link>https://yaasita.github.io/2011/08/21/3487/</link>
       <pubDate>Sun, 21 Aug 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/08/21/3487</guid>
+      <guid>https://yaasita.github.io/2011/08/21/3487/</guid>
       <description>
 aptか何かでsaneとxsaneをインストール
 sane-find-scannerで検索
@@ -264,10 +265,10 @@ http://samidarehetima.blog9.fc2.com/blog-entry-8.html
     
     <item>
       <title>atコマンドの実行内容（実際に発行するコマンド）を知りたい</title>
-      <link>https://yaasita.github.io/2011/08/20/3512</link>
+      <link>https://yaasita.github.io/2011/08/20/3512/</link>
       <pubDate>Sat, 20 Aug 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/08/20/3512</guid>
+      <guid>https://yaasita.github.io/2011/08/20/3512/</guid>
       <description>at -c job ... だそうです。
 参考リンク
 http://okwave.jp/qa/q5599261.html </description>
@@ -275,10 +276,10 @@ http://okwave.jp/qa/q5599261.html </description>
     
     <item>
       <title>WindowsでもMplayerを使う</title>
-      <link>https://yaasita.github.io/2011/08/14/3533</link>
+      <link>https://yaasita.github.io/2011/08/14/3533/</link>
       <pubDate>Sun, 14 Aug 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/08/14/3533</guid>
+      <guid>https://yaasita.github.io/2011/08/14/3533/</guid>
       <description>Mplayerはオープンソースのメディアプレイヤー
 公式サイトからDownloadと進んで
 「MPlayer SVN Windows with SMPlayer GUI (recommended)」をえらんだ
@@ -297,10 +298,10 @@ Video→Screenをえらんでディスプレイ先を切り替えること</desc
     
     <item>
       <title>lighttpdでバーチャルホスト設定</title>
-      <link>https://yaasita.github.io/2011/08/13/3554</link>
+      <link>https://yaasita.github.io/2011/08/13/3554/</link>
       <pubDate>Sat, 13 Aug 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/08/13/3554</guid>
+      <guid>https://yaasita.github.io/2011/08/13/3554/</guid>
       <description>lighttpd.confを少しいじるだけで出来た
 以下のように設定した
 hogehoge.netのホスト(HTTP_HOST)またはプライベートIPで指定してきたら
@@ -313,10 +314,10 @@ server.document-root = &#34;/var/www2&#34; $HTTP[&#34;host&#34;] == &#34;hogehog
     
     <item>
       <title>/etc/init.dに作った起動スクリプトのリンク設定とか</title>
-      <link>https://yaasita.github.io/2011/08/12/3618</link>
+      <link>https://yaasita.github.io/2011/08/12/3618/</link>
       <pubDate>Fri, 12 Aug 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/08/12/3618</guid>
+      <guid>https://yaasita.github.io/2011/08/12/3618/</guid>
       <description>起動時、終了時等のランレベルが変更されたときに走るスクリプトは/etc/init.dに
 格納するが、rc0.d/～rc6.d/のディレクトリにリンクを張る必要がある
 昔は手動でやっていたが、今は決まった書式でコメントを書いておけば自動的にアップデートしてくれるらしい
@@ -330,10 +331,10 @@ rep2をオンメモリーにして高速化2  </description>
     
     <item>
       <title>sudoku(数独)の日本語man</title>
-      <link>https://yaasita.github.io/2011/08/12/3583</link>
+      <link>https://yaasita.github.io/2011/08/12/3583/</link>
       <pubDate>Fri, 12 Aug 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/08/12/3583</guid>
+      <guid>https://yaasita.github.io/2011/08/12/3583/</guid>
       <description>Linux用のsudokuゲームの日本語manです
 NAMEsudoku - 数独ゲーム
 SYNOPSIS(ゲームを始める)
@@ -351,10 +352,10 @@ digits 1-9, so that each row, column, and block contains each of the digits 1-9<
     
     <item>
       <title>KDMのセッション選択の制御とかの話</title>
-      <link>https://yaasita.github.io/2011/08/11/3658</link>
+      <link>https://yaasita.github.io/2011/08/11/3658/</link>
       <pubDate>Thu, 11 Aug 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/08/11/3658</guid>
+      <guid>https://yaasita.github.io/2011/08/11/3658/</guid>
       <description>現在、Xにログインするときに使用するディスプレイマネージャにはKDMを使用している
 このKDMのセッション制御についてメモしておく
 ・ログイン時にセッションをDefaultを選んでログインする
@@ -369,10 +370,10 @@ KDMハンドブック
     
     <item>
       <title>KDMの設定をGUIで行う</title>
-      <link>https://yaasita.github.io/2011/08/11/3638</link>
+      <link>https://yaasita.github.io/2011/08/11/3638/</link>
       <pubDate>Thu, 11 Aug 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/08/11/3638</guid>
+      <guid>https://yaasita.github.io/2011/08/11/3638/</guid>
       <description>今まで：kcontrol
 これから：systemsettings
 だそうです
@@ -384,10 +385,10 @@ Advancedタブ→LoginManagerで設定できる
     
     <item>
       <title>LinuxでHDDの使用率を調べるには？</title>
-      <link>https://yaasita.github.io/2011/08/11/3678</link>
+      <link>https://yaasita.github.io/2011/08/11/3678/</link>
       <pubDate>Thu, 11 Aug 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/08/11/3678</guid>
+      <guid>https://yaasita.github.io/2011/08/11/3678/</guid>
       <description>HDDの各フォルダの使用量を調べる方法について調べた
 duコマンドで計ってもいいけど
 Baobabってコマンドでもいいかも

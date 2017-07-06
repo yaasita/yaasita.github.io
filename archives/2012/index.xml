@@ -2,18 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title># cd ~yaasita</title>
-    <link>https://yaasita.github.io/archives/2012/index.xml</link>
+    <link>https://yaasita.github.io/archives/2012/</link>
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="/archives/2012/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Dec 2012 00:00:00 +0900</lastBuildDate>
+    <atom:link href="/archives/2012/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>起動後一定時間経ったら○○の処理をする</title>
-      <link>https://yaasita.github.io/2012/12/27/1805</link>
+      <link>https://yaasita.github.io/2012/12/27/1805/</link>
       <pubDate>Thu, 27 Dec 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/12/27/1805</guid>
+      <guid>https://yaasita.github.io/2012/12/27/1805/</guid>
       <description>というスクリプトの例
 uptimeから取ってくる
 以下は3時間経ったらhoge.shを実行する
@@ -22,10 +23,10 @@ uptimeから取ってくる
     
     <item>
       <title>unboundのインストールと初期設定</title>
-      <link>https://yaasita.github.io/2012/12/24/1826</link>
+      <link>https://yaasita.github.io/2012/12/24/1826/</link>
       <pubDate>Mon, 24 Dec 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/12/24/1826</guid>
+      <guid>https://yaasita.github.io/2012/12/24/1826/</guid>
       <description>1.インストール
 普通にaptで入れる
 2.初期設定
@@ -47,10 +48,10 @@ ulimit -n 4140
     
     <item>
       <title>Debianにpostfixadminをインストール</title>
-      <link>https://yaasita.github.io/2012/12/23/1848</link>
+      <link>https://yaasita.github.io/2012/12/23/1848/</link>
       <pubDate>Sun, 23 Dec 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/12/23/1848</guid>
+      <guid>https://yaasita.github.io/2012/12/23/1848/</guid>
       <description>1.インストール
 # apt-get install postfixadmin
 
@@ -71,20 +72,20 @@ http://yourdomain.com/postfixadmin/setup.php
     
     <item>
       <title>動画でプログラミングを学べるサイト</title>
-      <link>https://yaasita.github.io/2012/12/21/1869</link>
+      <link>https://yaasita.github.io/2012/12/21/1869/</link>
       <pubDate>Fri, 21 Dec 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/12/21/1869</guid>
+      <guid>https://yaasita.github.io/2012/12/21/1869/</guid>
       <description>ドットインストール
 http://dotinstall.com/ </description>
     </item>
     
     <item>
       <title>ビルドするためにインストールするパッケージをまとめて</title>
-      <link>https://yaasita.github.io/2012/12/19/1889</link>
+      <link>https://yaasita.github.io/2012/12/19/1889/</link>
       <pubDate>Wed, 19 Dec 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/12/19/1889</guid>
+      <guid>https://yaasita.github.io/2012/12/19/1889/</guid>
       <description>入れる方法は
 ↓みたいにする
 この例だとvimに必要なパッケージ
@@ -95,10 +96,10 @@ http://vim-jp.org/docs/build_linux.html </description>
     
     <item>
       <title>AutoHotkeyを使ってTeraTerm &#43; vimを快適にする</title>
-      <link>https://yaasita.github.io/2012/11/25/1951</link>
+      <link>https://yaasita.github.io/2012/11/25/1951/</link>
       <pubDate>Sun, 25 Nov 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/11/25/1951</guid>
+      <guid>https://yaasita.github.io/2012/11/25/1951/</guid>
       <description>
 Esc押したらIMEをオフにしてくれれば良いので以下のような設定にした
 あと、無変換キー＋Rでsudoしてくれる設定も追加しておいた
@@ -113,10 +114,10 @@ https://sites.google.com/site/autohotkeyjp/reference/AutoHotkey_L/index </descri
     
     <item>
       <title>Web上でプログラミングの勉強が出来るサイト</title>
-      <link>https://yaasita.github.io/2012/11/25/1910</link>
+      <link>https://yaasita.github.io/2012/11/25/1910/</link>
       <pubDate>Sun, 25 Nov 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/11/25/1910</guid>
+      <guid>https://yaasita.github.io/2012/11/25/1910/</guid>
       <description>
 http://www.codecademy.com
 http://www.codeschool.com/ </description>
@@ -124,10 +125,10 @@ http://www.codeschool.com/ </description>
     
     <item>
       <title>雨の音を流してくれるサイト</title>
-      <link>https://yaasita.github.io/2012/11/25/1931</link>
+      <link>https://yaasita.github.io/2012/11/25/1931/</link>
       <pubDate>Sun, 25 Nov 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/11/25/1931</guid>
+      <guid>https://yaasita.github.io/2012/11/25/1931/</guid>
       <description>
 http://www.rainymood.com/
 http://raining.fm/
@@ -137,10 +138,10 @@ http://www.lifehacker.jp/2012/08/120820_raining_fm.html </description>
     
     <item>
       <title>teratermインストール後にやることメモ</title>
-      <link>https://yaasita.github.io/2012/11/24/1971</link>
+      <link>https://yaasita.github.io/2012/11/24/1971/</link>
       <pubDate>Sat, 24 Nov 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/11/24/1971</guid>
+      <guid>https://yaasita.github.io/2012/11/24/1971/</guid>
       <description>Teratermが新しくなっていたので、ここでまとめておく
 1.TERATERM.INI
  2.KEYBOARD.CNF
@@ -151,10 +152,10 @@ https://raw.github.com/gist/4140449/2bad78bfe24a407764f13c7055fc0ed452f1affd/KEY
     
     <item>
       <title>phpでctagsを使う</title>
-      <link>https://yaasita.github.io/2012/11/22/1990</link>
+      <link>https://yaasita.github.io/2012/11/22/1990/</link>
       <pubDate>Thu, 22 Nov 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/11/22/1990</guid>
+      <guid>https://yaasita.github.io/2012/11/22/1990/</guid>
       <description>
 phpが入ってるディレクトリで
 ctags -a -R --langmap=PHP:.php --php-types=c+f+d+v+i .
@@ -170,20 +171,20 @@ http://blog.veryposi.info/programing/php/php-ctags-vim/ </description>
     
     <item>
       <title>2012版 Firefox Thunderbird 使ってるアドオンまとめ</title>
-      <link>https://yaasita.github.io/2012/11/03/2009</link>
+      <link>https://yaasita.github.io/2012/11/03/2009/</link>
       <pubDate>Sat, 03 Nov 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/11/03/2009</guid>
+      <guid>https://yaasita.github.io/2012/11/03/2009/</guid>
       <description>FirefoxautotranslatorVideo DownloadHelperelasticfox-ec2tagFirebugFireMobileSimulatorLiveNavigate UpNicoFoxPersonas PlusQuickJavaScrapBookTomblooViewSourceWithVimiumテキストリンク
 ThunderbirdDisplay Mail User AgentLightningMailHops</description>
     </item>
     
     <item>
       <title>screenfetch</title>
-      <link>https://yaasita.github.io/2012/10/28/2029</link>
+      <link>https://yaasita.github.io/2012/10/28/2029/</link>
       <pubDate>Sun, 28 Oct 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/10/28/2029</guid>
+      <guid>https://yaasita.github.io/2012/10/28/2029/</guid>
       <description>
 bashで出来たシステムモニタ
 各ディストリのマークとか出る </description>
@@ -191,10 +192,10 @@ bashで出来たシステムモニタ
     
     <item>
       <title>tumblrのショートカットキー</title>
-      <link>https://yaasita.github.io/2012/10/20/2051</link>
+      <link>https://yaasita.github.io/2012/10/20/2051/</link>
       <pubDate>Sat, 20 Oct 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/10/20/2051</guid>
+      <guid>https://yaasita.github.io/2012/10/20/2051/</guid>
       <description>ダッシュボードで使えるよ j（ジェイ） 次のpostへ移動 k（ケー） 前のpostへ移動
 l（エル） like / like解除 n（エヌ） notesを開く / 閉じる r（アール） reblog（別ウィンドウが開く）
 R（Shift＋アール） 即時reblog
@@ -208,10 +209,10 @@ http://www.tumblr.com/tips#keyboard_shortcuts </description>
     
     <item>
       <title>xsetで省電力モードを解除</title>
-      <link>https://yaasita.github.io/2012/10/16/2070</link>
+      <link>https://yaasita.github.io/2012/10/16/2070/</link>
       <pubDate>Tue, 16 Oct 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/10/16/2070</guid>
+      <guid>https://yaasita.github.io/2012/10/16/2070/</guid>
       <description>現在の設定を確認 xset q
 DPMSを無効化
 xset -dpmsxset dpms force off
@@ -225,10 +226,10 @@ http://www.atmarkit.co.jp/flinux/rensai/linuxtips/254usedpmsx3x.html</descriptio
     
     <item>
       <title>tumblrのリンクと要素まとめ（使う分だけ）</title>
-      <link>https://yaasita.github.io/2012/10/11/2089</link>
+      <link>https://yaasita.github.io/2012/10/11/2089/</link>
       <pubDate>Thu, 11 Oct 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/10/11/2089</guid>
+      <guid>https://yaasita.github.io/2012/10/11/2089/</guid>
       <description>
 自分がフォローしている人をブログに表示する
 HTMLの編集からどうぞ
@@ -250,10 +251,10 @@ http://ryo-skd.tumblr.com/post/311289824/tumblr-tumblr-nplll-mutter </descriptio
     
     <item>
       <title>twitterのbotを作る</title>
-      <link>https://yaasita.github.io/2012/10/09/2109</link>
+      <link>https://yaasita.github.io/2012/10/09/2109/</link>
       <pubDate>Tue, 09 Oct 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/10/09/2109</guid>
+      <guid>https://yaasita.github.io/2012/10/09/2109/</guid>
       <description>そんなに難しくないと思った・・・
 CONSUMER_KEYとCONSUMER_SECRETの取得 アプリの登録を行う
 このページから飛んで適当に入力する
@@ -263,20 +264,20 @@ CONSUMER_KEYとCONSUMER_SECRETの取得 アプリの登録を行う
     
     <item>
       <title>munin2.0が出てるらしい</title>
-      <link>https://yaasita.github.io/2012/10/02/2129</link>
+      <link>https://yaasita.github.io/2012/10/02/2129/</link>
       <pubDate>Tue, 02 Oct 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/10/02/2129</guid>
+      <guid>https://yaasita.github.io/2012/10/02/2129/</guid>
       <description>http://pocketstudio.jp/log3/2012/06/04/new-features-of-munin2/
 http://dozen.dip.jp/archives/212 </description>
     </item>
     
     <item>
       <title>ffmpegの使い方</title>
-      <link>https://yaasita.github.io/2012/09/30/2150</link>
+      <link>https://yaasita.github.io/2012/09/30/2150/</link>
       <pubDate>Sun, 30 Sep 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/09/30/2150</guid>
+      <guid>https://yaasita.github.io/2012/09/30/2150/</guid>
       <description>&amp;amp;nbsp;ffmpeg -i 入力ファイル 出力ファイル
 みたいな感じでOKらしい
 ffmpeg -i hoge.flv hoge.mp4
@@ -289,10 +290,10 @@ http://yosilove.blog.shinobi.jp/Entry/603/ </description>
     
     <item>
       <title>rubyのバージョン管理 rbenv試してみた</title>
-      <link>https://yaasita.github.io/2012/09/26/2171</link>
+      <link>https://yaasita.github.io/2012/09/26/2171/</link>
       <pubDate>Wed, 26 Sep 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/09/26/2171</guid>
+      <guid>https://yaasita.github.io/2012/09/26/2171/</guid>
       <description>rvmとかあるらしいけど今回はrbenvを使ってみます 
 cd
 git clone git://github.com/sstephenson/rbenv.git .rbenv
@@ -321,10 +322,10 @@ rbenv rehash
     
     <item>
       <title>WindowsでS.M.A.R.T情報を取得</title>
-      <link>https://yaasita.github.io/2012/09/23/2191</link>
+      <link>https://yaasita.github.io/2012/09/23/2191/</link>
       <pubDate>Sun, 23 Sep 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/09/23/2191</guid>
+      <guid>https://yaasita.github.io/2012/09/23/2191/</guid>
       <description>Linuxだとsmartctlとかだけど、Windowsだとこれがいい感じ
 CrystalDiskInfo
 http://www.forest.impress.co.jp/lib/sys/hrdbnch/hardinfo/crdiskinfo.html </description>

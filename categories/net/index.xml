@@ -2,18 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title># cd ~yaasita</title>
-    <link>https://yaasita.github.io/categories/net/index.xml</link>
+    <link>https://yaasita.github.io/categories/net/</link>
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Jun 2017 04:17:15 +0900</lastBuildDate>
+    <atom:link href="/categories/net/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>AWSで監視してSlackに流す設定</title>
-      <link>https://yaasita.github.io/2017/06/22/aws-monitor</link>
+      <link>https://yaasita.github.io/2017/06/22/aws-monitor/</link>
       <pubDate>Thu, 22 Jun 2017 04:17:15 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/06/22/aws-monitor</guid>
+      <guid>https://yaasita.github.io/2017/06/22/aws-monitor/</guid>
       <description>EC2 -&amp;gt; CloudWatch -&amp;gt; SNS -&amp;gt; Lambda -&amp;gt; Slackみたいなよくある設定例
 
 Slack Customize Slack =&amp;gt; Custom Integrations から Incoming WebHooks 選んで適当にチャンネル選んで追加
@@ -29,20 +30,20 @@ SNS Topicsを新しく作ってTopicネームくらいは適当に埋めてお�
     
     <item>
       <title>絵文字探すときに</title>
-      <link>https://yaasita.github.io/2017/05/23/emoji</link>
+      <link>https://yaasita.github.io/2017/05/23/emoji/</link>
       <pubDate>Tue, 23 May 2017 23:24:02 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/05/23/emoji</guid>
+      <guid>https://yaasita.github.io/2017/05/23/emoji/</guid>
       <description>便利な emojipedia
 http://emojipedia.org/</description>
     </item>
     
     <item>
       <title>コピー禁止のWebサイトについて</title>
-      <link>https://yaasita.github.io/2017/05/21/web-copy-protect</link>
+      <link>https://yaasita.github.io/2017/05/21/web-copy-protect/</link>
       <pubDate>Sun, 21 May 2017 01:48:56 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/05/21/web-copy-protect</guid>
+      <guid>https://yaasita.github.io/2017/05/21/web-copy-protect/</guid>
       <description>コピー禁止のWordpressサイトが増えてきました
 ちょっと検索ワードをコピペするのに不便なので回避方法
 1. とりあえずJavaScriptをOFFる これで大半はOK wp-copyprotect って拡張だけならこれで大丈夫
@@ -62,10 +63,10 @@ Oops! It appears that you have disabled your Javascript. In order for you to see
     
     <item>
       <title>tumblrの画像を貼るときに直リンクしてはいけない</title>
-      <link>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr</link>
+      <link>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr/</link>
       <pubDate>Sun, 07 May 2017 02:49:05 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr</guid>
+      <guid>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr/</guid>
       <description>なぜか？画像のURLはたまに変わりリンク切れしてしまうから
 ちゃんとAPIを叩いてポストIDから画像リンクを取得した方が良い
  </description>
@@ -73,10 +74,10 @@ Oops! It appears that you have disabled your Javascript. In order for you to see
     
     <item>
       <title>テーマを簡素にしてtumblrを見たいとき</title>
-      <link>https://yaasita.github.io/2017/05/06/noneblr</link>
+      <link>https://yaasita.github.io/2017/05/06/noneblr/</link>
       <pubDate>Sat, 06 May 2017 04:55:23 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/05/06/noneblr</guid>
+      <guid>https://yaasita.github.io/2017/05/06/noneblr/</guid>
       <description>noneblrというサービスが良いかもしれない
 これでどんなBlogも一定のUIで見れる
 http://noneblr.com/
@@ -86,20 +87,20 @@ login押すと権限求められるけど怖いからそれはやってない</d
     
     <item>
       <title>Google Cloud Shellのディレクトリ削除</title>
-      <link>https://yaasita.github.io/2017/04/06/gcp-shell-homedata</link>
+      <link>https://yaasita.github.io/2017/04/06/gcp-shell-homedata/</link>
       <pubDate>Thu, 06 Apr 2017 00:21:33 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/04/06/gcp-shell-homedata</guid>
+      <guid>https://yaasita.github.io/2017/04/06/gcp-shell-homedata/</guid>
       <description>120日で削除されるらしい
 It&#39;s been over 120 days since you opened Cloud Shell from the Google Cloud Platform console. In 7 days, your Cloud Shell home directory will be automatically scheduled for deletion.  </description>
     </item>
     
     <item>
       <title>relをtumblrテーマに加える</title>
-      <link>https://yaasita.github.io/2017/02/14/add-rel-to-tumblr</link>
+      <link>https://yaasita.github.io/2017/02/14/add-rel-to-tumblr/</link>
       <pubDate>Tue, 14 Feb 2017 01:05:25 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/02/14/add-rel-to-tumblr</guid>
+      <guid>https://yaasita.github.io/2017/02/14/add-rel-to-tumblr/</guid>
       <description>tumblrのテーマをDefaultにしてみた
 一点気になったのは
 リンクがこんな感じでrel属性が指定されてない
@@ -113,20 +114,20 @@ It&#39;s been over 120 days since you opened Cloud Shell from the Google Cloud P
     
     <item>
       <title>FreenomのドメインはWebサイトないと消えちゃう</title>
-      <link>https://yaasita.github.io/2017/02/03/freenom-deletes-freely</link>
+      <link>https://yaasita.github.io/2017/02/03/freenom-deletes-freely/</link>
       <pubDate>Fri, 03 Feb 2017 02:46:27 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/02/03/freenom-deletes-freely</guid>
+      <guid>https://yaasita.github.io/2017/02/03/freenom-deletes-freely/</guid>
       <description>だそうです
 Dear yamasita yamasita, The Freenom Review Team has visited your website today. Unfortunately we have to say that today we cancelled your domain YAASITA.ML. The reason for the cancellation is that the website address you used for your free domain name was not accessible or did not follow the guidelines set in our terms and conditions. At this stage, anyone, including yourself, is able to (re)register the cancelled domain YAASITA.</description>
     </item>
     
     <item>
       <title>hostとdigコマンドの挙動が違う時</title>
-      <link>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different</link>
+      <link>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different/</link>
       <pubDate>Fri, 27 Jan 2017 01:52:29 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different</guid>
+      <guid>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different/</guid>
       <description>名前を引くときにhostコマンドでは返ってくるがdigだとおかしくなるときがある
 こんな感じにすれば同じになる
 host example.net. dig +nodnssec +noedns +noadflag example.net. a  WN-G300GRはadビット立ててると応答すらしないらしい</description>
@@ -134,10 +135,10 @@ host example.net. dig +nodnssec +noedns +noadflag example.net. a  WN-G300GRはad
     
     <item>
       <title>GMOのConoha VPS使ってみた</title>
-      <link>https://yaasita.github.io/2017/01/22/conoha-vps</link>
+      <link>https://yaasita.github.io/2017/01/22/conoha-vps/</link>
       <pubDate>Sun, 22 Jan 2017 23:51:14 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/01/22/conoha-vps</guid>
+      <guid>https://yaasita.github.io/2017/01/22/conoha-vps/</guid>
       <description>非常に良い
 さくらVPSより良いかもしれない
  DNSサーバ無料
@@ -152,10 +153,10 @@ host example.net. dig +nodnssec +noedns +noadflag example.net. a  WN-G300GRはad
     
     <item>
       <title>BCCヘッダを落とすのは誰か</title>
-      <link>https://yaasita.github.io/2017/01/22/who_drops_bccheader</link>
+      <link>https://yaasita.github.io/2017/01/22/who_drops_bccheader/</link>
       <pubDate>Sun, 22 Jan 2017 00:48:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/01/22/who_drops_bccheader</guid>
+      <guid>https://yaasita.github.io/2017/01/22/who_drops_bccheader/</guid>
       <description>BCCヘッダは転送しないで、MTA側で消されるというのは有名な話だけど
 実際どんな感じなのか
 まずメーラーでBCCを指定して送ったとする
@@ -173,10 +174,10 @@ message_drop_headers = bcc, content-length, resent-bcc, return-path   参考
     
     <item>
       <title>blogをmiddlemanからhugoに移行した</title>
-      <link>https://yaasita.github.io/2017/01/05/middleman2hugo</link>
+      <link>https://yaasita.github.io/2017/01/05/middleman2hugo/</link>
       <pubDate>Thu, 05 Jan 2017 04:50:10 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/01/05/middleman2hugo</guid>
+      <guid>https://yaasita.github.io/2017/01/05/middleman2hugo/</guid>
       <description> 使ってみた感想  ビルドはmiddlemanで10分かかってたけど1秒になった
  themeはgeppakuというのを使用 シンプルで良い
  Tumblrリンクのプルリクエストも快くマージしてくれた感謝m(_ _)m
@@ -205,10 +206,10 @@ Static Site Generatorはとても良い
     
     <item>
       <title>GCPの Cloud DNSでグルーレコード</title>
-      <link>https://yaasita.github.io/2016/12/03/google-cloud-dns</link>
+      <link>https://yaasita.github.io/2016/12/03/google-cloud-dns/</link>
       <pubDate>Sat, 03 Dec 2016 23:22:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/12/03/google-cloud-dns</guid>
+      <guid>https://yaasita.github.io/2016/12/03/google-cloud-dns/</guid>
       <description>Google Cloud Platform のDNSでグルーレコード作るときは
 こんな感じでNS指定したあとに、Aレコード追加すればグルーレコード(Glue Record)に追加してくれるようだ
 
@@ -217,10 +218,10 @@ Static Site Generatorはとても良い
     
     <item>
       <title>VALUE-DOMAINでグルーレコード追加</title>
-      <link>https://yaasita.github.io/2016/11/25/value-domain</link>
+      <link>https://yaasita.github.io/2016/11/25/value-domain/</link>
       <pubDate>Fri, 25 Nov 2016 01:31:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/11/25/value-domain</guid>
+      <guid>https://yaasita.github.io/2016/11/25/value-domain/</guid>
       <description>VALUE-DOMAIN バリュードメインの権威DNSサーバを使いつつ
 レコードにグルーレコードを追加する方法
 BINDみたくこんな感じにやる
@@ -231,10 +232,10 @@ https://www.value-domain.com/userguide/manual/othermodns/</description>
     
     <item>
       <title>AWSへVMイメージごと移動する手順</title>
-      <link>https://yaasita.github.io/2016/11/20/aws-vm-import</link>
+      <link>https://yaasita.github.io/2016/11/20/aws-vm-import/</link>
       <pubDate>Sun, 20 Nov 2016 20:45:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/11/20/aws-vm-import</guid>
+      <guid>https://yaasita.github.io/2016/11/20/aws-vm-import/</guid>
       <description> 手順 img作る前に以下を確認しておく
  DHCPを有効にしている
  iptablesを無効に
@@ -248,10 +249,10 @@ https://www.value-domain.com/userguide/manual/othermodns/</description>
     
     <item>
       <title>フレッツのDNS挙動</title>
-      <link>https://yaasita.github.io/2016/10/31/flets-dns</link>
+      <link>https://yaasita.github.io/2016/10/31/flets-dns/</link>
       <pubDate>Mon, 31 Oct 2016 00:42:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/10/31/flets-dns</guid>
+      <guid>https://yaasita.github.io/2016/10/31/flets-dns/</guid>
       <description>NSレコードに指定したホスト名にCNAMEを持たせてはいけない
 という話は有名だがどのように挙動が変わるか見てみる
 準備 yaasita.ml. の権威サーバは ns1.aws.yaasita.net. にしておく
@@ -261,10 +262,10 @@ NSで指定されてるサーバは CNAMEとして aws.yaasita.net. に設定し
     
     <item>
       <title>AWSのVPNまわり</title>
-      <link>https://yaasita.github.io/2016/07/31/aws-vpn</link>
+      <link>https://yaasita.github.io/2016/07/31/aws-vpn/</link>
       <pubDate>Sun, 31 Jul 2016 00:36:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/07/31/aws-vpn</guid>
+      <guid>https://yaasita.github.io/2016/07/31/aws-vpn/</guid>
       <description>よくある質問
 対応機器
 http://aws.amazon.com/jp/vpc/faqs/
@@ -276,10 +277,10 @@ http://dev.classmethod.jp/cloud/aws/vpc-connect-hardware-vpn/</description>
     
     <item>
       <title>s3fs使う</title>
-      <link>https://yaasita.github.io/2016/06/22/s3fs</link>
+      <link>https://yaasita.github.io/2016/06/22/s3fs/</link>
       <pubDate>Wed, 22 Jun 2016 13:40:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/06/22/s3fs</guid>
+      <guid>https://yaasita.github.io/2016/06/22/s3fs/</guid>
       <description>s3fsはamazon S3をファイルしすてむのように使うやつ
 ただ遅い
 基本ここ見てやる
@@ -290,10 +291,10 @@ https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes
     
     <item>
       <title>IRCのログを記録するbotbot.me</title>
-      <link>https://yaasita.github.io/2016/05/04/botbot-me</link>
+      <link>https://yaasita.github.io/2016/05/04/botbot-me/</link>
       <pubDate>Wed, 04 May 2016 23:10:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/05/04/botbot-me</guid>
+      <guid>https://yaasita.github.io/2016/05/04/botbot-me/</guid>
       <description>https://botbot.me/
 botbot.meはIRCに参加させることでログを取って
 公開できるbotだ
@@ -302,10 +303,10 @@ botbot.meはIRCに参加させることでログを取って
     
     <item>
       <title>Git-itやってみた</title>
-      <link>https://yaasita.github.io/2016/04/24/git-it</link>
+      <link>https://yaasita.github.io/2016/04/24/git-it/</link>
       <pubDate>Sun, 24 Apr 2016 02:05:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/04/24/git-it</guid>
+      <guid>https://yaasita.github.io/2016/04/24/git-it/</guid>
       <description>日本語も選択できるElectron製のアプリで
 ステップバイステップで勉強できる
 ここのリリースページからバイナリを落として実行する

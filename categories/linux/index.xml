@@ -2,18 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title># cd ~yaasita</title>
-    <link>https://yaasita.github.io/categories/linux/index.xml</link>
+    <link>https://yaasita.github.io/categories/linux/</link>
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Jul 2017 13:46:49 +0900</lastBuildDate>
+    <atom:link href="/categories/linux/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>machine-idを変える時</title>
+      <link>https://yaasita.github.io/2017/07/06/dbus-uuidgen/</link>
+      <pubDate>Thu, 06 Jul 2017 13:46:49 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/07/06/dbus-uuidgen/</guid>
+      <description>systemd-nspawn使ってて
+なんか /etc/machine-id　ないよって言われたとき
+dbus-uuidgen &amp;gt; root/etc/machine-id  </description>
+    </item>
     
     <item>
       <title>AWSへVMイメージごと移動する手順</title>
-      <link>https://yaasita.github.io/2016/11/20/aws-vm-import</link>
+      <link>https://yaasita.github.io/2016/11/20/aws-vm-import/</link>
       <pubDate>Sun, 20 Nov 2016 20:45:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/11/20/aws-vm-import</guid>
+      <guid>https://yaasita.github.io/2016/11/20/aws-vm-import/</guid>
       <description> 手順 img作る前に以下を確認しておく
  DHCPを有効にしている
  iptablesを無効に
@@ -27,10 +39,10 @@
     
     <item>
       <title>systemdでの電源管理</title>
-      <link>https://yaasita.github.io/2016/01/06/acpi</link>
+      <link>https://yaasita.github.io/2016/01/06/acpi/</link>
       <pubDate>Wed, 06 Jan 2016 00:47:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/01/06/acpi</guid>
+      <guid>https://yaasita.github.io/2016/01/06/acpi/</guid>
       <description>Arch Linuxのwikiが詳しかった
 /etc/systemd/logind.conf
 あたりを直す
@@ -40,10 +52,10 @@ HandleSuspendKey=ignore HandleLidSwitch=ignore  </description>
     
     <item>
       <title>docker composeインストール</title>
-      <link>https://yaasita.github.io/2015/12/31/compose</link>
+      <link>https://yaasita.github.io/2015/12/31/compose/</link>
       <pubDate>Thu, 31 Dec 2015 18:16:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/12/31/compose</guid>
+      <guid>https://yaasita.github.io/2015/12/31/compose/</guid>
       <description>docker-composeもcheckinstallでdebパッケージにしといた
 https://goo.gl/MKXvhm
 Makefile
@@ -52,10 +64,10 @@ install: chmod +x bin/docker-compose cp bin/docker-compose /usr/local/bin/ cp ba
     
     <item>
       <title>checkinstallでdocker-machineをパッケージに</title>
-      <link>https://yaasita.github.io/2015/12/30/checkinstall</link>
+      <link>https://yaasita.github.io/2015/12/30/checkinstall/</link>
       <pubDate>Wed, 30 Dec 2015 03:16:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/12/30/checkinstall</guid>
+      <guid>https://yaasita.github.io/2015/12/30/checkinstall/</guid>
       <description>debパッケージにするとアンインストールが楽になる
  https://github.com/docker/machine
  https://goo.gl/X5Njaz
@@ -67,20 +79,20 @@ docker-machine-0.5.5/ ├── Makefile ├── docker-machine ├── dock
     
     <item>
       <title>RAID5のリビルド中にもう一個壊れるってやつ</title>
-      <link>https://yaasita.github.io/2015/10/17/raid5_fail</link>
+      <link>https://yaasita.github.io/2015/10/17/raid5_fail/</link>
       <pubDate>Sat, 17 Oct 2015 16:52:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/10/17/raid5_fail</guid>
+      <guid>https://yaasita.github.io/2015/10/17/raid5_fail/</guid>
       <description>リビルド中にもう一個壊れてRAID5が終わった話
 /dev/md0: Version : 1.2 Creation Time : Fri Jan 6 12:24:44 2012 Raid Level : raid5 Array Size : 5860535808 (5589.04 GiB 6001.19 GB) Used Dev Size : 1953511936 (1863.01 GiB 2000.40 GB) Raid Devices : 4 Total Devices : 4 Persistence : Superblock is persistent Update Time : Sat Oct 17 16:59:57 2015 State : clean, FAILED Active Devices : 2 Working Devices : 3 Failed Devices : 1 Spare Devices : 1 Layout : left-symmetric Chunk Size : 512K Name : hoge:0 UUID : 55b9d6ea:4627c873:a0bcab05:a4f0c25d Events : 6755 Number Major Minor RaidDevice State 5 8 49 0 active sync /dev/sdd1 2 0 0 2 removed 2 8 33 2 active sync /dev/sdc1 6 0 0 6 removed 4 8 1 - faulty /dev/sda1 6 8 17 - spare /dev/sdb1  HDD一台が壊れたので /dev/sdb1を追加中にアレイの構成Diskがもう一個壊れた</description>
     </item>
     
     <item>
       <title>handbrakeでISOをエンコード</title>
-      <link>https://yaasita.github.io/2015/08/25/handbrake</link>
+      <link>https://yaasita.github.io/2015/08/25/handbrake/</link>
       <pubDate>Tue, 25 Aug 2015 00:32:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/08/25/handbrake</guid>
+      <guid>https://yaasita.github.io/2015/08/25/handbrake/</guid>
       <description>Linuxで動画のエンコード/リッピングするとき
 apt-get handbreak  handbrake-gtk
 で起動して、左側のソース選んで
@@ -91,10 +103,10 @@ http://yaasita.tumblr.com/post/127482624497</description>
     
     <item>
       <title>saslauthd-debian</title>
-      <link>https://yaasita.github.io/2015/07/26/saslauthd-debian</link>
+      <link>https://yaasita.github.io/2015/07/26/saslauthd-debian/</link>
       <pubDate>Sun, 26 Jul 2015 02:42:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/07/26/saslauthd-debian</guid>
+      <guid>https://yaasita.github.io/2015/07/26/saslauthd-debian/</guid>
       <description>なんか Debian Jessie(8.1)のsaslauthdのsystemd定義が書かれてない気がする
 なので自動起動に設定したかったら自分で書く感じで
 /etc/systemd/system/saslauthd.service
@@ -104,10 +116,10 @@ systemctl daemon-reload systemctl enable saslauthd.service systemctl start sasla
     
     <item>
       <title>Linuxでスクリーンショット取る</title>
-      <link>https://yaasita.github.io/2015/04/18/linux-screenshot</link>
+      <link>https://yaasita.github.io/2015/04/18/linux-screenshot/</link>
       <pubDate>Sat, 18 Apr 2015 02:03:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/04/18/linux-screenshot</guid>
+      <guid>https://yaasita.github.io/2015/04/18/linux-screenshot/</guid>
       <description>shutterというのがよさ気
 apt-get install shutter  http://www.xmisao.com/2014/02/07/get-screenshot-on-linux-by-shutter.html
 他にxwd使う方法もある
@@ -116,10 +128,10 @@ apt-get install shutter  http://www.xmisao.com/2014/02/07/get-screenshot-on-linu
     
     <item>
       <title>Linuxのクリップボードマネージャ</title>
-      <link>https://yaasita.github.io/2015/04/18/linux-clipboard-manager</link>
+      <link>https://yaasita.github.io/2015/04/18/linux-clipboard-manager/</link>
       <pubDate>Sat, 18 Apr 2015 01:31:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/04/18/linux-clipboard-manager</guid>
+      <guid>https://yaasita.github.io/2015/04/18/linux-clipboard-manager/</guid>
       <description>diodon apt-get install diodon  初期設定はCtrl + Alt + vで呼び出し
 Preferenceから以下の設定を直した
  Automatically paste selected item
@@ -135,10 +147,10 @@ apt-get install klipper  初期はShift+Zになってるので設定からなお
     
     <item>
       <title>Linuxのターミナルで出来るマリオらしい</title>
-      <link>https://yaasita.github.io/2015/04/13/linux-terminal-game</link>
+      <link>https://yaasita.github.io/2015/04/13/linux-terminal-game/</link>
       <pubDate>Mon, 13 Apr 2015 00:24:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/04/13/linux-terminal-game</guid>
+      <guid>https://yaasita.github.io/2015/04/13/linux-terminal-game/</guid>
       <description>すごいなこれ
 
 まさかの？Linuxターミナル上でプレイする『スーパーマリオブラザーズ』
@@ -147,10 +159,10 @@ apt-get install klipper  初期はShift+Zになってるので設定からなお
     
     <item>
       <title>LinuxでPDF編集ソフトまとめ</title>
-      <link>https://yaasita.github.io/2015/01/04/linux-pdf</link>
+      <link>https://yaasita.github.io/2015/01/04/linux-pdf/</link>
       <pubDate>Sun, 04 Jan 2015 00:17:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/01/04/linux-pdf</guid>
+      <guid>https://yaasita.github.io/2015/01/04/linux-pdf/</guid>
       <description>libreoffice-pdfimport libreofficeでPDF編集できる
 なんか変なところで逆さまになったり微妙だった
 でもUIはLibreofficeの感覚で使えるので今後に期待
@@ -170,10 +182,10 @@ pdftk コマンドライン(CUI)で使うPDF編集ソフト
     
     <item>
       <title>modern.ieのVMファイルの解凍</title>
-      <link>https://yaasita.github.io/2014/09/23/modern-ie</link>
+      <link>https://yaasita.github.io/2014/09/23/modern-ie/</link>
       <pubDate>Tue, 23 Sep 2014 22:18:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/09/23/modern-ie</guid>
+      <guid>https://yaasita.github.io/2014/09/23/modern-ie/</guid>
       <description>モダンIEというIEテスト用のVM配ってるサイト
 sfxの解凍はunrarでできた
 unrar e IE11.Win7.ForLinuxVirtualBox.part1.sfx  https://www.modern.ie/ja-jp
@@ -186,10 +198,10 @@ Windows7の日本語化について
     
     <item>
       <title>teraterm越しに特殊キーを送る</title>
-      <link>https://yaasita.github.io/2014/08/24/teraterm-keycode</link>
+      <link>https://yaasita.github.io/2014/08/24/teraterm-keycode/</link>
       <pubDate>Sun, 24 Aug 2014 23:40:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/08/24/teraterm-keycode</guid>
+      <guid>https://yaasita.github.io/2014/08/24/teraterm-keycode/</guid>
       <description>キーをどこで奪われてるのかまず探す
 teratem -&amp;gt; bash -&amp;gt; app  teratemでキーを取られているならKEYBOARD.CNFの末尾に以下のように追記する
 User(連番)で追記する書式についてはteratemのヘルプ参照
@@ -201,10 +213,10 @@ Ctrl-qについてはbash側でも取られるのでそっちも変更する
     
     <item>
       <title>検証環境の作り方</title>
-      <link>https://yaasita.github.io/2014/08/13/kensyou</link>
+      <link>https://yaasita.github.io/2014/08/13/kensyou/</link>
       <pubDate>Wed, 13 Aug 2014 02:53:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/08/13/kensyou</guid>
+      <guid>https://yaasita.github.io/2014/08/13/kensyou/</guid>
       <description> 検証環境の作り方
  元ファイル
   </description>
@@ -212,10 +224,10 @@ Ctrl-qについてはbash側でも取られるのでそっちも変更する
     
     <item>
       <title>gvfsのオートマウントを止める</title>
-      <link>https://yaasita.github.io/2014/07/05/gvfs-mount</link>
+      <link>https://yaasita.github.io/2014/07/05/gvfs-mount/</link>
       <pubDate>Sat, 05 Jul 2014 23:40:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/07/05/gvfs-mount</guid>
+      <guid>https://yaasita.github.io/2014/07/05/gvfs-mount/</guid>
       <description>/home/user/.gvfsになんか自動でマウントされるのを止める
 rm -rf ~/.local/share/gvfs*  面倒だったので以下で対処した
 rm -rf ~/.local  多分、gnome関連パッケージのせい</description>
@@ -223,10 +235,10 @@ rm -rf ~/.local  多分、gnome関連パッケージのせい</description>
     
     <item>
       <title>Debianで自動アップデート設定</title>
-      <link>https://yaasita.github.io/2014/07/03/unattended-upgrades</link>
+      <link>https://yaasita.github.io/2014/07/03/unattended-upgrades/</link>
       <pubDate>Thu, 03 Jul 2014 23:54:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/07/03/unattended-upgrades</guid>
+      <guid>https://yaasita.github.io/2014/07/03/unattended-upgrades/</guid>
       <description>apt-get install unattended-upgrades
 /etc/apt/apt.conf.d/50unattended-upgrades
 Unattended-Upgrade::Origins-Pattern { &amp;quot;o=Debian,n=jessie&amp;quot;; &amp;quot;o=Debian,n=jessie-updates&amp;quot;; &amp;quot;o=Debian,n=jessie-proposed-updates&amp;quot;; &amp;quot;o=Debian,n=jessie,l=Debian-Security&amp;quot;; &amp;quot;origin=Debian,archive=${distro_codename},label=Debian-Security&amp;quot;; }; Unattended-Upgrade::Package-Blacklist { };  /etc/apt/apt.conf.d/10periodicにAPT::Periodic::Unattended-Upgrade &amp;quot;1&amp;quot;;を追加
@@ -239,10 +251,10 @@ APT::Periodic::Update-Package-Lists &amp;quot;1&amp;quot;; APT::Periodic::Unatte
     
     <item>
       <title>cgroupでcpuリミットをあてる</title>
-      <link>https://yaasita.github.io/2014/06/22/cgroup-cpu-limit</link>
+      <link>https://yaasita.github.io/2014/06/22/cgroup-cpu-limit/</link>
       <pubDate>Sun, 22 Jun 2014 15:57:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/06/22/cgroup-cpu-limit</guid>
+      <guid>https://yaasita.github.io/2014/06/22/cgroup-cpu-limit/</guid>
       <description>microインスタンスはstealの関係でCPUリミットを設定するとよいらしい
 microインスタンスはlimitかけると大きくパフォーマンスが向上する
 なのでやってみました
@@ -255,19 +267,19 @@ cgcreate -g cpu:ruby cgexec -g cpu:ruby ./install_ruby.sh cgset -r cpu.cfs_quota
     
     <item>
       <title>非推奨になったネットワークコマンド</title>
-      <link>https://yaasita.github.io/2014/06/17/deprecated_network_cmd</link>
+      <link>https://yaasita.github.io/2014/06/17/deprecated_network_cmd/</link>
       <pubDate>Tue, 17 Jun 2014 01:13:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/06/17/deprecated_network_cmd</guid>
+      <guid>https://yaasita.github.io/2014/06/17/deprecated_network_cmd/</guid>
       <description>Deprecated command Replacement command(s)     arp ip n (ip neighbor)   ifconfig ip a (ip addr), ip link, ip -s (ip -stats)   iptunnel ip tunnel   iwconfig iw   nameif ip link, ifrename   netstat ss, ip route (for netstat-r), ip -s link (for netstat -i), ip maddr (for netstat-g)   route ip r (ip route)     http://understeer.</description>
     </item>
     
     <item>
       <title>unite.vimみたいなpercol</title>
-      <link>https://yaasita.github.io/2014/06/12/percol</link>
+      <link>https://yaasita.github.io/2014/06/12/percol/</link>
       <pubDate>Thu, 12 Jun 2014 23:22:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/06/12/percol</guid>
+      <guid>https://yaasita.github.io/2014/06/12/percol/</guid>
       <description> これ使うとシェルでもuniteみたいなインターフェイスで検索できる
 公式サイト
 インストール apt-get install python-pip pip install percol  設定 ~/.bashrc
@@ -275,17 +287,6 @@ cgcreate -g cpu:ruby cgexec -g cpu:ruby ./install_ruby.sh cgset -r cpu.cfs_quota
 参考リンク
  bashでもpercolをイイ感じに使う方法
   </description>
-    </item>
-    
-    <item>
-      <title>ディレクトリ間の差分を取ってくれるソフト</title>
-      <link>https://yaasita.github.io/2014/06/03/dir_diff</link>
-      <pubDate>Tue, 03 Jun 2014 18:50:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2014/06/03/dir_diff</guid>
-      <description>apt-get install meld
-参考リンク
-http://baker-street.jugem.jp/?eid=164</description>
     </item>
     
   </channel>

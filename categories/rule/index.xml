@@ -2,18 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title># cd ~yaasita</title>
-    <link>https://yaasita.github.io/categories/rule/index.xml</link>
+    <link>https://yaasita.github.io/categories/rule/</link>
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="/categories/rule/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Apr 2017 04:18:50 +0900</lastBuildDate>
+    <atom:link href="/categories/rule/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>複数ファイルアップロードの実装</title>
-      <link>https://yaasita.github.io/2017/04/02/multiple-upload</link>
+      <link>https://yaasita.github.io/2017/04/02/multiple-upload/</link>
       <pubDate>Sun, 02 Apr 2017 04:18:50 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/04/02/multiple-upload</guid>
+      <guid>https://yaasita.github.io/2017/04/02/multiple-upload/</guid>
       <description>multiple指定してuploadフォーム作るときの話
 &amp;lt;input type=&amp;quot;file&amp;quot; name=&amp;quot;files&amp;quot; multiple /&amp;gt;  で複数ファイル選択できるが
 Perl CGIで受けるときに↓みたいにすると
@@ -25,10 +26,10 @@ my @fhs = $q-&amp;gt;upload(&#39;files&#39;); my %fname_count; for my $fh (@fhs)
     
     <item>
       <title>hostとdigコマンドの挙動が違う時</title>
-      <link>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different</link>
+      <link>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different/</link>
       <pubDate>Fri, 27 Jan 2017 01:52:29 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different</guid>
+      <guid>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different/</guid>
       <description>名前を引くときにhostコマンドでは返ってくるがdigだとおかしくなるときがある
 こんな感じにすれば同じになる
 host example.net. dig +nodnssec +noedns +noadflag example.net. a  WN-G300GRはadビット立ててると応答すらしないらしい</description>
@@ -36,10 +37,10 @@ host example.net. dig +nodnssec +noedns +noadflag example.net. a  WN-G300GRはad
     
     <item>
       <title>BCCヘッダを落とすのは誰か</title>
-      <link>https://yaasita.github.io/2017/01/22/who_drops_bccheader</link>
+      <link>https://yaasita.github.io/2017/01/22/who_drops_bccheader/</link>
       <pubDate>Sun, 22 Jan 2017 00:48:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/01/22/who_drops_bccheader</guid>
+      <guid>https://yaasita.github.io/2017/01/22/who_drops_bccheader/</guid>
       <description>BCCヘッダは転送しないで、MTA側で消されるというのは有名な話だけど
 実際どんな感じなのか
 まずメーラーでBCCを指定して送ったとする
@@ -57,10 +58,10 @@ message_drop_headers = bcc, content-length, resent-bcc, return-path   参考
     
     <item>
       <title>VALUE-DOMAINでグルーレコード追加</title>
-      <link>https://yaasita.github.io/2016/11/25/value-domain</link>
+      <link>https://yaasita.github.io/2016/11/25/value-domain/</link>
       <pubDate>Fri, 25 Nov 2016 01:31:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/11/25/value-domain</guid>
+      <guid>https://yaasita.github.io/2016/11/25/value-domain/</guid>
       <description>VALUE-DOMAIN バリュードメインの権威DNSサーバを使いつつ
 レコードにグルーレコードを追加する方法
 BINDみたくこんな感じにやる
@@ -71,20 +72,20 @@ https://www.value-domain.com/userguide/manual/othermodns/</description>
     
     <item>
       <title>初めての暗号化メール</title>
-      <link>https://yaasita.github.io/2014/07/01/thunderbird-pgp</link>
+      <link>https://yaasita.github.io/2014/07/01/thunderbird-pgp/</link>
       <pubDate>Tue, 01 Jul 2014 23:36:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/07/01/thunderbird-pgp</guid>
+      <guid>https://yaasita.github.io/2014/07/01/thunderbird-pgp/</guid>
       <description> はじめての暗号化メール (Thunderbird編)
   </description>
     </item>
     
     <item>
       <title>tumblrのAPI回り</title>
-      <link>https://yaasita.github.io/2014/06/08/tumblr_api</link>
+      <link>https://yaasita.github.io/2014/06/08/tumblr_api/</link>
       <pubDate>Sun, 08 Jun 2014 23:19:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/06/08/tumblr_api</guid>
+      <guid>https://yaasita.github.io/2014/06/08/tumblr_api/</guid>
       <description>手順  アプリを登録
 OAuth Consumer KeyとSecret Keyを作る
  アクセストークンリクエスト
@@ -99,10 +100,10 @@ curl http://api.tumblr.com/v2/blog/yaasita.tumblr.com/info?api_key=xxxxxxxxxxxxx
     
     <item>
       <title>DNS関連のためになるPDF</title>
-      <link>https://yaasita.github.io/2014/05/14/dns</link>
+      <link>https://yaasita.github.io/2014/05/14/dns/</link>
       <pubDate>Wed, 14 May 2014 01:06:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/05/14/dns</guid>
+      <guid>https://yaasita.github.io/2014/05/14/dns/</guid>
       <description> DNSサーバーの引っ越し - JPRS
  DNS 浸透の都市伝説を斬る
   </description>
@@ -110,10 +111,10 @@ curl http://api.tumblr.com/v2/blog/yaasita.tumblr.com/info?api_key=xxxxxxxxxxxxx
     
     <item>
       <title>opensslでstarttlsのSMTPをコマンド実行</title>
-      <link>https://yaasita.github.io/2013/04/12/1030</link>
+      <link>https://yaasita.github.io/2013/04/12/1030/</link>
       <pubDate>Fri, 12 Apr 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/04/12/1030</guid>
+      <guid>https://yaasita.github.io/2013/04/12/1030/</guid>
       <description>こんな感じでやってみよう
 openssl s_client -starttls smtp -crlf -quiet -connect email-smtp.us-east-1.amazonaws.com:587
 
@@ -123,10 +124,10 @@ expectで送る場合はこんな感じ
     
     <item>
       <title>opensslでSMTPするとRENEGOTIATINGになる</title>
-      <link>https://yaasita.github.io/2013/04/01/1175</link>
+      <link>https://yaasita.github.io/2013/04/01/1175/</link>
       <pubDate>Mon, 01 Apr 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/04/01/1175</guid>
+      <guid>https://yaasita.github.io/2013/04/01/1175/</guid>
       <description>
 なるほどこういうことか
 openssl s_client -quiet -connect
@@ -136,10 +137,10 @@ http://backslash.ddo.jp/wordpress/archives/434 </description>
     
     <item>
       <title>自然対数(log)の割り算で任意底の対数計算</title>
-      <link>https://yaasita.github.io/2013/03/30/1196</link>
+      <link>https://yaasita.github.io/2013/03/30/1196/</link>
       <pubDate>Sat, 30 Mar 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/03/30/1196</guid>
+      <guid>https://yaasita.github.io/2013/03/30/1196/</guid>
       <description>
 例えば512は2の何乗か調べる場合は
 （この場合底はe）
@@ -150,10 +151,10 @@ http://ab.sinryow.net/lesson/shisu.html </description>
     
     <item>
       <title>digコマンドを理解する</title>
-      <link>https://yaasita.github.io/2013/01/05/1624</link>
+      <link>https://yaasita.github.io/2013/01/05/1624/</link>
       <pubDate>Sat, 05 Jan 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/01/05/1624</guid>
+      <guid>https://yaasita.github.io/2013/01/05/1624/</guid>
       <description>* usage
 dig [@server] domain [query-type]
 
@@ -186,10 +187,10 @@ http://www.syon.co.jp/syontech/tech002.html</description>
     
     <item>
       <title>プライベートIPアドレスの覚え方</title>
-      <link>https://yaasita.github.io/2010/10/24/5446</link>
+      <link>https://yaasita.github.io/2010/10/24/5446/</link>
       <pubDate>Sun, 24 Oct 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/10/24/5446</guid>
+      <guid>https://yaasita.github.io/2010/10/24/5446/</guid>
       <description>2進数で考えると覚えやすい
 まずはクラスの覚え方
 クラスA(最初が0で始まるのがAクラス)
@@ -216,49 +217,49 @@ subnet： 11111111.11111111.00000000.00000000-11111111.11111111.00000000.0000000
     
     <item>
       <title>crontabに書いてあるdomとdowは何の略？</title>
-      <link>https://yaasita.github.io/2010/10/03/5652</link>
+      <link>https://yaasita.github.io/2010/10/03/5652/</link>
       <pubDate>Sun, 03 Oct 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/10/03/5652</guid>
+      <guid>https://yaasita.github.io/2010/10/03/5652/</guid>
       <description>dow・・・Day Of Week
 dom・・・Day of Month </description>
     </item>
     
     <item>
       <title>SQLの解説サイト</title>
-      <link>https://yaasita.github.io/2009/09/07/8655</link>
+      <link>https://yaasita.github.io/2009/09/07/8655/</link>
       <pubDate>Mon, 07 Sep 2009 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2009/09/07/8655</guid>
+      <guid>https://yaasita.github.io/2009/09/07/8655/</guid>
       <description>ためになりそうだからメモ
 http://www.techscore.com/tech/sql/ </description>
     </item>
     
     <item>
       <title>携帯端末以外のIPを制限するhtaccessを簡単生成</title>
-      <link>https://yaasita.github.io/2008/12/31/10607</link>
+      <link>https://yaasita.github.io/2008/12/31/10607/</link>
       <pubDate>Wed, 31 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/12/31/10607</guid>
+      <guid>https://yaasita.github.io/2008/12/31/10607/</guid>
       <description>http://www.dspt.net/tools/mobile_ip/ </description>
     </item>
     
     <item>
       <title>telnetでSMTPコマンド叩いてメール送信</title>
-      <link>https://yaasita.github.io/2008/09/07/11328</link>
+      <link>https://yaasita.github.io/2008/09/07/11328/</link>
       <pubDate>Sun, 07 Sep 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/09/07/11328</guid>
+      <guid>https://yaasita.github.io/2008/09/07/11328/</guid>
       <description>↓を参考にどうぞ
 http://ash.jp/net/telnet_smtp.htm </description>
     </item>
     
     <item>
       <title>ASCIIコードで\x0cって何を表すか？</title>
-      <link>https://yaasita.github.io/2008/04/29/12531</link>
+      <link>https://yaasita.github.io/2008/04/29/12531/</link>
       <pubDate>Tue, 29 Apr 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/04/29/12531</guid>
+      <guid>https://yaasita.github.io/2008/04/29/12531/</guid>
       <description>ASCIIコード
 改ページだそうです
 参考リンク

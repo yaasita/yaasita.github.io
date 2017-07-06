@@ -2,27 +2,28 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title># cd ~yaasita</title>
-    <link>https://yaasita.github.io/archives/2010/index.xml</link>
+    <link>https://yaasita.github.io/archives/2010/</link>
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="/archives/2010/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Dec 2010 00:00:00 +0900</lastBuildDate>
+    <atom:link href="/archives/2010/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Bloggerのテンプレートを変更してみる</title>
-      <link>https://yaasita.github.io/2010/12/26/5011</link>
+      <link>https://yaasita.github.io/2010/12/26/5011/</link>
       <pubDate>Sun, 26 Dec 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/12/26/5011</guid>
+      <guid>https://yaasita.github.io/2010/12/26/5011/</guid>
       <description>テンプレートデザイナー等の新機能が使えるらしいので変えます</description>
     </item>
     
     <item>
       <title>rsyncのinclude,excludeで注意すること</title>
-      <link>https://yaasita.github.io/2010/12/26/5031</link>
+      <link>https://yaasita.github.io/2010/12/26/5031/</link>
       <pubDate>Sun, 26 Dec 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/12/26/5031</guid>
+      <guid>https://yaasita.github.io/2010/12/26/5031/</guid>
       <description>とりあえず3点
 1.--excludeする前に--includeしておかないと意味が無い
 2.あるフォルダ配下のファイルを対象にしたかった場合はフォルダ自体もincludeする
@@ -61,20 +62,20 @@ rsync -av --delete-excluded --include=&#34;ABC&#34; --include=&#34;</description
     
     <item>
       <title>Frozen BubbleのFLASH版</title>
-      <link>https://yaasita.github.io/2010/12/25/5052</link>
+      <link>https://yaasita.github.io/2010/12/25/5052/</link>
       <pubDate>Sat, 25 Dec 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/12/25/5052</guid>
+      <guid>https://yaasita.github.io/2010/12/25/5052/</guid>
       <description>Frozen BubbleのFLASH版があったのでメモ
 http://www.gamefz.com/a.asp?id=2420 </description>
     </item>
     
     <item>
       <title>紙飛行機を飛ばすゲーム</title>
-      <link>https://yaasita.github.io/2010/12/24/5072</link>
+      <link>https://yaasita.github.io/2010/12/24/5072/</link>
       <pubDate>Fri, 24 Dec 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/12/24/5072</guid>
+      <guid>https://yaasita.github.io/2010/12/24/5072/</guid>
       <description>紙飛行機を飛ばすゲーム
 http://armorgames.com/play/7598/flight
 ←→　角度調節 SPACE ジェット噴射 R レインボースター  参考リンク
@@ -83,10 +84,10 @@ http://blog.livedoor.jp/lkrejg/archives/65520026.html</description>
     
     <item>
       <title>multitailを調べてみる</title>
-      <link>https://yaasita.github.io/2010/12/20/5092</link>
+      <link>https://yaasita.github.io/2010/12/20/5092/</link>
       <pubDate>Mon, 20 Dec 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/12/20/5092</guid>
+      <guid>https://yaasita.github.io/2010/12/20/5092/</guid>
       <description>multitail messages -I syslog.1
 -I でファイルをひとつのウィンドウに混ぜて表示
 multitail -l &#39;ping hoge&#39; -L &#39;ping foo&#39;
@@ -108,10 +109,10 @@ http://www.vanheusden.com/multitail/  </description>
     
     <item>
       <title>teraterm &#43; screenだとマウスのスクロールが出来ない？</title>
-      <link>https://yaasita.github.io/2010/12/20/5113</link>
+      <link>https://yaasita.github.io/2010/12/20/5113/</link>
       <pubDate>Mon, 20 Dec 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/12/20/5113</guid>
+      <guid>https://yaasita.github.io/2010/12/20/5113/</guid>
       <description>解決策
 Ctrlを押しながらマウスホイールをまわす TERATERM.INIのTranslateWheelToCursorをoffにする
 参考リンク
@@ -120,10 +121,10 @@ http://d.hatena.ne.jp/orangeclover/20100406/1270564074 </description>
     
     <item>
       <title>CUIでRSSを見てみる</title>
-      <link>https://yaasita.github.io/2010/12/19/5135</link>
+      <link>https://yaasita.github.io/2010/12/19/5135/</link>
       <pubDate>Sun, 19 Dec 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/12/19/5135</guid>
+      <guid>https://yaasita.github.io/2010/12/19/5135/</guid>
       <description>下記参考リンクがすごい参考になったのでちょっとずつ試してみた
 * Newsbeuter
 適当にRSSへのURLを書いたテキストを用意(ex.url.txt)
@@ -162,10 +163,10 @@ newsbeuter →　メールを読むようにじっくり読みたい人向け</d
     
     <item>
       <title>bashrcが読み込まれない？</title>
-      <link>https://yaasita.github.io/2010/12/11/5157</link>
+      <link>https://yaasita.github.io/2010/12/11/5157/</link>
       <pubDate>Sat, 11 Dec 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/12/11/5157</guid>
+      <guid>https://yaasita.github.io/2010/12/11/5157/</guid>
       <description>useraddでテスト用のアカウント作ったら読み込まれてたので
 何でだろうとおもったら下のページに書いてあった
 ようはprofileとかなければ呼ばれないらしい
@@ -176,10 +177,10 @@ http://blog.jojo.jp/?eid=1013034
     
     <item>
       <title>CPUの温度とかを参照するには</title>
-      <link>https://yaasita.github.io/2010/12/10/5198</link>
+      <link>https://yaasita.github.io/2010/12/10/5198/</link>
       <pubDate>Fri, 10 Dec 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/12/10/5198</guid>
+      <guid>https://yaasita.github.io/2010/12/10/5198/</guid>
       <description>/proc/acpi/thermal_zone/THRM
 とよい
 temperatureとか・・・ </description>
@@ -187,10 +188,10 @@ temperatureとか・・・ </description>
     
     <item>
       <title>CUIでmp3等を再生</title>
-      <link>https://yaasita.github.io/2010/12/10/5218</link>
+      <link>https://yaasita.github.io/2010/12/10/5218/</link>
       <pubDate>Fri, 10 Dec 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/12/10/5218</guid>
+      <guid>https://yaasita.github.io/2010/12/10/5218/</guid>
       <description>mplayer で出来た
 →　←　でseek
 0 9 / * で音量操作
@@ -204,10 +205,10 @@ hoge.lstにはプレイリストを記述（一行に1ファイル） </descript
     
     <item>
       <title>screenでウィンドウ番号を入れ替える</title>
-      <link>https://yaasita.github.io/2010/12/10/5177</link>
+      <link>https://yaasita.github.io/2010/12/10/5177/</link>
       <pubDate>Fri, 10 Dec 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/12/10/5177</guid>
+      <guid>https://yaasita.github.io/2010/12/10/5177/</guid>
       <description>Ctrl-a押してから:number [n]
 で出来るらしい
 参考リンク
@@ -216,10 +217,10 @@ http://d.hatena.ne.jp/riskn/20070430/1177961903 </description>
     
     <item>
       <title>DebianのsqueezeにしたらUUIDでfstabが設定されてた</title>
-      <link>https://yaasita.github.io/2010/12/04/5239</link>
+      <link>https://yaasita.github.io/2010/12/04/5239/</link>
       <pubDate>Sat, 04 Dec 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/12/04/5239</guid>
+      <guid>https://yaasita.github.io/2010/12/04/5239/</guid>
       <description>以下UUIDの調べ方
 1./devを見る
 ls -l /dev/disk/by-uuid
@@ -231,10 +232,10 @@ http://ankyo.blog.so-net.ne.jp/2010-01-26 </description>
     
     <item>
       <title>Debian squeezeで音が出ない</title>
-      <link>https://yaasita.github.io/2010/11/28/5283</link>
+      <link>https://yaasita.github.io/2010/11/28/5283/</link>
       <pubDate>Sun, 28 Nov 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/11/28/5283</guid>
+      <guid>https://yaasita.github.io/2010/11/28/5283/</guid>
       <description>alsaconfが無くなったらしい
 alsactl initでできるらしい
 参考リンク
@@ -243,10 +244,10 @@ http://d.hatena.ne.jp/toromoti/20100610/1276167033 </description>
     
     <item>
       <title>Debian squeezeにtightvncをインストール</title>
-      <link>https://yaasita.github.io/2010/11/28/5259</link>
+      <link>https://yaasita.github.io/2010/11/28/5259/</link>
       <pubDate>Sun, 28 Nov 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/11/28/5259</guid>
+      <guid>https://yaasita.github.io/2010/11/28/5259/</guid>
       <description>tightvncserver(vncserver)で起動
 (XvncだけでXだけを起動することも出来るが普通は使用しない vncserverがラッパーになっている)
 Xvncのオプションも使えるので
@@ -265,10 +266,10 @@ user@squeeze:~/.vnc$ vncpasswd -f  passwd a user@squeeze:~/.vnc$  </description>
     
     <item>
       <title>XenをDebian squeezeにインストールしてみる</title>
-      <link>https://yaasita.github.io/2010/11/23/5324</link>
+      <link>https://yaasita.github.io/2010/11/23/5324/</link>
       <pubDate>Tue, 23 Nov 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/11/23/5324</guid>
+      <guid>https://yaasita.github.io/2010/11/23/5324/</guid>
       <description>はやっている様なのでXenを使ってみた
 基本的にはDebian Wikiの通りやればOK
 1.必要なパッケージのインストール
@@ -303,10 +304,10 @@ dir = /home/xen</description>
     
     <item>
       <title>smbclientで共有リストを表示させる</title>
-      <link>https://yaasita.github.io/2010/11/23/5303</link>
+      <link>https://yaasita.github.io/2010/11/23/5303/</link>
       <pubDate>Tue, 23 Nov 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/11/23/5303</guid>
+      <guid>https://yaasita.github.io/2010/11/23/5303/</guid>
       <description>192.168.0.11がsambaサーバだったとすると
 smbclient -L 192.168.0.11
  </description>
@@ -314,10 +315,10 @@ smbclient -L 192.168.0.11
     
     <item>
       <title>FLASH版のCookie Shared Objectの削除</title>
-      <link>https://yaasita.github.io/2010/11/13/5345</link>
+      <link>https://yaasita.github.io/2010/11/13/5345/</link>
       <pubDate>Sat, 13 Nov 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/11/13/5345</guid>
+      <guid>https://yaasita.github.io/2010/11/13/5345/</guid>
       <description>こういうのとかYOU ONLY LIVE ONCEShared Objectを削除すれば最初からできる
 Cookieを削除してもなぜか前回の情報を保持してる？と思ったときは試すといいかもしれない
 参考リンク
@@ -326,10 +327,10 @@ http://enchanting.cside.com/security/flashcookie.html </description>
     
     <item>
       <title>ありえない画像検索</title>
-      <link>https://yaasita.github.io/2010/11/04/5365</link>
+      <link>https://yaasita.github.io/2010/11/04/5365/</link>
       <pubDate>Thu, 04 Nov 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/11/04/5365</guid>
+      <guid>https://yaasita.github.io/2010/11/04/5365/</guid>
       <description>文字通りありえない画像を検索します
 元はyahooの画像検索らしい
 http://eroy.8-bit.jp/gazou/
@@ -340,10 +341,10 @@ http://blog.livedoor.jp/darkm/archives/51088800.html </description>
     
     <item>
       <title>Webプロキシ（初心者にでも出来る串より）</title>
-      <link>https://yaasita.github.io/2010/11/02/5385</link>
+      <link>https://yaasita.github.io/2010/11/02/5385/</link>
       <pubDate>Tue, 02 Nov 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/11/02/5385</guid>
+      <guid>https://yaasita.github.io/2010/11/02/5385/</guid>
       <description>こんなん見つけた
 http://anond.pha11.info/archives/5931
 仕組みは分からんが凄そうだ
@@ -357,10 +358,10 @@ http://suh45.blog9.fc2.com/blog-entry-92.html </description>
     
     <item>
       <title>rsshでscp/sftp専用のアカウントを作る</title>
-      <link>https://yaasita.github.io/2010/10/31/5405</link>
+      <link>https://yaasita.github.io/2010/10/31/5405/</link>
       <pubDate>Sun, 31 Oct 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/10/31/5405</guid>
+      <guid>https://yaasita.github.io/2010/10/31/5405/</guid>
       <description>rsshってソフトで実現できるらしい
 基本的にはyum install rsshでインストール→/etc/rssh.confを編集でOKらしい
 で、sftp,scp専用には出来たけどchroot環境を構築するためのスクリプトmkchroot.shが見つからなかった

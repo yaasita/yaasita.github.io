@@ -2,18 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title># cd ~yaasita</title>
-    <link>https://yaasita.github.io/categories/crack/index.xml</link>
+    <link>https://yaasita.github.io/categories/crack/</link>
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="/categories/crack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 May 2017 01:48:56 +0900</lastBuildDate>
+    <atom:link href="/categories/crack/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>コピー禁止のWebサイトについて</title>
-      <link>https://yaasita.github.io/2017/05/21/web-copy-protect</link>
+      <link>https://yaasita.github.io/2017/05/21/web-copy-protect/</link>
       <pubDate>Sun, 21 May 2017 01:48:56 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/05/21/web-copy-protect</guid>
+      <guid>https://yaasita.github.io/2017/05/21/web-copy-protect/</guid>
       <description>コピー禁止のWordpressサイトが増えてきました
 ちょっと検索ワードをコピペするのに不便なので回避方法
 1. とりあえずJavaScriptをOFFる これで大半はOK wp-copyprotect って拡張だけならこれで大丈夫
@@ -33,10 +34,10 @@ Oops! It appears that you have disabled your Javascript. In order for you to see
     
     <item>
       <title>ettercapで中間者攻撃（MITM）</title>
-      <link>https://yaasita.github.io/2013/01/20/1503</link>
+      <link>https://yaasita.github.io/2013/01/20/1503/</link>
       <pubDate>Sun, 20 Jan 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/01/20/1503</guid>
+      <guid>https://yaasita.github.io/2013/01/20/1503/</guid>
       <description>やり方は簡単
 以下のようにして192.168.0.2,192.168.0.11間のメッセージに割り込める
 ettercap -Tq -M arp /192.168.0.2/ /192.168.0.11/
@@ -51,10 +52,10 @@ tcpflow -cse -i eth0 dst port 80
     
     <item>
       <title>Linuxでtorを使ってみる</title>
-      <link>https://yaasita.github.io/2012/01/31/3068</link>
+      <link>https://yaasita.github.io/2012/01/31/3068/</link>
       <pubDate>Tue, 31 Jan 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/01/31/3068</guid>
+      <guid>https://yaasita.github.io/2012/01/31/3068/</guid>
       <description>Torは匿名のプロキシとして動作する
 インストール
 apt-get install tor
@@ -78,10 +79,10 @@ SocksPolicyは何も設定しなければ全て許可 </description>
     
     <item>
       <title>ハッシュ解析の常套手段レインボーテーブル</title>
-      <link>https://yaasita.github.io/2011/05/11/4006</link>
+      <link>https://yaasita.github.io/2011/05/11/4006/</link>
       <pubDate>Wed, 11 May 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/05/11/4006</guid>
+      <guid>https://yaasita.github.io/2011/05/11/4006/</guid>
       <description>レインボーテーブルとはあらかじめ作っておいたハッシュテーブルと平分の対応表を照らし合わせ、平分を得るテクニックらしいです。
 チェインと呼ばれる単位に集約されているので、テーブルの容量が少なくてすむ利点があります。
 ソフトはここら辺からどうぞ
@@ -92,10 +93,10 @@ http://backslash.ddo.jp/wordpress/index.php/archives/584 </description>
     
     <item>
       <title>LANの盗聴について</title>
-      <link>https://yaasita.github.io/2011/05/10/4046</link>
+      <link>https://yaasita.github.io/2011/05/10/4046/</link>
       <pubDate>Tue, 10 May 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/05/10/4046</guid>
+      <guid>https://yaasita.github.io/2011/05/10/4046/</guid>
       <description> 昔、調べたことがあったのでメモ
 有線LANの盗聴にはいくつか種類があって調べた限りだと以下の方法がある
 以下の方法の殆どを行えるソフトはettercapがあるman ettercapとやるだけで勉強になる
@@ -127,10 +128,10 @@ MAC Flood L2スイッチのMACテーブルを溢れさせて馬鹿ハブにし�
     
     <item>
       <title>fork爆弾を試してみる</title>
-      <link>https://yaasita.github.io/2011/05/08/4129</link>
+      <link>https://yaasita.github.io/2011/05/08/4129/</link>
       <pubDate>Sun, 08 May 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/05/08/4129</guid>
+      <guid>https://yaasita.github.io/2011/05/08/4129/</guid>
       <description>sleepだけなら大丈夫かな？と思って以下のスクリプトを実行してみた
 →結果すぐに応答なしになってkillallも効かない状態に＼(^o^)／
 電源を切るしかなくなった
@@ -145,10 +146,10 @@ done &amp;amp;
     
     <item>
       <title>tinyhoneypotを使ってみる</title>
-      <link>https://yaasita.github.io/2011/02/06/4778</link>
+      <link>https://yaasita.github.io/2011/02/06/4778/</link>
       <pubDate>Sun, 06 Feb 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/02/06/4778</guid>
+      <guid>https://yaasita.github.io/2011/02/06/4778/</guid>
       <description>aptかなんかでインストールコマンドは→thpot
 thpotはxinetdかinetdを通してでも起動できます
 接続とセッションを通しての命令は全てログに記録されます
@@ -160,10 +161,10 @@ shell, ftp, http, mssql, smtp, pop3 ,ssh
     
     <item>
       <title>ライブカメラを検索する</title>
-      <link>https://yaasita.github.io/2010/02/21/7286</link>
+      <link>https://yaasita.github.io/2010/02/21/7286/</link>
       <pubDate>Sun, 21 Feb 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/02/21/7286</guid>
+      <guid>https://yaasita.github.io/2010/02/21/7286/</guid>
       <description>inurl:ViewerFrame?Mode=で検索
 2ch記事
 ちょｗグーグルで「inurl:ViewerFrame?Mode= 」って検索してみｗｗｗ </description>
@@ -171,19 +172,19 @@ shell, ftp, http, mssql, smtp, pop3 ,ssh
     
     <item>
       <title>なんか知らないがROM配ってるサイト</title>
-      <link>https://yaasita.github.io/2009/09/06/8695</link>
+      <link>https://yaasita.github.io/2009/09/06/8695/</link>
       <pubDate>Sun, 06 Sep 2009 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2009/09/06/8695</guid>
+      <guid>https://yaasita.github.io/2009/09/06/8695/</guid>
       <description>http://ja.nitroroms.com/roms </description>
     </item>
     
     <item>
       <title>sonb32drv.dllってウィルスに感染してた</title>
-      <link>https://yaasita.github.io/2009/06/14/9342</link>
+      <link>https://yaasita.github.io/2009/06/14/9342/</link>
       <pubDate>Sun, 14 Jun 2009 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2009/06/14/9342</guid>
+      <guid>https://yaasita.github.io/2009/06/14/9342/</guid>
       <description>／(＾o＾)＼ナンテコッタイ
 つーことで対処法
 とりあえずC:\WINDOWS\system32\sonb32drv.dllを削除
@@ -235,10 +236,10 @@ http://onecare.live.com/site/ja-jp/center/cleanup.htm </description>
     
     <item>
       <title>PDFのパスワードを解析するソフトpdfcrack</title>
-      <link>https://yaasita.github.io/2009/04/19/9704</link>
+      <link>https://yaasita.github.io/2009/04/19/9704/</link>
       <pubDate>Sun, 19 Apr 2009 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2009/04/19/9704</guid>
+      <guid>https://yaasita.github.io/2009/04/19/9704/</guid>
       <description>Debian(lenny)のレポジトリにありました。
 aptで簡単インストール。
 使い方は
@@ -254,10 +255,10 @@ http://gigazine.net/index.php?/news/comments/20090219_pdfcrack/ </description>
     
     <item>
       <title>オラバウトが閉鎖されちゃうよー｡･ﾟ･(ﾉд`)･ﾟ･｡</title>
-      <link>https://yaasita.github.io/2009/04/15/9765</link>
+      <link>https://yaasita.github.io/2009/04/15/9765/</link>
       <pubDate>Wed, 15 Apr 2009 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2009/04/15/9765</guid>
+      <guid>https://yaasita.github.io/2009/04/15/9765/</guid>
       <description>そんなあなたに
 シナバウト
 http://www.alabout.com/
@@ -271,10 +272,10 @@ http://www.genie.x0.com/alabout/closed.phtml </description>
     
     <item>
       <title>解析テンプレ</title>
-      <link>https://yaasita.github.io/2008/10/24/11060</link>
+      <link>https://yaasita.github.io/2008/10/24/11060/</link>
       <pubDate>Fri, 24 Oct 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/10/24/11060</guid>
+      <guid>https://yaasita.github.io/2008/10/24/11060/</guid>
       <description>定番解析ソフトと解析勉強サイト
 ●デバッガ OllyDbg
 Digital Travesiaで再配布
@@ -302,10 +303,10 @@ ISBN:4871482456 1,682円 286頁
     
     <item>
       <title>nmapを使う</title>
-      <link>https://yaasita.github.io/2008/03/31/12673</link>
+      <link>https://yaasita.github.io/2008/03/31/12673/</link>
       <pubDate>Mon, 31 Mar 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/03/31/12673</guid>
+      <guid>https://yaasita.github.io/2008/03/31/12673/</guid>
       <description>nmap -sS -P0 -T2 -p 1-65535 -oN kaons.txt -r -v -sV hoge.co.jp
 -sS　ステルススキャン
 -P0 ホストの発見を省略する（確実にそのホストが存在していると分かっている場合はこれを使用する）
@@ -322,10 +323,10 @@ ISBN:4871482456 1,682円 286頁
     
     <item>
       <title>School Days LxHの動画を抽出する</title>
-      <link>https://yaasita.github.io/2008/01/20/12983</link>
+      <link>https://yaasita.github.io/2008/01/20/12983/</link>
       <pubDate>Sun, 20 Jan 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/01/20/12983</guid>
+      <guid>https://yaasita.github.io/2008/01/20/12983/</guid>
       <description>まずDVDの読めるPCでディスクを検索します。
 次にMV.AFSという1.15GBくらいのファイルがあるのでHDDにコピーします。
 この中にpssファイルがアーカイブされているので抽出します。
@@ -339,10 +340,10 @@ http://freeuse.ddo.jp/contents/game/ps2/ps2mov.html </description>
     
     <item>
       <title>昔、流行った地下ゲーム</title>
-      <link>https://yaasita.github.io/2007/12/31/13045</link>
+      <link>https://yaasita.github.io/2007/12/31/13045/</link>
       <pubDate>Mon, 31 Dec 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/12/31/13045</guid>
+      <guid>https://yaasita.github.io/2007/12/31/13045/</guid>
       <description>ブラックユーモア溢れるゲームたちです。
 倉庫番はHDDがフォーマットされる可能性があります。
 WindowsXP環境では平気でした。
@@ -351,19 +352,19 @@ http://www.hehehe.net/game/ </description>
     
     <item>
       <title>中国系P2Pテレビを視聴するには？</title>
-      <link>https://yaasita.github.io/2007/11/12/13395</link>
+      <link>https://yaasita.github.io/2007/11/12/13395/</link>
       <pubDate>Mon, 12 Nov 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/11/12/13395</guid>
+      <guid>https://yaasita.github.io/2007/11/12/13395/</guid>
       <description>https://wiki.ubuntulinux.jp/UbuntuTips/Application/P2Ptv </description>
     </item>
     
     <item>
       <title>アイコンを偽装できる拡張子はexeとsrcだけ</title>
-      <link>https://yaasita.github.io/2007/10/27/13502</link>
+      <link>https://yaasita.github.io/2007/10/27/13502/</link>
       <pubDate>Sat, 27 Oct 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/10/27/13502</guid>
+      <guid>https://yaasita.github.io/2007/10/27/13502/</guid>
       <description>ウイルスの拡張子をtxtにするともとのアイコンに戻るのはそのためです。
 よって下の記事は正確ではないようです。
 http://www.atmarkit.co.jp/fsecurity/special/90winny/winny05.html
@@ -373,10 +374,10 @@ http://www.tokix.net/txt/WinnyVirus.html </description>
     
     <item>
       <title>山田ウィルスの挙動とバイナリ</title>
-      <link>https://yaasita.github.io/2007/09/26/13809</link>
+      <link>https://yaasita.github.io/2007/09/26/13809/</link>
       <pubDate>Wed, 26 Sep 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/09/26/13809</guid>
+      <guid>https://yaasita.github.io/2007/09/26/13809/</guid>
       <description>●山田オルタナティブ（WORM_ANTINNY.BI、W32.Yawmo）
 【主な被害】
 ・2段階の画質でSSを出力し、他の（´・ω・） ｶﾜｲｿｽな香具師へ相互リンク
@@ -420,10 +421,10 @@ Backdoor.Win32.Agent.xs
     
     <item>
       <title>MACアドレスを任意のものに変える</title>
-      <link>https://yaasita.github.io/2007/08/15/14036</link>
+      <link>https://yaasita.github.io/2007/08/15/14036/</link>
       <pubDate>Wed, 15 Aug 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/08/15/14036</guid>
+      <guid>https://yaasita.github.io/2007/08/15/14036/</guid>
       <description>WindowsXPでは
 コントロールパネル→システム→ハードウェアタブのデバイスマネージャをクリック
 →ネットワークアダプタの項を展開し変更するNICを選び右クリック→プロパティ

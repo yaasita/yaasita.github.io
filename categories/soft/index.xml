@@ -2,18 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title># cd ~yaasita</title>
-    <link>https://yaasita.github.io/categories/soft/index.xml</link>
+    <link>https://yaasita.github.io/categories/soft/</link>
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 09 Apr 2017 23:28:13 +0900</lastBuildDate>
+    <atom:link href="/categories/soft/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>gpg鍵を変えた</title>
-      <link>https://yaasita.github.io/2017/04/09/update-gpg-key</link>
+      <link>https://yaasita.github.io/2017/04/09/update-gpg-key/</link>
       <pubDate>Sun, 09 Apr 2017 23:28:13 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/04/09/update-gpg-key</guid>
+      <guid>https://yaasita.github.io/2017/04/09/update-gpg-key/</guid>
       <description>https://keybase.io/yaasita
 有効期限を付けて1年毎に交換するのは止めよう
 keybase.ioの更新がめんどくさすぎる
@@ -23,10 +24,10 @@ keybase.ioの更新がめんどくさすぎる
     
     <item>
       <title>Vimの副ファイル</title>
-      <link>https://yaasita.github.io/2017/03/30/vim-alternate-file</link>
+      <link>https://yaasita.github.io/2017/03/30/vim-alternate-file/</link>
       <pubDate>Thu, 30 Mar 2017 01:46:13 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/03/30/vim-alternate-file</guid>
+      <guid>https://yaasita.github.io/2017/03/30/vim-alternate-file/</guid>
       <description>なんか検索に引っかからないのでメモ
 英語で the alternate file ってやつを取るときは Ctrl-^コマンドでやる
 日本語配列だとCtrl-6かな
@@ -39,10 +40,10 @@ alternate file = 代替ファイル = 副ファイル
     
     <item>
       <title>DockerでAUFSを使わない</title>
-      <link>https://yaasita.github.io/2017/03/21/do-not-use-aufs</link>
+      <link>https://yaasita.github.io/2017/03/21/do-not-use-aufs/</link>
       <pubDate>Tue, 21 Mar 2017 23:06:46 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/03/21/do-not-use-aufs</guid>
+      <guid>https://yaasita.github.io/2017/03/21/do-not-use-aufs/</guid>
       <description>AUFSっていうか/var/lib/dockerに置きたくないとかそういう話
 Dockerでもsystemd-nspawnよろしくそのディレクトリで即座にコンテナ上げたいとき
  要するに /proc, /dev, /sys, /net あたりを外して全部bindしちゃえばよかった</description>
@@ -50,10 +51,10 @@ Dockerでもsystemd-nspawnよろしくそのディレクトリで即座にコン
     
     <item>
       <title>Vimのエンコード周り</title>
-      <link>https://yaasita.github.io/2017/02/17/vim-encodeing</link>
+      <link>https://yaasita.github.io/2017/02/17/vim-encodeing/</link>
       <pubDate>Fri, 17 Feb 2017 23:56:59 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/02/17/vim-encodeing</guid>
+      <guid>https://yaasita.github.io/2017/02/17/vim-encodeing/</guid>
       <description>下図参照
 https://yaasita.tumblr.com/post/157354717792
 
@@ -64,10 +65,10 @@ https://yaasita.tumblr.com/post/157354717792
     
     <item>
       <title>ansibleで作ったロール</title>
-      <link>https://yaasita.github.io/2017/01/09/my-ansible-role</link>
+      <link>https://yaasita.github.io/2017/01/09/my-ansible-role/</link>
       <pubDate>Mon, 09 Jan 2017 16:24:41 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/01/09/my-ansible-role</guid>
+      <guid>https://yaasita.github.io/2017/01/09/my-ansible-role/</guid>
       <description>成果物  ec2でスワップファイル置くとかするやつ
  https://github.com/yaasita/ansible_role_amazon-ec2
   aptのproxy設定
@@ -99,10 +100,10 @@ https://yaasita.tumblr.com/post/157354717792
     
     <item>
       <title>smplayerでリピート再生</title>
-      <link>https://yaasita.github.io/2016/08/27/smplayer</link>
+      <link>https://yaasita.github.io/2016/08/27/smplayer/</link>
       <pubDate>Sat, 27 Aug 2016 14:33:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/08/27/smplayer</guid>
+      <guid>https://yaasita.github.io/2016/08/27/smplayer/</guid>
       <description>ずっとループして再生
  再生(P) → A-Bセクション(A) → 繰り返し&amp;reg;
   </description>
@@ -110,10 +111,10 @@ https://yaasita.tumblr.com/post/157354717792
     
     <item>
       <title>s3fs使う</title>
-      <link>https://yaasita.github.io/2016/06/22/s3fs</link>
+      <link>https://yaasita.github.io/2016/06/22/s3fs/</link>
       <pubDate>Wed, 22 Jun 2016 13:40:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/06/22/s3fs</guid>
+      <guid>https://yaasita.github.io/2016/06/22/s3fs/</guid>
       <description>s3fsはamazon S3をファイルしすてむのように使うやつ
 ただ遅い
 基本ここ見てやる
@@ -124,10 +125,10 @@ https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes
     
     <item>
       <title>リアルタイム監視ソフトnetdata</title>
-      <link>https://yaasita.github.io/2016/04/25/netdata</link>
+      <link>https://yaasita.github.io/2016/04/25/netdata/</link>
       <pubDate>Mon, 25 Apr 2016 23:24:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/04/25/netdata</guid>
+      <guid>https://yaasita.github.io/2016/04/25/netdata/</guid>
       <description>https://github.com/firehol/netdata
 インストール
 https://github.com/firehol/netdata/wiki/Installation
@@ -136,10 +137,10 @@ https://github.com/firehol/netdata/wiki/Installation
     
     <item>
       <title>ファイル同期ソフトSyncthing</title>
-      <link>https://yaasita.github.io/2016/04/25/syncthing</link>
+      <link>https://yaasita.github.io/2016/04/25/syncthing/</link>
       <pubDate>Mon, 25 Apr 2016 23:16:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/04/25/syncthing</guid>
+      <guid>https://yaasita.github.io/2016/04/25/syncthing/</guid>
       <description>ファイル同期ソフトSyncthingを試してみる
 公式
 https://syncthing.net/
@@ -153,10 +154,10 @@ Androidでも動く
     
     <item>
       <title>Git-itやってみた</title>
-      <link>https://yaasita.github.io/2016/04/24/git-it</link>
+      <link>https://yaasita.github.io/2016/04/24/git-it/</link>
       <pubDate>Sun, 24 Apr 2016 02:05:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/04/24/git-it</guid>
+      <guid>https://yaasita.github.io/2016/04/24/git-it/</guid>
       <description>日本語も選択できるElectron製のアプリで
 ステップバイステップで勉強できる
 ここのリリースページからバイナリを落として実行する
@@ -175,10 +176,10 @@ http://yaasita.github.io/patchwork/
     
     <item>
       <title>素因数分解の話</title>
-      <link>https://yaasita.github.io/2016/01/11/factor</link>
+      <link>https://yaasita.github.io/2016/01/11/factor/</link>
       <pubDate>Mon, 11 Jan 2016 02:20:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/01/11/factor</guid>
+      <guid>https://yaasita.github.io/2016/01/11/factor/</guid>
       <description>素因数分解してくれるサービス
 http://factordb.com/
 自分のSSH鍵がリストされてないか確認してみる
@@ -194,10 +195,10 @@ perlで大きめの数値計算する例も
     
     <item>
       <title>docker composeインストール</title>
-      <link>https://yaasita.github.io/2015/12/31/compose</link>
+      <link>https://yaasita.github.io/2015/12/31/compose/</link>
       <pubDate>Thu, 31 Dec 2015 18:16:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/12/31/compose</guid>
+      <guid>https://yaasita.github.io/2015/12/31/compose/</guid>
       <description>docker-composeもcheckinstallでdebパッケージにしといた
 https://goo.gl/MKXvhm
 Makefile
@@ -206,10 +207,10 @@ install: chmod +x bin/docker-compose cp bin/docker-compose /usr/local/bin/ cp ba
     
     <item>
       <title>checkinstallでdocker-machineをパッケージに</title>
-      <link>https://yaasita.github.io/2015/12/30/checkinstall</link>
+      <link>https://yaasita.github.io/2015/12/30/checkinstall/</link>
       <pubDate>Wed, 30 Dec 2015 03:16:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/12/30/checkinstall</guid>
+      <guid>https://yaasita.github.io/2015/12/30/checkinstall/</guid>
       <description>debパッケージにするとアンインストールが楽になる
  https://github.com/docker/machine
  https://goo.gl/X5Njaz
@@ -221,10 +222,10 @@ docker-machine-0.5.5/ ├── Makefile ├── docker-machine ├── dock
     
     <item>
       <title>handbrakeでISOをエンコード</title>
-      <link>https://yaasita.github.io/2015/08/25/handbrake</link>
+      <link>https://yaasita.github.io/2015/08/25/handbrake/</link>
       <pubDate>Tue, 25 Aug 2015 00:32:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/08/25/handbrake</guid>
+      <guid>https://yaasita.github.io/2015/08/25/handbrake/</guid>
       <description>Linuxで動画のエンコード/リッピングするとき
 apt-get handbreak  handbrake-gtk
 で起動して、左側のソース選んで
@@ -235,10 +236,10 @@ http://yaasita.tumblr.com/post/127482624497</description>
     
     <item>
       <title>saslauthd-debian</title>
-      <link>https://yaasita.github.io/2015/07/26/saslauthd-debian</link>
+      <link>https://yaasita.github.io/2015/07/26/saslauthd-debian/</link>
       <pubDate>Sun, 26 Jul 2015 02:42:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/07/26/saslauthd-debian</guid>
+      <guid>https://yaasita.github.io/2015/07/26/saslauthd-debian/</guid>
       <description>なんか Debian Jessie(8.1)のsaslauthdのsystemd定義が書かれてない気がする
 なので自動起動に設定したかったら自分で書く感じで
 /etc/systemd/system/saslauthd.service
@@ -248,10 +249,10 @@ systemctl daemon-reload systemctl enable saslauthd.service systemctl start sasla
     
     <item>
       <title>MySQLの地図情報</title>
-      <link>https://yaasita.github.io/2015/05/31/mysql-gis</link>
+      <link>https://yaasita.github.io/2015/05/31/mysql-gis/</link>
       <pubDate>Sun, 31 May 2015 01:58:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/05/31/mysql-gis</guid>
+      <guid>https://yaasita.github.io/2015/05/31/mysql-gis/</guid>
       <description>MySQLのGIS回り
 こんな感じで使うぽい
 # インサート insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;旭鮨総本店 新宿住友ビル50F店&#39; ,GeomFromText(&#39;POINT(35.691421 139.692595)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;久兵衛 京王プラザホテル店&#39; ,GeomFromText(&#39;POINT(35.689685 13 9.694664)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;白金寿司&#39; ,GeomFromText(&#39;POINT(35.693417 139.687282)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;喜与し&#39; ,GeomFromText(&#39;POINT(35.692192 139.742396)&#39;) ); # 現在の位置から近い順に表示 コンシェリア西新宿= 35.692777 139.687362 select shop_name, GLength( GeomFromText( concat(&#39;LineString(35.</description>
@@ -259,10 +260,10 @@ systemctl daemon-reload systemctl enable saslauthd.service systemctl start sasla
     
     <item>
       <title>Meteor チュートリアル 01</title>
-      <link>https://yaasita.github.io/2015/05/10/meteor-tutorial01</link>
+      <link>https://yaasita.github.io/2015/05/10/meteor-tutorial01/</link>
       <pubDate>Sun, 10 May 2015 00:28:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/05/10/meteor-tutorial01</guid>
+      <guid>https://yaasita.github.io/2015/05/10/meteor-tutorial01/</guid>
       <description>話題のMeteorを触ってみた
 discovermeteorっていうチュートリアル本があるのでやってみる
 なんか原文は有料になってる気がするけど翻訳版は読めるみたい
@@ -290,10 +291,10 @@ meteor deploy yaasita.meteor.com  なんかこれでできるぽい</description
     
     <item>
       <title>Linuxでスクリーンショット取る</title>
-      <link>https://yaasita.github.io/2015/04/18/linux-screenshot</link>
+      <link>https://yaasita.github.io/2015/04/18/linux-screenshot/</link>
       <pubDate>Sat, 18 Apr 2015 02:03:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/04/18/linux-screenshot</guid>
+      <guid>https://yaasita.github.io/2015/04/18/linux-screenshot/</guid>
       <description>shutterというのがよさ気
 apt-get install shutter  http://www.xmisao.com/2014/02/07/get-screenshot-on-linux-by-shutter.html
 他にxwd使う方法もある
@@ -302,10 +303,10 @@ apt-get install shutter  http://www.xmisao.com/2014/02/07/get-screenshot-on-linu
     
     <item>
       <title>Linuxのクリップボードマネージャ</title>
-      <link>https://yaasita.github.io/2015/04/18/linux-clipboard-manager</link>
+      <link>https://yaasita.github.io/2015/04/18/linux-clipboard-manager/</link>
       <pubDate>Sat, 18 Apr 2015 01:31:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/04/18/linux-clipboard-manager</guid>
+      <guid>https://yaasita.github.io/2015/04/18/linux-clipboard-manager/</guid>
       <description>diodon apt-get install diodon  初期設定はCtrl + Alt + vで呼び出し
 Preferenceから以下の設定を直した
  Automatically paste selected item
@@ -321,10 +322,10 @@ apt-get install klipper  初期はShift+Zになってるので設定からなお
     
     <item>
       <title>boxesっていうソフト</title>
-      <link>https://yaasita.github.io/2015/03/29/boxes</link>
+      <link>https://yaasita.github.io/2015/03/29/boxes/</link>
       <pubDate>Sun, 29 Mar 2015 03:06:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/03/29/boxes</guid>
+      <guid>https://yaasita.github.io/2015/03/29/boxes/</guid>
       <description>vimでも使える
 apt-get install boxes  Visual Modeで選択して
 !boxes -d shell  とかやる

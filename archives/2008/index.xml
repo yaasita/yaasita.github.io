@@ -2,18 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title># cd ~yaasita</title>
-    <link>https://yaasita.github.io/archives/2008/index.xml</link>
+    <link>https://yaasita.github.io/archives/2008/</link>
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="/archives/2008/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 31 Dec 2008 00:00:00 +0900</lastBuildDate>
+    <atom:link href="/archives/2008/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>iptablesで設定したルールを再起動後も反映したい</title>
-      <link>https://yaasita.github.io/2008/12/31/10585</link>
+      <link>https://yaasita.github.io/2008/12/31/10585/</link>
       <pubDate>Wed, 31 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/12/31/10585</guid>
+      <guid>https://yaasita.github.io/2008/12/31/10585/</guid>
       <description>どこに書けばいいのでしょうか？　＞ Debian , Ubuntu
 正解は/etc/network/if-pre-up.d
 iptables-restoreコマンドをうまいこと駆使してやってください
@@ -45,19 +46,19 @@ iptables -F
     
     <item>
       <title>携帯端末以外のIPを制限するhtaccessを簡単生成</title>
-      <link>https://yaasita.github.io/2008/12/31/10607</link>
+      <link>https://yaasita.github.io/2008/12/31/10607/</link>
       <pubDate>Wed, 31 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/12/31/10607</guid>
+      <guid>https://yaasita.github.io/2008/12/31/10607/</guid>
       <description>http://www.dspt.net/tools/mobile_ip/ </description>
     </item>
     
     <item>
       <title>Drupalをubuntu8.10にインストール</title>
-      <link>https://yaasita.github.io/2008/12/25/10628</link>
+      <link>https://yaasita.github.io/2008/12/25/10628/</link>
       <pubDate>Thu, 25 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/12/25/10628</guid>
+      <guid>https://yaasita.github.io/2008/12/25/10628/</guid>
       <description>１．環境設定
 LAMP入れとけばおｋ
 ２．mySQLでテーブル作成
@@ -73,10 +74,10 @@ http://drupal.jp/drupal6/quick_start </description>
     
     <item>
       <title>WMP11でWindows Live Messengerに再生曲表示</title>
-      <link>https://yaasita.github.io/2008/12/24/10671</link>
+      <link>https://yaasita.github.io/2008/12/24/10671/</link>
       <pubDate>Wed, 24 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/12/24/10671</guid>
+      <guid>https://yaasita.github.io/2008/12/24/10671/</guid>
       <description>なんか手順が変わってた
 Windows Live Messenger は、現在、自分の聞いている曲をメンバーにお知らせできる機能があります。
 しかし、Messenger の設定で表示するようにしたつもりなのですが、表示されていないのに気がつきました。
@@ -98,30 +99,30 @@ Windows Media Player 11の場合
     
     <item>
       <title>auのUA</title>
-      <link>https://yaasita.github.io/2008/12/24/10650</link>
+      <link>https://yaasita.github.io/2008/12/24/10650/</link>
       <pubDate>Wed, 24 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/12/24/10650</guid>
+      <guid>https://yaasita.github.io/2008/12/24/10650/</guid>
       <description>携帯のUserAgentを知りたいなーってときにすぐ出てこないのでメモ
 KDDI-KC37 UP.Browser/6.2.0.11.1.2.2e (GUI) MMP/2.0 </description>
     </item>
     
     <item>
       <title>決済用普通預金ってのがあるらしい</title>
-      <link>https://yaasita.github.io/2008/12/23/10691</link>
+      <link>https://yaasita.github.io/2008/12/23/10691/</link>
       <pubDate>Tue, 23 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/12/23/10691</guid>
+      <guid>https://yaasita.github.io/2008/12/23/10691/</guid>
       <description>利息はつかないけど、全額保障されるらしい
 ペイオフで保障されるのは1000万までだから金持ちの人はいいんじゃないかな </description>
     </item>
     
     <item>
       <title>.bashrcを作っても読み込まないよー＞＜</title>
-      <link>https://yaasita.github.io/2008/12/21/10753</link>
+      <link>https://yaasita.github.io/2008/12/21/10753/</link>
       <pubDate>Sun, 21 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/12/21/10753</guid>
+      <guid>https://yaasita.github.io/2008/12/21/10753/</guid>
       <description>そんなときは.profileを作ればいいのさ
 こんな感じで・・・
 # ~/.profile: executed by the command interpreter for login shells.
@@ -138,10 +139,10 @@ if [ -n &#34;</description>
     
     <item>
       <title>ubuntu8.10にはgnump3dパッケージが無いんだ</title>
-      <link>https://yaasita.github.io/2008/12/21/10732</link>
+      <link>https://yaasita.github.io/2008/12/21/10732/</link>
       <pubDate>Sun, 21 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/12/21/10732</guid>
+      <guid>https://yaasita.github.io/2008/12/21/10732/</guid>
       <description>やあ （´・ω・｀) ようこそ、Ubuntu8.10へ。
 うん、「また」なんだ。
 つーわけでgnump3dを入れるとなると自分でソースからビルドするか、debパッケージを探すかになります。
@@ -157,10 +158,10 @@ debパッケージをインストールする </description>
     
     <item>
       <title>ここら辺でsquidのconfをまとめようか</title>
-      <link>https://yaasita.github.io/2008/12/21/10711</link>
+      <link>https://yaasita.github.io/2008/12/21/10711/</link>
       <pubDate>Sun, 21 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/12/21/10711</guid>
+      <guid>https://yaasita.github.io/2008/12/21/10711/</guid>
       <description>acl all src all
 acl manager proto cache_object
 acl localhost src 127.0.0.1/32
@@ -177,20 +178,20 @@ acl Safe_ports port 21 # ftp</description>
     
     <item>
       <title>manコマンドの出力をtxtにする</title>
-      <link>https://yaasita.github.io/2008/12/19/10793</link>
+      <link>https://yaasita.github.io/2008/12/19/10793/</link>
       <pubDate>Fri, 19 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/12/19/10793</guid>
+      <guid>https://yaasita.github.io/2008/12/19/10793/</guid>
       <description>man uptime | col -bfx &amp;amp;lt; uptime.txt
 こんな感じでおｋ </description>
     </item>
     
     <item>
       <title>なんか軽くて良い音楽プレイヤーがあるらしい</title>
-      <link>https://yaasita.github.io/2008/12/19/10773</link>
+      <link>https://yaasita.github.io/2008/12/19/10773/</link>
       <pubDate>Fri, 19 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/12/19/10773</guid>
+      <guid>https://yaasita.github.io/2008/12/19/10773/</guid>
       <description>今までMPC使ってたけどこれもいいかもね
 Fittle
 まとめwiki </description>
@@ -198,10 +199,10 @@ Fittle
     
     <item>
       <title>FLASH版CookieみたいなSharedObjectについて</title>
-      <link>https://yaasita.github.io/2008/12/14/10834</link>
+      <link>https://yaasita.github.io/2008/12/14/10834/</link>
       <pubDate>Sun, 14 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/12/14/10834</guid>
+      <guid>https://yaasita.github.io/2008/12/14/10834/</guid>
       <description>とあるゲームをやっていたときにふと思ったのでメモ。
 ゲームをプレイしてある面で止める→次にブラウザ立ち上げてみる→続きからPLAYできる→Cookieを消してみる→続きから出来る
 なぜ？それはFLASHのSharedObjectというデータを読み込んでいるからなのさ
@@ -217,10 +218,10 @@ http://www.gravity-works.jp/gravica/web/000077.shtml </description>
     
     <item>
       <title>今日覚えた四字熟語</title>
-      <link>https://yaasita.github.io/2008/12/14/10814</link>
+      <link>https://yaasita.github.io/2008/12/14/10814/</link>
       <pubDate>Sun, 14 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/12/14/10814</guid>
+      <guid>https://yaasita.github.io/2008/12/14/10814/</guid>
       <description>・朝三暮四
 目先のことしか見えてないこと
 ・八面六臂
@@ -231,10 +232,10 @@ http://contest2004.thinkquest.jp/tqj2004/70237/t/tyousan.html </description>
     
     <item>
       <title>cshの限界について</title>
-      <link>https://yaasita.github.io/2008/12/07/10856</link>
+      <link>https://yaasita.github.io/2008/12/07/10856/</link>
       <pubDate>Sun, 07 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/12/07/10856</guid>
+      <guid>https://yaasita.github.io/2008/12/07/10856/</guid>
       <description>配列を参照するのにforeach文というものがあります
 これはperlとかphpにあったりします。そんでcshにもあるのですが・・・
 なぜかcshのforeach文に指定できる配列数の上限は997なのです
@@ -281,10 +282,10 @@ open (FH,&#34;list.txt&#34;);</description>
     
     <item>
       <title>Firefoxの拡張 backword を試す</title>
-      <link>https://yaasita.github.io/2008/12/06/10876</link>
+      <link>https://yaasita.github.io/2008/12/06/10876/</link>
       <pubDate>Sat, 06 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/12/06/10876</guid>
+      <guid>https://yaasita.github.io/2008/12/06/10876/</guid>
       <description>backwordはなんかホップアップで単語の意味を表示してくれる拡張みたいです。
 Googleツールバーにも同様の機能があるらしいけど分からん・・・・
 ココからインストールして
@@ -310,10 +311,10 @@ Automatically back word and context　→　ポップアップにあらわれる
     
     <item>
       <title>VirtualPCの設定ファイルとかの場所は？</title>
-      <link>https://yaasita.github.io/2008/11/30/10916</link>
+      <link>https://yaasita.github.io/2008/11/30/10916/</link>
       <pubDate>Sun, 30 Nov 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/11/30/10916</guid>
+      <guid>https://yaasita.github.io/2008/11/30/10916/</guid>
       <description>・使用しているバーチャルHDDは？
 VirtualPCコンソール→設定(T)→ハードディスクのバーチャルハードディスクファイルってのを見れば分かると思う
 ・使用してるVirtualマシンは？（その他、復元ファイルなどは？）
@@ -323,10 +324,10 @@ VirtualPCコンソール→設定(T)→ハードディスクのバーチャル�
     
     <item>
       <title>％COMSPEC％→がcmd.exeを示すように・・・</title>
-      <link>https://yaasita.github.io/2008/11/30/10896</link>
+      <link>https://yaasita.github.io/2008/11/30/10896/</link>
       <pubDate>Sun, 30 Nov 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/11/30/10896</guid>
+      <guid>https://yaasita.github.io/2008/11/30/10896/</guid>
       <description>環境変数を列挙したページがあったようだ
 cd %APPDATA%
 とかやるとアプリケーションデータに行くと思うよ
@@ -335,10 +336,10 @@ http://www.atmarkit.co.jp/fwin2k/win2ktips/267swchos/swchos.html </description>
     
     <item>
       <title>ゲーム</title>
-      <link>https://yaasita.github.io/2008/11/28/10937</link>
+      <link>https://yaasita.github.io/2008/11/28/10937/</link>
       <pubDate>Fri, 28 Nov 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/11/28/10937</guid>
+      <guid>https://yaasita.github.io/2008/11/28/10937/</guid>
       <description>切って進めるゲーム(splitter)
 http://www.kongregate.com/games/EvgenyKarataev/splitter/
 ニコニコメーカー
@@ -349,10 +350,10 @@ http://jp.youtube.com/watch?v=PHF6WKd1MyU </description>
     
     <item>
       <title>FFベンチをやってみた</title>
-      <link>https://yaasita.github.io/2008/11/26/10958</link>
+      <link>https://yaasita.github.io/2008/11/26/10958/</link>
       <pubDate>Wed, 26 Nov 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/11/26/10958</guid>
+      <guid>https://yaasita.github.io/2008/11/26/10958/</guid>
       <description>結果は3000くらい
 ２ｃｈのテンプレに習って報告してみる
 構成
@@ -373,10 +374,10 @@ http://www.playonline.com/ff11/download/media/benchmark01.html </description>
     
     <item>
       <title>apache2でWebDAV設定→Thunderbirdのカレンダー公開</title>
-      <link>https://yaasita.github.io/2008/10/26/10979</link>
+      <link>https://yaasita.github.io/2008/10/26/10979/</link>
       <pubDate>Sun, 26 Oct 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/10/26/10979</guid>
+      <guid>https://yaasita.github.io/2008/10/26/10979/</guid>
       <description>環境はDebian etch - apache2.2を想定
 １．a2enmodで必要なモジュール読み込む
 a2enmod webdav

@@ -2,18 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title># cd ~yaasita</title>
-    <link>https://yaasita.github.io/categories/hard/index.xml</link>
+    <link>https://yaasita.github.io/categories/hard/</link>
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="/categories/hard/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 Jan 2017 16:27:40 +0900</lastBuildDate>
+    <atom:link href="/categories/hard/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>MacBook買ったのでサポートお願いした</title>
-      <link>https://yaasita.github.io/2017/01/09/mac-personal-setup</link>
+      <link>https://yaasita.github.io/2017/01/09/mac-personal-setup/</link>
       <pubDate>Mon, 09 Jan 2017 16:27:40 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/01/09/mac-personal-setup</guid>
+      <guid>https://yaasita.github.io/2017/01/09/mac-personal-setup/</guid>
       <description>13インチ MacBook Air 1.6GHzデュアルコアIntel Core i5 整備済製品 (\84,000)で買ったのでパーソナルセットアップをお願いしてみた
 時間は30分だったけど、電話でいろいろ質問できて良い
 http://www.apple.com/jp/retail/personalsetup/</description>
@@ -21,10 +22,10 @@ http://www.apple.com/jp/retail/personalsetup/</description>
     
     <item>
       <title>最近買ったスマホ</title>
-      <link>https://yaasita.github.io/2016/10/22/smart-phone</link>
+      <link>https://yaasita.github.io/2016/10/22/smart-phone/</link>
       <pubDate>Sat, 22 Oct 2016 22:54:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/10/22/smart-phone</guid>
+      <guid>https://yaasita.github.io/2016/10/22/smart-phone/</guid>
       <description>エイスース SIMフリースマートフォン
 ZenFone 2 Laser（Qualcomm Snapdragon 410/メモリ 2GB）
 16GB ブラック ZE500KL-BK16
@@ -34,10 +35,10 @@ Androidは6.0.1まで上がった</description>
     
     <item>
       <title>HDDの不良セクタ埋める</title>
-      <link>https://yaasita.github.io/2016/03/26/hdd_bad_sector</link>
+      <link>https://yaasita.github.io/2016/03/26/hdd_bad_sector/</link>
       <pubDate>Sat, 26 Mar 2016 00:43:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/03/26/hdd_bad_sector</guid>
+      <guid>https://yaasita.github.io/2016/03/26/hdd_bad_sector/</guid>
       <description>HDDの不良セクタ代替処理を自動化
 Reallocated_Sector_Ctが残ってれば使える手法
 https://github.com/yaasita/hdd_badsector
@@ -47,10 +48,10 @@ smartctl -a /dev/sdc | ./hdd_check.pl /dev/sdc  </description>
     
     <item>
       <title>systemdでの電源管理</title>
-      <link>https://yaasita.github.io/2016/01/06/acpi</link>
+      <link>https://yaasita.github.io/2016/01/06/acpi/</link>
       <pubDate>Wed, 06 Jan 2016 00:47:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/01/06/acpi</guid>
+      <guid>https://yaasita.github.io/2016/01/06/acpi/</guid>
       <description>Arch Linuxのwikiが詳しかった
 /etc/systemd/logind.conf
 あたりを直す
@@ -60,20 +61,20 @@ HandleSuspendKey=ignore HandleLidSwitch=ignore  </description>
     
     <item>
       <title>RAID5のリビルド中にもう一個壊れるってやつ</title>
-      <link>https://yaasita.github.io/2015/10/17/raid5_fail</link>
+      <link>https://yaasita.github.io/2015/10/17/raid5_fail/</link>
       <pubDate>Sat, 17 Oct 2015 16:52:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/10/17/raid5_fail</guid>
+      <guid>https://yaasita.github.io/2015/10/17/raid5_fail/</guid>
       <description>リビルド中にもう一個壊れてRAID5が終わった話
 /dev/md0: Version : 1.2 Creation Time : Fri Jan 6 12:24:44 2012 Raid Level : raid5 Array Size : 5860535808 (5589.04 GiB 6001.19 GB) Used Dev Size : 1953511936 (1863.01 GiB 2000.40 GB) Raid Devices : 4 Total Devices : 4 Persistence : Superblock is persistent Update Time : Sat Oct 17 16:59:57 2015 State : clean, FAILED Active Devices : 2 Working Devices : 3 Failed Devices : 1 Spare Devices : 1 Layout : left-symmetric Chunk Size : 512K Name : hoge:0 UUID : 55b9d6ea:4627c873:a0bcab05:a4f0c25d Events : 6755 Number Major Minor RaidDevice State 5 8 49 0 active sync /dev/sdd1 2 0 0 2 removed 2 8 33 2 active sync /dev/sdc1 6 0 0 6 removed 4 8 1 - faulty /dev/sda1 6 8 17 - spare /dev/sdb1  HDD一台が壊れたので /dev/sdb1を追加中にアレイの構成Diskがもう一個壊れた</description>
     </item>
     
     <item>
       <title>最近買ったスマホ</title>
-      <link>https://yaasita.github.io/2015/07/26/xperia</link>
+      <link>https://yaasita.github.io/2015/07/26/xperia/</link>
       <pubDate>Sun, 26 Jul 2015 02:29:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/07/26/xperia</guid>
+      <guid>https://yaasita.github.io/2015/07/26/xperia/</guid>
       <description>EXPANSYSで買った
 Sony Xperia E4g E2003 (Unlocked LTE, 8GB, White) 18,737円  SIMフリーはIIJ MIO
 IIJ IIJmio SIM ウェルカムパック microSIM ( SMS 機能付き ) 版 1,900円  </description>
@@ -81,10 +82,10 @@ IIJ IIJmio SIM ウェルカムパック microSIM ( SMS 機能付き ) 版 1,900�
     
     <item>
       <title>MACアドレスのベンダーを調べる</title>
-      <link>https://yaasita.github.io/2014/08/25/mac-address-search</link>
+      <link>https://yaasita.github.io/2014/08/25/mac-address-search/</link>
       <pubDate>Mon, 25 Aug 2014 23:54:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/08/25/mac-address-search</guid>
+      <guid>https://yaasita.github.io/2014/08/25/mac-address-search/</guid>
       <description>http://standards.ieee.org/develop/regauth/oui/public.html
 MACアドレスの上位3バイトを検索窓に入れる
 例) 00-22-68</description>
@@ -92,10 +93,10 @@ MACアドレスの上位3バイトを検索窓に入れる
     
     <item>
       <title>HDDの故障が疑われるときにやったこと</title>
-      <link>https://yaasita.github.io/2014/08/16/hdd-fail</link>
+      <link>https://yaasita.github.io/2014/08/16/hdd-fail/</link>
       <pubDate>Sat, 16 Aug 2014 19:10:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/08/16/hdd-fail</guid>
+      <guid>https://yaasita.github.io/2014/08/16/hdd-fail/</guid>
       <description>なんかrsyncでバックアップしようとすると以下のエラーが出るようになった
 rsync: read errors mapping &amp;quot;/home/yamasita/Desktop/hogehoge.dat&amp;quot;: Input/output error (5) ERROR: /home/yamasita/Desktop/hogehoge.dat failed verification -- update discarded.  まずbadblocksで調べてみる
 badblocks /home/yamasita/Desktop/hogehoge.dat  ダメそう
@@ -110,20 +111,20 @@ http://nfolamp.wordpress.com/2010/10/25/dumpe2fstune2fs-manipulating-the-ext-fs-
     
     <item>
       <title>itunes入れるとDVDドライブが認識しない</title>
-      <link>https://yaasita.github.io/2014/07/12/itunes-dvd-device</link>
+      <link>https://yaasita.github.io/2014/07/12/itunes-dvd-device/</link>
       <pubDate>Sat, 12 Jul 2014 23:54:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/07/12/itunes-dvd-device</guid>
+      <guid>https://yaasita.github.io/2014/07/12/itunes-dvd-device/</guid>
       <description>レジストリの以下のキーを消すとうまくいった
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E965-E325-11CE-BFC1-08002BE10318}  http://michisugara.jp/archives/2013/op_drive_failure.html</description>
     </item>
     
     <item>
       <title>hardware checkコマンド</title>
-      <link>https://yaasita.github.io/2014/05/25/hardware_check</link>
+      <link>https://yaasita.github.io/2014/05/25/hardware_check/</link>
       <pubDate>Sun, 25 May 2014 15:20:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/05/25/hardware_check</guid>
+      <guid>https://yaasita.github.io/2014/05/25/hardware_check/</guid>
       <description> lshwだけじゃない
 PC構成を把握するコマンド
 ハードウェアチェックコマンド  hwinfo --short hdparm -i /dev/sda inxi -Fx lsscsi  lsscsiがいい感じ
@@ -133,10 +134,10 @@ PC構成を把握するコマンド
     
     <item>
       <title>無線LANとサスペンド機能の有効化</title>
-      <link>https://yaasita.github.io/2014/03/09/145</link>
+      <link>https://yaasita.github.io/2014/03/09/145/</link>
       <pubDate>Sun, 09 Mar 2014 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/03/09/145</guid>
+      <guid>https://yaasita.github.io/2014/03/09/145/</guid>
       <description>以下のパッケージとかを入れる
 firmware-linux-nonfree
 firmware-realtek
@@ -146,10 +147,10 @@ lspci
     
     <item>
       <title>smartdでHDD監視</title>
-      <link>https://yaasita.github.io/2013/08/29/494</link>
+      <link>https://yaasita.github.io/2013/08/29/494/</link>
       <pubDate>Thu, 29 Aug 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/08/29/494</guid>
+      <guid>https://yaasita.github.io/2013/08/29/494/</guid>
       <description>
 インストール
 apt-get install smartmontools
@@ -171,10 +172,10 @@ http://www.geocities.jp/sugachan1973/doc/funto57.html </description>
     
     <item>
       <title>Debian WheezyにRTL8111/8168Bのドライバインストール</title>
-      <link>https://yaasita.github.io/2013/08/25/515</link>
+      <link>https://yaasita.github.io/2013/08/25/515/</link>
       <pubDate>Sun, 25 Aug 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/08/25/515</guid>
+      <guid>https://yaasita.github.io/2013/08/25/515/</guid>
       <description>Realtekのドライバはインストールしておいたほうがいいみたい
 firmware-realtekってのがnon-freeにあったからaptで入る
 ethtool -i eth0
@@ -186,20 +187,20 @@ http://cskimura.blogspot.jp/2010/06/rtl81118168b-on-debian.html </description>
     
     <item>
       <title>LinuxでWake On Lanを設定する</title>
-      <link>https://yaasita.github.io/2013/08/18/556</link>
+      <link>https://yaasita.github.io/2013/08/18/556/</link>
       <pubDate>Sun, 18 Aug 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/08/18/556</guid>
+      <guid>https://yaasita.github.io/2013/08/18/556/</guid>
       <description>WOLの設定は以下参照
 http://80286.blog62.fc2.com/blog-entry-37.html </description>
     </item>
     
     <item>
       <title>X環境でのDPMS</title>
-      <link>https://yaasita.github.io/2013/04/20/989</link>
+      <link>https://yaasita.github.io/2013/04/20/989/</link>
       <pubDate>Sat, 20 Apr 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/04/20/989</guid>
+      <guid>https://yaasita.github.io/2013/04/20/989/</guid>
       <description>xset -q
 で確認
 xset dpms 0 0 0 とかで設定できるのか
@@ -210,30 +211,30 @@ https://forums.ubuntulinux.jp/viewtopic.php?id=1732 </description>
     
     <item>
       <title>Huawei 新モデル E586 モバイル</title>
-      <link>https://yaasita.github.io/2013/01/29/1483</link>
+      <link>https://yaasita.github.io/2013/01/29/1483/</link>
       <pubDate>Tue, 29 Jan 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/01/29/1483</guid>
+      <guid>https://yaasita.github.io/2013/01/29/1483/</guid>
       <description>を買ってみた
 所謂、SIMフリーの無線LANルータ </description>
     </item>
     
     <item>
       <title>PCを破棄したくなったら</title>
-      <link>https://yaasita.github.io/2013/01/02/1705</link>
+      <link>https://yaasita.github.io/2013/01/02/1705/</link>
       <pubDate>Wed, 02 Jan 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/01/02/1705</guid>
+      <guid>https://yaasita.github.io/2013/01/02/1705/</guid>
       <description>ごみパソに送りつけると良いらしい
 http://www.53pc.com/hikitori/index.html </description>
     </item>
     
     <item>
       <title>HDDが故障したときにやったこと</title>
-      <link>https://yaasita.github.io/2012/03/11/2962</link>
+      <link>https://yaasita.github.io/2012/03/11/2962/</link>
       <pubDate>Sun, 11 Mar 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/03/11/2962</guid>
+      <guid>https://yaasita.github.io/2012/03/11/2962/</guid>
       <description>/dev/sddが故障を検地 (S.M.A.R.T)
 まずはsmartのセルフテストをやってみる
 smartctl -t long /dev/sdd  badblocksでHDDをチェック
@@ -251,10 +252,10 @@ fsck
     
     <item>
       <title>/dev/disk/by-uuidに無いHDDがある？</title>
-      <link>https://yaasita.github.io/2012/01/06/3236</link>
+      <link>https://yaasita.github.io/2012/01/06/3236/</link>
       <pubDate>Fri, 06 Jan 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/01/06/3236</guid>
+      <guid>https://yaasita.github.io/2012/01/06/3236/</guid>
       <description>答え
 mkfsでフォーマットしてないからです。
 フォーマットすれば出ます。
@@ -267,10 +268,10 @@ http://manual.aptosid.com/ja/part-uuid-ja.htm </description>
     
     <item>
       <title>マザーボードのチップセットとかCPU情報をLinuxで取得する</title>
-      <link>https://yaasita.github.io/2011/12/31/3257</link>
+      <link>https://yaasita.github.io/2011/12/31/3257/</link>
       <pubDate>Sat, 31 Dec 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/12/31/3257</guid>
+      <guid>https://yaasita.github.io/2011/12/31/3257/</guid>
       <description>lshwというユーティリティがあった
 aptでインストールできた
 参考リンク

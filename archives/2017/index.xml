@@ -2,18 +2,30 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title># cd ~yaasita</title>
-    <link>https://yaasita.github.io/archives/2017/index.xml</link>
+    <link>https://yaasita.github.io/archives/2017/</link>
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="/archives/2017/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 06 Jul 2017 13:46:49 +0900</lastBuildDate>
+    <atom:link href="/archives/2017/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>machine-idを変える時</title>
+      <link>https://yaasita.github.io/2017/07/06/dbus-uuidgen/</link>
+      <pubDate>Thu, 06 Jul 2017 13:46:49 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/07/06/dbus-uuidgen/</guid>
+      <description>systemd-nspawn使ってて
+なんか /etc/machine-id　ないよって言われたとき
+dbus-uuidgen &amp;gt; root/etc/machine-id  </description>
+    </item>
     
     <item>
       <title>AWSで監視してSlackに流す設定</title>
-      <link>https://yaasita.github.io/2017/06/22/aws-monitor</link>
+      <link>https://yaasita.github.io/2017/06/22/aws-monitor/</link>
       <pubDate>Thu, 22 Jun 2017 04:17:15 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/06/22/aws-monitor</guid>
+      <guid>https://yaasita.github.io/2017/06/22/aws-monitor/</guid>
       <description>EC2 -&amp;gt; CloudWatch -&amp;gt; SNS -&amp;gt; Lambda -&amp;gt; Slackみたいなよくある設定例
 
 Slack Customize Slack =&amp;gt; Custom Integrations から Incoming WebHooks 選んで適当にチャンネル選んで追加
@@ -29,10 +41,10 @@ SNS Topicsを新しく作ってTopicネームくらいは適当に埋めてお�
     
     <item>
       <title>PS vita向けSSL設定</title>
-      <link>https://yaasita.github.io/2017/06/13/vita-ssl</link>
+      <link>https://yaasita.github.io/2017/06/13/vita-ssl/</link>
       <pubDate>Tue, 13 Jun 2017 01:57:49 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/06/13/vita-ssl</guid>
+      <guid>https://yaasita.github.io/2017/06/13/vita-ssl/</guid>
       <description>PlayStation Vitaの内蔵ブラウザは
 TLSv1.1, TLSv1.2
 が使えないので、 TLSv1 を使うこと
@@ -41,20 +53,20 @@ TLSv1.1, TLSv1.2
     
     <item>
       <title>絵文字探すときに</title>
-      <link>https://yaasita.github.io/2017/05/23/emoji</link>
+      <link>https://yaasita.github.io/2017/05/23/emoji/</link>
       <pubDate>Tue, 23 May 2017 23:24:02 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/05/23/emoji</guid>
+      <guid>https://yaasita.github.io/2017/05/23/emoji/</guid>
       <description>便利な emojipedia
 http://emojipedia.org/</description>
     </item>
     
     <item>
       <title>コピー禁止のWebサイトについて</title>
-      <link>https://yaasita.github.io/2017/05/21/web-copy-protect</link>
+      <link>https://yaasita.github.io/2017/05/21/web-copy-protect/</link>
       <pubDate>Sun, 21 May 2017 01:48:56 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/05/21/web-copy-protect</guid>
+      <guid>https://yaasita.github.io/2017/05/21/web-copy-protect/</guid>
       <description>コピー禁止のWordpressサイトが増えてきました
 ちょっと検索ワードをコピペするのに不便なので回避方法
 1. とりあえずJavaScriptをOFFる これで大半はOK wp-copyprotect って拡張だけならこれで大丈夫
@@ -74,10 +86,10 @@ Oops! It appears that you have disabled your Javascript. In order for you to see
     
     <item>
       <title>tumblrの画像を貼るときに直リンクしてはいけない</title>
-      <link>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr</link>
+      <link>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr/</link>
       <pubDate>Sun, 07 May 2017 02:49:05 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr</guid>
+      <guid>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr/</guid>
       <description>なぜか？画像のURLはたまに変わりリンク切れしてしまうから
 ちゃんとAPIを叩いてポストIDから画像リンクを取得した方が良い
  </description>
@@ -85,10 +97,10 @@ Oops! It appears that you have disabled your Javascript. In order for you to see
     
     <item>
       <title>テーマを簡素にしてtumblrを見たいとき</title>
-      <link>https://yaasita.github.io/2017/05/06/noneblr</link>
+      <link>https://yaasita.github.io/2017/05/06/noneblr/</link>
       <pubDate>Sat, 06 May 2017 04:55:23 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/05/06/noneblr</guid>
+      <guid>https://yaasita.github.io/2017/05/06/noneblr/</guid>
       <description>noneblrというサービスが良いかもしれない
 これでどんなBlogも一定のUIで見れる
 http://noneblr.com/
@@ -98,10 +110,10 @@ login押すと権限求められるけど怖いからそれはやってない</d
     
     <item>
       <title>Vue.jsのちょっとしたこと</title>
-      <link>https://yaasita.github.io/2017/04/14/vuejs-tips</link>
+      <link>https://yaasita.github.io/2017/04/14/vuejs-tips/</link>
       <pubDate>Fri, 14 Apr 2017 15:57:44 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/04/14/vuejs-tips</guid>
+      <guid>https://yaasita.github.io/2017/04/14/vuejs-tips/</guid>
       <description> v-on=&amp;ldquo;click&amp;rdquo;とmodelは一緒に使えない  watchで監視する
  https://github.com/vuejs/vue/issues/1146
    ある要素だけが繰り返すわけじゃないときはtemplateで挟むとよい &amp;lt;template v-for=&amp;quot;item in items&amp;quot;&amp;gt; &amp;lt;a&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;b&amp;gt;&amp;lt;/b&amp;gt; &amp;lt;/template&amp;gt;  https://jp.vuejs.org/v2/guide/list.html
@@ -111,10 +123,10 @@ vm.b = 2 // NG Vue.set(object, key, value) // OK  </description>
     
     <item>
       <title>gpg鍵を変えた</title>
-      <link>https://yaasita.github.io/2017/04/09/update-gpg-key</link>
+      <link>https://yaasita.github.io/2017/04/09/update-gpg-key/</link>
       <pubDate>Sun, 09 Apr 2017 23:28:13 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/04/09/update-gpg-key</guid>
+      <guid>https://yaasita.github.io/2017/04/09/update-gpg-key/</guid>
       <description>https://keybase.io/yaasita
 有効期限を付けて1年毎に交換するのは止めよう
 keybase.ioの更新がめんどくさすぎる
@@ -124,20 +136,20 @@ keybase.ioの更新がめんどくさすぎる
     
     <item>
       <title>Google Cloud Shellのディレクトリ削除</title>
-      <link>https://yaasita.github.io/2017/04/06/gcp-shell-homedata</link>
+      <link>https://yaasita.github.io/2017/04/06/gcp-shell-homedata/</link>
       <pubDate>Thu, 06 Apr 2017 00:21:33 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/04/06/gcp-shell-homedata</guid>
+      <guid>https://yaasita.github.io/2017/04/06/gcp-shell-homedata/</guid>
       <description>120日で削除されるらしい
 It&#39;s been over 120 days since you opened Cloud Shell from the Google Cloud Platform console. In 7 days, your Cloud Shell home directory will be automatically scheduled for deletion.  </description>
     </item>
     
     <item>
       <title>ginを使ってechoをLiveReload</title>
-      <link>https://yaasita.github.io/2017/04/03/gin-live-reload</link>
+      <link>https://yaasita.github.io/2017/04/03/gin-live-reload/</link>
       <pubDate>Mon, 03 Apr 2017 00:05:20 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/04/03/gin-live-reload</guid>
+      <guid>https://yaasita.github.io/2017/04/03/gin-live-reload/</guid>
       <description> Golangのweb frame workの Echo のライブリロード
 ginがproxyしてくれるのでechoサーバのポートを教えてくれればよろしくリコンパイルしてくれる
 gin --appPort 8080 r go run server.go  CompileDaemonだとこんな感じか
@@ -149,10 +161,10 @@ go get github.com/githubnemo/CompileDaemon CompileDaemon -command=&amp;quot;./ru
     
     <item>
       <title>複数ファイルアップロードの実装</title>
-      <link>https://yaasita.github.io/2017/04/02/multiple-upload</link>
+      <link>https://yaasita.github.io/2017/04/02/multiple-upload/</link>
       <pubDate>Sun, 02 Apr 2017 04:18:50 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/04/02/multiple-upload</guid>
+      <guid>https://yaasita.github.io/2017/04/02/multiple-upload/</guid>
       <description>multiple指定してuploadフォーム作るときの話
 &amp;lt;input type=&amp;quot;file&amp;quot; name=&amp;quot;files&amp;quot; multiple /&amp;gt;  で複数ファイル選択できるが
 Perl CGIで受けるときに↓みたいにすると
@@ -164,10 +176,10 @@ my @fhs = $q-&amp;gt;upload(&#39;files&#39;); my %fname_count; for my $fh (@fhs)
     
     <item>
       <title>Vimの副ファイル</title>
-      <link>https://yaasita.github.io/2017/03/30/vim-alternate-file</link>
+      <link>https://yaasita.github.io/2017/03/30/vim-alternate-file/</link>
       <pubDate>Thu, 30 Mar 2017 01:46:13 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/03/30/vim-alternate-file</guid>
+      <guid>https://yaasita.github.io/2017/03/30/vim-alternate-file/</guid>
       <description>なんか検索に引っかからないのでメモ
 英語で the alternate file ってやつを取るときは Ctrl-^コマンドでやる
 日本語配列だとCtrl-6かな
@@ -180,10 +192,10 @@ alternate file = 代替ファイル = 副ファイル
     
     <item>
       <title>DockerでAUFSを使わない</title>
-      <link>https://yaasita.github.io/2017/03/21/do-not-use-aufs</link>
+      <link>https://yaasita.github.io/2017/03/21/do-not-use-aufs/</link>
       <pubDate>Tue, 21 Mar 2017 23:06:46 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/03/21/do-not-use-aufs</guid>
+      <guid>https://yaasita.github.io/2017/03/21/do-not-use-aufs/</guid>
       <description>AUFSっていうか/var/lib/dockerに置きたくないとかそういう話
 Dockerでもsystemd-nspawnよろしくそのディレクトリで即座にコンテナ上げたいとき
  要するに /proc, /dev, /sys, /net あたりを外して全部bindしちゃえばよかった</description>
@@ -191,10 +203,10 @@ Dockerでもsystemd-nspawnよろしくそのディレクトリで即座にコン
     
     <item>
       <title>AWSソリューションアーキテクト</title>
-      <link>https://yaasita.github.io/2017/03/18/aws-test</link>
+      <link>https://yaasita.github.io/2017/03/18/aws-test/</link>
       <pubDate>Sat, 18 Mar 2017 23:56:51 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/03/18/aws-test</guid>
+      <guid>https://yaasita.github.io/2017/03/18/aws-test/</guid>
       <description>なんか必要になったということで取ってきた
 総合スコア: 74% トピックレベルのスコア: 1.0 高可用性、コスト効率、耐障害性、スケーラブルなシステムの設計: 72% 2.0 実装/デプロイ: 83% 3.0 セキュリティ: 72% 4.0 トラブルシューティング: 80%  勉強につかったサイト
 https://aws.koiwaclub.com/
@@ -206,10 +218,10 @@ https://aws.koiwaclub.com/
     
     <item>
       <title>Vue.jsとモーダルウィンドウ</title>
-      <link>https://yaasita.github.io/2017/03/04/vuejs-modal</link>
+      <link>https://yaasita.github.io/2017/03/04/vuejs-modal/</link>
       <pubDate>Sat, 04 Mar 2017 02:29:40 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/03/04/vuejs-modal</guid>
+      <guid>https://yaasita.github.io/2017/03/04/vuejs-modal/</guid>
       <description> 参考実装 slotで後から要素を上書きすればOK
  https://github.com/yaasita/vuejs-modal
 参考リンク  https://jp.vuejs.org/v2/examples/modal.html
@@ -218,10 +230,10 @@ https://aws.koiwaclub.com/
     
     <item>
       <title>Vue.jsでドラッグ＆ドロップリスト</title>
-      <link>https://yaasita.github.io/2017/02/20/draggable-list</link>
+      <link>https://yaasita.github.io/2017/02/20/draggable-list/</link>
       <pubDate>Mon, 20 Feb 2017 23:17:28 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/02/20/draggable-list</guid>
+      <guid>https://yaasita.github.io/2017/02/20/draggable-list/</guid>
       <description> Vue.js 2.1.10でやってみる
 https://github.com/yaasita/vuejs-dad-box
  並び変え終わったらdragendで
@@ -237,10 +249,10 @@ $sort_json = json_decode(file_get_contents(&amp;quot;php://input&amp;quot;),true
     
     <item>
       <title>Vimのエンコード周り</title>
-      <link>https://yaasita.github.io/2017/02/17/vim-encodeing</link>
+      <link>https://yaasita.github.io/2017/02/17/vim-encodeing/</link>
       <pubDate>Fri, 17 Feb 2017 23:56:59 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/02/17/vim-encodeing</guid>
+      <guid>https://yaasita.github.io/2017/02/17/vim-encodeing/</guid>
       <description>下図参照
 https://yaasita.tumblr.com/post/157354717792
 
@@ -251,10 +263,10 @@ https://yaasita.tumblr.com/post/157354717792
     
     <item>
       <title>Vue.js内のメソッドはコロン省略しない方が良い</title>
-      <link>https://yaasita.github.io/2017/02/17/do-not-omit-colon-in-vuejs</link>
+      <link>https://yaasita.github.io/2017/02/17/do-not-omit-colon-in-vuejs/</link>
       <pubDate>Fri, 17 Feb 2017 02:06:29 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/02/17/do-not-omit-colon-in-vuejs</guid>
+      <guid>https://yaasita.github.io/2017/02/17/do-not-omit-colon-in-vuejs/</guid>
       <description>InternetExplorer11で
 SCRIPT1003: &#39;:&#39; がありません。  というエラーになるから
 // OK var ok = new Vue({ el: &#39;#example1&#39;, data: { }, methods: { HogeMethod: function(){ } } }); // NG var ng = new Vue({ el: &#39;#example2&#39;, data: { }, methods: { HogeMethod(){ } } });  chromeとかMicrosoft Edgeとかなら良いんだけどね</description>
@@ -262,10 +274,10 @@ SCRIPT1003: &#39;:&#39; がありません。  というエラーになるから
     
     <item>
       <title>relをtumblrテーマに加える</title>
-      <link>https://yaasita.github.io/2017/02/14/add-rel-to-tumblr</link>
+      <link>https://yaasita.github.io/2017/02/14/add-rel-to-tumblr/</link>
       <pubDate>Tue, 14 Feb 2017 01:05:25 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/02/14/add-rel-to-tumblr</guid>
+      <guid>https://yaasita.github.io/2017/02/14/add-rel-to-tumblr/</guid>
       <description>tumblrのテーマをDefaultにしてみた
 一点気になったのは
 リンクがこんな感じでrel属性が指定されてない
@@ -275,18 +287,6 @@ SCRIPT1003: &#39;:&#39; がありません。  というエラーになるから
   参考リンク
  rel=”next”とrel=”prev” の使い方
    </description>
-    </item>
-    
-    <item>
-      <title>閉じるボタンとVue.js</title>
-      <link>https://yaasita.github.io/2017/02/07/close-button-with-vuejs</link>
-      <pubDate>Tue, 07 Feb 2017 23:59:54 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/02/07/close-button-with-vuejs</guid>
-      <description>box並べて閉じるボタンつけて、押されたらDOM消して何かするみたいなよくあるインターフェイス
-Vue.js使って書いてみた
-すごい便利
- https://github.com/yaasita/vuejs-close-button</description>
     </item>
     
   </channel>

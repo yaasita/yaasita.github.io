@@ -2,18 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title># cd ~yaasita</title>
-    <link>https://yaasita.github.io/categories/life/index.xml</link>
+    <link>https://yaasita.github.io/categories/life/</link>
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Mar 2017 23:56:51 +0900</lastBuildDate>
+    <atom:link href="/categories/life/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>AWSソリューションアーキテクト</title>
-      <link>https://yaasita.github.io/2017/03/18/aws-test</link>
+      <link>https://yaasita.github.io/2017/03/18/aws-test/</link>
       <pubDate>Sat, 18 Mar 2017 23:56:51 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/03/18/aws-test</guid>
+      <guid>https://yaasita.github.io/2017/03/18/aws-test/</guid>
       <description>なんか必要になったということで取ってきた
 総合スコア: 74% トピックレベルのスコア: 1.0 高可用性、コスト効率、耐障害性、スケーラブルなシステムの設計: 72% 2.0 実装/デプロイ: 83% 3.0 セキュリティ: 72% 4.0 トラブルシューティング: 80%  勉強につかったサイト
 https://aws.koiwaclub.com/
@@ -25,10 +26,10 @@ https://aws.koiwaclub.com/
     
     <item>
       <title>MacBook買ったのでサポートお願いした</title>
-      <link>https://yaasita.github.io/2017/01/09/mac-personal-setup</link>
+      <link>https://yaasita.github.io/2017/01/09/mac-personal-setup/</link>
       <pubDate>Mon, 09 Jan 2017 16:27:40 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/01/09/mac-personal-setup</guid>
+      <guid>https://yaasita.github.io/2017/01/09/mac-personal-setup/</guid>
       <description>13インチ MacBook Air 1.6GHzデュアルコアIntel Core i5 整備済製品 (\84,000)で買ったのでパーソナルセットアップをお願いしてみた
 時間は30分だったけど、電話でいろいろ質問できて良い
 http://www.apple.com/jp/retail/personalsetup/</description>
@@ -36,10 +37,10 @@ http://www.apple.com/jp/retail/personalsetup/</description>
     
     <item>
       <title>リンク</title>
-      <link>https://yaasita.github.io/2016/01/24/link</link>
+      <link>https://yaasita.github.io/2016/01/24/link/</link>
       <pubDate>Sun, 24 Jan 2016 02:15:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/01/24/link</guid>
+      <guid>https://yaasita.github.io/2016/01/24/link/</guid>
       <description> 監視カメラまとめ
  http://www.insecam.org/en/bycountry/JP/
   SIはやめておけ
@@ -50,10 +51,10 @@ http://www.apple.com/jp/retail/personalsetup/</description>
     
     <item>
       <title>最近のSIer記事</title>
-      <link>https://yaasita.github.io/2015/11/29/sier</link>
+      <link>https://yaasita.github.io/2015/11/29/sier/</link>
       <pubDate>Sun, 29 Nov 2015 22:39:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/11/29/sier</guid>
+      <guid>https://yaasita.github.io/2015/11/29/sier/</guid>
       <description> IT業界で客先常駐という働き方はもうやめにできないか
  大手Sierで見た！
  日本でプログラマが少ない理由は戦う戦場を間違えているからです
@@ -62,10 +63,10 @@ http://www.apple.com/jp/retail/personalsetup/</description>
     
     <item>
       <title>ISUCON5で惨敗した件</title>
-      <link>https://yaasita.github.io/2015/09/30/isucon5</link>
+      <link>https://yaasita.github.io/2015/09/30/isucon5/</link>
       <pubDate>Wed, 30 Sep 2015 00:38:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/09/30/isucon5</guid>
+      <guid>https://yaasita.github.io/2015/09/30/isucon5/</guid>
       <description>ISUCON5に参加してきました
 T・D・U！T・D・U！という名前で出てみました
 最高スコアは5000ちょっとでしたOTZ
@@ -97,29 +98,29 @@ T・D・U！T・D・U！という名前で出てみました
     
     <item>
       <title>三国志解説サイト</title>
-      <link>https://yaasita.github.io/2015/02/08/sangokushi</link>
+      <link>https://yaasita.github.io/2015/02/08/sangokushi/</link>
       <pubDate>Sun, 08 Feb 2015 23:44:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/02/08/sangokushi</guid>
+      <guid>https://yaasita.github.io/2015/02/08/sangokushi/</guid>
       <description>はじめての三国志
 http://hajimete-sangokushi.com/</description>
     </item>
     
     <item>
       <title>ユニコード文字の顔文字一覧</title>
-      <link>https://yaasita.github.io/2014/12/20/kaomoji</link>
+      <link>https://yaasita.github.io/2014/12/20/kaomoji/</link>
       <pubDate>Sat, 20 Dec 2014 14:47:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/12/20/kaomoji</guid>
+      <guid>https://yaasita.github.io/2014/12/20/kaomoji/</guid>
       <description>http://matome.naver.jp/odai/2139210846915545101</description>
     </item>
     
     <item>
       <title>闇SIer</title>
-      <link>https://yaasita.github.io/2014/09/11/yami_sier</link>
+      <link>https://yaasita.github.io/2014/09/11/yami_sier/</link>
       <pubDate>Thu, 11 Sep 2014 02:53:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/09/11/yami_sier</guid>
+      <guid>https://yaasita.github.io/2014/09/11/yami_sier/</guid>
       <description> 闇SIer
  元ファイル
   </description>
@@ -127,10 +128,10 @@ http://hajimete-sangokushi.com/</description>
     
     <item>
       <title>itunes経由でBook同期</title>
-      <link>https://yaasita.github.io/2014/05/26/itunes_books</link>
+      <link>https://yaasita.github.io/2014/05/26/itunes_books/</link>
       <pubDate>Mon, 26 May 2014 01:46:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/05/26/itunes_books</guid>
+      <guid>https://yaasita.github.io/2014/05/26/itunes_books/</guid>
       <description>手元のPDFをipadに転送したくていろいろ探したら
 下記画像みたいなブックという項目を出さないとダメみたい
 
@@ -141,20 +142,20 @@ C:\Users\hogeuser\Music\iTunes\iTunes Media\iTunes に自動的に追加   funct
     
     <item>
       <title>仕事を探したり発注できたりするサイト</title>
-      <link>https://yaasita.github.io/2013/03/23/1381</link>
+      <link>https://yaasita.github.io/2013/03/23/1381/</link>
       <pubDate>Sat, 23 Mar 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/03/23/1381</guid>
+      <guid>https://yaasita.github.io/2013/03/23/1381/</guid>
       <description>・ランサーズ
 ・クラウドワークス </description>
     </item>
     
     <item>
       <title>マウスオーバーで単語検索</title>
-      <link>https://yaasita.github.io/2013/01/14/1543</link>
+      <link>https://yaasita.github.io/2013/01/14/1543/</link>
       <pubDate>Mon, 14 Jan 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/01/14/1543</guid>
+      <guid>https://yaasita.github.io/2013/01/14/1543/</guid>
       <description>英単語を調べるときとかでも便利
 翻訳もできる
 1.Greasemonkeyをインストール
@@ -169,30 +170,30 @@ http://www.simplivillage.com/trac/wiki/Userscript/FastLookupJPandEN </descriptio
     
     <item>
       <title>PCを破棄したくなったら</title>
-      <link>https://yaasita.github.io/2013/01/02/1705</link>
+      <link>https://yaasita.github.io/2013/01/02/1705/</link>
       <pubDate>Wed, 02 Jan 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/01/02/1705</guid>
+      <guid>https://yaasita.github.io/2013/01/02/1705/</guid>
       <description>ごみパソに送りつけると良いらしい
 http://www.53pc.com/hikitori/index.html </description>
     </item>
     
     <item>
       <title>最近使ってるダンボールの収納ボックス</title>
-      <link>https://yaasita.github.io/2012/09/23/2212</link>
+      <link>https://yaasita.github.io/2012/09/23/2212/</link>
       <pubDate>Sun, 23 Sep 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/09/23/2212</guid>
+      <guid>https://yaasita.github.io/2012/09/23/2212/</guid>
       <description>結構便利
 http://item.rakuten.co.jp/angers/121696/ </description>
     </item>
     
     <item>
       <title>自分があとどれくらいの時間生きていられるか？</title>
-      <link>https://yaasita.github.io/2012/01/09/3174</link>
+      <link>https://yaasita.github.io/2012/01/09/3174/</link>
       <pubDate>Mon, 09 Jan 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/01/09/3174</guid>
+      <guid>https://yaasita.github.io/2012/01/09/3174/</guid>
       <description>自分があとどれくらいの時間生きていられるか簡単にわかるサイトです
 ライフカウンター
 残された時間がすぐに分かって便利です。
@@ -216,10 +217,10 @@ http://item.rakuten.co.jp/angers/121696/ </description>
     
     <item>
       <title>年収を入力すると女の子が評価してくれるサイト</title>
-      <link>https://yaasita.github.io/2012/01/08/3194</link>
+      <link>https://yaasita.github.io/2012/01/08/3194/</link>
       <pubDate>Sun, 08 Jan 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/01/08/3194</guid>
+      <guid>https://yaasita.github.io/2012/01/08/3194/</guid>
       <description>http://televider.com/msz/
 参考リンク
 http://www.zaeega.com/archives/53541552.html </description>
@@ -227,10 +228,10 @@ http://www.zaeega.com/archives/53541552.html </description>
     
     <item>
       <title>SIerは滅びぬ！何度でも蘇るさ！</title>
-      <link>https://yaasita.github.io/2011/12/25/3279</link>
+      <link>https://yaasita.github.io/2011/12/25/3279/</link>
       <pubDate>Sun, 25 Dec 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/12/25/3279</guid>
+      <guid>https://yaasita.github.io/2011/12/25/3279/</guid>
       <description>受託開発をするSIerがヤバイよ的な話はよく聞く話でSIer内部でそんな話もチラホラと聞くようになりました。
 （ヤバイ理由は人月換算とか多重請負とかいろいろ言われてます）
 でも結局のところこの先もSIerは生き残るよねっていうのが僕の見解。
@@ -287,10 +288,10 @@ IT部門の人からすれば自分は使わないのだから丸投げできる
     
     <item>
       <title>携帯開発の実態（笑わないプログラマ）</title>
-      <link>https://yaasita.github.io/2011/12/24/3299</link>
+      <link>https://yaasita.github.io/2011/12/24/3299/</link>
       <pubDate>Sat, 24 Dec 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/12/24/3299</guid>
+      <guid>https://yaasita.github.io/2011/12/24/3299/</guid>
       <description>例の軍曹のデスマーチ話です
  前編
  後編
@@ -299,10 +300,10 @@ IT部門の人からすれば自分は使わないのだから丸投げできる
     
     <item>
       <title>FXで使えるチャート</title>
-      <link>https://yaasita.github.io/2011/11/04/3383</link>
+      <link>https://yaasita.github.io/2011/11/04/3383/</link>
       <pubDate>Fri, 04 Nov 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/11/04/3383</guid>
+      <guid>https://yaasita.github.io/2011/11/04/3383/</guid>
       <description>ここにいろいろあった
 http://www.fxcm.co.jp/tools/chart.html
 その中でも↓が使いやすかったかも
@@ -311,10 +312,10 @@ http://www.dailyfx.com/charts/netdaniachart/ </description>
     
     <item>
       <title>弾を光らせて軌跡を作り見やすくする曳光弾</title>
-      <link>https://yaasita.github.io/2011/07/01/3761</link>
+      <link>https://yaasita.github.io/2011/07/01/3761/</link>
       <pubDate>Fri, 01 Jul 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/07/01/3761</guid>
+      <guid>https://yaasita.github.io/2011/07/01/3761/</guid>
       <description>曳光弾というらしい
 これにより弾の軌道が分かるんだと・・・
 参考リンク
@@ -324,10 +325,10 @@ http://www.nicovideo.jp/watch/sm14657423 </description>
     
     <item>
       <title>モンロー/ノイマン効果とは</title>
-      <link>https://yaasita.github.io/2011/05/29/3863</link>
+      <link>https://yaasita.github.io/2011/05/29/3863/</link>
       <pubDate>Sun, 29 May 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/05/29/3863</guid>
+      <guid>https://yaasita.github.io/2011/05/29/3863/</guid>
       <description>円形に配置した爆発物が爆発すると中央部にエネルギーが集中してどうたらこうたら・・・
 魔法少女まどか☆マギカの１１話参考とのこと
 参考リンク

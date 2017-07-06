@@ -2,18 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title># cd ~yaasita</title>
-    <link>https://yaasita.github.io/archives/2007/index.xml</link>
+    <link>https://yaasita.github.io/archives/2007/</link>
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="/archives/2007/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Dec 2007 00:00:00 +0900</lastBuildDate>
+    <atom:link href="/archives/2007/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>昔、流行った地下ゲーム</title>
-      <link>https://yaasita.github.io/2007/12/31/13045</link>
+      <link>https://yaasita.github.io/2007/12/31/13045/</link>
       <pubDate>Mon, 31 Dec 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/12/31/13045</guid>
+      <guid>https://yaasita.github.io/2007/12/31/13045/</guid>
       <description>ブラックユーモア溢れるゲームたちです。
 倉庫番はHDDがフォーマットされる可能性があります。
 WindowsXP環境では平気でした。
@@ -22,10 +23,10 @@ http://www.hehehe.net/game/ </description>
     
     <item>
       <title>Linuxでメモリの使用状況を把握する</title>
-      <link>https://yaasita.github.io/2007/12/25/13066</link>
+      <link>https://yaasita.github.io/2007/12/25/13066/</link>
       <pubDate>Tue, 25 Dec 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/12/25/13066</guid>
+      <guid>https://yaasita.github.io/2007/12/25/13066/</guid>
       <description>free
 vmstat
 cat /proc/meminfo
@@ -35,20 +36,20 @@ cat /proc/swaps
     
     <item>
       <title>Linuxでパーティションのアクティブフラグをセットするには</title>
-      <link>https://yaasita.github.io/2007/12/11/13086</link>
+      <link>https://yaasita.github.io/2007/12/11/13086/</link>
       <pubDate>Tue, 11 Dec 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/12/11/13086</guid>
+      <guid>https://yaasita.github.io/2007/12/11/13086/</guid>
       <description># sfdisk -A1 /dev/hda
 hdaのパーティション1番をアクティブにし、他のアクティブフラグを削除する。 </description>
     </item>
     
     <item>
       <title>GRUBをUSBメモリにインストールする</title>
-      <link>https://yaasita.github.io/2007/12/10/13107</link>
+      <link>https://yaasita.github.io/2007/12/10/13107/</link>
       <pubDate>Mon, 10 Dec 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/12/10/13107</guid>
+      <guid>https://yaasita.github.io/2007/12/10/13107/</guid>
       <description>まず、パーティションを切るFATでフォーマットしアクティブフラグをセットする。
 mkdir /mnt/usb/grub cp /boot/grub/stage* /boot/grub/fat_stage1_5 /mnt/usb/grub/ umount /mnt/usb  とし
 grub grub&amp;gt; device (hd0) /dev/sda grub&amp;gt; root (hd0,0) grub&amp;gt; setup (hd0) grub&amp;gt; quit  と入力する。（USBメモリを/dev/sdaとする）
@@ -60,10 +61,10 @@ grub grub&amp;gt; device (hd0) /dev/sda grub&amp;gt; root (hd0,0) grub&amp;gt; s
     
     <item>
       <title>mkfs,fdisk,parted,mkswap使い方</title>
-      <link>https://yaasita.github.io/2007/12/10/13106</link>
+      <link>https://yaasita.github.io/2007/12/10/13106/</link>
       <pubDate>Mon, 10 Dec 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/12/10/13106</guid>
+      <guid>https://yaasita.github.io/2007/12/10/13106/</guid>
       <description>fdisk パーティションの切り直しにはfdiskを使います。
 例えば、/dev/sdaのパーティションを編集するとします
 fdisk /dev/sda  で起動
@@ -88,19 +89,19 @@ resize 番号　でパーティションのリサイズ
     
     <item>
       <title>96KBの3Dゲーム</title>
-      <link>https://yaasita.github.io/2007/12/09/13148</link>
+      <link>https://yaasita.github.io/2007/12/09/13148/</link>
       <pubDate>Sun, 09 Dec 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/12/09/13148</guid>
+      <guid>https://yaasita.github.io/2007/12/09/13148/</guid>
       <description>http://www.4gamer.net/patch/demo/kkrieger/kkrieger.html </description>
     </item>
     
     <item>
       <title>vsftpdへIEを使ってログインする</title>
-      <link>https://yaasita.github.io/2007/12/09/13126</link>
+      <link>https://yaasita.github.io/2007/12/09/13126/</link>
       <pubDate>Sun, 09 Dec 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/12/09/13126</guid>
+      <guid>https://yaasita.github.io/2007/12/09/13126/</guid>
       <description>IEは標準でftpクライアントを持っています。
 ログインした際は通常のファイルのようにドラッグ＆ドロップによるアップロードやダウンロード。右クリックで削除、パーミッションの設定も出来ます。
 ftp://hoge.jp/という風にアドレスバーに入れてもvsftpdの場合は下図の様なエラーになります。
@@ -116,10 +117,10 @@ ftp://foobar:passwd@hoge.jp/
     
     <item>
       <title>DebianでFNW-3600-Tを使うとインターフェイスが落ちる問題</title>
-      <link>https://yaasita.github.io/2007/12/05/13168</link>
+      <link>https://yaasita.github.io/2007/12/05/13168/</link>
       <pubDate>Wed, 05 Dec 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/12/05/13168</guid>
+      <guid>https://yaasita.github.io/2007/12/05/13168/</guid>
       <description>PLANEXのFNW-3600-Tを使用している際にインターフェイスが勝手にリブートする問題があります。dmesgを見ると以下のようなログが確認できます。
 
 eth0: NE2000 (DL10019 rev 05): io 0x300, irq 3, hw_addr 00:E0:98:00:BE:63
@@ -141,19 +142,19 @@ eth0: lost link beat</description>
     
     <item>
       <title>Debianにnslookupが無い件</title>
-      <link>https://yaasita.github.io/2007/12/01/13209</link>
+      <link>https://yaasita.github.io/2007/12/01/13209/</link>
       <pubDate>Sat, 01 Dec 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/12/01/13209</guid>
+      <guid>https://yaasita.github.io/2007/12/01/13209/</guid>
       <description>#apt-get install dnsutils</description>
     </item>
     
     <item>
       <title>Debianコマンドラインからのパッケージアップデート</title>
-      <link>https://yaasita.github.io/2007/12/01/13189</link>
+      <link>https://yaasita.github.io/2007/12/01/13189/</link>
       <pubDate>Sat, 01 Dec 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/12/01/13189</guid>
+      <guid>https://yaasita.github.io/2007/12/01/13189/</guid>
       <description># apt-get update
 新しいパッケージリストの取得
 # apt-get upgrade -s アップデートされるパッケージの確認
@@ -162,10 +163,10 @@ eth0: lost link beat</description>
     
     <item>
       <title>Apacheのパスワード制御をサブディレクトリだけ外すには</title>
-      <link>https://yaasita.github.io/2007/11/30/13229</link>
+      <link>https://yaasita.github.io/2007/11/30/13229/</link>
       <pubDate>Fri, 30 Nov 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/11/30/13229</guid>
+      <guid>https://yaasita.github.io/2007/11/30/13229/</guid>
       <description>そのディレクトリ中に.htaccessを作り
 Satisfy Any
 Allow from all
@@ -180,10 +181,10 @@ Require user hoge
     
     <item>
       <title>Debian(etch)にtelnetdをインストール</title>
-      <link>https://yaasita.github.io/2007/11/30/13249</link>
+      <link>https://yaasita.github.io/2007/11/30/13249/</link>
       <pubDate>Fri, 30 Nov 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/11/30/13249</guid>
+      <guid>https://yaasita.github.io/2007/11/30/13249/</guid>
       <description>apt-get install telnetd
 その後
 /etc/init.d/openbsd-inetd start
@@ -202,10 +203,10 @@ http://www.itmedia.co.jp/help/tips/linux/l0370.html </description>
     
     <item>
       <title>Thunderbirdの表示名がメールアドレス前に入ってしまう</title>
-      <link>https://yaasita.github.io/2007/11/28/13270</link>
+      <link>https://yaasita.github.io/2007/11/28/13270/</link>
       <pubDate>Wed, 28 Nov 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/11/28/13270</guid>
+      <guid>https://yaasita.github.io/2007/11/28/13270/</guid>
       <description>例えば表示名を「hogehoge」としてアドレス帳に登録しておき、example@test.comに送ろうとしたときにToヘッダは
 To:hogehoge &amp;amp;lt;yamaooo310@yahoo.co.jp&amp;amp;gt;
 となり表示名が入ってしまいます。
@@ -214,20 +215,20 @@ To:hogehoge &amp;amp;lt;yamaooo310@yahoo.co.jp&amp;amp;gt;
     
     <item>
       <title>URLの書式</title>
-      <link>https://yaasita.github.io/2007/11/25/13290</link>
+      <link>https://yaasita.github.io/2007/11/25/13290/</link>
       <pubDate>Sun, 25 Nov 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/11/25/13290</guid>
+      <guid>https://yaasita.github.io/2007/11/25/13290/</guid>
       <description>
  function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
     <item>
       <title>rep2をLinuxにインストール</title>
-      <link>https://yaasita.github.io/2007/11/25/13311</link>
+      <link>https://yaasita.github.io/2007/11/25/13311/</link>
       <pubDate>Sun, 25 Nov 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/11/25/13311</guid>
+      <guid>https://yaasita.github.io/2007/11/25/13311/</guid>
       <description>インストール 公式サイトからrep2をダウンロード
 以下パッケージのインストール
 apt-get install php5 php-http-request php5-gd php-pear php-compat  ※公式にはこう書いてある
@@ -256,10 +257,10 @@ http://127.0.0.1/~(ユーザ名)/rep2/phpinfo.php
     
     <item>
       <title>MinGWをWindowsにインストールする</title>
-      <link>https://yaasita.github.io/2007/11/24/13332</link>
+      <link>https://yaasita.github.io/2007/11/24/13332/</link>
       <pubDate>Sat, 24 Nov 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/11/24/13332</guid>
+      <guid>https://yaasita.github.io/2007/11/24/13332/</guid>
       <description>フリーのC/C++コンパイラのインストールメモです。
 まず http://www.mingw.org/ に行きダウンロードします。
 ダウンロードは sourceforge から行ってください。現時点で最新版のAutomated MinGW InstallerのMinGW-5.1.3をダウンロードします。このダウンロードしたexeを実行すると自動的にダウンロードとインストールが行えます。
@@ -272,10 +273,10 @@ http://127.0.0.1/~(ユーザ名)/rep2/phpinfo.php
     
     <item>
       <title>x11vncの設定を保存するには</title>
-      <link>https://yaasita.github.io/2007/11/18/13354</link>
+      <link>https://yaasita.github.io/2007/11/18/13354/</link>
       <pubDate>Sun, 18 Nov 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/11/18/13354</guid>
+      <guid>https://yaasita.github.io/2007/11/18/13354/</guid>
       <description>前回の設定では長いオプションをいちいち入力する必要がありましたが
 rcファイルを作りオプションを保存することができます。
 設定ファイルは~/.x11vncrcとして保存します。
@@ -292,10 +293,10 @@ rcファイルを作りオプションを保存することができます。
     
     <item>
       <title>Linuxでビープ音を消す</title>
-      <link>https://yaasita.github.io/2007/11/17/13375</link>
+      <link>https://yaasita.github.io/2007/11/17/13375/</link>
       <pubDate>Sat, 17 Nov 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/11/17/13375</guid>
+      <guid>https://yaasita.github.io/2007/11/17/13375/</guid>
       <description>コンソールを含めて、いかなる場合もビープ音を鳴らしたくない場合は、次のコマンドを実行します。
 $ sudo rmmod pcspkr
 再起動後もビープ音を鳴らしたくなければ、/etc/modprobe.d/blacklistに次の行を加えます。
@@ -307,19 +308,19 @@ https://wiki.ubuntulinux.jp/UbuntuTips/Hardware/StopBeepSound </description>
     
     <item>
       <title>中国系P2Pテレビを視聴するには？</title>
-      <link>https://yaasita.github.io/2007/11/12/13395</link>
+      <link>https://yaasita.github.io/2007/11/12/13395/</link>
       <pubDate>Mon, 12 Nov 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/11/12/13395</guid>
+      <guid>https://yaasita.github.io/2007/11/12/13395/</guid>
       <description>https://wiki.ubuntulinux.jp/UbuntuTips/Application/P2Ptv </description>
     </item>
     
     <item>
       <title>ubuntu7.10にApache2を入れる</title>
-      <link>https://yaasita.github.io/2007/11/11/13417</link>
+      <link>https://yaasita.github.io/2007/11/11/13417/</link>
       <pubDate>Sun, 11 Nov 2007 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/11/11/13417</guid>
+      <guid>https://yaasita.github.io/2007/11/11/13417/</guid>
       <description>ファイル名が日本語の場合、Indexが文字化けする場合は/etc/apache2/conf.d/charset をUTF-8がデフォルトになるように書き換える。
 Indexの細かい指定は/etc/apache2/mods-available/autoindex.conf で設定する。 </description>
     </item>

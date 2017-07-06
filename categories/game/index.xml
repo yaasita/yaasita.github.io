@@ -2,18 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title># cd ~yaasita</title>
-    <link>https://yaasita.github.io/categories/game/index.xml</link>
+    <link>https://yaasita.github.io/categories/game/</link>
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="/categories/game/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 13 Jun 2017 01:57:49 +0900</lastBuildDate>
+    <atom:link href="/categories/game/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>PS vita向けSSL設定</title>
-      <link>https://yaasita.github.io/2017/06/13/vita-ssl</link>
+      <link>https://yaasita.github.io/2017/06/13/vita-ssl/</link>
       <pubDate>Tue, 13 Jun 2017 01:57:49 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/06/13/vita-ssl</guid>
+      <guid>https://yaasita.github.io/2017/06/13/vita-ssl/</guid>
       <description>PlayStation Vitaの内蔵ブラウザは
 TLSv1.1, TLSv1.2
 が使えないので、 TLSv1 を使うこと
@@ -22,10 +23,10 @@ TLSv1.1, TLSv1.2
     
     <item>
       <title>超次元アクション ネプテューヌU</title>
-      <link>https://yaasita.github.io/2016/09/04/nepu</link>
+      <link>https://yaasita.github.io/2016/09/04/nepu/</link>
       <pubDate>Sun, 04 Sep 2016 03:13:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/09/04/nepu</guid>
+      <guid>https://yaasita.github.io/2016/09/04/nepu/</guid>
       <description>Vita版のやつ
 ギョウ界チ武道会 クリアしたキャラ
  ネプチューヌ
@@ -53,10 +54,10 @@ http://catmiimi.com/nepu_military
     
     <item>
       <title>戦国無双クロニクル3(Vita)攻略</title>
-      <link>https://yaasita.github.io/2016/05/10/sengoku-musou</link>
+      <link>https://yaasita.github.io/2016/05/10/sengoku-musou/</link>
       <pubDate>Tue, 10 May 2016 00:36:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/05/10/sengoku-musou</guid>
+      <guid>https://yaasita.github.io/2016/05/10/sengoku-musou/</guid>
       <description>攻略サイト
 http://goo.gl/bAfbfX
 この全武将お手軽さ評価づけが参考になる
@@ -65,20 +66,20 @@ http://goo.gl/uenJG4</description>
     
     <item>
       <title>ff10-2</title>
-      <link>https://yaasita.github.io/2016/02/15/ff10-2</link>
+      <link>https://yaasita.github.io/2016/02/15/ff10-2/</link>
       <pubDate>Mon, 15 Feb 2016 01:13:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/02/15/ff10-2</guid>
+      <guid>https://yaasita.github.io/2016/02/15/ff10-2/</guid>
       <description>FF10-2ラストミッション攻略ページ
 http://hrs-game.main.jp/ff10-2_hd/last_mission/chapter_1.html</description>
     </item>
     
     <item>
       <title>オンライン囲碁ゲームCOSUMI</title>
-      <link>https://yaasita.github.io/2015/06/01/igo</link>
+      <link>https://yaasita.github.io/2015/06/01/igo/</link>
       <pubDate>Mon, 01 Jun 2015 00:01:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/06/01/igo</guid>
+      <guid>https://yaasita.github.io/2015/06/01/igo/</guid>
       <description>やってみた
 5路盤しか勝てない
 結果</description>
@@ -86,10 +87,10 @@ http://hrs-game.main.jp/ff10-2_hd/last_mission/chapter_1.html</description>
     
     <item>
       <title>クラシックダンジョンX2のインストール機能</title>
-      <link>https://yaasita.github.io/2015/05/19/classic-dungeon-x2</link>
+      <link>https://yaasita.github.io/2015/05/19/classic-dungeon-x2/</link>
       <pubDate>Tue, 19 May 2015 00:15:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/05/19/classic-dungeon-x2</guid>
+      <guid>https://yaasita.github.io/2015/05/19/classic-dungeon-x2/</guid>
       <description>クラシックダンジョンX2にはインストール機能ってやつがあるけど、
 UMDとかなら意味あるらしいけど、vitaでダウンロード版だと
 むしろ遅くなるしなんか不具合おきるぽい
@@ -99,10 +100,10 @@ vitaの場合はコンテンツ管理からアンインストールできた
     
     <item>
       <title>Linuxのターミナルで出来るマリオらしい</title>
-      <link>https://yaasita.github.io/2015/04/13/linux-terminal-game</link>
+      <link>https://yaasita.github.io/2015/04/13/linux-terminal-game/</link>
       <pubDate>Mon, 13 Apr 2015 00:24:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/04/13/linux-terminal-game</guid>
+      <guid>https://yaasita.github.io/2015/04/13/linux-terminal-game/</guid>
       <description>すごいなこれ
 
 まさかの？Linuxターミナル上でプレイする『スーパーマリオブラザーズ』
@@ -111,10 +112,10 @@ vitaの場合はコンテンツ管理からアンインストールできた
     
     <item>
       <title>ロックマンX5攻略</title>
-      <link>https://yaasita.github.io/2015/03/22/rockmanx5</link>
+      <link>https://yaasita.github.io/2015/03/22/rockmanx5/</link>
       <pubDate>Sun, 22 Mar 2015 23:09:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/03/22/rockmanx5</guid>
+      <guid>https://yaasita.github.io/2015/03/22/rockmanx5/</guid>
       <description>エンディング 以下の3種類
  ゼロがプレイヤーキャラから外れていない状態で、エックスでクリア。
  シャトル成功でOK
@@ -143,10 +144,10 @@ vitaの場合はコンテンツ管理からアンインストールできた
     
     <item>
       <title>ロックマンX4攻略</title>
-      <link>https://yaasita.github.io/2015/03/05/rockmanx4</link>
+      <link>https://yaasita.github.io/2015/03/05/rockmanx4/</link>
       <pubDate>Thu, 05 Mar 2015 00:15:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/03/05/rockmanx4</guid>
+      <guid>https://yaasita.github.io/2015/03/05/rockmanx4/</guid>
       <description>ステージ攻略 ウェブ・スパイダス(上段左) クモみたいな奴
  パーツ
  フットパーツ　前半降りてくるところの右
@@ -174,10 +175,10 @@ vitaの場合はコンテンツ管理からアンインストールできた
     
     <item>
       <title>HabitRPGについて</title>
-      <link>https://yaasita.github.io/2015/02/28/habitrpg</link>
+      <link>https://yaasita.github.io/2015/02/28/habitrpg/</link>
       <pubDate>Sat, 28 Feb 2015 22:54:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/02/28/habitrpg</guid>
+      <guid>https://yaasita.github.io/2015/02/28/habitrpg/</guid>
       <description>function callback(data){ var original_url = data.response.posts[0].photos[0].original_size.url; document.getElementById(&#34;habitimg&#34;).parentNode.href = original_url; document.getElementById(&#34;habitimg&#34;).src = original_url; }   公式 https://habitrpg.com/
 遊び方  アバター
  左上が自分のアバターで、クリックするとカスタマイズできる
@@ -204,10 +205,10 @@ vitaの場合はコンテンツ管理からアンインストールできた
     
     <item>
       <title>3Dのパズルゲーム？</title>
-      <link>https://yaasita.github.io/2014/08/31/blueprint3d</link>
+      <link>https://yaasita.github.io/2014/08/31/blueprint3d/</link>
       <pubDate>Sun, 31 Aug 2014 00:42:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/08/31/blueprint3d</guid>
+      <guid>https://yaasita.github.io/2014/08/31/blueprint3d/</guid>
       <description>3Dのパーツを重ねて絵にするゲーム
 Blueprint3D
 http://armorgames.com/play/12557/blueprint3d</description>
@@ -215,59 +216,59 @@ http://armorgames.com/play/12557/blueprint3d</description>
     
     <item>
       <title>CookieClicker</title>
-      <link>https://yaasita.github.io/2014/07/13/cookie-clicker</link>
+      <link>https://yaasita.github.io/2014/07/13/cookie-clicker/</link>
       <pubDate>Sun, 13 Jul 2014 14:30:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/07/13/cookie-clicker</guid>
+      <guid>https://yaasita.github.io/2014/07/13/cookie-clicker/</guid>
       <description>クッキークリッカーのセーブデータ
  </description>
     </item>
     
     <item>
       <title>rubyを駆使して敵を倒していくゲーム</title>
-      <link>https://yaasita.github.io/2013/07/28/661</link>
+      <link>https://yaasita.github.io/2013/07/28/661/</link>
       <pubDate>Sun, 28 Jul 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/07/28/661</guid>
+      <guid>https://yaasita.github.io/2013/07/28/661/</guid>
       <description>Ruby Warrior
 https://www.bloc.io/ruby-warrior/</description>
     </item>
     
     <item>
       <title>PS vitaのUserAgent</title>
-      <link>https://yaasita.github.io/2013/01/20/1523</link>
+      <link>https://yaasita.github.io/2013/01/20/1523/</link>
       <pubDate>Sun, 20 Jan 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/01/20/1523</guid>
+      <guid>https://yaasita.github.io/2013/01/20/1523/</guid>
       <description>Vitaのユーザーエージェントを調べてみました
  </description>
     </item>
     
     <item>
       <title>PS vitaエラーコード一覧</title>
-      <link>https://yaasita.github.io/2013/01/07/1604</link>
+      <link>https://yaasita.github.io/2013/01/07/1604/</link>
       <pubDate>Mon, 07 Jan 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/01/07/1604</guid>
+      <guid>https://yaasita.github.io/2013/01/07/1604/</guid>
       <description>https://gist.github.com/raw/4140449/PS%20Vita
 http://gamegaz.com/2013010310456/ </description>
     </item>
     
     <item>
       <title>機動戦士ガンダムSEED BATTLE DESTINY攻略HP</title>
-      <link>https://yaasita.github.io/2012/09/02/2253</link>
+      <link>https://yaasita.github.io/2012/09/02/2253/</link>
       <pubDate>Sun, 02 Sep 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/09/02/2253</guid>
+      <guid>https://yaasita.github.io/2012/09/02/2253/</guid>
       <description>http://sakray06.blog.so-net.ne.jp/2012-06-12</description>
     </item>
     
     <item>
       <title>マーブルvsカプコン2(MARVEL VS. CAPCOM 2 NEW AGE OF HEROES)</title>
-      <link>https://yaasita.github.io/2011/08/27/3467</link>
+      <link>https://yaasita.github.io/2011/08/27/3467/</link>
       <pubDate>Sat, 27 Aug 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/08/27/3467</guid>
+      <guid>https://yaasita.github.io/2011/08/27/3467/</guid>
       <description>通称マブカプ2
 まとめ
 クソゲーまとめ @ ウィキ
@@ -277,10 +278,10 @@ MARVEL　VS　CAPCOM２　攻略
     
     <item>
       <title>sudoku(数独)の日本語man</title>
-      <link>https://yaasita.github.io/2011/08/12/3583</link>
+      <link>https://yaasita.github.io/2011/08/12/3583/</link>
       <pubDate>Fri, 12 Aug 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/08/12/3583</guid>
+      <guid>https://yaasita.github.io/2011/08/12/3583/</guid>
       <description>Linux用のsudokuゲームの日本語manです
 NAMEsudoku - 数独ゲーム
 SYNOPSIS(ゲームを始める)
@@ -298,10 +299,10 @@ digits 1-9, so that each row, column, and block contains each of the digits 1-9<
     
     <item>
       <title>FF12攻略まとめ</title>
-      <link>https://yaasita.github.io/2011/07/16/3699</link>
+      <link>https://yaasita.github.io/2011/07/16/3699/</link>
       <pubDate>Sat, 16 Jul 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/07/16/3699</guid>
+      <guid>https://yaasita.github.io/2011/07/16/3699/</guid>
       <description>まとめWiki
 Final Fantasy XII WIKI
 FF12攻略情報-ZAPAnet
@@ -319,10 +320,10 @@ FF12攻略情報-ZAPAnet
     
     <item>
       <title>ヨッシーのクッキー裏技</title>
-      <link>https://yaasita.github.io/2011/06/05/3802</link>
+      <link>https://yaasita.github.io/2011/06/05/3802/</link>
       <pubDate>Sun, 05 Jun 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/06/05/3802</guid>
+      <guid>https://yaasita.github.io/2011/06/05/3802/</guid>
       <description>
 強いCPUと戦える </description>
     </item>

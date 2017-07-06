@@ -2,18 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title># cd ~yaasita</title>
-    <link>https://yaasita.github.io/archives/2015/index.xml</link>
+    <link>https://yaasita.github.io/archives/2015/</link>
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="/archives/2015/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 31 Dec 2015 18:16:00 +0900</lastBuildDate>
+    <atom:link href="/archives/2015/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>docker composeインストール</title>
-      <link>https://yaasita.github.io/2015/12/31/compose</link>
+      <link>https://yaasita.github.io/2015/12/31/compose/</link>
       <pubDate>Thu, 31 Dec 2015 18:16:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/12/31/compose</guid>
+      <guid>https://yaasita.github.io/2015/12/31/compose/</guid>
       <description>docker-composeもcheckinstallでdebパッケージにしといた
 https://goo.gl/MKXvhm
 Makefile
@@ -22,10 +23,10 @@ install: chmod +x bin/docker-compose cp bin/docker-compose /usr/local/bin/ cp ba
     
     <item>
       <title>checkinstallでdocker-machineをパッケージに</title>
-      <link>https://yaasita.github.io/2015/12/30/checkinstall</link>
+      <link>https://yaasita.github.io/2015/12/30/checkinstall/</link>
       <pubDate>Wed, 30 Dec 2015 03:16:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/12/30/checkinstall</guid>
+      <guid>https://yaasita.github.io/2015/12/30/checkinstall/</guid>
       <description>debパッケージにするとアンインストールが楽になる
  https://github.com/docker/machine
  https://goo.gl/X5Njaz
@@ -37,10 +38,10 @@ docker-machine-0.5.5/ ├── Makefile ├── docker-machine ├── dock
     
     <item>
       <title>最近のSIer記事</title>
-      <link>https://yaasita.github.io/2015/11/29/sier</link>
+      <link>https://yaasita.github.io/2015/11/29/sier/</link>
       <pubDate>Sun, 29 Nov 2015 22:39:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/11/29/sier</guid>
+      <guid>https://yaasita.github.io/2015/11/29/sier/</guid>
       <description> IT業界で客先常駐という働き方はもうやめにできないか
  大手Sierで見た！
  日本でプログラマが少ない理由は戦う戦場を間違えているからです
@@ -49,20 +50,20 @@ docker-machine-0.5.5/ ├── Makefile ├── docker-machine ├── dock
     
     <item>
       <title>RAID5のリビルド中にもう一個壊れるってやつ</title>
-      <link>https://yaasita.github.io/2015/10/17/raid5_fail</link>
+      <link>https://yaasita.github.io/2015/10/17/raid5_fail/</link>
       <pubDate>Sat, 17 Oct 2015 16:52:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/10/17/raid5_fail</guid>
+      <guid>https://yaasita.github.io/2015/10/17/raid5_fail/</guid>
       <description>リビルド中にもう一個壊れてRAID5が終わった話
 /dev/md0: Version : 1.2 Creation Time : Fri Jan 6 12:24:44 2012 Raid Level : raid5 Array Size : 5860535808 (5589.04 GiB 6001.19 GB) Used Dev Size : 1953511936 (1863.01 GiB 2000.40 GB) Raid Devices : 4 Total Devices : 4 Persistence : Superblock is persistent Update Time : Sat Oct 17 16:59:57 2015 State : clean, FAILED Active Devices : 2 Working Devices : 3 Failed Devices : 1 Spare Devices : 1 Layout : left-symmetric Chunk Size : 512K Name : hoge:0 UUID : 55b9d6ea:4627c873:a0bcab05:a4f0c25d Events : 6755 Number Major Minor RaidDevice State 5 8 49 0 active sync /dev/sdd1 2 0 0 2 removed 2 8 33 2 active sync /dev/sdc1 6 0 0 6 removed 4 8 1 - faulty /dev/sda1 6 8 17 - spare /dev/sdb1  HDD一台が壊れたので /dev/sdb1を追加中にアレイの構成Diskがもう一個壊れた</description>
     </item>
     
     <item>
       <title>ISUCON5で惨敗した件</title>
-      <link>https://yaasita.github.io/2015/09/30/isucon5</link>
+      <link>https://yaasita.github.io/2015/09/30/isucon5/</link>
       <pubDate>Wed, 30 Sep 2015 00:38:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/09/30/isucon5</guid>
+      <guid>https://yaasita.github.io/2015/09/30/isucon5/</guid>
       <description>ISUCON5に参加してきました
 T・D・U！T・D・U！という名前で出てみました
 最高スコアは5000ちょっとでしたOTZ
@@ -94,10 +95,10 @@ T・D・U！T・D・U！という名前で出てみました
     
     <item>
       <title>handbrakeでISOをエンコード</title>
-      <link>https://yaasita.github.io/2015/08/25/handbrake</link>
+      <link>https://yaasita.github.io/2015/08/25/handbrake/</link>
       <pubDate>Tue, 25 Aug 2015 00:32:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/08/25/handbrake</guid>
+      <guid>https://yaasita.github.io/2015/08/25/handbrake/</guid>
       <description>Linuxで動画のエンコード/リッピングするとき
 apt-get handbreak  handbrake-gtk
 で起動して、左側のソース選んで
@@ -108,10 +109,10 @@ http://yaasita.tumblr.com/post/127482624497</description>
     
     <item>
       <title>saslauthd-debian</title>
-      <link>https://yaasita.github.io/2015/07/26/saslauthd-debian</link>
+      <link>https://yaasita.github.io/2015/07/26/saslauthd-debian/</link>
       <pubDate>Sun, 26 Jul 2015 02:42:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/07/26/saslauthd-debian</guid>
+      <guid>https://yaasita.github.io/2015/07/26/saslauthd-debian/</guid>
       <description>なんか Debian Jessie(8.1)のsaslauthdのsystemd定義が書かれてない気がする
 なので自動起動に設定したかったら自分で書く感じで
 /etc/systemd/system/saslauthd.service
@@ -121,10 +122,10 @@ systemctl daemon-reload systemctl enable saslauthd.service systemctl start sasla
     
     <item>
       <title>最近買ったスマホ</title>
-      <link>https://yaasita.github.io/2015/07/26/xperia</link>
+      <link>https://yaasita.github.io/2015/07/26/xperia/</link>
       <pubDate>Sun, 26 Jul 2015 02:29:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/07/26/xperia</guid>
+      <guid>https://yaasita.github.io/2015/07/26/xperia/</guid>
       <description>EXPANSYSで買った
 Sony Xperia E4g E2003 (Unlocked LTE, 8GB, White) 18,737円  SIMフリーはIIJ MIO
 IIJ IIJmio SIM ウェルカムパック microSIM ( SMS 機能付き ) 版 1,900円  </description>
@@ -132,39 +133,39 @@ IIJ IIJmio SIM ウェルカムパック microSIM ( SMS 機能付き ) 版 1,900�
     
     <item>
       <title>IIJ(MIO SIM)のIPアドレス帯</title>
-      <link>https://yaasita.github.io/2015/07/20/iij-ip</link>
+      <link>https://yaasita.github.io/2015/07/20/iij-ip/</link>
       <pubDate>Mon, 20 Jul 2015 20:38:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/07/20/iij-ip</guid>
+      <guid>https://yaasita.github.io/2015/07/20/iij-ip/</guid>
       <description>調べた限りだとこんな感じ</description>
     </item>
     
     <item>
       <title>コードを書いて実力判定</title>
-      <link>https://yaasita.github.io/2015/06/06/codeeval</link>
+      <link>https://yaasita.github.io/2015/06/06/codeeval/</link>
       <pubDate>Sat, 06 Jun 2015 21:50:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/06/06/codeeval</guid>
+      <guid>https://yaasita.github.io/2015/06/06/codeeval/</guid>
       <description>コード書くと評価してくれるようなサービス
 https://www.codeeval.com/browse/1/</description>
     </item>
     
     <item>
       <title>簡易監視スクリプト</title>
-      <link>https://yaasita.github.io/2015/06/02/kanshi</link>
+      <link>https://yaasita.github.io/2015/06/02/kanshi/</link>
       <pubDate>Tue, 02 Jun 2015 00:02:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/06/02/kanshi</guid>
+      <guid>https://yaasita.github.io/2015/06/02/kanshi/</guid>
       <description>自分で自分を監視するperlスクリプト
 https://github.com/yaasita/kanshi-self</description>
     </item>
     
     <item>
       <title>オンライン囲碁ゲームCOSUMI</title>
-      <link>https://yaasita.github.io/2015/06/01/igo</link>
+      <link>https://yaasita.github.io/2015/06/01/igo/</link>
       <pubDate>Mon, 01 Jun 2015 00:01:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/06/01/igo</guid>
+      <guid>https://yaasita.github.io/2015/06/01/igo/</guid>
       <description>やってみた
 5路盤しか勝てない
 結果</description>
@@ -172,10 +173,10 @@ https://github.com/yaasita/kanshi-self</description>
     
     <item>
       <title>MySQLの地図情報</title>
-      <link>https://yaasita.github.io/2015/05/31/mysql-gis</link>
+      <link>https://yaasita.github.io/2015/05/31/mysql-gis/</link>
       <pubDate>Sun, 31 May 2015 01:58:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/05/31/mysql-gis</guid>
+      <guid>https://yaasita.github.io/2015/05/31/mysql-gis/</guid>
       <description>MySQLのGIS回り
 こんな感じで使うぽい
 # インサート insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;旭鮨総本店 新宿住友ビル50F店&#39; ,GeomFromText(&#39;POINT(35.691421 139.692595)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;久兵衛 京王プラザホテル店&#39; ,GeomFromText(&#39;POINT(35.689685 13 9.694664)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;白金寿司&#39; ,GeomFromText(&#39;POINT(35.693417 139.687282)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;喜与し&#39; ,GeomFromText(&#39;POINT(35.692192 139.742396)&#39;) ); # 現在の位置から近い順に表示 コンシェリア西新宿= 35.692777 139.687362 select shop_name, GLength( GeomFromText( concat(&#39;LineString(35.</description>
@@ -183,10 +184,10 @@ https://github.com/yaasita/kanshi-self</description>
     
     <item>
       <title>クラシックダンジョンX2のインストール機能</title>
-      <link>https://yaasita.github.io/2015/05/19/classic-dungeon-x2</link>
+      <link>https://yaasita.github.io/2015/05/19/classic-dungeon-x2/</link>
       <pubDate>Tue, 19 May 2015 00:15:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/05/19/classic-dungeon-x2</guid>
+      <guid>https://yaasita.github.io/2015/05/19/classic-dungeon-x2/</guid>
       <description>クラシックダンジョンX2にはインストール機能ってやつがあるけど、
 UMDとかなら意味あるらしいけど、vitaでダウンロード版だと
 むしろ遅くなるしなんか不具合おきるぽい
@@ -196,10 +197,10 @@ vitaの場合はコンテンツ管理からアンインストールできた
     
     <item>
       <title>Meteor チュートリアル 01</title>
-      <link>https://yaasita.github.io/2015/05/10/meteor-tutorial01</link>
+      <link>https://yaasita.github.io/2015/05/10/meteor-tutorial01/</link>
       <pubDate>Sun, 10 May 2015 00:28:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/05/10/meteor-tutorial01</guid>
+      <guid>https://yaasita.github.io/2015/05/10/meteor-tutorial01/</guid>
       <description>話題のMeteorを触ってみた
 discovermeteorっていうチュートリアル本があるのでやってみる
 なんか原文は有料になってる気がするけど翻訳版は読めるみたい
@@ -227,10 +228,10 @@ meteor deploy yaasita.meteor.com  なんかこれでできるぽい</description
     
     <item>
       <title>Linuxでスクリーンショット取る</title>
-      <link>https://yaasita.github.io/2015/04/18/linux-screenshot</link>
+      <link>https://yaasita.github.io/2015/04/18/linux-screenshot/</link>
       <pubDate>Sat, 18 Apr 2015 02:03:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/04/18/linux-screenshot</guid>
+      <guid>https://yaasita.github.io/2015/04/18/linux-screenshot/</guid>
       <description>shutterというのがよさ気
 apt-get install shutter  http://www.xmisao.com/2014/02/07/get-screenshot-on-linux-by-shutter.html
 他にxwd使う方法もある
@@ -239,10 +240,10 @@ apt-get install shutter  http://www.xmisao.com/2014/02/07/get-screenshot-on-linu
     
     <item>
       <title>Linuxのクリップボードマネージャ</title>
-      <link>https://yaasita.github.io/2015/04/18/linux-clipboard-manager</link>
+      <link>https://yaasita.github.io/2015/04/18/linux-clipboard-manager/</link>
       <pubDate>Sat, 18 Apr 2015 01:31:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/04/18/linux-clipboard-manager</guid>
+      <guid>https://yaasita.github.io/2015/04/18/linux-clipboard-manager/</guid>
       <description>diodon apt-get install diodon  初期設定はCtrl + Alt + vで呼び出し
 Preferenceから以下の設定を直した
  Automatically paste selected item
@@ -258,10 +259,10 @@ apt-get install klipper  初期はShift+Zになってるので設定からなお
     
     <item>
       <title>Linuxのターミナルで出来るマリオらしい</title>
-      <link>https://yaasita.github.io/2015/04/13/linux-terminal-game</link>
+      <link>https://yaasita.github.io/2015/04/13/linux-terminal-game/</link>
       <pubDate>Mon, 13 Apr 2015 00:24:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/04/13/linux-terminal-game</guid>
+      <guid>https://yaasita.github.io/2015/04/13/linux-terminal-game/</guid>
       <description>すごいなこれ
 
 まさかの？Linuxターミナル上でプレイする『スーパーマリオブラザーズ』
@@ -270,10 +271,10 @@ apt-get install klipper  初期はShift+Zになってるので設定からなお
     
     <item>
       <title>boxesっていうソフト</title>
-      <link>https://yaasita.github.io/2015/03/29/boxes</link>
+      <link>https://yaasita.github.io/2015/03/29/boxes/</link>
       <pubDate>Sun, 29 Mar 2015 03:06:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/03/29/boxes</guid>
+      <guid>https://yaasita.github.io/2015/03/29/boxes/</guid>
       <description>vimでも使える
 apt-get install boxes  Visual Modeで選択して
 !boxes -d shell  とかやる
@@ -282,10 +283,10 @@ apt-get install boxes  Visual Modeで選択して
     
     <item>
       <title>ロックマンX5攻略</title>
-      <link>https://yaasita.github.io/2015/03/22/rockmanx5</link>
+      <link>https://yaasita.github.io/2015/03/22/rockmanx5/</link>
       <pubDate>Sun, 22 Mar 2015 23:09:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2015/03/22/rockmanx5</guid>
+      <guid>https://yaasita.github.io/2015/03/22/rockmanx5/</guid>
       <description>エンディング 以下の3種類
  ゼロがプレイヤーキャラから外れていない状態で、エックスでクリア。
  シャトル成功でOK

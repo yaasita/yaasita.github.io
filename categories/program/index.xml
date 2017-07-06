@@ -2,18 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title># cd ~yaasita</title>
-    <link>https://yaasita.github.io/categories/program/index.xml</link>
+    <link>https://yaasita.github.io/categories/program/</link>
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Jun 2017 04:17:15 +0900</lastBuildDate>
+    <atom:link href="/categories/program/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>AWSで監視してSlackに流す設定</title>
-      <link>https://yaasita.github.io/2017/06/22/aws-monitor</link>
+      <link>https://yaasita.github.io/2017/06/22/aws-monitor/</link>
       <pubDate>Thu, 22 Jun 2017 04:17:15 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/06/22/aws-monitor</guid>
+      <guid>https://yaasita.github.io/2017/06/22/aws-monitor/</guid>
       <description>EC2 -&amp;gt; CloudWatch -&amp;gt; SNS -&amp;gt; Lambda -&amp;gt; Slackみたいなよくある設定例
 
 Slack Customize Slack =&amp;gt; Custom Integrations から Incoming WebHooks 選んで適当にチャンネル選んで追加
@@ -29,10 +30,10 @@ SNS Topicsを新しく作ってTopicネームくらいは適当に埋めてお�
     
     <item>
       <title>tumblrの画像を貼るときに直リンクしてはいけない</title>
-      <link>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr</link>
+      <link>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr/</link>
       <pubDate>Sun, 07 May 2017 02:49:05 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr</guid>
+      <guid>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr/</guid>
       <description>なぜか？画像のURLはたまに変わりリンク切れしてしまうから
 ちゃんとAPIを叩いてポストIDから画像リンクを取得した方が良い
  </description>
@@ -40,10 +41,10 @@ SNS Topicsを新しく作ってTopicネームくらいは適当に埋めてお�
     
     <item>
       <title>Vue.jsのちょっとしたこと</title>
-      <link>https://yaasita.github.io/2017/04/14/vuejs-tips</link>
+      <link>https://yaasita.github.io/2017/04/14/vuejs-tips/</link>
       <pubDate>Fri, 14 Apr 2017 15:57:44 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/04/14/vuejs-tips</guid>
+      <guid>https://yaasita.github.io/2017/04/14/vuejs-tips/</guid>
       <description> v-on=&amp;ldquo;click&amp;rdquo;とmodelは一緒に使えない  watchで監視する
  https://github.com/vuejs/vue/issues/1146
    ある要素だけが繰り返すわけじゃないときはtemplateで挟むとよい &amp;lt;template v-for=&amp;quot;item in items&amp;quot;&amp;gt; &amp;lt;a&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;b&amp;gt;&amp;lt;/b&amp;gt; &amp;lt;/template&amp;gt;  https://jp.vuejs.org/v2/guide/list.html
@@ -53,10 +54,10 @@ vm.b = 2 // NG Vue.set(object, key, value) // OK  </description>
     
     <item>
       <title>ginを使ってechoをLiveReload</title>
-      <link>https://yaasita.github.io/2017/04/03/gin-live-reload</link>
+      <link>https://yaasita.github.io/2017/04/03/gin-live-reload/</link>
       <pubDate>Mon, 03 Apr 2017 00:05:20 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/04/03/gin-live-reload</guid>
+      <guid>https://yaasita.github.io/2017/04/03/gin-live-reload/</guid>
       <description> Golangのweb frame workの Echo のライブリロード
 ginがproxyしてくれるのでechoサーバのポートを教えてくれればよろしくリコンパイルしてくれる
 gin --appPort 8080 r go run server.go  CompileDaemonだとこんな感じか
@@ -68,10 +69,10 @@ go get github.com/githubnemo/CompileDaemon CompileDaemon -command=&amp;quot;./ru
     
     <item>
       <title>複数ファイルアップロードの実装</title>
-      <link>https://yaasita.github.io/2017/04/02/multiple-upload</link>
+      <link>https://yaasita.github.io/2017/04/02/multiple-upload/</link>
       <pubDate>Sun, 02 Apr 2017 04:18:50 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/04/02/multiple-upload</guid>
+      <guid>https://yaasita.github.io/2017/04/02/multiple-upload/</guid>
       <description>multiple指定してuploadフォーム作るときの話
 &amp;lt;input type=&amp;quot;file&amp;quot; name=&amp;quot;files&amp;quot; multiple /&amp;gt;  で複数ファイル選択できるが
 Perl CGIで受けるときに↓みたいにすると
@@ -83,10 +84,10 @@ my @fhs = $q-&amp;gt;upload(&#39;files&#39;); my %fname_count; for my $fh (@fhs)
     
     <item>
       <title>Vue.jsとモーダルウィンドウ</title>
-      <link>https://yaasita.github.io/2017/03/04/vuejs-modal</link>
+      <link>https://yaasita.github.io/2017/03/04/vuejs-modal/</link>
       <pubDate>Sat, 04 Mar 2017 02:29:40 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/03/04/vuejs-modal</guid>
+      <guid>https://yaasita.github.io/2017/03/04/vuejs-modal/</guid>
       <description> 参考実装 slotで後から要素を上書きすればOK
  https://github.com/yaasita/vuejs-modal
 参考リンク  https://jp.vuejs.org/v2/examples/modal.html
@@ -95,10 +96,10 @@ my @fhs = $q-&amp;gt;upload(&#39;files&#39;); my %fname_count; for my $fh (@fhs)
     
     <item>
       <title>Vue.jsでドラッグ＆ドロップリスト</title>
-      <link>https://yaasita.github.io/2017/02/20/draggable-list</link>
+      <link>https://yaasita.github.io/2017/02/20/draggable-list/</link>
       <pubDate>Mon, 20 Feb 2017 23:17:28 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/02/20/draggable-list</guid>
+      <guid>https://yaasita.github.io/2017/02/20/draggable-list/</guid>
       <description> Vue.js 2.1.10でやってみる
 https://github.com/yaasita/vuejs-dad-box
  並び変え終わったらdragendで
@@ -114,10 +115,10 @@ $sort_json = json_decode(file_get_contents(&amp;quot;php://input&amp;quot;),true
     
     <item>
       <title>Vue.js内のメソッドはコロン省略しない方が良い</title>
-      <link>https://yaasita.github.io/2017/02/17/do-not-omit-colon-in-vuejs</link>
+      <link>https://yaasita.github.io/2017/02/17/do-not-omit-colon-in-vuejs/</link>
       <pubDate>Fri, 17 Feb 2017 02:06:29 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/02/17/do-not-omit-colon-in-vuejs</guid>
+      <guid>https://yaasita.github.io/2017/02/17/do-not-omit-colon-in-vuejs/</guid>
       <description>InternetExplorer11で
 SCRIPT1003: &#39;:&#39; がありません。  というエラーになるから
 // OK var ok = new Vue({ el: &#39;#example1&#39;, data: { }, methods: { HogeMethod: function(){ } } }); // NG var ng = new Vue({ el: &#39;#example2&#39;, data: { }, methods: { HogeMethod(){ } } });  chromeとかMicrosoft Edgeとかなら良いんだけどね</description>
@@ -125,10 +126,10 @@ SCRIPT1003: &#39;:&#39; がありません。  というエラーになるから
     
     <item>
       <title>relをtumblrテーマに加える</title>
-      <link>https://yaasita.github.io/2017/02/14/add-rel-to-tumblr</link>
+      <link>https://yaasita.github.io/2017/02/14/add-rel-to-tumblr/</link>
       <pubDate>Tue, 14 Feb 2017 01:05:25 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/02/14/add-rel-to-tumblr</guid>
+      <guid>https://yaasita.github.io/2017/02/14/add-rel-to-tumblr/</guid>
       <description>tumblrのテーマをDefaultにしてみた
 一点気になったのは
 リンクがこんな感じでrel属性が指定されてない
@@ -142,10 +143,10 @@ SCRIPT1003: &#39;:&#39; がありません。  というエラーになるから
     
     <item>
       <title>閉じるボタンとVue.js</title>
-      <link>https://yaasita.github.io/2017/02/07/close-button-with-vuejs</link>
+      <link>https://yaasita.github.io/2017/02/07/close-button-with-vuejs/</link>
       <pubDate>Tue, 07 Feb 2017 23:59:54 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/02/07/close-button-with-vuejs</guid>
+      <guid>https://yaasita.github.io/2017/02/07/close-button-with-vuejs/</guid>
       <description>box並べて閉じるボタンつけて、押されたらDOM消して何かするみたいなよくあるインターフェイス
 Vue.js使って書いてみた
 すごい便利
@@ -154,10 +155,10 @@ Vue.js使って書いてみた
     
     <item>
       <title>新旧リダイレクト</title>
-      <link>https://yaasita.github.io/2017/01/16/redirect-githubpage</link>
+      <link>https://yaasita.github.io/2017/01/16/redirect-githubpage/</link>
       <pubDate>Mon, 16 Jan 2017 23:36:18 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/01/16/redirect-githubpage</guid>
+      <guid>https://yaasita.github.io/2017/01/16/redirect-githubpage/</guid>
       <description> middlemanからの移行に際してリンクが壊れまくった
 GoogleのSearch Console
 https://yaasita.tumblr.com/post/155945715637 
@@ -175,10 +176,10 @@ https://yaasita.tumblr.com/post/155945774152
     
     <item>
       <title>ore_markdownを画像埋め込みに対応させた</title>
-      <link>https://yaasita.github.io/2017/01/15/ore_markdown_update2</link>
+      <link>https://yaasita.github.io/2017/01/15/ore_markdown_update2/</link>
       <pubDate>Sun, 15 Jan 2017 02:47:40 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/01/15/ore_markdown_update2</guid>
+      <guid>https://yaasita.github.io/2017/01/15/ore_markdown_update2/</guid>
       <description>またore_markdown-goの修正
 こんな感じに画像データをBase64にして埋め込めばHTMLファイル一枚で完結しそうだったので修正した
 &amp;lt;img src=&amp;quot;data:image/png;base64,(base64文字列)&amp;quot; alt=&amp;quot;img1&amp;quot;&amp;gt;  修正内容
@@ -189,10 +190,10 @@ https://gist.githubusercontent.com/yaasita/d9b55cff5e52197adf4840cf702e5bd6/raw/
     
     <item>
       <title>ansibleで作ったロール</title>
-      <link>https://yaasita.github.io/2017/01/09/my-ansible-role</link>
+      <link>https://yaasita.github.io/2017/01/09/my-ansible-role/</link>
       <pubDate>Mon, 09 Jan 2017 16:24:41 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/01/09/my-ansible-role</guid>
+      <guid>https://yaasita.github.io/2017/01/09/my-ansible-role/</guid>
       <description>成果物  ec2でスワップファイル置くとかするやつ
  https://github.com/yaasita/ansible_role_amazon-ec2
   aptのproxy設定
@@ -224,10 +225,10 @@ https://gist.githubusercontent.com/yaasita/d9b55cff5e52197adf4840cf702e5bd6/raw/
     
     <item>
       <title>ore_markdownをGo言語で書き直した</title>
-      <link>https://yaasita.github.io/2017/01/06/ore_markdown_to_golang</link>
+      <link>https://yaasita.github.io/2017/01/06/ore_markdown_to_golang/</link>
       <pubDate>Fri, 06 Jan 2017 15:44:33 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/01/06/ore_markdown_to_golang</guid>
+      <guid>https://yaasita.github.io/2017/01/06/ore_markdown_to_golang/</guid>
       <description> 久々に ore_markdownを書き直した
 感想とか  Ruby(Gem: github-markdown)→Go(russross/blackfriday)で書き直し
  スタティックファイルもgo-bindataでバイナリに閉じ込めた
@@ -246,10 +247,10 @@ https://gist.githubusercontent.com/yaasita/d9b55cff5e52197adf4840cf702e5bd6/raw/
     
     <item>
       <title>blogをmiddlemanからhugoに移行した</title>
-      <link>https://yaasita.github.io/2017/01/05/middleman2hugo</link>
+      <link>https://yaasita.github.io/2017/01/05/middleman2hugo/</link>
       <pubDate>Thu, 05 Jan 2017 04:50:10 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/01/05/middleman2hugo</guid>
+      <guid>https://yaasita.github.io/2017/01/05/middleman2hugo/</guid>
       <description> 使ってみた感想  ビルドはmiddlemanで10分かかってたけど1秒になった
  themeはgeppakuというのを使用 シンプルで良い
  Tumblrリンクのプルリクエストも快くマージしてくれた感謝m(_ _)m
@@ -278,20 +279,20 @@ Static Site Generatorはとても良い
     
     <item>
       <title>更新通知のbashrc</title>
-      <link>https://yaasita.github.io/2016/09/10/update-notify</link>
+      <link>https://yaasita.github.io/2016/09/10/update-notify/</link>
       <pubDate>Sat, 10 Sep 2016 12:52:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/09/10/update-notify</guid>
+      <guid>https://yaasita.github.io/2016/09/10/update-notify/</guid>
       <description>こんな感じで、更新を促す
  </description>
     </item>
     
     <item>
       <title>s3fs使う</title>
-      <link>https://yaasita.github.io/2016/06/22/s3fs</link>
+      <link>https://yaasita.github.io/2016/06/22/s3fs/</link>
       <pubDate>Wed, 22 Jun 2016 13:40:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/06/22/s3fs</guid>
+      <guid>https://yaasita.github.io/2016/06/22/s3fs/</guid>
       <description>s3fsはamazon S3をファイルしすてむのように使うやつ
 ただ遅い
 基本ここ見てやる
@@ -302,19 +303,19 @@ https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes
     
     <item>
       <title>やる夫で学ぶ機械学習シリーズ</title>
-      <link>https://yaasita.github.io/2016/06/11/deep-learning</link>
+      <link>https://yaasita.github.io/2016/06/11/deep-learning/</link>
       <pubDate>Sat, 11 Jun 2016 23:55:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/06/11/deep-learning</guid>
+      <guid>https://yaasita.github.io/2016/06/11/deep-learning/</guid>
       <description>http://tkengo.github.io/blog/2016/06/06/yaruo-machine-learning0/</description>
     </item>
     
     <item>
       <title>HDDの不良セクタ埋める</title>
-      <link>https://yaasita.github.io/2016/03/26/hdd_bad_sector</link>
+      <link>https://yaasita.github.io/2016/03/26/hdd_bad_sector/</link>
       <pubDate>Sat, 26 Mar 2016 00:43:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/03/26/hdd_bad_sector</guid>
+      <guid>https://yaasita.github.io/2016/03/26/hdd_bad_sector/</guid>
       <description>HDDの不良セクタ代替処理を自動化
 Reallocated_Sector_Ctが残ってれば使える手法
 https://github.com/yaasita/hdd_badsector
@@ -324,10 +325,10 @@ smartctl -a /dev/sdc | ./hdd_check.pl /dev/sdc  </description>
     
     <item>
       <title>Mojoliciousのwebsocket回り</title>
-      <link>https://yaasita.github.io/2016/02/21/mojolicious</link>
+      <link>https://yaasita.github.io/2016/02/21/mojolicious/</link>
       <pubDate>Sun, 21 Feb 2016 02:29:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2016/02/21/mojolicious</guid>
+      <guid>https://yaasita.github.io/2016/02/21/mojolicious/</guid>
       <description>websocketの開いてもデフォルト15秒でタイムアウトするのが嫌なら
 ↓みたいな感じでtimeout伸ばす
 Mojo::IOLoop-&amp;gt;stream($self-&amp;gt;tx-&amp;gt;connection)-&amp;gt;timeout(300);    参考リンク

@@ -2,38 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title># cd ~yaasita</title>
-    <link>https://yaasita.github.io/categories/windows/index.xml</link>
+    <link>https://yaasita.github.io/categories/windows/</link>
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <atom:link href="/categories/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Jul 2014 23:54:00 +0900</lastBuildDate>
+    <atom:link href="/categories/windows/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>itunes入れるとDVDドライブが認識しない</title>
-      <link>https://yaasita.github.io/2014/07/12/itunes-dvd-device</link>
+      <link>https://yaasita.github.io/2014/07/12/itunes-dvd-device/</link>
       <pubDate>Sat, 12 Jul 2014 23:54:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/07/12/itunes-dvd-device</guid>
+      <guid>https://yaasita.github.io/2014/07/12/itunes-dvd-device/</guid>
       <description>レジストリの以下のキーを消すとうまくいった
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E965-E325-11CE-BFC1-08002BE10318}  http://michisugara.jp/archives/2013/op_drive_failure.html</description>
     </item>
     
     <item>
       <title>Windows8.1の完全シャットダウン方法</title>
-      <link>https://yaasita.github.io/2014/06/18/windows8_1_shutdown</link>
+      <link>https://yaasita.github.io/2014/06/18/windows8_1_shutdown/</link>
       <pubDate>Wed, 18 Jun 2014 00:03:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/06/18/windows8_1_shutdown</guid>
+      <guid>https://yaasita.github.io/2014/06/18/windows8_1_shutdown/</guid>
       <description>Win+cで設定ボタン⇒PC設定の変更⇒保守と管理⇒回復⇒今すぐ再起動する⇒PCの電源を切る
 https://www2.mouse-jp.co.jp/ssl/user_support2/sc_faq_documents.asp?FaqID=13460</description>
     </item>
     
     <item>
       <title>キーボード操作を表示してくれるソフト</title>
-      <link>https://yaasita.github.io/2014/06/01/key_display</link>
+      <link>https://yaasita.github.io/2014/06/01/key_display/</link>
       <pubDate>Sun, 01 Jun 2014 02:37:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/06/01/key_display</guid>
+      <guid>https://yaasita.github.io/2014/06/01/key_display/</guid>
       <description>windows用のキーボード操作表示ソフト
 osdHotkey
 
@@ -44,10 +45,10 @@ osdHotkey
     
     <item>
       <title>WindowsでSPICE接続</title>
-      <link>https://yaasita.github.io/2013/12/07/349</link>
+      <link>https://yaasita.github.io/2013/12/07/349/</link>
       <pubDate>Sat, 07 Dec 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/12/07/349</guid>
+      <guid>https://yaasita.github.io/2013/12/07/349/</guid>
       <description>SPICEクライアントをダウンロード
 http://www.spice-space.org/download.html
 virt-viewer-x64-0.5.7.msiを使いました
@@ -61,19 +62,19 @@ http://www.server-world.info/query?os=Fedora_18&amp;amp;p=kvm&amp;amp;f=8 </desc
     
     <item>
       <title>rsyncを蹴るためのラッパーをwshで書いた</title>
-      <link>https://yaasita.github.io/2013/10/13/432</link>
+      <link>https://yaasita.github.io/2013/10/13/432/</link>
       <pubDate>Sun, 13 Oct 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/10/13/432</guid>
+      <guid>https://yaasita.github.io/2013/10/13/432/</guid>
       <description> </description>
     </item>
     
     <item>
       <title>Windows8でBlu-ray再生</title>
-      <link>https://yaasita.github.io/2013/08/25/536</link>
+      <link>https://yaasita.github.io/2013/08/25/536/</link>
       <pubDate>Sun, 25 Aug 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/08/25/536</guid>
+      <guid>https://yaasita.github.io/2013/08/25/536/</guid>
       <description>VLCをインストールして
 ↓から鍵ファイルとlibaacsを所定の場所に保存
 http://vlc-bluray.whoknowsmy.name/
@@ -83,20 +84,20 @@ http://orangeprose.blog.fc2.com/blog-entry-199.html </description>
     
     <item>
       <title>Windowsの無料イメージ</title>
-      <link>https://yaasita.github.io/2013/08/18/578</link>
+      <link>https://yaasita.github.io/2013/08/18/578/</link>
       <pubDate>Sun, 18 Aug 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/08/18/578</guid>
+      <guid>https://yaasita.github.io/2013/08/18/578/</guid>
       <description>IEテスト用らしい
 http://www.modern.ie/ja/virtualization-tools</description>
     </item>
     
     <item>
       <title>WindowsでS.M.A.R.T情報を取得</title>
-      <link>https://yaasita.github.io/2012/09/23/2191</link>
+      <link>https://yaasita.github.io/2012/09/23/2191/</link>
       <pubDate>Sun, 23 Sep 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/09/23/2191</guid>
+      <guid>https://yaasita.github.io/2012/09/23/2191/</guid>
       <description>Linuxだとsmartctlとかだけど、Windowsだとこれがいい感じ
 CrystalDiskInfo
 http://www.forest.impress.co.jp/lib/sys/hrdbnch/hardinfo/crdiskinfo.html </description>
@@ -104,10 +105,10 @@ http://www.forest.impress.co.jp/lib/sys/hrdbnch/hardinfo/crdiskinfo.html </descr
     
     <item>
       <title>Linuxからリモートデスクトップ(RDP)</title>
-      <link>https://yaasita.github.io/2012/06/09/2530</link>
+      <link>https://yaasita.github.io/2012/06/09/2530/</link>
       <pubDate>Sat, 09 Jun 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/06/09/2530</guid>
+      <guid>https://yaasita.github.io/2012/06/09/2530/</guid>
       <description>xfreerdpでいけます
 
 apt-get install freerdp-x11
@@ -116,10 +117,10 @@ apt-get install freerdp-x11
     
     <item>
       <title>最近のCygwinをインストール</title>
-      <link>https://yaasita.github.io/2012/01/26/3111</link>
+      <link>https://yaasita.github.io/2012/01/26/3111/</link>
       <pubDate>Thu, 26 Jan 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2012/01/26/3111</guid>
+      <guid>https://yaasita.github.io/2012/01/26/3111/</guid>
       <description>最近のCygwinが便利になってたので導入メモ
 １．インストール
 公式サイトからsetup.exeを持ってくる
@@ -149,10 +150,10 @@ http://rdt17.blogspot.com/2011/05/xming.html </description>
     
     <item>
       <title>HJSplitって何だ？</title>
-      <link>https://yaasita.github.io/2011/11/06/3361</link>
+      <link>https://yaasita.github.io/2011/11/06/3361/</link>
       <pubDate>Sun, 06 Nov 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/11/06/3361</guid>
+      <guid>https://yaasita.github.io/2011/11/06/3361/</guid>
       <description>ファイルを分割＆結合してくれるソフトです
 主に海外のダウンロードサイトなどで目にします。
 公式サイトはこちら
@@ -165,10 +166,10 @@ http://rdt17.blogspot.com/2011/05/xming.html </description>
     
     <item>
       <title>WindowsでもMplayerを使う</title>
-      <link>https://yaasita.github.io/2011/08/14/3533</link>
+      <link>https://yaasita.github.io/2011/08/14/3533/</link>
       <pubDate>Sun, 14 Aug 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/08/14/3533</guid>
+      <guid>https://yaasita.github.io/2011/08/14/3533/</guid>
       <description>Mplayerはオープンソースのメディアプレイヤー
 公式サイトからDownloadと進んで
 「MPlayer SVN Windows with SMPlayer GUI (recommended)」をえらんだ
@@ -187,10 +188,10 @@ Video→Screenをえらんでディスプレイ先を切り替えること</desc
     
     <item>
       <title>WindowsXPの自動起動（オートラン）機能を無効化する</title>
-      <link>https://yaasita.github.io/2011/05/14/3986</link>
+      <link>https://yaasita.github.io/2011/05/14/3986/</link>
       <pubDate>Sat, 14 May 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/05/14/3986</guid>
+      <guid>https://yaasita.github.io/2011/05/14/3986/</guid>
       <description>レジストリを以下のようにすればOKらしい
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
 &#34;NoDriveTypeAutoRun&#34;=dword:000000b5
@@ -203,10 +204,10 @@ http://yonyon-blog.net/youmei/2008/05/27/cddvd%E3%82%84usb%E3%83%A1%E3%83%A2%E3%
     
     <item>
       <title>Xmingを試してみる</title>
-      <link>https://yaasita.github.io/2011/05/01/4235</link>
+      <link>https://yaasita.github.io/2011/05/01/4235/</link>
       <pubDate>Sun, 01 May 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/05/01/4235</guid>
+      <guid>https://yaasita.github.io/2011/05/01/4235/</guid>
       <description>Xmingはwindowsで使えるXサーバー
 ここからダウンロードしてインストール
 とりあえず使ってみるにはWindows側で以下のコマンドでXサーバーを起動
@@ -223,10 +224,10 @@ export DISPLAY=&#34;192.168.0.6:0&#34;
     
     <item>
       <title>タスク切り替えソフトを選ぶ</title>
-      <link>https://yaasita.github.io/2011/05/01/4214</link>
+      <link>https://yaasita.github.io/2011/05/01/4214/</link>
       <pubDate>Sun, 01 May 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/05/01/4214</guid>
+      <guid>https://yaasita.github.io/2011/05/01/4214/</guid>
       <description>使いやすい＋早いと思ったのは
 ufsかなぁ
 ctclもなかなか良い感じだけど
@@ -237,10 +238,10 @@ http://d.hatena.ne.jp/ampll/20090602/1243924925 </description>
     
     <item>
       <title>bug.nを試してみた</title>
-      <link>https://yaasita.github.io/2011/04/11/4383</link>
+      <link>https://yaasita.github.io/2011/04/11/4383/</link>
       <pubDate>Mon, 11 Apr 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/04/11/4383</guid>
+      <guid>https://yaasita.github.io/2011/04/11/4383/</guid>
       <description>前回Dwmにはまったので
 Windowsでも出来ないか探してみたらあった
 bug.nというらしい
@@ -285,10 +286,10 @@ http://sourceforge.jp/projects/tilingwm/wiki/FrontPage </description>
     
     <item>
       <title>rsyncのWindows版 cwRsyncを試す</title>
-      <link>https://yaasita.github.io/2011/03/22/4612</link>
+      <link>https://yaasita.github.io/2011/03/22/4612/</link>
       <pubDate>Tue, 22 Mar 2011 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/03/22/4612</guid>
+      <guid>https://yaasita.github.io/2011/03/22/4612/</guid>
       <description>公式サイトからリンクを辿ってcwRsync_4.0.4_Installer.zip をダウンロード＆インストール今回は最小構成でインストール
 Secure Channel Wrapperは入れなかった
 PATHに&#34;C:\Program Files\cwRsync\bin&#34;を追加
@@ -302,10 +303,10 @@ http://satospo.sakura.ne.jp/blog_archives/tech/tool/cwrsync.html </description>
     
     <item>
       <title>teraterm &#43; screenだとマウスのスクロールが出来ない？</title>
-      <link>https://yaasita.github.io/2010/12/20/5113</link>
+      <link>https://yaasita.github.io/2010/12/20/5113/</link>
       <pubDate>Mon, 20 Dec 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/12/20/5113</guid>
+      <guid>https://yaasita.github.io/2010/12/20/5113/</guid>
       <description>解決策
 Ctrlを押しながらマウスホイールをまわす TERATERM.INIのTranslateWheelToCursorをoffにする
 参考リンク
@@ -314,10 +315,10 @@ http://d.hatena.ne.jp/orangeclover/20100406/1270564074 </description>
     
     <item>
       <title>smbmountでWindowsの共有フォルダをマウントする</title>
-      <link>https://yaasita.github.io/2010/05/09/6733</link>
+      <link>https://yaasita.github.io/2010/05/09/6733/</link>
       <pubDate>Sun, 09 May 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/05/09/6733</guid>
+      <guid>https://yaasita.github.io/2010/05/09/6733/</guid>
       <description>想定する環境はSoukoドライブがフルアクセスで共有されている場合
 コマンドラインからマウントするなら↓
 smbmount //192.168.0.2/souko\ \(S\)/Linux/dump /mnt -o sec=none
@@ -338,10 +339,10 @@ http://ksugita.blog62.fc2.com/blog-entry-23.html </description>
     
     <item>
       <title>レジストリまで追跡して確実にアンインストール　Revo Uninstaller</title>
-      <link>https://yaasita.github.io/2010/05/03/6876</link>
+      <link>https://yaasita.github.io/2010/05/03/6876/</link>
       <pubDate>Mon, 03 May 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/05/03/6876</guid>
+      <guid>https://yaasita.github.io/2010/05/03/6876/</guid>
       <description>Revo Uninstaller
 というらしい
 参考リンク
