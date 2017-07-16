@@ -6,8 +6,22 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 22 Jun 2017 04:17:15 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 16 Jul 2017 01:47:46 +0900</lastBuildDate>
     <atom:link href="/categories/net/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>IDCFクラウド試してみた</title>
+      <link>https://yaasita.github.io/2017/07/16/idcf-cloud/</link>
+      <pubDate>Sun, 16 Jul 2017 01:47:46 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/07/16/idcf-cloud/</guid>
+      <description> conohaから引っ越し
+ ソースIP、パブリックIPの概念がちょっと難しい
+ OP25Bはされてない
+ 多分VMwareで動いてる
+ conohaよりはファイヤーウォールとか細かく設定できるけど、ポートフォワードの設定とかしなきゃいけないので若干面倒
+  conohaとの比較    機能 conoha IDCF     メモリ 512MB 1GB   料金 680円 540円   CPU(bogomips) 4589.37 5600.00   Disk 20GB 15GB   転送量課金 なし 3,240GB/月まで無料   仮想方式 kvm VMware    </description>
+    </item>
     
     <item>
       <title>AWSで監視してSlackに流す設定</title>
@@ -299,28 +313,6 @@ https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes
 botbot.meはIRCに参加させることでログを取って
 公開できるbotだ
 便利そう</description>
-    </item>
-    
-    <item>
-      <title>Git-itやってみた</title>
-      <link>https://yaasita.github.io/2016/04/24/git-it/</link>
-      <pubDate>Sun, 24 Apr 2016 02:05:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/04/24/git-it/</guid>
-      <description>日本語も選択できるElectron製のアプリで
-ステップバイステップで勉強できる
-ここのリリースページからバイナリを落として実行する
-https://github.com/jlord/git-it-electron
-結果
-http://yaasita.github.io/patchwork/
-参考リンク
- Git-it – 手を動かしながら習得できる日本語対応のGit/GitHub学習アプリ
- http://www.softantenna.com/wp/review/git-it/
-  プルリク練習用のリポジトリ
- https://github.com/jlord/patchwork
-  結果確認
- http://jlord.us/patchwork/
-   </description>
     </item>
     
   </channel>

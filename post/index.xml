@@ -6,8 +6,22 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 15 Jul 2017 23:53:05 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 16 Jul 2017 01:47:46 +0900</lastBuildDate>
     <atom:link href="/post/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>IDCFクラウド試してみた</title>
+      <link>https://yaasita.github.io/2017/07/16/idcf-cloud/</link>
+      <pubDate>Sun, 16 Jul 2017 01:47:46 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/07/16/idcf-cloud/</guid>
+      <description> conohaから引っ越し
+ ソースIP、パブリックIPの概念がちょっと難しい
+ OP25Bはされてない
+ 多分VMwareで動いてる
+ conohaよりはファイヤーウォールとか細かく設定できるけど、ポートフォワードの設定とかしなきゃいけないので若干面倒
+  conohaとの比較    機能 conoha IDCF     メモリ 512MB 1GB   料金 680円 540円   CPU(bogomips) 4589.37 5600.00   Disk 20GB 15GB   転送量課金 なし 3,240GB/月まで無料   仮想方式 kvm VMware    </description>
+    </item>
     
     <item>
       <title>githubからコードスニペットを探す</title>
@@ -269,17 +283,6 @@ https://yaasita.tumblr.com/post/157354717792
 
 
  function callback(data){ gdata = data.response.posts[0].photos; var photos = data.response.posts[0].photos; for(var i=0;i </description>
-    </item>
-    
-    <item>
-      <title>Vue.js内のメソッドはコロン省略しない方が良い</title>
-      <link>https://yaasita.github.io/2017/02/17/do-not-omit-colon-in-vuejs/</link>
-      <pubDate>Fri, 17 Feb 2017 02:06:29 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/02/17/do-not-omit-colon-in-vuejs/</guid>
-      <description>InternetExplorer11で
-SCRIPT1003: &#39;:&#39; がありません。  というエラーになるから
-// OK var ok = new Vue({ el: &#39;#example1&#39;, data: { }, methods: { HogeMethod: function(){ } } }); // NG var ng = new Vue({ el: &#39;#example2&#39;, data: { }, methods: { HogeMethod(){ } } });  chromeとかMicrosoft Edgeとかなら良いんだけどね</description>
     </item>
     
   </channel>
