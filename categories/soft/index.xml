@@ -6,8 +6,20 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 09 Apr 2017 23:28:13 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 22 Jul 2017 17:53:24 +0900</lastBuildDate>
     <atom:link href="/categories/soft/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>apacheのログフォーマット</title>
+      <link>https://yaasita.github.io/2017/07/22/apache-log/</link>
+      <pubDate>Sat, 22 Jul 2017 17:53:24 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/07/22/apache-log/</guid>
+      <description>apacheのログフォーマットはJSONにしておいた方がパースが楽という話
+こんな感じにする
+LogFormat &amp;quot;\ { \ \&amp;quot;host\&amp;quot;:\&amp;quot;%V\&amp;quot;, \ \&amp;quot;method\&amp;quot;:\&amp;quot;%m\&amp;quot;, \ \&amp;quot;port\&amp;quot;:\&amp;quot;%p\&amp;quot;, \ \&amp;quot;processingTime\&amp;quot;:\&amp;quot;%D\&amp;quot;, \ \&amp;quot;protocol\&amp;quot;:\&amp;quot;%H\&amp;quot;, \ \&amp;quot;query\&amp;quot;:\&amp;quot;%q\&amp;quot;, \ \&amp;quot;referer\&amp;quot;:\&amp;quot;%{Referer}i\&amp;quot;, \ \&amp;quot;remoteIP\&amp;quot;:\&amp;quot;%a\&amp;quot;, \ \&amp;quot;request\&amp;quot;:\&amp;quot;%U\&amp;quot;, \ \&amp;quot;responseByte\&amp;quot;:\&amp;quot;%B\&amp;quot;, \ \&amp;quot;status\&amp;quot;:\&amp;quot;%&amp;gt;s\&amp;quot;, \ \&amp;quot;time\&amp;quot;:\&amp;quot;%t\&amp;quot;, \ \&amp;quot;unixtime\&amp;quot;:\&amp;quot;%{%s}t\&amp;quot;, \ \&amp;quot;userAgent\&amp;quot;:\&amp;quot;%{User-agent}i\&amp;quot;, \ \&amp;quot;user\&amp;quot;:\&amp;quot;%u\&amp;quot; \ }&amp;quot; \ leapache  吐き出し
+CustomLog ${APACHE_LOG_DIR}/access-json.log leapache  https://blog.logentries.com/2014/08/json-logging-in-apache-and-nginx-with-logentries/</description>
+    </item>
     
     <item>
       <title>gpg鍵を変えた</title>
@@ -318,18 +330,6 @@ apt-get install klipper  初期はShift+Zになってるので設定からなお
 全般の選択とクリップボード→選択を無視する
 ってやつやると選択しただけでクリップボードに入るのを抑止
 できる</description>
-    </item>
-    
-    <item>
-      <title>boxesっていうソフト</title>
-      <link>https://yaasita.github.io/2015/03/29/boxes/</link>
-      <pubDate>Sun, 29 Mar 2015 03:06:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/03/29/boxes/</guid>
-      <description>vimでも使える
-apt-get install boxes  Visual Modeで選択して
-!boxes -d shell  とかやる
-参考リンク 毎日のスクリプト作成にちょっとしたコダワリを加えるboxes</description>
     </item>
     
   </channel>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yaasita.github.io/2017/07/22/apache-log/</loc>
+    <lastmod>2017-07-22T17:53:24+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yaasita.github.io/2017/07/16/idcf-cloud/</loc>
     <lastmod>2017-07-16T01:47:46+09:00</lastmod>
   </url>
@@ -4259,7 +4264,7 @@
   
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2017-07-16T01:47:46+09:00</lastmod>
+    <lastmod>2017-07-22T17:53:24+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4325,7 +4330,7 @@
   
   <url>
     <loc>https://yaasita.github.io/archives/2017/</loc>
-    <lastmod>2017-07-16T01:47:46+09:00</lastmod>
+    <lastmod>2017-07-22T17:53:24+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4378,7 +4383,7 @@
   
   <url>
     <loc>https://yaasita.github.io/post/</loc>
-    <lastmod>2017-07-16T01:47:46+09:00</lastmod>
+    <lastmod>2017-07-22T17:53:24+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4396,7 +4401,7 @@
   
   <url>
     <loc>https://yaasita.github.io/categories/soft/</loc>
-    <lastmod>2017-04-09T23:28:13+09:00</lastmod>
+    <lastmod>2017-07-22T17:53:24+09:00</lastmod>
     <priority>0</priority>
   </url>
   

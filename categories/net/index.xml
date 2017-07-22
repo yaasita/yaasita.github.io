@@ -20,7 +20,9 @@
  OP25Bはされてない
  多分VMwareで動いてる
  conohaよりはファイヤーウォールとか細かく設定できるけど、ポートフォワードの設定とかしなきゃいけないので若干面倒
-  conohaとの比較    機能 conoha IDCF     メモリ 512MB 1GB   料金 680円 540円   CPU(bogomips) 4589.37 5600.00   Disk 20GB 15GB   転送量課金 なし 3,240GB/月まで無料   仮想方式 kvm VMware    </description>
+  conohaとの比較 最安プランで比べてみる
+転送量のリミットはあるものの総じてIDCFの方が良いかもしれない
+   機能 conoha IDCF     メモリ 512MB 1GB   料金 680円 540円   CPU(bogomips) 4589.37 5600.00   Disk 20GB 15GB   転送量課金 なし 3,240GB/月まで無料   仮想方式 kvm VMware    </description>
     </item>
     
     <item>
