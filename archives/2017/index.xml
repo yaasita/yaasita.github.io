@@ -6,8 +6,18 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 22 Jul 2017 17:53:24 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 09 Aug 2017 16:16:21 +0900</lastBuildDate>
     <atom:link href="/archives/2017/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>会社員→自営業でも再就職手当は貰える</title>
+      <link>https://yaasita.github.io/2017/08/09/sitsugyou-hoken/</link>
+      <pubDate>Wed, 09 Aug 2017 16:16:21 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/08/09/sitsugyou-hoken/</guid>
+      <description>なので、辞めた後にハロワ行って雇用保険受給資格者証もらってから開業届出した後に報告しに行った方が良い
+失業状態だと偽って失業保険貰うと不正受給になるので注意</description>
+    </item>
     
     <item>
       <title>apacheのログフォーマット</title>
@@ -263,25 +273,6 @@ https://aws.koiwaclub.com/
       <description> 参考実装 slotで後から要素を上書きすればOK
  https://github.com/yaasita/vuejs-modal
 参考リンク  https://jp.vuejs.org/v2/examples/modal.html
-  </description>
-    </item>
-    
-    <item>
-      <title>Vue.jsでドラッグ＆ドロップリスト</title>
-      <link>https://yaasita.github.io/2017/02/20/draggable-list/</link>
-      <pubDate>Mon, 20 Feb 2017 23:17:28 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/02/20/draggable-list/</guid>
-      <description> Vue.js 2.1.10でやってみる
-https://github.com/yaasita/vuejs-dad-box
- 並び変え終わったらdragendで
-var request_url = &amp;quot;https://hogehogehoge&amp;quot; var req = new XMLHttpRequest(); req.open(&#39;POST&#39;, request_url, false); req.setRequestHeader(&amp;quot;Content-Type&amp;quot;, &amp;quot;application/json&amp;quot;); req.send(JSON.stringify(this.boxes));  とかやってどっかに飛ばす
-んで後ろ側で
-$sort_json = json_decode(file_get_contents(&amp;quot;php://input&amp;quot;),true);  とかやって受けた
-実際は毎回更新させるのは重いだろうし、交換したDOM二つだけをjsonに乗せるとか工夫の余地あり
-参考リンク  多分Vue.js 1 時代のやつ
- Vue.jsのリストレンダリングとhtml5のドラッグ＆ドロップの実装
-  ネイティブ HTML5 ドラッグ＆ドロップ
   </description>
     </item>
     
