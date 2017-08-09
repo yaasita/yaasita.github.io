@@ -6,8 +6,27 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 15 Jul 2017 23:53:05 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 10 Aug 2017 02:35:57 +0900</lastBuildDate>
     <atom:link href="/categories/program/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>edit-slack.vimちょっと書き直した</title>
+      <link>https://yaasita.github.io/2017/08/10/edit-slack/</link>
+      <pubDate>Thu, 10 Aug 2017 02:35:57 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/08/10/edit-slack/</guid>
+      <description>edit-slack.vim をちょっと直した
+主な変更点は以下の通り
+reactionを表示するようにした
+
+アップロードされたファイルのダウンロードリンクを表示
+
+キーワード検索ができるようにした
+例) vim slack://sw/hogehoge vim slack://sw/from:@yamasita vim slack://sw/on:today  取っ散らかってたコードをちょっと直した
+https://github.com/yaasita/edit-slack/compare/v0.2.0...v0.8.1
+ちょっと見ない間にSlackもなんか変わってて、今までのTest tokenがlegacy tokenって名前になってたり、botアクセス、userアクセスで細かくAPI使用制限がされてるようになってた(前からか？)
+ function callback(data){ photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).src = photos[1].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>githubからコードスニペットを探す</title>
@@ -318,19 +337,6 @@ https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes
       
       <guid>https://yaasita.github.io/2016/06/11/deep-learning/</guid>
       <description>http://tkengo.github.io/blog/2016/06/06/yaruo-machine-learning0/</description>
-    </item>
-    
-    <item>
-      <title>HDDの不良セクタ埋める</title>
-      <link>https://yaasita.github.io/2016/03/26/hdd_bad_sector/</link>
-      <pubDate>Sat, 26 Mar 2016 00:43:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/03/26/hdd_bad_sector/</guid>
-      <description>HDDの不良セクタ代替処理を自動化
-Reallocated_Sector_Ctが残ってれば使える手法
-https://github.com/yaasita/hdd_badsector
-使い方
-smartctl -a /dev/sdc | ./hdd_check.pl /dev/sdc  </description>
     </item>
     
   </channel>

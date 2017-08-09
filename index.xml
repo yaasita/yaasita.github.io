@@ -6,8 +6,27 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 09 Aug 2017 16:16:21 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 10 Aug 2017 02:35:57 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>edit-slack.vimちょっと書き直した</title>
+      <link>https://yaasita.github.io/2017/08/10/edit-slack/</link>
+      <pubDate>Thu, 10 Aug 2017 02:35:57 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/08/10/edit-slack/</guid>
+      <description>edit-slack.vim をちょっと直した
+主な変更点は以下の通り
+reactionを表示するようにした
+
+アップロードされたファイルのダウンロードリンクを表示
+
+キーワード検索ができるようにした
+例) vim slack://sw/hogehoge vim slack://sw/from:@yamasita vim slack://sw/on:today  取っ散らかってたコードをちょっと直した
+https://github.com/yaasita/edit-slack/compare/v0.2.0...v0.8.1
+ちょっと見ない間にSlackもなんか変わってて、今までのTest tokenがlegacy tokenって名前になってたり、botアクセス、userアクセスで細かくAPI使用制限がされてるようになってた(前からか？)
+ function callback(data){ photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).src = photos[1].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>会社員→自営業でも再就職手当は貰える</title>
@@ -262,18 +281,6 @@ https://aws.koiwaclub.com/
 かかる費用は
 模擬試験＋本試験=2160+16200=18360円
 だった</description>
-    </item>
-    
-    <item>
-      <title>Vue.jsとモーダルウィンドウ</title>
-      <link>https://yaasita.github.io/2017/03/04/vuejs-modal/</link>
-      <pubDate>Sat, 04 Mar 2017 02:29:40 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/03/04/vuejs-modal/</guid>
-      <description> 参考実装 slotで後から要素を上書きすればOK
- https://github.com/yaasita/vuejs-modal
-参考リンク  https://jp.vuejs.org/v2/examples/modal.html
-  </description>
     </item>
     
   </channel>
