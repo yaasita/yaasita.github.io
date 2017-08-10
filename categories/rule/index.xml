@@ -23,11 +23,10 @@ DANEはクライアント用でこっちはCA用のレコードらしい
 ;; ANSWER SECTION: yaasita.tk. 60 IN CAA 0 issue &amp;quot;comodoca.com&amp;quot; yaasita.tk. 60 IN CAA 0 issuewild &amp;quot;\;&amp;quot; yaasita.tk. 60 IN CAA 0 iodef &amp;quot;mailto:alert@yaasita.net&amp;quot;  この場合、hoge.yaasita.tk. みたなサブドメインもcomodocaでしか発行できなくなる
 (設定はサブドメインに継承される)
 ただし、上書きは可能なのでCAAを以下のようにすればLet&amp;rsquo;s Encryptだけから発行できるように変わる
-hoge IN CAA 0 issue &amp;quot;letsencrypt.org&amp;quot; hoge IN CAA 0 issuewild &amp;quot;;&amp;quot; hoge IN CAA 0 iodef &amp;quot;mailto:alert@yaasita.net&amp;quot;  現時点で対応してるDNSサーバ少ない気がする
-(Google Cloud DNSは対応してたけど、AWS Route53は対応してなかった)
-iodefについてはLet&amp;rsquo;s Encryptはまだ対応してないぽい
-現時点でiodefに対応してくれないと面白くないのでしばらくはCTログを監視するしかなさそう
-参考リンク  GMOグローバルサインブログ</description>
+hoge IN CAA 0 issue &amp;quot;letsencrypt.org&amp;quot; hoge IN CAA 0 issuewild &amp;quot;;&amp;quot; hoge IN CAA 0 iodef &amp;quot;mailto:alert@yaasita.net&amp;quot;  例えば、google.com のCAAは以下のようになっているので、Google Trust Servicesおよびsymantecからしか発行できない
+仮に drive.google.com のwebrootに任意のファイルを置ける脆弱性があったとしても(http-01で)Let&amp;rsquo;s Encryptの証明書を発行することはできないし、WoSignで偽の証明書を発行されることもない
+(WoSignがCAA無視してたら意味ないけど)
+google.com. 84592 IN CAA 0 issue &amp;quot;pki.</description>
     </item>
     
     <item>

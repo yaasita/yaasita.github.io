@@ -53,7 +53,7 @@ ga('send', 'pageview');
 DANEはクライアント用でこっちはCA用のレコードらしい</p>
 
 <p>例えばこんな感じのCAAレコードを書いて Let&rsquo;s Encryptで発行しようとすると<br />
-こんな<a href="https://gist.github.com/yaasita/a5836b3f446872eb77f4af43370b9da8">エラー</a>が返される</p>
+<a href="https://gist.github.com/yaasita/a5836b3f446872eb77f4af43370b9da8">こんなエラー</a>が返される</p>
 
 <pre><code>;; ANSWER SECTION:
 yaasita.tk.             60      IN      CAA     0 issue &quot;comodoca.com&quot;
@@ -70,10 +70,19 @@ hoge IN CAA 0 issuewild &quot;;&quot;
 hoge IN CAA 0 iodef &quot;mailto:alert@yaasita.net&quot;
 </code></pre>
 
-<p>現時点で対応してるDNSサーバ少ない気がする<br />
-(Google Cloud DNSは対応してたけど、AWS Route53は対応してなかった)<br />
+<p>例えば、google.com のCAAは以下のようになっているので、<a href="https://pki.goog/">Google Trust Services</a>およびsymantecからしか発行できない<br />
+仮に drive.google.com のwebrootに任意のファイルを置ける脆弱性があったとしても(http-01で)Let&rsquo;s Encryptの証明書を発行することはできないし、WoSignで偽の証明書を発行されることもない<br />
+(WoSignがCAA無視してたら意味ないけど)</p>
+
+<pre><code>google.com.             84592   IN      CAA     0 issue &quot;pki.goog&quot;
+google.com.             84592   IN      CAA     0 issue &quot;symantec.com&quot;
+</code></pre>
+
+<p>という訳で、どっかのCAが事故って発行されるリスクも減らせるし自分が信頼するCAを表明しておくのは悪くないんじゃないかなー<br />
+(CTログは発見は出来るけど予防はできないので)<br />
+ただ現時点で対応してるDNSサーバ少ない気がする(Google Cloud DNSは対応してたけど、AWS Route53は対応してなかった)<br />
 iodefについてはLet&rsquo;s Encryptは<a href="https://community.letsencrypt.org/t/caa-setup-for-lets-encrypt/9893/3">まだ対応してない</a>ぽい<br />
-現時点でiodefに対応してくれないと面白くないのでしばらくはCTログを監視するしかなさそう</p>
+iodefに対応してくれないと面白くないのでしばらくはCTログを監視する必要はあるなー</p>
 
 <h2 id="参考リンク">参考リンク</h2>
 
