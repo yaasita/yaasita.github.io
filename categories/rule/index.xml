@@ -6,8 +6,29 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 02 Apr 2017 04:18:50 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 11 Aug 2017 02:03:56 +0900</lastBuildDate>
     <atom:link href="/categories/rule/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>DNSのCAAレコードについて</title>
+      <link>https://yaasita.github.io/2017/08/11/dns-caa-record/</link>
+      <pubDate>Fri, 11 Aug 2017 02:03:56 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/08/11/dns-caa-record/</guid>
+      <description>CAA (Certification Authority Authorization)レコードのチェックが2017年9月8日から必須になるみたい
+ちょっと調べてみる
+DANEはクライアント用でこっちはCA用のレコードらしい
+例えばこんな感じのCAAレコードを書いて Let&amp;rsquo;s Encryptで発行しようとすると
+こんなエラーが返される
+;; ANSWER SECTION: yaasita.tk. 60 IN CAA 0 issue &amp;quot;comodoca.com&amp;quot; yaasita.tk. 60 IN CAA 0 issuewild &amp;quot;\;&amp;quot; yaasita.tk. 60 IN CAA 0 iodef &amp;quot;mailto:alert@yaasita.net&amp;quot;  この場合、hoge.yaasita.tk. みたなサブドメインもcomodocaでしか発行できなくなる
+(設定はサブドメインに継承される)
+ただし、上書きは可能なのでCAAを以下のようにすればLet&amp;rsquo;s Encryptだけから発行できるように変わる
+hoge IN CAA 0 issue &amp;quot;letsencrypt.org&amp;quot; hoge IN CAA 0 issuewild &amp;quot;;&amp;quot; hoge IN CAA 0 iodef &amp;quot;mailto:alert@yaasita.net&amp;quot;  現時点で対応してるDNSサーバ少ない気がする
+(Google Cloud DNSは対応してたけど、AWS Route53は対応してなかった)
+iodefについてはLet&amp;rsquo;s Encryptはまだ対応してないぽい
+現時点でiodefに対応してくれないと面白くないのでしばらくはCTログを監視するしかなさそう
+参考リンク  GMOグローバルサインブログ</description>
+    </item>
     
     <item>
       <title>複数ファイルアップロードの実装</title>
