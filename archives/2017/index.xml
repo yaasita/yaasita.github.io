@@ -6,8 +6,30 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 11 Aug 2017 02:03:56 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 12 Aug 2017 17:25:39 +0900</lastBuildDate>
     <atom:link href="/archives/2017/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>S/MIMEの設定</title>
+      <link>https://yaasita.github.io/2017/08/12/smime/</link>
+      <pubDate>Sat, 12 Aug 2017 17:25:39 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/08/12/smime/</guid>
+      <description>StartSSL CSR作る
+emailaddressにS/MIME設定したいアドレスを入れる
+openssl req -newkey rsa:2048 -keyout yourname.key -out yourname.csr  証明書が送られてくるのでこんな感じでまとめて
+-----BEGIN PRIVATE KEY----- ... -----END PRIVATE KEY----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----  pkcs12に変換してthunderbirdにインポートする
+openssl pkcs12 -export -in sakusei.pem -out email.pfx  なんか送られてきた中間証明書がCRLFとLFが混在してるので直した
+チェーンはこんな感じになってた
+StartCom Certification Authority |_ StartCom Certification Authority ECC |_ StartCom CC2 ICA |_ 自分のメールアドレスメールアドレス  そういやCAAレコードを検証しなかったけどいいのかね？
+でここまでやって気づいたんだけどStartComの証明書が失効扱いで全然検証通らなかった
+これはGmailも同じなのでStartCom使うのは中止
+COMODO 今度COMODOを使うことになったんだけど既にChromeだとKEYGEN要素が使えないらしくFirefoxでアクセスするしかない
+(コードもselect[_moz-type=&amp;ldquo;-mozilla-keygen&amp;rdquo;]になってるし)
+こっちはフォームから申請して、リンククリックすればすぐに証明書がFirefoxに入るのでそれをエクスポートしてthunderbirdに入れればOK
+チェーンはこんな感じ
+COMODO RSA Certification Authority |_COMODO RSA Client Authentication and Secure Email CA |_ 自分のメールアドレス  まとめ Let&amp;rsquo;s EncryptがS/MIME対応してほしい</description>
+    </item>
     
     <item>
       <title>DNSのCAAレコードについて</title>
@@ -275,17 +297,6 @@ E23: 副ファイルはありません  のエラーになるんだよな
 というわけで
 alternate file = 代替ファイル = 副ファイル
 という認識で</description>
-    </item>
-    
-    <item>
-      <title>DockerでAUFSを使わない</title>
-      <link>https://yaasita.github.io/2017/03/21/do-not-use-aufs/</link>
-      <pubDate>Tue, 21 Mar 2017 23:06:46 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/03/21/do-not-use-aufs/</guid>
-      <description>AUFSっていうか/var/lib/dockerに置きたくないとかそういう話
-Dockerでもsystemd-nspawnよろしくそのディレクトリで即座にコンテナ上げたいとき
- 要するに /proc, /dev, /sys, /net あたりを外して全部bindしちゃえばよかった</description>
     </item>
     
   </channel>

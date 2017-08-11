@@ -6,8 +6,30 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 22 Jul 2017 17:53:24 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 12 Aug 2017 17:25:39 +0900</lastBuildDate>
     <atom:link href="/categories/soft/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>S/MIMEの設定</title>
+      <link>https://yaasita.github.io/2017/08/12/smime/</link>
+      <pubDate>Sat, 12 Aug 2017 17:25:39 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/08/12/smime/</guid>
+      <description>StartSSL CSR作る
+emailaddressにS/MIME設定したいアドレスを入れる
+openssl req -newkey rsa:2048 -keyout yourname.key -out yourname.csr  証明書が送られてくるのでこんな感じでまとめて
+-----BEGIN PRIVATE KEY----- ... -----END PRIVATE KEY----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----  pkcs12に変換してthunderbirdにインポートする
+openssl pkcs12 -export -in sakusei.pem -out email.pfx  なんか送られてきた中間証明書がCRLFとLFが混在してるので直した
+チェーンはこんな感じになってた
+StartCom Certification Authority |_ StartCom Certification Authority ECC |_ StartCom CC2 ICA |_ 自分のメールアドレスメールアドレス  そういやCAAレコードを検証しなかったけどいいのかね？
+でここまでやって気づいたんだけどStartComの証明書が失効扱いで全然検証通らなかった
+これはGmailも同じなのでStartCom使うのは中止
+COMODO 今度COMODOを使うことになったんだけど既にChromeだとKEYGEN要素が使えないらしくFirefoxでアクセスするしかない
+(コードもselect[_moz-type=&amp;ldquo;-mozilla-keygen&amp;rdquo;]になってるし)
+こっちはフォームから申請して、リンククリックすればすぐに証明書がFirefoxに入るのでそれをエクスポートしてthunderbirdに入れればOK
+チェーンはこんな感じ
+COMODO RSA Certification Authority |_COMODO RSA Client Authentication and Secure Email CA |_ 自分のメールアドレス  まとめ Let&amp;rsquo;s EncryptがS/MIME対応してほしい</description>
+    </item>
     
     <item>
       <title>apacheのログフォーマット</title>
@@ -311,25 +333,6 @@ meteor deploy yaasita.meteor.com  なんかこれでできるぽい</description
 apt-get install shutter  http://www.xmisao.com/2014/02/07/get-screenshot-on-linux-by-shutter.html
 他にxwd使う方法もある
 # クリックしたウィンドウ xwd | convert - hoge.png xwd -root | convert - desktop.png  http://www.xmisao.com/2013/09/17/linux-xwindow-screenshot.html</description>
-    </item>
-    
-    <item>
-      <title>Linuxのクリップボードマネージャ</title>
-      <link>https://yaasita.github.io/2015/04/18/linux-clipboard-manager/</link>
-      <pubDate>Sat, 18 Apr 2015 01:31:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/04/18/linux-clipboard-manager/</guid>
-      <description>diodon apt-get install diodon  初期設定はCtrl + Alt + vで呼び出し
-Preferenceから以下の設定を直した
- Automatically paste selected item
- 自動ペーストをやめる
-  PluginsのApplication Indicatorのチェックを外す
-  なんかCtrl-Vが使えなくなったりするので使うのやめた
-klipper KDEのやつ
-apt-get install klipper  初期はShift+Zになってるので設定からなおす
-全般の選択とクリップボード→選択を無視する
-ってやつやると選択しただけでクリップボードに入るのを抑止
-できる</description>
     </item>
     
   </channel>
