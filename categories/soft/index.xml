@@ -21,7 +21,7 @@ openssl req -newkey rsa:2048 -keyout yourname.key -out yourname.csr  証明書�
 -----BEGIN PRIVATE KEY----- ... -----END PRIVATE KEY----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----  pkcs12に変換してthunderbirdにインポートする
 openssl pkcs12 -export -in sakusei.pem -out email.pfx  なんか送られてきた中間証明書がCRLFとLFが混在してるので直した
 チェーンはこんな感じになってた
-StartCom Certification Authority |_ StartCom Certification Authority ECC |_ StartCom CC2 ICA |_ 自分のメールアドレスメールアドレス  そういやCAAレコードを検証しなかったけどいいのかね？
+StartCom Certification Authority |_ StartCom Certification Authority ECC |_ StartCom CC2 ICA |_ 自分のメールアドレス  そういやCAAレコードを検証しなかったけどいいのかね？
 でここまでやって気づいたんだけどStartComの証明書が失効扱いで全然検証通らなかった
 これはGmailも同じなのでStartCom使うのは中止
 COMODO 今度COMODOを使うことになったんだけど既にChromeだとKEYGEN要素が使えないらしくFirefoxでアクセスするしかない

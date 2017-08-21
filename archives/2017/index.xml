@@ -6,8 +6,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Aug 2017 17:25:39 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 22 Aug 2017 02:17:37 +0900</lastBuildDate>
     <atom:link href="/archives/2017/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>iptablesの変更をWebからやる</title>
+      <link>https://yaasita.github.io/2017/08/22/imap-iptables/</link>
+      <pubDate>Tue, 22 Aug 2017 02:17:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/08/22/imap-iptables/</guid>
+      <description>httpsのほかにもう一個ポートのアクセス制限を面倒見たくなかったのでなんとなくやってみた
+httpsでWebUIにアクセスしたらIP許可リストに入れるって処理
+
+PerlのCGIからGo言語で書いたバイナリを呼んでiptablesを更新する的な処理
+GoとPerl間はJSONで受け渡す
+Goで書いたのはSUIDビット立てたバイナリで叩きたいと思ったから
+（なんかうまくいかなくて結局sudoでやったけど)
+https://github.com/yaasita/mail-iptables
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>S/MIMEの設定</title>
@@ -21,7 +38,7 @@ openssl req -newkey rsa:2048 -keyout yourname.key -out yourname.csr  証明書�
 -----BEGIN PRIVATE KEY----- ... -----END PRIVATE KEY----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----  pkcs12に変換してthunderbirdにインポートする
 openssl pkcs12 -export -in sakusei.pem -out email.pfx  なんか送られてきた中間証明書がCRLFとLFが混在してるので直した
 チェーンはこんな感じになってた
-StartCom Certification Authority |_ StartCom Certification Authority ECC |_ StartCom CC2 ICA |_ 自分のメールアドレスメールアドレス  そういやCAAレコードを検証しなかったけどいいのかね？
+StartCom Certification Authority |_ StartCom Certification Authority ECC |_ StartCom CC2 ICA |_ 自分のメールアドレス  そういやCAAレコードを検証しなかったけどいいのかね？
 でここまでやって気づいたんだけどStartComの証明書が失効扱いで全然検証通らなかった
 これはGmailも同じなのでStartCom使うのは中止
 COMODO 今度COMODOを使うことになったんだけど既にChromeだとKEYGEN要素が使えないらしくFirefoxでアクセスするしかない
@@ -281,22 +298,6 @@ my @files = $q-&amp;gt;param(&#39;files&#39;); for my $filename (@files) { my $f
 (AndroidとかはOK)
 なのでこんな感じにする
 my @fhs = $q-&amp;gt;upload(&#39;files&#39;); my %fname_count; for my $fh (@fhs){ my $out_filename = non_overlapping_filenames(&amp;quot;$fh&amp;quot;); my $io_handle = $fh-&amp;gt;handle; open (my $wr,&amp;quot;&amp;gt;&amp;quot;, $out_filename) or die $!; while (&amp;lt;$io_handle&amp;gt;){ print $wr $_; } close $wr; push(@result, decode(&amp;quot;UTF-8&amp;quot;,&amp;quot;$fh&amp;quot;)); }  あと古めのアンドロイドはmultiple指定しても複数ファイル選択ができない</description>
-    </item>
-    
-    <item>
-      <title>Vimの副ファイル</title>
-      <link>https://yaasita.github.io/2017/03/30/vim-alternate-file/</link>
-      <pubDate>Thu, 30 Mar 2017 01:46:13 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/03/30/vim-alternate-file/</guid>
-      <description>なんか検索に引っかからないのでメモ
-英語で the alternate file ってやつを取るときは Ctrl-^コマンドでやる
-日本語配列だとCtrl-6かな
-日本語ヘルプだと代替ファイルって訳になってるけど
-E23: 副ファイルはありません  のエラーになるんだよな
-というわけで
-alternate file = 代替ファイル = 副ファイル
-という認識で</description>
     </item>
     
   </channel>
