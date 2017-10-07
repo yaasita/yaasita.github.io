@@ -6,8 +6,27 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 22 Aug 2017 02:17:37 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 29 Sep 2017 02:38:43 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>maildropの管理UIを作った</title>
+      <link>https://yaasita.github.io/2017/09/29/maildrop-admin/</link>
+      <pubDate>Fri, 29 Sep 2017 02:38:43 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/09/29/maildrop-admin/</guid>
+      <description>フロントをVue.jsでこんな感じの構成
+
+動作の様子
+
+maildropの設定ファイル(~/.mailfilter)でも良いんだけどちょっと
+日付が入れられないのとエントリーが増えてくるとちょっと管理しきれなくなった
+一旦こんな感じのJSONを経由することでマシにした感じ
+ &amp;quot;JUNKMAIL&amp;quot;: [ { &amp;quot;header&amp;quot;: &amp;quot;From&amp;quot;, &amp;quot;regex&amp;quot;: &amp;quot;.*atmarkit.co.jp&amp;quot;, &amp;quot;time&amp;quot;: &amp;quot;2017/05/08 01:58&amp;quot; }, { &amp;quot;header&amp;quot;: &amp;quot;From&amp;quot;, &amp;quot;regex&amp;quot;: &amp;quot;.*facebookmail.com&amp;quot;, &amp;quot;time&amp;quot;: &amp;quot;2017/05/08 01:58&amp;quot; },  サーバサイドの実装
+https://github.com/yaasita/maildrop-admin
+.mailfilterへの変換処理
+  function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img0&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img0&#34;).src = photos[0].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).src = photos[1].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>iptablesの変更をWebからやる</title>
@@ -283,21 +302,6 @@ go get github.com/githubnemo/CompileDaemon CompileDaemon -command=&amp;quot;./ru
  https://github.com/githubnemo/CompileDaemon
  https://goo.gl/gp6L9z
   </description>
-    </item>
-    
-    <item>
-      <title>複数ファイルアップロードの実装</title>
-      <link>https://yaasita.github.io/2017/04/02/multiple-upload/</link>
-      <pubDate>Sun, 02 Apr 2017 04:18:50 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/04/02/multiple-upload/</guid>
-      <description>multiple指定してuploadフォーム作るときの話
-&amp;lt;input type=&amp;quot;file&amp;quot; name=&amp;quot;files&amp;quot; multiple /&amp;gt;  で複数ファイル選択できるが
-Perl CGIで受けるときに↓みたいにすると
-my @files = $q-&amp;gt;param(&#39;files&#39;); for my $filename (@files) { my $fn = decode(&amp;quot;UTF-8&amp;quot;, $filename); move($q-&amp;gt;tmpFileName($filename), &amp;quot;/path/to/dir&amp;quot;); }  iOSで選択するとfilenameが全部image.jpgでPOSTされてしまう可能性があるのでダメ
-(AndroidとかはOK)
-なのでこんな感じにする
-my @fhs = $q-&amp;gt;upload(&#39;files&#39;); my %fname_count; for my $fh (@fhs){ my $out_filename = non_overlapping_filenames(&amp;quot;$fh&amp;quot;); my $io_handle = $fh-&amp;gt;handle; open (my $wr,&amp;quot;&amp;gt;&amp;quot;, $out_filename) or die $!; while (&amp;lt;$io_handle&amp;gt;){ print $wr $_; } close $wr; push(@result, decode(&amp;quot;UTF-8&amp;quot;,&amp;quot;$fh&amp;quot;)); }  あと古めのアンドロイドはmultiple指定しても複数ファイル選択ができない</description>
     </item>
     
   </channel>
