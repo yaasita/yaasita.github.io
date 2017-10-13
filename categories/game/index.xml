@@ -6,8 +6,26 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 13 Jun 2017 01:57:49 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Oct 2017 15:29:48 +0900</lastBuildDate>
     <atom:link href="/categories/game/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>WORLD OF FINAL FANTASY(WOFF)攻略まとめ</title>
+      <link>https://yaasita.github.io/2017/10/12/woff/</link>
+      <pubDate>Thu, 12 Oct 2017 15:29:48 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/10/12/woff/</guid>
+      <description>ワールド オブ ファイナルファンタジーの攻略ページまとめ
+ アビリティ
+ アビリティ一覧・効果・大技組み合わせ
+  クエスト・ストーリー
+ よりみちクエスト
+ 隠しマップの行き方
+ ストーリー攻略
+  その他
+ 最強ミラージュランキング！
+   </description>
+    </item>
     
     <item>
       <title>PS vita向けSSL設定</title>
@@ -316,16 +334,6 @@ FF12攻略情報-ZAPAnet
 技・魔法
 技・魔法入手場所
 サブイベント</description>
-    </item>
-    
-    <item>
-      <title>ヨッシーのクッキー裏技</title>
-      <link>https://yaasita.github.io/2011/06/05/3802/</link>
-      <pubDate>Sun, 05 Jun 2011 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2011/06/05/3802/</guid>
-      <description>
-強いCPUと戦える </description>
     </item>
     
   </channel>

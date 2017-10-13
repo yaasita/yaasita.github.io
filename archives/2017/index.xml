@@ -6,8 +6,26 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 29 Sep 2017 02:38:43 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Oct 2017 15:29:48 +0900</lastBuildDate>
     <atom:link href="/archives/2017/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>WORLD OF FINAL FANTASY(WOFF)攻略まとめ</title>
+      <link>https://yaasita.github.io/2017/10/12/woff/</link>
+      <pubDate>Thu, 12 Oct 2017 15:29:48 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/10/12/woff/</guid>
+      <description>ワールド オブ ファイナルファンタジーの攻略ページまとめ
+ アビリティ
+ アビリティ一覧・効果・大技組み合わせ
+  クエスト・ストーリー
+ よりみちクエスト
+ 隠しマップの行き方
+ ストーリー攻略
+  その他
+ 最強ミラージュランキング！
+   </description>
+    </item>
     
     <item>
       <title>maildropの管理UIを作った</title>
@@ -287,21 +305,6 @@ keybase.ioの更新がめんどくさすぎる
       <guid>https://yaasita.github.io/2017/04/06/gcp-shell-homedata/</guid>
       <description>120日で削除されるらしい
 It&#39;s been over 120 days since you opened Cloud Shell from the Google Cloud Platform console. In 7 days, your Cloud Shell home directory will be automatically scheduled for deletion.  </description>
-    </item>
-    
-    <item>
-      <title>ginを使ってechoをLiveReload</title>
-      <link>https://yaasita.github.io/2017/04/03/gin-live-reload/</link>
-      <pubDate>Mon, 03 Apr 2017 00:05:20 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/04/03/gin-live-reload/</guid>
-      <description> Golangのweb frame workの Echo のライブリロード
-ginがproxyしてくれるのでechoサーバのポートを教えてくれればよろしくリコンパイルしてくれる
-gin --appPort 8080 r go run server.go  CompileDaemonだとこんな感じか
-go get github.com/githubnemo/CompileDaemon CompileDaemon -command=&amp;quot;./run.sh&amp;quot; -include=&amp;quot;*.go&amp;quot;   参考リンク  https://github.com/codegangsta/gin
- https://github.com/githubnemo/CompileDaemon
- https://goo.gl/gp6L9z
-  </description>
     </item>
     
   </channel>
