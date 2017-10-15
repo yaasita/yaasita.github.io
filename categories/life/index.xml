@@ -6,8 +6,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 09 Aug 2017 16:16:21 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 15 Oct 2017 22:55:44 +0900</lastBuildDate>
     <atom:link href="/categories/life/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>銀行の通帳を捨てた</title>
+      <link>https://yaasita.github.io/2017/10/15/bank-tutyo/</link>
+      <pubDate>Sun, 15 Oct 2017 22:55:44 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/10/15/bank-tutyo/</guid>
+      <description>記帳に行くのがめんどくさくなったので全部捨ててみた
+Web通帳の各社保存期間はこんな感じ
+ ゆうちょ銀行
+ ゆうちょダイレクトプラス: 15ヶ月分
+  三菱東京UFJ銀行(三菱東京ＵＦＪダイレクト)
+ Eco通帳: 25ヵ月分
+  横浜銀行(はまぎんマイダイレクト)
+ マイスマート通帳: 36ヵ月分
+   </description>
+    </item>
     
     <item>
       <title>会社員→自営業でも再就職手当は貰える</title>
@@ -318,19 +335,6 @@ IT部門の人からすれば自分は使わないのだから丸投げできる
 http://www.fxcm.co.jp/tools/chart.html
 その中でも↓が使いやすかったかも
 http://www.dailyfx.com/charts/netdaniachart/ </description>
-    </item>
-    
-    <item>
-      <title>弾を光らせて軌跡を作り見やすくする曳光弾</title>
-      <link>https://yaasita.github.io/2011/07/01/3761/</link>
-      <pubDate>Fri, 01 Jul 2011 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2011/07/01/3761/</guid>
-      <description>曳光弾というらしい
-これにより弾の軌道が分かるんだと・・・
-参考リンク
-http://karapaia.livedoor.biz/archives/51767062.html
-http://www.nicovideo.jp/watch/sm14657423 </description>
     </item>
     
   </channel>

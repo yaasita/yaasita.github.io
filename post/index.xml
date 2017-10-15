@@ -6,8 +6,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 12 Oct 2017 15:29:48 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 15 Oct 2017 22:55:44 +0900</lastBuildDate>
     <atom:link href="/post/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>銀行の通帳を捨てた</title>
+      <link>https://yaasita.github.io/2017/10/15/bank-tutyo/</link>
+      <pubDate>Sun, 15 Oct 2017 22:55:44 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/10/15/bank-tutyo/</guid>
+      <description>記帳に行くのがめんどくさくなったので全部捨ててみた
+Web通帳の各社保存期間はこんな感じ
+ ゆうちょ銀行
+ ゆうちょダイレクトプラス: 15ヶ月分
+  三菱東京UFJ銀行(三菱東京ＵＦＪダイレクト)
+ Eco通帳: 25ヵ月分
+  横浜銀行(はまぎんマイダイレクト)
+ マイスマート通帳: 36ヵ月分
+   </description>
+    </item>
     
     <item>
       <title>WORLD OF FINAL FANTASY(WOFF)攻略まとめ</title>
@@ -300,16 +317,6 @@ vm.b = 2 // NG Vue.set(object, key, value) // OK  </description>
 keybase.ioの更新がめんどくさすぎる
 失効証明書だけ取っておいてどっか保存しておけば十分な気がしてきた
 ちなみに一回鍵消してもう一回連携やりなおしたら、Invitations が 24 まで増えたんだけどこれ無限増殖できるのでは・・・</description>
-    </item>
-    
-    <item>
-      <title>Google Cloud Shellのディレクトリ削除</title>
-      <link>https://yaasita.github.io/2017/04/06/gcp-shell-homedata/</link>
-      <pubDate>Thu, 06 Apr 2017 00:21:33 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/04/06/gcp-shell-homedata/</guid>
-      <description>120日で削除されるらしい
-It&#39;s been over 120 days since you opened Cloud Shell from the Google Cloud Platform console. In 7 days, your Cloud Shell home directory will be automatically scheduled for deletion.  </description>
     </item>
     
   </channel>
