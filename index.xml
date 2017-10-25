@@ -6,8 +6,28 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 15 Oct 2017 22:55:44 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 26 Oct 2017 01:30:38 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>正しいパッケージのアップデート方法</title>
+      <link>https://yaasita.github.io/2017/10/26/pkg-update/</link>
+      <pubDate>Thu, 26 Oct 2017 01:30:38 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/10/26/pkg-update/</guid>
+      <description>本番環境と検証環境があり、パッケージのアップデートを行いたい場合
+ 10月1日 検証環境のパッケージを上げる
+ 11月1日 検証環境で問題なければこちらも上げる
+  この時、それぞれの日に本番環境、検証環境で apt update, apt upgradeをすると本番、検証で差分が生じ検証されていないパッケージもアップデートされる可能性がある
+正しくは10月1日に検証環境、本番環境で 同時 に以下のコマンドを実行
+apt-get update apt-get upgrade --download-only  検証環境で以下を実行
+apt-get upgrade  問題なければ本番環境で以下を実行
+apt-get upgrade  ポイントは apt-get update, apt-get upgrade --download-only を検証,本番環境ともに同じタイミングで実行して更新予定のパッケージを揃えておくこと
+またubuntuは/etc/apt/apt.conf.d/10periodicの「APT::Periodic::Update-Package-Lists」を0にしておかないと毎日自動でapt-get updateが走るので注意すること
+図にするとこんな感じ
+
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>銀行の通帳を捨てた</title>
@@ -41,12 +61,16 @@ Web通帳の各行保存期間はこんな感じ
  ストーリー攻略
  マップ
  クリア後隠しダンジョン
-  その他
+ XG倒したときのパーティ
+  アイテム
+ マディンの記憶入手方法
+ ミラーストーン一覧と入手法
+  ミラージュ
+ WOFF攻略!ゴブリンプリンセス★、アンデッドセレブ★、クイーンアチョ★入手法
  最強ミラージュランキング！
  図鑑1-10
  図鑑11-20
  図鑑21-22
- マディンの記憶入手方法
    </description>
     </item>
     
@@ -305,19 +329,6 @@ login押すと権限求められるけど怖いからそれはやってない</d
    ある要素だけが繰り返すわけじゃないときはtemplateで挟むとよい &amp;lt;template v-for=&amp;quot;item in items&amp;quot;&amp;gt; &amp;lt;a&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;b&amp;gt;&amp;lt;/b&amp;gt; &amp;lt;/template&amp;gt;  https://jp.vuejs.org/v2/guide/list.html
 hash操作はリアクティブにならない https://jp.vuejs.org/v2/guide/reactivity.html
 vm.b = 2 // NG Vue.set(object, key, value) // OK  </description>
-    </item>
-    
-    <item>
-      <title>gpg鍵を変えた</title>
-      <link>https://yaasita.github.io/2017/04/09/update-gpg-key/</link>
-      <pubDate>Sun, 09 Apr 2017 23:28:13 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/04/09/update-gpg-key/</guid>
-      <description>https://keybase.io/yaasita
-有効期限を付けて1年毎に交換するのは止めよう
-keybase.ioの更新がめんどくさすぎる
-失効証明書だけ取っておいてどっか保存しておけば十分な気がしてきた
-ちなみに一回鍵消してもう一回連携やりなおしたら、Invitations が 24 まで増えたんだけどこれ無限増殖できるのでは・・・</description>
     </item>
     
   </channel>

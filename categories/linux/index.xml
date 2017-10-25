@@ -6,8 +6,28 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 06 Jul 2017 13:46:49 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 26 Oct 2017 01:30:38 +0900</lastBuildDate>
     <atom:link href="/categories/linux/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>正しいパッケージのアップデート方法</title>
+      <link>https://yaasita.github.io/2017/10/26/pkg-update/</link>
+      <pubDate>Thu, 26 Oct 2017 01:30:38 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/10/26/pkg-update/</guid>
+      <description>本番環境と検証環境があり、パッケージのアップデートを行いたい場合
+ 10月1日 検証環境のパッケージを上げる
+ 11月1日 検証環境で問題なければこちらも上げる
+  この時、それぞれの日に本番環境、検証環境で apt update, apt upgradeをすると本番、検証で差分が生じ検証されていないパッケージもアップデートされる可能性がある
+正しくは10月1日に検証環境、本番環境で 同時 に以下のコマンドを実行
+apt-get update apt-get upgrade --download-only  検証環境で以下を実行
+apt-get upgrade  問題なければ本番環境で以下を実行
+apt-get upgrade  ポイントは apt-get update, apt-get upgrade --download-only を検証,本番環境ともに同じタイミングで実行して更新予定のパッケージを揃えておくこと
+またubuntuは/etc/apt/apt.conf.d/10periodicの「APT::Periodic::Update-Package-Lists」を0にしておかないと毎日自動でapt-get updateが走るので注意すること
+図にするとこんな感じ
+
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>machine-idを変える時</title>
@@ -272,21 +292,6 @@ cgcreate -g cpu:ruby cgexec -g cpu:ruby ./install_ruby.sh cgset -r cpu.cfs_quota
       
       <guid>https://yaasita.github.io/2014/06/17/deprecated_network_cmd/</guid>
       <description>Deprecated command Replacement command(s)     arp ip n (ip neighbor)   ifconfig ip a (ip addr), ip link, ip -s (ip -stats)   iptunnel ip tunnel   iwconfig iw   nameif ip link, ifrename   netstat ss, ip route (for netstat-r), ip -s link (for netstat -i), ip maddr (for netstat-g)   route ip r (ip route)     http://understeer.</description>
-    </item>
-    
-    <item>
-      <title>unite.vimみたいなpercol</title>
-      <link>https://yaasita.github.io/2014/06/12/percol/</link>
-      <pubDate>Thu, 12 Jun 2014 23:22:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2014/06/12/percol/</guid>
-      <description> これ使うとシェルでもuniteみたいなインターフェイスで検索できる
-公式サイト
-インストール apt-get install python-pip pip install percol  設定 ~/.bashrc
- ~/.percol.d/rc.pyはREADMEのコピペ
-参考リンク
- bashでもpercolをイイ感じに使う方法
-  </description>
     </item>
     
   </channel>
