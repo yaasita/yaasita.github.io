@@ -6,8 +6,20 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Aug 2017 17:25:39 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 07 Nov 2017 01:36:51 +0900</lastBuildDate>
     <atom:link href="/categories/soft/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>s3fsとIPアドレス制限だけのpublic bucket</title>
+      <link>https://yaasita.github.io/2017/11/07/s3fs-public-bucket/</link>
+      <pubDate>Tue, 07 Nov 2017 01:36:51 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/11/07/s3fs-public-bucket/</guid>
+      <description>s3fsを使ってこんな感じのバケットポリシーのs3をマウントするときのやつ
+(hogehogeバケットとその中身を特定IPアドレスの人に開放する)
+{ &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Id&amp;quot;: &amp;quot;Policy1509977001523&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1509976998204&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;s3:*&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::hogehoge&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;IpAddress&amp;quot;: { &amp;quot;aws:SourceIp&amp;quot;: &amp;quot;203.0.113.1&amp;quot; } } }, { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1509976998204&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;s3:*&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::hogehoge/*&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;IpAddress&amp;quot;: { &amp;quot;aws:SourceIp&amp;quot;: &amp;quot;203.0.113.1&amp;quot; } } } ] }  んでs3fsはこんな感じ
+s3fs -o public_bucket=1,rw,allow_other,umask=0022,endpoint=ap-northeast-1,default_acl=public-read hogehoge /mnt  public_bucketがポイント</description>
+    </item>
     
     <item>
       <title>S/MIMEの設定</title>
@@ -321,18 +333,6 @@ mkdir server client public lib  実行について
 mkdir client/stylesheets vi client/stylesheets/style.css  https://github.com/yaasita/meteor-microscope/tree/88cc746c372b13dae6a669c014c764320a8e776e
 Deployment deployしてみる
 meteor deploy yaasita.meteor.com  なんかこれでできるぽい</description>
-    </item>
-    
-    <item>
-      <title>Linuxでスクリーンショット取る</title>
-      <link>https://yaasita.github.io/2015/04/18/linux-screenshot/</link>
-      <pubDate>Sat, 18 Apr 2015 02:03:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/04/18/linux-screenshot/</guid>
-      <description>shutterというのがよさ気
-apt-get install shutter  http://www.xmisao.com/2014/02/07/get-screenshot-on-linux-by-shutter.html
-他にxwd使う方法もある
-# クリックしたウィンドウ xwd | convert - hoge.png xwd -root | convert - desktop.png  http://www.xmisao.com/2013/09/17/linux-xwindow-screenshot.html</description>
     </item>
     
   </channel>

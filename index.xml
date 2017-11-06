@@ -6,8 +6,20 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 26 Oct 2017 01:30:38 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 07 Nov 2017 01:36:51 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>s3fsとIPアドレス制限だけのpublic bucket</title>
+      <link>https://yaasita.github.io/2017/11/07/s3fs-public-bucket/</link>
+      <pubDate>Tue, 07 Nov 2017 01:36:51 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/11/07/s3fs-public-bucket/</guid>
+      <description>s3fsを使ってこんな感じのバケットポリシーのs3をマウントするときのやつ
+(hogehogeバケットとその中身を特定IPアドレスの人に開放する)
+{ &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Id&amp;quot;: &amp;quot;Policy1509977001523&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1509976998204&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;s3:*&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::hogehoge&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;IpAddress&amp;quot;: { &amp;quot;aws:SourceIp&amp;quot;: &amp;quot;203.0.113.1&amp;quot; } } }, { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1509976998204&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;s3:*&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::hogehoge/*&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;IpAddress&amp;quot;: { &amp;quot;aws:SourceIp&amp;quot;: &amp;quot;203.0.113.1&amp;quot; } } } ] }  んでs3fsはこんな感じ
+s3fs -o public_bucket=1,rw,allow_other,umask=0022,endpoint=ap-northeast-1,default_acl=public-read hogehoge /mnt  public_bucketがポイント</description>
+    </item>
     
     <item>
       <title>正しいパッケージのアップデート方法</title>
@@ -17,7 +29,7 @@
       <guid>https://yaasita.github.io/2017/10/26/pkg-update/</guid>
       <description>本番環境と検証環境があり、パッケージのアップデートを行いたい場合
  10月1日 検証環境のパッケージを上げる
- 11月1日 検証環境で問題なければこちらも上げる
+ 11月1日 検証環境で問題なければ本番も上げる
   この時、それぞれの日に本番環境、検証環境で apt update, apt upgradeをすると本番、検証で差分が生じ検証されていないパッケージもアップデートされる可能性がある
 正しくは10月1日に検証環境、本番環境で 同時 に以下のコマンドを実行
 apt-get update apt-get upgrade --download-only  検証環境で以下を実行
@@ -316,19 +328,6 @@ Oops! It appears that you have disabled your Javascript. In order for you to see
 http://noneblr.com/
 こんな感じになる
 login押すと権限求められるけど怖いからそれはやってない</description>
-    </item>
-    
-    <item>
-      <title>Vue.jsのちょっとしたこと</title>
-      <link>https://yaasita.github.io/2017/04/14/vuejs-tips/</link>
-      <pubDate>Fri, 14 Apr 2017 15:57:44 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/04/14/vuejs-tips/</guid>
-      <description> v-on=&amp;ldquo;click&amp;rdquo;とmodelは一緒に使えない  watchで監視する
- https://github.com/vuejs/vue/issues/1146
-   ある要素だけが繰り返すわけじゃないときはtemplateで挟むとよい &amp;lt;template v-for=&amp;quot;item in items&amp;quot;&amp;gt; &amp;lt;a&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;b&amp;gt;&amp;lt;/b&amp;gt; &amp;lt;/template&amp;gt;  https://jp.vuejs.org/v2/guide/list.html
-hash操作はリアクティブにならない https://jp.vuejs.org/v2/guide/reactivity.html
-vm.b = 2 // NG Vue.set(object, key, value) // OK  </description>
     </item>
     
   </channel>
