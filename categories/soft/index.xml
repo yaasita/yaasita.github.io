@@ -6,8 +6,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 07 Nov 2017 01:36:51 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 16 Nov 2017 06:33:07 +0900</lastBuildDate>
     <atom:link href="/categories/soft/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Teratermでreject clipbordのエラー</title>
+      <link>https://yaasita.github.io/2017/11/16/teraterm-copy/</link>
+      <pubDate>Thu, 16 Nov 2017 06:33:07 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/11/16/teraterm-copy/</guid>
+      <description> teraterm + Tmuxでコピーをすると
+Reject clipboard write access from remoteのエラーが出る
+これはOSC52っていう制御文字を使ってリモートからOSのクリップボードを書き込むことができる機能がブロックされてるよって事
+直すには Setup -&amp;gt; Addtional settings -&amp;gt; Control Sequenceタブ
+と進んで該当箇所を設定すればOK
+その下にNotifyの設定もある
+
+参考リンク  リモートの tmux でコピーした内容のローカルのクリップボードへの反映
+   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>s3fsとIPアドレス制限だけのpublic bucket</title>
@@ -302,37 +319,6 @@ systemctl daemon-reload systemctl enable saslauthd.service systemctl start sasla
       <description>MySQLのGIS回り
 こんな感じで使うぽい
 # インサート insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;旭鮨総本店 新宿住友ビル50F店&#39; ,GeomFromText(&#39;POINT(35.691421 139.692595)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;久兵衛 京王プラザホテル店&#39; ,GeomFromText(&#39;POINT(35.689685 13 9.694664)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;白金寿司&#39; ,GeomFromText(&#39;POINT(35.693417 139.687282)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;喜与し&#39; ,GeomFromText(&#39;POINT(35.692192 139.742396)&#39;) ); # 現在の位置から近い順に表示 コンシェリア西新宿= 35.692777 139.687362 select shop_name, GLength( GeomFromText( concat(&#39;LineString(35.</description>
-    </item>
-    
-    <item>
-      <title>Meteor チュートリアル 01</title>
-      <link>https://yaasita.github.io/2015/05/10/meteor-tutorial01/</link>
-      <pubDate>Sun, 10 May 2015 00:28:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/05/10/meteor-tutorial01/</guid>
-      <description>話題のMeteorを触ってみた
-discovermeteorっていうチュートリアル本があるのでやってみる
-なんか原文は有料になってる気がするけど翻訳版は読めるみたい
-http://ja.discovermeteor.com/
-とりあえず最初の方だけ
-Getting Started インストール
-途中でsudoするので出来るようにしておく
-curl https://install.meteor.com | sh  最初に以下のコマンドを発行して作る
-meteor create microscope  ちなみにこの.meteor/.gitignoreに書かれてる
-.meteor/.local/の中を消せばリセットされる
-パッケージの追加
-meteor add mizzao:bootstrap-3 meteor add underscore  ディレクトリ追加
-mkdir server client public lib  実行について
- server =&amp;gt; サーバ上でのみ実行
- client =&amp;gt; クライアント上でのみ実行
- それ以外はどちらでも動く
- publicには静的ファイルを置く
- libはどのファイルよりも先に実行される
- main.*というファイル名は一番最後に実行される
-  CSSを追加
-mkdir client/stylesheets vi client/stylesheets/style.css  https://github.com/yaasita/meteor-microscope/tree/88cc746c372b13dae6a669c014c764320a8e776e
-Deployment deployしてみる
-meteor deploy yaasita.meteor.com  なんかこれでできるぽい</description>
     </item>
     
   </channel>

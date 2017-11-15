@@ -6,8 +6,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 07 Nov 2017 01:36:51 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 16 Nov 2017 06:33:07 +0900</lastBuildDate>
     <atom:link href="/archives/2017/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Teratermでreject clipbordのエラー</title>
+      <link>https://yaasita.github.io/2017/11/16/teraterm-copy/</link>
+      <pubDate>Thu, 16 Nov 2017 06:33:07 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/11/16/teraterm-copy/</guid>
+      <description> teraterm + Tmuxでコピーをすると
+Reject clipboard write access from remoteのエラーが出る
+これはOSC52っていう制御文字を使ってリモートからOSのクリップボードを書き込むことができる機能がブロックされてるよって事
+直すには Setup -&amp;gt; Addtional settings -&amp;gt; Control Sequenceタブ
+と進んで該当箇所を設定すればOK
+その下にNotifyの設定もある
+
+参考リンク  リモートの tmux でコピーした内容のローカルのクリップボードへの反映
+   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>s3fsとIPアドレス制限だけのpublic bucket</title>
@@ -315,19 +332,6 @@ Oops! It appears that you have disabled your Javascript. In order for you to see
       <description>なぜか？画像のURLはたまに変わりリンク切れしてしまうから
 ちゃんとAPIを叩いてポストIDから画像リンクを取得した方が良い
  </description>
-    </item>
-    
-    <item>
-      <title>テーマを簡素にしてtumblrを見たいとき</title>
-      <link>https://yaasita.github.io/2017/05/06/noneblr/</link>
-      <pubDate>Sat, 06 May 2017 04:55:23 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/05/06/noneblr/</guid>
-      <description>noneblrというサービスが良いかもしれない
-これでどんなBlogも一定のUIで見れる
-http://noneblr.com/
-こんな感じになる
-login押すと権限求められるけど怖いからそれはやってない</description>
     </item>
     
   </channel>
