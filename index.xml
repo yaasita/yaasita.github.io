@@ -6,8 +6,18 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 16 Nov 2017 06:33:07 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 24 Nov 2017 01:54:56 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>SSL証明書の有効期限チェック</title>
+      <link>https://yaasita.github.io/2017/11/24/ssl-check/</link>
+      <pubDate>Fri, 24 Nov 2017 01:54:56 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/11/24/ssl-check/</guid>
+      <description>なんか必要だったので、シェルとかでも良いけど
+ </description>
+    </item>
     
     <item>
       <title>Teratermでreject clipbordのエラー</title>
@@ -321,17 +331,6 @@ Oops! It appears that you have disabled your Javascript. In order for you to see
 とりあえずここまでやれば大抵コピーできるようになるはず
 参考リンク  コピペ禁止サイト
  Webページの「コピペ禁止」を解除・回避するJavaScriptコード</description>
-    </item>
-    
-    <item>
-      <title>tumblrの画像を貼るときに直リンクしてはいけない</title>
-      <link>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr/</link>
-      <pubDate>Sun, 07 May 2017 02:49:05 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr/</guid>
-      <description>なぜか？画像のURLはたまに変わりリンク切れしてしまうから
-ちゃんとAPIを叩いてポストIDから画像リンクを取得した方が良い
- </description>
     </item>
     
   </channel>

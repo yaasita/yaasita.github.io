@@ -6,8 +6,18 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 29 Sep 2017 02:38:43 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 24 Nov 2017 01:54:56 +0900</lastBuildDate>
     <atom:link href="/categories/program/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>SSL証明書の有効期限チェック</title>
+      <link>https://yaasita.github.io/2017/11/24/ssl-check/</link>
+      <pubDate>Fri, 24 Nov 2017 01:54:56 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/11/24/ssl-check/</guid>
+      <description>なんか必要だったので、シェルとかでも良いけど
+ </description>
+    </item>
     
     <item>
       <title>maildropの管理UIを作った</title>
@@ -340,16 +350,6 @@ Static Site Generatorはとても良い
  参考リンク  middleman
  hugo
   </description>
-    </item>
-    
-    <item>
-      <title>更新通知のbashrc</title>
-      <link>https://yaasita.github.io/2016/09/10/update-notify/</link>
-      <pubDate>Sat, 10 Sep 2016 12:52:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/09/10/update-notify/</guid>
-      <description>こんな感じで、更新を促す
- </description>
     </item>
     
   </channel>
