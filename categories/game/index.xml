@@ -6,8 +6,20 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 12 Oct 2017 15:29:48 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 29 Nov 2017 23:20:37 +0900</lastBuildDate>
     <atom:link href="/categories/game/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>PS Vita 3.67アップデートでTLS1.2対応</title>
+      <link>https://yaasita.github.io/2017/11/29/vita-new-version/</link>
+      <pubDate>Wed, 29 Nov 2017 23:20:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/11/29/vita-new-version/</guid>
+      <description>3.65時点だと対応してなかったけど、3.67でTLS1.2対応しました🎉
+公式には
+ システムソフトウェアにおいて、動作の安定性を改善しました。
+ としか書いてないけど</description>
+    </item>
     
     <item>
       <title>WORLD OF FINAL FANTASY(WOFF)攻略まとめ</title>
@@ -323,27 +335,6 @@ sudoku -s [options] ...
 DESCRIPTIONThe sudoku board game is played on a 9x9 grid, divided into rows, columns, and
 9 blocks of 3x3 squares. The objective is to fill the empty squares with the
 digits 1-9, so that each row, column, and block contains each of the digits 1-9</description>
-    </item>
-    
-    <item>
-      <title>FF12攻略まとめ</title>
-      <link>https://yaasita.github.io/2011/07/16/3699/</link>
-      <pubDate>Sat, 16 Jul 2011 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2011/07/16/3699/</guid>
-      <description>まとめWiki
-Final Fantasy XII WIKI
-FF12攻略情報-ZAPAnet
-武器・防具について
-武器の特徴
-武器・防具の入手方法
-防具リスト
-武器リスト
-ライセンス
-ライセンスボードの位置
-技・魔法
-技・魔法入手場所
-サブイベント</description>
     </item>
     
   </channel>

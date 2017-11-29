@@ -6,8 +6,32 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 09 Jan 2017 16:27:40 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 29 Nov 2017 23:20:37 +0900</lastBuildDate>
     <atom:link href="/categories/hard/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>PS Vita 3.67アップデートでTLS1.2対応</title>
+      <link>https://yaasita.github.io/2017/11/29/vita-new-version/</link>
+      <pubDate>Wed, 29 Nov 2017 23:20:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/11/29/vita-new-version/</guid>
+      <description>3.65時点だと対応してなかったけど、3.67でTLS1.2対応しました🎉
+公式には
+ システムソフトウェアにおいて、動作の安定性を改善しました。
+ としか書いてないけど</description>
+    </item>
+    
+    <item>
+      <title>PS vita向けSSL設定</title>
+      <link>https://yaasita.github.io/2017/06/13/vita-ssl/</link>
+      <pubDate>Tue, 13 Jun 2017 01:57:49 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/06/13/vita-ssl/</guid>
+      <description>PlayStation Vitaの内蔵ブラウザは
+TLSv1.1, TLSv1.2
+が使えないので、 TLSv1 を使うこと
+システムソフトウェア 3.65 時点</description>
+    </item>
     
     <item>
       <title>MacBook買ったのでサポートお願いした</title>
@@ -248,34 +272,6 @@ http://nabe.blog.abk.nu/0245
 ファイルシステムが壊れてそうなら
 fsck
 を使うこと</description>
-    </item>
-    
-    <item>
-      <title>/dev/disk/by-uuidに無いHDDがある？</title>
-      <link>https://yaasita.github.io/2012/01/06/3236/</link>
-      <pubDate>Fri, 06 Jan 2012 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2012/01/06/3236/</guid>
-      <description>答え
-mkfsでフォーマットしてないからです。
-フォーマットすれば出ます。
-ファイルシステム単位につけるものらしいね
-だからmkfsしなおしたら変わります
-ご注意を
-参考リンク
-http://manual.aptosid.com/ja/part-uuid-ja.htm </description>
-    </item>
-    
-    <item>
-      <title>マザーボードのチップセットとかCPU情報をLinuxで取得する</title>
-      <link>https://yaasita.github.io/2011/12/31/3257/</link>
-      <pubDate>Sat, 31 Dec 2011 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2011/12/31/3257/</guid>
-      <description>lshwというユーティリティがあった
-aptでインストールできた
-参考リンク
-PCのハードウェア情報を表示するには </description>
     </item>
     
   </channel>
