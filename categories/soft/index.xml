@@ -6,8 +6,24 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 16 Nov 2017 06:33:07 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 02 Dec 2017 04:36:08 +0900</lastBuildDate>
     <atom:link href="/categories/soft/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>TeratermからConEmuへ移行した</title>
+      <link>https://yaasita.github.io/2017/12/02/teraterm-to-conemu/</link>
+      <pubDate>Sat, 02 Dec 2017 04:36:08 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/12/02/teraterm-to-conemu/</guid>
+      <description>長年使ってたTeratermからConEmuへ移行した
+SSHクライアントはputtyを使ってる
+WSL経由でも良かったんだけど、なんかVimのvisualモードで背景色が変わらなかったり表示が微妙だったので結局putty使った
+良かった点  絵文字も表示できる
+ タブが便利(TeratermもCollectorで出来るけどこっちの方が使いやすい)
+ F1キーをリモート側に送るとかそういう設定がしやすい
+  微妙な点  Alt-Vでペーストしてたけどこれが使えない(設定方法が分からない)
+  まとめ ConEmu入れた後putty設定したり、微妙に面倒だけど使いやすい</description>
+    </item>
     
     <item>
       <title>Teratermでreject clipbordのエラー</title>
@@ -308,17 +324,6 @@ http://yaasita.tumblr.com/post/127482624497</description>
 /etc/systemd/system/saslauthd.service
  みたいな定義を書いて
 systemctl daemon-reload systemctl enable saslauthd.service systemctl start saslauthd.service  </description>
-    </item>
-    
-    <item>
-      <title>MySQLの地図情報</title>
-      <link>https://yaasita.github.io/2015/05/31/mysql-gis/</link>
-      <pubDate>Sun, 31 May 2015 01:58:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/05/31/mysql-gis/</guid>
-      <description>MySQLのGIS回り
-こんな感じで使うぽい
-# インサート insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;旭鮨総本店 新宿住友ビル50F店&#39; ,GeomFromText(&#39;POINT(35.691421 139.692595)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;久兵衛 京王プラザホテル店&#39; ,GeomFromText(&#39;POINT(35.689685 13 9.694664)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;白金寿司&#39; ,GeomFromText(&#39;POINT(35.693417 139.687282)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;喜与し&#39; ,GeomFromText(&#39;POINT(35.692192 139.742396)&#39;) ); # 現在の位置から近い順に表示 コンシェリア西新宿= 35.692777 139.687362 select shop_name, GLength( GeomFromText( concat(&#39;LineString(35.</description>
     </item>
     
   </channel>

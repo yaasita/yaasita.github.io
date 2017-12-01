@@ -6,8 +6,24 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 29 Nov 2017 23:20:37 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 02 Dec 2017 04:36:08 +0900</lastBuildDate>
     <atom:link href="/archives/2017/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>TeratermからConEmuへ移行した</title>
+      <link>https://yaasita.github.io/2017/12/02/teraterm-to-conemu/</link>
+      <pubDate>Sat, 02 Dec 2017 04:36:08 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/12/02/teraterm-to-conemu/</guid>
+      <description>長年使ってたTeratermからConEmuへ移行した
+SSHクライアントはputtyを使ってる
+WSL経由でも良かったんだけど、なんかVimのvisualモードで背景色が変わらなかったり表示が微妙だったので結局putty使った
+良かった点  絵文字も表示できる
+ タブが便利(TeratermもCollectorで出来るけどこっちの方が使いやすい)
+ F1キーをリモート側に送るとかそういう設定がしやすい
+  微妙な点  Alt-Vでペーストしてたけどこれが使えない(設定方法が分からない)
+  まとめ ConEmu入れた後putty設定したり、微妙に面倒だけど使いやすい</description>
+    </item>
     
     <item>
       <title>PS Vita 3.67アップデートでTLS1.2対応</title>
@@ -310,16 +326,6 @@ SNS Topicsを新しく作ってTopicネームくらいは適当に埋めてお�
 TLSv1.1, TLSv1.2
 が使えないので、 TLSv1 を使うこと
 システムソフトウェア 3.65 時点</description>
-    </item>
-    
-    <item>
-      <title>絵文字探すときに</title>
-      <link>https://yaasita.github.io/2017/05/23/emoji/</link>
-      <pubDate>Tue, 23 May 2017 23:24:02 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/05/23/emoji/</guid>
-      <description>便利な emojipedia
-http://emojipedia.org/</description>
     </item>
     
   </channel>
