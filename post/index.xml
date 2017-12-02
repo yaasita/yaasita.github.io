@@ -6,8 +6,21 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 02 Dec 2017 04:36:08 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 03 Dec 2017 01:30:08 +0900</lastBuildDate>
     <atom:link href="/post/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>モナコインのマイニング</title>
+      <link>https://yaasita.github.io/2017/12/03/mona-coin/</link>
+      <pubDate>Sun, 03 Dec 2017 01:30:08 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/12/03/mona-coin/</guid>
+      <description>cpuminer-multiでやってみた
+スコア  IDCF Cloud (Light.S1) メモリ1GB 仮想1CPU =&amp;gt; 17.48 kH/s
+ 自宅PC Intel&amp;reg; Core&amp;trade; i5-4460 CPU @ 3.20GHz 4コア メモリ 4GB =&amp;gt; 376 kH/s
+ ノートパソコン LB-C110B インテル&amp;reg; Celeron&amp;reg; プロセッサー 1037U 2コア/1.80GHz メモリ8GB =&amp;gt; 91 kH/s
+  まとめ CPUマイニングなんてやるもんじゃない←結論</description>
+    </item>
     
     <item>
       <title>TeratermからConEmuへ移行した</title>
@@ -31,7 +44,7 @@ WSL経由でも良かったんだけど、なんかVimのvisualモードで背�
       <pubDate>Wed, 29 Nov 2017 23:20:37 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2017/11/29/vita-new-version/</guid>
-      <description>3.65時点だと対応してなかったけど、3.67でTLS1.2対応しました🎉
+      <description>3.65時点だと対応してなかったけど、3.67でTLS1.2対応したようです🎉
 公式には
  システムソフトウェアにおいて、動作の安定性を改善しました。
  としか書いてないけど</description>
@@ -314,18 +327,6 @@ apt-get install awscli # カスタムメトリクス用スクリプト apt-get i
   CloudWatch ダッシュボード作ったりアラーム書いたりしておく
 通知はSNSのTopicsを指定する(後述)
 SNS Topicsを新しく作ってTopicネームくらいは適当に埋めておく後で、Lambda側で指定するのでTopicさえあればOK</description>
-    </item>
-    
-    <item>
-      <title>PS vita向けSSL設定</title>
-      <link>https://yaasita.github.io/2017/06/13/vita-ssl/</link>
-      <pubDate>Tue, 13 Jun 2017 01:57:49 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/06/13/vita-ssl/</guid>
-      <description>PlayStation Vitaの内蔵ブラウザは
-TLSv1.1, TLSv1.2
-が使えないので、 TLSv1 を使うこと
-システムソフトウェア 3.65 時点</description>
     </item>
     
   </channel>
