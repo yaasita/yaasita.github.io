@@ -6,16 +6,34 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 03 Dec 2017 01:30:08 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 04 Dec 2017 23:27:01 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>モナコインのマイニング</title>
+      <title>gpgでサブキーを指定して暗号化</title>
+      <link>https://yaasita.github.io/2017/12/04/gpg-specify-subkey/</link>
+      <pubDate>Mon, 04 Dec 2017 23:27:01 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/12/04/gpg-specify-subkey/</guid>
+      <description>gpgで副鍵(subkey)を新しく作ったとする(addkey)
+でいざ使うと思ったら、やむ負えない事情により古い副鍵で暗号化しなきゃいけなくなったとする
+こんな感じの状態ね
+pub rsa2048 2017-04-09 [SC] XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX uid [ultimate] yamasita &amp;lt;yamasita@example.net&amp;gt; sub rsa2048 2017-04-09 [E] sub elg2048 2017-12-04 [E]  んで、普通にgpg -e で暗号化すると新しい elg2048 の方が使われてしまう
+rsa2048を使いたくなったらこんな感じでrsa2048の方のIDを指定して暗号化する
+gpg --recipient BBBBBBBBBBB12345! -v -e memo  IDは&amp;ndash;edit-keysとかやれば見れるお
+あと、注意点として副鍵は追加しても古い鍵はしばらく残しておくこと
+送信側がすぐ、新しい鍵を入れてくれるとも限らないし古い鍵で暗号化されたものを復号化できなくなる
+主鍵は、副鍵を署名するだけのものであって、副鍵の秘密鍵は取っておかなきゃいけないのです</description>
+    </item>
+    
+    <item>
+      <title>MonaCoinのマイニング</title>
       <link>https://yaasita.github.io/2017/12/03/mona-coin/</link>
       <pubDate>Sun, 03 Dec 2017 01:30:08 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2017/12/03/mona-coin/</guid>
-      <description>cpuminer-multiでやってみた
+      <description>モナコインをマイニングしてみる
+cpuminer-multiでやってみた
 スコア  IDCF Cloud (Light.S1) メモリ1GB 仮想1CPU =&amp;gt; 17.48 kH/s
  自宅PC Intel&amp;reg; Core&amp;trade; i5-4460 CPU @ 3.20GHz 4コア メモリ 4GB =&amp;gt; 376 kH/s
  ノートパソコン LB-C110B インテル&amp;reg; Celeron&amp;reg; プロセッサー 1037U 2コア/1.80GHz メモリ8GB =&amp;gt; 91 kH/s
@@ -308,25 +326,6 @@ CustomLog ${APACHE_LOG_DIR}/access-json.log leapache  https://blog.logentries.co
       <description>systemd-nspawn使ってて
 なんか /etc/machine-id　ないよって言われたとき
 dbus-uuidgen &amp;gt; root/etc/machine-id  </description>
-    </item>
-    
-    <item>
-      <title>AWSで監視してSlackに流す設定</title>
-      <link>https://yaasita.github.io/2017/06/22/aws-monitor/</link>
-      <pubDate>Thu, 22 Jun 2017 04:17:15 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/06/22/aws-monitor/</guid>
-      <description>EC2 -&amp;gt; CloudWatch -&amp;gt; SNS -&amp;gt; Lambda -&amp;gt; Slackみたいなよくある設定例
-
-Slack Customize Slack =&amp;gt; Custom Integrations から Incoming WebHooks 選んで適当にチャンネル選んで追加
-URLをメモっておく
-EC2 とりあえずaws cli入れて、この辺の監視スクリプトをcronに登録すればOK
-apt-get install awscli # カスタムメトリクス用スクリプト apt-get install unzip libwww-perl libdatetime-perl curl http://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.1.zip -O unzip CloudWatchMonitoringScripts-1.2.1.zip rm CloudWatchMonitoringScripts-1.2.1.zip cd aws-scripts-mon cp awscreds.template awscreds.conf vim awscreds.conf # keyIDとSecretKeyを書いておく  こんな感じのやつをcronに登録
-~/aws-scripts-mon/mon-put-instance-data.pl --mem-util --swap-util --disk-path=/ --disk-space-util --from-cron  んで即座に反映されるはず
- カスタムメトリクスをパブリッシュする
-  CloudWatch ダッシュボード作ったりアラーム書いたりしておく
-通知はSNSのTopicsを指定する(後述)
-SNS Topicsを新しく作ってTopicネームくらいは適当に埋めておく後で、Lambda側で指定するのでTopicさえあればOK</description>
     </item>
     
   </channel>

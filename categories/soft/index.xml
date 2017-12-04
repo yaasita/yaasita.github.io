@@ -6,8 +6,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 02 Dec 2017 04:36:08 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 04 Dec 2017 23:27:01 +0900</lastBuildDate>
     <atom:link href="/categories/soft/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>gpgでサブキーを指定して暗号化</title>
+      <link>https://yaasita.github.io/2017/12/04/gpg-specify-subkey/</link>
+      <pubDate>Mon, 04 Dec 2017 23:27:01 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/12/04/gpg-specify-subkey/</guid>
+      <description>gpgで副鍵(subkey)を新しく作ったとする(addkey)
+でいざ使うと思ったら、やむ負えない事情により古い副鍵で暗号化しなきゃいけなくなったとする
+こんな感じの状態ね
+pub rsa2048 2017-04-09 [SC] XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX uid [ultimate] yamasita &amp;lt;yamasita@example.net&amp;gt; sub rsa2048 2017-04-09 [E] sub elg2048 2017-12-04 [E]  んで、普通にgpg -e で暗号化すると新しい elg2048 の方が使われてしまう
+rsa2048を使いたくなったらこんな感じでrsa2048の方のIDを指定して暗号化する
+gpg --recipient BBBBBBBBBBB12345! -v -e memo  IDは&amp;ndash;edit-keysとかやれば見れるお
+あと、注意点として副鍵は追加しても古い鍵はしばらく残しておくこと
+送信側がすぐ、新しい鍵を入れてくれるとも限らないし古い鍵で暗号化されたものを復号化できなくなる
+主鍵は、副鍵を署名するだけのものであって、副鍵の秘密鍵は取っておかなきゃいけないのです</description>
+    </item>
     
     <item>
       <title>TeratermからConEmuへ移行した</title>
@@ -311,19 +328,6 @@ apt-get handbreak  handbrake-gtk
 開始でOK
 あんま難しくない
 http://yaasita.tumblr.com/post/127482624497</description>
-    </item>
-    
-    <item>
-      <title>saslauthd-debian</title>
-      <link>https://yaasita.github.io/2015/07/26/saslauthd-debian/</link>
-      <pubDate>Sun, 26 Jul 2015 02:42:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/07/26/saslauthd-debian/</guid>
-      <description>なんか Debian Jessie(8.1)のsaslauthdのsystemd定義が書かれてない気がする
-なので自動起動に設定したかったら自分で書く感じで
-/etc/systemd/system/saslauthd.service
- みたいな定義を書いて
-systemctl daemon-reload systemctl enable saslauthd.service systemctl start saslauthd.service  </description>
     </item>
     
   </channel>

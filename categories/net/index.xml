@@ -10,12 +10,13 @@
     <atom:link href="/categories/net/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>モナコインのマイニング</title>
+      <title>MonaCoinのマイニング</title>
       <link>https://yaasita.github.io/2017/12/03/mona-coin/</link>
       <pubDate>Sun, 03 Dec 2017 01:30:08 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2017/12/03/mona-coin/</guid>
-      <description>cpuminer-multiでやってみた
+      <description>モナコインをマイニングしてみる
+cpuminer-multiでやってみた
 スコア  IDCF Cloud (Light.S1) メモリ1GB 仮想1CPU =&amp;gt; 17.48 kH/s
  自宅PC Intel&amp;reg; Core&amp;trade; i5-4460 CPU @ 3.20GHz 4コア メモリ 4GB =&amp;gt; 376 kH/s
  ノートパソコン LB-C110B インテル&amp;reg; Celeron&amp;reg; プロセッサー 1037U 2コア/1.80GHz メモリ8GB =&amp;gt; 91 kH/s
