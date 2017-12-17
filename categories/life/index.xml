@@ -18,8 +18,8 @@
       <description>モナコインをマイニングしてみる
 cpuminer-multiでやってみた
 スコア  IDCF Cloud (Light.S1) メモリ1GB 仮想1CPU =&amp;gt; 17.48 kH/s
- 自宅PC Intel&amp;reg; Core&amp;trade; i5-4460 CPU @ 3.20GHz 4コア メモリ 4GB =&amp;gt; 376 kH/s
- ノートパソコン LB-C110B インテル&amp;reg; Celeron&amp;reg; プロセッサー 1037U 2コア/1.80GHz メモリ8GB =&amp;gt; 91 kH/s
+ 自宅PC Core i5-4460 @ 3.20GHz 4コア メモリ 4GB =&amp;gt; 376 kH/s
+ ノートパソコン LB-C110B Celeron 1037U 2コア/1.80GHz メモリ8GB =&amp;gt; 91 kH/s
   まとめ CPUマイニングなんてやるもんじゃない←結論</description>
     </item>
     
