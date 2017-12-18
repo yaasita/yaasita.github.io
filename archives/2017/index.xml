@@ -6,8 +6,18 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 04 Dec 2017 23:27:01 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 19 Dec 2017 04:34:55 +0900</lastBuildDate>
     <atom:link href="/archives/2017/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>systemd-nspawnアドベントカレンダー</title>
+      <link>https://yaasita.github.io/2017/12/19/systemd-nspawn-adcal/</link>
+      <pubDate>Tue, 19 Dec 2017 04:34:55 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/12/19/systemd-nspawn-adcal/</guid>
+      <description>書きました
+https://qiita.com/advent-calendar/2017/systemd-nspawn</description>
+    </item>
     
     <item>
       <title>gpgでサブキーを指定して暗号化</title>
@@ -315,17 +325,6 @@ CustomLog ${APACHE_LOG_DIR}/access-json.log leapache  https://blog.logentries.co
       <guid>https://yaasita.github.io/2017/07/15/github-code-search/</guid>
       <description>githubのAPIでコードスニペット探すと捗る
   </description>
-    </item>
-    
-    <item>
-      <title>machine-idを変える時</title>
-      <link>https://yaasita.github.io/2017/07/06/dbus-uuidgen/</link>
-      <pubDate>Thu, 06 Jul 2017 13:46:49 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/07/06/dbus-uuidgen/</guid>
-      <description>systemd-nspawn使ってて
-なんか /etc/machine-id　ないよって言われたとき
-dbus-uuidgen &amp;gt; root/etc/machine-id  </description>
     </item>
     
   </channel>

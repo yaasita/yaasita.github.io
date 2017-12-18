@@ -6,8 +6,18 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 04 Dec 2017 23:27:01 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 19 Dec 2017 04:34:55 +0900</lastBuildDate>
     <atom:link href="/categories/soft/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>systemd-nspawnアドベントカレンダー</title>
+      <link>https://yaasita.github.io/2017/12/19/systemd-nspawn-adcal/</link>
+      <pubDate>Tue, 19 Dec 2017 04:34:55 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/12/19/systemd-nspawn-adcal/</guid>
+      <description>書きました
+https://qiita.com/advent-calendar/2017/systemd-nspawn</description>
+    </item>
     
     <item>
       <title>gpgでサブキーを指定して暗号化</title>
@@ -314,20 +324,6 @@ install: chmod +x bin/docker-compose cp bin/docker-compose /usr/local/bin/ cp ba
 bash補完はこの辺
 docker-machine-0.5.5/ ├── Makefile ├── docker-machine ├── docker-machine-prompt.bash ├── docker-machine-wrapper.bash └── docker-machine.bash  Makefile
  </description>
-    </item>
-    
-    <item>
-      <title>handbrakeでISOをエンコード</title>
-      <link>https://yaasita.github.io/2015/08/25/handbrake/</link>
-      <pubDate>Tue, 25 Aug 2015 00:32:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/08/25/handbrake/</guid>
-      <description>Linuxで動画のエンコード/リッピングするとき
-apt-get handbreak  handbrake-gtk
-で起動して、左側のソース選んで
-開始でOK
-あんま難しくない
-http://yaasita.tumblr.com/post/127482624497</description>
     </item>
     
   </channel>
