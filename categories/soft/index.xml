@@ -6,8 +6,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 19 Dec 2017 04:34:55 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jan 2018 03:41:21 +0900</lastBuildDate>
     <atom:link href="/categories/soft/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GoogleHomeでPCつける</title>
+      <link>https://yaasita.github.io/2018/01/14/google-home/</link>
+      <pubDate>Sun, 14 Jan 2018 03:41:21 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/01/14/google-home/</guid>
+      <description>Mojoliciousで受けてコマンド叩くだけ
+IFTTTはこんな感じにして
+
+
+Mojolicious側のコントローラはこんな感じで受けた
+
+喋りたくない時もあるので、JavaScriptでも叩けるようにした(適当な場所にHTML置いておいた)
+function hogeop(){ postjson({key: &#39;huga&#39;}) } function postjson(j) { fetch(&amp;quot;/google&amp;quot;, { method: &amp;quot;POST&amp;quot;, headers: { &#39;Content-Type&#39;: &#39;application/json&#39; }, body: JSON.stringify(j) }).then(res =&amp;gt; res.json()).then(res =&amp;gt; { console.log(res) }); }  結論: こうやって家電を操作できるのは楽しい
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).src = photos[1].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>systemd-nspawnアドベントカレンダー</title>
@@ -309,21 +326,6 @@ perlで大きめの数値計算する例も
 https://goo.gl/MKXvhm
 Makefile
 install: chmod +x bin/docker-compose cp bin/docker-compose /usr/local/bin/ cp bash/docker-compose /etc/bash_completion.d/  </description>
-    </item>
-    
-    <item>
-      <title>checkinstallでdocker-machineをパッケージに</title>
-      <link>https://yaasita.github.io/2015/12/30/checkinstall/</link>
-      <pubDate>Wed, 30 Dec 2015 03:16:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/12/30/checkinstall/</guid>
-      <description>debパッケージにするとアンインストールが楽になる
- https://github.com/docker/machine
- https://goo.gl/X5Njaz
-  以下のMakefileを作ってcheckinstallコマンドでおｋ
-bash補完はこの辺
-docker-machine-0.5.5/ ├── Makefile ├── docker-machine ├── docker-machine-prompt.bash ├── docker-machine-wrapper.bash └── docker-machine.bash  Makefile
- </description>
     </item>
     
   </channel>

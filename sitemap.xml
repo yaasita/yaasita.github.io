@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yaasita.github.io/2018/01/14/google-home/</loc>
+    <lastmod>2018-01-14T03:41:21+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yaasita.github.io/2017/12/19/systemd-nspawn-adcal/</loc>
     <lastmod>2017-12-19T04:34:55+09:00</lastmod>
   </url>
@@ -4349,7 +4354,7 @@
   
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2017-12-19T04:34:55+09:00</lastmod>
+    <lastmod>2018-01-14T03:41:21+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4420,6 +4425,12 @@
   </url>
   
   <url>
+    <loc>https://yaasita.github.io/archives/2018/</loc>
+    <lastmod>2018-01-14T03:41:21+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://yaasita.github.io/archives/</loc>
     <lastmod>2007-12-31T00:00:00+09:00</lastmod>
     <priority>0</priority>
@@ -4468,13 +4479,13 @@
   
   <url>
     <loc>https://yaasita.github.io/post/</loc>
-    <lastmod>2017-12-19T04:34:55+09:00</lastmod>
+    <lastmod>2018-01-14T03:41:21+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/categories/program/</loc>
-    <lastmod>2017-11-24T01:54:56+09:00</lastmod>
+    <lastmod>2018-01-14T03:41:21+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4486,7 +4497,7 @@
   
   <url>
     <loc>https://yaasita.github.io/categories/soft/</loc>
-    <lastmod>2017-12-19T04:34:55+09:00</lastmod>
+    <lastmod>2018-01-14T03:41:21+09:00</lastmod>
     <priority>0</priority>
   </url>
   

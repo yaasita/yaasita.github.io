@@ -6,8 +6,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 24 Nov 2017 01:54:56 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jan 2018 03:41:21 +0900</lastBuildDate>
     <atom:link href="/categories/program/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GoogleHomeでPCつける</title>
+      <link>https://yaasita.github.io/2018/01/14/google-home/</link>
+      <pubDate>Sun, 14 Jan 2018 03:41:21 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/01/14/google-home/</guid>
+      <description>Mojoliciousで受けてコマンド叩くだけ
+IFTTTはこんな感じにして
+
+
+Mojolicious側のコントローラはこんな感じで受けた
+
+喋りたくない時もあるので、JavaScriptでも叩けるようにした(適当な場所にHTML置いておいた)
+function hogeop(){ postjson({key: &#39;huga&#39;}) } function postjson(j) { fetch(&amp;quot;/google&amp;quot;, { method: &amp;quot;POST&amp;quot;, headers: { &#39;Content-Type&#39;: &#39;application/json&#39; }, body: JSON.stringify(j) }).then(res =&amp;gt; res.json()).then(res =&amp;gt; { console.log(res) }); }  結論: こうやって家電を操作できるのは楽しい
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).src = photos[1].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>SSL証明書の有効期限チェック</title>
@@ -318,38 +335,6 @@ https://gist.githubusercontent.com/yaasita/d9b55cff5e52197adf4840cf702e5bd6/raw/
   go-bindata
  https://github.com/jteeuwen/go-bindata
    </description>
-    </item>
-    
-    <item>
-      <title>blogをmiddlemanからhugoに移行した</title>
-      <link>https://yaasita.github.io/2017/01/05/middleman2hugo/</link>
-      <pubDate>Thu, 05 Jan 2017 04:50:10 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/01/05/middleman2hugo/</guid>
-      <description> 使ってみた感想  ビルドはmiddlemanで10分かかってたけど1秒になった
- themeはgeppakuというのを使用 シンプルで良い
- Tumblrリンクのプルリクエストも快くマージしてくれた感謝m(_ _)m
-  pagination 周りの部分はちょっとページ数が多いとカラム落ちしたり苦しかったので書き直した
- taxonomiesを追加して、年別のアーカイブページを作成
- アーカイブページを逆順にする対応はなぜかうまくいかなかったので後で調査する
- とりあえずJavaScriptで逆順にした &amp;gt; gist
-  hugo serverのライブリロードがとっても良い(ブラウザも自動更新)
- ただしpagination周りで変な書き方するとサーバごと落ちる
-  DISQUS周りはちょっとカスタマイズした
- なぜかデフォルトだと読み込まなかったので
-  markdown周りはほぼ設定ファイルで完結
- 今回の設定はこんな感じ
-  middleman時代のリンクを維持するためにUglyURLs設定したけどcategoriesとかリンク切れが面倒だったので中止
- 参考: http://wdkk.co.jp/note/2015/0824-hugo-public/
-  Highlight.js今回無効にした過去分のcodeブロックが微妙になったので
-  総評
-Static Site Generatorはとても良い
-移行するにも、更新するにもメンテがすごく楽
-移行スクリプト 基本的にはファイル名にある時間のデータをTOMLに直して終わり
-/home/yamasitaにhugo,middlemanのディレクトリがある前提
- 参考リンク  middleman
- hugo
-  </description>
     </item>
     
   </channel>

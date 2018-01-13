@@ -6,8 +6,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 19 Dec 2017 04:34:55 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jan 2018 03:41:21 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GoogleHomeでPCつける</title>
+      <link>https://yaasita.github.io/2018/01/14/google-home/</link>
+      <pubDate>Sun, 14 Jan 2018 03:41:21 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/01/14/google-home/</guid>
+      <description>Mojoliciousで受けてコマンド叩くだけ
+IFTTTはこんな感じにして
+
+
+Mojolicious側のコントローラはこんな感じで受けた
+
+喋りたくない時もあるので、JavaScriptでも叩けるようにした(適当な場所にHTML置いておいた)
+function hogeop(){ postjson({key: &#39;huga&#39;}) } function postjson(j) { fetch(&amp;quot;/google&amp;quot;, { method: &amp;quot;POST&amp;quot;, headers: { &#39;Content-Type&#39;: &#39;application/json&#39; }, body: JSON.stringify(j) }).then(res =&amp;gt; res.json()).then(res =&amp;gt; { console.log(res) }); }  結論: こうやって家電を操作できるのは楽しい
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).src = photos[1].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>systemd-nspawnアドベントカレンダー</title>
@@ -315,16 +332,6 @@ CustomLog ${APACHE_LOG_DIR}/access-json.log leapache  https://blog.logentries.co
   conohaとの比較 最安プランで比べてみる
 転送量のリミットはあるものの総じてIDCFの方が良いかもしれない
    機能 conoha IDCF     メモリ 512MB 1GB   料金 680円 540円   CPU(bogomips) 4589.37 5600.00   Disk 20GB 15GB   転送量課金 なし 3,240GB/月まで無料   仮想方式 kvm VMware    </description>
-    </item>
-    
-    <item>
-      <title>githubからコードスニペットを探す</title>
-      <link>https://yaasita.github.io/2017/07/15/github-code-search/</link>
-      <pubDate>Sat, 15 Jul 2017 23:53:05 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/07/15/github-code-search/</guid>
-      <description>githubのAPIでコードスニペット探すと捗る
-  </description>
     </item>
     
   </channel>
