@@ -6,8 +6,41 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Jul 2014 23:54:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 02 Dec 2017 04:36:08 +0900</lastBuildDate>
     <atom:link href="/categories/windows/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>TeratermからConEmuへ移行した</title>
+      <link>https://yaasita.github.io/2017/12/02/teraterm-to-conemu/</link>
+      <pubDate>Sat, 02 Dec 2017 04:36:08 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/12/02/teraterm-to-conemu/</guid>
+      <description>長年使ってたTeratermからConEmuへ移行した
+SSHクライアントはputtyを使ってる
+WSL経由でも良かったんだけど、なんかVimのvisualモードで背景色が変わらなかったり表示が微妙だったので結局putty使った
+良かった点  絵文字も表示できる
+ タブが便利(TeratermもCollectorで出来るけどこっちの方が使いやすい)
+ F1キーをリモート側に送るとかそういう設定がしやすい
+  微妙な点  Alt-Vでペーストしてたけどこれが使えない(設定方法が分からない)
+  まとめ ConEmu入れた後putty設定したり、微妙に面倒だけど使いやすい</description>
+    </item>
+    
+    <item>
+      <title>Teratermでreject clipbordのエラー</title>
+      <link>https://yaasita.github.io/2017/11/16/teraterm-copy/</link>
+      <pubDate>Thu, 16 Nov 2017 06:33:07 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/11/16/teraterm-copy/</guid>
+      <description> teraterm + Tmuxでコピーをすると
+Reject clipboard write access from remoteのエラーが出る
+これはOSC52っていう制御文字を使ってリモートからOSのクリップボードを書き込むことができる機能がブロックされてるよって事
+直すには Setup -&amp;gt; Addtional settings -&amp;gt; Control Sequenceタブ
+と進んで該当箇所を設定すればOK
+その下にNotifyの設定もある
+
+参考リンク  リモートの tmux でコピーした内容のローカルのクリップボードへの反映
+   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>itunes入れるとDVDドライブが認識しない</title>
@@ -311,42 +344,6 @@ http://satospo.sakura.ne.jp/blog_archives/tech/tool/cwrsync.html </description>
 Ctrlを押しながらマウスホイールをまわす TERATERM.INIのTranslateWheelToCursorをoffにする
 参考リンク
 http://d.hatena.ne.jp/orangeclover/20100406/1270564074 </description>
-    </item>
-    
-    <item>
-      <title>smbmountでWindowsの共有フォルダをマウントする</title>
-      <link>https://yaasita.github.io/2010/05/09/6733/</link>
-      <pubDate>Sun, 09 May 2010 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2010/05/09/6733/</guid>
-      <description>想定する環境はSoukoドライブがフルアクセスで共有されている場合
-コマンドラインからマウントするなら↓
-smbmount //192.168.0.2/souko\ \(S\)/Linux/dump /mnt -o sec=none
-/etc/fstabに書くなら↓
-//192.168.0.2/souko\040(S)/Linux/dump /mnt smbfs rw,defaults,sec=none 0 0
-ちなみに前回の時にはオプションに-o guestってやってたけどこれだと「Warning: mapping &#39;guest&#39; to &#39;guest,sec=none&#39;」というwarningが出るので直した
-あとfstabのファイルパス中にスペースを入れる場合は\040と記述すればおｋ
-man fstabより抜粋
- 2 番目のフィールド (fs_file) は、ファイルシステムのマウントポイントを記
-述する。スワップパーティションの場合、このフィールドは ‘none’ と明記 す
-る必要がある。マウントポイントに含まれている空白は、‘\040’ のようにエス
-ケープできる。
-
-参考リンク
-http://d.hatena.ne.jp/adsaria/20080114/1200328063
-http://ksugita.blog62.fc2.com/blog-entry-23.html </description>
-    </item>
-    
-    <item>
-      <title>レジストリまで追跡して確実にアンインストール　Revo Uninstaller</title>
-      <link>https://yaasita.github.io/2010/05/03/6876/</link>
-      <pubDate>Mon, 03 May 2010 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2010/05/03/6876/</guid>
-      <description>Revo Uninstaller
-というらしい
-参考リンク
-http://www.forest.impress.co.jp/article/2007/05/29/revouninst.html </description>
     </item>
     
   </channel>

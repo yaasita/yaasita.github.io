@@ -6,8 +6,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 14 Jan 2018 03:41:21 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jan 2018 18:04:22 +0900</lastBuildDate>
     <atom:link href="/post/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>プライベートCA作るまで</title>
+      <link>https://yaasita.github.io/2018/01/31/private-ca/</link>
+      <pubDate>Wed, 31 Jan 2018 18:04:22 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/01/31/private-ca/</guid>
+      <description>Debian9でやってみた
+cd /etc/ssl /usr/lib/ssl/misc/CA.pl -newca /usr/lib/ssl/misc/CA.pl -newreq /usr/lib/ssl/misc/CA.pl -sign # /tmp/ca.pemを入れてもらう openssl x509 -outform PEM -in demoCA/cacert.pem -out /tmp/ca.pem # 変換 openssl x509 -outform PEM -in newcert.pem -out /etc/nginx/ssl/hogehoge.crt # パスフレーズ解除 openssl rsa -in newkey.pem -out /etc/nginx/ssl/hogehoge.key  データベースおかしくなったら
+index.txt空っぽすればOK
+rm demoCA/index.txt touch demoCA/index.txt  /etc/ssl/openssl.cnf は こんな感じ
+証明書の管理は
+chromeなら設定 =&amp;gt; 詳細設定 =&amp;gt; SSLの管理からやる
+windowsの場合はファイル名を指定して実行 =&amp;gt; certlm.msc と同じこと
+あと注意点として、chromeはsubjectAltNameを見るので注意
+(EnableCommonNameFallbackForLocalAnchorsってやつを設定するとできるようだけど)</description>
+    </item>
     
     <item>
       <title>GoogleHomeでPCつける</title>
@@ -316,22 +333,6 @@ https://github.com/yaasita/edit-slack/compare/v0.2.0...v0.8.1
 こんな感じにする
 LogFormat &amp;quot;\ { \ \&amp;quot;host\&amp;quot;:\&amp;quot;%V\&amp;quot;, \ \&amp;quot;method\&amp;quot;:\&amp;quot;%m\&amp;quot;, \ \&amp;quot;port\&amp;quot;:\&amp;quot;%p\&amp;quot;, \ \&amp;quot;processingTime\&amp;quot;:\&amp;quot;%D\&amp;quot;, \ \&amp;quot;protocol\&amp;quot;:\&amp;quot;%H\&amp;quot;, \ \&amp;quot;query\&amp;quot;:\&amp;quot;%q\&amp;quot;, \ \&amp;quot;referer\&amp;quot;:\&amp;quot;%{Referer}i\&amp;quot;, \ \&amp;quot;remoteIP\&amp;quot;:\&amp;quot;%a\&amp;quot;, \ \&amp;quot;request\&amp;quot;:\&amp;quot;%U\&amp;quot;, \ \&amp;quot;responseByte\&amp;quot;:\&amp;quot;%B\&amp;quot;, \ \&amp;quot;status\&amp;quot;:\&amp;quot;%&amp;gt;s\&amp;quot;, \ \&amp;quot;time\&amp;quot;:\&amp;quot;%t\&amp;quot;, \ \&amp;quot;unixtime\&amp;quot;:\&amp;quot;%{%s}t\&amp;quot;, \ \&amp;quot;userAgent\&amp;quot;:\&amp;quot;%{User-agent}i\&amp;quot;, \ \&amp;quot;user\&amp;quot;:\&amp;quot;%u\&amp;quot; \ }&amp;quot; \ leapache  吐き出し
 CustomLog ${APACHE_LOG_DIR}/access-json.log leapache  https://blog.logentries.com/2014/08/json-logging-in-apache-and-nginx-with-logentries/</description>
-    </item>
-    
-    <item>
-      <title>IDCFクラウド試してみた</title>
-      <link>https://yaasita.github.io/2017/07/16/idcf-cloud/</link>
-      <pubDate>Sun, 16 Jul 2017 01:47:46 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/07/16/idcf-cloud/</guid>
-      <description> conohaから引っ越し
- ソースIP、パブリックIPの概念がちょっと難しい
- OP25Bはされてない
- 多分VMwareで動いてる
- conohaよりはファイヤーウォールとか細かく設定できるけど、ポートフォワードの設定とかしなきゃいけないので若干面倒
-  conohaとの比較 最安プランで比べてみる
-転送量のリミットはあるものの総じてIDCFの方が良いかもしれない
-   機能 conoha IDCF     メモリ 512MB 1GB   料金 680円 540円   CPU(bogomips) 4589.37 5600.00   Disk 20GB 15GB   転送量課金 なし 3,240GB/月まで無料   仮想方式 kvm VMware    </description>
     </item>
     
   </channel>

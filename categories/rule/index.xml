@@ -6,8 +6,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Aug 2017 17:25:39 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 31 Jan 2018 18:04:22 +0900</lastBuildDate>
     <atom:link href="/categories/rule/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>プライベートCA作るまで</title>
+      <link>https://yaasita.github.io/2018/01/31/private-ca/</link>
+      <pubDate>Wed, 31 Jan 2018 18:04:22 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/01/31/private-ca/</guid>
+      <description>Debian9でやってみた
+cd /etc/ssl /usr/lib/ssl/misc/CA.pl -newca /usr/lib/ssl/misc/CA.pl -newreq /usr/lib/ssl/misc/CA.pl -sign # /tmp/ca.pemを入れてもらう openssl x509 -outform PEM -in demoCA/cacert.pem -out /tmp/ca.pem # 変換 openssl x509 -outform PEM -in newcert.pem -out /etc/nginx/ssl/hogehoge.crt # パスフレーズ解除 openssl rsa -in newkey.pem -out /etc/nginx/ssl/hogehoge.key  データベースおかしくなったら
+index.txt空っぽすればOK
+rm demoCA/index.txt touch demoCA/index.txt  /etc/ssl/openssl.cnf は こんな感じ
+証明書の管理は
+chromeなら設定 =&amp;gt; 詳細設定 =&amp;gt; SSLの管理からやる
+windowsの場合はファイル名を指定して実行 =&amp;gt; certlm.msc と同じこと
+あと注意点として、chromeはsubjectAltNameを見るので注意
+(EnableCommonNameFallbackForLocalAnchorsってやつを設定するとできるようだけど)</description>
+    </item>
     
     <item>
       <title>S/MIMEの設定</title>
