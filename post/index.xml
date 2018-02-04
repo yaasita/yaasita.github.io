@@ -6,8 +6,21 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 31 Jan 2018 18:04:22 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 04 Feb 2018 16:27:56 +0900</lastBuildDate>
     <atom:link href="/post/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Apacheでリバースプロキシ</title>
+      <link>https://yaasita.github.io/2018/02/04/apache-header/</link>
+      <pubDate>Sun, 04 Feb 2018 16:27:56 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/02/04/apache-header/</guid>
+      <description>Apacheでリバースプロキシするときこんな感じに書いた方が良いよという話
+&amp;lt;VirtualHost *:443&amp;gt; ServerName example.net &amp;lt;Proxy *&amp;gt; Require all granted &amp;lt;/Proxy&amp;gt; ProxyRequests Off ProxyPreserveHost On ProxyPass / http://192.168.0.1:8080/ keepalive=On ProxyPassReverse / http://192.168.0.1:8080/ RequestHeader set X-Forwarded-Proto &amp;quot;https&amp;quot; RequestHeader unset X-Forwarded-For RequestHeader unset X-Forwarded-Server RequestHeader unset X-Forwarded-Host Include /path/to/common.conf &amp;lt;/VirtualHost&amp;gt;  X-Forwarded-Forとかを一旦unsetしないと、
+X-Forwarded-Forとかをクライアント側から指定されると、追加されて判別が困難になる
+curl -H &amp;quot;X-Forwarded-For: 1.2.3.4&amp;quot;  みたいな感じで指定されると
+ x-forwarded-for: &amp;quot;1.2.3.4, 192.168.0.100&amp;quot;  こんな感じに追加されて http://192.168.0.1:8080 側にわたってしまう</description>
+    </item>
     
     <item>
       <title>プライベートCA作るまで</title>
@@ -321,18 +334,6 @@ https://github.com/yaasita/edit-slack/compare/v0.2.0...v0.8.1
       <guid>https://yaasita.github.io/2017/08/09/sitsugyou-hoken/</guid>
       <description>なので、辞めた後にハロワ行って雇用保険受給資格者証もらってから開業届出した後に報告しに行った方が良い
 失業状態だと偽って失業保険貰うと不正受給になるので注意</description>
-    </item>
-    
-    <item>
-      <title>apacheのログフォーマット</title>
-      <link>https://yaasita.github.io/2017/07/22/apache-log/</link>
-      <pubDate>Sat, 22 Jul 2017 17:53:24 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/07/22/apache-log/</guid>
-      <description>apacheのログフォーマットはJSONにしておいた方がパースが楽という話
-こんな感じにする
-LogFormat &amp;quot;\ { \ \&amp;quot;host\&amp;quot;:\&amp;quot;%V\&amp;quot;, \ \&amp;quot;method\&amp;quot;:\&amp;quot;%m\&amp;quot;, \ \&amp;quot;port\&amp;quot;:\&amp;quot;%p\&amp;quot;, \ \&amp;quot;processingTime\&amp;quot;:\&amp;quot;%D\&amp;quot;, \ \&amp;quot;protocol\&amp;quot;:\&amp;quot;%H\&amp;quot;, \ \&amp;quot;query\&amp;quot;:\&amp;quot;%q\&amp;quot;, \ \&amp;quot;referer\&amp;quot;:\&amp;quot;%{Referer}i\&amp;quot;, \ \&amp;quot;remoteIP\&amp;quot;:\&amp;quot;%a\&amp;quot;, \ \&amp;quot;request\&amp;quot;:\&amp;quot;%U\&amp;quot;, \ \&amp;quot;responseByte\&amp;quot;:\&amp;quot;%B\&amp;quot;, \ \&amp;quot;status\&amp;quot;:\&amp;quot;%&amp;gt;s\&amp;quot;, \ \&amp;quot;time\&amp;quot;:\&amp;quot;%t\&amp;quot;, \ \&amp;quot;unixtime\&amp;quot;:\&amp;quot;%{%s}t\&amp;quot;, \ \&amp;quot;userAgent\&amp;quot;:\&amp;quot;%{User-agent}i\&amp;quot;, \ \&amp;quot;user\&amp;quot;:\&amp;quot;%u\&amp;quot; \ }&amp;quot; \ leapache  吐き出し
-CustomLog ${APACHE_LOG_DIR}/access-json.log leapache  https://blog.logentries.com/2014/08/json-logging-in-apache-and-nginx-with-logentries/</description>
     </item>
     
   </channel>
