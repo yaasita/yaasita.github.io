@@ -6,8 +6,20 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 14 Jan 2018 03:41:21 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 17 Mar 2018 02:57:05 +0900</lastBuildDate>
     <atom:link href="/categories/program/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>perlのデストラクタ</title>
+      <link>https://yaasita.github.io/2018/03/17/perl-destory/</link>
+      <pubDate>Sat, 17 Mar 2018 02:57:05 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/03/17/perl-destory/</guid>
+      <description>Ctrl-Cで止めたときもデストラクタを呼びたいときがある
+そういう時は、シグナルハンドラを作ればOK
+最後に変数のスコープから外れてデストラクタが呼ばれる
+ </description>
+    </item>
     
     <item>
       <title>GoogleHomeでPCつける</title>
@@ -313,28 +325,6 @@ https://gist.githubusercontent.com/yaasita/d9b55cff5e52197adf4840cf702e5bd6/raw/
   railsの初期設定
  https://github.com/yaasita/ansible_role_rails
   rbenv</description>
-    </item>
-    
-    <item>
-      <title>ore_markdownをGo言語で書き直した</title>
-      <link>https://yaasita.github.io/2017/01/06/ore_markdown_to_golang/</link>
-      <pubDate>Fri, 06 Jan 2017 15:44:33 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/01/06/ore_markdown_to_golang/</guid>
-      <description> 久々に ore_markdownを書き直した
-感想とか  Ruby(Gem: github-markdown)→Go(russross/blackfriday)で書き直し
- スタティックファイルもgo-bindataでバイナリに閉じ込めた
- OS間の違いを意識するのがめんどくさいのでVimでの判定は全部やめてGo側に寄せた
- 早くて良い
-  成果物とかライブラリ  作ったもの
- https://github.com/yaasita/ore_markdown
- https://github.com/yaasita/ore_markdown-go
-  blackfriday
- https://github.com/russross/blackfriday
- https://godoc.org/github.com/russross/blackfriday
-  go-bindata
- https://github.com/jteeuwen/go-bindata
-   </description>
     </item>
     
   </channel>
