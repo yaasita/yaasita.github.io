@@ -6,8 +6,34 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 17 Mar 2018 02:57:05 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 21 Mar 2018 01:37:01 +0900</lastBuildDate>
     <atom:link href="/archives/2018/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AlwaysOnSSL</title>
+      <link>https://yaasita.github.io/2018/03/21/alwaysonssl/</link>
+      <pubDate>Wed, 21 Mar 2018 01:37:01 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/03/21/alwaysonssl/</guid>
+      <description>letsencryptとは違う無料のSSLサービス使ってみた
+サーバ証明書 使って見た感想
+ CAAレコード違反のレポートメールは飛んでこなかった
+ 証明書の期間は1年間
+ CTログはComodo CA に書くみたいでLetsencryptより少ない
+ ワイルドカードは無理
+ SANに複数のドメイン入れるのも無理
+  チェインはこんな感じ
+DigiCert Global Root G2 |_ AlwaysOnSSL TLS RSA CA G1 |_ yourdomain.example.com  DigiCertなんで大抵のブラウザならOKなはず
+curlで簡単に叩けるのでcertbotが入らない場合はこっちの方が良いかも
+certbotが入るならLetsencryptの方が良いと思う
+S/MIME  有効期間は1年間
+ CSR作って署名してもらうので、秘密鍵は自分で作る安心設計
+  チェーンはこんな感じ
+Symantec Class 1 Public Primary CertificationAuthority - G6 |_ Symantec Class 1 Individual Subscriber CA - G7  普通にメール受信できるなら作ってもらえるとても良い
+CNにメールアドレス入れてCSR作ってからVerifyする
+そんで、My Certificatesから中間証明書と証明書ダウンロードしてpkcs12にまとめればOK
+openssl pkcs12 -export -in merged.crt -inkey secret.</description>
+    </item>
     
     <item>
       <title>perlのデストラクタ</title>

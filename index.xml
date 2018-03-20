@@ -6,8 +6,34 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 17 Mar 2018 02:57:05 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 21 Mar 2018 01:37:01 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AlwaysOnSSL</title>
+      <link>https://yaasita.github.io/2018/03/21/alwaysonssl/</link>
+      <pubDate>Wed, 21 Mar 2018 01:37:01 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/03/21/alwaysonssl/</guid>
+      <description>letsencryptとは違う無料のSSLサービス使ってみた
+サーバ証明書 使って見た感想
+ CAAレコード違反のレポートメールは飛んでこなかった
+ 証明書の期間は1年間
+ CTログはComodo CA に書くみたいでLetsencryptより少ない
+ ワイルドカードは無理
+ SANに複数のドメイン入れるのも無理
+  チェインはこんな感じ
+DigiCert Global Root G2 |_ AlwaysOnSSL TLS RSA CA G1 |_ yourdomain.example.com  DigiCertなんで大抵のブラウザならOKなはず
+curlで簡単に叩けるのでcertbotが入らない場合はこっちの方が良いかも
+certbotが入るならLetsencryptの方が良いと思う
+S/MIME  有効期間は1年間
+ CSR作って署名してもらうので、秘密鍵は自分で作る安心設計
+  チェーンはこんな感じ
+Symantec Class 1 Public Primary CertificationAuthority - G6 |_ Symantec Class 1 Individual Subscriber CA - G7  普通にメール受信できるなら作ってもらえるとても良い
+CNにメールアドレス入れてCSR作ってからVerifyする
+そんで、My Certificatesから中間証明書と証明書ダウンロードしてpkcs12にまとめればOK
+openssl pkcs12 -export -in merged.crt -inkey secret.</description>
+    </item>
     
     <item>
       <title>perlのデストラクタ</title>
@@ -317,25 +343,6 @@ hoge IN CAA 0 issue &amp;quot;letsencrypt.org&amp;quot; hoge IN CAA 0 issuewild 
 仮に drive.google.com のwebrootに任意のファイルを置ける脆弱性があったとしても(http-01で)Let&amp;rsquo;s Encryptの証明書を発行することはできないし、WoSignで偽の証明書を発行されることもない
 (WoSignがCAA無視してたら意味ないけど)
 google.com. 84592 IN CAA 0 issue &amp;quot;pki.</description>
-    </item>
-    
-    <item>
-      <title>edit-slack.vimちょっと書き直した</title>
-      <link>https://yaasita.github.io/2017/08/10/edit-slack/</link>
-      <pubDate>Thu, 10 Aug 2017 02:35:57 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/08/10/edit-slack/</guid>
-      <description>edit-slack.vim をちょっと直した
-主な変更点は以下の通り
-reactionを表示するようにした
-
-アップロードされたファイルのダウンロードリンクを表示
-
-キーワード検索ができるようにした
-例) vim slack://sw/hogehoge vim slack://sw/from:@yamasita vim slack://sw/on:today  取っ散らかってたコードをちょっと直した
-https://github.com/yaasita/edit-slack/compare/v0.2.0...v0.8.1
-ちょっと見ない間にSlackもなんか変わってて、今までのTest tokenがlegacy tokenって名前になってたり、botアクセス、userアクセスで細かくAPI使用制限がされてるようになってた(前からか？)
- function callback(data){ photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).src = photos[1].original_size.url; }   </description>
     </item>
     
   </channel>
