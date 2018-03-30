@@ -6,8 +6,21 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 21 Mar 2018 01:37:01 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 31 Mar 2018 03:38:25 +0900</lastBuildDate>
     <atom:link href="/categories/net/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Let&#39;s Encryptのワイルドカード</title>
+      <link>https://yaasita.github.io/2018/03/31/lets-wildcard/</link>
+      <pubDate>Sat, 31 Mar 2018 03:38:25 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/03/31/lets-wildcard/</guid>
+      <description>debian testingに
+certbot 0.22.2が来てたので使ってみる
+とりあえずこんな感じで言った
+まだサーバを指定しなきゃいけないけど、これでワイルドカード手に入るのは良い
+apt install certbot certbot certonly --manual -d yaasita.net -d *.yaasita.net --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory  </description>
+    </item>
     
     <item>
       <title>AlwaysOnSSL</title>
@@ -16,6 +29,7 @@
       
       <guid>https://yaasita.github.io/2018/03/21/alwaysonssl/</guid>
       <description>letsencryptとは違う無料のSSLサービス使ってみた
+その名も AlwaysOnSSL
 サーバ証明書 使って見た感想
  CAAレコード違反のレポートメールは飛んでこなかった
  証明書の期間は1年間
@@ -32,7 +46,7 @@ S/MIME  有効期間は1年間
 Symantec Class 1 Public Primary CertificationAuthority - G6 |_ Symantec Class 1 Individual Subscriber CA - G7  普通にメール受信できるなら作ってもらえるとても良い
 CNにメールアドレス入れてCSR作ってからVerifyする
 そんで、My Certificatesから中間証明書と証明書ダウンロードしてpkcs12にまとめればOK
-openssl pkcs12 -export -in merged.crt -inkey secret.</description>
+openssl pkcs12 -export -in merged.</description>
     </item>
     
     <item>
@@ -313,23 +327,6 @@ BINDみたくこんな感じにやる
 ns cloud cloud.example.net. a cloud.example.net. 123.123.123.123  上位の権威サーバにグルーレコードを設定する場合は
 下記参照
 https://www.value-domain.com/userguide/manual/othermodns/</description>
-    </item>
-    
-    <item>
-      <title>AWSへVMイメージごと移動する手順</title>
-      <link>https://yaasita.github.io/2016/11/20/aws-vm-import/</link>
-      <pubDate>Sun, 20 Nov 2016 20:45:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/11/20/aws-vm-import/</guid>
-      <description> 手順 img作る前に以下を確認しておく
- DHCPを有効にしている
- iptablesを無効に
- rawでイメージを作っておく
-  次に以下のコマンドでインポート
-# hoge-importってバケット作ったとする # 最初にimgをS3に上げておく aws s3 cp hoge.img s3://hoge-import/hoge.img # IAM周りを準備 aws iam create-role --role-name vmimport --assume-role-policy-document file://trust-policy.json aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json # インポートタスク開始 aws ec2 import-image --description &amp;quot;hoge server&amp;quot; --disk-containers file://containers.json # 進捗見る aws ec2 describe-import-image-tasks  使ったjsonファイル
- 参考リンク  http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats
- http://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html
-  </description>
     </item>
     
   </channel>

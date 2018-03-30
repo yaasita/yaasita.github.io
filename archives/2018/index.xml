@@ -6,8 +6,21 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 21 Mar 2018 01:37:01 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 31 Mar 2018 03:38:25 +0900</lastBuildDate>
     <atom:link href="/archives/2018/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Let&#39;s Encryptのワイルドカード</title>
+      <link>https://yaasita.github.io/2018/03/31/lets-wildcard/</link>
+      <pubDate>Sat, 31 Mar 2018 03:38:25 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/03/31/lets-wildcard/</guid>
+      <description>debian testingに
+certbot 0.22.2が来てたので使ってみる
+とりあえずこんな感じで言った
+まだサーバを指定しなきゃいけないけど、これでワイルドカード手に入るのは良い
+apt install certbot certbot certonly --manual -d yaasita.net -d *.yaasita.net --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory  </description>
+    </item>
     
     <item>
       <title>AlwaysOnSSL</title>
@@ -16,6 +29,7 @@
       
       <guid>https://yaasita.github.io/2018/03/21/alwaysonssl/</guid>
       <description>letsencryptとは違う無料のSSLサービス使ってみた
+その名も AlwaysOnSSL
 サーバ証明書 使って見た感想
  CAAレコード違反のレポートメールは飛んでこなかった
  証明書の期間は1年間
@@ -32,7 +46,7 @@ S/MIME  有効期間は1年間
 Symantec Class 1 Public Primary CertificationAuthority - G6 |_ Symantec Class 1 Individual Subscriber CA - G7  普通にメール受信できるなら作ってもらえるとても良い
 CNにメールアドレス入れてCSR作ってからVerifyする
 そんで、My Certificatesから中間証明書と証明書ダウンロードしてpkcs12にまとめればOK
-openssl pkcs12 -export -in merged.crt -inkey secret.</description>
+openssl pkcs12 -export -in merged.</description>
     </item>
     
     <item>
