@@ -6,8 +6,20 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 31 Mar 2018 03:38:25 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 07 Apr 2018 02:24:37 +0900</lastBuildDate>
     <atom:link href="/archives/2018/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GoogleのCloud SDKの署名鍵エラー</title>
+      <link>https://yaasita.github.io/2018/04/07/google-cloud-sdk-gpg/</link>
+      <pubDate>Sat, 07 Apr 2018 02:24:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/04/07/google-cloud-sdk-gpg/</guid>
+      <description>GCP(google cloud platform)の署名鍵が変わってた
+取得:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease [6,372 B] エラー:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease 公開鍵を利用できないため、以下の署名は検証できませんでした: NO_PUBKEY 6A030B21BA07F4FB  なんか探してみると2018年4月1日に作った鍵にしてるみたい
+gpg2 --search-keys BA07F4FB gpg: data source: http://gpg.NebrWesleyan.edu:11371 (1) Google Cloud Packages Automatic Signing Key &amp;lt;gc-team@google.com&amp;gt; 2048 bit RSA key BA07F4FB, created: 2018-04-01, expires: 2021-03-31  ということで追加して事なきを得た
+gpg2 -a --export BA07F4FB | apt-key add -  </description>
+    </item>
     
     <item>
       <title>Let&#39;s Encryptのワイルドカード</title>
@@ -17,7 +29,7 @@
       <guid>https://yaasita.github.io/2018/03/31/lets-wildcard/</guid>
       <description>debian testingに
 certbot 0.22.2が来てたので使ってみる
-とりあえずこんな感じで言った
+とりあえずこんな感じで行った
 まだサーバを指定しなきゃいけないけど、これでワイルドカード手に入るのは良い
 apt install certbot certbot certonly --manual -d yaasita.net -d *.yaasita.net --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory  </description>
     </item>
