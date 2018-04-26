@@ -6,8 +6,21 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 26 Oct 2017 01:30:38 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 07 Apr 2018 02:24:37 +0900</lastBuildDate>
     <atom:link href="/categories/linux/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GoogleのCloud SDKの署名鍵エラー</title>
+      <link>https://yaasita.github.io/2018/04/07/google-cloud-sdk-gpg/</link>
+      <pubDate>Sat, 07 Apr 2018 02:24:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/04/07/google-cloud-sdk-gpg/</guid>
+      <description>GCP(google cloud platform)の署名鍵が変わってた
+つーか元のgpg鍵の有効期限が切れてる
+取得:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease [6,372 B] エラー:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease 公開鍵を利用できないため、以下の署名は検証できませんでした: NO_PUBKEY 6A030B21BA07F4FB  なんか探してみると2018年4月1日に作った鍵にしてるみたい
+gpg2 --search-keys BA07F4FB gpg: data source: http://gpg.NebrWesleyan.edu:11371 (1) Google Cloud Packages Automatic Signing Key &amp;lt;gc-team@google.com&amp;gt; 2048 bit RSA key BA07F4FB, created: 2018-04-01, expires: 2021-03-31  ということで追加して事なきを得た
+gpg2 -a --export BA07F4FB | apt-key add - apt-key del A7317B0F  </description>
+    </item>
     
     <item>
       <title>正しいパッケージのアップデート方法</title>
@@ -283,15 +296,6 @@ cgcreate -g cpu:ruby cgexec -g cpu:ruby ./install_ruby.sh cgset -r cpu.cfs_quota
  cgroup について理解する
  cgroup でメモリと走行時間に制限を加える
   </description>
-    </item>
-    
-    <item>
-      <title>非推奨になったネットワークコマンド</title>
-      <link>https://yaasita.github.io/2014/06/17/deprecated_network_cmd/</link>
-      <pubDate>Tue, 17 Jun 2014 01:13:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2014/06/17/deprecated_network_cmd/</guid>
-      <description>Deprecated command Replacement command(s)     arp ip n (ip neighbor)   ifconfig ip a (ip addr), ip link, ip -s (ip -stats)   iptunnel ip tunnel   iwconfig iw   nameif ip link, ifrename   netstat ss, ip route (for netstat-r), ip -s link (for netstat -i), ip maddr (for netstat-g)   route ip r (ip route)     http://understeer.</description>
     </item>
     
   </channel>

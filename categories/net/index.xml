@@ -16,9 +16,10 @@
       
       <guid>https://yaasita.github.io/2018/04/07/google-cloud-sdk-gpg/</guid>
       <description>GCP(google cloud platform)の署名鍵が変わってた
+つーか元のgpg鍵の有効期限が切れてる
 取得:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease [6,372 B] エラー:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease 公開鍵を利用できないため、以下の署名は検証できませんでした: NO_PUBKEY 6A030B21BA07F4FB  なんか探してみると2018年4月1日に作った鍵にしてるみたい
 gpg2 --search-keys BA07F4FB gpg: data source: http://gpg.NebrWesleyan.edu:11371 (1) Google Cloud Packages Automatic Signing Key &amp;lt;gc-team@google.com&amp;gt; 2048 bit RSA key BA07F4FB, created: 2018-04-01, expires: 2021-03-31  ということで追加して事なきを得た
-gpg2 -a --export BA07F4FB | apt-key add -  </description>
+gpg2 -a --export BA07F4FB | apt-key add - apt-key del A7317B0F  </description>
     </item>
     
     <item>

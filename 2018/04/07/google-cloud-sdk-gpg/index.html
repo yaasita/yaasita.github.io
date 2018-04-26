@@ -46,7 +46,8 @@ ga('send', 'pageview');
     </div>
   </header>
   <div class="content">
-    <p>GCP(google cloud platform)の署名鍵が変わってた</p>
+    <p>GCP(google cloud platform)の署名鍵が変わってた<br />
+つーか元のgpg鍵の有効期限が切れてる</p>
 
 <pre><code>取得:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease [6,372 B]
 エラー:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease
@@ -65,6 +66,7 @@ gpg: data source: http://gpg.NebrWesleyan.edu:11371
 <p>ということで追加して事なきを得た</p>
 
 <pre><code>gpg2 -a --export BA07F4FB | apt-key add -
+apt-key del A7317B0F
 </code></pre>
 
   </div>
@@ -76,6 +78,10 @@ gpg: data source: http://gpg.NebrWesleyan.edu:11371
     
     <li>
         <a href="/categories/net">net</a>
+    </li>
+    
+    <li>
+        <a href="/categories/linux">linux</a>
     </li>
     
   </ul>
@@ -132,6 +138,11 @@ gpg: data source: http://gpg.NebrWesleyan.edu:11371
           <a href="https://yaasita.github.io/2018/03/31/lets-wildcard/">Let&#39;s Encryptのワイルドカード</a>
         </div>
         
+        
+        <div id="pagenavigation-prev">
+          <span class="pagenav-label">Next</span>
+          <a href="https://yaasita.github.io/2018/04/07/libio-socket-ssl/">PerlのHTTP::Tiny</a>
+        </div>
         
       </div>
       
@@ -202,7 +213,7 @@ gpg: data source: http://gpg.NebrWesleyan.edu:11371
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (323)</a>
+          <a href="/categories/linux"><span></span>linux (324)</a>
         </li>
         
         <li>
@@ -210,7 +221,7 @@ gpg: data source: http://gpg.NebrWesleyan.edu:11371
         </li>
         
         <li>
-          <a href="/categories/program"><span></span>program (139)</a>
+          <a href="/categories/program"><span></span>program (141)</a>
         </li>
         
         <li>
@@ -281,7 +292,7 @@ gpg: data source: http://gpg.NebrWesleyan.edu:11371
         </li>
         
         <li>
-          <a href="/archives/2018"><span></span>2018 (7)</a>
+          <a href="/archives/2018"><span></span>2018 (9)</a>
         </li>
         
       </ul>

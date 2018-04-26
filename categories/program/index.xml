@@ -6,8 +6,32 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 17 Mar 2018 02:57:05 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 17 Apr 2018 01:09:31 +0900</lastBuildDate>
     <atom:link href="/categories/program/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>たまにはGDBM使う</title>
+      <link>https://yaasita.github.io/2018/04/17/gdbm-file/</link>
+      <pubDate>Tue, 17 Apr 2018 01:09:31 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/04/17/gdbm-file/</guid>
+      <description>2018年にGDBM使う
+perl標準モジュールにある
+簡単なKVSならこれで
+debianだと多分入ってるけど、libperl5.24が無い環境だとダメぽい
+#!/usr/bin/perl use strict; use warnings; use feature qw(:5.10); use utf8; use GDBM_File ; my $filename = &amp;quot;gdm&amp;quot;; my %hash; tie %hash, &#39;GDBM_File&#39;, $filename, &amp;amp;GDBM_WRCREAT, 0640; $hash{hoge} = &amp;quot;huga&amp;quot;; say &amp;quot;$_ =&amp;gt; $hash{$_}&amp;quot; for keys %hash;  </description>
+    </item>
+    
+    <item>
+      <title>PerlのHTTP::Tiny</title>
+      <link>https://yaasita.github.io/2018/04/07/libio-socket-ssl/</link>
+      <pubDate>Sat, 07 Apr 2018 04:17:18 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/04/07/libio-socket-ssl/</guid>
+      <description>perlのHTTP::Tinyは標準モジュールなんだけど、IO::Socket::SSLが無くて
+IO::Socket::SSL 1.42 must be installed for https support  が出ちゃう場合は
+apt install libio-socket-ssl-perl  </description>
+    </item>
     
     <item>
       <title>perlのデストラクタ</title>
@@ -276,55 +300,6 @@ https://yaasita.tumblr.com/post/155945774152
   年ページ
  https://yaasita.github.io/2008.html
    </description>
-    </item>
-    
-    <item>
-      <title>ore_markdownを画像埋め込みに対応させた</title>
-      <link>https://yaasita.github.io/2017/01/15/ore_markdown_update2/</link>
-      <pubDate>Sun, 15 Jan 2017 02:47:40 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/01/15/ore_markdown_update2/</guid>
-      <description>またore_markdown-goの修正
-こんな感じに画像データをBase64にして埋め込めばHTMLファイル一枚で完結しそうだったので修正した
-&amp;lt;img src=&amp;quot;data:image/png;base64,(base64文字列)&amp;quot; alt=&amp;quot;img1&amp;quot;&amp;gt;  修正内容
-吐き出されたHTMLの例
-https://gist.githubusercontent.com/yaasita/d9b55cff5e52197adf4840cf702e5bd6/raw/c6a3c2f96f4360ad3fa526c6c5ae5302acd26769/preview.html
-保存してHTMLを表示させれば画像がみれるはず</description>
-    </item>
-    
-    <item>
-      <title>ansibleで作ったロール</title>
-      <link>https://yaasita.github.io/2017/01/09/my-ansible-role/</link>
-      <pubDate>Mon, 09 Jan 2017 16:24:41 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/01/09/my-ansible-role/</guid>
-      <description>成果物  ec2でスワップファイル置くとかするやつ
- https://github.com/yaasita/ansible_role_amazon-ec2
-  aptのproxy設定
- https://github.com/yaasita/ansible_role_apt-proxy
-  ブラックホールメールサーバ作るときの設定
- https://github.com/yaasita/ansible_role_blackhole-postfix
-  adminユーザ作るとき
- https://github.com/yaasita/ansible_role_admin-server
-  centosでよくやる設定
- https://github.com/yaasita/ansible_role_common_centos
-  Ubuntuでよくやる設定
- https://github.com/yaasita/ansible_role_common_ubuntu
-  Dockerコンテナにするときによくやる設定
- https://github.com/yaasita/ansible_role_docker-care
-  munin-node入れるとき
- https://github.com/yaasita/ansible_role_munin
-  mysql
- https://github.com/yaasita/ansible_role_mysql
-  nagios nrpe
- https://github.com/yaasita/ansible_role_nagios-nrpe
-  ネットワーク設定
- https://github.com/yaasita/ansible_role_network
-  proxy設定(主にaptの)
- https://github.com/yaasita/ansible_role_proxy
-  railsの初期設定
- https://github.com/yaasita/ansible_role_rails
-  rbenv</description>
     </item>
     
   </channel>

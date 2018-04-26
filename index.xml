@@ -6,8 +6,32 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 07 Apr 2018 02:24:37 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 17 Apr 2018 01:09:31 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>たまにはGDBM使う</title>
+      <link>https://yaasita.github.io/2018/04/17/gdbm-file/</link>
+      <pubDate>Tue, 17 Apr 2018 01:09:31 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/04/17/gdbm-file/</guid>
+      <description>2018年にGDBM使う
+perl標準モジュールにある
+簡単なKVSならこれで
+debianだと多分入ってるけど、libperl5.24が無い環境だとダメぽい
+#!/usr/bin/perl use strict; use warnings; use feature qw(:5.10); use utf8; use GDBM_File ; my $filename = &amp;quot;gdm&amp;quot;; my %hash; tie %hash, &#39;GDBM_File&#39;, $filename, &amp;amp;GDBM_WRCREAT, 0640; $hash{hoge} = &amp;quot;huga&amp;quot;; say &amp;quot;$_ =&amp;gt; $hash{$_}&amp;quot; for keys %hash;  </description>
+    </item>
+    
+    <item>
+      <title>PerlのHTTP::Tiny</title>
+      <link>https://yaasita.github.io/2018/04/07/libio-socket-ssl/</link>
+      <pubDate>Sat, 07 Apr 2018 04:17:18 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/04/07/libio-socket-ssl/</guid>
+      <description>perlのHTTP::Tinyは標準モジュールなんだけど、IO::Socket::SSLが無くて
+IO::Socket::SSL 1.42 must be installed for https support  が出ちゃう場合は
+apt install libio-socket-ssl-perl  </description>
+    </item>
     
     <item>
       <title>GoogleのCloud SDKの署名鍵エラー</title>
@@ -16,9 +40,10 @@
       
       <guid>https://yaasita.github.io/2018/04/07/google-cloud-sdk-gpg/</guid>
       <description>GCP(google cloud platform)の署名鍵が変わってた
+つーか元のgpg鍵の有効期限が切れてる
 取得:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease [6,372 B] エラー:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease 公開鍵を利用できないため、以下の署名は検証できませんでした: NO_PUBKEY 6A030B21BA07F4FB  なんか探してみると2018年4月1日に作った鍵にしてるみたい
 gpg2 --search-keys BA07F4FB gpg: data source: http://gpg.NebrWesleyan.edu:11371 (1) Google Cloud Packages Automatic Signing Key &amp;lt;gc-team@google.com&amp;gt; 2048 bit RSA key BA07F4FB, created: 2018-04-01, expires: 2021-03-31  ということで追加して事なきを得た
-gpg2 -a --export BA07F4FB | apt-key add -  </description>
+gpg2 -a --export BA07F4FB | apt-key add - apt-key del A7317B0F  </description>
     </item>
     
     <item>
@@ -291,42 +316,6 @@ Web通帳の各行保存期間はこんな感じ
  図鑑11-20
  図鑑21-22
    </description>
-    </item>
-    
-    <item>
-      <title>maildropの管理UIを作った</title>
-      <link>https://yaasita.github.io/2017/09/29/maildrop-admin/</link>
-      <pubDate>Fri, 29 Sep 2017 02:38:43 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/09/29/maildrop-admin/</guid>
-      <description>フロントをVue.jsでこんな感じの構成
-
-動作の様子
-
-maildropの設定ファイル(~/.mailfilter)でも良いんだけどちょっと
-日付が入れられないのとエントリーが増えてくるとちょっと管理しきれなくなった
-一旦こんな感じのJSONを経由することでマシにした感じ
- &amp;quot;JUNKMAIL&amp;quot;: [ { &amp;quot;header&amp;quot;: &amp;quot;From&amp;quot;, &amp;quot;regex&amp;quot;: &amp;quot;.*atmarkit.co.jp&amp;quot;, &amp;quot;time&amp;quot;: &amp;quot;2017/05/08 01:58&amp;quot; }, { &amp;quot;header&amp;quot;: &amp;quot;From&amp;quot;, &amp;quot;regex&amp;quot;: &amp;quot;.*facebookmail.com&amp;quot;, &amp;quot;time&amp;quot;: &amp;quot;2017/05/08 01:58&amp;quot; },  サーバサイドの実装
-https://github.com/yaasita/maildrop-admin
-.mailfilterへの変換処理
-  function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img0&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img0&#34;).src = photos[0].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).src = photos[1].original_size.url; }   </description>
-    </item>
-    
-    <item>
-      <title>iptablesの変更をWebからやる</title>
-      <link>https://yaasita.github.io/2017/08/22/imap-iptables/</link>
-      <pubDate>Tue, 22 Aug 2017 02:17:37 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/08/22/imap-iptables/</guid>
-      <description>httpsのほかにもう一個ポートのアクセス制限を面倒見たくなかったのでなんとなくやってみた
-httpsでWebUIにアクセスしたらIP許可リストに入れるって処理
-
-PerlのCGIからGo言語で書いたバイナリを呼んでiptablesを更新する的な処理
-GoとPerl間はJSONで受け渡す
-Goで書いたのはSUIDビット立てたバイナリで叩きたいと思ったから
-（なんかうまくいかなくて結局sudoでやったけど)
-https://github.com/yaasita/mail-iptables
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
   </channel>
