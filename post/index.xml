@@ -6,8 +6,23 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 17 Apr 2018 01:09:31 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 19 May 2018 05:16:04 +0900</lastBuildDate>
     <atom:link href="/post/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>vimのterminalモード</title>
+      <link>https://yaasita.github.io/2018/05/19/vim-terminal/</link>
+      <pubDate>Sat, 19 May 2018 05:16:04 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/05/19/vim-terminal/</guid>
+      <description>メモ
+ tmuxパカパカ開くよりは良い気がする
+ 以下のマッピング追加してペーストできるようにした
+if has(&#39;terminal&#39;) tnoremap &amp;lt;C-T&amp;gt; &amp;lt;C-W&amp;gt;&amp;quot;&amp;quot; endif  ubuntu18.04でもちょい古くてなんか挙動が少し違うから手動で入れた方が良い
+  参考リンク
+【(Neo)Vim】terminal mode のマッピングについての闇とその解決法
+結論：すごく便利だと思います</description>
+    </item>
     
     <item>
       <title>たまにはGDBM使う</title>
@@ -287,34 +302,6 @@ Web通帳の各行保存期間はこんな感じ
  Eco通帳: 25ヵ月分
   横浜銀行(はまぎんマイダイレクト)
  マイスマート通帳: 36ヵ月分
-   </description>
-    </item>
-    
-    <item>
-      <title>WORLD OF FINAL FANTASY(WOFF)攻略まとめ</title>
-      <link>https://yaasita.github.io/2017/10/12/woff/</link>
-      <pubDate>Thu, 12 Oct 2017 15:29:48 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/10/12/woff/</guid>
-      <description>ワールド オブ ファイナルファンタジーの攻略ページまとめ
- アビリティ
- アビリティ一覧・効果・大技組み合わせ
-  クエスト・ストーリー
- よりみちクエスト
- 隠しマップの行き方
- ストーリー攻略
- マップ
- クリア後隠しダンジョン
- XG倒したときのパーティ
-  アイテム
- マディンの記憶入手方法
- ミラーストーン一覧と入手法
-  ミラージュ
- WOFF攻略!ゴブリンプリンセス★、アンデッドセレブ★、クイーンアチョ★入手法
- 最強ミラージュランキング！
- 図鑑1-10
- 図鑑11-20
- 図鑑21-22
    </description>
     </item>
     

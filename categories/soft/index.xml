@@ -6,8 +6,23 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 04 Feb 2018 16:27:56 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 19 May 2018 05:16:04 +0900</lastBuildDate>
     <atom:link href="/categories/soft/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>vimのterminalモード</title>
+      <link>https://yaasita.github.io/2018/05/19/vim-terminal/</link>
+      <pubDate>Sat, 19 May 2018 05:16:04 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/05/19/vim-terminal/</guid>
+      <description>メモ
+ tmuxパカパカ開くよりは良い気がする
+ 以下のマッピング追加してペーストできるようにした
+if has(&#39;terminal&#39;) tnoremap &amp;lt;C-T&amp;gt; &amp;lt;C-W&amp;gt;&amp;quot;&amp;quot; endif  ubuntu18.04でもちょい古くてなんか挙動が少し違うから手動で入れた方が良い
+  参考リンク
+【(Neo)Vim】terminal mode のマッピングについての闇とその解決法
+結論：すごく便利だと思います</description>
+    </item>
     
     <item>
       <title>Apacheでリバースプロキシ</title>
@@ -303,28 +318,6 @@ Androidでも動く
 （同期ディレクトリに上限がないため）
 こんな感じ
 ./syncthing -gui-address=&amp;quot;192.168.0.10:3184&amp;quot; -no-browser  </description>
-    </item>
-    
-    <item>
-      <title>Git-itやってみた</title>
-      <link>https://yaasita.github.io/2016/04/24/git-it/</link>
-      <pubDate>Sun, 24 Apr 2016 02:05:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/04/24/git-it/</guid>
-      <description>日本語も選択できるElectron製のアプリで
-ステップバイステップで勉強できる
-ここのリリースページからバイナリを落として実行する
-https://github.com/jlord/git-it-electron
-結果
-http://yaasita.github.io/patchwork/
-参考リンク
- Git-it – 手を動かしながら習得できる日本語対応のGit/GitHub学習アプリ
- http://www.softantenna.com/wp/review/git-it/
-  プルリク練習用のリポジトリ
- https://github.com/jlord/patchwork
-  結果確認
- http://jlord.us/patchwork/
-   </description>
     </item>
     
   </channel>

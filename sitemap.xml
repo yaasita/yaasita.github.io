@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yaasita.github.io/2018/05/19/vim-terminal/</loc>
+    <lastmod>2018-05-19T05:16:04+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yaasita.github.io/2018/04/17/gdbm-file/</loc>
     <lastmod>2018-04-17T01:09:31+09:00</lastmod>
   </url>
@@ -4394,7 +4399,7 @@
   
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2018-04-17T01:09:31+09:00</lastmod>
+    <lastmod>2018-05-19T05:16:04+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4466,7 +4471,7 @@
   
   <url>
     <loc>https://yaasita.github.io/archives/2018/</loc>
-    <lastmod>2018-04-17T01:09:31+09:00</lastmod>
+    <lastmod>2018-05-19T05:16:04+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4519,7 +4524,7 @@
   
   <url>
     <loc>https://yaasita.github.io/post/</loc>
-    <lastmod>2018-04-17T01:09:31+09:00</lastmod>
+    <lastmod>2018-05-19T05:16:04+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4537,7 +4542,7 @@
   
   <url>
     <loc>https://yaasita.github.io/categories/soft/</loc>
-    <lastmod>2018-02-04T16:27:56+09:00</lastmod>
+    <lastmod>2018-05-19T05:16:04+09:00</lastmod>
     <priority>0</priority>
   </url>
   
