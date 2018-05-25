@@ -6,8 +6,22 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 07 Apr 2018 02:24:37 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 26 May 2018 03:49:43 +0900</lastBuildDate>
     <atom:link href="/categories/net/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>クライアント証明書とIP制限</title>
+      <link>https://yaasita.github.io/2018/05/26/client-auth/</link>
+      <pubDate>Sat, 26 May 2018 03:49:43 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/05/26/client-auth/</guid>
+      <description>外からはクライアント証明書を要求して、中からは素通しさせたいケース
+Apache2.4ならこんな感じ
+SSLCACertificateFile /etc/apache2/ssl/example.crt &amp;lt;Directory /var/www&amp;gt; Options Indexes FollowSymLinks MultiViews ExecCGI Require ip 192.168.100.0/24 SSLVerifyClient require Satisfy any &amp;lt;/Directory&amp;gt;  curlで確認
+curl https://example.net --key client.key --cert cert.crt --http1.1  作るときは /usr/lib/ssl/misc/CA.pl -newreq とかで適当に作る
+鍵とセットなら良いのでcommon nameとかは適当
+参考リンク プライベートCA作るまで</description>
+    </item>
     
     <item>
       <title>GoogleのCloud SDKの署名鍵エラー</title>
@@ -314,18 +328,6 @@ Static Site Generatorはとても良い
  参考リンク  middleman
  hugo
   </description>
-    </item>
-    
-    <item>
-      <title>GCPの Cloud DNSでグルーレコード</title>
-      <link>https://yaasita.github.io/2016/12/03/google-cloud-dns/</link>
-      <pubDate>Sat, 03 Dec 2016 23:22:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/12/03/google-cloud-dns/</guid>
-      <description>Google Cloud Platform のDNSでグルーレコード作るときは
-こんな感じでNS指定したあとに、Aレコード追加すればグルーレコード(Glue Record)に追加してくれるようだ
-
-; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.9.5-9+deb8u8-Debian &amp;lt;&amp;lt;&amp;gt;&amp;gt; +norec @ns-cloud-d1.googledomains.com. name.yaasita.xyz. a ; (2 servers found) ;; global options: +cmd ;; Got answer: ;; -&amp;gt;&amp;gt;HEADER&amp;lt;&amp;lt;- opcode: QUERY, status: NOERROR, id: 39015 ;; flags: qr; QUERY: 1, ANSWER: 0, AUTHORITY: 2, ADDITIONAL: 3 ;; OPT PSEUDOSECTION: ; EDNS: version: 0, flags:; udp: 512 ;; QUESTION SECTION: ;name.yaasita.xyz. IN A ;; AUTHORITY SECTION: name.yaasita.xyz. 300 IN NS ns1.name.yaasita.xyz. name.</description>
     </item>
     
   </channel>
