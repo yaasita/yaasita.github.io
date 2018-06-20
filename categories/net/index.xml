@@ -6,8 +6,27 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 26 May 2018 03:49:43 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 20 Jun 2018 23:46:45 +0900</lastBuildDate>
     <atom:link href="/categories/net/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GCPでAWS Batch的な事をやる</title>
+      <link>https://yaasita.github.io/2018/06/20/aws-batch-gcp/</link>
+      <pubDate>Wed, 20 Jun 2018 23:46:45 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/06/20/aws-batch-gcp/</guid>
+      <description> こんな感じにS3になんか置いて、ファイルがあったら起動して、終わったらshutdownするみたいな奴
+
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   GCPはインスタンスの起動停止が早いので結構良い感じ
+Lambda 処理するファイルが存在して、GCPが動いてたら起動かける
+
+GCP キュー代わりのファイル消してから
+bootしてから3分後に実行（ちょっとインターバルないとインスタンスに入るのが大変になる）
+処理の最後でshutdownすればOK
+/etc/systemd/system/gcp-calc.service
+[Unit] Description=gcp-calc Wants=network-pre.target After=multi-user.target [Install] WantedBy=multi-user.target [Service] ExecStart=/root/run.sh Type=oneshot  /etc/systemd/system/gcp-calc.timer
+[Unit] Description=gcp calc [Timer] OnBootSec=3min [Install] WantedBy=timers.target  </description>
+    </item>
     
     <item>
       <title>クライアント証明書とIP制限</title>
@@ -296,38 +315,6 @@ message_drop_headers = bcc, content-length, resent-bcc, return-path   参考
    まとめ 本来見られちゃいけないヘッダをMTAに渡して、多分消してくれるだろうと期待するのはあまりよくないと思う
 具体的にはBccヘッダまで綺麗に書いて sendmail -t で送るよりはちゃんとenvelope to を指定して送った方が安全度高い
 要するにthunderbirdみたいに送るべき</description>
-    </item>
-    
-    <item>
-      <title>blogをmiddlemanからhugoに移行した</title>
-      <link>https://yaasita.github.io/2017/01/05/middleman2hugo/</link>
-      <pubDate>Thu, 05 Jan 2017 04:50:10 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/01/05/middleman2hugo/</guid>
-      <description> 使ってみた感想  ビルドはmiddlemanで10分かかってたけど1秒になった
- themeはgeppakuというのを使用 シンプルで良い
- Tumblrリンクのプルリクエストも快くマージしてくれた感謝m(_ _)m
-  pagination 周りの部分はちょっとページ数が多いとカラム落ちしたり苦しかったので書き直した
- taxonomiesを追加して、年別のアーカイブページを作成
- アーカイブページを逆順にする対応はなぜかうまくいかなかったので後で調査する
- とりあえずJavaScriptで逆順にした &amp;gt; gist
-  hugo serverのライブリロードがとっても良い(ブラウザも自動更新)
- ただしpagination周りで変な書き方するとサーバごと落ちる
-  DISQUS周りはちょっとカスタマイズした
- なぜかデフォルトだと読み込まなかったので
-  markdown周りはほぼ設定ファイルで完結
- 今回の設定はこんな感じ
-  middleman時代のリンクを維持するためにUglyURLs設定したけどcategoriesとかリンク切れが面倒だったので中止
- 参考: http://wdkk.co.jp/note/2015/0824-hugo-public/
-  Highlight.js今回無効にした過去分のcodeブロックが微妙になったので
-  総評
-Static Site Generatorはとても良い
-移行するにも、更新するにもメンテがすごく楽
-移行スクリプト 基本的にはファイル名にある時間のデータをTOMLに直して終わり
-/home/yamasitaにhugo,middlemanのディレクトリがある前提
- 参考リンク  middleman
- hugo
-  </description>
     </item>
     
   </channel>

@@ -6,8 +6,27 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 17 Apr 2018 01:09:31 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 20 Jun 2018 23:46:45 +0900</lastBuildDate>
     <atom:link href="/categories/program/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GCPでAWS Batch的な事をやる</title>
+      <link>https://yaasita.github.io/2018/06/20/aws-batch-gcp/</link>
+      <pubDate>Wed, 20 Jun 2018 23:46:45 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/06/20/aws-batch-gcp/</guid>
+      <description> こんな感じにS3になんか置いて、ファイルがあったら起動して、終わったらshutdownするみたいな奴
+
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   GCPはインスタンスの起動停止が早いので結構良い感じ
+Lambda 処理するファイルが存在して、GCPが動いてたら起動かける
+
+GCP キュー代わりのファイル消してから
+bootしてから3分後に実行（ちょっとインターバルないとインスタンスに入るのが大変になる）
+処理の最後でshutdownすればOK
+/etc/systemd/system/gcp-calc.service
+[Unit] Description=gcp-calc Wants=network-pre.target After=multi-user.target [Install] WantedBy=multi-user.target [Service] ExecStart=/root/run.sh Type=oneshot  /etc/systemd/system/gcp-calc.timer
+[Unit] Description=gcp calc [Timer] OnBootSec=3min [Install] WantedBy=timers.target  </description>
+    </item>
     
     <item>
       <title>たまにはGDBM使う</title>
@@ -279,27 +298,6 @@ SCRIPT1003: &#39;:&#39; がありません。  というエラーになるから
 Vue.js使って書いてみた
 すごい便利
  https://github.com/yaasita/vuejs-close-button</description>
-    </item>
-    
-    <item>
-      <title>新旧リダイレクト</title>
-      <link>https://yaasita.github.io/2017/01/16/redirect-githubpage/</link>
-      <pubDate>Mon, 16 Jan 2017 23:36:18 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/01/16/redirect-githubpage/</guid>
-      <description> middlemanからの移行に際してリンクが壊れまくった
-GoogleのSearch Console
-https://yaasita.tumblr.com/post/155945715637 
-とりあえずJavaScriptで新URL案内すればいいか
- こんな感じ
-https://yaasita.tumblr.com/post/155945774152 
-旧ページ  記事ページ
- https://yaasita.github.io/2010/08/30/5917.html
-  タグページ
- https://yaasita.github.io/tags/soft.html
-  年ページ
- https://yaasita.github.io/2008.html
-   </description>
     </item>
     
   </channel>

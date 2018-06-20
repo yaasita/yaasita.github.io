@@ -6,8 +6,27 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 26 May 2018 03:49:43 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 20 Jun 2018 23:46:45 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GCPでAWS Batch的な事をやる</title>
+      <link>https://yaasita.github.io/2018/06/20/aws-batch-gcp/</link>
+      <pubDate>Wed, 20 Jun 2018 23:46:45 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/06/20/aws-batch-gcp/</guid>
+      <description> こんな感じにS3になんか置いて、ファイルがあったら起動して、終わったらshutdownするみたいな奴
+
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   GCPはインスタンスの起動停止が早いので結構良い感じ
+Lambda 処理するファイルが存在して、GCPが動いてたら起動かける
+
+GCP キュー代わりのファイル消してから
+bootしてから3分後に実行（ちょっとインターバルないとインスタンスに入るのが大変になる）
+処理の最後でshutdownすればOK
+/etc/systemd/system/gcp-calc.service
+[Unit] Description=gcp-calc Wants=network-pre.target After=multi-user.target [Install] WantedBy=multi-user.target [Service] ExecStart=/root/run.sh Type=oneshot  /etc/systemd/system/gcp-calc.timer
+[Unit] Description=gcp calc [Timer] OnBootSec=3min [Install] WantedBy=timers.target  </description>
+    </item>
     
     <item>
       <title>クライアント証明書とIP制限</title>
@@ -281,26 +300,6 @@ Reject clipboard write access from remoteのエラーが出る
 (hogehogeバケットとその中身を特定IPアドレスの人に開放する)
 { &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Id&amp;quot;: &amp;quot;Policy1509977001523&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1509976998204&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;s3:*&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::hogehoge&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;IpAddress&amp;quot;: { &amp;quot;aws:SourceIp&amp;quot;: &amp;quot;203.0.113.1&amp;quot; } } }, { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1509976998204&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;s3:*&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::hogehoge/*&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;IpAddress&amp;quot;: { &amp;quot;aws:SourceIp&amp;quot;: &amp;quot;203.0.113.1&amp;quot; } } } ] }  んでs3fsはこんな感じ
 s3fs -o public_bucket=1,rw,allow_other,umask=0022,endpoint=ap-northeast-1,default_acl=public-read hogehoge /mnt  public_bucketがポイント</description>
-    </item>
-    
-    <item>
-      <title>正しいパッケージのアップデート方法</title>
-      <link>https://yaasita.github.io/2017/10/26/pkg-update/</link>
-      <pubDate>Thu, 26 Oct 2017 01:30:38 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/10/26/pkg-update/</guid>
-      <description>本番環境と検証環境があり、パッケージのアップデートを行いたい場合
- 10月1日 検証環境のパッケージを上げる
- 11月1日 検証環境で問題なければ本番も上げる
-  この時、それぞれの日に本番環境、検証環境で apt update, apt upgradeをすると本番、検証で差分が生じ検証されていないパッケージもアップデートされる可能性がある
-正しくは10月1日に検証環境、本番環境で 同時 に以下のコマンドを実行
-apt-get update apt-get upgrade --download-only  検証環境で以下を実行
-apt-get upgrade  問題なければ本番環境で以下を実行
-apt-get upgrade  ポイントは apt-get update, apt-get upgrade --download-only を検証,本番環境ともに同じタイミングで実行して更新予定のパッケージを揃えておくこと
-またubuntuは/etc/apt/apt.conf.d/10periodicの「APT::Periodic::Update-Package-Lists」を0にしておかないと毎日自動でapt-get updateが走るので注意すること
-図にするとこんな感じ
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
   </channel>
