@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yaasita.github.io/2018/07/04/es-perl/</loc>
+    <lastmod>2018-07-04T03:06:02+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yaasita.github.io/2018/06/20/aws-batch-gcp/</loc>
     <lastmod>2018-06-20T23:46:45+09:00</lastmod>
   </url>
@@ -4409,7 +4414,7 @@
   
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2018-06-20T23:46:45+09:00</lastmod>
+    <lastmod>2018-07-04T03:06:02+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4481,7 +4486,7 @@
   
   <url>
     <loc>https://yaasita.github.io/archives/2018/</loc>
-    <lastmod>2018-06-20T23:46:45+09:00</lastmod>
+    <lastmod>2018-07-04T03:06:02+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4534,13 +4539,13 @@
   
   <url>
     <loc>https://yaasita.github.io/post/</loc>
-    <lastmod>2018-06-20T23:46:45+09:00</lastmod>
+    <lastmod>2018-07-04T03:06:02+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/categories/program/</loc>
-    <lastmod>2018-06-20T23:46:45+09:00</lastmod>
+    <lastmod>2018-07-04T03:06:02+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4552,7 +4557,7 @@
   
   <url>
     <loc>https://yaasita.github.io/categories/soft/</loc>
-    <lastmod>2018-05-26T03:49:43+09:00</lastmod>
+    <lastmod>2018-07-04T03:06:02+09:00</lastmod>
     <priority>0</priority>
   </url>
   

@@ -6,8 +6,19 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 20 Jun 2018 23:46:45 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 04 Jul 2018 03:06:02 +0900</lastBuildDate>
     <atom:link href="/post/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>PerlでElasticsearch</title>
+      <link>https://yaasita.github.io/2018/07/04/es-perl/</link>
+      <pubDate>Wed, 04 Jul 2018 03:06:02 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/07/04/es-perl/</guid>
+      <description>perlでElasticsearch
+mojoliciousでの例
+ </description>
+    </item>
     
     <item>
       <title>GCPでAWS Batch的な事をやる</title>
@@ -288,18 +299,6 @@ Reject clipboard write access from remoteのエラーが出る
 
 参考リンク  リモートの tmux でコピーした内容のローカルのクリップボードへの反映
    function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
-    </item>
-    
-    <item>
-      <title>s3fsとIPアドレス制限だけのpublic bucket</title>
-      <link>https://yaasita.github.io/2017/11/07/s3fs-public-bucket/</link>
-      <pubDate>Tue, 07 Nov 2017 01:36:51 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/11/07/s3fs-public-bucket/</guid>
-      <description>s3fsを使ってこんな感じのバケットポリシーのs3をマウントするときのやつ
-(hogehogeバケットとその中身を特定IPアドレスの人に開放する)
-{ &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Id&amp;quot;: &amp;quot;Policy1509977001523&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1509976998204&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;s3:*&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::hogehoge&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;IpAddress&amp;quot;: { &amp;quot;aws:SourceIp&amp;quot;: &amp;quot;203.0.113.1&amp;quot; } } }, { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1509976998204&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;s3:*&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::hogehoge/*&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;IpAddress&amp;quot;: { &amp;quot;aws:SourceIp&amp;quot;: &amp;quot;203.0.113.1&amp;quot; } } } ] }  んでs3fsはこんな感じ
-s3fs -o public_bucket=1,rw,allow_other,umask=0022,endpoint=ap-northeast-1,default_acl=public-read hogehoge /mnt  public_bucketがポイント</description>
     </item>
     
   </channel>
