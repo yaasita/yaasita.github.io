@@ -6,8 +6,27 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 20 Jun 2018 23:46:45 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 29 Jul 2018 16:36:57 +0900</lastBuildDate>
     <atom:link href="/categories/net/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>クライアント証明書&#43;HTTP2</title>
+      <link>https://yaasita.github.io/2018/07/29/h2-plus-client-auth/</link>
+      <pubDate>Sun, 29 Jul 2018 16:36:57 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/07/29/h2-plus-client-auth/</guid>
+      <description>SSLRequire は 非推奨みたいなので
+クライアント証明書とIP制限を今風に書き直す
+あとCNとかも検証するようにした
+こんな感じ
+&amp;lt;Directory /var/www&amp;gt; Options Indexes FollowSymLinks MultiViews ExecCGI SSLVerifyClient optional &amp;lt;RequireAny&amp;gt; Require ip 192.168.100.0/24 &amp;lt;RequireAll&amp;gt; Require ssl-verify-client Require expr &amp;quot;%{SSL_CLIENT_S_DN_CN} == &#39;hogeclient&#39;&amp;quot; &amp;lt;/RequireAll&amp;gt; &amp;lt;/RequireAny&amp;gt; &amp;lt;/Directory&amp;gt;  あと
+Protocols http/1.1 h2  のようにhttp/1.1を先にしないと
+curl: (92) HTTP/2 stream 1 was not closed cleanly: HTTP_1_1_REQUIRED (err 13)  こんなエラーになるので注意
+参考リンク
+ reqexprの説明
+ mod_ssl変数一覧
+  </description>
+    </item>
     
     <item>
       <title>GCPでAWS Batch的な事をやる</title>
@@ -294,27 +313,6 @@ host example.net. dig +nodnssec +noedns +noadflag example.net. a  WN-G300GRはad
  時間課金方式と月額方式のハイブリット
   今はコンテナ技術でサクッと移動できちゃうので、
 安いクラウドサービス渡り歩くのも良いと思った</description>
-    </item>
-    
-    <item>
-      <title>BCCヘッダを落とすのは誰か</title>
-      <link>https://yaasita.github.io/2017/01/22/who_drops_bccheader/</link>
-      <pubDate>Sun, 22 Jan 2017 00:48:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/01/22/who_drops_bccheader/</guid>
-      <description>BCCヘッダは転送しないで、MTA側で消されるというのは有名な話だけど
-実際どんな感じなのか
-まずメーラーでBCCを指定して送ったとする
-この時BCCヘッダはどのタイミングで消えるか？という問題
-MUA(thunderbird等) -&amp;gt; 送信側MTA(postfix等) -&amp;gt; 受信側MTA(postfix等)  thunderbird まずthunderbirdからBCCで送信した場合はそもそもBccヘッダはつけない(Icedove/45.6.0で検証)
-envelope toには存在するがそもそもBccヘッダなんてものを書かない
-postfix postfixもデフォルトではBccヘッダは落とすようになっている
-しかしこの設定を変更すればBccヘッダを落とさないでそのまま配送される
-message_drop_headers = bcc, content-length, resent-bcc, return-path   参考
- http://www.postfix.org/postconf.5.html#message_drop_headers
-   まとめ 本来見られちゃいけないヘッダをMTAに渡して、多分消してくれるだろうと期待するのはあまりよくないと思う
-具体的にはBccヘッダまで綺麗に書いて sendmail -t で送るよりはちゃんとenvelope to を指定して送った方が安全度高い
-要するにthunderbirdみたいに送るべき</description>
     </item>
     
   </channel>

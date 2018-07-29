@@ -6,8 +6,27 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 04 Jul 2018 03:06:02 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 29 Jul 2018 16:36:57 +0900</lastBuildDate>
     <atom:link href="/archives/2018/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>クライアント証明書&#43;HTTP2</title>
+      <link>https://yaasita.github.io/2018/07/29/h2-plus-client-auth/</link>
+      <pubDate>Sun, 29 Jul 2018 16:36:57 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/07/29/h2-plus-client-auth/</guid>
+      <description>SSLRequire は 非推奨みたいなので
+クライアント証明書とIP制限を今風に書き直す
+あとCNとかも検証するようにした
+こんな感じ
+&amp;lt;Directory /var/www&amp;gt; Options Indexes FollowSymLinks MultiViews ExecCGI SSLVerifyClient optional &amp;lt;RequireAny&amp;gt; Require ip 192.168.100.0/24 &amp;lt;RequireAll&amp;gt; Require ssl-verify-client Require expr &amp;quot;%{SSL_CLIENT_S_DN_CN} == &#39;hogeclient&#39;&amp;quot; &amp;lt;/RequireAll&amp;gt; &amp;lt;/RequireAny&amp;gt; &amp;lt;/Directory&amp;gt;  あと
+Protocols http/1.1 h2  のようにhttp/1.1を先にしないと
+curl: (92) HTTP/2 stream 1 was not closed cleanly: HTTP_1_1_REQUIRED (err 13)  こんなエラーになるので注意
+参考リンク
+ reqexprの説明
+ mod_ssl変数一覧
+  </description>
+    </item>
     
     <item>
       <title>PerlでElasticsearch</title>

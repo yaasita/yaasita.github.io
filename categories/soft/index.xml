@@ -6,8 +6,27 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 04 Jul 2018 03:06:02 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 29 Jul 2018 16:36:57 +0900</lastBuildDate>
     <atom:link href="/categories/soft/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>クライアント証明書&#43;HTTP2</title>
+      <link>https://yaasita.github.io/2018/07/29/h2-plus-client-auth/</link>
+      <pubDate>Sun, 29 Jul 2018 16:36:57 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/07/29/h2-plus-client-auth/</guid>
+      <description>SSLRequire は 非推奨みたいなので
+クライアント証明書とIP制限を今風に書き直す
+あとCNとかも検証するようにした
+こんな感じ
+&amp;lt;Directory /var/www&amp;gt; Options Indexes FollowSymLinks MultiViews ExecCGI SSLVerifyClient optional &amp;lt;RequireAny&amp;gt; Require ip 192.168.100.0/24 &amp;lt;RequireAll&amp;gt; Require ssl-verify-client Require expr &amp;quot;%{SSL_CLIENT_S_DN_CN} == &#39;hogeclient&#39;&amp;quot; &amp;lt;/RequireAll&amp;gt; &amp;lt;/RequireAny&amp;gt; &amp;lt;/Directory&amp;gt;  あと
+Protocols http/1.1 h2  のようにhttp/1.1を先にしないと
+curl: (92) HTTP/2 stream 1 was not closed cleanly: HTTP_1_1_REQUIRED (err 13)  こんなエラーになるので注意
+参考リンク
+ reqexprの説明
+ mod_ssl変数一覧
+  </description>
+    </item>
     
     <item>
       <title>PerlでElasticsearch</title>
@@ -301,20 +320,6 @@ https://yaasita.tumblr.com/post/157354717792
       <description>ずっとループして再生
  再生(P) → A-Bセクション(A) → 繰り返し&amp;reg;
   </description>
-    </item>
-    
-    <item>
-      <title>s3fs使う</title>
-      <link>https://yaasita.github.io/2016/06/22/s3fs/</link>
-      <pubDate>Wed, 22 Jun 2016 13:40:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/06/22/s3fs/</guid>
-      <description>s3fsはamazon S3をファイルしすてむのように使うやつ
-ただ遅い
-基本ここ見てやる
-https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes
-今回はCeontOS6を対象
-# paco入れておく yum install paco # コンパイルに必要なもの入れる yum install -y gcc libstdc++-devel gcc-c++ curl-devel libxml2-devel openssl-devel mailcap # fuse wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.8.5.tar.gz ./configure make paco -lD &#39;make install&#39; # /usr/local/lib 追記 vi /etc/ld.so.conf ldconfig # s3fs wget http://s3fs.googlecode.com/files/s3fs-1.74.tar.gz tar xvaf s3fs-1.74.tar.gz cd s3fs-1.74/ autoreconf --install export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure --prefix=/usr make paco -lD &#39;make install&#39; # mount s3fs hoge-bucket /s3 -o rw,allow_other,uid=501,gid=501,default_acl=public-read su - apps cd /s3 date &amp;gt; date.</description>
     </item>
     
   </channel>
