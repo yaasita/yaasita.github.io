@@ -6,8 +6,19 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 29 Jul 2018 16:36:57 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 01 Aug 2018 01:03:14 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AlwaysOnSSLがダメぽい</title>
+      <link>https://yaasita.github.io/2018/08/01/alwaysonssl-breaking/</link>
+      <pubDate>Wed, 01 Aug 2018 01:03:14 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/08/01/alwaysonssl-breaking/</guid>
+      <description>S/MIMEもSSL証明書も取れない
+(´；ω；｀)ﾌﾞﾜｯ
+トップページも繋がらないしもう駄目か・・・</description>
+    </item>
     
     <item>
       <title>クライアント証明書&#43;HTTP2</title>
@@ -291,16 +302,6 @@ WSL経由でも良かったんだけど、なんかVimのvisualモードで背�
 公式には
  システムソフトウェアにおいて、動作の安定性を改善しました。
  としか書いてないけど</description>
-    </item>
-    
-    <item>
-      <title>SSL証明書の有効期限チェック</title>
-      <link>https://yaasita.github.io/2017/11/24/ssl-check/</link>
-      <pubDate>Fri, 24 Nov 2017 01:54:56 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/11/24/ssl-check/</guid>
-      <description>なんか必要だったので、シェルとかでも良いけど
- </description>
     </item>
     
   </channel>

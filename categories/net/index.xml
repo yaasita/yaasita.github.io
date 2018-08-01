@@ -6,8 +6,19 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 29 Jul 2018 16:36:57 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 01 Aug 2018 01:03:14 +0900</lastBuildDate>
     <atom:link href="/categories/net/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AlwaysOnSSLがダメぽい</title>
+      <link>https://yaasita.github.io/2018/08/01/alwaysonssl-breaking/</link>
+      <pubDate>Wed, 01 Aug 2018 01:03:14 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/08/01/alwaysonssl-breaking/</guid>
+      <description>S/MIMEもSSL証明書も取れない
+(´；ω；｀)ﾌﾞﾜｯ
+トップページも繋がらないしもう駄目か・・・</description>
+    </item>
     
     <item>
       <title>クライアント証明書&#43;HTTP2</title>
@@ -295,24 +306,6 @@ Dear yamasita yamasita, The Freenom Review Team has visited your website today. 
       <description>名前を引くときにhostコマンドでは返ってくるがdigだとおかしくなるときがある
 こんな感じにすれば同じになる
 host example.net. dig +nodnssec +noedns +noadflag example.net. a  WN-G300GRはadビット立ててると応答すらしないらしい</description>
-    </item>
-    
-    <item>
-      <title>GMOのConoha VPS使ってみた</title>
-      <link>https://yaasita.github.io/2017/01/22/conoha-vps/</link>
-      <pubDate>Sun, 22 Jan 2017 23:51:14 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/01/22/conoha-vps/</guid>
-      <description>非常に良い
-さくらVPSより良いかもしれない
- DNSサーバ無料
- OP25B無し
- SSD 20GB
- 初期費用なし
- 転送量無制限
- 時間課金方式と月額方式のハイブリット
-  今はコンテナ技術でサクッと移動できちゃうので、
-安いクラウドサービス渡り歩くのも良いと思った</description>
     </item>
     
   </channel>
