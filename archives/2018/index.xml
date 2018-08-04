@@ -6,8 +6,26 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 01 Aug 2018 01:03:14 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 05 Aug 2018 00:57:46 +0900</lastBuildDate>
     <atom:link href="/archives/2018/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>プライベートCAでダメなaltname</title>
+      <link>https://yaasita.github.io/2018/08/05/private-ca-invalid/</link>
+      <pubDate>Sun, 05 Aug 2018 00:57:46 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/08/05/private-ca-invalid/</guid>
+      <description>openssl.cnf
+subjectAltName=@alt_names [ alt_names ] DNS.1 = *.example.com IP.1 = 192.168.0.1  ここに書ける値についてのお話
+IPでこういうのはダメ
+ IP.1 = 192.168.0.*
+ IP.2 = 192.168.0.0/24
+  [IPアドレス範囲もダメ}(https://security.stackexchange.com/questions/91368/ip-range-in-ssl-subject-alternative-name)
+こういうのはOKなのでテスト用の証明書だったらこの辺だけ書いて渡すのが良いのかな
+ IP.1 = 127.0.0.1
+ DNS.1 = localhost
+  </description>
+    </item>
     
     <item>
       <title>AlwaysOnSSLがダメぽい</title>
