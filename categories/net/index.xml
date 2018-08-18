@@ -6,8 +6,21 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 01 Aug 2018 01:03:14 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 18 Aug 2018 17:40:23 +0900</lastBuildDate>
     <atom:link href="/categories/net/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ubuntu18.04でDKIM設定</title>
+      <link>https://yaasita.github.io/2018/08/18/dkim/</link>
+      <pubDate>Sat, 18 Aug 2018 17:40:23 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/08/18/dkim/</guid>
+      <description>インストール apt install opendkim opendkim-tools  opendkim設定 mkdir /etc/postfix/dkim/ opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail # -d ドメイン # -s セレクタ chgrp opendkim /etc/postfix/dkim/* chmod g+r /etc/postfix/dkim/*  /etc/opendkim.conf
+Syslog yes LogWhy Yes UMask 007 Canonicalization relaxed/relaxed Mode sv Socket inet:8891@localhost PidFile /var/run/opendkim/opendkim.pid OversignHeaders From TrustAnchorFile /usr/share/dns/root.key UserID opendkim KeyTable file:/etc/postfix/dkim/keytable SigningTable file:/etc/postfix/dkim/signingtable  /etc/postfix/dkim/keytable
+mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private  /etc/postfix/dkim/signingtable
+example.net mail._domainkey.example.net  チェック
+systemctl restart opendkim.service  postfix設定 以下追記</description>
+    </item>
     
     <item>
       <title>AlwaysOnSSLがダメぽい</title>
@@ -295,17 +308,6 @@ It&#39;s been over 120 days since you opened Cloud Shell from the Google Cloud P
       <guid>https://yaasita.github.io/2017/02/03/freenom-deletes-freely/</guid>
       <description>だそうです
 Dear yamasita yamasita, The Freenom Review Team has visited your website today. Unfortunately we have to say that today we cancelled your domain YAASITA.ML. The reason for the cancellation is that the website address you used for your free domain name was not accessible or did not follow the guidelines set in our terms and conditions. At this stage, anyone, including yourself, is able to (re)register the cancelled domain YAASITA.</description>
-    </item>
-    
-    <item>
-      <title>hostとdigコマンドの挙動が違う時</title>
-      <link>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different/</link>
-      <pubDate>Fri, 27 Jan 2017 01:52:29 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different/</guid>
-      <description>名前を引くときにhostコマンドでは返ってくるがdigだとおかしくなるときがある
-こんな感じにすれば同じになる
-host example.net. dig +nodnssec +noedns +noadflag example.net. a  WN-G300GRはadビット立ててると応答すらしないらしい</description>
     </item>
     
   </channel>

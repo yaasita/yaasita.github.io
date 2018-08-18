@@ -6,8 +6,21 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 29 Jul 2018 16:36:57 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 18 Aug 2018 17:40:23 +0900</lastBuildDate>
     <atom:link href="/categories/soft/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ubuntu18.04でDKIM設定</title>
+      <link>https://yaasita.github.io/2018/08/18/dkim/</link>
+      <pubDate>Sat, 18 Aug 2018 17:40:23 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/08/18/dkim/</guid>
+      <description>インストール apt install opendkim opendkim-tools  opendkim設定 mkdir /etc/postfix/dkim/ opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail # -d ドメイン # -s セレクタ chgrp opendkim /etc/postfix/dkim/* chmod g+r /etc/postfix/dkim/*  /etc/opendkim.conf
+Syslog yes LogWhy Yes UMask 007 Canonicalization relaxed/relaxed Mode sv Socket inet:8891@localhost PidFile /var/run/opendkim/opendkim.pid OversignHeaders From TrustAnchorFile /usr/share/dns/root.key UserID opendkim KeyTable file:/etc/postfix/dkim/keytable SigningTable file:/etc/postfix/dkim/signingtable  /etc/postfix/dkim/keytable
+mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private  /etc/postfix/dkim/signingtable
+example.net mail._domainkey.example.net  チェック
+systemctl restart opendkim.service  postfix設定 以下追記</description>
+    </item>
     
     <item>
       <title>クライアント証明書&#43;HTTP2</title>
@@ -309,17 +322,6 @@ https://yaasita.tumblr.com/post/157354717792
   railsの初期設定
  https://github.com/yaasita/ansible_role_rails
   rbenv</description>
-    </item>
-    
-    <item>
-      <title>smplayerでリピート再生</title>
-      <link>https://yaasita.github.io/2016/08/27/smplayer/</link>
-      <pubDate>Sat, 27 Aug 2016 14:33:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/08/27/smplayer/</guid>
-      <description>ずっとループして再生
- 再生(P) → A-Bセクション(A) → 繰り返し&amp;reg;
-  </description>
     </item>
     
   </channel>

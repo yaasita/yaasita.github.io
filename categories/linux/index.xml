@@ -6,8 +6,21 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 07 Apr 2018 02:24:37 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 18 Aug 2018 17:40:23 +0900</lastBuildDate>
     <atom:link href="/categories/linux/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ubuntu18.04でDKIM設定</title>
+      <link>https://yaasita.github.io/2018/08/18/dkim/</link>
+      <pubDate>Sat, 18 Aug 2018 17:40:23 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/08/18/dkim/</guid>
+      <description>インストール apt install opendkim opendkim-tools  opendkim設定 mkdir /etc/postfix/dkim/ opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail # -d ドメイン # -s セレクタ chgrp opendkim /etc/postfix/dkim/* chmod g+r /etc/postfix/dkim/*  /etc/opendkim.conf
+Syslog yes LogWhy Yes UMask 007 Canonicalization relaxed/relaxed Mode sv Socket inet:8891@localhost PidFile /var/run/opendkim/opendkim.pid OversignHeaders From TrustAnchorFile /usr/share/dns/root.key UserID opendkim KeyTable file:/etc/postfix/dkim/keytable SigningTable file:/etc/postfix/dkim/signingtable  /etc/postfix/dkim/keytable
+mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private  /etc/postfix/dkim/signingtable
+example.net mail._domainkey.example.net  チェック
+systemctl restart opendkim.service  postfix設定 以下追記</description>
+    </item>
     
     <item>
       <title>GoogleのCloud SDKの署名鍵エラー</title>
@@ -279,22 +292,6 @@ APT::Periodic::Update-Package-Lists &amp;quot;1&amp;quot;; APT::Periodic::Unatte
 再起動が必要なら/var/run/reboot-requiredが作られるのか
 // Automatically reboot *WITHOUT CONFIRMATION* if // the file /var/run/reboot-required is found after the upgrade //Unattended-Upgrade::Automatic-Reboot &amp;quot;false&amp;quot;;  参考リンク
  http://orangain.hatenablog.com/entry/unattended-upgrades
-  </description>
-    </item>
-    
-    <item>
-      <title>cgroupでcpuリミットをあてる</title>
-      <link>https://yaasita.github.io/2014/06/22/cgroup-cpu-limit/</link>
-      <pubDate>Sun, 22 Jun 2014 15:57:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2014/06/22/cgroup-cpu-limit/</guid>
-      <description>microインスタンスはstealの関係でCPUリミットを設定するとよいらしい
-microインスタンスはlimitかけると大きくパフォーマンスが向上する
-なのでやってみました
-環境はt1.micro (ubuntu 14.04)
-cgcreate -g cpu:ruby cgexec -g cpu:ruby ./install_ruby.sh cgset -r cpu.cfs_quota_us=250000 ruby cgset -r cpu.cfs_period_us=1000000 ruby # 確認 cd /sys/fs/cgroup ls cpu/ruby cat cpu/ruby/tasks cgget -r cpu.cfs_quota_us -r cpu.cfs_period_us ruby  参考リンク
- cgroup について理解する
- cgroup でメモリと走行時間に制限を加える
   </description>
     </item>
     

@@ -6,8 +6,21 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 05 Aug 2018 00:57:46 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 18 Aug 2018 17:40:23 +0900</lastBuildDate>
     <atom:link href="/post/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ubuntu18.04でDKIM設定</title>
+      <link>https://yaasita.github.io/2018/08/18/dkim/</link>
+      <pubDate>Sat, 18 Aug 2018 17:40:23 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/08/18/dkim/</guid>
+      <description>インストール apt install opendkim opendkim-tools  opendkim設定 mkdir /etc/postfix/dkim/ opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail # -d ドメイン # -s セレクタ chgrp opendkim /etc/postfix/dkim/* chmod g+r /etc/postfix/dkim/*  /etc/opendkim.conf
+Syslog yes LogWhy Yes UMask 007 Canonicalization relaxed/relaxed Mode sv Socket inet:8891@localhost PidFile /var/run/opendkim/opendkim.pid OversignHeaders From TrustAnchorFile /usr/share/dns/root.key UserID opendkim KeyTable file:/etc/postfix/dkim/keytable SigningTable file:/etc/postfix/dkim/signingtable  /etc/postfix/dkim/keytable
+mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private  /etc/postfix/dkim/signingtable
+example.net mail._domainkey.example.net  チェック
+systemctl restart opendkim.service  postfix設定 以下追記</description>
+    </item>
     
     <item>
       <title>プライベートCAでダメなaltname</title>
@@ -20,7 +33,7 @@ subjectAltName=@alt_names [ alt_names ] DNS.1 = *.example.com IP.1 = 192.168.0.1
 IPでこういうのはダメ
  IP.1 = 192.168.0.*
  IP.2 = 192.168.0.0/24
-  [IPアドレス範囲もダメ}(https://security.stackexchange.com/questions/91368/ip-range-in-ssl-subject-alternative-name)
+  IPアドレス範囲もダメ
 こういうのはOKなのでテスト用の証明書だったらこの辺だけ書いて渡すのが良いのかな
  IP.1 = 127.0.0.1
  DNS.1 = localhost
@@ -292,22 +305,6 @@ cpuminer-multiでやってみた
  自宅PC Core i5-4460 @ 3.20GHz 4コア メモリ 4GB =&amp;gt; 376 kH/s
  ノートパソコン LB-C110B Celeron 1037U 2コア/1.80GHz メモリ8GB =&amp;gt; 91 kH/s
   まとめ CPUマイニングなんてやるもんじゃない←結論</description>
-    </item>
-    
-    <item>
-      <title>TeratermからConEmuへ移行した</title>
-      <link>https://yaasita.github.io/2017/12/02/teraterm-to-conemu/</link>
-      <pubDate>Sat, 02 Dec 2017 04:36:08 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/12/02/teraterm-to-conemu/</guid>
-      <description>長年使ってたTeratermからConEmuへ移行した
-SSHクライアントはputtyを使ってる
-WSL経由でも良かったんだけど、なんかVimのvisualモードで背景色が変わらなかったり表示が微妙だったので結局putty使った
-良かった点  絵文字も表示できる
- タブが便利(TeratermもCollectorで出来るけどこっちの方が使いやすい)
- F1キーをリモート側に送るとかそういう設定がしやすい
-  微妙な点  Alt-Vでペーストしてたけどこれが使えない(設定方法が分からない)
-  まとめ ConEmu入れた後putty設定したり、微妙に面倒だけど使いやすい</description>
     </item>
     
   </channel>
