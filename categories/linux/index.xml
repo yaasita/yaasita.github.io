@@ -18,7 +18,7 @@
       <description>インストール apt install opendkim opendkim-tools  opendkim設定 mkdir /etc/postfix/dkim/ opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail # -d ドメイン # -s セレクタ chgrp opendkim /etc/postfix/dkim/* chmod g+r /etc/postfix/dkim/*  /etc/opendkim.conf
 Syslog yes LogWhy Yes UMask 007 Canonicalization relaxed/relaxed Mode sv Socket inet:8891@localhost PidFile /var/run/opendkim/opendkim.pid OversignHeaders From TrustAnchorFile /usr/share/dns/root.key UserID opendkim KeyTable file:/etc/postfix/dkim/keytable SigningTable file:/etc/postfix/dkim/signingtable  /etc/postfix/dkim/keytable
 mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private  /etc/postfix/dkim/signingtable
-example.net mail._domainkey.example.net  チェック
+example.net mail._domainkey.example.net  反映
 systemctl restart opendkim.service  postfix設定 以下追記</description>
     </item>
     

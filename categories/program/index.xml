@@ -6,8 +6,19 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 04 Jul 2018 03:06:02 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 06 Sep 2018 02:43:21 +0900</lastBuildDate>
     <atom:link href="/categories/program/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>perlのクロージャ</title>
+      <link>https://yaasita.github.io/2018/09/06/perl-closure/</link>
+      <pubDate>Thu, 06 Sep 2018 02:43:21 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/09/06/perl-closure/</guid>
+      <description>これでも良いけど
+{ my $count; sub func { return ++$count; } }  最近ならこうstate使って
+use feature qw(:5.10); sub func { state $count; return ++$count; }  ただstateって配列とかには使えない</description>
+    </item>
     
     <item>
       <title>PerlでElasticsearch</title>
@@ -280,23 +291,6 @@ $sort_json = json_decode(file_get_contents(&amp;quot;php://input&amp;quot;),true
       <description>InternetExplorer11で
 SCRIPT1003: &#39;:&#39; がありません。  というエラーになるから
 // OK var ok = new Vue({ el: &#39;#example1&#39;, data: { }, methods: { HogeMethod: function(){ } } }); // NG var ng = new Vue({ el: &#39;#example2&#39;, data: { }, methods: { HogeMethod(){ } } });  chromeとかMicrosoft Edgeとかなら良いんだけどね</description>
-    </item>
-    
-    <item>
-      <title>relをtumblrテーマに加える</title>
-      <link>https://yaasita.github.io/2017/02/14/add-rel-to-tumblr/</link>
-      <pubDate>Tue, 14 Feb 2017 01:05:25 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/02/14/add-rel-to-tumblr/</guid>
-      <description>tumblrのテーマをDefaultにしてみた
-一点気になったのは
-リンクがこんな感じでrel属性が指定されてない
-&amp;lt;a href=&amp;quot;{PreviousPage}&amp;quot; class=&amp;quot;left&amp;quot;&amp;gt; &amp;lt;a rel=&amp;quot;next&amp;quot; href=&amp;quot;{NextPage}&amp;quot; class=&amp;quot;right&amp;quot;&amp;gt;  これだとvimiumの[[, ]]コマンドで辿れないのでそこだけ修正した
- 修正後のテーマ
- https://gist.github.com/yaasita/40831000ea20c85f20eeccaa7de5c9c3
-  参考リンク
- rel=”next”とrel=”prev” の使い方
-   </description>
     </item>
     
   </channel>

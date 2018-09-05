@@ -6,8 +6,19 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 18 Aug 2018 17:40:23 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 06 Sep 2018 02:43:21 +0900</lastBuildDate>
     <atom:link href="/archives/2018/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>perlのクロージャ</title>
+      <link>https://yaasita.github.io/2018/09/06/perl-closure/</link>
+      <pubDate>Thu, 06 Sep 2018 02:43:21 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/09/06/perl-closure/</guid>
+      <description>これでも良いけど
+{ my $count; sub func { return ++$count; } }  最近ならこうstate使って
+use feature qw(:5.10); sub func { state $count; return ++$count; }  ただstateって配列とかには使えない</description>
+    </item>
     
     <item>
       <title>ubuntu18.04でDKIM設定</title>
@@ -18,7 +29,7 @@
       <description>インストール apt install opendkim opendkim-tools  opendkim設定 mkdir /etc/postfix/dkim/ opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail # -d ドメイン # -s セレクタ chgrp opendkim /etc/postfix/dkim/* chmod g+r /etc/postfix/dkim/*  /etc/opendkim.conf
 Syslog yes LogWhy Yes UMask 007 Canonicalization relaxed/relaxed Mode sv Socket inet:8891@localhost PidFile /var/run/opendkim/opendkim.pid OversignHeaders From TrustAnchorFile /usr/share/dns/root.key UserID opendkim KeyTable file:/etc/postfix/dkim/keytable SigningTable file:/etc/postfix/dkim/signingtable  /etc/postfix/dkim/keytable
 mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private  /etc/postfix/dkim/signingtable
-example.net mail._domainkey.example.net  チェック
+example.net mail._domainkey.example.net  反映
 systemctl restart opendkim.service  postfix設定 以下追記</description>
     </item>
     
