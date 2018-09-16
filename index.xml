@@ -6,8 +6,18 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 06 Sep 2018 02:43:21 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 16 Sep 2018 15:48:27 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hugoをアップデート</title>
+      <link>https://yaasita.github.io/2018/09/16/hugo-new-version/</link>
+      <pubDate>Sun, 16 Sep 2018 15:48:27 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/09/16/hugo-new-version/</guid>
+      <description>なんかこんなプルリクも来てたのでthemeもちょいと修正
+たまにはhugoのbuild logみてwarning潰してかないとだな</description>
+    </item>
     
     <item>
       <title>perlのクロージャ</title>
@@ -285,23 +295,6 @@ function hogeop(){ postjson({key: &#39;huga&#39;}) } function postjson(j) { fetc
       <guid>https://yaasita.github.io/2017/12/19/systemd-nspawn-adcal/</guid>
       <description>書きました
 https://qiita.com/advent-calendar/2017/systemd-nspawn</description>
-    </item>
-    
-    <item>
-      <title>gpgでサブキーを指定して暗号化</title>
-      <link>https://yaasita.github.io/2017/12/04/gpg-specify-subkey/</link>
-      <pubDate>Mon, 04 Dec 2017 23:27:01 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/12/04/gpg-specify-subkey/</guid>
-      <description>gpgで副鍵(subkey)を新しく作ったとする(addkey)
-でいざ使うと思ったら、やむ負えない事情により古い副鍵で暗号化しなきゃいけなくなったとする
-こんな感じの状態ね
-pub rsa2048 2017-04-09 [SC] XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX uid [ultimate] yamasita &amp;lt;yamasita@example.net&amp;gt; sub rsa2048 2017-04-09 [E] sub elg2048 2017-12-04 [E]  んで、普通にgpg -e で暗号化すると新しい elg2048 の方が使われてしまう
-rsa2048を使いたくなったらこんな感じでrsa2048の方のIDを指定して暗号化する
-gpg --recipient BBBBBBBBBBB12345! -v -e memo  IDは&amp;ndash;edit-keysとかやれば見れるお
-あと、注意点として副鍵は追加しても古い鍵はしばらく残しておくこと
-送信側がすぐ、新しい鍵を入れてくれるとも限らないし古い鍵で暗号化されたものを復号化できなくなる
-主鍵は、副鍵を署名するだけのものであって、副鍵の秘密鍵は取っておかなきゃいけないのです</description>
     </item>
     
   </channel>

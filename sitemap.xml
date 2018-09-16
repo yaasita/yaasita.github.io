@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yaasita.github.io/2018/09/16/hugo-new-version/</loc>
+    <lastmod>2018-09-16T15:48:27+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yaasita.github.io/2018/09/06/perl-closure/</loc>
     <lastmod>2018-09-06T02:43:21+09:00</lastmod>
   </url>
@@ -4439,7 +4444,7 @@
   
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2018-09-06T02:43:21+09:00</lastmod>
+    <lastmod>2018-09-16T15:48:27+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4511,7 +4516,7 @@
   
   <url>
     <loc>https://yaasita.github.io/archives/2018/</loc>
-    <lastmod>2018-09-06T02:43:21+09:00</lastmod>
+    <lastmod>2018-09-16T15:48:27+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4564,7 +4569,7 @@
   
   <url>
     <loc>https://yaasita.github.io/post/</loc>
-    <lastmod>2018-09-06T02:43:21+09:00</lastmod>
+    <lastmod>2018-09-16T15:48:27+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4582,7 +4587,7 @@
   
   <url>
     <loc>https://yaasita.github.io/categories/soft/</loc>
-    <lastmod>2018-08-18T17:40:23+09:00</lastmod>
+    <lastmod>2018-09-16T15:48:27+09:00</lastmod>
     <priority>0</priority>
   </url>
   
