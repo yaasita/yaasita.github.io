@@ -6,8 +6,21 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 16 Sep 2018 15:48:27 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 23 Sep 2018 01:02:54 +0900</lastBuildDate>
     <atom:link href="/categories/soft/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>SSL証明書のchain検証</title>
+      <link>https://yaasita.github.io/2018/09/23/verify-certificate-chain/</link>
+      <pubDate>Sun, 23 Sep 2018 01:02:54 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/09/23/verify-certificate-chain/</guid>
+      <description>以下のようなチェインを検証したい時
+AddTrust |_ ca1 |_ ca2 |_ hoge  こんな感じにコマンドを打つ
+openssl verify -trusted /etc/ssl/certs/AddTrust_External_Root.pem \ -untrusted ca/ca1.pem \ -untrusted ca/ca2.pem \ hoge.pem*  verify -CAfileを指定して検証する例を見るけど、
+インストールされてるデフォルトのrootCAも見ちゃうから
+-no-CAfile, -no-CApathで無効化しなきゃだったりするのでこっちの方が良さそう</description>
+    </item>
     
     <item>
       <title>Hugoをアップデート</title>
@@ -283,20 +296,6 @@ alternate file = 代替ファイル = 副ファイル
       <description>AUFSっていうか/var/lib/dockerに置きたくないとかそういう話
 Dockerでもsystemd-nspawnよろしくそのディレクトリで即座にコンテナ上げたいとき
  要するに /proc, /dev, /sys, /net あたりを外して全部bindしちゃえばよかった</description>
-    </item>
-    
-    <item>
-      <title>Vimのエンコード周り</title>
-      <link>https://yaasita.github.io/2017/02/17/vim-encodeing/</link>
-      <pubDate>Fri, 17 Feb 2017 23:56:59 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/02/17/vim-encodeing/</guid>
-      <description>下図参照
-https://yaasita.tumblr.com/post/157354717792
-
-
-
- function callback(data){ gdata = data.response.posts[0].photos; var photos = data.response.posts[0].photos; for(var i=0;i </description>
     </item>
     
   </channel>
