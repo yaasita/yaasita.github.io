@@ -6,8 +6,27 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 23 Sep 2018 01:02:54 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 25 Sep 2018 00:56:22 +0900</lastBuildDate>
     <atom:link href="/categories/soft/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>skypeの会話ログをjsonに</title>
+      <link>https://yaasita.github.io/2018/09/25/skype-log/</link>
+      <pubDate>Tue, 25 Sep 2018 00:56:22 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/09/25/skype-log/</guid>
+      <description>skypeの会話履歴をJSONにしておくやつ作った
+https://github.com/yaasita/skype2json
+logはsqliteで保存されている
+こちらによるとskype for windows 10とskype for windows desktopの保存場所が違う
+
+こっちが最近のやつ
+場所: %localappdata%\Packages\Microsoft.SkypeApp_kzf8qxf38zg5c\LocalState
+
+昔のやつ
+場所: C:\Users\username\AppData\Roaming\Skype\username\main.db
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;skype1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;skype1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;skype2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;skype2&#34;).src = photos[1].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>SSL証明書のchain検証</title>
@@ -285,17 +304,6 @@ E23: 副ファイルはありません  のエラーになるんだよな
 というわけで
 alternate file = 代替ファイル = 副ファイル
 という認識で</description>
-    </item>
-    
-    <item>
-      <title>DockerでAUFSを使わない</title>
-      <link>https://yaasita.github.io/2017/03/21/do-not-use-aufs/</link>
-      <pubDate>Tue, 21 Mar 2017 23:06:46 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/03/21/do-not-use-aufs/</guid>
-      <description>AUFSっていうか/var/lib/dockerに置きたくないとかそういう話
-Dockerでもsystemd-nspawnよろしくそのディレクトリで即座にコンテナ上げたいとき
- 要するに /proc, /dev, /sys, /net あたりを外して全部bindしちゃえばよかった</description>
     </item>
     
   </channel>

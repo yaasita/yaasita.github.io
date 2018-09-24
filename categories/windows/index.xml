@@ -6,8 +6,27 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 02 Dec 2017 04:36:08 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 25 Sep 2018 00:56:22 +0900</lastBuildDate>
     <atom:link href="/categories/windows/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>skypeの会話ログをjsonに</title>
+      <link>https://yaasita.github.io/2018/09/25/skype-log/</link>
+      <pubDate>Tue, 25 Sep 2018 00:56:22 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/09/25/skype-log/</guid>
+      <description>skypeの会話履歴をJSONにしておくやつ作った
+https://github.com/yaasita/skype2json
+logはsqliteで保存されている
+こちらによるとskype for windows 10とskype for windows desktopの保存場所が違う
+
+こっちが最近のやつ
+場所: %localappdata%\Packages\Microsoft.SkypeApp_kzf8qxf38zg5c\LocalState
+
+昔のやつ
+場所: C:\Users\username\AppData\Roaming\Skype\username\main.db
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;skype1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;skype1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;skype2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;skype2&#34;).src = photos[1].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>TeratermからConEmuへ移行した</title>
@@ -332,18 +351,6 @@ rsync -av --delete /cygdrive/n/backup/Firefox/ /cygdrive/c/test/
 ※心配なら-nオプションを付けて挙動を確認すると良いかも
 参考リンク
 http://satospo.sakura.ne.jp/blog_archives/tech/tool/cwrsync.html </description>
-    </item>
-    
-    <item>
-      <title>teraterm &#43; screenだとマウスのスクロールが出来ない？</title>
-      <link>https://yaasita.github.io/2010/12/20/5113/</link>
-      <pubDate>Mon, 20 Dec 2010 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2010/12/20/5113/</guid>
-      <description>解決策
-Ctrlを押しながらマウスホイールをまわす TERATERM.INIのTranslateWheelToCursorをoffにする
-参考リンク
-http://d.hatena.ne.jp/orangeclover/20100406/1270564074 </description>
     </item>
     
   </channel>

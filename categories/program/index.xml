@@ -6,8 +6,27 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 06 Sep 2018 02:43:21 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 25 Sep 2018 00:56:22 +0900</lastBuildDate>
     <atom:link href="/categories/program/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>skypeの会話ログをjsonに</title>
+      <link>https://yaasita.github.io/2018/09/25/skype-log/</link>
+      <pubDate>Tue, 25 Sep 2018 00:56:22 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/09/25/skype-log/</guid>
+      <description>skypeの会話履歴をJSONにしておくやつ作った
+https://github.com/yaasita/skype2json
+logはsqliteで保存されている
+こちらによるとskype for windows 10とskype for windows desktopの保存場所が違う
+
+こっちが最近のやつ
+場所: %localappdata%\Packages\Microsoft.SkypeApp_kzf8qxf38zg5c\LocalState
+
+昔のやつ
+場所: C:\Users\username\AppData\Roaming\Skype\username\main.db
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;skype1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;skype1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;skype2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;skype2&#34;).src = photos[1].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>perlのクロージャ</title>
@@ -280,17 +299,6 @@ $sort_json = json_decode(file_get_contents(&amp;quot;php://input&amp;quot;),true
  Vue.jsのリストレンダリングとhtml5のドラッグ＆ドロップの実装
   ネイティブ HTML5 ドラッグ＆ドロップ
   </description>
-    </item>
-    
-    <item>
-      <title>Vue.js内のメソッドはコロン省略しない方が良い</title>
-      <link>https://yaasita.github.io/2017/02/17/do-not-omit-colon-in-vuejs/</link>
-      <pubDate>Fri, 17 Feb 2017 02:06:29 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/02/17/do-not-omit-colon-in-vuejs/</guid>
-      <description>InternetExplorer11で
-SCRIPT1003: &#39;:&#39; がありません。  というエラーになるから
-// OK var ok = new Vue({ el: &#39;#example1&#39;, data: { }, methods: { HogeMethod: function(){ } } }); // NG var ng = new Vue({ el: &#39;#example2&#39;, data: { }, methods: { HogeMethod(){ } } });  chromeとかMicrosoft Edgeとかなら良いんだけどね</description>
     </item>
     
   </channel>

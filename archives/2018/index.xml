@@ -6,8 +6,27 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 23 Sep 2018 01:02:54 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 25 Sep 2018 00:56:22 +0900</lastBuildDate>
     <atom:link href="/archives/2018/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>skypeの会話ログをjsonに</title>
+      <link>https://yaasita.github.io/2018/09/25/skype-log/</link>
+      <pubDate>Tue, 25 Sep 2018 00:56:22 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/09/25/skype-log/</guid>
+      <description>skypeの会話履歴をJSONにしておくやつ作った
+https://github.com/yaasita/skype2json
+logはsqliteで保存されている
+こちらによるとskype for windows 10とskype for windows desktopの保存場所が違う
+
+こっちが最近のやつ
+場所: %localappdata%\Packages\Microsoft.SkypeApp_kzf8qxf38zg5c\LocalState
+
+昔のやつ
+場所: C:\Users\username\AppData\Roaming\Skype\username\main.db
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;skype1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;skype1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;skype2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;skype2&#34;).src = photos[1].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>SSL証明書のchain検証</title>
@@ -281,23 +300,6 @@ chromeなら設定 =&amp;gt; 詳細設定 =&amp;gt; SSLの管理からやる
 windowsの場合はファイル名を指定して実行 =&amp;gt; certlm.msc と同じこと
 あと注意点として、chromeはsubjectAltNameを見るので注意
 (EnableCommonNameFallbackForLocalAnchorsってやつを設定するとできるようだけど)</description>
-    </item>
-    
-    <item>
-      <title>GoogleHomeでPCつける</title>
-      <link>https://yaasita.github.io/2018/01/14/google-home/</link>
-      <pubDate>Sun, 14 Jan 2018 03:41:21 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/01/14/google-home/</guid>
-      <description>Mojoliciousで受けてコマンド叩くだけ
-IFTTTはこんな感じにして
-
-
-Mojolicious側のコントローラはこんな感じで受けた
-
-喋りたくない時もあるので、JavaScriptでも叩けるようにした(適当な場所にHTML置いておいた)
-function hogeop(){ postjson({key: &#39;huga&#39;}) } function postjson(j) { fetch(&amp;quot;/google&amp;quot;, { method: &amp;quot;POST&amp;quot;, headers: { &#39;Content-Type&#39;: &#39;application/json&#39; }, body: JSON.stringify(j) }).then(res =&amp;gt; res.json()).then(res =&amp;gt; { console.log(res) }); }  結論: こうやって家電を操作できるのは楽しい
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).src = photos[1].original_size.url; }   </description>
     </item>
     
   </channel>
