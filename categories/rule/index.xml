@@ -6,8 +6,19 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 18 Aug 2018 17:40:23 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 29 Sep 2018 04:25:33 +0900</lastBuildDate>
     <atom:link href="/categories/rule/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>全文検索n-gram</title>
+      <link>https://yaasita.github.io/2018/09/29/n-gram/</link>
+      <pubDate>Sat, 29 Sep 2018 04:25:33 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/09/29/n-gram/</guid>
+      <description>N-gramについて
+検索とインデックスについて
+https://gist.github.com/yaasita/ea31d7bbfc839fc859fd7d713800088b</description>
+    </item>
     
     <item>
       <title>ubuntu18.04でDKIM設定</title>
@@ -323,15 +334,6 @@ dom・・・Day of Month </description>
       <guid>https://yaasita.github.io/2009/09/07/8655/</guid>
       <description>ためになりそうだからメモ
 http://www.techscore.com/tech/sql/ </description>
-    </item>
-    
-    <item>
-      <title>携帯端末以外のIPを制限するhtaccessを簡単生成</title>
-      <link>https://yaasita.github.io/2008/12/31/10607/</link>
-      <pubDate>Wed, 31 Dec 2008 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2008/12/31/10607/</guid>
-      <description>http://www.dspt.net/tools/mobile_ip/ </description>
     </item>
     
   </channel>

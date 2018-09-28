@@ -6,8 +6,19 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 25 Sep 2018 00:56:22 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 29 Sep 2018 04:25:33 +0900</lastBuildDate>
     <atom:link href="/categories/soft/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>全文検索n-gram</title>
+      <link>https://yaasita.github.io/2018/09/29/n-gram/</link>
+      <pubDate>Sat, 29 Sep 2018 04:25:33 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/09/29/n-gram/</guid>
+      <description>N-gramについて
+検索とインデックスについて
+https://gist.github.com/yaasita/ea31d7bbfc839fc859fd7d713800088b</description>
+    </item>
     
     <item>
       <title>skypeの会話ログをjsonに</title>
@@ -288,22 +299,6 @@ CustomLog ${APACHE_LOG_DIR}/access-json.log leapache  https://blog.logentries.co
 keybase.ioの更新がめんどくさすぎる
 失効証明書だけ取っておいてどっか保存しておけば十分な気がしてきた
 ちなみに一回鍵消してもう一回連携やりなおしたら、Invitations が 24 まで増えたんだけどこれ無限増殖できるのでは・・・</description>
-    </item>
-    
-    <item>
-      <title>Vimの副ファイル</title>
-      <link>https://yaasita.github.io/2017/03/30/vim-alternate-file/</link>
-      <pubDate>Thu, 30 Mar 2017 01:46:13 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/03/30/vim-alternate-file/</guid>
-      <description>なんか検索に引っかからないのでメモ
-英語で the alternate file ってやつを取るときは Ctrl-^コマンドでやる
-日本語配列だとCtrl-6かな
-日本語ヘルプだと代替ファイルって訳になってるけど
-E23: 副ファイルはありません  のエラーになるんだよな
-というわけで
-alternate file = 代替ファイル = 副ファイル
-という認識で</description>
     </item>
     
   </channel>

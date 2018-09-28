@@ -6,8 +6,19 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 25 Sep 2018 00:56:22 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 29 Sep 2018 04:25:33 +0900</lastBuildDate>
     <atom:link href="/post/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>全文検索n-gram</title>
+      <link>https://yaasita.github.io/2018/09/29/n-gram/</link>
+      <pubDate>Sat, 29 Sep 2018 04:25:33 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/09/29/n-gram/</guid>
+      <description>N-gramについて
+検索とインデックスについて
+https://gist.github.com/yaasita/ea31d7bbfc839fc859fd7d713800088b</description>
+    </item>
     
     <item>
       <title>skypeの会話ログをjsonに</title>
@@ -283,23 +294,6 @@ openssl pkcs12 -export -in merged.</description>
 X-Forwarded-Forとかをクライアント側から指定されると、追加されて判別が困難になる
 curl -H &amp;quot;X-Forwarded-For: 1.2.3.4&amp;quot;  みたいな感じで指定されると
  x-forwarded-for: &amp;quot;1.2.3.4, 192.168.0.100&amp;quot;  こんな感じに追加されて http://192.168.0.1:8080 側にわたってしまう</description>
-    </item>
-    
-    <item>
-      <title>プライベートCA作るまで</title>
-      <link>https://yaasita.github.io/2018/01/31/private-ca/</link>
-      <pubDate>Wed, 31 Jan 2018 18:04:22 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/01/31/private-ca/</guid>
-      <description>Debian9でやってみた
-cd /etc/ssl /usr/lib/ssl/misc/CA.pl -newca /usr/lib/ssl/misc/CA.pl -newreq /usr/lib/ssl/misc/CA.pl -sign # /tmp/ca.pemを入れてもらう openssl x509 -outform PEM -in demoCA/cacert.pem -out /tmp/ca.pem # 変換 openssl x509 -outform PEM -in newcert.pem -out /etc/nginx/ssl/hogehoge.crt # パスフレーズ解除 openssl rsa -in newkey.pem -out /etc/nginx/ssl/hogehoge.key  データベースおかしくなったら
-index.txt空っぽすればOK
-rm demoCA/index.txt touch demoCA/index.txt  /etc/ssl/openssl.cnf は こんな感じ
-証明書の管理は
-chromeなら設定 =&amp;gt; 詳細設定 =&amp;gt; SSLの管理からやる
-windowsの場合はファイル名を指定して実行 =&amp;gt; certlm.msc と同じこと
-あと注意点として、chromeはsubjectAltNameを見るので注意
-(EnableCommonNameFallbackForLocalAnchorsってやつを設定するとできるようだけど)</description>
     </item>
     
   </channel>
