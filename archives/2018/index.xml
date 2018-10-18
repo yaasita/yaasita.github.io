@@ -6,8 +6,24 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 29 Sep 2018 04:25:33 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 19 Oct 2018 03:03:35 +0900</lastBuildDate>
     <atom:link href="/archives/2018/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>CircleCIのキャッシュについて</title>
+      <link>https://yaasita.github.io/2018/10/19/circleci/</link>
+      <pubDate>Fri, 19 Oct 2018 03:03:35 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/10/19/circleci/</guid>
+      <description>先に結論だけ
+ キャッシュは一度書き込むとupdate出来ない
+ キャッシュクリアは名前を変えて対応する
+  以下具体例
+以下のようなキャッシュをした際に
+古いバージョンのライブラリが入ってしまった場合
+- restore_cache: keys: - v2-dependencies-{{ checksum &amp;quot;requirements.txt&amp;quot; }} - v2-dependencies- - run: name: install dependencies command: | python3 -m venv venv . venv/bin/activate pip install -r requirements.txt - save_cache: paths: - ./venv key: v2-dependencies-{{ checksum &amp;quot;requirements.txt&amp;quot; }}  これを解消しようとして、以下のようにしてもcacheはupdateされない
+- restore_cache: keys: - v2-dependencies-{{ checksum &amp;quot;requirements.txt&amp;quot; }} - v2-dependencies- - run: name: install dependencies command: | python3 -m venv venv .</description>
+    </item>
     
     <item>
       <title>全文検索n-gram</title>
@@ -16,7 +32,8 @@
       
       <guid>https://yaasita.github.io/2018/09/29/n-gram/</guid>
       <description>N-gramについて
-検索とインデックスについて
+検索とインデックスについて作った
+検討資料用にどうぞ
 https://gist.github.com/yaasita/ea31d7bbfc839fc859fd7d713800088b</description>
     </item>
     
@@ -281,19 +298,6 @@ openssl pkcs12 -export -in merged.</description>
 そういう時は、シグナルハンドラを作ればOK
 最後に変数のスコープから外れてデストラクタが呼ばれる
  </description>
-    </item>
-    
-    <item>
-      <title>Apacheでリバースプロキシ</title>
-      <link>https://yaasita.github.io/2018/02/04/apache-header/</link>
-      <pubDate>Sun, 04 Feb 2018 16:27:56 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/02/04/apache-header/</guid>
-      <description>Apacheでリバースプロキシするときこんな感じに書いた方が良いよという話
-&amp;lt;VirtualHost *:443&amp;gt; ServerName example.net &amp;lt;Proxy *&amp;gt; Require all granted &amp;lt;/Proxy&amp;gt; ProxyRequests Off ProxyPreserveHost On ProxyPass / http://192.168.0.1:8080/ keepalive=On ProxyPassReverse / http://192.168.0.1:8080/ RequestHeader set X-Forwarded-Proto &amp;quot;https&amp;quot; RequestHeader unset X-Forwarded-For RequestHeader unset X-Forwarded-Server RequestHeader unset X-Forwarded-Host Include /path/to/common.conf &amp;lt;/VirtualHost&amp;gt;  X-Forwarded-Forとかを一旦unsetしないと、
-X-Forwarded-Forとかをクライアント側から指定されると、追加されて判別が困難になる
-curl -H &amp;quot;X-Forwarded-For: 1.2.3.4&amp;quot;  みたいな感じで指定されると
- x-forwarded-for: &amp;quot;1.2.3.4, 192.168.0.100&amp;quot;  こんな感じに追加されて http://192.168.0.1:8080 側にわたってしまう</description>
     </item>
     
   </channel>
