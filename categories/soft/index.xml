@@ -6,8 +6,30 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 29 Sep 2018 04:25:33 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 10 Nov 2018 03:22:31 +0900</lastBuildDate>
     <atom:link href="/categories/soft/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>mitmproxyが便利</title>
+      <link>https://yaasita.github.io/2018/11/10/mitmproxy/</link>
+      <pubDate>Sat, 10 Nov 2018 03:22:31 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/11/10/mitmproxy/</guid>
+      <description>とっても便利なmitmproxyを使ってみた
+概要 こんな感じでHTTPSなサイトも中間に入りこんでくれる
+（root証明証を予め信頼しておく必要がある)
+browser &amp;lt;---(指定のCA鍵で再署名)---- mitmproxy &amp;lt;---(HTTPSを一旦解く)----- web server  インストール apt install mitmproxy  設定 プライベートCAをやってるなら
+ /etc/ssl/demoCA/private/cakey.pem
+ /etc/ssl/demoCA/cacert.pem
+  この２ファイルを結合する
+こんな感じで mitmproxy-ca.pem って名前でどっかのディレクトリに置く
+-----BEGIN ENCRYPTED PRIVATE KEY----- ... -----END ENCRYPTED PRIVATE KEY----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----  実行 こんな感じで実行できる &amp;ndash;view-filter で表示させたいURLを絞れる
+(hogedirの中にmitmproxy-ca.pemが入ってる)
+mitmproxy --set confdir=/path/to/hogedir --view-filter m3u  画面中ではVimぽいキーバインドで色々操作できる
+リクエストを選んで、wでストリームを保存できる
+dump mitmproxyだけだと長いURLとかは省略されちゃったりするので、完全なものを見る場合にmitmdumpを使う
+# getだけ抽出 mitmdump -nr /tmp/save -w outfile &amp;quot;~m get&amp;quot; # リクエスト一覧 mitmdump -nr /tmp/save  まとめ HTTPSのデバッグ時にめっちゃ便利</description>
+    </item>
     
     <item>
       <title>全文検索n-gram</title>
@@ -287,19 +309,6 @@ COMODO RSA Certification Authority |_COMODO RSA Client Authentication and Secure
 こんな感じにする
 LogFormat &amp;quot;\ { \ \&amp;quot;host\&amp;quot;:\&amp;quot;%V\&amp;quot;, \ \&amp;quot;method\&amp;quot;:\&amp;quot;%m\&amp;quot;, \ \&amp;quot;port\&amp;quot;:\&amp;quot;%p\&amp;quot;, \ \&amp;quot;processingTime\&amp;quot;:\&amp;quot;%D\&amp;quot;, \ \&amp;quot;protocol\&amp;quot;:\&amp;quot;%H\&amp;quot;, \ \&amp;quot;query\&amp;quot;:\&amp;quot;%q\&amp;quot;, \ \&amp;quot;referer\&amp;quot;:\&amp;quot;%{Referer}i\&amp;quot;, \ \&amp;quot;remoteIP\&amp;quot;:\&amp;quot;%a\&amp;quot;, \ \&amp;quot;request\&amp;quot;:\&amp;quot;%U\&amp;quot;, \ \&amp;quot;responseByte\&amp;quot;:\&amp;quot;%B\&amp;quot;, \ \&amp;quot;status\&amp;quot;:\&amp;quot;%&amp;gt;s\&amp;quot;, \ \&amp;quot;time\&amp;quot;:\&amp;quot;%t\&amp;quot;, \ \&amp;quot;unixtime\&amp;quot;:\&amp;quot;%{%s}t\&amp;quot;, \ \&amp;quot;userAgent\&amp;quot;:\&amp;quot;%{User-agent}i\&amp;quot;, \ \&amp;quot;user\&amp;quot;:\&amp;quot;%u\&amp;quot; \ }&amp;quot; \ leapache  吐き出し
 CustomLog ${APACHE_LOG_DIR}/access-json.log leapache  https://blog.logentries.com/2014/08/json-logging-in-apache-and-nginx-with-logentries/</description>
-    </item>
-    
-    <item>
-      <title>gpg鍵を変えた</title>
-      <link>https://yaasita.github.io/2017/04/09/update-gpg-key/</link>
-      <pubDate>Sun, 09 Apr 2017 23:28:13 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/04/09/update-gpg-key/</guid>
-      <description>https://keybase.io/yaasita
-有効期限を付けて1年毎に交換するのは止めよう
-keybase.ioの更新がめんどくさすぎる
-失効証明書だけ取っておいてどっか保存しておけば十分な気がしてきた
-ちなみに一回鍵消してもう一回連携やりなおしたら、Invitations が 24 まで増えたんだけどこれ無限増殖できるのでは・・・</description>
     </item>
     
   </channel>

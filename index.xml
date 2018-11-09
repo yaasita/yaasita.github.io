@@ -6,8 +6,30 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 19 Oct 2018 03:03:35 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 10 Nov 2018 03:22:31 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>mitmproxyが便利</title>
+      <link>https://yaasita.github.io/2018/11/10/mitmproxy/</link>
+      <pubDate>Sat, 10 Nov 2018 03:22:31 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/11/10/mitmproxy/</guid>
+      <description>とっても便利なmitmproxyを使ってみた
+概要 こんな感じでHTTPSなサイトも中間に入りこんでくれる
+（root証明証を予め信頼しておく必要がある)
+browser &amp;lt;---(指定のCA鍵で再署名)---- mitmproxy &amp;lt;---(HTTPSを一旦解く)----- web server  インストール apt install mitmproxy  設定 プライベートCAをやってるなら
+ /etc/ssl/demoCA/private/cakey.pem
+ /etc/ssl/demoCA/cacert.pem
+  この２ファイルを結合する
+こんな感じで mitmproxy-ca.pem って名前でどっかのディレクトリに置く
+-----BEGIN ENCRYPTED PRIVATE KEY----- ... -----END ENCRYPTED PRIVATE KEY----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----  実行 こんな感じで実行できる &amp;ndash;view-filter で表示させたいURLを絞れる
+(hogedirの中にmitmproxy-ca.pemが入ってる)
+mitmproxy --set confdir=/path/to/hogedir --view-filter m3u  画面中ではVimぽいキーバインドで色々操作できる
+リクエストを選んで、wでストリームを保存できる
+dump mitmproxyだけだと長いURLとかは省略されちゃったりするので、完全なものを見る場合にmitmdumpを使う
+# getだけ抽出 mitmdump -nr /tmp/save -w outfile &amp;quot;~m get&amp;quot; # リクエスト一覧 mitmdump -nr /tmp/save  まとめ HTTPSのデバッグ時にめっちゃ便利</description>
+    </item>
     
     <item>
       <title>CircleCIのキャッシュについて</title>
@@ -286,18 +308,6 @@ Symantec Class 1 Public Primary CertificationAuthority - G6 |_ Symantec Class 1 
 CNにメールアドレス入れてCSR作ってからVerifyする
 そんで、My Certificatesから中間証明書と証明書ダウンロードしてpkcs12にまとめればOK
 openssl pkcs12 -export -in merged.</description>
-    </item>
-    
-    <item>
-      <title>perlのデストラクタ</title>
-      <link>https://yaasita.github.io/2018/03/17/perl-destory/</link>
-      <pubDate>Sat, 17 Mar 2018 02:57:05 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/03/17/perl-destory/</guid>
-      <description>Ctrl-Cで止めたときもデストラクタを呼びたいときがある
-そういう時は、シグナルハンドラを作ればOK
-最後に変数のスコープから外れてデストラクタが呼ばれる
- </description>
     </item>
     
   </channel>

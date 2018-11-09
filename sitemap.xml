@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yaasita.github.io/2018/11/10/mitmproxy/</loc>
+    <lastmod>2018-11-10T03:22:31+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yaasita.github.io/2018/10/19/circleci/</loc>
     <lastmod>2018-10-19T03:03:35+09:00</lastmod>
   </url>
@@ -4464,7 +4469,7 @@
   
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2018-10-19T03:03:35+09:00</lastmod>
+    <lastmod>2018-11-10T03:22:31+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4536,7 +4541,7 @@
   
   <url>
     <loc>https://yaasita.github.io/archives/2018/</loc>
-    <lastmod>2018-10-19T03:03:35+09:00</lastmod>
+    <lastmod>2018-11-10T03:22:31+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4583,13 +4588,13 @@
   
   <url>
     <loc>https://yaasita.github.io/categories/net/</loc>
-    <lastmod>2018-10-19T03:03:35+09:00</lastmod>
+    <lastmod>2018-11-10T03:22:31+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/post/</loc>
-    <lastmod>2018-10-19T03:03:35+09:00</lastmod>
+    <lastmod>2018-11-10T03:22:31+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4607,7 +4612,7 @@
   
   <url>
     <loc>https://yaasita.github.io/categories/soft/</loc>
-    <lastmod>2018-09-29T04:25:33+09:00</lastmod>
+    <lastmod>2018-11-10T03:22:31+09:00</lastmod>
     <priority>0</priority>
   </url>
   
