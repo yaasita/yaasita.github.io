@@ -6,8 +6,24 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 21 May 2017 01:48:56 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 11 Nov 2018 01:33:21 +0900</lastBuildDate>
     <atom:link href="/categories/crack/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>徳丸さんのセキュリティ問題(CSRF)</title>
+      <link>https://yaasita.github.io/2018/11/11/tokumaru-csrf/</link>
+      <pubDate>Sun, 11 Nov 2018 01:33:21 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/11/11/tokumaru-csrf/</guid>
+      <description>徳丸さんがCSRFの問題を出していたので考えてみる
+問題：間違ったCSRF対策～初級編～
+解答
+https://github.com/yaasita/tokumaru-csrf-20181110
+なんか最初はXMLHttpRequestとか駆使して、chgmailform.phpからtoken引っこ抜こうと思ったんだけど
+CORSとかCORBで無理なんすよね
+でよく見るとtokenが無いときの考慮がないよってやつでした
+まとめ 最近のブラウザは良く出来てる</description>
+    </item>
     
     <item>
       <title>コピー禁止のWebサイトについて</title>
@@ -417,25 +433,6 @@ Backdoor.Win32.Agent.xs
 →ファイル名を指定して実行→msconfig→スタートアップからそれらしいものを探しチェックを外す
 バイナリファイルへ戻すにはvimなどでできます。
 流失企業まとめ </description>
-    </item>
-    
-    <item>
-      <title>MACアドレスを任意のものに変える</title>
-      <link>https://yaasita.github.io/2007/08/15/14036/</link>
-      <pubDate>Wed, 15 Aug 2007 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2007/08/15/14036/</guid>
-      <description>WindowsXPでは
-コントロールパネル→システム→ハードウェアタブのデバイスマネージャをクリック
-→ネットワークアダプタの項を展開し変更するNICを選び右クリック→プロパティ
-→詳細設定タブのNetworkaddressをクリックし変更する。
-（NICによっては使用できないかもしれません）
-Linuxでは
-ifconfig LANインタフェース名 hw ether MACアドレス
-例）
-# ifdown eth0
-# ifconfig eth1 hw ether aa:aa:aa:aa:aa:aa
-# ifup eth0 </description>
     </item>
     
   </channel>

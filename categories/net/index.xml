@@ -6,8 +6,24 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 10 Nov 2018 03:22:31 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 11 Nov 2018 01:33:21 +0900</lastBuildDate>
     <atom:link href="/categories/net/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>徳丸さんのセキュリティ問題(CSRF)</title>
+      <link>https://yaasita.github.io/2018/11/11/tokumaru-csrf/</link>
+      <pubDate>Sun, 11 Nov 2018 01:33:21 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/11/11/tokumaru-csrf/</guid>
+      <description>徳丸さんがCSRFの問題を出していたので考えてみる
+問題：間違ったCSRF対策～初級編～
+解答
+https://github.com/yaasita/tokumaru-csrf-20181110
+なんか最初はXMLHttpRequestとか駆使して、chgmailform.phpからtoken引っこ抜こうと思ったんだけど
+CORSとかCORBで無理なんすよね
+でよく見るとtokenが無いときの考慮がないよってやつでした
+まとめ 最近のブラウザは良く出来てる</description>
+    </item>
     
     <item>
       <title>mitmproxyが便利</title>
@@ -309,16 +325,6 @@ Oops! It appears that you have disabled your Javascript. In order for you to see
 http://noneblr.com/
 こんな感じになる
 login押すと権限求められるけど怖いからそれはやってない</description>
-    </item>
-    
-    <item>
-      <title>Google Cloud Shellのディレクトリ削除</title>
-      <link>https://yaasita.github.io/2017/04/06/gcp-shell-homedata/</link>
-      <pubDate>Thu, 06 Apr 2017 00:21:33 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/04/06/gcp-shell-homedata/</guid>
-      <description>120日で削除されるらしい
-It&#39;s been over 120 days since you opened Cloud Shell from the Google Cloud Platform console. In 7 days, your Cloud Shell home directory will be automatically scheduled for deletion.  </description>
     </item>
     
   </channel>

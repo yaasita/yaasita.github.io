@@ -6,8 +6,24 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 10 Nov 2018 03:22:31 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 11 Nov 2018 01:33:21 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>徳丸さんのセキュリティ問題(CSRF)</title>
+      <link>https://yaasita.github.io/2018/11/11/tokumaru-csrf/</link>
+      <pubDate>Sun, 11 Nov 2018 01:33:21 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/11/11/tokumaru-csrf/</guid>
+      <description>徳丸さんがCSRFの問題を出していたので考えてみる
+問題：間違ったCSRF対策～初級編～
+解答
+https://github.com/yaasita/tokumaru-csrf-20181110
+なんか最初はXMLHttpRequestとか駆使して、chgmailform.phpからtoken引っこ抜こうと思ったんだけど
+CORSとかCORBで無理なんすよね
+でよく見るとtokenが無いときの考慮がないよってやつでした
+まとめ 最近のブラウザは良く出来てる</description>
+    </item>
     
     <item>
       <title>mitmproxyが便利</title>
@@ -281,33 +297,6 @@ certbot 0.22.2が来てたので使ってみる
 とりあえずこんな感じで行った
 まだサーバを指定しなきゃいけないけど、これでワイルドカード手に入るのは良い
 apt install certbot certbot certonly --manual -d yaasita.net -d *.yaasita.net --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory  </description>
-    </item>
-    
-    <item>
-      <title>AlwaysOnSSL</title>
-      <link>https://yaasita.github.io/2018/03/21/alwaysonssl/</link>
-      <pubDate>Wed, 21 Mar 2018 01:37:01 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/03/21/alwaysonssl/</guid>
-      <description>letsencryptとは違う無料のSSLサービス使ってみた
-その名も AlwaysOnSSL
-サーバ証明書 使って見た感想
- CAAレコード違反のレポートメールは飛んでこなかった
- 証明書の期間は1年間
- CTログはComodo CA に書くみたいでLetsencryptより少ない
- ワイルドカードは無理
- SANに複数のドメイン入れるのも無理
-  チェインはこんな感じ
-DigiCert Global Root G2 |_ AlwaysOnSSL TLS RSA CA G1 |_ yourdomain.example.com  DigiCertなんで大抵のブラウザならOKなはず
-curlで簡単に叩けるのでcertbotが入らない場合はこっちの方が良いかも
-certbotが入るならLetsencryptの方が良いと思う
-S/MIME  有効期間は1年間
- CSR作って署名してもらうので、秘密鍵は自分で作る安心設計
-  チェーンはこんな感じ
-Symantec Class 1 Public Primary CertificationAuthority - G6 |_ Symantec Class 1 Individual Subscriber CA - G7  普通にメール受信できるなら作ってもらえるとても良い
-CNにメールアドレス入れてCSR作ってからVerifyする
-そんで、My Certificatesから中間証明書と証明書ダウンロードしてpkcs12にまとめればOK
-openssl pkcs12 -export -in merged.</description>
     </item>
     
   </channel>

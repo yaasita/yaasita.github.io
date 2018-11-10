@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yaasita.github.io/2018/11/11/tokumaru-csrf/</loc>
+    <lastmod>2018-11-11T01:33:21+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yaasita.github.io/2018/11/10/mitmproxy/</loc>
     <lastmod>2018-11-10T03:22:31+09:00</lastmod>
   </url>
@@ -4469,7 +4474,7 @@
   
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2018-11-10T03:22:31+09:00</lastmod>
+    <lastmod>2018-11-11T01:33:21+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4541,7 +4546,7 @@
   
   <url>
     <loc>https://yaasita.github.io/archives/2018/</loc>
-    <lastmod>2018-11-10T03:22:31+09:00</lastmod>
+    <lastmod>2018-11-11T01:33:21+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4558,7 +4563,7 @@
   
   <url>
     <loc>https://yaasita.github.io/categories/crack/</loc>
-    <lastmod>2017-05-21T01:48:56+09:00</lastmod>
+    <lastmod>2018-11-11T01:33:21+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4588,19 +4593,19 @@
   
   <url>
     <loc>https://yaasita.github.io/categories/net/</loc>
-    <lastmod>2018-11-10T03:22:31+09:00</lastmod>
+    <lastmod>2018-11-11T01:33:21+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/post/</loc>
-    <lastmod>2018-11-10T03:22:31+09:00</lastmod>
+    <lastmod>2018-11-11T01:33:21+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/categories/program/</loc>
-    <lastmod>2018-09-25T00:56:22+09:00</lastmod>
+    <lastmod>2018-11-11T01:33:21+09:00</lastmod>
     <priority>0</priority>
   </url>
   
