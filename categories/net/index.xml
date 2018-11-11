@@ -6,8 +6,41 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 11 Nov 2018 01:33:21 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 12 Nov 2018 01:24:39 +0900</lastBuildDate>
     <atom:link href="/categories/net/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>HSTSの説明資料</title>
+      <link>https://yaasita.github.io/2018/11/12/hsts/</link>
+      <pubDate>Mon, 12 Nov 2018 01:24:39 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/11/12/hsts/</guid>
+      <description>なんかで作ったので
+HSTSとは HTTPでの通信を減らしよりセキュアなHTTPSを使うように促す仕組み
+通常 通常HTTPリクエストをして、301、302等のリダイレクトによってHTTPSにアクセスし直す
+が、HTTPでのやりとり部分に中間者攻撃のリスクが存在する
+
+※厳密には301リダイレクトはブラウザがキャッシュするので2回目以降はサーバー側にリクエストしない
+HSTS ヘッダ HSTSヘッダを受け取ると、ブラウザ側でHTTPをHTTPSに読み替えてリクエストする
+通常のリダイレクトは違い、一旦 HSTSヘッダを受け取ると有効期間中は決してhttpによるリクエストをしない
+(http:// ~ というリンクはブラウザ側で読み換える)
+
+付与するヘッダーは以下のようなもの
+strict-transport-security: max-age=31536000; includeSubDomains; preload   max-age: 有効時間（秒単位）
+ includeSubDomains: サブドメインも含めるかどうか alis.to なら hoge.alis.to も有効になる
+ preload: preloadに登録しても良いかどうか（後述）
+  HSTS preload HSTS preloadは予め hstspreload.org に自分のサイトを登録しておいて
+初回リクエスト時からHTTPSを有効にしておく仕組み
+
+メリット・デメリット  メリット
+ observatory の点数アップ (対外アピール）
+ 盗聴・中間者攻撃リスクを軽減しよりセキュアになる
+  デメリット
+ 証明書の運用を失敗できない
+ サブドメインを含め、HTTPでの運用を一切できなくなる
+ ローカルでのテスト時に偽の証明書を無視しにくくなる
+   通常だと出てくる証明書エラー無視のリンクが・・・</description>
+    </item>
     
     <item>
       <title>徳丸さんのセキュリティ問題(CSRF)</title>
@@ -312,19 +345,6 @@ Oops! It appears that you have disabled your Javascript. In order for you to see
       <description>なぜか？画像のURLはたまに変わりリンク切れしてしまうから
 ちゃんとAPIを叩いてポストIDから画像リンクを取得した方が良い
  </description>
-    </item>
-    
-    <item>
-      <title>テーマを簡素にしてtumblrを見たいとき</title>
-      <link>https://yaasita.github.io/2017/05/06/noneblr/</link>
-      <pubDate>Sat, 06 May 2017 04:55:23 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/05/06/noneblr/</guid>
-      <description>noneblrというサービスが良いかもしれない
-これでどんなBlogも一定のUIで見れる
-http://noneblr.com/
-こんな感じになる
-login押すと権限求められるけど怖いからそれはやってない</description>
     </item>
     
   </channel>
