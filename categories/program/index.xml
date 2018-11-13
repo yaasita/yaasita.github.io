@@ -6,8 +6,18 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 11 Nov 2018 01:33:21 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 14 Nov 2018 01:41:06 +0900</lastBuildDate>
     <atom:link href="/categories/program/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>githubのwebhook受け取ってjenkins走らせる</title>
+      <link>https://yaasita.github.io/2018/11/14/github2jenkins/</link>
+      <pubDate>Wed, 14 Nov 2018 01:41:06 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/11/14/github2jenkins/</guid>
+      <description>無かったので作りました
+Github -&amp;gt; Mojolicious -&amp;gt; jenkins   </description>
+    </item>
     
     <item>
       <title>徳丸さんのセキュリティ問題(CSRF)</title>
@@ -284,18 +294,6 @@ my @files = $q-&amp;gt;param(&#39;files&#39;); for my $filename (@files) { my $f
 (AndroidとかはOK)
 なのでこんな感じにする
 my @fhs = $q-&amp;gt;upload(&#39;files&#39;); my %fname_count; for my $fh (@fhs){ my $out_filename = non_overlapping_filenames(&amp;quot;$fh&amp;quot;); my $io_handle = $fh-&amp;gt;handle; open (my $wr,&amp;quot;&amp;gt;&amp;quot;, $out_filename) or die $!; while (&amp;lt;$io_handle&amp;gt;){ print $wr $_; } close $wr; push(@result, decode(&amp;quot;UTF-8&amp;quot;,&amp;quot;$fh&amp;quot;)); }  あと古めのアンドロイドはmultiple指定しても複数ファイル選択ができない</description>
-    </item>
-    
-    <item>
-      <title>Vue.jsとモーダルウィンドウ</title>
-      <link>https://yaasita.github.io/2017/03/04/vuejs-modal/</link>
-      <pubDate>Sat, 04 Mar 2017 02:29:40 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/03/04/vuejs-modal/</guid>
-      <description> 参考実装 slotで後から要素を上書きすればOK
- https://github.com/yaasita/vuejs-modal
-参考リンク  https://jp.vuejs.org/v2/examples/modal.html
-  </description>
     </item>
     
   </channel>

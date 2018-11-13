@@ -6,8 +6,18 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 12 Nov 2018 01:24:39 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 14 Nov 2018 01:41:06 +0900</lastBuildDate>
     <atom:link href="/post/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>githubのwebhook受け取ってjenkins走らせる</title>
+      <link>https://yaasita.github.io/2018/11/14/github2jenkins/</link>
+      <pubDate>Wed, 14 Nov 2018 01:41:06 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/11/14/github2jenkins/</guid>
+      <description>無かったので作りました
+Github -&amp;gt; Mojolicious -&amp;gt; jenkins   </description>
+    </item>
     
     <item>
       <title>HSTSの説明資料</title>
@@ -304,19 +314,6 @@ debianだと多分入ってるけど、libperl5.24が無い環境だとダメぽ
       <description>perlのHTTP::Tinyは標準モジュールなんだけど、IO::Socket::SSLが無くて
 IO::Socket::SSL 1.42 must be installed for https support  が出ちゃう場合は
 apt install libio-socket-ssl-perl  </description>
-    </item>
-    
-    <item>
-      <title>GoogleのCloud SDKの署名鍵エラー</title>
-      <link>https://yaasita.github.io/2018/04/07/google-cloud-sdk-gpg/</link>
-      <pubDate>Sat, 07 Apr 2018 02:24:37 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/04/07/google-cloud-sdk-gpg/</guid>
-      <description>GCP(google cloud platform)の署名鍵が変わってた
-つーか元のgpg鍵の有効期限が切れてる
-取得:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease [6,372 B] エラー:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease 公開鍵を利用できないため、以下の署名は検証できませんでした: NO_PUBKEY 6A030B21BA07F4FB  なんか探してみると2018年4月1日に作った鍵にしてるみたい
-gpg2 --search-keys BA07F4FB gpg: data source: http://gpg.NebrWesleyan.edu:11371 (1) Google Cloud Packages Automatic Signing Key &amp;lt;gc-team@google.com&amp;gt; 2048 bit RSA key BA07F4FB, created: 2018-04-01, expires: 2021-03-31  ということで追加して事なきを得た
-gpg2 -a --export BA07F4FB | apt-key add - apt-key del A7317B0F  </description>
     </item>
     
   </channel>
