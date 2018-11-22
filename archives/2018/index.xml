@@ -6,8 +6,21 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 14 Nov 2018 01:41:06 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 23 Nov 2018 00:54:50 +0900</lastBuildDate>
     <atom:link href="/archives/2018/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>vimとtranslate-shellを連携する</title>
+      <link>https://yaasita.github.io/2018/11/23/translate/</link>
+      <pubDate>Fri, 23 Nov 2018 00:54:50 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/11/23/translate/</guid>
+      <description>translate-shellが便利だ
+vimrcにこんな感じに書く
+
+英単語の意味をちょっと調べる  翻訳  なんか微妙に画面がバグってるけど、本当はちゃんと表示されてる
+まとめ こういうちょっとした改善大事</description>
+    </item>
     
     <item>
       <title>githubのwebhook受け取ってjenkins走らせる</title>
@@ -303,17 +316,6 @@ perl標準モジュールにある
 簡単なKVSならこれで
 debianだと多分入ってるけど、libperl5.24が無い環境だとダメぽい
 #!/usr/bin/perl use strict; use warnings; use feature qw(:5.10); use utf8; use GDBM_File ; my $filename = &amp;quot;gdm&amp;quot;; my %hash; tie %hash, &#39;GDBM_File&#39;, $filename, &amp;amp;GDBM_WRCREAT, 0640; $hash{hoge} = &amp;quot;huga&amp;quot;; say &amp;quot;$_ =&amp;gt; $hash{$_}&amp;quot; for keys %hash;  </description>
-    </item>
-    
-    <item>
-      <title>PerlのHTTP::Tiny</title>
-      <link>https://yaasita.github.io/2018/04/07/libio-socket-ssl/</link>
-      <pubDate>Sat, 07 Apr 2018 04:17:18 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/04/07/libio-socket-ssl/</guid>
-      <description>perlのHTTP::Tinyは標準モジュールなんだけど、IO::Socket::SSLが無くて
-IO::Socket::SSL 1.42 must be installed for https support  が出ちゃう場合は
-apt install libio-socket-ssl-perl  </description>
     </item>
     
   </channel>

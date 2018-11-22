@@ -6,8 +6,21 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 14 Nov 2018 01:41:06 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 23 Nov 2018 00:54:50 +0900</lastBuildDate>
     <atom:link href="/categories/program/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>vimとtranslate-shellを連携する</title>
+      <link>https://yaasita.github.io/2018/11/23/translate/</link>
+      <pubDate>Fri, 23 Nov 2018 00:54:50 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/11/23/translate/</guid>
+      <description>translate-shellが便利だ
+vimrcにこんな感じに書く
+
+英単語の意味をちょっと調べる  翻訳  なんか微妙に画面がバグってるけど、本当はちゃんと表示されてる
+まとめ こういうちょっとした改善大事</description>
+    </item>
     
     <item>
       <title>githubのwebhook受け取ってjenkins走らせる</title>
@@ -279,21 +292,6 @@ go get github.com/githubnemo/CompileDaemon CompileDaemon -command=&amp;quot;./ru
  https://github.com/githubnemo/CompileDaemon
  https://goo.gl/gp6L9z
   </description>
-    </item>
-    
-    <item>
-      <title>複数ファイルアップロードの実装</title>
-      <link>https://yaasita.github.io/2017/04/02/multiple-upload/</link>
-      <pubDate>Sun, 02 Apr 2017 04:18:50 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/04/02/multiple-upload/</guid>
-      <description>multiple指定してuploadフォーム作るときの話
-&amp;lt;input type=&amp;quot;file&amp;quot; name=&amp;quot;files&amp;quot; multiple /&amp;gt;  で複数ファイル選択できるが
-Perl CGIで受けるときに↓みたいにすると
-my @files = $q-&amp;gt;param(&#39;files&#39;); for my $filename (@files) { my $fn = decode(&amp;quot;UTF-8&amp;quot;, $filename); move($q-&amp;gt;tmpFileName($filename), &amp;quot;/path/to/dir&amp;quot;); }  iOSで選択するとfilenameが全部image.jpgでPOSTされてしまう可能性があるのでダメ
-(AndroidとかはOK)
-なのでこんな感じにする
-my @fhs = $q-&amp;gt;upload(&#39;files&#39;); my %fname_count; for my $fh (@fhs){ my $out_filename = non_overlapping_filenames(&amp;quot;$fh&amp;quot;); my $io_handle = $fh-&amp;gt;handle; open (my $wr,&amp;quot;&amp;gt;&amp;quot;, $out_filename) or die $!; while (&amp;lt;$io_handle&amp;gt;){ print $wr $_; } close $wr; push(@result, decode(&amp;quot;UTF-8&amp;quot;,&amp;quot;$fh&amp;quot;)); }  あと古めのアンドロイドはmultiple指定しても複数ファイル選択ができない</description>
     </item>
     
   </channel>
