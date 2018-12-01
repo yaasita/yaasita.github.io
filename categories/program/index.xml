@@ -6,8 +6,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 23 Nov 2018 00:54:50 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 02 Dec 2018 01:28:21 +0900</lastBuildDate>
     <atom:link href="/categories/program/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>skypeのログフォーマットが変わってた</title>
+      <link>https://yaasita.github.io/2018/12/02/skype2json/</link>
+      <pubDate>Sun, 02 Dec 2018 01:28:21 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/12/02/skype2json/</guid>
+      <description>のでちょっとスクリプト修正した
+https://github.com/yaasita/skype2json
+修正点  yarnじゃなくても良いと聞いたのでnpmにだけにした
+ フォーマットが歴代合わせて3つあったので、3つスクリプト書いた(年代は適当)
+ libに共通関数をまとめた
+  なんか新しいフォーマットだと
+nsp_dataってカラムにjsonで突っ込んでるみたいね。json型が無いSQLiteのツライところ
+まとめ ころころフォーマットが変わるけどSQLiteになってるからSkypeは簡単にバックアップ出来て良い
+LINEはどうしたもんか</description>
+    </item>
     
     <item>
       <title>vimとtranslate-shellを連携する</title>
@@ -277,21 +294,6 @@ SNS Topicsを新しく作ってTopicネームくらいは適当に埋めてお�
    ある要素だけが繰り返すわけじゃないときはtemplateで挟むとよい &amp;lt;template v-for=&amp;quot;item in items&amp;quot;&amp;gt; &amp;lt;a&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;b&amp;gt;&amp;lt;/b&amp;gt; &amp;lt;/template&amp;gt;  https://jp.vuejs.org/v2/guide/list.html
 hash操作はリアクティブにならない https://jp.vuejs.org/v2/guide/reactivity.html
 vm.b = 2 // NG Vue.set(object, key, value) // OK  </description>
-    </item>
-    
-    <item>
-      <title>ginを使ってechoをLiveReload</title>
-      <link>https://yaasita.github.io/2017/04/03/gin-live-reload/</link>
-      <pubDate>Mon, 03 Apr 2017 00:05:20 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/04/03/gin-live-reload/</guid>
-      <description> Golangのweb frame workの Echo のライブリロード
-ginがproxyしてくれるのでechoサーバのポートを教えてくれればよろしくリコンパイルしてくれる
-gin --appPort 8080 r go run server.go  CompileDaemonだとこんな感じか
-go get github.com/githubnemo/CompileDaemon CompileDaemon -command=&amp;quot;./run.sh&amp;quot; -include=&amp;quot;*.go&amp;quot;   参考リンク  https://github.com/codegangsta/gin
- https://github.com/githubnemo/CompileDaemon
- https://goo.gl/gp6L9z
-  </description>
     </item>
     
   </channel>

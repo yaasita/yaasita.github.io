@@ -6,8 +6,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 23 Nov 2018 00:54:50 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 02 Dec 2018 01:28:21 +0900</lastBuildDate>
     <atom:link href="/archives/2018/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>skypeのログフォーマットが変わってた</title>
+      <link>https://yaasita.github.io/2018/12/02/skype2json/</link>
+      <pubDate>Sun, 02 Dec 2018 01:28:21 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/12/02/skype2json/</guid>
+      <description>のでちょっとスクリプト修正した
+https://github.com/yaasita/skype2json
+修正点  yarnじゃなくても良いと聞いたのでnpmにだけにした
+ フォーマットが歴代合わせて3つあったので、3つスクリプト書いた(年代は適当)
+ libに共通関数をまとめた
+  なんか新しいフォーマットだと
+nsp_dataってカラムにjsonで突っ込んでるみたいね。json型が無いSQLiteのツライところ
+まとめ ころころフォーマットが変わるけどSQLiteになってるからSkypeは簡単にバックアップ出来て良い
+LINEはどうしたもんか</description>
+    </item>
     
     <item>
       <title>vimとtranslate-shellを連携する</title>
@@ -303,19 +320,6 @@ if has(&#39;terminal&#39;) tnoremap &amp;lt;C-T&amp;gt; &amp;lt;C-W&amp;gt;&amp;
 apt-get build-dep vim apt-get install libperl-dev python-dev python3-dev ruby-dev git clone --depth 1 git@github.com:vim/vim.git cd vim make make install   参考リンク
 【(Neo)Vim】terminal mode のマッピングについての闇とその解決法
 結論：すごく便利だと思います</description>
-    </item>
-    
-    <item>
-      <title>たまにはGDBM使う</title>
-      <link>https://yaasita.github.io/2018/04/17/gdbm-file/</link>
-      <pubDate>Tue, 17 Apr 2018 01:09:31 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/04/17/gdbm-file/</guid>
-      <description>2018年にGDBM使う
-perl標準モジュールにある
-簡単なKVSならこれで
-debianだと多分入ってるけど、libperl5.24が無い環境だとダメぽい
-#!/usr/bin/perl use strict; use warnings; use feature qw(:5.10); use utf8; use GDBM_File ; my $filename = &amp;quot;gdm&amp;quot;; my %hash; tie %hash, &#39;GDBM_File&#39;, $filename, &amp;amp;GDBM_WRCREAT, 0640; $hash{hoge} = &amp;quot;huga&amp;quot;; say &amp;quot;$_ =&amp;gt; $hash{$_}&amp;quot; for keys %hash;  </description>
     </item>
     
   </channel>

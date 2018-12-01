@@ -6,8 +6,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 23 Nov 2018 00:54:50 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 02 Dec 2018 01:28:21 +0900</lastBuildDate>
     <atom:link href="/categories/soft/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>skypeのログフォーマットが変わってた</title>
+      <link>https://yaasita.github.io/2018/12/02/skype2json/</link>
+      <pubDate>Sun, 02 Dec 2018 01:28:21 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/12/02/skype2json/</guid>
+      <description>のでちょっとスクリプト修正した
+https://github.com/yaasita/skype2json
+修正点  yarnじゃなくても良いと聞いたのでnpmにだけにした
+ フォーマットが歴代合わせて3つあったので、3つスクリプト書いた(年代は適当)
+ libに共通関数をまとめた
+  なんか新しいフォーマットだと
+nsp_dataってカラムにjsonで突っ込んでるみたいね。json型が無いSQLiteのツライところ
+まとめ ころころフォーマットが変わるけどSQLiteになってるからSkypeは簡単にバックアップ出来て良い
+LINEはどうしたもんか</description>
+    </item>
     
     <item>
       <title>vimとtranslate-shellを連携する</title>
@@ -288,28 +305,6 @@ Reject clipboard write access from remoteのエラーが出る
 (hogehogeバケットとその中身を特定IPアドレスの人に開放する)
 { &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Id&amp;quot;: &amp;quot;Policy1509977001523&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1509976998204&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;s3:*&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::hogehoge&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;IpAddress&amp;quot;: { &amp;quot;aws:SourceIp&amp;quot;: &amp;quot;203.0.113.1&amp;quot; } } }, { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1509976998204&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;s3:*&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::hogehoge/*&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;IpAddress&amp;quot;: { &amp;quot;aws:SourceIp&amp;quot;: &amp;quot;203.0.113.1&amp;quot; } } } ] }  んでs3fsはこんな感じ
 s3fs -o public_bucket=1,rw,allow_other,umask=0022,endpoint=ap-northeast-1,default_acl=public-read hogehoge /mnt  public_bucketがポイント</description>
-    </item>
-    
-    <item>
-      <title>S/MIMEの設定</title>
-      <link>https://yaasita.github.io/2017/08/12/smime/</link>
-      <pubDate>Sat, 12 Aug 2017 17:25:39 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/08/12/smime/</guid>
-      <description>StartSSL CSR作る
-emailaddressにS/MIME設定したいアドレスを入れる
-openssl req -newkey rsa:2048 -keyout yourname.key -out yourname.csr  証明書が送られてくるのでこんな感じでまとめて
------BEGIN PRIVATE KEY----- ... -----END PRIVATE KEY----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----  pkcs12に変換してthunderbirdにインポートする
-openssl pkcs12 -export -in sakusei.pem -out email.pfx  なんか送られてきた中間証明書がCRLFとLFが混在してるので直した
-チェーンはこんな感じになってた
-StartCom Certification Authority |_ StartCom Certification Authority ECC |_ StartCom CC2 ICA |_ 自分のメールアドレス  そういやCAAレコードを検証しなかったけどいいのかね？
-でここまでやって気づいたんだけどStartComの証明書が失効扱いで全然検証通らなかった
-これはGmailも同じなのでStartCom使うのは中止
-COMODO 今度COMODOを使うことになったんだけど既にChromeだとKEYGEN要素が使えないらしくFirefoxでアクセスするしかない
-(コードもselect[_moz-type=&amp;ldquo;-mozilla-keygen&amp;rdquo;]になってるし)
-こっちはフォームから申請して、リンククリックすればすぐに証明書がFirefoxに入るのでそれをエクスポートしてthunderbirdに入れればOK
-チェーンはこんな感じ
-COMODO RSA Certification Authority |_COMODO RSA Client Authentication and Secure Email CA |_ 自分のメールアドレス  まとめ Let&amp;rsquo;s EncryptがS/MIME対応してほしい</description>
     </item>
     
   </channel>
