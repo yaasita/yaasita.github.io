@@ -6,8 +6,23 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 29 Nov 2017 23:20:37 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 17 Dec 2018 00:02:37 +0900</lastBuildDate>
     <atom:link href="/categories/hard/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>電源を変えた</title>
+      <link>https://yaasita.github.io/2018/12/17/power-supply/</link>
+      <pubDate>Mon, 17 Dec 2018 00:02:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/12/17/power-supply/</guid>
+      <description>寒いせいでPCの調子が悪くなった
+ANTEC(アンテック) NeoECO Classicシリーズ 650Wモデル NE650C
+って3年くらい使った電源が、寒い日にうまくついてくれない。
+（電源つけて2,3秒で再起動を繰り返す)
+なので
+KRPW-AK750W/88+ という玄人志向のやつに変更した
+8000円くらいのやつ</description>
+    </item>
     
     <item>
       <title>PS Vita 3.67アップデートでTLS1.2対応</title>
@@ -251,27 +266,6 @@ https://forums.ubuntulinux.jp/viewtopic.php?id=1732 </description>
       <guid>https://yaasita.github.io/2013/01/02/1705/</guid>
       <description>ごみパソに送りつけると良いらしい
 http://www.53pc.com/hikitori/index.html </description>
-    </item>
-    
-    <item>
-      <title>HDDが故障したときにやったこと</title>
-      <link>https://yaasita.github.io/2012/03/11/2962/</link>
-      <pubDate>Sun, 11 Mar 2012 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2012/03/11/2962/</guid>
-      <description>/dev/sddが故障を検地 (S.M.A.R.T)
-まずはsmartのセルフテストをやってみる
-smartctl -t long /dev/sdd  badblocksでHDDをチェック
-今回は読み込みチェックだけやった
-badblocks -s -v /dev/hda  書き込みチェックもやるなら↓
-badblocks -s -v -n /dev/hda
--s 進捗状況表示
--v 詳細表示
--n 非破壊テスト
-http://nabe.blog.abk.nu/0245
-ファイルシステムが壊れてそうなら
-fsck
-を使うこと</description>
     </item>
     
   </channel>

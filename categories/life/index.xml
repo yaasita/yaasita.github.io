@@ -6,8 +6,23 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 03 Dec 2017 01:30:08 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 17 Dec 2018 00:02:37 +0900</lastBuildDate>
     <atom:link href="/categories/life/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>電源を変えた</title>
+      <link>https://yaasita.github.io/2018/12/17/power-supply/</link>
+      <pubDate>Mon, 17 Dec 2018 00:02:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/12/17/power-supply/</guid>
+      <description>寒いせいでPCの調子が悪くなった
+ANTEC(アンテック) NeoECO Classicシリーズ 650Wモデル NE650C
+って3年くらい使った電源が、寒い日にうまくついてくれない。
+（電源つけて2,3秒で再起動を繰り返す)
+なので
+KRPW-AK750W/88+ という玄人志向のやつに変更した
+8000円くらいのやつ</description>
+    </item>
     
     <item>
       <title>MonaCoinのマイニング</title>
@@ -325,18 +340,6 @@ IT部門の人からすれば自分は使わないのだから丸投げできる
 久々のSI業界
 日本のIT業界の問題点
 笑ってはいけないSIer </description>
-    </item>
-    
-    <item>
-      <title>携帯開発の実態（笑わないプログラマ）</title>
-      <link>https://yaasita.github.io/2011/12/24/3299/</link>
-      <pubDate>Sat, 24 Dec 2011 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2011/12/24/3299/</guid>
-      <description>例の軍曹のデスマーチ話です
- 前編
- 後編
-  </description>
     </item>
     
   </channel>
