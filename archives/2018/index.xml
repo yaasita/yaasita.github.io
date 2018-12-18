@@ -6,8 +6,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 17 Dec 2018 00:02:37 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 19 Dec 2018 00:53:21 +0900</lastBuildDate>
     <atom:link href="/archives/2018/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>dynamodbオンデマンド</title>
+      <link>https://yaasita.github.io/2018/12/19/dynamodb/</link>
+      <pubDate>Wed, 19 Dec 2018 00:53:21 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/12/19/dynamodb/</guid>
+      <description> re:Invent 2018で言われたアレ
+DynamoDBオンデマンド
+のベンチを取ってみた
+ ベンチマークに使ったスクリプト
+  結論  ほとんどDynamoDB ondemand でOKだと思うj
+ オートスケールぽい挙動なのでちょっとずつスケールしてるぽい
+ 200とかそんくらいのスパイクアクセスがある場合はあらかじめ、プロビジョニングキャパシティにしておいた方が良いと思う
+ ただし、オンデマンドの有効化は一日一回だけなので注意
+  </description>
+    </item>
     
     <item>
       <title>電源を変えた</title>
@@ -305,20 +322,6 @@ bootしてから3分後に実行（ちょっとインターバルないとイン
 /etc/systemd/system/gcp-calc.service
 [Unit] Description=gcp-calc Wants=network-pre.target After=multi-user.target [Install] WantedBy=multi-user.target [Service] ExecStart=/root/run.sh Type=oneshot  /etc/systemd/system/gcp-calc.timer
 [Unit] Description=gcp calc [Timer] OnBootSec=3min [Install] WantedBy=timers.target  </description>
-    </item>
-    
-    <item>
-      <title>クライアント証明書とIP制限</title>
-      <link>https://yaasita.github.io/2018/05/26/client-auth/</link>
-      <pubDate>Sat, 26 May 2018 03:49:43 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/05/26/client-auth/</guid>
-      <description>外からはクライアント証明書を要求して、中からは素通しさせたいケース
-Apache2.4ならこんな感じ
-SSLCACertificateFile /etc/apache2/ssl/example.crt &amp;lt;Directory /var/www&amp;gt; Options Indexes FollowSymLinks MultiViews ExecCGI Require ip 192.168.100.0/24 SSLVerifyClient require Satisfy any &amp;lt;/Directory&amp;gt;  curlで確認
-curl https://example.net --key client.key --cert cert.crt --http1.1  作るときは /usr/lib/ssl/misc/CA.pl -newreq とかで適当に作る
-鍵とセットなら良いのでcommon nameとかは適当
-参考リンク プライベートCA作るまで</description>
     </item>
     
   </channel>

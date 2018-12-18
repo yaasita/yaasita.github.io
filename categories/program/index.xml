@@ -6,8 +6,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 02 Dec 2018 01:28:21 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 19 Dec 2018 00:53:21 +0900</lastBuildDate>
     <atom:link href="/categories/program/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>dynamodbオンデマンド</title>
+      <link>https://yaasita.github.io/2018/12/19/dynamodb/</link>
+      <pubDate>Wed, 19 Dec 2018 00:53:21 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/12/19/dynamodb/</guid>
+      <description> re:Invent 2018で言われたアレ
+DynamoDBオンデマンド
+のベンチを取ってみた
+ ベンチマークに使ったスクリプト
+  結論  ほとんどDynamoDB ondemand でOKだと思うj
+ オートスケールぽい挙動なのでちょっとずつスケールしてるぽい
+ 200とかそんくらいのスパイクアクセスがある場合はあらかじめ、プロビジョニングキャパシティにしておいた方が良いと思う
+ ただし、オンデマンドの有効化は一日一回だけなので注意
+  </description>
+    </item>
     
     <item>
       <title>skypeのログフォーマットが変わってた</title>
@@ -281,19 +298,6 @@ SNS Topicsを新しく作ってTopicネームくらいは適当に埋めてお�
       <description>なぜか？画像のURLはたまに変わりリンク切れしてしまうから
 ちゃんとAPIを叩いてポストIDから画像リンクを取得した方が良い
  </description>
-    </item>
-    
-    <item>
-      <title>Vue.jsのちょっとしたこと</title>
-      <link>https://yaasita.github.io/2017/04/14/vuejs-tips/</link>
-      <pubDate>Fri, 14 Apr 2017 15:57:44 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/04/14/vuejs-tips/</guid>
-      <description> v-on=&amp;ldquo;click&amp;rdquo;とmodelは一緒に使えない  watchで監視する
- https://github.com/vuejs/vue/issues/1146
-   ある要素だけが繰り返すわけじゃないときはtemplateで挟むとよい &amp;lt;template v-for=&amp;quot;item in items&amp;quot;&amp;gt; &amp;lt;a&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;b&amp;gt;&amp;lt;/b&amp;gt; &amp;lt;/template&amp;gt;  https://jp.vuejs.org/v2/guide/list.html
-hash操作はリアクティブにならない https://jp.vuejs.org/v2/guide/reactivity.html
-vm.b = 2 // NG Vue.set(object, key, value) // OK  </description>
     </item>
     
   </channel>

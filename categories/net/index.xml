@@ -6,8 +6,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 12 Nov 2018 01:24:39 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 19 Dec 2018 00:53:21 +0900</lastBuildDate>
     <atom:link href="/categories/net/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>dynamodbオンデマンド</title>
+      <link>https://yaasita.github.io/2018/12/19/dynamodb/</link>
+      <pubDate>Wed, 19 Dec 2018 00:53:21 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/12/19/dynamodb/</guid>
+      <description> re:Invent 2018で言われたアレ
+DynamoDBオンデマンド
+のベンチを取ってみた
+ ベンチマークに使ったスクリプト
+  結論  ほとんどDynamoDB ondemand でOKだと思うj
+ オートスケールぽい挙動なのでちょっとずつスケールしてるぽい
+ 200とかそんくらいのスパイクアクセスがある場合はあらかじめ、プロビジョニングキャパシティにしておいた方が良いと思う
+ ただし、オンデマンドの有効化は一日一回だけなので注意
+  </description>
+    </item>
     
     <item>
       <title>HSTSの説明資料</title>
@@ -334,17 +351,6 @@ Oops! It appears that you have disabled your Javascript. In order for you to see
 とりあえずここまでやれば大抵コピーできるようになるはず
 参考リンク  コピペ禁止サイト
  Webページの「コピペ禁止」を解除・回避するJavaScriptコード</description>
-    </item>
-    
-    <item>
-      <title>tumblrの画像を貼るときに直リンクしてはいけない</title>
-      <link>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr/</link>
-      <pubDate>Sun, 07 May 2017 02:49:05 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr/</guid>
-      <description>なぜか？画像のURLはたまに変わりリンク切れしてしまうから
-ちゃんとAPIを叩いてポストIDから画像リンクを取得した方が良い
- </description>
     </item>
     
   </channel>
