@@ -6,8 +6,19 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 19 Dec 2018 00:53:21 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 19 Dec 2018 01:06:14 +0900</lastBuildDate>
     <atom:link href="/post/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>スマホ変えた</title>
+      <link>https://yaasita.github.io/2018/12/19/sumaho/</link>
+      <pubDate>Wed, 19 Dec 2018 01:06:14 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/12/19/sumaho/</guid>
+      <description>Moto E5 2GB/16GBってやつに変更した
+Android8まで上がった
+ついでにSIMもIIJ mioからLINEモバイルに変えた</description>
+    </item>
     
     <item>
       <title>dynamodbオンデマンド</title>
@@ -303,25 +314,6 @@ curl: (92) HTTP/2 stream 1 was not closed cleanly: HTTP_1_1_REQUIRED (err 13)  �
       <description>perlでElasticsearch
 mojoliciousでの例
  </description>
-    </item>
-    
-    <item>
-      <title>GCPでAWS Batch的な事をやる</title>
-      <link>https://yaasita.github.io/2018/06/20/aws-batch-gcp/</link>
-      <pubDate>Wed, 20 Jun 2018 23:46:45 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/06/20/aws-batch-gcp/</guid>
-      <description> こんな感じにS3になんか置いて、ファイルがあったら起動して、終わったらshutdownするみたいな奴
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   GCPはインスタンスの起動停止が早いので結構良い感じ
-Lambda 処理するファイルが存在して、GCPが動いてたら起動かける
-
-GCP キュー代わりのファイル消してから
-bootしてから3分後に実行（ちょっとインターバルないとインスタンスに入るのが大変になる）
-処理の最後でshutdownすればOK
-/etc/systemd/system/gcp-calc.service
-[Unit] Description=gcp-calc Wants=network-pre.target After=multi-user.target [Install] WantedBy=multi-user.target [Service] ExecStart=/root/run.sh Type=oneshot  /etc/systemd/system/gcp-calc.timer
-[Unit] Description=gcp calc [Timer] OnBootSec=3min [Install] WantedBy=timers.target  </description>
     </item>
     
   </channel>

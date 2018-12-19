@@ -6,8 +6,19 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 17 Dec 2018 00:02:37 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 19 Dec 2018 01:06:14 +0900</lastBuildDate>
     <atom:link href="/categories/hard/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>スマホ変えた</title>
+      <link>https://yaasita.github.io/2018/12/19/sumaho/</link>
+      <pubDate>Wed, 19 Dec 2018 01:06:14 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2018/12/19/sumaho/</guid>
+      <description>Moto E5 2GB/16GBってやつに変更した
+Android8まで上がった
+ついでにSIMもIIJ mioからLINEモバイルに変えた</description>
+    </item>
     
     <item>
       <title>電源を変えた</title>
@@ -256,16 +267,6 @@ https://forums.ubuntulinux.jp/viewtopic.php?id=1732 </description>
       <guid>https://yaasita.github.io/2013/01/29/1483/</guid>
       <description>を買ってみた
 所謂、SIMフリーの無線LANルータ </description>
-    </item>
-    
-    <item>
-      <title>PCを破棄したくなったら</title>
-      <link>https://yaasita.github.io/2013/01/02/1705/</link>
-      <pubDate>Wed, 02 Jan 2013 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2013/01/02/1705/</guid>
-      <description>ごみパソに送りつけると良いらしい
-http://www.53pc.com/hikitori/index.html </description>
     </item>
     
   </channel>
