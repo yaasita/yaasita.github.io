@@ -6,8 +6,23 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 19 Dec 2018 01:06:14 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 21 Jan 2019 03:24:13 +0900</lastBuildDate>
     <atom:link href="/post/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ELB配下のどのインスタンスAPIを叩く</title>
+      <link>https://yaasita.github.io/2019/01/21/post-under-elb/</link>
+      <pubDate>Mon, 21 Jan 2019 03:24:13 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/01/21/post-under-elb/</guid>
+      <description>構想
+
+コード
+
+ELBからインスタンス一覧引っ張る所はまだ書いてない
+明けましておめでとうございます
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>スマホ変えた</title>
@@ -303,17 +318,6 @@ curl: (92) HTTP/2 stream 1 was not closed cleanly: HTTP_1_1_REQUIRED (err 13)  �
  reqexprの説明
  mod_ssl変数一覧
   </description>
-    </item>
-    
-    <item>
-      <title>PerlでElasticsearch</title>
-      <link>https://yaasita.github.io/2018/07/04/es-perl/</link>
-      <pubDate>Wed, 04 Jul 2018 03:06:02 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/07/04/es-perl/</guid>
-      <description>perlでElasticsearch
-mojoliciousでの例
- </description>
     </item>
     
   </channel>
