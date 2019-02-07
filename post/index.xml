@@ -6,11 +6,26 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 21 Jan 2019 03:24:13 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 08 Feb 2019 00:52:50 +0900</lastBuildDate>
     <atom:link href="/post/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>ELB配下のどのインスタンスAPIを叩く</title>
+      <title>最近使ってる集中アプリ</title>
+      <link>https://yaasita.github.io/2019/02/08/concentration/</link>
+      <pubDate>Fri, 08 Feb 2019 00:52:50 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/02/08/concentration/</guid>
+      <description>いろいろ試してみた
+ Forest: 広告が邪魔
+ Focus To-Do: 複雑でよく分からなかった
+ ブロックタイマー: なんか画面が付きっぱなしになる
+ FLIP: 勉強用かな操作がむずい
+ Studyplus: なんかポモドーロぽいの使えなかった
+  で結局Focus To-DoのWindowsアプリ版を使ってる</description>
+    </item>
+    
+    <item>
+      <title>ELB配下のどれか生きてるインスタンスのAPIを叩く</title>
       <link>https://yaasita.github.io/2019/01/21/post-under-elb/</link>
       <pubDate>Mon, 21 Jan 2019 03:24:13 +0900</pubDate>
       
@@ -299,25 +314,6 @@ IPでこういうのはダメ
       <description>S/MIMEもSSL証明書も取れない
 (´；ω；｀)ﾌﾞﾜｯ
 トップページも繋がらないしもう駄目か・・・</description>
-    </item>
-    
-    <item>
-      <title>クライアント証明書&#43;HTTP2</title>
-      <link>https://yaasita.github.io/2018/07/29/h2-plus-client-auth/</link>
-      <pubDate>Sun, 29 Jul 2018 16:36:57 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/07/29/h2-plus-client-auth/</guid>
-      <description>SSLRequire は 非推奨みたいなので
-クライアント証明書とIP制限を今風に書き直す
-あとCNとかも検証するようにした
-こんな感じ
-&amp;lt;Directory /var/www&amp;gt; Options Indexes FollowSymLinks MultiViews ExecCGI SSLVerifyClient optional &amp;lt;RequireAny&amp;gt; Require ip 192.168.100.0/24 &amp;lt;RequireAll&amp;gt; Require ssl-verify-client Require expr &amp;quot;%{SSL_CLIENT_S_DN_CN} == &#39;hogeclient&#39;&amp;quot; &amp;lt;/RequireAll&amp;gt; &amp;lt;/RequireAny&amp;gt; &amp;lt;/Directory&amp;gt;  あと
-Protocols http/1.1 h2  のようにhttp/1.1を先にしないと
-curl: (92) HTTP/2 stream 1 was not closed cleanly: HTTP_1_1_REQUIRED (err 13)  こんなエラーになるので注意
-参考リンク
- reqexprの説明
- mod_ssl変数一覧
-  </description>
     </item>
     
   </channel>

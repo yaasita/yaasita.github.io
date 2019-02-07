@@ -6,11 +6,26 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 21 Jan 2019 03:24:13 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 08 Feb 2019 00:52:50 +0900</lastBuildDate>
     <atom:link href="/archives/2019/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>ELB配下のどのインスタンスAPIを叩く</title>
+      <title>最近使ってる集中アプリ</title>
+      <link>https://yaasita.github.io/2019/02/08/concentration/</link>
+      <pubDate>Fri, 08 Feb 2019 00:52:50 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/02/08/concentration/</guid>
+      <description>いろいろ試してみた
+ Forest: 広告が邪魔
+ Focus To-Do: 複雑でよく分からなかった
+ ブロックタイマー: なんか画面が付きっぱなしになる
+ FLIP: 勉強用かな操作がむずい
+ Studyplus: なんかポモドーロぽいの使えなかった
+  で結局Focus To-DoのWindowsアプリ版を使ってる</description>
+    </item>
+    
+    <item>
+      <title>ELB配下のどれか生きてるインスタンスのAPIを叩く</title>
       <link>https://yaasita.github.io/2019/01/21/post-under-elb/</link>
       <pubDate>Mon, 21 Jan 2019 03:24:13 +0900</pubDate>
       
