@@ -6,8 +6,19 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 19 Dec 2018 00:53:21 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 28 Feb 2019 01:44:13 +0900</lastBuildDate>
     <atom:link href="/categories/net/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AlwaysOnSSL終了のお知らせ</title>
+      <link>https://yaasita.github.io/2019/02/28/alwaysonssl/</link>
+      <pubDate>Thu, 28 Feb 2019 01:44:13 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/02/28/alwaysonssl/</guid>
+      <description>無料のSSL証明書AlwaysOnSSLがセキュリティ問題を指摘されてシャットダウンしたぽい
+groups.google.com/forum/#!topic/mozilla.dev.security.policy/OTuUdNKoySA
+S/MIME手に入るので良かったんだけどなぁ・・・</description>
+    </item>
     
     <item>
       <title>dynamodbオンデマンド</title>
@@ -328,29 +339,6 @@ SNS Topicsを新しく作ってTopicネームくらいは適当に埋めてお�
       <guid>https://yaasita.github.io/2017/05/23/emoji/</guid>
       <description>便利な emojipedia
 http://emojipedia.org/</description>
-    </item>
-    
-    <item>
-      <title>コピー禁止のWebサイトについて</title>
-      <link>https://yaasita.github.io/2017/05/21/web-copy-protect/</link>
-      <pubDate>Sun, 21 May 2017 01:48:56 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/05/21/web-copy-protect/</guid>
-      <description>コピー禁止のWordpressサイトが増えてきました
-ちょっと検索ワードをコピペするのに不便なので回避方法
-1. とりあえずJavaScriptをOFFる これで大半はOK wp-copyprotect って拡張だけならこれで大丈夫
-この仕組みの参考実装はこんな感じ
-https://gist.github.com/yaasita/7b07710840186561c76d7e5c4af28b2d
-chromeならURLバーの左をクリックしてJavaScriptをブロックで
-
-2. noscriptのタグを消す WP Content Copy Protection みたいなやつだと noscript タグの中に画面一杯に広げてコンテンツを見えなくするdivが入るので、chrome developers tools開いて &amp;lt;noscript&amp;gt;タグごと削除する
-Oops! It appears that you have disabled your Javascript. In order for you to see this page as it is meant to appear, we ask that you please re-enable your Javascript! みたいな文言はこれ
-
-3. cssでuser-selectをnoneにしている場合 chrome developers toolsでuser-select: text;書き換えてやる
-
-とりあえずここまでやれば大抵コピーできるようになるはず
-参考リンク  コピペ禁止サイト
- Webページの「コピペ禁止」を解除・回避するJavaScriptコード</description>
     </item>
     
   </channel>
