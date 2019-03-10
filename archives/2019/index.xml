@@ -6,8 +6,19 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 28 Feb 2019 01:44:13 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 10 Mar 2019 22:47:52 +0900</lastBuildDate>
     <atom:link href="/archives/2019/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Windows10のクリップボード履歴昨日</title>
+      <link>https://yaasita.github.io/2019/03/10/clipboard/</link>
+      <pubDate>Sun, 10 Mar 2019 22:47:52 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/03/10/clipboard/</guid>
+      <description>Windows10に標準でクリップボード履歴機能が付いたらしい
+ https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html
+  Windows キー + Vで使えるようになる</description>
+    </item>
     
     <item>
       <title>AlwaysOnSSL終了のお知らせ</title>
@@ -16,7 +27,7 @@
       
       <guid>https://yaasita.github.io/2019/02/28/alwaysonssl/</guid>
       <description>無料のSSL証明書AlwaysOnSSLがセキュリティ問題を指摘されてシャットダウンしたぽい
-groups.google.com/forum/#!topic/mozilla.dev.security.policy/OTuUdNKoySA
+AlwaysOnSSL web security issues
 S/MIME手に入るので良かったんだけどなぁ・・・</description>
     </item>
     

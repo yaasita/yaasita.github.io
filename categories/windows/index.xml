@@ -6,8 +6,19 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 25 Sep 2018 00:56:22 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 10 Mar 2019 22:47:52 +0900</lastBuildDate>
     <atom:link href="/categories/windows/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Windows10のクリップボード履歴昨日</title>
+      <link>https://yaasita.github.io/2019/03/10/clipboard/</link>
+      <pubDate>Sun, 10 Mar 2019 22:47:52 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/03/10/clipboard/</guid>
+      <description>Windows10に標準でクリップボード履歴機能が付いたらしい
+ https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html
+  Windows キー + Vで使えるようになる</description>
+    </item>
     
     <item>
       <title>skypeの会話ログをjsonに</title>
@@ -334,23 +345,6 @@ Win+Shift+q
 
 参考リンク
 http://sourceforge.jp/projects/tilingwm/wiki/FrontPage </description>
-    </item>
-    
-    <item>
-      <title>rsyncのWindows版 cwRsyncを試す</title>
-      <link>https://yaasita.github.io/2011/03/22/4612/</link>
-      <pubDate>Tue, 22 Mar 2011 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2011/03/22/4612/</guid>
-      <description>公式サイトからリンクを辿ってcwRsync_4.0.4_Installer.zip をダウンロード＆インストール今回は最小構成でインストール
-Secure Channel Wrapperは入れなかった
-PATHに&#34;C:\Program Files\cwRsync\bin&#34;を追加
-あとはrsyncコマンドがつかえるので使用する今回はネットワークドライブからローカルへ同期してみた
-例）Nドライブ→Cドライブのtestフォルダを同期
-rsync -av --delete /cygdrive/n/backup/Firefox/ /cygdrive/c/test/
-※心配なら-nオプションを付けて挙動を確認すると良いかも
-参考リンク
-http://satospo.sakura.ne.jp/blog_archives/tech/tool/cwrsync.html </description>
     </item>
     
   </channel>
