@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="Debianのデスクトップ環境をDwmに変更してみた" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2011/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Debianのデスクトップ環境をDwmに変更してみた | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    軽量と言われるLXDEだけどやはり10年前のノートPCだと重いと感じてきたので変更する<br />変更するのはウィンドウマネージャの<a href="http://ja.wikipedia.org/wiki/Dwm_%28%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%29">Dwm</a><br /><br />インストールはaptとかでさくっとできるはず<br />デフォルトのMod1キーはAltキーなのでいつもAltキーが必要です<br />起動して左上に表示されている１～９の数字は仮想デスクトップでここではタグと呼びます<br />基本操作は以下のとおり<br /><br /><i>uxtermの起動</i><br /><pre>Alt+Shift+Return</pre><br /><i>ウィンドウ間のフォーカスを切り替え</i><br /><pre>Alt+j<br />Alt+k<br /></pre><br /><i>ウィンドウのサイズ変更</i><br /><pre>Alt+h<br />Alt+l<br /></pre><br /><i>フォーカスされているウィンドウを閉じる</i><br /><pre>Alt+Shift+c</pre><br /><i>6番目のタグへ移動</i><br /><pre>Alt+6</pre><br /><i>全てのタグを選択(全ウィンドウが表示されます)</i><br /><pre>Alt+0</pre><br /><i>現在フォーカスされているウィンドウを4番目のタグへ移動</i><br /><pre>Alt+Shift+4</pre><br /><i>ウィンドウの入れ替え</i><br /><pre>Alt+Return</pre><br /><i>前回選択してたタグへ移動</i><br /><pre>Alt+Tab</pre><br /><i>上のバーの表示／非表示切り替え</i><br /><pre>Alt+b</pre><br /><i>ウィンドウをタイル表示（重ならないように配置）</i><br /><pre>Alt+t</pre><br /><i>フローティングレイアウト表示へ（重なって表示）</i><br /><pre>Alt+f</pre>※Alt押しながらマウスで移動できます<br /><br /><i>常に最大化表示（ひとつのウィンドウが最大化表示）</i><br /><pre>Alt+m</pre><br /><i>Dwmを終了</i><br /><pre>Alt+Shift+q</pre><br />その他詳しいことは<br /><pre>man dwm</pre><br />ステータスバーを変えるには<a href="http://rdt17.blogspot.com/2011/04/dwm.html">こちら</a><br /><br />参考リンク<br /><a href="http://sourceforge.jp/projects/tilingwm/wiki/FrontPage">http://sourceforge.jp/projects/tilingwm/wiki/FrontPage</a>
+    
+
+軽量と言われるLXDEだけどやはり10年前のノートPCだと重いと感じてきたので変更する<br />変更するのはウィンドウマネージャの<a href="http://ja.wikipedia.org/wiki/Dwm_%28%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%89%E3%82%A6%E3%83%9E%E3%83%8D%E3%83%BC%E3%82%B8%E3%83%A3%29">Dwm</a><br /><br />インストールはaptとかでさくっとできるはず<br />デフォルトのMod1キーはAltキーなのでいつもAltキーが必要です<br />起動して左上に表示されている１～９の数字は仮想デスクトップでここではタグと呼びます<br />基本操作は以下のとおり<br /><br /><i>uxtermの起動</i><br /><pre>Alt+Shift+Return</pre><br /><i>ウィンドウ間のフォーカスを切り替え</i><br /><pre>Alt+j<br />Alt+k<br /></pre><br /><i>ウィンドウのサイズ変更</i><br /><pre>Alt+h<br />Alt+l<br /></pre><br /><i>フォーカスされているウィンドウを閉じる</i><br /><pre>Alt+Shift+c</pre><br /><i>6番目のタグへ移動</i><br /><pre>Alt+6</pre><br /><i>全てのタグを選択(全ウィンドウが表示されます)</i><br /><pre>Alt+0</pre><br /><i>現在フォーカスされているウィンドウを4番目のタグへ移動</i><br /><pre>Alt+Shift+4</pre><br /><i>ウィンドウの入れ替え</i><br /><pre>Alt+Return</pre><br /><i>前回選択してたタグへ移動</i><br /><pre>Alt+Tab</pre><br /><i>上のバーの表示／非表示切り替え</i><br /><pre>Alt+b</pre><br /><i>ウィンドウをタイル表示（重ならないように配置）</i><br /><pre>Alt+t</pre><br /><i>フローティングレイアウト表示へ（重なって表示）</i><br /><pre>Alt+f</pre>※Alt押しながらマウスで移動できます<br /><br /><i>常に最大化表示（ひとつのウィンドウが最大化表示）</i><br /><pre>Alt+m</pre><br /><i>Dwmを終了</i><br /><pre>Alt+Shift+q</pre><br />その他詳しいことは<br /><pre>man dwm</pre><br />ステータスバーを変えるには<a href="http://rdt17.blogspot.com/2011/04/dwm.html">こちら</a><br /><br />参考リンク<br /><a href="http://sourceforge.jp/projects/tilingwm/wiki/FrontPage">http://sourceforge.jp/projects/tilingwm/wiki/FrontPage</a>
 
 
   </div>
@@ -212,7 +221,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -279,7 +288,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

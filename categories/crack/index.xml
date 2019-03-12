@@ -72,7 +72,7 @@ tcpflow -cse -i eth0 dst port 80
       <pubDate>Tue, 31 Jan 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/01/31/3068/</guid>
-      <description>Torは匿名のプロキシとして動作する
+      <description> Torは匿名のプロキシとして動作する
 インストール
 apt-get install tor
 
@@ -99,7 +99,7 @@ SocksPolicyは何も設定しなければ全て許可 </description>
       <pubDate>Wed, 11 May 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/05/11/4006/</guid>
-      <description>レインボーテーブルとはあらかじめ作っておいたハッシュテーブルと平分の対応表を照らし合わせ、平分を得るテクニックらしいです。
+      <description> レインボーテーブルとはあらかじめ作っておいたハッシュテーブルと平分の対応表を照らし合わせ、平分を得るテクニックらしいです。
 チェインと呼ばれる単位に集約されているので、テーブルの容量が少なくてすむ利点があります。
 ソフトはここら辺からどうぞ
 http://project-rainbowcrack.com/index.htm
@@ -148,7 +148,7 @@ MAC Flood L2スイッチのMACテーブルを溢れさせて馬鹿ハブにし�
       <pubDate>Sun, 08 May 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/05/08/4129/</guid>
-      <description>sleepだけなら大丈夫かな？と思って以下のスクリプトを実行してみた
+      <description> sleepだけなら大丈夫かな？と思って以下のスクリプトを実行してみた
 →結果すぐに応答なしになってkillallも効かない状態に＼(^o^)／
 電源を切るしかなくなった
 #!/bin/bash
@@ -166,7 +166,7 @@ done &amp;amp;
       <pubDate>Sun, 06 Feb 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/02/06/4778/</guid>
-      <description>aptかなんかでインストールコマンドは→thpot
+      <description> aptかなんかでインストールコマンドは→thpot
 thpotはxinetdかinetdを通してでも起動できます
 接続とセッションを通しての命令は全てログに記録されます
 以下のどれかの引数を与えてサービスを起動します
@@ -181,7 +181,7 @@ shell, ftp, http, mssql, smtp, pop3 ,ssh
       <pubDate>Sun, 21 Feb 2010 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2010/02/21/7286/</guid>
-      <description>inurl:ViewerFrame?Mode=で検索
+      <description> inurl:ViewerFrame?Mode=で検索
 2ch記事
 ちょｗグーグルで「inurl:ViewerFrame?Mode= 」って検索してみｗｗｗ </description>
     </item>
@@ -192,7 +192,7 @@ shell, ftp, http, mssql, smtp, pop3 ,ssh
       <pubDate>Sun, 06 Sep 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/09/06/8695/</guid>
-      <description>http://ja.nitroroms.com/roms </description>
+      <description> http://ja.nitroroms.com/roms </description>
     </item>
     
     <item>
@@ -201,7 +201,7 @@ shell, ftp, http, mssql, smtp, pop3 ,ssh
       <pubDate>Sun, 14 Jun 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/06/14/9342/</guid>
-      <description>／(＾o＾)＼ナンテコッタイ
+      <description> ／(＾o＾)＼ナンテコッタイ
 つーことで対処法
 とりあえずC:\WINDOWS\system32\sonb32drv.dllを削除
 つーかこの話って2008年の6月くらいの話です・・・
@@ -256,7 +256,7 @@ http://onecare.live.com/site/ja-jp/center/cleanup.htm </description>
       <pubDate>Sun, 19 Apr 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/04/19/9704/</guid>
-      <description>Debian(lenny)のレポジトリにありました。
+      <description> Debian(lenny)のレポジトリにありました。
 aptで簡単インストール。
 使い方は
 pdfcrack hoge.pdf
@@ -275,7 +275,7 @@ http://gigazine.net/index.php?/news/comments/20090219_pdfcrack/ </description>
       <pubDate>Wed, 15 Apr 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/04/15/9765/</guid>
-      <description>そんなあなたに
+      <description> そんなあなたに
 シナバウト
 http://www.alabout.com/
 オラバウトNEXT
@@ -292,7 +292,7 @@ http://www.genie.x0.com/alabout/closed.phtml </description>
       <pubDate>Fri, 24 Oct 2008 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2008/10/24/11060/</guid>
-      <description>定番解析ソフトと解析勉強サイト
+      <description> 定番解析ソフトと解析勉強サイト
 ●デバッガ OllyDbg
 Digital Travesiaで再配布
 ●プロセスメモリエディタ兼デバッガ スペシャルねこまんま57号
@@ -323,7 +323,7 @@ ISBN:4871482456 1,682円 286頁
       <pubDate>Mon, 31 Mar 2008 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2008/03/31/12673/</guid>
-      <description>nmap -sS -P0 -T2 -p 1-65535 -oN kaons.txt -r -v -sV hoge.co.jp
+      <description> nmap -sS -P0 -T2 -p 1-65535 -oN kaons.txt -r -v -sV hoge.co.jp
 -sS　ステルススキャン
 -P0 ホストの発見を省略する（確実にそのホストが存在していると分かっている場合はこれを使用する）
 -T2 スキャン速度。T1、T2、T3、T4、T5と早くなっていく。T5は高速回線が望ましい。
@@ -343,7 +343,7 @@ ISBN:4871482456 1,682円 286頁
       <pubDate>Sun, 20 Jan 2008 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2008/01/20/12983/</guid>
-      <description>まずDVDの読めるPCでディスクを検索します。
+      <description> まずDVDの読めるPCでディスクを検索します。
 次にMV.AFSという1.15GBくらいのファイルがあるのでHDDにコピーします。
 この中にpssファイルがアーカイブされているので抽出します。
 こちらで配布されているAFS Cutter Ver.1.00を使ってPSSファイルを抽出します。抽出したファイルはbinという拡張子になっていますがPSSファイルです。再生はVLCプレイヤーなどで出来ます。
@@ -360,7 +360,7 @@ http://freeuse.ddo.jp/contents/game/ps2/ps2mov.html </description>
       <pubDate>Mon, 31 Dec 2007 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2007/12/31/13045/</guid>
-      <description>ブラックユーモア溢れるゲームたちです。
+      <description> ブラックユーモア溢れるゲームたちです。
 倉庫番はHDDがフォーマットされる可能性があります。
 WindowsXP環境では平気でした。
 http://www.hehehe.net/game/ </description>
@@ -372,7 +372,7 @@ http://www.hehehe.net/game/ </description>
       <pubDate>Mon, 12 Nov 2007 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2007/11/12/13395/</guid>
-      <description>https://wiki.ubuntulinux.jp/UbuntuTips/Application/P2Ptv </description>
+      <description> https://wiki.ubuntulinux.jp/UbuntuTips/Application/P2Ptv </description>
     </item>
     
     <item>
@@ -381,7 +381,7 @@ http://www.hehehe.net/game/ </description>
       <pubDate>Sat, 27 Oct 2007 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2007/10/27/13502/</guid>
-      <description>ウイルスの拡張子をtxtにするともとのアイコンに戻るのはそのためです。
+      <description> ウイルスの拡張子をtxtにするともとのアイコンに戻るのはそのためです。
 よって下の記事は正確ではないようです。
 http://www.atmarkit.co.jp/fsecurity/special/90winny/winny05.html
 参考リンク
@@ -394,7 +394,7 @@ http://www.tokix.net/txt/WinnyVirus.html </description>
       <pubDate>Wed, 26 Sep 2007 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2007/09/26/13809/</guid>
-      <description>●山田オルタナティブ（WORM_ANTINNY.BI、W32.Yawmo）
+      <description> ●山田オルタナティブ（WORM_ANTINNY.BI、W32.Yawmo）
 【主な被害】
 ・2段階の画質でSSを出力し、他の（´・ω・） ｶﾜｲｿｽな香具師へ相互リンク
 ・アップロードらしきフォームで、コンピュータ上の全HDD上の全ファイルのHTTPでのダウンロードを可能にする

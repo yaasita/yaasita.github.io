@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="postfixで複合条件アクション" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2013/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>postfixで複合条件アクション | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    こんな感じでスパムメールを拒否してみた<br /><br />目標は：特定のIPかつ(123.123.123.123)、特定のアドレス(reject@)を拒否する<br /><br />まず、check_client_accessをつくる<br />smtpd_restriction_classesで制限クラスをつくって<br />client_accessで定義した制限クラスに飛ばす<br /><br /><br />/etc/postfix/main.cf<br /><pre>smtpd_recipient_restrictions = permit_mynetworks ,<br />    check_client_access hash:/etc/postfix/client_access ,<br />    permit_sasl_authenticated ,<br />    reject_unauth_destination<br />smtpd_restriction_classes = spam_restriction<br />spam_restriction = check_recipient_access hash:/etc/postfix/rejectaddress<br /></pre><br />/etc/postfix/client_access<br /><pre>123.123.123.123 spam_restriction<br /></pre><br />/etc/postfix/rejectaddress<br /><pre>reject@ REJECT<br /></pre><br />参考リンク<br /><a href="http://futuremix.org/2010/02/postfix-reject-ip-address-list">Postfix で特定の IP アドレスを拒否する設定</a><br /><a href="http://www.postfix-jp.info/ML/arc-2.1/msg00114.html">[postfix-jp: 115] Re: 複合条件での送信制限は可能でしょうか？</a>
+    
+
+こんな感じでスパムメールを拒否してみた<br /><br />目標は：特定のIPかつ(123.123.123.123)、特定のアドレス(reject@)を拒否する<br /><br />まず、check_client_accessをつくる<br />smtpd_restriction_classesで制限クラスをつくって<br />client_accessで定義した制限クラスに飛ばす<br /><br /><br />/etc/postfix/main.cf<br /><pre>smtpd_recipient_restrictions = permit_mynetworks ,<br />    check_client_access hash:/etc/postfix/client_access ,<br />    permit_sasl_authenticated ,<br />    reject_unauth_destination<br />smtpd_restriction_classes = spam_restriction<br />spam_restriction = check_recipient_access hash:/etc/postfix/rejectaddress<br /></pre><br />/etc/postfix/client_access<br /><pre>123.123.123.123 spam_restriction<br /></pre><br />/etc/postfix/rejectaddress<br /><pre>reject@ REJECT<br /></pre><br />参考リンク<br /><a href="http://futuremix.org/2010/02/postfix-reject-ip-address-list">Postfix で特定の IP アドレスを拒否する設定</a><br /><a href="http://www.postfix-jp.info/ML/arc-2.1/msg00114.html">[postfix-jp: 115] Re: 複合条件での送信制限は可能でしょうか？</a>
 
 
   </div>
@@ -216,7 +225,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -283,7 +292,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

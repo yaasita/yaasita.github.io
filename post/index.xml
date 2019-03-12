@@ -6,18 +6,38 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 10 Mar 2019 22:47:52 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 12 Mar 2019 23:00:51 +0900</lastBuildDate>
     <atom:link href="/post/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Windows10のクリップボード履歴昨日</title>
+      <title>hugoアップデート</title>
+      <link>https://yaasita.github.io/2019/03/12/hugo-update/</link>
+      <pubDate>Tue, 12 Mar 2019 23:00:51 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/03/12/hugo-update/</guid>
+      <description>久々にhugoをアップデート v0.41 =&amp;gt; v0.54まで上げた
+ワーニング潰し アップデートに伴い
+.Prev と .Nextが非推奨になったぽい マニュアル, コミット
+なのでこれはそれぞれ以下のように修正すればOK(意味が逆なので分かりにくいけど)
+ .Prev =&amp;gt; .NextPage
+ .Next =&amp;gt; .PrevPage
+  OGP設定 某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました
+上手く表示できてますか？
+修正箇所
+themes/hugo-theme-geppaku/layouts/partials/header.html
+ {{ if .IsHome }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Site.Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;website&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}&amp;quot; /&amp;gt; {{ else }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;article&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}{{ .Page.Dir }}&amp;quot; /&amp;gt; {{ end }} &amp;lt;meta property=&amp;quot;og:site_name&amp;quot; content=&amp;quot;{{ .</description>
+    </item>
+    
+    <item>
+      <title>Windows10のクリップボード履歴機能</title>
       <link>https://yaasita.github.io/2019/03/10/clipboard/</link>
       <pubDate>Sun, 10 Mar 2019 22:47:52 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2019/03/10/clipboard/</guid>
       <description>Windows10に標準でクリップボード履歴機能が付いたらしい
  https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html
-  Windows キー + Vで使えるようになる</description>
+  Windows キー + Vで使えるようになる
+cliborの方が使いやすそうな気がするけど、しばらくこっち使ってみる</description>
     </item>
     
     <item>
@@ -28,7 +48,8 @@
       <guid>https://yaasita.github.io/2019/02/28/alwaysonssl/</guid>
       <description>無料のSSL証明書AlwaysOnSSLがセキュリティ問題を指摘されてシャットダウンしたぽい
 AlwaysOnSSL web security issues
-S/MIME手に入るので良かったんだけどなぁ・・・</description>
+S/MIME手に入るので良かったんだけどなぁ・・・
+前回</description>
     </item>
     
     <item>
@@ -294,19 +315,6 @@ openssl verify -trusted /etc/ssl/certs/AddTrust_External_Root.pem \ -untrusted c
       <description>これでも良いけど
 { my $count; sub func { return ++$count; } }  最近ならこうstate使って
 use feature qw(:5.10); sub func { state $count; return ++$count; }  ただstateって配列とかには使えない</description>
-    </item>
-    
-    <item>
-      <title>ubuntu18.04でDKIM設定</title>
-      <link>https://yaasita.github.io/2018/08/18/dkim/</link>
-      <pubDate>Sat, 18 Aug 2018 17:40:23 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/08/18/dkim/</guid>
-      <description>インストール apt install opendkim opendkim-tools  opendkim設定 mkdir /etc/postfix/dkim/ opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail # -d ドメイン # -s セレクタ chgrp opendkim /etc/postfix/dkim/* chmod g+r /etc/postfix/dkim/*  /etc/opendkim.conf
-Syslog yes LogWhy Yes UMask 007 Canonicalization relaxed/relaxed Mode sv Socket inet:8891@localhost PidFile /var/run/opendkim/opendkim.pid OversignHeaders From TrustAnchorFile /usr/share/dns/root.key UserID opendkim KeyTable file:/etc/postfix/dkim/keytable SigningTable file:/etc/postfix/dkim/signingtable  /etc/postfix/dkim/keytable
-mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private  /etc/postfix/dkim/signingtable
-example.net mail._domainkey.example.net  反映
-systemctl restart opendkim.service  postfix設定 以下追記</description>
     </item>
     
   </channel>

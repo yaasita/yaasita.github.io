@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="＠wikiのデータバックアップをperlで自動化してみる" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2008/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>＠wikiのデータバックアップをperlで自動化してみる | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    まず、ブラウザから保存までの過程を行い、パケットをキャプチャします。<br />今回、対象とするサイトは<a href="http://www34.atwiki.jp/_mng/backup2.php">こちら</a>です。キャプチャはWiresharkなどでも良いですが、今回はTCPのフローまで見る必要はありません。HTTPのリクエストヘッダさえ分かれば大丈夫なので、<a href="https://addons.mozilla.org/ja/firefox/addon/3829">Live HTTP Headers</a>などで見たほうが便利です。（このソフトを使えばHTTPリクエストをGUI上で自由に変更できます。どのヘッダが必要か不要かも分かるので便利です）で、キャプチャしたものが以下のものです↓<br />Content-Length以下にはwikiidとpassというパスワードを送っています。submitのURLエンコードは「ダウンロード」という文字列を表しています。<br />ちなみにwikiidの項とpassの項とCookieは適当です。<br /><br /><br /><blockquote><span style="font-family: times new roman;"><br />  POST /_mng/backup.php HTTP/1.1<br />  Host: www34.atwiki.jp<br />  User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; ja; rv:1.9) Gecko/2008052906 Firefox/3.0<br />  Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8<br />  Accept-Language: ja,en-us;q=0.7,en;q=0.3<br />  Accept-Encoding: gzip,deflate<br />  Accept-Charset: Shift_JIS,utf-8;q=0.7,*;q=0.7<br />  Keep-Alive: 300<br />  Connection: keep-alive<br />  Referer: http://www34.atwiki.jp/_mng/backup2.php<br />  Cookie: PHPSESSID=5684723debae48752efea5555565acdd<br />  Content-Type: application/x-www-form-urlencoded<br />  Content-Length: 93<br /><br />  wikiid=***********&amp;amp;pass=*******&amp;amp;submit=%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89<br />  </span><br /></blockquote><br /><br /><br />次にLive HTTP Headersのリプレイ機能を使って必要なヘッダが何かを判断します。まずCookieが必須かどうかを調べる必要があります。なぜならCookieが必要だった場合はCookie取得の処理が追加されるからです。いらなそうなヘッダを削除→リプレイで目的の結果になるかを確認　を繰り返してください。で、調べた結果、不要だということが分かりました。つまりPerlスクリプトではCookieヘッダは発行しません。ちなみにこの鯖はContent-Typeを指定しないとトップに戻されるようです。<br /><br /><br />-------------- wiki_back.pl ----------------------------------<br /><br />#!/usr/bin/perl<br />use Net::HTTP;<br /><br />### Initial Setting ###########################<br /><br />$server    ="www34.atwiki.jp";<br /><br />###############################################<br /><br /><br />$header{'Host'}       = "$server";<br />$header{'User-Agent'} = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; ja; rv:1.9) Gecko/2008052906 Firefox/3.0';<br />$header{'Accept'} = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8';<br />$header{'Accept-Language'} = 'ja,en-us;q=0.7,en;q=0.3';<br />$header{'Accept-Encoding'} = 'gzip,deflate';<br />$header{'Referer'}    = 'http://www34.atwiki.jp/_mng/backup2.php';<br />$header{'Content-Type'}    = 'application/x-www-form-urlencoded';<br />$content = 'wikiid=***********&amp;pass=*******&amp;submit=%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89';<br /><br />$s = Net::HTTP->new(Host => "$server") || die $@;<br />$s->max_line_length(0);<br />$s->keep_alive(300);<br /><br />$s->write_request( POST => '/_mng/backup.php' , %header , $content );<br /><br /><br />($code, $mess, %h) = $s->read_response_headers;<br />unless($code eq "200"){<br /> die "erorr!!";<br />}<br /><br />open (FH,">back.zip") or die $!;<br />binmode FH;<br /><br />while (1) {<br /> my $buf;<br /> my $n = $s->read_entity_body($buf, 1024);<br /> die "read failed: $!" unless defined $n;<br /> last unless $n;<br /> print FH $buf;<br />}<br /><br />close FH;<br /><br /><br />print "\n$code   $mess\n";<br />foreach $key(keys %h){<br /><br /> print $key,"  ";<br /> print $h{$key},"\n";<br /><br />}<br /><br /><br />-------------- wiki_back.pl ----------------------------------<br /><br /><br /><br /><span style="color:red;"><br />※注意<br />Windows環境下ではファイルをopenした後に必ずファイルをバイナリモードにして下さい。<br />バイナリモードの指定は<br />binmode FH;<br />と引数にファイルハンドルを指定します。これを行わないと0D(CR)の後に0A(LF)が追加されてしまいます。<br />UNIX環境下ではこの指定は不要です。<br /></span><br /><br /><br />ちなみに鯖からのレスポンスヘッダ内でContent-dispositionというヘッダがあります。このスクリプト内ではback.zipという名前でファイルを作成していますが、普通ブラウザではこの項を見てファイル名を決定します。↓はhoge.zipの例<br />Content-disposition  attachment; filename=hoge.zip
+    
+
+まず、ブラウザから保存までの過程を行い、パケットをキャプチャします。<br />今回、対象とするサイトは<a href="http://www34.atwiki.jp/_mng/backup2.php">こちら</a>です。キャプチャはWiresharkなどでも良いですが、今回はTCPのフローまで見る必要はありません。HTTPのリクエストヘッダさえ分かれば大丈夫なので、<a href="https://addons.mozilla.org/ja/firefox/addon/3829">Live HTTP Headers</a>などで見たほうが便利です。（このソフトを使えばHTTPリクエストをGUI上で自由に変更できます。どのヘッダが必要か不要かも分かるので便利です）で、キャプチャしたものが以下のものです↓<br />Content-Length以下にはwikiidとpassというパスワードを送っています。submitのURLエンコードは「ダウンロード」という文字列を表しています。<br />ちなみにwikiidの項とpassの項とCookieは適当です。<br /><br /><br /><blockquote><span style="font-family: times new roman;"><br />  POST /_mng/backup.php HTTP/1.1<br />  Host: www34.atwiki.jp<br />  User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; ja; rv:1.9) Gecko/2008052906 Firefox/3.0<br />  Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8<br />  Accept-Language: ja,en-us;q=0.7,en;q=0.3<br />  Accept-Encoding: gzip,deflate<br />  Accept-Charset: Shift_JIS,utf-8;q=0.7,*;q=0.7<br />  Keep-Alive: 300<br />  Connection: keep-alive<br />  Referer: http://www34.atwiki.jp/_mng/backup2.php<br />  Cookie: PHPSESSID=5684723debae48752efea5555565acdd<br />  Content-Type: application/x-www-form-urlencoded<br />  Content-Length: 93<br /><br />  wikiid=***********&amp;amp;pass=*******&amp;amp;submit=%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89<br />  </span><br /></blockquote><br /><br /><br />次にLive HTTP Headersのリプレイ機能を使って必要なヘッダが何かを判断します。まずCookieが必須かどうかを調べる必要があります。なぜならCookieが必要だった場合はCookie取得の処理が追加されるからです。いらなそうなヘッダを削除→リプレイで目的の結果になるかを確認　を繰り返してください。で、調べた結果、不要だということが分かりました。つまりPerlスクリプトではCookieヘッダは発行しません。ちなみにこの鯖はContent-Typeを指定しないとトップに戻されるようです。<br /><br /><br />-------------- wiki_back.pl ----------------------------------<br /><br />#!/usr/bin/perl<br />use Net::HTTP;<br /><br />### Initial Setting ###########################<br /><br />$server    ="www34.atwiki.jp";<br /><br />###############################################<br /><br /><br />$header{'Host'}       = "$server";<br />$header{'User-Agent'} = 'Mozilla/5.0 (Windows; U; Windows NT 5.1; ja; rv:1.9) Gecko/2008052906 Firefox/3.0';<br />$header{'Accept'} = 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8';<br />$header{'Accept-Language'} = 'ja,en-us;q=0.7,en;q=0.3';<br />$header{'Accept-Encoding'} = 'gzip,deflate';<br />$header{'Referer'}    = 'http://www34.atwiki.jp/_mng/backup2.php';<br />$header{'Content-Type'}    = 'application/x-www-form-urlencoded';<br />$content = 'wikiid=***********&amp;pass=*******&amp;submit=%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89';<br /><br />$s = Net::HTTP->new(Host => "$server") || die $@;<br />$s->max_line_length(0);<br />$s->keep_alive(300);<br /><br />$s->write_request( POST => '/_mng/backup.php' , %header , $content );<br /><br /><br />($code, $mess, %h) = $s->read_response_headers;<br />unless($code eq "200"){<br /> die "erorr!!";<br />}<br /><br />open (FH,">back.zip") or die $!;<br />binmode FH;<br /><br />while (1) {<br /> my $buf;<br /> my $n = $s->read_entity_body($buf, 1024);<br /> die "read failed: $!" unless defined $n;<br /> last unless $n;<br /> print FH $buf;<br />}<br /><br />close FH;<br /><br /><br />print "\n$code   $mess\n";<br />foreach $key(keys %h){<br /><br /> print $key,"  ";<br /> print $h{$key},"\n";<br /><br />}<br /><br /><br />-------------- wiki_back.pl ----------------------------------<br /><br /><br /><br /><span style="color:red;"><br />※注意<br />Windows環境下ではファイルをopenした後に必ずファイルをバイナリモードにして下さい。<br />バイナリモードの指定は<br />binmode FH;<br />と引数にファイルハンドルを指定します。これを行わないと0D(CR)の後に0A(LF)が追加されてしまいます。<br />UNIX環境下ではこの指定は不要です。<br /></span><br /><br /><br />ちなみに鯖からのレスポンスヘッダ内でContent-dispositionというヘッダがあります。このスクリプト内ではback.zipという名前でファイルを作成していますが、普通ブラウザではこの項を見てファイル名を決定します。↓はhoge.zipの例<br />Content-disposition  attachment; filename=hoge.zip
 
 
   </div>
@@ -216,7 +225,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -283,7 +292,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="標準エラー出力のリダイレクト話" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2010/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>標準エラー出力のリダイレクト話 | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    標準エラー出力と標準出力を混ぜたいときに使う<br />この文法<br /><pre>command &amp;gt; hoge 2&amp;gt;&amp;amp;1</pre>なぜ↓の様に書いては駄目なのか解説する<br /><pre>command 2&amp;gt;&amp;amp;1 &amp;gt; hoge ←これはうまく出ない</pre><br />まず >&amp;1 の意味は標準出力の出力先を指す<br />つまり標準出力と同じ場所に出したいときにしていする<br /><br />間違った例だとなぜ標準エラー出力が標準出力に出てしまうか順番に解説<br />1.リダイレクトを指定しない場合<br />デフォルトの画面に出力される　<br /><b>標準出力先：画面<br />標準エラー出力先：画面 </b><br /><pre>command</pre><br />2.標準エラー出力先を標準出力と同じに指定<br />標準出力先は画面なのでエラー出力を同じに指定してもまた画面になる<br /><b>標準出力先：画面<br />標準エラー出力先：画面（現在の標準出力先と同じ） </b><br /><pre>command 2&amp;gt;&amp;amp;1</pre><br />3.標準出力先を指定<br />標準出力先をリダイレクトによって指定する<br /><b>標準出力先：hoge<br />標準エラー出力先：画面</b><br /><pre>command 2&amp;gt;&amp;amp;1 &amp;gt; hoge</pre><br />つまり 2&amp;gt;&amp;amp;1 という指定はその時点の標準エラー出力を参照するため、まだ標準出力先を変更していない内に変更しても意味がないということ<br /><br /><br />参考リンク<br /><a href="http://www.fireproject.jp/feature/bash/basic/redirect-pipe.html">http://www.fireproject.jp/feature/bash/basic/redirect-pipe.html</a>
+    
+
+標準エラー出力と標準出力を混ぜたいときに使う<br />この文法<br /><pre>command &amp;gt; hoge 2&amp;gt;&amp;amp;1</pre>なぜ↓の様に書いては駄目なのか解説する<br /><pre>command 2&amp;gt;&amp;amp;1 &amp;gt; hoge ←これはうまく出ない</pre><br />まず >&amp;1 の意味は標準出力の出力先を指す<br />つまり標準出力と同じ場所に出したいときにしていする<br /><br />間違った例だとなぜ標準エラー出力が標準出力に出てしまうか順番に解説<br />1.リダイレクトを指定しない場合<br />デフォルトの画面に出力される　<br /><b>標準出力先：画面<br />標準エラー出力先：画面 </b><br /><pre>command</pre><br />2.標準エラー出力先を標準出力と同じに指定<br />標準出力先は画面なのでエラー出力を同じに指定してもまた画面になる<br /><b>標準出力先：画面<br />標準エラー出力先：画面（現在の標準出力先と同じ） </b><br /><pre>command 2&amp;gt;&amp;amp;1</pre><br />3.標準出力先を指定<br />標準出力先をリダイレクトによって指定する<br /><b>標準出力先：hoge<br />標準エラー出力先：画面</b><br /><pre>command 2&amp;gt;&amp;amp;1 &amp;gt; hoge</pre><br />つまり 2&amp;gt;&amp;amp;1 という指定はその時点の標準エラー出力を参照するため、まだ標準出力先を変更していない内に変更しても意味がないということ<br /><br /><br />参考リンク<br /><a href="http://www.fireproject.jp/feature/bash/basic/redirect-pipe.html">http://www.fireproject.jp/feature/bash/basic/redirect-pipe.html</a>
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="init.d/とか各ランレベルごとの起動スクリプトについて" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2010/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>init.d/とか各ランレベルごとの起動スクリプトについて | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    <a href="http://rdt17.blogspot.com/2010/04/rep22.html">前回</a>rep2の話でスタートアップとシャットダウン時に行うスクリプトについて書いた<br />今回は/etc/init.d/rcを使わずにやる（正式な？）方法で起動時、終了時のスクリプトを実行してみる<br /><br />まず、Linuxは/etc/inittabの定義に従って、/etc/init.d/rcをランレベルを引数にして実行する。<br />その後、/etc/rc$runlevel.dの中にあるディレクトリを順番に実行する。$runlevelは0～6の数値<br />（たとえばrc1.d,rc2.d,rc3.d,rc4.d,rc5.d,rc6.d）<br />/etc/init.d/rcの中を読めば分かるが、大まかな挙動は以下の通り。<br /><br />1.現在のランレベルと前回のランレベルを取得する。<br />2.現在のランレベルに対応するディレクトリのKで始まるスクリプトを探し、前回のランレベルで実行されているなら（頭文字がSで始まるスクリプトが存在しているのなら）それを止める。<br />3.次に、Sで始まるディレクトリを探し、前回のランレベルで起動していないと判明したらstart、もしくはstopをかける。<br /><br />ちなみに0,6はstopを引数にしてSから始まるスクリプトを順次実行する。<br />実行する順番はSもしくはKから始まる次の2桁の数値の若い順。<br />SとKではKが最初に実行される。<br /><br />前回のスクリプトをこの方法で実現するなら<br />下記のようなスクリプトを用意すればOK<br /><pre>init.d/my_script<br />  rc0.d/K01my_script@<br />  rc2.d/S99my_script@<br />  rc6.d/K01my_script@<br /><br /></pre>my_scriptの中身は↓<br /><pre>#! /bin/sh<br />### BEGIN INIT INFO<br />#<br /># Default-Start:     2<br /># Default-Stop:      0 6<br /># Short-Description: rep2<br />### END INIT INFO<br />#<br /><br />PATH=/bin:/usr/bin:/sbin:/usr/sbin<br /><br />case "$1" in<br />  start)<br />        # rep2 HDD -&amp;gt; memory<br />        mkdir /dev/shm/rep2mem<br />        rsync -av --delete /var/www/rep2mem_bk/ /dev/shm/rep2mem/<br />    ;;<br />  restart|force-reload)<br />        # nothing to do<br />    :<br />    ;;<br />  stop)<br />        #rep2 memory -&amp;gt; HDD<br />        rsync -av --delete /dev/shm/rep2mem/ /var/www/rep2mem_bk/<br />    ;;<br />  *)<br />    echo "Usage: /etc/init.d/my_script {start|stop}"<br />    exit 2<br />    ;;<br />esac<br /><br />exit 0<br /></pre>参考リンク<br /><a href="http://d.hatena.ne.jp/Naruhodius/20100923/1285247505">http://d.hatena.ne.jp/Naruhodius/20100923/1285247505</a><br /><a href="http://www.fulldigit.net/content/view/91/17/">http://www.fulldigit.net/content/view/91/17/</a><br />cronで@rebootっていうのも書けたりするらしい
+    
+
+<a href="http://rdt17.blogspot.com/2010/04/rep22.html">前回</a>rep2の話でスタートアップとシャットダウン時に行うスクリプトについて書いた<br />今回は/etc/init.d/rcを使わずにやる（正式な？）方法で起動時、終了時のスクリプトを実行してみる<br /><br />まず、Linuxは/etc/inittabの定義に従って、/etc/init.d/rcをランレベルを引数にして実行する。<br />その後、/etc/rc$runlevel.dの中にあるディレクトリを順番に実行する。$runlevelは0～6の数値<br />（たとえばrc1.d,rc2.d,rc3.d,rc4.d,rc5.d,rc6.d）<br />/etc/init.d/rcの中を読めば分かるが、大まかな挙動は以下の通り。<br /><br />1.現在のランレベルと前回のランレベルを取得する。<br />2.現在のランレベルに対応するディレクトリのKで始まるスクリプトを探し、前回のランレベルで実行されているなら（頭文字がSで始まるスクリプトが存在しているのなら）それを止める。<br />3.次に、Sで始まるディレクトリを探し、前回のランレベルで起動していないと判明したらstart、もしくはstopをかける。<br /><br />ちなみに0,6はstopを引数にしてSから始まるスクリプトを順次実行する。<br />実行する順番はSもしくはKから始まる次の2桁の数値の若い順。<br />SとKではKが最初に実行される。<br /><br />前回のスクリプトをこの方法で実現するなら<br />下記のようなスクリプトを用意すればOK<br /><pre>init.d/my_script<br />  rc0.d/K01my_script@<br />  rc2.d/S99my_script@<br />  rc6.d/K01my_script@<br /><br /></pre>my_scriptの中身は↓<br /><pre>#! /bin/sh<br />### BEGIN INIT INFO<br />#<br /># Default-Start:     2<br /># Default-Stop:      0 6<br /># Short-Description: rep2<br />### END INIT INFO<br />#<br /><br />PATH=/bin:/usr/bin:/sbin:/usr/sbin<br /><br />case "$1" in<br />  start)<br />        # rep2 HDD -&amp;gt; memory<br />        mkdir /dev/shm/rep2mem<br />        rsync -av --delete /var/www/rep2mem_bk/ /dev/shm/rep2mem/<br />    ;;<br />  restart|force-reload)<br />        # nothing to do<br />    :<br />    ;;<br />  stop)<br />        #rep2 memory -&amp;gt; HDD<br />        rsync -av --delete /dev/shm/rep2mem/ /var/www/rep2mem_bk/<br />    ;;<br />  *)<br />    echo "Usage: /etc/init.d/my_script {start|stop}"<br />    exit 2<br />    ;;<br />esac<br /><br />exit 0<br /></pre>参考リンク<br /><a href="http://d.hatena.ne.jp/Naruhodius/20100923/1285247505">http://d.hatena.ne.jp/Naruhodius/20100923/1285247505</a><br /><a href="http://www.fulldigit.net/content/view/91/17/">http://www.fulldigit.net/content/view/91/17/</a><br />cronで@rebootっていうのも書けたりするらしい
 
 
   </div>
@@ -212,7 +221,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -279,7 +288,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

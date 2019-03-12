@@ -285,8 +285,7 @@ rm -rf ~/.local  多分、gnome関連パッケージのせい</description>
       <pubDate>Thu, 03 Jul 2014 23:54:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2014/07/03/unattended-upgrades/</guid>
-      <description>apt-get install unattended-upgrades
-/etc/apt/apt.conf.d/50unattended-upgrades
+      <description>apt-get install unattended-upgrades  /etc/apt/apt.conf.d/50unattended-upgrades
 Unattended-Upgrade::Origins-Pattern { &amp;quot;o=Debian,n=jessie&amp;quot;; &amp;quot;o=Debian,n=jessie-updates&amp;quot;; &amp;quot;o=Debian,n=jessie-proposed-updates&amp;quot;; &amp;quot;o=Debian,n=jessie,l=Debian-Security&amp;quot;; &amp;quot;origin=Debian,archive=${distro_codename},label=Debian-Security&amp;quot;; }; Unattended-Upgrade::Package-Blacklist { };  /etc/apt/apt.conf.d/10periodicにAPT::Periodic::Unattended-Upgrade &amp;quot;1&amp;quot;;を追加
 APT::Periodic::Update-Package-Lists &amp;quot;1&amp;quot;; APT::Periodic::Unattended-Upgrade &amp;quot;1&amp;quot;; APT::Periodic::Download-Upgradeable-Packages &amp;quot;0&amp;quot;; APT::Periodic::AutocleanInterval &amp;quot;0&amp;quot;; APT::Periodic::RandomSleep &amp;quot;0&amp;quot;;  再起動をしなきゃいけないアップデートは以下を有効にするらしい
 再起動が必要なら/var/run/reboot-requiredが作られるのか

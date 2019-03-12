@@ -17,7 +17,8 @@
       <guid>https://yaasita.github.io/2019/02/28/alwaysonssl/</guid>
       <description>無料のSSL証明書AlwaysOnSSLがセキュリティ問題を指摘されてシャットダウンしたぽい
 AlwaysOnSSL web security issues
-S/MIME手に入るので良かったんだけどなぁ・・・</description>
+S/MIME手に入るので良かったんだけどなぁ・・・
+前回</description>
     </item>
     
     <item>
@@ -145,7 +146,9 @@ systemctl restart opendkim.service  postfix設定 以下追記</description>
       <guid>https://yaasita.github.io/2018/08/01/alwaysonssl-breaking/</guid>
       <description>S/MIMEもSSL証明書も取れない
 (´；ω；｀)ﾌﾞﾜｯ
-トップページも繋がらないしもう駄目か・・・</description>
+トップページも繋がらないしもう駄目か・・・
+前回
+続き</description>
     </item>
     
     <item>

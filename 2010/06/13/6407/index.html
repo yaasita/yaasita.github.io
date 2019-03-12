@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="C/MigemoをMSVC 2010でコンパイルしてみる" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2010/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>C/MigemoをMSVC 2010でコンパイルしてみる | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    vimにインストールするためMSVC 2010でコンパイルしてみた<br />まずは↓からMicrosoft Visual Studio Express C++をダウンロード&amp;amp;インストール<br /><a href="http://www.microsoft.com/japan/msdn/vstudio/express/">http://www.microsoft.com/japan/msdn/vstudio/express/</a><br />（ちなみにインストールするとメイリオフォントもインストールされる Firefoxとかだと文字がにじむサイトとかでるかも・・・）<br /><br />そんで<a href="http://www.kaoriya.net/#CMIGEMO">kaoriyaさんのHP</a>から「ソースコード 1.3(予定) 開発版」をダウンロード解凍して cmigemo-1.3c\compile\vs2003のCMigemo.slnをMSVS 2010で開く→変換ウィザードでプロジェクトを変換<br />プロジェクトを開いたらReleaseに変更<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/_51uwrZcw3_U/TBOu6Dls8hI/AAAAAAAAAPQ/995H9VvMQs0/s1600/project2.PNG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/_51uwrZcw3_U/TBOu6Dls8hI/AAAAAAAAAPQ/995H9VvMQs0/s320/project2.PNG" /></a></div><br /><br />そんでCMigemoを右クリック→リビルドすると cannot open include file 'afxres.h'というエラーが出るので<a href="http://rubyist.g.hatena.ne.jp/hatecha/20090329/p1">こんな感じ</a>で直す<br /><br /><blockquote>修正前 <br />#include "afxres.h"<br />修正後  <br />#include <windows.h><br />#define IDC_STATIC -1<br /></blockquote>あとはvs2003\CMigemo\Release\CMigemo.exeとvs2003\MigemoDLL\Release\migemo.dllを保存してvimにインストール<br /><br />辞書ファイルはCygwinで作成するかkaoriyaさんの「バイナリ(DLL) 1.2 リリース版 for Windows 」をダウンロードしてもおｋ<br /><br />ちなみにmigemo.vimは1.2版のを使った方が調子が良かった
+    
+
+vimにインストールするためMSVC 2010でコンパイルしてみた<br />まずは↓からMicrosoft Visual Studio Express C++をダウンロード&amp;amp;インストール<br /><a href="http://www.microsoft.com/japan/msdn/vstudio/express/">http://www.microsoft.com/japan/msdn/vstudio/express/</a><br />（ちなみにインストールするとメイリオフォントもインストールされる Firefoxとかだと文字がにじむサイトとかでるかも・・・）<br /><br />そんで<a href="http://www.kaoriya.net/#CMIGEMO">kaoriyaさんのHP</a>から「ソースコード 1.3(予定) 開発版」をダウンロード解凍して cmigemo-1.3c\compile\vs2003のCMigemo.slnをMSVS 2010で開く→変換ウィザードでプロジェクトを変換<br />プロジェクトを開いたらReleaseに変更<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/_51uwrZcw3_U/TBOu6Dls8hI/AAAAAAAAAPQ/995H9VvMQs0/s1600/project2.PNG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/_51uwrZcw3_U/TBOu6Dls8hI/AAAAAAAAAPQ/995H9VvMQs0/s320/project2.PNG" /></a></div><br /><br />そんでCMigemoを右クリック→リビルドすると cannot open include file 'afxres.h'というエラーが出るので<a href="http://rubyist.g.hatena.ne.jp/hatecha/20090329/p1">こんな感じ</a>で直す<br /><br /><blockquote>修正前 <br />#include "afxres.h"<br />修正後  <br />#include <windows.h><br />#define IDC_STATIC -1<br /></blockquote>あとはvs2003\CMigemo\Release\CMigemo.exeとvs2003\MigemoDLL\Release\migemo.dllを保存してvimにインストール<br /><br />辞書ファイルはCygwinで作成するかkaoriyaさんの「バイナリ(DLL) 1.2 リリース版 for Windows 」をダウンロードしてもおｋ<br /><br />ちなみにmigemo.vimは1.2版のを使った方が調子が良かった
 
 
   </div>
@@ -212,7 +221,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -279,7 +288,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

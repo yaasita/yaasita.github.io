@@ -15,8 +15,7 @@
       <pubDate>Sun, 15 Dec 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/12/15/307/</guid>
-      <description>
-knife configure client /path/to/tempdir
+      <description> knife configure client /path/to/tempdir
 できたファイルをnodeに置く
 /etc/chef/client.rb
 /etc/chef/validation.pem
@@ -32,7 +31,7 @@ http://hivecolor.com/id/46 </description>
       <pubDate>Sun, 15 Dec 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/12/15/328/</guid>
-      <description>maildirsizeをMaildirに置くとクォータの設定ができる
+      <description> maildirsizeをMaildirに置くとクォータの設定ができる
 dovecotとかmaildropが対応している
 ~/Maildir/maildirsize
 8000C
@@ -46,7 +45,7 @@ dovecotとかmaildropが対応している
       <pubDate>Sat, 07 Dec 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/12/07/349/</guid>
-      <description>SPICEクライアントをダウンロード
+      <description> SPICEクライアントをダウンロード
 http://www.spice-space.org/download.html
 virt-viewer-x64-0.5.7.msiを使いました
 んでインストール
@@ -63,7 +62,7 @@ http://www.server-world.info/query?os=Fedora_18&amp;amp;p=kvm&amp;amp;f=8 </desc
       <pubDate>Sun, 10 Nov 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/11/10/391/</guid>
-      <description>ダウンロードは公式サイトから
+      <description> ダウンロードは公式サイトから
 file sp-sc-auth
 readelf -h sp-sc-auth
 みたいにするとELF32の実行ファイルだとわかる
@@ -87,8 +86,7 @@ https://gist.github.com/yaasita/7390590 </description>
       <pubDate>Sun, 10 Nov 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/11/10/370/</guid>
-      <description>
-日本語とか打つときに参考にする
+      <description> 日本語とか打つときに参考にする
 https://sites.google.com/site/fudist/Home/vim-nihongo-ban/vim-japanese/ime-control/xvkbd#imctrl </description>
     </item>
     
@@ -98,8 +96,7 @@ https://sites.google.com/site/fudist/Home/vim-nihongo-ban/vim-japanese/ime-contr
       <pubDate>Fri, 25 Oct 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/10/25/412/</guid>
-      <description>
-デジタルアタックマップ
+      <description> デジタルアタックマップ
 http://www.digitalattackmap.com/ </description>
     </item>
     
@@ -109,7 +106,7 @@ http://www.digitalattackmap.com/ </description>
       <pubDate>Sun, 13 Oct 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/10/13/432/</guid>
-      <description> </description>
+      <description>  </description>
     </item>
     
     <item>
@@ -118,8 +115,7 @@ http://www.digitalattackmap.com/ </description>
       <pubDate>Mon, 23 Sep 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/09/23/453/</guid>
-      <description>
-日本語版はこちら
+      <description> 日本語版はこちら
 http://cafe-capy.net/cookieclicker/
 貯蔵数が焼いた数を上回っちゃったりしてたから不正とみなされちゃったけど最終的なデータはこちら
 MS4wMzZ8fDEzNzk3OTY0MDAxNzZ8MTExMTExfDIuODQyMjMzOTk5Mzk0ODU3M2UrMjg7MjQzODM3NDc4MTg4NjU7MjkyNDsxMDsyNjE5MDI0Njc1NzszMTstMTstMTswOzA7MDswOzY1OzI0NzN8MzI5LDMzMiw1MzcwMTczODQ3MiwwOzIwMSwyMDEsMTc4MDEzMDQ4NiwwOzIwMCwyMDAsMjc0MjQ0ODIsMDsyMDMsMjAzLDk5MzA3NDM3LDA7MTY3LDE2NywzMjk4NDc2NzIsMDsxMDYsMTA2LDM5OTE3NjQyNSwwOzEwNywxMDcsMTI2MzM4Njc5NywwOzExOSwxMTksMTY1NTgwODE5NTksMDsxMjUsMTI1LDEzNzU4NjIxMzM3NSwwOzEzNiwxMzYsMTA4OTYwMzI2OTkwOSwwO3w0NTAzNTk5NjI3MzcwNDk1OzQ1MDM1OTk2MjczNzA0OTU7MjI1MTgwMTk2MTE2ODUxMTs0NTAzNTczNzIzNDc4NTI3OzEwNDg1NzV8NDUwMjQ5ODEwMjQ3Njc5OTsxNzUxMTY1MDE2NDczNQ%3D%3D%21END%21
@@ -134,7 +130,7 @@ cookie編集時に使ったスクリプト
       <pubDate>Mon, 16 Sep 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/09/16/474/</guid>
-      <description>Linuxでこんな設定した
+      <description> Linuxでこんな設定した
 ちょっとデモ用にLinuxデスクトップを見せたかったので・・・
 /etc/pam.d/common-auth
 の先頭に以下を追加
@@ -149,8 +145,7 @@ cookie編集時に使ったスクリプト
       <pubDate>Thu, 29 Aug 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/08/29/494/</guid>
-      <description>
-インストール
+      <description> インストール
 apt-get install smartmontools
 
 /etc/default/smartmontoolsの以下の行を有効にする
@@ -174,7 +169,7 @@ http://www.geocities.jp/sugachan1973/doc/funto57.html </description>
       <pubDate>Sun, 25 Aug 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/08/25/515/</guid>
-      <description>Realtekのドライバはインストールしておいたほうがいいみたい
+      <description> Realtekのドライバはインストールしておいたほうがいいみたい
 firmware-realtekってのがnon-freeにあったからaptで入る
 ethtool -i eth0
 lspci | grep Realtek
@@ -189,7 +184,7 @@ http://cskimura.blogspot.jp/2010/06/rtl81118168b-on-debian.html </description>
       <pubDate>Sun, 25 Aug 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/08/25/536/</guid>
-      <description>VLCをインストールして
+      <description> VLCをインストールして
 ↓から鍵ファイルとlibaacsを所定の場所に保存
 http://vlc-bluray.whoknowsmy.name/
 参考リンク
@@ -202,7 +197,7 @@ http://orangeprose.blog.fc2.com/blog-entry-199.html </description>
       <pubDate>Sun, 18 Aug 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/08/18/556/</guid>
-      <description>WOLの設定は以下参照
+      <description> WOLの設定は以下参照
 http://80286.blog62.fc2.com/blog-entry-37.html </description>
     </item>
     
@@ -222,7 +217,7 @@ http://www.modern.ie/ja/virtualization-tools</description>
       <pubDate>Fri, 09 Aug 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/08/09/600/</guid>
-      <description>フロップデザインフォント
+      <description> フロップデザインフォント
 http://www.flopdesign.com/freefont/flopdesignfont.html </description>
     </item>
     
@@ -232,7 +227,7 @@ http://www.flopdesign.com/freefont/flopdesignfont.html </description>
       <pubDate>Mon, 05 Aug 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/08/05/620/</guid>
-      <description>sshd_configを編集する
+      <description> sshd_configを編集する
  Match User sftpuser
 AllowTcpForwarding no
 ChrootDirectory /home/chroot
@@ -250,7 +245,7 @@ X11Forwarding no
       <pubDate>Mon, 29 Jul 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/07/29/641/</guid>
-      <description># dpkg --add-architecture amd64
+      <description> # dpkg --add-architecture amd64
  </description>
     </item>
     
@@ -270,7 +265,7 @@ https://www.bloc.io/ruby-warrior/</description>
       <pubDate>Fri, 26 Jul 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/07/26/682/</guid>
-      <description>chefもいいけどこれもよさそう
+      <description> chefもいいけどこれもよさそう
 Ansible
 http://apatheia.info/blog/2013/04/06/about-ansible/
 http://www.ansibleworks.com/ </description>

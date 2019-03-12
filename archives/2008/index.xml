@@ -50,7 +50,7 @@ iptables -F
       <pubDate>Wed, 31 Dec 2008 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2008/12/31/10607/</guid>
-      <description>http://www.dspt.net/tools/mobile_ip/ </description>
+      <description> http://www.dspt.net/tools/mobile_ip/ </description>
     </item>
     
     <item>
@@ -59,7 +59,7 @@ iptables -F
       <pubDate>Thu, 25 Dec 2008 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2008/12/25/10628/</guid>
-      <description>１．環境設定
+      <description> １．環境設定
 LAMP入れとけばおｋ
 ２．mySQLでテーブル作成
 # mysql -u root -p
@@ -93,8 +93,7 @@ Windows Media Player 11の場合
 1. Windows Media Player を起動します。
 2. 「プレイビュー」の下の▼ボタンをクリックし、「プラグイン」から「オプション」をクリックします。
 3. 左側の欄にある「バックグラウンド」をクリックします。
-4. 右側に「Windows Live Messenger ミュージック プラグイン」が表示されますので、チェックをつけます。
-5. 「OK」をクリックします。</description>
+4. 右側に「Windows Live Messenger ミュージック プラグイン」が表示されますので、チェックをつけます。</description>
     </item>
     
     <item>
@@ -103,7 +102,7 @@ Windows Media Player 11の場合
       <pubDate>Wed, 24 Dec 2008 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2008/12/24/10650/</guid>
-      <description>携帯のUserAgentを知りたいなーってときにすぐ出てこないのでメモ
+      <description> 携帯のUserAgentを知りたいなーってときにすぐ出てこないのでメモ
 KDDI-KC37 UP.Browser/6.2.0.11.1.2.2e (GUI) MMP/2.0 </description>
     </item>
     
@@ -113,7 +112,7 @@ KDDI-KC37 UP.Browser/6.2.0.11.1.2.2e (GUI) MMP/2.0 </description>
       <pubDate>Tue, 23 Dec 2008 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2008/12/23/10691/</guid>
-      <description>利息はつかないけど、全額保障されるらしい
+      <description> 利息はつかないけど、全額保障されるらしい
 ペイオフで保障されるのは1000万までだから金持ちの人はいいんじゃないかな </description>
     </item>
     
@@ -143,7 +142,7 @@ if [ -n &#34;</description>
       <pubDate>Sun, 21 Dec 2008 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2008/12/21/10732/</guid>
-      <description>やあ （´・ω・｀) ようこそ、Ubuntu8.10へ。
+      <description> やあ （´・ω・｀) ようこそ、Ubuntu8.10へ。
 うん、「また」なんだ。
 つーわけでgnump3dを入れるとなると自分でソースからビルドするか、debパッケージを探すかになります。
 http://packages.ubuntu.com/
@@ -182,7 +181,7 @@ acl Safe_ports port 21 # ftp</description>
       <pubDate>Fri, 19 Dec 2008 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2008/12/19/10793/</guid>
-      <description>man uptime | col -bfx &amp;amp;lt; uptime.txt
+      <description> man uptime | col -bfx &amp;amp;lt; uptime.txt
 こんな感じでおｋ </description>
     </item>
     
@@ -192,7 +191,7 @@ acl Safe_ports port 21 # ftp</description>
       <pubDate>Fri, 19 Dec 2008 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2008/12/19/10773/</guid>
-      <description>今までMPC使ってたけどこれもいいかもね
+      <description> 今までMPC使ってたけどこれもいいかもね
 Fittle
 まとめwiki </description>
     </item>
@@ -203,7 +202,7 @@ Fittle
       <pubDate>Sun, 14 Dec 2008 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2008/12/14/10834/</guid>
-      <description>とあるゲームをやっていたときにふと思ったのでメモ。
+      <description> とあるゲームをやっていたときにふと思ったのでメモ。
 ゲームをプレイしてある面で止める→次にブラウザ立ち上げてみる→続きからPLAYできる→Cookieを消してみる→続きから出来る
 なぜ？それはFLASHのSharedObjectというデータを読み込んでいるからなのさ
 どこに保存されているの？
@@ -222,7 +221,7 @@ http://www.gravity-works.jp/gravica/web/000077.shtml </description>
       <pubDate>Sun, 14 Dec 2008 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2008/12/14/10814/</guid>
-      <description>・朝三暮四
+      <description> ・朝三暮四
 目先のことしか見えてないこと
 ・八面六臂
 なんかすごい活躍
@@ -277,7 +276,7 @@ echo &#34;やっぱりtcsh ${#array} 人乗っても大丈夫&#34;
 流石perlだどんな配列でもなんとも無いぜ！
 
 #!/usr/bin/perl
-open (FH,&#34;list.txt&#34;);</description>
+open (FH,&#34;</description>
     </item>
     
     <item>
@@ -286,7 +285,7 @@ open (FH,&#34;list.txt&#34;);</description>
       <pubDate>Sat, 06 Dec 2008 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2008/12/06/10876/</guid>
-      <description>backwordはなんかホップアップで単語の意味を表示してくれる拡張みたいです。
+      <description> backwordはなんかホップアップで単語の意味を表示してくれる拡張みたいです。
 Googleツールバーにも同様の機能があるらしいけど分からん・・・・
 ココからインストールして
 適当に設定する。
@@ -315,7 +314,7 @@ Automatically back word and context　→　ポップアップにあらわれる
       <pubDate>Sun, 30 Nov 2008 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2008/11/30/10916/</guid>
-      <description>・使用しているバーチャルHDDは？
+      <description> ・使用しているバーチャルHDDは？
 VirtualPCコンソール→設定(T)→ハードディスクのバーチャルハードディスクファイルってのを見れば分かると思う
 ・使用してるVirtualマシンは？（その他、復元ファイルなどは？）
 \Documents and Settings\ユーザー名\Application Data\Microsoft\Virtual PC\Virtual Machines
@@ -328,7 +327,7 @@ VirtualPCコンソール→設定(T)→ハードディスクのバーチャル�
       <pubDate>Sun, 30 Nov 2008 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2008/11/30/10896/</guid>
-      <description>環境変数を列挙したページがあったようだ
+      <description> 環境変数を列挙したページがあったようだ
 cd %APPDATA%
 とかやるとアプリケーションデータに行くと思うよ
 http://www.atmarkit.co.jp/fwin2k/win2ktips/267swchos/swchos.html </description>
@@ -340,7 +339,7 @@ http://www.atmarkit.co.jp/fwin2k/win2ktips/267swchos/swchos.html </description>
       <pubDate>Fri, 28 Nov 2008 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2008/11/28/10937/</guid>
-      <description>切って進めるゲーム(splitter)
+      <description> 切って進めるゲーム(splitter)
 http://www.kongregate.com/games/EvgenyKarataev/splitter/
 ニコニコメーカー
 http://nm.dabun-doumei.com/
@@ -354,7 +353,7 @@ http://jp.youtube.com/watch?v=PHF6WKd1MyU </description>
       <pubDate>Wed, 26 Nov 2008 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2008/11/26/10958/</guid>
-      <description>結果は3000くらい
+      <description> 結果は3000くらい
 ２ｃｈのテンプレに習って報告してみる
 構成
 【 .CPU.　】 AMD Athlon 64 3200+
@@ -378,7 +377,7 @@ http://www.playonline.com/ff11/download/media/benchmark01.html </description>
       <pubDate>Sun, 26 Oct 2008 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2008/10/26/10979/</guid>
-      <description>環境はDebian etch - apache2.2を想定
+      <description> 環境はDebian etch - apache2.2を想定
 １．a2enmodで必要なモジュール読み込む
 a2enmod webdav
 a2enmod dav_fs

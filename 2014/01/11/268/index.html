@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="let&#39;s noteにacpid入れてバックライト調整" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2014/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>let&#39;s noteにacpid入れてバックライト調整 | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    <br />debian jessieでやってみた<br />使用したPCはLet's Note CF-W5<br /><br />acpi-supportインストール<br /><pre>apt-get install acpi-support<br /></pre><br /><a href="https://wiki.archlinux.org/index.php/acpid">Enabling backlight control</a>を参考にする<br /><br />/etc/acpi/bright.sh<br /><pre>#!/bin/sh<br />bl_dev=/sys/class/backlight/panasonic/brightness<br />step=1<br /><br />case $1 in<br />    -)<br />        echo $( expr `cat $bl_dev` - $step ) > $bl_dev<br />        ;;<br />    +)<br />        echo $( expr `cat $bl_dev` + $step ) > $bl_dev<br />        ;;<br />esac<br /></pre><br />/etc/acpi/events/bright_d<br /><pre>event=video/brightnessdown<br />action=/etc/acpi/bright.sh -<br /></pre><br />/etc/acpi/events/bright_u<br /><pre>event=video/brightnessup<br />action=/etc/acpi/bright.sh +<br /></pre><br /><br />参考リンク<br /><a href="https://wiki.archlinux.org/index.php/acpid">https://wiki.archlinux.org/index.php/acpid</a>
+    
+
+<br />debian jessieでやってみた<br />使用したPCはLet's Note CF-W5<br /><br />acpi-supportインストール<br /><pre>apt-get install acpi-support<br /></pre><br /><a href="https://wiki.archlinux.org/index.php/acpid">Enabling backlight control</a>を参考にする<br /><br />/etc/acpi/bright.sh<br /><pre>#!/bin/sh<br />bl_dev=/sys/class/backlight/panasonic/brightness<br />step=1<br /><br />case $1 in<br />    -)<br />        echo $( expr `cat $bl_dev` - $step ) > $bl_dev<br />        ;;<br />    +)<br />        echo $( expr `cat $bl_dev` + $step ) > $bl_dev<br />        ;;<br />esac<br /></pre><br />/etc/acpi/events/bright_d<br /><pre>event=video/brightnessdown<br />action=/etc/acpi/bright.sh -<br /></pre><br />/etc/acpi/events/bright_u<br /><pre>event=video/brightnessup<br />action=/etc/acpi/bright.sh +<br /></pre><br /><br />参考リンク<br /><a href="https://wiki.archlinux.org/index.php/acpid">https://wiki.archlinux.org/index.php/acpid</a>
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="iotop日本語man" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2011/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>iotop日本語man | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    iotopを最近使ってたから日本語訳にしてみた<br />結構意訳になってる<br /><br /><br /><b>IOTOP(1)</b>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; <b> IOTOP(1)</b><br /><br /><br /><b><br /></b><br /><b>NAME</b><br />iotop - シンプルなIOモニター<br /><br /><b>SYNOPSIS</b><br />iotop [OPTIONS]<br /><br /><b>DESCRIPTION</b><br />iotopはLinuxカーネルからI/O使用情報を取得し(カーネル2.6.20以上を必要とします)、<br />プロセス・スレッド毎にI/O使用状況を表示します。<br /><br />カーネルのビルドオプションに以下を含める必要があります。<br />CONFIG_TASK_DELAY_ACCT, CONFIG_TASK_IO_ACCOUNTING, CONFIG_TASKSTATS and  CONFIG_VM_EVENT_COUNTERS<br /><br />iotopはI/Oのプロセス/スレッドごとのI/O帯域を表示間隔毎に表示します。<br />また、プロセスがI/Oの処理によって待たせれている時間の割合も表示します。<br />各プロセスについてI/Oの優先度(クラス/レベル)が表示されます。<br />加えて、表示間隔の間に読み書きされた総I/O帯域は一番上に表示されます。<br /><br />左矢印、右矢印キーを使うとソート項目を変更できます。rでソート順を逆転できます。<br />oで--onlyオプションの有効、無効を切り替えられます。(IOを使用しているプロセスだけを表示するかどうか)<br />pで--processesオプションの有効、無効を切り替えられます。(プロセスのみを表示してスレッドは表示しないかどうか)<br />aで--accumulatedオプションの有効、無効を切り替えられます。(IOの累積値表示に切り替えるかどうか)<br />qで終了します。<br />iでスレッド/プロセスの優先度を変更できます。<br />その他のキーを押すと最新の情報に更新できます。<br /><br /><b>OPTIONS</b><br />--version<br />バージョンを表示し終了します。<br /><br />-h, --help<br />使用方法を表示し、終了します。<br /><br />-o, --only<br />実際にI/Oを使用しているプロセス/スレッドのみを表示します。これはoを押すことで<br />表示中にも切り替えることができます。<br /><br />-b, --batch<br />対話的な表示でなくなります。(バッチモード)これは状態を記録するときに便利です。<br /><br />-n NUM, --iter=NUM<br />自動的に終了する時間を指定します。(デフォルトでは自動的に終了しません。)<br />これはバッチモードで役に立ちます。<br /><br />-d SEC, --delay=SEC<br />表示間隔を設定します。(デフォルトは1秒)　1.1秒のような少数も指定可能です。<br /><br />-p PID, --pid=PID<br />表示するプロセスIDを指定します。(デフォルトは全て表示します)<br /><br />-u USER, --user=USER<br />表示するユーザーIDを指定します。(デフォルトは全て表示します)<br /><br />-P, --processes<br />プロセスのみ表示します。通常は全てのスレッドを表示します。<br /><br />-a, --accumulated<br />I/O帯域幅の代わりにI/Oの累積値を表示します。<br />iotopを実行してから、プロセスが使用したI/Oの量を示します。<br /><br />-k, --kilobytes<br />人間が読みやすい表記の変わりにキロバイト表示にします。<br />このオプションはバッチモードの出力をスクリプトが処理するときに役立ちます。<br />通常は最適な単位を選択して表示しますが、このオプションが指定されると<br />常にキロバイト表示となります。<br /><br />-t, --time<br />各出力行にタイムスタンプを加えます。(このオプションは--batchオプションを含みます)<br />タイムスタンプは行の先頭に置かれます。<br /><br />-q, --quiet<br />ヘッダ行を取り除きます。(このオプションは--batchオプションを含みます)<br />このオプションはヘッダの非表示のレベルによって最高3回まで指定できます。<br />-q     カラム行は最初に表示されるだけです<br />-qq    カラム行は出力されません<br />-qqq   I/Oの合計値も出力されません<br /><br /><b>SEE ALSO</b><br />ionice(1), top(1), vmstat(1)<br /><br /><b>AUTHOR</b><br />iotop was written by Guillaume Chazarain.<br /><br />This manual page was started by Paul Wise for  the  Debian  project<br />and is placed in the public domain.<br /><br />April 2009                        IOTOP(1)
+    
+
+iotopを最近使ってたから日本語訳にしてみた<br />結構意訳になってる<br /><br /><br /><b>IOTOP(1)</b>&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; <b> IOTOP(1)</b><br /><br /><br /><b><br /></b><br /><b>NAME</b><br />iotop - シンプルなIOモニター<br /><br /><b>SYNOPSIS</b><br />iotop [OPTIONS]<br /><br /><b>DESCRIPTION</b><br />iotopはLinuxカーネルからI/O使用情報を取得し(カーネル2.6.20以上を必要とします)、<br />プロセス・スレッド毎にI/O使用状況を表示します。<br /><br />カーネルのビルドオプションに以下を含める必要があります。<br />CONFIG_TASK_DELAY_ACCT, CONFIG_TASK_IO_ACCOUNTING, CONFIG_TASKSTATS and  CONFIG_VM_EVENT_COUNTERS<br /><br />iotopはI/Oのプロセス/スレッドごとのI/O帯域を表示間隔毎に表示します。<br />また、プロセスがI/Oの処理によって待たせれている時間の割合も表示します。<br />各プロセスについてI/Oの優先度(クラス/レベル)が表示されます。<br />加えて、表示間隔の間に読み書きされた総I/O帯域は一番上に表示されます。<br /><br />左矢印、右矢印キーを使うとソート項目を変更できます。rでソート順を逆転できます。<br />oで--onlyオプションの有効、無効を切り替えられます。(IOを使用しているプロセスだけを表示するかどうか)<br />pで--processesオプションの有効、無効を切り替えられます。(プロセスのみを表示してスレッドは表示しないかどうか)<br />aで--accumulatedオプションの有効、無効を切り替えられます。(IOの累積値表示に切り替えるかどうか)<br />qで終了します。<br />iでスレッド/プロセスの優先度を変更できます。<br />その他のキーを押すと最新の情報に更新できます。<br /><br /><b>OPTIONS</b><br />--version<br />バージョンを表示し終了します。<br /><br />-h, --help<br />使用方法を表示し、終了します。<br /><br />-o, --only<br />実際にI/Oを使用しているプロセス/スレッドのみを表示します。これはoを押すことで<br />表示中にも切り替えることができます。<br /><br />-b, --batch<br />対話的な表示でなくなります。(バッチモード)これは状態を記録するときに便利です。<br /><br />-n NUM, --iter=NUM<br />自動的に終了する時間を指定します。(デフォルトでは自動的に終了しません。)<br />これはバッチモードで役に立ちます。<br /><br />-d SEC, --delay=SEC<br />表示間隔を設定します。(デフォルトは1秒)　1.1秒のような少数も指定可能です。<br /><br />-p PID, --pid=PID<br />表示するプロセスIDを指定します。(デフォルトは全て表示します)<br /><br />-u USER, --user=USER<br />表示するユーザーIDを指定します。(デフォルトは全て表示します)<br /><br />-P, --processes<br />プロセスのみ表示します。通常は全てのスレッドを表示します。<br /><br />-a, --accumulated<br />I/O帯域幅の代わりにI/Oの累積値を表示します。<br />iotopを実行してから、プロセスが使用したI/Oの量を示します。<br /><br />-k, --kilobytes<br />人間が読みやすい表記の変わりにキロバイト表示にします。<br />このオプションはバッチモードの出力をスクリプトが処理するときに役立ちます。<br />通常は最適な単位を選択して表示しますが、このオプションが指定されると<br />常にキロバイト表示となります。<br /><br />-t, --time<br />各出力行にタイムスタンプを加えます。(このオプションは--batchオプションを含みます)<br />タイムスタンプは行の先頭に置かれます。<br /><br />-q, --quiet<br />ヘッダ行を取り除きます。(このオプションは--batchオプションを含みます)<br />このオプションはヘッダの非表示のレベルによって最高3回まで指定できます。<br />-q     カラム行は最初に表示されるだけです<br />-qq    カラム行は出力されません<br />-qqq   I/Oの合計値も出力されません<br /><br /><b>SEE ALSO</b><br />ionice(1), top(1), vmstat(1)<br /><br /><b>AUTHOR</b><br />iotop was written by Guillaume Chazarain.<br /><br />This manual page was started by Paul Wise for  the  Debian  project<br />and is placed in the public domain.<br /><br />April 2009                        IOTOP(1)
 
 
   </div>
@@ -212,7 +221,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -279,7 +288,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

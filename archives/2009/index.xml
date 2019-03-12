@@ -15,7 +15,7 @@
       <pubDate>Sat, 26 Dec 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/12/26/7511/</guid>
-      <description>リンクメモ
+      <description> リンクメモ
 日本語チュートリアル
 GUIツールのTortoiseHg
 TortoiseHgの日本語Wiki
@@ -28,7 +28,7 @@ TortoiseHgの日本語Wiki
       <pubDate>Thu, 24 Dec 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/12/24/7551/</guid>
-      <description>http://campaign.live.jp/bing/
+      <description> http://campaign.live.jp/bing/
 検索しまくるとなんか壁紙とかもらえるらしい </description>
     </item>
     
@@ -38,7 +38,7 @@ TortoiseHgの日本語Wiki
       <pubDate>Thu, 24 Dec 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/12/24/7531/</guid>
-      <description>/etc/network/interfacesを編集する
+      <description> /etc/network/interfacesを編集する
 下みたいになっているのを
 # The loopback network interface
 auto lo
@@ -74,7 +74,7 @@ http://asaasa.tk/wiki/?Debian%2FSettings%2FStaticIP </description>
       <pubDate>Wed, 23 Dec 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/12/23/7572/</guid>
-      <description>SCMPXです </description>
+      <description> SCMPXです </description>
     </item>
     
     <item>
@@ -83,7 +83,7 @@ http://asaasa.tk/wiki/?Debian%2FSettings%2FStaticIP </description>
       <pubDate>Wed, 23 Dec 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/12/23/7592/</guid>
-      <description>免責事項とかCopyrightとかを表示しないようにするには
+      <description> 免責事項とかCopyrightとかを表示しないようにするには
 ~/.screenrcに
 startup_message offと書いておく </description>
     </item>
@@ -94,7 +94,7 @@ startup_message offと書いておく </description>
       <pubDate>Sun, 20 Dec 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/12/20/7654/</guid>
-      <description>試した環境は以下の通り
+      <description> 試した環境は以下の通り
 VirtualPC 6.0.156.0
 Debian Lenny 最小のCDイメージ　バージョンは5.0.3
 ↓のサイトとかを参考にするとどうやらインストール時にパラメータを追加しないといけないらしいので
@@ -112,7 +112,7 @@ Debian Wiki </description>
       <pubDate>Sun, 20 Dec 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/12/20/7613/</guid>
-      <description>Ctrl+Sを押すと端末がロックしてしまうのが不便だと感じたら
+      <description> Ctrl+Sを押すと端末がロックしてしまうのが不便だと感じたら
 ↓を.bashrcなどに書いておく
 stty stop undef
 参考リンク
@@ -153,7 +153,7 @@ nice -n10 tmpreaper --delay=30 --mtime-dir --symlinks 7d \
 --mtime \
 PRE
 for (@fdir){
-$command.=&#34;--protect &#39;$DAT_DIR&#34;.$_.&#34;&#39; \\\n&#34;;</description>
+$command.=&#34;--protect &#39;$DAT_DIR&#34;.$_.&#34;&#39; \\\n&#34;</description>
     </item>
     
     <item>
@@ -162,7 +162,7 @@ $command.=&#34;--protect &#39;$DAT_DIR&#34;.$_.&#34;&#39; \\\n&#34;;</descriptio
       <pubDate>Sun, 13 Dec 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/12/13/7696/</guid>
-      <description>Thunderbirdの方のコレクション
+      <description> Thunderbirdの方のコレクション
 俺のアドオン（雷鳥）
 Firefoxの方のコレクション
 俺のアドオン（火狐） </description>
@@ -174,7 +174,7 @@ Firefoxの方のコレクション
       <pubDate>Sun, 13 Dec 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/12/13/7676/</guid>
-      <description>iCal天気
+      <description> iCal天気
 通常のicsの他にGoogle用とMac用も配ってる </description>
     </item>
     
@@ -204,7 +204,7 @@ if ($_conf[&#39;through_ime&#39;]) {
 $tsukin_url = P2Util::throughIme($tsukin_url);
 }
 // $ext_pre_hts[] = &#39;&amp;amp;lt;a href=&#34;&#39; . hs($tsukin_url) . &#39;&#34;&amp;amp;gt;通&amp;amp;lt;/a&amp;amp;gt;&#39;;
-$ext_pre_hts[] = &#39;&amp;amp;lt;a href=&#34;&#39; . hs($tsukin_url) .</description>
+$ext_pre_hts[] = &#39;&amp;amp;lt;a href=&#34;&#39; .</description>
     </item>
     
     <item>
@@ -213,7 +213,7 @@ $ext_pre_hts[] = &#39;&amp;amp;lt;a href=&#34;&#39; . hs($tsukin_url) .</descrip
       <pubDate>Sun, 06 Dec 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/12/06/7759/</guid>
-      <description>それぞれ~/Maildirの中のドットファイルでしたls -aしたら見つかります
+      <description> それぞれ~/Maildirの中のドットファイルでしたls -aしたら見つかります
 /Maildir/.Sent
 /Maildir/.Trash
 /Maildir/.Drafts
@@ -226,7 +226,7 @@ $ext_pre_hts[] = &#39;&amp;amp;lt;a href=&#34;&#39; . hs($tsukin_url) .</descrip
       <pubDate>Sun, 06 Dec 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/12/06/7800/</guid>
-      <description>フォルダの再帰的なコピーには
+      <description> フォルダの再帰的なコピーには
 xcopyを使いましょう
 xcopy /?で詳しくみれます
 例）E:ppmというディレクトリを再帰的に全部コピー
@@ -241,7 +241,7 @@ http://www5.ocn.ne.jp/~m-shin/windows/windows-bat-xcopy.html </description>
       <pubDate>Sun, 06 Dec 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/12/06/7780/</guid>
-      <description>ディレクトリごと再帰的に削除するには
+      <description> ディレクトリごと再帰的に削除するには
 rmdirコマンドを使います
 UNIXでいうところのrm -rみたいな
 rmdir /S /Q hogedir
@@ -282,7 +282,7 @@ None by default.</description>
       <pubDate>Sun, 06 Dec 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/12/06/7738/</guid>
-      <description>インストールはDebian Lennyならaptitudeで簡単に入る
+      <description> インストールはDebian Lennyならaptitudeで簡単に入る
 そんで使い方
 基本的な使い方とかはこことか見れば大体分かる
 Maildirを指定して
@@ -310,7 +310,7 @@ http://www.emaillab.org/mutt/whatis.html </description>
       <pubDate>Sat, 05 Dec 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/12/05/7861/</guid>
-      <description>OP25Bを実施しているISPの場合、25番ポートへの出力が制限されているからリレーしてもらうように設定する
+      <description> OP25Bを実施しているISPの場合、25番ポートへの出力が制限されているからリレーしてもらうように設定する
 /etc/postfix/main.cfを編集 (hoge.ne.jpがSMPTサーバーだとする）
 ispauthはユーザー名とパスワードを書くファイル名前はなんでもOK
 relayhost = [hoge.ne.jp]:587
@@ -349,7 +349,7 @@ tcpdump -s 1500 ip host ?.?.?.? -w out.cap
       <pubDate>Sat, 05 Dec 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/12/05/7840/</guid>
-      <description>Debian Lennyで試した。
+      <description> Debian Lennyで試した。
 Red hat系だとtmpwatchとかあるみたいだけど無いのでこれを使う
 まずはaptitudeでインストール
 インストールすると/etc/cron.daily/tmpreaperが作成される
@@ -393,7 +393,7 @@ $TMPREAPER_ADDITIONALOPTIONS \
       <pubDate>Tue, 01 Dec 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/12/01/7882/</guid>
-      <description>メールの容量を制限する（クォータの設定）するには？
+      <description> メールの容量を制限する（クォータの設定）するには？
 Plugin settingsの部分に以下を追記
 ↓がグローバルなクォータ設定（ユーザー個別に設定すればそちらが優先される）
 参考リンク→http://wiki.dovecot.org/Quota/1.0
@@ -428,7 +428,7 @@ trash = trash = /etc/dovecot/dovecot-trash.conf
       <pubDate>Mon, 30 Nov 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/11/30/7904/</guid>
-      <description>こんな感じらしい
+      <description> こんな感じらしい
 Windows NT⇒400万行
 Windows 95⇒1,500万行
 Windows XP⇒3,500万行

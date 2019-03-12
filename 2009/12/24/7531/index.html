@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="Debian でIPアドレスを固定にする" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2009/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Debian でIPアドレスを固定にする | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    /etc/network/interfacesを編集する<br />下みたいになっているのを<br /><blockquote># The loopback network interface<br />auto lo<br />iface lo inet loopback<br /><br /># The primary network interface<br />allow-hotplug eth0<br />iface eth0 inet dhcp</blockquote><br />↓の様に直す（192.168.0.11）にする場合<br /><blockquote># The loopback network interface<br />auto lo<br />iface lo inet loopback<br /><br /># The primary network interface<br />allow-hotplug eth0<br />iface eth0 inet static<br />address 192.168.0.11<br />netmask 255.255.255.0<br />gateway 192.168.0.1</blockquote><br />直したら<br />#ifdown eth0<br />#ifup eth0<br />でおｋ<br /># /etc/init.d/networking restart<br />でもいけるがその場合は↓を書いておくこと(ifup -aの対象となる)<br /><blockquote>auto eth0</blockquote><br />※VirtualPCではallow-hotplugはコメントアウトしておいた方がよさげ<br /><br />参考リンク<br /><a href="http://asaasa.tk/wiki/?Debian%2FSettings%2FStaticIP">http://asaasa.tk/wiki/?Debian%2FSettings%2FStaticIP</a>
+    
+
+/etc/network/interfacesを編集する<br />下みたいになっているのを<br /><blockquote># The loopback network interface<br />auto lo<br />iface lo inet loopback<br /><br /># The primary network interface<br />allow-hotplug eth0<br />iface eth0 inet dhcp</blockquote><br />↓の様に直す（192.168.0.11）にする場合<br /><blockquote># The loopback network interface<br />auto lo<br />iface lo inet loopback<br /><br /># The primary network interface<br />allow-hotplug eth0<br />iface eth0 inet static<br />address 192.168.0.11<br />netmask 255.255.255.0<br />gateway 192.168.0.1</blockquote><br />直したら<br />#ifdown eth0<br />#ifup eth0<br />でおｋ<br /># /etc/init.d/networking restart<br />でもいけるがその場合は↓を書いておくこと(ifup -aの対象となる)<br /><blockquote>auto eth0</blockquote><br />※VirtualPCではallow-hotplugはコメントアウトしておいた方がよさげ<br /><br />参考リンク<br /><a href="http://asaasa.tk/wiki/?Debian%2FSettings%2FStaticIP">http://asaasa.tk/wiki/?Debian%2FSettings%2FStaticIP</a>
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

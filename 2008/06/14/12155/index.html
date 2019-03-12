@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="Debian(etch)でcpan設定" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2008/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Debian(etch)でcpan設定 | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    まずCPANを使う上で必要なソフトは下記のとおりです。先にインストールしておきます。<br />gzip,tar,unzip,make,lynx,wget,ncftpget(ncftpでインストール)<br /><br /><br />#cpan<br />で初回起動時の設定が入る。基本的にEnterでデフォルトの設定で問題ないと思います。<br />The next option deals with the charset your terminal supports. In<br />general CPAN is English speaking territory, thus the charset does not<br />matter much, but some of the aliens out there who upload their<br />software to CPAN bear names that are outside the ASCII range. If your<br />terminal supports UTF-8, you say no to the next question, if it<br />supports ISO-8859-1 (also known as LATIN1) then you say yes, and if it<br />supports neither nor, your answer does not matter, you will not be<br />able to read the names of some authors anyway. If you answer no, names<br />will be output in UTF-8.<br /><br />Your terminal expects ISO-8859-1 (yes/no)? <br />↑のように聞かれたらnoがいいかもしれません。<br /><br />そんで使えるCPAN鯖が無かった場合はftp://ftp.kddlabs.co.jp/CPAN/とかを使うといいかもです。<br /><br />find `perl -le 'print for @INC'`  -name '*.pm' | less<br />↑のコマンドでインストールされているモジュールを確認できます。<br /><br />あと<br />cpan> m /Net::SMTP_.*/<br />Module id = Net::SMTP_auth<br />    CPAN_USERID  APLEINER (Alex Pleiner <alex-cpan.ext2@zeitform.de>)<br />    CPAN_VERSION 0.08<br />    CPAN_FILE    A/AP/APLEINER/Net-SMTP_auth-0.08.tar.gz<br />    MANPAGE      Net::SMTP_auth - Simple Mail Transfer Protocol Client with AUTHentication<br />    INST_FILE    /usr/local/share/perl/5.8.8/Net/SMTP_auth.pm<br />    INST_VERSION 0.08<br />↑みたいな感じでモジュール検索もできます
+    
+
+まずCPANを使う上で必要なソフトは下記のとおりです。先にインストールしておきます。<br />gzip,tar,unzip,make,lynx,wget,ncftpget(ncftpでインストール)<br /><br /><br />#cpan<br />で初回起動時の設定が入る。基本的にEnterでデフォルトの設定で問題ないと思います。<br />The next option deals with the charset your terminal supports. In<br />general CPAN is English speaking territory, thus the charset does not<br />matter much, but some of the aliens out there who upload their<br />software to CPAN bear names that are outside the ASCII range. If your<br />terminal supports UTF-8, you say no to the next question, if it<br />supports ISO-8859-1 (also known as LATIN1) then you say yes, and if it<br />supports neither nor, your answer does not matter, you will not be<br />able to read the names of some authors anyway. If you answer no, names<br />will be output in UTF-8.<br /><br />Your terminal expects ISO-8859-1 (yes/no)? <br />↑のように聞かれたらnoがいいかもしれません。<br /><br />そんで使えるCPAN鯖が無かった場合はftp://ftp.kddlabs.co.jp/CPAN/とかを使うといいかもです。<br /><br />find `perl -le 'print for @INC'`  -name '*.pm' | less<br />↑のコマンドでインストールされているモジュールを確認できます。<br /><br />あと<br />cpan> m /Net::SMTP_.*/<br />Module id = Net::SMTP_auth<br />    CPAN_USERID  APLEINER (Alex Pleiner <alex-cpan.ext2@zeitform.de>)<br />    CPAN_VERSION 0.08<br />    CPAN_FILE    A/AP/APLEINER/Net-SMTP_auth-0.08.tar.gz<br />    MANPAGE      Net::SMTP_auth - Simple Mail Transfer Protocol Client with AUTHentication<br />    INST_FILE    /usr/local/share/perl/5.8.8/Net/SMTP_auth.pm<br />    INST_VERSION 0.08<br />↑みたいな感じでモジュール検索もできます
 
 
   </div>
@@ -216,7 +225,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -283,7 +292,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

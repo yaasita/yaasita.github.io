@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="bashrcに書いておくと便利な行" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2011/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>bashrcに書いておくと便利な行 | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    <pre>#キーバインド<br />set -o #キーバインドをviに<br />stty stop undef #端末ロックをやめる<br />bind C-f:menu-complete #Ctrl-fでメニューコンプリート<br />bind C-l:clear-screen #Ctrl-lで端末のクリア<br /><br />#エイリアス<br />alias bc='bc -q' #bc の最初のメッセージがうるさいので<br />alias mv='mv -i' #お好みでrootのbashrcには必要？<br />alias rm='rm -i' #お好みでrootのbashrcには必要？<br /></pre><br />注意点はset -o viの前にbindでキーバインドを設定しても無効になってしまうこと<br />必ずset -o viした後にbindを書くこと<br /><br /><br />過去記事<br /><a href="http://rdt17.blogspot.com/2008/09/bashctrl-s.html">bashでCtrl-S押すと端末がロックされる</a><br /><a href="http://rdt17.blogspot.com/2009/12/bash.html">bashで端末ロック機能を解除する</a> <br /><a href="http://rdt17.blogspot.com/2011/03/bashtabmenu-complete.html">bashでTAB補完する（menu-complete）</a>
+    
+
+<pre>#キーバインド<br />set -o #キーバインドをviに<br />stty stop undef #端末ロックをやめる<br />bind C-f:menu-complete #Ctrl-fでメニューコンプリート<br />bind C-l:clear-screen #Ctrl-lで端末のクリア<br /><br />#エイリアス<br />alias bc='bc -q' #bc の最初のメッセージがうるさいので<br />alias mv='mv -i' #お好みでrootのbashrcには必要？<br />alias rm='rm -i' #お好みでrootのbashrcには必要？<br /></pre><br />注意点はset -o viの前にbindでキーバインドを設定しても無効になってしまうこと<br />必ずset -o viした後にbindを書くこと<br /><br /><br />過去記事<br /><a href="http://rdt17.blogspot.com/2008/09/bashctrl-s.html">bashでCtrl-S押すと端末がロックされる</a><br /><a href="http://rdt17.blogspot.com/2009/12/bash.html">bashで端末ロック機能を解除する</a> <br /><a href="http://rdt17.blogspot.com/2011/03/bashtabmenu-complete.html">bashでTAB補完する（menu-complete）</a>
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

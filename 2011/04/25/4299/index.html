@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="DTIのVPSにPukiWikiをインストール" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2011/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>DTIのVPSにPukiWikiをインストール | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    必要なのはphp5オンリーなので楽  <ol> <li>ダウンロード</li> <a href="http://pukiwiki.sourceforge.jp/?PukiWiki%2FDownload">公式サイト</a>からダウンロード  今回は「pukiwiki-1.4.7_notb_utf8.tar.gz」を選択  こちらは以下のコマンドで展開すればパーミッションの設定を省けるので良い  <pre>tar xvzpf pukiwiki-1.4.7_notb_utf8.tar.gz</pre> <li>インストール</li> 基本的には  <a href="http://pukiwiki.sourceforge.jp/?PukiWiki%2FInstall%2F%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%96%B9%E6%B3%95">ここ</a> に書いてある通りやればOK  md5値は以下のようにして算出できる  <pre>echo -n 'pass' | md5sum </pre> この値を設定すればOK  上記例だとこんな感じ  <pre>$adminpass = '{x-php-md5}1a1dc91c907325c69271ddf0c944bc72'</pre> <li>個別設定</li> その他個人の設定はお好みで<br /> アップロードサイズの変更  <pre>vi plugin/attach.inc.php</pre> <a href="http://pcmemoofdkuro.blogspot.com/2008/02/pukiwiki.html">ここ</a>を参考にして  アップロードサイズ上限を16MBに変更した(19行目付近)  <pre><br /> // Max file size for upload on script of PukiWikiX_FILESIZE<br /> define('PLUGIN_ATTACH_MAX_FILESIZE', (16 * 1024 * 1024)); // default: 1MB<br /> </pre> ※ただしphp.iniの制限に引っかかっていたら意味ないので見直すこと→<a href="http://pukiwiki.sourceforge.jp/?FAQ%2F31">詳しくはこちら</a><br /><br /> <a href="http://d.hatena.ne.jp/peroon/20110406/1302068581">はてなマークを消す</a>方法<br /> 以下のようにnowikinameを1に変更する  <pre><br />  $nowikiname = 1;<br /> </pre></ol> その他<br /><a href="http://pukiwiki.sourceforge.jp/?PukiWiki%2FInstall%2F%E3%83%A6%E3%83%BC%E3%82%B6%E8%AA%8D%E8%A8%BC">ユーザ制御・アクセス制御</a><br /><a href="http://pukiwiki.sourceforge.jp/?Q%EF%BC%86A%2F%E9%81%8B%E5%96%B6#y9a598f1">QAユーザー認証</a><br /><a href="http://pukiwiki.sourceforge.jp/?Q%EF%BC%86A%2F%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3">セキュリティQA</a><br />
+    
+
+必要なのはphp5オンリーなので楽  <ol> <li>ダウンロード</li> <a href="http://pukiwiki.sourceforge.jp/?PukiWiki%2FDownload">公式サイト</a>からダウンロード  今回は「pukiwiki-1.4.7_notb_utf8.tar.gz」を選択  こちらは以下のコマンドで展開すればパーミッションの設定を省けるので良い  <pre>tar xvzpf pukiwiki-1.4.7_notb_utf8.tar.gz</pre> <li>インストール</li> 基本的には  <a href="http://pukiwiki.sourceforge.jp/?PukiWiki%2FInstall%2F%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E6%96%B9%E6%B3%95">ここ</a> に書いてある通りやればOK  md5値は以下のようにして算出できる  <pre>echo -n 'pass' | md5sum </pre> この値を設定すればOK  上記例だとこんな感じ  <pre>$adminpass = '{x-php-md5}1a1dc91c907325c69271ddf0c944bc72'</pre> <li>個別設定</li> その他個人の設定はお好みで<br /> アップロードサイズの変更  <pre>vi plugin/attach.inc.php</pre> <a href="http://pcmemoofdkuro.blogspot.com/2008/02/pukiwiki.html">ここ</a>を参考にして  アップロードサイズ上限を16MBに変更した(19行目付近)  <pre><br /> // Max file size for upload on script of PukiWikiX_FILESIZE<br /> define('PLUGIN_ATTACH_MAX_FILESIZE', (16 * 1024 * 1024)); // default: 1MB<br /> </pre> ※ただしphp.iniの制限に引っかかっていたら意味ないので見直すこと→<a href="http://pukiwiki.sourceforge.jp/?FAQ%2F31">詳しくはこちら</a><br /><br /> <a href="http://d.hatena.ne.jp/peroon/20110406/1302068581">はてなマークを消す</a>方法<br /> 以下のようにnowikinameを1に変更する  <pre><br />  $nowikiname = 1;<br /> </pre></ol> その他<br /><a href="http://pukiwiki.sourceforge.jp/?PukiWiki%2FInstall%2F%E3%83%A6%E3%83%BC%E3%82%B6%E8%AA%8D%E8%A8%BC">ユーザ制御・アクセス制御</a><br /><a href="http://pukiwiki.sourceforge.jp/?Q%EF%BC%86A%2F%E9%81%8B%E5%96%B6#y9a598f1">QAユーザー認証</a><br /><a href="http://pukiwiki.sourceforge.jp/?Q%EF%BC%86A%2F%E3%82%BB%E3%82%AD%E3%83%A5%E3%83%AA%E3%83%86%E3%82%A3">セキュリティQA</a><br />
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

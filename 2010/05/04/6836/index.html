@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="dumpコマンドで取ったバックアップをリストア" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2010/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>dumpコマンドで取ったバックアップをリストア | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    バックアップしたシステムディレクトリを丸ごとリストアするには<br /><a href="http://www.jp.debian.org/releases/stable/amd64/ch08s07.html.ja">インストールディスクでboot</a>→レスキューモードを選択（Advanced optionsから選択できます）→「インストール環境内でシェルを実行」<br />/targetに選択したシステムディレクトリがあります。<br />fsckとかフォーマットとかやる<br />/targetに該当のフォルダを展開<br />/restoresymtableを削除しておわり<br /><br />ディレクトリを移すときはcp -aを指定することcp -prだけでは不十分ハードリンク処理が不十分なので・・・詳しくは<a href="http://www.linux.or.jp/JM/html/GNU_fileutils/man1/cp.1.html">こちら</a><br /><br />参考リンク<br /><a href="http://chiji.atnifty.com/server/other/ext3backuprestore.html">http://chiji.atnifty.com/server/other/ext3backuprestore.html</a><br /><a href="http://debian.fam.cx/index.php?install">http://debian.fam.cx/index.php?install</a>
+    
+
+バックアップしたシステムディレクトリを丸ごとリストアするには<br /><a href="http://www.jp.debian.org/releases/stable/amd64/ch08s07.html.ja">インストールディスクでboot</a>→レスキューモードを選択（Advanced optionsから選択できます）→「インストール環境内でシェルを実行」<br />/targetに選択したシステムディレクトリがあります。<br />fsckとかフォーマットとかやる<br />/targetに該当のフォルダを展開<br />/restoresymtableを削除しておわり<br /><br />ディレクトリを移すときはcp -aを指定することcp -prだけでは不十分ハードリンク処理が不十分なので・・・詳しくは<a href="http://www.linux.or.jp/JM/html/GNU_fileutils/man1/cp.1.html">こちら</a><br /><br />参考リンク<br /><a href="http://chiji.atnifty.com/server/other/ext3backuprestore.html">http://chiji.atnifty.com/server/other/ext3backuprestore.html</a><br /><a href="http://debian.fam.cx/index.php?install">http://debian.fam.cx/index.php?install</a>
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

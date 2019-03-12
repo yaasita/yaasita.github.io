@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="sambaを入れてみよう" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2008/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>sambaを入れてみよう | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    aptかなんかでインストール<br />/etc/samba/smb.confを直そうか<br /><br />   [global]<br />   unix charset = UTF-8<br />   dos charset = CP932<br />   display charset = UTF-8<br /><br />まず↑の設定を確認unix charsetは環境に合わせてどうぞ<br /><br /><br /> workgroup = MSHOME<br /><br />次にワークグループを合わせて<br /><br /> security = share<br /><br />セキュリティをshareにした。パスワード求められるとウザイので・・・<br />でもこれだとvistaとかだと問題になるそうです　XPの場合は大丈夫らしいけど<br /><br />  guest account = ageftp<br />  <br />あとはゲストアカウントを誰にするかを決める。<br /><br /><br /><br /> [upload]<br /> path = /var/www/upload/<br /> available = yes<br /> browsable = yes<br /> public = yes<br /> writable = yes<br /> read only = no<br /> create mask = 0777<br /> printable = no<br /> guest ok = yes<br /><br />あとは適当にどうぞ<br /><br />ここで別にゲストアカウントを誰々って決めなくても良いんですが、<br />じつはこの/var/www/uploadディレクトリはftpのanonymousログインを<br />許可しているのでotherのパーミッションに書き込みを与える事が出来ないのです
+    
+
+aptかなんかでインストール<br />/etc/samba/smb.confを直そうか<br /><br />   [global]<br />   unix charset = UTF-8<br />   dos charset = CP932<br />   display charset = UTF-8<br /><br />まず↑の設定を確認unix charsetは環境に合わせてどうぞ<br /><br /><br /> workgroup = MSHOME<br /><br />次にワークグループを合わせて<br /><br /> security = share<br /><br />セキュリティをshareにした。パスワード求められるとウザイので・・・<br />でもこれだとvistaとかだと問題になるそうです　XPの場合は大丈夫らしいけど<br /><br />  guest account = ageftp<br />  <br />あとはゲストアカウントを誰にするかを決める。<br /><br /><br /><br /> [upload]<br /> path = /var/www/upload/<br /> available = yes<br /> browsable = yes<br /> public = yes<br /> writable = yes<br /> read only = no<br /> create mask = 0777<br /> printable = no<br /> guest ok = yes<br /><br />あとは適当にどうぞ<br /><br />ここで別にゲストアカウントを誰々って決めなくても良いんですが、<br />じつはこの/var/www/uploadディレクトリはftpのanonymousログインを<br />許可しているのでotherのパーミッションに書き込みを与える事が出来ないのです
 
 
   </div>
@@ -216,7 +225,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -283,7 +292,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

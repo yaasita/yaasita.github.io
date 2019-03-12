@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="古いノートにXfce4をインストール" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2010/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>古いノートにXfce4をインストール | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    aptitudeでそれらしいパッケージをインストール<br /><pre>x-window-system<br />xfce4<br /></pre>ウィンドマネージャには<a href="http://slim.berlios.de/manual.php">Slim</a>を採用した<br />あと追加で↓をインストールするとデスクトップ環境らしくなるらしい<br /><pre>xfce4-goodies<br />#tasksel install xfce-desktop<br /></pre><br />あとXfceから一般ユーザーが電源を切れるようにsudoをインストール<br />visudoでエディタを立ち上げてから<br /><pre>ALL ALL=(ALL) NOPASSWD: /usr/sbin/xfsm-shutdown-helper<br /></pre>を追加 (<a href="http://www12.atwiki.jp/linux2ch/pages/135.html">ここ</a>とかに書いてあった)<br /><br />あとは適当にフォント等をインストール<br /><pre>ttf-kochi-gothic<br />ttf-kochi-mincho<br />ttf-mscorefonts-installer<br /></pre>ttf-mscorefonts-installerはcontribパッケージなのでsources.listを編集すること<br /><br />ちなみにDebian Lennyではdefomaでフォントを管理しているためxorg.confにFontPathを書く必要はない<br /><br />日本語入力の設定はscim-anthyをインストールすれば<br />/etc/X11/xinit/xinput.d/配下に適当にインストールしてくれるのでOK<br /><br />参考リンク<br /><a href="http://wiki.xfce.org/ja/faq?s[]=ubuntu">Xfce wiki</a><br /><a href="http://debian.fam.cx/index.php?Software%2FXfce">Xfce FAQ</a>
+    
+
+aptitudeでそれらしいパッケージをインストール<br /><pre>x-window-system<br />xfce4<br /></pre>ウィンドマネージャには<a href="http://slim.berlios.de/manual.php">Slim</a>を採用した<br />あと追加で↓をインストールするとデスクトップ環境らしくなるらしい<br /><pre>xfce4-goodies<br />#tasksel install xfce-desktop<br /></pre><br />あとXfceから一般ユーザーが電源を切れるようにsudoをインストール<br />visudoでエディタを立ち上げてから<br /><pre>ALL ALL=(ALL) NOPASSWD: /usr/sbin/xfsm-shutdown-helper<br /></pre>を追加 (<a href="http://www12.atwiki.jp/linux2ch/pages/135.html">ここ</a>とかに書いてあった)<br /><br />あとは適当にフォント等をインストール<br /><pre>ttf-kochi-gothic<br />ttf-kochi-mincho<br />ttf-mscorefonts-installer<br /></pre>ttf-mscorefonts-installerはcontribパッケージなのでsources.listを編集すること<br /><br />ちなみにDebian Lennyではdefomaでフォントを管理しているためxorg.confにFontPathを書く必要はない<br /><br />日本語入力の設定はscim-anthyをインストールすれば<br />/etc/X11/xinit/xinput.d/配下に適当にインストールしてくれるのでOK<br /><br />参考リンク<br /><a href="http://wiki.xfce.org/ja/faq?s[]=ubuntu">Xfce wiki</a><br /><a href="http://debian.fam.cx/index.php?Software%2FXfce">Xfce FAQ</a>
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

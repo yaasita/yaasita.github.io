@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="Linuxでランダムに壁紙を変更するスクリプト書いた" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2011/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Linuxでランダムに壁紙を変更するスクリプト書いた | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    いろいろソフトとかあるみたいだけどスクリプトでやってみる<br /><br /><pre>#!/usr/bin/perl<br />use strict;<br />use warnings;<br />##################################<br /># ランダムに壁紙を変更するスクリプト<br />##################################<br />my $WALLPAPER_DIR=shift;<br />##################################<br /><br />chdir $WALLPAPER_DIR or die $!;<br />my @pic_lst=(<*.jpg>,<*.png>);<br />my $random_num=int rand(scalar @pic_lst);<br />system "hsetroot -full $pic_lst[$random_num]" and die $!;<br /></pre>このスクリプトをrandom_wallpaper.plとして保存した<br />.xsessionrcに書いておけばOK<br /><pre>while true<br />        do<br />        /usr/local/bin/random_wallpaper.pl /jitaku/local/pic/Linux_wallpaper/ || exit<br />        sleep 30m<br />done &amp;<br /></pre><br />参考リンク<br /><a href="http://penguin.tantin.jp/mori/category/%E3%82%A2%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%BA%E3%83%A1%E3%83%B3%E3%83%88/%E5%A3%81%E7%B4%99.html">ペンギンの杜 〜 Linux ソフト集 〜アミューズメント/壁紙</a><br /><a href="http://linux.ikoinoba.net/index.php?UID=1293204546">美女LinuxをUbuntu(GNOME)の壁紙にする</a><br /><br />参考記事<br /><a href="http://rdt17.blogspot.com/2011/05/xsessionrc.html">xsessionrcのプロセス制御</a>
+    
+
+いろいろソフトとかあるみたいだけどスクリプトでやってみる<br /><br /><pre>#!/usr/bin/perl<br />use strict;<br />use warnings;<br />##################################<br /># ランダムに壁紙を変更するスクリプト<br />##################################<br />my $WALLPAPER_DIR=shift;<br />##################################<br /><br />chdir $WALLPAPER_DIR or die $!;<br />my @pic_lst=(<*.jpg>,<*.png>);<br />my $random_num=int rand(scalar @pic_lst);<br />system "hsetroot -full $pic_lst[$random_num]" and die $!;<br /></pre>このスクリプトをrandom_wallpaper.plとして保存した<br />.xsessionrcに書いておけばOK<br /><pre>while true<br />        do<br />        /usr/local/bin/random_wallpaper.pl /jitaku/local/pic/Linux_wallpaper/ || exit<br />        sleep 30m<br />done &amp;<br /></pre><br />参考リンク<br /><a href="http://penguin.tantin.jp/mori/category/%E3%82%A2%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%BA%E3%83%A1%E3%83%B3%E3%83%88/%E5%A3%81%E7%B4%99.html">ペンギンの杜 〜 Linux ソフト集 〜アミューズメント/壁紙</a><br /><a href="http://linux.ikoinoba.net/index.php?UID=1293204546">美女LinuxをUbuntu(GNOME)の壁紙にする</a><br /><br />参考記事<br /><a href="http://rdt17.blogspot.com/2011/05/xsessionrc.html">xsessionrcのプロセス制御</a>
 
 
   </div>
@@ -212,7 +221,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -279,7 +288,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

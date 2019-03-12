@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="Debian でNFSを設定してみる" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2010/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Debian でNFSを設定してみる | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    1.nfs-kernel-serverをインストール<br />/etc/exportsを編集<br /><pre>/etc 192.168.0.0/255.255.255.0(ro)<br /></pre>※あとNFSのマウント側では同じUID同士でマッピングされるがrootだけはanonymousでマッピングされるため、no_root_squashをつける<br />詳しくは→man exports<br /><br />2.リロード<br />exportfs -ra<br />showmount -e<br /><br />3.クライアント側の設定<br />aptitudeとかでnfs-commonをインストール<br /><br />4.マウント<br />mount 192.168.0.4:/tmp /mnt<br /><br />5.アンマウント<br />umount /mnt<br /><br />6.fstabに書く<br /><pre>192.168.0.4:/tmp   /mnt         nfs    rw,user            0       0<br /></pre>mount -a<br /><br /><br />参考リンク<br /><a href="http://nawolets.blogspot.com/2009/11/debian-de-nfs.html">http://nawolets.blogspot.com/2009/11/debian-de-nfs.html</a><br /><a href="http://www.linux.or.jp/JF/JFdocs/NFS-HOWTO/server.html">http://www.linux.or.jp/JF/JFdocs/NFS-HOWTO/server.html</a><br /><a href="http://www.atmarkit.co.jp/flinux/rensai/linuxtips/367usenfs.html">http://www.atmarkit.co.jp/flinux/rensai/linuxtips/367usenfs.html</a>
+    
+
+1.nfs-kernel-serverをインストール<br />/etc/exportsを編集<br /><pre>/etc 192.168.0.0/255.255.255.0(ro)<br /></pre>※あとNFSのマウント側では同じUID同士でマッピングされるがrootだけはanonymousでマッピングされるため、no_root_squashをつける<br />詳しくは→man exports<br /><br />2.リロード<br />exportfs -ra<br />showmount -e<br /><br />3.クライアント側の設定<br />aptitudeとかでnfs-commonをインストール<br /><br />4.マウント<br />mount 192.168.0.4:/tmp /mnt<br /><br />5.アンマウント<br />umount /mnt<br /><br />6.fstabに書く<br /><pre>192.168.0.4:/tmp   /mnt         nfs    rw,user            0       0<br /></pre>mount -a<br /><br /><br />参考リンク<br /><a href="http://nawolets.blogspot.com/2009/11/debian-de-nfs.html">http://nawolets.blogspot.com/2009/11/debian-de-nfs.html</a><br /><a href="http://www.linux.or.jp/JF/JFdocs/NFS-HOWTO/server.html">http://www.linux.or.jp/JF/JFdocs/NFS-HOWTO/server.html</a><br /><a href="http://www.atmarkit.co.jp/flinux/rensai/linuxtips/367usenfs.html">http://www.atmarkit.co.jp/flinux/rensai/linuxtips/367usenfs.html</a>
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

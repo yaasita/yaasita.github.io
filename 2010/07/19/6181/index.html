@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="squid3を試してみた" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2010/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>squid3を試してみた | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    * Debian で squid3を試す<br /><br />aptitudeとかでsquid3をインストール<br /><br />以下squid.confの設定<br />1.アクセスリストlocalnetを有効化<br /><blockquote>acl localnet src 192.168.0.0/16 # RFC1918 possible internal network  </blockquote><br />2.cachemgr3.cgiを見るための設定と普通のアクセス設定<br /><blockquote>http_access allow manager localnet</blockquote><blockquote>http_access allow localnet</blockquote><br />いずれもdenyの前に置くこと<br /><br />3.ポートの変更<br /><blockquote>http_port 8080</blockquote><br />4.各種設定<br /><blockquote>cache_mem 20 MB <br />maximum_object_size_in_memory 256 KB<br />cache_dir ufs /var/spool/squid3 4000 32 256<br />maximum_object_size 18000 KB <br />#icp_port 3130 #無効化<br />forwarded_for off</blockquote><br />5.あとcachemgr.confも変更したポートに合わせる<br /><blockquote>localhost:8080</blockquote><br />なんかあったらとりあえずログを見ること<br />/var/log/messages<br />/var/log/syslog<br />/var/log/squid3/*<br /><br />※あと注意点<br />NetBIOS名で指定しないことcachemgr3を操作しようとしないこと<br />↓は駄目<br />http://jitaku:8000/cgi-bin/cachemgr3.cgi<br />↓はおｋ<br />http://192.168.0.11:8000/cgi-bin/cachemgr3.cgi<br /><br />使った感想は特に昔と変わんないかな・・・
+    
+
+* Debian で squid3を試す<br /><br />aptitudeとかでsquid3をインストール<br /><br />以下squid.confの設定<br />1.アクセスリストlocalnetを有効化<br /><blockquote>acl localnet src 192.168.0.0/16 # RFC1918 possible internal network  </blockquote><br />2.cachemgr3.cgiを見るための設定と普通のアクセス設定<br /><blockquote>http_access allow manager localnet</blockquote><blockquote>http_access allow localnet</blockquote><br />いずれもdenyの前に置くこと<br /><br />3.ポートの変更<br /><blockquote>http_port 8080</blockquote><br />4.各種設定<br /><blockquote>cache_mem 20 MB <br />maximum_object_size_in_memory 256 KB<br />cache_dir ufs /var/spool/squid3 4000 32 256<br />maximum_object_size 18000 KB <br />#icp_port 3130 #無効化<br />forwarded_for off</blockquote><br />5.あとcachemgr.confも変更したポートに合わせる<br /><blockquote>localhost:8080</blockquote><br />なんかあったらとりあえずログを見ること<br />/var/log/messages<br />/var/log/syslog<br />/var/log/squid3/*<br /><br />※あと注意点<br />NetBIOS名で指定しないことcachemgr3を操作しようとしないこと<br />↓は駄目<br />http://jitaku:8000/cgi-bin/cachemgr3.cgi<br />↓はおｋ<br />http://192.168.0.11:8000/cgi-bin/cachemgr3.cgi<br /><br />使った感想は特に昔と変わんないかな・・・
 
 
   </div>
@@ -212,7 +221,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -279,7 +288,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

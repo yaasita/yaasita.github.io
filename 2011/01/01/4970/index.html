@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="tmuxを試してみた" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2011/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>tmuxを試してみた | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    <h2>tmuxの考え方</h2>セッション・・・複数のウィンドウを持つ固まり<br />ウィンドウ・・・複数のペインを持つ1画面<br />ペイン・・・いわゆる操作できる端末<br /><br /><h2>プレフィックスキー</h2>全てプレフィックスキー(デフォルトはC-b)を押した後に入力する<br /><br />※ $で始まるものはコマンド操作<br />それ以外はプレフィックスキー後に入力する<br /><h2>セッション操作</h2><br />hogesessionというセッション名で作成<br /><pre>$ tmux new -s hogesession</pre><br />セッション選択<br /><pre>:choose-session</pre><br />セッション一覧を表示<br /><pre>$ tmux ls</pre><br />hogeセッションにアタッチ<br /><pre>$ tmux a -t hoge</pre><br /><h2>ウィンドウ操作</h2>windowのリネーム <br /><pre>,</pre>※:set-window-option automatic-rename onにするとデフォルトになる<br /><br />新しいwindowの作成<br /><pre>c</pre><br />windowの数字選択指定<br /><pre>0～9</pre><br />windowの数字を変更<br /><pre>.</pre><br />ウィンドウを8番へ移動<br /><pre>move-window -t 8</pre><br />ウィンドウ選択<br /><pre>:choose-window</pre><br />ウィンドウの入れ替え(1と入れ替える)<br /><pre>swap-window -t 1</pre><br /><h2>ペインpane操作</h2><br />ペインの入れ替え<br /><pre>{</pre><pre>}</pre><br />pane番号表示<br /><pre>q</pre><br />レイアウト変更<br /><pre>SPACE</pre><br />上下左右サイズ変更<br /><pre>+</pre><pre>-</pre><pre>&amp;lt;</pre><pre>&amp;gt;</pre><br />ペインの入力同期 on/off<br /><pre>:set-window-option synchronize-panes on</pre><pre>:set-window-option synchronize-panes off</pre><br />ペインを:1ウィンドウから一枚もらってくる<br /><pre>:join-pane -s :1</pre><br />ペインを:1ウィンドウに移す<br /><pre>:join-pane -dt :1</pre>※:1.3という指定にすればペイン番号3指定<br /><br /><h2>その他操作</h2><br />コピーバッファの選択<br /><pre>=</pre><br />コピーバッファを一覧を表示<br /><pre>lsb</pre><br />コピーバッファの1番をペースト<br /><pre>paste-buffer -b 1</pre><br />時計表示<br /><pre>t</pre><br /><h2>screenと比べて</h2><ul><li>画面分割の制御が楽（上下左右のリサイズが楽）</li><li>画面表示が崩れない気がする</li><li>軽い気がする </li><li>screenに比べて設定ファイルが分かりやすい気がする　<a href="http://rdt17.blogspot.com/2010/07/screen.html">※</a></li><li>ウィンドウの中に画面分割のペインが紐付いているので管理が楽(分割された画面で画面が変わってしまうこちらはウィンドウの分割状態をそのまま保持できるため)</li><li>クラサバ志向なので他人がすでにアタッチしているセッションに参加できる（2人で同じ端末をみれる何気にすごい）</li><li>コピーバッファが何個も持てる</li></ul><br /><br /><h2>自分の設定</h2><pre>#key<br />bind s split-window -v<br />bind v split-window -h<br />bind j select-pane -D<br />bind k select-pane -U<br />bind h select-pane -L<br />bind l select-pane -R<br />bind -r < resize-pane -L 1<br />bind -r > resize-pane -R 1<br />bind -r - resize-pane -D 1<br />bind -r + resize-pane -U 1<br />bind : command-prompt<br />bind C-i select-pane -t :.+<br />bind Escape copy-mode<br />setw -g mode-keys vi<br />set -g prefix C-a<br />bind C-a send-prefix<br /><br />#option<br />set -g display-time 6000<br />set -g status-interval 30<br />set -g mouse-select-pane on<br /><br />#status line<br />set -g status-right "#(uptime|cut -d, -f 3 | cut -d: -f 2) %Y/%m/%d (%a) %p %I:%M"<br />setw -g window-status-format "#I:#W"<br />setw -g window-status-current-format "#I:#W_#P"<br />set -g status-bg black<br />set -g status-fg cyan<br />set -g status-left-fg black<br />set -g status-left-bg magenta<br />set -g status-right-fg black<br />set -g status-right-bg green<br />set-window-option -g window-status-current-attr bright,reverse<br />set-window-option -g window-status-current-bg cyan<br />set-window-option -g window-status-current-fg black<br /><br />#window<br />new -s def -n rss_log "tail.pl /var/log/rss.log"<br />splitw -h 'cd /var/log ; tailf allevent &amp; tailf samba/log.nmbd &amp;tailf samba/log.smbd &amp; tailf lighttpd/access.log  '<br />neww<br /></pre><br /><br /><h2>参考リンク</h2><a href="http://bytebucket.org/ns9tks/tmux-ja/wiki/tmux-ja.html">日本語man</a><br /><a href="http://hagio.org/wiki/index.php/Tmux">WikiNote</a><br />
+    
+
+<h2>tmuxの考え方</h2>セッション・・・複数のウィンドウを持つ固まり<br />ウィンドウ・・・複数のペインを持つ1画面<br />ペイン・・・いわゆる操作できる端末<br /><br /><h2>プレフィックスキー</h2>全てプレフィックスキー(デフォルトはC-b)を押した後に入力する<br /><br />※ $で始まるものはコマンド操作<br />それ以外はプレフィックスキー後に入力する<br /><h2>セッション操作</h2><br />hogesessionというセッション名で作成<br /><pre>$ tmux new -s hogesession</pre><br />セッション選択<br /><pre>:choose-session</pre><br />セッション一覧を表示<br /><pre>$ tmux ls</pre><br />hogeセッションにアタッチ<br /><pre>$ tmux a -t hoge</pre><br /><h2>ウィンドウ操作</h2>windowのリネーム <br /><pre>,</pre>※:set-window-option automatic-rename onにするとデフォルトになる<br /><br />新しいwindowの作成<br /><pre>c</pre><br />windowの数字選択指定<br /><pre>0～9</pre><br />windowの数字を変更<br /><pre>.</pre><br />ウィンドウを8番へ移動<br /><pre>move-window -t 8</pre><br />ウィンドウ選択<br /><pre>:choose-window</pre><br />ウィンドウの入れ替え(1と入れ替える)<br /><pre>swap-window -t 1</pre><br /><h2>ペインpane操作</h2><br />ペインの入れ替え<br /><pre>{</pre><pre>}</pre><br />pane番号表示<br /><pre>q</pre><br />レイアウト変更<br /><pre>SPACE</pre><br />上下左右サイズ変更<br /><pre>+</pre><pre>-</pre><pre>&amp;lt;</pre><pre>&amp;gt;</pre><br />ペインの入力同期 on/off<br /><pre>:set-window-option synchronize-panes on</pre><pre>:set-window-option synchronize-panes off</pre><br />ペインを:1ウィンドウから一枚もらってくる<br /><pre>:join-pane -s :1</pre><br />ペインを:1ウィンドウに移す<br /><pre>:join-pane -dt :1</pre>※:1.3という指定にすればペイン番号3指定<br /><br /><h2>その他操作</h2><br />コピーバッファの選択<br /><pre>=</pre><br />コピーバッファを一覧を表示<br /><pre>lsb</pre><br />コピーバッファの1番をペースト<br /><pre>paste-buffer -b 1</pre><br />時計表示<br /><pre>t</pre><br /><h2>screenと比べて</h2><ul><li>画面分割の制御が楽（上下左右のリサイズが楽）</li><li>画面表示が崩れない気がする</li><li>軽い気がする </li><li>screenに比べて設定ファイルが分かりやすい気がする　<a href="http://rdt17.blogspot.com/2010/07/screen.html">※</a></li><li>ウィンドウの中に画面分割のペインが紐付いているので管理が楽(分割された画面で画面が変わってしまうこちらはウィンドウの分割状態をそのまま保持できるため)</li><li>クラサバ志向なので他人がすでにアタッチしているセッションに参加できる（2人で同じ端末をみれる何気にすごい）</li><li>コピーバッファが何個も持てる</li></ul><br /><br /><h2>自分の設定</h2><pre>#key<br />bind s split-window -v<br />bind v split-window -h<br />bind j select-pane -D<br />bind k select-pane -U<br />bind h select-pane -L<br />bind l select-pane -R<br />bind -r < resize-pane -L 1<br />bind -r > resize-pane -R 1<br />bind -r - resize-pane -D 1<br />bind -r + resize-pane -U 1<br />bind : command-prompt<br />bind C-i select-pane -t :.+<br />bind Escape copy-mode<br />setw -g mode-keys vi<br />set -g prefix C-a<br />bind C-a send-prefix<br /><br />#option<br />set -g display-time 6000<br />set -g status-interval 30<br />set -g mouse-select-pane on<br /><br />#status line<br />set -g status-right "#(uptime|cut -d, -f 3 | cut -d: -f 2) %Y/%m/%d (%a) %p %I:%M"<br />setw -g window-status-format "#I:#W"<br />setw -g window-status-current-format "#I:#W_#P"<br />set -g status-bg black<br />set -g status-fg cyan<br />set -g status-left-fg black<br />set -g status-left-bg magenta<br />set -g status-right-fg black<br />set -g status-right-bg green<br />set-window-option -g window-status-current-attr bright,reverse<br />set-window-option -g window-status-current-bg cyan<br />set-window-option -g window-status-current-fg black<br /><br />#window<br />new -s def -n rss_log "tail.pl /var/log/rss.log"<br />splitw -h 'cd /var/log ; tailf allevent &amp; tailf samba/log.nmbd &amp;tailf samba/log.smbd &amp; tailf lighttpd/access.log  '<br />neww<br /></pre><br /><br /><h2>参考リンク</h2><a href="http://bytebucket.org/ns9tks/tmux-ja/wiki/tmux-ja.html">日本語man</a><br /><a href="http://hagio.org/wiki/index.php/Tmux">WikiNote</a><br />
 
 
   </div>
@@ -212,7 +221,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -279,7 +288,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

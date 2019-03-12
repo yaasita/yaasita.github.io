@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="radikoを聞くperlスクリプト書いた" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2011/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>radikoを聞くperlスクリプト書いた | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    ポイントはforkして指定した時間で落とすこと<br /><br /><br /><pre style="height:400px;" >#!/usr/bin/perl<br />################################################<br /># radiko を聞くスクリプト<br /># 引数で制御する<br />#<br /># ヘルプを表示するにはh<br /># radiko.pl -h<br />################################################<br />use strict;<br />use warnings;<br />use Getopt::Std;<br /><br />my %opt;<br />getopts("hc:f:t:",\%opt);<br /><br />if (exists $opt{h}){<br />print << "HELP";<br />usage: radiko.pl [-h] [-c channel] [-f outfile] [-t playtime]<br />-h<br /> print this message<br /><br />-c channel<br /> select play channel<br /> default: LFR<br /> * FMT  TOKYO FM<br /> * FMJ  J-WAVE<br /> * LFR  nippon housou<br /> * TBS  TBS radio<br /><br />-f outfile<br /> default: /tmp/channel.flv<br /><br />-t playtime<br /> default: 1 hour<br />HELP<br />exit;<br />}<br /><br />my $CHANNEL;<br />if (exists $opt{c}){<br /> $CHANNEL=$opt{c};<br />}<br />else {<br /> $CHANNEL="LFR";<br />}<br /><br />my $OUTFILE;<br />if (exists $opt{f}){<br /> $OUTFILE=$opt{f};<br />}<br />else{<br /> $OUTFILE="/tmp/$CHANNEL.flv";<br />}<br /><br />my $PLAYTIME;<br />if (exists $opt{t}){<br /> $PLAYTIME=$opt{t} * 60 * 60;<br />}<br />else{<br /> $PLAYTIME= 1 * 60 * 60;<br />}<br /><br />unlink $OUTFILE if -e $OUTFILE;<br /><br />my $com = << "CMD";<br />rtmpdump -v -e -s 'http://radiko.jp/player/swf/player_2.0.1.00.swf' \\<br />-r 'rtmpe://radiko.smartstream.ne.jp/$CHANNEL/_defInst_' \\<br />--playpath 'simul-stream?ucid=1dbab2acb98174787146465a40ba9eba' \\<br />-p 'http://radiko.jp/player/player.html' \\<br />-f 'WIN 10,1,102,64' \\<br />-o $OUTFILE<br />CMD<br /><br />print "${com}\nplaytime=$PLAYTIME\n";<br /><br />my $pid=fork;<br />die $! unless defined $pid;<br />print $pid;<br /><br />if ($pid){<br /> sleep $PLAYTIME;<br /> kill 9,$pid;<br />}<br />else{<br /> exec "$com";<br />}<br /><br /></pre>
+    
+
+ポイントはforkして指定した時間で落とすこと<br /><br /><br /><pre style="height:400px;" >#!/usr/bin/perl<br />################################################<br /># radiko を聞くスクリプト<br /># 引数で制御する<br />#<br /># ヘルプを表示するにはh<br /># radiko.pl -h<br />################################################<br />use strict;<br />use warnings;<br />use Getopt::Std;<br /><br />my %opt;<br />getopts("hc:f:t:",\%opt);<br /><br />if (exists $opt{h}){<br />print << "HELP";<br />usage: radiko.pl [-h] [-c channel] [-f outfile] [-t playtime]<br />-h<br /> print this message<br /><br />-c channel<br /> select play channel<br /> default: LFR<br /> * FMT  TOKYO FM<br /> * FMJ  J-WAVE<br /> * LFR  nippon housou<br /> * TBS  TBS radio<br /><br />-f outfile<br /> default: /tmp/channel.flv<br /><br />-t playtime<br /> default: 1 hour<br />HELP<br />exit;<br />}<br /><br />my $CHANNEL;<br />if (exists $opt{c}){<br /> $CHANNEL=$opt{c};<br />}<br />else {<br /> $CHANNEL="LFR";<br />}<br /><br />my $OUTFILE;<br />if (exists $opt{f}){<br /> $OUTFILE=$opt{f};<br />}<br />else{<br /> $OUTFILE="/tmp/$CHANNEL.flv";<br />}<br /><br />my $PLAYTIME;<br />if (exists $opt{t}){<br /> $PLAYTIME=$opt{t} * 60 * 60;<br />}<br />else{<br /> $PLAYTIME= 1 * 60 * 60;<br />}<br /><br />unlink $OUTFILE if -e $OUTFILE;<br /><br />my $com = << "CMD";<br />rtmpdump -v -e -s 'http://radiko.jp/player/swf/player_2.0.1.00.swf' \\<br />-r 'rtmpe://radiko.smartstream.ne.jp/$CHANNEL/_defInst_' \\<br />--playpath 'simul-stream?ucid=1dbab2acb98174787146465a40ba9eba' \\<br />-p 'http://radiko.jp/player/player.html' \\<br />-f 'WIN 10,1,102,64' \\<br />-o $OUTFILE<br />CMD<br /><br />print "${com}\nplaytime=$PLAYTIME\n";<br /><br />my $pid=fork;<br />die $! unless defined $pid;<br />print $pid;<br /><br />if ($pid){<br /> sleep $PLAYTIME;<br /> kill 9,$pid;<br />}<br />else{<br /> exec "$com";<br />}<br /><br /></pre>
 
 
   </div>
@@ -212,7 +221,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -279,7 +288,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

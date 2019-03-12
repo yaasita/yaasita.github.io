@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="ActivePerlとLinuxのPerlで挙動が違う" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2007/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>ActivePerlとLinuxのPerlで挙動が違う | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    ブロードキャストアドレスを指定したsend関数で挙動の違いがあります。<br />たとえばUDPパケットを送ろうと、次のようなsocketを作ります。<br /><div style="text-align: left;"><blockquote>socket(SOCKET, PF_INET, SOCK_DGRAM, 0) ;</blockquote><br /></div>そして次のように送ろうとします。<br /><div style="text-align: left;"><blockquote>send(SOCKET, $data, 0, $sock_addr) ;</blockquote></div>この時もし$sock_addrがブロードキャスアドレスだった場合<br />WindowsのActivePerlなら問題なくブロードキャストできます。<br />LinuxのPerlだった場合はSocketの生成後に<br /><blockquote></blockquote><blockquote>setsockopt(SOCKET, SOL_SOCKET, SO_BROADCAST,1) ;</blockquote>としてソケットオプションSO_BROADCASTを指定しなければエラーを返し、送信できません。<br /><br />ソケットについては以下を参照して下さい。<br /><a href="http://www.linux.or.jp/JM/html/LDP_man-pages/man2/socket.2.html">Socket(2)</a><br /><a href="http://www.linux.or.jp/JM/html/LDP_man-pages/man7/socket.7.html">Socket(7)</a>
+    
+
+ブロードキャストアドレスを指定したsend関数で挙動の違いがあります。<br />たとえばUDPパケットを送ろうと、次のようなsocketを作ります。<br /><div style="text-align: left;"><blockquote>socket(SOCKET, PF_INET, SOCK_DGRAM, 0) ;</blockquote><br /></div>そして次のように送ろうとします。<br /><div style="text-align: left;"><blockquote>send(SOCKET, $data, 0, $sock_addr) ;</blockquote></div>この時もし$sock_addrがブロードキャスアドレスだった場合<br />WindowsのActivePerlなら問題なくブロードキャストできます。<br />LinuxのPerlだった場合はSocketの生成後に<br /><blockquote></blockquote><blockquote>setsockopt(SOCKET, SOL_SOCKET, SO_BROADCAST,1) ;</blockquote>としてソケットオプションSO_BROADCASTを指定しなければエラーを返し、送信できません。<br /><br />ソケットについては以下を参照して下さい。<br /><a href="http://www.linux.or.jp/JM/html/LDP_man-pages/man2/socket.2.html">Socket(2)</a><br /><a href="http://www.linux.or.jp/JM/html/LDP_man-pages/man7/socket.7.html">Socket(7)</a>
 
 
   </div>
@@ -216,7 +225,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -283,7 +292,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

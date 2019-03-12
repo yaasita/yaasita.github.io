@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="Ubuntu8.04のxorg.conf設定を行う" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2008/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Ubuntu8.04のxorg.conf設定を行う | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    なんか色々自動でやってくれるのはいいけどCPU切替器を挟むと表示がおかしくなるため手動で設定する。<br />１.Section "Screen"にサブセクションを作って解像度と色深度を設定<br /> SubSection "Display"<br /> Depth 24<br /> Modes "1280x1024"<br /> EndSubSection<br /><br />２.xvidtuneコマンドで位置を調整する。GUIメニューのshowボタンを押せば<br />"1280x1024"   108.00   1280 1344 1456 1688   1024 1025 1028 1066 +hsync +vsync<br />のようにコンソールに表示されるのでメモる。<br /><br />3.Section "Monitor"に水平同期周波数と垂直同期周波数とさっきメモったパラメータをModeLineと共に指定する。<br />Section "Monitor"<br /> Identifier "Configured Monitor"<br /> HorizSync   31.5 - 81<br /> VertRefresh 56 - 76<br /> ModeLine "1280x1024"   108.00   1280 1344 1456 1688   1024 1025 1028 1066 +hsync +vsync<br />EndSection<br /><br />参考リンク<br /><a href="http://linux.kororo.jp/cont/tips/display_tune.php">http://linux.kororo.jp/cont/tips/display_tune.php</a><br /><br /><br /><br /><br />で最終的に出来上がったxorg.confが↓<br /><br />Section "InputDevice"<br /> Identifier "Generic Keyboard"<br /> Driver  "kbd"<br /> Option  "XkbRules" "xorg"<br /> Option  "XkbModel" "jp106"<br /> Option  "XkbLayout" "jp,jp"<br /> Option  "XkbVariant" "106,"<br /> Option  "XkbOptions" "grp:alt_shift_toggle,grp_led:scroll"<br />EndSection<br /><br />Section "InputDevice"<br /> Identifier "Configured Mouse"<br /> Driver  "mouse"<br /> Option  "CorePointer"<br />EndSection<br /><br />Section "Device"<br /> Identifier "Configured Video Device"<br />EndSection<br /><br />Section "Monitor"<br /> Identifier "Configured Monitor"<br /> HorizSync   31.5 - 81<br /> VertRefresh 56 - 76<br /> ModeLine "1280x1024"   108.00   1280 1344 1456 1688   1024 1025 1028 1066 +hsync +vsync<br />EndSection<br /><br />Section "Screen"<br /> Identifier "Default Screen"<br /> Monitor  "Configured Monitor"<br /> Device  "Configured Video Device"<br /> SubSection "Display"<br /> Depth 24<br /> Modes "1280x1024"<br /> EndSubSection<br />EndSection<br /><br />Section "ServerLayout"<br /> Identifier "Default Layout"<br /> Screen  "Default Screen"<br />EndSection
+    
+
+なんか色々自動でやってくれるのはいいけどCPU切替器を挟むと表示がおかしくなるため手動で設定する。<br />１.Section "Screen"にサブセクションを作って解像度と色深度を設定<br /> SubSection "Display"<br /> Depth 24<br /> Modes "1280x1024"<br /> EndSubSection<br /><br />２.xvidtuneコマンドで位置を調整する。GUIメニューのshowボタンを押せば<br />"1280x1024"   108.00   1280 1344 1456 1688   1024 1025 1028 1066 +hsync +vsync<br />のようにコンソールに表示されるのでメモる。<br /><br />3.Section "Monitor"に水平同期周波数と垂直同期周波数とさっきメモったパラメータをModeLineと共に指定する。<br />Section "Monitor"<br /> Identifier "Configured Monitor"<br /> HorizSync   31.5 - 81<br /> VertRefresh 56 - 76<br /> ModeLine "1280x1024"   108.00   1280 1344 1456 1688   1024 1025 1028 1066 +hsync +vsync<br />EndSection<br /><br />参考リンク<br /><a href="http://linux.kororo.jp/cont/tips/display_tune.php">http://linux.kororo.jp/cont/tips/display_tune.php</a><br /><br /><br /><br /><br />で最終的に出来上がったxorg.confが↓<br /><br />Section "InputDevice"<br /> Identifier "Generic Keyboard"<br /> Driver  "kbd"<br /> Option  "XkbRules" "xorg"<br /> Option  "XkbModel" "jp106"<br /> Option  "XkbLayout" "jp,jp"<br /> Option  "XkbVariant" "106,"<br /> Option  "XkbOptions" "grp:alt_shift_toggle,grp_led:scroll"<br />EndSection<br /><br />Section "InputDevice"<br /> Identifier "Configured Mouse"<br /> Driver  "mouse"<br /> Option  "CorePointer"<br />EndSection<br /><br />Section "Device"<br /> Identifier "Configured Video Device"<br />EndSection<br /><br />Section "Monitor"<br /> Identifier "Configured Monitor"<br /> HorizSync   31.5 - 81<br /> VertRefresh 56 - 76<br /> ModeLine "1280x1024"   108.00   1280 1344 1456 1688   1024 1025 1028 1066 +hsync +vsync<br />EndSection<br /><br />Section "Screen"<br /> Identifier "Default Screen"<br /> Monitor  "Configured Monitor"<br /> Device  "Configured Video Device"<br /> SubSection "Display"<br /> Depth 24<br /> Modes "1280x1024"<br /> EndSubSection<br />EndSection<br /><br />Section "ServerLayout"<br /> Identifier "Default Layout"<br /> Screen  "Default Screen"<br />EndSection
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

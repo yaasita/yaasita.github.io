@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="TightVNCをインストールしてみた" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2010/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>TightVNCをインストールしてみた | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    Windows版のTightVNCを試してみた<br /><a href="http://www.tightvnc.com/">公式サイト</a>から「Self-installing package for Windows」を落としてみてインストール使用した感じはRealVNCより軽い感じがする・・・<br /><br />使い方１　サービスとして起動する<br />スタートメニュー⇒ TightVNC ⇒ Administration　⇒ Install VNC Serviceを選んでクリック<br />コンパネの管理ツール⇒サービスを見てVNC Serverがあるのを確認する（制御はここで行う）<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/_51uwrZcw3_U/S0s4QiuJwQI/AAAAAAAAAME/I_xY5vGN_AA/s1600-h/servicevnc.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/_51uwrZcw3_U/S0s4QiuJwQI/AAAAAAAAAME/I_xY5vGN_AA/s320/servicevnc.png" /></a><br /></div>で設定はスタートメニュー⇒ TightVNC ⇒ Administration ⇒　Show Default Settingsからどうぞ<br />ちなみに設定でログを採取する設定にした際に作られる場所はC:\WINDOWS\system32の中のWinVNC.log<br /><div style="color: red;">注意）上記の設定で手動で起動した場合タスクトレイに表示されないが再起動すると表示される<br /></div><br />使い方２　ユーザーモードで起動する<br />スタートメニュー⇒ TightVNC ⇒ Launch TightVNC Serverで起動<br />ユーザーモードならタスクトレイにアイコンが出るのでそこを右クリックして設定を開いても良いし、<br />TightVNCの中にあるShow User Settingsで設定を開いても良い。<br />ちなみにログを採取するように設定した場合の吐き出される場所はC:\Program Files\TightVNCの中のWinVNC.log<br /><br /><br />あとWindows版のVNCはUNIXのようなconfファイルを使用しないので以下のレジストリに設定を保存する<br />HKEY_LOCAL_MACHINE\Software\ORL\WinVNC3<br />HKEY_CURRENT_USER\Software\ORL\WinVNC3
+    
+
+Windows版のTightVNCを試してみた<br /><a href="http://www.tightvnc.com/">公式サイト</a>から「Self-installing package for Windows」を落としてみてインストール使用した感じはRealVNCより軽い感じがする・・・<br /><br />使い方１　サービスとして起動する<br />スタートメニュー⇒ TightVNC ⇒ Administration　⇒ Install VNC Serviceを選んでクリック<br />コンパネの管理ツール⇒サービスを見てVNC Serverがあるのを確認する（制御はここで行う）<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/_51uwrZcw3_U/S0s4QiuJwQI/AAAAAAAAAME/I_xY5vGN_AA/s1600-h/servicevnc.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/_51uwrZcw3_U/S0s4QiuJwQI/AAAAAAAAAME/I_xY5vGN_AA/s320/servicevnc.png" /></a><br /></div>で設定はスタートメニュー⇒ TightVNC ⇒ Administration ⇒　Show Default Settingsからどうぞ<br />ちなみに設定でログを採取する設定にした際に作られる場所はC:\WINDOWS\system32の中のWinVNC.log<br /><div style="color: red;">注意）上記の設定で手動で起動した場合タスクトレイに表示されないが再起動すると表示される<br /></div><br />使い方２　ユーザーモードで起動する<br />スタートメニュー⇒ TightVNC ⇒ Launch TightVNC Serverで起動<br />ユーザーモードならタスクトレイにアイコンが出るのでそこを右クリックして設定を開いても良いし、<br />TightVNCの中にあるShow User Settingsで設定を開いても良い。<br />ちなみにログを採取するように設定した場合の吐き出される場所はC:\Program Files\TightVNCの中のWinVNC.log<br /><br /><br />あとWindows版のVNCはUNIXのようなconfファイルを使用しないので以下のレジストリに設定を保存する<br />HKEY_LOCAL_MACHINE\Software\ORL\WinVNC3<br />HKEY_CURRENT_USER\Software\ORL\WinVNC3
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

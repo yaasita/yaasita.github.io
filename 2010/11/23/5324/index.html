@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="XenをDebian squeezeにインストールしてみる" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2010/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>XenをDebian squeezeにインストールしてみる | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    はやっている様なのでXenを使ってみた<br />基本的には<a href="http://wiki.debian.org/Xen#XenonTesting.2BAC8-SqueezeandonUnstable.2BAC8-SidasDom0.2CtocreateamultitudeofDomU.27s">Debian Wiki</a>の通りやればOK<br /><br />1.必要なパッケージのインストール<br />amd64じゃなかったら686とか自分のPCに合わせる<br />bridge-utils debootstrapも忘れずに<br /><pre>aptitude -P install xen-hypervisor-4.0-amd64 linux-image-xen-amd64 xen-tools</pre><br />2.grubの起動順位、設定の変更？<br />なんか知らんがこうするといいらしい<br /><pre>mv -i /etc/grub.d/10_linux /etc/grub.d/50_linux<br />update-grub2<br />echo "" >> /etc/default/grub<br />echo "# Disable OS prober to prevent virtual machines on logical volumes from appearing in the boot menu." >> /etc/default/grub<br />echo "GRUB_DISABLE_OS_PROBER=true" >> /etc/default/grub<br />update-grub2<br /></pre><br />3./etc/default/xendomainsを編集して状態保存を無効化<br /><pre>XENDOMAINS_RESTORE=false<br />XENDOMAINS_SAVE=""<br /></pre><br />4.ネットワークブリッジの設定<br />/etc/xen/xend-config.sxpを編集<br />以下の行のコメントアウトを解除<br /><pre>(network-script network-bridge)<br /></pre><br />5.VMイメージ作成する際のデフォルト値を設定<br /><br />今回はLVM上にイメージファイルを作らないのでdir を指定<br />ここで設定しなくても全部コマンドラインでやるのも可→<a href="http://d.hatena.ne.jp/trashsuite/20080912/1221218298">参考リンク</a><br />pygrubっていうのはdom0からカーネルを一々VM上に持っていかなくても済む<br />仕組み　→　<a href="http://www.valinux.co.jp/contents/tech/techlib/xen/xen_sp_0703.html">参考リンク</a><br /><pre>dir = /home/xen<br />size   = 4Gb      # Disk image size.<br />memory = 32Mb    # Memory size<br />swap   = 128Mb    # Swap size<br /># noswap = 1      # Don't use swap at all for the new system.<br />fs     = ext3     # use the EXT3 filesystem for the disk image.<br />dist   = `xt-guess-suite-and-mirror --suite` # Default distribution to install.<br />image  = sparse   # Specify sparse vs. full disk images.<br /><br />gateway    = 192.168.0.1<br />netmask    = 255.255.255.0<br />broadcast  = 192.168.0.255<br /><br />#パスワード作成時に対話的に尋ねる<br />passwd = 1<br /><br />mirror = `xt-guess-suite-and-mirror --mirror`<br />mirror_maverick = http://archive.ubuntu.com/ubuntu<br /><br />ext3_options     = noatime,nodiratime,errors=remount-ro<br /><br />pygrub=1<br /></pre><br />6.イメージファイルの作成<br />Debian GNU/Linux, with Linux 2.6.32-5-xen-686<br />で再起動<br />以下のコマンドを実行<br /><pre>xen-create-image --hostname test1 --ip 192.168.0.20 --scsi --vcpus 1 --pygrub --dist lenny<br /></pre><br />7.Xenで起動<br />Debian GNU/Linux, with Linux 2.6.32-5-xen-686 and XEN 4.0-i386<br />で起動<br />以下のコマンドを投入<br /><pre>xm create /etc/xen/test1.cfg -c<br /></pre><br />GRUBメニューまではいったが、<br />なぜかメモリエラーでカーネルパニックしたOTZ<br />流石に256MのノートPCじゃ駄目だったかも今回はここまで<br /><br /><br />※<br />あと不要なVMイメージは<br />xen-delete-image<br />ってコマンドで削除するといいかも<br />xen-list-images<br />で一覧を見れる<br /><br />参考リンク<br /><a href="http://www.valinux.co.jp/contents/tech/techlib/xen/xen_sp_01.html">http://www.valinux.co.jp/contents/tech/techlib/xen/xen_sp_01.html</a><br /><a href="http://rayearth.homelinux.net/pukiwiki/?Debian%2FXen">http://rayearth.homelinux.net/pukiwiki/?Debian%2FXen</a><br /><a href="http://www.cs.is.noda.tus.ac.jp/~tatsuya/master_wiki/index.php?Xen%20on%20Debian">http://www.cs.is.noda.tus.ac.jp/~tatsuya/master_wiki/index.php?Xen%20on%20Debian</a><br /><a href="http://d.hatena.ne.jp/fujisan3776/20090309/1236576002">http://d.hatena.ne.jp/fujisan3776/20090309/1236576002</a><br /><a href="http://pocketstudio.jp/linux/?Xen%2FXenFaq%20-%20Xen%20%B8%F8%BC%B0%20Wiki%20%C6%FC%CB%DC%B8%EC%CC%F5">http://pocketstudio.jp/linux/?Xen%2FXenFaq%20-%20Xen%20%B8%F8%BC%B0%20Wiki%20%C6%FC%CB%DC%B8%EC%CC%F5</a>
+    
+
+はやっている様なのでXenを使ってみた<br />基本的には<a href="http://wiki.debian.org/Xen#XenonTesting.2BAC8-SqueezeandonUnstable.2BAC8-SidasDom0.2CtocreateamultitudeofDomU.27s">Debian Wiki</a>の通りやればOK<br /><br />1.必要なパッケージのインストール<br />amd64じゃなかったら686とか自分のPCに合わせる<br />bridge-utils debootstrapも忘れずに<br /><pre>aptitude -P install xen-hypervisor-4.0-amd64 linux-image-xen-amd64 xen-tools</pre><br />2.grubの起動順位、設定の変更？<br />なんか知らんがこうするといいらしい<br /><pre>mv -i /etc/grub.d/10_linux /etc/grub.d/50_linux<br />update-grub2<br />echo "" >> /etc/default/grub<br />echo "# Disable OS prober to prevent virtual machines on logical volumes from appearing in the boot menu." >> /etc/default/grub<br />echo "GRUB_DISABLE_OS_PROBER=true" >> /etc/default/grub<br />update-grub2<br /></pre><br />3./etc/default/xendomainsを編集して状態保存を無効化<br /><pre>XENDOMAINS_RESTORE=false<br />XENDOMAINS_SAVE=""<br /></pre><br />4.ネットワークブリッジの設定<br />/etc/xen/xend-config.sxpを編集<br />以下の行のコメントアウトを解除<br /><pre>(network-script network-bridge)<br /></pre><br />5.VMイメージ作成する際のデフォルト値を設定<br /><br />今回はLVM上にイメージファイルを作らないのでdir を指定<br />ここで設定しなくても全部コマンドラインでやるのも可→<a href="http://d.hatena.ne.jp/trashsuite/20080912/1221218298">参考リンク</a><br />pygrubっていうのはdom0からカーネルを一々VM上に持っていかなくても済む<br />仕組み　→　<a href="http://www.valinux.co.jp/contents/tech/techlib/xen/xen_sp_0703.html">参考リンク</a><br /><pre>dir = /home/xen<br />size   = 4Gb      # Disk image size.<br />memory = 32Mb    # Memory size<br />swap   = 128Mb    # Swap size<br /># noswap = 1      # Don't use swap at all for the new system.<br />fs     = ext3     # use the EXT3 filesystem for the disk image.<br />dist   = `xt-guess-suite-and-mirror --suite` # Default distribution to install.<br />image  = sparse   # Specify sparse vs. full disk images.<br /><br />gateway    = 192.168.0.1<br />netmask    = 255.255.255.0<br />broadcast  = 192.168.0.255<br /><br />#パスワード作成時に対話的に尋ねる<br />passwd = 1<br /><br />mirror = `xt-guess-suite-and-mirror --mirror`<br />mirror_maverick = http://archive.ubuntu.com/ubuntu<br /><br />ext3_options     = noatime,nodiratime,errors=remount-ro<br /><br />pygrub=1<br /></pre><br />6.イメージファイルの作成<br />Debian GNU/Linux, with Linux 2.6.32-5-xen-686<br />で再起動<br />以下のコマンドを実行<br /><pre>xen-create-image --hostname test1 --ip 192.168.0.20 --scsi --vcpus 1 --pygrub --dist lenny<br /></pre><br />7.Xenで起動<br />Debian GNU/Linux, with Linux 2.6.32-5-xen-686 and XEN 4.0-i386<br />で起動<br />以下のコマンドを投入<br /><pre>xm create /etc/xen/test1.cfg -c<br /></pre><br />GRUBメニューまではいったが、<br />なぜかメモリエラーでカーネルパニックしたOTZ<br />流石に256MのノートPCじゃ駄目だったかも今回はここまで<br /><br /><br />※<br />あと不要なVMイメージは<br />xen-delete-image<br />ってコマンドで削除するといいかも<br />xen-list-images<br />で一覧を見れる<br /><br />参考リンク<br /><a href="http://www.valinux.co.jp/contents/tech/techlib/xen/xen_sp_01.html">http://www.valinux.co.jp/contents/tech/techlib/xen/xen_sp_01.html</a><br /><a href="http://rayearth.homelinux.net/pukiwiki/?Debian%2FXen">http://rayearth.homelinux.net/pukiwiki/?Debian%2FXen</a><br /><a href="http://www.cs.is.noda.tus.ac.jp/~tatsuya/master_wiki/index.php?Xen%20on%20Debian">http://www.cs.is.noda.tus.ac.jp/~tatsuya/master_wiki/index.php?Xen%20on%20Debian</a><br /><a href="http://d.hatena.ne.jp/fujisan3776/20090309/1236576002">http://d.hatena.ne.jp/fujisan3776/20090309/1236576002</a><br /><a href="http://pocketstudio.jp/linux/?Xen%2FXenFaq%20-%20Xen%20%B8%F8%BC%B0%20Wiki%20%C6%FC%CB%DC%B8%EC%CC%F5">http://pocketstudio.jp/linux/?Xen%2FXenFaq%20-%20Xen%20%B8%F8%BC%B0%20Wiki%20%C6%FC%CB%DC%B8%EC%CC%F5</a>
 
 
   </div>
@@ -212,7 +221,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -279,7 +288,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

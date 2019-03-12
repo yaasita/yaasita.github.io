@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="Debian squeezeにしたらコンソールの解像度が変わった" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2011/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Debian squeezeにしたらコンソールの解像度が変わった | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    事象は/etc/default/grubのGRUB_GFXMODEを変更しても<br />GRUB2の選択画面はその解像度になるがブート後のコンソール画面が狂ってしまうというもの<br /><a href="http://www.google.co.jp/search?hl=ja&amp;safe=off&amp;client=firefox-a&amp;hs=8zm&amp;rls=org.mozilla%3Aja%3Aofficial&amp;q=Debian+squeeze+console+resolution&amp;aq=f&amp;aqi=&amp;aql=&amp;oq=">こんな単語</a>でググったらいろいろ見つかった<br /><a href="http://linux.derkeiler.com/Mailing-Lists/Debian/2010-01/msg01695.html">こちらの情報</a>を参考に設定してみた<br /><br />1./etc/default/grubを編集<br /><pre>GRUB_GFXMODE=1024x768<br /></pre>というように設定<br /><br />2./etc/grub.d/00_headerを編集<br />39行目あたりにある<br />if [ "x${GRUB_GFXMODE}" = "x" ] ; then GRUB_GFXMODE=640x480 ; fi<br />の下に以下の行を追記<br /><pre>GRUB_GFXPAYLOAD="${GRUB_GFXMODE}"<br /></pre>127行目あたりの<br />set gfxmode=${GRUB_GFXMODE}<br />の下に<br /><pre>set gfxpayload=${GRUB_GFXPAYLOAD}<br /></pre>を追記<br /><br />3.update-grub<br />update-grubする<br /><br />その他<br />なんでもgfxtermとか言うらしい・・・詳しいことはよく分からない<br /><br />参考リンク<br /><a href="https://forums.ubuntulinux.jp/viewtopic.php?pid=44077">https://forums.ubuntulinux.jp/viewtopic.php?pid=44077</a><br /><a href="http://linux.derkeiler.com/Mailing-Lists/Debian/2010-01/msg01695.html">http://linux.derkeiler.com/Mailing-Lists/Debian/2010-01/msg01695.html</a>
+    
+
+事象は/etc/default/grubのGRUB_GFXMODEを変更しても<br />GRUB2の選択画面はその解像度になるがブート後のコンソール画面が狂ってしまうというもの<br /><a href="http://www.google.co.jp/search?hl=ja&amp;safe=off&amp;client=firefox-a&amp;hs=8zm&amp;rls=org.mozilla%3Aja%3Aofficial&amp;q=Debian+squeeze+console+resolution&amp;aq=f&amp;aqi=&amp;aql=&amp;oq=">こんな単語</a>でググったらいろいろ見つかった<br /><a href="http://linux.derkeiler.com/Mailing-Lists/Debian/2010-01/msg01695.html">こちらの情報</a>を参考に設定してみた<br /><br />1./etc/default/grubを編集<br /><pre>GRUB_GFXMODE=1024x768<br /></pre>というように設定<br /><br />2./etc/grub.d/00_headerを編集<br />39行目あたりにある<br />if [ "x${GRUB_GFXMODE}" = "x" ] ; then GRUB_GFXMODE=640x480 ; fi<br />の下に以下の行を追記<br /><pre>GRUB_GFXPAYLOAD="${GRUB_GFXMODE}"<br /></pre>127行目あたりの<br />set gfxmode=${GRUB_GFXMODE}<br />の下に<br /><pre>set gfxpayload=${GRUB_GFXPAYLOAD}<br /></pre>を追記<br /><br />3.update-grub<br />update-grubする<br /><br />その他<br />なんでもgfxtermとか言うらしい・・・詳しいことはよく分からない<br /><br />参考リンク<br /><a href="https://forums.ubuntulinux.jp/viewtopic.php?pid=44077">https://forums.ubuntulinux.jp/viewtopic.php?pid=44077</a><br /><a href="http://linux.derkeiler.com/Mailing-Lists/Debian/2010-01/msg01695.html">http://linux.derkeiler.com/Mailing-Lists/Debian/2010-01/msg01695.html</a>
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

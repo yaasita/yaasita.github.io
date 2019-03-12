@@ -10,14 +10,15 @@
     <atom:link href="/categories/windows/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Windows10のクリップボード履歴昨日</title>
+      <title>Windows10のクリップボード履歴機能</title>
       <link>https://yaasita.github.io/2019/03/10/clipboard/</link>
       <pubDate>Sun, 10 Mar 2019 22:47:52 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2019/03/10/clipboard/</guid>
       <description>Windows10に標準でクリップボード履歴機能が付いたらしい
  https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html
-  Windows キー + Vで使えるようになる</description>
+  Windows キー + Vで使えるようになる
+cliborの方が使いやすそうな気がするけど、しばらくこっち使ってみる</description>
     </item>
     
     <item>
@@ -88,8 +89,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E965-E325-11CE-BF
       <pubDate>Wed, 18 Jun 2014 00:03:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2014/06/18/windows8_1_shutdown/</guid>
-      <description>Win+cで設定ボタン⇒PC設定の変更⇒保守と管理⇒回復⇒今すぐ再起動する⇒PCの電源を切る
-https://www2.mouse-jp.co.jp/ssl/user_support2/sc_faq_documents.asp?FaqID=13460</description>
+      <description>Win+cで設定ボタン⇒PC設定の変更⇒保守と管理⇒回復⇒今すぐ再起動する⇒PCの電源を切る  https://www2.mouse-jp.co.jp/ssl/user_support2/sc_faq_documents.asp?FaqID=13460</description>
     </item>
     
     <item>
@@ -112,7 +112,7 @@ osdHotkey
       <pubDate>Sat, 07 Dec 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/12/07/349/</guid>
-      <description>SPICEクライアントをダウンロード
+      <description> SPICEクライアントをダウンロード
 http://www.spice-space.org/download.html
 virt-viewer-x64-0.5.7.msiを使いました
 んでインストール
@@ -129,7 +129,7 @@ http://www.server-world.info/query?os=Fedora_18&amp;amp;p=kvm&amp;amp;f=8 </desc
       <pubDate>Sun, 13 Oct 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/10/13/432/</guid>
-      <description> </description>
+      <description>  </description>
     </item>
     
     <item>
@@ -138,7 +138,7 @@ http://www.server-world.info/query?os=Fedora_18&amp;amp;p=kvm&amp;amp;f=8 </desc
       <pubDate>Sun, 25 Aug 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/08/25/536/</guid>
-      <description>VLCをインストールして
+      <description> VLCをインストールして
 ↓から鍵ファイルとlibaacsを所定の場所に保存
 http://vlc-bluray.whoknowsmy.name/
 参考リンク
@@ -161,7 +161,7 @@ http://www.modern.ie/ja/virtualization-tools</description>
       <pubDate>Sun, 23 Sep 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/09/23/2191/</guid>
-      <description>Linuxだとsmartctlとかだけど、Windowsだとこれがいい感じ
+      <description> Linuxだとsmartctlとかだけど、Windowsだとこれがいい感じ
 CrystalDiskInfo
 http://www.forest.impress.co.jp/lib/sys/hrdbnch/hardinfo/crdiskinfo.html </description>
     </item>
@@ -172,7 +172,7 @@ http://www.forest.impress.co.jp/lib/sys/hrdbnch/hardinfo/crdiskinfo.html </descr
       <pubDate>Sat, 09 Jun 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/06/09/2530/</guid>
-      <description>xfreerdpでいけます
+      <description> xfreerdpでいけます
 
 apt-get install freerdp-x11
  </description>
@@ -184,7 +184,7 @@ apt-get install freerdp-x11
       <pubDate>Thu, 26 Jan 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/01/26/3111/</guid>
-      <description>最近のCygwinが便利になってたので導入メモ
+      <description> 最近のCygwinが便利になってたので導入メモ
 １．インストール
 公式サイトからsetup.exeを持ってくる
 ソフトのインストールに毎回setup.exeを使うのは面倒なので、apt-cygを導入する
@@ -217,7 +217,7 @@ http://rdt17.blogspot.com/2011/05/xming.html </description>
       <pubDate>Sun, 06 Nov 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/11/06/3361/</guid>
-      <description>ファイルを分割＆結合してくれるソフトです
+      <description> ファイルを分割＆結合してくれるソフトです
 主に海外のダウンロードサイトなどで目にします。
 公式サイトはこちら
 そこからLinux版とWinodws版が選べます
@@ -255,7 +255,7 @@ Video→Screenをえらんでディスプレイ先を切り替えること</desc
       <pubDate>Sat, 14 May 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/05/14/3986/</guid>
-      <description>レジストリを以下のようにすればOKらしい
+      <description> レジストリを以下のようにすればOKらしい
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
 &#34;NoDriveTypeAutoRun&#34;=dword:000000b5
 
@@ -271,7 +271,7 @@ http://yonyon-blog.net/youmei/2008/05/27/cddvd%E3%82%84usb%E3%83%A1%E3%83%A2%E3%
       <pubDate>Sun, 01 May 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/05/01/4235/</guid>
-      <description>Xmingはwindowsで使えるXサーバー
+      <description> Xmingはwindowsで使えるXサーバー
 ここからダウンロードしてインストール
 とりあえず使ってみるにはWindows側で以下のコマンドでXサーバーを起動
 Xming.exe -ac -multiwindow -clipboard
@@ -291,7 +291,7 @@ export DISPLAY=&#34;192.168.0.6:0&#34;
       <pubDate>Sun, 01 May 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/05/01/4214/</guid>
-      <description>使いやすい＋早いと思ったのは
+      <description> 使いやすい＋早いと思ったのは
 ufsかなぁ
 ctclもなかなか良い感じだけど
 切替の早さはufsかなぁ・・・
@@ -305,7 +305,7 @@ http://d.hatena.ne.jp/ampll/20090602/1243924925 </description>
       <pubDate>Mon, 11 Apr 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/04/11/4383/</guid>
-      <description>前回Dwmにはまったので
+      <description> 前回Dwmにはまったので
 Windowsでも出来ないか探してみたらあった
 bug.nというらしい
 使い方はLinuxの時とほぼ同じ

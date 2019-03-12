@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="xsessionrcのプロセス制御" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2011/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>xsessionrcのプロセス制御 | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    <a href="http://rdt17.blogspot.com/2011/05/linux.html">前回</a>、<a href="http://rdt17.blogspot.com/2011/04/dwm.html">前々回</a>でwhileでループさせた後xsessionで壁紙やらステータスバーを変更してたけど、それだといろいろと不具合があることが分かったので修正する。<br /><br />修正後のxsessionrcは以下のようになった<br /><br /><pre>#!/bin/bash<br />#xsetroot -solid DarkSlateBlue<br />#hsetroot -full /usr/share/lxde/wallpapers/garasunodice.jpg<br /><br />D_NUM=`echo $DISPLAY  | cut -f 2 -d:`<br />PIDFILE=~/.xsession_${D_NUM}.pid<br />for psnum in $(cat $PIDFILE)<br />do<br />        cmd=`ps -p $psnum | tail -1 `<br />        if echo $cmd | grep Xsession > /dev/null ; then<br />                kill $psnum<br />        fi<br />done<br />rm -f $PIDFILE<br /><br />while true<br />        do<br />        DATE=`date +"%Y/%m/%d %H:%M"`<br />        LOAD=`loadav.pl`<br />        xsetroot -name "Load Average:$LOAD   $DATE" || exit<br />        sleep 30s || exit<br />done &amp;<br />echo $! >> $PIDFILE<br /><br />while true<br />        do<br />        /usr/local/bin/random_wallpaper.pl /jitaku/local/pic/Linux_wallpaper/ || exit<br />        sleep 30m || exit<br />done &amp;<br />echo $! >> $PIDFILE<br /></pre><br />まず不具合の原因はwhileループがXをログオフしても生き続けること<br />下図参考このように30sの間にログオフ→ログインが行われると2つのプロセスが実行されてしまう<br />それを防ぐためにwhileのwhileのプロセスを記録しておく<br />このときディスプレイ番号も記録し他のXセッションも切らないようにする<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-xZdIpCpqxyI/TcYrDv7H6kI/AAAAAAAAASA/8jjuwlI7NpE/s1600/ps2.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="208" width="320" src="http://2.bp.blogspot.com/-xZdIpCpqxyI/TcYrDv7H6kI/AAAAAAAAASA/8jjuwlI7NpE/s320/ps2.png" /></a></div>pstreeでみるとこんな感じ<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-RUEPzQU1VuU/TcYrWoc6W4I/AAAAAAAAASI/Ymif4LG0ERA/s1600/pstree.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="69" width="320" src="http://1.bp.blogspot.com/-RUEPzQU1VuU/TcYrWoc6W4I/AAAAAAAAASI/Ymif4LG0ERA/s320/pstree.png" /></a></div><br />こうしておけば次にログインするときにWhileプロセスを殺してくれる。whileプロセスが無いので時間が経てば消えるので良しとした<br />ちなみにこの方法は再起動した時でも前回のプロセス番号をkillしようとするので完全ではない。<br />たまたま、同じプロセス番号＋Xsessionコマンドで実行されていれば間違えてしまう可能性がある<br /><br />過去記事<br /><a href="http://rdt17.blogspot.com/2011/04/dwm.html">Dwmのステータスバーと壁紙を変更してみる</a><br /><a href="http://rdt17.blogspot.com/2011/05/linux.html">Linuxでランダムに壁紙を変更するスクリプト書いた </a>
+    
+
+<a href="http://rdt17.blogspot.com/2011/05/linux.html">前回</a>、<a href="http://rdt17.blogspot.com/2011/04/dwm.html">前々回</a>でwhileでループさせた後xsessionで壁紙やらステータスバーを変更してたけど、それだといろいろと不具合があることが分かったので修正する。<br /><br />修正後のxsessionrcは以下のようになった<br /><br /><pre>#!/bin/bash<br />#xsetroot -solid DarkSlateBlue<br />#hsetroot -full /usr/share/lxde/wallpapers/garasunodice.jpg<br /><br />D_NUM=`echo $DISPLAY  | cut -f 2 -d:`<br />PIDFILE=~/.xsession_${D_NUM}.pid<br />for psnum in $(cat $PIDFILE)<br />do<br />        cmd=`ps -p $psnum | tail -1 `<br />        if echo $cmd | grep Xsession > /dev/null ; then<br />                kill $psnum<br />        fi<br />done<br />rm -f $PIDFILE<br /><br />while true<br />        do<br />        DATE=`date +"%Y/%m/%d %H:%M"`<br />        LOAD=`loadav.pl`<br />        xsetroot -name "Load Average:$LOAD   $DATE" || exit<br />        sleep 30s || exit<br />done &amp;<br />echo $! >> $PIDFILE<br /><br />while true<br />        do<br />        /usr/local/bin/random_wallpaper.pl /jitaku/local/pic/Linux_wallpaper/ || exit<br />        sleep 30m || exit<br />done &amp;<br />echo $! >> $PIDFILE<br /></pre><br />まず不具合の原因はwhileループがXをログオフしても生き続けること<br />下図参考このように30sの間にログオフ→ログインが行われると2つのプロセスが実行されてしまう<br />それを防ぐためにwhileのwhileのプロセスを記録しておく<br />このときディスプレイ番号も記録し他のXセッションも切らないようにする<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/-xZdIpCpqxyI/TcYrDv7H6kI/AAAAAAAAASA/8jjuwlI7NpE/s1600/ps2.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="208" width="320" src="http://2.bp.blogspot.com/-xZdIpCpqxyI/TcYrDv7H6kI/AAAAAAAAASA/8jjuwlI7NpE/s320/ps2.png" /></a></div>pstreeでみるとこんな感じ<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-RUEPzQU1VuU/TcYrWoc6W4I/AAAAAAAAASI/Ymif4LG0ERA/s1600/pstree.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="69" width="320" src="http://1.bp.blogspot.com/-RUEPzQU1VuU/TcYrWoc6W4I/AAAAAAAAASI/Ymif4LG0ERA/s320/pstree.png" /></a></div><br />こうしておけば次にログインするときにWhileプロセスを殺してくれる。whileプロセスが無いので時間が経てば消えるので良しとした<br />ちなみにこの方法は再起動した時でも前回のプロセス番号をkillしようとするので完全ではない。<br />たまたま、同じプロセス番号＋Xsessionコマンドで実行されていれば間違えてしまう可能性がある<br /><br />過去記事<br /><a href="http://rdt17.blogspot.com/2011/04/dwm.html">Dwmのステータスバーと壁紙を変更してみる</a><br /><a href="http://rdt17.blogspot.com/2011/05/linux.html">Linuxでランダムに壁紙を変更するスクリプト書いた </a>
 
 
   </div>
@@ -212,7 +221,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -279,7 +288,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

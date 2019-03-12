@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="sudoku(数独)の日本語man" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2011/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>sudoku(数独)の日本語man | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    Linux用のsudokuゲームの日本語manです<br /><br /><br /><br /><h1>NAME</h1>sudoku - 数独ゲーム<br /><br /><h1>SYNOPSIS</h1>(ゲームを始める)<br />sudoku [options] ...  [&amp;lt;filename&amp;gt;]<br /><br />(問題を作成)<br />sudoku -g [&amp;lt;num&amp;gt;] [options] ...<br /><br />(問題を解く)<br />sudoku -v [options] ...<br /><br />(難易度を計算)<br />sudoku -s [options] ...<br /><br /><h1>DESCRIPTION</h1>The  sudoku board game is played on a 9x9 grid, divided into rows, columns, and<br />9 blocks of 3x3 squares. The objective is to fill the empty  squares  with  the<br />digits 1-9, so that each row, column, and block contains each of the digits 1-9<br />(and hence, it is not possible for any digit to appear twice in the  same  row,<br />column or block).<br /><br /><h1>GAME INTERFACE</h1>数独は、単純なテキスト・インターフェース（curses(3) ライブラリを使用）です。<br />ゲームを開始すると使用できるキー入力の説明と共に中央に問題が表示されます。 <br />カーソルは矢印キーかviのキーバインドで動かすことが出来ます。<br />正方形のマスに（最初から数値が入っているマスを除き）対応する数値を<br />入力します。0か.キーを入力すると消すことが出来ます。<br /><br /><h2>Generating a New Board</h2>新しい問題はnキーを押すことで表示できます。新しい問題はランダムに生成されたものか<br />すでに用意された問題ファイルから表示されます。<br />-nコマンドが渡された場合はすでに用意されている問題ファイルからのみ表示します。<br /><br /><h2>Entering a Custom Board</h2>独自の問題を解くことも出来ます。(例えばインターネットや新聞で見つけた問題)<br />まずcキーを押して問題をクリアし、初期値を入力します。<br />その後、fキーを押すことで問題を固定できます。<br />固定した値は変更できなくなります。<br /><br /><h2>Hints</h2>このプログラムでは問題を解くための支援をするヒント機能が存在します。<br />それは次に入力できるマスの領域をハイライトします。<br />繰り返しヒントを使用すると入力すべき値まで教えてくれます。<br /><br />たまにヒントが不可解な場合があります。例えば以下のように<br /><pre>v v v
+    
+
+Linux用のsudokuゲームの日本語manです<br /><br /><br /><br /><h1>NAME</h1>sudoku - 数独ゲーム<br /><br /><h1>SYNOPSIS</h1>(ゲームを始める)<br />sudoku [options] ...  [&amp;lt;filename&amp;gt;]<br /><br />(問題を作成)<br />sudoku -g [&amp;lt;num&amp;gt;] [options] ...<br /><br />(問題を解く)<br />sudoku -v [options] ...<br /><br />(難易度を計算)<br />sudoku -s [options] ...<br /><br /><h1>DESCRIPTION</h1>The  sudoku board game is played on a 9x9 grid, divided into rows, columns, and<br />9 blocks of 3x3 squares. The objective is to fill the empty  squares  with  the<br />digits 1-9, so that each row, column, and block contains each of the digits 1-9<br />(and hence, it is not possible for any digit to appear twice in the  same  row,<br />column or block).<br /><br /><h1>GAME INTERFACE</h1>数独は、単純なテキスト・インターフェース（curses(3) ライブラリを使用）です。<br />ゲームを開始すると使用できるキー入力の説明と共に中央に問題が表示されます。 <br />カーソルは矢印キーかviのキーバインドで動かすことが出来ます。<br />正方形のマスに（最初から数値が入っているマスを除き）対応する数値を<br />入力します。0か.キーを入力すると消すことが出来ます。<br /><br /><h2>Generating a New Board</h2>新しい問題はnキーを押すことで表示できます。新しい問題はランダムに生成されたものか<br />すでに用意された問題ファイルから表示されます。<br />-nコマンドが渡された場合はすでに用意されている問題ファイルからのみ表示します。<br /><br /><h2>Entering a Custom Board</h2>独自の問題を解くことも出来ます。(例えばインターネットや新聞で見つけた問題)<br />まずcキーを押して問題をクリアし、初期値を入力します。<br />その後、fキーを押すことで問題を固定できます。<br />固定した値は変更できなくなります。<br /><br /><h2>Hints</h2>このプログラムでは問題を解くための支援をするヒント機能が存在します。<br />それは次に入力できるマスの領域をハイライトします。<br />繰り返しヒントを使用すると入力すべき値まで教えてくれます。<br /><br />たまにヒントが不可解な場合があります。例えば以下のように<br /><pre>v v v
 <br />. . 7 | . . 9 | . . .
 <br />9 . 6 | 7 4 . | . 1 5
 <br />. . 2 | 5 1 . | . . .
@@ -229,7 +238,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -296,7 +305,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

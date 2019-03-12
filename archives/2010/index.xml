@@ -57,7 +57,7 @@ ABCディレクトリ配下のみ同期したい場合
 rsync -av --delete-excluded --include=&#34;ABC/*&#34; --exclude=&#34;*&#34; src/ dst/
 ABC配下のみ同期したい場合はまずABCをincludeします
 ↓のようにやればOK
-rsync -av --delete-excluded --include=&#34;ABC&#34; --include=&#34;</description>
+rsync -av --delete-excluded --include=&#34;</description>
     </item>
     
     <item>
@@ -66,7 +66,7 @@ rsync -av --delete-excluded --include=&#34;ABC&#34; --include=&#34;</description
       <pubDate>Sat, 25 Dec 2010 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2010/12/25/5052/</guid>
-      <description>Frozen BubbleのFLASH版があったのでメモ
+      <description> Frozen BubbleのFLASH版があったのでメモ
 http://www.gamefz.com/a.asp?id=2420 </description>
     </item>
     
@@ -88,7 +88,7 @@ http://blog.livedoor.jp/lkrejg/archives/65520026.html</description>
       <pubDate>Mon, 20 Dec 2010 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2010/12/20/5092/</guid>
-      <description>multitail messages -I syslog.1
+      <description> multitail messages -I syslog.1
 -I でファイルをひとつのウィンドウに混ぜて表示
 multitail -l &#39;ping hoge&#39; -L &#39;ping foo&#39;
 外部プログラムなら-Lで混ぜて表示
@@ -113,7 +113,7 @@ http://www.vanheusden.com/multitail/  </description>
       <pubDate>Mon, 20 Dec 2010 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2010/12/20/5113/</guid>
-      <description>解決策
+      <description> 解決策
 Ctrlを押しながらマウスホイールをまわす TERATERM.INIのTranslateWheelToCursorをoffにする
 参考リンク
 http://d.hatena.ne.jp/orangeclover/20100406/1270564074 </description>
@@ -167,7 +167,7 @@ newsbeuter →　メールを読むようにじっくり読みたい人向け</d
       <pubDate>Sat, 11 Dec 2010 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2010/12/11/5157/</guid>
-      <description>useraddでテスト用のアカウント作ったら読み込まれてたので
+      <description> useraddでテスト用のアカウント作ったら読み込まれてたので
 何でだろうとおもったら下のページに書いてあった
 ようはprofileとかなければ呼ばれないらしい
 http://blog.jojo.jp/?eid=1013034
@@ -181,7 +181,7 @@ http://blog.jojo.jp/?eid=1013034
       <pubDate>Fri, 10 Dec 2010 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2010/12/10/5198/</guid>
-      <description>/proc/acpi/thermal_zone/THRM
+      <description> /proc/acpi/thermal_zone/THRM
 とよい
 temperatureとか・・・ </description>
     </item>
@@ -192,7 +192,7 @@ temperatureとか・・・ </description>
       <pubDate>Fri, 10 Dec 2010 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2010/12/10/5218/</guid>
-      <description>mplayer で出来た
+      <description> mplayer で出来た
 →　←　でseek
 0 9 / * で音量操作
 p　で一時停止
@@ -209,7 +209,7 @@ hoge.lstにはプレイリストを記述（一行に1ファイル） </descript
       <pubDate>Fri, 10 Dec 2010 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2010/12/10/5177/</guid>
-      <description>Ctrl-a押してから:number [n]
+      <description> Ctrl-a押してから:number [n]
 で出来るらしい
 参考リンク
 http://d.hatena.ne.jp/riskn/20070430/1177961903 </description>
@@ -221,7 +221,7 @@ http://d.hatena.ne.jp/riskn/20070430/1177961903 </description>
       <pubDate>Sat, 04 Dec 2010 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2010/12/04/5239/</guid>
-      <description>以下UUIDの調べ方
+      <description> 以下UUIDの調べ方
 1./devを見る
 ls -l /dev/disk/by-uuid
 2.blkidコマンドで見る
@@ -236,7 +236,7 @@ http://ankyo.blog.so-net.ne.jp/2010-01-26 </description>
       <pubDate>Sun, 28 Nov 2010 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2010/11/28/5283/</guid>
-      <description>alsaconfが無くなったらしい
+      <description> alsaconfが無くなったらしい
 alsactl initでできるらしい
 参考リンク
 http://d.hatena.ne.jp/toromoti/20100610/1276167033 </description>
@@ -248,7 +248,7 @@ http://d.hatena.ne.jp/toromoti/20100610/1276167033 </description>
       <pubDate>Sun, 28 Nov 2010 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2010/11/28/5259/</guid>
-      <description>tightvncserver(vncserver)で起動
+      <description> tightvncserver(vncserver)で起動
 (XvncだけでXだけを起動することも出来るが普通は使用しない vncserverがラッパーになっている)
 Xvncのオプションも使えるので
 こんな感じで起動
@@ -308,7 +308,7 @@ dir = /home/xen</description>
       <pubDate>Tue, 23 Nov 2010 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2010/11/23/5303/</guid>
-      <description>192.168.0.11がsambaサーバだったとすると
+      <description> 192.168.0.11がsambaサーバだったとすると
 smbclient -L 192.168.0.11
  </description>
     </item>
@@ -319,7 +319,7 @@ smbclient -L 192.168.0.11
       <pubDate>Sat, 13 Nov 2010 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2010/11/13/5345/</guid>
-      <description>こういうのとかYOU ONLY LIVE ONCEShared Objectを削除すれば最初からできる
+      <description> こういうのとかYOU ONLY LIVE ONCEShared Objectを削除すれば最初からできる
 Cookieを削除してもなぜか前回の情報を保持してる？と思ったときは試すといいかもしれない
 参考リンク
 http://enchanting.cside.com/security/flashcookie.html </description>
@@ -331,7 +331,7 @@ http://enchanting.cside.com/security/flashcookie.html </description>
       <pubDate>Thu, 04 Nov 2010 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2010/11/04/5365/</guid>
-      <description>文字通りありえない画像を検索します
+      <description> 文字通りありえない画像を検索します
 元はyahooの画像検索らしい
 http://eroy.8-bit.jp/gazou/
 あとTumblrとかいうのもあった
@@ -345,7 +345,7 @@ http://blog.livedoor.jp/darkm/archives/51088800.html </description>
       <pubDate>Tue, 02 Nov 2010 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2010/11/02/5385/</guid>
-      <description>こんなん見つけた
+      <description> こんなん見つけた
 http://anond.pha11.info/archives/5931
 仕組みは分からんが凄そうだ
 http://openlega.appspot.com/
@@ -362,7 +362,7 @@ http://suh45.blog9.fc2.com/blog-entry-92.html </description>
       <pubDate>Sun, 31 Oct 2010 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2010/10/31/5405/</guid>
-      <description>rsshってソフトで実現できるらしい
+      <description> rsshってソフトで実現できるらしい
 基本的にはyum install rsshでインストール→/etc/rssh.confを編集でOKらしい
 で、sftp,scp専用には出来たけどchroot環境を構築するためのスクリプトmkchroot.shが見つからなかった
 yum whatprovides */mkchroot.shとかやっても駄目

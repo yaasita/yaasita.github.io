@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="Bazaarを使ってみたので分かった事のまとめ" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2010/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Bazaarを使ってみたので分かった事のまとめ | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    Mercurialを使ったことがあるならすぐ慣れると思うけど<br />Mercurialは単一のリポジトリでブランチを管理できるけどbzrは切り離す必要があるということは注意<br /><b>* マニュアル</b><br />公式マニュアル<br /><a href="http://doc.bazaar.canonical.com/ja/">http://doc.bazaar.canonical.com/ja/</a><br />Bazzar Wiki<br /><a href="http://www19.atwiki.jp/bazaar/pages/1.html">http://www19.atwiki.jp/bazaar/pages/1.html</a><br /><br /><b>* Logの参照</b><br />1から3までのログを参照<br /><blockquote>bzr log -r 1..3</blockquote>今日の変更を参照<br /><blockquote>bzr log -r today</blockquote>最新の変更を参照<br /><blockquote>bzr log -r last:</blockquote>ちなみにbzr log -vとやると変更ファイル一覧が見れる<br /><br /><b>* 現在のリビジョンを確認</b><br /><blockquote>bzr revno</blockquote><br /><b>* リポジトリの情報を表示</b><br /><blockquote>bzr info</blockquote><br /><b>* ブランチからmerge</b><br /><blockquote>bzr merge /tmp/hoge</blockquote><br /><b>* push/pull</b><br />ブランチから変更を送信/取得<br /><br /><b>* ブランチを作成</b><br />mercurialと違ってブランチはリポジトリも切り離す<br />必要がある<br /><blockquote>bzr ./ /tmp/hoge</blockquote><a href="http://d.hatena.ne.jp/methane/20090825/1251175889">http://d.hatena.ne.jp/methane/20090825/1251175889</a><br /><br /><b>* 無視リスト</b><br /><blockquote>bzr ignore "hoge"</blockquote>これで.bzrignoreに追加される(手動で追加しても良い)<br />デフォルトでワイルドカードが有効<br />例)  classの拡張子を無視<br /><blockquote>bzr ignore "*.class"</blockquote>!を最初につけると例外を追加できる<br />例）~で終わるファイルを無視しない (*~はデフォルトで無視リストに入っている)<br /><blockquote>!*~</blockquote>RE:をつけると正規表現が使える<br />例）libディレクトリは以下の.oファイルを無視<br /><blockquote>bzr ignore "RE:lib/.*\.o"</blockquote>ちなみにbzr ignoredで実際に無視しているファイルを確認できる<br /><div style="color: red;">※一度管理下に置かれてしまったファイルは無視できないため、bzr rm --keepで一旦削除して下さい</div><br /><b>* Web Interface</b><br />loggerhead ってのがあった<br />aptでインストール　serve-branchesで起動<br /><br /><b>* 共有リポジトリ</b><br /><blockquote>bzr init-repo hoge/</blockquote><blockquote>bzr init hoge/</blockquote>とかで開始<br /><a href="http://doc.bazaar.canonical.com/bzr.2.1/ja/user-guide/publishing_a_branch.html">http://doc.bazaar.canonical.com/bzr.2.1/ja/user-guide/publishing_a_branch.html</a><br /><br /><b>* 指定したリビジョンへ戻す</b><br />bzr revertで最新コミットからの状態を取り消す（bzr statで修正が検地できる箇所をすべてなかったことにする）<br />bzr uncommit で最後のコミットを取り消す<br />bzr revert -r 19 で19番目のリビジョンへ全体を戻す<br /><br /><a href="http://doc.bazaar.canonical.com/bzr.dev/ja/user-guide/undoing_mistakes.html">http://doc.bazaar.canonical.com/bzr.dev/ja/user-guide/undoing_mistakes.html</a>
+    
+
+Mercurialを使ったことがあるならすぐ慣れると思うけど<br />Mercurialは単一のリポジトリでブランチを管理できるけどbzrは切り離す必要があるということは注意<br /><b>* マニュアル</b><br />公式マニュアル<br /><a href="http://doc.bazaar.canonical.com/ja/">http://doc.bazaar.canonical.com/ja/</a><br />Bazzar Wiki<br /><a href="http://www19.atwiki.jp/bazaar/pages/1.html">http://www19.atwiki.jp/bazaar/pages/1.html</a><br /><br /><b>* Logの参照</b><br />1から3までのログを参照<br /><blockquote>bzr log -r 1..3</blockquote>今日の変更を参照<br /><blockquote>bzr log -r today</blockquote>最新の変更を参照<br /><blockquote>bzr log -r last:</blockquote>ちなみにbzr log -vとやると変更ファイル一覧が見れる<br /><br /><b>* 現在のリビジョンを確認</b><br /><blockquote>bzr revno</blockquote><br /><b>* リポジトリの情報を表示</b><br /><blockquote>bzr info</blockquote><br /><b>* ブランチからmerge</b><br /><blockquote>bzr merge /tmp/hoge</blockquote><br /><b>* push/pull</b><br />ブランチから変更を送信/取得<br /><br /><b>* ブランチを作成</b><br />mercurialと違ってブランチはリポジトリも切り離す<br />必要がある<br /><blockquote>bzr ./ /tmp/hoge</blockquote><a href="http://d.hatena.ne.jp/methane/20090825/1251175889">http://d.hatena.ne.jp/methane/20090825/1251175889</a><br /><br /><b>* 無視リスト</b><br /><blockquote>bzr ignore "hoge"</blockquote>これで.bzrignoreに追加される(手動で追加しても良い)<br />デフォルトでワイルドカードが有効<br />例)  classの拡張子を無視<br /><blockquote>bzr ignore "*.class"</blockquote>!を最初につけると例外を追加できる<br />例）~で終わるファイルを無視しない (*~はデフォルトで無視リストに入っている)<br /><blockquote>!*~</blockquote>RE:をつけると正規表現が使える<br />例）libディレクトリは以下の.oファイルを無視<br /><blockquote>bzr ignore "RE:lib/.*\.o"</blockquote>ちなみにbzr ignoredで実際に無視しているファイルを確認できる<br /><div style="color: red;">※一度管理下に置かれてしまったファイルは無視できないため、bzr rm --keepで一旦削除して下さい</div><br /><b>* Web Interface</b><br />loggerhead ってのがあった<br />aptでインストール　serve-branchesで起動<br /><br /><b>* 共有リポジトリ</b><br /><blockquote>bzr init-repo hoge/</blockquote><blockquote>bzr init hoge/</blockquote>とかで開始<br /><a href="http://doc.bazaar.canonical.com/bzr.2.1/ja/user-guide/publishing_a_branch.html">http://doc.bazaar.canonical.com/bzr.2.1/ja/user-guide/publishing_a_branch.html</a><br /><br /><b>* 指定したリビジョンへ戻す</b><br />bzr revertで最新コミットからの状態を取り消す（bzr statで修正が検地できる箇所をすべてなかったことにする）<br />bzr uncommit で最後のコミットを取り消す<br />bzr revert -r 19 で19番目のリビジョンへ全体を戻す<br /><br /><a href="http://doc.bazaar.canonical.com/bzr.dev/ja/user-guide/undoing_mistakes.html">http://doc.bazaar.canonical.com/bzr.dev/ja/user-guide/undoing_mistakes.html</a>
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

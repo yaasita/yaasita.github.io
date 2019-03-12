@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="apt-fileについて" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2010/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>apt-fileについて | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    コマンドからパッケージ名を検索するときに便利なコマンド<br /><br />以下manの（適当な）翻訳<br /><pre>書式<br />apt-file [ options ] [ action ] [ pattern ]<br /><br />apt-fileコマンドはAPTパッケージシステム中のファイルを探すことが出来ます。<br />action には以下の物を使用します<br /><br />update<br />パッケージの情報からファイルのリストを再同期します。<br />パッケージリストの情報はsources.listから持ってきます。<br /><br />search<br />ファイルがどのパッケージに含まれるかを検索します。<br />patternを含むファイルを持っているすべてのパッケージが出力されます。<br /><br />find<br />searchのエイリアスです。<br /><br />list<br />patternにマッチしているパッケージの中身を出力します。<br />dpkg -L と違ってインストールされていなくても良いという違いはありますが、<br />挙動はdpkg -L に非常に近いです。<br /><br />show<br />listのエイリアスです。<br /><br />purge<br />キャッシュディレクトリにある全てのContents-<arch>.gzファイルを削除します。<br /></pre>あと<br />apt-file list pattern<br />でpatternパッケージに含まれているファイル一覧を出力することができますが、<br />patternを含む全パッケージが出力されてしまうため、厳密にこのパッケージの<br />中身が見たいという場合はdpkg -L の方が良いかもしれません。<br />あとオプションに-xを指定すると正規表現が使えます<br /><br />例）<br />apt-file find nslookup | grep bin # nslookupコマンドを含むパッケージ名を検索<br />apt-file -x list ^bittorrent$ #bittorrentパッケージ中のファイルを出力<br /><br />参考リンク<br /><a href="http://d.hatena.ne.jp/rx7/20080830/p1">http://d.hatena.ne.jp/rx7/20080830/p1</a><br /><a href="http://d.hatena.ne.jp/kiririmode/20081119/p1">http://d.hatena.ne.jp/kiririmode/20081119/p1</a><br /><a href="http://d.hatena.ne.jp/rubikitch/20080406/1207420372">http://d.hatena.ne.jp/rubikitch/20080406/1207420372</a>
+    
+
+コマンドからパッケージ名を検索するときに便利なコマンド<br /><br />以下manの（適当な）翻訳<br /><pre>書式<br />apt-file [ options ] [ action ] [ pattern ]<br /><br />apt-fileコマンドはAPTパッケージシステム中のファイルを探すことが出来ます。<br />action には以下の物を使用します<br /><br />update<br />パッケージの情報からファイルのリストを再同期します。<br />パッケージリストの情報はsources.listから持ってきます。<br /><br />search<br />ファイルがどのパッケージに含まれるかを検索します。<br />patternを含むファイルを持っているすべてのパッケージが出力されます。<br /><br />find<br />searchのエイリアスです。<br /><br />list<br />patternにマッチしているパッケージの中身を出力します。<br />dpkg -L と違ってインストールされていなくても良いという違いはありますが、<br />挙動はdpkg -L に非常に近いです。<br /><br />show<br />listのエイリアスです。<br /><br />purge<br />キャッシュディレクトリにある全てのContents-<arch>.gzファイルを削除します。<br /></pre>あと<br />apt-file list pattern<br />でpatternパッケージに含まれているファイル一覧を出力することができますが、<br />patternを含む全パッケージが出力されてしまうため、厳密にこのパッケージの<br />中身が見たいという場合はdpkg -L の方が良いかもしれません。<br />あとオプションに-xを指定すると正規表現が使えます<br /><br />例）<br />apt-file find nslookup | grep bin # nslookupコマンドを含むパッケージ名を検索<br />apt-file -x list ^bittorrent$ #bittorrentパッケージ中のファイルを出力<br /><br />参考リンク<br /><a href="http://d.hatena.ne.jp/rx7/20080830/p1">http://d.hatena.ne.jp/rx7/20080830/p1</a><br /><a href="http://d.hatena.ne.jp/kiririmode/20081119/p1">http://d.hatena.ne.jp/kiririmode/20081119/p1</a><br /><a href="http://d.hatena.ne.jp/rubikitch/20080406/1207420372">http://d.hatena.ne.jp/rubikitch/20080406/1207420372</a>
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

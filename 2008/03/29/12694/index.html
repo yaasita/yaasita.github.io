@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="Linuxでスワップ頻度を調整する" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2008/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Linuxでスワップ頻度を調整する | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    swappinessという値を変更する。これは0～100までの値で大きいほどスワップし、<br />小さいほどアプリケーションに割り当てるメモリを多く取り結果スワップが減る。<br /><br />現在の値を表示する（デフォルトは60）<br /><blockquote>cat /proc/sys/vm/swappiness</blockquote><br />一時的に40に変更する（再起動後はデフォルトに戻る）<br /><blockquote>echo 40 > /proc/sys/vm/swappiness</blockquote><br />永続的に変更する<br /><blockquote>/etc/sysctl.confを編集し<br />vm.swappiness=40<br />を付け加える<br />その後<br /># sysctl -p<br />で適用</blockquote><br /><br /><br />参考リンク<br />ITmedia<a href="http://www.itmedia.co.jp/enterprise/articles/0712/10/news011_4.html"><br />http://www.itmedia.co.jp/enterprise/articles/0712/10/news011_4.html<br /></a><br /><a href="http://www.linuxmagic.org/tips02.html">http://www.linuxmagic.org/tips02.html</a>
+    
+
+swappinessという値を変更する。これは0～100までの値で大きいほどスワップし、<br />小さいほどアプリケーションに割り当てるメモリを多く取り結果スワップが減る。<br /><br />現在の値を表示する（デフォルトは60）<br /><blockquote>cat /proc/sys/vm/swappiness</blockquote><br />一時的に40に変更する（再起動後はデフォルトに戻る）<br /><blockquote>echo 40 > /proc/sys/vm/swappiness</blockquote><br />永続的に変更する<br /><blockquote>/etc/sysctl.confを編集し<br />vm.swappiness=40<br />を付け加える<br />その後<br /># sysctl -p<br />で適用</blockquote><br /><br /><br />参考リンク<br />ITmedia<a href="http://www.itmedia.co.jp/enterprise/articles/0712/10/news011_4.html"><br />http://www.itmedia.co.jp/enterprise/articles/0712/10/news011_4.html<br /></a><br /><a href="http://www.linuxmagic.org/tips02.html">http://www.linuxmagic.org/tips02.html</a>
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

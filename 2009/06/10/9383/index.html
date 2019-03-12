@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="perlで定数を宣言するには？" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2009/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>perlで定数を宣言するには？ | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    １．use constantモジュールを使う<br /><br /><blockquote>#!/usr/bin/perl<br />use constant TEISU =&amp;gt; 777;<br />use constant {<br /> HOGE =&amp;gt; 'あああ',<br /> HAGE =&amp;gt; 'いいい'<br />};<br /></blockquote><br />２．型グロブとリファレンスを駆使して上書き禁止の変数にする<br /><br /><blockquote>#!/usr/bin/perl -l<br />*TEISU=\777;<br />*KENSAKU=\(quotemeta 'てすと');<br />print $TEISU;<br /></blockquote><br />参考リンク<br /><a href="http://www2u.biglobe.ne.jp/~MAS/perl/waza/const.html">http://www2u.biglobe.ne.jp/~MAS/perl/waza/const.html</a><br /><a href="http://chaichan.web.infoseek.co.jp/perlnote/perlnote2008-03-153.htm">http://chaichan.web.infoseek.co.jp/perlnote/perlnote2008-03-153.htm</a><br /><a href="http://www.rfs.jp/sb/perl/02/02.html#TRY!%20%E5%AE%9A%E6%95%B0%E3%81%AE%E5%AE%A3%E8%A8%80">http://www.rfs.jp/sb/perl/02/02.html#TRY!%20%E5%AE%9A%E6%95%B0%E3%81%AE%E5%AE%A3%E8%A8%80</a>
+    
+
+１．use constantモジュールを使う<br /><br /><blockquote>#!/usr/bin/perl<br />use constant TEISU =&amp;gt; 777;<br />use constant {<br /> HOGE =&amp;gt; 'あああ',<br /> HAGE =&amp;gt; 'いいい'<br />};<br /></blockquote><br />２．型グロブとリファレンスを駆使して上書き禁止の変数にする<br /><br /><blockquote>#!/usr/bin/perl -l<br />*TEISU=\777;<br />*KENSAKU=\(quotemeta 'てすと');<br />print $TEISU;<br /></blockquote><br />参考リンク<br /><a href="http://www2u.biglobe.ne.jp/~MAS/perl/waza/const.html">http://www2u.biglobe.ne.jp/~MAS/perl/waza/const.html</a><br /><a href="http://chaichan.web.infoseek.co.jp/perlnote/perlnote2008-03-153.htm">http://chaichan.web.infoseek.co.jp/perlnote/perlnote2008-03-153.htm</a><br /><a href="http://www.rfs.jp/sb/perl/02/02.html#TRY!%20%E5%AE%9A%E6%95%B0%E3%81%AE%E5%AE%A3%E8%A8%80">http://www.rfs.jp/sb/perl/02/02.html#TRY!%20%E5%AE%9A%E6%95%B0%E3%81%AE%E5%AE%A3%E8%A8%80</a>
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

@@ -6,8 +6,27 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 08 Feb 2019 00:52:50 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 12 Mar 2019 23:00:51 +0900</lastBuildDate>
     <atom:link href="/categories/soft/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>hugoアップデート</title>
+      <link>https://yaasita.github.io/2019/03/12/hugo-update/</link>
+      <pubDate>Tue, 12 Mar 2019 23:00:51 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/03/12/hugo-update/</guid>
+      <description>久々にhugoをアップデート v0.41 =&amp;gt; v0.54まで上げた
+ワーニング潰し アップデートに伴い
+.Prev と .Nextが非推奨になったぽい マニュアル, コミット
+なのでこれはそれぞれ以下のように修正すればOK(意味が逆なので分かりにくいけど)
+ .Prev =&amp;gt; .NextPage
+ .Next =&amp;gt; .PrevPage
+  OGP設定 某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました
+上手く表示できてますか？
+修正箇所
+themes/hugo-theme-geppaku/layouts/partials/header.html
+ {{ if .IsHome }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Site.Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;website&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}&amp;quot; /&amp;gt; {{ else }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;article&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}{{ .Page.Dir }}&amp;quot; /&amp;gt; {{ end }} &amp;lt;meta property=&amp;quot;og:site_name&amp;quot; content=&amp;quot;{{ .</description>
+    </item>
     
     <item>
       <title>最近使ってる集中アプリ</title>
@@ -291,23 +310,6 @@ WSL経由でも良かったんだけど、なんかVimのvisualモードで背�
  F1キーをリモート側に送るとかそういう設定がしやすい
   微妙な点  Alt-Vでペーストしてたけどこれが使えない(設定方法が分からない)
   まとめ ConEmu入れた後putty設定したり、微妙に面倒だけど使いやすい</description>
-    </item>
-    
-    <item>
-      <title>Teratermでreject clipbordのエラー</title>
-      <link>https://yaasita.github.io/2017/11/16/teraterm-copy/</link>
-      <pubDate>Thu, 16 Nov 2017 06:33:07 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/11/16/teraterm-copy/</guid>
-      <description> teraterm + Tmuxでコピーをすると
-Reject clipboard write access from remoteのエラーが出る
-これはOSC52っていう制御文字を使ってリモートからOSのクリップボードを書き込むことができる機能がブロックされてるよって事
-直すには Setup -&amp;gt; Addtional settings -&amp;gt; Control Sequenceタブ
-と進んで該当箇所を設定すればOK
-その下にNotifyの設定もある
-
-参考リンク  リモートの tmux でコピーした内容のローカルのクリップボードへの反映
-   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
   </channel>

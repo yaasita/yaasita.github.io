@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="BIND9の設定" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2012/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>BIND9の設定 | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    <ol><li>インストール</li><pre>apt-get install bind9</pre><li>正引きの設定</li>named.conf.local <pre>zone "test" {<br />    type master;<br />    file "/etc/bind/db.test";<br />};<br /></pre>db.test <pre>$TTL    1D<br />@       IN      SOA     dns.test. root.hoge. (<br />                         20120505       ; Serial<br />                         604800         ; Refresh<br />                          86400         ; Retry<br />                        2419200         ; Expire<br />                         604800 )       ; Negative Cache TTL<br />;<br />@       IN      NS      dns.test.<br />main            IN      A               192.168.0.2<br />vista           IN      A               192.168.0.3<br />dns             IN      A               192.168.0.4<br />note            IN      CNAME           dns.test.<br />jitaku          IN      A               192.168.0.11<br /></pre><li>逆引きの設定</li>named.conf.local <pre>zone "0.168.192.in-addr.arpa" {<br />        type master;<br />        file "/etc/bind/db.testrev";<br />};<br /></pre>db.testrev <pre>$TTL    1D<br />@       IN      SOA     dns.test. root.hoge. (<br />                         20120505       ; Serial<br />                         604800         ; Refresh<br />                          86400         ; Retry<br />                        2419200         ; Expire<br />                         604800 )       ; Negative Cache TTL<br />;<br />@       IN      NS      dns.test.<br />;<br />2                       IN      PTR             main.test.<br />3                       IN      PTR             vista.test.<br />4                       IN      PTR             note.test.<br />11                      IN      PTR             jitaku.test.<br /></pre><li>セカンダリDNS設定</li>セカンダリDNSの設定は以下のようにする これでプライマリからゾーン転送されてくる <pre>named.conf.local<br />zone "hoge.jp" {<br />    type slave;<br />    file "/tmp/db.hoge";<br />    masters { 123.123.123.123; };<br />};<br /></pre>ゾーン転送(完全転送：AXFR)をエミュレートするには <pre>nslookup<br />server ns.example.co.jp<br />ls example.co.jp<br /></pre>digでも出来る <pre>dig @ns.example.co.jp example.co.jp axfr<br /></pre><a href="http://www.atmarkit.co.jp/fsecurity/rensai/iprotect01/iprotect01.html">http://www.atmarkit.co.jp/fsecurity/rensai/iprotect01/iprotect01.html</a><li>その他Tips </li>フォワーダ設定<br />named.conf.options <pre>forwarders {<br />    210.130.1.1;<br />    210.130.0.1;<br />    8.8.8.8;<br />    8.8.4.4;<br />};<br /></pre>chacheファイルの在り処 <pre>/var/cache/bind/named_dump.db<br /></pre>chacheのクリア <pre>rndc flush<br /></pre>時間は秒数以外も指定できる <pre>W　週<br />D　日<br />H　時間<br />M　分<br /></pre><a href="http://kajuhome.com/tips/tips_04_002.shtml">http://kajuhome.com/tips/tips_04_002.shtml</a></ol>参考リンク <a href="http://www.atmarkit.co.jp/flinux/index/indexfiles/index-linux.html#bind8">http://www.atmarkit.co.jp/flinux/index/indexfiles/index-linux.html#bind8</a>
+    
+
+<ol><li>インストール</li><pre>apt-get install bind9</pre><li>正引きの設定</li>named.conf.local <pre>zone "test" {<br />    type master;<br />    file "/etc/bind/db.test";<br />};<br /></pre>db.test <pre>$TTL    1D<br />@       IN      SOA     dns.test. root.hoge. (<br />                         20120505       ; Serial<br />                         604800         ; Refresh<br />                          86400         ; Retry<br />                        2419200         ; Expire<br />                         604800 )       ; Negative Cache TTL<br />;<br />@       IN      NS      dns.test.<br />main            IN      A               192.168.0.2<br />vista           IN      A               192.168.0.3<br />dns             IN      A               192.168.0.4<br />note            IN      CNAME           dns.test.<br />jitaku          IN      A               192.168.0.11<br /></pre><li>逆引きの設定</li>named.conf.local <pre>zone "0.168.192.in-addr.arpa" {<br />        type master;<br />        file "/etc/bind/db.testrev";<br />};<br /></pre>db.testrev <pre>$TTL    1D<br />@       IN      SOA     dns.test. root.hoge. (<br />                         20120505       ; Serial<br />                         604800         ; Refresh<br />                          86400         ; Retry<br />                        2419200         ; Expire<br />                         604800 )       ; Negative Cache TTL<br />;<br />@       IN      NS      dns.test.<br />;<br />2                       IN      PTR             main.test.<br />3                       IN      PTR             vista.test.<br />4                       IN      PTR             note.test.<br />11                      IN      PTR             jitaku.test.<br /></pre><li>セカンダリDNS設定</li>セカンダリDNSの設定は以下のようにする これでプライマリからゾーン転送されてくる <pre>named.conf.local<br />zone "hoge.jp" {<br />    type slave;<br />    file "/tmp/db.hoge";<br />    masters { 123.123.123.123; };<br />};<br /></pre>ゾーン転送(完全転送：AXFR)をエミュレートするには <pre>nslookup<br />server ns.example.co.jp<br />ls example.co.jp<br /></pre>digでも出来る <pre>dig @ns.example.co.jp example.co.jp axfr<br /></pre><a href="http://www.atmarkit.co.jp/fsecurity/rensai/iprotect01/iprotect01.html">http://www.atmarkit.co.jp/fsecurity/rensai/iprotect01/iprotect01.html</a><li>その他Tips </li>フォワーダ設定<br />named.conf.options <pre>forwarders {<br />    210.130.1.1;<br />    210.130.0.1;<br />    8.8.8.8;<br />    8.8.4.4;<br />};<br /></pre>chacheファイルの在り処 <pre>/var/cache/bind/named_dump.db<br /></pre>chacheのクリア <pre>rndc flush<br /></pre>時間は秒数以外も指定できる <pre>W　週<br />D　日<br />H　時間<br />M　分<br /></pre><a href="http://kajuhome.com/tips/tips_04_002.shtml">http://kajuhome.com/tips/tips_04_002.shtml</a></ol>参考リンク <a href="http://www.atmarkit.co.jp/flinux/index/indexfiles/index-linux.html#bind8">http://www.atmarkit.co.jp/flinux/index/indexfiles/index-linux.html#bind8</a>
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

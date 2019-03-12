@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="perlでプログレスバー的なものを作る" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2009/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>perlでプログレスバー的なものを作る | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    ポイントは$lと\rです。<br />$|・・・出力をバッファリングするかどうか（0以外はバッファリングしない。つまりprint文は直ぐ出すということ）<br />\r・・・キャリッジリターンまあ頭にカーソル戻すよーみたいな意味<br /><br /><blockquote><br />#!/usr/bin/perl<br />$max=125;<br />$split=50;<br /><br />$| = 1;<br />$ps=int($max/$split+1);<br />for (1..$split){<br />    print "[","=" x $_," " x ($split-$_),"]";<br />    print "\r";<br />    sleep 1;<br />    if ($_==$split){<br />        print "[","=" x $split,"]\n";<br />        exit;<br />    }<br /><br />}<br /><br /></blockquote><br />参考リンク<br /><a href="http://perl.g.hatena.ne.jp/bosh/20080107/p1">http://perl.g.hatena.ne.jp/bosh/20080107/p1</a><br /><a href="http://www.geocities.co.jp/SiliconValley-Sunnyvale/6128/perl/evalue.html">http://www.geocities.co.jp/SiliconValley-Sunnyvale/6128/perl/evalue.html</a>
+    
+
+ポイントは$lと\rです。<br />$|・・・出力をバッファリングするかどうか（0以外はバッファリングしない。つまりprint文は直ぐ出すということ）<br />\r・・・キャリッジリターンまあ頭にカーソル戻すよーみたいな意味<br /><br /><blockquote><br />#!/usr/bin/perl<br />$max=125;<br />$split=50;<br /><br />$| = 1;<br />$ps=int($max/$split+1);<br />for (1..$split){<br />    print "[","=" x $_," " x ($split-$_),"]";<br />    print "\r";<br />    sleep 1;<br />    if ($_==$split){<br />        print "[","=" x $split,"]\n";<br />        exit;<br />    }<br /><br />}<br /><br /></blockquote><br />参考リンク<br /><a href="http://perl.g.hatena.ne.jp/bosh/20080107/p1">http://perl.g.hatena.ne.jp/bosh/20080107/p1</a><br /><a href="http://www.geocities.co.jp/SiliconValley-Sunnyvale/6128/perl/evalue.html">http://www.geocities.co.jp/SiliconValley-Sunnyvale/6128/perl/evalue.html</a>
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

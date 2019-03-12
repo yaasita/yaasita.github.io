@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="perlでリターンキーを待たずにキーのデータを一つ読み取るには?" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2009/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>perlでリターンキーを待たずにキーのデータを一つ読み取るには? | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    Term::ReadKeyを使えばいいらしい<br /><br />使い方：<br /><br />ReadModeで読み方を指定　引数は0～5のどれか<br /> 0・・・元々の設定に戻す<br /> 1・・・普通のモード<br /> 2・・・1と同じだがechoされない（自分が入力したものが見れないからパスワード入力などに使える）<br /> 3・・・cbreakモード　Ctrl＋Cで止めるとかできる<br /> 4・・・rowモード　Ctrl＋Cで止めるとか無理。改行コード変換はしてくれる。<br /> 5・・・4と同じだが改行コード変換はしてくれない。（Windows環境では4と5は同じ）<br /><br />ReadKeyで読み込む　引数は0、-1、0より大きい値のどれか<br />0・・・getc見たいに1文字よみます（引数省略時のデフォルト）<br />-1・・・<a href="http://e-words.jp/w/E3838EE383B3E38396E383ADE38383E382ADE383B3E382B0E9809AE4BFA1.html">ノンブロッキング</a>リード<br />引数>0・・・引数秒だけwaitし、時間になったらundefを返す<br /><br />例<br /><blockquote>#!/usr/bin/perl<br /><br />use Term::ReadKey;<br />print $Term::ReadKey::VERSION;<br />print "\n";<br />ReadMode 3;<br />while (1){<br /> $char = ReadKey(5);<br /> last if not defined $char;<br /> printf ("%1s is %X ",$char,ord $char);<br /> print "\n";<br />}</blockquote><br /><br /><br /><br />参考サイト<br /><a href="http://search.cpan.org/~stsi/TermReadKey/ReadKey.pm">http://search.cpan.org/~stsi/TermReadKey/ReadKey.pm</a><br /><a href="http://perldoc.jp/docs/perl/5.10.0/perlfaq8.pod">http://perldoc.jp/docs/perl/5.10.0/perlfaq8.pod</a><br /><a href="http://www.jp-z.jp/perlmemo/IF_Term-ReadKey.html">http://www.jp-z.jp/perlmemo/IF_Term-ReadKey.html</a>
+    
+
+Term::ReadKeyを使えばいいらしい<br /><br />使い方：<br /><br />ReadModeで読み方を指定　引数は0～5のどれか<br /> 0・・・元々の設定に戻す<br /> 1・・・普通のモード<br /> 2・・・1と同じだがechoされない（自分が入力したものが見れないからパスワード入力などに使える）<br /> 3・・・cbreakモード　Ctrl＋Cで止めるとかできる<br /> 4・・・rowモード　Ctrl＋Cで止めるとか無理。改行コード変換はしてくれる。<br /> 5・・・4と同じだが改行コード変換はしてくれない。（Windows環境では4と5は同じ）<br /><br />ReadKeyで読み込む　引数は0、-1、0より大きい値のどれか<br />0・・・getc見たいに1文字よみます（引数省略時のデフォルト）<br />-1・・・<a href="http://e-words.jp/w/E3838EE383B3E38396E383ADE38383E382ADE383B3E382B0E9809AE4BFA1.html">ノンブロッキング</a>リード<br />引数>0・・・引数秒だけwaitし、時間になったらundefを返す<br /><br />例<br /><blockquote>#!/usr/bin/perl<br /><br />use Term::ReadKey;<br />print $Term::ReadKey::VERSION;<br />print "\n";<br />ReadMode 3;<br />while (1){<br /> $char = ReadKey(5);<br /> last if not defined $char;<br /> printf ("%1s is %X ",$char,ord $char);<br /> print "\n";<br />}</blockquote><br /><br /><br /><br />参考サイト<br /><a href="http://search.cpan.org/~stsi/TermReadKey/ReadKey.pm">http://search.cpan.org/~stsi/TermReadKey/ReadKey.pm</a><br /><a href="http://perldoc.jp/docs/perl/5.10.0/perlfaq8.pod">http://perldoc.jp/docs/perl/5.10.0/perlfaq8.pod</a><br /><a href="http://www.jp-z.jp/perlmemo/IF_Term-ReadKey.html">http://www.jp-z.jp/perlmemo/IF_Term-ReadKey.html</a>
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="cshの限界について" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2008/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>cshの限界について | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    配列を参照するのにforeach文というものがあります<br />これはperlとかphpにあったりします。そんでcshにもあるのですが・・・<br />なぜか<span style="font-weight: bold; color: rgb(51, 51, 255);">cshのforeach文に指定できる配列数の上限は997なのです</span><br />この997配列がMAXというのはOSやハードウェアの仕様によらずに、どの環境でも同じでした。<br />つまりcshの言語仕様ってことらしい。なぜ？？なんでだろーなんでだろー<br /><br />いろいろなシェル（一部perlで検証してみた）<br />イナバの物置風にforeachの捌ける配列MAXを探す<br /><span style="color: rgb(255, 0, 0);">※スクリプト中に使われるファイル（list.txt,list2.txt)は複数行あるテキストファイルです。このファイルに例えば3行あれば3個の配列を用意します（空行は除く）。</span><br /><span style="color: rgb(255, 0, 0);">つまりcshが997が限界なのかを検証するには997行のファイルと998行のファイルを用意すればいいのです。</span><br /><br /><br />まずはbash　全然平気<br /><blockquote><br />#!/bin/bash<br />array=(`cat list.txt`)<br />for line in ${array[@]}<br />do<br />echo $line<br />done<br />echo "やっぱりbash ${#array[@]} 人のっても大丈夫"<br /></blockquote><br /><br />続いてzsh　まあbashの強化版だし平気みたい<br /><blockquote><br />#!/usr/bin/zsh<br />array=(`cat list.txt`)<br />for line in ${array[@]}<br />do<br />echo $line<br />done<br />echo "やっぱりzsh ${#array[@]} 人のっても大丈夫"<br /></blockquote><br /><br />cshとは違うのだよcshとは　みたいな感じで余裕でクリア<br /><blockquote><br />#!/bin/tcsh<br />set array=`cat list.txt`<br />foreach i ($array)<br />echo $i<br />end<br />echo "やっぱりtcsh ${#array} 人乗っても大丈夫"<br /></blockquote><br /><br />流石perlだどんな配列でもなんとも無いぜ！<br /><blockquote><br />#!/usr/bin/perl<br />open (FH,"list.txt");<br />@array=&amp;lt;FH&amp;gt;;<br />foreach (@array) {<br />print;<br />}<br />print "やっぱりperl ",$#array+1,"人乗っても大丈夫\n";<br />close FH;<br /></blockquote><br /><br />この入力ファイルが997行以上あると・・・・<br />ちょおまｗｗｗｗみたいな感じで駄目　csh終わったな・・・<br /><blockquote><br />#!/bin/csh<br />set array=`cat list2.txt`<br />foreach i ($array)<br />echo $i<br />end<br />echo "やっぱりcsh ${#array} 人乗っても大丈夫"<br /></blockquote>
+    
+
+配列を参照するのにforeach文というものがあります<br />これはperlとかphpにあったりします。そんでcshにもあるのですが・・・<br />なぜか<span style="font-weight: bold; color: rgb(51, 51, 255);">cshのforeach文に指定できる配列数の上限は997なのです</span><br />この997配列がMAXというのはOSやハードウェアの仕様によらずに、どの環境でも同じでした。<br />つまりcshの言語仕様ってことらしい。なぜ？？なんでだろーなんでだろー<br /><br />いろいろなシェル（一部perlで検証してみた）<br />イナバの物置風にforeachの捌ける配列MAXを探す<br /><span style="color: rgb(255, 0, 0);">※スクリプト中に使われるファイル（list.txt,list2.txt)は複数行あるテキストファイルです。このファイルに例えば3行あれば3個の配列を用意します（空行は除く）。</span><br /><span style="color: rgb(255, 0, 0);">つまりcshが997が限界なのかを検証するには997行のファイルと998行のファイルを用意すればいいのです。</span><br /><br /><br />まずはbash　全然平気<br /><blockquote><br />#!/bin/bash<br />array=(`cat list.txt`)<br />for line in ${array[@]}<br />do<br />echo $line<br />done<br />echo "やっぱりbash ${#array[@]} 人のっても大丈夫"<br /></blockquote><br /><br />続いてzsh　まあbashの強化版だし平気みたい<br /><blockquote><br />#!/usr/bin/zsh<br />array=(`cat list.txt`)<br />for line in ${array[@]}<br />do<br />echo $line<br />done<br />echo "やっぱりzsh ${#array[@]} 人のっても大丈夫"<br /></blockquote><br /><br />cshとは違うのだよcshとは　みたいな感じで余裕でクリア<br /><blockquote><br />#!/bin/tcsh<br />set array=`cat list.txt`<br />foreach i ($array)<br />echo $i<br />end<br />echo "やっぱりtcsh ${#array} 人乗っても大丈夫"<br /></blockquote><br /><br />流石perlだどんな配列でもなんとも無いぜ！<br /><blockquote><br />#!/usr/bin/perl<br />open (FH,"list.txt");<br />@array=&amp;lt;FH&amp;gt;;<br />foreach (@array) {<br />print;<br />}<br />print "やっぱりperl ",$#array+1,"人乗っても大丈夫\n";<br />close FH;<br /></blockquote><br /><br />この入力ファイルが997行以上あると・・・・<br />ちょおまｗｗｗｗみたいな感じで駄目　csh終わったな・・・<br /><blockquote><br />#!/bin/csh<br />set array=`cat list2.txt`<br />foreach i ($array)<br />echo $i<br />end<br />echo "やっぱりcsh ${#array} 人乗っても大丈夫"<br /></blockquote>
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

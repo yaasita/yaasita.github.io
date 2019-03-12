@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="最近のCygwinをインストール" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2012/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>最近のCygwinをインストール | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    最近のCygwinが便利になってたので導入メモ<br /><br />１．インストール<br /><a href="http://cygwin.com/install.html">公式サイト</a>からsetup.exeを持ってくる<br />ソフトのインストールに毎回setup.exeを使うのは面倒なので、<a href="http://d.hatena.ne.jp/takuya_1st/20110205/1296887435">apt-cygを導入する</a><br /><br />２．Xサーバの導入<br />setup.exeからX11を選択して全部入れる<br />そんでウィンドウマネージャとしてdwmを入れる<br />ソースは<a href="http://dwm.suckless.org/">公式サイト</a>から拾ってビルド<br /><pre>tar xzf dwm-6.0.tar.gz<br />cd dwm-6.0<br />make<br />mv dwm.exe /usr/bin/<br /></pre>あとは~/.xinitrcに適当に書いてstartxでOK<br /><pre>xhost +192.168.0.4<br />dwm<br /></pre><br /><br />３．その他設定<br /><br />あとは便利に使うコマンドとしてcygstartを覚えておくと良いかも<br />詳しくは<a href="http://at-aka.blogspot.com/2008/06/cygstart-cygwin-word.html">こちら</a><br />コンソールの設定だけど右クリック→Options→Looks→背景色とか透過とかカーソルをいじる<br /><br />Xサーバーに飛ばしたかったらアプリ起動側で変数設定すること<br /><pre>export DISPLAY="192.168.0.3:0"<br /></pre><br /><br />関連記事<br /><a href="http://rdt17.blogspot.com/2011/05/xming.html">http://rdt17.blogspot.com/2011/05/xming.html</a>
+    
+
+最近のCygwinが便利になってたので導入メモ<br /><br />１．インストール<br /><a href="http://cygwin.com/install.html">公式サイト</a>からsetup.exeを持ってくる<br />ソフトのインストールに毎回setup.exeを使うのは面倒なので、<a href="http://d.hatena.ne.jp/takuya_1st/20110205/1296887435">apt-cygを導入する</a><br /><br />２．Xサーバの導入<br />setup.exeからX11を選択して全部入れる<br />そんでウィンドウマネージャとしてdwmを入れる<br />ソースは<a href="http://dwm.suckless.org/">公式サイト</a>から拾ってビルド<br /><pre>tar xzf dwm-6.0.tar.gz<br />cd dwm-6.0<br />make<br />mv dwm.exe /usr/bin/<br /></pre>あとは~/.xinitrcに適当に書いてstartxでOK<br /><pre>xhost +192.168.0.4<br />dwm<br /></pre><br /><br />３．その他設定<br /><br />あとは便利に使うコマンドとしてcygstartを覚えておくと良いかも<br />詳しくは<a href="http://at-aka.blogspot.com/2008/06/cygstart-cygwin-word.html">こちら</a><br />コンソールの設定だけど右クリック→Options→Looks→背景色とか透過とかカーソルをいじる<br /><br />Xサーバーに飛ばしたかったらアプリ起動側で変数設定すること<br /><pre>export DISPLAY="192.168.0.3:0"<br /></pre><br /><br />関連記事<br /><a href="http://rdt17.blogspot.com/2011/05/xming.html">http://rdt17.blogspot.com/2011/05/xming.html</a>
 
 
   </div>
@@ -212,7 +221,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -279,7 +288,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

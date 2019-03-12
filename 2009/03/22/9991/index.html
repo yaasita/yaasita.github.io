@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="WebDAVの設定をDebian lennyでやってみる" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2009/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>WebDAVの設定をDebian lennyでやってみる | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    <a href="http://rdt17.blogspot.com/2008/10/apache2webdavthunderbird.html">前回</a>とちょっと違う部分があったので補足を含め書きます。<br />１．a2enmodで必要なモジュール読み込む<br />a2enmod dav<br />a2enmod dav_fs<br /><br />２．httpd.confに↓みたいに書いとけばok<br />そんでまあcalってディレクトリ作ってパーミッションとか777にしとけば<br />まあ間違いないだろう<br /><directory /var/www/cal/><br />Dav On<br />Options Indexes<br />AuthType Basic<br />AuthName "input webdav password!"<br />AuthUserFile "/etc/apache2/passwd"<br />Require valid-user<br />Order allow,deny<br />allow from all<br /></Directory><br /><br />３．ロックファイルやらうんちゃらは<br />/etc/apache2/mods-enabled<br />にある<br />dav_fs.conf<br />で定義してあるから別に書かなくてもおｋ<br /><br />3.5．Windowsのネットワークプレースでの確認方法は<br />ネットワークプレースの追加→ウィザード開く→基本次へで進む→アドレスに↓を記述してOK<br /><blockquote><br />http://hogehoge.com:8000/cal/<br />↑アドレス　　　↑WebDAVが有効なディレクトリ<br /></blockquote><br /><br />４．thunderbirdにlightningって拡張いれて<br />新しいカレンダーでも作ってごにょごにょすれば良いですよ <br /><br />参考リンク<br />休日カレンダーICS<br /><a href="http://www.mozilla-japan.org/projects/calendar/holidays.html">http://www.mozilla-japan.org/projects/calendar/holidays.html</a>
+    
+
+<a href="http://rdt17.blogspot.com/2008/10/apache2webdavthunderbird.html">前回</a>とちょっと違う部分があったので補足を含め書きます。<br />１．a2enmodで必要なモジュール読み込む<br />a2enmod dav<br />a2enmod dav_fs<br /><br />２．httpd.confに↓みたいに書いとけばok<br />そんでまあcalってディレクトリ作ってパーミッションとか777にしとけば<br />まあ間違いないだろう<br /><directory /var/www/cal/><br />Dav On<br />Options Indexes<br />AuthType Basic<br />AuthName "input webdav password!"<br />AuthUserFile "/etc/apache2/passwd"<br />Require valid-user<br />Order allow,deny<br />allow from all<br /></Directory><br /><br />３．ロックファイルやらうんちゃらは<br />/etc/apache2/mods-enabled<br />にある<br />dav_fs.conf<br />で定義してあるから別に書かなくてもおｋ<br /><br />3.5．Windowsのネットワークプレースでの確認方法は<br />ネットワークプレースの追加→ウィザード開く→基本次へで進む→アドレスに↓を記述してOK<br /><blockquote><br />http://hogehoge.com:8000/cal/<br />↑アドレス　　　↑WebDAVが有効なディレクトリ<br /></blockquote><br /><br />４．thunderbirdにlightningって拡張いれて<br />新しいカレンダーでも作ってごにょごにょすれば良いですよ <br /><br />参考リンク<br />休日カレンダーICS<br /><a href="http://www.mozilla-japan.org/projects/calendar/holidays.html">http://www.mozilla-japan.org/projects/calendar/holidays.html</a>
 
 
   </div>
@@ -212,7 +221,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -279,7 +288,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

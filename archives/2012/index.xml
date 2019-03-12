@@ -15,7 +15,7 @@
       <pubDate>Thu, 27 Dec 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/12/27/1805/</guid>
-      <description>というスクリプトの例
+      <description> というスクリプトの例
 uptimeから取ってくる
 以下は3時間経ったらhoge.shを実行する
  </description>
@@ -27,7 +27,7 @@ uptimeから取ってくる
       <pubDate>Mon, 24 Dec 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/12/24/1826/</guid>
-      <description>1.インストール
+      <description> 1.インストール
 普通にaptで入れる
 2.初期設定
 unbound.conf
@@ -76,7 +76,7 @@ http://yourdomain.com/postfixadmin/setup.php
       <pubDate>Fri, 21 Dec 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/12/21/1869/</guid>
-      <description>ドットインストール
+      <description> ドットインストール
 http://dotinstall.com/ </description>
     </item>
     
@@ -86,7 +86,7 @@ http://dotinstall.com/ </description>
       <pubDate>Wed, 19 Dec 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/12/19/1889/</guid>
-      <description>入れる方法は
+      <description> 入れる方法は
 ↓みたいにする
 この例だとvimに必要なパッケージ
 apt-get build-dep vim
@@ -100,8 +100,7 @@ http://vim-jp.org/docs/build_linux.html </description>
       <pubDate>Sun, 25 Nov 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/11/25/1951/</guid>
-      <description>
-Esc押したらIMEをオフにしてくれれば良いので以下のような設定にした
+      <description> Esc押したらIMEをオフにしてくれれば良いので以下のような設定にした
 あと、無変換キー＋Rでsudoしてくれる設定も追加しておいた
 AutoHotkey.ahk
 
@@ -118,8 +117,7 @@ https://sites.google.com/site/autohotkeyjp/reference/AutoHotkey_L/index </descri
       <pubDate>Sun, 25 Nov 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/11/25/1910/</guid>
-      <description>
-http://www.codecademy.com
+      <description> http://www.codecademy.com
 http://www.codeschool.com/ </description>
     </item>
     
@@ -129,8 +127,7 @@ http://www.codeschool.com/ </description>
       <pubDate>Sun, 25 Nov 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/11/25/1931/</guid>
-      <description>
-http://www.rainymood.com/
+      <description> http://www.rainymood.com/
 http://raining.fm/
 参考リンク
 http://www.lifehacker.jp/2012/08/120820_raining_fm.html </description>
@@ -142,7 +139,7 @@ http://www.lifehacker.jp/2012/08/120820_raining_fm.html </description>
       <pubDate>Sat, 24 Nov 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/11/24/1971/</guid>
-      <description>Teratermが新しくなっていたので、ここでまとめておく
+      <description> Teratermが新しくなっていたので、ここでまとめておく
 1.TERATERM.INI
  2.KEYBOARD.CNF
 https://raw.github.com/gist/4140449/2bad78bfe24a407764f13c7055fc0ed452f1affd/KEYBOARD.CNF
@@ -156,8 +153,7 @@ https://raw.github.com/gist/4140449/2bad78bfe24a407764f13c7055fc0ed452f1affd/KEY
       <pubDate>Thu, 22 Nov 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/11/22/1990/</guid>
-      <description>
-phpが入ってるディレクトリで
+      <description> phpが入ってるディレクトリで
 ctags -a -R --langmap=PHP:.php --php-types=c+f+d+v+i .
 
 でOKみたい
@@ -185,7 +181,7 @@ ThunderbirdDisplay Mail User AgentLightningMailHops</description>
       <pubDate>Sun, 28 Oct 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/10/28/2029/</guid>
-      <description>
+      <description> 
 bashで出来たシステムモニタ
 各ディストリのマークとか出る </description>
     </item>
@@ -196,7 +192,7 @@ bashで出来たシステムモニタ
       <pubDate>Sat, 20 Oct 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/10/20/2051/</guid>
-      <description>ダッシュボードで使えるよ j（ジェイ） 次のpostへ移動 k（ケー） 前のpostへ移動
+      <description> ダッシュボードで使えるよ j（ジェイ） 次のpostへ移動 k（ケー） 前のpostへ移動
 l（エル） like / like解除 n（エヌ） notesを開く / 閉じる r（アール） reblog（別ウィンドウが開く）
 R（Shift＋アール） 即時reblog
 E（Shift＋イー） キュー（投稿予約）へreblog
@@ -230,8 +226,7 @@ http://www.atmarkit.co.jp/flinux/rensai/linuxtips/254usedpmsx3x.html</descriptio
       <pubDate>Thu, 11 Oct 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/10/11/2089/</guid>
-      <description>
-自分がフォローしている人をブログに表示する
+      <description> 自分がフォローしている人をブログに表示する
 HTMLの編集からどうぞ
  following
 &amp;amp;lt;div&amp;amp;gt;
@@ -268,7 +263,7 @@ CONSUMER_KEYとCONSUMER_SECRETの取得 アプリの登録を行う
       <pubDate>Tue, 02 Oct 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/10/02/2129/</guid>
-      <description>http://pocketstudio.jp/log3/2012/06/04/new-features-of-munin2/
+      <description> http://pocketstudio.jp/log3/2012/06/04/new-features-of-munin2/
 http://dozen.dip.jp/archives/212 </description>
     </item>
     
@@ -278,7 +273,7 @@ http://dozen.dip.jp/archives/212 </description>
       <pubDate>Sun, 30 Sep 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/09/30/2150/</guid>
-      <description>&amp;amp;nbsp;ffmpeg -i 入力ファイル 出力ファイル
+      <description> &amp;amp;nbsp;ffmpeg -i 入力ファイル 出力ファイル
 みたいな感じでOKらしい
 ffmpeg -i hoge.flv hoge.mp4
 でもいけた
@@ -294,7 +289,7 @@ http://yosilove.blog.shinobi.jp/Entry/603/ </description>
       <pubDate>Wed, 26 Sep 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/09/26/2171/</guid>
-      <description>rvmとかあるらしいけど今回はrbenvを使ってみます 
+      <description> rvmとかあるらしいけど今回はrbenvを使ってみます 
 cd
 git clone git://github.com/sstephenson/rbenv.git .rbenv
 echo &#39;export PATH=&#34;$HOME/.rbenv/bin:$PATH&#34;&#39; &amp;amp;gt;&amp;amp;gt; ~/.bash_profile
@@ -326,7 +321,7 @@ rbenv rehash
       <pubDate>Sun, 23 Sep 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/09/23/2191/</guid>
-      <description>Linuxだとsmartctlとかだけど、Windowsだとこれがいい感じ
+      <description> Linuxだとsmartctlとかだけど、Windowsだとこれがいい感じ
 CrystalDiskInfo
 http://www.forest.impress.co.jp/lib/sys/hrdbnch/hardinfo/crdiskinfo.html </description>
     </item>

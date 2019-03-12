@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://yaasita.github.io/2019/03/12/hugo-update/</loc>
+    <lastmod>2019-03-12T23:00:51+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://yaasita.github.io/2019/03/10/clipboard/</loc>
     <lastmod>2019-03-10T22:47:52+09:00</lastmod>
   </url>
@@ -4529,7 +4534,7 @@
   
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2019-03-10T22:47:52+09:00</lastmod>
+    <lastmod>2019-03-12T23:00:51+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4607,7 +4612,7 @@
   
   <url>
     <loc>https://yaasita.github.io/archives/2019/</loc>
-    <lastmod>2019-03-10T22:47:52+09:00</lastmod>
+    <lastmod>2019-03-12T23:00:51+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4660,7 +4665,7 @@
   
   <url>
     <loc>https://yaasita.github.io/post/</loc>
-    <lastmod>2019-03-10T22:47:52+09:00</lastmod>
+    <lastmod>2019-03-12T23:00:51+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -4678,7 +4683,7 @@
   
   <url>
     <loc>https://yaasita.github.io/categories/soft/</loc>
-    <lastmod>2019-02-08T00:52:50+09:00</lastmod>
+    <lastmod>2019-03-12T23:00:51+09:00</lastmod>
     <priority>0</priority>
   </url>
   

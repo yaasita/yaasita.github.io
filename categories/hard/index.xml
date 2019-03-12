@@ -76,10 +76,7 @@ http://www.apple.com/jp/retail/personalsetup/</description>
       <pubDate>Sat, 22 Oct 2016 22:54:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2016/10/22/smart-phone/</guid>
-      <description>エイスース SIMフリースマートフォン
-ASUS ZenFone 2 Laser（Qualcomm Snapdragon 410/メモリ 2GB）
-16GB ブラック ZE500KL-BK16
-18,672円だった
+      <description>エイスース SIMフリースマートフォン ASUS ZenFone 2 Laser（Qualcomm Snapdragon 410/メモリ 2GB） 16GB ブラック ZE500KL-BK16  18,672円だった
 Androidは6.0.1まで上がった</description>
     </item>
     
@@ -188,7 +185,7 @@ PC構成を把握するコマンド
       <pubDate>Sun, 09 Mar 2014 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2014/03/09/145/</guid>
-      <description>以下のパッケージとかを入れる
+      <description> 以下のパッケージとかを入れる
 firmware-linux-nonfree
 firmware-realtek
 lspci
@@ -201,8 +198,7 @@ lspci
       <pubDate>Thu, 29 Aug 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/08/29/494/</guid>
-      <description>
-インストール
+      <description> インストール
 apt-get install smartmontools
 
 /etc/default/smartmontoolsの以下の行を有効にする
@@ -226,7 +222,7 @@ http://www.geocities.jp/sugachan1973/doc/funto57.html </description>
       <pubDate>Sun, 25 Aug 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/08/25/515/</guid>
-      <description>Realtekのドライバはインストールしておいたほうがいいみたい
+      <description> Realtekのドライバはインストールしておいたほうがいいみたい
 firmware-realtekってのがnon-freeにあったからaptで入る
 ethtool -i eth0
 lspci | grep Realtek
@@ -241,7 +237,7 @@ http://cskimura.blogspot.jp/2010/06/rtl81118168b-on-debian.html </description>
       <pubDate>Sun, 18 Aug 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/08/18/556/</guid>
-      <description>WOLの設定は以下参照
+      <description> WOLの設定は以下参照
 http://80286.blog62.fc2.com/blog-entry-37.html </description>
     </item>
     
@@ -251,7 +247,7 @@ http://80286.blog62.fc2.com/blog-entry-37.html </description>
       <pubDate>Sat, 20 Apr 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/04/20/989/</guid>
-      <description>xset -q
+      <description> xset -q
 で確認
 xset dpms 0 0 0 とかで設定できるのか
 なるほどね
@@ -265,7 +261,7 @@ https://forums.ubuntulinux.jp/viewtopic.php?id=1732 </description>
       <pubDate>Tue, 29 Jan 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/01/29/1483/</guid>
-      <description>を買ってみた
+      <description> を買ってみた
 所謂、SIMフリーの無線LANルータ </description>
     </item>
     

@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="vimで開いたファイルに日本語が無かった場合の挙動を制御" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2009/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>vimで開いたファイルに日本語が無かった場合の挙動を制御 | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    vimで<br />set fileencodings=utf-8,ucs-bom,cp932,ucs-2,euc-jp<br />↑を書いておくと上から順に判定してくれる。ただしこう書いておくと困ることがある<br />日本語を含まないファイルを開くとUTF-8でfencしてしまう。（:eで新規作成するファイルはencの値を使われるので問題ない）<br />つーわけでスクリプトで解決する。<br /><a href="http://www.kawaz.jp/pukiwiki/?vim#hec32c49">ずんwiki</a>に日本語判定スクリプトがあったので参考にする<br />ただし、このスクリプトには問題があってsearch関数はカーソル以下を検索するのでカーソル前に日本語があっても見逃してしまう<br />例えば下記の例で3行目にカーソルがあると日本語なしと判断してしまう<br /><br /><blockquote>aaa<br />ああああ<br />hogehoge←カーソル<br /></blockquote><br /><br />こんな感じで書くといいんじゃないでしょうか<br /><blockquote>" 日本語を含まない場合は fileencoding に encoding を使うようにする<br />function! AU_ReCheck_FENC()<br />let l:c=line(".")<br />normal gg<br />if search("[^\x01-\x7e]", 'n') == 0<br />"let &amp;fileencoding=&amp;encoding<br />  set fenc=cp932<br />  call cursor(l:c,1)<br />endif<br />endfunction<br />autocmd BufReadPost * call AU_ReCheck_FENC()</blockquote>
+    
+
+vimで<br />set fileencodings=utf-8,ucs-bom,cp932,ucs-2,euc-jp<br />↑を書いておくと上から順に判定してくれる。ただしこう書いておくと困ることがある<br />日本語を含まないファイルを開くとUTF-8でfencしてしまう。（:eで新規作成するファイルはencの値を使われるので問題ない）<br />つーわけでスクリプトで解決する。<br /><a href="http://www.kawaz.jp/pukiwiki/?vim#hec32c49">ずんwiki</a>に日本語判定スクリプトがあったので参考にする<br />ただし、このスクリプトには問題があってsearch関数はカーソル以下を検索するのでカーソル前に日本語があっても見逃してしまう<br />例えば下記の例で3行目にカーソルがあると日本語なしと判断してしまう<br /><br /><blockquote>aaa<br />ああああ<br />hogehoge←カーソル<br /></blockquote><br /><br />こんな感じで書くといいんじゃないでしょうか<br /><blockquote>" 日本語を含まない場合は fileencoding に encoding を使うようにする<br />function! AU_ReCheck_FENC()<br />let l:c=line(".")<br />normal gg<br />if search("[^\x01-\x7e]", 'n') == 0<br />"let &amp;fileencoding=&amp;encoding<br />  set fenc=cp932<br />  call cursor(l:c,1)<br />endif<br />endfunction<br />autocmd BufReadPost * call AU_ReCheck_FENC()</blockquote>
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

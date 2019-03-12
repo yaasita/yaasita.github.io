@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="自宅サーバーとレンタルサーバーでメールの同期を図る" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2010/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>自宅サーバーとレンタルサーバーでメールの同期を図る | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    私の環境は以下のようにレンタルサーバーと自宅サーバーそれぞれでメールを受信している<br />自宅サーバーは24時間動かしているわけではないため、自宅サーバーが電源OFFした場合はDynDNSのドメインのIPアドレスをレンタルサーバーに設定。逆に電源がONになった場合はその逆でドメインのIPを自宅サーバーへ向けるようにする。<br />つまりDNSを更新して現用系(自宅)と待機系(レンタルサーバー)でスイッチさせている<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/_51uwrZcw3_U/TJTJHiQXAfI/AAAAAAAAAQQ/0_OxS1DGZ3I/s1600/mail.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/_51uwrZcw3_U/TJTJHiQXAfI/AAAAAAAAAQQ/0_OxS1DGZ3I/s320/mail.png" /></a></div><br />でその時に問題なるのはレンタルサーバーで受信したメールをどうやってこちらに移すか？<br />今回はsftpを使って同期する<br /><br />userが対象のユーザ、hoge.netがレンタルサーバーのアドレスとする<br /><pre>#!/bin/bash<br /><br />my_maildir=/home/user/Maildir/<br />{<br />cat << BAT<br />lcd ${my_maildir}tmp<br />-get Maildir/cur/*<br />-get Maildir/new/*<br />-rm  Maildir/cur/*<br />-rm  Maildir/new/*<br />exit<br />BAT<br />} | sftp   -C \<br />    -b - \<br />    -oIdentityFile=/home/user/.ssh/dti_id_rsa \<br />       -oPort=443 \<br />    user@hoge.net > /dev/null 2>&amp;1<br /><br />cd ${my_maildir}/tmp<br />for i in $( ls ); do<br /> dst=`echo $i | cut -d: -f 1`<br /> if [ $i != $dst ] ; then<br />  mv $i $dst<br /> fi<br /> chmod a+rw $dst<br /> mv $dst ${my_maildir}/new<br />done<br /></pre><br /><b>適当な解説</b><br />・sftpについて<br />sftpはバッチモードというのがあり、-bで指定してその後に命令の書かれたファイルを指定します。今回は標準入力から読み込むため-を指定。get rmはftpでおなじみのコマンドで、<br />最初に-がついてるのはエラーになっても続行すると言う意味です。（curなどにファイルが無い場合はエラーとなる）<br /><a href="http://www.unixuser.org/~euske/doc/openssh/jman/sftp.html">ここら辺</a>に具体的な説明が書かれていますが、-Pはポート指定では無いなどこちらの環境と少し違う箇所がありました。man sftpで見た方が良いかもしれません。<br /><br />・Maildirのファイル名について<br />　命名の規約は下記参考リンクを参照するとして今回はレンタルサーバーにたまっていた物を新着メールとして処理したいので、ファイル名の:（コロン）以降を取り外しています。<br />ファイル名は以下のような構造になっています<br /><pre>1234567890.ABCDEFGHI123456789.hostname:2,S</pre><br />1234567890 → UNIX時間<br />ABCDEFGHI123456789 →　メールごとにユニークな識別文字<br />hostname → ホスト名<br />:2 → 普通は:2を指定してそれ以降に意味のあるフラグ文字を続ける<br />,S → この例だと既読の意味 Thunderbird上で捨てると,STとかフラグが追加される<br /><br />参考にフラグの例を記載<br />* Flag "P" (passed): 転送とかしたときに付くらしい？<br />* Flag "R" (replied): そのメッセージに対して返信した場合につく<br />* Flag "S" (seen): 既読のメッセージ<br />* Flag "T" (trashed): 削除した場合につく<br />* Flag "D" (draft): 下書きを意味する<br />* Flag "F" (flagged): フラグ付きを意味する ThunderbirdだとスターをつけるとFがつく<br /><br /><br />参考リンク<br /><a href="http://www.dovecot.jp/wiki/MailboxFormat.Maildir.txt">http://www.dovecot.jp/wiki/MailboxFormat.Maildir.txt</a><br /><a href="http://cr.yp.to/proto/maildir.html ">http://cr.yp.to/proto/maildir.html </a>
+    
+
+私の環境は以下のようにレンタルサーバーと自宅サーバーそれぞれでメールを受信している<br />自宅サーバーは24時間動かしているわけではないため、自宅サーバーが電源OFFした場合はDynDNSのドメインのIPアドレスをレンタルサーバーに設定。逆に電源がONになった場合はその逆でドメインのIPを自宅サーバーへ向けるようにする。<br />つまりDNSを更新して現用系(自宅)と待機系(レンタルサーバー)でスイッチさせている<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/_51uwrZcw3_U/TJTJHiQXAfI/AAAAAAAAAQQ/0_OxS1DGZ3I/s1600/mail.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/_51uwrZcw3_U/TJTJHiQXAfI/AAAAAAAAAQQ/0_OxS1DGZ3I/s320/mail.png" /></a></div><br />でその時に問題なるのはレンタルサーバーで受信したメールをどうやってこちらに移すか？<br />今回はsftpを使って同期する<br /><br />userが対象のユーザ、hoge.netがレンタルサーバーのアドレスとする<br /><pre>#!/bin/bash<br /><br />my_maildir=/home/user/Maildir/<br />{<br />cat << BAT<br />lcd ${my_maildir}tmp<br />-get Maildir/cur/*<br />-get Maildir/new/*<br />-rm  Maildir/cur/*<br />-rm  Maildir/new/*<br />exit<br />BAT<br />} | sftp   -C \<br />    -b - \<br />    -oIdentityFile=/home/user/.ssh/dti_id_rsa \<br />       -oPort=443 \<br />    user@hoge.net > /dev/null 2>&amp;1<br /><br />cd ${my_maildir}/tmp<br />for i in $( ls ); do<br /> dst=`echo $i | cut -d: -f 1`<br /> if [ $i != $dst ] ; then<br />  mv $i $dst<br /> fi<br /> chmod a+rw $dst<br /> mv $dst ${my_maildir}/new<br />done<br /></pre><br /><b>適当な解説</b><br />・sftpについて<br />sftpはバッチモードというのがあり、-bで指定してその後に命令の書かれたファイルを指定します。今回は標準入力から読み込むため-を指定。get rmはftpでおなじみのコマンドで、<br />最初に-がついてるのはエラーになっても続行すると言う意味です。（curなどにファイルが無い場合はエラーとなる）<br /><a href="http://www.unixuser.org/~euske/doc/openssh/jman/sftp.html">ここら辺</a>に具体的な説明が書かれていますが、-Pはポート指定では無いなどこちらの環境と少し違う箇所がありました。man sftpで見た方が良いかもしれません。<br /><br />・Maildirのファイル名について<br />　命名の規約は下記参考リンクを参照するとして今回はレンタルサーバーにたまっていた物を新着メールとして処理したいので、ファイル名の:（コロン）以降を取り外しています。<br />ファイル名は以下のような構造になっています<br /><pre>1234567890.ABCDEFGHI123456789.hostname:2,S</pre><br />1234567890 → UNIX時間<br />ABCDEFGHI123456789 →　メールごとにユニークな識別文字<br />hostname → ホスト名<br />:2 → 普通は:2を指定してそれ以降に意味のあるフラグ文字を続ける<br />,S → この例だと既読の意味 Thunderbird上で捨てると,STとかフラグが追加される<br /><br />参考にフラグの例を記載<br />* Flag "P" (passed): 転送とかしたときに付くらしい？<br />* Flag "R" (replied): そのメッセージに対して返信した場合につく<br />* Flag "S" (seen): 既読のメッセージ<br />* Flag "T" (trashed): 削除した場合につく<br />* Flag "D" (draft): 下書きを意味する<br />* Flag "F" (flagged): フラグ付きを意味する ThunderbirdだとスターをつけるとFがつく<br /><br /><br />参考リンク<br /><a href="http://www.dovecot.jp/wiki/MailboxFormat.Maildir.txt">http://www.dovecot.jp/wiki/MailboxFormat.Maildir.txt</a><br /><a href="http://cr.yp.to/proto/maildir.html ">http://cr.yp.to/proto/maildir.html </a>
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

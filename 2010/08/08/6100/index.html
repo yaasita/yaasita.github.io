@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.48" />
+    <meta name="generator" content="Hugo 0.54.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="https://yaasita.github.io/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -11,6 +11,13 @@
     
     <script src="https://apis.google.com/js/platform.js" async defer>{lang: 'ja'}</script>
     
+    
+    <meta property="og:title" content="IS02を買ったからガラケーから電話帳の移行" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://yaasita.github.io/post/2010/" />
+    
+    <meta property="og:site_name" content="# cd ~yaasita" />
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=300&v=4" />
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>IS02を買ったからガラケーから電話帳の移行 | # cd ~yaasita</title>
@@ -49,7 +56,9 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    W43K→からIS02への移行をした<br /><br />１．W43KにマイクロSDを挿して電話帳を保存<br /><br />２．スマートフォンアドレス帳移行ツールでIMPORTすればOK<br /><br />ちなみにW43Kのアドレス帳はvcf形式になっていた<br />csvに変換してから適当に編集してからIS02にIMPORTした<br />vcf→csv<br /><pre>#!/usr/bin/perl<br />use feature qw(say);<br />use warnings;<br />use strict;<br /><br />our %date;<br />our @order;<br />while (&amp;lt;DATA&amp;gt;){<br /> chomp;<br /> $date{$_}=1;<br /> push (@order,$_);<br /> print "$_,";<br />}<br />print "\n";<br /><br />my $infile=shift || "20100801.vcf";<br /><br />open (FH,$infile) or die $!;<br />my %hash;<br />while (&amp;lt;FH&amp;gt;){<br /> chomp;<br /> my ($key,$value) = split (/:/);<br /> &amp;check($key);<br /> unless (defined $hash{$key}){<br />  $hash{$key}=$value;<br /> }<br /> elsif ($key eq "EMAIL") {<br />  $hash{"EMAIL2"}=$value;<br /> }<br /> else {<br />  die "Error!";<br /> }<br /> if ($key eq "END"){<br />  for (@order){<br />   $hash{$_} ||="";<br />   print "$hash{$_},";<br />  }<br />  print "\n";<br />  %hash=();<br /> }<br />}<br />close FH;<br /><br />sub check {<br /> unless ($date{$_[0]}){<br />  die "Data Error -&amp;gt; $_[0]";<br /> }<br />}<br /><br />__END__<br />BEGIN<br />VERSION<br />N<br />FN<br />SORT-STRING<br />TEL;TYPE=WORK<br />TEL;TYPE=CELL<br />TEL;TYPE=PCS<br />TEL;TYPE=HOME<br />TEL;TYPE=FAX<br />EMAIL<br />EMAIL2<br />BDAY<br />X-GN<br />END<br /><br /></pre><br />csv→vcf<br /><pre>#!/usr/bin/perl<br />use feature qw(say);<br />use warnings;<br />use strict;<br /><br />our @order;<br />while (<data>){<br /> chomp;<br /> push (@order,$_);<br />}<br /><br />my $infile = shift || "adress.csv";<br />open (FH,$infile) or die $!;<br />$_=<fh>;<br />while (<fh>){<br /> chomp;<br /> my @list=split (/,/);<br /> s/^\"(.*)\"$/$1/ for @list;<br /> my $i=0;<br /> for (@order){<br />  print "$_:".$list[$i]."\n" if (defined $list[$i] and $list[$i] ne "");<br />  $i++;<br /> }<br />}<br />close FH;<br /><br /><br />__END__<br />BEGIN<br />VERSION<br />N<br />FN<br />SORT-STRING<br />TEL;TYPE=WORK<br />TEL;TYPE=CELL<br />TEL;TYPE=PCS<br />TEL;TYPE=HOME<br />TEL;TYPE=FAX<br />EMAIL<br />EMAIL<br />BDAY<br />X-GN<br />END<br /></pre>
+    
+
+W43K→からIS02への移行をした<br /><br />１．W43KにマイクロSDを挿して電話帳を保存<br /><br />２．スマートフォンアドレス帳移行ツールでIMPORTすればOK<br /><br />ちなみにW43Kのアドレス帳はvcf形式になっていた<br />csvに変換してから適当に編集してからIS02にIMPORTした<br />vcf→csv<br /><pre>#!/usr/bin/perl<br />use feature qw(say);<br />use warnings;<br />use strict;<br /><br />our %date;<br />our @order;<br />while (&amp;lt;DATA&amp;gt;){<br /> chomp;<br /> $date{$_}=1;<br /> push (@order,$_);<br /> print "$_,";<br />}<br />print "\n";<br /><br />my $infile=shift || "20100801.vcf";<br /><br />open (FH,$infile) or die $!;<br />my %hash;<br />while (&amp;lt;FH&amp;gt;){<br /> chomp;<br /> my ($key,$value) = split (/:/);<br /> &amp;check($key);<br /> unless (defined $hash{$key}){<br />  $hash{$key}=$value;<br /> }<br /> elsif ($key eq "EMAIL") {<br />  $hash{"EMAIL2"}=$value;<br /> }<br /> else {<br />  die "Error!";<br /> }<br /> if ($key eq "END"){<br />  for (@order){<br />   $hash{$_} ||="";<br />   print "$hash{$_},";<br />  }<br />  print "\n";<br />  %hash=();<br /> }<br />}<br />close FH;<br /><br />sub check {<br /> unless ($date{$_[0]}){<br />  die "Data Error -&amp;gt; $_[0]";<br /> }<br />}<br /><br />__END__<br />BEGIN<br />VERSION<br />N<br />FN<br />SORT-STRING<br />TEL;TYPE=WORK<br />TEL;TYPE=CELL<br />TEL;TYPE=PCS<br />TEL;TYPE=HOME<br />TEL;TYPE=FAX<br />EMAIL<br />EMAIL2<br />BDAY<br />X-GN<br />END<br /><br /></pre><br />csv→vcf<br /><pre>#!/usr/bin/perl<br />use feature qw(say);<br />use warnings;<br />use strict;<br /><br />our @order;<br />while (<data>){<br /> chomp;<br /> push (@order,$_);<br />}<br /><br />my $infile = shift || "adress.csv";<br />open (FH,$infile) or die $!;<br />$_=<fh>;<br />while (<fh>){<br /> chomp;<br /> my @list=split (/,/);<br /> s/^\"(.*)\"$/$1/ for @list;<br /> my $i=0;<br /> for (@order){<br />  print "$_:".$list[$i]."\n" if (defined $list[$i] and $list[$i] ne "");<br />  $i++;<br /> }<br />}<br />close FH;<br /><br /><br />__END__<br />BEGIN<br />VERSION<br />N<br />FN<br />SORT-STRING<br />TEL;TYPE=WORK<br />TEL;TYPE=CELL<br />TEL;TYPE=PCS<br />TEL;TYPE=HOME<br />TEL;TYPE=FAX<br />EMAIL<br />EMAIL<br />BDAY<br />X-GN<br />END<br /></pre>
 
 
   </div>
@@ -208,7 +217,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (395)</a>
+          <a href="/categories/soft"><span></span>soft (396)</a>
         </li>
         
         <li>
@@ -275,7 +284,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (4)</a>
+          <a href="/archives/2019"><span></span>2019 (5)</a>
         </li>
         
       </ul>

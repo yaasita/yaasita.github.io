@@ -15,7 +15,7 @@
       <pubDate>Sat, 31 Dec 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/12/31/3257/</guid>
-      <description>lshwというユーティリティがあった
+      <description> lshwというユーティリティがあった
 aptでインストールできた
 参考リンク
 PCのハードウェア情報を表示するには </description>
@@ -27,7 +27,7 @@ PCのハードウェア情報を表示するには </description>
       <pubDate>Sun, 25 Dec 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/12/25/3279/</guid>
-      <description>受託開発をするSIerがヤバイよ的な話はよく聞く話でSIer内部でそんな話もチラホラと聞くようになりました。
+      <description> 受託開発をするSIerがヤバイよ的な話はよく聞く話でSIer内部でそんな話もチラホラと聞くようになりました。
 （ヤバイ理由は人月換算とか多重請負とかいろいろ言われてます）
 でも結局のところこの先もSIerは生き残るよねっていうのが僕の見解。
 もう何十年もこんな感じでやってきたから引くに引けないんですよ。
@@ -99,7 +99,7 @@ IT部門の人からすれば自分は使わないのだから丸投げできる
       <pubDate>Mon, 19 Dec 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/12/19/3319/</guid>
-      <description>公式ページからDownloadを選択「Linux etc」をクリックnew_installer_offline_1405.jarをダウンロードして
+      <description> 公式ページからDownloadを選択「Linux etc」をクリックnew_installer_offline_1405.jarをダウンロードして
 ↓のコマンドでインストール
 java -jar new_installer_offline.jar
 インストールするディレクトリを聞かれるので適当に答えればOK
@@ -113,7 +113,7 @@ START引数で起動、STOP引数で停止かな </description>
       <pubDate>Sun, 04 Dec 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/12/04/3341/</guid>
-      <description>前に書いたキーボードショートカットサービスが終了していた
+      <description> 前に書いたキーボードショートカットサービスが終了していた
 今はAccessible Viewというサービスになってるみたい
 操作方法はキーボードショートカット時代と同じ
 音が出るようになったみたいだけど・・・
@@ -127,7 +127,7 @@ https://www.google.com/webhp?esrch=Axs </description>
       <pubDate>Sun, 06 Nov 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/11/06/3361/</guid>
-      <description>ファイルを分割＆結合してくれるソフトです
+      <description> ファイルを分割＆結合してくれるソフトです
 主に海外のダウンロードサイトなどで目にします。
 公式サイトはこちら
 そこからLinux版とWinodws版が選べます
@@ -143,7 +143,7 @@ https://www.google.com/webhp?esrch=Axs </description>
       <pubDate>Fri, 04 Nov 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/11/04/3383/</guid>
-      <description>ここにいろいろあった
+      <description> ここにいろいろあった
 http://www.fxcm.co.jp/tools/chart.html
 その中でも↓が使いやすかったかも
 http://www.dailyfx.com/charts/netdaniachart/ </description>
@@ -210,7 +210,7 @@ OPTIONS
       <pubDate>Tue, 11 Oct 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/10/11/3424/</guid>
-      <description>sudoでrootになってからXアプリを起動してもDisplayのオープンに失敗するので
+      <description> sudoでrootになってからXアプリを起動してもDisplayのオープンに失敗するので
 gksuでrootターミナルを開いてからやるとOK </description>
     </item>
     
@@ -220,7 +220,7 @@ gksuでrootターミナルを開いてからやるとOK </description>
       <pubDate>Sun, 25 Sep 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/09/25/3445/</guid>
-      <description>1.main.cfに以下を追加
+      <description> 1.main.cfに以下を追加
 content_filter=filter:dummy
 2.master.cfに以下を追加
 filter unix - n n - - pipe
@@ -250,8 +250,7 @@ MARVEL　VS　CAPCOM２　攻略
       <pubDate>Sun, 21 Aug 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/08/21/3487/</guid>
-      <description>
-aptか何かでsaneとxsaneをインストール
+      <description> aptか何かでsaneとxsaneをインストール
 sane-find-scannerで検索
 /etc/sane.d/mustek_usb.confを編集
 以下の行だけ有効化
@@ -269,7 +268,7 @@ http://samidarehetima.blog9.fc2.com/blog-entry-8.html
       <pubDate>Sat, 20 Aug 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/08/20/3512/</guid>
-      <description>at -c job ... だそうです。
+      <description> at -c job ... だそうです。
 参考リンク
 http://okwave.jp/qa/q5599261.html </description>
     </item>
@@ -302,7 +301,7 @@ Video→Screenをえらんでディスプレイ先を切り替えること</desc
       <pubDate>Sat, 13 Aug 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/08/13/3554/</guid>
-      <description>lighttpd.confを少しいじるだけで出来た
+      <description> lighttpd.confを少しいじるだけで出来た
 以下のように設定した
 hogehoge.netのホスト(HTTP_HOST)またはプライベートIPで指定してきたら
 /var/wwwを見せる
@@ -318,7 +317,7 @@ server.document-root = &#34;/var/www2&#34; $HTTP[&#34;host&#34;] == &#34;hogehog
       <pubDate>Fri, 12 Aug 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/08/12/3618/</guid>
-      <description>起動時、終了時等のランレベルが変更されたときに走るスクリプトは/etc/init.dに
+      <description> 起動時、終了時等のランレベルが変更されたときに走るスクリプトは/etc/init.dに
 格納するが、rc0.d/～rc6.d/のディレクトリにリンクを張る必要がある
 昔は手動でやっていたが、今は決まった書式でコメントを書いておけば自動的にアップデートしてくれるらしい
 update-rc.dというコマンドで行える
@@ -356,7 +355,7 @@ digits 1-9, so that each row, column, and block contains each of the digits 1-9<
       <pubDate>Thu, 11 Aug 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/08/11/3658/</guid>
-      <description>現在、Xにログインするときに使用するディスプレイマネージャにはKDMを使用している
+      <description> 現在、Xにログインするときに使用するディスプレイマネージャにはKDMを使用している
 このKDMのセッション制御についてメモしておく
 ・ログイン時にセッションをDefaultを選んでログインする
 →.xinitrc .xsessionに書いたデフォルトセッションが開始される
@@ -374,7 +373,7 @@ KDMハンドブック
       <pubDate>Thu, 11 Aug 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/08/11/3638/</guid>
-      <description>今まで：kcontrol
+      <description> 今まで：kcontrol
 これから：systemsettings
 だそうです
 参照
@@ -389,7 +388,7 @@ Advancedタブ→LoginManagerで設定できる
       <pubDate>Thu, 11 Aug 2011 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2011/08/11/3678/</guid>
-      <description>HDDの各フォルダの使用量を調べる方法について調べた
+      <description> HDDの各フォルダの使用量を調べる方法について調べた
 duコマンドで計ってもいいけど
 Baobabってコマンドでもいいかも
 参考リンク
