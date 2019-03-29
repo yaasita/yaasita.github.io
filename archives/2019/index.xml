@@ -6,8 +6,28 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 12 Mar 2019 23:00:51 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 30 Mar 2019 02:32:25 +0900</lastBuildDate>
     <atom:link href="/archives/2019/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>tarの-gオプションについて</title>
+      <link>https://yaasita.github.io/2019/03/30/tar-g-option/</link>
+      <pubDate>Sat, 30 Mar 2019 02:32:25 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/03/30/tar-g-option/</guid>
+      <description>-g, &amp;ndash;listed-incremental
+という増分バックアップに使われるオプションについてどうやって判定してるか？
+それはctimeの変化を見ている
+ctimeの変化で気をつけなければいけないことはハードリンクによるバックアップ
+(rsync &amp;ndash;link-dest等)
+例えば、以下のようなファイルが存在し
+work/ `-- 1.txt  以下のコマンドを発行した場合
+tar -g resume -cvf work.tar work/  初回なので当然全部がバックアップされる
+このまま以下のコマンドを打てばディレクトリだけのバックアップになる(差分がないため)
+tar -g resume -cvf work.tar work/  しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう
+stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる  なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
+うまく増分バックアップができなくなる</description>
+    </item>
     
     <item>
       <title>hugoアップデート</title>
