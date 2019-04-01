@@ -6,8 +6,24 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 30 Mar 2019 02:32:25 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 01 Apr 2019 16:12:46 +0900</lastBuildDate>
     <atom:link href="/post/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>tarの差分バックアップ</title>
+      <link>https://yaasita.github.io/2019/04/01/tar-backup/</link>
+      <pubDate>Mon, 01 Apr 2019 16:12:46 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/04/01/tar-backup/</guid>
+      <description>前回の続き
+でctime変化しちゃってどうしたか？
+ファイルサイズとファイル名を取っておいて差分を作ることにした
+ こんな感じのスクリプトで、ファイル名 + tab + ファイルサイズで保存する
+(厳密にやる場合はsha256とかで)
+そんで現在のファイルリストも取って、差分をとる
+diff -u previous.txt now.txt | egrep &amp;quot;^\+[^\+]&amp;quot; | perl -ple &#39;s/^\+//;s/\t.+//&#39; &amp;gt; tar.txt  あとは-Tオプションで差分のファイルだけをtarで固める
+tar -cvaf hoge.tgz -T tar.txt  </description>
+    </item>
     
     <item>
       <title>tarの-gオプションについて</title>
@@ -26,7 +42,8 @@ tar -g resume -cvf work.tar work/  初回なので当然全部がバックアッ
 このまま以下のコマンドを打てばディレクトリだけのバックアップになる(差分がないため)
 tar -g resume -cvf work.tar work/  しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう
 stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる  なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
-うまく増分バックアップができなくなる</description>
+うまく増分バックアップができなくなる
+続き</description>
     </item>
     
     <item>
@@ -314,16 +331,6 @@ AddTrust |_ ca1 |_ ca2 |_ hoge  こんな感じにコマンドを打つ
 openssl verify -trusted /etc/ssl/certs/AddTrust_External_Root.pem \ -untrusted ca/ca1.pem \ -untrusted ca/ca2.pem \ hoge.pem*  verify -CAfileを指定して検証する例を見るけど、
 インストールされてるデフォルトのrootCAも見ちゃうから
 -no-CAfile, -no-CApathで無効化しなきゃだったりするのでこっちの方が良さそう</description>
-    </item>
-    
-    <item>
-      <title>Hugoをアップデート</title>
-      <link>https://yaasita.github.io/2018/09/16/hugo-new-version/</link>
-      <pubDate>Sun, 16 Sep 2018 15:48:27 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/09/16/hugo-new-version/</guid>
-      <description>なんかこんなプルリクも来てたのでthemeもちょいと修正
-たまにはhugoのbuild logみてwarning潰してかないとだな</description>
     </item>
     
   </channel>
