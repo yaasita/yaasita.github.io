@@ -5,8 +5,20 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 25 Apr 2019 02:08:40 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 29 Apr 2019 01:23:20 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>PKCEをJavaScriptで実装する</title>
+      <link>https://yaasita.github.io/2019/04/29/pkce/</link>
+      <pubDate>Mon, 29 Apr 2019 01:23:20 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/04/29/pkce/</guid>
+      <description>node.jsで書いた
+Oauth2のPKCE
+base64エンコードじゃなくてbase64urlエンコードなのが注意点
+ </description>
+    </item>
     
     <item>
       <title>令和の対応に際して</title>
@@ -308,25 +320,6 @@ dump mitmproxyだけだと長いURLとかは省略されちゃったりするの
 検索とインデックスについて作った
 検討資料用にどうぞ
 https://gist.github.com/yaasita/ea31d7bbfc839fc859fd7d713800088b</description>
-    </item>
-    
-    <item>
-      <title>skypeの会話ログをjsonに</title>
-      <link>https://yaasita.github.io/2018/09/25/skype-log/</link>
-      <pubDate>Tue, 25 Sep 2018 00:56:22 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/09/25/skype-log/</guid>
-      <description>skypeの会話履歴をJSONにしておくやつ作った
-https://github.com/yaasita/skype2json
-logはsqliteで保存されている
-こちらによるとskype for windows 10とskype for windows desktopの保存場所が違う
-
-こっちが最近のやつ
-場所: %localappdata%\Packages\Microsoft.SkypeApp_kzf8qxf38zg5c\LocalState
-
-昔のやつ
-場所: C:\Users\username\AppData\Roaming\Skype\username\main.db
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;skype1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;skype1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;skype2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;skype2&#34;).src = photos[1].original_size.url; }   </description>
     </item>
     
   </channel>

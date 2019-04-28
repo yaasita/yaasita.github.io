@@ -5,8 +5,20 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 25 Apr 2019 02:08:40 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 29 Apr 2019 01:23:20 +0900</lastBuildDate>
     <atom:link href="/categories/program/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>PKCEをJavaScriptで実装する</title>
+      <link>https://yaasita.github.io/2019/04/29/pkce/</link>
+      <pubDate>Mon, 29 Apr 2019 01:23:20 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/04/29/pkce/</guid>
+      <description>node.jsで書いた
+Oauth2のPKCE
+base64エンコードじゃなくてbase64urlエンコードなのが注意点
+ </description>
+    </item>
     
     <item>
       <title>令和の対応に際して</title>
@@ -279,25 +291,6 @@ Goで書いたのはSUIDビット立てたバイナリで叩きたいと思っ�
 （なんかうまくいかなくて結局sudoでやったけど)
 https://github.com/yaasita/mail-iptables
  function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
-    </item>
-    
-    <item>
-      <title>edit-slack.vimちょっと書き直した</title>
-      <link>https://yaasita.github.io/2017/08/10/edit-slack/</link>
-      <pubDate>Thu, 10 Aug 2017 02:35:57 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/08/10/edit-slack/</guid>
-      <description>edit-slack.vim をちょっと直した
-主な変更点は以下の通り
-reactionを表示するようにした
-
-アップロードされたファイルのダウンロードリンクを表示
-
-キーワード検索ができるようにした
-例) vim slack://sw/hogehoge vim slack://sw/from:@yamasita vim slack://sw/on:today  取っ散らかってたコードをちょっと直した
-https://github.com/yaasita/edit-slack/compare/v0.2.0...v0.8.1
-ちょっと見ない間にSlackもなんか変わってて、今までのTest tokenがlegacy tokenって名前になってたり、botアクセス、userアクセスで細かくAPI使用制限がされてるようになってた(前からか？)
- function callback(data){ photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).src = photos[1].original_size.url; }   </description>
     </item>
     
   </channel>

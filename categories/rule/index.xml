@@ -5,8 +5,20 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 12 Nov 2018 01:24:39 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 29 Apr 2019 01:23:20 +0900</lastBuildDate>
     <atom:link href="/categories/rule/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>PKCEをJavaScriptで実装する</title>
+      <link>https://yaasita.github.io/2019/04/29/pkce/</link>
+      <pubDate>Mon, 29 Apr 2019 01:23:20 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/04/29/pkce/</guid>
+      <description>node.jsで書いた
+Oauth2のPKCE
+base64エンコードじゃなくてbase64urlエンコードなのが注意点
+ </description>
+    </item>
     
     <item>
       <title>HSTSの説明資料</title>
@@ -345,16 +357,6 @@ http://www.syon.co.jp/syontech/tech002.html</description>
 2進数： 11000000.10101000.00000000.00000000-11000000.10101000.11111111.11111111
 subnet： 11111111.11111111.00000000.00000000-11111111.11111111.00000000.00000000
  </description>
-    </item>
-    
-    <item>
-      <title>crontabに書いてあるdomとdowは何の略？</title>
-      <link>https://yaasita.github.io/2010/10/03/5652/</link>
-      <pubDate>Sun, 03 Oct 2010 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2010/10/03/5652/</guid>
-      <description> dow・・・Day Of Week
-dom・・・Day of Month </description>
     </item>
     
   </channel>
