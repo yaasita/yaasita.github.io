@@ -6,7 +6,7 @@
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Thu, 27 Dec 2012 00:00:00 +0900</lastBuildDate>
-    <atom:link href="/archives/2012/" rel="self" type="application/rss+xml" />
+    <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>起動後一定時間経ったら○○の処理をする</title>

@@ -6,7 +6,7 @@
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 26 Dec 2010 00:00:00 +0900</lastBuildDate>
-    <atom:link href="/archives/2010/" rel="self" type="application/rss+xml" />
+    <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Bloggerのテンプレートを変更してみる</title>

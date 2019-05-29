@@ -6,7 +6,7 @@
     <generator>Hugo</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 26 Dec 2009 00:00:00 +0900</lastBuildDate>
-    <atom:link href="/archives/2009/" rel="self" type="application/rss+xml" />
+    <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
       <title>最近、Mercurial について勉強しているのでメモ</title>

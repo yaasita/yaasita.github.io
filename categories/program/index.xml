@@ -5,8 +5,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 29 Apr 2019 01:23:20 +0900</lastBuildDate>
-    <atom:link href="/categories/program/" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 29 May 2019 21:42:23 +0900</lastBuildDate>
+    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Cloud Runがすごく良い</title>
+      <link>https://yaasita.github.io/2019/05/29/cloud-run/</link>
+      <pubDate>Wed, 29 May 2019 21:42:23 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/05/29/cloud-run/</guid>
+      <description>GCPのCloud Runがめっちゃ便利
+覚えなきゃいけないルールは2つ
+ Dockerにする事
+ 環境変数 $PORT のポート番号でlistenしてレスポンスを返す事
+  これだけ
+コマンドとかはこの辺見ればすぐできると思います
+あと、Chunked Transferみたいな仕組みで進捗を返すみたいなAPIは難しいかもしれない
+以下のようなプログラムでちょっとずつレスポンス返しても、バッファリングされてるみたいで、最後ドバっと返ってきた
+ </description>
+    </item>
     
     <item>
       <title>PKCEをJavaScriptで実装する</title>
@@ -14,7 +31,9 @@
       <pubDate>Mon, 29 Apr 2019 01:23:20 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2019/04/29/pkce/</guid>
-      <description>node.jsで書いた
+      <description>code_verifier から code_challenge の生成方法について調べた
+code_challenge_method=S256の場合は以下のような実装ロジックになる
+node.jsで書いた
 Oauth2のPKCE
 base64エンコードじゃなくてbase64urlエンコードなのが注意点
  </description>
@@ -274,23 +293,6 @@ maildropの設定ファイル(~/.mailfilter)でも良いんだけどちょっと
 https://github.com/yaasita/maildrop-admin
 .mailfilterへの変換処理
   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img0&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img0&#34;).src = photos[0].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).src = photos[1].original_size.url; }   </description>
-    </item>
-    
-    <item>
-      <title>iptablesの変更をWebからやる</title>
-      <link>https://yaasita.github.io/2017/08/22/imap-iptables/</link>
-      <pubDate>Tue, 22 Aug 2017 02:17:37 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/08/22/imap-iptables/</guid>
-      <description>httpsのほかにもう一個ポートのアクセス制限を面倒見たくなかったのでなんとなくやってみた
-httpsでWebUIにアクセスしたらIP許可リストに入れるって処理
-
-PerlのCGIからGo言語で書いたバイナリを呼んでiptablesを更新する的な処理
-GoとPerl間はJSONで受け渡す
-Goで書いたのはSUIDビット立てたバイナリで叩きたいと思ったから
-（なんかうまくいかなくて結局sudoでやったけど)
-https://github.com/yaasita/mail-iptables
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
   </channel>
