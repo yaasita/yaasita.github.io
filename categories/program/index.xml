@@ -5,8 +5,20 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 29 May 2019 21:42:23 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 25 Jun 2019 00:31:08 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>例のS3署名バージョン2について</title>
+      <link>https://yaasita.github.io/2019/06/25/s3v2/</link>
+      <pubDate>Tue, 25 Jun 2019 00:31:08 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/06/25/s3v2/</guid>
+      <description>AWS S3の署名バージョン騒動
+大丈夫ぽいけど一応調べた時につかったスクリプト
+CloudTrailでログを有効化してからお使いください
+ </description>
+    </item>
     
     <item>
       <title>Cloud Runがすごく良い</title>
@@ -274,25 +286,6 @@ function hogeop(){ postjson({key: &#39;huga&#39;}) } function postjson(j) { fetc
       <guid>https://yaasita.github.io/2017/11/24/ssl-check/</guid>
       <description>なんか必要だったので、シェルとかでも良いけど
  </description>
-    </item>
-    
-    <item>
-      <title>maildropの管理UIを作った</title>
-      <link>https://yaasita.github.io/2017/09/29/maildrop-admin/</link>
-      <pubDate>Fri, 29 Sep 2017 02:38:43 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/09/29/maildrop-admin/</guid>
-      <description>フロントをVue.jsでこんな感じの構成
-
-動作の様子
-
-maildropの設定ファイル(~/.mailfilter)でも良いんだけどちょっと
-日付が入れられないのとエントリーが増えてくるとちょっと管理しきれなくなった
-一旦こんな感じのJSONを経由することでマシにした感じ
- &amp;quot;JUNKMAIL&amp;quot;: [ { &amp;quot;header&amp;quot;: &amp;quot;From&amp;quot;, &amp;quot;regex&amp;quot;: &amp;quot;.*atmarkit.co.jp&amp;quot;, &amp;quot;time&amp;quot;: &amp;quot;2017/05/08 01:58&amp;quot; }, { &amp;quot;header&amp;quot;: &amp;quot;From&amp;quot;, &amp;quot;regex&amp;quot;: &amp;quot;.*facebookmail.com&amp;quot;, &amp;quot;time&amp;quot;: &amp;quot;2017/05/08 01:58&amp;quot; },  サーバサイドの実装
-https://github.com/yaasita/maildrop-admin
-.mailfilterへの変換処理
-  function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img0&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img0&#34;).src = photos[0].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).src = photos[1].original_size.url; }   </description>
     </item>
     
   </channel>

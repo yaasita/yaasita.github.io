@@ -5,8 +5,20 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 29 May 2019 21:42:23 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 25 Jun 2019 00:31:08 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>例のS3署名バージョン2について</title>
+      <link>https://yaasita.github.io/2019/06/25/s3v2/</link>
+      <pubDate>Tue, 25 Jun 2019 00:31:08 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/06/25/s3v2/</guid>
+      <description>AWS S3の署名バージョン騒動
+大丈夫ぽいけど一応調べた時につかったスクリプト
+CloudTrailでログを有効化してからお使いください
+ </description>
+    </item>
     
     <item>
       <title>Cloud Runがすごく良い</title>
@@ -311,22 +323,6 @@ mitmproxy --set confdir=/path/to/hogedir --view-filter m3u  画面中ではVim�
 リクエストを選んで、wでストリームを保存できる
 dump mitmproxyだけだと長いURLとかは省略されちゃったりするので、完全なものを見る場合にmitmdumpを使う
 # getだけ抽出 mitmdump -nr /tmp/save -w outfile &amp;quot;~m get&amp;quot; # リクエスト一覧 mitmdump -nr /tmp/save  まとめ HTTPSのデバッグ時にめっちゃ便利</description>
-    </item>
-    
-    <item>
-      <title>CircleCIのキャッシュについて</title>
-      <link>https://yaasita.github.io/2018/10/19/circleci/</link>
-      <pubDate>Fri, 19 Oct 2018 03:03:35 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/10/19/circleci/</guid>
-      <description>先に結論だけ
- キャッシュは一度書き込むとupdate出来ない
- キャッシュクリアは名前を変えて対応する
-  以下具体例
-以下のようなキャッシュをした際に
-古いバージョンのライブラリが入ってしまった場合
-- restore_cache: keys: - v2-dependencies-{{ checksum &amp;quot;requirements.txt&amp;quot; }} - v2-dependencies- - run: name: install dependencies command: | python3 -m venv venv . venv/bin/activate pip install -r requirements.txt - save_cache: paths: - ./venv key: v2-dependencies-{{ checksum &amp;quot;requirements.txt&amp;quot; }}  これを解消しようとして、以下のようにしてもcacheはupdateされない
-- restore_cache: keys: - v2-dependencies-{{ checksum &amp;quot;requirements.txt&amp;quot; }} - v2-dependencies- - run: name: install dependencies command: | python3 -m venv venv .</description>
     </item>
     
   </channel>
