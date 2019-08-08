@@ -5,8 +5,22 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 25 Jun 2019 00:31:08 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jul 2019 03:42:37 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>虫よけスプレー</title>
+      <link>https://yaasita.github.io/2019/07/29/musiyoke/</link>
+      <pubDate>Mon, 29 Jul 2019 03:42:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/07/29/musiyoke/</guid>
+      <description>虫除けスプレーで最近買ったこれが良かった
+ベタベタしないので気にならない
+フマキラー SKIN VAPEってやつかな
+商品名はスキンベープミスト　200mlかも
+
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   そういや虫よけ剤に入ってるDEETって薬はなぜ虫が寄り付かないか謎らしい</description>
+    </item>
     
     <item>
       <title>例のS3署名バージョン2について</title>

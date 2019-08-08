@@ -5,8 +5,17 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 25 Jun 2019 00:31:08 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 29 Jul 2019 03:42:37 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>life</title>
+      <link>https://yaasita.github.io/categories/life/</link>
+      <pubDate>Mon, 29 Jul 2019 03:42:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/categories/life/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>net</title>
@@ -68,15 +77,6 @@
       <pubDate>Wed, 19 Dec 2018 01:06:14 +0900</pubDate>
       
       <guid>https://yaasita.github.io/categories/hard/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>life</title>
-      <link>https://yaasita.github.io/categories/life/</link>
-      <pubDate>Mon, 17 Dec 2018 00:02:37 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/categories/life/</guid>
       <description></description>
     </item>
     
