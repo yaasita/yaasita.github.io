@@ -5,8 +5,20 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 14 Aug 2019 10:20:33 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 15 Aug 2019 04:10:11 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>1から100の偶数の和を求めるやつ</title>
+      <link>https://yaasita.github.io/2019/08/15/sum-even-number/</link>
+      <pubDate>Thu, 15 Aug 2019 04:10:11 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/08/15/sum-even-number/</guid>
+      <description>「1から100の偶数の和を求めるワンライナー」まとめ
+perlでやってみる
+perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39;  3つ思いついた
+結論 simple is best</description>
+    </item>
     
     <item>
       <title>各種サーバの中間証明書の扱い</title>
@@ -290,39 +302,6 @@ vimrcにこんな感じに書く
       <guid>https://yaasita.github.io/2018/11/14/github2jenkins/</guid>
       <description>無かったので作りました
 Github -&amp;gt; Mojolicious -&amp;gt; jenkins   </description>
-    </item>
-    
-    <item>
-      <title>HSTSの説明資料</title>
-      <link>https://yaasita.github.io/2018/11/12/hsts/</link>
-      <pubDate>Mon, 12 Nov 2018 01:24:39 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/11/12/hsts/</guid>
-      <description>なんかで作ったので
-HSTSとは HTTPでの通信を減らしよりセキュアなHTTPSを使うように促す仕組み
-通常 通常HTTPリクエストをして、301、302等のリダイレクトによってHTTPSにアクセスし直す
-が、HTTPでのやりとり部分に中間者攻撃のリスクが存在する
-
-※厳密には301リダイレクトはブラウザがキャッシュするので2回目以降はサーバー側にリクエストしない
-HSTS ヘッダ HSTSヘッダを受け取ると、ブラウザ側でHTTPをHTTPSに読み替えてリクエストする
-通常のリダイレクトは違い、一旦 HSTSヘッダを受け取ると有効期間中は決してhttpによるリクエストをしない
-(http:// ~ というリンクはブラウザ側で読み換える)
-
-付与するヘッダーは以下のようなもの
-strict-transport-security: max-age=31536000; includeSubDomains; preload   max-age: 有効時間（秒単位）
- includeSubDomains: サブドメインも含めるかどうか alis.to なら hoge.alis.to も有効になる
- preload: preloadに登録しても良いかどうか（後述）
-  HSTS preload HSTS preloadは予め hstspreload.org に自分のサイトを登録しておいて
-初回リクエスト時からHTTPSを有効にしておく仕組み
-
-メリット・デメリット  メリット
- observatory の点数アップ (対外アピール）
- 盗聴・中間者攻撃リスクを軽減しよりセキュアになる
-  デメリット
- 証明書の運用を失敗できない
- サブドメインを含め、HTTPでの運用を一切できなくなる
- ローカルでのテスト時に偽の証明書を無視しにくくなる
-   通常だと出てくる証明書エラー無視のリンクが・・・</description>
     </item>
     
   </channel>

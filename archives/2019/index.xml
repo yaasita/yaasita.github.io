@@ -5,8 +5,20 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 14 Aug 2019 10:20:33 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 15 Aug 2019 04:10:11 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>1から100の偶数の和を求めるやつ</title>
+      <link>https://yaasita.github.io/2019/08/15/sum-even-number/</link>
+      <pubDate>Thu, 15 Aug 2019 04:10:11 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/08/15/sum-even-number/</guid>
+      <description>「1から100の偶数の和を求めるワンライナー」まとめ
+perlでやってみる
+perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39;  3つ思いついた
+結論 simple is best</description>
+    </item>
     
     <item>
       <title>各種サーバの中間証明書の扱い</title>

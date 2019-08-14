@@ -5,8 +5,20 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 25 Jun 2019 00:31:08 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 15 Aug 2019 04:10:11 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>1から100の偶数の和を求めるやつ</title>
+      <link>https://yaasita.github.io/2019/08/15/sum-even-number/</link>
+      <pubDate>Thu, 15 Aug 2019 04:10:11 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/08/15/sum-even-number/</guid>
+      <description>「1から100の偶数の和を求めるワンライナー」まとめ
+perlでやってみる
+perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39;  3つ思いついた
+結論 simple is best</description>
+    </item>
     
     <item>
       <title>例のS3署名バージョン2について</title>
@@ -276,16 +288,6 @@ Mojolicious側のコントローラはこんな感じで受けた
 喋りたくない時もあるので、JavaScriptでも叩けるようにした(適当な場所にHTML置いておいた)
 function hogeop(){ postjson({key: &#39;huga&#39;}) } function postjson(j) { fetch(&amp;quot;/google&amp;quot;, { method: &amp;quot;POST&amp;quot;, headers: { &#39;Content-Type&#39;: &#39;application/json&#39; }, body: JSON.stringify(j) }).then(res =&amp;gt; res.json()).then(res =&amp;gt; { console.log(res) }); }  結論: こうやって家電を操作できるのは楽しい
  function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).src = photos[1].original_size.url; }   </description>
-    </item>
-    
-    <item>
-      <title>SSL証明書の有効期限チェック</title>
-      <link>https://yaasita.github.io/2017/11/24/ssl-check/</link>
-      <pubDate>Fri, 24 Nov 2017 01:54:56 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/11/24/ssl-check/</guid>
-      <description>なんか必要だったので、シェルとかでも良いけど
- </description>
     </item>
     
   </channel>
