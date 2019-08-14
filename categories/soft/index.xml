@@ -5,8 +5,32 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 12 Mar 2019 23:00:51 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 14 Aug 2019 10:20:33 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>各種サーバの中間証明書の扱い</title>
+      <link>https://yaasita.github.io/2019/08/14/ssl-capath/</link>
+      <pubDate>Wed, 14 Aug 2019 10:20:33 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/08/14/ssl-capath/</guid>
+      <description>中間証明書をどう設定するか問題
+postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&amp;rsquo;s Encryptの場合こんな感じ
+smtpd_tls_CAfileに中間証明書を指定する
+smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
+dovecot 10-ssl.conf
+ssl_ca = &amp;lt;/etc/letsencrypt/live/example.net/chain.pem  これはダメ
+この設定はクライアント証明書用ですので
+正しくは、こんな感じに、まとめたやつを指定すればOK
+ssl_cert = &amp;lt;/etc/letsencrypt/live/example.net/fullchain.pem  apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
+SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem  dovecot同様に中間証明書もまとめて指定する
+まとめ この問題はスマホのK-9 Mailでメール読もうとしたときに判明した
+(突然CertPathValidatorExceptionって怒られた)
+thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね
+
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
+openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
+    </item>
     
     <item>
       <title>hugoアップデート</title>
@@ -293,22 +317,6 @@ gpg --recipient BBBBBBBBBBB12345! -v -e memo  IDは&amp;ndash;edit-keysとかや
 あと、注意点として副鍵は追加しても古い鍵はしばらく残しておくこと
 送信側がすぐ、新しい鍵を入れてくれるとも限らないし古い鍵で暗号化されたものを復号化できなくなる
 主鍵は、副鍵を署名するだけのものであって、副鍵の秘密鍵は取っておかなきゃいけないのです</description>
-    </item>
-    
-    <item>
-      <title>TeratermからConEmuへ移行した</title>
-      <link>https://yaasita.github.io/2017/12/02/teraterm-to-conemu/</link>
-      <pubDate>Sat, 02 Dec 2017 04:36:08 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/12/02/teraterm-to-conemu/</guid>
-      <description>長年使ってたTeratermからConEmuへ移行した
-SSHクライアントはputtyを使ってる
-WSL経由でも良かったんだけど、なんかVimのvisualモードで背景色が変わらなかったり表示が微妙だったので結局putty使った
-良かった点  絵文字も表示できる
- タブが便利(TeratermもCollectorで出来るけどこっちの方が使いやすい)
- F1キーをリモート側に送るとかそういう設定がしやすい
-  微妙な点  Alt-Vでペーストしてたけどこれが使えない(設定方法が分からない)
-  まとめ ConEmu入れた後putty設定したり、微妙に面倒だけど使いやすい</description>
     </item>
     
   </channel>
