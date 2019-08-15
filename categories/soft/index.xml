@@ -5,8 +5,24 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 14 Aug 2019 10:20:33 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 16 Aug 2019 04:45:45 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>on_ac_powerコマンドについて</title>
+      <link>https://yaasita.github.io/2019/08/16/on-ac-power/</link>
+      <pubDate>Fri, 16 Aug 2019 04:45:45 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/08/16/on-ac-power/</guid>
+      <description>debian10にした関係でLinuxネタが続く
+PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある
+そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる
+例えば、/etc/cron.daily/mlocate の場合
+if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi  こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
+んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
+このままだと永遠にlocateコマンドが使えないので、divertで退避させた
+dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power  おしまい</description>
+    </item>
     
     <item>
       <title>各種サーバの中間証明書の扱い</title>
@@ -300,23 +316,6 @@ function hogeop(){ postjson({key: &#39;huga&#39;}) } function postjson(j) { fetc
       <guid>https://yaasita.github.io/2017/12/19/systemd-nspawn-adcal/</guid>
       <description>書きました
 https://qiita.com/advent-calendar/2017/systemd-nspawn</description>
-    </item>
-    
-    <item>
-      <title>gpgでサブキーを指定して暗号化</title>
-      <link>https://yaasita.github.io/2017/12/04/gpg-specify-subkey/</link>
-      <pubDate>Mon, 04 Dec 2017 23:27:01 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/12/04/gpg-specify-subkey/</guid>
-      <description>gpgで副鍵(subkey)を新しく作ったとする(addkey)
-でいざ使うと思ったら、やむ負えない事情により古い副鍵で暗号化しなきゃいけなくなったとする
-こんな感じの状態ね
-pub rsa2048 2017-04-09 [SC] XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX uid [ultimate] yamasita &amp;lt;yamasita@example.net&amp;gt; sub rsa2048 2017-04-09 [E] sub elg2048 2017-12-04 [E]  んで、普通にgpg -e で暗号化すると新しい elg2048 の方が使われてしまう
-rsa2048を使いたくなったらこんな感じでrsa2048の方のIDを指定して暗号化する
-gpg --recipient BBBBBBBBBBB12345! -v -e memo  IDは&amp;ndash;edit-keysとかやれば見れるお
-あと、注意点として副鍵は追加しても古い鍵はしばらく残しておくこと
-送信側がすぐ、新しい鍵を入れてくれるとも限らないし古い鍵で暗号化されたものを復号化できなくなる
-主鍵は、副鍵を署名するだけのものであって、副鍵の秘密鍵は取っておかなきゃいけないのです</description>
     </item>
     
   </channel>

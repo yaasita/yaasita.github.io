@@ -5,8 +5,24 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 14 Aug 2019 10:20:33 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 16 Aug 2019 04:45:45 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>on_ac_powerコマンドについて</title>
+      <link>https://yaasita.github.io/2019/08/16/on-ac-power/</link>
+      <pubDate>Fri, 16 Aug 2019 04:45:45 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/08/16/on-ac-power/</guid>
+      <description>debian10にした関係でLinuxネタが続く
+PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある
+そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる
+例えば、/etc/cron.daily/mlocate の場合
+if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi  こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
+んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
+このままだと永遠にlocateコマンドが使えないので、divertで退避させた
+dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power  おしまい</description>
+    </item>
     
     <item>
       <title>各種サーバの中間証明書の扱い</title>
@@ -300,21 +316,6 @@ Windows7の日本語化について
  コントロールパネルの Clock, Language, and Regionを選択
  TimeZone変更
   http://qiita.com/hnakamur/items/5f2f9e817dd0de60abb2</description>
-    </item>
-    
-    <item>
-      <title>teraterm越しに特殊キーを送る</title>
-      <link>https://yaasita.github.io/2014/08/24/teraterm-keycode/</link>
-      <pubDate>Sun, 24 Aug 2014 23:40:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2014/08/24/teraterm-keycode/</guid>
-      <description>キーをどこで奪われてるのかまず探す
-teratem -&amp;gt; bash -&amp;gt; app  teratemでキーを取られているならKEYBOARD.CNFの末尾に以下のように追記する
-User(連番)で追記する書式についてはteratemのヘルプ参照
-User3=1037,0,$1E User4=1040,0,$11  この例だとUser3でvimの副ファイル切り替え(:h ctrl-^)を出来るようにしている
-User4ではDockerのデタッチに使うCtrl-qを通している
-Ctrl-qについてはbash側でも取られるのでそっちも変更する
-# キー設定を参照 # stopに割り当てられてるのが分かる stty -a # startをundefにする(ついでにstopも) stty start undef stty stop undef  </description>
     </item>
     
   </channel>

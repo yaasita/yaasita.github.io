@@ -64,9 +64,10 @@ if (!doNotTrack) {
 <pre><code>perl -E '$s+=$_%2?0:$_ for 1..100;say$s'
 perl -E 's/.+/$s+=$&amp;%2?0:$&amp;/e for 1..100;say$s'
 perl -E '$&quot;=&quot;+&quot;;$a=&quot;@{[1..100]}&quot;;$a=~s/\d+/$&amp;%2?0:$&amp;/eg;eval&quot;say $a&quot;'
+perl -E '$&quot;=&quot;+&quot;;eval&quot;say @{[grep{$_%2==0}1..100]}&quot;;'
 </code></pre>
 
-<p>3つ思いついた</p>
+<p>4つ思いついた</p>
 
 <h2 id="結論">結論</h2>
 
@@ -138,6 +139,11 @@ perl -E '$&quot;=&quot;+&quot;;$a=&quot;@{[1..100]}&quot;;$a=~s/\d+/$&amp;%2?0:$
         </div>
         
         
+        <div id="pagenavigation-prev">
+          <span class="pagenav-label">Next</span>
+          <a href="https://yaasita.github.io/2019/08/16/on-ac-power/">on_ac_powerコマンドについて</a>
+        </div>
+        
       </div>
       
     </div>
@@ -207,7 +213,7 @@ perl -E '$&quot;=&quot;+&quot;;$a=&quot;@{[1..100]}&quot;;$a=~s/\d+/$&amp;%2?0:$
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (328)</a>
+          <a href="/categories/linux"><span></span>linux (329)</a>
         </li>
         
         <li>
@@ -223,7 +229,7 @@ perl -E '$&quot;=&quot;+&quot;;$a=&quot;@{[1..100]}&quot;;$a=~s/\d+/$&amp;%2?0:$
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (397)</a>
+          <a href="/categories/soft"><span></span>soft (398)</a>
         </li>
         
         <li>
@@ -290,7 +296,7 @@ perl -E '$&quot;=&quot;+&quot;;$a=&quot;@{[1..100]}&quot;;$a=~s/\d+/$&amp;%2?0:$
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (14)</a>
+          <a href="/archives/2019"><span></span>2019 (15)</a>
         </li>
         
       </ul>
