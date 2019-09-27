@@ -5,8 +5,21 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 25 Jun 2019 00:31:08 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 14 Sep 2019 22:21:43 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>ビリビリ動画とcrunchyrollのIP制限をGCPで検証</title>
+      <link>https://yaasita.github.io/2019/09/14/anime-ip-block/</link>
+      <pubDate>Sat, 14 Sep 2019 22:21:43 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/09/14/anime-ip-block/</guid>
+      <description>bilibili動画とcrunchyrollのIP制限はどんな感じなのか
+GCPの各リージョンからアクセスして試してみる
+rttは自宅から該当サーバーまでのpingしたときの平均値
+なのでISPによって全然違うと思うので参考値ということで
+   region bilibili crunchyroll rtt(ms)     asia-east1 (台湾) ng ok 60.149   asia-east2 (香港) ng ok 76.986   asia-northeast1 (東京) ng ok 29.624   asia-northeast2 (大阪) ng ok 37.401   asia-south1 (ムンバイ) ng ok 144.055   asia-southeast1 (シンガポール) ng ok 89.755   australia-southeast1 (シドニー) ng ok 122.193   europe-north1 (フィンランド) ng ok 256.714   europe-west1 (ベルギー) ng ok 229.</description>
+    </item>
     
     <item>
       <title>例のS3署名バージョン2について</title>
@@ -325,22 +338,6 @@ cpuminer-multiでやってみた
 (hogehogeバケットとその中身を特定IPアドレスの人に開放する)
 { &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Id&amp;quot;: &amp;quot;Policy1509977001523&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1509976998204&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;s3:*&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::hogehoge&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;IpAddress&amp;quot;: { &amp;quot;aws:SourceIp&amp;quot;: &amp;quot;203.0.113.1&amp;quot; } } }, { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1509976998204&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;s3:*&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::hogehoge/*&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;IpAddress&amp;quot;: { &amp;quot;aws:SourceIp&amp;quot;: &amp;quot;203.0.113.1&amp;quot; } } } ] }  んでs3fsはこんな感じ
 s3fs -o public_bucket=1,rw,allow_other,umask=0022,endpoint=ap-northeast-1,default_acl=public-read hogehoge /mnt  public_bucketがポイント</description>
-    </item>
-    
-    <item>
-      <title>IDCFクラウド試してみた</title>
-      <link>https://yaasita.github.io/2017/07/16/idcf-cloud/</link>
-      <pubDate>Sun, 16 Jul 2017 01:47:46 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/07/16/idcf-cloud/</guid>
-      <description> conohaから引っ越し
- ソースIP、パブリックIPの概念がちょっと難しい
- OP25Bはされてない
- 多分VMwareで動いてる
- conohaよりはファイヤーウォールとか細かく設定できるけど、ポートフォワードの設定とかしなきゃいけないので若干面倒
-  conohaとの比較 最安プランで比べてみる
-転送量のリミットはあるものの総じてIDCFの方が良いかもしれない
-   機能 conoha IDCF     メモリ 512MB 1GB   料金 680円 540円   CPU(bogomips) 4589.37 5600.00   Disk 20GB 15GB   転送量課金 なし 3,240GB/月まで無料   仮想方式 kvm VMware    </description>
     </item>
     
   </channel>
