@@ -5,8 +5,19 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 15 Aug 2019 04:10:11 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 30 Sep 2019 05:05:34 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AtCoder Beginner Contest 142のD問題</title>
+      <link>https://yaasita.github.io/2019/09/30/atcoder-abc142/</link>
+      <pubDate>Mon, 30 Sep 2019 05:05:34 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/09/30/atcoder-abc142/</guid>
+      <description>方針はユークリッドの互除法で最大公約数を出して、最大公約数を素因数分解
+存在する素数の数+1(今回は1もお互いに素の数として含めるため)でOKぽい
+ 解説動画</description>
+    </item>
     
     <item>
       <title>1から100の偶数の和を求めるやつ</title>
@@ -271,23 +282,6 @@ apt install libio-socket-ssl-perl  </description>
 そういう時は、シグナルハンドラを作ればOK
 最後に変数のスコープから外れてデストラクタが呼ばれる
  </description>
-    </item>
-    
-    <item>
-      <title>GoogleHomeでPCつける</title>
-      <link>https://yaasita.github.io/2018/01/14/google-home/</link>
-      <pubDate>Sun, 14 Jan 2018 03:41:21 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/01/14/google-home/</guid>
-      <description>Mojoliciousで受けてコマンド叩くだけ
-IFTTTはこんな感じにして
-
-
-Mojolicious側のコントローラはこんな感じで受けた
-
-喋りたくない時もあるので、JavaScriptでも叩けるようにした(適当な場所にHTML置いておいた)
-function hogeop(){ postjson({key: &#39;huga&#39;}) } function postjson(j) { fetch(&amp;quot;/google&amp;quot;, { method: &amp;quot;POST&amp;quot;, headers: { &#39;Content-Type&#39;: &#39;application/json&#39; }, body: JSON.stringify(j) }).then(res =&amp;gt; res.json()).then(res =&amp;gt; { console.log(res) }); }  結論: こうやって家電を操作できるのは楽しい
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).src = photos[1].original_size.url; }   </description>
     </item>
     
   </channel>

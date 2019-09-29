@@ -5,8 +5,19 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 29 Sep 2019 16:51:09 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 30 Sep 2019 05:05:34 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AtCoder Beginner Contest 142のD問題</title>
+      <link>https://yaasita.github.io/2019/09/30/atcoder-abc142/</link>
+      <pubDate>Mon, 30 Sep 2019 05:05:34 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/09/30/atcoder-abc142/</guid>
+      <description>方針はユークリッドの互除法で最大公約数を出して、最大公約数を素因数分解
+存在する素数の数+1(今回は1もお互いに素の数として含めるため)でOKぽい
+ 解説動画</description>
+    </item>
     
     <item>
       <title>systemd timerはちゃんと動いてる？</title>
@@ -24,7 +35,13 @@ ConditionACPower=true  これはバッテリー駆動の時は動かさないっ
 なので、以下のコマンドでoverride.conf作って判定を無効化した
 systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower=  というわけで
 cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
-journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  </description>
+journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  とりあえず分かった、バッテリー時の判定が入ってるtimer
+ apt-daily-upgrade
+ man-db
+ logrotate
+ anacron
+ apt-daily
+  </description>
     </item>
     
     <item>
@@ -295,21 +312,6 @@ DynamoDBオンデマンド
  200とかそんくらいのスパイクアクセスがある場合はあらかじめ、プロビジョニングキャパシティにしておいた方が良いと思う
  ただし、オンデマンドの有効化は一日一回だけなので注意
   </description>
-    </item>
-    
-    <item>
-      <title>電源を変えた</title>
-      <link>https://yaasita.github.io/2018/12/17/power-supply/</link>
-      <pubDate>Mon, 17 Dec 2018 00:02:37 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/12/17/power-supply/</guid>
-      <description>寒いせいでPCの調子が悪くなった
-ANTEC(アンテック) NeoECO Classicシリーズ 650Wモデル NE650C
-って3年くらい使った電源が、寒い日にうまくついてくれない。
-（電源つけて2,3秒で再起動を繰り返す)
-なので
-KRPW-AK750W/88+ という玄人志向のやつに変更した
-8000円くらいのやつ</description>
     </item>
     
   </channel>

@@ -24,7 +24,13 @@ ConditionACPower=true  これはバッテリー駆動の時は動かさないっ
 なので、以下のコマンドでoverride.conf作って判定を無効化した
 systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower=  というわけで
 cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
-journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  </description>
+journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  とりあえず分かった、バッテリー時の判定が入ってるtimer
+ apt-daily-upgrade
+ man-db
+ logrotate
+ anacron
+ apt-daily
+  </description>
     </item>
     
     <item>
