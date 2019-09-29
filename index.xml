@@ -5,8 +5,27 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 14 Sep 2019 22:21:43 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 29 Sep 2019 16:51:09 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>systemd timerはちゃんと動いてる？</title>
+      <link>https://yaasita.github.io/2019/09/29/systemd-timer/</link>
+      <pubDate>Sun, 29 Sep 2019 16:51:09 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/09/29/systemd-timer/</guid>
+      <description>systemdタイマーがちゃんと動いてるか確認したほうが良いよというお話
+systemctl list-timers --allコマンドで一覧が見れるあれです
+debian10だと /etc/cron.daily にあるスクリプトでこんな感じに書かれてたら、systemd timerの方を使ってる
+if [ -d /run/systemd/system ]; then exit 0 fi  前回 と同様にノートパソコンのバッテリー稼働と誤って判断されることに起因する問題
+例えばlogrotateとかみると
+systemctl cat logrotate  こんな一文がある
+ConditionACPower=true  これはバッテリー駆動の時は動かさないって意味らしいんだけど、どうも判定が狂ってるみたいでずっと実行されなかった
+なので、以下のコマンドでoverride.conf作って判定を無効化した
+systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower=  というわけで
+cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
+journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  </description>
+    </item>
     
     <item>
       <title>ビリビリ動画とcrunchyrollのIP制限をGCPで検証</title>
@@ -291,23 +310,6 @@ ANTEC(アンテック) NeoECO Classicシリーズ 650Wモデル NE650C
 なので
 KRPW-AK750W/88+ という玄人志向のやつに変更した
 8000円くらいのやつ</description>
-    </item>
-    
-    <item>
-      <title>skypeのログフォーマットが変わってた</title>
-      <link>https://yaasita.github.io/2018/12/02/skype2json/</link>
-      <pubDate>Sun, 02 Dec 2018 01:28:21 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/12/02/skype2json/</guid>
-      <description>のでちょっとスクリプト修正した
-https://github.com/yaasita/skype2json
-修正点  yarnじゃなくても良いと聞いたのでnpmにだけにした
- フォーマットが歴代合わせて3つあったので、3つスクリプト書いた(年代は適当)
- libに共通関数をまとめた
-  なんか新しいフォーマットだと
-nsp_dataってカラムにjsonで突っ込んでるみたいね。json型が無いSQLiteのツライところ
-まとめ ころころフォーマットが変わるけどSQLiteになってるからSkypeは簡単にバックアップ出来て良い
-LINEはどうしたもんか</description>
     </item>
     
   </channel>

@@ -5,8 +5,27 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 16 Aug 2019 04:45:45 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 29 Sep 2019 16:51:09 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>systemd timerはちゃんと動いてる？</title>
+      <link>https://yaasita.github.io/2019/09/29/systemd-timer/</link>
+      <pubDate>Sun, 29 Sep 2019 16:51:09 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/09/29/systemd-timer/</guid>
+      <description>systemdタイマーがちゃんと動いてるか確認したほうが良いよというお話
+systemctl list-timers --allコマンドで一覧が見れるあれです
+debian10だと /etc/cron.daily にあるスクリプトでこんな感じに書かれてたら、systemd timerの方を使ってる
+if [ -d /run/systemd/system ]; then exit 0 fi  前回 と同様にノートパソコンのバッテリー稼働と誤って判断されることに起因する問題
+例えばlogrotateとかみると
+systemctl cat logrotate  こんな一文がある
+ConditionACPower=true  これはバッテリー駆動の時は動かさないって意味らしいんだけど、どうも判定が狂ってるみたいでずっと実行されなかった
+なので、以下のコマンドでoverride.conf作って判定を無効化した
+systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower=  というわけで
+cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
+journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  </description>
+    </item>
     
     <item>
       <title>on_ac_powerコマンドについて</title>
@@ -300,22 +319,6 @@ pdfmodに比べて重い気がする
 機能も若干少な目
 pdftk コマンドライン(CUI)で使うPDF編集ソフト
 結合とかはGUIだとうまくできないので、こっちでやった方が良さげ</description>
-    </item>
-    
-    <item>
-      <title>modern.ieのVMファイルの解凍</title>
-      <link>https://yaasita.github.io/2014/09/23/modern-ie/</link>
-      <pubDate>Tue, 23 Sep 2014 22:18:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2014/09/23/modern-ie/</guid>
-      <description>モダンIEというIEテスト用のVM配ってるサイト
-sfxの解凍はunrarでできた
-unrar e IE11.Win7.ForLinuxVirtualBox.part1.sfx  https://www.modern.ie/ja-jp
-Windows7の日本語化について
- WindowsUpdateでオプション選択してLanguage Pack入れる
- コントロールパネルの Clock, Language, and Regionを選択
- TimeZone変更
-  http://qiita.com/hnakamur/items/5f2f9e817dd0de60abb2</description>
     </item>
     
   </channel>
