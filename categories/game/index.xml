@@ -5,8 +5,19 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 29 Nov 2017 23:20:37 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 27 Oct 2019 03:00:31 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>osu!taikoのskin</title>
+      <link>https://yaasita.github.io/2019/10/27/osu/</link>
+      <pubDate>Sun, 27 Oct 2019 03:00:31 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/10/27/osu/</guid>
+      <description>osu!taikoのスキン
+これが一番良かった
+概要欄からダウンロードできる</description>
+    </item>
     
     <item>
       <title>PS Vita 3.67アップデートでTLS1.2対応</title>
@@ -326,27 +337,6 @@ http://gamegaz.com/2013010310456/ </description>
 クソゲーまとめ @ ウィキ
 MARVEL　VS　CAPCOM２　攻略
 コマンド</description>
-    </item>
-    
-    <item>
-      <title>sudoku(数独)の日本語man</title>
-      <link>https://yaasita.github.io/2011/08/12/3583/</link>
-      <pubDate>Fri, 12 Aug 2011 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2011/08/12/3583/</guid>
-      <description>Linux用のsudokuゲームの日本語manです
-NAMEsudoku - 数独ゲーム
-SYNOPSIS(ゲームを始める)
-sudoku [options] ... [&amp;amp;lt;filename&amp;amp;gt;]
-(問題を作成)
-sudoku -g [&amp;amp;lt;num&amp;amp;gt;] [options] ...
-(問題を解く)
-sudoku -v [options] ...
-(難易度を計算)
-sudoku -s [options] ...
-DESCRIPTIONThe sudoku board game is played on a 9x9 grid, divided into rows, columns, and
-9 blocks of 3x3 squares. The objective is to fill the empty squares with the
-digits 1-9, so that each row, column, and block contains each of the digits 1-9</description>
     </item>
     
   </channel>

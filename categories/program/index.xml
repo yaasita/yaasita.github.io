@@ -14,8 +14,10 @@
       <pubDate>Mon, 30 Sep 2019 05:05:34 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2019/09/30/atcoder-abc142/</guid>
-      <description>方針はユークリッドの互除法で最大公約数を出して、最大公約数を素因数分解
+      <description>問題: D - Disjoint Set of Common Divisors
+方針はユークリッドの互除法で最大公約数を出して、最大公約数を素因数分解
 存在する素数の数+1(今回は1もお互いに素の数として含めるため)でOKぽい
+perlで書いてみる
  解説動画</description>
     </item>
     

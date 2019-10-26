@@ -5,8 +5,17 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 30 Sep 2019 05:05:34 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 27 Oct 2019 03:00:31 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>game</title>
+      <link>https://yaasita.github.io/categories/game/</link>
+      <pubDate>Sun, 27 Oct 2019 03:00:31 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/categories/game/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>program</title>
@@ -86,15 +95,6 @@
       <pubDate>Sun, 11 Nov 2018 01:33:21 +0900</pubDate>
       
       <guid>https://yaasita.github.io/categories/crack/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>game</title>
-      <link>https://yaasita.github.io/categories/game/</link>
-      <pubDate>Wed, 29 Nov 2017 23:20:37 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/categories/game/</guid>
       <description></description>
     </item>
     
