@@ -5,8 +5,27 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 14 Nov 2019 22:32:41 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 08 Dec 2019 05:12:12 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GCP Cloud Functions内からサービスアカウントのtoken取る</title>
+      <link>https://yaasita.github.io/2019/12/08/service-account-in-cf/</link>
+      <pubDate>Sun, 08 Dec 2019 05:12:12 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/12/08/service-account-in-cf/</guid>
+      <description>Cloud Functionsからアクセストークンをどうやって取るの？と疑問に思ったので調べた
+Google Compute Engineと同じ取り方でOK
+&amp;quot;use strict&amp;quot;; const fetch = require(&amp;quot;node-fetch&amp;quot;); exports.handler = async (req, res) =&amp;gt; { const url = &amp;quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&amp;quot; + &amp;quot;[サービスアカウント名]/token&amp;quot;; const result = await fetch(url, { method: &amp;quot;GET&amp;quot;, headers: { &amp;quot;Metadata-Flavor&amp;quot;: &amp;quot;Google&amp;quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&amp;quot;OK&amp;quot;); };  なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
+
+まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &amp;ldquo;Function Identity&amp;rdquo;とかクリックするとちゃんと日本語版あるんですよね
+なんかメニューがバグってるのかな・・・
+とりあえず英語版から探すのをオススメします&amp;hellip;
+参考リンク
+ 関数ID
+ Compute Metadata Server
+   function callback(data){ var photos = data.response.posts[0].photos; document.</description>
+    </item>
     
     <item>
       <title>GCPでアクセストークンを取得する</title>
@@ -299,21 +318,6 @@ S/MIME手に入るので良かったんだけどなぁ・・・
  FLIP: 勉強用かな操作がむずい
  Studyplus: なんかポモドーロぽいの使えなかった
   で結局Focus To-DoのWindowsアプリ版を使ってる</description>
-    </item>
-    
-    <item>
-      <title>ELB配下のどれか生きてるインスタンスのAPIを叩く</title>
-      <link>https://yaasita.github.io/2019/01/21/post-under-elb/</link>
-      <pubDate>Mon, 21 Jan 2019 03:24:13 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/01/21/post-under-elb/</guid>
-      <description>構想
-
-コード
-
-ELBからインスタンス一覧引っ張る所はまだ書いてない
-明けましておめでとうございます
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
   </channel>

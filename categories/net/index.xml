@@ -5,8 +5,27 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 14 Sep 2019 22:21:43 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 08 Dec 2019 05:12:12 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>GCP Cloud Functions内からサービスアカウントのtoken取る</title>
+      <link>https://yaasita.github.io/2019/12/08/service-account-in-cf/</link>
+      <pubDate>Sun, 08 Dec 2019 05:12:12 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/12/08/service-account-in-cf/</guid>
+      <description>Cloud Functionsからアクセストークンをどうやって取るの？と疑問に思ったので調べた
+Google Compute Engineと同じ取り方でOK
+&amp;quot;use strict&amp;quot;; const fetch = require(&amp;quot;node-fetch&amp;quot;); exports.handler = async (req, res) =&amp;gt; { const url = &amp;quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&amp;quot; + &amp;quot;[サービスアカウント名]/token&amp;quot;; const result = await fetch(url, { method: &amp;quot;GET&amp;quot;, headers: { &amp;quot;Metadata-Flavor&amp;quot;: &amp;quot;Google&amp;quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&amp;quot;OK&amp;quot;); };  なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
+
+まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &amp;ldquo;Function Identity&amp;rdquo;とかクリックするとちゃんと日本語版あるんですよね
+なんかメニューがバグってるのかな・・・
+とりあえず英語版から探すのをオススメします&amp;hellip;
+参考リンク
+ 関数ID
+ Compute Metadata Server
+   function callback(data){ var photos = data.response.posts[0].photos; document.</description>
+    </item>
     
     <item>
       <title>ビリビリ動画とcrunchyrollのIP制限をGCPで検証</title>
@@ -326,18 +345,6 @@ cpuminer-multiでやってみた
  自宅PC Core i5-4460 @ 3.20GHz 4コア メモリ 4GB =&amp;gt; 376 kH/s
  ノートパソコン LB-C110B Celeron 1037U 2コア/1.80GHz メモリ8GB =&amp;gt; 91 kH/s
   まとめ CPUマイニングなんてやるもんじゃない←結論</description>
-    </item>
-    
-    <item>
-      <title>s3fsとIPアドレス制限だけのpublic bucket</title>
-      <link>https://yaasita.github.io/2017/11/07/s3fs-public-bucket/</link>
-      <pubDate>Tue, 07 Nov 2017 01:36:51 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/11/07/s3fs-public-bucket/</guid>
-      <description>s3fsを使ってこんな感じのバケットポリシーのs3をマウントするときのやつ
-(hogehogeバケットとその中身を特定IPアドレスの人に開放する)
-{ &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Id&amp;quot;: &amp;quot;Policy1509977001523&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1509976998204&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;s3:*&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::hogehoge&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;IpAddress&amp;quot;: { &amp;quot;aws:SourceIp&amp;quot;: &amp;quot;203.0.113.1&amp;quot; } } }, { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1509976998204&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;s3:*&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::hogehoge/*&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;IpAddress&amp;quot;: { &amp;quot;aws:SourceIp&amp;quot;: &amp;quot;203.0.113.1&amp;quot; } } } ] }  んでs3fsはこんな感じ
-s3fs -o public_bucket=1,rw,allow_other,umask=0022,endpoint=ap-northeast-1,default_acl=public-read hogehoge /mnt  public_bucketがポイント</description>
     </item>
     
   </channel>
