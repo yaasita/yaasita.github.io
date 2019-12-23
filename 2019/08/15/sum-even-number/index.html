@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,22 +55,15 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<p><a href="https://qiita.com/noobow/items/28cd77968815f329ca77">「1から100の偶数の和を求めるワンライナー」まとめ</a></p>
-
+    <p><a href="https://qiita.com/noobow/items/28cd77968815f329ca77">「1から100の偶数の和を求めるワンライナー」まとめ</a></p>
 <p>perlでやってみる</p>
-
 <pre><code>perl -E '$s+=$_%2?0:$_ for 1..100;say$s'
 perl -E 's/.+/$s+=$&amp;%2?0:$&amp;/e for 1..100;say$s'
 perl -E '$&quot;=&quot;+&quot;;$a=&quot;@{[1..100]}&quot;;$a=~s/\d+/$&amp;%2?0:$&amp;/eg;eval&quot;say $a&quot;'
 perl -E '$&quot;=&quot;+&quot;;eval&quot;say @{[grep{$_%2==0}1..100]}&quot;;'
 </code></pre>
-
 <p>4つ思いついた</p>
-
-<h2 id="結論">結論</h2>
-
+<h2 id="heading">結論</h2>
 <p>simple is best</p>
 
   </div>
@@ -205,7 +198,7 @@ perl -E '$&quot;=&quot;+&quot;;eval&quot;say @{[grep{$_%2==0}1..100]}&quot;;'
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -213,7 +206,7 @@ perl -E '$&quot;=&quot;+&quot;;eval&quot;say @{[grep{$_%2==0}1..100]}&quot;;'
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -296,7 +289,7 @@ perl -E '$&quot;=&quot;+&quot;;eval&quot;say @{[grep{$_%2==0}1..100]}&quot;;'
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

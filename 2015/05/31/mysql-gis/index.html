@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,9 +55,8 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    <p>MySQLのGIS回り<br />
+    <p>MySQLのGIS回り<br>
 こんな感じで使うぽい</p>
-
 <pre><code># インサート
 insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( '旭鮨総本店 新宿住友ビル50F店' ,GeomFromText('POINT(35.691421  139.692595)') );
 insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( '久兵衛 京王プラザホテル店' ,GeomFromText('POINT(35.689685 13 9.694664)') );
@@ -70,11 +69,9 @@ insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( '喜与し' ,GeomFromT
  GLength( GeomFromText( concat('LineString(35.692777 139.687362 ,', X(`latlng`) ,' ',Y(`latlng`),')' ) ) )  '距離'
  from gis_tbl order by GLength( GeomFromText( concat('LineString(35.692777 139.687362 ,', X(`latlng`) ,' ',Y(`latlng`),' )' ) ) );
 </code></pre>
-
 <p>参考リンク</p>
-
 <ul>
-<li><a href="http://d.hatena.ne.jp/IT7C/20100723/1279835242">MySQL TIPS 3 空間情報(geometry)を使って経度・緯度の検索を高速化する</a><br /></li>
+<li><a href="http://d.hatena.ne.jp/IT7C/20100723/1279835242">MySQL TIPS 3 空間情報(geometry)を使って経度・緯度の検索を高速化する</a></li>
 </ul>
 
   </div>
@@ -209,7 +206,7 @@ insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( '喜与し' ,GeomFromT
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -217,7 +214,7 @@ insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( '喜与し' ,GeomFromT
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -300,7 +297,7 @@ insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( '喜与し' ,GeomFromT
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

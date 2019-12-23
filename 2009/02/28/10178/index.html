@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -56,25 +56,19 @@ if (!doNotTrack) {
   </header>
   <div class="content">
     <p>よく忘れるのでメモ</p>
-
 <p>↓は普通の使い方</p>
-
 <pre><code>perl -e 'print &quot;hello&quot;'
 </code></pre>
-
-<p>↓test.txtの中身を表示 -nオプションは<br />
+<p>↓test.txtの中身を表示 -nオプションは<br>
 こんな感じの意味</p>
-
 <pre><code>perl -ne 'print' test.txt
 
 while (&lt;&gt;) {
 ...  # your program goes here
 }
 </code></pre>
-
-<p>↓test.txtの中身を表示 -pオプションは<br />
+<p>↓test.txtの中身を表示 -pオプションは<br>
 -nの最後にプリント文をかます様なイメージ</p>
-
 <pre><code>perl -pe '' test.txt
 
 while (&lt;&gt;) {
@@ -82,29 +76,22 @@ while (&lt;&gt;) {
     print;
 }
 </code></pre>
-
 <p>ライン処理を追加する（print文の後に改行＋&lt;&gt;後にchmop）</p>
-
 <pre><code>perl -lpe '' test.txt
 </code></pre>
-
-<p>-iオプションは対象のファイルを上書きする<br />
-注意するのは-iはその後に変更前のファイル名を取るので<br />
-まとめないこと（-ipleは駄目）<br />
-上がtest.txtの頭に行番号を付加する<br />
+<p>-iオプションは対象のファイルを上書きする<br>
+注意するのは-iはその後に変更前のファイル名を取るので<br>
+まとめないこと（-ipleは駄目）<br>
+上がtest.txtの頭に行番号を付加する<br>
 下が変更前のtest.txtをtest.txt.backとして残す</p>
-
 <pre><code>perl -i -ple 's/^(.*$)/$.$1/' test.txt
 perl -i.back -ple 's/^(.*)/$. \: $1/' test.txt
 </code></pre>
-
 <p>参考リンク</p>
-
 <ul>
-<li><a href="http://blog.livedoor.jp/dankogai/archives/51026593.html">http://blog.livedoor.jp/dankogai/archives/51026593.html</a><br /></li>
-<li><a href="http://perldoc.jp/docs/perl/5.6.1/perlrun.pod">http://perldoc.jp/docs/perl/5.6.1/perlrun.pod</a><br /></li>
-<li><a href="https://www.google.co.jp/search?hl=ja&amp;q=perl+%E3%83%AF%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%8A%E3%83%BC&amp;btnG=Google+%E6%A4%9C%E7%B4%A2&amp;meta=lr%3D&amp;gws_rd=ssl">perl ワンライナー google検索</a><br />
-<br /></li>
+<li><a href="http://blog.livedoor.jp/dankogai/archives/51026593.html">http://blog.livedoor.jp/dankogai/archives/51026593.html</a></li>
+<li><a href="http://perldoc.jp/docs/perl/5.6.1/perlrun.pod">http://perldoc.jp/docs/perl/5.6.1/perlrun.pod</a></li>
+<li><a href="https://www.google.co.jp/search?hl=ja&amp;q=perl+%E3%83%AF%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%8A%E3%83%BC&amp;btnG=Google+%E6%A4%9C%E7%B4%A2&amp;meta=lr%3D&amp;gws_rd=ssl">perl ワンライナー google検索</a></li>
 </ul>
 
   </div>
@@ -239,7 +226,7 @@ perl -i.back -ple 's/^(.*)/$. \: $1/' test.txt
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -247,7 +234,7 @@ perl -i.back -ple 's/^(.*)/$. \: $1/' test.txt
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -330,7 +317,7 @@ perl -i.back -ple 's/^(.*)/$. \: $1/' test.txt
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,55 +55,52 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<h2 id="手順">手順</h2>
-
+    <h2 id="heading">手順</h2>
 <ol>
-<li><a href="http://www.tumblr.com/oauth/apps">アプリを登録</a><br />
-<code>OAuth Consumer Key</code>と<code>Secret Key</code>を作る<br /></li>
-
-<li><p>アクセストークンリクエスト</p>
-
-<pre><code>#!/usr/bin/env ruby
-require 'oauth'
-require 'oauth/consumer'
-@consumer=OAuth::Consumer.new( &quot;consumer key&quot;,&quot;secret key&quot;,
-  { :site =&gt; 'http://www.tumblr.com',
-  :request_token_path =&gt; '/oauth/request_token',
-  :authorize_path =&gt; '/oauth/authorize',
-  :access_token_path =&gt; '/oauth/access_token',
-  :http_method =&gt; :get
-  }
-)
-@request_token=@consumer.get_request_token
-put @request_token.authorize_url
-</code></pre></li>
-
-<li><p>リクエストトークンを踏む</p></li>
-
-<li><p>コールバックされる</p></li>
-
-<li><p>verifirerをメモる</p>
-
-<pre><code>@access_token = @request_token.get_access_token(:oauth_verifier =&gt; verifier )
-puts @access_token.token
-puts @access_token.secret
-</code></pre></li>
+<li>
+<p><a href="http://www.tumblr.com/oauth/apps">アプリを登録</a><br>
+<code>OAuth Consumer Key</code>と<code>Secret Key</code>を作る</p>
+</li>
+<li>
+<p>アクセストークンリクエスト</p>
+<pre><code> #!/usr/bin/env ruby
+ require 'oauth'
+ require 'oauth/consumer'
+ @consumer=OAuth::Consumer.new( &quot;consumer key&quot;,&quot;secret key&quot;,
+   { :site =&gt; 'http://www.tumblr.com',
+   :request_token_path =&gt; '/oauth/request_token',
+   :authorize_path =&gt; '/oauth/authorize',
+   :access_token_path =&gt; '/oauth/access_token',
+   :http_method =&gt; :get
+   }
+ )
+ @request_token=@consumer.get_request_token
+ put @request_token.authorize_url
+</code></pre>
+</li>
+<li>
+<p>リクエストトークンを踏む</p>
+</li>
+<li>
+<p>コールバックされる</p>
+</li>
+<li>
+<p>verifirerをメモる</p>
+<pre><code> @access_token = @request_token.get_access_token(:oauth_verifier =&gt; verifier )
+ puts @access_token.token
+ puts @access_token.secret
+</code></pre>
+</li>
 </ol>
-
-<p>APIによってはOauthリクエスト署名いらいないやつもある<br />
+<p>APIによってはOauthリクエスト署名いらいないやつもある<br>
 (api_keyのみでOK)</p>
-
 <pre><code>curl http://api.tumblr.com/v2/blog/yaasita.tumblr.com/info?api_key=xxxxxxxxxxxxxxx
 </code></pre>
-
-<h2 id="参考リンク">参考リンク</h2>
-
+<h2 id="heading-1">参考リンク</h2>
 <ul>
-<li><a href="http://kid0725.usamimi.info/api_v2_docs_ja.html#auth">Tumblr API日本語版</a><br /></li>
-<li><a href="http://qiita.com/ikedahidenori/items/ede8f53e2484843da174">RubyでTumblrのOAuth認証のアクセストークンを得る手順</a><br /></li>
-<li><a href="https://gist.github.com/monde/4577106">gist sample code</a><br /></li>
+<li><a href="http://kid0725.usamimi.info/api_v2_docs_ja.html#auth">Tumblr API日本語版</a></li>
+<li><a href="http://qiita.com/ikedahidenori/items/ede8f53e2484843da174">RubyでTumblrのOAuth認証のアクセストークンを得る手順</a></li>
+<li><a href="https://gist.github.com/monde/4577106">gist sample code</a></li>
 </ul>
 
   </div>
@@ -242,7 +239,7 @@ puts @access_token.secret
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -250,7 +247,7 @@ puts @access_token.secret
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -333,7 +330,7 @@ puts @access_token.secret
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,43 +55,30 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<p>BCCヘッダは転送しないで、MTA側で消されるというのは有名な話だけど<br />
+    <p>BCCヘッダは転送しないで、MTA側で消されるというのは有名な話だけど<br>
 実際どんな感じなのか</p>
-
-<p>まずメーラーでBCCを指定して送ったとする<br />
+<p>まずメーラーでBCCを指定して送ったとする<br>
 この時BCCヘッダはどのタイミングで消えるか？という問題</p>
-
 <pre><code>MUA(thunderbird等) -&gt; 送信側MTA(postfix等) -&gt; 受信側MTA(postfix等)
 </code></pre>
-
 <h2 id="thunderbird">thunderbird</h2>
-
-<p>まずthunderbirdからBCCで送信した場合はそもそもBccヘッダはつけない(Icedove/45.6.0で検証)<br />
+<p>まずthunderbirdからBCCで送信した場合はそもそもBccヘッダはつけない(Icedove/45.6.0で検証)<br>
 envelope toには存在するがそもそもBccヘッダなんてものを書かない</p>
-
 <h2 id="postfix">postfix</h2>
-
-<p>postfixもデフォルトではBccヘッダは落とすようになっている<br />
+<p>postfixもデフォルトではBccヘッダは落とすようになっている<br>
 しかしこの設定を変更すればBccヘッダを落とさないでそのまま配送される</p>
-
 <pre><code>message_drop_headers = bcc, content-length, resent-bcc, return-path
 </code></pre>
-
 <ul>
-<li>参考<br />
-
+<li>参考
 <ul>
-<li><a href="http://www.postfix.org/postconf.5.html#message_drop_headers">http://www.postfix.org/postconf.5.html#message_drop_headers</a><br />
-<br /></li>
-</ul></li>
+<li><a href="http://www.postfix.org/postconf.5.html#message_drop_headers">http://www.postfix.org/postconf.5.html#message_drop_headers</a></li>
 </ul>
-
-<h2 id="まとめ">まとめ</h2>
-
-<p>本来見られちゃいけないヘッダをMTAに渡して、多分消してくれるだろうと期待するのはあまりよくないと思う<br />
-具体的にはBccヘッダまで綺麗に書いて <code>sendmail -t</code> で送るよりはちゃんとenvelope to を指定して送った方が安全度高い<br />
+</li>
+</ul>
+<h2 id="heading">まとめ</h2>
+<p>本来見られちゃいけないヘッダをMTAに渡して、多分消してくれるだろうと期待するのはあまりよくないと思う<br>
+具体的にはBccヘッダまで綺麗に書いて <code>sendmail -t</code> で送るよりはちゃんとenvelope to を指定して送った方が安全度高い<br>
 要するにthunderbirdみたいに送るべき</p>
 
   </div>
@@ -230,7 +217,7 @@ envelope toには存在するがそもそもBccヘッダなんてものを書か
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -238,7 +225,7 @@ envelope toには存在するがそもそもBccヘッダなんてものを書か
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -321,7 +308,7 @@ envelope toには存在するがそもそもBccヘッダなんてものを書か
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

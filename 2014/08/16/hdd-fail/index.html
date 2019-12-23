@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -56,30 +56,22 @@ if (!doNotTrack) {
   </header>
   <div class="content">
     <p>なんかrsyncでバックアップしようとすると以下のエラーが出るようになった</p>
-
 <pre><code>rsync: read errors mapping &quot;/home/yamasita/Desktop/hogehoge.dat&quot;: Input/output error (5)
 ERROR: /home/yamasita/Desktop/hogehoge.dat failed verification -- update discarded.
 </code></pre>
-
 <p>まずbadblocksで調べてみる</p>
-
 <pre><code>badblocks /home/yamasita/Desktop/hogehoge.dat
 </code></pre>
-
-<p>ダメそう<br />
-とりあえず、fsckをかけてみる<br />
+<p>ダメそう<br>
+とりあえず、fsckをかけてみる<br>
 /のパーティションなのでfsckの間隔を調整</p>
-
 <pre><code>dumpe2fs -h /dev/sda1 | egrep -i 'check|mount count'
 tune2fs -i 30d /dev/sda1
 </code></pre>
-
 <p>これでとりあえず不良セクタ退避させた</p>
-
-<p>過去記事<br />
+<p>過去記事<br>
 <a href="/2012/03/11/2962.html">HDDが故障したときにやったこと</a></p>
-
-<p>参考リンク<br />
+<p>参考リンク<br>
 <a href="http://nfolamp.wordpress.com/2010/10/25/dumpe2fstune2fs-manipulating-the-ext-fs-auto-check-parameters/">http://nfolamp.wordpress.com/2010/10/25/dumpe2fstune2fs-manipulating-the-ext-fs-auto-check-parameters/</a></p>
 
   </div>
@@ -218,7 +210,7 @@ tune2fs -i 30d /dev/sda1
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -226,7 +218,7 @@ tune2fs -i 30d /dev/sda1
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -309,7 +301,7 @@ tune2fs -i 30d /dev/sda1
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

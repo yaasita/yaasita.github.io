@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -56,28 +56,22 @@ if (!doNotTrack) {
   </header>
   <div class="content">
     <p>まず、パーティションを切るFATでフォーマットしアクティブフラグをセットする。</p>
-
 <pre><code>mkdir /mnt/usb/grub
 cp /boot/grub/stage* /boot/grub/fat_stage1_5 /mnt/usb/grub/
 umount /mnt/usb
 </code></pre>
-
 <p>とし</p>
-
 <pre><code>grub
 grub&gt; device (hd0) /dev/sda
 grub&gt; root (hd0,0)
 grub&gt; setup (hd0)
 grub&gt; quit
 </code></pre>
-
 <p>と入力する。（USBメモリを<code>/dev/sda</code>とする）</p>
-
 <p>参考リンク</p>
-
 <ul>
-<li><a href="http://opentechpress.jp/developer/article.pl?sid=07/06/18/0135208&amp;pagenum=3">http://opentechpress.jp/developer/article.pl?sid=07/06/18/0135208&amp;pagenum=3</a><br /></li>
-<li><a href="http://d.hatena.ne.jp/kamopapa/20071118">http://d.hatena.ne.jp/kamopapa/20071118</a><br /></li>
+<li><a href="http://opentechpress.jp/developer/article.pl?sid=07/06/18/0135208&amp;amp;pagenum=3">http://opentechpress.jp/developer/article.pl?sid=07/06/18/0135208&amp;amp;pagenum=3</a></li>
+<li><a href="http://d.hatena.ne.jp/kamopapa/20071118">http://d.hatena.ne.jp/kamopapa/20071118</a></li>
 </ul>
 
   </div>
@@ -212,7 +206,7 @@ grub&gt; quit
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -220,7 +214,7 @@ grub&gt; quit
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -303,7 +297,7 @@ grub&gt; quit
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

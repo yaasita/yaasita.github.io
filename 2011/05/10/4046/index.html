@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,59 +55,41 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<p>昔、調べたことがあったのでメモ</p>
-
-<p>有線LANの盗聴にはいくつか種類があって調べた限りだと以下の方法がある<br />
-以下の方法の殆どを行えるソフトはettercapがあるman ettercapとやるだけで勉強になる<br />
+    <p>昔、調べたことがあったのでメモ</p>
+<p>有線LANの盗聴にはいくつか種類があって調べた限りだと以下の方法がある<br>
+以下の方法の殆どを行えるソフトはettercapがあるman ettercapとやるだけで勉強になる<br>
 →MAC Floodはdsniffの中にあるmacofを使うと良いかも</p>
-
 <ul>
-<li>ARP Spoofing<br /></li>
-<li>ICMP Redirect<br /></li>
-<li>DHCP Spoofing<br /></li>
-<li>Port Stealing<br /></li>
-<li>MAC Flood<br />
-<br /></li>
+<li>ARP Spoofing</li>
+<li>ICMP Redirect</li>
+<li>DHCP Spoofing</li>
+<li>Port Stealing</li>
+<li>MAC Flood</li>
 </ul>
-
 <h2 id="apr-spoofing">APR Spoofing</h2>
-
-<p>偽のARP応答を返すことでARPテーブルを変更し中間者攻撃を行う手法<br />
+<p>偽のARP応答を返すことでARPテーブルを変更し中間者攻撃を行う手法<br>
 ARP Spoofingについては<a href="http://www.rootsecure.net/content/downloads/pdf/arp_spoofing_intro.pdf">こちら</a>が参考になる</p>
-
 <h2 id="icmp-redirect">ICMP Redirect</h2>
-
 <p>ICMPリダイレクトを使って経路情報を書き換え</p>
-
 <h2 id="dhcp-spoofing">DHCP Spoofing</h2>
-
 <p>DHCPを使ってIPアドレスを振るときにGWを盗聴できるように変更</p>
-
 <h2 id="port-stealing">Port Stealing</h2>
-
 <p>L2スイッチのポート情報を書き換えることでパケットをこちらに流すようにする</p>
-
 <h2 id="mac-flood">MAC Flood</h2>
-
 <p>L2スイッチのMACテーブルを溢れさせて馬鹿ハブにして盗聴する荒業</p>
-
-<h2 id="参考リンク">参考リンク</h2>
-
+<h2 id="heading">参考リンク</h2>
 <ul>
-<li><a href="http://www.net.c.dendai.ac.jp/%7Eyamasita/">LAN内の盗聴とその予防</a><br /></li>
-<li><a href="http://bogus.jp/pukiwiki/index.php?%A5%B9%A5%D7%A1%BC%A5%D5%A5%A3%A5%F3%A5%B0">スプーフィング</a><br /></li>
-<li><a href="http://herald.jugem.jp/?eid=64">MACアドレス書き換えで通信傍受！</a><br /></li>
-<li><a href="http://herald.jugem.jp/?eid=67">ARPスプーフィングで通信傍受！</a><br /></li>
-<li><a href="http://nmap.org/man/jp/man-bypass-firewalls-ids.html">ファイアウォール/IDS の回避とスプーフィング</a><br /></li>
-<li><a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060122/227652/">オキテ破りにトライ！　ネットワーク実験室</a><br /></li>
-<li><a href="http://itpro.nikkeibp.co.jp/members/ITPro/SEC_CHECK/20011202/1/">見えざる脅威，ネットワーク盗聴を見つけ出す</a><br /></li>
-<li><a href="http://itpro.nikkeibp.co.jp/members/NBY/techsquare/20030304/1/">社内の盗聴者を見つけ出すフリーツール「PromiScan」の使い方</a><br /></li>
-<li><a href="http://news.mynavi.jp/special/2002/lansec/007.html">社内LANが危ない? 今どきの社内セキュリティ対策</a><br /></li>
-<li><a href="http://linuxmag.sourceforge.jp/Japanese/March2003/article282.shtml">外部からの攻撃</a><br /></li>
-<li><a href="http://www.kozupon.com/security/toucho.html">SwitchingHubの特性を利用して盗聴する！</a><br />
-<br /></li>
+<li><a href="http://www.net.c.dendai.ac.jp/%7Eyamasita/">LAN内の盗聴とその予防</a></li>
+<li><a href="http://bogus.jp/pukiwiki/index.php?%A5%B9%A5%D7%A1%BC%A5%D5%A5%A3%A5%F3%A5%B0">スプーフィング</a></li>
+<li><a href="http://herald.jugem.jp/?eid=64">MACアドレス書き換えで通信傍受！</a></li>
+<li><a href="http://herald.jugem.jp/?eid=67">ARPスプーフィングで通信傍受！</a></li>
+<li><a href="http://nmap.org/man/jp/man-bypass-firewalls-ids.html">ファイアウォール/IDS の回避とスプーフィング</a></li>
+<li><a href="http://itpro.nikkeibp.co.jp/article/COLUMN/20060122/227652/">オキテ破りにトライ！　ネットワーク実験室</a></li>
+<li><a href="http://itpro.nikkeibp.co.jp/members/ITPro/SEC_CHECK/20011202/1/">見えざる脅威，ネットワーク盗聴を見つけ出す</a></li>
+<li><a href="http://itpro.nikkeibp.co.jp/members/NBY/techsquare/20030304/1/">社内の盗聴者を見つけ出すフリーツール「PromiScan」の使い方</a></li>
+<li><a href="http://news.mynavi.jp/special/2002/lansec/007.html">社内LANが危ない? 今どきの社内セキュリティ対策</a></li>
+<li><a href="http://linuxmag.sourceforge.jp/Japanese/March2003/article282.shtml">外部からの攻撃</a></li>
+<li><a href="http://www.kozupon.com/security/toucho.html">SwitchingHubの特性を利用して盗聴する！</a></li>
 </ul>
 
   </div>
@@ -246,7 +228,7 @@ ARP Spoofingについては<a href="http://www.rootsecure.net/content/downloads/
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -254,7 +236,7 @@ ARP Spoofingについては<a href="http://www.rootsecure.net/content/downloads/
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -337,7 +319,7 @@ ARP Spoofingについては<a href="http://www.rootsecure.net/content/downloads/
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

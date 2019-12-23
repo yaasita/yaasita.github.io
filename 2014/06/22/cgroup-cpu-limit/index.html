@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -56,13 +56,9 @@ if (!doNotTrack) {
   </header>
   <div class="content">
     <p>microインスタンスはstealの関係でCPUリミットを設定するとよいらしい</p>
-
 <p><a href="http://d.hatena.ne.jp/toritori0318/20140312/1394634304">microインスタンスはlimitかけると大きくパフォーマンスが向上する</a></p>
-
 <p>なのでやってみました</p>
-
 <p>環境は<code>t1.micro (ubuntu 14.04)</code></p>
-
 <pre><code>cgcreate -g cpu:ruby
 cgexec -g cpu:ruby ./install_ruby.sh
 cgset -r cpu.cfs_quota_us=250000 ruby
@@ -73,14 +69,10 @@ ls cpu/ruby
 cat cpu/ruby/tasks
 cgget -r cpu.cfs_quota_us -r cpu.cfs_period_us ruby
 </code></pre>
-
 <p>参考リンク</p>
-
 <ul>
-<li><a href="http://www.usupi.org/sysad/228.html">cgroup について理解する</a><br /></li>
-<li><a href="http://www.usupi.org/sysad/229.html">cgroup でメモリと走行時間に制限を加える</a><br />
-<br />
-<br /></li>
+<li><a href="http://www.usupi.org/sysad/228.html">cgroup について理解する</a></li>
+<li><a href="http://www.usupi.org/sysad/229.html">cgroup でメモリと走行時間に制限を加える</a></li>
 </ul>
 
   </div>
@@ -215,7 +207,7 @@ cgget -r cpu.cfs_quota_us -r cpu.cfs_period_us ruby
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -223,7 +215,7 @@ cgget -r cpu.cfs_quota_us -r cpu.cfs_period_us ruby
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -306,7 +298,7 @@ cgget -r cpu.cfs_quota_us -r cpu.cfs_period_us ruby
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

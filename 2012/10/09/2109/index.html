@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,19 +55,12 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<p>そんなに難しくないと思った・・・</p>
-
-<h2 id="consumer-keyとconsumer-secretの取得">CONSUMER_KEYとCONSUMER_SECRETの取得</h2>
-
-<p>アプリの登録を行う<br />
+    <p>そんなに難しくないと思った・・・</p>
+<h2 id="consumer-keyconsumer-secret">CONSUMER_KEYとCONSUMER_SECRETの取得</h2>
+<p>アプリの登録を行う<br>
 <a href="https://dev.twitter.com/apps">このページ</a>から飛んで適当に入力する</p>
-
-<h2 id="ユーザに許可してもらいアクセストークンをもらう">ユーザに許可してもらいアクセストークンをもらう</h2>
-
+<h2 id="heading">ユーザに許可してもらいアクセストークンをもらう</h2>
 <p>スクリプト実行⇒authページ⇒許可を押す⇒数値をメモ⇒スクリプトに入力</p>
-
 <pre><code>#!/usr/bin/env ruby
 # coding: utf-8
 require 'rubygems'
@@ -93,11 +86,8 @@ access_token = request_token.get_access_token(
 puts &quot;Access token: #{access_token.token}&quot;
 puts &quot;Access token secret: #{access_token.secret}&quot;
 </code></pre>
-
-<h2 id="後はもらったアクセストークン-コンシューマidでスクリプトを書く">後はもらったアクセストークン＆コンシューマIDでスクリプトを書く</h2>
-
+<h2 id="id">後はもらったアクセストークン＆コンシューマIDでスクリプトを書く</h2>
 <p>twitter のgemでもoauthのgemでも簡単なことをやる場合はあんま変わんない感じ</p>
-
 <pre><code>#!/usr/bin/env ruby
 # coding: utf-8
 
@@ -109,9 +99,7 @@ CONSUMER_SECRET = 'XXXXXXXXXXXXXXXXXXXX'
 ACCESS_TOKEN = 'XXXX-XXXX'
 ACCESS_TOKEN_SECRET = 'XXXXXXXXXXXXXXXXX'
 </code></pre>
-
-<h2 id="下準備">下準備</h2>
-
+<h2 id="heading-1">下準備</h2>
 <pre><code>consumer = OAuth::Consumer.new(
   CONSUMER_KEY,
   CONSUMER_SECRET,
@@ -123,18 +111,14 @@ access_token = OAuth::AccessToken.new(
   ACCESS_TOKEN_SECRET
 )
 </code></pre>
-
-<h2 id="タイムラインを取得して時系列順に表示">タイムラインを取得して時系列順に表示</h2>
-
+<h2 id="heading-2">タイムラインを取得して時系列順に表示</h2>
 <pre><code>response = access_token.get('http://twitter.com/statuses/friends_timeline.json')
 JSON.parse(response.body).reverse_each do |status|
   user = status['user']
   puts &quot;#{user['name']}(#{user['screen_name']}): #{status['text']}&quot;
 end
 </code></pre>
-
-<h2 id="tweetの投稿">Tweetの投稿</h2>
-
+<h2 id="tweet">Tweetの投稿</h2>
 <pre><code>response = access_token.post(
   'http://twitter.com/statuses/update.json',
   'status'=&amp;amp;gt; 'oauth test post2'
@@ -157,14 +141,11 @@ end
   #puts Twitter.home_timeline.first.text
   Twitter.update('hoge')
 </code></pre>
-
-<h2 id="参考リンク">参考リンク</h2>
-
+<h2 id="heading-3">参考リンク</h2>
 <ul>
-<li><a href="http://d.hatena.ne.jp/shibason/20090802/1249204953">http://d.hatena.ne.jp/shibason/20090802/1249204953</a><br /></li>
-<li><a href="http://rdoc.info/gems/twitter">http://rdoc.info/gems/twitter</a><br /></li>
-<li><a href="http://tech.sayama-yuki.net/archives/166">http://tech.sayama-yuki.net/archives/166</a><br />
-<br /></li>
+<li><a href="http://d.hatena.ne.jp/shibason/20090802/1249204953">http://d.hatena.ne.jp/shibason/20090802/1249204953</a></li>
+<li><a href="http://rdoc.info/gems/twitter">http://rdoc.info/gems/twitter</a></li>
+<li><a href="http://tech.sayama-yuki.net/archives/166">http://tech.sayama-yuki.net/archives/166</a></li>
 </ul>
 
   </div>
@@ -299,7 +280,7 @@ end
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -307,7 +288,7 @@ end
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -390,7 +371,7 @@ end
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

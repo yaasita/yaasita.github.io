@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,14 +55,11 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    <p>s3fsはamazon S3をファイルしすてむのように使うやつ<br />
+    <p>s3fsはamazon S3をファイルしすてむのように使うやつ<br>
 ただ遅い</p>
-
-<p>基本ここ見てやる<br />
+<p>基本ここ見てやる<br>
 <a href="https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes">https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes</a></p>
-
 <p>今回はCeontOS6を対象</p>
-
 <pre><code># paco入れておく
 yum install paco
 
@@ -105,13 +102,10 @@ mount /s3
 x-amz-meta-modeってメタデータでやってるぽい
 aws s3 sync /s3/test s3://hoge-bucket/test --delete --metadata  &quot;mode=33279&quot; --size-only
 </code></pre>
-
 <p>今はこれより早い goofys なるものもあるらしい</p>
-
 <ul>
-<li><a href="https://github.com/kahing/goofys">https://github.com/kahing/goofys</a><br /></li>
-<li><a href="http://dev.classmethod.jp/cloud/aws/how-to-use-s3fs-goofys/">http://dev.classmethod.jp/cloud/aws/how-to-use-s3fs-goofys/</a><br />
-<br /></li>
+<li><a href="https://github.com/kahing/goofys">https://github.com/kahing/goofys</a></li>
+<li><a href="http://dev.classmethod.jp/cloud/aws/how-to-use-s3fs-goofys/">http://dev.classmethod.jp/cloud/aws/how-to-use-s3fs-goofys/</a></li>
 </ul>
 
   </div>
@@ -254,7 +248,7 @@ aws s3 sync /s3/test s3://hoge-bucket/test --delete --metadata  &quot;mode=33279
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -262,7 +256,7 @@ aws s3 sync /s3/test s3://hoge-bucket/test --delete --metadata  &quot;mode=33279
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -345,7 +339,7 @@ aws s3 sync /s3/test s3://hoge-bucket/test --delete --metadata  &quot;mode=33279
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

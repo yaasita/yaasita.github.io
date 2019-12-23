@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,10 +55,8 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    <p>Cloud Functionsからアクセストークンをどうやって取るの？と疑問に思ったので調べた</p>
-
+    <p>Cloud Functionsからサービスアカウントのアクセストークンをどうやって取るの？と疑問に思ったので調べた</p>
 <p>Google Compute Engineと同じ取り方でOK</p>
-
 <pre><code>&quot;use strict&quot;;
 const fetch = require(&quot;node-fetch&quot;);
 exports.handler = async (req, res) =&gt; {
@@ -76,24 +74,16 @@ exports.handler = async (req, res) =&gt; {
   res.status(200).send(&quot;OK&quot;);
 };
 </code></pre>
-
 <p>なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。</p>
-
 <p><a href="#"><img id="tumblr-img" src=""></a></p>
-
-<p>まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &ldquo;Function Identity&rdquo;とかクリックするとちゃんと日本語版あるんですよね<br />
-なんかメニューがバグってるのかな・・・<br />
+<p>まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &ldquo;Function Identity&quot;とかクリックするとちゃんと日本語版あるんですよね<br>
+なんかメニューがバグってるのかな・・・<br>
 とりあえず英語版から探すのをオススメします&hellip;</p>
-
 <p>参考リンク</p>
-
 <ul>
-<li><a href="https://cloud.google.com/functions/docs/securing/function-identity#per-function_identity">関数ID</a><br /></li>
-<li><a href="https://cloud.google.com/functions/docs/securing/function-identity">Compute Metadata Server</a><br />
-<br />
-<br /></li>
+<li><a href="https://cloud.google.com/functions/docs/securing/function-identity#per-function_identity">関数ID</a></li>
+<li><a href="https://cloud.google.com/functions/docs/securing/function-identity">Compute Metadata Server</a></li>
 </ul>
-
 <script>
 function callback(data){
     var photos = data.response.posts[0].photos;
@@ -173,6 +163,11 @@ function callback(data){
         </div>
         
         
+        <div id="pagenavigation-prev">
+          <span class="pagenav-label">Next</span>
+          <a href="https://yaasita.github.io/2019/12/23/chromebook/">chromebookが最高だった</a>
+        </div>
+        
       </div>
       
     </div>
@@ -234,7 +229,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -242,7 +237,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -325,7 +320,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

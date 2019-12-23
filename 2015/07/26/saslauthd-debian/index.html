@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,15 +55,11 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    <p>なんか Debian Jessie(8.1)のsaslauthdのsystemd定義が書かれてない気がする<br />
+    <p>なんか Debian Jessie(8.1)のsaslauthdのsystemd定義が書かれてない気がする<br>
 なので自動起動に設定したかったら自分で書く感じで</p>
-
 <p>/etc/systemd/system/saslauthd.service</p>
-
 <script src="https://gist.github.com/yaasita/48602af769598320ec56.js"></script>
-
 <p>みたいな定義を書いて</p>
-
 <pre><code>systemctl daemon-reload
 systemctl enable saslauthd.service
 systemctl start saslauthd.service
@@ -205,7 +201,7 @@ systemctl start saslauthd.service
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -213,7 +209,7 @@ systemctl start saslauthd.service
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -296,7 +292,7 @@ systemctl start saslauthd.service
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

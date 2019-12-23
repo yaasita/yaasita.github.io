@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,27 +55,20 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<p>multiple指定してuploadフォーム作るときの話</p>
-
+    <p>multiple指定してuploadフォーム作るときの話</p>
 <pre><code>&lt;input type=&quot;file&quot; name=&quot;files&quot; multiple /&gt;
 </code></pre>
-
-<p>で複数ファイル選択できるが<br />
+<p>で複数ファイル選択できるが<br>
 Perl CGIで受けるときに↓みたいにすると</p>
-
 <pre><code>my @files = $q-&gt;param('files');
 for my $filename (@files) {
     my $fn = decode(&quot;UTF-8&quot;, $filename);
     move($q-&gt;tmpFileName($filename), &quot;/path/to/dir&quot;);
 }
 </code></pre>
-
-<p>iOSで選択するとfilenameが全部image.jpgでPOSTされてしまう可能性があるのでダメ<br />
-(AndroidとかはOK)<br />
+<p>iOSで選択するとfilenameが全部image.jpgでPOSTされてしまう可能性があるのでダメ<br>
+(AndroidとかはOK)<br>
 なのでこんな感じにする</p>
-
 <pre><code>my @fhs = $q-&gt;upload('files');
 my %fname_count;
 for my $fh (@fhs){
@@ -89,15 +82,12 @@ for my $fh (@fhs){
     push(@result, decode(&quot;UTF-8&quot;,&quot;$fh&quot;));
 }
 </code></pre>
-
-<p>あと古めのアンドロイドはmultiple指定しても複数ファイル選択ができない<br />
+<p>あと古めのアンドロイドはmultiple指定しても複数ファイル選択ができない<br>
 Andoroid4.0はダメだけど6.0だとOKだった</p>
-
-<h2 id="参考リンク">参考リンク</h2>
-
+<h2 id="heading">参考リンク</h2>
 <ul>
-<li><a href="http://stackoverflow.com/questions/22226597/how-to-upload-multiple-files-in-perl">http://stackoverflow.com/questions/22226597/how-to-upload-multiple-files-in-perl</a><br /></li>
-<li><a href="https://github.com/yaasita/simple-uploader">https://github.com/yaasita/simple-uploader</a><br /></li>
+<li><a href="http://stackoverflow.com/questions/22226597/how-to-upload-multiple-files-in-perl">http://stackoverflow.com/questions/22226597/how-to-upload-multiple-files-in-perl</a></li>
+<li><a href="https://github.com/yaasita/simple-uploader">https://github.com/yaasita/simple-uploader</a></li>
 </ul>
 
   </div>
@@ -236,7 +226,7 @@ Andoroid4.0はダメだけど6.0だとOKだった</p>
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -244,7 +234,7 @@ Andoroid4.0はダメだけど6.0だとOKだった</p>
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -327,7 +317,7 @@ Andoroid4.0はダメだけど6.0だとOKだった</p>
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

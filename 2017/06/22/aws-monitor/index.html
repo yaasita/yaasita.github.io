@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,21 +55,13 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<p>EC2 -&gt; CloudWatch -&gt; SNS -&gt; Lambda -&gt; Slackみたいなよくある設定例</p>
-
+    <p>EC2 -&gt; CloudWatch -&gt; SNS -&gt; Lambda -&gt; Slackみたいなよくある設定例</p>
 <p><a href="#"><img id="tumblr-img" src=""></a></p>
-
 <h2 id="slack">Slack</h2>
-
-<p>Customize Slack =&gt; Custom Integrations から <code>Incoming WebHooks</code> 選んで適当にチャンネル選んで追加<br />
+<p>Customize Slack =&gt; Custom Integrations から <code>Incoming WebHooks</code> 選んで適当にチャンネル選んで追加<br>
 URLをメモっておく</p>
-
 <h2 id="ec2">EC2</h2>
-
 <p>とりあえずaws cli入れて、<a href="http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/mon-scripts.html">この辺の監視スクリプト</a>をcronに登録すればOK</p>
-
 <pre><code>apt-get install awscli
 # カスタムメトリクス用スクリプト
 apt-get install unzip libwww-perl libdatetime-perl
@@ -80,48 +72,29 @@ cd aws-scripts-mon
 cp awscreds.template awscreds.conf
 vim awscreds.conf # keyIDとSecretKeyを書いておく
 </code></pre>
-
 <p>こんな感じのやつをcronに登録</p>
-
 <pre><code>~/aws-scripts-mon/mon-put-instance-data.pl --mem-util --swap-util --disk-path=/ --disk-space-util --from-cron
 </code></pre>
-
 <p>んで即座に反映されるはず</p>
-
 <ul>
-<li><a href="http://docs.aws.amazon.com/ja_jp/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">カスタムメトリクスをパブリッシュする</a><br />
-<br /></li>
+<li><a href="http://docs.aws.amazon.com/ja_jp/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">カスタムメトリクスをパブリッシュする</a></li>
 </ul>
-
 <h2 id="cloudwatch">CloudWatch</h2>
-
-<p>ダッシュボード作ったりアラーム書いたりしておく<br />
+<p>ダッシュボード作ったりアラーム書いたりしておく<br>
 通知はSNSのTopicsを指定する(後述)</p>
-
 <h2 id="sns">SNS</h2>
-
 <p>Topicsを新しく作ってTopicネームくらいは適当に埋めておく後で、Lambda側で指定するのでTopicさえあればOK</p>
-
 <h2 id="lambda">Lambda</h2>
-
 <p>適当にNode.jsで書く</p>
-
-<p>こんな感じのスクリプトをZipで固めてアップロード<br />
+<p>こんな感じのスクリプトをZipで固めてアップロード<br>
 <a href="https://github.com/yaasita/aws-lambda-slack-post">https://github.com/yaasita/aws-lambda-slack-post</a></p>
-
 <pre><code>zip -r my-func.zip index.js node_modules/
 </code></pre>
-
 <p>あとはトリガーにSNSを指定すればOK</p>
-
-<h2 id="参考リンク">参考リンク</h2>
-
+<h2 id="heading">参考リンク</h2>
 <ul>
-<li><a href="http://qiita.com/tmtysk/items/7161b11e20ac5e2dfc01">CloudWatchのAlertをAWS Lambda経由でSlackに飛ばす</a><br />
-<br />
-<br /></li>
+<li><a href="http://qiita.com/tmtysk/items/7161b11e20ac5e2dfc01">CloudWatchのAlertをAWS Lambda経由でSlackに飛ばす</a></li>
 </ul>
-
 <script>
 function callback(data){
     var photos = data.response.posts[0].photos;
@@ -267,7 +240,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -275,7 +248,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -358,7 +331,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

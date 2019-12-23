@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,53 +55,34 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<p>中間証明書をどう設定するか問題</p>
-
+    <p>中間証明書をどう設定するか問題</p>
 <h2 id="postfix">postfix</h2>
-
 <pre><code>smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem
 smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem
 smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem
 </code></pre>
-
-<p>Let&rsquo;s Encryptの場合こんな感じ<br />
-smtpd_tls_CAfileに中間証明書を指定する<br />
+<p>Let's Encryptの場合こんな感じ<br>
+smtpd_tls_CAfileに中間証明書を指定する<br>
 smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG</p>
-
 <h2 id="dovecot">dovecot</h2>
-
 <p>10-ssl.conf</p>
-
 <pre><code>ssl_ca = &lt;/etc/letsencrypt/live/example.net/chain.pem
 </code></pre>
-
-<p>これはダメ<br />
+<p>これはダメ<br>
 この設定はクライアント証明書用ですので</p>
-
 <p>正しくは、こんな感じに、まとめたやつを指定すればOK</p>
-
 <pre><code>ssl_cert = &lt;/etc/letsencrypt/live/example.net/fullchain.pem
 </code></pre>
-
 <h2 id="apache">apache</h2>
-
 <p>SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない</p>
-
 <pre><code>SSLCertificateFile    /etc/letsencrypt/live/example.net/fullchain.pem
 </code></pre>
-
 <p>dovecot同様に中間証明書もまとめて指定する</p>
-
-<h2 id="まとめ">まとめ</h2>
-
-<p>この問題はスマホのK-9 Mailでメール読もうとしたときに判明した<br />
-(突然CertPathValidatorExceptionって怒られた)<br />
+<h2 id="heading">まとめ</h2>
+<p>この問題はスマホのK-9 Mailでメール読もうとしたときに判明した<br>
+(突然CertPathValidatorExceptionって怒られた)<br>
 thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね</p>
-
 <p><a href="#"><img id="tumblr-img" src=""></a></p>
-
 <script>
 function callback(data){
     var photos = data.response.posts[0].photos;
@@ -110,12 +91,9 @@ function callback(data){
 }
 </script>
 <script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=187009335442&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
-
 <p>サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも</p>
-
 <pre><code>openssl s_client -connect example.org:465 -showcerts
 </code></pre>
-
 <p>thunderbirdだけで確認すると痛い目を見るよと言うお話でした</p>
 
   </div>
@@ -254,7 +232,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -262,7 +240,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -345,7 +323,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

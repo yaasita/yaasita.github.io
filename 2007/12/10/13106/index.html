@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,56 +55,38 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<h2 id="fdisk">fdisk</h2>
-
-<p>パーティションの切り直しにはfdiskを使います。<br />
+    <h2 id="fdisk">fdisk</h2>
+<p>パーティションの切り直しにはfdiskを使います。<br>
 例えば、<code>/dev/sda</code>のパーティションを編集するとします</p>
-
 <pre><code>fdisk /dev/sda
 </code></pre>
-
 <p>で起動</p>
-
 <pre><code>Command (m for help):
 </code></pre>
-
-<p>と表示されます。<br />
-<code>p</code>でパーティションテーブルの表示<br />
-<code>d</code>を押して次にパーティション番号を入力してパーティションの削除<br />
-<code>n</code>で新しいパーティションの作成<br />
-<code>t</code>でパーティションタイプの編集（FAT32のパーティションタイプは0b）<br />
-<code>l</code>でパーティションタイプ一覧表示<br />
-<code>w</code>で編集したパーティションを書き込み終了<br />
+<p>と表示されます。<br>
+<code>p</code>でパーティションテーブルの表示<br>
+<code>d</code>を押して次にパーティション番号を入力してパーティションの削除<br>
+<code>n</code>で新しいパーティションの作成<br>
+<code>t</code>でパーティションタイプの編集（FAT32のパーティションタイプは0b）<br>
+<code>l</code>でパーティションタイプ一覧表示<br>
+<code>w</code>で編集したパーティションを書き込み終了<br>
 <code>a</code>でブートフラグの設定</p>
-
-<h3 id="参考リンク">参考リンク</h3>
-
+<h3 id="heading">参考リンク</h3>
 <ul>
-<li><a href="http://www.makichan.jp/home/index.php?swap%A5%D1%A1%BC%A5%C6%A5%A3%A5%B7%A5%E7%A5%F3%A4%CE%BA%EE%C0%AE">swapパーティションの作成</a><br /></li>
-<li><a href="http://nobumasa-web.hp.infoseek.co.jp/partition/partition.html#type">パーティションタイプ一覧</a><br />
-<br /></li>
+<li><a href="http://www.makichan.jp/home/index.php?swap%A5%D1%A1%BC%A5%C6%A5%A3%A5%B7%A5%E7%A5%F3%A4%CE%BA%EE%C0%AE">swapパーティションの作成</a></li>
+<li><a href="http://nobumasa-web.hp.infoseek.co.jp/partition/partition.html#type">パーティションタイプ一覧</a></li>
 </ul>
-
 <h2 id="parted">parted</h2>
-
 <p>fdiskの機能に加えてパーティションのリサイズが行えます。</p>
-
 <pre><code># parted /dev/sda
 </code></pre>
-
 <p>のように起動します</p>
-
 <pre><code>(parted)
 </code></pre>
-
-<p>と表示されます。<br />
-<code>print</code>でパーティションテーブルの表示<br />
+<p>と表示されます。<br>
+<code>print</code>でパーティションテーブルの表示<br>
 <code>resize</code> 番号　でパーティションのリサイズ</p>
-
 <p>例）<code>/dev/sda</code>上のswapパーティションを縮小する</p>
-
 <pre><code># parted /dev/sda
 
 GNU Parted 1.7.1
@@ -135,22 +117,14 @@ Number  Start   End     Size    Type     File system  Flags
 
 (parted) quit
 </code></pre>
-
-<h3 id="参考リンク-1">参考リンク</h3>
-
+<h3 id="heading-1">参考リンク</h3>
 <ul>
-<li><a href="http://www.itmedia.co.jp/help/tips/linux/l0696.html">ITmedia　partedの使い方</a><br />
-<br /></li>
+<li><a href="http://www.itmedia.co.jp/help/tips/linux/l0696.html">ITmedia　partedの使い方</a></li>
 </ul>
-
 <h2 id="mkfs">mkfs</h2>
-
 <p>ファイルシステムを作成する。</p>
-
 <h2 id="mkswap">mkswap</h2>
-
 <p>スワップファイルシステムを作成する。</p>
-
 <pre><code>swapon
 swapoff
 </code></pre>
@@ -287,7 +261,7 @@ swapoff
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -295,7 +269,7 @@ swapoff
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -378,7 +352,7 @@ swapoff
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

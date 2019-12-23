@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,70 +55,59 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<p><a href="https://www.softel.co.jp/blogs/tech/archives/5075">NSレコードに指定したホスト名にCNAMEを持たせてはいけない</a><br />
+    <p><a href="https://www.softel.co.jp/blogs/tech/archives/5075">NSレコードに指定したホスト名にCNAMEを持たせてはいけない</a><br>
 という話は有名だがどのように挙動が変わるか見てみる</p>
-
-<h1 id="準備">準備</h1>
-
-<p>yaasita.ml. の権威サーバは ns1.aws.yaasita.net. にしておく<br />
+<h1 id="heading">準備</h1>
+<p>yaasita.ml. の権威サーバは ns1.aws.yaasita.net. にしておく<br>
 NSで指定されてるサーバは CNAMEとして aws.yaasita.net. に設定しておく</p>
-
 <pre><code>; &lt;&lt;&gt;&gt; DiG 9.9.5-9+deb8u7-Debian &lt;&lt;&gt;&gt; +norec @aws.yaasita.net. ns1.aws.yaasita.net. a
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
 ;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 31880
 ;; flags: qr aa; QUERY: 1, ANSWER: 2, AUTHORITY: 1, ADDITIONAL: 1
-
+ 
 ;; OPT PSEUDOSECTION:
 ; EDNS: version: 0, flags:; udp: 4096
 ;; QUESTION SECTION:
 ;ns1.aws.yaasita.net.           IN      A
-
+ 
 ;; ANSWER SECTION:
 ns1.aws.yaasita.net.    60      IN      CNAME   aws.yaasita.net.
 aws.yaasita.net.        60      IN      A       54.159.240.111
-
+ 
 ;; AUTHORITY SECTION:
 aws.yaasita.net.        60      IN      NS      aws.yaasita.net.
-
+ 
 ;; Query time: 205 msec
 ;; SERVER: 54.159.240.111#53(54.159.240.111)
 ;; WHEN: Mon Oct 31 00:53:20 JST 2016
 ;; MSG SIZE  rcvd: 92
 </code></pre>
-
-<h1 id="fletsのdnsキャッシュサーバ-210-130-1-1-の場合">FletsのDNSキャッシュサーバ(210.130.1.1)の場合</h1>
-
-<p>CNAMEとともにAレコードを返しているのでIPアドレスは取得可能だが、フレッツ側はエラーとなる<br />
+<h1 id="fletsdns21013011">FletsのDNSキャッシュサーバ(210.130.1.1)の場合</h1>
+<p>CNAMEとともにAレコードを返しているのでIPアドレスは取得可能だが、フレッツ側はエラーとなる<br>
 この時点でエラーとなり hoge.yaasita.ml. のクエリ自体を発行しない</p>
-
 <pre><code>; &lt;&lt;&gt;&gt; DiG 9.9.5-9+deb8u7-Debian &lt;&lt;&gt;&gt; @210.130.0.1 hoge.yaasita.ml. a
 ; (1 server found)
 ;; global options: +cmd
 ;; Got answer:
 ;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: SERVFAIL, id: 28051
 ;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
-
+ 
 ;; OPT PSEUDOSECTION:
 ; EDNS: version: 0, flags:; udp: 4096
 ;; QUESTION SECTION:
 ;hoge.yaasita.ml.               IN      A
-
+ 
 ;; Query time: 360 msec
 ;; SERVER: 210.130.0.1#53(210.130.0.1)
 ;; WHEN: Mon Oct 31 00:56:16 JST 2016
 ;; MSG SIZE  rcvd: 44
 </code></pre>
-
-<h1 id="google-8-8-8-8-dnsキャッシューサーバの場合">Google(8.8.8.8)DNSキャッシューサーバの場合</h1>
-
-<p>この場合、上記Aレコードを取得した後にCNAMEでも処理を続行し、<br />
-hoge.yaasita.ml. の名前解決を行う<br />
+<h1 id="google8888dns">Google(8.8.8.8)DNSキャッシューサーバの場合</h1>
+<p>この場合、上記Aレコードを取得した後にCNAMEでも処理を続行し、<br>
+hoge.yaasita.ml. の名前解決を行う<br>
 フレッツと違い最終的なIPアドレスを取得可能</p>
-
 <pre><code>; &lt;&lt;&gt;&gt; DiG 9.9.5-9+deb8u7-Debian &lt;&lt;&gt;&gt; @8.8.8.8 hoge.yaasita.ml. a
 ; (1 server found)
 ;; global options: +cmd
@@ -139,15 +128,10 @@ hoge.yaasita.ml.        59      IN      A       54.159.240.111
 ;; WHEN: Mon Oct 31 00:58:23 JST 2016
 ;; MSG SIZE  rcvd: 60
 </code></pre>
-
-<h1 id="シーケンス図">シーケンス図</h1>
-
-<p><div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/iLB6pDT42R2z3QMphp8Cgw/152512953297" data-did="da39a3ee5e6b4b0d3255bfef95601890afd80709"><a href="https://yaasita.tumblr.com/post/152512953297">https://yaasita.tumblr.com/post/152512953297</a></div>  <script async src="https://assets.tumblr.com/post.js"></script></p>
-
+<h1 id="heading-1">シーケンス図</h1>
+<div class="tumblr-post" data-href="https://embed.tumblr.com/embed/post/iLB6pDT42R2z3QMphp8Cgw/152512953297" data-did="da39a3ee5e6b4b0d3255bfef95601890afd80709"><a href="https://yaasita.tumblr.com/post/152512953297">https://yaasita.tumblr.com/post/152512953297</a></div>  <script async src="https://assets.tumblr.com/post.js"></script>
 <p><a href="http://yaasita.tumblr.com/post/152512953297">http://yaasita.tumblr.com/post/152512953297</a></p>
-
-<h1 id="ちなみに">ちなみに</h1>
-
+<h1 id="heading-2">ちなみに</h1>
 <p>unbound 1.4.22 ( debian 8 )でもGoogleと同じようにCNAMEでもOKだった</p>
 
   </div>
@@ -282,7 +266,7 @@ hoge.yaasita.ml.        59      IN      A       54.159.240.111
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -290,7 +274,7 @@ hoge.yaasita.ml.        59      IN      A       54.159.240.111
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -373,7 +357,7 @@ hoge.yaasita.ml.        59      IN      A       54.159.240.111
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,19 +55,15 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    <p>デフォルトだと<code>HTTP_X_FORWARDED_HOST</code>等のヘッダは解釈してくれないので、<br />
+    <p>デフォルトだと<code>HTTP_X_FORWARDED_HOST</code>等のヘッダは解釈してくれないので、<br>
 以下のような設定にしてHOSTヘッダも化かす(apacheの場合)</p>
-
 <pre><code>ProxyPreserveHost On
 ProxyPass / http://hoge.example.com/
 ProxyPassReverse / http://hoge.example.com/
 </code></pre>
-
-<p><code>HTTP_X_FORWARDED_HOST</code>も解釈して欲しかったら以下のようなパッチを当てる<br />
-<script src="https://gist.github.com/yaasita/0498769ada9db8e968fb.js"></script></p>
-
+<p><code>HTTP_X_FORWARDED_HOST</code>も解釈して欲しかったら以下のようなパッチを当てる</p>
+<script src="https://gist.github.com/yaasita/0498769ada9db8e968fb.js"></script>
 <p>パッチの当て方</p>
-
 <pre><code>patch -p0 &lt; rproxy.patch
 </code></pre>
 
@@ -203,7 +199,7 @@ ProxyPassReverse / http://hoge.example.com/
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -211,7 +207,7 @@ ProxyPassReverse / http://hoge.example.com/
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -294,7 +290,7 @@ ProxyPassReverse / http://hoge.example.com/
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

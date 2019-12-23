@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,122 +55,113 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<h2 id="raidの構築">RAIDの構築</h2>
-
+    <h2 id="raid">RAIDの構築</h2>
 <ul>
-<li><p>fdisk等を用いてパーティションを作成<br />
+<li>
+<p>fdisk等を用いてパーティションを作成<br>
 (このときのパーティションタイプはfd(Linux RAID)にしておくと分かりやすい)</p>
-
-<pre><code># mdadm -C /dev/md0 -l5 -n3 /dev/hdd[123]
-</code></pre></li>
-
-<li><p>-Cは新規作成時に指定するオプションで&ndash;createと同じ意味</p></li>
-
-<li><p>/dev/md0は最終的に出来上がるRAIDデバイスを指定する（無くても勝手に作ってくれる）</p></li>
-
-<li><p>-l5はRAIDレベルを表す 0,1,5,6が指定可能 &ndash;level=raid5と指定しても同じ意味</p></li>
-
-<li><p>-n3はデバイスの数(HDDの数) &ndash;raid-devices=3と指定しても同じ</p></li>
-
-<li><p>/dev/hdd[123]はRAIDを構成するHDD この例では単一のHDDで構成しているが本当は/dev/hd[bcd]1みたいに物理的に違うデバイスを指定する</p></li>
+<pre><code>  # mdadm -C /dev/md0 -l5 -n3 /dev/hdd[123]
+</code></pre>
+</li>
+<li>
+<p>-Cは新規作成時に指定するオプションで&ndash;createと同じ意味</p>
+</li>
+<li>
+<p>/dev/md0は最終的に出来上がるRAIDデバイスを指定する（無くても勝手に作ってくれる）</p>
+</li>
+<li>
+<p>-l5はRAIDレベルを表す 0,1,5,6が指定可能 &ndash;level=raid5と指定しても同じ意味</p>
+</li>
+<li>
+<p>-n3はデバイスの数(HDDの数) &ndash;raid-devices=3と指定しても同じ</p>
+</li>
+<li>
+<p>/dev/hdd[123]はRAIDを構成するHDD この例では単一のHDDで構成しているが本当は/dev/hd[bcd]1みたいに物理的に違うデバイスを指定する</p>
+</li>
 </ul>
-
-<h2 id="スペアディスクの追加">スペアディスクの追加</h2>
-
+<h2 id="heading">スペアディスクの追加</h2>
 <pre><code># mdadm /dev/md0 --add /dev/hdd4
 </code></pre>
-
 <p>mdadm -D /dev/md0でスペアディスクが存在することを確認できる</p>
-
-<h2 id="raidの監視">RAIDの監視</h2>
-
+<h2 id="raid-1">RAIDの監視</h2>
 <ul>
-<li><p>procから見る</p>
-
-<pre><code>cat /proc/mdstat
-(watch -n 1 cat /proc/mdstat　みたいにやると１秒ごとにこのコマンドを発行してくれるので便利)
-</code></pre></li>
-
-<li><p>詳細に見る</p>
-
-<pre><code>mdadm -D /dev/md0
-</code></pre></li>
-</ul>
-
-<h2 id="raidの再構築-hdd故障時の対処">RAIDの再構築(HDD故障時の対処)</h2>
-
-<ul>
-<li><p>故障マークを付ける</p>
-
-<pre><code># mdadm /dev/md0 -f /dev/hdd1 
+<li>
+<p>procから見る</p>
+<pre><code>  cat /proc/mdstat
+  (watch -n 1 cat /proc/mdstat　みたいにやると１秒ごとにこのコマンドを発行してくれるので便利)
 </code></pre>
-
-<p>スペアディスクがあるなら再構築が始まるないなら交換する</p></li>
-
-<li><p>RAIDアレイから削除する</p>
-
-<pre><code># mdadm /dev/md0 -r /dev/hdd1
+</li>
+<li>
+<p>詳細に見る</p>
+<pre><code>  mdadm -D /dev/md0
 </code></pre>
-
-<p>この後ディスクを交換する</p></li>
-
-<li><p>アレイに追加</p>
-
-<pre><code># mdadm /dev/md0 -a /dev/hdd1
-</code></pre></li>
+</li>
 </ul>
-
-<h2 id="raidの解除">RAIDの解除</h2>
-
+<h2 id="raidhdd">RAIDの再構築(HDD故障時の対処)</h2>
 <ul>
-<li><p>アレイの停止</p>
-
-<pre><code># mdadm -S /dev/md0
-</code></pre></li>
-
-<li><p>スーパーブロックの削除</p>
-
-<pre><code># mdadm --zero-superblock /dev/hdd1
-</code></pre></li>
+<li>
+<p>故障マークを付ける</p>
+<pre><code>  # mdadm /dev/md0 -f /dev/hdd1 
+</code></pre>
+<p>スペアディスクがあるなら再構築が始まるないなら交換する</p>
+</li>
+<li>
+<p>RAIDアレイから削除する</p>
+<pre><code>  # mdadm /dev/md0 -r /dev/hdd1
+</code></pre>
+<p>この後ディスクを交換する</p>
+</li>
+<li>
+<p>アレイに追加</p>
+<pre><code>  # mdadm /dev/md0 -a /dev/hdd1
+</code></pre>
+</li>
 </ul>
-
-<h2 id="その他">その他</h2>
-
+<h2 id="raid-2">RAIDの解除</h2>
 <ul>
-<li><p>以前存在していたRAIDデバイスを再構築しデータをサルベージ<a href="http://www.crimson-snow.net/tips/linux/mdadm_raid5.html">この辺(KNOPPIXでの認識)</a>を参考にした</p>
-
-<pre><code># mdadm -A /dev/md0 /dev/hd[efgh]1
-</code></pre></li>
-
-<li><p>/etc/mdadm/mdadm.confファイル</p>
-
-<pre><code># mdadm -E --scan &gt;&gt; /etc/mdadm.conf
-</code></pre></li>
+<li>
+<p>アレイの停止</p>
+<pre><code>  # mdadm -S /dev/md0
+</code></pre>
+</li>
+<li>
+<p>スーパーブロックの削除</p>
+<pre><code>  # mdadm --zero-superblock /dev/hdd1
+</code></pre>
+</li>
 </ul>
-
-<p>こうしてアレイ情報を書き込むといいらしい<br />
+<h2 id="heading-1">その他</h2>
+<ul>
+<li>
+<p>以前存在していたRAIDデバイスを再構築しデータをサルベージ<a href="http://www.crimson-snow.net/tips/linux/mdadm_raid5.html">この辺(KNOPPIXでの認識)</a>を参考にした</p>
+<pre><code>  # mdadm -A /dev/md0 /dev/hd[efgh]1
+</code></pre>
+</li>
+<li>
+<p>/etc/mdadm/mdadm.confファイル</p>
+<pre><code>  # mdadm -E --scan &gt;&gt; /etc/mdadm.conf
+</code></pre>
+</li>
+</ul>
+<p>こうしてアレイ情報を書き込むといいらしい<br>
 カーネルから自動起動の場合は意味なし？</p>
-
 <ul>
-<li><p>Debian Lennyの場合カーネルから自動で読み込むモードとか指定できる</p>
-
-<pre><code># dpkg-reconfigure mdadm
+<li>
+<p>Debian Lennyの場合カーネルから自動で読み込むモードとか指定できる</p>
+<pre><code>  # dpkg-reconfigure mdadm
 </code></pre>
-
-<p>これで再設定する<br />
-(カーネルで自動起動した場合は/etc/mdadm/mdadm.confは必要ない)</p></li>
-
-<li><p>2ディスク壊れたら強制的に起動させる</p>
-
-<pre><code>mdadm -A /dev/md0 -u 3fee8ddc:fc710c65:daa5f7c5:4109bf44 --run --force 
-</code></pre></li>
+<p>これで再設定する<br>
+(カーネルで自動起動した場合は/etc/mdadm/mdadm.confは必要ない)</p>
+</li>
+<li>
+<p>2ディスク壊れたら強制的に起動させる</p>
+<pre><code>  mdadm -A /dev/md0 -u 3fee8ddc:fc710c65:daa5f7c5:4109bf44 --run --force 
+</code></pre>
+</li>
 </ul>
-
-<p>参考リンク<br />
-<a href="http://www.ioss.jp/sohodiy/mdadm8-1_5.html">mdadm(8) ver.1.5 man page [日本語]</a><br />
-<a href="http://okkun-lab.rd.fukuoka-u.ac.jp/wiki/?Tips%2FLinux%2Fmdadm">福岡大学 mdadm wiki</a><br />
+<p>参考リンク<br>
+<a href="http://www.ioss.jp/sohodiy/mdadm8-1_5.html">mdadm(8) ver.1.5 man page [日本語]</a><br>
+<a href="http://okkun-lab.rd.fukuoka-u.ac.jp/wiki/?Tips%2FLinux%2Fmdadm">福岡大学 mdadm wiki</a><br>
 <a href="http://www.crimson-snow.net/tips/linux/mdadm_raid5.html">「mdadm」によるRAID5の構築</a></p>
 
   </div>
@@ -305,7 +296,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -313,7 +304,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -396,7 +387,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

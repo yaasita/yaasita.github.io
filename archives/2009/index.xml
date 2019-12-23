@@ -9,429 +9,297 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>最近、Mercurial について勉強しているのでメモ</title>
-      <link>https://yaasita.github.io/2009/12/26/7511/</link>
-      <pubDate>Sat, 26 Dec 2009 00:00:00 +0900</pubDate>
+      <title>chromebookが最高だった</title>
+      <link>https://yaasita.github.io/2019/12/23/chromebook/</link>
+      <pubDate>Mon, 23 Dec 2019 05:58:32 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2009/12/26/7511/</guid>
-      <description> リンクメモ
-日本語チュートリアル
-GUIツールのTortoiseHg
-TortoiseHgの日本語Wiki
-オラ本のPDFを配布してるとこ </description>
+      <guid>https://yaasita.github.io/2019/12/23/chromebook/</guid>
+      <description>ASUS の C434TA-AI0084 を買ったのでレビュー
+chromeOS  起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある  解除がちょっと遅い10秒くらい待たされる   chromeの複数ユーザー機能が使えない  多重ログイン機能はあるけどちょっと微妙  別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能      ディスプレイ  タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 バックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗  テザリング  Moto E5 とbluetoothでのテザリングが出来なかった  とりあえずUSBテザリングは刺すだけで使えたので良しとしてます    キーボード  Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない  Androidアプリ  ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない  Linux環境 OS  Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり  バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい   USB共有機能あり /opt/google/cros-containers/bin/.</description>
     </item>
     
     <item>
-      <title>Bingで萌えキャンペーン</title>
-      <link>https://yaasita.github.io/2009/12/24/7551/</link>
-      <pubDate>Thu, 24 Dec 2009 00:00:00 +0900</pubDate>
+      <title>GCP Cloud Functions内からサービスアカウントのtoken取る</title>
+      <link>https://yaasita.github.io/2019/12/08/service-account-in-cf/</link>
+      <pubDate>Sun, 08 Dec 2019 05:12:12 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2009/12/24/7551/</guid>
-      <description> http://campaign.live.jp/bing/
-検索しまくるとなんか壁紙とかもらえるらしい </description>
-    </item>
-    
-    <item>
-      <title>Debian でIPアドレスを固定にする</title>
-      <link>https://yaasita.github.io/2009/12/24/7531/</link>
-      <pubDate>Thu, 24 Dec 2009 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2009/12/24/7531/</guid>
-      <description> /etc/network/interfacesを編集する
-下みたいになっているのを
-# The loopback network interface
-auto lo
-iface lo inet loopback
-# The primary network interface
-allow-hotplug eth0
-iface eth0 inet dhcp
-↓の様に直す（192.168.0.11）にする場合
-# The loopback network interface
-auto lo
-iface lo inet loopback
-# The primary network interface
-allow-hotplug eth0
-iface eth0 inet static
-address 192.168.0.11
-netmask 255.255.255.0
-gateway 192.168.0.1
-直したら
-#ifdown eth0
-#ifup eth0
-でおｋ
-# /etc/init.d/networking restart
-でもいけるがその場合は↓を書いておくこと(ifup -aの対象となる)
-auto eth0
-※VirtualPCではallow-hotplugはコメントアウトしておいた方がよさげ
-参考リンク
-http://asaasa.tk/wiki/?Debian%2FSettings%2FStaticIP </description>
-    </item>
-    
-    <item>
-      <title>mp3のエンコードが出来るプレイヤーみたいなソフトって？？</title>
-      <link>https://yaasita.github.io/2009/12/23/7572/</link>
-      <pubDate>Wed, 23 Dec 2009 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2009/12/23/7572/</guid>
-      <description> SCMPXです </description>
-    </item>
-    
-    <item>
-      <title>screenで開始するときの初期画面を表示しない</title>
-      <link>https://yaasita.github.io/2009/12/23/7592/</link>
-      <pubDate>Wed, 23 Dec 2009 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2009/12/23/7592/</guid>
-      <description> 免責事項とかCopyrightとかを表示しないようにするには
-~/.screenrcに
-startup_message offと書いておく </description>
-    </item>
-    
-    <item>
-      <title>Debian LennyをVirtualPC2007へインストール</title>
-      <link>https://yaasita.github.io/2009/12/20/7654/</link>
-      <pubDate>Sun, 20 Dec 2009 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2009/12/20/7654/</guid>
-      <description> 試した環境は以下の通り
-VirtualPC 6.0.156.0
-Debian Lenny 最小のCDイメージ　バージョンは5.0.3
-↓のサイトとかを参考にするとどうやらインストール時にパラメータを追加しないといけないらしいので
-http://hiro-system.blog.ocn.ne.jp/blog/2009/03/debian_lennyvir_5b2e.html
-インストール時にquit を取ってから&#34;noreplace-paravirt vga=791 clock=pit&#34;を追加する
-（インストール時はまだ日本語配列ではないので=イコールのタイプには注意する）
-参考リンクには/boot/grub/menu.lstを編集、update-grubするようなことが書いてあるけどなんかインストール時に指定したパラメータが有効になって既にmenu.lstに反映されていたので省く。あとGUIも使わないのでそこら辺も無視した。
-参考リンク
-Debian Wiki </description>
-    </item>
-    
-    <item>
-      <title>bashで端末ロック機能を解除する</title>
-      <link>https://yaasita.github.io/2009/12/20/7613/</link>
-      <pubDate>Sun, 20 Dec 2009 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2009/12/20/7613/</guid>
-      <description> Ctrl+Sを押すと端末がロックしてしまうのが不便だと感じたら
-↓を.bashrcなどに書いておく
-stty stop undef
-参考リンク
-http://www.mazn.net/blog/2007/12/17/42.html </description>
-    </item>
-    
-    <item>
-      <title>rep2の過去ログをtmpreaperを使って整理</title>
-      <link>https://yaasita.github.io/2009/12/20/7633/</link>
-      <pubDate>Sun, 20 Dec 2009 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2009/12/20/7633/</guid>
-      <description>OpenJaneとかにはDAT落ちしたものを整理（削除）する機能があるけどrep2にはないのでtmpreaperで実装する
-やり方はrep2/data直下にあるファイルはお気に入りとかなんで削除しない
-それ以外は削除するっていう方法で行う
-↓みたいなのをcronとかに保存しておけばいいんじゃないかな
-#!/usr/bin/perl
-use strict;
-use warnings;
-#### Initial Setting ###############
-our $DAT_DIR=&#34;/var/www/rep2/data&#34;;
-####################################
-chdir ($DAT_DIR) or die $!;
-unless ($DAT_DIR=~/\/$/){
-$DAT_DIR.=&#34;/&#34;; #最後が/で終わってなかったら付け足す
-}
-opendir (DIR,$DAT_DIR) or die $!;
-my @dir=readdir DIR;
-my @fdir;
-for (@dir){
-push (@fdir,$_) if -f $_;
-}
-closedir DIR;
-my $command;
-$command = &amp;amp;lt;&amp;amp;lt; &#39;PRE&#39;;
-nice -n10 tmpreaper --delay=30 --mtime-dir --symlinks 7d \
---showdeleted \
---mtime \
-PRE
-for (@fdir){
-$command.=&#34;--protect &#39;$DAT_DIR&#34;.$_.&#34;&#39; \\\n&#34;</description>
-    </item>
-    
-    <item>
-      <title>Thunderbird3も出たことなのでコレクションを作っておく</title>
-      <link>https://yaasita.github.io/2009/12/13/7696/</link>
-      <pubDate>Sun, 13 Dec 2009 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2009/12/13/7696/</guid>
-      <description> Thunderbirdの方のコレクション
-俺のアドオン（雷鳥）
-Firefoxの方のコレクション
-俺のアドオン（火狐） </description>
-    </item>
-    
-    <item>
-      <title>天気予報をical形式で配信してるところ</title>
-      <link>https://yaasita.github.io/2009/12/13/7676/</link>
-      <pubDate>Sun, 13 Dec 2009 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2009/12/13/7676/</guid>
-      <description> iCal天気
-通常のicsの他にGoogle用とMac用も配ってる </description>
-    </item>
-    
-    <item>
-      <title>携帯でrep2見てるときに外部リンクを通勤ブラウザ以外に設定する</title>
-      <link>https://yaasita.github.io/2009/12/12/7717/</link>
-      <pubDate>Sat, 12 Dec 2009 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2009/12/12/7717/</guid>
-      <description>通勤ブラウザは重いしイマイチ使い勝手が良くなかったのでGoogleのGWT(Google Wireless Transcoder)を使う
-rep2/lib/ShowThreadK.php を編集すればおｋ
-650行目あたりの
-// 通勤ブラウザ
-if ($_conf[&#39;k_use_tsukin&#39;]) {
-$tsukin_url = &#39;http://www.sjk.co.jp/c/w.exe?y=&#39; . urlencode($url);
-if ($_conf[&#39;through_ime&#39;]) {
-$tsukin_url = P2Util::throughIme($tsukin_url);
-}
-$ext_pre_hts[] = &#39;&amp;amp;lt;a href=&#34;&#39; . hs($tsukin_url) . &#39;&#34;&amp;amp;gt;通&amp;amp;lt;/a&amp;amp;gt;&#39;;
-}
-↑を↓の様に変更
-// 通勤ブラウザ
-if ($_conf[&#39;k_use_tsukin&#39;]) {
-// $tsukin_url = &#39;http://www.sjk.co.jp/c/w.exe?y=&#39; . urlencode($url);
-$tsukin_url = &#39;http://www.google.co.jp/gwt/x?u=&#39; . urlencode($url);
-if ($_conf[&#39;through_ime&#39;]) {
-$tsukin_url = P2Util::throughIme($tsukin_url);
-}
-// $ext_pre_hts[] = &#39;&amp;amp;lt;a href=&#34;&#39; . hs($tsukin_url) . &#39;&#34;&amp;amp;gt;通&amp;amp;lt;/a&amp;amp;gt;&#39;;
-$ext_pre_hts[] = &#39;&amp;amp;lt;a href=&#34;&#39; .</description>
-    </item>
-    
-    <item>
-      <title>DovecotのTrashフォルダはどこにあるのか？</title>
-      <link>https://yaasita.github.io/2009/12/06/7759/</link>
-      <pubDate>Sun, 06 Dec 2009 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2009/12/06/7759/</guid>
-      <description> それぞれ~/Maildirの中のドットファイルでしたls -aしたら見つかります
-/Maildir/.Sent
-/Maildir/.Trash
-/Maildir/.Drafts
-/Maildir/.Junk </description>
-    </item>
-    
-    <item>
-      <title>Windowsのコマンドプロンプト(DOS窓)でディレクトリコピー</title>
-      <link>https://yaasita.github.io/2009/12/06/7800/</link>
-      <pubDate>Sun, 06 Dec 2009 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2009/12/06/7800/</guid>
-      <description> フォルダの再帰的なコピーには
-xcopyを使いましょう
-xcopy /?で詳しくみれます
-例）E:ppmというディレクトリを再帰的に全部コピー
-xcopy /E /I /Y E:\ppm D:\ppm_backup\ppm2
-参考リンク
-http://www5.ocn.ne.jp/~m-shin/windows/windows-bat-xcopy.html </description>
-    </item>
-    
-    <item>
-      <title>Windowsのコマンドプロンプト(DOS窓)でディレクトリ削除</title>
-      <link>https://yaasita.github.io/2009/12/06/7780/</link>
-      <pubDate>Sun, 06 Dec 2009 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2009/12/06/7780/</guid>
-      <description> ディレクトリごと再帰的に削除するには
-rmdirコマンドを使います
-UNIXでいうところのrm -rみたいな
-rmdir /S /Q hogedir
-参考リンク
-http://sonic64.com/2006-04-05.html </description>
-    </item>
-    
-    <item>
-      <title>perlモジュールを作るための雛形を作る h2xs コマンド</title>
-      <link>https://yaasita.github.io/2009/12/06/7820/</link>
-      <pubDate>Sun, 06 Dec 2009 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2009/12/06/7820/</guid>
-      <description>↓みたいな感じで雛形を作る
-h2xs -X -A HogeModule
-参考リンク
-http://torus.jp/memo/x200311/PerlModule.rd.html
-モジュールの最後にPODも追加してくれて便利
-__END__
-# Below is stub documentation for your module. You&#39;d better edit it!
-=head1 NAME
-HogeModule - Perl extension for blah blah blah
-=head1 SYNOPSIS
-use HogeModule;
-blah blah blah
-=head1 DESCRIPTION
-Stub documentation for Okyama, created by h2xs. It looks like the
-author of the extension was negligent enough to leave the stub
-unedited.
-Blah blah blah.
-=head2 EXPORT
-None by default.</description>
-    </item>
-    
-    <item>
-      <title>メールをCUIで読むソフト mutt</title>
-      <link>https://yaasita.github.io/2009/12/06/7738/</link>
-      <pubDate>Sun, 06 Dec 2009 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2009/12/06/7738/</guid>
-      <description> インストールはDebian Lennyならaptitudeで簡単に入る
-そんで使い方
-基本的な使い方とかはこことか見れば大体分かる
-Maildirを指定して
-mutt -f ~/Maildirこれでとりあえず見れる
-メールボックスとかは一々指定するのは面倒なので~/.muttrcを作成して
-set folder=&#34;~/Maildir&#34;
-set spoolfile=&#34;~/Maildir&#34;
-set keep_flagged=yes
-set mbox=&#34;&#34;
-set postponed=&#34;/tmp/postponed&#34;
-set sort=&#34;reverse-date-received&#34;
-↑みたいなのを書いておく意味はここら辺を見るとわかるかも
-設定ファイルを書けば以降はmuttのみで起動できる
-mutt操作方法
-PageUpとPageDownで次とか後のメールを選択（vim風にjkでもできるけど削除が選択できない）
-?でヘルプ
-mで新規メール作成
-参考リンク
-http://www.emaillab.org/mutt/whatis.html </description>
-    </item>
-    
-    <item>
-      <title>postfixでOP25B対策</title>
-      <link>https://yaasita.github.io/2009/12/05/7861/</link>
-      <pubDate>Sat, 05 Dec 2009 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2009/12/05/7861/</guid>
-      <description> OP25Bを実施しているISPの場合、25番ポートへの出力が制限されているからリレーしてもらうように設定する
-/etc/postfix/main.cfを編集 (hoge.ne.jpがSMPTサーバーだとする）
-ispauthはユーザー名とパスワードを書くファイル名前はなんでもOK
-relayhost = [hoge.ne.jp]:587
-smtp_sasl_auth_enable = yes
-smtp_sasl_password_maps = hash:/etc/postfix/ispauth
-smtp_sasl_security_options = noanonymous
-smtp_sasl_mechanism_filter = cram-md5,login,plain
-ispauthには以下のようなものを書く
-[プロバイダのSMTPサーバー]:587 プロバイダのユーザーID:プロバイダのパスワード
-サーバーがhoge.ne.jp、ログインIDがfoobar、パスワードがbuzzだった場合は以下のように書く
-[hoge.ne.jp]:587 foobar:buzz
+      <guid>https://yaasita.github.io/2019/12/08/service-account-in-cf/</guid>
+      <description>Cloud Functionsからサービスアカウントのアクセストークンをどうやって取るの？と疑問に思ったので調べた
+Google Compute Engineと同じ取り方でOK
+&amp;quot;use strict&amp;quot;; const fetch = require(&amp;quot;node-fetch&amp;quot;); exports.handler = async (req, res) =&amp;gt; { const url = &amp;quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&amp;quot; + &amp;quot;[サービスアカウント名]/token&amp;quot;; const result = await fetch(url, { method: &amp;quot;GET&amp;quot;, headers: { &amp;quot;Metadata-Flavor&amp;quot;: &amp;quot;Google&amp;quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&amp;quot;OK&amp;quot;); };  なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
 
-そんで以下のコマンド投入
-chmod 640 /etc/postfix/ispauth
-postmap /etc/postfix/ispauth
-/etc/rc.d/init.d/postfix restart
+まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &amp;ldquo;Function Identity&amp;quot;とかクリックするとちゃんと日本語版あるんですよね
+なんかメニューがバグってるのかな・・・
+とりあえず英語版から探すのをオススメします&amp;hellip;
 参考リンク
-http://centos.server-manual.com/postfix_op25b.html
-smtp_sasl_mechanism_filterはそのSMPTサーバーが使っているものにあわせるのでそれを確認する
-telnet hoge.ne.jp 587
-EHLO hoge.ne.jp
-↓みたいなのが出たら↑の設定でOK
-250-AUTH CRAM-MD5 PLAIN LOGIN
-参考リンク
-http://www.aconus.com/~oyaji/mail2/op25b.htm
-※注意 SMTP認証を使う場合はlibsasl2-modulesがインストールされていることを確認してください
+ 関数ID Compute Metadata Server   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].</description>
+    </item>
+    
+    <item>
+      <title>GCPでアクセストークンを取得する</title>
+      <link>https://yaasita.github.io/2019/11/14/gcp-access-token/</link>
+      <pubDate>Thu, 14 Nov 2019 22:32:41 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/11/14/gcp-access-token/</guid>
+      <description>ほとんどのサービスは クライアントライブラリ を使えば
+export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json  みたいに環境変数を設定するだけで良いのだが、Cloud Build 等は access tokenを取得して叩く必要がある
+という事でGCPのサービスアカウントからアクセストークンを取得するコード
+ スコープ一覧はこちら
+https://developers.google.com/identity/protocols/googlescopes
+アクセストークンのテストは DLP とかがお手軽で良いかな
+参考リンク  jose API Document Using OAuth 2.0 for Server to Server Applications  </description>
+    </item>
+    
+    <item>
+      <title>osu!taikoのskin</title>
+      <link>https://yaasita.github.io/2019/10/27/osu/</link>
+      <pubDate>Sun, 27 Oct 2019 03:00:31 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/10/27/osu/</guid>
+      <description>osu!taikoのスキン
+これが一番良かった
+概要欄からダウンロードできる</description>
+    </item>
+    
+    <item>
+      <title>AtCoder Beginner Contest 142のD問題</title>
+      <link>https://yaasita.github.io/2019/09/30/atcoder-abc142/</link>
+      <pubDate>Mon, 30 Sep 2019 05:05:34 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/09/30/atcoder-abc142/</guid>
+      <description>問題: D - Disjoint Set of Common Divisors
+方針はユークリッドの互除法で最大公約数を出して、最大公約数を素因数分解
+存在する素数の数+1(今回は1もお互いに素の数として含めるため)でOKぽい
+perlで書いてみる
+ 解説動画</description>
+    </item>
+    
+    <item>
+      <title>systemd timerはちゃんと動いてる？</title>
+      <link>https://yaasita.github.io/2019/09/29/systemd-timer/</link>
+      <pubDate>Sun, 29 Sep 2019 16:51:09 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/09/29/systemd-timer/</guid>
+      <description>systemdタイマーがちゃんと動いてるか確認したほうが良いよというお話
+systemctl list-timers --allコマンドで一覧が見れるあれです
+debian10だと /etc/cron.daily にあるスクリプトでこんな感じに書かれてたら、systemd timerの方を使ってる
+if [ -d /run/systemd/system ]; then exit 0 fi  前回 と同様にノートパソコンのバッテリー稼働と誤って判断されることに起因する問題
+例えばlogrotateとかみると
+systemctl cat logrotate  こんな一文がある
+ConditionACPower=true  これはバッテリー駆動の時は動かさないって意味らしいんだけど、どうも判定が狂ってるみたいでずっと実行されなかった
+なので、以下のコマンドでoverride.conf作って判定を無効化した
+systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower=  というわけで
+cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
+journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  とりあえず分かった、バッテリー時の判定が入ってるtimer
+ apt-daily-upgrade man-db logrotate anacron apt-daily  </description>
+    </item>
+    
+    <item>
+      <title>ビリビリ動画とcrunchyrollのIP制限をGCPで検証</title>
+      <link>https://yaasita.github.io/2019/09/14/anime-ip-block/</link>
+      <pubDate>Sat, 14 Sep 2019 22:21:43 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/09/14/anime-ip-block/</guid>
+      <description>bilibili動画とcrunchyrollのIP制限はどんな感じなのか
+GCPの各リージョンからアクセスして試してみる
+rttは自宅から該当サーバーまでのpingしたときの平均値
+なのでISPによって全然違うと思うので参考値ということで
+   region bilibili crunchyroll rtt(ms)     asia-east1 (台湾) ng ok 60.149   asia-east2 (香港) ng ok 76.986   asia-northeast1 (東京) ng ok 29.624   asia-northeast2 (大阪) ng ok 37.401   asia-south1 (ムンバイ) ng ok 144.055   asia-southeast1 (シンガポール) ng ok 89.755   australia-southeast1 (シドニー) ng ok 122.193   europe-north1 (フィンランド) ng ok 256.714   europe-west1 (ベルギー) ng ok 229.</description>
+    </item>
+    
+    <item>
+      <title>on_ac_powerコマンドについて</title>
+      <link>https://yaasita.github.io/2019/08/16/on-ac-power/</link>
+      <pubDate>Fri, 16 Aug 2019 04:45:45 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/08/16/on-ac-power/</guid>
+      <description>debian10にした関係でLinuxネタが続く
+PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある
+そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる
+例えば、/etc/cron.daily/mlocate の場合
+if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi  こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
+んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
+このままだと永遠にlocateコマンドが使えないので、divertで退避させた
+dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power  おしまい</description>
+    </item>
+    
+    <item>
+      <title>1から100の偶数の和を求めるやつ</title>
+      <link>https://yaasita.github.io/2019/08/15/sum-even-number/</link>
+      <pubDate>Thu, 15 Aug 2019 04:10:11 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/08/15/sum-even-number/</guid>
+      <description>「1から100の偶数の和を求めるワンライナー」まとめ
+perlでやってみる
+perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;eval&amp;quot;say @{[grep{$_%2==0}1..100]}&amp;quot;;&#39;  4つ思いついた
+結論 simple is best</description>
+    </item>
+    
+    <item>
+      <title>各種サーバの中間証明書の扱い</title>
+      <link>https://yaasita.github.io/2019/08/14/ssl-capath/</link>
+      <pubDate>Wed, 14 Aug 2019 10:20:33 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/08/14/ssl-capath/</guid>
+      <description>中間証明書をどう設定するか問題
+postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&#39;s Encryptの場合こんな感じ
+smtpd_tls_CAfileに中間証明書を指定する
+smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
+dovecot 10-ssl.conf
+ssl_ca = &amp;lt;/etc/letsencrypt/live/example.net/chain.pem  これはダメ
+この設定はクライアント証明書用ですので
+正しくは、こんな感じに、まとめたやつを指定すればOK
+ssl_cert = &amp;lt;/etc/letsencrypt/live/example.net/fullchain.pem  apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
+SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem  dovecot同様に中間証明書もまとめて指定する
+まとめ この問題はスマホのK-9 Mailでメール読もうとしたときに判明した
+(突然CertPathValidatorExceptionって怒られた)
+thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね
 
-どうしても出来なかったら↓みたいな感じでパケットキャプチャー→Wiresharkで見て考える感じで
-tcpdump -s 1500 ip host ?.?.?.? -w out.cap
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
+openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
+    </item>
+    
+    <item>
+      <title>虫よけスプレー</title>
+      <link>https://yaasita.github.io/2019/07/29/musiyoke/</link>
+      <pubDate>Mon, 29 Jul 2019 03:42:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/07/29/musiyoke/</guid>
+      <description>虫除けスプレーで最近買ったこれが良かった
+ベタベタしないので気にならない
+フマキラー SKIN VAPEってやつかな
+商品名はスキンベープミスト　200mlかも
+
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   そういや虫よけ剤に入ってるDEETって薬はなぜ虫が寄り付かないか謎らしい</description>
+    </item>
+    
+    <item>
+      <title>例のS3署名バージョン2について</title>
+      <link>https://yaasita.github.io/2019/06/25/s3v2/</link>
+      <pubDate>Tue, 25 Jun 2019 00:31:08 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/06/25/s3v2/</guid>
+      <description>AWS S3の署名バージョン騒動
+大丈夫ぽいけど一応調べた時につかったスクリプト
+CloudTrailでログを有効化してからお使いください
  </description>
     </item>
     
     <item>
-      <title>定期的に/tmpを掃除してくれるソフトtmpreaper</title>
-      <link>https://yaasita.github.io/2009/12/05/7840/</link>
-      <pubDate>Sat, 05 Dec 2009 00:00:00 +0900</pubDate>
+      <title>Cloud Runがすごく良い</title>
+      <link>https://yaasita.github.io/2019/05/29/cloud-run/</link>
+      <pubDate>Wed, 29 May 2019 21:42:23 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2009/12/05/7840/</guid>
-      <description> Debian Lennyで試した。
-Red hat系だとtmpwatchとかあるみたいだけど無いのでこれを使う
-まずはaptitudeでインストール
-インストールすると/etc/cron.daily/tmpreaperが作成される
-これによって毎日cronで実行される
-設定はこれをいじってもできるが基本的には
-/etc/tmpreaper.confをいじる
-まずはワーニングが出るので13行目あたりにあるSHOWWARNINGをコメント化する
-#SHOWWARNING=true
-
-次にオプションを設定する各オプションの意味は以下の通り
-TMPREAPER_TIME・・・どのくらいアクセスがないファイルを削除するか？設定値はデフォルトで7dつまり7d以上アクセスがないと削除
-TMPREAPER_PROTECT_EXTRA・・・削除しては駄目な名前を指定
-TMPREAPER_DIRS・・・削除の対象とするディレクトリ　デフォルトは/tmpのみ 複数指定するときはスペースで区切る　例）TMPREAPER_DIRS=&#39;/tmp/. /var/tmp/.&#39;
-TMPREAPER_DELAY・・・実行するまで待つ時間　デフォルトは256秒
-TMPREAPER_ADDITIONALOPTIONS・・・他に指定したいオプションがある場合はこここに入れる他のオプションはmanを参照
-あと/etc/cron.daily/tmpreaper見れば分かるけど
-デフォルトで
-以下のオプションが設定されている。ヤバイファイルは消えないようにしているようだ
---protect &#39;/tmp/.X*-{lock,unix,unix/*}&#39; \
---protect &#39;/tmp/.ICE-{unix,unix/*}&#39; \
---protect &#39;/tmp/.iroha_{unix,unix/*}&#39; \
---protect &#39;/tmp/.ki2-{unix,unix/*}&#39; \
---protect &#39;/tmp/lost+found&#39; \
---protect &#39;/tmp/journal.dat&#39; \
---protect &#39;/tmp/quota.{user,group}&#39; \
-
-※注意
-デフォルトのシェルだと--ctimeが設定されています↓みたいに
-nice -n10 tmpreaper --delay=$TMPREAPER_DELAY --mtime-dir --symlinks $TMPREAPER_TIME \
-$TMPREAPER_ADDITIONALOPTIONS \
---ctime \
-これだとcronでlocateのDBを作っているので、アクセスタイムが更新され
-いつまで経っても削除されません。（ctimeオプションはatime+ctimeのチェックをします）
-用途によってはここを--mtimeに変更してもいいと思います
+      <guid>https://yaasita.github.io/2019/05/29/cloud-run/</guid>
+      <description>GCPのCloud Runがめっちゃ便利
+覚えなきゃいけないルールは2つ
+ Dockerにする事 環境変数 $PORT のポート番号でlistenしてレスポンスを返す事  これだけ
+コマンドとかはこの辺見ればすぐできると思います
+あと、Chunked Transferみたいな仕組みで進捗を返すみたいなAPIは難しいかもしれない
+以下のようなプログラムでちょっとずつレスポンス返しても、バッファリングされてるみたいで、最後ドバっと返ってきた
  </description>
     </item>
     
     <item>
-      <title>dovecotでQuota設定</title>
-      <link>https://yaasita.github.io/2009/12/01/7882/</link>
-      <pubDate>Tue, 01 Dec 2009 00:00:00 +0900</pubDate>
+      <title>PKCEをJavaScriptで実装する</title>
+      <link>https://yaasita.github.io/2019/04/29/pkce/</link>
+      <pubDate>Mon, 29 Apr 2019 01:23:20 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2009/12/01/7882/</guid>
-      <description> メールの容量を制限する（クォータの設定）するには？
-Plugin settingsの部分に以下を追記
-↓がグローバルなクォータ設定（ユーザー個別に設定すればそちらが優先される）
-参考リンク→http://wiki.dovecot.org/Quota/1.0
-plugin {
-quota = maildir:storage=10240:messages=1000
-}
-上記の設定後
-protocol imapに次の文を追記
-参考リンク→http://wiki.dovecot.org/Quota/1.0
-protocol imap {
-mail_plugins = quota imap_quota
-}
-Thunderbirdで試すとクォータが有効なら↓のようなメッセージが出る
-
-で、クォータ当てただけじゃ不便だから古いメッセージから自動で削除してくれるように設定するにはTrashプラグインを使う
-protocol imap {
-mail_plugins = quota imap_quota trash
-}
-plugin {
-quota = maildir:storage=10240:messages=1000
-trash = trash = /etc/dovecot/dovecot-trash.conf
-}
-さっき指定したdovecot-trash.conf　(無ければ作る）　を編集する
-↓はTrashだけ削除の対象とする例
-1 Trash
-↑のファイルを1行つくればOK </description>
+      <guid>https://yaasita.github.io/2019/04/29/pkce/</guid>
+      <description>code_verifier から code_challenge の生成方法について調べた
+code_challenge_method=S256の場合は以下のような実装ロジックになる
+node.jsで書いた
+Oauth2のPKCE
+base64エンコードじゃなくてbase64urlエンコードなのが注意点
+ </description>
     </item>
     
     <item>
-      <title>Windowsのソースコードのステップ数（目安）</title>
-      <link>https://yaasita.github.io/2009/11/30/7904/</link>
-      <pubDate>Mon, 30 Nov 2009 00:00:00 +0900</pubDate>
+      <title>令和の対応に際して</title>
+      <link>https://yaasita.github.io/2019/04/25/reiwa/</link>
+      <pubDate>Thu, 25 Apr 2019 02:08:40 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2009/11/30/7904/</guid>
-      <description> こんな感じらしい
-Windows NT⇒400万行
-Windows 95⇒1,500万行
-Windows XP⇒3,500万行
-Windows Vista⇒5,000万行http://blog.development-network.net/ung/2006/10/post_54.html </description>
+      <guid>https://yaasita.github.io/2019/04/25/reiwa/</guid>
+      <description>techrachoの記事
+perlも追加でお願いします
+ </description>
+    </item>
+    
+    <item>
+      <title>tarの差分バックアップ</title>
+      <link>https://yaasita.github.io/2019/04/01/tar-backup/</link>
+      <pubDate>Mon, 01 Apr 2019 16:12:46 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/04/01/tar-backup/</guid>
+      <description>前回の続き
+でctime変化しちゃってどうしたか？
+ファイルサイズとファイル名を取っておいて差分を作ることにした
+ こんな感じのスクリプトで、ファイル名 + tab + ファイルサイズで保存する
+(厳密にやる場合はsha256とかで)
+そんで現在のファイルリストも取って、差分をとる
+diff -u previous.txt now.txt | egrep &amp;quot;^\+[^\+]&amp;quot; | perl -ple &#39;s/^\+//;s/\t.+//&#39; &amp;gt; tar.txt あとは-Tオプションで差分のファイルだけをtarで固める
+tar -cvaf hoge.tgz -T tar.txt </description>
+    </item>
+    
+    <item>
+      <title>tarの-gオプションについて</title>
+      <link>https://yaasita.github.io/2019/03/30/tar-g-option/</link>
+      <pubDate>Sat, 30 Mar 2019 02:32:25 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/03/30/tar-g-option/</guid>
+      <description>-g, &amp;ndash;listed-incremental
+という増分バックアップに使われるオプションについてどうやって判定してるか？
+それはctimeの変化を見ている
+ctimeの変化で気をつけなければいけないことはハードリンクによるバックアップ
+(rsync &amp;ndash;link-dest等)
+例えば、以下のようなファイルが存在し
+work/ `-- 1.txt  以下のコマンドを発行した場合
+tar -g resume -cvf work.tar work/  初回なので当然全部がバックアップされる
+このまま以下のコマンドを打てばディレクトリだけのバックアップになる(差分がないため)
+tar -g resume -cvf work.tar work/  しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう
+stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる  なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
+うまく増分バックアップができなくなる
+続き</description>
+    </item>
+    
+    <item>
+      <title>hugoアップデート</title>
+      <link>https://yaasita.github.io/2019/03/12/hugo-update/</link>
+      <pubDate>Tue, 12 Mar 2019 23:00:51 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/03/12/hugo-update/</guid>
+      <description>久々にhugoをアップデート v0.41 =&amp;gt; v0.54まで上げた
+ワーニング潰し アップデートに伴い
+.Prev と .Nextが非推奨になったぽい マニュアル, コミット
+なのでこれはそれぞれ以下のように修正すればOK(意味が逆なので分かりにくいけど)
+ .Prev =&amp;gt; .NextPage .Next =&amp;gt; .PrevPage  OGP設定 某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました
+上手く表示できてますか？
+修正箇所
+themes/hugo-theme-geppaku/layouts/partials/header.html
+ {{ if .IsHome }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Site.Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;website&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}&amp;quot; /&amp;gt; {{ else }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;article&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}{{ .Page.Dir }}&amp;quot; /&amp;gt; {{ end }} &amp;lt;meta property=&amp;quot;og:site_name&amp;quot; content=&amp;quot;{{ .</description>
+    </item>
+    
+    <item>
+      <title>Windows10のクリップボード履歴機能</title>
+      <link>https://yaasita.github.io/2019/03/10/clipboard/</link>
+      <pubDate>Sun, 10 Mar 2019 22:47:52 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/03/10/clipboard/</guid>
+      <description>Windows10に標準でクリップボード履歴機能が付いたらしい
+ https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html  Windows キー + Vで使えるようになる
+cliborの方が使いやすそうな気がするけど、しばらくこっち使ってみる</description>
+    </item>
+    
+    <item>
+      <title>AlwaysOnSSL終了のお知らせ</title>
+      <link>https://yaasita.github.io/2019/02/28/alwaysonssl/</link>
+      <pubDate>Thu, 28 Feb 2019 01:44:13 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/02/28/alwaysonssl/</guid>
+      <description>無料のSSL証明書AlwaysOnSSLがセキュリティ問題を指摘されてシャットダウンしたぽい
+AlwaysOnSSL web security issues
+S/MIME手に入るので良かったんだけどなぁ・・・
+前回</description>
     </item>
     
   </channel>

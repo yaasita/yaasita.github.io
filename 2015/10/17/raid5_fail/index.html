@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -56,7 +56,6 @@ if (!doNotTrack) {
   </header>
   <div class="content">
     <p>リビルド中にもう一個壊れてRAID5が終わった話</p>
-
 <pre><code>/dev/md0:
         Version : 1.2
   Creation Time : Fri Jan  6 12:24:44 2012
@@ -90,22 +89,17 @@ Working Devices : 3
        4       8        1        -      faulty   /dev/sda1
        6       8       17        -      spare   /dev/sdb1
 </code></pre>
-
-<p>HDD一台が壊れたので /dev/sdb1を追加中にアレイの構成Diskがもう一個壊れた<br />
+<p>HDD一台が壊れたので /dev/sdb1を追加中にアレイの構成Diskがもう一個壊れた<br>
 無理やり起動してみる</p>
-
 <pre><code>mdadm -S /dev/md0
 mdadm -A /dev/md0 -u 55b9d6ea:4627c873:a0bcab05:a4f0c25d --run --force
 # リビルドが走るがどうせしくじるのでスペアディスクになってるやつを削除
 mdadm /dev/md0 -f /dev/sdb1
 </code></pre>
-
 <p>ここまでやってとりあえずRAIDアレイを起動させて出来る限りデータをコピー</p>
-
 <p>参考リンク</p>
-
 <ul>
-<li><a href="http://xn--u9j0md1592aqmt715c.net/raid5-double-fail-rescue/">http://xn--u9j0md1592aqmt715c.net/raid5-double-fail-rescue/</a><br /></li>
+<li><a href="http://xn--u9j0md1592aqmt715c.net/raid5-double-fail-rescue/">http://xn--u9j0md1592aqmt715c.net/raid5-double-fail-rescue/</a></li>
 </ul>
 
   </div>
@@ -244,7 +238,7 @@ mdadm /dev/md0 -f /dev/sdb1
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -252,7 +246,7 @@ mdadm /dev/md0 -f /dev/sdb1
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -335,7 +329,7 @@ mdadm /dev/md0 -f /dev/sdb1
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

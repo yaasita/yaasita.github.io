@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,91 +55,63 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<h2 id="インストール">インストール</h2>
-
+    <h2 id="heading">インストール</h2>
 <p><a href="http://akid.s17.xrea.com/">公式サイト</a>からrep2をダウンロード</p>
-
 <p>以下パッケージのインストール</p>
-
 <pre><code>apt-get install php5 php-http-request php5-gd php-pear php-compat
 </code></pre>
-
 <p>※<a href="http://akid.s17.xrea.com/p2puki/index.phtml?DebianGNU%2FLinux%A4%C7%A4%CE%A5%A4%A5%F3%A5%B9%A5%C8%A1%BC%A5%EB">公式</a>にはこう書いてある</p>
-
 <blockquote>
 <p>aptitude install apache2-mpm-prefork php5 php-pear php-compat php-http-request php-pager php-file php5-curl curl unzip</p>
 </blockquote>
-
 <p>必要なpearパッケージも</p>
-
 <pre><code>pear install Net_UserAgent_Mobile
 </code></pre>
-
 <p>※なかったらpear search Net_UserAgent_Mobileとかで検索してみる</p>
-
 <p>リポジトリにPHP_Compatが無かった場合は追加で以下のコマンド</p>
-
 <pre><code>pear install PHP_Compat
 </code></pre>
-
-<p>それ以外は公式サイト見てやる<br />
+<p>それ以外は公式サイト見てやる<br>
 公式サイトの説明文</p>
-
 <blockquote>
 <ol>
-<li>サーバを立ち上げて、PHPが動くようにする。PEARも忘れずに（下記参照）<br /></li>
-<li>rep2ディレクトリをサーバからアクセスできる所（「~/Sites」とか）へ置く。<br /></li>
-<li>rep2ディレクトリの中にデータ保存用のディレクトリを作成する。（デフォルトでは「data」ディレクトリ）<br /></li>
-<li>データ保存用ディレクトリのパーミッションを「707」（または777）にする。<br /></li>
-<li>必要に応じて、 conf/conf_admin.inc.php などのconfファイルをテキストエディタで開いて設定編集。<br /></li>
-<li>ブラウザから、<br />
-<a href="http://127.0.0.1/~(ユーザ名)/rep2/index.php">http://127.0.0.1/~(ユーザ名)/rep2/index.php</a><br />
-てな具合にrep2ディレクトリへアクセス。<br />
-<br /></li>
+<li>サーバを立ち上げて、PHPが動くようにする。PEARも忘れずに（下記参照）</li>
+<li>rep2ディレクトリをサーバからアクセスできる所（「~/Sites」とか）へ置く。</li>
+<li>rep2ディレクトリの中にデータ保存用のディレクトリを作成する。（デフォルトでは「data」ディレクトリ）</li>
+<li>データ保存用ディレクトリのパーミッションを「707」（または777）にする。</li>
+<li>必要に応じて、 conf/conf_admin.inc.php などのconfファイルをテキストエディタで開いて設定編集。</li>
+<li>ブラウザから、<br>
+http://127.0.0.1/~(ユーザ名)/rep2/index.php<br>
+てな具合にrep2ディレクトリへアクセス。</li>
 </ol>
-
-<p>※PHPが確かに動いていることを確かめたい時は？<br />
-<a href="http://127.0.0.1/~(ユーザ名)/rep2/phpinfo.php">http://127.0.0.1/~(ユーザ名)/rep2/phpinfo.php</a><br />
-てなとこにアクセスしてみて下さい。<br />
-ずらずらーっとPHPの環境情報が表示されたならば、PHPは正常に動作しています。<br />
+<p>※PHPが確かに動いていることを確かめたい時は？<br>
+http://127.0.0.1/~(ユーザ名)/rep2/phpinfo.php<br>
+てなとこにアクセスしてみて下さい。<br>
+ずらずらーっとPHPの環境情報が表示されたならば、PHPは正常に動作しています。<br>
 （確認ができましたら、phpinfo.php はもう必要ないので削除しても構いません）</p>
-
 <p>これで動くはずです。動かなかった場合はエラーを見て判断してください。</p>
 </blockquote>
-
-<h2 id="設定">設定</h2>
-
-<p>conf/conf_hostcheck.php<br />
+<h2 id="heading-1">設定</h2>
+<p>conf/conf_hostcheck.php<br>
 を編集してグローバルIP側からの接続でもrep2を利用できるようにします。</p>
-
 <p>29行目付近 customを1に設定</p>
-
 <pre><code>// ユーザー設定
 'custom'    =&gt; 1,
 </code></pre>
-
 <p>36行目付近を以下のように設定</p>
-
 <pre><code>$GLOBALS['_HOSTCHKCONF']['custom_allowed_host'] = array(
 '0.0.0.0' =&gt; 0,
 );
 </code></pre>
-
-<p>なんかapacheのdeflateと相性悪いらしくスマホで検索するとContent-Encodingエラーになる<br />
+<p>なんかapacheのdeflateと相性悪いらしくスマホで検索するとContent-Encodingエラーになる<br>
 conf/conf_admin.inc.php</p>
-
 <pre><code>$_conf['enable_ob_gzhandler'] = 0; // gzip圧縮転送を有効にするか（※有効にすると逐次表示ができなくなる）（する:1, しない:0, 携帯だけ:2）
 </code></pre>
-
-<h2 id="参考リンク">参考リンク</h2>
-
+<h2 id="heading-2">参考リンク</h2>
 <ul>
-<li><a href="http://yaasita.github.io/2010/04/25/6959.html">rep2をオンメモリーにして高速化2</a><br /></li>
-<li><a href="http://yaasita.github.io/2009/12/20/7633.html">rep2の過去ログをtmpreaperを使って整理</a><br /></li>
-<li><a href="http://yaasita.github.io/2009/12/12/7717.html">携帯でrep2見てるときに外部リンクを通勤ブラウザ以外に設定する</a><br />
-<br /></li>
+<li><a href="http://yaasita.github.io/2010/04/25/6959.html">rep2をオンメモリーにして高速化2</a></li>
+<li><a href="http://yaasita.github.io/2009/12/20/7633.html">rep2の過去ログをtmpreaperを使って整理</a></li>
+<li><a href="http://yaasita.github.io/2009/12/12/7717.html">携帯でrep2見てるときに外部リンクを通勤ブラウザ以外に設定する</a></li>
 </ul>
 
   </div>
@@ -208,13 +180,13 @@ conf/conf_admin.inc.php</p>
         
         <div id="pagenavigation-next">
           <span class="pagenav-label">Previous</span>
-          <a href="https://yaasita.github.io/2007/11/24/13332/">MinGWをWindowsにインストールする</a>
+          <a href="https://yaasita.github.io/2007/11/25/13290/">URLの書式</a>
         </div>
         
         
         <div id="pagenavigation-prev">
           <span class="pagenav-label">Next</span>
-          <a href="https://yaasita.github.io/2007/11/25/13290/">URLの書式</a>
+          <a href="https://yaasita.github.io/2007/11/28/13270/">Thunderbirdの表示名がメールアドレス前に入ってしまう</a>
         </div>
         
       </div>
@@ -278,7 +250,7 @@ conf/conf_admin.inc.php</p>
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -286,7 +258,7 @@ conf/conf_admin.inc.php</p>
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -369,7 +341,7 @@ conf/conf_admin.inc.php</p>
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

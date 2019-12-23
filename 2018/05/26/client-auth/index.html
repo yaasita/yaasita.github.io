@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,12 +55,8 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<p>外からはクライアント証明書を要求して、中からは素通しさせたいケース</p>
-
+    <p>外からはクライアント証明書を要求して、中からは素通しさせたいケース</p>
 <p>Apache2.4ならこんな感じ</p>
-
 <pre><code>SSLCACertificateFile /etc/apache2/ssl/example.crt
 
 &lt;Directory /var/www&gt;
@@ -70,17 +66,12 @@ if (!doNotTrack) {
     Satisfy any
 &lt;/Directory&gt;
 </code></pre>
-
 <p>curlで確認</p>
-
 <pre><code>curl https://example.net --key client.key --cert cert.crt --http1.1
 </code></pre>
-
-<p>作るときは <code>/usr/lib/ssl/misc/CA.pl -newreq</code> とかで適当に作る<br />
+<p>作るときは <code>/usr/lib/ssl/misc/CA.pl -newreq</code> とかで適当に作る<br>
 鍵とセットなら良いのでcommon nameとかは適当</p>
-
-<h2 id="参考リンク">参考リンク</h2>
-
+<h2 id="heading">参考リンク</h2>
 <p><a href="/2018/01/31/private-ca/">プライベートCA作るまで</a></p>
 
   </div>
@@ -219,7 +210,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -227,7 +218,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -310,7 +301,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -56,23 +56,19 @@ if (!doNotTrack) {
   </header>
   <div class="content">
     <p>以下のようなチェインを検証したい時</p>
-
 <pre><code>AddTrust
     |_ ca1
         |_ ca2
             |_ hoge
 </code></pre>
-
 <p>こんな感じにコマンドを打つ</p>
-
 <pre><code>openssl verify -trusted /etc/ssl/certs/AddTrust_External_Root.pem \
     -untrusted ca/ca1.pem \
     -untrusted ca/ca2.pem \
     hoge.pem*
 </code></pre>
-
-<p>verify -CAfileを指定して検証する例を見るけど、<br />
-インストールされてるデフォルトのrootCAも見ちゃうから<br />
+<p>verify -CAfileを指定して検証する例を見るけど、<br>
+インストールされてるデフォルトのrootCAも見ちゃうから<br>
 -no-CAfile, -no-CApathで無効化しなきゃだったりするのでこっちの方が良さそう</p>
 
   </div>
@@ -207,7 +203,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -215,7 +211,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -298,7 +294,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

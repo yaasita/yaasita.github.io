@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,68 +55,45 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<p>とっても便利な<a href="https://mitmproxy.org/">mitmproxy</a>を使ってみた</p>
-
-<h2 id="概要">概要</h2>
-
-<p>こんな感じでHTTPSなサイトも中間に入りこんでくれる<br />
+    <p>とっても便利な<a href="https://mitmproxy.org/">mitmproxy</a>を使ってみた</p>
+<h2 id="heading">概要</h2>
+<p>こんな感じでHTTPSなサイトも中間に入りこんでくれる<br>
 （root証明証を予め信頼しておく必要がある)</p>
-
 <pre><code>browser &lt;---(指定のCA鍵で再署名)---- mitmproxy &lt;---(HTTPSを一旦解く)----- web server
 </code></pre>
-
-<h2 id="インストール">インストール</h2>
-
+<h2 id="heading-1">インストール</h2>
 <pre><code>apt install mitmproxy
 </code></pre>
-
-<h2 id="設定">設定</h2>
-
+<h2 id="heading-2">設定</h2>
 <p><a href="/2018/01/31/private-ca/">プライベートCA</a>をやってるなら</p>
-
 <ul>
-<li>/etc/ssl/demoCA/private/cakey.pem<br /></li>
-<li>/etc/ssl/demoCA/cacert.pem<br />
-<br /></li>
+<li>/etc/ssl/demoCA/private/cakey.pem</li>
+<li>/etc/ssl/demoCA/cacert.pem</li>
 </ul>
-
-<p>この２ファイルを結合する<br />
+<p>この２ファイルを結合する<br>
 こんな感じで mitmproxy-ca.pem って名前でどっかのディレクトリに置く</p>
-
 <pre><code>-----BEGIN ENCRYPTED PRIVATE KEY-----
 ...
 -----END ENCRYPTED PRIVATE KEY-----
 -----BEGIN CERTIFICATE-----
 ...
 -----END CERTIFICATE-----
-</code></pre>
-
-<h2 id="実行">実行</h2>
-
-<p>こんな感じで実行できる &ndash;view-filter で表示させたいURLを絞れる<br />
+</code></pre><h2 id="heading-3">実行</h2>
+<p>こんな感じで実行できる &ndash;view-filter で表示させたいURLを絞れる<br>
 (hogedirの中にmitmproxy-ca.pemが入ってる)</p>
-
 <pre><code>mitmproxy --set confdir=/path/to/hogedir --view-filter m3u
 </code></pre>
-
-<p>画面中ではVimぽいキーバインドで色々操作できる<br />
+<p>画面中ではVimぽいキーバインドで色々操作できる<br>
 リクエストを選んで、wでストリームを保存できる</p>
-
 <h2 id="dump">dump</h2>
-
 <p>mitmproxyだけだと長いURLとかは省略されちゃったりするので、完全なものを見る場合に<a href="https://docs.mitmproxy.org/stable/overview-tools/#mitmdump">mitmdump</a>を使う</p>
-
 <pre><code># getだけ抽出
 mitmdump -nr /tmp/save -w outfile &quot;~m get&quot;
 
 # リクエスト一覧
 mitmdump -nr /tmp/save 
 </code></pre>
-
-<h2 id="まとめ">まとめ</h2>
-
+<h2 id="heading-4">まとめ</h2>
 <p>HTTPSのデバッグ時にめっちゃ便利</p>
 
   </div>
@@ -255,7 +232,7 @@ mitmdump -nr /tmp/save
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -263,7 +240,7 @@ mitmdump -nr /tmp/save
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -346,7 +323,7 @@ mitmdump -nr /tmp/save
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

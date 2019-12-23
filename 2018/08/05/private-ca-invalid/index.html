@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -56,30 +56,22 @@ if (!doNotTrack) {
   </header>
   <div class="content">
     <p>openssl.cnf</p>
-
 <pre><code>subjectAltName=@alt_names
 [ alt_names ]
 DNS.1 = *.example.com
 IP.1 = 192.168.0.1
 </code></pre>
-
 <p>ここに書ける値についてのお話</p>
-
 <p>IPでこういうのはダメ</p>
-
 <ul>
-<li>IP.1 = 192.168.0.*<br /></li>
-<li>IP.2 = 192.168.0.0/24<br />
-<br /></li>
+<li>IP.1 = 192.168.0.*</li>
+<li>IP.2 = 192.168.0.0/24</li>
 </ul>
-
 <p><a href="https://security.stackexchange.com/questions/91368/ip-range-in-ssl-subject-alternative-name">IPアドレス範囲もダメ</a></p>
-
 <p>こういうのはOKなのでテスト用の証明書だったらこの辺だけ書いて渡すのが良いのかな</p>
-
 <ul>
-<li>IP.1 = 127.0.0.1<br /></li>
-<li>DNS.1 = localhost<br /></li>
+<li>IP.1 = 127.0.0.1</li>
+<li>DNS.1 = localhost</li>
 </ul>
 
   </div>
@@ -214,7 +206,7 @@ IP.1 = 192.168.0.1
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -222,7 +214,7 @@ IP.1 = 192.168.0.1
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -305,7 +297,7 @@ IP.1 = 192.168.0.1
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

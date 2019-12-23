@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,65 +55,54 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<h2 id="使ってみた感想">使ってみた感想</h2>
-
+    <h2 id="heading">使ってみた感想</h2>
 <ul>
-<li>ビルドはmiddlemanで10分かかってたけど1秒になった<br /></li>
-<li>themeは<a href="https://github.com/masa0221/hugo-theme-geppaku">geppaku</a>というのを使用 シンプルで良い<br />
-
+<li>ビルドはmiddlemanで10分かかってたけど1秒になった</li>
+<li>themeは<a href="https://github.com/masa0221/hugo-theme-geppaku">geppaku</a>というのを使用 シンプルで良い
 <ul>
-<li>Tumblrリンクの<a href="https://github.com/masa0221/hugo-theme-geppaku/pull/8">プルリクエスト</a>も快くマージしてくれた感謝m(_ _)m<br /></li>
-</ul></li>
-<li>pagination 周りの部分はちょっとページ数が多いとカラム落ちしたり苦しかったので書き直した<br /></li>
-<li>taxonomiesを追加して、年別のアーカイブページを作成<br /></li>
-<li>アーカイブページを<a href="https://discuss.gohugo.io/t/sorting-site-taxonomy/1178/4">逆順にする</a>対応はなぜかうまくいかなかったので後で調査する<br />
-
-<ul>
-<li>とりあえずJavaScriptで逆順にした &gt; <a href="https://gist.github.com/yaasita/7146860b12e2c9bae6e0218693384c03">gist</a><br /></li>
-</ul></li>
-<li>hugo serverのライブリロードがとっても良い(ブラウザも自動更新)<br />
-
-<ul>
-<li>ただしpagination周りで変な書き方するとサーバごと落ちる<br /></li>
-</ul></li>
-<li>DISQUS周りはちょっとカスタマイズした<br />
-
-<ul>
-<li>なぜかデフォルトだと読み込まなかったので<br /></li>
-</ul></li>
-<li>markdown周りはほぼ設定ファイルで完結<br />
-
-<ul>
-<li>今回の設定は<a href="https://gist.github.com/yaasita/3cfa481ccbe5f37f12631d66ce696114">こんな</a>感じ<br /></li>
-</ul></li>
-<li>middleman時代のリンクを維持するためにUglyURLs設定したけどcategoriesとかリンク切れが面倒だったので中止<br />
-
-<ul>
-<li>参考: <a href="http://wdkk.co.jp/note/2015/0824-hugo-public/">http://wdkk.co.jp/note/2015/0824-hugo-public/</a><br /></li>
-</ul></li>
-<li>Highlight.js今回無効にした過去分のcodeブロックが微妙になったので<br />
-<br /></li>
+<li>Tumblrリンクの<a href="https://github.com/masa0221/hugo-theme-geppaku/pull/8">プルリクエスト</a>も快くマージしてくれた感謝m(_ _)m</li>
 </ul>
-
-<p>総評</p>
-
-<p>Static Site Generatorはとても良い<br />
-移行するにも、更新するにもメンテがすごく楽</p>
-
-<h2 id="移行スクリプト">移行スクリプト</h2>
-
-<p>基本的にはファイル名にある時間のデータをTOMLに直して終わり<br />
-/home/yamasitaにhugo,middlemanのディレクトリがある前提</p>
-
-<script src="https://gist.github.com/yaasita/4dcddca5a97221ad75328d0f14e078be.js"></script>
-
-<h2 id="参考リンク">参考リンク</h2>
-
+</li>
+<li>pagination 周りの部分はちょっとページ数が多いとカラム落ちしたり苦しかったので書き直した</li>
+<li>taxonomiesを追加して、年別のアーカイブページを作成</li>
+<li>アーカイブページを<a href="https://discuss.gohugo.io/t/sorting-site-taxonomy/1178/4">逆順にする</a>対応はなぜかうまくいかなかったので後で調査する
 <ul>
-<li><a href="https://middlemanapp.com/jp/">middleman</a><br /></li>
-<li><a href="https://gohugo.io/">hugo</a><br /></li>
+<li>とりあえずJavaScriptで逆順にした &gt; <a href="https://gist.github.com/yaasita/7146860b12e2c9bae6e0218693384c03">gist</a></li>
+</ul>
+</li>
+<li>hugo serverのライブリロードがとっても良い(ブラウザも自動更新)
+<ul>
+<li>ただしpagination周りで変な書き方するとサーバごと落ちる</li>
+</ul>
+</li>
+<li>DISQUS周りはちょっとカスタマイズした
+<ul>
+<li>なぜかデフォルトだと読み込まなかったので</li>
+</ul>
+</li>
+<li>markdown周りはほぼ設定ファイルで完結
+<ul>
+<li>今回の設定は<a href="https://gist.github.com/yaasita/3cfa481ccbe5f37f12631d66ce696114">こんな</a>感じ</li>
+</ul>
+</li>
+<li>middleman時代のリンクを維持するためにUglyURLs設定したけどcategoriesとかリンク切れが面倒だったので中止
+<ul>
+<li>参考: <a href="http://wdkk.co.jp/note/2015/0824-hugo-public/">http://wdkk.co.jp/note/2015/0824-hugo-public/</a></li>
+</ul>
+</li>
+<li>Highlight.js今回無効にした過去分のcodeブロックが微妙になったので</li>
+</ul>
+<p>総評</p>
+<p>Static Site Generatorはとても良い<br>
+移行するにも、更新するにもメンテがすごく楽</p>
+<h2 id="heading-1">移行スクリプト</h2>
+<p>基本的にはファイル名にある時間のデータをTOMLに直して終わり<br>
+/home/yamasitaにhugo,middlemanのディレクトリがある前提</p>
+<script src="https://gist.github.com/yaasita/4dcddca5a97221ad75328d0f14e078be.js"></script>
+<h2 id="heading-2">参考リンク</h2>
+<ul>
+<li><a href="https://middlemanapp.com/jp/">middleman</a></li>
+<li><a href="https://gohugo.io/">hugo</a></li>
 </ul>
 
   </div>
@@ -252,7 +241,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -260,7 +249,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -343,7 +332,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

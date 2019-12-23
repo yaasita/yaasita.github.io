@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,52 +55,38 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    <p>systemdタイマーがちゃんと動いてるか確認したほうが良いよというお話<br />
+    <p>systemdタイマーがちゃんと動いてるか確認したほうが良いよというお話<br>
 <code>systemctl list-timers --all</code>コマンドで一覧が見れるあれです</p>
-
 <p>debian10だと /etc/cron.daily にあるスクリプトでこんな感じに書かれてたら、systemd timerの方を使ってる</p>
-
 <pre><code>if [ -d /run/systemd/system ]; then
     exit 0
 fi
 </code></pre>
-
 <p><a href="/2019/08/16/on-ac-power/">前回</a> と同様にノートパソコンのバッテリー稼働と誤って判断されることに起因する問題</p>
-
 <p>例えばlogrotateとかみると</p>
-
 <pre><code>systemctl cat logrotate
 </code></pre>
-
 <p>こんな一文がある</p>
-
 <pre><code>ConditionACPower=true
 </code></pre>
-
 <p>これはバッテリー駆動の時は動かさないって意味らしいんだけど、どうも判定が狂ってるみたいでずっと実行されなかった</p>
-
 <p>なので、以下のコマンドでoverride.conf作って判定を無効化した</p>
-
 <pre><code>systemctl edit logrotate
 # 書いた内容
 [Unit]
 ConditionACPower=
 </code></pre>
-
-<p>というわけで<br />
+<p>というわけで<br>
 cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない</p>
-
 <pre><code>journalctl -n 10 -u logrotate | egrep -i &quot;condition check.*skipped&quot;
 </code></pre>
-
 <p>とりあえず分かった、バッテリー時の判定が入ってるtimer</p>
-
 <ul>
-<li>apt-daily-upgrade<br /></li>
-<li>man-db<br /></li>
-<li>logrotate<br /></li>
-<li>anacron<br /></li>
-<li>apt-daily<br /></li>
+<li>apt-daily-upgrade</li>
+<li>man-db</li>
+<li>logrotate</li>
+<li>anacron</li>
+<li>apt-daily</li>
 </ul>
 
   </div>
@@ -235,7 +221,7 @@ cronだけじゃなくて, systemd-timerもちゃんと見ておかないとい�
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -243,7 +229,7 @@ cronだけじゃなくて, systemd-timerもちゃんと見ておかないとい�
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -326,7 +312,7 @@ cronだけじゃなくて, systemd-timerもちゃんと見ておかないとい�
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

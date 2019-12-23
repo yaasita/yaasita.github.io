@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,12 +55,10 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    <p>SSLRequire は 非推奨みたいなので<br />
+    <p>SSLRequire は 非推奨みたいなので<br>
 <a href="/2018/05/26/client-auth/">クライアント証明書とIP制限</a>を今風に書き直す</p>
-
-<p>あとCNとかも検証するようにした<br />
+<p>あとCNとかも検証するようにした<br>
 こんな感じ</p>
-
 <pre><code>&lt;Directory /var/www&gt;
     Options Indexes FollowSymLinks MultiViews ExecCGI
     SSLVerifyClient optional
@@ -73,24 +71,17 @@ if (!doNotTrack) {
     &lt;/RequireAny&gt;
 &lt;/Directory&gt;
 </code></pre>
-
 <p>あと</p>
-
 <pre><code>Protocols http/1.1 h2
 </code></pre>
-
 <p>のようにhttp/1.1を先にしないと</p>
-
 <pre><code>curl: (92) HTTP/2 stream 1 was not closed cleanly: HTTP_1_1_REQUIRED (err 13)
 </code></pre>
-
 <p>こんなエラーになるので注意</p>
-
 <p>参考リンク</p>
-
 <ul>
-<li><a href="http://httpd.apache.org/docs/current/mod/mod_authz_core.html#reqexpr">reqexprの説明</a><br /></li>
-<li><a href="http://httpd.apache.org/docs/current/mod/mod_ssl.html#envvars">mod_ssl変数一覧</a><br /></li>
+<li><a href="http://httpd.apache.org/docs/current/mod/mod_authz_core.html#reqexpr">reqexprの説明</a></li>
+<li><a href="http://httpd.apache.org/docs/current/mod/mod_ssl.html#envvars">mod_ssl変数一覧</a></li>
 </ul>
 
   </div>
@@ -229,7 +220,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -237,7 +228,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -320,7 +311,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

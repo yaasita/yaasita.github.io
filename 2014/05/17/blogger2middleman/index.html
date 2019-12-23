@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -56,27 +56,27 @@ if (!doNotTrack) {
   </header>
   <div class="content">
     <p>bloggerからmiddleman(というかこのページ)に移行したときのやり方メモ</p>
-
 <ol>
-<li><p>bloggerからデータをエクスポートする</p>
-
-<pre><code>管理画面から　設定　⇒　その他　⇒　ブログをエクスポート
-</code></pre></li>
-
-<li><p>XMLファイルが一行が長いので整形</p>
-
-<pre><code>&gt;&lt;を&gt;\n&lt;に変換
-</code></pre></li>
-
-<li><p>以下のようなスクリプトentry事に分解<br />
-<script src="https://gist.github.com/yaasita/1a6ecce213edd08df5ba.js?file=bunkai.pl"></script></p></li>
-
-<li><p>整形<br />
-<script src="https://gist.github.com/yaasita/1a6ecce213edd08df5ba.js?file=seikei.pl"></script></p></li>
+<li>
+<p>bloggerからデータをエクスポートする</p>
+<pre><code> 管理画面から　設定　⇒　その他　⇒　ブログをエクスポート
+</code></pre>
+</li>
+<li>
+<p>XMLファイルが一行が長いので整形</p>
+<pre><code> &gt;&lt;を&gt;\n&lt;に変換
+</code></pre>
+</li>
+<li>
+<p>以下のようなスクリプトentry事に分解</p>
+ <script src="https://gist.github.com/yaasita/1a6ecce213edd08df5ba.js?file=bunkai.pl"></script>
+</li>
+<li>
+<p>整形</p>
+ <script src="https://gist.github.com/yaasita/1a6ecce213edd08df5ba.js?file=seikei.pl"></script>
+</li>
 </ol>
-
 <p>こんな感じでできたファイルをbuildすればOK</p>
-
 <pre><code>$ bundle exec middleman build
 </code></pre>
 
@@ -216,7 +216,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -224,7 +224,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -307,7 +307,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -56,22 +56,16 @@ if (!doNotTrack) {
   </header>
   <div class="content">
     <p>キーをどこで奪われてるのかまず探す</p>
-
 <pre><code>teratem -&gt; bash -&gt; app
 </code></pre>
-
-<p>teratemでキーを取られているなら<code>KEYBOARD.CNF</code>の末尾に以下のように追記する<br />
+<p>teratemでキーを取られているなら<code>KEYBOARD.CNF</code>の末尾に以下のように追記する<br>
 User(連番)で追記する書式についてはteratemのヘルプ参照</p>
-
 <pre><code>User3=1037,0,$1E
 User4=1040,0,$11
 </code></pre>
-
-<p>この例だとUser3でvimの副ファイル切り替え(<code>:h ctrl-^</code>)を出来るようにしている<br />
+<p>この例だとUser3でvimの副ファイル切り替え(<code>:h ctrl-^</code>)を出来るようにしている<br>
 User4ではDockerのデタッチに使うCtrl-qを通している</p>
-
 <p>Ctrl-qについてはbash側でも取られるのでそっちも変更する</p>
-
 <pre><code># キー設定を参照
 # stopに割り当てられてるのが分かる
 stty -a
@@ -217,7 +211,7 @@ stty stop undef
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -225,7 +219,7 @@ stty stop undef
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -308,7 +302,7 @@ stty stop undef
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

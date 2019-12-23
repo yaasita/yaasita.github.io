@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -56,28 +56,21 @@ if (!doNotTrack) {
   </header>
   <div class="content">
     <p>/dev/sddが故障を検地 (S.M.A.R.T)</p>
-
 <p>まずはsmartのセルフテストをやってみる</p>
-
 <pre><code>smartctl -t long /dev/sdd
 </code></pre>
-
-<p>badblocksでHDDをチェック<br />
+<p>badblocksでHDDをチェック<br>
 今回は読み込みチェックだけやった</p>
-
 <pre><code>badblocks -s -v /dev/hda
 </code></pre>
-
-<p>書き込みチェックもやるなら↓<br />
-badblocks -s -v -n /dev/hda<br />
--s 進捗状況表示<br />
--v 詳細表示<br />
+<p>書き込みチェックもやるなら↓<br>
+badblocks -s -v -n /dev/hda<br>
+-s 進捗状況表示<br>
+-v 詳細表示<br>
 -n 非破壊テスト</p>
-
 <p><a href="http://nabe.blog.abk.nu/0245">http://nabe.blog.abk.nu/0245</a></p>
-
-<p>ファイルシステムが壊れてそうなら<br />
-fsck<br />
+<p>ファイルシステムが壊れてそうなら<br>
+fsck<br>
 を使うこと</p>
 
   </div>
@@ -216,7 +209,7 @@ fsck<br />
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -224,7 +217,7 @@ fsck<br />
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -307,7 +300,7 @@ fsck<br />
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

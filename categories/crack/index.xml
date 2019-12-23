@@ -9,429 +9,297 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>徳丸さんのセキュリティ問題(CSRF)</title>
-      <link>https://yaasita.github.io/2018/11/11/tokumaru-csrf/</link>
-      <pubDate>Sun, 11 Nov 2018 01:33:21 +0900</pubDate>
+      <title>chromebookが最高だった</title>
+      <link>https://yaasita.github.io/2019/12/23/chromebook/</link>
+      <pubDate>Mon, 23 Dec 2019 05:58:32 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2018/11/11/tokumaru-csrf/</guid>
-      <description>徳丸さんがCSRFの問題を出していたので考えてみる
-問題：間違ったCSRF対策～初級編～
-解答
-https://github.com/yaasita/tokumaru-csrf-20181110
-なんか最初はXMLHttpRequestとか駆使して、chgmailform.phpからtoken引っこ抜こうと思ったんだけど
-CORSとかCORBで無理なんすよね
-でよく見るとtokenが無いときの考慮がないよってやつでした
-まとめ 最近のブラウザは良く出来てる</description>
+      <guid>https://yaasita.github.io/2019/12/23/chromebook/</guid>
+      <description>ASUS の C434TA-AI0084 を買ったのでレビュー
+chromeOS  起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある  解除がちょっと遅い10秒くらい待たされる   chromeの複数ユーザー機能が使えない  多重ログイン機能はあるけどちょっと微妙  別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能      ディスプレイ  タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 バックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗  テザリング  Moto E5 とbluetoothでのテザリングが出来なかった  とりあえずUSBテザリングは刺すだけで使えたので良しとしてます    キーボード  Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない  Androidアプリ  ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない  Linux環境 OS  Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり  バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい   USB共有機能あり /opt/google/cros-containers/bin/.</description>
     </item>
     
     <item>
-      <title>コピー禁止のWebサイトについて</title>
-      <link>https://yaasita.github.io/2017/05/21/web-copy-protect/</link>
-      <pubDate>Sun, 21 May 2017 01:48:56 +0900</pubDate>
+      <title>GCP Cloud Functions内からサービスアカウントのtoken取る</title>
+      <link>https://yaasita.github.io/2019/12/08/service-account-in-cf/</link>
+      <pubDate>Sun, 08 Dec 2019 05:12:12 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2017/05/21/web-copy-protect/</guid>
-      <description>コピー禁止のWordpressサイトが増えてきました
-ちょっと検索ワードをコピペするのに不便なので回避方法
-1. とりあえずJavaScriptをOFFる これで大半はOK wp-copyprotect って拡張だけならこれで大丈夫
-この仕組みの参考実装はこんな感じ
-https://gist.github.com/yaasita/7b07710840186561c76d7e5c4af28b2d
-chromeならURLバーの左をクリックしてJavaScriptをブロックで
+      <guid>https://yaasita.github.io/2019/12/08/service-account-in-cf/</guid>
+      <description>Cloud Functionsからサービスアカウントのアクセストークンをどうやって取るの？と疑問に思ったので調べた
+Google Compute Engineと同じ取り方でOK
+&amp;quot;use strict&amp;quot;; const fetch = require(&amp;quot;node-fetch&amp;quot;); exports.handler = async (req, res) =&amp;gt; { const url = &amp;quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&amp;quot; + &amp;quot;[サービスアカウント名]/token&amp;quot;; const result = await fetch(url, { method: &amp;quot;GET&amp;quot;, headers: { &amp;quot;Metadata-Flavor&amp;quot;: &amp;quot;Google&amp;quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&amp;quot;OK&amp;quot;); };  なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
 
-2. noscriptのタグを消す WP Content Copy Protection みたいなやつだと noscript タグの中に画面一杯に広げてコンテンツを見えなくするdivが入るので、chrome developers tools開いて &amp;lt;noscript&amp;gt;タグごと削除する
-Oops! It appears that you have disabled your Javascript. In order for you to see this page as it is meant to appear, we ask that you please re-enable your Javascript! みたいな文言はこれ
-
-3. cssでuser-selectをnoneにしている場合 chrome developers toolsでuser-select: text;書き換えてやる
-
-とりあえずここまでやれば大抵コピーできるようになるはず
-参考リンク  コピペ禁止サイト
- Webページの「コピペ禁止」を解除・回避するJavaScriptコード</description>
-    </item>
-    
-    <item>
-      <title>ettercapで中間者攻撃（MITM）</title>
-      <link>https://yaasita.github.io/2013/01/20/1503/</link>
-      <pubDate>Sun, 20 Jan 2013 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2013/01/20/1503/</guid>
-      <description>やり方は簡単
-以下のようにして192.168.0.2,192.168.0.11間のメッセージに割り込める
-ettercap -Tq -M arp /192.168.0.2/ /192.168.0.11/
-インターフェイスは-Tのテキスト、-Cのcurses、-GのGtkと選べる
-tcpflowで覗いてみる
-tcpflow -cse -i eth0 dst port 80
--c コンソールに出力
--s 印字できないもじは.へ変換
--e カラー表示
--i インターフェイス指定</description>
-    </item>
-    
-    <item>
-      <title>Linuxでtorを使ってみる</title>
-      <link>https://yaasita.github.io/2012/01/31/3068/</link>
-      <pubDate>Tue, 31 Jan 2012 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2012/01/31/3068/</guid>
-      <description> Torは匿名のプロキシとして動作する
-インストール
-apt-get install tor
-
-/etc/tor/torrcを編集
-SocksListenAddress 192.168.0.4(Torが入っているサーバーのアドレス)
-を追加
-## Replace this with &#34;SocksPort 0&#34; if you plan to run Tor only as a
-## relay, and not make any local application connections yourself.
-SocksPort 9050 # what port to open for local application connections
-SocksListenAddress 127.0.0.1 # accept connections only from localhost
-SocksListenAddress 192.168.0.4
-
-あとは再起動でOK
-killall tor
-tor
-
-これで192.168.0.2から接続できた
-SocksPolicyは何も設定しなければ全て許可 </description>
-    </item>
-    
-    <item>
-      <title>ハッシュ解析の常套手段レインボーテーブル</title>
-      <link>https://yaasita.github.io/2011/05/11/4006/</link>
-      <pubDate>Wed, 11 May 2011 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2011/05/11/4006/</guid>
-      <description> レインボーテーブルとはあらかじめ作っておいたハッシュテーブルと平分の対応表を照らし合わせ、平分を得るテクニックらしいです。
-チェインと呼ばれる単位に集約されているので、テーブルの容量が少なくてすむ利点があります。
-ソフトはここら辺からどうぞ
-http://project-rainbowcrack.com/index.htm
+まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &amp;ldquo;Function Identity&amp;quot;とかクリックするとちゃんと日本語版あるんですよね
+なんかメニューがバグってるのかな・・・
+とりあえず英語版から探すのをオススメします&amp;hellip;
 参考リンク
-http://backslash.ddo.jp/wordpress/index.php/archives/584 </description>
+ 関数ID Compute Metadata Server   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].</description>
     </item>
     
     <item>
-      <title>LANの盗聴について</title>
-      <link>https://yaasita.github.io/2011/05/10/4046/</link>
-      <pubDate>Tue, 10 May 2011 00:00:00 +0900</pubDate>
+      <title>GCPでアクセストークンを取得する</title>
+      <link>https://yaasita.github.io/2019/11/14/gcp-access-token/</link>
+      <pubDate>Thu, 14 Nov 2019 22:32:41 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/05/10/4046/</guid>
-      <description> 昔、調べたことがあったのでメモ
-有線LANの盗聴にはいくつか種類があって調べた限りだと以下の方法がある
-以下の方法の殆どを行えるソフトはettercapがあるman ettercapとやるだけで勉強になる
-→MAC Floodはdsniffの中にあるmacofを使うと良いかも
- ARP Spoofing
- ICMP Redirect
- DHCP Spoofing
- Port Stealing
- MAC Flood
-  APR Spoofing 偽のARP応答を返すことでARPテーブルを変更し中間者攻撃を行う手法
-ARP Spoofingについてはこちらが参考になる
-ICMP Redirect ICMPリダイレクトを使って経路情報を書き換え
-DHCP Spoofing DHCPを使ってIPアドレスを振るときにGWを盗聴できるように変更
-Port Stealing L2スイッチのポート情報を書き換えることでパケットをこちらに流すようにする
-MAC Flood L2スイッチのMACテーブルを溢れさせて馬鹿ハブにして盗聴する荒業
-参考リンク  LAN内の盗聴とその予防
- スプーフィング
- MACアドレス書き換えで通信傍受！
- ARPスプーフィングで通信傍受！
- ファイアウォール/IDS の回避とスプーフィング
- オキテ破りにトライ！　ネットワーク実験室
- 見えざる脅威，ネットワーク盗聴を見つけ出す
- 社内の盗聴者を見つけ出すフリーツール「PromiScan」の使い方
- 社内LANが危ない? 今どきの社内セキュリティ対策
- 外部からの攻撃
- SwitchingHubの特性を利用して盗聴する！
-  </description>
+      <guid>https://yaasita.github.io/2019/11/14/gcp-access-token/</guid>
+      <description>ほとんどのサービスは クライアントライブラリ を使えば
+export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json  みたいに環境変数を設定するだけで良いのだが、Cloud Build 等は access tokenを取得して叩く必要がある
+という事でGCPのサービスアカウントからアクセストークンを取得するコード
+ スコープ一覧はこちら
+https://developers.google.com/identity/protocols/googlescopes
+アクセストークンのテストは DLP とかがお手軽で良いかな
+参考リンク  jose API Document Using OAuth 2.0 for Server to Server Applications  </description>
     </item>
     
     <item>
-      <title>fork爆弾を試してみる</title>
-      <link>https://yaasita.github.io/2011/05/08/4129/</link>
-      <pubDate>Sun, 08 May 2011 00:00:00 +0900</pubDate>
+      <title>osu!taikoのskin</title>
+      <link>https://yaasita.github.io/2019/10/27/osu/</link>
+      <pubDate>Sun, 27 Oct 2019 03:00:31 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/05/08/4129/</guid>
-      <description> sleepだけなら大丈夫かな？と思って以下のスクリプトを実行してみた
-→結果すぐに応答なしになってkillallも効かない状態に＼(^o^)／
-電源を切るしかなくなった
-#!/bin/bash
-while :; do
-$0 &amp;amp;
-sleep 10m
-done &amp;amp;
+      <guid>https://yaasita.github.io/2019/10/27/osu/</guid>
+      <description>osu!taikoのスキン
+これが一番良かった
+概要欄からダウンロードできる</description>
+    </item>
+    
+    <item>
+      <title>AtCoder Beginner Contest 142のD問題</title>
+      <link>https://yaasita.github.io/2019/09/30/atcoder-abc142/</link>
+      <pubDate>Mon, 30 Sep 2019 05:05:34 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/09/30/atcoder-abc142/</guid>
+      <description>問題: D - Disjoint Set of Common Divisors
+方針はユークリッドの互除法で最大公約数を出して、最大公約数を素因数分解
+存在する素数の数+1(今回は1もお互いに素の数として含めるため)でOKぽい
+perlで書いてみる
+ 解説動画</description>
+    </item>
+    
+    <item>
+      <title>systemd timerはちゃんと動いてる？</title>
+      <link>https://yaasita.github.io/2019/09/29/systemd-timer/</link>
+      <pubDate>Sun, 29 Sep 2019 16:51:09 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/09/29/systemd-timer/</guid>
+      <description>systemdタイマーがちゃんと動いてるか確認したほうが良いよというお話
+systemctl list-timers --allコマンドで一覧が見れるあれです
+debian10だと /etc/cron.daily にあるスクリプトでこんな感じに書かれてたら、systemd timerの方を使ってる
+if [ -d /run/systemd/system ]; then exit 0 fi  前回 と同様にノートパソコンのバッテリー稼働と誤って判断されることに起因する問題
+例えばlogrotateとかみると
+systemctl cat logrotate  こんな一文がある
+ConditionACPower=true  これはバッテリー駆動の時は動かさないって意味らしいんだけど、どうも判定が狂ってるみたいでずっと実行されなかった
+なので、以下のコマンドでoverride.conf作って判定を無効化した
+systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower=  というわけで
+cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
+journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  とりあえず分かった、バッテリー時の判定が入ってるtimer
+ apt-daily-upgrade man-db logrotate anacron apt-daily  </description>
+    </item>
+    
+    <item>
+      <title>ビリビリ動画とcrunchyrollのIP制限をGCPで検証</title>
+      <link>https://yaasita.github.io/2019/09/14/anime-ip-block/</link>
+      <pubDate>Sat, 14 Sep 2019 22:21:43 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/09/14/anime-ip-block/</guid>
+      <description>bilibili動画とcrunchyrollのIP制限はどんな感じなのか
+GCPの各リージョンからアクセスして試してみる
+rttは自宅から該当サーバーまでのpingしたときの平均値
+なのでISPによって全然違うと思うので参考値ということで
+   region bilibili crunchyroll rtt(ms)     asia-east1 (台湾) ng ok 60.149   asia-east2 (香港) ng ok 76.986   asia-northeast1 (東京) ng ok 29.624   asia-northeast2 (大阪) ng ok 37.401   asia-south1 (ムンバイ) ng ok 144.055   asia-southeast1 (シンガポール) ng ok 89.755   australia-southeast1 (シドニー) ng ok 122.193   europe-north1 (フィンランド) ng ok 256.714   europe-west1 (ベルギー) ng ok 229.</description>
+    </item>
+    
+    <item>
+      <title>on_ac_powerコマンドについて</title>
+      <link>https://yaasita.github.io/2019/08/16/on-ac-power/</link>
+      <pubDate>Fri, 16 Aug 2019 04:45:45 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/08/16/on-ac-power/</guid>
+      <description>debian10にした関係でLinuxネタが続く
+PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある
+そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる
+例えば、/etc/cron.daily/mlocate の場合
+if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi  こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
+んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
+このままだと永遠にlocateコマンドが使えないので、divertで退避させた
+dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power  おしまい</description>
+    </item>
+    
+    <item>
+      <title>1から100の偶数の和を求めるやつ</title>
+      <link>https://yaasita.github.io/2019/08/15/sum-even-number/</link>
+      <pubDate>Thu, 15 Aug 2019 04:10:11 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/08/15/sum-even-number/</guid>
+      <description>「1から100の偶数の和を求めるワンライナー」まとめ
+perlでやってみる
+perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;eval&amp;quot;say @{[grep{$_%2==0}1..100]}&amp;quot;;&#39;  4つ思いついた
+結論 simple is best</description>
+    </item>
+    
+    <item>
+      <title>各種サーバの中間証明書の扱い</title>
+      <link>https://yaasita.github.io/2019/08/14/ssl-capath/</link>
+      <pubDate>Wed, 14 Aug 2019 10:20:33 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/08/14/ssl-capath/</guid>
+      <description>中間証明書をどう設定するか問題
+postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&#39;s Encryptの場合こんな感じ
+smtpd_tls_CAfileに中間証明書を指定する
+smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
+dovecot 10-ssl.conf
+ssl_ca = &amp;lt;/etc/letsencrypt/live/example.net/chain.pem  これはダメ
+この設定はクライアント証明書用ですので
+正しくは、こんな感じに、まとめたやつを指定すればOK
+ssl_cert = &amp;lt;/etc/letsencrypt/live/example.net/fullchain.pem  apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
+SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem  dovecot同様に中間証明書もまとめて指定する
+まとめ この問題はスマホのK-9 Mailでメール読もうとしたときに判明した
+(突然CertPathValidatorExceptionって怒られた)
+thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね
 
-詳しくはWikipediaで </description>
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
+openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
     </item>
     
     <item>
-      <title>tinyhoneypotを使ってみる</title>
-      <link>https://yaasita.github.io/2011/02/06/4778/</link>
-      <pubDate>Sun, 06 Feb 2011 00:00:00 +0900</pubDate>
+      <title>虫よけスプレー</title>
+      <link>https://yaasita.github.io/2019/07/29/musiyoke/</link>
+      <pubDate>Mon, 29 Jul 2019 03:42:37 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2011/02/06/4778/</guid>
-      <description> aptかなんかでインストールコマンドは→thpot
-thpotはxinetdかinetdを通してでも起動できます
-接続とセッションを通しての命令は全てログに記録されます
-以下のどれかの引数を与えてサービスを起動します
-shell, ftp, http, mssql, smtp, pop3 ,ssh
-ドキュメントは以下
-/usr/share/doc/tinyhoneypot </description>
+      <guid>https://yaasita.github.io/2019/07/29/musiyoke/</guid>
+      <description>虫除けスプレーで最近買ったこれが良かった
+ベタベタしないので気にならない
+フマキラー SKIN VAPEってやつかな
+商品名はスキンベープミスト　200mlかも
+
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   そういや虫よけ剤に入ってるDEETって薬はなぜ虫が寄り付かないか謎らしい</description>
     </item>
     
     <item>
-      <title>ライブカメラを検索する</title>
-      <link>https://yaasita.github.io/2010/02/21/7286/</link>
-      <pubDate>Sun, 21 Feb 2010 00:00:00 +0900</pubDate>
+      <title>例のS3署名バージョン2について</title>
+      <link>https://yaasita.github.io/2019/06/25/s3v2/</link>
+      <pubDate>Tue, 25 Jun 2019 00:31:08 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2010/02/21/7286/</guid>
-      <description> inurl:ViewerFrame?Mode=で検索
-2ch記事
-ちょｗグーグルで「inurl:ViewerFrame?Mode= 」って検索してみｗｗｗ </description>
+      <guid>https://yaasita.github.io/2019/06/25/s3v2/</guid>
+      <description>AWS S3の署名バージョン騒動
+大丈夫ぽいけど一応調べた時につかったスクリプト
+CloudTrailでログを有効化してからお使いください
+ </description>
     </item>
     
     <item>
-      <title>なんか知らないがROM配ってるサイト</title>
-      <link>https://yaasita.github.io/2009/09/06/8695/</link>
-      <pubDate>Sun, 06 Sep 2009 00:00:00 +0900</pubDate>
+      <title>Cloud Runがすごく良い</title>
+      <link>https://yaasita.github.io/2019/05/29/cloud-run/</link>
+      <pubDate>Wed, 29 May 2019 21:42:23 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2009/09/06/8695/</guid>
-      <description> http://ja.nitroroms.com/roms </description>
+      <guid>https://yaasita.github.io/2019/05/29/cloud-run/</guid>
+      <description>GCPのCloud Runがめっちゃ便利
+覚えなきゃいけないルールは2つ
+ Dockerにする事 環境変数 $PORT のポート番号でlistenしてレスポンスを返す事  これだけ
+コマンドとかはこの辺見ればすぐできると思います
+あと、Chunked Transferみたいな仕組みで進捗を返すみたいなAPIは難しいかもしれない
+以下のようなプログラムでちょっとずつレスポンス返しても、バッファリングされてるみたいで、最後ドバっと返ってきた
+ </description>
     </item>
     
     <item>
-      <title>sonb32drv.dllってウィルスに感染してた</title>
-      <link>https://yaasita.github.io/2009/06/14/9342/</link>
-      <pubDate>Sun, 14 Jun 2009 00:00:00 +0900</pubDate>
+      <title>PKCEをJavaScriptで実装する</title>
+      <link>https://yaasita.github.io/2019/04/29/pkce/</link>
+      <pubDate>Mon, 29 Apr 2019 01:23:20 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2009/06/14/9342/</guid>
-      <description> ／(＾o＾)＼ナンテコッタイ
-つーことで対処法
-とりあえずC:\WINDOWS\system32\sonb32drv.dllを削除
-つーかこの話って2008年の6月くらいの話です・・・
-どんだけウィルススキャンさぼってたんだ(；・∀・)
-↓はググって分かったこと
-・感染経路は？
-どうもXREAの広告らしい
-感染はFlash Playerの脆弱性により行われる
-バージョンが9．0．124より古いと危ないとのこと
-http://d.hatena.ne.jp/soundwing/20080614
-・ウィルスの活動は？
-IEの場合
-C:\Documents and Settings\ユーザー名\Local Settings\Temporary Internet Files\
-あたりにtaa.gifを作成後orz.exeという実行ファイルに展開されるそうです
-場所は%Temp%\orz.exeかな？
-http://www.symantec.com/ja/jp/security_response/writeup.jsp?docid=2008-052714-3021-99&amp;amp;amp;tabid=2
-→対処方はtaa.gif、orz.exeを消す
-sonb32drv.dllを作成されます
-→対処方はsonb32drv.dllを消す
-C:\WINDOWS\system32\drivers\etc\hostsを削除されます
-→対処方はhosts.msnをコピーしhostsにリネームする
-まあhostsファイルはデフォルトでlocalhostしか書いてないので以下の内容のファイルでもok
-127.0.0.1 localhost
-以下のレジストリを追加されます
-HKEY_CLASSES_ROOT\CLSID\{F60A0B68-AF3A-C1D2-CD09-5A81AE36D2BA}
-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellExecuteHooks\{F60A0B68-AF3A-C1D2-CD09-5A81AE36D2BA}
-→対処方は上記のレジストリを削除
-http://www.trendmicro.co.jp/vinfo/virusencyclo/default5.asp?VName=TROJ_GAMETHIEF.M&amp;amp;VSect=Sn
-・被害は？
-このプログラムはキーロガーのようです
-プレイオンライン、mixi、Windowsメッセンジャーなどのアカウントハック
-に遇うかもしれません・・・・
-・その他の情報
-カスペでは
-Trojan-PSW.Win32.Nilage.djl
-という名前らしい
-Flashのバージョンを上げると勝手に削除してくれるぽい
-sonb32drv.dllを削除してくれる場合があるらしい
-http://qanda.rakuten.ne.jp/qa4097191.html
-その所為なのか自分の環境には↓のレジストリが既に無かった
-HKEY_CLASSES_ROOT\CLSID\{F60A0B68-AF3A-C1D2-CD09-5A81AE36D2BA}
-↓はあった（汗
-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellExecuteHooks\{F60A0B68-AF3A-C1D2-CD09-5A81AE36D2BA} まあ直接は関係ないけど
-レジストリの掃除にクリーンアップセンターを使うとかね
-(上記のレジストリは削除できませんでしたｗ)
-http://onecare.live.com/site/ja-jp/center/cleanup.htm </description>
+      <guid>https://yaasita.github.io/2019/04/29/pkce/</guid>
+      <description>code_verifier から code_challenge の生成方法について調べた
+code_challenge_method=S256の場合は以下のような実装ロジックになる
+node.jsで書いた
+Oauth2のPKCE
+base64エンコードじゃなくてbase64urlエンコードなのが注意点
+ </description>
     </item>
     
     <item>
-      <title>PDFのパスワードを解析するソフトpdfcrack</title>
-      <link>https://yaasita.github.io/2009/04/19/9704/</link>
-      <pubDate>Sun, 19 Apr 2009 00:00:00 +0900</pubDate>
+      <title>令和の対応に際して</title>
+      <link>https://yaasita.github.io/2019/04/25/reiwa/</link>
+      <pubDate>Thu, 25 Apr 2019 02:08:40 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2009/04/19/9704/</guid>
-      <description> Debian(lenny)のレポジトリにありました。
-aptで簡単インストール。
-使い方は
-pdfcrack hoge.pdf
-みたいに使う
-途中でCtrl+Cで止めてもカレントディレクトリにsavedstate.savが出来るから
-また再開したいときには
-pdfcrack -l savedstate.sav hoge.pdf
-みたいな感じで
-参考リンク
-http://gigazine.net/index.php?/news/comments/20090219_pdfcrack/ </description>
+      <guid>https://yaasita.github.io/2019/04/25/reiwa/</guid>
+      <description>techrachoの記事
+perlも追加でお願いします
+ </description>
     </item>
     
     <item>
-      <title>オラバウトが閉鎖されちゃうよー｡･ﾟ･(ﾉд`)･ﾟ･｡</title>
-      <link>https://yaasita.github.io/2009/04/15/9765/</link>
-      <pubDate>Wed, 15 Apr 2009 00:00:00 +0900</pubDate>
+      <title>tarの差分バックアップ</title>
+      <link>https://yaasita.github.io/2019/04/01/tar-backup/</link>
+      <pubDate>Mon, 01 Apr 2019 16:12:46 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2009/04/15/9765/</guid>
-      <description> そんなあなたに
-シナバウト
-http://www.alabout.com/
-オラバウトNEXT
-http://gazouch.net/allabout/
-ヨロバウト
-http://reafin.net/
-オラバウト跡地
-http://www.genie.x0.com/alabout/closed.phtml </description>
+      <guid>https://yaasita.github.io/2019/04/01/tar-backup/</guid>
+      <description>前回の続き
+でctime変化しちゃってどうしたか？
+ファイルサイズとファイル名を取っておいて差分を作ることにした
+ こんな感じのスクリプトで、ファイル名 + tab + ファイルサイズで保存する
+(厳密にやる場合はsha256とかで)
+そんで現在のファイルリストも取って、差分をとる
+diff -u previous.txt now.txt | egrep &amp;quot;^\+[^\+]&amp;quot; | perl -ple &#39;s/^\+//;s/\t.+//&#39; &amp;gt; tar.txt あとは-Tオプションで差分のファイルだけをtarで固める
+tar -cvaf hoge.tgz -T tar.txt </description>
     </item>
     
     <item>
-      <title>解析テンプレ</title>
-      <link>https://yaasita.github.io/2008/10/24/11060/</link>
-      <pubDate>Fri, 24 Oct 2008 00:00:00 +0900</pubDate>
+      <title>tarの-gオプションについて</title>
+      <link>https://yaasita.github.io/2019/03/30/tar-g-option/</link>
+      <pubDate>Sat, 30 Mar 2019 02:32:25 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/10/24/11060/</guid>
-      <description> 定番解析ソフトと解析勉強サイト
-●デバッガ OllyDbg
-Digital Travesiaで再配布
-●プロセスメモリエディタ兼デバッガ スペシャルねこまんま57号
-http://www.vector.co.jp/soft/win95/hardware/se254476.html
-●プロセスメモリエディタ兼デバッガ うさみみハリケーン
-http://hp.vector.co.jp/authors/VA028184/
-●ヘキサエディタ Stirling
-http://www.vector.co.jp/soft/win95/util/se079072.html
-●PCゲーム解析指南+OllyDbg日本語化パッチ Digital Travesia
-http://hp.vector.co.jp/authors/VA028184/
-参考書
-・解析魔法少女美咲ちゃん マジカル・オープン!
-ISBN:4-7980-0853-2 2,730円 A5判 280 頁
-・クラッカー・プログラム大全―禁断のシリアルナンバー解析テクニック
-ISBN:4-88718-746-7 2625円 A5判 304頁
-・はじめて読む8086
-ISBN:4871482456 1,682円 286頁
-購入回避推奨
-ゲーム解析スレ・書評サイト等で酷評されている参考書
-・いまどきのアセンブラプログラミング [橋本和明(著)]
-・いまどきのアセンブラの教科書 [橋本和明(著)]
-・アセンブラ読本 for Game ゼロからはじめるゲーム改造 [橋本和明(著)] </description>
+      <guid>https://yaasita.github.io/2019/03/30/tar-g-option/</guid>
+      <description>-g, &amp;ndash;listed-incremental
+という増分バックアップに使われるオプションについてどうやって判定してるか？
+それはctimeの変化を見ている
+ctimeの変化で気をつけなければいけないことはハードリンクによるバックアップ
+(rsync &amp;ndash;link-dest等)
+例えば、以下のようなファイルが存在し
+work/ `-- 1.txt  以下のコマンドを発行した場合
+tar -g resume -cvf work.tar work/  初回なので当然全部がバックアップされる
+このまま以下のコマンドを打てばディレクトリだけのバックアップになる(差分がないため)
+tar -g resume -cvf work.tar work/  しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう
+stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる  なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
+うまく増分バックアップができなくなる
+続き</description>
     </item>
     
     <item>
-      <title>nmapを使う</title>
-      <link>https://yaasita.github.io/2008/03/31/12673/</link>
-      <pubDate>Mon, 31 Mar 2008 00:00:00 +0900</pubDate>
+      <title>hugoアップデート</title>
+      <link>https://yaasita.github.io/2019/03/12/hugo-update/</link>
+      <pubDate>Tue, 12 Mar 2019 23:00:51 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/03/31/12673/</guid>
-      <description> nmap -sS -P0 -T2 -p 1-65535 -oN kaons.txt -r -v -sV hoge.co.jp
--sS　ステルススキャン
--P0 ホストの発見を省略する（確実にそのホストが存在していると分かっている場合はこれを使用する）
--T2 スキャン速度。T1、T2、T3、T4、T5と早くなっていく。T5は高速回線が望ましい。
--p ポートスキャンする範囲↑の例では1から65535番まで(全部)
--oN 出力するファイル
--r ランダムにスキャンしない
--v 冗長オプション。多くの情報を出力する。
--sV そのポートで使用されているアプリを特定する
--O OSを特定する
-※注意
-家庭用のブロードバンドルーターを使っている人はスキャン速度をT3以下にしないと落ちる場合があります。 </description>
+      <guid>https://yaasita.github.io/2019/03/12/hugo-update/</guid>
+      <description>久々にhugoをアップデート v0.41 =&amp;gt; v0.54まで上げた
+ワーニング潰し アップデートに伴い
+.Prev と .Nextが非推奨になったぽい マニュアル, コミット
+なのでこれはそれぞれ以下のように修正すればOK(意味が逆なので分かりにくいけど)
+ .Prev =&amp;gt; .NextPage .Next =&amp;gt; .PrevPage  OGP設定 某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました
+上手く表示できてますか？
+修正箇所
+themes/hugo-theme-geppaku/layouts/partials/header.html
+ {{ if .IsHome }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Site.Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;website&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}&amp;quot; /&amp;gt; {{ else }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;article&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}{{ .Page.Dir }}&amp;quot; /&amp;gt; {{ end }} &amp;lt;meta property=&amp;quot;og:site_name&amp;quot; content=&amp;quot;{{ .</description>
     </item>
     
     <item>
-      <title>School Days LxHの動画を抽出する</title>
-      <link>https://yaasita.github.io/2008/01/20/12983/</link>
-      <pubDate>Sun, 20 Jan 2008 00:00:00 +0900</pubDate>
+      <title>Windows10のクリップボード履歴機能</title>
+      <link>https://yaasita.github.io/2019/03/10/clipboard/</link>
+      <pubDate>Sun, 10 Mar 2019 22:47:52 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2008/01/20/12983/</guid>
-      <description> まずDVDの読めるPCでディスクを検索します。
-次にMV.AFSという1.15GBくらいのファイルがあるのでHDDにコピーします。
-この中にpssファイルがアーカイブされているので抽出します。
-こちらで配布されているAFS Cutter Ver.1.00を使ってPSSファイルを抽出します。抽出したファイルはbinという拡張子になっていますがPSSファイルです。再生はVLCプレイヤーなどで出来ます。
-ゲームで使われていないムービーは
-AFS_0836・・・niceboatと書かれた延々と続くスタッフロール
-AFS_0855・・・工事中でちゅ!と書かれた世界の落書き
-参考
-http://freeuse.ddo.jp/contents/game/ps2/ps2mov.html </description>
+      <guid>https://yaasita.github.io/2019/03/10/clipboard/</guid>
+      <description>Windows10に標準でクリップボード履歴機能が付いたらしい
+ https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html  Windows キー + Vで使えるようになる
+cliborの方が使いやすそうな気がするけど、しばらくこっち使ってみる</description>
     </item>
     
     <item>
-      <title>昔、流行った地下ゲーム</title>
-      <link>https://yaasita.github.io/2007/12/31/13045/</link>
-      <pubDate>Mon, 31 Dec 2007 00:00:00 +0900</pubDate>
+      <title>AlwaysOnSSL終了のお知らせ</title>
+      <link>https://yaasita.github.io/2019/02/28/alwaysonssl/</link>
+      <pubDate>Thu, 28 Feb 2019 01:44:13 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2007/12/31/13045/</guid>
-      <description> ブラックユーモア溢れるゲームたちです。
-倉庫番はHDDがフォーマットされる可能性があります。
-WindowsXP環境では平気でした。
-http://www.hehehe.net/game/ </description>
-    </item>
-    
-    <item>
-      <title>中国系P2Pテレビを視聴するには？</title>
-      <link>https://yaasita.github.io/2007/11/12/13395/</link>
-      <pubDate>Mon, 12 Nov 2007 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2007/11/12/13395/</guid>
-      <description> https://wiki.ubuntulinux.jp/UbuntuTips/Application/P2Ptv </description>
-    </item>
-    
-    <item>
-      <title>アイコンを偽装できる拡張子はexeとsrcだけ</title>
-      <link>https://yaasita.github.io/2007/10/27/13502/</link>
-      <pubDate>Sat, 27 Oct 2007 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2007/10/27/13502/</guid>
-      <description> ウイルスの拡張子をtxtにするともとのアイコンに戻るのはそのためです。
-よって下の記事は正確ではないようです。
-http://www.atmarkit.co.jp/fsecurity/special/90winny/winny05.html
-参考リンク
-http://www.tokix.net/txt/WinnyVirus.html </description>
-    </item>
-    
-    <item>
-      <title>山田ウィルスの挙動とバイナリ</title>
-      <link>https://yaasita.github.io/2007/09/26/13809/</link>
-      <pubDate>Wed, 26 Sep 2007 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2007/09/26/13809/</guid>
-      <description> ●山田オルタナティブ（WORM_ANTINNY.BI、W32.Yawmo）
-【主な被害】
-・2段階の画質でSSを出力し、他の（´・ω・） ｶﾜｲｿｽな香具師へ相互リンク
-・アップロードらしきフォームで、コンピュータ上の全HDD上の全ファイルのHTTPでのダウンロードを可能にする
-【主な活動】
-・Windowsシステムフォルダ内に以下のファイルを作成
-* ya_wmp.exe
-* winsocks.dll
-・&#34;C:\RECYCLER\explorer.exe&#34; というファイルを作成
-・C:ドライブ内に &#34;Up&#34; というフォルダを作成
-・レジストリ値&#34;HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run&#34;の中に
-YA_WMP = &#34;\ya_wmp.exe -update&#34;を追加
-・ポート80、ポート8080の空き領域を使う
-（そのほかのポートを使う場合もある模様）
-【感染確認方法（とりあえず安心程度）】
-・タスクマネージャでya_wmp.exeの有無を確認。存在すれば（´・ω・） ｶﾜｲｿｽ
-・C:\RECYCLER\にexplorer.exeが存在すれば（´・ω・） ｶﾜｲｿｽ
-・コマンドプロンプトからnetstat -anoと打ち込み
-Local Addressに80、8000、8080の有無を確認。存在すれば（´・ω・） ｶﾜｲｿｽ
-【感染確認方法（ほぼ確実）】
-ttp://www.excite.co.jp/world/english/web/等のウェブページ翻訳可能な翻訳サイトで
-以下を入力して翻訳
-http://(自分のIP)/C:/
-http://(自分のIP):8080/C:/
-http://(自分のIP):1080/C:/
-http://(自分のIP):8000/C:/
-翻訳不可能＝見えない（´・ω・） ｽ
-翻訳可能＝外部から見える＝（´・ω・） ｶﾜｲｿｽ
-あと山田砲について調べる予定
-http://ycanon.memebot.com/cgi-bin/YCanon.cgi
-http://www.geocities.jp/uesssu/siryou/virus.html
-http://www.nurs.or.jp/~jisatsu/bbs/bbs.txt
-http://yamada.xxxxxxxx.jp/capture.htm#view
-Mell-1-0.11 &#34;1&#34;
-Backdoor.Win32.Agent.xs
-対処法
-→ファイル名を指定して実行→msconfig→スタートアップからそれらしいものを探しチェックを外す
-バイナリファイルへ戻すにはvimなどでできます。
-流失企業まとめ </description>
+      <guid>https://yaasita.github.io/2019/02/28/alwaysonssl/</guid>
+      <description>無料のSSL証明書AlwaysOnSSLがセキュリティ問題を指摘されてシャットダウンしたぽい
+AlwaysOnSSL web security issues
+S/MIME手に入るので良かったんだけどなぁ・・・
+前回</description>
     </item>
     
   </channel>

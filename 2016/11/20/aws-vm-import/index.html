@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,22 +55,14 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<h2 id="手順">手順</h2>
-
+    <h2 id="heading">手順</h2>
 <p>img作る前に以下を確認しておく</p>
-
 <ul>
-<li>DHCPを有効にしている<br /></li>
-<li>iptablesを無効に<br /></li>
-<li>rawでイメージを作っておく<br />
-<br />
-<br /></li>
+<li>DHCPを有効にしている</li>
+<li>iptablesを無効に</li>
+<li>rawでイメージを作っておく</li>
 </ul>
-
 <p>次に以下のコマンドでインポート</p>
-
 <pre><code># hoge-importってバケット作ったとする
 # 最初にimgをS3に上げておく
 aws s3 cp hoge.img s3://hoge-import/hoge.img
@@ -85,17 +77,12 @@ aws ec2 import-image --description &quot;hoge server&quot; --disk-containers fil
 # 進捗見る
 aws ec2 describe-import-image-tasks
 </code></pre>
-
 <p>使ったjsonファイル</p>
-
 <script src="https://gist.github.com/yaasita/a707461e7b3a07bb64e8717cf5fbdcd0.js"></script>
-
-<h2 id="参考リンク">参考リンク</h2>
-
+<h2 id="heading-1">参考リンク</h2>
 <ul>
-<li><a href="http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats">http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats</a><br /></li>
-<li><a href="http://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html">http://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html</a><br />
-<br /></li>
+<li><a href="http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats">http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html">http://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html</a></li>
 </ul>
 
   </div>
@@ -234,7 +221,7 @@ aws ec2 describe-import-image-tasks
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -242,7 +229,7 @@ aws ec2 describe-import-image-tasks
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -325,7 +312,7 @@ aws ec2 describe-import-image-tasks
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

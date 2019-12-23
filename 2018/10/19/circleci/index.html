@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -56,18 +56,13 @@ if (!doNotTrack) {
   </header>
   <div class="content">
     <p>先に結論だけ</p>
-
 <ul>
-<li>キャッシュは一度書き込むとupdate出来ない<br /></li>
-<li>キャッシュクリアは名前を変えて対応する<br />
-<br /></li>
+<li>キャッシュは一度書き込むとupdate出来ない</li>
+<li>キャッシュクリアは名前を変えて対応する</li>
 </ul>
-
 <p>以下具体例</p>
-
-<p>以下のようなキャッシュをした際に<br />
+<p>以下のようなキャッシュをした際に<br>
 古いバージョンのライブラリが入ってしまった場合</p>
-
 <pre><code>- restore_cache:
   keys:
   - v2-dependencies-{{ checksum &quot;requirements.txt&quot; }}
@@ -85,10 +80,7 @@ if (!doNotTrack) {
     - ./venv
   key: v2-dependencies-{{ checksum &quot;requirements.txt&quot; }}
 
-</code></pre>
-
-<p>これを解消しようとして、以下のようにしてもcacheはupdateされない</p>
-
+</code></pre><p>これを解消しようとして、以下のようにしてもcacheはupdateされない</p>
 <pre><code>- restore_cache:
   keys:
   - v2-dependencies-{{ checksum &quot;requirements.txt&quot; }}
@@ -106,11 +98,8 @@ if (!doNotTrack) {
   paths:
     - ./venv
   key: v2-dependencies-{{ checksum &quot;requirements.txt&quot; }}
-</code></pre>
-
-<p>またキャッシュは最大30日間保存されてしまうので、手っ取り早くクリアしたいならv2をv3にして対応すべき</p>
-
-<p>公式マニュアル<br />
+</code></pre><p>またキャッシュは最大30日間保存されてしまうので、手っ取り早くクリアしたいならv2をv3にして対応すべき</p>
+<p>公式マニュアル<br>
 <a href="https://circleci.com/docs/2.0/caching/">https://circleci.com/docs/2.0/caching/</a></p>
 
   </div>
@@ -245,7 +234,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -253,7 +242,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -336,7 +325,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -56,12 +56,9 @@ if (!doNotTrack) {
   </header>
   <div class="content">
     <p>debian10にした関係でLinuxネタが続く</p>
-
-<p>PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある<br />
+<p>PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある<br>
 そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる</p>
-
 <p>例えば、/etc/cron.daily/mlocate の場合</p>
-
 <pre><code>if which on_ac_power &gt;/dev/null 2&gt;&amp;1; then
     ON_BATTERY=0
     on_ac_power &gt;/dev/null 2&gt;&amp;1 || ON_BATTERY=$?
@@ -70,15 +67,12 @@ if (!doNotTrack) {
     fi
 fi
 </code></pre>
-
-<p>こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう<br />
-んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった<br />
+<p>こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう<br>
+んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった<br>
 このままだと永遠にlocateコマンドが使えないので、divertで退避させた</p>
-
 <pre><code>dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power
 ln -s /bin/true /sbin/on_ac_power 
 </code></pre>
-
 <p>おしまい</p>
 
   </div>
@@ -217,7 +211,7 @@ ln -s /bin/true /sbin/on_ac_power
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -225,7 +219,7 @@ ln -s /bin/true /sbin/on_ac_power
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -308,7 +302,7 @@ ln -s /bin/true /sbin/on_ac_power
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

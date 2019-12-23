@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,45 +55,27 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<p>コピー禁止のWordpressサイトが増えてきました<br />
+    <p>コピー禁止のWordpressサイトが増えてきました<br>
 ちょっと検索ワードをコピペするのに不便なので回避方法</p>
-
-<h2 id="1-とりあえずjavascriptをoffる">1. とりあえずJavaScriptをOFFる</h2>
-
-<p>これで大半はOK <a href="https://chetangole.com/blog/wp-copyprotect/">wp-copyprotect</a> って拡張だけならこれで大丈夫<br />
-この仕組みの参考実装はこんな感じ<br />
+<h2 id="1-javascriptoff">1. とりあえずJavaScriptをOFFる</h2>
+<p>これで大半はOK <a href="https://chetangole.com/blog/wp-copyprotect/">wp-copyprotect</a> って拡張だけならこれで大丈夫<br>
+この仕組みの参考実装はこんな感じ<br>
 <a href="https://gist.github.com/yaasita/7b07710840186561c76d7e5c4af28b2d">https://gist.github.com/yaasita/7b07710840186561c76d7e5c4af28b2d</a></p>
-
 <p>chromeならURLバーの左をクリックしてJavaScriptをブロックで</p>
-
 <p><a href="#"><img id="tumblr-img1" src=""></a></p>
-
-<h2 id="2-noscriptのタグを消す">2. noscriptのタグを消す</h2>
-
-<p><a href="https://github.com/wp-plugins/wp-content-copy-protection/blob/master/wpccpl.php">WP Content Copy Protection</a> みたいなやつだと noscript タグの中に画面一杯に広げてコンテンツを見えなくするdivが入るので、chrome developers tools開いて &lt;noscript&gt;タグごと削除する<br />
+<h2 id="2-noscript">2. noscriptのタグを消す</h2>
+<p><a href="https://github.com/wp-plugins/wp-content-copy-protection/blob/master/wpccpl.php">WP Content Copy Protection</a> みたいなやつだと noscript タグの中に画面一杯に広げてコンテンツを見えなくするdivが入るので、chrome developers tools開いて &lt;noscript&gt;タグごと削除する<br>
 <code>Oops! It appears that you have disabled your Javascript. In order for you to see this page as it is meant to appear, we ask that you please re-enable your Javascript!</code> みたいな文言はこれ</p>
-
 <p><a href="#"><img id="tumblr-img2" src=""></a></p>
-
-<h2 id="3-cssでuser-selectをnoneにしている場合">3. cssでuser-selectをnoneにしている場合</h2>
-
+<h2 id="3-cssuser-selectnone">3. cssでuser-selectをnoneにしている場合</h2>
 <p>chrome developers toolsで<code>user-select: text;</code>書き換えてやる</p>
-
 <p><a href="#"><img id="tumblr-img3" src=""></a></p>
-
 <p>とりあえずここまでやれば大抵コピーできるようになるはず</p>
-
-<h3 id="参考リンク">参考リンク</h3>
-
+<h3 id="heading">参考リンク</h3>
 <ul>
-<li><a href="https://yaasita.tumblr.com/post/160878594317/">コピペ禁止サイト</a><br /></li>
-<li><a href="http://language-and-engineering.hatenablog.jp/entry/20150716/UnlockCopyPasteForbiddenOnWebPage">Webページの「コピペ禁止」を解除・回避するJavaScriptコード</a><br />
-<br />
-<br /></li>
+<li><a href="https://yaasita.tumblr.com/post/160878594317/">コピペ禁止サイト</a></li>
+<li><a href="http://language-and-engineering.hatenablog.jp/entry/20150716/UnlockCopyPasteForbiddenOnWebPage">Webページの「コピペ禁止」を解除・回避するJavaScriptコード</a></li>
 </ul>
-
 <script>
 function callback(data){
     var photos = data.response.posts[0].photos;
@@ -243,7 +225,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -251,7 +233,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -334,7 +316,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

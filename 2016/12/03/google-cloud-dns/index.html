@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,37 +55,34 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    <p>Google Cloud Platform のDNSでグルーレコード作るときは<br />
+    <p>Google Cloud Platform のDNSでグルーレコード作るときは<br>
 こんな感じでNS指定したあとに、Aレコード追加すればグルーレコード(Glue Record)に追加してくれるようだ</p>
-
 <p><a href="#"><img id="tumblr-img" src=""></a></p>
-
 <pre><code>; &lt;&lt;&gt;&gt; DiG 9.9.5-9+deb8u8-Debian &lt;&lt;&gt;&gt; +norec @ns-cloud-d1.googledomains.com. name.yaasita.xyz. a
 ; (2 servers found)
 ;; global options: +cmd
 ;; Got answer:
 ;; -&gt;&gt;HEADER&lt;&lt;- opcode: QUERY, status: NOERROR, id: 39015
 ;; flags: qr; QUERY: 1, ANSWER: 0, AUTHORITY: 2, ADDITIONAL: 3
-
+ 
 ;; OPT PSEUDOSECTION:
 ; EDNS: version: 0, flags:; udp: 512
 ;; QUESTION SECTION:
 ;name.yaasita.xyz.              IN      A
-
+ 
 ;; AUTHORITY SECTION:
 name.yaasita.xyz.       300     IN      NS      ns1.name.yaasita.xyz.
 name.yaasita.xyz.       300     IN      NS      ns2.name.yaasita.xyz.
-
+ 
 ;; ADDITIONAL SECTION:
 ns1.name.yaasita.xyz.   300     IN      A       192.168.0.1
 ns2.name.yaasita.xyz.   300     IN      A       192.168.0.2
-
+ 
 ;; Query time: 143 msec
 ;; SERVER: 216.239.32.109#53(216.239.32.109)
 ;; WHEN: Sat Dec 03 23:23:55 JST 2016
 ;; MSG SIZE  rcvd: 113
 </code></pre>
-
 <script>
 function callback(data){
     var photos = data.response.posts[0].photos;
@@ -227,7 +224,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -235,7 +232,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -318,7 +315,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

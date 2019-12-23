@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -56,7 +56,6 @@ if (!doNotTrack) {
   </header>
   <div class="content">
     <p>Debian9でやってみた</p>
-
 <pre><code>cd /etc/ssl
 /usr/lib/ssl/misc/CA.pl -newca
 /usr/lib/ssl/misc/CA.pl -newreq
@@ -71,22 +70,16 @@ openssl x509 -outform PEM -in newcert.pem -out /etc/nginx/ssl/hogehoge.crt
 # パスフレーズ解除
 openssl rsa -in newkey.pem -out /etc/nginx/ssl/hogehoge.key
 </code></pre>
-
-<p>データベースおかしくなったら<br />
+<p>データベースおかしくなったら<br>
 index.txt空っぽすればOK</p>
-
 <pre><code>rm demoCA/index.txt
 touch demoCA/index.txt
 </code></pre>
-
 <p>/etc/ssl/openssl.cnf は <a href="https://gist.github.com/yaasita/6782743a5b83fe532544aeddf0d6e98d">こんな感じ</a></p>
-
-<p>証明書の管理は<br />
+<p>証明書の管理は<br>
 chromeなら設定 =&gt; 詳細設定 =&gt; SSLの管理からやる</p>
-
 <p>windowsの場合はファイル名を指定して実行 =&gt; certlm.msc と同じこと</p>
-
-<p>あと注意点として、<a href="https://www.pistolfly.com/weblog/2017/06">chromeはsubjectAltName</a>を見るので注意<br />
+<p>あと注意点として、<a href="https://www.pistolfly.com/weblog/2017/06">chromeはsubjectAltName</a>を見るので注意<br>
 (EnableCommonNameFallbackForLocalAnchorsってやつを設定するとできるようだけど)</p>
 
   </div>
@@ -229,7 +222,7 @@ chromeなら設定 =&gt; 詳細設定 =&gt; SSLの管理からやる</p>
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -237,7 +230,7 @@ chromeなら設定 =&gt; 詳細設定 =&gt; SSLの管理からやる</p>
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -320,7 +313,7 @@ chromeなら設定 =&gt; 詳細設定 =&gt; SSLの管理からやる</p>
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

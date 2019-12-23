@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,12 +55,8 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<p>こんな感じにS3になんか置いて、ファイルがあったら起動して、終わったらshutdownするみたいな奴</p>
-
+    <p>こんな感じにS3になんか置いて、ファイルがあったら起動して、終わったらshutdownするみたいな奴</p>
 <p><a href="#"><img id="tumblr-img" src=""></a></p>
-
 <script>
 function callback(data){
     var photos = data.response.posts[0].photos;
@@ -69,22 +65,15 @@ function callback(data){
 }
 </script>
 <script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=175076628407&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
-
 <p>GCPはインスタンスの起動停止が早いので結構良い感じ</p>
-
 <h2 id="lambda">Lambda</h2>
-
-<p>処理するファイルが存在して、GCPが動いてたら起動かける<br />
-<script src="https://gist.github.com/yaasita/ec1c67bf9a69de082883b74907786ffa.js"></script></p>
-
+<p>処理するファイルが存在して、GCPが動いてたら起動かける</p>
+<script src="https://gist.github.com/yaasita/ec1c67bf9a69de082883b74907786ffa.js"></script>
 <h2 id="gcp">GCP</h2>
-
-<p>キュー代わりのファイル消してから<br />
-bootしてから3分後に実行（ちょっとインターバルないとインスタンスに入るのが大変になる）<br />
+<p>キュー代わりのファイル消してから<br>
+bootしてから3分後に実行（ちょっとインターバルないとインスタンスに入るのが大変になる）<br>
 処理の最後でshutdownすればOK</p>
-
 <p>/etc/systemd/system/gcp-calc.service</p>
-
 <pre><code>[Unit]
 Description=gcp-calc
 Wants=network-pre.target
@@ -97,9 +86,7 @@ WantedBy=multi-user.target
 ExecStart=/root/run.sh
 Type=oneshot
 </code></pre>
-
 <p>/etc/systemd/system/gcp-calc.timer</p>
-
 <pre><code>[Unit]
 Description=gcp calc
 
@@ -246,7 +233,7 @@ WantedBy=timers.target
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -254,7 +241,7 @@ WantedBy=timers.target
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -337,7 +324,7 @@ WantedBy=timers.target
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

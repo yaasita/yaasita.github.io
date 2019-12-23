@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,32 +55,23 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    <p>-g, &ndash;listed-incremental<br />
-という増分バックアップに使われるオプションについてどうやって判定してるか？<br />
+    <p>-g, &ndash;listed-incremental<br>
+という増分バックアップに使われるオプションについてどうやって判定してるか？<br>
 それはctimeの変化を見ている</p>
-
-<p>ctimeの変化で気をつけなければいけないことはハードリンクによるバックアップ<br />
+<p>ctimeの変化で気をつけなければいけないことはハードリンクによるバックアップ<br>
 (rsync &ndash;link-dest等)</p>
-
 <p>例えば、以下のようなファイルが存在し</p>
-
 <pre><code>work/
 `-- 1.txt
 </code></pre>
-
 <p>以下のコマンドを発行した場合</p>
-
 <pre><code>tar -g resume -cvf work.tar work/
 </code></pre>
-
-<p>初回なので当然全部がバックアップされる<br />
+<p>初回なので当然全部がバックアップされる<br>
 このまま以下のコマンドを打てばディレクトリだけのバックアップになる(差分がないため)</p>
-
 <pre><code>tar -g resume -cvf work.tar work/
 </code></pre>
-
 <p>しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう</p>
-
 <pre><code>stat work/1.txt # ctime確認
 cp -al work work2 # linksを増やす
 stat work/1.txt # ctime更新されている
@@ -88,10 +79,8 @@ tar -g resume -cvf work.tar work/ # 1.txtは対象になる
 rm -rf work2 # linksを減らす
 tar -g resume -cvf work.tar work/ # 1.txtは対象になる
 </code></pre>
-
-<p>なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する<br />
+<p>なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する<br>
 うまく増分バックアップができなくなる</p>
-
 <p><a href="/2019/04/01/tar-backup/">続き</a></p>
 
   </div>
@@ -226,7 +215,7 @@ tar -g resume -cvf work.tar work/ # 1.txtは対象になる
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -234,7 +223,7 @@ tar -g resume -cvf work.tar work/ # 1.txtは対象になる
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -317,7 +306,7 @@ tar -g resume -cvf work.tar work/ # 1.txtは対象になる
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

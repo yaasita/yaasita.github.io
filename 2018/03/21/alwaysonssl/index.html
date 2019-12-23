@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,61 +55,41 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<p>letsencryptとは違う無料のSSLサービス使ってみた<br />
+    <p>letsencryptとは違う無料のSSLサービス使ってみた<br>
 その名も <a href="https://alwaysonssl.com/">AlwaysOnSSL</a></p>
-
-<h2 id="サーバ証明書">サーバ証明書</h2>
-
+<h2 id="heading">サーバ証明書</h2>
 <p>使って見た感想</p>
-
 <ul>
-<li>CAAレコード違反のレポートメールは飛んでこなかった<br /></li>
-<li>証明書の期間は1年間<br /></li>
-<li>CTログは<a href="https://mammoth.ct.comodo.com/">Comodo CA</a> に書くみたいでLetsencryptより少ない<br /></li>
-<li>ワイルドカードは無理<br /></li>
-<li>SANに複数のドメイン入れるのも無理<br />
-<br /></li>
+<li>CAAレコード違反のレポートメールは飛んでこなかった</li>
+<li>証明書の期間は1年間</li>
+<li>CTログは<a href="https://mammoth.ct.comodo.com/">Comodo CA</a> に書くみたいでLetsencryptより少ない</li>
+<li>ワイルドカードは無理</li>
+<li>SANに複数のドメイン入れるのも無理</li>
 </ul>
-
 <p>チェインはこんな感じ</p>
-
 <pre><code>DigiCert Global Root G2
 |_ AlwaysOnSSL TLS RSA CA G1
     |_ yourdomain.example.com
 </code></pre>
-
 <p>DigiCertなんで大抵のブラウザならOKなはず</p>
-
-<p>curlで簡単に叩けるのでcertbotが入らない場合はこっちの方が良いかも<br />
+<p>curlで簡単に叩けるのでcertbotが入らない場合はこっちの方が良いかも<br>
 certbotが入るならLetsencryptの方が良いと思う</p>
-
-<h2 id="s-mime">S/MIME</h2>
-
+<h2 id="smime">S/MIME</h2>
 <ul>
-<li>有効期間は1年間<br /></li>
-<li>CSR作って署名してもらうので、秘密鍵は自分で作る安心設計<br />
-<br /></li>
+<li>有効期間は1年間</li>
+<li>CSR作って署名してもらうので、秘密鍵は自分で作る安心設計</li>
 </ul>
-
 <p>チェーンはこんな感じ</p>
-
 <pre><code>Symantec Class 1 Public Primary CertificationAuthority - G6
 |_ Symantec Class 1 Individual Subscriber CA - G7
 </code></pre>
-
-<p>普通にメール受信できるなら作ってもらえるとても良い<br />
-CNにメールアドレス入れてCSR作ってからVerifyする<br />
+<p>普通にメール受信できるなら作ってもらえるとても良い<br>
+CNにメールアドレス入れてCSR作ってからVerifyする<br>
 そんで、My Certificatesから中間証明書と証明書ダウンロードしてpkcs12にまとめればOK</p>
-
 <pre><code>openssl pkcs12 -export -in merged.crt -inkey secret.key -out email.pfx
 </code></pre>
-
-<h2 id="まとめ">まとめ</h2>
-
+<h2 id="heading-1">まとめ</h2>
 <p>S/MIMEはすごくありがたい</p>
-
 <p><a href="https://yaasita.github.io/2018/08/01/alwaysonssl-breaking/">続き</a></p>
 
   </div>
@@ -244,7 +224,7 @@ CNにメールアドレス入れてCSR作ってからVerifyする<br />
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -252,7 +232,7 @@ CNにメールアドレス入れてCSR作ってからVerifyする<br />
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -335,7 +315,7 @@ CNにメールアドレス入れてCSR作ってからVerifyする<br />
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,31 +55,20 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<p>久々にhugoをアップデート v0.41 =&gt; v0.54まで上げた</p>
-
-<h2 id="ワーニング潰し">ワーニング潰し</h2>
-
-<p>アップデートに伴い<br />
-<code>.Prev</code> と <code>.Next</code>が非推奨になったぽい <a href="https://gohugo.io/variables/page/">マニュアル</a>, <a href="https://github.com/gohugoio/hugo/commit/fb732d5322381ee7f3a849258419cef7bbf1487b">コミット</a><br />
+    <p>久々にhugoをアップデート v0.41 =&gt; v0.54まで上げた</p>
+<h2 id="heading">ワーニング潰し</h2>
+<p>アップデートに伴い<br>
+<code>.Prev</code> と <code>.Next</code>が非推奨になったぽい <a href="https://gohugo.io/variables/page/">マニュアル</a>, <a href="https://github.com/gohugoio/hugo/commit/fb732d5322381ee7f3a849258419cef7bbf1487b">コミット</a><br>
 なのでこれはそれぞれ以下のように修正すればOK(意味が逆なので分かりにくいけど)</p>
-
 <ul>
-<li><code>.Prev</code> =&gt; <code>.NextPage</code><br /></li>
-<li><code>.Next</code> =&gt; <code>.PrevPage</code><br />
-<br /></li>
+<li><code>.Prev</code> =&gt; <code>.NextPage</code></li>
+<li><code>.Next</code> =&gt; <code>.PrevPage</code></li>
 </ul>
-
-<h2 id="ogp設定">OGP設定</h2>
-
-<p>某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました<br />
+<h2 id="ogp">OGP設定</h2>
+<p>某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました<br>
 上手く表示できてますか？</p>
-
 <p>修正箇所</p>
-
 <p>themes/hugo-theme-geppaku/layouts/partials/header.html</p>
-
 <pre><code>    {{ if .IsHome }}
     &lt;meta property=&quot;og:title&quot; content=&quot;{{ .Site.Title }}&quot; /&gt;
     &lt;meta property=&quot;og:type&quot; content=&quot;website&quot; /&gt;
@@ -92,7 +81,6 @@ if (!doNotTrack) {
     &lt;meta property=&quot;og:site_name&quot; content=&quot;{{ .Site.Title }}&quot; /&gt;
     &lt;meta property=&quot;og:image&quot; content=&quot;https://avatars3.githubusercontent.com/u/1515338?s=300&amp;v=4&quot; /&gt;
 </code></pre>
-
   </div>
   <footer>
     <div class="article-footer">
@@ -225,7 +213,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -233,7 +221,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -316,7 +304,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

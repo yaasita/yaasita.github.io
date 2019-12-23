@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,9 +55,8 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    <p>s3fsを使ってこんな感じのバケットポリシーのs3をマウントするときのやつ<br />
+    <p>s3fsを使ってこんな感じのバケットポリシーのs3をマウントするときのやつ<br>
 (hogehogeバケットとその中身を特定IPアドレスの人に開放する)</p>
-
 <pre><code>{
     &quot;Version&quot;: &quot;2012-10-17&quot;,
     &quot;Id&quot;: &quot;Policy1509977001523&quot;,
@@ -89,12 +88,9 @@ if (!doNotTrack) {
     ]
 }
 </code></pre>
-
 <p>んでs3fsはこんな感じ</p>
-
 <pre><code>s3fs -o public_bucket=1,rw,allow_other,umask=0022,endpoint=ap-northeast-1,default_acl=public-read hogehoge /mnt
 </code></pre>
-
 <p>public_bucketがポイント</p>
 
   </div>
@@ -233,7 +229,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -241,7 +237,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -324,7 +320,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

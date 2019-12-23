@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -56,38 +56,25 @@ if (!doNotTrack) {
   </header>
   <div class="content">
     <p>本番環境と検証環境があり、パッケージのアップデートを行いたい場合</p>
-
 <ul>
-<li>10月1日 検証環境のパッケージを上げる<br /></li>
-<li>11月1日 検証環境で問題なければ本番も上げる<br />
-<br /></li>
+<li>10月1日 検証環境のパッケージを上げる</li>
+<li>11月1日 検証環境で問題なければ本番も上げる</li>
 </ul>
-
 <p>この時、それぞれの日に本番環境、検証環境で <code>apt update</code>, <code>apt upgrade</code>をすると本番、検証で差分が生じ検証されていないパッケージもアップデートされる可能性がある</p>
-
 <p>正しくは10月1日に検証環境、本番環境で <strong>同時</strong> に以下のコマンドを実行</p>
-
 <pre><code>apt-get update
 apt-get upgrade --download-only
 </code></pre>
-
 <p>検証環境で以下を実行</p>
-
 <pre><code>apt-get upgrade
 </code></pre>
-
 <p>問題なければ本番環境で以下を実行</p>
-
 <pre><code>apt-get upgrade
 </code></pre>
-
-<p>ポイントは <code>apt-get update</code>, <code>apt-get upgrade --download-only</code> を検証,本番環境ともに同じタイミングで実行して更新予定のパッケージを揃えておくこと<br />
+<p>ポイントは <code>apt-get update</code>, <code>apt-get upgrade --download-only</code> を検証,本番環境ともに同じタイミングで実行して更新予定のパッケージを揃えておくこと<br>
 またubuntuは/etc/apt/apt.conf.d/10periodicの「APT::Periodic::Update-Package-Lists」を0にしておかないと毎日自動でapt-get updateが走るので注意すること</p>
-
 <p>図にするとこんな感じ</p>
-
 <p><a href="#"><img id="tumblr-img" src=""></a></p>
-
 <script>
 function callback(data){
     var photos = data.response.posts[0].photos;
@@ -229,7 +216,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -237,7 +224,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -320,7 +307,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

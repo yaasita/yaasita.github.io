@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,52 +55,41 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<p>CAA (Certification Authority Authorization)レコードのチェックが2017年9月8日から必須になるみたい<br />
-ちょっと調べてみる<br />
+    <p>CAA (Certification Authority Authorization)レコードのチェックが2017年9月8日から必須になるみたい<br>
+ちょっと調べてみる<br>
 DANEはクライアント用でこっちはCA用のレコードらしい</p>
-
-<p>例えばこんな感じのCAAレコードを書いて Let&rsquo;s Encryptで発行しようとすると<br />
+<p>例えばこんな感じのCAAレコードを書いて Let's Encryptで発行しようとすると<br>
 <a href="https://gist.github.com/yaasita/a5836b3f446872eb77f4af43370b9da8">こんなエラー</a>が返される</p>
-
 <pre><code>;; ANSWER SECTION:
 yaasita.tk.             60      IN      CAA     0 issue &quot;comodoca.com&quot;
 yaasita.tk.             60      IN      CAA     0 issuewild &quot;\;&quot;
 yaasita.tk.             60      IN      CAA     0 iodef &quot;mailto:alert@yaasita.net&quot;
 </code></pre>
-
-<p>この場合、hoge.yaasita.tk. みたなサブドメインもcomodocaでしか発行できなくなる<br />
-(設定はサブドメインに継承される)<br />
-ただし、上書きは可能なのでCAAを以下のようにすればLet&rsquo;s Encryptだけから発行できるように変わる</p>
-
+<p>この場合、hoge.yaasita.tk. みたなサブドメインもcomodocaでしか発行できなくなる<br>
+(設定はサブドメインに継承される)<br>
+ただし、上書きは可能なのでCAAを以下のようにすればLet's Encryptだけから発行できるように変わる</p>
 <pre><code>hoge IN CAA 0 issue &quot;letsencrypt.org&quot;
 hoge IN CAA 0 issuewild &quot;;&quot;
 hoge IN CAA 0 iodef &quot;mailto:alert@yaasita.net&quot;
 </code></pre>
-
-<p>例えば、google.com のCAAは以下のようになっているので、<a href="https://pki.goog/">Google Trust Services</a>およびsymantecからしか発行できない<br />
-仮に drive.google.com のwebrootに任意のファイルを置ける脆弱性があったとしても(http-01で)Let&rsquo;s Encryptの証明書を発行することはできないし、WoSignで偽の証明書を発行されることもない<br />
+<p>例えば、google.com のCAAは以下のようになっているので、<a href="https://pki.goog/">Google Trust Services</a>およびsymantecからしか発行できない<br>
+仮に drive.google.com のwebrootに任意のファイルを置ける脆弱性があったとしても(http-01で)Let's Encryptの証明書を発行することはできないし、WoSignで偽の証明書を発行されることもない<br>
 (WoSignがCAA無視してたら意味ないけど)</p>
-
 <pre><code>google.com.             84592   IN      CAA     0 issue &quot;pki.goog&quot;
 google.com.             84592   IN      CAA     0 issue &quot;symantec.com&quot;
 </code></pre>
-
-<p>という訳で、どっかのCAが事故って発行されるリスクも減らせるし自分が信頼するCAを表明しておくのは悪くないんじゃないかなー<br />
-(CTログは発見は出来るけど予防はできないので)<br />
-ただ現時点で対応してるDNSサーバ少ない気がする(Google Cloud DNSは対応してたけど、AWS Route53は対応してなかった)<br />
-iodefについてはLet&rsquo;s Encryptは<a href="https://community.letsencrypt.org/t/caa-setup-for-lets-encrypt/9893/3">まだ対応してない</a>ぽい<br />
+<p>という訳で、どっかのCAが事故って発行されるリスクも減らせるし自分が信頼するCAを表明しておくのは悪くないんじゃないかなー<br>
+(CTログは発見は出来るけど予防はできないので)<br>
+ただ現時点で対応してるDNSサーバ少ない気がする(Google Cloud DNSは対応してたけど、AWS Route53は対応してなかった)<br>
+iodefについてはLet's Encryptは<a href="https://community.letsencrypt.org/t/caa-setup-for-lets-encrypt/9893/3">まだ対応してない</a>ぽい<br>
 iodefに対応してくれないと面白くないけどまあしょうがないか</p>
-
-<h2 id="参考リンク">参考リンク</h2>
-
+<h2 id="heading">参考リンク</h2>
 <ul>
-<li><a href="https://jp.globalsign.com/blog/2013/caa.html">GMOグローバルサインブログ</a><br /></li>
-<li><a href="https://it.srad.jp/story/17/03/17/0644247/">DNSのCAAリソース・レコード、使っていますか スラド</a><br /></li>
-<li><a href="https://blog.apar.jp/web/7334/">DNS CAAレコードに Let&rsquo;s Encrypt 認証局を設定する</a><br /></li>
-<li><a href="https://sslmate.com/labs/caa/">CAA Record Generator</a><br /></li>
-<li><a href="https://support.dnsimple.com/articles/caa-record/">dnsimple What is a CAA record?</a><br /></li>
+<li><a href="https://jp.globalsign.com/blog/2013/caa.html">GMOグローバルサインブログ</a></li>
+<li><a href="https://it.srad.jp/story/17/03/17/0644247/">DNSのCAAリソース・レコード、使っていますか スラド</a></li>
+<li><a href="https://blog.apar.jp/web/7334/">DNS CAAレコードに Let's Encrypt 認証局を設定する</a></li>
+<li><a href="https://sslmate.com/labs/caa/">CAA Record Generator</a></li>
+<li><a href="https://support.dnsimple.com/articles/caa-record/">dnsimple What is a CAA record?</a></li>
 </ul>
 
   </div>
@@ -235,7 +224,7 @@ iodefに対応してくれないと面白くないけどまあしょうがない
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -243,7 +232,7 @@ iodefに対応してくれないと面白くないけどまあしょうがない
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -326,7 +315,7 @@ iodefに対応してくれないと面白くないけどまあしょうがない
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

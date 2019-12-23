@@ -9,22 +9,89 @@
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>chromebookが最高だった</title>
+      <link>https://yaasita.github.io/2019/12/23/chromebook/</link>
+      <pubDate>Mon, 23 Dec 2019 05:58:32 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/12/23/chromebook/</guid>
+      <description>ASUS の C434TA-AI0084 を買ったのでレビュー
+chromeOS  起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある  解除がちょっと遅い10秒くらい待たされる   chromeの複数ユーザー機能が使えない  多重ログイン機能はあるけどちょっと微妙  別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能      ディスプレイ  タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 バックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗  テザリング  Moto E5 とbluetoothでのテザリングが出来なかった  とりあえずUSBテザリングは刺すだけで使えたので良しとしてます    キーボード  Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない  Androidアプリ  ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない  Linux環境 OS  Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり  バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい   USB共有機能あり /opt/google/cros-containers/bin/.</description>
+    </item>
+    
+    <item>
       <title>GCP Cloud Functions内からサービスアカウントのtoken取る</title>
       <link>https://yaasita.github.io/2019/12/08/service-account-in-cf/</link>
       <pubDate>Sun, 08 Dec 2019 05:12:12 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2019/12/08/service-account-in-cf/</guid>
-      <description>Cloud Functionsからアクセストークンをどうやって取るの？と疑問に思ったので調べた
+      <description>Cloud Functionsからサービスアカウントのアクセストークンをどうやって取るの？と疑問に思ったので調べた
 Google Compute Engineと同じ取り方でOK
 &amp;quot;use strict&amp;quot;; const fetch = require(&amp;quot;node-fetch&amp;quot;); exports.handler = async (req, res) =&amp;gt; { const url = &amp;quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&amp;quot; + &amp;quot;[サービスアカウント名]/token&amp;quot;; const result = await fetch(url, { method: &amp;quot;GET&amp;quot;, headers: { &amp;quot;Metadata-Flavor&amp;quot;: &amp;quot;Google&amp;quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&amp;quot;OK&amp;quot;); };  なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
 
-まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &amp;ldquo;Function Identity&amp;rdquo;とかクリックするとちゃんと日本語版あるんですよね
+まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &amp;ldquo;Function Identity&amp;quot;とかクリックするとちゃんと日本語版あるんですよね
 なんかメニューがバグってるのかな・・・
 とりあえず英語版から探すのをオススメします&amp;hellip;
 参考リンク
- 関数ID
- Compute Metadata Server
-   function callback(data){ var photos = data.response.posts[0].photos; document.</description>
+ 関数ID Compute Metadata Server   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].</description>
+    </item>
+    
+    <item>
+      <title>GCPでアクセストークンを取得する</title>
+      <link>https://yaasita.github.io/2019/11/14/gcp-access-token/</link>
+      <pubDate>Thu, 14 Nov 2019 22:32:41 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/11/14/gcp-access-token/</guid>
+      <description>ほとんどのサービスは クライアントライブラリ を使えば
+export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json  みたいに環境変数を設定するだけで良いのだが、Cloud Build 等は access tokenを取得して叩く必要がある
+という事でGCPのサービスアカウントからアクセストークンを取得するコード
+ スコープ一覧はこちら
+https://developers.google.com/identity/protocols/googlescopes
+アクセストークンのテストは DLP とかがお手軽で良いかな
+参考リンク  jose API Document Using OAuth 2.0 for Server to Server Applications  </description>
+    </item>
+    
+    <item>
+      <title>osu!taikoのskin</title>
+      <link>https://yaasita.github.io/2019/10/27/osu/</link>
+      <pubDate>Sun, 27 Oct 2019 03:00:31 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/10/27/osu/</guid>
+      <description>osu!taikoのスキン
+これが一番良かった
+概要欄からダウンロードできる</description>
+    </item>
+    
+    <item>
+      <title>AtCoder Beginner Contest 142のD問題</title>
+      <link>https://yaasita.github.io/2019/09/30/atcoder-abc142/</link>
+      <pubDate>Mon, 30 Sep 2019 05:05:34 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/09/30/atcoder-abc142/</guid>
+      <description>問題: D - Disjoint Set of Common Divisors
+方針はユークリッドの互除法で最大公約数を出して、最大公約数を素因数分解
+存在する素数の数+1(今回は1もお互いに素の数として含めるため)でOKぽい
+perlで書いてみる
+ 解説動画</description>
+    </item>
+    
+    <item>
+      <title>systemd timerはちゃんと動いてる？</title>
+      <link>https://yaasita.github.io/2019/09/29/systemd-timer/</link>
+      <pubDate>Sun, 29 Sep 2019 16:51:09 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/09/29/systemd-timer/</guid>
+      <description>systemdタイマーがちゃんと動いてるか確認したほうが良いよというお話
+systemctl list-timers --allコマンドで一覧が見れるあれです
+debian10だと /etc/cron.daily にあるスクリプトでこんな感じに書かれてたら、systemd timerの方を使ってる
+if [ -d /run/systemd/system ]; then exit 0 fi  前回 と同様にノートパソコンのバッテリー稼働と誤って判断されることに起因する問題
+例えばlogrotateとかみると
+systemctl cat logrotate  こんな一文がある
+ConditionACPower=true  これはバッテリー駆動の時は動かさないって意味らしいんだけど、どうも判定が狂ってるみたいでずっと実行されなかった
+なので、以下のコマンドでoverride.conf作って判定を無効化した
+systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower=  というわけで
+cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
+journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  とりあえず分かった、バッテリー時の判定が入ってるtimer
+ apt-daily-upgrade man-db logrotate anacron apt-daily  </description>
     </item>
     
     <item>
@@ -38,6 +105,72 @@ GCPの各リージョンからアクセスして試してみる
 rttは自宅から該当サーバーまでのpingしたときの平均値
 なのでISPによって全然違うと思うので参考値ということで
    region bilibili crunchyroll rtt(ms)     asia-east1 (台湾) ng ok 60.149   asia-east2 (香港) ng ok 76.986   asia-northeast1 (東京) ng ok 29.624   asia-northeast2 (大阪) ng ok 37.401   asia-south1 (ムンバイ) ng ok 144.055   asia-southeast1 (シンガポール) ng ok 89.755   australia-southeast1 (シドニー) ng ok 122.193   europe-north1 (フィンランド) ng ok 256.714   europe-west1 (ベルギー) ng ok 229.</description>
+    </item>
+    
+    <item>
+      <title>on_ac_powerコマンドについて</title>
+      <link>https://yaasita.github.io/2019/08/16/on-ac-power/</link>
+      <pubDate>Fri, 16 Aug 2019 04:45:45 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/08/16/on-ac-power/</guid>
+      <description>debian10にした関係でLinuxネタが続く
+PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある
+そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる
+例えば、/etc/cron.daily/mlocate の場合
+if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi  こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
+んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
+このままだと永遠にlocateコマンドが使えないので、divertで退避させた
+dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power  おしまい</description>
+    </item>
+    
+    <item>
+      <title>1から100の偶数の和を求めるやつ</title>
+      <link>https://yaasita.github.io/2019/08/15/sum-even-number/</link>
+      <pubDate>Thu, 15 Aug 2019 04:10:11 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/08/15/sum-even-number/</guid>
+      <description>「1から100の偶数の和を求めるワンライナー」まとめ
+perlでやってみる
+perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;eval&amp;quot;say @{[grep{$_%2==0}1..100]}&amp;quot;;&#39;  4つ思いついた
+結論 simple is best</description>
+    </item>
+    
+    <item>
+      <title>各種サーバの中間証明書の扱い</title>
+      <link>https://yaasita.github.io/2019/08/14/ssl-capath/</link>
+      <pubDate>Wed, 14 Aug 2019 10:20:33 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/08/14/ssl-capath/</guid>
+      <description>中間証明書をどう設定するか問題
+postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&#39;s Encryptの場合こんな感じ
+smtpd_tls_CAfileに中間証明書を指定する
+smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
+dovecot 10-ssl.conf
+ssl_ca = &amp;lt;/etc/letsencrypt/live/example.net/chain.pem  これはダメ
+この設定はクライアント証明書用ですので
+正しくは、こんな感じに、まとめたやつを指定すればOK
+ssl_cert = &amp;lt;/etc/letsencrypt/live/example.net/fullchain.pem  apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
+SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem  dovecot同様に中間証明書もまとめて指定する
+まとめ この問題はスマホのK-9 Mailでメール読もうとしたときに判明した
+(突然CertPathValidatorExceptionって怒られた)
+thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね
+
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
+openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
+    </item>
+    
+    <item>
+      <title>虫よけスプレー</title>
+      <link>https://yaasita.github.io/2019/07/29/musiyoke/</link>
+      <pubDate>Mon, 29 Jul 2019 03:42:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/07/29/musiyoke/</guid>
+      <description>虫除けスプレーで最近買ったこれが良かった
+ベタベタしないので気にならない
+フマキラー SKIN VAPEってやつかな
+商品名はスキンベープミスト　200mlかも
+
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   そういや虫よけ剤に入ってるDEETって薬はなぜ虫が寄り付かないか謎らしい</description>
     </item>
     
     <item>
@@ -60,13 +193,101 @@ CloudTrailでログを有効化してからお使いください
       <guid>https://yaasita.github.io/2019/05/29/cloud-run/</guid>
       <description>GCPのCloud Runがめっちゃ便利
 覚えなきゃいけないルールは2つ
- Dockerにする事
- 環境変数 $PORT のポート番号でlistenしてレスポンスを返す事
-  これだけ
+ Dockerにする事 環境変数 $PORT のポート番号でlistenしてレスポンスを返す事  これだけ
 コマンドとかはこの辺見ればすぐできると思います
 あと、Chunked Transferみたいな仕組みで進捗を返すみたいなAPIは難しいかもしれない
 以下のようなプログラムでちょっとずつレスポンス返しても、バッファリングされてるみたいで、最後ドバっと返ってきた
  </description>
+    </item>
+    
+    <item>
+      <title>PKCEをJavaScriptで実装する</title>
+      <link>https://yaasita.github.io/2019/04/29/pkce/</link>
+      <pubDate>Mon, 29 Apr 2019 01:23:20 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/04/29/pkce/</guid>
+      <description>code_verifier から code_challenge の生成方法について調べた
+code_challenge_method=S256の場合は以下のような実装ロジックになる
+node.jsで書いた
+Oauth2のPKCE
+base64エンコードじゃなくてbase64urlエンコードなのが注意点
+ </description>
+    </item>
+    
+    <item>
+      <title>令和の対応に際して</title>
+      <link>https://yaasita.github.io/2019/04/25/reiwa/</link>
+      <pubDate>Thu, 25 Apr 2019 02:08:40 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/04/25/reiwa/</guid>
+      <description>techrachoの記事
+perlも追加でお願いします
+ </description>
+    </item>
+    
+    <item>
+      <title>tarの差分バックアップ</title>
+      <link>https://yaasita.github.io/2019/04/01/tar-backup/</link>
+      <pubDate>Mon, 01 Apr 2019 16:12:46 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/04/01/tar-backup/</guid>
+      <description>前回の続き
+でctime変化しちゃってどうしたか？
+ファイルサイズとファイル名を取っておいて差分を作ることにした
+ こんな感じのスクリプトで、ファイル名 + tab + ファイルサイズで保存する
+(厳密にやる場合はsha256とかで)
+そんで現在のファイルリストも取って、差分をとる
+diff -u previous.txt now.txt | egrep &amp;quot;^\+[^\+]&amp;quot; | perl -ple &#39;s/^\+//;s/\t.+//&#39; &amp;gt; tar.txt あとは-Tオプションで差分のファイルだけをtarで固める
+tar -cvaf hoge.tgz -T tar.txt </description>
+    </item>
+    
+    <item>
+      <title>tarの-gオプションについて</title>
+      <link>https://yaasita.github.io/2019/03/30/tar-g-option/</link>
+      <pubDate>Sat, 30 Mar 2019 02:32:25 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/03/30/tar-g-option/</guid>
+      <description>-g, &amp;ndash;listed-incremental
+という増分バックアップに使われるオプションについてどうやって判定してるか？
+それはctimeの変化を見ている
+ctimeの変化で気をつけなければいけないことはハードリンクによるバックアップ
+(rsync &amp;ndash;link-dest等)
+例えば、以下のようなファイルが存在し
+work/ `-- 1.txt  以下のコマンドを発行した場合
+tar -g resume -cvf work.tar work/  初回なので当然全部がバックアップされる
+このまま以下のコマンドを打てばディレクトリだけのバックアップになる(差分がないため)
+tar -g resume -cvf work.tar work/  しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう
+stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる  なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
+うまく増分バックアップができなくなる
+続き</description>
+    </item>
+    
+    <item>
+      <title>hugoアップデート</title>
+      <link>https://yaasita.github.io/2019/03/12/hugo-update/</link>
+      <pubDate>Tue, 12 Mar 2019 23:00:51 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/03/12/hugo-update/</guid>
+      <description>久々にhugoをアップデート v0.41 =&amp;gt; v0.54まで上げた
+ワーニング潰し アップデートに伴い
+.Prev と .Nextが非推奨になったぽい マニュアル, コミット
+なのでこれはそれぞれ以下のように修正すればOK(意味が逆なので分かりにくいけど)
+ .Prev =&amp;gt; .NextPage .Next =&amp;gt; .PrevPage  OGP設定 某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました
+上手く表示できてますか？
+修正箇所
+themes/hugo-theme-geppaku/layouts/partials/header.html
+ {{ if .IsHome }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Site.Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;website&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}&amp;quot; /&amp;gt; {{ else }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;article&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}{{ .Page.Dir }}&amp;quot; /&amp;gt; {{ end }} &amp;lt;meta property=&amp;quot;og:site_name&amp;quot; content=&amp;quot;{{ .</description>
+    </item>
+    
+    <item>
+      <title>Windows10のクリップボード履歴機能</title>
+      <link>https://yaasita.github.io/2019/03/10/clipboard/</link>
+      <pubDate>Sun, 10 Mar 2019 22:47:52 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/03/10/clipboard/</guid>
+      <description>Windows10に標準でクリップボード履歴機能が付いたらしい
+ https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html  Windows キー + Vで使えるようになる
+cliborの方が使いやすそうな気がするけど、しばらくこっち使ってみる</description>
     </item>
     
     <item>
@@ -79,272 +300,6 @@ CloudTrailでログを有効化してからお使いください
 AlwaysOnSSL web security issues
 S/MIME手に入るので良かったんだけどなぁ・・・
 前回</description>
-    </item>
-    
-    <item>
-      <title>dynamodbオンデマンド</title>
-      <link>https://yaasita.github.io/2018/12/19/dynamodb/</link>
-      <pubDate>Wed, 19 Dec 2018 00:53:21 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/12/19/dynamodb/</guid>
-      <description> re:Invent 2018で言われたアレ
-DynamoDBオンデマンド
-のベンチを取ってみた
- ベンチマークに使ったスクリプト
-  結論  ほとんどDynamoDB ondemand でOKだと思うj
- オートスケールぽい挙動なのでちょっとずつスケールしてるぽい
- 200とかそんくらいのスパイクアクセスがある場合はあらかじめ、プロビジョニングキャパシティにしておいた方が良いと思う
- ただし、オンデマンドの有効化は一日一回だけなので注意
-  </description>
-    </item>
-    
-    <item>
-      <title>HSTSの説明資料</title>
-      <link>https://yaasita.github.io/2018/11/12/hsts/</link>
-      <pubDate>Mon, 12 Nov 2018 01:24:39 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/11/12/hsts/</guid>
-      <description>なんかで作ったので
-HSTSとは HTTPでの通信を減らしよりセキュアなHTTPSを使うように促す仕組み
-通常 通常HTTPリクエストをして、301、302等のリダイレクトによってHTTPSにアクセスし直す
-が、HTTPでのやりとり部分に中間者攻撃のリスクが存在する
-
-※厳密には301リダイレクトはブラウザがキャッシュするので2回目以降はサーバー側にリクエストしない
-HSTS ヘッダ HSTSヘッダを受け取ると、ブラウザ側でHTTPをHTTPSに読み替えてリクエストする
-通常のリダイレクトは違い、一旦 HSTSヘッダを受け取ると有効期間中は決してhttpによるリクエストをしない
-(http:// ~ というリンクはブラウザ側で読み換える)
-
-付与するヘッダーは以下のようなもの
-strict-transport-security: max-age=31536000; includeSubDomains; preload   max-age: 有効時間（秒単位）
- includeSubDomains: サブドメインも含めるかどうか alis.to なら hoge.alis.to も有効になる
- preload: preloadに登録しても良いかどうか（後述）
-  HSTS preload HSTS preloadは予め hstspreload.org に自分のサイトを登録しておいて
-初回リクエスト時からHTTPSを有効にしておく仕組み
-
-メリット・デメリット  メリット
- observatory の点数アップ (対外アピール）
- 盗聴・中間者攻撃リスクを軽減しよりセキュアになる
-  デメリット
- 証明書の運用を失敗できない
- サブドメインを含め、HTTPでの運用を一切できなくなる
- ローカルでのテスト時に偽の証明書を無視しにくくなる
-   通常だと出てくる証明書エラー無視のリンクが・・・</description>
-    </item>
-    
-    <item>
-      <title>徳丸さんのセキュリティ問題(CSRF)</title>
-      <link>https://yaasita.github.io/2018/11/11/tokumaru-csrf/</link>
-      <pubDate>Sun, 11 Nov 2018 01:33:21 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/11/11/tokumaru-csrf/</guid>
-      <description>徳丸さんがCSRFの問題を出していたので考えてみる
-問題：間違ったCSRF対策～初級編～
-解答
-https://github.com/yaasita/tokumaru-csrf-20181110
-なんか最初はXMLHttpRequestとか駆使して、chgmailform.phpからtoken引っこ抜こうと思ったんだけど
-CORSとかCORBで無理なんすよね
-でよく見るとtokenが無いときの考慮がないよってやつでした
-まとめ 最近のブラウザは良く出来てる</description>
-    </item>
-    
-    <item>
-      <title>mitmproxyが便利</title>
-      <link>https://yaasita.github.io/2018/11/10/mitmproxy/</link>
-      <pubDate>Sat, 10 Nov 2018 03:22:31 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/11/10/mitmproxy/</guid>
-      <description>とっても便利なmitmproxyを使ってみた
-概要 こんな感じでHTTPSなサイトも中間に入りこんでくれる
-（root証明証を予め信頼しておく必要がある)
-browser &amp;lt;---(指定のCA鍵で再署名)---- mitmproxy &amp;lt;---(HTTPSを一旦解く)----- web server  インストール apt install mitmproxy  設定 プライベートCAをやってるなら
- /etc/ssl/demoCA/private/cakey.pem
- /etc/ssl/demoCA/cacert.pem
-  この２ファイルを結合する
-こんな感じで mitmproxy-ca.pem って名前でどっかのディレクトリに置く
------BEGIN ENCRYPTED PRIVATE KEY----- ... -----END ENCRYPTED PRIVATE KEY----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----  実行 こんな感じで実行できる &amp;ndash;view-filter で表示させたいURLを絞れる
-(hogedirの中にmitmproxy-ca.pemが入ってる)
-mitmproxy --set confdir=/path/to/hogedir --view-filter m3u  画面中ではVimぽいキーバインドで色々操作できる
-リクエストを選んで、wでストリームを保存できる
-dump mitmproxyだけだと長いURLとかは省略されちゃったりするので、完全なものを見る場合にmitmdumpを使う
-# getだけ抽出 mitmdump -nr /tmp/save -w outfile &amp;quot;~m get&amp;quot; # リクエスト一覧 mitmdump -nr /tmp/save  まとめ HTTPSのデバッグ時にめっちゃ便利</description>
-    </item>
-    
-    <item>
-      <title>CircleCIのキャッシュについて</title>
-      <link>https://yaasita.github.io/2018/10/19/circleci/</link>
-      <pubDate>Fri, 19 Oct 2018 03:03:35 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/10/19/circleci/</guid>
-      <description>先に結論だけ
- キャッシュは一度書き込むとupdate出来ない
- キャッシュクリアは名前を変えて対応する
-  以下具体例
-以下のようなキャッシュをした際に
-古いバージョンのライブラリが入ってしまった場合
-- restore_cache: keys: - v2-dependencies-{{ checksum &amp;quot;requirements.txt&amp;quot; }} - v2-dependencies- - run: name: install dependencies command: | python3 -m venv venv . venv/bin/activate pip install -r requirements.txt - save_cache: paths: - ./venv key: v2-dependencies-{{ checksum &amp;quot;requirements.txt&amp;quot; }}  これを解消しようとして、以下のようにしてもcacheはupdateされない
-- restore_cache: keys: - v2-dependencies-{{ checksum &amp;quot;requirements.txt&amp;quot; }} - v2-dependencies- - run: name: install dependencies command: | python3 -m venv venv .</description>
-    </item>
-    
-    <item>
-      <title>ubuntu18.04でDKIM設定</title>
-      <link>https://yaasita.github.io/2018/08/18/dkim/</link>
-      <pubDate>Sat, 18 Aug 2018 17:40:23 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/08/18/dkim/</guid>
-      <description>インストール apt install opendkim opendkim-tools  opendkim設定 mkdir /etc/postfix/dkim/ opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail # -d ドメイン # -s セレクタ chgrp opendkim /etc/postfix/dkim/* chmod g+r /etc/postfix/dkim/*  /etc/opendkim.conf
-Syslog yes LogWhy Yes UMask 007 Canonicalization relaxed/relaxed Mode sv Socket inet:8891@localhost PidFile /var/run/opendkim/opendkim.pid OversignHeaders From TrustAnchorFile /usr/share/dns/root.key UserID opendkim KeyTable file:/etc/postfix/dkim/keytable SigningTable file:/etc/postfix/dkim/signingtable  /etc/postfix/dkim/keytable
-mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private  /etc/postfix/dkim/signingtable
-example.net mail._domainkey.example.net  反映
-systemctl restart opendkim.service  postfix設定 以下追記</description>
-    </item>
-    
-    <item>
-      <title>AlwaysOnSSLがダメぽい</title>
-      <link>https://yaasita.github.io/2018/08/01/alwaysonssl-breaking/</link>
-      <pubDate>Wed, 01 Aug 2018 01:03:14 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/08/01/alwaysonssl-breaking/</guid>
-      <description>S/MIMEもSSL証明書も取れない
-(´；ω；｀)ﾌﾞﾜｯ
-トップページも繋がらないしもう駄目か・・・
-前回
-続き</description>
-    </item>
-    
-    <item>
-      <title>クライアント証明書&#43;HTTP2</title>
-      <link>https://yaasita.github.io/2018/07/29/h2-plus-client-auth/</link>
-      <pubDate>Sun, 29 Jul 2018 16:36:57 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/07/29/h2-plus-client-auth/</guid>
-      <description>SSLRequire は 非推奨みたいなので
-クライアント証明書とIP制限を今風に書き直す
-あとCNとかも検証するようにした
-こんな感じ
-&amp;lt;Directory /var/www&amp;gt; Options Indexes FollowSymLinks MultiViews ExecCGI SSLVerifyClient optional &amp;lt;RequireAny&amp;gt; Require ip 192.168.100.0/24 &amp;lt;RequireAll&amp;gt; Require ssl-verify-client Require expr &amp;quot;%{SSL_CLIENT_S_DN_CN} == &#39;hogeclient&#39;&amp;quot; &amp;lt;/RequireAll&amp;gt; &amp;lt;/RequireAny&amp;gt; &amp;lt;/Directory&amp;gt;  あと
-Protocols http/1.1 h2  のようにhttp/1.1を先にしないと
-curl: (92) HTTP/2 stream 1 was not closed cleanly: HTTP_1_1_REQUIRED (err 13)  こんなエラーになるので注意
-参考リンク
- reqexprの説明
- mod_ssl変数一覧
-  </description>
-    </item>
-    
-    <item>
-      <title>GCPでAWS Batch的な事をやる</title>
-      <link>https://yaasita.github.io/2018/06/20/aws-batch-gcp/</link>
-      <pubDate>Wed, 20 Jun 2018 23:46:45 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/06/20/aws-batch-gcp/</guid>
-      <description> こんな感じにS3になんか置いて、ファイルがあったら起動して、終わったらshutdownするみたいな奴
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   GCPはインスタンスの起動停止が早いので結構良い感じ
-Lambda 処理するファイルが存在して、GCPが動いてたら起動かける
-
-GCP キュー代わりのファイル消してから
-bootしてから3分後に実行（ちょっとインターバルないとインスタンスに入るのが大変になる）
-処理の最後でshutdownすればOK
-/etc/systemd/system/gcp-calc.service
-[Unit] Description=gcp-calc Wants=network-pre.target After=multi-user.target [Install] WantedBy=multi-user.target [Service] ExecStart=/root/run.sh Type=oneshot  /etc/systemd/system/gcp-calc.timer
-[Unit] Description=gcp calc [Timer] OnBootSec=3min [Install] WantedBy=timers.target  </description>
-    </item>
-    
-    <item>
-      <title>クライアント証明書とIP制限</title>
-      <link>https://yaasita.github.io/2018/05/26/client-auth/</link>
-      <pubDate>Sat, 26 May 2018 03:49:43 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/05/26/client-auth/</guid>
-      <description>外からはクライアント証明書を要求して、中からは素通しさせたいケース
-Apache2.4ならこんな感じ
-SSLCACertificateFile /etc/apache2/ssl/example.crt &amp;lt;Directory /var/www&amp;gt; Options Indexes FollowSymLinks MultiViews ExecCGI Require ip 192.168.100.0/24 SSLVerifyClient require Satisfy any &amp;lt;/Directory&amp;gt;  curlで確認
-curl https://example.net --key client.key --cert cert.crt --http1.1  作るときは /usr/lib/ssl/misc/CA.pl -newreq とかで適当に作る
-鍵とセットなら良いのでcommon nameとかは適当
-参考リンク プライベートCA作るまで</description>
-    </item>
-    
-    <item>
-      <title>GoogleのCloud SDKの署名鍵エラー</title>
-      <link>https://yaasita.github.io/2018/04/07/google-cloud-sdk-gpg/</link>
-      <pubDate>Sat, 07 Apr 2018 02:24:37 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/04/07/google-cloud-sdk-gpg/</guid>
-      <description>GCP(google cloud platform)の署名鍵が変わってた
-つーか元のgpg鍵の有効期限が切れてる
-取得:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease [6,372 B] エラー:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease 公開鍵を利用できないため、以下の署名は検証できませんでした: NO_PUBKEY 6A030B21BA07F4FB  なんか探してみると2018年4月1日に作った鍵にしてるみたい
-gpg2 --search-keys BA07F4FB gpg: data source: http://gpg.NebrWesleyan.edu:11371 (1) Google Cloud Packages Automatic Signing Key &amp;lt;gc-team@google.com&amp;gt; 2048 bit RSA key BA07F4FB, created: 2018-04-01, expires: 2021-03-31  ということで追加して事なきを得た
-gpg2 -a --export BA07F4FB | apt-key add - apt-key del A7317B0F  </description>
-    </item>
-    
-    <item>
-      <title>Let&#39;s Encryptのワイルドカード</title>
-      <link>https://yaasita.github.io/2018/03/31/lets-wildcard/</link>
-      <pubDate>Sat, 31 Mar 2018 03:38:25 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/03/31/lets-wildcard/</guid>
-      <description>debian testingに
-certbot 0.22.2が来てたので使ってみる
-とりあえずこんな感じで行った
-まだサーバを指定しなきゃいけないけど、これでワイルドカード手に入るのは良い
-apt install certbot certbot certonly --manual -d yaasita.net -d *.yaasita.net --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory  </description>
-    </item>
-    
-    <item>
-      <title>AlwaysOnSSL</title>
-      <link>https://yaasita.github.io/2018/03/21/alwaysonssl/</link>
-      <pubDate>Wed, 21 Mar 2018 01:37:01 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/03/21/alwaysonssl/</guid>
-      <description>letsencryptとは違う無料のSSLサービス使ってみた
-その名も AlwaysOnSSL
-サーバ証明書 使って見た感想
- CAAレコード違反のレポートメールは飛んでこなかった
- 証明書の期間は1年間
- CTログはComodo CA に書くみたいでLetsencryptより少ない
- ワイルドカードは無理
- SANに複数のドメイン入れるのも無理
-  チェインはこんな感じ
-DigiCert Global Root G2 |_ AlwaysOnSSL TLS RSA CA G1 |_ yourdomain.example.com  DigiCertなんで大抵のブラウザならOKなはず
-curlで簡単に叩けるのでcertbotが入らない場合はこっちの方が良いかも
-certbotが入るならLetsencryptの方が良いと思う
-S/MIME  有効期間は1年間
- CSR作って署名してもらうので、秘密鍵は自分で作る安心設計
-  チェーンはこんな感じ
-Symantec Class 1 Public Primary CertificationAuthority - G6 |_ Symantec Class 1 Individual Subscriber CA - G7  普通にメール受信できるなら作ってもらえるとても良い
-CNにメールアドレス入れてCSR作ってからVerifyする
-そんで、My Certificatesから中間証明書と証明書ダウンロードしてpkcs12にまとめればOK
-openssl pkcs12 -export -in merged.</description>
-    </item>
-    
-    <item>
-      <title>プライベートCA作るまで</title>
-      <link>https://yaasita.github.io/2018/01/31/private-ca/</link>
-      <pubDate>Wed, 31 Jan 2018 18:04:22 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/01/31/private-ca/</guid>
-      <description>Debian9でやってみた
-cd /etc/ssl /usr/lib/ssl/misc/CA.pl -newca /usr/lib/ssl/misc/CA.pl -newreq /usr/lib/ssl/misc/CA.pl -sign # /tmp/ca.pemを入れてもらう openssl x509 -outform PEM -in demoCA/cacert.pem -out /tmp/ca.pem # 変換 openssl x509 -outform PEM -in newcert.pem -out /etc/nginx/ssl/hogehoge.crt # パスフレーズ解除 openssl rsa -in newkey.pem -out /etc/nginx/ssl/hogehoge.key  データベースおかしくなったら
-index.txt空っぽすればOK
-rm demoCA/index.txt touch demoCA/index.txt  /etc/ssl/openssl.cnf は こんな感じ
-証明書の管理は
-chromeなら設定 =&amp;gt; 詳細設定 =&amp;gt; SSLの管理からやる
-windowsの場合はファイル名を指定して実行 =&amp;gt; certlm.msc と同じこと
-あと注意点として、chromeはsubjectAltNameを見るので注意
-(EnableCommonNameFallbackForLocalAnchorsってやつを設定するとできるようだけど)</description>
-    </item>
-    
-    <item>
-      <title>MonaCoinのマイニング</title>
-      <link>https://yaasita.github.io/2017/12/03/mona-coin/</link>
-      <pubDate>Sun, 03 Dec 2017 01:30:08 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/12/03/mona-coin/</guid>
-      <description>モナコインをマイニングしてみる
-cpuminer-multiでやってみた
-スコア  IDCF Cloud (Light.S1) メモリ1GB 仮想1CPU =&amp;gt; 17.48 kH/s
- 自宅PC Core i5-4460 @ 3.20GHz 4コア メモリ 4GB =&amp;gt; 376 kH/s
- ノートパソコン LB-C110B Celeron 1037U 2コア/1.80GHz メモリ8GB =&amp;gt; 91 kH/s
-  まとめ CPUマイニングなんてやるもんじゃない←結論</description>
     </item>
     
   </channel>

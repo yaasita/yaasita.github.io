@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,29 +55,21 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    <p>gpgで副鍵(subkey)を新しく作ったとする(addkey)<br />
+    <p>gpgで副鍵(subkey)を新しく作ったとする(addkey)<br>
 でいざ使うと思ったら、やむ負えない事情により古い副鍵で暗号化しなきゃいけなくなったとする</p>
-
 <p>こんな感じの状態ね</p>
-
 <pre><code>pub   rsa2048 2017-04-09 [SC]
       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
       uid           [ultimate] yamasita &lt;yamasita@example.net&gt;
       sub   rsa2048 2017-04-09 [E]
       sub   elg2048 2017-12-04 [E]
-</code></pre>
-
-<p>んで、普通にgpg -e で暗号化すると新しい elg2048 の方が使われてしまう<br />
+</code></pre><p>んで、普通にgpg -e で暗号化すると新しい elg2048 の方が使われてしまう<br>
 rsa2048を使いたくなったらこんな感じでrsa2048の方のIDを指定して暗号化する</p>
-
 <pre><code>gpg --recipient BBBBBBBBBBB12345! -v -e memo
 </code></pre>
-
 <p>IDは&ndash;edit-keysとかやれば見れるお</p>
-
-<p>あと、注意点として副鍵は追加しても古い鍵はしばらく残しておくこと<br />
+<p>あと、注意点として副鍵は追加しても古い鍵はしばらく残しておくこと<br>
 送信側がすぐ、新しい鍵を入れてくれるとも限らないし古い鍵で暗号化されたものを復号化できなくなる</p>
-
 <p>主鍵は、副鍵を署名するだけのものであって、副鍵の秘密鍵は取っておかなきゃいけないのです</p>
 
   </div>
@@ -212,7 +204,7 @@ rsa2048を使いたくなったらこんな感じでrsa2048の方のIDを指定�
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -220,7 +212,7 @@ rsa2048を使いたくなったらこんな感じでrsa2048の方のIDを指定�
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -303,7 +295,7 @@ rsa2048を使いたくなったらこんな感じでrsa2048の方のIDを指定�
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

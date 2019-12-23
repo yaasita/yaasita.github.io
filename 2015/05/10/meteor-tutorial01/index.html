@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,119 +55,88 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<p>話題のMeteorを触ってみた<br />
-discovermeteorっていうチュートリアル本があるのでやってみる<br />
+    <p>話題のMeteorを触ってみた<br>
+discovermeteorっていうチュートリアル本があるのでやってみる<br>
 なんか原文は有料になってる気がするけど翻訳版は読めるみたい</p>
-
 <p><a href="http://ja.discovermeteor.com/">http://ja.discovermeteor.com/</a></p>
-
 <p>とりあえず最初の方だけ</p>
-
 <h2 id="getting-started">Getting Started</h2>
-
-<p>インストール<br />
+<p>インストール<br>
 途中でsudoするので出来るようにしておく</p>
-
 <pre><code>curl https://install.meteor.com | sh
 </code></pre>
-
 <p>最初に以下のコマンドを発行して作る</p>
-
 <pre><code>meteor create microscope
 </code></pre>
-
-<p>ちなみにこの<code>.meteor/.gitignore</code>に書かれてる<br />
+<p>ちなみにこの<code>.meteor/.gitignore</code>に書かれてる<br>
 <code>.meteor/.local/</code>の中を消せばリセットされる</p>
-
 <p>パッケージの追加</p>
-
 <pre><code>meteor add mizzao:bootstrap-3
 meteor add underscore
 </code></pre>
-
 <p>ディレクトリ追加</p>
-
 <pre><code>mkdir server client public lib
 </code></pre>
-
 <p>実行について</p>
-
 <ul>
-<li>server =&gt; サーバ上でのみ実行<br /></li>
-<li>client =&gt; クライアント上でのみ実行<br /></li>
-<li>それ以外はどちらでも動く<br /></li>
-<li>publicには静的ファイルを置く<br /></li>
-<li>libはどのファイルよりも先に実行される<br /></li>
-<li><code>main.*</code>というファイル名は一番最後に実行される<br />
-<br /></li>
+<li>server =&gt; サーバ上でのみ実行</li>
+<li>client =&gt; クライアント上でのみ実行</li>
+<li>それ以外はどちらでも動く</li>
+<li>publicには静的ファイルを置く</li>
+<li>libはどのファイルよりも先に実行される</li>
+<li><code>main.*</code>というファイル名は一番最後に実行される</li>
 </ul>
-
 <p>CSSを追加</p>
-
 <pre><code>mkdir client/stylesheets
 vi client/stylesheets/style.css
 </code></pre>
-
 <p><a href="https://github.com/yaasita/meteor-microscope/tree/88cc746c372b13dae6a669c014c764320a8e776e">https://github.com/yaasita/meteor-microscope/tree/88cc746c372b13dae6a669c014c764320a8e776e</a></p>
-
 <h2 id="deployment">Deployment</h2>
-
 <p>deployしてみる</p>
-
 <pre><code>meteor deploy yaasita.meteor.com
 </code></pre>
-
-<p>なんかこれでできるぽい<br />
+<p>なんかこれでできるぽい<br>
 modulusというのを使うのがいいらしい</p>
-
 <pre><code>npm install -g modulus
 ndenv rehash
 modulus login
 modulus project create
 </code></pre>
-
 <p>modulusでmongodb使うにはダッシュボードからDATABASESを選んでいける</p>
-
 <pre><code>modulus env set MONGO_URL &quot;mongodb://&lt;user&gt;:&lt;pass&gt;@mongo.onmodulus.net:27017/&lt;database_name&gt;&quot;
 modulus deploy
 </code></pre>
-
-<p>そんで、案内されるURLから見れるはず・・・なんだけど見れないな<br />
-次は普通のサーバにdeployする方法<br />
+<p>そんで、案内されるURLから見れるはず・・・なんだけど見れないな<br>
+次は普通のサーバにdeployする方法<br>
 meteor upというのを使うらしい</p>
-
 <pre><code>npm install -g mup
 </code></pre>
-
 <p>おススメはdeploy用のディレクトリを分けることらしいのでその通りやってみる</p>
-
 <pre><code>mkdir ~/microscope-deploy
 cd ~/microscope-deploy
 mup init
 </code></pre>
-
-<p>mup.jsonとsettings.jsonができた<br />
+<p>mup.jsonとsettings.jsonができた<br>
 まずmup.jsonを設定する</p>
-
 <ul>
-<li>サーバ認証<br /></li>
-<li>MongoDB<br /></li>
-<li>deploy先のフォルダPATH指定を行う<br /></li>
-
-<li><p>ROOT_URLあたりの設定</p>
-
-<p>mup setup<br />
-mup deploy</p></li>
+<li>
+<p>サーバ認証</p>
+</li>
+<li>
+<p>MongoDB</p>
+</li>
+<li>
+<p>deploy先のフォルダPATH指定を行う</p>
+</li>
+<li>
+<p>ROOT_URLあたりの設定</p>
+<p>mup setup<br>
+mup deploy</p>
+</li>
 </ul>
-
 <p>で出来るはずなんだけどなんかうまく行かんかった</p>
-
 <p>今日はここまで</p>
-
-<h2 id="参考リンク">参考リンク</h2>
-
+<h2 id="heading">参考リンク</h2>
 <p><a href="http://qiita.com/m0a/items/90d05c22353d9c271fbf">http://qiita.com/m0a/items/90d05c22353d9c271fbf</a></p>
 
   </div>
@@ -306,7 +275,7 @@ mup deploy</p></li>
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -314,7 +283,7 @@ mup deploy</p></li>
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -397,7 +366,7 @@ mup deploy</p></li>
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

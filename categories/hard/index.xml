@@ -5,263 +5,301 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 19 Dec 2018 01:06:14 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 23 Dec 2019 05:58:32 +0900</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>スマホ変えた</title>
-      <link>https://yaasita.github.io/2018/12/19/sumaho/</link>
-      <pubDate>Wed, 19 Dec 2018 01:06:14 +0900</pubDate>
+      <title>chromebookが最高だった</title>
+      <link>https://yaasita.github.io/2019/12/23/chromebook/</link>
+      <pubDate>Mon, 23 Dec 2019 05:58:32 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2018/12/19/sumaho/</guid>
-      <description>Moto E5 2GB/16GBってやつに変更した
-Android8まで上がった
-ついでにSIMもIIJ mioからLINEモバイルに変えた</description>
+      <guid>https://yaasita.github.io/2019/12/23/chromebook/</guid>
+      <description>ASUS の C434TA-AI0084 を買ったのでレビュー
+chromeOS  起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある  解除がちょっと遅い10秒くらい待たされる   chromeの複数ユーザー機能が使えない  多重ログイン機能はあるけどちょっと微妙  別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能      ディスプレイ  タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 バックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗  テザリング  Moto E5 とbluetoothでのテザリングが出来なかった  とりあえずUSBテザリングは刺すだけで使えたので良しとしてます    キーボード  Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない  Androidアプリ  ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない  Linux環境 OS  Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり  バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい   USB共有機能あり /opt/google/cros-containers/bin/.</description>
     </item>
     
     <item>
-      <title>電源を変えた</title>
-      <link>https://yaasita.github.io/2018/12/17/power-supply/</link>
-      <pubDate>Mon, 17 Dec 2018 00:02:37 +0900</pubDate>
+      <title>GCP Cloud Functions内からサービスアカウントのtoken取る</title>
+      <link>https://yaasita.github.io/2019/12/08/service-account-in-cf/</link>
+      <pubDate>Sun, 08 Dec 2019 05:12:12 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2018/12/17/power-supply/</guid>
-      <description>寒いせいでPCの調子が悪くなった
-ANTEC(アンテック) NeoECO Classicシリーズ 650Wモデル NE650C
-って3年くらい使った電源が、寒い日にうまくついてくれない。
-（電源つけて2,3秒で再起動を繰り返す)
-なので
-KRPW-AK750W/88+ という玄人志向のやつに変更した
-8000円くらいのやつ</description>
-    </item>
-    
-    <item>
-      <title>PS Vita 3.67アップデートでTLS1.2対応</title>
-      <link>https://yaasita.github.io/2017/11/29/vita-new-version/</link>
-      <pubDate>Wed, 29 Nov 2017 23:20:37 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/11/29/vita-new-version/</guid>
-      <description>3.65時点だと対応してなかったけど、3.67でTLS1.2対応したようです🎉
-公式には
- システムソフトウェアにおいて、動作の安定性を改善しました。
- としか書いてないけど</description>
-    </item>
-    
-    <item>
-      <title>PS vita向けSSL設定</title>
-      <link>https://yaasita.github.io/2017/06/13/vita-ssl/</link>
-      <pubDate>Tue, 13 Jun 2017 01:57:49 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/06/13/vita-ssl/</guid>
-      <description>PlayStation Vitaの内蔵ブラウザは
-TLSv1.1, TLSv1.2
-が使えないので、 TLSv1 を使うこと
-システムソフトウェア 3.65 時点</description>
-    </item>
-    
-    <item>
-      <title>MacBook買ったのでサポートお願いした</title>
-      <link>https://yaasita.github.io/2017/01/09/mac-personal-setup/</link>
-      <pubDate>Mon, 09 Jan 2017 16:27:40 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/01/09/mac-personal-setup/</guid>
-      <description>13インチ MacBook Air 1.6GHzデュアルコアIntel Core i5 整備済製品 (\84,000)で買ったのでパーソナルセットアップをお願いしてみた
-時間は30分だったけど、電話でいろいろ質問できて良い
-http://www.apple.com/jp/retail/personalsetup/</description>
-    </item>
-    
-    <item>
-      <title>最近買ったスマホ</title>
-      <link>https://yaasita.github.io/2016/10/22/smart-phone/</link>
-      <pubDate>Sat, 22 Oct 2016 22:54:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/10/22/smart-phone/</guid>
-      <description>エイスース SIMフリースマートフォン ASUS ZenFone 2 Laser（Qualcomm Snapdragon 410/メモリ 2GB） 16GB ブラック ZE500KL-BK16  18,672円だった
-Androidは6.0.1まで上がった</description>
-    </item>
-    
-    <item>
-      <title>HDDの不良セクタ埋める</title>
-      <link>https://yaasita.github.io/2016/03/26/hdd_bad_sector/</link>
-      <pubDate>Sat, 26 Mar 2016 00:43:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/03/26/hdd_bad_sector/</guid>
-      <description>HDDの不良セクタ代替処理を自動化
-Reallocated_Sector_Ctが残ってれば使える手法
-https://github.com/yaasita/hdd_badsector
-使い方
-smartctl -a /dev/sdc | ./hdd_check.pl /dev/sdc  </description>
-    </item>
-    
-    <item>
-      <title>systemdでの電源管理</title>
-      <link>https://yaasita.github.io/2016/01/06/acpi/</link>
-      <pubDate>Wed, 06 Jan 2016 00:47:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/01/06/acpi/</guid>
-      <description>Arch Linuxのwikiが詳しかった
-/etc/systemd/logind.conf
-あたりを直す
-ノートPC閉じたときのSuspendを止めたかったから↓みたいにした
-HandleSuspendKey=ignore HandleLidSwitch=ignore  </description>
-    </item>
-    
-    <item>
-      <title>RAID5のリビルド中にもう一個壊れるってやつ</title>
-      <link>https://yaasita.github.io/2015/10/17/raid5_fail/</link>
-      <pubDate>Sat, 17 Oct 2015 16:52:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/10/17/raid5_fail/</guid>
-      <description>リビルド中にもう一個壊れてRAID5が終わった話
-/dev/md0: Version : 1.2 Creation Time : Fri Jan 6 12:24:44 2012 Raid Level : raid5 Array Size : 5860535808 (5589.04 GiB 6001.19 GB) Used Dev Size : 1953511936 (1863.01 GiB 2000.40 GB) Raid Devices : 4 Total Devices : 4 Persistence : Superblock is persistent Update Time : Sat Oct 17 16:59:57 2015 State : clean, FAILED Active Devices : 2 Working Devices : 3 Failed Devices : 1 Spare Devices : 1 Layout : left-symmetric Chunk Size : 512K Name : hoge:0 UUID : 55b9d6ea:4627c873:a0bcab05:a4f0c25d Events : 6755 Number Major Minor RaidDevice State 5 8 49 0 active sync /dev/sdd1 2 0 0 2 removed 2 8 33 2 active sync /dev/sdc1 6 0 0 6 removed 4 8 1 - faulty /dev/sda1 6 8 17 - spare /dev/sdb1  HDD一台が壊れたので /dev/sdb1を追加中にアレイの構成Diskがもう一個壊れた</description>
-    </item>
-    
-    <item>
-      <title>最近買ったスマホ</title>
-      <link>https://yaasita.github.io/2015/07/26/xperia/</link>
-      <pubDate>Sun, 26 Jul 2015 02:29:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/07/26/xperia/</guid>
-      <description>EXPANSYSで買った
-Sony Xperia E4g E2003 (Unlocked LTE, 8GB, White) 18,737円  SIMフリーはIIJ MIO
-IIJ IIJmio SIM ウェルカムパック microSIM ( SMS 機能付き ) 版 1,900円  </description>
-    </item>
-    
-    <item>
-      <title>MACアドレスのベンダーを調べる</title>
-      <link>https://yaasita.github.io/2014/08/25/mac-address-search/</link>
-      <pubDate>Mon, 25 Aug 2014 23:54:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2014/08/25/mac-address-search/</guid>
-      <description>http://standards.ieee.org/develop/regauth/oui/public.html
-MACアドレスの上位3バイトを検索窓に入れる
-例) 00-22-68</description>
-    </item>
-    
-    <item>
-      <title>HDDの故障が疑われるときにやったこと</title>
-      <link>https://yaasita.github.io/2014/08/16/hdd-fail/</link>
-      <pubDate>Sat, 16 Aug 2014 19:10:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2014/08/16/hdd-fail/</guid>
-      <description>なんかrsyncでバックアップしようとすると以下のエラーが出るようになった
-rsync: read errors mapping &amp;quot;/home/yamasita/Desktop/hogehoge.dat&amp;quot;: Input/output error (5) ERROR: /home/yamasita/Desktop/hogehoge.dat failed verification -- update discarded.  まずbadblocksで調べてみる
-badblocks /home/yamasita/Desktop/hogehoge.dat  ダメそう
-とりあえず、fsckをかけてみる
-/のパーティションなのでfsckの間隔を調整
-dumpe2fs -h /dev/sda1 | egrep -i &#39;check|mount count&#39; tune2fs -i 30d /dev/sda1  これでとりあえず不良セクタ退避させた
-過去記事
-HDDが故障したときにやったこと
+      <guid>https://yaasita.github.io/2019/12/08/service-account-in-cf/</guid>
+      <description>Cloud Functionsからサービスアカウントのアクセストークンをどうやって取るの？と疑問に思ったので調べた
+Google Compute Engineと同じ取り方でOK
+&amp;quot;use strict&amp;quot;; const fetch = require(&amp;quot;node-fetch&amp;quot;); exports.handler = async (req, res) =&amp;gt; { const url = &amp;quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&amp;quot; + &amp;quot;[サービスアカウント名]/token&amp;quot;; const result = await fetch(url, { method: &amp;quot;GET&amp;quot;, headers: { &amp;quot;Metadata-Flavor&amp;quot;: &amp;quot;Google&amp;quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&amp;quot;OK&amp;quot;); };  なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
+
+まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &amp;ldquo;Function Identity&amp;quot;とかクリックするとちゃんと日本語版あるんですよね
+なんかメニューがバグってるのかな・・・
+とりあえず英語版から探すのをオススメします&amp;hellip;
 参考リンク
-http://nfolamp.wordpress.com/2010/10/25/dumpe2fstune2fs-manipulating-the-ext-fs-auto-check-parameters/</description>
+ 関数ID Compute Metadata Server   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].</description>
     </item>
     
     <item>
-      <title>itunes入れるとDVDドライブが認識しない</title>
-      <link>https://yaasita.github.io/2014/07/12/itunes-dvd-device/</link>
-      <pubDate>Sat, 12 Jul 2014 23:54:00 +0900</pubDate>
+      <title>GCPでアクセストークンを取得する</title>
+      <link>https://yaasita.github.io/2019/11/14/gcp-access-token/</link>
+      <pubDate>Thu, 14 Nov 2019 22:32:41 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/07/12/itunes-dvd-device/</guid>
-      <description>レジストリの以下のキーを消すとうまくいった
-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E965-E325-11CE-BFC1-08002BE10318}  http://michisugara.jp/archives/2013/op_drive_failure.html</description>
+      <guid>https://yaasita.github.io/2019/11/14/gcp-access-token/</guid>
+      <description>ほとんどのサービスは クライアントライブラリ を使えば
+export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json  みたいに環境変数を設定するだけで良いのだが、Cloud Build 等は access tokenを取得して叩く必要がある
+という事でGCPのサービスアカウントからアクセストークンを取得するコード
+ スコープ一覧はこちら
+https://developers.google.com/identity/protocols/googlescopes
+アクセストークンのテストは DLP とかがお手軽で良いかな
+参考リンク  jose API Document Using OAuth 2.0 for Server to Server Applications  </description>
     </item>
     
     <item>
-      <title>hardware checkコマンド</title>
-      <link>https://yaasita.github.io/2014/05/25/hardware_check/</link>
-      <pubDate>Sun, 25 May 2014 15:20:00 +0900</pubDate>
+      <title>osu!taikoのskin</title>
+      <link>https://yaasita.github.io/2019/10/27/osu/</link>
+      <pubDate>Sun, 27 Oct 2019 03:00:31 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/05/25/hardware_check/</guid>
-      <description> lshwだけじゃない
-PC構成を把握するコマンド
-ハードウェアチェックコマンド  hwinfo --short hdparm -i /dev/sda inxi -Fx lsscsi  lsscsiがいい感じ
-参考リンク  http://www.binarytides.com/linux-commands-hardware-info/
-  </description>
+      <guid>https://yaasita.github.io/2019/10/27/osu/</guid>
+      <description>osu!taikoのスキン
+これが一番良かった
+概要欄からダウンロードできる</description>
     </item>
     
     <item>
-      <title>無線LANとサスペンド機能の有効化</title>
-      <link>https://yaasita.github.io/2014/03/09/145/</link>
-      <pubDate>Sun, 09 Mar 2014 00:00:00 +0900</pubDate>
+      <title>AtCoder Beginner Contest 142のD問題</title>
+      <link>https://yaasita.github.io/2019/09/30/atcoder-abc142/</link>
+      <pubDate>Mon, 30 Sep 2019 05:05:34 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2014/03/09/145/</guid>
-      <description> 以下のパッケージとかを入れる
-firmware-linux-nonfree
-firmware-realtek
-lspci
-とか使ってハードウェアを調べること </description>
+      <guid>https://yaasita.github.io/2019/09/30/atcoder-abc142/</guid>
+      <description>問題: D - Disjoint Set of Common Divisors
+方針はユークリッドの互除法で最大公約数を出して、最大公約数を素因数分解
+存在する素数の数+1(今回は1もお互いに素の数として含めるため)でOKぽい
+perlで書いてみる
+ 解説動画</description>
     </item>
     
     <item>
-      <title>smartdでHDD監視</title>
-      <link>https://yaasita.github.io/2013/08/29/494/</link>
-      <pubDate>Thu, 29 Aug 2013 00:00:00 +0900</pubDate>
+      <title>systemd timerはちゃんと動いてる？</title>
+      <link>https://yaasita.github.io/2019/09/29/systemd-timer/</link>
+      <pubDate>Sun, 29 Sep 2019 16:51:09 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/08/29/494/</guid>
-      <description> インストール
-apt-get install smartmontools
+      <guid>https://yaasita.github.io/2019/09/29/systemd-timer/</guid>
+      <description>systemdタイマーがちゃんと動いてるか確認したほうが良いよというお話
+systemctl list-timers --allコマンドで一覧が見れるあれです
+debian10だと /etc/cron.daily にあるスクリプトでこんな感じに書かれてたら、systemd timerの方を使ってる
+if [ -d /run/systemd/system ]; then exit 0 fi  前回 と同様にノートパソコンのバッテリー稼働と誤って判断されることに起因する問題
+例えばlogrotateとかみると
+systemctl cat logrotate  こんな一文がある
+ConditionACPower=true  これはバッテリー駆動の時は動かさないって意味らしいんだけど、どうも判定が狂ってるみたいでずっと実行されなかった
+なので、以下のコマンドでoverride.conf作って判定を無効化した
+systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower=  というわけで
+cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
+journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  とりあえず分かった、バッテリー時の判定が入ってるtimer
+ apt-daily-upgrade man-db logrotate anacron apt-daily  </description>
+    </item>
+    
+    <item>
+      <title>ビリビリ動画とcrunchyrollのIP制限をGCPで検証</title>
+      <link>https://yaasita.github.io/2019/09/14/anime-ip-block/</link>
+      <pubDate>Sat, 14 Sep 2019 22:21:43 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/09/14/anime-ip-block/</guid>
+      <description>bilibili動画とcrunchyrollのIP制限はどんな感じなのか
+GCPの各リージョンからアクセスして試してみる
+rttは自宅から該当サーバーまでのpingしたときの平均値
+なのでISPによって全然違うと思うので参考値ということで
+   region bilibili crunchyroll rtt(ms)     asia-east1 (台湾) ng ok 60.149   asia-east2 (香港) ng ok 76.986   asia-northeast1 (東京) ng ok 29.624   asia-northeast2 (大阪) ng ok 37.401   asia-south1 (ムンバイ) ng ok 144.055   asia-southeast1 (シンガポール) ng ok 89.755   australia-southeast1 (シドニー) ng ok 122.193   europe-north1 (フィンランド) ng ok 256.714   europe-west1 (ベルギー) ng ok 229.</description>
+    </item>
+    
+    <item>
+      <title>on_ac_powerコマンドについて</title>
+      <link>https://yaasita.github.io/2019/08/16/on-ac-power/</link>
+      <pubDate>Fri, 16 Aug 2019 04:45:45 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/08/16/on-ac-power/</guid>
+      <description>debian10にした関係でLinuxネタが続く
+PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある
+そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる
+例えば、/etc/cron.daily/mlocate の場合
+if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi  こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
+んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
+このままだと永遠にlocateコマンドが使えないので、divertで退避させた
+dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power  おしまい</description>
+    </item>
+    
+    <item>
+      <title>1から100の偶数の和を求めるやつ</title>
+      <link>https://yaasita.github.io/2019/08/15/sum-even-number/</link>
+      <pubDate>Thu, 15 Aug 2019 04:10:11 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/08/15/sum-even-number/</guid>
+      <description>「1から100の偶数の和を求めるワンライナー」まとめ
+perlでやってみる
+perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;eval&amp;quot;say @{[grep{$_%2==0}1..100]}&amp;quot;;&#39;  4つ思いついた
+結論 simple is best</description>
+    </item>
+    
+    <item>
+      <title>各種サーバの中間証明書の扱い</title>
+      <link>https://yaasita.github.io/2019/08/14/ssl-capath/</link>
+      <pubDate>Wed, 14 Aug 2019 10:20:33 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/08/14/ssl-capath/</guid>
+      <description>中間証明書をどう設定するか問題
+postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&#39;s Encryptの場合こんな感じ
+smtpd_tls_CAfileに中間証明書を指定する
+smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
+dovecot 10-ssl.conf
+ssl_ca = &amp;lt;/etc/letsencrypt/live/example.net/chain.pem  これはダメ
+この設定はクライアント証明書用ですので
+正しくは、こんな感じに、まとめたやつを指定すればOK
+ssl_cert = &amp;lt;/etc/letsencrypt/live/example.net/fullchain.pem  apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
+SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem  dovecot同様に中間証明書もまとめて指定する
+まとめ この問題はスマホのK-9 Mailでメール読もうとしたときに判明した
+(突然CertPathValidatorExceptionって怒られた)
+thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね
 
-/etc/default/smartmontoolsの以下の行を有効にする
-start_smartd=yes
-
-/etc/smartd.confを編集
-DEVICESCANをコメントアウトして設定を書く
-#DEVICESCAN -d removable -n standby -m root -M exec /usr/share/smartmontools/smartd-runner
-/dev/sda -a -d sat -o on -S on -s (S/../.././02|L/../../6/03) -m hoge@example.com
-
-こうするとメールのテストができるらしい
-/dev/sda -a -d sat -o on -S on -s (S/../.././02|L/../../6/03) -m hoge@example.com -M test
-
-参考リンク
-http://www.geocities.jp/sugachan1973/doc/funto57.html </description>
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
+openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
     </item>
     
     <item>
-      <title>Debian WheezyにRTL8111/8168Bのドライバインストール</title>
-      <link>https://yaasita.github.io/2013/08/25/515/</link>
-      <pubDate>Sun, 25 Aug 2013 00:00:00 +0900</pubDate>
+      <title>虫よけスプレー</title>
+      <link>https://yaasita.github.io/2019/07/29/musiyoke/</link>
+      <pubDate>Mon, 29 Jul 2019 03:42:37 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/08/25/515/</guid>
-      <description> Realtekのドライバはインストールしておいたほうがいいみたい
-firmware-realtekってのがnon-freeにあったからaptで入る
-ethtool -i eth0
-lspci | grep Realtek
+      <guid>https://yaasita.github.io/2019/07/29/musiyoke/</guid>
+      <description>虫除けスプレーで最近買ったこれが良かった
+ベタベタしないので気にならない
+フマキラー SKIN VAPEってやつかな
+商品名はスキンベープミスト　200mlかも
 
-参考リンク
-http://cskimura.blogspot.jp/2010/06/rtl81118168b-on-debian.html </description>
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   そういや虫よけ剤に入ってるDEETって薬はなぜ虫が寄り付かないか謎らしい</description>
     </item>
     
     <item>
-      <title>LinuxでWake On Lanを設定する</title>
-      <link>https://yaasita.github.io/2013/08/18/556/</link>
-      <pubDate>Sun, 18 Aug 2013 00:00:00 +0900</pubDate>
+      <title>例のS3署名バージョン2について</title>
+      <link>https://yaasita.github.io/2019/06/25/s3v2/</link>
+      <pubDate>Tue, 25 Jun 2019 00:31:08 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/08/18/556/</guid>
-      <description> WOLの設定は以下参照
-http://80286.blog62.fc2.com/blog-entry-37.html </description>
+      <guid>https://yaasita.github.io/2019/06/25/s3v2/</guid>
+      <description>AWS S3の署名バージョン騒動
+大丈夫ぽいけど一応調べた時につかったスクリプト
+CloudTrailでログを有効化してからお使いください
+ </description>
     </item>
     
     <item>
-      <title>X環境でのDPMS</title>
-      <link>https://yaasita.github.io/2013/04/20/989/</link>
-      <pubDate>Sat, 20 Apr 2013 00:00:00 +0900</pubDate>
+      <title>Cloud Runがすごく良い</title>
+      <link>https://yaasita.github.io/2019/05/29/cloud-run/</link>
+      <pubDate>Wed, 29 May 2019 21:42:23 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/04/20/989/</guid>
-      <description> xset -q
-で確認
-xset dpms 0 0 0 とかで設定できるのか
-なるほどね
-参考リンク
-https://forums.ubuntulinux.jp/viewtopic.php?id=1732 </description>
+      <guid>https://yaasita.github.io/2019/05/29/cloud-run/</guid>
+      <description>GCPのCloud Runがめっちゃ便利
+覚えなきゃいけないルールは2つ
+ Dockerにする事 環境変数 $PORT のポート番号でlistenしてレスポンスを返す事  これだけ
+コマンドとかはこの辺見ればすぐできると思います
+あと、Chunked Transferみたいな仕組みで進捗を返すみたいなAPIは難しいかもしれない
+以下のようなプログラムでちょっとずつレスポンス返しても、バッファリングされてるみたいで、最後ドバっと返ってきた
+ </description>
     </item>
     
     <item>
-      <title>Huawei 新モデル E586 モバイル</title>
-      <link>https://yaasita.github.io/2013/01/29/1483/</link>
-      <pubDate>Tue, 29 Jan 2013 00:00:00 +0900</pubDate>
+      <title>PKCEをJavaScriptで実装する</title>
+      <link>https://yaasita.github.io/2019/04/29/pkce/</link>
+      <pubDate>Mon, 29 Apr 2019 01:23:20 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2013/01/29/1483/</guid>
-      <description> を買ってみた
-所謂、SIMフリーの無線LANルータ </description>
+      <guid>https://yaasita.github.io/2019/04/29/pkce/</guid>
+      <description>code_verifier から code_challenge の生成方法について調べた
+code_challenge_method=S256の場合は以下のような実装ロジックになる
+node.jsで書いた
+Oauth2のPKCE
+base64エンコードじゃなくてbase64urlエンコードなのが注意点
+ </description>
+    </item>
+    
+    <item>
+      <title>令和の対応に際して</title>
+      <link>https://yaasita.github.io/2019/04/25/reiwa/</link>
+      <pubDate>Thu, 25 Apr 2019 02:08:40 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/04/25/reiwa/</guid>
+      <description>techrachoの記事
+perlも追加でお願いします
+ </description>
+    </item>
+    
+    <item>
+      <title>tarの差分バックアップ</title>
+      <link>https://yaasita.github.io/2019/04/01/tar-backup/</link>
+      <pubDate>Mon, 01 Apr 2019 16:12:46 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/04/01/tar-backup/</guid>
+      <description>前回の続き
+でctime変化しちゃってどうしたか？
+ファイルサイズとファイル名を取っておいて差分を作ることにした
+ こんな感じのスクリプトで、ファイル名 + tab + ファイルサイズで保存する
+(厳密にやる場合はsha256とかで)
+そんで現在のファイルリストも取って、差分をとる
+diff -u previous.txt now.txt | egrep &amp;quot;^\+[^\+]&amp;quot; | perl -ple &#39;s/^\+//;s/\t.+//&#39; &amp;gt; tar.txt あとは-Tオプションで差分のファイルだけをtarで固める
+tar -cvaf hoge.tgz -T tar.txt </description>
+    </item>
+    
+    <item>
+      <title>tarの-gオプションについて</title>
+      <link>https://yaasita.github.io/2019/03/30/tar-g-option/</link>
+      <pubDate>Sat, 30 Mar 2019 02:32:25 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/03/30/tar-g-option/</guid>
+      <description>-g, &amp;ndash;listed-incremental
+という増分バックアップに使われるオプションについてどうやって判定してるか？
+それはctimeの変化を見ている
+ctimeの変化で気をつけなければいけないことはハードリンクによるバックアップ
+(rsync &amp;ndash;link-dest等)
+例えば、以下のようなファイルが存在し
+work/ `-- 1.txt  以下のコマンドを発行した場合
+tar -g resume -cvf work.tar work/  初回なので当然全部がバックアップされる
+このまま以下のコマンドを打てばディレクトリだけのバックアップになる(差分がないため)
+tar -g resume -cvf work.tar work/  しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう
+stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる  なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
+うまく増分バックアップができなくなる
+続き</description>
+    </item>
+    
+    <item>
+      <title>hugoアップデート</title>
+      <link>https://yaasita.github.io/2019/03/12/hugo-update/</link>
+      <pubDate>Tue, 12 Mar 2019 23:00:51 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/03/12/hugo-update/</guid>
+      <description>久々にhugoをアップデート v0.41 =&amp;gt; v0.54まで上げた
+ワーニング潰し アップデートに伴い
+.Prev と .Nextが非推奨になったぽい マニュアル, コミット
+なのでこれはそれぞれ以下のように修正すればOK(意味が逆なので分かりにくいけど)
+ .Prev =&amp;gt; .NextPage .Next =&amp;gt; .PrevPage  OGP設定 某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました
+上手く表示できてますか？
+修正箇所
+themes/hugo-theme-geppaku/layouts/partials/header.html
+ {{ if .IsHome }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Site.Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;website&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}&amp;quot; /&amp;gt; {{ else }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;article&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}{{ .Page.Dir }}&amp;quot; /&amp;gt; {{ end }} &amp;lt;meta property=&amp;quot;og:site_name&amp;quot; content=&amp;quot;{{ .</description>
+    </item>
+    
+    <item>
+      <title>Windows10のクリップボード履歴機能</title>
+      <link>https://yaasita.github.io/2019/03/10/clipboard/</link>
+      <pubDate>Sun, 10 Mar 2019 22:47:52 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/03/10/clipboard/</guid>
+      <description>Windows10に標準でクリップボード履歴機能が付いたらしい
+ https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html  Windows キー + Vで使えるようになる
+cliborの方が使いやすそうな気がするけど、しばらくこっち使ってみる</description>
+    </item>
+    
+    <item>
+      <title>AlwaysOnSSL終了のお知らせ</title>
+      <link>https://yaasita.github.io/2019/02/28/alwaysonssl/</link>
+      <pubDate>Thu, 28 Feb 2019 01:44:13 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2019/02/28/alwaysonssl/</guid>
+      <description>無料のSSL証明書AlwaysOnSSLがセキュリティ問題を指摘されてシャットダウンしたぽい
+AlwaysOnSSL web security issues
+S/MIME手に入るので良かったんだけどなぁ・・・
+前回</description>
     </item>
     
   </channel>

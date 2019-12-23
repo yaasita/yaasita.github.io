@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,15 +55,10 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<h2 id="インストール">インストール</h2>
-
+    <h2 id="heading">インストール</h2>
 <pre><code>apt install opendkim opendkim-tools
 </code></pre>
-
-<h2 id="opendkim設定">opendkim設定</h2>
-
+<h2 id="opendkim">opendkim設定</h2>
 <pre><code>mkdir /etc/postfix/dkim/ 
 opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail 
 # -d ドメイン
@@ -71,75 +66,55 @@ opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail
 chgrp opendkim /etc/postfix/dkim/*
 chmod g+r /etc/postfix/dkim/*
 </code></pre>
-
 <p>/etc/opendkim.conf</p>
-
-<pre><code>Syslog          yes
+<pre><code>Syslog			yes
 LogWhy          Yes
-UMask           007
-Canonicalization    relaxed/relaxed
-Mode            sv
+UMask			007
+Canonicalization	relaxed/relaxed
+Mode			sv
 Socket                  inet:8891@localhost
 PidFile               /var/run/opendkim/opendkim.pid
-OversignHeaders     From
+OversignHeaders		From
 TrustAnchorFile       /usr/share/dns/root.key
 UserID                opendkim
 KeyTable file:/etc/postfix/dkim/keytable
 SigningTable file:/etc/postfix/dkim/signingtable 
 </code></pre>
-
 <p>/etc/postfix/dkim/keytable</p>
-
 <pre><code>mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private 
 </code></pre>
-
 <p>/etc/postfix/dkim/signingtable</p>
-
 <pre><code>example.net mail._domainkey.example.net
 </code></pre>
-
 <p>反映</p>
-
 <pre><code>systemctl restart opendkim.service 
 </code></pre>
-
-<h2 id="postfix設定">postfix設定</h2>
-
+<h2 id="postfix">postfix設定</h2>
 <p>以下追記</p>
-
 <pre><code>milter_default_action = tempfail
 milter_protocol = 2
 smtpd_milters = inet:localhost:8891
 non_smtpd_milters = inet:localhost:8891 
 </code></pre>
-
-<p>ここで,milterを使うので<br />
+<p>ここで,milterを使うので<br>
 compatibility_level = 0 にしておくこと</p>
-
-<h2 id="dns設定">DNS設定</h2>
-
-<p>/etc/postfix/dkim/mail.txtにできたファイルをそのままコピペすれば BIND/NSDでそのまま使える<br />
+<h2 id="dns">DNS設定</h2>
+<p>/etc/postfix/dkim/mail.txtにできたファイルをそのままコピペすれば BIND/NSDでそのまま使える<br>
 加工する必要なし</p>
-
-<pre><code>mail._domainkey IN  TXT ( &quot;v=DKIM1; h=sha256; k=rsa; &quot;
+<pre><code>mail._domainkey	IN	TXT	( &quot;v=DKIM1; h=sha256; k=rsa; &quot;
       &quot;p=MIIB...&quot;
       &quot;....&quot; )  ; ----- DKIM key mail for example.net
 
 # チェック
 opendkim-testkey -d example.com -s mail -vvv
 </code></pre>
-
-<h2 id="送ってみる">送ってみる</h2>
-
+<h2 id="heading-1">送ってみる</h2>
 <pre><code>mail -r test@example.net -s $(date +%Y%M%d-%H%M)
 </code></pre>
-
 <p><a href="https://addons.thunderbird.net/ja/thunderbird/addon/dkim-verifier/">この手のプラグイン</a>でチェックしてみる</p>
-
-<h2 id="参考リンク">参考リンク</h2>
-
+<h2 id="heading-2">参考リンク</h2>
 <ul>
-<li><a href="http://opendkim.org/opendkim.conf.5.html">opendkim.conf</a><br /></li>
+<li><a href="http://opendkim.org/opendkim.conf.5.html">opendkim.conf</a></li>
 </ul>
 
   </div>
@@ -286,7 +261,7 @@ opendkim-testkey -d example.com -s mail -vvv
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -294,7 +269,7 @@ opendkim-testkey -d example.com -s mail -vvv
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -377,7 +352,7 @@ opendkim-testkey -d example.com -s mail -vvv
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -56,7 +56,6 @@ if (!doNotTrack) {
   </header>
   <div class="content">
     <p>Apacheでリバースプロキシするときこんな感じに書いた方が良いよという話</p>
-
 <pre><code>&lt;VirtualHost *:443&gt;
     ServerName example.net
     &lt;Proxy *&gt;
@@ -73,19 +72,14 @@ if (!doNotTrack) {
     Include /path/to/common.conf
 &lt;/VirtualHost&gt;
 </code></pre>
-
-<p>X-Forwarded-Forとかを一旦unsetしないと、<br />
+<p>X-Forwarded-Forとかを一旦unsetしないと、<br>
 X-Forwarded-Forとかをクライアント側から指定されると、追加されて判別が困難になる</p>
-
 <pre><code>curl -H &quot;X-Forwarded-For: 1.2.3.4&quot;
 </code></pre>
-
 <p>みたいな感じで指定されると</p>
-
 <pre><code> x-forwarded-for: &quot;1.2.3.4, 192.168.0.100&quot;
 </code></pre>
-
-<p>こんな感じに追加されて <a href="http://192.168.0.1:8080">http://192.168.0.1:8080</a> 側にわたってしまう</p>
+<p>こんな感じに追加されて http://192.168.0.1:8080 側にわたってしまう</p>
 
   </div>
   <footer>
@@ -219,7 +213,7 @@ X-Forwarded-Forとかをクライアント側から指定されると、追加�
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -227,7 +221,7 @@ X-Forwarded-Forとかをクライアント側から指定されると、追加�
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -310,7 +304,7 @@ X-Forwarded-Forとかをクライアント側から指定されると、追加�
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

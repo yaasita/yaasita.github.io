@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -55,18 +55,12 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<h2 id="startssl">StartSSL</h2>
-
-<p>CSR作る<br />
+    <h2 id="startssl">StartSSL</h2>
+<p>CSR作る<br>
 emailaddressにS/MIME設定したいアドレスを入れる</p>
-
 <pre><code>openssl req -newkey rsa:2048 -keyout yourname.key -out yourname.csr
 </code></pre>
-
 <p>証明書が送られてくるのでこんな感じでまとめて</p>
-
 <pre><code>-----BEGIN PRIVATE KEY-----
 ...
 -----END PRIVATE KEY-----
@@ -77,50 +71,35 @@ emailaddressにS/MIME設定したいアドレスを入れる</p>
 ...
 -----END CERTIFICATE-----
 </code></pre>
-
 <p>pkcs12に変換してthunderbirdにインポートする</p>
-
 <pre><code>openssl pkcs12 -export -in sakusei.pem -out email.pfx
 </code></pre>
-
-<p>なんか送られてきた中間証明書がCRLFとLFが混在してるので直した<br />
+<p>なんか送られてきた中間証明書がCRLFとLFが混在してるので直した<br>
 チェーンはこんな感じになってた</p>
-
 <pre><code>StartCom Certification Authority
     |_ StartCom Certification Authority ECC
         |_ StartCom CC2 ICA
             |_ 自分のメールアドレス
 </code></pre>
-
 <p>そういやCAAレコードを検証しなかったけどいいのかね？</p>
-
-<p>でここまでやって気づいたんだけど<a href="http://www.itmedia.co.jp/enterprise/articles/1611/02/news082.html">StartComの証明書が失効扱い</a>で全然検証通らなかった<br />
+<p>でここまでやって気づいたんだけど<a href="http://www.itmedia.co.jp/enterprise/articles/1611/02/news082.html">StartComの証明書が失効扱い</a>で全然検証通らなかった<br>
 これはGmailも同じなのでStartCom使うのは中止</p>
-
 <h2 id="comodo">COMODO</h2>
-
-<p>今度COMODOを使うことになったんだけど既にChromeだと<a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/keygen">KEYGEN</a>要素が使えないらしくFirefoxでアクセスするしかない<br />
-(コードもselect[_moz-type=&ldquo;-mozilla-keygen&rdquo;]になってるし)</p>
-
+<p>今度COMODOを使うことになったんだけど既にChromeだと<a href="https://developer.mozilla.org/ja/docs/Web/HTML/Element/keygen">KEYGEN</a>要素が使えないらしくFirefoxでアクセスするしかない<br>
+(コードもselect[_moz-type=&rdquo;-mozilla-keygen&rdquo;]になってるし)</p>
 <p>こっちはフォームから申請して、リンククリックすればすぐに証明書がFirefoxに入るのでそれをエクスポートしてthunderbirdに入れればOK</p>
-
 <p>チェーンはこんな感じ</p>
-
 <pre><code>COMODO RSA Certification Authority
     |_COMODO RSA Client Authentication and Secure Email CA
         |_ 自分のメールアドレス
 </code></pre>
-
-<h2 id="まとめ">まとめ</h2>
-
-<p>Let&rsquo;s EncryptがS/MIME対応してほしい</p>
-
-<h2 id="参考リンク">参考リンク</h2>
-
+<h2 id="heading">まとめ</h2>
+<p>Let's EncryptがS/MIME対応してほしい</p>
+<h2 id="heading-1">参考リンク</h2>
 <ul>
-<li><a href="http://d.hatena.ne.jp/eikihaya/20130621/SMIME">S/MIME の電子メール暗号化／署名の環境を作る</a><br /></li>
-<li><a href="https://masutaka.net/chalow/2017-01-10-1.html">完全に闇に落ちていた StartSSL に ￥3,603 課金してしまったお話</a><br /></li>
-<li><a href="https://rms-digicert.ne.jp/howto/basis/openssl-get-pxf.html">OpenSSLを使って.pfxファイル証明書を作成する方法</a><br /></li>
+<li><a href="http://d.hatena.ne.jp/eikihaya/20130621/SMIME">S/MIME の電子メール暗号化／署名の環境を作る</a></li>
+<li><a href="https://masutaka.net/chalow/2017-01-10-1.html">完全に闇に落ちていた StartSSL に ￥3,603 課金してしまったお話</a></li>
+<li><a href="https://rms-digicert.ne.jp/howto/basis/openssl-get-pxf.html">OpenSSLを使って.pfxファイル証明書を作成する方法</a></li>
 </ul>
 
   </div>
@@ -259,7 +238,7 @@ emailaddressにS/MIME設定したいアドレスを入れる</p>
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -267,7 +246,7 @@ emailaddressにS/MIME設定したいアドレスを入れる</p>
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -350,7 +329,7 @@ emailaddressにS/MIME設定したいアドレスを入れる</p>
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>

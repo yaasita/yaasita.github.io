@@ -3,7 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="generator" content="Hugo 0.56.3" />
+    <meta name="generator" content="Hugo 0.61.0" />
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link href="/index.xml" rel="alternate" type="application/rss+xml" title="# cd ~yaasita" />
     
@@ -57,9 +57,7 @@ if (!doNotTrack) {
   <div class="content">
     <pre><code>apt-get install unattended-upgrades
 </code></pre>
-
 <p>/etc/apt/apt.conf.d/50unattended-upgrades</p>
-
 <pre><code>Unattended-Upgrade::Origins-Pattern {
       &quot;o=Debian,n=jessie&quot;;
       &quot;o=Debian,n=jessie-updates&quot;;
@@ -72,28 +70,22 @@ if (!doNotTrack) {
 Unattended-Upgrade::Package-Blacklist {
 };
 </code></pre>
-
 <p><code>/etc/apt/apt.conf.d/10periodic</code>に<code>APT::Periodic::Unattended-Upgrade &quot;1&quot;;</code>を追加</p>
-
 <pre><code>APT::Periodic::Update-Package-Lists &quot;1&quot;;
 APT::Periodic::Unattended-Upgrade &quot;1&quot;;
 APT::Periodic::Download-Upgradeable-Packages &quot;0&quot;;
 APT::Periodic::AutocleanInterval &quot;0&quot;;
 APT::Periodic::RandomSleep &quot;0&quot;;
 </code></pre>
-
-<p>再起動をしなきゃいけないアップデートは以下を有効にするらしい<br />
+<p>再起動をしなきゃいけないアップデートは以下を有効にするらしい<br>
 再起動が必要なら<code>/var/run/reboot-required</code>が作られるのか</p>
-
 <pre><code>// Automatically reboot *WITHOUT CONFIRMATION* if
 //  the file /var/run/reboot-required is found after the upgrade 
 //Unattended-Upgrade::Automatic-Reboot &quot;false&quot;;
 </code></pre>
-
 <p>参考リンク</p>
-
 <ul>
-<li><a href="http://orangain.hatenablog.com/entry/unattended-upgrades">http://orangain.hatenablog.com/entry/unattended-upgrades</a><br /></li>
+<li><a href="http://orangain.hatenablog.com/entry/unattended-upgrades">http://orangain.hatenablog.com/entry/unattended-upgrades</a></li>
 </ul>
 
   </div>
@@ -232,7 +224,7 @@ APT::Periodic::RandomSleep &quot;0&quot;;
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (39)</a>
+          <a href="/categories/hard"><span></span>hard (40)</a>
         </li>
         
         <li>
@@ -240,7 +232,7 @@ APT::Periodic::RandomSleep &quot;0&quot;;
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (330)</a>
+          <a href="/categories/linux"><span></span>linux (331)</a>
         </li>
         
         <li>
@@ -323,7 +315,7 @@ APT::Periodic::RandomSleep &quot;0&quot;;
         </li>
         
         <li>
-          <a href="/archives/2019"><span></span>2019 (21)</a>
+          <a href="/archives/2019"><span></span>2019 (22)</a>
         </li>
         
       </ul>
