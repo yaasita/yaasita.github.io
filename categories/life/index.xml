@@ -1,98 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title># cd ~yaasita</title>
+    <title>life on # cd ~yaasita</title>
     <link>https://yaasita.github.io/categories/life/</link>
-    <description>Recent content on # cd ~yaasita</description>
-    <generator>Hugo</generator>
+    <description>Recent content in life on # cd ~yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 14 Sep 2019 22:21:43 +0900</lastBuildDate>
-    <atom:link href="/" rel="self" type="application/rss+xml" />
     
-    <item>
-      <title>chromebookが最高だった</title>
-      <link>https://yaasita.github.io/2019/12/23/chromebook/</link>
-      <pubDate>Mon, 23 Dec 2019 05:58:32 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/12/23/chromebook/</guid>
-      <description>ASUS の C434TA-AI0084 を買ったのでレビュー
-chromeOS  起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある  解除がちょっと遅い10秒くらい待たされる   chromeの複数ユーザー機能が使えない  多重ログイン機能はあるけどちょっと微妙  別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能      ディスプレイ  タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 バックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗  テザリング  Moto E5 とbluetoothでのテザリングが出来なかった  とりあえずUSBテザリングは刺すだけで使えたので良しとしてます    キーボード  Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない  Androidアプリ  ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない  Linux環境 OS  Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり  バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい   USB共有機能あり /opt/google/cros-containers/bin/.</description>
-    </item>
+	<atom:link href="https://yaasita.github.io/categories/life/index.xml" rel="self" type="application/rss+xml" />
     
-    <item>
-      <title>GCP Cloud Functions内からサービスアカウントのtoken取る</title>
-      <link>https://yaasita.github.io/2019/12/08/service-account-in-cf/</link>
-      <pubDate>Sun, 08 Dec 2019 05:12:12 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/12/08/service-account-in-cf/</guid>
-      <description>Cloud Functionsからサービスアカウントのアクセストークンをどうやって取るの？と疑問に思ったので調べた
-Google Compute Engineと同じ取り方でOK
-&amp;quot;use strict&amp;quot;; const fetch = require(&amp;quot;node-fetch&amp;quot;); exports.handler = async (req, res) =&amp;gt; { const url = &amp;quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&amp;quot; + &amp;quot;[サービスアカウント名]/token&amp;quot;; const result = await fetch(url, { method: &amp;quot;GET&amp;quot;, headers: { &amp;quot;Metadata-Flavor&amp;quot;: &amp;quot;Google&amp;quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&amp;quot;OK&amp;quot;); };  なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
-
-まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &amp;ldquo;Function Identity&amp;quot;とかクリックするとちゃんと日本語版あるんですよね
-なんかメニューがバグってるのかな・・・
-とりあえず英語版から探すのをオススメします&amp;hellip;
-参考リンク
- 関数ID Compute Metadata Server   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].</description>
-    </item>
-    
-    <item>
-      <title>GCPでアクセストークンを取得する</title>
-      <link>https://yaasita.github.io/2019/11/14/gcp-access-token/</link>
-      <pubDate>Thu, 14 Nov 2019 22:32:41 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/11/14/gcp-access-token/</guid>
-      <description>ほとんどのサービスは クライアントライブラリ を使えば
-export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json  みたいに環境変数を設定するだけで良いのだが、Cloud Build 等は access tokenを取得して叩く必要がある
-という事でGCPのサービスアカウントからアクセストークンを取得するコード
- スコープ一覧はこちら
-https://developers.google.com/identity/protocols/googlescopes
-アクセストークンのテストは DLP とかがお手軽で良いかな
-参考リンク  jose API Document Using OAuth 2.0 for Server to Server Applications  </description>
-    </item>
-    
-    <item>
-      <title>osu!taikoのskin</title>
-      <link>https://yaasita.github.io/2019/10/27/osu/</link>
-      <pubDate>Sun, 27 Oct 2019 03:00:31 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/10/27/osu/</guid>
-      <description>osu!taikoのスキン
-これが一番良かった
-概要欄からダウンロードできる</description>
-    </item>
-    
-    <item>
-      <title>AtCoder Beginner Contest 142のD問題</title>
-      <link>https://yaasita.github.io/2019/09/30/atcoder-abc142/</link>
-      <pubDate>Mon, 30 Sep 2019 05:05:34 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/09/30/atcoder-abc142/</guid>
-      <description>問題: D - Disjoint Set of Common Divisors
-方針はユークリッドの互除法で最大公約数を出して、最大公約数を素因数分解
-存在する素数の数+1(今回は1もお互いに素の数として含めるため)でOKぽい
-perlで書いてみる
- 解説動画</description>
-    </item>
-    
-    <item>
-      <title>systemd timerはちゃんと動いてる？</title>
-      <link>https://yaasita.github.io/2019/09/29/systemd-timer/</link>
-      <pubDate>Sun, 29 Sep 2019 16:51:09 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/09/29/systemd-timer/</guid>
-      <description>systemdタイマーがちゃんと動いてるか確認したほうが良いよというお話
-systemctl list-timers --allコマンドで一覧が見れるあれです
-debian10だと /etc/cron.daily にあるスクリプトでこんな感じに書かれてたら、systemd timerの方を使ってる
-if [ -d /run/systemd/system ]; then exit 0 fi  前回 と同様にノートパソコンのバッテリー稼働と誤って判断されることに起因する問題
-例えばlogrotateとかみると
-systemctl cat logrotate  こんな一文がある
-ConditionACPower=true  これはバッテリー駆動の時は動かさないって意味らしいんだけど、どうも判定が狂ってるみたいでずっと実行されなかった
-なので、以下のコマンドでoverride.conf作って判定を無効化した
-systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower=  というわけで
-cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
-journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  とりあえず分かった、バッテリー時の判定が入ってるtimer
- apt-daily-upgrade man-db logrotate anacron apt-daily  </description>
-    </item>
     
     <item>
       <title>ビリビリ動画とcrunchyrollのIP制限をGCPで検証</title>
@@ -105,58 +22,6 @@ GCPの各リージョンからアクセスして試してみる
 rttは自宅から該当サーバーまでのpingしたときの平均値
 なのでISPによって全然違うと思うので参考値ということで
    region bilibili crunchyroll rtt(ms)     asia-east1 (台湾) ng ok 60.149   asia-east2 (香港) ng ok 76.986   asia-northeast1 (東京) ng ok 29.624   asia-northeast2 (大阪) ng ok 37.401   asia-south1 (ムンバイ) ng ok 144.055   asia-southeast1 (シンガポール) ng ok 89.755   australia-southeast1 (シドニー) ng ok 122.193   europe-north1 (フィンランド) ng ok 256.714   europe-west1 (ベルギー) ng ok 229.</description>
-    </item>
-    
-    <item>
-      <title>on_ac_powerコマンドについて</title>
-      <link>https://yaasita.github.io/2019/08/16/on-ac-power/</link>
-      <pubDate>Fri, 16 Aug 2019 04:45:45 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/16/on-ac-power/</guid>
-      <description>debian10にした関係でLinuxネタが続く
-PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある
-そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる
-例えば、/etc/cron.daily/mlocate の場合
-if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi  こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
-んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
-このままだと永遠にlocateコマンドが使えないので、divertで退避させた
-dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power  おしまい</description>
-    </item>
-    
-    <item>
-      <title>1から100の偶数の和を求めるやつ</title>
-      <link>https://yaasita.github.io/2019/08/15/sum-even-number/</link>
-      <pubDate>Thu, 15 Aug 2019 04:10:11 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/15/sum-even-number/</guid>
-      <description>「1から100の偶数の和を求めるワンライナー」まとめ
-perlでやってみる
-perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;eval&amp;quot;say @{[grep{$_%2==0}1..100]}&amp;quot;;&#39;  4つ思いついた
-結論 simple is best</description>
-    </item>
-    
-    <item>
-      <title>各種サーバの中間証明書の扱い</title>
-      <link>https://yaasita.github.io/2019/08/14/ssl-capath/</link>
-      <pubDate>Wed, 14 Aug 2019 10:20:33 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/14/ssl-capath/</guid>
-      <description>中間証明書をどう設定するか問題
-postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&#39;s Encryptの場合こんな感じ
-smtpd_tls_CAfileに中間証明書を指定する
-smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
-dovecot 10-ssl.conf
-ssl_ca = &amp;lt;/etc/letsencrypt/live/example.net/chain.pem  これはダメ
-この設定はクライアント証明書用ですので
-正しくは、こんな感じに、まとめたやつを指定すればOK
-ssl_cert = &amp;lt;/etc/letsencrypt/live/example.net/fullchain.pem  apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
-SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem  dovecot同様に中間証明書もまとめて指定する
-まとめ この問題はスマホのK-9 Mailでメール読もうとしたときに判明した
-(突然CertPathValidatorExceptionって怒られた)
-thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
-openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
     </item>
     
     <item>
@@ -174,132 +39,915 @@ openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認
     </item>
     
     <item>
-      <title>例のS3署名バージョン2について</title>
-      <link>https://yaasita.github.io/2019/06/25/s3v2/</link>
-      <pubDate>Tue, 25 Jun 2019 00:31:08 +0900</pubDate>
+      <title>電源を変えた</title>
+      <link>https://yaasita.github.io/2018/12/17/power-supply/</link>
+      <pubDate>Mon, 17 Dec 2018 00:02:37 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/06/25/s3v2/</guid>
-      <description>AWS S3の署名バージョン騒動
-大丈夫ぽいけど一応調べた時につかったスクリプト
-CloudTrailでログを有効化してからお使いください
- </description>
+      <guid>https://yaasita.github.io/2018/12/17/power-supply/</guid>
+      <description>寒いせいでPCの調子が悪くなった
+ANTEC(アンテック) NeoECO Classicシリーズ 650Wモデル NE650C
+って3年くらい使った電源が、寒い日にうまくついてくれない。
+（電源つけて2,3秒で再起動を繰り返す)
+なので
+KRPW-AK750W/88+ という玄人志向のやつに変更した
+8000円くらいのやつ</description>
     </item>
     
     <item>
-      <title>Cloud Runがすごく良い</title>
-      <link>https://yaasita.github.io/2019/05/29/cloud-run/</link>
-      <pubDate>Wed, 29 May 2019 21:42:23 +0900</pubDate>
+      <title>MonaCoinのマイニング</title>
+      <link>https://yaasita.github.io/2017/12/03/mona-coin/</link>
+      <pubDate>Sun, 03 Dec 2017 01:30:08 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/05/29/cloud-run/</guid>
-      <description>GCPのCloud Runがめっちゃ便利
-覚えなきゃいけないルールは2つ
- Dockerにする事 環境変数 $PORT のポート番号でlistenしてレスポンスを返す事  これだけ
-コマンドとかはこの辺見ればすぐできると思います
-あと、Chunked Transferみたいな仕組みで進捗を返すみたいなAPIは難しいかもしれない
-以下のようなプログラムでちょっとずつレスポンス返しても、バッファリングされてるみたいで、最後ドバっと返ってきた
- </description>
+      <guid>https://yaasita.github.io/2017/12/03/mona-coin/</guid>
+      <description>モナコインをマイニングしてみる
+cpuminer-multiでやってみた
+スコア  IDCF Cloud (Light.S1) メモリ1GB 仮想1CPU =&amp;gt; 17.48 kH/s 自宅PC Core i5-4460 @ 3.20GHz 4コア メモリ 4GB =&amp;gt; 376 kH/s ノートパソコン LB-C110B Celeron 1037U 2コア/1.80GHz メモリ8GB =&amp;gt; 91 kH/s  まとめ CPUマイニングなんてやるもんじゃない←結論</description>
     </item>
     
     <item>
-      <title>PKCEをJavaScriptで実装する</title>
-      <link>https://yaasita.github.io/2019/04/29/pkce/</link>
-      <pubDate>Mon, 29 Apr 2019 01:23:20 +0900</pubDate>
+      <title>銀行の通帳を捨てた</title>
+      <link>https://yaasita.github.io/2017/10/15/bank-tutyo/</link>
+      <pubDate>Sun, 15 Oct 2017 22:55:44 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/04/29/pkce/</guid>
-      <description>code_verifier から code_challenge の生成方法について調べた
-code_challenge_method=S256の場合は以下のような実装ロジックになる
-node.jsで書いた
-Oauth2のPKCE
-base64エンコードじゃなくてbase64urlエンコードなのが注意点
- </description>
+      <guid>https://yaasita.github.io/2017/10/15/bank-tutyo/</guid>
+      <description>記帳に行くのがめんどくさくなったので全部捨ててみた
+Web通帳の各行保存期間はこんな感じ
+ ゆうちょ銀行  ゆうちょダイレクトプラス: 15ヶ月分   三菱東京UFJ銀行(三菱東京ＵＦＪダイレクト)  Eco通帳: 25ヵ月分   横浜銀行(はまぎんマイダイレクト)  マイスマート通帳: 36ヵ月分    </description>
     </item>
     
     <item>
-      <title>令和の対応に際して</title>
-      <link>https://yaasita.github.io/2019/04/25/reiwa/</link>
-      <pubDate>Thu, 25 Apr 2019 02:08:40 +0900</pubDate>
+      <title>会社員→自営業でも再就職手当は貰える</title>
+      <link>https://yaasita.github.io/2017/08/09/sitsugyou-hoken/</link>
+      <pubDate>Wed, 09 Aug 2017 16:16:21 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/04/25/reiwa/</guid>
-      <description>techrachoの記事
-perlも追加でお願いします
- </description>
+      <guid>https://yaasita.github.io/2017/08/09/sitsugyou-hoken/</guid>
+      <description>なので、辞めた後にハロワ行って雇用保険受給資格者証もらってから開業届出した後に報告しに行った方が良い
+失業状態だと偽って失業保険貰うと不正受給になるので注意</description>
     </item>
     
     <item>
-      <title>tarの差分バックアップ</title>
-      <link>https://yaasita.github.io/2019/04/01/tar-backup/</link>
-      <pubDate>Mon, 01 Apr 2019 16:12:46 +0900</pubDate>
+      <title>AWSソリューションアーキテクト</title>
+      <link>https://yaasita.github.io/2017/03/18/aws-test/</link>
+      <pubDate>Sat, 18 Mar 2017 23:56:51 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/04/01/tar-backup/</guid>
-      <description>前回の続き
-でctime変化しちゃってどうしたか？
-ファイルサイズとファイル名を取っておいて差分を作ることにした
- こんな感じのスクリプトで、ファイル名 + tab + ファイルサイズで保存する
-(厳密にやる場合はsha256とかで)
-そんで現在のファイルリストも取って、差分をとる
-diff -u previous.txt now.txt | egrep &amp;quot;^\+[^\+]&amp;quot; | perl -ple &#39;s/^\+//;s/\t.+//&#39; &amp;gt; tar.txt あとは-Tオプションで差分のファイルだけをtarで固める
-tar -cvaf hoge.tgz -T tar.txt </description>
+      <guid>https://yaasita.github.io/2017/03/18/aws-test/</guid>
+      <description>なんか必要になったということで取ってきた
+総合スコア: 74% トピックレベルのスコア: 1.0 高可用性、コスト効率、耐障害性、スケーラブルなシステムの設計: 72% 2.0 実装/デプロイ: 83% 3.0 セキュリティ: 72% 4.0 トラブルシューティング: 80% 勉強につかったサイト
+https://aws.koiwaclub.com/
+細かい数字とか覚えるよりもどんなサービスなのかなーくらいが頭に入ってれば良さげ
+かかる費用は
+模擬試験＋本試験=2160+16200=18360円
+だった</description>
     </item>
     
     <item>
-      <title>tarの-gオプションについて</title>
-      <link>https://yaasita.github.io/2019/03/30/tar-g-option/</link>
-      <pubDate>Sat, 30 Mar 2019 02:32:25 +0900</pubDate>
+      <title>MacBook買ったのでサポートお願いした</title>
+      <link>https://yaasita.github.io/2017/01/09/mac-personal-setup/</link>
+      <pubDate>Mon, 09 Jan 2017 16:27:40 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/03/30/tar-g-option/</guid>
-      <description>-g, &amp;ndash;listed-incremental
-という増分バックアップに使われるオプションについてどうやって判定してるか？
-それはctimeの変化を見ている
-ctimeの変化で気をつけなければいけないことはハードリンクによるバックアップ
-(rsync &amp;ndash;link-dest等)
-例えば、以下のようなファイルが存在し
-work/ `-- 1.txt  以下のコマンドを発行した場合
-tar -g resume -cvf work.tar work/  初回なので当然全部がバックアップされる
-このまま以下のコマンドを打てばディレクトリだけのバックアップになる(差分がないため)
-tar -g resume -cvf work.tar work/  しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう
-stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる  なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
-うまく増分バックアップができなくなる
-続き</description>
+      <guid>https://yaasita.github.io/2017/01/09/mac-personal-setup/</guid>
+      <description>13インチ MacBook Air 1.6GHzデュアルコアIntel Core i5 整備済製品 (\84,000)で買ったのでパーソナルセットアップをお願いしてみた
+時間は30分だったけど、電話でいろいろ質問できて良い
+http://www.apple.com/jp/retail/personalsetup/</description>
     </item>
     
     <item>
-      <title>hugoアップデート</title>
-      <link>https://yaasita.github.io/2019/03/12/hugo-update/</link>
-      <pubDate>Tue, 12 Mar 2019 23:00:51 +0900</pubDate>
+      <title>リンク</title>
+      <link>https://yaasita.github.io/2016/01/24/link/</link>
+      <pubDate>Sun, 24 Jan 2016 02:15:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/03/12/hugo-update/</guid>
-      <description>久々にhugoをアップデート v0.41 =&amp;gt; v0.54まで上げた
-ワーニング潰し アップデートに伴い
-.Prev と .Nextが非推奨になったぽい マニュアル, コミット
-なのでこれはそれぞれ以下のように修正すればOK(意味が逆なので分かりにくいけど)
- .Prev =&amp;gt; .NextPage .Next =&amp;gt; .PrevPage  OGP設定 某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました
-上手く表示できてますか？
-修正箇所
-themes/hugo-theme-geppaku/layouts/partials/header.html
- {{ if .IsHome }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Site.Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;website&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}&amp;quot; /&amp;gt; {{ else }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;article&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}{{ .Page.Dir }}&amp;quot; /&amp;gt; {{ end }} &amp;lt;meta property=&amp;quot;og:site_name&amp;quot; content=&amp;quot;{{ .</description>
+      <guid>https://yaasita.github.io/2016/01/24/link/</guid>
+      <description> 監視カメラまとめ  http://www.insecam.org/en/bycountry/JP/   SIはやめておけ  http://anond.hatelabo.jp/20160123131828 バックアップ    </description>
     </item>
     
     <item>
-      <title>Windows10のクリップボード履歴機能</title>
-      <link>https://yaasita.github.io/2019/03/10/clipboard/</link>
-      <pubDate>Sun, 10 Mar 2019 22:47:52 +0900</pubDate>
+      <title>最近のSIer記事</title>
+      <link>https://yaasita.github.io/2015/11/29/sier/</link>
+      <pubDate>Sun, 29 Nov 2015 22:39:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/03/10/clipboard/</guid>
-      <description>Windows10に標準でクリップボード履歴機能が付いたらしい
- https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html  Windows キー + Vで使えるようになる
-cliborの方が使いやすそうな気がするけど、しばらくこっち使ってみる</description>
+      <guid>https://yaasita.github.io/2015/11/29/sier/</guid>
+      <description> IT業界で客先常駐という働き方はもうやめにできないか 大手Sierで見た！ 日本でプログラマが少ない理由は戦う戦場を間違えているからです  </description>
     </item>
     
     <item>
-      <title>AlwaysOnSSL終了のお知らせ</title>
-      <link>https://yaasita.github.io/2019/02/28/alwaysonssl/</link>
-      <pubDate>Thu, 28 Feb 2019 01:44:13 +0900</pubDate>
+      <title>ISUCON5で惨敗した件</title>
+      <link>https://yaasita.github.io/2015/09/30/isucon5/</link>
+      <pubDate>Wed, 30 Sep 2015 00:38:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/02/28/alwaysonssl/</guid>
-      <description>無料のSSL証明書AlwaysOnSSLがセキュリティ問題を指摘されてシャットダウンしたぽい
-AlwaysOnSSL web security issues
-S/MIME手に入るので良かったんだけどなぁ・・・
-前回</description>
+      <guid>https://yaasita.github.io/2015/09/30/isucon5/</guid>
+      <description>ISUCON5に参加してきました
+T・D・U！T・D・U！という名前で出てみました
+最高スコアは5000ちょっとでしたOTZ
+感想  ISUCON  会社以外の人ととチーム組むと他社の事情とか聞けて結構良いかもしれない idobata,GCE(Google Compute Engine)とか使ったことなかったからいい機会だったかも VM渡されて時間内に早くするんだ！って競技はルールも分かりやすくて面白い 惨敗だったけど楽しかったし勉強になった   GCP(Google Cloud Platform)  なんかAWS慣れてる所為もあるんだろうけど結構手間取った ついでに触ったGoogle Cloud DNSはRoute53の方が高機能かな～ あらかじめユーザ名＋鍵登録しておけばインスタンス立ち上げ時にユーザ作って鍵設定までしてくれて便利(小並感   idobata  slackと違って1ユーザのアカウントをチーム内で共有するみたいな感じなので  会社内のチャット→slack 会社を跨いだメンバーとのやり取り→idobataみたいな感じがよいのかな   ちょっとISUCON中は重かったけどこれからに期待    反省  最初に落ち着いて計測してみたほうが良かったかも  制限時間があるから焦って、手当たり次第に対応してたけどもっと計測に時間とってやることやらない事決めてから取り掛かれば良かったかも   troterにほぼ任せちゃったので。。。   役割決めないとだったな お前これやる、俺これやる的な話してから取り掛かるべきだったかも   やっぱコード読まなきゃダメ  パラメータチューニングとかでもちょっとはスコア上がるけど、ロジック見て良い感じの実装にするのは必須ですた 例年 sinatraアプリらしいので一個くらいは作ってから望むべきだったかも    参考リンク  ISUCON5の予選に参加して惨敗してきました #isucon   function callback(data){ var photos = data.</description>
+    </item>
+    
+    <item>
+      <title>三国志解説サイト</title>
+      <link>https://yaasita.github.io/2015/02/08/sangokushi/</link>
+      <pubDate>Sun, 08 Feb 2015 23:44:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/02/08/sangokushi/</guid>
+      <description>はじめての三国志
+http://hajimete-sangokushi.com/</description>
+    </item>
+    
+    <item>
+      <title>ユニコード文字の顔文字一覧</title>
+      <link>https://yaasita.github.io/2014/12/20/kaomoji/</link>
+      <pubDate>Sat, 20 Dec 2014 14:47:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/12/20/kaomoji/</guid>
+      <description>http://matome.naver.jp/odai/2139210846915545101</description>
+    </item>
+    
+    <item>
+      <title>闇SIer</title>
+      <link>https://yaasita.github.io/2014/09/11/yami_sier/</link>
+      <pubDate>Thu, 11 Sep 2014 02:53:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/09/11/yami_sier/</guid>
+      <description> 闇SIer 元ファイル  </description>
+    </item>
+    
+    <item>
+      <title>itunes経由でBook同期</title>
+      <link>https://yaasita.github.io/2014/05/26/itunes_books/</link>
+      <pubDate>Mon, 26 May 2014 01:46:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/05/26/itunes_books/</guid>
+      <description>手元のPDFをipadに転送したくていろいろ探したら
+下記画像みたいなブックという項目を出さないとダメみたい
+
+iTunesStoreでブック押したりなんかいろいろしたら出るようになった
+あとPDFを追加するときは以下のフォルダに置くと良いみたい（入れると自動的に消える）
+C:\Users\hogeuser\Music\iTunes\iTunes Media\iTunes に自動的に追加   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+    </item>
+    
+    <item>
+      <title>仕事を探したり発注できたりするサイト</title>
+      <link>https://yaasita.github.io/2013/03/23/1381/</link>
+      <pubDate>Sat, 23 Mar 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/03/23/1381/</guid>
+      <description> ・ランサーズ
+・クラウドワークス </description>
+    </item>
+    
+    <item>
+      <title>マウスオーバーで単語検索</title>
+      <link>https://yaasita.github.io/2013/01/14/1543/</link>
+      <pubDate>Mon, 14 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/14/1543/</guid>
+      <description> 英単語を調べるときとかでも便利
+翻訳もできる
+1.Greasemonkeyをインストール
+2. スクリプトを追加（以下URLのINSTALL)
+http://userscripts.org/scripts/show/12901
+alt押しながら単語選択で検索
+alt+yで設定
+参考リンク
+http://mozilla-remix.seesaa.net/article/80993858.html
+http://www.simplivillage.com/trac/wiki/Userscript/FastLookupJPandEN </description>
+    </item>
+    
+    <item>
+      <title>PCを破棄したくなったら</title>
+      <link>https://yaasita.github.io/2013/01/02/1705/</link>
+      <pubDate>Wed, 02 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/02/1705/</guid>
+      <description> ごみパソに送りつけると良いらしい
+http://www.53pc.com/hikitori/index.html </description>
+    </item>
+    
+    <item>
+      <title>最近使ってるダンボールの収納ボックス</title>
+      <link>https://yaasita.github.io/2012/09/23/2212/</link>
+      <pubDate>Sun, 23 Sep 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/09/23/2212/</guid>
+      <description> 結構便利
+http://item.rakuten.co.jp/angers/121696/ </description>
+    </item>
+    
+    <item>
+      <title>自分があとどれくらいの時間生きていられるか？</title>
+      <link>https://yaasita.github.io/2012/01/09/3174/</link>
+      <pubDate>Mon, 09 Jan 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/01/09/3174/</guid>
+      <description> 自分があとどれくらいの時間生きていられるか簡単にわかるサイトです
+ライフカウンター
+残された時間がすぐに分かって便利です。
+例えば本日1/9誕生日の25歳の場合、残された時間は482113時間です。（寿命80歳までと仮定して）
+毎日8時間寝るとすると人生の1/3ですから160704時間寝ています
+この人はSEをしていて、毎日残業して14時間働き、休日出勤も多いので年間休日は100日です
+定年は65歳にあがったみたいなので、65歳とします
+14 x (365 - 100) x (65-25) = 148400時間が働いている時間です。
+まとめると以下のようになります
+寝ている時間　160704h
+働いてる時間　148400h
+自由な時間　173009h
+合計　482113h
+
+自由な時間は全体の35％しかないことが分かります。
+何か仕事とは別にやりたい事や目標がある場合、残された173009時間でやる必要があります。
+年にすると約20年しかないですので結構少ない気がします。
+（実際には自由な時間中に家事、食事、冠婚葬祭等がありますのでずっと少ないです）
+もし、働いている時間も自由な時間も充実していなかったとしたら死ぬ時に後悔するんじゃないでしょうか？もしこの例のような生活をしているSEの方が居ましたら考え直した方が良いかもしれないです。 </description>
+    </item>
+    
+    <item>
+      <title>年収を入力すると女の子が評価してくれるサイト</title>
+      <link>https://yaasita.github.io/2012/01/08/3194/</link>
+      <pubDate>Sun, 08 Jan 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/01/08/3194/</guid>
+      <description> http://televider.com/msz/
+参考リンク
+http://www.zaeega.com/archives/53541552.html </description>
+    </item>
+    
+    <item>
+      <title>SIerは滅びぬ！何度でも蘇るさ！</title>
+      <link>https://yaasita.github.io/2011/12/25/3279/</link>
+      <pubDate>Sun, 25 Dec 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/12/25/3279/</guid>
+      <description> 受託開発をするSIerがヤバイよ的な話はよく聞く話でSIer内部でそんな話もチラホラと聞くようになりました。
+（ヤバイ理由は人月換算とか多重請負とかいろいろ言われてます）
+でも結局のところこの先もSIerは生き残るよねっていうのが僕の見解。
+もう何十年もこんな感じでやってきたから引くに引けないんですよ。
+これは知人から聞いた話なんですが、ある大企業システムのIT部門の人は
+本当にそのシステムを使っているユーザーから改善案を聞いて直すということを
+しないらしいです。
+仕様変更・機能追加はそのIT部門の上司の思いつきらしいですｗ
+当然、普段から使っているユーザーの要望ではないので、どんどん使いにくくなってる
+＋いらない機能ばかり増えてるみたいですがｗ
+で、こういう話って大企業とかだと結構ある話みたいです。
+ユーザーが沢山いるシステムだと一人一人にヒアリングするのが面倒だし、
+俺は（IT部門だから）そのシステム使わない。上司が言ったとおりの
+仕様で発注出せばいいやーみたいに考えるのでしょう。
+他に優秀なパッケージソフトがあっても買いません。
+今まで、大手SIerに頼んでたんだから、今更、どこぞの中小企業と取引なんて
+したくない。なぜなら稟議を通すときに説明を求められて面倒だからｗ
+で糞システムをアホみたいな価格で買ってくるんです。
+IT部門の人は会社の利益向上というよりも自分が面倒な思いをしなければいいやと
+思ってるんですね。
+自分がシステムを使わないから当事者意識が希薄なんです。
+IT部門という独立した部署を持てる大企業で起こりがちな気もします。
+酷いときには今期の予算は1000万円だけど発注は500万しかしてなかったなぁ・・・
+（予算をある程度余らせるとそれはそれで怒られるらしいｗ）
+と気づいたIT部門の人はSIerとこんな交渉もします。
+IT部門　「大手SIerさんこの案件500万から800万に値上げしてもいいすよ」
+大手SIer「ヽ(´▽｀)ノﾜｰｲ喜んで！ではこの案件は800万で見積もりします♪」
+なんてこともやってます。
+こんな事をよく続けてられるなと最初は思いました。
+普通は他社との競争原理が働き淘汰されていくようにも思えます。
+でも、大手SIerと大企業、公共団体、銀行ってズブズブの関係だって知ってました？
+見渡せば部長クラスの人は元顧客側のお偉いさんだったり、
+今、顧客の立場として発注してるのは大手SIerから出向している人だったりｗ
+結局みんな身内でお金を回してるんじゃないかと思うくらいですｗ
+こんな感じで何十年も回してるから、
+もう良いやって思ってるんです。
+顧客側も今更内製とか顧客がプロジェクトに参加するなんてことはしないでしょう
+IT部門の人からすれば自分は使わないのだから丸投げできる大手SIerの方が良いに決まってます。
+「面倒だから」・「今までそうやってきたから」を変えるには本当に経営危機とかにならない
+限り無理でしょう。
+結局こんな感じでSIerは続いていきます。
+大手SIerは人を手配し、誰も見ないような品質項目やExcel資料を作るのに必死になっています。
+中堅SIerは、そこら辺の人をSEに見立てて大手SIerに売り飛ばすだけです。
+プログラマーは何十にも中間搾取されているので雀の涙ほどの給料で働きます。
+みな実際はユーザーの利便性をそこなう糞システムだと知らずに日々残業をします。
+きっとこの状況はこの先もずっと変わらないんだろうな（;´ー｀）
+でも結局これってIT業界だけじゃなくてどこの業界も同じようなものじゃないでしょうか？
+世の中なんてこんなものですよね
+参考リンク
+久々のSI業界
+日本のIT業界の問題点
+笑ってはいけないSIer </description>
+    </item>
+    
+    <item>
+      <title>携帯開発の実態（笑わないプログラマ）</title>
+      <link>https://yaasita.github.io/2011/12/24/3299/</link>
+      <pubDate>Sat, 24 Dec 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/12/24/3299/</guid>
+      <description>例の軍曹のデスマーチ話です
+ 前編 後編  </description>
+    </item>
+    
+    <item>
+      <title>FXで使えるチャート</title>
+      <link>https://yaasita.github.io/2011/11/04/3383/</link>
+      <pubDate>Fri, 04 Nov 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/11/04/3383/</guid>
+      <description> ここにいろいろあった
+http://www.fxcm.co.jp/tools/chart.html
+その中でも↓が使いやすかったかも
+http://www.dailyfx.com/charts/netdaniachart/ </description>
+    </item>
+    
+    <item>
+      <title>弾を光らせて軌跡を作り見やすくする曳光弾</title>
+      <link>https://yaasita.github.io/2011/07/01/3761/</link>
+      <pubDate>Fri, 01 Jul 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/07/01/3761/</guid>
+      <description> 曳光弾というらしい
+これにより弾の軌道が分かるんだと・・・
+参考リンク
+http://karapaia.livedoor.biz/archives/51767062.html
+http://www.nicovideo.jp/watch/sm14657423 </description>
+    </item>
+    
+    <item>
+      <title>モンロー/ノイマン効果とは</title>
+      <link>https://yaasita.github.io/2011/05/29/3863/</link>
+      <pubDate>Sun, 29 May 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/05/29/3863/</guid>
+      <description> 円形に配置した爆発物が爆発すると中央部にエネルギーが集中してどうたらこうたら・・・
+魔法少女まどか☆マギカの１１話参考とのこと
+参考リンク
+ほむほむ11話戦闘シーン
+モンロー/ノイマン効果(Wikipedia) </description>
+    </item>
+    
+    <item>
+      <title>ブログランキングサイトまとめ</title>
+      <link>https://yaasita.github.io/2011/03/20/4633/</link>
+      <pubDate>Sun, 20 Mar 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/03/20/4633/</guid>
+      <description> ・TopHatenar
+国内のサイトで比較できるので分かりやすい
+グラフとかも出て自分の順位が把握しやすい
+登録までに1日かかる
+このブログの結果
+・BlogChart
+レーダーチャートで表示してくれる
+分かりやすいLv表示
+このブログの結果
+・ウェブク
+ドメインの価値を表示してくれる
+表示単位はドメイン
+このブログの結果
+・ブログ戦闘力チェッカー
+ブログを戦闘力で例えてくれる
+ドラゴンボールが好きな人は分かりやすい？
+TopHatenarのデータを使っているのでTopHatenarへの登録が必要
+このブログの結果
+過去の記事
+あなたのドメインの価値を教えてくれるサイト 
+BlogChartってサイトでこのBlogのレベルを測定してみる  </description>
+    </item>
+    
+    <item>
+      <title>ミュウツーはなかまたちとﾎﾟｹﾓﾝﾏｽﾀｰをめざすようだシリーズまとめ</title>
+      <link>https://yaasita.github.io/2011/02/13/4757/</link>
+      <pubDate>Sun, 13 Feb 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/02/13/4757/</guid>
+      <description> とりあえず一覧にしてみた
+その09その10その11その12その13その14その15その28その29その30その31その32その33その34その35
+作者様ブログ
+二尺足ラズ
+(現時点で最新は35みたい) </description>
+    </item>
+    
+    <item>
+      <title>rtmpdump試してみた</title>
+      <link>https://yaasita.github.io/2011/01/15/4947/</link>
+      <pubDate>Sat, 15 Jan 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/01/15/4947/</guid>
+      <description>NHKオンデマンドに挑戦
+1.URLを解析
+fms0000.nod.ipcasting.jp
+
+2.hostsを変更
+今回は192.168.0.4にrtmpsuckを走らせておく
+192.168.0.4 fms0000.nod.ipcasting.jp
+
+3.でダウンロード
+出来るはずだったが、なんか出来なかったOTZ
+因みにこんな方法もあるLinuxならiptablesで転送する
+hogeuserをすべてlocalhostへ飛ばす例
+iptables -t nat -A OUTPUT -p tcp --dport 1935 -m owner \! --uid-owner hogeuser -j REDIRECT
+
+iptables -t nat -n -L で確認
+iptables -t nat -D OUTPUT 1　で削除
+参考リンク
+http://h.hatena.ne.jp/syouhi/9259273302189983422
+気を取り直してradiko録音これはrtmpsuckで一発OK
+rtmpdumpならこうかな
+#!/bin/bash
+rtmpdump -v -e -s &#39;http://radiko.jp/player/swf/player_2.0.1.00.swf&#39; \
+-r &#39;rtmpe://radiko.smartstream.ne.jp/FMJ/_defInst_&#39; \
+--playpath &#39;simul-stream?ucid=1dbab2acb98174787146465a40ba9eba&#39; \
+-p &#39;http://radiko.jp/player/player.html&#39; \
+-f &#39;WIN 10,1,102,64&#39; \
+-o FMJ</description>
+    </item>
+    
+    <item>
+      <title>Bloggerのテンプレートを変更してみる</title>
+      <link>https://yaasita.github.io/2010/12/26/5011/</link>
+      <pubDate>Sun, 26 Dec 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/12/26/5011/</guid>
+      <description>テンプレートデザイナー等の新機能が使えるらしいので変えます</description>
+    </item>
+    
+    <item>
+      <title>インターネットの仕組み</title>
+      <link>https://yaasita.github.io/2010/08/29/5938/</link>
+      <pubDate>Sun, 29 Aug 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/08/29/5938/</guid>
+      <description> インターネットのしくみ
+∧＿∧
+( ･ω･)
+＿(__つ/￣￣￣/
+＼/　/
+￣￣￣＼　（エロ画像） （　ZIP　） （　exe　）　（個人情報）
+＼┗(^o^ )┛┗(^o^ )┛┗(^o^ )┛　┗( ^o^)┛
+＼┏┗　┏┗　┏┗　┛┓
+￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣
+
+参考リンク
+http://suiseisekisuisui.blog107.fc2.com/blog-entry-1406.html </description>
+    </item>
+    
+    <item>
+      <title>NTT研究所の錯視紹介ページ</title>
+      <link>https://yaasita.github.io/2010/07/03/6264/</link>
+      <pubDate>Sat, 03 Jul 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/07/03/6264/</guid>
+      <description>錯視、錯聴とか錯覚の世界
+イリュージョンフォーラム
+IllusionForum
+錯視と錯聴を体験！Illusion Forum イリュージョンフォーラム</description>
+    </item>
+    
+    <item>
+      <title>胃の薬でよく効くやつは</title>
+      <link>https://yaasita.github.io/2010/06/10/6429/</link>
+      <pubDate>Thu, 10 Jun 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/06/10/6429/</guid>
+      <description> セルベックスらしい
+市販品だとセルベールというらしい </description>
+    </item>
+    
+    <item>
+      <title>ライブカメラを検索する</title>
+      <link>https://yaasita.github.io/2010/02/21/7286/</link>
+      <pubDate>Sun, 21 Feb 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/02/21/7286/</guid>
+      <description> inurl:ViewerFrame?Mode=で検索
+2ch記事
+ちょｗグーグルで「inurl:ViewerFrame?Mode= 」って検索してみｗｗｗ </description>
+    </item>
+    
+    <item>
+      <title>SE出世双六</title>
+      <link>https://yaasita.github.io/2010/01/08/7451/</link>
+      <pubDate>Fri, 08 Jan 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/01/08/7451/</guid>
+      <description> SEの出世を目指すすごろく
+http://www.seshop.com/detail.asp?pid=8557
+日立記事
+http://www.hitachi-system.co.jp/press/2007/pr071217.html
+スラド
+http://slashdot.jp/comments.pl?sid=383856&amp;amp;threshold=1&amp;amp;commentsort=3&amp;amp;mode=thread&amp;amp;pid=1267369 </description>
+    </item>
+    
+    <item>
+      <title>“元”エンジニアの告白辞めたワケと今のキモチ</title>
+      <link>https://yaasita.github.io/2010/01/03/7471/</link>
+      <pubDate>Sun, 03 Jan 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/01/03/7471/</guid>
+      <description> SEから他業種に転職した人の話
+http://rikunabi-next.yahoo.co.jp/tech/docs/ct_s03600.jsp?p=000846 </description>
+    </item>
+    
+    <item>
+      <title>エア参拝</title>
+      <link>https://yaasita.github.io/2009/10/29/8209/</link>
+      <pubDate>Thu, 29 Oct 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/10/29/8209/</guid>
+      <description> 参拝しなくても京都に行って参拝したような気になるような感じがする
+http://air-sampai.jp/ </description>
+    </item>
+    
+    <item>
+      <title>IT業界のお話をしているサイト</title>
+      <link>https://yaasita.github.io/2009/10/23/8249/</link>
+      <pubDate>Fri, 23 Oct 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/10/23/8249/</guid>
+      <description> だいたい合ってると思う
+http://www.mars.dti.ne.jp/~hirok/xp/index.html </description>
+    </item>
+    
+    <item>
+      <title>Linuxのイースターエッグ</title>
+      <link>https://yaasita.github.io/2009/10/10/8471/</link>
+      <pubDate>Sat, 10 Oct 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/10/10/8471/</guid>
+      <description> 参考記事とかみて分かった。
+aptitude -v moo
+aptitude -vv moo
+みたいにvを足していくと変なのが出る
+あとはapt-get mooとか </description>
+    </item>
+    
+    <item>
+      <title>カードのイカサマテクニック</title>
+      <link>https://yaasita.github.io/2009/09/05/8716/</link>
+      <pubDate>Sat, 05 Sep 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/09/05/8716/</guid>
+      <description> すげーと思った
+http://www.onlinecasinofan.com/cheatingtechnique-29aug09.php </description>
+    </item>
+    
+    <item>
+      <title>演奏してみた系の動画を探す</title>
+      <link>https://yaasita.github.io/2009/08/29/8756/</link>
+      <pubDate>Sat, 29 Aug 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/08/29/8756/</guid>
+      <description> ジャスコタグで検索するといいかも
+http://www.nicovideo.jp/tag/%E3%82%B8%E3%83%A3%E3%82%B9%E3%82%B3
+あとお気に入りのマイリス
+http://www.nicovideo.jp/mylist/2964530
+http://www.nicovideo.jp/mylist/1916621
+http://www.nicovideo.jp/mylist/9250099 </description>
+    </item>
+    
+    <item>
+      <title>働くモノニュース</title>
+      <link>https://yaasita.github.io/2009/08/16/8939/</link>
+      <pubDate>Sun, 16 Aug 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/08/16/8939/</guid>
+      <description> 転職の参考になるかもしれない
+http://workingnews.blog117.fc2.com/ </description>
+    </item>
+    
+    <item>
+      <title>質問に答えるだけでキャラを当ててくれるサイトらしい</title>
+      <link>https://yaasita.github.io/2009/07/25/8999/</link>
+      <pubDate>Sat, 25 Jul 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/07/25/8999/</guid>
+      <description> http://en.akinator.com/
+http://blog.livedoor.jp/himasoku123/archives/51284785.html </description>
+    </item>
+    
+    <item>
+      <title>phaのニート日記</title>
+      <link>https://yaasita.github.io/2009/07/24/9019/</link>
+      <pubDate>Fri, 24 Jul 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/07/24/9019/</guid>
+      <description> というサイト
+ただのNEETじゃなくてすごいNEETです
+http://d.hatena.ne.jp/pha/
+あー仕事やめてぇ・・・ </description>
+    </item>
+    
+    <item>
+      <title>ほっこり廃墟ツアー</title>
+      <link>https://yaasita.github.io/2009/07/04/9161/</link>
+      <pubDate>Sat, 04 Jul 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/07/04/9161/</guid>
+      <description> http://talkintrash.fc2web.com/index.html </description>
+    </item>
+    
+    <item>
+      <title>あなたの社畜度を測るサイト</title>
+      <link>https://yaasita.github.io/2009/06/17/9241/</link>
+      <pubDate>Wed, 17 Jun 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/06/17/9241/</guid>
+      <description> だそうです
+http://www.syachiku.com/ </description>
+    </item>
+    
+    <item>
+      <title>新人プログラマーがプロのプログラマーとして独り立ちするための7つの条件</title>
+      <link>https://yaasita.github.io/2009/05/30/9502/</link>
+      <pubDate>Sat, 30 May 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/05/30/9502/</guid>
+      <description> http://d.hatena.ne.jp/aureliano/20090423/1240454590 </description>
+    </item>
+    
+    <item>
+      <title>クレジットカードのフェイスを気にする人へ</title>
+      <link>https://yaasita.github.io/2009/05/10/9542/</link>
+      <pubDate>Sun, 10 May 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/05/10/9542/</guid>
+      <description> クレジットカードのフェイスを気にする人へ
+http://www.eposcard.co.jp/campaign/100designcards/index.html
+http://card.sakuratan.com/index.html </description>
+    </item>
+    
+    <item>
+      <title>なんかよく分からないけどほめてくれるサイト</title>
+      <link>https://yaasita.github.io/2009/05/08/9623/</link>
+      <pubDate>Fri, 08 May 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/05/08/9623/</guid>
+      <description> ほめられサロン
+http://kakula.jp/homeSalon/ </description>
+    </item>
+    
+    <item>
+      <title>なんか面白いgifアニメを置いてあるとこ</title>
+      <link>https://yaasita.github.io/2009/05/05/9644/</link>
+      <pubDate>Tue, 05 May 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/05/05/9644/</guid>
+      <description> http://www.creepygif.com/ </description>
+    </item>
+    
+    <item>
+      <title>オラバウトが閉鎖されちゃうよー｡･ﾟ･(ﾉд`)･ﾟ･｡</title>
+      <link>https://yaasita.github.io/2009/04/15/9765/</link>
+      <pubDate>Wed, 15 Apr 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/04/15/9765/</guid>
+      <description> そんなあなたに
+シナバウト
+http://www.alabout.com/
+オラバウトNEXT
+http://gazouch.net/allabout/
+ヨロバウト
+http://reafin.net/
+オラバウト跡地
+http://www.genie.x0.com/alabout/closed.phtml </description>
+    </item>
+    
+    <item>
+      <title>TMTOWTDIの話</title>
+      <link>https://yaasita.github.io/2009/03/21/10032/</link>
+      <pubDate>Sat, 21 Mar 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/03/21/10032/</guid>
+      <description> there&#39;s more than one way to do it 略して
+TMTOWTDI
+perlのスローガン
+意味は「やり方はいくらでもある」みたいな
+うーんためになる
+よくアドレスを忘れるからメモ
+努力、忍耐、謙遜　(Larry Wall)
+http://www.oreilly.co.jp/BOOK/osp/OpenSource_Web_Version/chapter10/chapter10.html </description>
+    </item>
+    
+    <item>
+      <title>よくCMでみかける会社のキャッチコピー</title>
+      <link>https://yaasita.github.io/2009/01/04/10481/</link>
+      <pubDate>Sun, 04 Jan 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/01/04/10481/</guid>
+      <description> 日立　Inspire the Next
+東芝　Leading Innovation
+松下　idea for life
+三菱電機　Changes for the Better </description>
+    </item>
+    
+    <item>
+      <title>決済用普通預金ってのがあるらしい</title>
+      <link>https://yaasita.github.io/2008/12/23/10691/</link>
+      <pubDate>Tue, 23 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/23/10691/</guid>
+      <description> 利息はつかないけど、全額保障されるらしい
+ペイオフで保障されるのは1000万までだから金持ちの人はいいんじゃないかな </description>
+    </item>
+    
+    <item>
+      <title>今日覚えた四字熟語</title>
+      <link>https://yaasita.github.io/2008/12/14/10814/</link>
+      <pubDate>Sun, 14 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/14/10814/</guid>
+      <description> ・朝三暮四
+目先のことしか見えてないこと
+・八面六臂
+なんかすごい活躍
+参考リンク
+http://contest2004.thinkquest.jp/tqj2004/70237/t/tyousan.html </description>
+    </item>
+    
+    <item>
+      <title>ゲーム</title>
+      <link>https://yaasita.github.io/2008/11/28/10937/</link>
+      <pubDate>Fri, 28 Nov 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/11/28/10937/</guid>
+      <description> 切って進めるゲーム(splitter)
+http://www.kongregate.com/games/EvgenyKarataev/splitter/
+ニコニコメーカー
+http://nm.dabun-doumei.com/
+splitter 解答
+http://jp.youtube.com/watch?v=PHF6WKd1MyU </description>
+    </item>
+    
+    <item>
+      <title>FFベンチをやってみた</title>
+      <link>https://yaasita.github.io/2008/11/26/10958/</link>
+      <pubDate>Wed, 26 Nov 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/11/26/10958/</guid>
+      <description> 結果は3000くらい
+２ｃｈのテンプレに習って報告してみる
+構成
+【 .CPU.　】 AMD Athlon 64 3200+
+【 Mem 】 1GB DDR400
+【　M/B　】Albatron K8X890 Pro
+【　VGA 】GeForce 7300GS (AL-GF7300GS)
+【VGAﾄﾞﾗｲﾊﾞ】
+【　DirectX....】 DirectX9.0c
+【　Sound 】
+【 OS 】
+【 Ver . 】
+▼スコア
+【　.Low　】
+【　High　.】
+http://www.playonline.com/ff11/download/media/benchmark01.html </description>
+    </item>
+    
+    <item>
+      <title>ガンダノイドSEED</title>
+      <link>https://yaasita.github.io/2008/10/25/11040/</link>
+      <pubDate>Sat, 25 Oct 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/10/25/11040/</guid>
+      <description> http://nameall.cosotto.com/gundanoids/ </description>
+    </item>
+    
+    <item>
+      <title>何か衝突とか破裂する瞬間をスローで見るFLASH</title>
+      <link>https://yaasita.github.io/2008/10/25/11020/</link>
+      <pubDate>Sat, 25 Oct 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/10/25/11020/</guid>
+      <description> http://dsc.discovery.com/tv/time-warp/video/interactive/interactive.html </description>
+    </item>
+    
+    <item>
+      <title>解析テンプレ</title>
+      <link>https://yaasita.github.io/2008/10/24/11060/</link>
+      <pubDate>Fri, 24 Oct 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/10/24/11060/</guid>
+      <description> 定番解析ソフトと解析勉強サイト
+●デバッガ OllyDbg
+Digital Travesiaで再配布
+●プロセスメモリエディタ兼デバッガ スペシャルねこまんま57号
+http://www.vector.co.jp/soft/win95/hardware/se254476.html
+●プロセスメモリエディタ兼デバッガ うさみみハリケーン
+http://hp.vector.co.jp/authors/VA028184/
+●ヘキサエディタ Stirling
+http://www.vector.co.jp/soft/win95/util/se079072.html
+●PCゲーム解析指南+OllyDbg日本語化パッチ Digital Travesia
+http://hp.vector.co.jp/authors/VA028184/
+参考書
+・解析魔法少女美咲ちゃん マジカル・オープン!
+ISBN:4-7980-0853-2 2,730円 A5判 280 頁
+・クラッカー・プログラム大全―禁断のシリアルナンバー解析テクニック
+ISBN:4-88718-746-7 2625円 A5判 304頁
+・はじめて読む8086
+ISBN:4871482456 1,682円 286頁
+購入回避推奨
+ゲーム解析スレ・書評サイト等で酷評されている参考書
+・いまどきのアセンブラプログラミング [橋本和明(著)]
+・いまどきのアセンブラの教科書 [橋本和明(著)]
+・アセンブラ読本 for Game ゼロからはじめるゲーム改造 [橋本和明(著)] </description>
+    </item>
+    
+    <item>
+      <title>葛飾北斎ジェネレーター</title>
+      <link>https://yaasita.github.io/2008/10/22/11103/</link>
+      <pubDate>Wed, 22 Oct 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/10/22/11103/</guid>
+      <description> http://www.adgame-wonderland.de/type/hokusai/ </description>
+    </item>
+    
+    <item>
+      <title>Project Cartoon</title>
+      <link>https://yaasita.github.io/2008/10/14/11123/</link>
+      <pubDate>Tue, 14 Oct 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/10/14/11123/</guid>
+      <description> ITプロジェクトの現状を木で表現したあれ
+http://www.projectcartoon.com/ </description>
+    </item>
+    
+    <item>
+      <title>最近流行の崩壊系</title>
+      <link>https://yaasita.github.io/2008/10/04/11143/</link>
+      <pubDate>Sat, 04 Oct 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/10/04/11143/</guid>
+      <description> http://www.nicovideo.jp/watch/nm4801333
+http://jp.youtube.com/experiencewii </description>
+    </item>
+    
+    <item>
+      <title>面白いコピペ</title>
+      <link>https://yaasita.github.io/2008/09/16/11225/</link>
+      <pubDate>Tue, 16 Sep 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/09/16/11225/</guid>
+      <description> 
+
+1 名前：Socket774[sage] 投稿日：2008/09/09(火) 17:00:33 ID:AVvI1x3R
+|㍑㍍||l㌔㍍l|
+|㌧㌦||l㌻㍊l|
+| ||l㍗㌍l|　┏━━━━━━━━━━┓
+| ||　|　┃┌――――――――┐┃
+| ||　|　┃｜　＼　.｜┃
+／￣￣￣￣￣ﾌ.┃｜　n.∧∧＼　.｜┃コﾆl
+㌢㍍㌘㌶㌧.／...┃｜　l (^Д^)/)､ﾍ,,∧　｜┃ .＿　＿＿
+／／! ┃｜　｀ｰ,　`(`ﾐﾟヮﾟ,,ミ　｜┃/ ./／　／l
+＿＿＿／.／　.┃｜　ﾉ　|´\　とソ .｜┃￣|三三／
+＿＿＿|／ .┃｜　し&#39;`J　＾|　|　.｜┃⊂⊃
+┃└─―――――――┘┃ |　|
+┗━━━━━━━━━━┛ ｀ｰ´
+人は何かの犠牲なしに何も得ることは出来ない
+パソコンを得るためには相応の代価が必要になる
+それが自作PCにおける自己責任の原則だ
+このスレに来るまで 僕等はそれが世界の真実だと信じていた．．．
+
+
+多分↑をJaneとかにコピペすりゃーズレないだろう </description>
+    </item>
+    
+    <item>
+      <title>OSたんのやつ</title>
+      <link>https://yaasita.github.io/2008/09/01/11390/</link>
+      <pubDate>Mon, 01 Sep 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/09/01/11390/</guid>
+      <description> 共有フォルＤＡ！
+http://www.dejavuartworks.com/os/index.html </description>
+    </item>
+    
+    <item>
+      <title>ジャンボ宝くじ模擬実験室</title>
+      <link>https://yaasita.github.io/2008/07/26/11516/</link>
+      <pubDate>Sat, 26 Jul 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/07/26/11516/</guid>
+      <description> http://homepage2.nifty.com/nif/takara.html </description>
+    </item>
+    
+    <item>
+      <title>ナイナイのANN（オールナイトニッポン）</title>
+      <link>https://yaasita.github.io/2008/07/19/11559/</link>
+      <pubDate>Sat, 19 Jul 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/07/19/11559/</guid>
+      <description> 【ニコニコ動画】ナイナイのANN </description>
+    </item>
+    
+    <item>
+      <title>クレジットカードの使えるコンビニ</title>
+      <link>https://yaasita.github.io/2008/06/22/11992/</link>
+      <pubDate>Sun, 22 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/22/11992/</guid>
+      <description> サークルKサンクス
+ローソン
+ミニストップ </description>
+    </item>
+    
+    <item>
+      <title>メモ帳代わりにブログを初めてみる</title>
+      <link>https://yaasita.github.io/2007/07/29/14306/</link>
+      <pubDate>Sun, 29 Jul 2007 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2007/07/29/14306/</guid>
+      <description>blogger.comはgoogleアカウント持ってればすぐできるからこれにしよう</description>
     </item>
     
   </channel>

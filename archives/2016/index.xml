@@ -1,305 +1,303 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title># cd ~yaasita</title>
+    <title>2016 on # cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2016/</link>
-    <description>Recent content on # cd ~yaasita</description>
-    <generator>Hugo</generator>
+    <description>Recent content in 2016 on # cd ~yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sat, 03 Dec 2016 23:22:00 +0900</lastBuildDate>
-    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://yaasita.github.io/archives/2016/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
-      <title>chromebookが最高だった</title>
-      <link>https://yaasita.github.io/2019/12/23/chromebook/</link>
-      <pubDate>Mon, 23 Dec 2019 05:58:32 +0900</pubDate>
+      <title>GCPの Cloud DNSでグルーレコード</title>
+      <link>https://yaasita.github.io/2016/12/03/google-cloud-dns/</link>
+      <pubDate>Sat, 03 Dec 2016 23:22:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/12/23/chromebook/</guid>
-      <description>ASUS の C434TA-AI0084 を買ったのでレビュー
-chromeOS  起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある  解除がちょっと遅い10秒くらい待たされる   chromeの複数ユーザー機能が使えない  多重ログイン機能はあるけどちょっと微妙  別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能      ディスプレイ  タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 バックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗  テザリング  Moto E5 とbluetoothでのテザリングが出来なかった  とりあえずUSBテザリングは刺すだけで使えたので良しとしてます    キーボード  Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない  Androidアプリ  ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない  Linux環境 OS  Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり  バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい   USB共有機能あり /opt/google/cros-containers/bin/.</description>
+      <guid>https://yaasita.github.io/2016/12/03/google-cloud-dns/</guid>
+      <description>Google Cloud Platform のDNSでグルーレコード作るときは
+こんな感じでNS指定したあとに、Aレコード追加すればグルーレコード(Glue Record)に追加してくれるようだ
+
+; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.9.5-9+deb8u8-Debian &amp;lt;&amp;lt;&amp;gt;&amp;gt; +norec @ns-cloud-d1.googledomains.com. name.yaasita.xyz. a ; (2 servers found) ;; global options: +cmd ;; Got answer: ;; -&amp;gt;&amp;gt;HEADER&amp;lt;&amp;lt;- opcode: QUERY, status: NOERROR, id: 39015 ;; flags: qr; QUERY: 1, ANSWER: 0, AUTHORITY: 2, ADDITIONAL: 3 ;; OPT PSEUDOSECTION: ; EDNS: version: 0, flags:; udp: 512 ;; QUESTION SECTION: ;name.yaasita.xyz. IN A ;; AUTHORITY SECTION: name.yaasita.xyz. 300 IN NS ns1.name.yaasita.xyz. name.</description>
     </item>
     
     <item>
-      <title>GCP Cloud Functions内からサービスアカウントのtoken取る</title>
-      <link>https://yaasita.github.io/2019/12/08/service-account-in-cf/</link>
-      <pubDate>Sun, 08 Dec 2019 05:12:12 +0900</pubDate>
+      <title>VALUE-DOMAINでグルーレコード追加</title>
+      <link>https://yaasita.github.io/2016/11/25/value-domain/</link>
+      <pubDate>Fri, 25 Nov 2016 01:31:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/12/08/service-account-in-cf/</guid>
-      <description>Cloud Functionsからサービスアカウントのアクセストークンをどうやって取るの？と疑問に思ったので調べた
-Google Compute Engineと同じ取り方でOK
-&amp;quot;use strict&amp;quot;; const fetch = require(&amp;quot;node-fetch&amp;quot;); exports.handler = async (req, res) =&amp;gt; { const url = &amp;quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&amp;quot; + &amp;quot;[サービスアカウント名]/token&amp;quot;; const result = await fetch(url, { method: &amp;quot;GET&amp;quot;, headers: { &amp;quot;Metadata-Flavor&amp;quot;: &amp;quot;Google&amp;quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&amp;quot;OK&amp;quot;); };  なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
-
-まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &amp;ldquo;Function Identity&amp;quot;とかクリックするとちゃんと日本語版あるんですよね
-なんかメニューがバグってるのかな・・・
-とりあえず英語版から探すのをオススメします&amp;hellip;
+      <guid>https://yaasita.github.io/2016/11/25/value-domain/</guid>
+      <description>VALUE-DOMAIN バリュードメインの権威DNSサーバを使いつつ
+レコードにグルーレコードを追加する方法
+BINDみたくこんな感じにやる
+ns cloud cloud.example.net. a cloud.example.net. 123.123.123.123  上位の権威サーバにグルーレコードを設定する場合は
+下記参照
+https://www.value-domain.com/userguide/manual/othermodns/</description>
+    </item>
+    
+    <item>
+      <title>AWSへVMイメージごと移動する手順</title>
+      <link>https://yaasita.github.io/2016/11/20/aws-vm-import/</link>
+      <pubDate>Sun, 20 Nov 2016 20:45:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/11/20/aws-vm-import/</guid>
+      <description>手順 img作る前に以下を確認しておく
+ DHCPを有効にしている iptablesを無効に rawでイメージを作っておく  次に以下のコマンドでインポート
+# hoge-importってバケット作ったとする # 最初にimgをS3に上げておく aws s3 cp hoge.img s3://hoge-import/hoge.img # IAM周りを準備 aws iam create-role --role-name vmimport --assume-role-policy-document file://trust-policy.json aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json # インポートタスク開始 aws ec2 import-image --description &amp;quot;hoge server&amp;quot; --disk-containers file://containers.json # 進捗見る aws ec2 describe-import-image-tasks  使ったjsonファイル
+ 参考リンク  http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats http://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html  </description>
+    </item>
+    
+    <item>
+      <title>フレッツのDNS挙動</title>
+      <link>https://yaasita.github.io/2016/10/31/flets-dns/</link>
+      <pubDate>Mon, 31 Oct 2016 00:42:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/10/31/flets-dns/</guid>
+      <description>NSレコードに指定したホスト名にCNAMEを持たせてはいけない
+という話は有名だがどのように挙動が変わるか見てみる
+準備 yaasita.ml. の権威サーバは ns1.aws.yaasita.net. にしておく
+NSで指定されてるサーバは CNAMEとして aws.yaasita.net. に設定しておく
+; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.9.5-9+deb8u7-Debian &amp;lt;&amp;lt;&amp;gt;&amp;gt; +norec @aws.yaasita.net. ns1.aws.yaasita.net. a ; (1 server found) ;; global options: +cmd ;; Got answer: ;; -&amp;gt;&amp;gt;HEADER&amp;lt;&amp;lt;- opcode: QUERY, status: NOERROR, id: 31880 ;; flags: qr aa; QUERY: 1, ANSWER: 2, AUTHORITY: 1, ADDITIONAL: 1 ;; OPT PSEUDOSECTION: ; EDNS: version: 0, flags:; udp: 4096 ;; QUESTION SECTION: ;ns1.aws.yaasita.net. IN A ;; ANSWER SECTION: ns1.</description>
+    </item>
+    
+    <item>
+      <title>最近買ったスマホ</title>
+      <link>https://yaasita.github.io/2016/10/22/smart-phone/</link>
+      <pubDate>Sat, 22 Oct 2016 22:54:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/10/22/smart-phone/</guid>
+      <description>エイスース SIMフリースマートフォン ASUS ZenFone 2 Laser（Qualcomm Snapdragon 410/メモリ 2GB） 16GB ブラック ZE500KL-BK16  18,672円だった
+Androidは6.0.1まで上がった</description>
+    </item>
+    
+    <item>
+      <title>更新通知のbashrc</title>
+      <link>https://yaasita.github.io/2016/09/10/update-notify/</link>
+      <pubDate>Sat, 10 Sep 2016 12:52:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/09/10/update-notify/</guid>
+      <description>こんな感じで、更新を促す
+ </description>
+    </item>
+    
+    <item>
+      <title>超次元アクション ネプテューヌU</title>
+      <link>https://yaasita.github.io/2016/09/04/nepu/</link>
+      <pubDate>Sun, 04 Sep 2016 03:13:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/09/04/nepu/</guid>
+      <description>Vita版のやつ
+ギョウ界チ武道会 クリアしたキャラ
+ ネプチューヌ ノワール ブラン ベール ネプギア ユニ ロム ラム デンゲキコ パープルハート ブラックハート ホワイトハート グリーンハート パープルシスター ブラックシスター ホワイトシスター(左) ホワイトシスター(右) ファミ通  -&amp;gt; 取得したアイテムで審議判定できる
+http://catmiimi.com/nepu_military
+参考リンク http://catmiimi.com/nepu</description>
+    </item>
+    
+    <item>
+      <title>smplayerでリピート再生</title>
+      <link>https://yaasita.github.io/2016/08/27/smplayer/</link>
+      <pubDate>Sat, 27 Aug 2016 14:33:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/08/27/smplayer/</guid>
+      <description>ずっとループして再生
+ 再生(P) → A-Bセクション(A) → 繰り返し(R)  </description>
+    </item>
+    
+    <item>
+      <title>AWSのVPNまわり</title>
+      <link>https://yaasita.github.io/2016/07/31/aws-vpn/</link>
+      <pubDate>Sun, 31 Jul 2016 00:36:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/07/31/aws-vpn/</guid>
+      <description>よくある質問
+対応機器
+http://aws.amazon.com/jp/vpc/faqs/
+ハードウェアVPN接続
+ 1つの仮想プライベートゲートウェイあたり10接続
+http://docs.aws.amazon.com/ja_jp/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html
+http://dev.classmethod.jp/cloud/aws/vpc-connect-hardware-vpn/  </description>
+    </item>
+    
+    <item>
+      <title>s3fs使う</title>
+      <link>https://yaasita.github.io/2016/06/22/s3fs/</link>
+      <pubDate>Wed, 22 Jun 2016 13:40:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/06/22/s3fs/</guid>
+      <description>s3fsはamazon S3をファイルしすてむのように使うやつ
+ただ遅い
+基本ここ見てやる
+https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes
+今回はCeontOS6を対象
+# paco入れておく yum install paco # コンパイルに必要なもの入れる yum install -y gcc libstdc++-devel gcc-c++ curl-devel libxml2-devel openssl-devel mailcap # fuse wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.8.5.tar.gz ./configure make paco -lD &#39;make install&#39; # /usr/local/lib 追記 vi /etc/ld.so.conf ldconfig # s3fs wget http://s3fs.googlecode.com/files/s3fs-1.74.tar.gz tar xvaf s3fs-1.74.tar.gz cd s3fs-1.74/ autoreconf --install export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure --prefix=/usr make paco -lD &#39;make install&#39; # mount s3fs hoge-bucket /s3 -o rw,allow_other,uid=501,gid=501,default_acl=public-read su - apps cd /s3 date &amp;gt; date.</description>
+    </item>
+    
+    <item>
+      <title>やる夫で学ぶ機械学習シリーズ</title>
+      <link>https://yaasita.github.io/2016/06/11/deep-learning/</link>
+      <pubDate>Sat, 11 Jun 2016 23:55:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/06/11/deep-learning/</guid>
+      <description>http://tkengo.github.io/blog/2016/06/06/yaruo-machine-learning0/</description>
+    </item>
+    
+    <item>
+      <title>戦国無双クロニクル3(Vita)攻略</title>
+      <link>https://yaasita.github.io/2016/05/10/sengoku-musou/</link>
+      <pubDate>Tue, 10 May 2016 00:36:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/05/10/sengoku-musou/</guid>
+      <description>攻略サイト
+http://goo.gl/bAfbfX
+この全武将お手軽さ評価づけが参考になる
+http://goo.gl/uenJG4</description>
+    </item>
+    
+    <item>
+      <title>IRCのログを記録するbotbot.me</title>
+      <link>https://yaasita.github.io/2016/05/04/botbot-me/</link>
+      <pubDate>Wed, 04 May 2016 23:10:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/05/04/botbot-me/</guid>
+      <description>https://botbot.me/
+botbot.meはIRCに参加させることでログを取って
+公開できるbotだ
+便利そう</description>
+    </item>
+    
+    <item>
+      <title>リアルタイム監視ソフトnetdata</title>
+      <link>https://yaasita.github.io/2016/04/25/netdata/</link>
+      <pubDate>Mon, 25 Apr 2016 23:24:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/04/25/netdata/</guid>
+      <description>https://github.com/firehol/netdata
+インストール
+https://github.com/firehol/netdata/wiki/Installation
+# 起動 /usr/sbin/netdata # 見てみる http://192.168.0.38:19999/  </description>
+    </item>
+    
+    <item>
+      <title>ファイル同期ソフトSyncthing</title>
+      <link>https://yaasita.github.io/2016/04/25/syncthing/</link>
+      <pubDate>Mon, 25 Apr 2016 23:16:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/04/25/syncthing/</guid>
+      <description>ファイル同期ソフトSyncthingを試してみる
+公式
+https://syncthing.net/
+Go言語で出来ていてクロスプラットフォーム
+Androidでも動く
+同様のソフトにBitTorrent Syncがあるみたいだけどこっちのほうが良さそう
+（同期ディレクトリに上限がないため）
+こんな感じ
+./syncthing -gui-address=&amp;quot;192.168.0.10:3184&amp;quot; -no-browser  </description>
+    </item>
+    
+    <item>
+      <title>Git-itやってみた</title>
+      <link>https://yaasita.github.io/2016/04/24/git-it/</link>
+      <pubDate>Sun, 24 Apr 2016 02:05:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2016/04/24/git-it/</guid>
+      <description>日本語も選択できるElectron製のアプリで
+ステップバイステップで勉強できる
+ここのリリースページからバイナリを落として実行する
+https://github.com/jlord/git-it-electron
+結果
+http://yaasita.github.io/patchwork/
 参考リンク
- 関数ID Compute Metadata Server   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].</description>
+ Git-it – 手を動かしながら習得できる日本語対応のGit/GitHub学習アプリ  http://www.softantenna.com/wp/review/git-it/   プルリク練習用のリポジトリ  https://github.com/jlord/patchwork   結果確認  http://jlord.us/patchwork/    </description>
     </item>
     
     <item>
-      <title>GCPでアクセストークンを取得する</title>
-      <link>https://yaasita.github.io/2019/11/14/gcp-access-token/</link>
-      <pubDate>Thu, 14 Nov 2019 22:32:41 +0900</pubDate>
+      <title>HDDの不良セクタ埋める</title>
+      <link>https://yaasita.github.io/2016/03/26/hdd_bad_sector/</link>
+      <pubDate>Sat, 26 Mar 2016 00:43:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/11/14/gcp-access-token/</guid>
-      <description>ほとんどのサービスは クライアントライブラリ を使えば
-export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json  みたいに環境変数を設定するだけで良いのだが、Cloud Build 等は access tokenを取得して叩く必要がある
-という事でGCPのサービスアカウントからアクセストークンを取得するコード
- スコープ一覧はこちら
-https://developers.google.com/identity/protocols/googlescopes
-アクセストークンのテストは DLP とかがお手軽で良いかな
-参考リンク  jose API Document Using OAuth 2.0 for Server to Server Applications  </description>
+      <guid>https://yaasita.github.io/2016/03/26/hdd_bad_sector/</guid>
+      <description>HDDの不良セクタ代替処理を自動化
+Reallocated_Sector_Ctが残ってれば使える手法
+https://github.com/yaasita/hdd_badsector
+使い方
+smartctl -a /dev/sdc | ./hdd_check.pl /dev/sdc  </description>
     </item>
     
     <item>
-      <title>osu!taikoのskin</title>
-      <link>https://yaasita.github.io/2019/10/27/osu/</link>
-      <pubDate>Sun, 27 Oct 2019 03:00:31 +0900</pubDate>
+      <title>Mojoliciousのwebsocket回り</title>
+      <link>https://yaasita.github.io/2016/02/21/mojolicious/</link>
+      <pubDate>Sun, 21 Feb 2016 02:29:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/10/27/osu/</guid>
-      <description>osu!taikoのスキン
-これが一番良かった
-概要欄からダウンロードできる</description>
+      <guid>https://yaasita.github.io/2016/02/21/mojolicious/</guid>
+      <description>websocketの開いてもデフォルト15秒でタイムアウトするのが嫌なら
+↓みたいな感じでtimeout伸ばす
+Mojo::IOLoop-&amp;gt;stream($self-&amp;gt;tx-&amp;gt;connection)-&amp;gt;timeout(300);    参考リンク http://kazuph.hateblo.jp/entry/20120310/1331395725 https://github.com/yuki-kimoto/mojolicious-guides-japanese/wiki  </description>
     </item>
     
     <item>
-      <title>AtCoder Beginner Contest 142のD問題</title>
-      <link>https://yaasita.github.io/2019/09/30/atcoder-abc142/</link>
-      <pubDate>Mon, 30 Sep 2019 05:05:34 +0900</pubDate>
+      <title>ff10-2</title>
+      <link>https://yaasita.github.io/2016/02/15/ff10-2/</link>
+      <pubDate>Mon, 15 Feb 2016 01:13:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/09/30/atcoder-abc142/</guid>
-      <description>問題: D - Disjoint Set of Common Divisors
-方針はユークリッドの互除法で最大公約数を出して、最大公約数を素因数分解
-存在する素数の数+1(今回は1もお互いに素の数として含めるため)でOKぽい
-perlで書いてみる
- 解説動画</description>
+      <guid>https://yaasita.github.io/2016/02/15/ff10-2/</guid>
+      <description>FF10-2ラストミッション LAST MISSIONでの使用ドレス
+ラスボスが混乱攻撃してくるのでその対策は必須
+あと、アイテムに足して、呪いだったりボムだったりの状態異常がかかる場合があるので、アイテムエスナを使えるアイテムシューターも必須かと思う
+ ガンナー (混乱防御のため) アイテムシューター ダークナイト (暗黒が強力) 調教師 (穴掘りでアイテム探し) 白魔導士 (ケアルガで回復)  あと装備アイテムは以下の2種類
+ 満ちる月の石 (自動MP回復) トリプルティアラ(3回攻撃)  参考リンク  FF10-2ラストミッション攻略ページ 結界解除条件  </description>
     </item>
     
     <item>
-      <title>systemd timerはちゃんと動いてる？</title>
-      <link>https://yaasita.github.io/2019/09/29/systemd-timer/</link>
-      <pubDate>Sun, 29 Sep 2019 16:51:09 +0900</pubDate>
+      <title>下位10%のダメなエンジニアシリーズ</title>
+      <link>https://yaasita.github.io/2016/01/25/dame-engineer/</link>
+      <pubDate>Mon, 25 Jan 2016 00:23:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/09/29/systemd-timer/</guid>
-      <description>systemdタイマーがちゃんと動いてるか確認したほうが良いよというお話
-systemctl list-timers --allコマンドで一覧が見れるあれです
-debian10だと /etc/cron.daily にあるスクリプトでこんな感じに書かれてたら、systemd timerの方を使ってる
-if [ -d /run/systemd/system ]; then exit 0 fi  前回 と同様にノートパソコンのバッテリー稼働と誤って判断されることに起因する問題
-例えばlogrotateとかみると
-systemctl cat logrotate  こんな一文がある
-ConditionACPower=true  これはバッテリー駆動の時は動かさないって意味らしいんだけど、どうも判定が狂ってるみたいでずっと実行されなかった
-なので、以下のコマンドでoverride.conf作って判定を無効化した
-systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower=  というわけで
-cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
-journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  とりあえず分かった、バッテリー時の判定が入ってるtimer
- apt-daily-upgrade man-db logrotate anacron apt-daily  </description>
+      <guid>https://yaasita.github.io/2016/01/25/dame-engineer/</guid>
+      <description>パズル1  http://tango-ruby.hatenablog.com/entry/2015/11/30/122814 http://challenge-your-limits.herokuapp.com/  答え
+curl http://challenge-your-limits.herokuapp.com/call/me # getだめだよって怒られる curl -F &amp;quot;hoge=hoge&amp;quot; http://challenge-your-limits.herokuapp.com/call/me # 適当にPOSTすると正しいURLを教えてくれる curl -F &amp;quot;name=hoge&amp;quot; -F &amp;quot;email=huga@hoge.com&amp;quot; \ http://challenge-your-limits.herokuapp.com/challenge_users # あとはこんな感じで  パズル2  http://tango-ruby.hatenablog.com/entry/2015/12/28/212010 http://challenge-your-limits2.herokuapp.com/  答え
+curl http://challenge-your-limits2.herokuapp.com/call/my/APIs # メソッドが違うらしい curl -X DELETE http://challenge-your-limits2.herokuapp.com/call/my/APIs # いろいろ試すとDELETEで通る curl http://challenge-your-limits2.herokuapp.com/c2_users/12/hacker_apply # 案内されたURLにリクエストするとなんか違うらしい curl http://challenge-your-limits2.herokuapp.com/help/me/out # とりあえず登録 curl -F &amp;quot;username=yaasita&amp;quot; -F &#39;email=hoge1@example.com&#39; \ http://challenge-your-limits2.heroku/app.com/c2_users/ # 帰ってきた値でBASIC認証 curl --user yaasita:uRd4yy-imPbHBR4W http://challenge-your-limits2.herokuapp.com/c2_users/10 # あとは帰ってきた文字列をBASE64デコード  パズル3  http://tango-ruby.hatenablog.com/entry/2016/01/10/125615 http://challenge-your-limits3.herokuapp.com/  答え</description>
     </item>
     
     <item>
-      <title>ビリビリ動画とcrunchyrollのIP制限をGCPで検証</title>
-      <link>https://yaasita.github.io/2019/09/14/anime-ip-block/</link>
-      <pubDate>Sat, 14 Sep 2019 22:21:43 +0900</pubDate>
+      <title>リンク</title>
+      <link>https://yaasita.github.io/2016/01/24/link/</link>
+      <pubDate>Sun, 24 Jan 2016 02:15:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/09/14/anime-ip-block/</guid>
-      <description>bilibili動画とcrunchyrollのIP制限はどんな感じなのか
-GCPの各リージョンからアクセスして試してみる
-rttは自宅から該当サーバーまでのpingしたときの平均値
-なのでISPによって全然違うと思うので参考値ということで
-   region bilibili crunchyroll rtt(ms)     asia-east1 (台湾) ng ok 60.149   asia-east2 (香港) ng ok 76.986   asia-northeast1 (東京) ng ok 29.624   asia-northeast2 (大阪) ng ok 37.401   asia-south1 (ムンバイ) ng ok 144.055   asia-southeast1 (シンガポール) ng ok 89.755   australia-southeast1 (シドニー) ng ok 122.193   europe-north1 (フィンランド) ng ok 256.714   europe-west1 (ベルギー) ng ok 229.</description>
+      <guid>https://yaasita.github.io/2016/01/24/link/</guid>
+      <description> 監視カメラまとめ  http://www.insecam.org/en/bycountry/JP/   SIはやめておけ  http://anond.hatelabo.jp/20160123131828 バックアップ    </description>
     </item>
     
     <item>
-      <title>on_ac_powerコマンドについて</title>
-      <link>https://yaasita.github.io/2019/08/16/on-ac-power/</link>
-      <pubDate>Fri, 16 Aug 2019 04:45:45 +0900</pubDate>
+      <title>素因数分解の話</title>
+      <link>https://yaasita.github.io/2016/01/11/factor/</link>
+      <pubDate>Mon, 11 Jan 2016 02:20:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/08/16/on-ac-power/</guid>
-      <description>debian10にした関係でLinuxネタが続く
-PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある
-そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる
-例えば、/etc/cron.daily/mlocate の場合
-if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi  こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
-んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
-このままだと永遠にlocateコマンドが使えないので、divertで退避させた
-dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power  おしまい</description>
+      <guid>https://yaasita.github.io/2016/01/11/factor/</guid>
+      <description>素因数分解してくれるサービス
+http://factordb.com/
+自分のSSH鍵がリストされてないか確認してみる
+# 公開鍵の modulus ssh-keygen -m PKCS8 -e -f authorized_keys &amp;gt; kagi openssl rsa -pubin -inform PEM -text -noout &amp;lt; kagi &amp;gt; modulus # 秘密鍵の modulus とか prime1, prime2の確認 openssl rsa -text -noout -in ~/.ssh/id_rsa  こんな感じのスクリプトで10進数にすればOK
+perlで大きめの数値計算する例も
+ 載ってない一安心
+  http://goo.gl/Qqaed5
+  http://goo.gl/yKVyUH
+  参考リンク
+ TeslaCrypt（vvvウイルス）によって暗号化されたファイルの復号手順メモ    </description>
     </item>
     
     <item>
-      <title>1から100の偶数の和を求めるやつ</title>
-      <link>https://yaasita.github.io/2019/08/15/sum-even-number/</link>
-      <pubDate>Thu, 15 Aug 2019 04:10:11 +0900</pubDate>
+      <title>systemdでの電源管理</title>
+      <link>https://yaasita.github.io/2016/01/06/acpi/</link>
+      <pubDate>Wed, 06 Jan 2016 00:47:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/08/15/sum-even-number/</guid>
-      <description>「1から100の偶数の和を求めるワンライナー」まとめ
-perlでやってみる
-perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;eval&amp;quot;say @{[grep{$_%2==0}1..100]}&amp;quot;;&#39;  4つ思いついた
-結論 simple is best</description>
-    </item>
-    
-    <item>
-      <title>各種サーバの中間証明書の扱い</title>
-      <link>https://yaasita.github.io/2019/08/14/ssl-capath/</link>
-      <pubDate>Wed, 14 Aug 2019 10:20:33 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/14/ssl-capath/</guid>
-      <description>中間証明書をどう設定するか問題
-postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&#39;s Encryptの場合こんな感じ
-smtpd_tls_CAfileに中間証明書を指定する
-smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
-dovecot 10-ssl.conf
-ssl_ca = &amp;lt;/etc/letsencrypt/live/example.net/chain.pem  これはダメ
-この設定はクライアント証明書用ですので
-正しくは、こんな感じに、まとめたやつを指定すればOK
-ssl_cert = &amp;lt;/etc/letsencrypt/live/example.net/fullchain.pem  apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
-SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem  dovecot同様に中間証明書もまとめて指定する
-まとめ この問題はスマホのK-9 Mailでメール読もうとしたときに判明した
-(突然CertPathValidatorExceptionって怒られた)
-thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
-openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
-    </item>
-    
-    <item>
-      <title>虫よけスプレー</title>
-      <link>https://yaasita.github.io/2019/07/29/musiyoke/</link>
-      <pubDate>Mon, 29 Jul 2019 03:42:37 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/07/29/musiyoke/</guid>
-      <description>虫除けスプレーで最近買ったこれが良かった
-ベタベタしないので気にならない
-フマキラー SKIN VAPEってやつかな
-商品名はスキンベープミスト　200mlかも
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   そういや虫よけ剤に入ってるDEETって薬はなぜ虫が寄り付かないか謎らしい</description>
-    </item>
-    
-    <item>
-      <title>例のS3署名バージョン2について</title>
-      <link>https://yaasita.github.io/2019/06/25/s3v2/</link>
-      <pubDate>Tue, 25 Jun 2019 00:31:08 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/06/25/s3v2/</guid>
-      <description>AWS S3の署名バージョン騒動
-大丈夫ぽいけど一応調べた時につかったスクリプト
-CloudTrailでログを有効化してからお使いください
- </description>
-    </item>
-    
-    <item>
-      <title>Cloud Runがすごく良い</title>
-      <link>https://yaasita.github.io/2019/05/29/cloud-run/</link>
-      <pubDate>Wed, 29 May 2019 21:42:23 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/05/29/cloud-run/</guid>
-      <description>GCPのCloud Runがめっちゃ便利
-覚えなきゃいけないルールは2つ
- Dockerにする事 環境変数 $PORT のポート番号でlistenしてレスポンスを返す事  これだけ
-コマンドとかはこの辺見ればすぐできると思います
-あと、Chunked Transferみたいな仕組みで進捗を返すみたいなAPIは難しいかもしれない
-以下のようなプログラムでちょっとずつレスポンス返しても、バッファリングされてるみたいで、最後ドバっと返ってきた
- </description>
-    </item>
-    
-    <item>
-      <title>PKCEをJavaScriptで実装する</title>
-      <link>https://yaasita.github.io/2019/04/29/pkce/</link>
-      <pubDate>Mon, 29 Apr 2019 01:23:20 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/04/29/pkce/</guid>
-      <description>code_verifier から code_challenge の生成方法について調べた
-code_challenge_method=S256の場合は以下のような実装ロジックになる
-node.jsで書いた
-Oauth2のPKCE
-base64エンコードじゃなくてbase64urlエンコードなのが注意点
- </description>
-    </item>
-    
-    <item>
-      <title>令和の対応に際して</title>
-      <link>https://yaasita.github.io/2019/04/25/reiwa/</link>
-      <pubDate>Thu, 25 Apr 2019 02:08:40 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/04/25/reiwa/</guid>
-      <description>techrachoの記事
-perlも追加でお願いします
- </description>
-    </item>
-    
-    <item>
-      <title>tarの差分バックアップ</title>
-      <link>https://yaasita.github.io/2019/04/01/tar-backup/</link>
-      <pubDate>Mon, 01 Apr 2019 16:12:46 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/04/01/tar-backup/</guid>
-      <description>前回の続き
-でctime変化しちゃってどうしたか？
-ファイルサイズとファイル名を取っておいて差分を作ることにした
- こんな感じのスクリプトで、ファイル名 + tab + ファイルサイズで保存する
-(厳密にやる場合はsha256とかで)
-そんで現在のファイルリストも取って、差分をとる
-diff -u previous.txt now.txt | egrep &amp;quot;^\+[^\+]&amp;quot; | perl -ple &#39;s/^\+//;s/\t.+//&#39; &amp;gt; tar.txt あとは-Tオプションで差分のファイルだけをtarで固める
-tar -cvaf hoge.tgz -T tar.txt </description>
-    </item>
-    
-    <item>
-      <title>tarの-gオプションについて</title>
-      <link>https://yaasita.github.io/2019/03/30/tar-g-option/</link>
-      <pubDate>Sat, 30 Mar 2019 02:32:25 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/03/30/tar-g-option/</guid>
-      <description>-g, &amp;ndash;listed-incremental
-という増分バックアップに使われるオプションについてどうやって判定してるか？
-それはctimeの変化を見ている
-ctimeの変化で気をつけなければいけないことはハードリンクによるバックアップ
-(rsync &amp;ndash;link-dest等)
-例えば、以下のようなファイルが存在し
-work/ `-- 1.txt  以下のコマンドを発行した場合
-tar -g resume -cvf work.tar work/  初回なので当然全部がバックアップされる
-このまま以下のコマンドを打てばディレクトリだけのバックアップになる(差分がないため)
-tar -g resume -cvf work.tar work/  しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう
-stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる  なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
-うまく増分バックアップができなくなる
-続き</description>
-    </item>
-    
-    <item>
-      <title>hugoアップデート</title>
-      <link>https://yaasita.github.io/2019/03/12/hugo-update/</link>
-      <pubDate>Tue, 12 Mar 2019 23:00:51 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/03/12/hugo-update/</guid>
-      <description>久々にhugoをアップデート v0.41 =&amp;gt; v0.54まで上げた
-ワーニング潰し アップデートに伴い
-.Prev と .Nextが非推奨になったぽい マニュアル, コミット
-なのでこれはそれぞれ以下のように修正すればOK(意味が逆なので分かりにくいけど)
- .Prev =&amp;gt; .NextPage .Next =&amp;gt; .PrevPage  OGP設定 某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました
-上手く表示できてますか？
-修正箇所
-themes/hugo-theme-geppaku/layouts/partials/header.html
- {{ if .IsHome }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Site.Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;website&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}&amp;quot; /&amp;gt; {{ else }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;article&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}{{ .Page.Dir }}&amp;quot; /&amp;gt; {{ end }} &amp;lt;meta property=&amp;quot;og:site_name&amp;quot; content=&amp;quot;{{ .</description>
-    </item>
-    
-    <item>
-      <title>Windows10のクリップボード履歴機能</title>
-      <link>https://yaasita.github.io/2019/03/10/clipboard/</link>
-      <pubDate>Sun, 10 Mar 2019 22:47:52 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/03/10/clipboard/</guid>
-      <description>Windows10に標準でクリップボード履歴機能が付いたらしい
- https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html  Windows キー + Vで使えるようになる
-cliborの方が使いやすそうな気がするけど、しばらくこっち使ってみる</description>
-    </item>
-    
-    <item>
-      <title>AlwaysOnSSL終了のお知らせ</title>
-      <link>https://yaasita.github.io/2019/02/28/alwaysonssl/</link>
-      <pubDate>Thu, 28 Feb 2019 01:44:13 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/02/28/alwaysonssl/</guid>
-      <description>無料のSSL証明書AlwaysOnSSLがセキュリティ問題を指摘されてシャットダウンしたぽい
-AlwaysOnSSL web security issues
-S/MIME手に入るので良かったんだけどなぁ・・・
-前回</description>
+      <guid>https://yaasita.github.io/2016/01/06/acpi/</guid>
+      <description>Arch Linuxのwikiが詳しかった
+/etc/systemd/logind.conf
+あたりを直す
+ノートPC閉じたときのSuspendを止めたかったから↓みたいにした
+HandleSuspendKey=ignore HandleLidSwitch=ignore  </description>
     </item>
     
   </channel>

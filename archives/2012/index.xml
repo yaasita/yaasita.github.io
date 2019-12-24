@@ -1,305 +1,1235 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title># cd ~yaasita</title>
+    <title>2012 on # cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2012/</link>
-    <description>Recent content on # cd ~yaasita</description>
-    <generator>Hugo</generator>
+    <description>Recent content in 2012 on # cd ~yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Thu, 27 Dec 2012 00:00:00 +0900</lastBuildDate>
-    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://yaasita.github.io/archives/2012/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
-      <title>chromebookが最高だった</title>
-      <link>https://yaasita.github.io/2019/12/23/chromebook/</link>
-      <pubDate>Mon, 23 Dec 2019 05:58:32 +0900</pubDate>
+      <title>起動後一定時間経ったら○○の処理をする</title>
+      <link>https://yaasita.github.io/2012/12/27/1805/</link>
+      <pubDate>Thu, 27 Dec 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/12/23/chromebook/</guid>
-      <description>ASUS の C434TA-AI0084 を買ったのでレビュー
-chromeOS  起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある  解除がちょっと遅い10秒くらい待たされる   chromeの複数ユーザー機能が使えない  多重ログイン機能はあるけどちょっと微妙  別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能      ディスプレイ  タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 バックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗  テザリング  Moto E5 とbluetoothでのテザリングが出来なかった  とりあえずUSBテザリングは刺すだけで使えたので良しとしてます    キーボード  Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない  Androidアプリ  ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない  Linux環境 OS  Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり  バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい   USB共有機能あり /opt/google/cros-containers/bin/.</description>
+      <guid>https://yaasita.github.io/2012/12/27/1805/</guid>
+      <description> というスクリプトの例
+uptimeから取ってくる
+以下は3時間経ったらhoge.shを実行する
+ </description>
     </item>
     
     <item>
-      <title>GCP Cloud Functions内からサービスアカウントのtoken取る</title>
-      <link>https://yaasita.github.io/2019/12/08/service-account-in-cf/</link>
-      <pubDate>Sun, 08 Dec 2019 05:12:12 +0900</pubDate>
+      <title>unboundのインストールと初期設定</title>
+      <link>https://yaasita.github.io/2012/12/24/1826/</link>
+      <pubDate>Mon, 24 Dec 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/12/08/service-account-in-cf/</guid>
-      <description>Cloud Functionsからサービスアカウントのアクセストークンをどうやって取るの？と疑問に思ったので調べた
-Google Compute Engineと同じ取り方でOK
-&amp;quot;use strict&amp;quot;; const fetch = require(&amp;quot;node-fetch&amp;quot;); exports.handler = async (req, res) =&amp;gt; { const url = &amp;quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&amp;quot; + &amp;quot;[サービスアカウント名]/token&amp;quot;; const result = await fetch(url, { method: &amp;quot;GET&amp;quot;, headers: { &amp;quot;Metadata-Flavor&amp;quot;: &amp;quot;Google&amp;quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&amp;quot;OK&amp;quot;); };  なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
+      <guid>https://yaasita.github.io/2012/12/24/1826/</guid>
+      <description> 1.インストール
+普通にaptで入れる
+2.初期設定
+unbound.conf
+interface: 0.0.0.0
+access-control: 192.168.0.0/24 allow
 
-まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &amp;ldquo;Function Identity&amp;quot;とかクリックするとちゃんと日本語版あるんですよね
-なんかメニューがバグってるのかな・・・
-とりあえず英語版から探すのをオススメします&amp;hellip;
+3.レコード設定
+local-data: &#34;hoge.net. IN A 192.168.0.4&#34;
+local-data: &#34;hoge.net. IN MX 10 hoge.net.&#34;
+local-data-ptr: &#34;192.168.0.4 hoge.net.&#34;
+※ hoge.netのAレコードを設定してしまうと、hoge.netのMXレコードを
+本物のDNSに問い合わせないで無しで返してしまうので注意
+4.ulimitの設定
+warningsがうるさいなら
+ulimit -n 4140
+を/etc/init.d/unboundの頭の方に書いておくと良いんじゃないでしょうか？ </description>
+    </item>
+    
+    <item>
+      <title>Debianにpostfixadminをインストール</title>
+      <link>https://yaasita.github.io/2012/12/23/1848/</link>
+      <pubDate>Sun, 23 Dec 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/12/23/1848/</guid>
+      <description>1.インストール
+# apt-get install postfixadmin
+
+2.Webサーバ設定
+/etc/postfixadminに設定ファイルがあるのでリンクを張る
+今回はlighttpdで
+# ln -s /etc/postfixadmin/lighttpd.conf /etc/lighttpd/conf-enabled/60-postfixadmin.conf
+# /etc/init.d/lighttpd restart
+
+3.初期セットアップ
+http://yourdomain.com/postfixadmin/setup.php
+にアクセスしてセットアップ
+初期パスワードとadminアカウントを作成
+4.その他の設定
+/usr/share/doc/postfixadmin/DOCUMENTS
+↑を読む</description>
+    </item>
+    
+    <item>
+      <title>動画でプログラミングを学べるサイト</title>
+      <link>https://yaasita.github.io/2012/12/21/1869/</link>
+      <pubDate>Fri, 21 Dec 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/12/21/1869/</guid>
+      <description> ドットインストール
+http://dotinstall.com/ </description>
+    </item>
+    
+    <item>
+      <title>ビルドするためにインストールするパッケージをまとめて</title>
+      <link>https://yaasita.github.io/2012/12/19/1889/</link>
+      <pubDate>Wed, 19 Dec 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/12/19/1889/</guid>
+      <description> 入れる方法は
+↓みたいにする
+この例だとvimに必要なパッケージ
+apt-get build-dep vim
+
+http://vim-jp.org/docs/build_linux.html </description>
+    </item>
+    
+    <item>
+      <title>AutoHotkeyを使ってTeraTerm &#43; vimを快適にする</title>
+      <link>https://yaasita.github.io/2012/11/25/1951/</link>
+      <pubDate>Sun, 25 Nov 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/11/25/1951/</guid>
+      <description> Esc押したらIMEをオフにしてくれれば良いので以下のような設定にした
+あと、無変換キー＋Rでsudoしてくれる設定も追加しておいた
+AutoHotkey.ahk
+
+注意点としてはEscがEscを再帰的に呼んで無限ループするので、Escの頭に$を付ける必要があること
+IMEのOn/Offの切り替えはえらい人がスクリプトを作ってくれていたので、そっちからコピペ
+http://www6.atwiki.jp/eamat/pub/MyScript/Lib/
 参考リンク
- 関数ID Compute Metadata Server   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].</description>
+https://sites.google.com/site/autohotkeyjp/reference/AutoHotkey_L/index </description>
     </item>
     
     <item>
-      <title>GCPでアクセストークンを取得する</title>
-      <link>https://yaasita.github.io/2019/11/14/gcp-access-token/</link>
-      <pubDate>Thu, 14 Nov 2019 22:32:41 +0900</pubDate>
+      <title>Web上でプログラミングの勉強が出来るサイト</title>
+      <link>https://yaasita.github.io/2012/11/25/1910/</link>
+      <pubDate>Sun, 25 Nov 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/11/14/gcp-access-token/</guid>
-      <description>ほとんどのサービスは クライアントライブラリ を使えば
-export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json  みたいに環境変数を設定するだけで良いのだが、Cloud Build 等は access tokenを取得して叩く必要がある
-という事でGCPのサービスアカウントからアクセストークンを取得するコード
- スコープ一覧はこちら
-https://developers.google.com/identity/protocols/googlescopes
-アクセストークンのテストは DLP とかがお手軽で良いかな
-参考リンク  jose API Document Using OAuth 2.0 for Server to Server Applications  </description>
+      <guid>https://yaasita.github.io/2012/11/25/1910/</guid>
+      <description> http://www.codecademy.com
+http://www.codeschool.com/ </description>
     </item>
     
     <item>
-      <title>osu!taikoのskin</title>
-      <link>https://yaasita.github.io/2019/10/27/osu/</link>
-      <pubDate>Sun, 27 Oct 2019 03:00:31 +0900</pubDate>
+      <title>雨の音を流してくれるサイト</title>
+      <link>https://yaasita.github.io/2012/11/25/1931/</link>
+      <pubDate>Sun, 25 Nov 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/10/27/osu/</guid>
-      <description>osu!taikoのスキン
-これが一番良かった
-概要欄からダウンロードできる</description>
+      <guid>https://yaasita.github.io/2012/11/25/1931/</guid>
+      <description> http://www.rainymood.com/
+http://raining.fm/
+参考リンク
+http://www.lifehacker.jp/2012/08/120820_raining_fm.html </description>
     </item>
     
     <item>
-      <title>AtCoder Beginner Contest 142のD問題</title>
-      <link>https://yaasita.github.io/2019/09/30/atcoder-abc142/</link>
-      <pubDate>Mon, 30 Sep 2019 05:05:34 +0900</pubDate>
+      <title>teratermインストール後にやることメモ</title>
+      <link>https://yaasita.github.io/2012/11/24/1971/</link>
+      <pubDate>Sat, 24 Nov 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/09/30/atcoder-abc142/</guid>
-      <description>問題: D - Disjoint Set of Common Divisors
-方針はユークリッドの互除法で最大公約数を出して、最大公約数を素因数分解
-存在する素数の数+1(今回は1もお互いに素の数として含めるため)でOKぽい
-perlで書いてみる
- 解説動画</description>
+      <guid>https://yaasita.github.io/2012/11/24/1971/</guid>
+      <description> Teratermが新しくなっていたので、ここでまとめておく
+1.TERATERM.INI
+ 2.KEYBOARD.CNF
+https://raw.github.com/gist/4140449/2bad78bfe24a407764f13c7055fc0ed452f1affd/KEYBOARD.CNF
+3.テーマファイル
+テーマファイルとかあればhttps://raw.github.com/gist/4140449/91748dba84035a7a0f0ac7dfa8b8ec480b8ed93c/yamasita.ini </description>
     </item>
     
     <item>
-      <title>systemd timerはちゃんと動いてる？</title>
-      <link>https://yaasita.github.io/2019/09/29/systemd-timer/</link>
-      <pubDate>Sun, 29 Sep 2019 16:51:09 +0900</pubDate>
+      <title>phpでctagsを使う</title>
+      <link>https://yaasita.github.io/2012/11/22/1990/</link>
+      <pubDate>Thu, 22 Nov 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/09/29/systemd-timer/</guid>
-      <description>systemdタイマーがちゃんと動いてるか確認したほうが良いよというお話
-systemctl list-timers --allコマンドで一覧が見れるあれです
-debian10だと /etc/cron.daily にあるスクリプトでこんな感じに書かれてたら、systemd timerの方を使ってる
-if [ -d /run/systemd/system ]; then exit 0 fi  前回 と同様にノートパソコンのバッテリー稼働と誤って判断されることに起因する問題
-例えばlogrotateとかみると
-systemctl cat logrotate  こんな一文がある
-ConditionACPower=true  これはバッテリー駆動の時は動かさないって意味らしいんだけど、どうも判定が狂ってるみたいでずっと実行されなかった
-なので、以下のコマンドでoverride.conf作って判定を無効化した
-systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower=  というわけで
-cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
-journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  とりあえず分かった、バッテリー時の判定が入ってるtimer
- apt-daily-upgrade man-db logrotate anacron apt-daily  </description>
-    </item>
-    
-    <item>
-      <title>ビリビリ動画とcrunchyrollのIP制限をGCPで検証</title>
-      <link>https://yaasita.github.io/2019/09/14/anime-ip-block/</link>
-      <pubDate>Sat, 14 Sep 2019 22:21:43 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/09/14/anime-ip-block/</guid>
-      <description>bilibili動画とcrunchyrollのIP制限はどんな感じなのか
-GCPの各リージョンからアクセスして試してみる
-rttは自宅から該当サーバーまでのpingしたときの平均値
-なのでISPによって全然違うと思うので参考値ということで
-   region bilibili crunchyroll rtt(ms)     asia-east1 (台湾) ng ok 60.149   asia-east2 (香港) ng ok 76.986   asia-northeast1 (東京) ng ok 29.624   asia-northeast2 (大阪) ng ok 37.401   asia-south1 (ムンバイ) ng ok 144.055   asia-southeast1 (シンガポール) ng ok 89.755   australia-southeast1 (シドニー) ng ok 122.193   europe-north1 (フィンランド) ng ok 256.714   europe-west1 (ベルギー) ng ok 229.</description>
-    </item>
-    
-    <item>
-      <title>on_ac_powerコマンドについて</title>
-      <link>https://yaasita.github.io/2019/08/16/on-ac-power/</link>
-      <pubDate>Fri, 16 Aug 2019 04:45:45 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/16/on-ac-power/</guid>
-      <description>debian10にした関係でLinuxネタが続く
-PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある
-そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる
-例えば、/etc/cron.daily/mlocate の場合
-if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi  こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
-んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
-このままだと永遠にlocateコマンドが使えないので、divertで退避させた
-dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power  おしまい</description>
-    </item>
-    
-    <item>
-      <title>1から100の偶数の和を求めるやつ</title>
-      <link>https://yaasita.github.io/2019/08/15/sum-even-number/</link>
-      <pubDate>Thu, 15 Aug 2019 04:10:11 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/15/sum-even-number/</guid>
-      <description>「1から100の偶数の和を求めるワンライナー」まとめ
-perlでやってみる
-perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;eval&amp;quot;say @{[grep{$_%2==0}1..100]}&amp;quot;;&#39;  4つ思いついた
-結論 simple is best</description>
-    </item>
-    
-    <item>
-      <title>各種サーバの中間証明書の扱い</title>
-      <link>https://yaasita.github.io/2019/08/14/ssl-capath/</link>
-      <pubDate>Wed, 14 Aug 2019 10:20:33 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/14/ssl-capath/</guid>
-      <description>中間証明書をどう設定するか問題
-postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&#39;s Encryptの場合こんな感じ
-smtpd_tls_CAfileに中間証明書を指定する
-smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
-dovecot 10-ssl.conf
-ssl_ca = &amp;lt;/etc/letsencrypt/live/example.net/chain.pem  これはダメ
-この設定はクライアント証明書用ですので
-正しくは、こんな感じに、まとめたやつを指定すればOK
-ssl_cert = &amp;lt;/etc/letsencrypt/live/example.net/fullchain.pem  apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
-SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem  dovecot同様に中間証明書もまとめて指定する
-まとめ この問題はスマホのK-9 Mailでメール読もうとしたときに判明した
-(突然CertPathValidatorExceptionって怒られた)
-thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね
+      <guid>https://yaasita.github.io/2012/11/22/1990/</guid>
+      <description> phpが入ってるディレクトリで
+ctags -a -R --langmap=PHP:.php --php-types=c+f+d+v+i .
 
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
-openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
-    </item>
-    
-    <item>
-      <title>虫よけスプレー</title>
-      <link>https://yaasita.github.io/2019/07/29/musiyoke/</link>
-      <pubDate>Mon, 29 Jul 2019 03:42:37 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/07/29/musiyoke/</guid>
-      <description>虫除けスプレーで最近買ったこれが良かった
-ベタベタしないので気にならない
-フマキラー SKIN VAPEってやつかな
-商品名はスキンベープミスト　200mlかも
+でOKみたい
+↓で種類みれる
+ctags --list-kinds=php
 
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   そういや虫よけ剤に入ってるDEETって薬はなぜ虫が寄り付かないか謎らしい</description>
+こうすればtagsファイルが作られる
+参考リンク
+http://blog.veryposi.info/programing/php/php-ctags-vim/ </description>
     </item>
     
     <item>
-      <title>例のS3署名バージョン2について</title>
-      <link>https://yaasita.github.io/2019/06/25/s3v2/</link>
-      <pubDate>Tue, 25 Jun 2019 00:31:08 +0900</pubDate>
+      <title>2012版 Firefox Thunderbird 使ってるアドオンまとめ</title>
+      <link>https://yaasita.github.io/2012/11/03/2009/</link>
+      <pubDate>Sat, 03 Nov 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/06/25/s3v2/</guid>
-      <description>AWS S3の署名バージョン騒動
-大丈夫ぽいけど一応調べた時につかったスクリプト
-CloudTrailでログを有効化してからお使いください
+      <guid>https://yaasita.github.io/2012/11/03/2009/</guid>
+      <description>FirefoxautotranslatorVideo DownloadHelperelasticfox-ec2tagFirebugFireMobileSimulatorLiveNavigate UpNicoFoxPersonas PlusQuickJavaScrapBookTomblooViewSourceWithVimiumテキストリンク
+ThunderbirdDisplay Mail User AgentLightningMailHops</description>
+    </item>
+    
+    <item>
+      <title>screenfetch</title>
+      <link>https://yaasita.github.io/2012/10/28/2029/</link>
+      <pubDate>Sun, 28 Oct 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/10/28/2029/</guid>
+      <description> 
+bashで出来たシステムモニタ
+各ディストリのマークとか出る </description>
+    </item>
+    
+    <item>
+      <title>tumblrのショートカットキー</title>
+      <link>https://yaasita.github.io/2012/10/20/2051/</link>
+      <pubDate>Sat, 20 Oct 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/10/20/2051/</guid>
+      <description> ダッシュボードで使えるよ j（ジェイ） 次のpostへ移動 k（ケー） 前のpostへ移動
+l（エル） like / like解除 n（エヌ） notesを開く / 閉じる r（アール） reblog（別ウィンドウが開く）
+R（Shift＋アール） 即時reblog
+E（Shift＋イー） キュー（投稿予約）へreblog
+スペース 動画再生？（未確認）
+カーソルキー左 前のページへ カーソルキー右 次のページへ
+z+tab 切り替え
+http://dara-j.asablo.jp/blog/2012/10/17/6605357&amp;amp;nbsp;
+http://www.tumblr.com/tips#keyboard_shortcuts </description>
+    </item>
+    
+    <item>
+      <title>xsetで省電力モードを解除</title>
+      <link>https://yaasita.github.io/2012/10/16/2070/</link>
+      <pubDate>Tue, 16 Oct 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/10/16/2070/</guid>
+      <description>現在の設定を確認 xset q
+DPMSを無効化
+xset -dpmsxset dpms force off
+DPMSを有効化
+xset +dpms スタンバイ、サスペンド、パワーオフ時間を設定（有効化時しか意味は無い）
+xset dpms 300 600 900
+参考リンク
+http://kakurasan.ehoh.net/summary/xset.cmd.term.html
+http://www.atmarkit.co.jp/flinux/rensai/linuxtips/254usedpmsx3x.html</description>
+    </item>
+    
+    <item>
+      <title>tumblrのリンクと要素まとめ（使う分だけ）</title>
+      <link>https://yaasita.github.io/2012/10/11/2089/</link>
+      <pubDate>Thu, 11 Oct 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/10/11/2089/</guid>
+      <description> 自分がフォローしている人をブログに表示する
+HTMLの編集からどうぞ
+ following
+&amp;amp;lt;div&amp;amp;gt;
+{block:Followed} &amp;amp;lt;a href=&#34;{FollowedURL}&#34;&amp;amp;gt;&amp;amp;lt;img src=&#34;{FollowedPortraitURL-48}&#34;/&amp;amp;gt;&amp;amp;lt;/a&amp;amp;gt;
+{/block:Followed}
+&amp;amp;lt;/div&amp;amp;gt;
+{/block:Following}
+
+リンク
+(hogeをユーザ名に変更すること)
+アーカイブ（http://hoge.tumblr.com/archive）ランダム表示（http://hoge.tumblr.com/random）RSS（http://hoge.tumblr.com/rss）携帯向け簡易表示（http://hoge.tumblr.com/mobile）Like一覧（http://www.tumblr.com/liked/by/hoge）ログイン時有効リンク
+自分がフォローしている人一覧（http://www.tumblr.com/following）自分をフォローしている人一覧（http://www.tumblr.com/followers）
+参考リンク
+http://tagblr.tumblr.com/post/340724562 
+http://ryo-skd.tumblr.com/post/311289824/tumblr-tumblr-nplll-mutter </description>
+    </item>
+    
+    <item>
+      <title>twitterのbotを作る</title>
+      <link>https://yaasita.github.io/2012/10/09/2109/</link>
+      <pubDate>Tue, 09 Oct 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/10/09/2109/</guid>
+      <description>そんなに難しくないと思った・・・
+CONSUMER_KEYとCONSUMER_SECRETの取得 アプリの登録を行う
+このページから飛んで適当に入力する
+ユーザに許可してもらいアクセストークンをもらう スクリプト実行⇒authページ⇒許可を押す⇒数値をメモ⇒スクリプトに入力
+#!/usr/bin/env ruby # coding: utf-8 require &#39;rubygems&#39; require &#39;oauth&#39; OAUTH_CONSUMER_KEY=&#39;XXXXXXXXXXXXXXXXXXXXXXXXXX&#39; OAUTH_CONSUMER_SECRET=&#39;XXXXXXXXXXXXXXXXXXXXXXXX&#39; consumer = OAuth::Consumer.new( OAUTH_CONSUMER_KEY , OAUTH_CONSUMER_SECRET , { :site=&amp;amp;amp;gt;&amp;quot;http://twitter.com&amp;quot; }) #optprm = { :oauth_callback=&amp;amp;amp;gt;&amp;quot;（コールバック先のURL）&amp;quot; } request_token = consumer.get_request_token puts &amp;quot;Access this URL and approve =&amp;amp;amp;gt; #{request_token.authorize_url}&amp;quot; print &amp;quot;Input OAuth Verifier: &amp;quot; oauth_verifier = gets.chomp.strip access_token = request_token.get_access_token( :oauth_verifier =&amp;amp;amp;gt; oauth_verifier ) puts &amp;quot;Access token: #{access_token.token}&amp;quot; puts &amp;quot;Access token secret: #{access_token.secret}&amp;quot;  後はもらったアクセストークン＆コンシューマIDでスクリプトを書く twitter のgemでもoauthのgemでも簡単なことをやる場合はあんま変わんない感じ</description>
+    </item>
+    
+    <item>
+      <title>munin2.0が出てるらしい</title>
+      <link>https://yaasita.github.io/2012/10/02/2129/</link>
+      <pubDate>Tue, 02 Oct 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/10/02/2129/</guid>
+      <description> http://pocketstudio.jp/log3/2012/06/04/new-features-of-munin2/
+http://dozen.dip.jp/archives/212 </description>
+    </item>
+    
+    <item>
+      <title>ffmpegの使い方</title>
+      <link>https://yaasita.github.io/2012/09/30/2150/</link>
+      <pubDate>Sun, 30 Sep 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/09/30/2150/</guid>
+      <description> &amp;amp;nbsp;ffmpeg -i 入力ファイル 出力ファイル
+みたいな感じでOKらしい
+ffmpeg -i hoge.flv hoge.mp4
+でもいけた
+mp3のビットレート調整とかも出来る
+ffmpeg -i input.mp3 -ab 128k output.mp3
+http://d.hatena.ne.jp/takuya_1st/20120225/1330189927
+http://yosilove.blog.shinobi.jp/Entry/603/ </description>
+    </item>
+    
+    <item>
+      <title>rubyのバージョン管理 rbenv試してみた</title>
+      <link>https://yaasita.github.io/2012/09/26/2171/</link>
+      <pubDate>Wed, 26 Sep 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/09/26/2171/</guid>
+      <description> rvmとかあるらしいけど今回はrbenvを使ってみます 
+cd
+git clone git://github.com/sstephenson/rbenv.git .rbenv
+echo &#39;export PATH=&#34;$HOME/.rbenv/bin:$PATH&#34;&#39; &amp;amp;gt;&amp;amp;gt; ~/.bash_profile
+echo &#39;eval &#34;$(rbenv init -)&#34;&#39; &amp;amp;gt;&amp;amp;gt; ~/.bash_profile
+
+ここで、シェルのリスタート
+次にrbenv installが使えるようにbuildプラグインをインストール 
+mkdir -p ~/.rbenv/plugins
+cd ~/.rbenv/plugins
+git clone git://github.com/sstephenson/ruby-build.git
+
+これでrbenv installコマンドが使えるようになります
+インストールできるバージョンを確認 
+rbenv install -l
+ インストール 
+rbenv install 1.9.3-xxxxx
+ 使用中のバージョンを確認 
+rbenv versions
+ バージョンの切り替え 
+rbenv global 1.9.2-p290
+ リフレッシュ変更を反映 
+rbenv rehash
  </description>
     </item>
     
     <item>
-      <title>Cloud Runがすごく良い</title>
-      <link>https://yaasita.github.io/2019/05/29/cloud-run/</link>
-      <pubDate>Wed, 29 May 2019 21:42:23 +0900</pubDate>
+      <title>WindowsでS.M.A.R.T情報を取得</title>
+      <link>https://yaasita.github.io/2012/09/23/2191/</link>
+      <pubDate>Sun, 23 Sep 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/05/29/cloud-run/</guid>
-      <description>GCPのCloud Runがめっちゃ便利
-覚えなきゃいけないルールは2つ
- Dockerにする事 環境変数 $PORT のポート番号でlistenしてレスポンスを返す事  これだけ
-コマンドとかはこの辺見ればすぐできると思います
-あと、Chunked Transferみたいな仕組みで進捗を返すみたいなAPIは難しいかもしれない
-以下のようなプログラムでちょっとずつレスポンス返しても、バッファリングされてるみたいで、最後ドバっと返ってきた
+      <guid>https://yaasita.github.io/2012/09/23/2191/</guid>
+      <description> Linuxだとsmartctlとかだけど、Windowsだとこれがいい感じ
+CrystalDiskInfo
+http://www.forest.impress.co.jp/lib/sys/hrdbnch/hardinfo/crdiskinfo.html </description>
+    </item>
+    
+    <item>
+      <title>最近使ってるダンボールの収納ボックス</title>
+      <link>https://yaasita.github.io/2012/09/23/2212/</link>
+      <pubDate>Sun, 23 Sep 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/09/23/2212/</guid>
+      <description> 結構便利
+http://item.rakuten.co.jp/angers/121696/ </description>
+    </item>
+    
+    <item>
+      <title>とっても分かりやすいRailsチュートリアル</title>
+      <link>https://yaasita.github.io/2012/09/22/2232/</link>
+      <pubDate>Sat, 22 Sep 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/09/22/2232/</guid>
+      <description> http://japanese.railstutorial.org/chapters/beginning </description>
+    </item>
+    
+    <item>
+      <title>機動戦士ガンダムSEED BATTLE DESTINY攻略HP</title>
+      <link>https://yaasita.github.io/2012/09/02/2253/</link>
+      <pubDate>Sun, 02 Sep 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/09/02/2253/</guid>
+      <description>http://sakray06.blog.so-net.ne.jp/2012-06-12</description>
+    </item>
+    
+    <item>
+      <title>TeratermでTTLマクロをショートカットキーで呼び出す</title>
+      <link>https://yaasita.github.io/2012/08/25/2273/</link>
+      <pubDate>Sat, 25 Aug 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/08/25/2273/</guid>
+      <description> login.ttl 
+connect &#39;192.168.0.2:23 /nossh /T=1 /W=&#34;jitaku&#34; /F=TERATERM_ARERT.INI /K=KEYBOARD.CNF&#39;
+wait &#39;login:&#39;
+sendln &#39;hogehoge&#39;
+wait &#39;Password:&#39;
+sendln &#39;password&#39;
+ KEYBOARD.cnfに以下を追記 
+[User keys]
+User1=1083,2,sudo.ttl
+ KEYBOARD.ttlがあるところにsudo.ttlをおく 
+sendln &#39;sudo -s&#39;
+pause 1
+sendln &#39;passwd&#39;
  </description>
     </item>
     
     <item>
-      <title>PKCEをJavaScriptで実装する</title>
-      <link>https://yaasita.github.io/2019/04/29/pkce/</link>
-      <pubDate>Mon, 29 Apr 2019 01:23:20 +0900</pubDate>
+      <title>vim&#43;tmuxでキーが効かないとき</title>
+      <link>https://yaasita.github.io/2012/08/19/2311/</link>
+      <pubDate>Sun, 19 Aug 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/04/29/pkce/</guid>
-      <description>code_verifier から code_challenge の生成方法について調べた
-code_challenge_method=S256の場合は以下のような実装ロジックになる
-node.jsで書いた
-Oauth2のPKCE
-base64エンコードじゃなくてbase64urlエンコードなのが注意点
+      <guid>https://yaasita.github.io/2012/08/19/2311/</guid>
+      <description> vim + tmuxのとき http://blog.othree.net/log/2010/01/07/screen-vim-f1f4-map/ </description>
+    </item>
+    
+    <item>
+      <title>vimでも暗号化できるらしい</title>
+      <link>https://yaasita.github.io/2012/08/19/2292/</link>
+      <pubDate>Sun, 19 Aug 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/08/19/2292/</guid>
+      <description> http://yakinikunotare.boo.jp/orebase2/vim/crypt_file </description>
+    </item>
+    
+    <item>
+      <title>vimでgitのブラウジングすると便利だよ</title>
+      <link>https://yaasita.github.io/2012/07/23/2330/</link>
+      <pubDate>Mon, 23 Jul 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/07/23/2330/</guid>
+      <description> という話
+gitvというプラグイン:Gitvコマンドからどうぞ
+3方向マージ(3 way merge)もGdiffで一発
+http://d.hatena.ne.jp/cohama/20120417/1334679297
+http://yuku-tech.hatenablog.com/entry/20110427/1303868482 </description>
+    </item>
+    
+    <item>
+      <title>vimのプラグイン管理vundle</title>
+      <link>https://yaasita.github.io/2012/07/19/2351/</link>
+      <pubDate>Thu, 19 Jul 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/07/19/2351/</guid>
+      <description> 便利なのでメモ
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+http://shu-cream.blogspot.jp/2011/04/2011vimvundle.html  </description>
+    </item>
+    
+    <item>
+      <title>opensslの確認コマンドまとめ</title>
+      <link>https://yaasita.github.io/2012/07/09/2371/</link>
+      <pubDate>Mon, 09 Jul 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/07/09/2371/</guid>
+      <description> http://chinmai.net/~osakana/tech-memo/wiki.cgi?page=OpenSSL+CSR%2C+%BE%DA%CC%C0%BD%F1%A4%CA%A4%C9%B3%CE%C7%A7%A5%B3%A5%DE%A5%F3%A5%C9 </description>
+    </item>
+    
+    <item>
+      <title>Postfix⇒Gmailへのリレー設定</title>
+      <link>https://yaasita.github.io/2012/07/09/2391/</link>
+      <pubDate>Mon, 09 Jul 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/07/09/2391/</guid>
+      <description> 以下の設定でGoogleのSMTPを中継するようになる main.cf 
+relayhost = [smtp.gmail.com]:587
+smtp_use_tls = yes
+smtp_sasl_auth_enable = yes
+smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
+smtp_sasl_tls_security_options = noanonymous
+smtp_sasl_mechanism_filter = plain
+smtp_tls_CAfile = /etc/postfix/ssl/cacert.pem
+ /etc/postfix/sasl_passwd 
+[smtp.gmail.com]:587 hoge@gmail.com:hogepasswd
+ 以下のコマンドを忘れずに postmap sasl_passwd 参考リンク
+http://linux.matchy.net/archives/35
+http://stevejenkins.com/blog/2011/06/fixing-postfix-certificate-verification-failed-for-gmail-untrusted-issuer-error-message/
+http://giantdorks.org/alain/fix-for-postfix-untrusted-certificate-tls-error/ </description>
+    </item>
+    
+    <item>
+      <title>amazon(aws)でubuntu12.04の初期設定</title>
+      <link>https://yaasita.github.io/2012/07/03/2412/</link>
+      <pubDate>Tue, 03 Jul 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/07/03/2412/</guid>
+      <description> localeの設定 http://www.server-world.info/query?os=Ubuntu_12.04&amp;amp;p=japanese ec2 toolのインストール http://qiita.com/items/216e0f8b69f20d5b07d3 </description>
+    </item>
+    
+    <item>
+      <title>オンランから.htaccessを作成してくれるサイト</title>
+      <link>https://yaasita.github.io/2012/06/30/2432/</link>
+      <pubDate>Sat, 30 Jun 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/06/30/2432/</guid>
+      <description> すげー便利 http://www.htaccesseditor.com/ </description>
+    </item>
+    
+    <item>
+      <title>gitでpushしたらpushした先でワーキングツリーをリセット</title>
+      <link>https://yaasita.github.io/2012/06/26/2452/</link>
+      <pubDate>Tue, 26 Jun 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/06/26/2452/</guid>
+      <description> それhookで出来るよ
+
+cd .git/hooks/
+mv post-receive.sample post-receive
+chmod +x post-receive
+echo &#39;cd /home/hoge/huga/&#39;  post-receive
+echo &#39;git --git-dir=.git reset --hard HEAD&#39;  post-receive
  </description>
     </item>
     
     <item>
-      <title>令和の対応に際して</title>
-      <link>https://yaasita.github.io/2019/04/25/reiwa/</link>
-      <pubDate>Thu, 25 Apr 2019 02:08:40 +0900</pubDate>
+      <title>SSH力を身につけた</title>
+      <link>https://yaasita.github.io/2012/06/23/2472/</link>
+      <pubDate>Sat, 23 Jun 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/04/25/reiwa/</guid>
-      <description>techrachoの記事
-perlも追加でお願いします
+      <guid>https://yaasita.github.io/2012/06/23/2472/</guid>
+      <description> sshで繋いじゃった後でも
+Enter押してすぐに
+~Cでコンソール(helpコマンド使えるよ)
+~#でフォワード一覧
+~?でヘルプ
+↓みたいに.ssh/config書けば多段がいけるらしい
+Host humidai
+&amp;amp;nbsp;HostName hoge.co.jp
+Host target
+&amp;amp;nbsp;ProxyCommand ssh -W 192.168.x.x:22 humidai
+参考リンク
+SSH力をつけよう </description>
+    </item>
+    
+    <item>
+      <title>Amazon AWSについて</title>
+      <link>https://yaasita.github.io/2012/06/16/2491/</link>
+      <pubDate>Sat, 16 Jun 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/06/16/2491/</guid>
+      <description> 参考リンク
+&amp;amp;nbsp;Amazon EC2 を使った無限IPアドレスの作り方 </description>
+    </item>
+    
+    <item>
+      <title>ディスクアクセスをキャッシュして高速化する</title>
+      <link>https://yaasita.github.io/2012/06/10/2511/</link>
+      <pubDate>Sun, 10 Jun 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/06/10/2511/</guid>
+      <description> その名もpreload
+参考リンク http://blog.browncat.org/2008/02/linuxpreload.html </description>
+    </item>
+    
+    <item>
+      <title>gitでbareじゃない共有リポジトリを作る</title>
+      <link>https://yaasita.github.io/2012/06/09/2552/</link>
+      <pubDate>Sat, 09 Jun 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/06/09/2552/</guid>
+      <description> 共有リポジトリだと作業フォルダが無くて不便なので
+
+[core]
+repositoryformatversion = 0
+filemode = true
+bare = false
+logallrefupdates = true
+[receive]
+denyCurrentBranch = ignore
+ コマンドならこう 
+git config --add receive.denyCurrentBranch ignore
+ 参考リンク http://d.hatena.ne.jp/shokai/20101105/1288968082 </description>
+    </item>
+    
+    <item>
+      <title>Linuxからリモートデスクトップ(RDP)</title>
+      <link>https://yaasita.github.io/2012/06/09/2530/</link>
+      <pubDate>Sat, 09 Jun 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/06/09/2530/</guid>
+      <description> xfreerdpでいけます
+
+apt-get install freerdp-x11
  </description>
     </item>
     
     <item>
-      <title>tarの差分バックアップ</title>
-      <link>https://yaasita.github.io/2019/04/01/tar-backup/</link>
-      <pubDate>Mon, 01 Apr 2019 16:12:46 +0900</pubDate>
+      <title>Linuxデスクトップのガジェットとか</title>
+      <link>https://yaasita.github.io/2012/06/08/2572/</link>
+      <pubDate>Fri, 08 Jun 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/04/01/tar-backup/</guid>
-      <description>前回の続き
-でctime変化しちゃってどうしたか？
-ファイルサイズとファイル名を取っておいて差分を作ることにした
- こんな感じのスクリプトで、ファイル名 + tab + ファイルサイズで保存する
-(厳密にやる場合はsha256とかで)
-そんで現在のファイルリストも取って、差分をとる
-diff -u previous.txt now.txt | egrep &amp;quot;^\+[^\+]&amp;quot; | perl -ple &#39;s/^\+//;s/\t.+//&#39; &amp;gt; tar.txt あとは-Tオプションで差分のファイルだけをtarで固める
-tar -cvaf hoge.tgz -T tar.txt </description>
+      <guid>https://yaasita.github.io/2012/06/08/2572/</guid>
+      <description> システムモニタ ・adesklets
+・conky
+・gdesklets
+参考リンク http://wikiwiki.jp/linux/?FrontPage
+http://usamimi.info/~linux/  </description>
     </item>
     
     <item>
-      <title>tarの-gオプションについて</title>
-      <link>https://yaasita.github.io/2019/03/30/tar-g-option/</link>
-      <pubDate>Sat, 30 Mar 2019 02:32:25 +0900</pubDate>
+      <title>brctlでブリッジインターフェイスを作成</title>
+      <link>https://yaasita.github.io/2012/06/04/2613/</link>
+      <pubDate>Mon, 04 Jun 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/03/30/tar-g-option/</guid>
-      <description>-g, &amp;ndash;listed-incremental
-という増分バックアップに使われるオプションについてどうやって判定してるか？
-それはctimeの変化を見ている
-ctimeの変化で気をつけなければいけないことはハードリンクによるバックアップ
-(rsync &amp;ndash;link-dest等)
-例えば、以下のようなファイルが存在し
-work/ `-- 1.txt  以下のコマンドを発行した場合
-tar -g resume -cvf work.tar work/  初回なので当然全部がバックアップされる
-このまま以下のコマンドを打てばディレクトリだけのバックアップになる(差分がないため)
-tar -g resume -cvf work.tar work/  しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう
-stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる  なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
-うまく増分バックアップができなくなる
-続き</description>
+      <guid>https://yaasita.github.io/2012/06/04/2613/</guid>
+      <description> KVMを使うときに必要になったブリッジインターフェイスの設定メモ コマンドでは以下のようにやればO 
+brctl addbr br0
+brctl addif br0 eth0
+ /etc/network/interfaces 
+auto lo br0
+iface lo inet loopback
+allow-hotplug eth0
+auto eth0
+iface eth0 inet static
+address 192.168.0.4
+netmask 255.255.255.0
+gateway 192.168.0.1
+iface br0 inet static
+bridge_ports eth0
+address 192.168.0.40
+netmask 255.255.255.0
+gateway 192.168.0.1
+ 参考リンク
+brctl でLinuxマシンをHUBにする - いますぐ実践! Linuxシステム管理第2回　KVMの導入と基本的な使い方 </description>
     </item>
     
     <item>
-      <title>hugoアップデート</title>
-      <link>https://yaasita.github.io/2019/03/12/hugo-update/</link>
-      <pubDate>Tue, 12 Mar 2019 23:00:51 +0900</pubDate>
+      <title>DebianでKVMを試してみた</title>
+      <link>https://yaasita.github.io/2012/06/04/2593/</link>
+      <pubDate>Mon, 04 Jun 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/03/12/hugo-update/</guid>
-      <description>久々にhugoをアップデート v0.41 =&amp;gt; v0.54まで上げた
-ワーニング潰し アップデートに伴い
-.Prev と .Nextが非推奨になったぽい マニュアル, コミット
-なのでこれはそれぞれ以下のように修正すればOK(意味が逆なので分かりにくいけど)
- .Prev =&amp;gt; .NextPage .Next =&amp;gt; .PrevPage  OGP設定 某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました
-上手く表示できてますか？
-修正箇所
-themes/hugo-theme-geppaku/layouts/partials/header.html
- {{ if .IsHome }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Site.Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;website&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}&amp;quot; /&amp;gt; {{ else }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;article&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}{{ .Page.Dir }}&amp;quot; /&amp;gt; {{ end }} &amp;lt;meta property=&amp;quot;og:site_name&amp;quot; content=&amp;quot;{{ .</description>
+      <guid>https://yaasita.github.io/2012/06/04/2593/</guid>
+      <description> こんな感じでDebian Wiki通りにやればOK -cの後は/dev/cdrom or iso 
+virt-install -n testos -r 128 --disk path=/tmp/testos.dsk,size=10 --os-type=linux --network bridge=br0 --vncport=5900 --vnclisten=0.0.0.0 -c /tmp/debian.iso
+あとはこんな感じでXサーバーにコンソールを出力させた virt-viewer testos --display=192.168.0.5:0
+仮想マシンの削除 virsh destroy testos2
+virsh undefine testos2
+参考リンク
+http://docs.redhat.com/docs/ja-JP/Red_Hat_Enterprise_Linux/5/html/Virtualization/chap-Virtualization-Managing_guests_with_virsh.html </description>
     </item>
     
     <item>
-      <title>Windows10のクリップボード履歴機能</title>
-      <link>https://yaasita.github.io/2019/03/10/clipboard/</link>
-      <pubDate>Sun, 10 Mar 2019 22:47:52 +0900</pubDate>
+      <title>2ch互換掲示板CGI</title>
+      <link>https://yaasita.github.io/2012/05/28/2634/</link>
+      <pubDate>Mon, 28 May 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/03/10/clipboard/</guid>
-      <description>Windows10に標準でクリップボード履歴機能が付いたらしい
- https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html  Windows キー + Vで使えるようになる
-cliborの方が使いやすそうな気がするけど、しばらくこっち使ってみる</description>
+      <guid>https://yaasita.github.io/2012/05/28/2634/</guid>
+      <description> http://www.toshinari.net/ </description>
     </item>
     
     <item>
-      <title>AlwaysOnSSL終了のお知らせ</title>
-      <link>https://yaasita.github.io/2019/02/28/alwaysonssl/</link>
-      <pubDate>Thu, 28 Feb 2019 01:44:13 +0900</pubDate>
+      <title>lighttpd &#43; zabbixをDebian squeezeにインストール</title>
+      <link>https://yaasita.github.io/2012/05/26/2655/</link>
+      <pubDate>Sat, 26 May 2012 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/02/28/alwaysonssl/</guid>
-      <description>無料のSSL証明書AlwaysOnSSLがセキュリティ問題を指摘されてシャットダウンしたぽい
-AlwaysOnSSL web security issues
-S/MIME手に入るので良かったんだけどなぁ・・・
-前回</description>
+      <guid>https://yaasita.github.io/2012/05/26/2655/</guid>
+      <description> aptで以下のパッケージをインストール 
+zabbix-agent #監視される側
+zabbix-frontend-php #zabbixのWebインターフェイス
+zabbix-server-mysql #zabbixのサーバー（監視する側）
+ lighttpdに以下を追記 
+alias.url += (
+&#34;/zabbix&#34; =&amp;amp;gt; &#34;/usr/share/zabbix&#34;
+)
+ なんかログインできなかったので以下のSQLを発行 
+update users set passwd=md5(&#39;hoge&#39;) where alias=&#39;Admin&#39;;
+ 参考リンクSQLのアップデートの仕方マニュアル </description>
+    </item>
+    
+    <item>
+      <title>HA構成のサーバー作るときに使うソフトメモ</title>
+      <link>https://yaasita.github.io/2012/05/20/2677/</link>
+      <pubDate>Sun, 20 May 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/05/20/2677/</guid>
+      <description>複数のサーバーを同一の設定にする Puppet  OSインストールを簡略化 kickstart  データ同期 DRBD  Heartbeat(Pacemaker) 生死監視</description>
+    </item>
+    
+    <item>
+      <title>lighttpdでSSL設定</title>
+      <link>https://yaasita.github.io/2012/05/07/2698/</link>
+      <pubDate>Mon, 07 May 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/05/07/2698/</guid>
+      <description>Debian(squeeze)でやってみた
+1.モジュールの有効化
+
+lighty-enable-mod ssl
+
+2.認証局(CA)の作成
+
+/usr/lib/ssl/misc/CA.sh -newca
+
+最初はエンター
+後は対話形式に適当に入力する
+入力項目についてはここら辺を参照 A challenge passwordとAn optional company nameは飛ばした
+3.サーバーの秘密鍵,CRTの作成
+
+openssl genrsa -out server.key 2048
+openssl req -new -days 365 -key server.key -out csr.pem
+
+4.署名(CRT)ファイルの作成
+
+openssl ca -in csr.pem -keyfile demoCA/private/cakey.pem -cert demoCA/cacert.pem -out crt.pem
+エラーが出る場合は以下のようにindex.txtを空にする（ここら辺参照） 
+rm demoCA/index.txt
+touch demoCA/index.txt
+
+5. ファイルの設置
+
+ファイルをvim等で適当に編集して
+-----BEGIN RSA PRIVATE KEY-----
+hogehogehogehoge.....
+-----END RSA PRIVATE KEY-----</description>
+    </item>
+    
+    <item>
+      <title>LDAPの設定メモ</title>
+      <link>https://yaasita.github.io/2012/05/06/2717/</link>
+      <pubDate>Sun, 06 May 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/05/06/2717/</guid>
+      <description> slapdをインストール
+mozillaAbPersonAlpha.schemaを以下へコピーする
+/etc/ldap/schema
+phpldapadminをインストール
+lighttpdのconfに以下を追加
+# Alias for pa directory
+alias.url += (
+&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp; &#34;/pl&#34; =&amp;amp;gt; &#34;/usr/share/phpldapadmin&#34;,
+)
+パスワードを忘れたら
+dpkg-reconfigure slapd
+↓で内容の確認
+slapcat
+cn=admin...
+で始まる行をメモして
+phpldapadminにログイン
+詳しくはこちら
+/usr/share/doc/slapd
+本体はこっち？
+/usr/share/slapd
+参考リンク
+Gentoo Linuxな生活​/ThunderBirdアドレス帳をLDAPで悩む </description>
+    </item>
+    
+    <item>
+      <title>BIND9の設定</title>
+      <link>https://yaasita.github.io/2012/05/05/2738/</link>
+      <pubDate>Sat, 05 May 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/05/05/2738/</guid>
+      <description>インストールapt-get install bind9正引きの設定named.conf.local zone &#34;test&#34; {
+type master;
+file &#34;/etc/bind/db.test&#34;;
+};
+db.test $TTL 1D
+@ IN SOA dns.test. root.hoge. (
+20120505 ; Serial
+604800 ; Refresh
+86400 ; Retry
+2419200 ; Expire
+604800 ) ; Negative Cache TTL
+;
+@ IN NS dns.test.
+main IN A 192.168.0.2
+vista IN A 192.168.0.3
+dns IN A 192.168.0.4
+note IN CNAME dns.test.
+jitaku IN A 192.168.0.11
+逆引きの設定named.conf.local zone &#34;0.168.192.in-addr.arpa&#34; {
+type master;</description>
+    </item>
+    
+    <item>
+      <title>vimでコマンドをファイル中に書くことができる</title>
+      <link>https://yaasita.github.io/2012/05/05/2757/</link>
+      <pubDate>Sat, 05 May 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/05/05/2757/</guid>
+      <description> その名もモードライン 
+:h modeline
+ </description>
+    </item>
+    
+    <item>
+      <title>mysqlのtips</title>
+      <link>https://yaasita.github.io/2012/04/22/2777/</link>
+      <pubDate>Sun, 22 Apr 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/04/22/2777/</guid>
+      <description>*AUTO_INCREMENTの値をリセットする
+ALTER TABLE hogetable AUTO_INCREMENT = 1;
+http://www.programming-magic.com/20071126231401/
+*列の追加
+alter table log add date date after id;
+http://www.programming-magic.com/20071004015528/ *列の削除
+alter table log drop date;
+(logテーブルからdateカラム削除) http://www.programming-magic.com/20071023000012/</description>
+    </item>
+    
+    <item>
+      <title>nagios3でのパッシブチェックについて</title>
+      <link>https://yaasita.github.io/2012/04/15/2796/</link>
+      <pubDate>Sun, 15 Apr 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/04/15/2796/</guid>
+      <description> nagios3でのパッシブチェックは外部コマンドファイル(External Commands)に書き込むことで実現するチェックした結果を名前付パイプ(/var/lib/nagios3/rw/nagios.cmd)に書き込むことでnagios3が拾う
+以下のようなスクリプトを用意する #!/bin/sh
+echocmd=&#34;/bin/echo&#34;
+CommandFile=&#34;/var/lib/nagios3/rw/nagios.cmd&#34;
+datetime=`date +%s`
+cmdline=&#34;[$datetime] PROCESS_SERVICE_CHECK_RESULT;$1;$2;$3;$4&#34;
+`$echocmd $cmdline &amp;amp;gt;&amp;amp;gt; $CommandFile`
+cronか何かで以下のようにスクリプトを叩く引数は4つで最初からホスト名、サービス名、ステータス、メッセージの順でサービス名はservice_descriptionで指定したもの ./result.sh localhost HTTP 2 &#34;DOWN MESSAGE&#34;
+HOSTのパッシブチェックは以下のようなコマンドで #!/bin/sh
+echocmd=&#34;/bin/echo&#34;
+CommandFile=&#34;/var/lib/nagios3/rw/nagios.cmd&#34;
+datetime=`date +%s`
+cmdline=&#34;[$datetime] PROCESS_HOST_CHECK_RESULT;$1;$2;$3&#34;
+`$echocmd $cmdline &amp;amp;gt;&amp;amp;gt; $CommandFile`
+こう叩く ./host.sh localhost 0 &#34;OK&#34;
+
+参考リンク
+Nagios 3翻訳プロジェクトExternal Commands
+Passive Checks </description>
+    </item>
+    
+    <item>
+      <title>nagios3で外部コマンドを初期化するには？</title>
+      <link>https://yaasita.github.io/2012/04/15/2817/</link>
+      <pubDate>Sun, 15 Apr 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/04/15/2817/</guid>
+      <description>nagios3のWebインターフェイス等で行ったステータスを初期化するには /var/lib/nagios3/retention.dat を削除すればOK</description>
+    </item>
+    
+    <item>
+      <title>lighttpd&#43;nagios3</title>
+      <link>https://yaasita.github.io/2012/04/13/2839/</link>
+      <pubDate>Fri, 13 Apr 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/04/13/2839/</guid>
+      <description>&amp;amp;nbsp;lighttpd+nagios3を試してみた
+インストールapt-get install nagios3CGI設定/etc/lighttpd/lighttpd.conf  alias.url += (
+&#34;/nagios3/stylesheets&#34; =&amp;amp;gt; &#34;/etc/nagios3/stylesheets&#34; ,
+&#34;/cgi-bin/nagios3&#34; =&amp;amp;gt; &#34;/usr/lib/cgi-bin/nagios3&#34;,
+&#34;/nagios3/cgi-bin&#34; =&amp;amp;gt; &#34;/usr/lib/cgi-bin/nagios3&#34;,
+&#34;/nagios3&#34; =&amp;amp;gt; &#34;/usr/share/nagios3/htdocs&#34;
+)
+$HTTP[&#34;url&#34;] =~ &#34;^/nagios3/cgi-bin|^/cgi-bin/nagios3&#34; {
+cgi.assign = ( &#34;&#34; =&amp;amp;gt; &#34;&#34; )
+auth.require = (
+&#34;&#34; =&amp;amp;gt;
+(
+&#34;method&#34; =&amp;amp;gt; &#34;basic&#34;,
+&#34;realm&#34; =&amp;amp;gt; &#34;nagios&#34;,
+&#34;require&#34; =&amp;amp;gt; &#34;user=nagiosadmin&#34;
+)
+)
+}
+/etc/nagios3/nagios.cfg
+check_external_commands=1
+パーミッション
+# dpkg-statoverride --update --add nagios www-data 2710 /var/lib/nagios3/rw
+# dpkg-statoverride --update --add nagios nagios 751 /var/lib/nagios3</description>
+    </item>
+    
+    <item>
+      <title>bloggerの問題を報告するには？</title>
+      <link>https://yaasita.github.io/2012/03/24/2858/</link>
+      <pubDate>Sat, 24 Mar 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/03/24/2858/</guid>
+      <description> 以下のリンクからどうぞ
+悩んでいたクイック編集が出ない問題も載ってた
+理由は分からないけど以下のリンクで.jpにリダイレクトされなくなる
+http://rdt17.blogspot.com/ncr </description>
+    </item>
+    
+    <item>
+      <title>Ruby on Railsのインストール</title>
+      <link>https://yaasita.github.io/2012/03/23/2878/</link>
+      <pubDate>Fri, 23 Mar 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/03/23/2878/</guid>
+      <description>必要なパッケージのインストール適当に以下のパッケージをインストール 
+build-essential imagemagick zlib1g-dev libssl-dev libreadline-dev libmagick-dev libmagickcore-dev
+libmagickwand-dev sqlite3 libsqlite3-dev automake bison mysql-server mysql-client libmysqld-dev libmysqlclient-dev libcurl4-openssl-dev
+libapr1-dev libaprutil1-dev libxslt-dev libxml2-dev
+※この時点ではRubyは入れない RVMのインストールRVMはRubyのバージョンのスイッチとか簡単に出来るので便利
+公式サイトどおりに以下のコマンドですぐインストールされる 
+curl -L get.rvm.io | bash -s stable
+source ~/.rvm/scripts/rvm
+ Rubyのインストール
+rvm install ruby
+rvm list
+rvm use 1.9.3 --default
+必要なGemインストール
+gem install bundler
+gem install rails
+gem install unicron
+その他の設定あとJavaScriptエンジンが足りないとか起こられたら こちらを参照して設定する
+Gemfileに以下を追記 
+gem &#39;execjs&#39;
+gem &#39;therubyracer&#39;
+
+rails new hoge</description>
+    </item>
+    
+    <item>
+      <title>perlのワンライナーでファイルの一括リネーム</title>
+      <link>https://yaasita.github.io/2012/03/21/2899/</link>
+      <pubDate>Wed, 21 Mar 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/03/21/2899/</guid>
+      <description> メモしておく
+以下の例はファイルの拡張子を残して連番にする例
+リネーム前確認
+perl -le &#39;for(@ARGV){$n=$o=$_;$n=~s/.+(\..+)/sprintf(&#34;%04d$1&#34;,++$i)/e;print &#34;$o = $n&#34;}&#39; *
+
+リネーム
+perl -le &#39;for(@ARGV){$n=$o=$_;$n=~s/.+(\..+)/sprintf(&#34;%04d$1&#34;,++$i)/e;rename $o,$n}&#39; *
+ </description>
+    </item>
+    
+    <item>
+      <title>github使ってみた</title>
+      <link>https://yaasita.github.io/2012/03/19/2919/</link>
+      <pubDate>Mon, 19 Mar 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/03/19/2919/</guid>
+      <description>今更だけどgithub使ってみたときのメモ
+とりあえず初期設定は下記参考リンク見ながらやればOK
+以下はリポジトリの作成→アップロードまで簡易版のメモ
+gitの設定名前とe-mailを設定 git config --global user.name &#34;Firstname Lastname&#34;
+git config --global user.email &#34;your_email@youremail.com&#34;
+githubのユーザーＩＤとアクセストークンの設定 ※アクセストークンはAccount Settings→左メニューのAccount Settingsで見れる git config --global github.user username
+git config --global github.token 0123456789yourf0123456789token
+sshの設定.ssh/configに以下を書いておく Host github.com
+User git
+Hostname github.com
+IdentityFile ~/.ssh/YOUR_PRIVATE_KEY
+リポジトリの作成githubにログインして&#34;New Repository&#34;を押せばOK リポジトリにpushmkdir repname
+cd repname
+git init
+touch README
+git add README
+git commit -m &#39;first commit&#39;
+git remote add origin git@github.com:yourid/repname.git
+git push -u origin master
+
+感想
+コマンドから簡単にWebのホスティングサービスにアップロードできるのは超便利</description>
+    </item>
+    
+    <item>
+      <title>CUI(テキストベース)のメッセンジャー</title>
+      <link>https://yaasita.github.io/2012/03/14/2940/</link>
+      <pubDate>Wed, 14 Mar 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/03/14/2940/</guid>
+      <description> CUIでメッセが出来たらいいなーと思って探してみた
+centerim
+finch
+参考リンク
+http://techno-st.net/2009/02/18/cui-im.html
+http://d.hatena.ne.jp/goth_wrist_cut/20080128/1201484704 </description>
+    </item>
+    
+    <item>
+      <title>HDDが故障したときにやったこと</title>
+      <link>https://yaasita.github.io/2012/03/11/2962/</link>
+      <pubDate>Sun, 11 Mar 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/03/11/2962/</guid>
+      <description>/dev/sddが故障を検地 (S.M.A.R.T)
+まずはsmartのセルフテストをやってみる
+smartctl -t long /dev/sdd  badblocksでHDDをチェック
+今回は読み込みチェックだけやった
+badblocks -s -v /dev/hda  書き込みチェックもやるなら↓
+badblocks -s -v -n /dev/hda
+-s 進捗状況表示
+-v 詳細表示
+-n 非破壊テスト
+http://nabe.blog.abk.nu/0245
+ファイルシステムが壊れてそうなら
+fsck
+を使うこと</description>
+    </item>
+    
+    <item>
+      <title>dwmのキーマップの変更</title>
+      <link>https://yaasita.github.io/2012/03/09/2983/</link>
+      <pubDate>Fri, 09 Mar 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/03/09/2983/</guid>
+      <description> ソースをダウンロードしてから
+makeする
+apt-get source dwm
+以下のとおり変更
+#define MODKEY Mod1Mask
+↓
+#define MODKEY Mod4Mask
+static const char *termcmd[] = { &#34;uxterm&#34;, NULL };
+↓
+static const char *termcmd[] = { &#34;x-terminal-emulator&#34;, NULL };
+
+make
+あとは出来たdwmをフォルダに突っ込めばOK
+参考リンク
+http://wiki.mma.club.uec.ac.jp/clear/dwm </description>
+    </item>
+    
+    <item>
+      <title>mysqlを使ってみる</title>
+      <link>https://yaasita.github.io/2012/03/01/3004/</link>
+      <pubDate>Thu, 01 Mar 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/03/01/3004/</guid>
+      <description> インストールはmysql-clientとmysql-serverを入れればOK
+mysqlへの接続
+mysql -u root -p
+DB一覧の表示
+show databases;
+databasesの切り替え
+use データベース名
+テーブルの表示
+show tables;
+phpmyadminへのログイン
+http://192.168.0.1/phpmyadmin/
+バックアップ
+mysqldump --user=root --password=hoge --all-databases &amp;amp;gt; /tmp/mysql.dump
+リストア
+mysql -u root -phoge &amp;amp;lt; /tmp/mysql.dump </description>
+    </item>
+    
+    <item>
+      <title>Catalyst&#43;lighttpd&#43;fastcgiで動かしてみる</title>
+      <link>https://yaasita.github.io/2012/02/05/3025/</link>
+      <pubDate>Sun, 05 Feb 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/02/05/3025/</guid>
+      <description>Catalyst+lighttpd+fastcgiで動かす場合の設定メモ
+今回は下の図のように動かす
+Catalystはスタンドアロンで動かすほうが早い気がする
+bin-path指定で動かす場合はこちらを参照
+
+conf編集/etc/lighttpd/conf-enabled/10-fastcgi.confを編集 今回のサーバーではlighttpdは普通のWebサーバーとして使っているので、ポートで切り分ける以下を追加 あとserver.port文を消す $SERVER[&#34;socket&#34;] == &#34;192.168.0.4:5000&#34; {
+#server.port = 5000
+fastcgi.server = (
+&#34;&#34; =&amp;amp;gt; ( # the extension is empty because we want to match on any extension
+&#34;myserver1&#34; =&amp;amp;gt; (
+&#34;host&#34; =&amp;amp;gt; &#34;192.168.0.4&#34;,
+&#34;port&#34; =&amp;amp;gt; 5001,
+&#34;check-local&#34; =&amp;amp;gt; &#34;disable&#34;
+)
+)
+)
+}
+$SERVER[&#34;socket&#34;] == &#34;192.168.0.4:4000&#34; {
+}
+Catalystの起動ポート越しにやりとりするからパーミッションとかは適当でOK script/helloworld_fastcgi.pl --listen 192.168.0.4:5001 --keeperr 2
+デーモン化する/etc/init.dにスクリプトを書けば自動起動する こちらを参考に適当にスクリプト書けばOK 
+参考リンク
+Deploying Catalyst Applications
+Deploying Catalyst applications with lighttpd and FastCGI</description>
+    </item>
+    
+    <item>
+      <title>LinuxでISO=&amp;gt;aviエンコード（DVDリッピング）</title>
+      <link>https://yaasita.github.io/2012/02/02/3047/</link>
+      <pubDate>Thu, 02 Feb 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/02/02/3047/</guid>
+      <description> LinuxでDVDのISOイメージをavi化する方法を調べたのでメモ
+リポジトリにdebian-multimediaを追加/etc/apt/sources.listに以下の一行を追加 deb http://www.debian-multimedia.org squeeze main non-free
+このFAQにあるとおり公開鍵をインストール dpkg -i debian-multimedia-keyring_2008.10.16_all.deb
+acidripをインストールapt-get update
+apt-get install acidrip
+ISOイメージをマウントmount -o loop /tmp/DVD.ISO /mnt
+acidripを起動acidrip
+/mntを指定してエンコード あとはGUIなので分かるはず  </description>
+    </item>
+    
+    <item>
+      <title>CUIでサウンド制御</title>
+      <link>https://yaasita.github.io/2012/01/31/3090/</link>
+      <pubDate>Tue, 31 Jan 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/01/31/3090/</guid>
+      <description> PCMの調節とか音の調整を出来るコマンド
+alsamixer
+よく忘れるので.......φ（．．）メモメモ
+ </description>
+    </item>
+    
+    <item>
+      <title>Linuxでtorを使ってみる</title>
+      <link>https://yaasita.github.io/2012/01/31/3068/</link>
+      <pubDate>Tue, 31 Jan 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/01/31/3068/</guid>
+      <description> Torは匿名のプロキシとして動作する
+インストール
+apt-get install tor
+
+/etc/tor/torrcを編集
+SocksListenAddress 192.168.0.4(Torが入っているサーバーのアドレス)
+を追加
+## Replace this with &#34;SocksPort 0&#34; if you plan to run Tor only as a
+## relay, and not make any local application connections yourself.
+SocksPort 9050 # what port to open for local application connections
+SocksListenAddress 127.0.0.1 # accept connections only from localhost
+SocksListenAddress 192.168.0.4
+
+あとは再起動でOK
+killall tor
+tor
+
+これで192.168.0.2から接続できた
+SocksPolicyは何も設定しなければ全て許可 </description>
+    </item>
+    
+    <item>
+      <title>最近のCygwinをインストール</title>
+      <link>https://yaasita.github.io/2012/01/26/3111/</link>
+      <pubDate>Thu, 26 Jan 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/01/26/3111/</guid>
+      <description> 最近のCygwinが便利になってたので導入メモ
+１．インストール
+公式サイトからsetup.exeを持ってくる
+ソフトのインストールに毎回setup.exeを使うのは面倒なので、apt-cygを導入する
+２．Xサーバの導入
+setup.exeからX11を選択して全部入れる
+そんでウィンドウマネージャとしてdwmを入れる
+ソースは公式サイトから拾ってビルド
+tar xzf dwm-6.0.tar.gz
+cd dwm-6.0
+make
+mv dwm.exe /usr/bin/
+あとは~/.xinitrcに適当に書いてstartxでOK
+xhost +192.168.0.4
+dwm
+
+３．その他設定
+あとは便利に使うコマンドとしてcygstartを覚えておくと良いかも
+詳しくはこちら
+コンソールの設定だけど右クリック→Options→Looks→背景色とか透過とかカーソルをいじる
+Xサーバーに飛ばしたかったらアプリ起動側で変数設定すること
+export DISPLAY=&#34;192.168.0.3:0&#34;
+
+関連記事
+http://rdt17.blogspot.com/2011/05/xming.html </description>
+    </item>
+    
+    <item>
+      <title>rsyncで転送途中のファイルを破棄しない</title>
+      <link>https://yaasita.github.io/2012/01/24/3154/</link>
+      <pubDate>Tue, 24 Jan 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/01/24/3154/</guid>
+      <description> 所謂、リジューム（レジューム）機能ってやつだ
+--partial
+を付ければOKみたい
+参考リンク
+http://d.hatena.ne.jp/matoken/20110525/1306335511 </description>
+    </item>
+    
+    <item>
+      <title>コマンド補完を強力にしてくれるbash_completion</title>
+      <link>https://yaasita.github.io/2012/01/24/3132/</link>
+      <pubDate>Tue, 24 Jan 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/01/24/3132/</guid>
+      <description> インストールはaptでできる（bash-completion）
+.bashrcに以下の記述をすればOKだけどDebianの場合は予め書いてあった
+if [ -f /etc/bash_completion ] &amp;amp;&amp;amp; ! shopt -oq posix; then
+. /etc/bash_completion
+fi
+
+その他詳しいことは
+man dh_bash-completion
+参考リンク
+http://d.hatena.ne.jp/orangeclover/20110204/1296769974
+http://d.hatena.ne.jp/wadap/20080601/1212312418 </description>
+    </item>
+    
+    <item>
+      <title>自分があとどれくらいの時間生きていられるか？</title>
+      <link>https://yaasita.github.io/2012/01/09/3174/</link>
+      <pubDate>Mon, 09 Jan 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/01/09/3174/</guid>
+      <description> 自分があとどれくらいの時間生きていられるか簡単にわかるサイトです
+ライフカウンター
+残された時間がすぐに分かって便利です。
+例えば本日1/9誕生日の25歳の場合、残された時間は482113時間です。（寿命80歳までと仮定して）
+毎日8時間寝るとすると人生の1/3ですから160704時間寝ています
+この人はSEをしていて、毎日残業して14時間働き、休日出勤も多いので年間休日は100日です
+定年は65歳にあがったみたいなので、65歳とします
+14 x (365 - 100) x (65-25) = 148400時間が働いている時間です。
+まとめると以下のようになります
+寝ている時間　160704h
+働いてる時間　148400h
+自由な時間　173009h
+合計　482113h
+
+自由な時間は全体の35％しかないことが分かります。
+何か仕事とは別にやりたい事や目標がある場合、残された173009時間でやる必要があります。
+年にすると約20年しかないですので結構少ない気がします。
+（実際には自由な時間中に家事、食事、冠婚葬祭等がありますのでずっと少ないです）
+もし、働いている時間も自由な時間も充実していなかったとしたら死ぬ時に後悔するんじゃないでしょうか？もしこの例のような生活をしているSEの方が居ましたら考え直した方が良いかもしれないです。 </description>
+    </item>
+    
+    <item>
+      <title>年収を入力すると女の子が評価してくれるサイト</title>
+      <link>https://yaasita.github.io/2012/01/08/3194/</link>
+      <pubDate>Sun, 08 Jan 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/01/08/3194/</guid>
+      <description> http://televider.com/msz/
+参考リンク
+http://www.zaeega.com/archives/53541552.html </description>
+    </item>
+    
+    <item>
+      <title>/boot/grub/grub.cfgのrootってどこから設定されている？</title>
+      <link>https://yaasita.github.io/2012/01/06/3214/</link>
+      <pubDate>Fri, 06 Jan 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/01/06/3214/</guid>
+      <description> というわけで調べてみた
+update-grub2のコールスタック
+
+/etc/grub.d/10_linuxを見れば分かるとおり
+grub.cfgの$linux_root_device_thisversionによって作られています。
+で、これは$GRUB_DEVICEから作られています。（grub-mkconfig参照）
+結局、$GRUB_DEVICEはどこを参照しているかというと以下のコマンドで出してます。
+grub-probe --target=device /
+というわけでgrub-probeというコマンドの結果を入れているので、grub legacyみたいに設定値ではありません。じゃあどうやってrootパラメータを変更するの？って話になるけど、それはchrootするとか
+GRUBメニュー選択時にEDITするとかが良いんじゃないでしょうか？ </description>
+    </item>
+    
+    <item>
+      <title>/dev/disk/by-uuidに無いHDDがある？</title>
+      <link>https://yaasita.github.io/2012/01/06/3236/</link>
+      <pubDate>Fri, 06 Jan 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/01/06/3236/</guid>
+      <description> 答え
+mkfsでフォーマットしてないからです。
+フォーマットすれば出ます。
+ファイルシステム単位につけるものらしいね
+だからmkfsしなおしたら変わります
+ご注意を
+参考リンク
+http://manual.aptosid.com/ja/part-uuid-ja.htm </description>
     </item>
     
   </channel>

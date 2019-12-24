@@ -1,305 +1,2119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title># cd ~yaasita</title>
+    <title>2008 on # cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2008/</link>
-    <description>Recent content on # cd ~yaasita</description>
-    <generator>Hugo</generator>
+    <description>Recent content in 2008 on # cd ~yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Wed, 31 Dec 2008 00:00:00 +0900</lastBuildDate>
-    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://yaasita.github.io/archives/2008/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
-      <title>chromebookが最高だった</title>
-      <link>https://yaasita.github.io/2019/12/23/chromebook/</link>
-      <pubDate>Mon, 23 Dec 2019 05:58:32 +0900</pubDate>
+      <title>iptablesで設定したルールを再起動後も反映したい</title>
+      <link>https://yaasita.github.io/2008/12/31/10585/</link>
+      <pubDate>Wed, 31 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/12/23/chromebook/</guid>
-      <description>ASUS の C434TA-AI0084 を買ったのでレビュー
-chromeOS  起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある  解除がちょっと遅い10秒くらい待たされる   chromeの複数ユーザー機能が使えない  多重ログイン機能はあるけどちょっと微妙  別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能      ディスプレイ  タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 バックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗  テザリング  Moto E5 とbluetoothでのテザリングが出来なかった  とりあえずUSBテザリングは刺すだけで使えたので良しとしてます    キーボード  Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない  Androidアプリ  ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない  Linux環境 OS  Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり  バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい   USB共有機能あり /opt/google/cros-containers/bin/.</description>
+      <guid>https://yaasita.github.io/2008/12/31/10585/</guid>
+      <description>どこに書けばいいのでしょうか？　＞ Debian , Ubuntu
+正解は/etc/network/if-pre-up.d
+iptables-restoreコマンドをうまいこと駆使してやってください
+まあ後はiptablesのメモ
+最初に決めるルールINPUTは入ってくパケットOUTPUTは出て行くパケット
+FORWARDは転送するパケット
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+全てのルールをクリア
+iptables -F
+すべてのユーザー定義もクリア
+iptables -X
+パケットカウンタもクリアしたいなら
+iptables -Z iptables -A INPUT -p tcp --dport 4000:4999 -s ! 192.168.0.0/24 -j DROP
+↑の例だと192.168.0.0/24以外のネットワークから来たパケットで4000から4999ポートを指定
+しているものを削除
+※注意 --dportは-p tcpが指定されていない場合は使えない（udpでも良いけど)
+現在のルールを表示
+iptables -L
+最終的にはこんな感じで
+#!/bin/bash
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -P OUTPUT ACCEPT
+iptables -F
+#iptables -A INPUT -p tcp --dport 4000:4999 -s !</description>
     </item>
     
     <item>
-      <title>GCP Cloud Functions内からサービスアカウントのtoken取る</title>
-      <link>https://yaasita.github.io/2019/12/08/service-account-in-cf/</link>
-      <pubDate>Sun, 08 Dec 2019 05:12:12 +0900</pubDate>
+      <title>携帯端末以外のIPを制限するhtaccessを簡単生成</title>
+      <link>https://yaasita.github.io/2008/12/31/10607/</link>
+      <pubDate>Wed, 31 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/12/08/service-account-in-cf/</guid>
-      <description>Cloud Functionsからサービスアカウントのアクセストークンをどうやって取るの？と疑問に思ったので調べた
-Google Compute Engineと同じ取り方でOK
-&amp;quot;use strict&amp;quot;; const fetch = require(&amp;quot;node-fetch&amp;quot;); exports.handler = async (req, res) =&amp;gt; { const url = &amp;quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&amp;quot; + &amp;quot;[サービスアカウント名]/token&amp;quot;; const result = await fetch(url, { method: &amp;quot;GET&amp;quot;, headers: { &amp;quot;Metadata-Flavor&amp;quot;: &amp;quot;Google&amp;quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&amp;quot;OK&amp;quot;); };  なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
-
-まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &amp;ldquo;Function Identity&amp;quot;とかクリックするとちゃんと日本語版あるんですよね
-なんかメニューがバグってるのかな・・・
-とりあえず英語版から探すのをオススメします&amp;hellip;
+      <guid>https://yaasita.github.io/2008/12/31/10607/</guid>
+      <description> http://www.dspt.net/tools/mobile_ip/ </description>
+    </item>
+    
+    <item>
+      <title>Drupalをubuntu8.10にインストール</title>
+      <link>https://yaasita.github.io/2008/12/25/10628/</link>
+      <pubDate>Thu, 25 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/25/10628/</guid>
+      <description> １．環境設定
+LAMP入れとけばおｋ
+２．mySQLでテーブル作成
+# mysql -u root -p
+mysql&amp;amp;gt; create database drupal;
+↑データベース名
+mysql&amp;amp;gt; grant select,insert,update,delete,create,drop,index,alter,create temporary　tables,lock tables on drupal.* to root@localhost identified by &#39;drupal&#39;;
+↑の例だとrootってユーザーでパスワードはdrupal
+mysql&amp;amp;gt; flush privileges;
+３．webからごにょごにょ設定
+http://drupal.jp/drupal6/quick_start </description>
+    </item>
+    
+    <item>
+      <title>auのUA</title>
+      <link>https://yaasita.github.io/2008/12/24/10650/</link>
+      <pubDate>Wed, 24 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/24/10650/</guid>
+      <description> 携帯のUserAgentを知りたいなーってときにすぐ出てこないのでメモ
+KDDI-KC37 UP.Browser/6.2.0.11.1.2.2e (GUI) MMP/2.0 </description>
+    </item>
+    
+    <item>
+      <title>WMP11でWindows Live Messengerに再生曲表示</title>
+      <link>https://yaasita.github.io/2008/12/24/10671/</link>
+      <pubDate>Wed, 24 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/24/10671/</guid>
+      <description>なんか手順が変わってた
+Windows Live Messenger は、現在、自分の聞いている曲をメンバーにお知らせできる機能があります。
+しかし、Messenger の設定で表示するようにしたつもりなのですが、表示されていないのに気がつきました。
+iTunesでは自動的に再生している曲を表示してくれますが、Windows XP のWindows Media Playerの場合は、Windows Live Messenger だけでなく、Windows Media Playerでも設定する必要があります。
+まずは、Windows Live Messenger を下記のように設定します。
+1. 「メニューを表示します」アイコンをクリックして表示されるメニューより「ツール」の 「オプション」をクリックします。
+2. 「オプション」が表示されるので、左側の欄にある「個人設定」をクリックします。
+3. 「表示名」の下にある「Windows Media Player の音楽情報を表示メッセージで公開する」にチェックをつけます。
+4. 「OK」をクリックします。
+Windows Live Messenger の設定が完了したら、Windows Media Player と Windows Live Messenger を連携させましょう。
+Windows Media Player で下記のように設定します。なお、Windows Media Playerのバージョンによって、少し設定方法が違いますので、ご注意ください。
+Windows Media Player 11の場合
+1. Windows Media Player を起動します。
+2. 「プレイビュー」の下の▼ボタンをクリックし、「プラグイン」から「オプション」をクリックします。
+3. 左側の欄にある「バックグラウンド」をクリックします。
+4. 右側に「Windows Live Messenger ミュージック プラグイン」が表示されますので、チェックをつけます。</description>
+    </item>
+    
+    <item>
+      <title>決済用普通預金ってのがあるらしい</title>
+      <link>https://yaasita.github.io/2008/12/23/10691/</link>
+      <pubDate>Tue, 23 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/23/10691/</guid>
+      <description> 利息はつかないけど、全額保障されるらしい
+ペイオフで保障されるのは1000万までだから金持ちの人はいいんじゃないかな </description>
+    </item>
+    
+    <item>
+      <title>.bashrcを作っても読み込まないよー＞＜</title>
+      <link>https://yaasita.github.io/2008/12/21/10753/</link>
+      <pubDate>Sun, 21 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/21/10753/</guid>
+      <description>そんなときは.profileを作ればいいのさ
+こんな感じで・・・
+# ~/.profile: executed by the command interpreter for login shells.
+# This file is not read by bash(1), if ~/.bash_profile or ~/.bash_login
+# exists.
+# see /usr/share/doc/bash/examples/startup-files for examples.
+# the files are located in the bash-doc package.
+# the default umask is set in /etc/profile; for setting the umask
+# for ssh logins, install and configure the libpam-umask package.
+#umask 022
+# if running bash
+if [ -n &#34;</description>
+    </item>
+    
+    <item>
+      <title>ubuntu8.10にはgnump3dパッケージが無いんだ</title>
+      <link>https://yaasita.github.io/2008/12/21/10732/</link>
+      <pubDate>Sun, 21 Dec 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/12/21/10732/</guid>
+      <description> やあ （´・ω・｀) ようこそ、Ubuntu8.10へ。
+うん、「また」なんだ。
+つーわけでgnump3dを入れるとなると自分でソースからビルドするか、debパッケージを探すかになります。
+http://packages.ubuntu.com/
+しょうがないので↑から適当に選ぶ「Search package directories」にgnump3dを入れて、Distributionは一個前のhardyを選択
+一個前だとあるんだね・・・なんでレポジトリから消えたかは知らないけど・・・・
+http://packages.ubuntu.com/hardy/gnump3d
+まあダウンロードしたらGUIからでもdebファイルをインストールすると良いよ。GUI無い人はこんな感じでインストールすると良いんじゃない？
+# dpkg -i gnump3d_3.0-2_all.deb
 参考リンク
- 関数ID Compute Metadata Server   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].</description>
+debパッケージをインストールする </description>
     </item>
     
     <item>
-      <title>GCPでアクセストークンを取得する</title>
-      <link>https://yaasita.github.io/2019/11/14/gcp-access-token/</link>
-      <pubDate>Thu, 14 Nov 2019 22:32:41 +0900</pubDate>
+      <title>ここら辺でsquidのconfをまとめようか</title>
+      <link>https://yaasita.github.io/2008/12/21/10711/</link>
+      <pubDate>Sun, 21 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/11/14/gcp-access-token/</guid>
-      <description>ほとんどのサービスは クライアントライブラリ を使えば
-export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json  みたいに環境変数を設定するだけで良いのだが、Cloud Build 等は access tokenを取得して叩く必要がある
-という事でGCPのサービスアカウントからアクセストークンを取得するコード
- スコープ一覧はこちら
-https://developers.google.com/identity/protocols/googlescopes
-アクセストークンのテストは DLP とかがお手軽で良いかな
-参考リンク  jose API Document Using OAuth 2.0 for Server to Server Applications  </description>
+      <guid>https://yaasita.github.io/2008/12/21/10711/</guid>
+      <description>acl all src all
+acl manager proto cache_object
+acl localhost src 127.0.0.1/32
+acl to_localhost dst 127.0.0.0/8
+acl localnet src 10.0.0.0/8 # RFC1918 possible internal network
+acl localnet src 172.16.0.0/12 # RFC1918 possible internal network
+acl localnet src 192.168.0.0/16 # RFC1918 possible internal network
+acl SSL_ports port 443 # https
+acl SSL_ports port 563 # snews
+acl SSL_ports port 873 # rsync
+acl Safe_ports port 80 # http
+acl Safe_ports port 21 # ftp</description>
     </item>
     
     <item>
-      <title>osu!taikoのskin</title>
-      <link>https://yaasita.github.io/2019/10/27/osu/</link>
-      <pubDate>Sun, 27 Oct 2019 03:00:31 +0900</pubDate>
+      <title>manコマンドの出力をtxtにする</title>
+      <link>https://yaasita.github.io/2008/12/19/10793/</link>
+      <pubDate>Fri, 19 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/10/27/osu/</guid>
-      <description>osu!taikoのスキン
-これが一番良かった
-概要欄からダウンロードできる</description>
+      <guid>https://yaasita.github.io/2008/12/19/10793/</guid>
+      <description> man uptime | col -bfx &amp;amp;lt; uptime.txt
+こんな感じでおｋ </description>
     </item>
     
     <item>
-      <title>AtCoder Beginner Contest 142のD問題</title>
-      <link>https://yaasita.github.io/2019/09/30/atcoder-abc142/</link>
-      <pubDate>Mon, 30 Sep 2019 05:05:34 +0900</pubDate>
+      <title>なんか軽くて良い音楽プレイヤーがあるらしい</title>
+      <link>https://yaasita.github.io/2008/12/19/10773/</link>
+      <pubDate>Fri, 19 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/09/30/atcoder-abc142/</guid>
-      <description>問題: D - Disjoint Set of Common Divisors
-方針はユークリッドの互除法で最大公約数を出して、最大公約数を素因数分解
-存在する素数の数+1(今回は1もお互いに素の数として含めるため)でOKぽい
-perlで書いてみる
- 解説動画</description>
+      <guid>https://yaasita.github.io/2008/12/19/10773/</guid>
+      <description> 今までMPC使ってたけどこれもいいかもね
+Fittle
+まとめwiki </description>
     </item>
     
     <item>
-      <title>systemd timerはちゃんと動いてる？</title>
-      <link>https://yaasita.github.io/2019/09/29/systemd-timer/</link>
-      <pubDate>Sun, 29 Sep 2019 16:51:09 +0900</pubDate>
+      <title>FLASH版CookieみたいなSharedObjectについて</title>
+      <link>https://yaasita.github.io/2008/12/14/10834/</link>
+      <pubDate>Sun, 14 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/09/29/systemd-timer/</guid>
-      <description>systemdタイマーがちゃんと動いてるか確認したほうが良いよというお話
-systemctl list-timers --allコマンドで一覧が見れるあれです
-debian10だと /etc/cron.daily にあるスクリプトでこんな感じに書かれてたら、systemd timerの方を使ってる
-if [ -d /run/systemd/system ]; then exit 0 fi  前回 と同様にノートパソコンのバッテリー稼働と誤って判断されることに起因する問題
-例えばlogrotateとかみると
-systemctl cat logrotate  こんな一文がある
-ConditionACPower=true  これはバッテリー駆動の時は動かさないって意味らしいんだけど、どうも判定が狂ってるみたいでずっと実行されなかった
-なので、以下のコマンドでoverride.conf作って判定を無効化した
-systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower=  というわけで
-cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
-journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  とりあえず分かった、バッテリー時の判定が入ってるtimer
- apt-daily-upgrade man-db logrotate anacron apt-daily  </description>
+      <guid>https://yaasita.github.io/2008/12/14/10834/</guid>
+      <description> とあるゲームをやっていたときにふと思ったのでメモ。
+ゲームをプレイしてある面で止める→次にブラウザ立ち上げてみる→続きからPLAYできる→Cookieを消してみる→続きから出来る
+なぜ？それはFLASHのSharedObjectというデータを読み込んでいるからなのさ
+どこに保存されているの？
+WindowsXPなら
+C:\Documents and Settings\＜ユーザー名＞\Application Data\Macromedia\Flash Player\#SharedObjects
+とかだな多分
+Linuxなら
+/home/username/.macromedia/Flash_Player/とか探せばいいみたいね
+参考リンク
+http://www.gravity-works.jp/gravica/web/000077.shtml </description>
     </item>
     
     <item>
-      <title>ビリビリ動画とcrunchyrollのIP制限をGCPで検証</title>
-      <link>https://yaasita.github.io/2019/09/14/anime-ip-block/</link>
-      <pubDate>Sat, 14 Sep 2019 22:21:43 +0900</pubDate>
+      <title>今日覚えた四字熟語</title>
+      <link>https://yaasita.github.io/2008/12/14/10814/</link>
+      <pubDate>Sun, 14 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/09/14/anime-ip-block/</guid>
-      <description>bilibili動画とcrunchyrollのIP制限はどんな感じなのか
-GCPの各リージョンからアクセスして試してみる
-rttは自宅から該当サーバーまでのpingしたときの平均値
-なのでISPによって全然違うと思うので参考値ということで
-   region bilibili crunchyroll rtt(ms)     asia-east1 (台湾) ng ok 60.149   asia-east2 (香港) ng ok 76.986   asia-northeast1 (東京) ng ok 29.624   asia-northeast2 (大阪) ng ok 37.401   asia-south1 (ムンバイ) ng ok 144.055   asia-southeast1 (シンガポール) ng ok 89.755   australia-southeast1 (シドニー) ng ok 122.193   europe-north1 (フィンランド) ng ok 256.714   europe-west1 (ベルギー) ng ok 229.</description>
+      <guid>https://yaasita.github.io/2008/12/14/10814/</guid>
+      <description> ・朝三暮四
+目先のことしか見えてないこと
+・八面六臂
+なんかすごい活躍
+参考リンク
+http://contest2004.thinkquest.jp/tqj2004/70237/t/tyousan.html </description>
     </item>
     
     <item>
-      <title>on_ac_powerコマンドについて</title>
-      <link>https://yaasita.github.io/2019/08/16/on-ac-power/</link>
-      <pubDate>Fri, 16 Aug 2019 04:45:45 +0900</pubDate>
+      <title>cshの限界について</title>
+      <link>https://yaasita.github.io/2008/12/07/10856/</link>
+      <pubDate>Sun, 07 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/08/16/on-ac-power/</guid>
-      <description>debian10にした関係でLinuxネタが続く
-PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある
-そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる
-例えば、/etc/cron.daily/mlocate の場合
-if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi  こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
-んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
-このままだと永遠にlocateコマンドが使えないので、divertで退避させた
-dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power  おしまい</description>
-    </item>
-    
-    <item>
-      <title>1から100の偶数の和を求めるやつ</title>
-      <link>https://yaasita.github.io/2019/08/15/sum-even-number/</link>
-      <pubDate>Thu, 15 Aug 2019 04:10:11 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/15/sum-even-number/</guid>
-      <description>「1から100の偶数の和を求めるワンライナー」まとめ
-perlでやってみる
-perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;eval&amp;quot;say @{[grep{$_%2==0}1..100]}&amp;quot;;&#39;  4つ思いついた
-結論 simple is best</description>
-    </item>
-    
-    <item>
-      <title>各種サーバの中間証明書の扱い</title>
-      <link>https://yaasita.github.io/2019/08/14/ssl-capath/</link>
-      <pubDate>Wed, 14 Aug 2019 10:20:33 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/14/ssl-capath/</guid>
-      <description>中間証明書をどう設定するか問題
-postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&#39;s Encryptの場合こんな感じ
-smtpd_tls_CAfileに中間証明書を指定する
-smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
-dovecot 10-ssl.conf
-ssl_ca = &amp;lt;/etc/letsencrypt/live/example.net/chain.pem  これはダメ
-この設定はクライアント証明書用ですので
-正しくは、こんな感じに、まとめたやつを指定すればOK
-ssl_cert = &amp;lt;/etc/letsencrypt/live/example.net/fullchain.pem  apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
-SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem  dovecot同様に中間証明書もまとめて指定する
-まとめ この問題はスマホのK-9 Mailでメール読もうとしたときに判明した
-(突然CertPathValidatorExceptionって怒られた)
-thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね
+      <guid>https://yaasita.github.io/2008/12/07/10856/</guid>
+      <description>配列を参照するのにforeach文というものがあります
+これはperlとかphpにあったりします。そんでcshにもあるのですが・・・
+なぜかcshのforeach文に指定できる配列数の上限は997なのです
+この997配列がMAXというのはOSやハードウェアの仕様によらずに、どの環境でも同じでした。
+つまりcshの言語仕様ってことらしい。なぜ？？なんでだろーなんでだろー
+いろいろなシェル（一部perlで検証してみた）
+イナバの物置風にforeachの捌ける配列MAXを探す
+※スクリプト中に使われるファイル（list.txt,list2.txt)は複数行あるテキストファイルです。このファイルに例えば3行あれば3個の配列を用意します（空行は除く）。
+つまりcshが997が限界なのかを検証するには997行のファイルと998行のファイルを用意すればいいのです。
+まずはbash　全然平気
 
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
-openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
-    </item>
-    
-    <item>
-      <title>虫よけスプレー</title>
-      <link>https://yaasita.github.io/2019/07/29/musiyoke/</link>
-      <pubDate>Mon, 29 Jul 2019 03:42:37 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/07/29/musiyoke/</guid>
-      <description>虫除けスプレーで最近買ったこれが良かった
-ベタベタしないので気にならない
-フマキラー SKIN VAPEってやつかな
-商品名はスキンベープミスト　200mlかも
+#!/bin/bash
+array=(`cat list.txt`)
+for line in ${array[@]}
+do
+echo $line
+done
+echo &#34;やっぱりbash ${#array[@]} 人のっても大丈夫&#34;
 
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   そういや虫よけ剤に入ってるDEETって薬はなぜ虫が寄り付かないか謎らしい</description>
+続いてzsh　まあbashの強化版だし平気みたい
+
+#!/usr/bin/zsh
+array=(`cat list.txt`)
+for line in ${array[@]}
+do
+echo $line
+done
+echo &#34;やっぱりzsh ${#array[@]} 人のっても大丈夫&#34;
+
+cshとは違うのだよcshとは　みたいな感じで余裕でクリア
+
+#!/bin/tcsh
+set array=`cat list.txt`
+foreach i ($array)
+echo $i
+end
+echo &#34;やっぱりtcsh ${#array} 人乗っても大丈夫&#34;
+
+流石perlだどんな配列でもなんとも無いぜ！
+
+#!/usr/bin/perl
+open (FH,&#34;</description>
     </item>
     
     <item>
-      <title>例のS3署名バージョン2について</title>
-      <link>https://yaasita.github.io/2019/06/25/s3v2/</link>
-      <pubDate>Tue, 25 Jun 2019 00:31:08 +0900</pubDate>
+      <title>Firefoxの拡張 backword を試す</title>
+      <link>https://yaasita.github.io/2008/12/06/10876/</link>
+      <pubDate>Sat, 06 Dec 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/06/25/s3v2/</guid>
-      <description>AWS S3の署名バージョン騒動
-大丈夫ぽいけど一応調べた時につかったスクリプト
-CloudTrailでログを有効化してからお使いください
+      <guid>https://yaasita.github.io/2008/12/06/10876/</guid>
+      <description> backwordはなんかホップアップで単語の意味を表示してくれる拡張みたいです。
+Googleツールバーにも同様の機能があるらしいけど分からん・・・・
+ココからインストールして
+適当に設定する。
+アドオンから設定→DictionaryをGoogle - Japaneseに設定
+さらに検索するにはホップアップから虫眼鏡マークをクリックするんだけどそれにつかうサイトをSearch Webに書くエキサイトが良いと思うので
+http://www.excite.co.jp/dictionary/english_japanese/?search=
+と書いておこうか
+そういやこの拡張いれればDictionarySearchいらんな
+**一応設定メモ
+Setting Ⅰ
+Dictionary → 表示に使う辞書
+Show phonetics(rarely hang on Firefox) → 読み方？を示すのかな？なんかたまにFirefoxがハングするとか書いてあるので触らない
+Search Web → 虫眼鏡マークのなんとか・・・↑の方に既に書いた
+Setting Ⅱ
+Use Storage →　検索した単語をローカルにキャッシュするかどうかC:\Documents and Settings\Admin\Application Data\Mozilla\Firefox\Profiles\hogehoge.default\backwordの中に保存されてるみたいよ あと右下の有効、無効を切り替えるマークを右クリック→Pages→
+Review Page of Local Storageで自分のキャッシュが見れるお
+Automatically back word and context　→　ポップアップにあらわれるメニューがごちゃごちゃと増える
+あとは良く分からん
+参考リンク
+発音も分かる無料マウスオーバー辞書なFirefox拡張「backword」 </description>
+    </item>
+    
+    <item>
+      <title>VirtualPCの設定ファイルとかの場所は？</title>
+      <link>https://yaasita.github.io/2008/11/30/10916/</link>
+      <pubDate>Sun, 30 Nov 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/11/30/10916/</guid>
+      <description> ・使用しているバーチャルHDDは？
+VirtualPCコンソール→設定(T)→ハードディスクのバーチャルハードディスクファイルってのを見れば分かると思う
+・使用してるVirtualマシンは？（その他、復元ファイルなどは？）
+\Documents and Settings\ユーザー名\Application Data\Microsoft\Virtual PC\Virtual Machines
+を見ればいける </description>
+    </item>
+    
+    <item>
+      <title>％COMSPEC％→がcmd.exeを示すように・・・</title>
+      <link>https://yaasita.github.io/2008/11/30/10896/</link>
+      <pubDate>Sun, 30 Nov 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/11/30/10896/</guid>
+      <description> 環境変数を列挙したページがあったようだ
+cd %APPDATA%
+とかやるとアプリケーションデータに行くと思うよ
+http://www.atmarkit.co.jp/fwin2k/win2ktips/267swchos/swchos.html </description>
+    </item>
+    
+    <item>
+      <title>ゲーム</title>
+      <link>https://yaasita.github.io/2008/11/28/10937/</link>
+      <pubDate>Fri, 28 Nov 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/11/28/10937/</guid>
+      <description> 切って進めるゲーム(splitter)
+http://www.kongregate.com/games/EvgenyKarataev/splitter/
+ニコニコメーカー
+http://nm.dabun-doumei.com/
+splitter 解答
+http://jp.youtube.com/watch?v=PHF6WKd1MyU </description>
+    </item>
+    
+    <item>
+      <title>FFベンチをやってみた</title>
+      <link>https://yaasita.github.io/2008/11/26/10958/</link>
+      <pubDate>Wed, 26 Nov 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/11/26/10958/</guid>
+      <description> 結果は3000くらい
+２ｃｈのテンプレに習って報告してみる
+構成
+【 .CPU.　】 AMD Athlon 64 3200+
+【 Mem 】 1GB DDR400
+【　M/B　】Albatron K8X890 Pro
+【　VGA 】GeForce 7300GS (AL-GF7300GS)
+【VGAﾄﾞﾗｲﾊﾞ】
+【　DirectX....】 DirectX9.0c
+【　Sound 】
+【 OS 】
+【 Ver . 】
+▼スコア
+【　.Low　】
+【　High　.】
+http://www.playonline.com/ff11/download/media/benchmark01.html </description>
+    </item>
+    
+    <item>
+      <title>apache2でWebDAV設定→Thunderbirdのカレンダー公開</title>
+      <link>https://yaasita.github.io/2008/10/26/10979/</link>
+      <pubDate>Sun, 26 Oct 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/10/26/10979/</guid>
+      <description> 環境はDebian etch - apache2.2を想定
+１．a2enmodで必要なモジュール読み込む
+a2enmod webdav
+a2enmod dav_fs
+２．httpd.confに↓みたいに書いとけばok
+そんでまあcalってディレクトリ作ってパーミッションとか777にしとけば
+まあ間違いないだろう
+&amp;amp;lt;Directory /var/www/cal/&amp;amp;gt;
+Dav On
+Options Indexes
+AuthType Basic
+AuthName &#34;input webdav password!&#34;
+AuthUserFile &#34;/etc/apache2/pass&#34;
+Require valid-user
+Order allow,deny
+allow from all
+&amp;amp;lt;/Directory&amp;amp;gt;
+３．ロックファイルやらうんちゃらは
+/etc/apache2/mods-enabled
+にある
+dav_fs.conf
+で定義してあるから別に書かなくてもおｋ
+４．thunderbirdにlightningって拡張いれて
+新しいカレンダーでも作ってごにょごにょすれば良いですよ </description>
+    </item>
+    
+    <item>
+      <title>ファイルの関連付けを行う時にgvimが追加できなくなる事象について</title>
+      <link>https://yaasita.github.io/2008/10/26/11000/</link>
+      <pubDate>Sun, 26 Oct 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/10/26/11000/</guid>
+      <description> レジストリの
+[HKEY_CLASSES_ROOT￥Applications￥gvim.exe]のフルパスが間違ってるとからしいです。
+直すのが面倒ならそのキーごと削除→再登録でおｋ
+参考リンク
+「ファイルを開くプログラムの選択」でプログラムを参照しても一覧に追加されずに選択できない </description>
+    </item>
+    
+    <item>
+      <title>ガンダノイドSEED</title>
+      <link>https://yaasita.github.io/2008/10/25/11040/</link>
+      <pubDate>Sat, 25 Oct 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/10/25/11040/</guid>
+      <description> http://nameall.cosotto.com/gundanoids/ </description>
+    </item>
+    
+    <item>
+      <title>何か衝突とか破裂する瞬間をスローで見るFLASH</title>
+      <link>https://yaasita.github.io/2008/10/25/11020/</link>
+      <pubDate>Sat, 25 Oct 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/10/25/11020/</guid>
+      <description> http://dsc.discovery.com/tv/time-warp/video/interactive/interactive.html </description>
+    </item>
+    
+    <item>
+      <title>sshのダイナミック転送でSOCKSプロキシ</title>
+      <link>https://yaasita.github.io/2008/10/24/11082/</link>
+      <pubDate>Fri, 24 Oct 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/10/24/11082/</guid>
+      <description> １．まあ普通にsshダイナミック転送する
+２．Firefoxの接続設定でSOCKS v5 プロキシに設定
+３．名前解決はローカルでやろうとするので
+about:configからnetwork.proxy.socks_remote_dnsをtrueにする
+でおｋ
+参考リンク
+SSH のダイナミック転送ってすごいんですよ </description>
+    </item>
+    
+    <item>
+      <title>解析テンプレ</title>
+      <link>https://yaasita.github.io/2008/10/24/11060/</link>
+      <pubDate>Fri, 24 Oct 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/10/24/11060/</guid>
+      <description> 定番解析ソフトと解析勉強サイト
+●デバッガ OllyDbg
+Digital Travesiaで再配布
+●プロセスメモリエディタ兼デバッガ スペシャルねこまんま57号
+http://www.vector.co.jp/soft/win95/hardware/se254476.html
+●プロセスメモリエディタ兼デバッガ うさみみハリケーン
+http://hp.vector.co.jp/authors/VA028184/
+●ヘキサエディタ Stirling
+http://www.vector.co.jp/soft/win95/util/se079072.html
+●PCゲーム解析指南+OllyDbg日本語化パッチ Digital Travesia
+http://hp.vector.co.jp/authors/VA028184/
+参考書
+・解析魔法少女美咲ちゃん マジカル・オープン!
+ISBN:4-7980-0853-2 2,730円 A5判 280 頁
+・クラッカー・プログラム大全―禁断のシリアルナンバー解析テクニック
+ISBN:4-88718-746-7 2625円 A5判 304頁
+・はじめて読む8086
+ISBN:4871482456 1,682円 286頁
+購入回避推奨
+ゲーム解析スレ・書評サイト等で酷評されている参考書
+・いまどきのアセンブラプログラミング [橋本和明(著)]
+・いまどきのアセンブラの教科書 [橋本和明(著)]
+・アセンブラ読本 for Game ゼロからはじめるゲーム改造 [橋本和明(著)] </description>
+    </item>
+    
+    <item>
+      <title>葛飾北斎ジェネレーター</title>
+      <link>https://yaasita.github.io/2008/10/22/11103/</link>
+      <pubDate>Wed, 22 Oct 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/10/22/11103/</guid>
+      <description> http://www.adgame-wonderland.de/type/hokusai/ </description>
+    </item>
+    
+    <item>
+      <title>Project Cartoon</title>
+      <link>https://yaasita.github.io/2008/10/14/11123/</link>
+      <pubDate>Tue, 14 Oct 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/10/14/11123/</guid>
+      <description> ITプロジェクトの現状を木で表現したあれ
+http://www.projectcartoon.com/ </description>
+    </item>
+    
+    <item>
+      <title>最近流行の崩壊系</title>
+      <link>https://yaasita.github.io/2008/10/04/11143/</link>
+      <pubDate>Sat, 04 Oct 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/10/04/11143/</guid>
+      <description> http://www.nicovideo.jp/watch/nm4801333
+http://jp.youtube.com/experiencewii </description>
+    </item>
+    
+    <item>
+      <title>vimのtips</title>
+      <link>https://yaasita.github.io/2008/10/02/11164/</link>
+      <pubDate>Thu, 02 Oct 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/10/02/11164/</guid>
+      <description>カーソルラインを表示
+set cursorline
+カーソルコラムを表示（縦線）
+set cursorcolumn
+コマンドを続けるには縦棒を使う
+command Pw w | !perl %
+自動整形の実行方法を決める
+改行後もコメントとするかとか
+set formatoptions?
+コマンド結果をリダイレクト
+:h :redir
+キーコード(特殊文字) Ctrl+k 押してからキー押すと
+名前を挿入できる
+:h key-codes
+タブをスペースに変更
+set expandtab
+retab
+テキストファイルに固有の設定を残す
+h modeline
+マークした箇所をTodoハイライト
+h group-name でどんなハイライトがあるか分かるよ
+syntax match Todo /%&amp;lsquo;a.*/ containedin=ALL
+プラグイン、固有の設定ファイル
+boxes
+diff.exe
+color sampler pack
+txt.vim -&amp;gt; $VIMRUNTIME/syntax/txt.vim
+MRU.vim
+skeleton.html
+eregex.vim -&amp;gt; $VIMRUNTIME/plugin/eregex.vim
+$VIMRUNTIME/plugin/eregex_e.vim
+検索は:M/hogeで　それ以外は大文字で
+テキストに対し固有の設定を書く
+マッピングなどはmodeline使えないため
+autocmd BufRead ~/デスクトップ/kara.txt set nonu |
+\nnoremap j gj| nnoremap k gk</description>
+    </item>
+    
+    <item>
+      <title>aptitudeコマンドまとめ</title>
+      <link>https://yaasita.github.io/2008/09/21/11184/</link>
+      <pubDate>Sun, 21 Sep 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/09/21/11184/</guid>
+      <description> http://dolphin.c.u-tokyo.ac.jp/~nori1/aptitude-ja/ch02s01s02.html </description>
+    </item>
+    
+    <item>
+      <title>なんか早いOpenDNSっていうDNSがあるらしい</title>
+      <link>https://yaasita.github.io/2008/09/21/11205/</link>
+      <pubDate>Sun, 21 Sep 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/09/21/11205/</guid>
+      <description> ここに書いてあるみたいに
+優先DNSを「208.67.222.222」にして、代替DNSを「208.67.220.220」
+に設定すればよろし
+検証はまた後で・・・
+公式サイト </description>
+    </item>
+    
+    <item>
+      <title>apache2のインデックスにヘッダとかフッタとか付ける</title>
+      <link>https://yaasita.github.io/2008/09/16/11245/</link>
+      <pubDate>Tue, 16 Sep 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/09/16/11245/</guid>
+      <description> #
+# ReadmeName is the name of the README file the server will look for by
+# default, and append to directory listings.
+#
+# HeaderName is the name of a file which should be prepended to
+# directory indexes.
+ReadmeName README.html
+HeaderName HEADER.html
+autoindexモジュールの
+この辺の設定を変える。README.htmlの内容がファイルインデックスの欄の前か後ろに出るはずさ </description>
+    </item>
+    
+    <item>
+      <title>ettercapでDHCP Spoof</title>
+      <link>https://yaasita.github.io/2008/09/16/11287/</link>
+      <pubDate>Tue, 16 Sep 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/09/16/11287/</guid>
+      <description>ettercap -i eth0 -M dhcp:/255.255.255.0/192.168.0.2 -T</description>
+    </item>
+    
+    <item>
+      <title>New Live Wall! 通称ぬりかべって？</title>
+      <link>https://yaasita.github.io/2008/09/16/11265/</link>
+      <pubDate>Tue, 16 Sep 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/09/16/11265/</guid>
+      <description> なんかWebページにコメントを残せるみたいです
+現在は新しい開発者により九尾というものになっている
+ようです。
+
+リンク
+公式サイト
+まとめwiki </description>
+    </item>
+    
+    <item>
+      <title>面白いコピペ</title>
+      <link>https://yaasita.github.io/2008/09/16/11225/</link>
+      <pubDate>Tue, 16 Sep 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/09/16/11225/</guid>
+      <description> 
+
+1 名前：Socket774[sage] 投稿日：2008/09/09(火) 17:00:33 ID:AVvI1x3R
+|㍑㍍||l㌔㍍l|
+|㌧㌦||l㌻㍊l|
+| ||l㍗㌍l|　┏━━━━━━━━━━┓
+| ||　|　┃┌――――――――┐┃
+| ||　|　┃｜　＼　.｜┃
+／￣￣￣￣￣ﾌ.┃｜　n.∧∧＼　.｜┃コﾆl
+㌢㍍㌘㌶㌧.／...┃｜　l (^Д^)/)､ﾍ,,∧　｜┃ .＿　＿＿
+／／! ┃｜　｀ｰ,　`(`ﾐﾟヮﾟ,,ミ　｜┃/ ./／　／l
+＿＿＿／.／　.┃｜　ﾉ　|´\　とソ .｜┃￣|三三／
+＿＿＿|／ .┃｜　し&#39;`J　＾|　|　.｜┃⊂⊃
+┃└─―――――――┘┃ |　|
+┗━━━━━━━━━━┛ ｀ｰ´
+人は何かの犠牲なしに何も得ることは出来ない
+パソコンを得るためには相応の代価が必要になる
+それが自作PCにおける自己責任の原則だ
+このスレに来るまで 僕等はそれが世界の真実だと信じていた．．．
+
+
+多分↑をJaneとかにコピペすりゃーズレないだろう </description>
+    </item>
+    
+    <item>
+      <title>rep2の過去ログ（DAT）を整理するには</title>
+      <link>https://yaasita.github.io/2008/09/15/11308/</link>
+      <pubDate>Mon, 15 Sep 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/09/15/11308/</guid>
+      <description> rep2/data以下にある2channelフォルダごと削除すればよろし
+machibbs.com/は町BBSのDAT保存フォルダらしい </description>
+    </item>
+    
+    <item>
+      <title>postfixで設定されている環境変数を列挙する</title>
+      <link>https://yaasita.github.io/2008/09/07/11349/</link>
+      <pubDate>Sun, 07 Sep 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/09/07/11349/</guid>
+      <description> postconf
+でおｋ
+デフォルトの設定値は↓で確認
+postconf -d </description>
+    </item>
+    
+    <item>
+      <title>telnetでSMTPコマンド叩いてメール送信</title>
+      <link>https://yaasita.github.io/2008/09/07/11328/</link>
+      <pubDate>Sun, 07 Sep 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/09/07/11328/</guid>
+      <description> ↓を参考にどうぞ
+http://ash.jp/net/telnet_smtp.htm </description>
+    </item>
+    
+    <item>
+      <title>bashでCtrl-S押すと端末がロックされる</title>
+      <link>https://yaasita.github.io/2008/09/06/11370/</link>
+      <pubDate>Sat, 06 Sep 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/09/06/11370/</guid>
+      <description>Ctrl-Qで解除だそうで</description>
+    </item>
+    
+    <item>
+      <title>OSたんのやつ</title>
+      <link>https://yaasita.github.io/2008/09/01/11390/</link>
+      <pubDate>Mon, 01 Sep 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/09/01/11390/</guid>
+      <description> 共有フォルＤＡ！
+http://www.dejavuartworks.com/os/index.html </description>
+    </item>
+    
+    <item>
+      <title>ddclientでDynDNSのIPをアップデートしてみようか</title>
+      <link>https://yaasita.github.io/2008/08/24/11411/</link>
+      <pubDate>Sun, 24 Aug 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/08/24/11411/</guid>
+      <description> aptでインストールして初期設定して
+まだ足りないとこあるから
+dpkg-reconfigure ddclient
+打って再設定。デーモンで動かさないようにする。
+そんで/etc/ddclient.confを編集
+use=if
+になってるけどこれだと自分のIPアドレス（プライベートアドレス）を通知してしまうので、
+use=web
+にして回避させる。
+あとは普通に
+ddclient
+と打てばアップデートされる
+cronか何かに登録しておくといいかも
+参考サイト
+http://tinstoy.jugem.jp/?eid=13 </description>
+    </item>
+    
+    <item>
+      <title>ファイル、ディレクトリの新規作成時のデフォルトのパーミッションを変更するには</title>
+      <link>https://yaasita.github.io/2008/08/24/11433/</link>
+      <pubDate>Sun, 24 Aug 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/08/24/11433/</guid>
+      <description> umaskってコマンドを使います。
+引数なしの
+umask
+で現在のパーミッションの確認
+umask 0027
+のように打つことで次回以降のファイルやディレクトリ作成時のデフォルトパーミッションの変更が出来ます
+上記の例だと
+ディレクトリだと下記のように
+drwxr-x---
+ファイルだと下記のようになります
+-rw-r-----
+※ファイルの場合は最初から実行権限を付与しません
+参考リンク
+http://linuxtips.biz/030/post_19.html </description>
+    </item>
+    
+    <item>
+      <title>Firefoxの面白いテーマ</title>
+      <link>https://yaasita.github.io/2008/08/14/11453/</link>
+      <pubDate>Thu, 14 Aug 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/08/14/11453/</guid>
+      <description> マリオ
+https://addons.mozilla.org/ja/firefox/addon/7921 </description>
+    </item>
+    
+    <item>
+      <title>lsofでどのプロセスがどのファイルシステムを使用中か調べる</title>
+      <link>https://yaasita.github.io/2008/07/30/11473/</link>
+      <pubDate>Wed, 30 Jul 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/07/30/11473/</guid>
+      <description> lsof /media/cdrom
+みたいに
+プロセスが使用中のファイルも見れる 参考リンク
+http://d.hatena.ne.jp/hogem/20070223/1172221315 </description>
+    </item>
+    
+    <item>
+      <title>x11vncのリバースコネクトについて</title>
+      <link>https://yaasita.github.io/2008/07/27/11493/</link>
+      <pubDate>Sun, 27 Jul 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/07/27/11493/</guid>
+      <description>http://www.karlrunge.com/x11vnc/#faq-reverse-connect</description>
+    </item>
+    
+    <item>
+      <title>ジャンボ宝くじ模擬実験室</title>
+      <link>https://yaasita.github.io/2008/07/26/11516/</link>
+      <pubDate>Sat, 26 Jul 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/07/26/11516/</guid>
+      <description> http://homepage2.nifty.com/nif/takara.html </description>
+    </item>
+    
+    <item>
+      <title>puttyで起動時の引数を指定してすぐにコンソールを開く</title>
+      <link>https://yaasita.github.io/2008/07/20/11536/</link>
+      <pubDate>Sun, 20 Jul 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/07/20/11536/</guid>
+      <description> -load　オプションを起動時の引数に与えてやればいいと思います。
+詳しくはこちらの 3.8.1 Starting a session from the command line
+を見てもらえれば分かると思います。
+
+参考サイト
+http://p0t.jp/archives/2006/09/1.html </description>
+    </item>
+    
+    <item>
+      <title>ナイナイのANN（オールナイトニッポン）</title>
+      <link>https://yaasita.github.io/2008/07/19/11559/</link>
+      <pubDate>Sat, 19 Jul 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/07/19/11559/</guid>
+      <description> 【ニコニコ動画】ナイナイのANN </description>
+    </item>
+    
+    <item>
+      <title>zshを使おうか</title>
+      <link>https://yaasita.github.io/2008/07/12/11579/</link>
+      <pubDate>Sat, 12 Jul 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/07/12/11579/</guid>
+      <description> まずzshの強力な補完機能を有効にする
+
+autoload -U compinit
+compinit
+
+そんでキーバインドをvi風にする
+
+bindkey -v
+
+あとプロンプトを変えておく
+
+PROMPT=&#34;%/%%&#34;
+
+テトリスもできるらしい
+
+zsh
+autoload -U tetris
+zle -N tetris
+bindkey &#39;^T&#39; tetris
+
+Control-T を押せばゲーム開始。zsh最強。 </description>
+    </item>
+    
+    <item>
+      <title>最近、気になったソフト</title>
+      <link>https://yaasita.github.io/2008/07/10/11599/</link>
+      <pubDate>Thu, 10 Jul 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/07/10/11599/</guid>
+      <description> IgRemote・・・すげー早いVNCだって
+Social IME・・・みんなで育てるIMEだって </description>
+    </item>
+    
+    <item>
+      <title>perlの出力、入力関係</title>
+      <link>https://yaasita.github.io/2008/07/06/11620/</link>
+      <pubDate>Sun, 06 Jul 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/07/06/11620/</guid>
+      <description> STDIN 標準入力：キーボードからの入力。 STDOUT 標準出力：ディスプレー (コンソール)。
+STDERR 標準エラー出力：ディスプレー (コンソール)。
+だそうですよ
+print STDERR &#34;Erorr&#34;;
+でエラー出力されるぽい
+WindowsでもUNIXでもエラー出力をリダイレクトする際は
+route 2 route.txt
+みたいに2をつければおｋ </description>
+    </item>
+    
+    <item>
+      <title>＠wikiのデータバックアップをperlで自動化してみる</title>
+      <link>https://yaasita.github.io/2008/07/05/11641/</link>
+      <pubDate>Sat, 05 Jul 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/07/05/11641/</guid>
+      <description>まず、ブラウザから保存までの過程を行い、パケットをキャプチャします。
+今回、対象とするサイトはこちらです。キャプチャはWiresharkなどでも良いですが、今回はTCPのフローまで見る必要はありません。HTTPのリクエストヘッダさえ分かれば大丈夫なので、Live HTTP Headersなどで見たほうが便利です。（このソフトを使えばHTTPリクエストをGUI上で自由に変更できます。どのヘッダが必要か不要かも分かるので便利です）で、キャプチャしたものが以下のものです↓
+Content-Length以下にはwikiidとpassというパスワードを送っています。submitのURLエンコードは「ダウンロード」という文字列を表しています。
+ちなみにwikiidの項とpassの項とCookieは適当です。
+POST /_mng/backup.php HTTP/1.1
+Host: www34.atwiki.jp
+User-Agent: Mozilla/5.0 (Windows; U; Windows NT 5.1; ja; rv:1.9) Gecko/2008052906 Firefox/3.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: ja,en-us;q=0.7,en;q=0.3
+Accept-Encoding: gzip,deflate
+Accept-Charset: Shift_JIS,utf-8;q=0.7,*;q=0.7
+Keep-Alive: 300
+Connection: keep-alive
+Referer: http://www34.atwiki.jp/_mng/backup2.php
+Cookie: PHPSESSID=5684723debae48752efea5555565acdd
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 93
+wikiid=***********&amp;amp;amp;pass=*******&amp;amp;amp;submit=%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89
+
+
+次にLive HTTP Headersのリプレイ機能を使って必要なヘッダが何かを判断します。まずCookieが必須かどうかを調べる必要があります。なぜならCookieが必要だった場合はCookie取得の処理が追加されるからです。いらなそうなヘッダを削除→リプレイで目的の結果になるかを確認　を繰り返してください。で、調べた結果、不要だということが分かりました。つまりPerlスクリプトではCookieヘッダは発行しません。ちなみにこの鯖はContent-Typeを指定しないとトップに戻されるようです。
+-------------- wiki_back.pl ----------------------------------
+#!/usr/bin/perl
+use Net::HTTP;
+### Initial Setting ###########################
+$server =&#34;www34.atwiki.jp&#34;;
+###############################################
+$header{&#39;Host&#39;} = &#34;$server&#34;;
+$header{&#39;User-Agent&#39;} = &#39;Mozilla/5.0 (Windows; U; Windows NT 5.</description>
+    </item>
+    
+    <item>
+      <title>vimだとCtrl&#43;Hでバックスペースが入るお</title>
+      <link>https://yaasita.github.io/2008/07/04/11663/</link>
+      <pubDate>Fri, 04 Jul 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/07/04/11663/</guid>
+      <description> :h i_^Hで確認してみよう
+bashのキーバインドをviにしている人も試してみてください
+あと
+追記：なんか世間一般的にそうなってるみたいです。なにもvimに限った事ではないのかも
+Ctrl+M・・・Enter
+Ctrl+H・・・BackSpace
+Ctrl+I・・・Tab </description>
+    </item>
+    
+    <item>
+      <title>必要ないモジュールをアンロードしてみてはいかが？</title>
+      <link>https://yaasita.github.io/2008/07/04/11684/</link>
+      <pubDate>Fri, 04 Jul 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/07/04/11684/</guid>
+      <description> 必要ないモジュールはアンロードしておくのが吉ですよ
+たとえばUSBのohci_hcdはなぜだかwakeupを繰り返しカーネルのログに吐き出し
+やたらリソースを食っていました。
+/etc/modprobe.d/blacklistに以下を追加しました。
+blacklist trident
+blacklist ac97_codec
+blacklist joydev
+blacklist gameport
+blacklist ohci_hcd
+blacklist usbcore
+blacklist ide_cd
+blacklist cdrom
+blacklist pcspkr
+blacklist psmouse
+blacklist parport_pc
+blacklist parport
+blacklist snd_ali5451
+blacklist snd_ac97_codec
+blacklist snd_ac97_bus
+blacklist snd_pcm
+blacklist snd_timer
+blacklist snd
+blacklist soundcore
+blacklist snd_page_alloc
+※注意
+参考サイトに書いてあったのですが書いただけではなく
+update-initramfs -u
+コマンドでロードイメージを更新する必要があるようです
+
+モジュールのロード、アンロードについては前回書きました。
+参考
+Debianインストール覚え書き </description>
+    </item>
+    
+    <item>
+      <title>Firefox3にむけて入れる拡張おさらい</title>
+      <link>https://yaasita.github.io/2008/07/03/11725/</link>
+      <pubDate>Thu, 03 Jul 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/07/03/11725/</guid>
+      <description> Last Change:2008/06/28 20:43:08.
+前回も書いたけど付け足した拡張とかあるのでまたまとめ
+(＊はFirefox3対応済み)
+Dictionary Search＊
+Cache Viewer＊
+Fast Video Download
+Go Up＊
+Scrap Book＊
+Switch Proxy Tool
+Web Developer＊ 日本語版
+テキストリンク＊
+ニコニコ動画ダウンローダ
+refspoof
+User Agent Switcher＊
+Live HTTP Headers＊ 使い方
+ViewSourceWith＊
+Fasterfox
+QuickProxy＊
+Multiproxy Switch＊
+---暫定---
+Fast Dial＊ 紹介
+Video DownloadHelper＊
+Download Embedded 0.5
+Embedded Objects 1.1
+New Live Wall </description>
+    </item>
+    
+    <item>
+      <title>WindowsXPでファイル共有するとき詳細にアクセスコントロールするには</title>
+      <link>https://yaasita.github.io/2008/07/03/11704/</link>
+      <pubDate>Thu, 03 Jul 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/07/03/11704/</guid>
+      <description> WindowsXP Professional限定ですけど
+フォルダオプションから次のチェックを外すといけるはずです
+
+参考
+http://pcsupport.happy-ritaiya.net/2007/10/windowsxp_prolan.php </description>
+    </item>
+    
+    <item>
+      <title>sambaで接続が切れる問題</title>
+      <link>https://yaasita.github.io/2008/06/30/11786/</link>
+      <pubDate>Mon, 30 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/30/11786/</guid>
+      <description> socket options = IPTOS_LOWDELAY SO_RCVBUF=1000 SO_SNDBUF=1000
+バッファリングが多すぎたみたい
+低スペックなPCだとNODELAYは辛いようだ
+socketオプションは↓を参照
+http://www.linux.or.jp/JM/html/LDP_man-pages/man7/socket.7.html </description>
+    </item>
+    
+    <item>
+      <title>sysctlでカーネルパラメータのチューニング</title>
+      <link>https://yaasita.github.io/2008/06/30/11745/</link>
+      <pubDate>Mon, 30 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/30/11745/</guid>
+      <description> 前回、前々回でバッファが重要みたいなことを言いました。
+個々のソフトでバッファサイズを調整するのは煩わしいので今度はカーネル側でやろうと思います。つーか本当の動機はvsftpdではバッファサイズの調整が出来ないっぽいからですけど・・・
+/etc/sysctl.confを編集します
+net.ipv4.tcp_rmem=500 1500 5000
+net.ipv4.tcp_wmem=500 1500 5000
+↑の2行を追加します。上が受信バッファ、下が送信バッファです多分
+なんで3つの値を渡しているかはこちらを参照してください
+そんで書いたらこんな感じでパラーメータを設定して下さい
+sysctl -p
+でおｋね
+まあ/proc以下をechoで飛ばして設定しても良いんですが再起動すると戻ってしまうので・・・・ </description>
+    </item>
+    
+    <item>
+      <title>自宅鯖のapache2をチューニング</title>
+      <link>https://yaasita.github.io/2008/06/30/11765/</link>
+      <pubDate>Mon, 30 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/30/11765/</guid>
+      <description> Sambaの件でバッファリングが大きすぎてサーバー側で処理できなくなる→切断となっていることに気づいたのでもしかするとapache2で大きいファイルを落とすときに切れる現象も同じなんじゃないかなと思ってチューニングしてみる。
+受信バッファサイズと送信バッファサイズを調整して鯖が落ちるのを止める。
+俺はhttpd.confに↓を書いた。でおｋだった。
+SendBufferSize 4000
+ReceiveBufferSize 1500
+具体的にどうコネクションが切れるか検証してないけど多分こんな感じだと思う
+クライアント「オラオラ・・・もっとパケット送るぜー！ウィンドサイズはでかいからなーｗ」
+サーバー「ちょｗｗｗおまｗｗｗ待ってくれそんな処理しきれｗｗｗ」
+（ただいまサーバーがシーケンシャルナンバーの整理などしておりますしばしお待ちください）
+クライアント「おかしいな？返事がない・・・しかたないコネクション切るか」
+サーバー「ふう・・・終わったぜ！さあパケット返そうかな・・・ってコネクション切れてるしｗｗｗｗ」
+みたいなノリだと思う
+まあバッファの調整はマシンのスペックを見て調整しましょってことで </description>
+    </item>
+    
+    <item>
+      <title>aptitudeでインストールすると推奨パッケージも入れてしまう</title>
+      <link>https://yaasita.github.io/2008/06/29/11869/</link>
+      <pubDate>Sun, 29 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/29/11869/</guid>
+      <description> apt-get installだとインストールしなんだよね・・・なんかお節介でヤダ
+上のほうのメニューから外せるそうですよ
+
  </description>
     </item>
     
     <item>
-      <title>Cloud Runがすごく良い</title>
-      <link>https://yaasita.github.io/2019/05/29/cloud-run/</link>
-      <pubDate>Wed, 29 May 2019 21:42:23 +0900</pubDate>
+      <title>aptitudeのフラグの意味</title>
+      <link>https://yaasita.github.io/2008/06/29/11890/</link>
+      <pubDate>Sun, 29 Jun 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/05/29/cloud-run/</guid>
-      <description>GCPのCloud Runがめっちゃ便利
-覚えなきゃいけないルールは2つ
- Dockerにする事 環境変数 $PORT のポート番号でlistenしてレスポンスを返す事  これだけ
-コマンドとかはこの辺見ればすぐできると思います
-あと、Chunked Transferみたいな仕組みで進捗を返すみたいなAPIは難しいかもしれない
-以下のようなプログラムでちょっとずつレスポンス返しても、バッファリングされてるみたいで、最後ドバっと返ってきた
+      <guid>https://yaasita.github.io/2008/06/29/11890/</guid>
+      <description> ここに書いてあった
+http://dolphin.c.u-tokyo.ac.jp/~nori1/aptitude-ja/ch02s02s02.html
+ちなみにAは自動的にインストールされたか動画を表すんだって </description>
+    </item>
+    
+    <item>
+      <title>Firefox3のウィルススキャンいらね</title>
+      <link>https://yaasita.github.io/2008/06/29/11807/</link>
+      <pubDate>Sun, 29 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/29/11807/</guid>
+      <description>about:configからbrowser.download.manager.scanWhenDoneをfalseに設定。</description>
+    </item>
+    
+    <item>
+      <title>LinuxでS.M.A.R.T情報を表示する</title>
+      <link>https://yaasita.github.io/2008/06/29/11910/</link>
+      <pubDate>Sun, 29 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/29/11910/</guid>
+      <description>aptかなんかでsmartmontoolsをインストール
+# smartctl -a /dev/hda  これで見れるらしい↓の方が見やすいかも
+# smartctl -A /dev/hda  参考サイト
+項目の詳しい説明は下記のwkipedia参照
+http://ja.wikipedia.org/wiki/Self-Monitoring,_Analysis_and_Reporting_Technology
+Windowsだとこんなものもあるらしい
+CrystalDiskInfo</description>
+    </item>
+    
+    <item>
+      <title>Linuxでログイン時に表示されるメッセージを変える</title>
+      <link>https://yaasita.github.io/2008/06/29/11827/</link>
+      <pubDate>Sun, 29 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/29/11827/</guid>
+      <description>ここ
+に書いてありました
+/etc/motdを編集すればいいだけです簡単ですね
+CJKにしないとモナーとかズレるからどうしようかなーと思って
+boxesからAAを拝借こんなのいれてみた
+boxes -d mouseね
+ .--, .--, ( ( \.---./ ) ) &#39;.__/o o\__.&#39; {= ^ =} &amp;amp;gt; - &amp;amp;lt; __.&amp;quot;&amp;quot;`-------`&amp;quot;&amp;quot;.__ / \ \ Debian / / \ \___________________/ ___)( )(___ (((__) (__)))  </description>
+    </item>
+    
+    <item>
+      <title>sambaを入れてみよう</title>
+      <link>https://yaasita.github.io/2008/06/29/11847/</link>
+      <pubDate>Sun, 29 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/29/11847/</guid>
+      <description> aptかなんかでインストール
+/etc/samba/smb.confを直そうか
+[global]
+unix charset = UTF-8
+dos charset = CP932
+display charset = UTF-8
+まず↑の設定を確認unix charsetは環境に合わせてどうぞ
+workgroup = MSHOME
+次にワークグループを合わせて
+security = share
+セキュリティをshareにした。パスワード求められるとウザイので・・・
+でもこれだとvistaとかだと問題になるそうです　XPの場合は大丈夫らしいけど
+guest account = ageftp
+あとはゲストアカウントを誰にするかを決める。
+[upload]
+path = /var/www/upload/
+available = yes
+browsable = yes
+public = yes
+writable = yes
+read only = no
+create mask = 0777
+printable = no
+guest ok = yes
+あとは適当にどうぞ
+ここで別にゲストアカウントを誰々って決めなくても良いんですが、
+じつはこの/var/www/uploadディレクトリはftpのanonymousログインを
+許可しているのでotherのパーミッションに書き込みを与える事が出来ないのです </description>
+    </item>
+    
+    <item>
+      <title>Linuxでよく使われるscreenを今更使ってみた</title>
+      <link>https://yaasita.github.io/2008/06/27/11951/</link>
+      <pubDate>Fri, 27 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/27/11951/</guid>
+      <description> つーわけでメモ
+aptかなんかでサクッとインストールしてscreenで起動します。
+まずコマンドはプレフィックスキー（コマンド前に毎回入力するキー）がいります。そんでデフォルトのプレフィックスキーはCtrl+aです。
+Ctrl+a ?でヘルプ見れます。
+コマンド一覧　プレフィックスキーは省略
+c　新しい端末を開く
+&#34;　画面リストの表示
+n　次の画面へ
+p　前の画面へ
+n nの端末へ移動(nは端末番号)
+S 画面分割 大文字のSなのでshiftと共に押す！
+\　バックスラッシュ　全てを破棄してscreenを終了
+Ctrl＋i　ウィンド間の移動
+X　ウィンドウのクローズ　大文字のX！
+[　コピーモードの開始　開始地点、終了地点でエンターかスペース
+]　ペースト
+:resize -10　ウィンドのリサイズ。-10だと縮める10広げるみたいな感じ
+d　デタッチ
+screen -r でデタッチした端末をアタッチ
+screen -ls　で端末一覧表示 </description>
+    </item>
+    
+    <item>
+      <title>Linuxコマンド　ログイン関連　faillog,lastlog</title>
+      <link>https://yaasita.github.io/2008/06/27/11931/</link>
+      <pubDate>Fri, 27 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/27/11931/</guid>
+      <description> faillog・・・何回ログインをミスったか
+lastlog・・・最後にログインした時間はいつか？ </description>
+    </item>
+    
+    <item>
+      <title>リダイレクトについて</title>
+      <link>https://yaasita.github.io/2008/06/23/11972/</link>
+      <pubDate>Mon, 23 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/23/11972/</guid>
+      <description> command  hoge 2&amp;amp;amp;1
+エラー出力を標準出力先と同じにするこれを使えば
+$gunzip_message = qx/gunzip -f $unixtime.dat.gz 2&amp;amp;amp;1/;
+↑のようにエラー出力を捕らえることも可能になる
+command &amp;amp;amp; hoge
+参考
+http://www.fireproject.jp/feature/bash/basic/redirect-pipe.html
  </description>
     </item>
     
     <item>
-      <title>PKCEをJavaScriptで実装する</title>
-      <link>https://yaasita.github.io/2019/04/29/pkce/</link>
-      <pubDate>Mon, 29 Apr 2019 01:23:20 +0900</pubDate>
+      <title>Firefoxの拡張ViewSourceWith使う時の注意点</title>
+      <link>https://yaasita.github.io/2008/06/22/12012/</link>
+      <pubDate>Sun, 22 Jun 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/04/29/pkce/</guid>
-      <description>code_verifier から code_challenge の生成方法について調べた
-code_challenge_method=S256の場合は以下のような実装ロジックになる
-node.jsで書いた
-Oauth2のPKCE
-base64エンコードじゃなくてbase64urlエンコードなのが注意点
+      <guid>https://yaasita.github.io/2008/06/22/12012/</guid>
+      <description> 例えばこのBloggerの入力フォームはUTF-8です。
+Kaoriya版のvimだとsjisがデフォルトなので文字化けします。下のように起動時にエンコーディングを変えておくと良いかもしれません。
+
+シンタックスを当てたいときはこんな感じでオプションを追加していけば良いんじゃないでしょうか
  </description>
     </item>
     
     <item>
-      <title>令和の対応に際して</title>
-      <link>https://yaasita.github.io/2019/04/25/reiwa/</link>
-      <pubDate>Thu, 25 Apr 2019 02:08:40 +0900</pubDate>
+      <title>kaoriya版vimでは便利なコマンドが用意されているよ</title>
+      <link>https://yaasita.github.io/2008/06/22/12034/</link>
+      <pubDate>Sun, 22 Jun 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/04/25/reiwa/</guid>
-      <description>techrachoの記事
-perlも追加でお願いします
+      <guid>https://yaasita.github.io/2008/06/22/12034/</guid>
+      <description> http://nanasi.jp/articles/vim/cmdex_vim.html
+↑に書いてありました
+/vim71-kaoriya-w32j/runtime/plugin/cmdex.vim
+↑に置かれているので見てみると良いんじゃないでしょうか
+HTMLConvertは中で2html.vimを呼んでるみたいですね
+TOhtmlコマンドがあるのになんでこんなコマンドあるんだろ・・・ </description>
+    </item>
+    
+    <item>
+      <title>クレジットカードの使えるコンビニ</title>
+      <link>https://yaasita.github.io/2008/06/22/11992/</link>
+      <pubDate>Sun, 22 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/22/11992/</guid>
+      <description> サークルKサンクス
+ローソン
+ミニストップ </description>
+    </item>
+    
+    <item>
+      <title>vimでマークを視覚的に表示する</title>
+      <link>https://yaasita.github.io/2008/06/16/12054/</link>
+      <pubDate>Mon, 16 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/16/12054/</guid>
+      <description> http://nanasi.jp/articles/vim/showmarks_vim.html
+http://www.vim.org/scripts/script.php?script_id=152
+他にもマークにマッチする正規表現があるのでそれでもおｋです。
+たとえばaマークをTodoハイライトするには
+syntax match Todo /.*\%&#39;a.*/ containedin=ALL
+を$VIM/runtime/syntax/txt.vimというファイルを作り入れておきます。
+自分はtxtにそのハイライトを当てているので_gvimrcの中で
+autocmd BufRead,BufNewFile *.txt setfiletype txt
+を追加してファイルタイプを設定しています。 </description>
+    </item>
+    
+    <item>
+      <title>aptitudeよく使うコマンドとか・・・</title>
+      <link>https://yaasita.github.io/2008/06/15/12074/</link>
+      <pubDate>Sun, 15 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/15/12074/</guid>
+      <description> uでパッケージの一覧の更新
+Uですべてのパッケージをアップグレード
+あとは↓みて
+http://dolphin.c.u-tokyo.ac.jp/~nori1/aptitude-ja/ch01s01s04.html
+コマンド一覧はこちら
+http://dolphin.c.u-tokyo.ac.jp/~nori1/aptitude-ja/ch02s01s02.html#id2533999 </description>
+    </item>
+    
+    <item>
+      <title>Firefox3拡張の強制インストール</title>
+      <link>https://yaasita.github.io/2008/06/15/12094/</link>
+      <pubDate>Sun, 15 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/15/12094/</guid>
+      <description> http://d.hatena.ne.jp/periwnkl/20080611/p1 </description>
+    </item>
+    
+    <item>
+      <title>ActivePerlでyahooにメールを送ろうか</title>
+      <link>https://yaasita.github.io/2008/06/14/12134/</link>
+      <pubDate>Sat, 14 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/14/12134/</guid>
+      <description>Net::SMTPモジュールを使います。ただデフォルトでauthメソッドを使おうとしてもパケットを投げてくれないので、下のモジュールを新たにppmか何かでインストールして下さい。
+
+次にコーディングに入ります。Net::SMTPについての説明はこちらを参照してください。
+メールヘッダについてはTo:だけでいいかと思ったらうまく送信できなかったので、Thunderbirdのパケットをキャプチャしたものを丸パクリします。
+Dataヘッダについては何でもいいかと思いますが、一応現在時を取得する方が親切設計でしょう。どれが必要なヘッダか不要なヘッダかは面倒なので調べていません。
+Message-IDですがこちらを見る限り何でもいいそうです。好きな命名規則で良いでしょう。
+＊参考
+yahooの鯖はSMTPを拡張したESMTPで運用されています。ESMTPではグリーティングの際にEHLOコマンドを用います。（SMTPではHELOコマンド）
+EHLOコマンドでは自分のホストを通知します。Thunderbirdでは
+EHLO [192.168.0.6]
+とグリーティングしますが、Net::SMTPでは
+EHLO localhost.localdomain
+とグリーティングします。まあどっちでも構いませんが、、、
+http://www.atmarkit.co.jp/fnetwork/rensai/netpro06/netpro01.html
+#!/usr/local/bin/perl
+use Net::SMTP;
+$user=&#34;??????&#34;;
+$passwd=&#34;?????????????&#34;;
+$maildata=Date: Sat, 14 Jun 2008 09:59:39 +0900
+From: uesugi 
+User-Agent: Thunderbird 2.0.0.14 (Windows/20080421)
+MIME-Version: 1.0
+To: yahoo 
+Subject: This Mail Make Perl
+Content-Type: text/plain; charset=ISO-2022-JP
+Content-Transfer-Encoding: 7bit
+END
+$smtp = Net::SMTP-new(&#39;smtp.mail.yahoo.co.jp&#39;,Timeout=30,Debug=1);
+$smtp-auth($user, $passwd) or die &#34;Auth Fail\n&#34;;
+$smtp-mail(&#39;????????????????????@yahoo.co.jp&#39;);
+$smtp-to(&#39;????????????????????@yahoo.co.jp&#39;);
+$smtp-data();
+$smtp-datasend(&#34;$maildata&#34;);
+$smtp-datasend(&#34;\n&#34;);
+$smtp-datasend(&#34;A simple test message\n&#34;);</description>
+    </item>
+    
+    <item>
+      <title>Debian(etch)でcpan設定</title>
+      <link>https://yaasita.github.io/2008/06/14/12155/</link>
+      <pubDate>Sat, 14 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/14/12155/</guid>
+      <description>まずCPANを使う上で必要なソフトは下記のとおりです。先にインストールしておきます。
+gzip,tar,unzip,make,lynx,wget,ncftpget(ncftpでインストール)
+#cpan
+で初回起動時の設定が入る。基本的にEnterでデフォルトの設定で問題ないと思います。
+The next option deals with the charset your terminal supports. In
+general CPAN is English speaking territory, thus the charset does not
+matter much, but some of the aliens out there who upload their
+software to CPAN bear names that are outside the ASCII range. If your
+terminal supports UTF-8, you say no to the next question, if it
+supports ISO-8859-1 (also known as LATIN1) then you say yes, and if it</description>
+    </item>
+    
+    <item>
+      <title>シェルの環境変数で前回コマンドの終了ステータスを確認する</title>
+      <link>https://yaasita.github.io/2008/06/14/12114/</link>
+      <pubDate>Sat, 14 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/14/12114/</guid>
+      <description> $?に入っているそうですよ
+http://www.geocities.jp/geo_sunisland/exit_status.html </description>
+    </item>
+    
+    <item>
+      <title>aptitudeのよく使うコマンドとか</title>
+      <link>https://yaasita.github.io/2008/06/12/12198/</link>
+      <pubDate>Thu, 12 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/12/12198/</guid>
+      <description> 検索時には正規表現が使えます
+lで検索すると制限できていいかも・・・
+~d説明
+正規表現説明にパッケージ説明がマッチするパッケージにマッチします。 ~d&#34;test&#34;
+みたいな感じで
+検索パターン </description>
+    </item>
+    
+    <item>
+      <title>pearのコマンドとか・・・</title>
+      <link>https://yaasita.github.io/2008/06/12/12177/</link>
+      <pubDate>Thu, 12 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/12/12177/</guid>
+      <description> phpのライブラリ管理のpear
+よく使うコマンド備忘録
+pear
+PEARコマンド一覧表示
+pear help command_type
+command_typeの説明を表示
+pear list
+現在インストールされているパッケージ一覧
+pear list-upgrades
+更新ライブラリの確認
+pear upgrade package
+パッケージのアップグレード前述のpear list-upgradeで出てきたPACKAGE欄を
+packageに入れる </description>
+    </item>
+    
+    <item>
+      <title>scimとgvimは相性悪いみたい</title>
+      <link>https://yaasita.github.io/2008/06/08/12219/</link>
+      <pubDate>Sun, 08 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/08/12219/</guid>
+      <description> http://d.hatena.ne.jp/silverintegral/20071115
+こんな感じでどーぞ </description>
+    </item>
+    
+    <item>
+      <title>Linux版のvim7に日本語ヘルプを入れてみる</title>
+      <link>https://yaasita.github.io/2008/06/07/12261/</link>
+      <pubDate>Sat, 07 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/07/12261/</guid>
+      <description> なんかkaoriyaさんのとこに
+http://www.kaoriya.net/vimdoc_j/
+という日本語ヘルプがあったので落としてくるそんで解凍とかする。
+解凍したものを/usr/share/vim/vim71に放り込んでも拡張子が.jaxとかなっててうまくいかない
+しょうがないから拡張子を.jax→.txtにする
+一括変換とかシェルスクリプトでできそうだけど分からないからPerlで書く
+#!/usr/local/bin/perl
+$newdir=&#34;.&#34;;
+chdir $newdir or die &#34;$newdir is not found!\n&#34;;
+opendir(DIR, &#34;.&#34;);
+@file = readdir(DIR);
+closedir(DIR);
+@file = sort {(stat ($a))[8]  (stat ($b))[8]} @file;
+foreach(@file){
+if($_=~/^\.$|^\.\.$|^rename\.pl$/){ next;
+}
+if ($_=~/\.jax$/){
+$moto=$_;
+$_=~s/\.jax$//;
+system &#34;mv $moto $_.txt&#34;;
+#print &#34;$moto $_.txt\n&#34;;
+}
+# print $_,&#34;\n&#34;;
+# `mv $moto `;
+} </description>
+    </item>
+    
+    <item>
+      <title>定期的に文章をバックアップする</title>
+      <link>https://yaasita.github.io/2008/06/07/12240/</link>
+      <pubDate>Sat, 07 Jun 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/06/07/12240/</guid>
+      <description> なんか大事な文章を日付順にバックアップしておきたいときに書くシェルスクリプトとか・・・
+#! /bin/bash
+var=`LANG=C date +&#39;%Y%m%d%a&#39;`
+cp /media/taihi1/komando.txt /media/taihi1/komando-bak/$var.txt </description>
+    </item>
+    
+    <item>
+      <title>telnetのポート番号を変更したりとか・・・</title>
+      <link>https://yaasita.github.io/2008/05/17/12282/</link>
+      <pubDate>Sat, 17 May 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/05/17/12282/</guid>
+      <description> /etc/servicesあたりかなあと
+/etc/inetd.confとかも・・・ </description>
+    </item>
+    
+    <item>
+      <title>apache2にDirectoryIndexの設定項目が無い件</title>
+      <link>https://yaasita.github.io/2008/05/06/12324/</link>
+      <pubDate>Tue, 06 May 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/05/06/12324/</guid>
+      <description> /etc/apache2/mods-enabledのdir.confにあるそうです
+参考リンク
+http://www.maocat.jp/?p=10 </description>
+    </item>
+    
+    <item>
+      <title>expectを使って自動的にPCをシャットダウンさせる</title>
+      <link>https://yaasita.github.io/2008/05/06/12303/</link>
+      <pubDate>Tue, 06 May 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/05/06/12303/</guid>
+      <description> こんな感じで書くと良いですよ
+WebからやりたいならPerlならsystem関数とかで呼べば良いんじゃないでしょうか
+#!/usr/bin/expect
+set timeout 10
+spawn telnet 192.168.0.2
+expect &#34;login:&#34;
+send &#34;root\n&#34;
+expect &#34;Password:&#34;
+send &#34;hogehoge\n&#34;
+send &#34;shutdown -h now\n&#34;
+send &#34;exit\n&#34;
+interact </description>
+    </item>
+    
+    <item>
+      <title>squidでユーザー認証を行う(Ubuntu8.04)</title>
+      <link>https://yaasita.github.io/2008/05/06/12366/</link>
+      <pubDate>Tue, 06 May 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/05/06/12366/</guid>
+      <description>まずhtpasswdでユーザー名とパスワードのMD5値のペアtxtを用意します。
+# htpasswd -c /etc/squid/passwd hogehoge
+New password:
+Re-type new password: できたら↓のように指定します。
+auth_param basic children は認証プロセスの為のプロセス数を指定します。
+auth_param basic realm はBASIC認証時に現われるメッセージを指定します。この場合は&#34;Squid proxy-caching web server&#34;と表示されます。
+auth_param basic credentialsttl はパスワードの生存時間を指定します。（HTTPアクセスヘッダに付随させるBASIC認証で生存時間があるのはよく分からないですが・・・）
+auth_param basic casesensitive は大文字小文字を区別するかどうかです（多分）offなので区別します。最後にacl kusi proxy_auth REQUIREDでアクセスリストkusiを定義
+ローカルネットの後にhttp_access allow kusiを入れているので
+LAN内のホストなら無条件で通し、WAN側からの要求にはBASIC認証を要求します。
+auth_param basic program /usr/lib/squid/ncsa_auth /etc/squid/passwd
+auth_param basic children 5
+auth_param basic realm Squid proxy-caching web server
+auth_param basic credentialsttl 2 hours
+auth_param basic casesensitive off
+acl kusi proxy_auth REQUIRED
+http_access allow localnet</description>
+    </item>
+    
+    <item>
+      <title>vsftpdでanonymousログインを許可させる場合の注意点</title>
+      <link>https://yaasita.github.io/2008/05/06/12345/</link>
+      <pubDate>Tue, 06 May 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/05/06/12345/</guid>
+      <description> /etc/vsftpd.confを編集して
+anonymous_enable=YESを追加する
+↓のようにanonymousユーザーのディレクトリを決定させる
+anon_root=/var/www/upload/
+この時の注意点としてはパーミッションにその他ユーザが書き込めないような設定にしておくこと（これをしないとログインできない）
+例：rwxr-xr-xやrwxrwxr-xなど </description>
+    </item>
+    
+    <item>
+      <title>Linuxでモジュールの確認と削除を行う</title>
+      <link>https://yaasita.github.io/2008/05/04/12449/</link>
+      <pubDate>Sun, 04 May 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/05/04/12449/</guid>
+      <description> 主にDebian系での話です
+lsmod・・・ロードされているモジュールを確認（miiがNICか？）
+modinfo・・・lsmodに表示されている各モジュール名を引数に取り、詳しい情報を表示する
+rmmod・・・モジュールをアンロードする
+insmod・・・モジュールをロードする
+modprobe・・・依存関係を処理しながらロードしてくれる
+/etc/modprobe.d/blacklistに項目を追加すれば再起動してもモジュールをアンロードできる
+参考
+http://markun.cs.shinshu-u.ac.jp/learn/linux/h_05-05.html </description>
+    </item>
+    
+    <item>
+      <title>Linuxでリッスン(Listen)してるポートの確認</title>
+      <link>https://yaasita.github.io/2008/05/04/12429/</link>
+      <pubDate>Sun, 04 May 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/05/04/12429/</guid>
+      <description> lsof -iで
+でも微妙に分かりにくいので
+netstat -anp | grep LISTEN | less
+こんな感じで
+あとは
+netstat -tap
+とかやって
+詳しく見たい場合は
+lsof -i:5900 </description>
+    </item>
+    
+    <item>
+      <title>Linux版FirefoxとWindows版Firefoxの挙動の差異</title>
+      <link>https://yaasita.github.io/2008/05/04/12387/</link>
+      <pubDate>Sun, 04 May 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/05/04/12387/</guid>
+      <description> about:configから
+browser.urlbar.clickSelectsAllをtrueにすると
+URLバーをクリックした際にすべて選択されます。
+browser.backspace_actionを0にするとバックスペースで履歴を一つ前に辿れます。
+1ならスクロールアップ。2なら何もしないです。
+↓はよく設定する箇所です（Mailtoタグの無効化と検索時のbeep音の無効化）
+network.protocol-handler.external.mailto
+false
+accessibility.typeaheadfind.soundURL
+空文字列 </description>
+    </item>
+    
+    <item>
+      <title>ubuntu8.04のネットワーク設定が何かローミングモードとかなってて嫌な感じになる</title>
+      <link>https://yaasita.github.io/2008/05/04/12408/</link>
+      <pubDate>Sun, 04 May 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/05/04/12408/</guid>
+      <description> ローミングモードを一つのNICだけ無効にしてもなんか意味ないみたい
+IPアドレスも複数持てたりしちゃって嫌なので
+/etc/network/interfaces
+に
+auto lo
+iface lo inet loopback
+iface eth0 inet dhcp
+auto eth0
+iface eth2 inet dhcp
+iface eth3 inet dhcp
+iface eth4 inet dhcp
+と記述しておく
+autoを付けなければ立ち上がらないので・・・・
+前に書いたロードモジュール名をblacklistに入れる方法だと/etc/init.d/networking をリスタートかけるごとにロードされてしまうみたい </description>
+    </item>
+    
+    <item>
+      <title>Ubuntu8.04のxorg.conf設定を行う</title>
+      <link>https://yaasita.github.io/2008/05/03/12469/</link>
+      <pubDate>Sat, 03 May 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/05/03/12469/</guid>
+      <description>なんか色々自動でやってくれるのはいいけどCPU切替器を挟むと表示がおかしくなるため手動で設定する。
+１.Section &#34;Screen&#34;にサブセクションを作って解像度と色深度を設定
+SubSection &#34;Display&#34;
+Depth 24
+Modes &#34;1280x1024&#34;
+EndSubSection
+２.xvidtuneコマンドで位置を調整する。GUIメニューのshowボタンを押せば
+&#34;1280x1024&#34; 108.00 1280 1344 1456 1688 1024 1025 1028 1066 +hsync +vsync
+のようにコンソールに表示されるのでメモる。
+3.Section &#34;Monitor&#34;に水平同期周波数と垂直同期周波数とさっきメモったパラメータをModeLineと共に指定する。
+Section &#34;Monitor&#34;
+Identifier &#34;Configured Monitor&#34;
+HorizSync 31.5 - 81
+VertRefresh 56 - 76
+ModeLine &#34;1280x1024&#34; 108.00 1280 1344 1456 1688 1024 1025 1028 1066 +hsync +vsync
+EndSection
+参考リンク
+http://linux.kororo.jp/cont/tips/display_tune.php
+で最終的に出来上がったxorg.confが↓
+Section &#34;InputDevice&#34;
+Identifier &#34;Generic Keyboard&#34;
+Driver &#34;kbd&#34;
+Option &#34;XkbRules&#34; &#34;xorg&#34;
+Option &#34;XkbModel&#34; &#34;jp106&#34;</description>
+    </item>
+    
+    <item>
+      <title>x2vncについて・・・・・</title>
+      <link>https://yaasita.github.io/2008/05/03/12509/</link>
+      <pubDate>Sat, 03 May 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/05/03/12509/</guid>
+      <description> デュアルスクリーンハック - MS-Windows と X ディスプレイをリンク
+このプログラムは x2x と vncviewer の機能をマージします。 X ディスプレイを起動したマシンとメインスクリーンで VNC サーバを起動したマシン が、あたかも一つのマシンに結合された二つのディスプレイであるかのように振る舞う ことを可能にします。マウスポインタを選択した方にある画面から外すと、ポインタ がもう一つの画面に現れます。
+だそうですいつか調べます </description>
+    </item>
+    
+    <item>
+      <title>Xの画面位置を調整する</title>
+      <link>https://yaasita.github.io/2008/05/03/12489/</link>
+      <pubDate>Sat, 03 May 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/05/03/12489/</guid>
+      <description>xvidtuneコマンドからどうぞ</description>
+    </item>
+    
+    <item>
+      <title>ASCIIコードで\x0cって何を表すか？</title>
+      <link>https://yaasita.github.io/2008/04/29/12531/</link>
+      <pubDate>Tue, 29 Apr 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/04/29/12531/</guid>
+      <description> ASCIIコード
+改ページだそうです
+参考リンク
+http://www12.plala.or.jp/mz80k2/electronics/ascii/ascii.html </description>
+    </item>
+    
+    <item>
+      <title>KNOPPIXを外付けHDDなどにインストール</title>
+      <link>https://yaasita.github.io/2008/04/26/12551/</link>
+      <pubDate>Sat, 26 Apr 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/04/26/12551/</guid>
+      <description> USBメモリでKNOPPIX v5.01を起動
+ひろちゃん帝国　ココログ村
+USB-Knoppixではじめよう
+この辺を参考にどうぞ
+あとfdiskでパーティションをアクティブにするのを忘れないように・・・ </description>
+    </item>
+    
+    <item>
+      <title>NTPで時刻あわせ　Linux</title>
+      <link>https://yaasita.github.io/2008/04/20/12571/</link>
+      <pubDate>Sun, 20 Apr 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/04/20/12571/</guid>
+      <description> こんな感じでcronに登録しておくといいです
+#!/bin/bash
+ntpdate ntp.jst.mfeed.ad.jp
+またハードウェアクロックとの同期も取る必要があります
+ハードウェアクロックがずれていると再起動した時におかしな時間になってしまいます。
+hwclock --systohc
+と打てばおｋです。
+hwclock
+と打てば現在のハードウェアクロックを見れます
+hwclock --adjust
+と打てば前回の差分から進む（または遅れる）時間を計測していい感じに調整してくれます
+cronとかには↓のように登録しておくといいかも
+#!/bin/bash
+ntpdate ntp.jst.mfeed.ad.jp  /dev/null
+hwclock --adjust
+hwclock --systohc </description>
+    </item>
+    
+    <item>
+      <title>COBOL符号付数値の表記方法</title>
+      <link>https://yaasita.github.io/2008/04/19/12592/</link>
+      <pubDate>Sat, 19 Apr 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/04/19/12592/</guid>
+      <description> 10の位以上 &amp;amp;h3x 0 1 2 3 4 5 6 7 8 9
+プラスの1の位 &amp;amp;h4x @ A B C D E F G H I
+マイナスの1の位 &amp;amp;h5x p q r s t u v w x y 参考リンク </description>
+    </item>
+    
+    <item>
+      <title>squidでプロキシーサーバーを立てる</title>
+      <link>https://yaasita.github.io/2008/04/13/12612/</link>
+      <pubDate>Sun, 13 Apr 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/04/13/12612/</guid>
+      <description> まず、
+apt-get install squid
+などでインストールする。
+次に/etc/squid/squid.confを編集する
+http_port 8080
+visible_hostname 192.168.0.11
+http_portで接続ポートを設定、visible_hostnameで自分自身のホスト名を設定
+acl localnet src 192.168.0.0/255.255.255.0
+http_access allow manager localhostの下あたりに
+http_access allow localnet
+forwarded_for off
+アクセス元のIPを隠す
+via off
+viaヘッダを隠す
+header_access Cache-Control deny all
+キャッシュコントロールヘッダの無効化
+cache_dir ufs /var/spool/squid 1500 64 1024
+キャッシュディレクトリサイズの変更とか
+ufs --&amp;amp;gt; なんかこれ指定しとけてきなあれ
+/var/spool/squid --&amp;amp;gt; キャッシュディレクトリ
+1500 --&amp;amp;gt; なんメガバイトのサイズを上限とするかこの例だと1500MB
+64 --&amp;amp;gt; キャッシュディレクトリの最初の階層のフォルダ数
+1024 --&amp;amp;gt; キャッシュディレクトリの2番目の階層のフォルダ数
+参考
+http://tech.ckme.co.jp/proxy.shtml
+http://squid.robata.org/squid2.0-conf.html </description>
+    </item>
+    
+    <item>
+      <title>SSLで利用するポート</title>
+      <link>https://yaasita.github.io/2008/04/03/12633/</link>
+      <pubDate>Thu, 03 Apr 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/04/03/12633/</guid>
+      <description>443だそうです</description>
+    </item>
+    
+    <item>
+      <title>nmapを使う</title>
+      <link>https://yaasita.github.io/2008/03/31/12673/</link>
+      <pubDate>Mon, 31 Mar 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/03/31/12673/</guid>
+      <description> nmap -sS -P0 -T2 -p 1-65535 -oN kaons.txt -r -v -sV hoge.co.jp
+-sS　ステルススキャン
+-P0 ホストの発見を省略する（確実にそのホストが存在していると分かっている場合はこれを使用する）
+-T2 スキャン速度。T1、T2、T3、T4、T5と早くなっていく。T5は高速回線が望ましい。
+-p ポートスキャンする範囲↑の例では1から65535番まで(全部)
+-oN 出力するファイル
+-r ランダムにスキャンしない
+-v 冗長オプション。多くの情報を出力する。
+-sV そのポートで使用されているアプリを特定する
+-O OSを特定する
+※注意
+家庭用のブロードバンドルーターを使っている人はスキャン速度をT3以下にしないと落ちる場合があります。 </description>
+    </item>
+    
+    <item>
+      <title>端末を終了しても（ログアウトしても）処理し続ける</title>
+      <link>https://yaasita.github.io/2008/03/31/12653/</link>
+      <pubDate>Mon, 31 Mar 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/03/31/12653/</guid>
+      <description> nohupコマンドを使用します。
+http://www.linux.or.jp/JM/html/gnumaniak/man1/nohup.1.html
+http://itpro.nikkeibp.co.jp/article/COLUMN/20060228/231191/?ST=oss
+例）
+nohup nmap -sS -P0 -T2 -p 1-65000 -oN kaons.txt -r -v -sV hogehoge.info &amp;amp; nohup.txt
+こんな感じで・・・&amp;amp;はエラー出力と標準出力を同じファイルに出す </description>
+    </item>
+    
+    <item>
+      <title>Linuxでスワップ頻度を調整する</title>
+      <link>https://yaasita.github.io/2008/03/29/12694/</link>
+      <pubDate>Sat, 29 Mar 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/03/29/12694/</guid>
+      <description> swappinessという値を変更する。これは0～100までの値で大きいほどスワップし、
+小さいほどアプリケーションに割り当てるメモリを多く取り結果スワップが減る。
+現在の値を表示する（デフォルトは60）
+cat /proc/sys/vm/swappiness
+一時的に40に変更する（再起動後はデフォルトに戻る）
+echo 40  /proc/sys/vm/swappiness
+永続的に変更する
+/etc/sysctl.confを編集し
+vm.swappiness=40
+を付け加える
+その後
+# sysctl -p
+で適用
+参考リンク
+ITmediahttp://www.itmedia.co.jp/enterprise/articles/0712/10/news011_4.html
+
+http://www.linuxmagic.org/tips02.html </description>
+    </item>
+    
+    <item>
+      <title>apacheの.htaccessでユーザーアクセスする人を絞る</title>
+      <link>https://yaasita.github.io/2008/03/22/12714/</link>
+      <pubDate>Sat, 22 Mar 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/03/22/12714/</guid>
+      <description> AuthType Basic
+AuthUserFile &#34;/etc/apache2/pass&#34;
+AuthName &#34;Enter pass word&#34;
+Require user hogehoge
+Require user　の後にhogehogeという人なら許すという設定 </description>
+    </item>
+    
+    <item>
+      <title>ブロードバンドルータの設定や確認をperlで行う1</title>
+      <link>https://yaasita.github.io/2008/03/18/12734/</link>
+      <pubDate>Tue, 18 Mar 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/03/18/12734/</guid>
+      <description> 市販されているブロードバンドルーターの多くがブラウザから設定を行うタイプだと思います。これはGUIにより容易に設定が行えますが、ポートの開閉やIPアドレスの定期的な確認などがしたいときには煩わしくプログラムで自動化したいと思うことがあります。
+まずは下図の様な場合を想定し、目的のスクリプトを作成したいと思います。
+
+ルーターはNP-BBRPでWAN側はPPPoE接続されています。今回は例としてNP-BBRPを想定しますが、どのルーターでも出来るように説明します。
+まず、認証方法を確認します。ブラウザからログインして設定画面に行きます。
+この場合http://192.168.0.1/にアクセスしログインします。下図のような画面が出てきました。ユーザー名、パスワード欄に適切なワードを入れてログインします。
  </description>
     </item>
     
     <item>
-      <title>tarの差分バックアップ</title>
-      <link>https://yaasita.github.io/2019/04/01/tar-backup/</link>
-      <pubDate>Mon, 01 Apr 2019 16:12:46 +0900</pubDate>
+      <title>analog  /etc/analog.cfg以外のコンフィグファイルを使う</title>
+      <link>https://yaasita.github.io/2008/03/15/12757/</link>
+      <pubDate>Sat, 15 Mar 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/04/01/tar-backup/</guid>
-      <description>前回の続き
-でctime変化しちゃってどうしたか？
-ファイルサイズとファイル名を取っておいて差分を作ることにした
- こんな感じのスクリプトで、ファイル名 + tab + ファイルサイズで保存する
-(厳密にやる場合はsha256とかで)
-そんで現在のファイルリストも取って、差分をとる
-diff -u previous.txt now.txt | egrep &amp;quot;^\+[^\+]&amp;quot; | perl -ple &#39;s/^\+//;s/\t.+//&#39; &amp;gt; tar.txt あとは-Tオプションで差分のファイルだけをtarで固める
-tar -cvaf hoge.tgz -T tar.txt </description>
+      <guid>https://yaasita.github.io/2008/03/15/12757/</guid>
+      <description> analog -G +g/var/www/hoge/foo.cfg.txt
+のように書きます。+gの後にスペースを入れないように注意します。
+また-Gをつけるのを忘れないで下さい。 </description>
     </item>
     
     <item>
-      <title>tarの-gオプションについて</title>
-      <link>https://yaasita.github.io/2019/03/30/tar-g-option/</link>
-      <pubDate>Sat, 30 Mar 2019 02:32:25 +0900</pubDate>
+      <title>analogを使ってログ解析</title>
+      <link>https://yaasita.github.io/2008/03/15/12777/</link>
+      <pubDate>Sat, 15 Mar 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/03/30/tar-g-option/</guid>
-      <description>-g, &amp;ndash;listed-incremental
-という増分バックアップに使われるオプションについてどうやって判定してるか？
-それはctimeの変化を見ている
-ctimeの変化で気をつけなければいけないことはハードリンクによるバックアップ
-(rsync &amp;ndash;link-dest等)
-例えば、以下のようなファイルが存在し
-work/ `-- 1.txt  以下のコマンドを発行した場合
-tar -g resume -cvf work.tar work/  初回なので当然全部がバックアップされる
-このまま以下のコマンドを打てばディレクトリだけのバックアップになる(差分がないため)
-tar -g resume -cvf work.tar work/  しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう
-stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる  なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
-うまく増分バックアップができなくなる
-続き</description>
+      <guid>https://yaasita.github.io/2008/03/15/12777/</guid>
+      <description>analogはログ解析ソフトです。
+Debianならaptで簡単にインストールできます。
+インストールしたらまず/etc/analog.cfgを編集します。
+ログファイルの指定
+LOGFILE /var/log/apache2/access.log
+古いログファイルの指定 (gzで圧縮されていても大丈夫です)
+LOGFILE /var/log/apache2/access.log.*
+出力HTMLの指定
+OUTFILE /var/www/hoge/Report.html
+HOSTEXCLUDE・・・このホストからのログは対象としない
+リモートホストでの指定ではワイルドカード（*）を省略しないこと
+HOSTINCLUDE・・・このホストを集計の対象とする
+FILEEXCLUDE・・・このファイル（ディレクトリ）を集計の対象としない
+DNSFILE・・・IPの逆引き結果をキャッシュするファイル
+DNS WRITE・・・キャッシュを参照、新しいIPはキャッシュする詳しくはこちら
+DNSGOODHOURS・・・キャッシュの有効期限　詳しくはこちら
+
+LANGUAGE japanese-utf
+HOSTEXCLUDE 192.168.0.*
+HOSTEXCLUDE *.point.ne.jp
+HOSTEXCLUDE *.ezweb.ne.jp
+#FILEINCLUDE /upload/*
+FILEEXCLUDE /icons/*
+DNSFILE /var/www/kaiseki/dnscache.txt
+DNS WRITE
+DNSGOODHOURS 679
+BROWSER ON
+DAILYREP ON
+DAILYSUM ON
+FAILHOST ON
+FAILREF ON
+FAILURE ON
+FAILUSER ON
+FIVEREP ON
+FIVESUM ON
+FULLBROWSER ON
+HOST ON
+HOURLYREP ON
+HOURLYSUM ON
+ORGANISATION ON</description>
     </item>
     
     <item>
-      <title>hugoアップデート</title>
-      <link>https://yaasita.github.io/2019/03/12/hugo-update/</link>
-      <pubDate>Tue, 12 Mar 2019 23:00:51 +0900</pubDate>
+      <title>apacheのログにリモートホストを表示する</title>
+      <link>https://yaasita.github.io/2008/03/14/12797/</link>
+      <pubDate>Fri, 14 Mar 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/03/12/hugo-update/</guid>
-      <description>久々にhugoをアップデート v0.41 =&amp;gt; v0.54まで上げた
-ワーニング潰し アップデートに伴い
-.Prev と .Nextが非推奨になったぽい マニュアル, コミット
-なのでこれはそれぞれ以下のように修正すればOK(意味が逆なので分かりにくいけど)
- .Prev =&amp;gt; .NextPage .Next =&amp;gt; .PrevPage  OGP設定 某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました
-上手く表示できてますか？
-修正箇所
-themes/hugo-theme-geppaku/layouts/partials/header.html
- {{ if .IsHome }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Site.Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;website&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}&amp;quot; /&amp;gt; {{ else }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;article&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}{{ .Page.Dir }}&amp;quot; /&amp;gt; {{ end }} &amp;lt;meta property=&amp;quot;og:site_name&amp;quot; content=&amp;quot;{{ .</description>
+      <guid>https://yaasita.github.io/2008/03/14/12797/</guid>
+      <description> /etc/apache2/apache2.conf
+に
+HostnameLookups Off
+という項があるので
+HostnameLookups On
+に変更する。 </description>
     </item>
     
     <item>
-      <title>Windows10のクリップボード履歴機能</title>
-      <link>https://yaasita.github.io/2019/03/10/clipboard/</link>
-      <pubDate>Sun, 10 Mar 2019 22:47:52 +0900</pubDate>
+      <title>puttyでsftp/scp (psftp/pscp)</title>
+      <link>https://yaasita.github.io/2008/03/10/12817/</link>
+      <pubDate>Mon, 10 Mar 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/03/10/clipboard/</guid>
-      <description>Windows10に標準でクリップボード履歴機能が付いたらしい
- https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html  Windows キー + Vで使えるようになる
-cliborの方が使いやすそうな気がするけど、しばらくこっち使ってみる</description>
+      <guid>https://yaasita.github.io/2008/03/10/12817/</guid>
+      <description> sftpはputtyの中にある
+psftpを実行します。
+実行するとコンソールが開くので
+open hogeuser@bar.test.jp 22
+と入力します。
+また鍵認証をした場合はputtyに登録してあるセッション名でもログインできます。
+open sessionname
+ログインしたあとはhelpコマンドによってコマンド一覧を見れます。
+一つ一つのコマンドの詳細はhelp によって見れます。
+ローカルのファイルを確認する場合はWindowsの場合
+!dir
+と入力します。
+put test.txt 
+でtest.txtをリモートへ送信します。
+注意
+ftpといってもsshのポートを利用します。
+scpは
+pscp.exeをDOS窓から実行します
+例
+C:\pscp.exe foo.txt user@bar.test.jp:
+Using keyboard-interactive authentication.
+Password:
+foo.txt | 14 kB | 14.1 kB/s | ETA: 00:00:00 | 100%
+注意
+pscpにpathが通っていること
+user@bar.test.jp:←のコロンを忘れないこと
+参考リンク
+PSFTPの利用 </description>
     </item>
     
     <item>
-      <title>AlwaysOnSSL終了のお知らせ</title>
-      <link>https://yaasita.github.io/2019/02/28/alwaysonssl/</link>
-      <pubDate>Thu, 28 Feb 2019 01:44:13 +0900</pubDate>
+      <title>vimでタブをスペースに変換する</title>
+      <link>https://yaasita.github.io/2008/03/07/12837/</link>
+      <pubDate>Fri, 07 Mar 2008 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/02/28/alwaysonssl/</guid>
-      <description>無料のSSL証明書AlwaysOnSSLがセキュリティ問題を指摘されてシャットダウンしたぽい
-AlwaysOnSSL web security issues
-S/MIME手に入るので良かったんだけどなぁ・・・
-前回</description>
+      <guid>https://yaasita.github.io/2008/03/07/12837/</guid>
+      <description> :set expandtab で今後入力されるタブがスペースに変換される。
+:retab 既存のタブはこのコマンドで変換される。
+:set tabstop=4
+としていれば4つのスペースに変換される。 </description>
+    </item>
+    
+    <item>
+      <title>Apacheのautoindexモジュールが文字化けする</title>
+      <link>https://yaasita.github.io/2008/03/05/12857/</link>
+      <pubDate>Wed, 05 Mar 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/03/05/12857/</guid>
+      <description> ApacheのautoindexはデフォルトエンコーディングでUTF-8を指定しているにも関わらず、
+インデックスをリクエストしたときにレスポンスヘッダに
+charset=ISO-8859-1
+が付いてしまいます。
+回避するためにはautoindexのconfのIndexOptionsに
+Charset=UTF-8
+を追加します。 </description>
+    </item>
+    
+    <item>
+      <title>2chのスレを自動保存</title>
+      <link>https://yaasita.github.io/2008/02/27/12879/</link>
+      <pubDate>Wed, 27 Feb 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/02/27/12879/</guid>
+      <description>2chのスレを自動で保存する方法を考えます。
+スレの進行が早いところはすぐにDAT落ちしてしまいます。プログラムによって定期的にDATを取得できたら便利です。
+いきいきwikiによるとUser-AgentをMonazilla/1.00 (ブラウザ名/バージョン)にするといいようです。
+また鯖の転送量を減らす目的でgzipを推奨しています。
+例としてJaneviewのリクエストヘッダを見て見ます。
+
+こんな感じです。
+これよりどこにアクセスし、DATを取得しているか分かります。
+取得したdatはgzipに圧縮されているのでgunzipで展開します。（gunzipコマンドのあるLinux環境を想定しています）
+ここで注意して欲しいのは必ずgzipで返ってくるとは限らない点です。gzipではなく生のDATが送られてきても対応できるようにします。
+例としてDATを取得するスクリプトをいかに示します。定期的に取得する場合はcronなどで回して下さい。
+#!/usr/bin/perl
+use Net::HTTP;
+### Initial Setting ###########################
+$server =&#34;namidame.2ch.net&#34;;
+$category =&#34;campus&#34;;
+$unixtime =&#34;1234567890&#34;;
+$backup_directory =&#39;/var/www/&#39;;
+###############################################
+unless($backup_directory=~/\/$/){
+$backup_directory.=&#39;/&#39;;
+}
+$s = Net::HTTP-new(Host = &#34;$server&#34;) || die $@;
+$s-max_line_length(0);
+$s-keep_alive(300);
+$s-write_request(GET = &#34;/$category/dat/$unixtime.dat&#34;, &#39;User-Agent&#39; = &#34;Monazilla/1.00 (perl/1.3)&#34; , &#39;Accept-Encoding&#39; = &#34;gzip&#34; );
+($code, $mess, %h) = $s-read_response_headers;
+unless($code eq &#34;200&#34;){
+print &#34;Thread not found!\n&#34;;
+exit;
+}
+open (FH,&#34;$backup_directory$unixtime.dat.gz&#34;) or die $!</description>
+    </item>
+    
+    <item>
+      <title>Debian(etch)の日本語環境設定</title>
+      <link>https://yaasita.github.io/2008/02/18/12901/</link>
+      <pubDate>Mon, 18 Feb 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/02/18/12901/</guid>
+      <description> $ sudo dpkg-reconfigure locales
+こんな感じでおｋ簡単ですね
+参考リンク
+http://wiki.debian.org/JapaneseEnvironment </description>
+    </item>
+    
+    <item>
+      <title>x11vncよく使いそうなオプション（追加）</title>
+      <link>https://yaasita.github.io/2008/02/13/12921/</link>
+      <pubDate>Wed, 13 Feb 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/02/13/12921/</guid>
+      <description> 前回の他に見つけた良く使いそうなオプション
+-allow
+リモートアクセスを許可するホストを設定する。
+例）192.168.0.5からだけアクセスを許可する
+-allow 192.168.0.5
+例）192.168.0.0/24からのアクセスを許可する
+-allow 192.168.0.
+-nopw
+パスワードファイルが無くても警告を出さない
+＊その他のx11vnc関連の投稿
+x11vnc端末から実行した際に出るエラー出力が邪魔
+x11vncの設定を保存するには 
+Ubuntu7.04 にx11vncをインストールする  </description>
+    </item>
+    
+    <item>
+      <title>x11vnc端末から実行した際に出るエラー出力が邪魔</title>
+      <link>https://yaasita.github.io/2008/02/13/12942/</link>
+      <pubDate>Wed, 13 Feb 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/02/13/12942/</guid>
+      <description> ~$ x11vnc &amp;amp;amp; /dev/null &amp;amp;amp;
+こんな感じでnullへ捨てる。最後の&amp;amp;amp;はバックグラウンドで実行するという意味。 </description>
+    </item>
+    
+    <item>
+      <title>ダウソ板で良く使われる隠語</title>
+      <link>https://yaasita.github.io/2008/02/08/12963/</link>
+      <pubDate>Fri, 08 Feb 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/02/08/12963/</guid>
+      <description> 葱→Negies
+PG→peerguardian </description>
+    </item>
+    
+    <item>
+      <title>School Days LxHの動画を抽出する</title>
+      <link>https://yaasita.github.io/2008/01/20/12983/</link>
+      <pubDate>Sun, 20 Jan 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/01/20/12983/</guid>
+      <description> まずDVDの読めるPCでディスクを検索します。
+次にMV.AFSという1.15GBくらいのファイルがあるのでHDDにコピーします。
+この中にpssファイルがアーカイブされているので抽出します。
+こちらで配布されているAFS Cutter Ver.1.00を使ってPSSファイルを抽出します。抽出したファイルはbinという拡張子になっていますがPSSファイルです。再生はVLCプレイヤーなどで出来ます。
+ゲームで使われていないムービーは
+AFS_0836・・・niceboatと書かれた延々と続くスタッフロール
+AFS_0855・・・工事中でちゅ!と書かれた世界の落書き
+参考
+http://freeuse.ddo.jp/contents/game/ps2/ps2mov.html </description>
+    </item>
+    
+    <item>
+      <title>ProxomitronをLinuxで・・・</title>
+      <link>https://yaasita.github.io/2008/01/07/13004/</link>
+      <pubDate>Mon, 07 Jan 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/01/07/13004/</guid>
+      <description> １．wineで動かす
+２．Privoxyで頑張る </description>
+    </item>
+    
+    <item>
+      <title>perlでURLデコード</title>
+      <link>https://yaasita.github.io/2008/01/02/13025/</link>
+      <pubDate>Wed, 02 Jan 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/01/02/13025/</guid>
+      <description> #!/usr/local/bin/perl
+open (FH,&#34;access.log&#34;);
+open (FH2,&#34;kekka.txt&#34;);
+while(){
+s/%([0-9A-Fa-f][0-9A-Fa-f])/pack(&#39;H2&#39;,$1)/eg;
+print FH2;
+}
+close FH;
+close FH2;
+s置換演算子のオプションeは置換後の文字列（ここではpack(&#39;H2&#39;,$1)）の評価を行う。
+gオプションは繰り返しマッチさせる。 </description>
     </item>
     
   </channel>

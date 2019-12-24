@@ -1,54 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title># cd ~yaasita</title>
+    <title>game on # cd ~yaasita</title>
     <link>https://yaasita.github.io/categories/game/</link>
-    <description>Recent content on # cd ~yaasita</description>
-    <generator>Hugo</generator>
+    <description>Recent content in game on # cd ~yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 27 Oct 2019 03:00:31 +0900</lastBuildDate>
-    <atom:link href="/" rel="self" type="application/rss+xml" />
     
-    <item>
-      <title>chromebookが最高だった</title>
-      <link>https://yaasita.github.io/2019/12/23/chromebook/</link>
-      <pubDate>Mon, 23 Dec 2019 05:58:32 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/12/23/chromebook/</guid>
-      <description>ASUS の C434TA-AI0084 を買ったのでレビュー
-chromeOS  起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある  解除がちょっと遅い10秒くらい待たされる   chromeの複数ユーザー機能が使えない  多重ログイン機能はあるけどちょっと微妙  別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能      ディスプレイ  タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 バックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗  テザリング  Moto E5 とbluetoothでのテザリングが出来なかった  とりあえずUSBテザリングは刺すだけで使えたので良しとしてます    キーボード  Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない  Androidアプリ  ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない  Linux環境 OS  Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり  バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい   USB共有機能あり /opt/google/cros-containers/bin/.</description>
-    </item>
+	<atom:link href="https://yaasita.github.io/categories/game/index.xml" rel="self" type="application/rss+xml" />
     
-    <item>
-      <title>GCP Cloud Functions内からサービスアカウントのtoken取る</title>
-      <link>https://yaasita.github.io/2019/12/08/service-account-in-cf/</link>
-      <pubDate>Sun, 08 Dec 2019 05:12:12 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/12/08/service-account-in-cf/</guid>
-      <description>Cloud Functionsからサービスアカウントのアクセストークンをどうやって取るの？と疑問に思ったので調べた
-Google Compute Engineと同じ取り方でOK
-&amp;quot;use strict&amp;quot;; const fetch = require(&amp;quot;node-fetch&amp;quot;); exports.handler = async (req, res) =&amp;gt; { const url = &amp;quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&amp;quot; + &amp;quot;[サービスアカウント名]/token&amp;quot;; const result = await fetch(url, { method: &amp;quot;GET&amp;quot;, headers: { &amp;quot;Metadata-Flavor&amp;quot;: &amp;quot;Google&amp;quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&amp;quot;OK&amp;quot;); };  なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
-
-まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &amp;ldquo;Function Identity&amp;quot;とかクリックするとちゃんと日本語版あるんですよね
-なんかメニューがバグってるのかな・・・
-とりあえず英語版から探すのをオススメします&amp;hellip;
-参考リンク
- 関数ID Compute Metadata Server   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].</description>
-    </item>
-    
-    <item>
-      <title>GCPでアクセストークンを取得する</title>
-      <link>https://yaasita.github.io/2019/11/14/gcp-access-token/</link>
-      <pubDate>Thu, 14 Nov 2019 22:32:41 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/11/14/gcp-access-token/</guid>
-      <description>ほとんどのサービスは クライアントライブラリ を使えば
-export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json  みたいに環境変数を設定するだけで良いのだが、Cloud Build 等は access tokenを取得して叩く必要がある
-という事でGCPのサービスアカウントからアクセストークンを取得するコード
- スコープ一覧はこちら
-https://developers.google.com/identity/protocols/googlescopes
-アクセストークンのテストは DLP とかがお手軽で良いかな
-参考リンク  jose API Document Using OAuth 2.0 for Server to Server Applications  </description>
-    </item>
     
     <item>
       <title>osu!taikoのskin</title>
@@ -62,244 +23,800 @@ https://developers.google.com/identity/protocols/googlescopes
     </item>
     
     <item>
-      <title>AtCoder Beginner Contest 142のD問題</title>
-      <link>https://yaasita.github.io/2019/09/30/atcoder-abc142/</link>
-      <pubDate>Mon, 30 Sep 2019 05:05:34 +0900</pubDate>
+      <title>PS Vita 3.67アップデートでTLS1.2対応</title>
+      <link>https://yaasita.github.io/2017/11/29/vita-new-version/</link>
+      <pubDate>Wed, 29 Nov 2017 23:20:37 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/09/30/atcoder-abc142/</guid>
-      <description>問題: D - Disjoint Set of Common Divisors
-方針はユークリッドの互除法で最大公約数を出して、最大公約数を素因数分解
-存在する素数の数+1(今回は1もお互いに素の数として含めるため)でOKぽい
-perlで書いてみる
- 解説動画</description>
+      <guid>https://yaasita.github.io/2017/11/29/vita-new-version/</guid>
+      <description>3.65時点だと対応してなかったけど、3.67でTLS1.2対応したようです🎉
+公式には
+ システムソフトウェアにおいて、動作の安定性を改善しました。
+ としか書いてないけど</description>
     </item>
     
     <item>
-      <title>systemd timerはちゃんと動いてる？</title>
-      <link>https://yaasita.github.io/2019/09/29/systemd-timer/</link>
-      <pubDate>Sun, 29 Sep 2019 16:51:09 +0900</pubDate>
+      <title>WORLD OF FINAL FANTASY(WOFF)攻略まとめ</title>
+      <link>https://yaasita.github.io/2017/10/12/woff/</link>
+      <pubDate>Thu, 12 Oct 2017 15:29:48 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/09/29/systemd-timer/</guid>
-      <description>systemdタイマーがちゃんと動いてるか確認したほうが良いよというお話
-systemctl list-timers --allコマンドで一覧が見れるあれです
-debian10だと /etc/cron.daily にあるスクリプトでこんな感じに書かれてたら、systemd timerの方を使ってる
-if [ -d /run/systemd/system ]; then exit 0 fi  前回 と同様にノートパソコンのバッテリー稼働と誤って判断されることに起因する問題
-例えばlogrotateとかみると
-systemctl cat logrotate  こんな一文がある
-ConditionACPower=true  これはバッテリー駆動の時は動かさないって意味らしいんだけど、どうも判定が狂ってるみたいでずっと実行されなかった
-なので、以下のコマンドでoverride.conf作って判定を無効化した
-systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower=  というわけで
-cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
-journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  とりあえず分かった、バッテリー時の判定が入ってるtimer
- apt-daily-upgrade man-db logrotate anacron apt-daily  </description>
+      <guid>https://yaasita.github.io/2017/10/12/woff/</guid>
+      <description>ワールド オブ ファイナルファンタジーの攻略ページまとめ
+ アビリティ  アビリティ一覧・効果・大技組み合わせ   クエスト・ストーリー  よりみちクエスト 隠しマップの行き方 ストーリー攻略 マップ クリア後隠しダンジョン XG倒したときのパーティ   アイテム  マディンの記憶入手方法 ミラーストーン一覧と入手法   ミラージュ  WOFF攻略!ゴブリンプリンセス★、アンデッドセレブ★、クイーンアチョ★入手法 最強ミラージュランキング！ 図鑑1-10 図鑑11-20 図鑑21-22    </description>
     </item>
     
     <item>
-      <title>ビリビリ動画とcrunchyrollのIP制限をGCPで検証</title>
-      <link>https://yaasita.github.io/2019/09/14/anime-ip-block/</link>
-      <pubDate>Sat, 14 Sep 2019 22:21:43 +0900</pubDate>
+      <title>PS vita向けSSL設定</title>
+      <link>https://yaasita.github.io/2017/06/13/vita-ssl/</link>
+      <pubDate>Tue, 13 Jun 2017 01:57:49 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/09/14/anime-ip-block/</guid>
-      <description>bilibili動画とcrunchyrollのIP制限はどんな感じなのか
-GCPの各リージョンからアクセスして試してみる
-rttは自宅から該当サーバーまでのpingしたときの平均値
-なのでISPによって全然違うと思うので参考値ということで
-   region bilibili crunchyroll rtt(ms)     asia-east1 (台湾) ng ok 60.149   asia-east2 (香港) ng ok 76.986   asia-northeast1 (東京) ng ok 29.624   asia-northeast2 (大阪) ng ok 37.401   asia-south1 (ムンバイ) ng ok 144.055   asia-southeast1 (シンガポール) ng ok 89.755   australia-southeast1 (シドニー) ng ok 122.193   europe-north1 (フィンランド) ng ok 256.714   europe-west1 (ベルギー) ng ok 229.</description>
+      <guid>https://yaasita.github.io/2017/06/13/vita-ssl/</guid>
+      <description>PlayStation Vitaの内蔵ブラウザは
+TLSv1.1, TLSv1.2
+が使えないので、 TLSv1 を使うこと
+システムソフトウェア 3.65 時点</description>
     </item>
     
     <item>
-      <title>on_ac_powerコマンドについて</title>
-      <link>https://yaasita.github.io/2019/08/16/on-ac-power/</link>
-      <pubDate>Fri, 16 Aug 2019 04:45:45 +0900</pubDate>
+      <title>超次元アクション ネプテューヌU</title>
+      <link>https://yaasita.github.io/2016/09/04/nepu/</link>
+      <pubDate>Sun, 04 Sep 2016 03:13:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/08/16/on-ac-power/</guid>
-      <description>debian10にした関係でLinuxネタが続く
-PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある
-そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる
-例えば、/etc/cron.daily/mlocate の場合
-if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi  こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
-んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
-このままだと永遠にlocateコマンドが使えないので、divertで退避させた
-dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power  おしまい</description>
+      <guid>https://yaasita.github.io/2016/09/04/nepu/</guid>
+      <description>Vita版のやつ
+ギョウ界チ武道会 クリアしたキャラ
+ ネプチューヌ ノワール ブラン ベール ネプギア ユニ ロム ラム デンゲキコ パープルハート ブラックハート ホワイトハート グリーンハート パープルシスター ブラックシスター ホワイトシスター(左) ホワイトシスター(右) ファミ通  -&amp;gt; 取得したアイテムで審議判定できる
+http://catmiimi.com/nepu_military
+参考リンク http://catmiimi.com/nepu</description>
     </item>
     
     <item>
-      <title>1から100の偶数の和を求めるやつ</title>
-      <link>https://yaasita.github.io/2019/08/15/sum-even-number/</link>
-      <pubDate>Thu, 15 Aug 2019 04:10:11 +0900</pubDate>
+      <title>戦国無双クロニクル3(Vita)攻略</title>
+      <link>https://yaasita.github.io/2016/05/10/sengoku-musou/</link>
+      <pubDate>Tue, 10 May 2016 00:36:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/08/15/sum-even-number/</guid>
-      <description>「1から100の偶数の和を求めるワンライナー」まとめ
-perlでやってみる
-perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;eval&amp;quot;say @{[grep{$_%2==0}1..100]}&amp;quot;;&#39;  4つ思いついた
-結論 simple is best</description>
+      <guid>https://yaasita.github.io/2016/05/10/sengoku-musou/</guid>
+      <description>攻略サイト
+http://goo.gl/bAfbfX
+この全武将お手軽さ評価づけが参考になる
+http://goo.gl/uenJG4</description>
     </item>
     
     <item>
-      <title>各種サーバの中間証明書の扱い</title>
-      <link>https://yaasita.github.io/2019/08/14/ssl-capath/</link>
-      <pubDate>Wed, 14 Aug 2019 10:20:33 +0900</pubDate>
+      <title>ff10-2</title>
+      <link>https://yaasita.github.io/2016/02/15/ff10-2/</link>
+      <pubDate>Mon, 15 Feb 2016 01:13:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/08/14/ssl-capath/</guid>
-      <description>中間証明書をどう設定するか問題
-postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&#39;s Encryptの場合こんな感じ
-smtpd_tls_CAfileに中間証明書を指定する
-smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
-dovecot 10-ssl.conf
-ssl_ca = &amp;lt;/etc/letsencrypt/live/example.net/chain.pem  これはダメ
-この設定はクライアント証明書用ですので
-正しくは、こんな感じに、まとめたやつを指定すればOK
-ssl_cert = &amp;lt;/etc/letsencrypt/live/example.net/fullchain.pem  apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
-SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem  dovecot同様に中間証明書もまとめて指定する
-まとめ この問題はスマホのK-9 Mailでメール読もうとしたときに判明した
-(突然CertPathValidatorExceptionって怒られた)
-thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね
+      <guid>https://yaasita.github.io/2016/02/15/ff10-2/</guid>
+      <description>FF10-2ラストミッション LAST MISSIONでの使用ドレス
+ラスボスが混乱攻撃してくるのでその対策は必須
+あと、アイテムに足して、呪いだったりボムだったりの状態異常がかかる場合があるので、アイテムエスナを使えるアイテムシューターも必須かと思う
+ ガンナー (混乱防御のため) アイテムシューター ダークナイト (暗黒が強力) 調教師 (穴掘りでアイテム探し) 白魔導士 (ケアルガで回復)  あと装備アイテムは以下の2種類
+ 満ちる月の石 (自動MP回復) トリプルティアラ(3回攻撃)  参考リンク  FF10-2ラストミッション攻略ページ 結界解除条件  </description>
+    </item>
+    
+    <item>
+      <title>オンライン囲碁ゲームCOSUMI</title>
+      <link>https://yaasita.github.io/2015/06/01/igo/</link>
+      <pubDate>Mon, 01 Jun 2015 00:01:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/06/01/igo/</guid>
+      <description>やってみた
+5路盤しか勝てない
+結果</description>
+    </item>
+    
+    <item>
+      <title>クラシックダンジョンX2のインストール機能</title>
+      <link>https://yaasita.github.io/2015/05/19/classic-dungeon-x2/</link>
+      <pubDate>Tue, 19 May 2015 00:15:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/05/19/classic-dungeon-x2/</guid>
+      <description>クラシックダンジョンX2にはインストール機能ってやつがあるけど、
+UMDとかなら意味あるらしいけど、vitaでダウンロード版だと
+むしろ遅くなるしなんか不具合おきるぽい
+vitaの場合はコンテンツ管理からアンインストールできた
+61MBくらいのデータ(ゲームデータ)ってやつを消せばおｋ</description>
+    </item>
+    
+    <item>
+      <title>Linuxのターミナルで出来るマリオらしい</title>
+      <link>https://yaasita.github.io/2015/04/13/linux-terminal-game/</link>
+      <pubDate>Mon, 13 Apr 2015 00:24:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/04/13/linux-terminal-game/</guid>
+      <description>すごいなこれ
 
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
-openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
+まさかの？Linuxターミナル上でプレイする『スーパーマリオブラザーズ』
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
     <item>
-      <title>虫よけスプレー</title>
-      <link>https://yaasita.github.io/2019/07/29/musiyoke/</link>
-      <pubDate>Mon, 29 Jul 2019 03:42:37 +0900</pubDate>
+      <title>ロックマンX5攻略</title>
+      <link>https://yaasita.github.io/2015/03/22/rockmanx5/</link>
+      <pubDate>Sun, 22 Mar 2015 23:09:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/07/29/musiyoke/</guid>
-      <description>虫除けスプレーで最近買ったこれが良かった
-ベタベタしないので気にならない
-フマキラー SKIN VAPEってやつかな
-商品名はスキンベープミスト　200mlかも
+      <guid>https://yaasita.github.io/2015/03/22/rockmanx5/</guid>
+      <description>エンディング 以下の3種類
+ ゼロがプレイヤーキャラから外れていない状態で、エックスでクリア。  シャトル成功でOK   ゼロがプレイヤーキャラから外れている状態で、エックスでクリア。  エニグマ、シャトルどっちも失敗すればOK   ゼロでクリア。  シャトル成功でOK    ステージ攻略 クレッセント・グリズリー(左一番上)  弱点  エックス：スパイクロープ ゼロ：双幻夢   サブタンク  暴走トラックの途中に普通においてある   ライフアップ  暴走トラック面中間の屋根の上(ファルコン or ガイアアーマ必須)   パーツ  ファルコン・フットパーツ 暴走トラックから飛び降りてすぐ上の岩を壁蹴りで登る。   強化パーツ  ライフ: ショックアブソーバー エナジー: ハイパーダッシュ    ボルト・クラーケン(左上から2番目)  弱点  クレッセントショット or 三日月斬   ライフアップ  ガイアアーマー必須 ステージ最後のトラップの上Vと書かれた箱をチャージショット   パーツ  ファルコン・ヘッドパーツ ライドチェイサーでエネルギー8個全部取る   強化パーツ  ライフ: ハイパーチャージ エナジー: ゼットセイバーエクステンド（ゼロ用）    シャイニング・ホタルニクス(左下から2番目)  弱点  エックス：トライサンダー ゼロ：電刃   ライフアップ  ステージ最初の針の下 ファルコンかガイア使って取る   パーツ  ファルコン・アームパーツ クレッセントショット(エックス) or 三日月斬(ゼロ) 天井にあるプラズマ放題を↑の武器で壊す   EXアイテム  木の天井をグランドファイヤで燃やす   強化パーツ  ライフ: ラピッド５（エックス用） エナジー: ショットイレイザー（ゼロ用）    タイダル・マッコイーン(左一番下)  弱点  エックス：クレッセントショット ゼロ：三日月斬   ライフアップ  ファルコンアーマー or ガイアアーマー or 電刃 水の引いた船の中 ゼロの場合はブロック破壊 エックスの場合はアーマ使って取る   パーツ  ファルコン・ボディパーツ ジュエルシェイバー(エックス) 水の引いた船の中↑の武器で扉を破壊   強化パーツ  ライフ: スーパーリカバー エナジー: エナジーセイバー    スパイラル・ペガシオン(右一番上)  弱点  エックス：ダークホールド ゼロ：ダークホールド   ライフアップ  上に登るリフトの2番目停止位置にある 右に行けば普通に取れる   パーツ  ガイア・ボディパーツ ファルコンアーマーが必要 斜めリフトに乗るところを上に飛ぶ   サブタンク  下に降りていくリフトの下   強化パーツ  ライフ: ハイジャンプ エナジー: スピードムーブ    スパイク・ローズレッド(右上から2番目)  弱点  エックス：グランドファイア ゼロ：断地炎   ライフアップ  ガイアアーマー ステージ最初のVとかかれた箱をチャージショットで壊す ダッシュでブロック動かして足場作ってジャンプ   パーツ  ファルコンアーマー(フットパーツ) ロープ掴みの連続で横に進む途中の岩の間を上に   強化パーツ  ライフ: アルティメットバスター エナジー: ゼットセイバープラス（ゼロ用）    ダーク・ネクロバット(右下から2番目)  弱点  ウイルレーザー 滅閃光   サブタンク  ステージ後半に置いてある ファルコンアーマーで取る   ライフアップ  重力逆転のところにある   パーツ  ガイア・ヘッドパーツ ウィルレーザーが必要 ボス手前の穴を下に降りる。   サブタンク  リフトで進む場所の最後   強化パーツ  ライフ: ウィルスバリアー エナジー: ウィルスバスター    バーン・ディノレックス(右一番下)  弱点  ウィングスパイラル 疾風   ライフアップ  マグマが左から出てくるところの一番左にある   パーツ  ガイア・アームパーツ ライドアーマーにのってマグマ進んで一番奥 ファルコンアーマーで行くのもOK   強化パーツ  ライフ: スピードショット エナジー: バスタープラス    零空間1(真ん中) シャドーデビル</description>
+    </item>
+    
+    <item>
+      <title>ロックマンX4攻略</title>
+      <link>https://yaasita.github.io/2015/03/05/rockmanx4/</link>
+      <pubDate>Thu, 05 Mar 2015 00:15:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/03/05/rockmanx4/</guid>
+      <description>ステージ攻略 ウェブ・スパイダス(上段左) クモみたいな奴
+ パーツ  フットパーツ　前半降りてくるところの右   弱点武器  X: ツインスラッシャー(ライオンから奪った)   ライフアップ  後半、2つ目の燃やせる木の幹の中（炎の攻撃で入手）。    サイバー・クジャッカー(上段左から2番目)  パーツ  ヘッドパーツ 前半、エリア3をSランク   弱点武器  X: ソウルボディ(キノコ) ゼロ: 上に上昇しながら炎だすやつ   ライフアップ  前半、エリア1（ゼロはエリア2）を「S」ランクを出して抜ける。   サブタンク  前半、エリア2（ゼロはエリア3）を「S」ランクを出して抜ける。    ストーム・フクロウル(上段右から2番目)  パーツ  アームパーツ 後半、トゲ地帯の上 ライトニングウェブで普通の壁蹴りで行く   弱点武器  X:エイミングレーザー(孔雀)   ライフアップ  前半、下に極太ビームを放つ最初のUFOの下（足場破壊前に回収）。    マグマード・ドラグーン(上段右)  パーツ  ボディパーツ 後半　ライドアーマ乗り捨てジャンプ ツインスラッシャーチャージショットで破壊   弱点武器  ダブルサイクロン(フクロウ)   ライフアップ  後半、ライドアーマー手前の階段状通路の左上。    ジェット・スティングレン(下段左) エイみたいな奴</description>
+    </item>
+    
+    <item>
+      <title>HabitRPGについて</title>
+      <link>https://yaasita.github.io/2015/02/28/habitrpg/</link>
+      <pubDate>Sat, 28 Feb 2015 22:54:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2015/02/28/habitrpg/</guid>
+      <description>function callback(data){ var original_url = data.response.posts[0].photos[0].original_size.url; document.getElementById(&#34;habitimg&#34;).parentNode.href = original_url; document.getElementById(&#34;habitimg&#34;).src = original_url; }   公式 https://habitrpg.com/
+遊び方   アバター
+ 左上が自分のアバターで、クリックするとカスタマイズできる    ライフゲージ
+ 赤いバーがライフゲージで、仕事をしないと減っていく 0になると1レベルダウン＆お金、装備品が無くなる    経験値
+ 黄色いバーは経験値 仕事を達成するとお金と経験値が入る ゲージ一杯になるとレベルアップ レベルがあがると、ゲームの新要素がアンロック    仕事はHabits(習慣), Dailies(毎日), To-Dos(すべきこと)の3つの仕事がある
+  Habits(習慣)
+ 絶えず行う仕事 良い習慣を作る(プラス)⇒経験値+お金が入る 悪い習慣を作れば(マイナス)⇒ライフゲージが減る    Dailies(毎日)
+ 1日に1回完了させたい仕事 毎日チェックできればお金と経験値が入る チェックできないとライフゲージが減る    To-Dos(すべきこと)
+ 1回限りの仕事    Rewards</description>
+    </item>
+    
+    <item>
+      <title>3Dのパズルゲーム？</title>
+      <link>https://yaasita.github.io/2014/08/31/blueprint3d/</link>
+      <pubDate>Sun, 31 Aug 2014 00:42:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/08/31/blueprint3d/</guid>
+      <description>3Dのパーツを重ねて絵にするゲーム
+Blueprint3D
+http://armorgames.com/play/12557/blueprint3d</description>
+    </item>
+    
+    <item>
+      <title>CookieClicker</title>
+      <link>https://yaasita.github.io/2014/07/13/cookie-clicker/</link>
+      <pubDate>Sun, 13 Jul 2014 14:30:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2014/07/13/cookie-clicker/</guid>
+      <description>クッキークリッカーのセーブデータ
+ </description>
+    </item>
+    
+    <item>
+      <title>rubyを駆使して敵を倒していくゲーム</title>
+      <link>https://yaasita.github.io/2013/07/28/661/</link>
+      <pubDate>Sun, 28 Jul 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/07/28/661/</guid>
+      <description>Ruby Warrior
+https://www.bloc.io/ruby-warrior/</description>
+    </item>
+    
+    <item>
+      <title>PS vitaのUserAgent</title>
+      <link>https://yaasita.github.io/2013/01/20/1523/</link>
+      <pubDate>Sun, 20 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/20/1523/</guid>
+      <description> Vitaのユーザーエージェントを調べてみました
+ </description>
+    </item>
+    
+    <item>
+      <title>PS vitaエラーコード一覧</title>
+      <link>https://yaasita.github.io/2013/01/07/1604/</link>
+      <pubDate>Mon, 07 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/07/1604/</guid>
+      <description> https://gist.github.com/raw/4140449/PS%20Vita
+http://gamegaz.com/2013010310456/ </description>
+    </item>
+    
+    <item>
+      <title>機動戦士ガンダムSEED BATTLE DESTINY攻略HP</title>
+      <link>https://yaasita.github.io/2012/09/02/2253/</link>
+      <pubDate>Sun, 02 Sep 2012 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2012/09/02/2253/</guid>
+      <description>http://sakray06.blog.so-net.ne.jp/2012-06-12</description>
+    </item>
+    
+    <item>
+      <title>マーブルvsカプコン2(MARVEL VS. CAPCOM 2 NEW AGE OF HEROES)</title>
+      <link>https://yaasita.github.io/2011/08/27/3467/</link>
+      <pubDate>Sat, 27 Aug 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/08/27/3467/</guid>
+      <description>通称マブカプ2
+まとめ
+クソゲーまとめ @ ウィキ
+MARVEL　VS　CAPCOM２　攻略
+コマンド</description>
+    </item>
+    
+    <item>
+      <title>sudoku(数独)の日本語man</title>
+      <link>https://yaasita.github.io/2011/08/12/3583/</link>
+      <pubDate>Fri, 12 Aug 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/08/12/3583/</guid>
+      <description>Linux用のsudokuゲームの日本語manです
+NAMEsudoku - 数独ゲーム
+SYNOPSIS(ゲームを始める)
+sudoku [options] ... [&amp;amp;lt;filename&amp;amp;gt;]
+(問題を作成)
+sudoku -g [&amp;amp;lt;num&amp;amp;gt;] [options] ...
+(問題を解く)
+sudoku -v [options] ...
+(難易度を計算)
+sudoku -s [options] ...
+DESCRIPTIONThe sudoku board game is played on a 9x9 grid, divided into rows, columns, and
+9 blocks of 3x3 squares. The objective is to fill the empty squares with the
+digits 1-9, so that each row, column, and block contains each of the digits 1-9</description>
+    </item>
+    
+    <item>
+      <title>FF12攻略まとめ</title>
+      <link>https://yaasita.github.io/2011/07/16/3699/</link>
+      <pubDate>Sat, 16 Jul 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/07/16/3699/</guid>
+      <description>まとめWiki
+Final Fantasy XII WIKI
+FF12攻略情報-ZAPAnet
+武器・防具について
+武器の特徴
+武器・防具の入手方法
+防具リスト
+武器リスト
+ライセンス
+ライセンスボードの位置
+技・魔法
+技・魔法入手場所
+サブイベント</description>
+    </item>
+    
+    <item>
+      <title>ヨッシーのクッキー裏技</title>
+      <link>https://yaasita.github.io/2011/06/05/3802/</link>
+      <pubDate>Sun, 05 Jun 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/06/05/3802/</guid>
+      <description> 
+強いCPUと戦える </description>
+    </item>
+    
+    <item>
+      <title>Linuxの面白そうなゲーム</title>
+      <link>https://yaasita.github.io/2011/05/22/3925/</link>
+      <pubDate>Sun, 22 May 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/05/22/3925/</guid>
+      <description> 全てaptでインストールできる
+sudoku - コンソールでできる数独
+xshogi - 将棋ゲーム　軽くて良い感じ
+kraptor - シューティングゲーム
+ltris - 軽いテトリス
+netris　- コンソール版のテトリス
+viruskiller - シューティングゲーム？（動作せず）
+xblast - ボンバーマンのクローン
+flobopuyo - ぷよぷよのクローン
+xfireworks - デスクトップに花火が出る
+xfishtank - デスクトップが水族館みたいになる
+xpenguins - デスクトップにペンギンが出る
+xsol - ただのソリティア
+参考リンク
+http://www10.atwiki.jp/gleaning/pages/32.html
+http://penguin.tantin.jp/mori/category.html#af0d8275 </description>
+    </item>
+    
+    <item>
+      <title>風来のシレン改造コード</title>
+      <link>https://yaasita.github.io/2011/04/04/4467/</link>
+      <pubDate>Mon, 04 Apr 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/04/04/4467/</guid>
+      <description> チートコードhttp://homepage3.nifty.com/game-sfccode/furai_no_shiren.html </description>
+    </item>
+    
+    <item>
+      <title>トルネコの大冒険（SFC）のチートコード</title>
+      <link>https://yaasita.github.io/2011/02/27/4715/</link>
+      <pubDate>Sun, 27 Feb 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/02/27/4715/</guid>
+      <description> 
+改造コードは以下
+満腹度固定
+7E0DE573
+HP減らない
+7E0BB7FF
+7E0BB800
+HPの最大値MAX
+7E0BCBFF
+7E0BCC00
+力の最大値MAX
+7E0DDF63
+力最大
+7E0DE063
+ </description>
+    </item>
+    
+    <item>
+      <title>デビルメイクライ3攻略リンク集</title>
+      <link>https://yaasita.github.io/2011/01/16/4885/</link>
+      <pubDate>Sun, 16 Jan 2011 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2011/01/16/4885/</guid>
+      <description> 丁寧な攻略チャートがある
+http://dmc-labo.secret.jp/DMC-Labo.html
+武器アクション
+スタイルアクション
+http://www.geocities.jp/no0sloter/devil/index.html
+MISSION 13のパズル解答
+スペシャルエディションの裏技
+タイトル画面でL1L2R1R2を押したまま十字キー上と左を押しながら左スティックを右下に入れる
+バジールのコシュチューム一覧
+・普通のバジール
+・上半身軽装のバジール
+・魔人化無制限のバジール（幻影剣は減る）
+・ネロアンジェロに返信できるバジール
+・ネロアンジェロ無制限のバジール（幻影剣も無制限） </description>
+    </item>
+    
+    <item>
+      <title>Frozen BubbleのFLASH版</title>
+      <link>https://yaasita.github.io/2010/12/25/5052/</link>
+      <pubDate>Sat, 25 Dec 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/12/25/5052/</guid>
+      <description> Frozen BubbleのFLASH版があったのでメモ
+http://www.gamefz.com/a.asp?id=2420 </description>
+    </item>
+    
+    <item>
+      <title>紙飛行機を飛ばすゲーム</title>
+      <link>https://yaasita.github.io/2010/12/24/5072/</link>
+      <pubDate>Fri, 24 Dec 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/12/24/5072/</guid>
+      <description>紙飛行機を飛ばすゲーム
+http://armorgames.com/play/7598/flight
+←→　角度調節 SPACE ジェット噴射 R レインボースター  参考リンク
+http://blog.livedoor.jp/lkrejg/archives/65520026.html</description>
+    </item>
+    
+    <item>
+      <title>バイオハザード4の参考リンク集</title>
+      <link>https://yaasita.github.io/2010/10/11/5547/</link>
+      <pubDate>Mon, 11 Oct 2010 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2010/10/11/5547/</guid>
+      <description> 攻略チャート(謎解きの解答とかもあるので手っ取り早く進めたい人向け)
+http://gamekouryaku.com/bio4/
+攻略チャート(マップ付き)
+http://www10.plala.or.jp/namikipatty/bio4gc/iegamebio4.html
+武器
+http://www10.plala.or.jp/namikipatty/bio4gc/bio4ps2/psbuki.html
+お宝
+http://www.xn--eckm0bye2ad62a.com/item3.html
+Wikipedia(クリーチャー一覧等)
+http://ja.wikipedia.org/wiki/%E3%83%90%E3%82%A4%E3%82%AA%E3%83%8F%E3%82%B6%E3%83%BC%E3%83%894
+改造コード
+http://www.unkar.org/read/game12.2ch.net/gameurawaza/1178132223
+http://www6.ocn.ne.jp/~ps2/c/bio.html
+使用した改造コード ※ちなみに試したのはベスト版
+マスターコード
+EC878560 1456E79B 敵一撃死
+1C8BB504 3845089C
+お金MAX
+1CD56854 14BE598C HP減らない
+1C8BB33C 1496D7C8 制限時間操作（Ｌ２＋〇で最大，Ｌ２＋Ｘでタイムアウト）
+0CD69F8C 1456E625
+4CD84450 1456B00C
+0CD69F8C 1456E525
+4CD84450 1456E7A5
 
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   そういや虫よけ剤に入ってるDEETって薬はなぜ虫が寄り付かないか謎らしい</description>
+※ちなみにU-3などの首折攻撃で死ぬ場合があります（レバガチャすれば大丈夫）
+あと知っておくと良いパズル解説は
+双子の墓→3⇒4⇒3⇒3⇒3⇒4⇒4
+教会のライト→赤2回、緑3回、青1回操作
+THE MERCENARIESの星5つの条件は6万点以上 </description>
     </item>
     
     <item>
-      <title>例のS3署名バージョン2について</title>
-      <link>https://yaasita.github.io/2019/06/25/s3v2/</link>
-      <pubDate>Tue, 25 Jun 2019 00:31:08 +0900</pubDate>
+      <title>スーパーボンバーマン5を100%クリアすると・・・</title>
+      <link>https://yaasita.github.io/2010/05/22/6551/</link>
+      <pubDate>Sat, 22 May 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/06/25/s3v2/</guid>
-      <description>AWS S3の署名バージョン騒動
-大丈夫ぽいけど一応調べた時につかったスクリプト
-CloudTrailでログを有効化してからお使いください
- </description>
+      <guid>https://yaasita.github.io/2010/05/22/6551/</guid>
+      <description> 100%達成のご褒美？に秘密のパスワードを教えてくれる
+
+100%達成のためのルート攻略はこちら
+http://2nd.geocities.jp/donoidmosiyousareteta/3-11.htm </description>
     </item>
     
     <item>
-      <title>Cloud Runがすごく良い</title>
-      <link>https://yaasita.github.io/2019/05/29/cloud-run/</link>
-      <pubDate>Wed, 29 May 2019 21:42:23 +0900</pubDate>
+      <title>スーパーボンバーマン5のチートコード</title>
+      <link>https://yaasita.github.io/2010/05/17/6672/</link>
+      <pubDate>Mon, 17 May 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/05/29/cloud-run/</guid>
-      <description>GCPのCloud Runがめっちゃ便利
-覚えなきゃいけないルールは2つ
- Dockerにする事 環境変数 $PORT のポート番号でlistenしてレスポンスを返す事  これだけ
-コマンドとかはこの辺見ればすぐできると思います
-あと、Chunked Transferみたいな仕組みで進捗を返すみたいなAPIは難しいかもしれない
-以下のようなプログラムでちょっとずつレスポンス返しても、バッファリングされてるみたいで、最後ドバっと返ってきた
- </description>
+      <guid>https://yaasita.github.io/2010/05/17/6672/</guid>
+      <description> 改造コード
+無敵
+1P 7E15A205
+2P 7E15A305
+スピード
+7E15D2FF
+火力MAX
+7E17CA0A
+爆弾の数
+7E4EBD0A
+リモコン爆弾
+7E4ED50F </description>
     </item>
     
     <item>
-      <title>PKCEをJavaScriptで実装する</title>
-      <link>https://yaasita.github.io/2019/04/29/pkce/</link>
-      <pubDate>Mon, 29 Apr 2019 01:23:20 +0900</pubDate>
+      <title>スーパーマリオブラザーズ 3-1でやる無限増殖</title>
+      <link>https://yaasita.github.io/2010/05/01/6917/</link>
+      <pubDate>Sat, 01 May 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/04/29/pkce/</guid>
-      <description>code_verifier から code_challenge の生成方法について調べた
-code_challenge_method=S256の場合は以下のような実装ロジックになる
-node.jsで書いた
-Oauth2のPKCE
-base64エンコードじゃなくてbase64urlエンコードなのが注意点
- </description>
+      <guid>https://yaasita.github.io/2010/05/01/6917/</guid>
+      <description> なんで今更こんな投稿するか微妙だけど一応やり方
+SFCのスーパーマリオコレクションでやってみた
+１．まず二匹いるノコノコの最初を倒すかスルーして↓の画像のように待っている
+待っている位置はどこでも良い
+
+２．ノコノコがマリオが居た位置に落ちてくる直前で踏めるタイミングでジャンプする。
+踏んだ後は続かないかもしれないのでBボタンを連射しておくと良いかもしれません
+
+参考リンク
+永井先生がやった無限増殖　8:55あたりから
+【ニコニコ動画】永井兄弟のスーパーマリオブラザーズ Part1
+【ニコニコ動画】永井兄弟のスーパーマリオブラザーズ Part2
+【ニコニコ動画】永井兄弟のスーパーマリオブラザーズ Part3 </description>
     </item>
     
     <item>
-      <title>令和の対応に際して</title>
-      <link>https://yaasita.github.io/2019/04/25/reiwa/</link>
-      <pubDate>Thu, 25 Apr 2019 02:08:40 +0900</pubDate>
+      <title>ドラゴンを操作して敵を倒すシューティングゲーム</title>
+      <link>https://yaasita.github.io/2010/02/14/7308/</link>
+      <pubDate>Sun, 14 Feb 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/04/25/reiwa/</guid>
-      <description>techrachoの記事
-perlも追加でお願いします
- </description>
+      <guid>https://yaasita.github.io/2010/02/14/7308/</guid>
+      <description>FLASHで出来てる
+マウスで操作、スペースでボム
+http://armorgames.com/play/4720/skyfyre
+参考記事
+http://himatubu.seesaa.net/article/130955400.html</description>
     </item>
     
     <item>
-      <title>tarの差分バックアップ</title>
-      <link>https://yaasita.github.io/2019/04/01/tar-backup/</link>
-      <pubDate>Mon, 01 Apr 2019 16:12:46 +0900</pubDate>
+      <title>マリオペイントのハエ叩きは何週目まであるか？</title>
+      <link>https://yaasita.github.io/2010/02/07/7348/</link>
+      <pubDate>Sun, 07 Feb 2010 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/04/01/tar-backup/</guid>
-      <description>前回の続き
-でctime変化しちゃってどうしたか？
-ファイルサイズとファイル名を取っておいて差分を作ることにした
- こんな感じのスクリプトで、ファイル名 + tab + ファイルサイズで保存する
-(厳密にやる場合はsha256とかで)
-そんで現在のファイルリストも取って、差分をとる
-diff -u previous.txt now.txt | egrep &amp;quot;^\+[^\+]&amp;quot; | perl -ple &#39;s/^\+//;s/\t.+//&#39; &amp;gt; tar.txt あとは-Tオプションで差分のファイルだけをtarで固める
-tar -cvaf hoge.tgz -T tar.txt </description>
+      <guid>https://yaasita.github.io/2010/02/07/7348/</guid>
+      <description> ハエ叩きは1面→2面→3面と難易度が上がり、3面をクリアすると1面に戻ります。
+戻った際には何週クリアしたかを表すマークが画面左上に出ます。
+これは1週クリアした場合は星、2周目ならマリオ、3周目ならピーチという様に毎回違うマークが表示されます。 
+このマークは何周目まで出るかというと15周目まで出ます。
+
+15周目以降はマークが消えて、また1面からやり直しになります。
+
+周回数を重ねるごとにライフ（手の形をしたアイテム）が手に入りにくくなります。
+チートコード無しに15周クリアするのは難しいかもしれません。 </description>
     </item>
     
     <item>
-      <title>tarの-gオプションについて</title>
-      <link>https://yaasita.github.io/2019/03/30/tar-g-option/</link>
-      <pubDate>Sat, 30 Mar 2019 02:32:25 +0900</pubDate>
+      <title>スーパーマリオ63？っていうFLASHゲーム</title>
+      <link>https://yaasita.github.io/2009/11/22/8047/</link>
+      <pubDate>Sun, 22 Nov 2009 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/03/30/tar-g-option/</guid>
-      <description>-g, &amp;ndash;listed-incremental
-という増分バックアップに使われるオプションについてどうやって判定してるか？
-それはctimeの変化を見ている
-ctimeの変化で気をつけなければいけないことはハードリンクによるバックアップ
-(rsync &amp;ndash;link-dest等)
-例えば、以下のようなファイルが存在し
-work/ `-- 1.txt  以下のコマンドを発行した場合
-tar -g resume -cvf work.tar work/  初回なので当然全部がバックアップされる
-このまま以下のコマンドを打てばディレクトリだけのバックアップになる(差分がないため)
-tar -g resume -cvf work.tar work/  しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう
-stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる  なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
-うまく増分バックアップができなくなる
-続き</description>
+      <guid>https://yaasita.github.io/2009/11/22/8047/</guid>
+      <description> これはすごいと思った
+音楽とかはスーパーマリオ64のまんま
+Super Mario63
+http://www.freeworldgroup.com/games8/gameindex/supermario.htm </description>
     </item>
     
     <item>
-      <title>hugoアップデート</title>
-      <link>https://yaasita.github.io/2019/03/12/hugo-update/</link>
-      <pubDate>Tue, 12 Mar 2019 23:00:51 +0900</pubDate>
+      <title>2本のアームを使って敵を挟む→倒すゲーム</title>
+      <link>https://yaasita.github.io/2009/10/10/8492/</link>
+      <pubDate>Sat, 10 Oct 2009 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/03/12/hugo-update/</guid>
-      <description>久々にhugoをアップデート v0.41 =&amp;gt; v0.54まで上げた
-ワーニング潰し アップデートに伴い
-.Prev と .Nextが非推奨になったぽい マニュアル, コミット
-なのでこれはそれぞれ以下のように修正すればOK(意味が逆なので分かりにくいけど)
- .Prev =&amp;gt; .NextPage .Next =&amp;gt; .PrevPage  OGP設定 某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました
-上手く表示できてますか？
-修正箇所
-themes/hugo-theme-geppaku/layouts/partials/header.html
- {{ if .IsHome }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Site.Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;website&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}&amp;quot; /&amp;gt; {{ else }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;article&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}{{ .Page.Dir }}&amp;quot; /&amp;gt; {{ end }} &amp;lt;meta property=&amp;quot;og:site_name&amp;quot; content=&amp;quot;{{ .</description>
+      <guid>https://yaasita.github.io/2009/10/10/8492/</guid>
+      <description> http://www.kongregate.com/games/xpndsprt/the-tickler
+ザイーガ記事
+http://www.zaeega.com/archives/50893498.html </description>
     </item>
     
     <item>
-      <title>Windows10のクリップボード履歴機能</title>
-      <link>https://yaasita.github.io/2019/03/10/clipboard/</link>
-      <pubDate>Sun, 10 Mar 2019 22:47:52 +0900</pubDate>
+      <title>アニソンに合わせてタイピング練習するゲーム</title>
+      <link>https://yaasita.github.io/2009/10/03/8532/</link>
+      <pubDate>Sat, 03 Oct 2009 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/03/10/clipboard/</guid>
-      <description>Windows10に標準でクリップボード履歴機能が付いたらしい
- https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html  Windows キー + Vで使えるようになる
-cliborの方が使いやすそうな気がするけど、しばらくこっち使ってみる</description>
+      <guid>https://yaasita.github.io/2009/10/03/8532/</guid>
+      <description> タイピングマニア
+http://www10.atpages.jp/mania/
+http://sonbura.hp.infoseek.co.jp/self/typingmania4.html
+追記
+どうやらこれは自分で作るタイプのFLASHゲームだそうです。。。
+以下参考リンク
+公式サイト
+TYPINGMANIA Wiki
+タイピングマニアまとめサイト </description>
     </item>
     
     <item>
-      <title>AlwaysOnSSL終了のお知らせ</title>
-      <link>https://yaasita.github.io/2019/02/28/alwaysonssl/</link>
-      <pubDate>Thu, 28 Feb 2019 01:44:13 +0900</pubDate>
+      <title>ライフルで狙撃するゲーム</title>
+      <link>https://yaasita.github.io/2009/09/26/8614/</link>
+      <pubDate>Sat, 26 Sep 2009 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/02/28/alwaysonssl/</guid>
-      <description>無料のSSL証明書AlwaysOnSSLがセキュリティ問題を指摘されてシャットダウンしたぽい
-AlwaysOnSSL web security issues
-S/MIME手に入るので良かったんだけどなぁ・・・
-前回</description>
+      <guid>https://yaasita.github.io/2009/09/26/8614/</guid>
+      <description> FLASHゲーム　マテリアルスナイパー
+http://nextframe.jp/flash/matsnp/matsnp.html
+ザイーガ紹介記事
+http://www.zaeega.com/archives/50885912.html </description>
+    </item>
+    
+    <item>
+      <title>ここら辺で自分が使ってるエミュレータをまとめる</title>
+      <link>https://yaasita.github.io/2009/09/06/8675/</link>
+      <pubDate>Sun, 06 Sep 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/09/06/8675/</guid>
+      <description> スーパーファミコン（SNES）
+ZSNES
+ファミコン（NES）
+VirtuaNES
+ゲームボーイ、ゲームボーイカラー（GB）
+TGB Dual
+あとROMサイト </description>
+    </item>
+    
+    <item>
+      <title>なんか知らないがROM配ってるサイト</title>
+      <link>https://yaasita.github.io/2009/09/06/8695/</link>
+      <pubDate>Sun, 06 Sep 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/09/06/8695/</guid>
+      <description> http://ja.nitroroms.com/roms </description>
+    </item>
+    
+    <item>
+      <title>大きな画面で四川省</title>
+      <link>https://yaasita.github.io/2009/08/30/8736/</link>
+      <pubDate>Sun, 30 Aug 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/08/30/8736/</guid>
+      <description> http://www.karakusa-lab.com/gallery/flash/mj/fs-big.html </description>
+    </item>
+    
+    <item>
+      <title>静森さんディフェンス（精子から守るゲーム）</title>
+      <link>https://yaasita.github.io/2009/08/29/8777/</link>
+      <pubDate>Sat, 29 Aug 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/08/29/8777/</guid>
+      <description>https://www.ppwks.net/fp/sd.html
+&amp;ndash;裏技&amp;ndash;
+zを押す･･･1回押す毎に金が500増える
+xを押す･･･1回押す毎に敵の種類はそのままでエネミーレベルが1上がる
+cを押す･･･1回押す毎に次の敵を強制的に出現させる
+vを押す･･･1回押す毎にライフ（受精まで）のカウントが1増える</description>
+    </item>
+    
+    <item>
+      <title>なんか面白いシューティングゲーム</title>
+      <link>https://yaasita.github.io/2009/08/23/8817/</link>
+      <pubDate>Sun, 23 Aug 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/08/23/8817/</guid>
+      <description> ポイントためてパワーアップも出来る
+http://www.kongregate.com/games/x_boost/pixelvader </description>
+    </item>
+    
+    <item>
+      <title>ワリオランドシェイクのやつ（youtube）</title>
+      <link>https://yaasita.github.io/2009/08/22/8897/</link>
+      <pubDate>Sat, 22 Aug 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/08/22/8897/</guid>
+      <description> youtubeのレイアウトがぶっ壊れる奴
+http://www.youtube.com/wariolandshakeit2008 </description>
+    </item>
+    
+    <item>
+      <title>幽霊に光を当てて倒すゲーム</title>
+      <link>https://yaasita.github.io/2009/08/02/8979/</link>
+      <pubDate>Sun, 02 Aug 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/08/02/8979/</guid>
+      <description> http://www.girlsgames123.com/misc-game/graveyard-panic.html </description>
+    </item>
+    
+    <item>
+      <title>なんか宇宙でやるゴルフゲーム？</title>
+      <link>https://yaasita.github.io/2009/07/21/9039/</link>
+      <pubDate>Tue, 21 Jul 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/07/21/9039/</guid>
+      <description>http://armorgames.com/play/4171/gravitex-2</description>
+    </item>
+    
+    <item>
+      <title>FLASHの面白いゲームを紹介するブログ</title>
+      <link>https://yaasita.github.io/2009/07/13/9059/</link>
+      <pubDate>Mon, 13 Jul 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/07/13/9059/</guid>
+      <description> 暇をつぶす音がする
+http://himatubu.seesaa.net/ </description>
+    </item>
+    
+    <item>
+      <title>背景実写のFLASHシューティングゲーム</title>
+      <link>https://yaasita.github.io/2009/07/11/9120/</link>
+      <pubDate>Sat, 11 Jul 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/07/11/9120/</guid>
+      <description> Toon Crisis 1
+http://www.tooncrisis.com/
+Toon Crisis 2
+http://killerviral.com/site/games/561/Toon+Crisis+2
+ザイーガ記事
+http://www.zaeega.com/archives/50832040.html </description>
+    </item>
+    
+    <item>
+      <title>人生オワタの大冒険ゲーム</title>
+      <link>https://yaasita.github.io/2009/07/05/9140/</link>
+      <pubDate>Sun, 05 Jul 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/07/05/9140/</guid>
+      <description> 
+途中まで出来たからパスワードをメモっておく
+http://blog-imgs-18.fc2.com/k/i/n/king75/owata.html </description>
+    </item>
+    
+    <item>
+      <title>うさぎ（ウサギ）のベル鳴らし＋新海探検</title>
+      <link>https://yaasita.github.io/2009/07/04/9181/</link>
+      <pubDate>Sat, 04 Jul 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/07/04/9181/</guid>
+      <description> うさぎ
+http://www.ferryhalim.com/orisinal/g3/bells.htm
+深海ワンダー
+http://www.mext.go.jp/wonder/shinkai/ </description>
+    </item>
+    
+    <item>
+      <title>スライドパズル by ハンゲーム</title>
+      <link>https://yaasita.github.io/2009/04/18/9725/</link>
+      <pubDate>Sat, 18 Apr 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/04/18/9725/</guid>
+      <description> http://flashweb.hangame.co.jp/play.nhn?gameid=fpbswitch </description>
+    </item>
+    
+    <item>
+      <title>ネコを囲むFLASHゲーム</title>
+      <link>https://yaasita.github.io/2009/04/16/9745/</link>
+      <pubDate>Thu, 16 Apr 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/04/16/9745/</guid>
+      <description> http://www.gamedesign.jp/flash/chatnoir/chatnoir_jp.html </description>
+    </item>
+    
+    <item>
+      <title>人を燃やして連鎖を狙うゲーム</title>
+      <link>https://yaasita.github.io/2009/02/11/10320/</link>
+      <pubDate>Wed, 11 Feb 2009 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2009/02/11/10320/</guid>
+      <description> http://www.bubblebox.com/play/skill/1257.htm </description>
+    </item>
+    
+    <item>
+      <title>ゲーム</title>
+      <link>https://yaasita.github.io/2008/11/28/10937/</link>
+      <pubDate>Fri, 28 Nov 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/11/28/10937/</guid>
+      <description> 切って進めるゲーム(splitter)
+http://www.kongregate.com/games/EvgenyKarataev/splitter/
+ニコニコメーカー
+http://nm.dabun-doumei.com/
+splitter 解答
+http://jp.youtube.com/watch?v=PHF6WKd1MyU </description>
+    </item>
+    
+    <item>
+      <title>School Days LxHの動画を抽出する</title>
+      <link>https://yaasita.github.io/2008/01/20/12983/</link>
+      <pubDate>Sun, 20 Jan 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/01/20/12983/</guid>
+      <description> まずDVDの読めるPCでディスクを検索します。
+次にMV.AFSという1.15GBくらいのファイルがあるのでHDDにコピーします。
+この中にpssファイルがアーカイブされているので抽出します。
+こちらで配布されているAFS Cutter Ver.1.00を使ってPSSファイルを抽出します。抽出したファイルはbinという拡張子になっていますがPSSファイルです。再生はVLCプレイヤーなどで出来ます。
+ゲームで使われていないムービーは
+AFS_0836・・・niceboatと書かれた延々と続くスタッフロール
+AFS_0855・・・工事中でちゅ!と書かれた世界の落書き
+参考
+http://freeuse.ddo.jp/contents/game/ps2/ps2mov.html </description>
+    </item>
+    
+    <item>
+      <title>昔、流行った地下ゲーム</title>
+      <link>https://yaasita.github.io/2007/12/31/13045/</link>
+      <pubDate>Mon, 31 Dec 2007 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2007/12/31/13045/</guid>
+      <description> ブラックユーモア溢れるゲームたちです。
+倉庫番はHDDがフォーマットされる可能性があります。
+WindowsXP環境では平気でした。
+http://www.hehehe.net/game/ </description>
+    </item>
+    
+    <item>
+      <title>kxmameでLinuxでもアーケードゲームを遊ぶ</title>
+      <link>https://yaasita.github.io/2007/10/29/13480/</link>
+      <pubDate>Mon, 29 Oct 2007 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2007/10/29/13480/</guid>
+      <description> ubuntuのaptでインストールしたら
+アプリケーションー＞ゲームー＞kxmameを選択して起動
+その後
+Settings-Directoriesを選択して
+そこら辺のタブにある
+/usr/lib/games/xmameを
+/usr/share/games/xmameに変える
+次にFileー＞Propertiesから
+Controllersを選んで
+ジョイスティックデバイスを/dev/input/js0にする。
+ROMイメージはzipのままで解凍しないでおく。ROMイメージ場所の設定はSettings-Directories...からMame/Mess basic pathタブの Mame ROMS path:で指定する。
+ゲームを起動したらTabで諸々の設定ができる。
+ROMは下記サイトで探す
+http://www.romnation.net/srv/roms/mame.html </description>
+    </item>
+    
+    <item>
+      <title>ロックマンX2　パスワード</title>
+      <link>https://yaasita.github.io/2007/09/28/13748/</link>
+      <pubDate>Fri, 28 Sep 2007 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2007/09/28/13748/</guid>
+      <description> 
+ライフアップ＆サブタンク＆パーツ＆ゼロパーツ全部取得したパスワード
+最初の8ボスは全員倒しています </description>
+    </item>
+    
+    <item>
+      <title>幽遊白書2裏技</title>
+      <link>https://yaasita.github.io/2007/08/10/14079/</link>
+      <pubDate>Fri, 10 Aug 2007 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2007/08/10/14079/</guid>
+      <description>  </description>
+    </item>
+    
+    <item>
+      <title>シムシティ2000</title>
+      <link>https://yaasita.github.io/2007/07/29/14285/</link>
+      <pubDate>Sun, 29 Jul 2007 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2007/07/29/14285/</guid>
+      <description> やる事無いからシムシティ2000をやってみる。
+なんかスゲー遅いし。ゲーム途中で止める方法が見つからない。 </description>
     </item>
     
   </channel>

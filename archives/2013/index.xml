@@ -1,305 +1,1039 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title># cd ~yaasita</title>
+    <title>2013 on # cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2013/</link>
-    <description>Recent content on # cd ~yaasita</description>
-    <generator>Hugo</generator>
+    <description>Recent content in 2013 on # cd ~yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Sun, 15 Dec 2013 00:00:00 +0900</lastBuildDate>
-    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://yaasita.github.io/archives/2013/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
-      <title>chromebookが最高だった</title>
-      <link>https://yaasita.github.io/2019/12/23/chromebook/</link>
-      <pubDate>Mon, 23 Dec 2019 05:58:32 +0900</pubDate>
+      <title>chef bootstrapが使えないときにnodeを追加する</title>
+      <link>https://yaasita.github.io/2013/12/15/307/</link>
+      <pubDate>Sun, 15 Dec 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/12/23/chromebook/</guid>
-      <description>ASUS の C434TA-AI0084 を買ったのでレビュー
-chromeOS  起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある  解除がちょっと遅い10秒くらい待たされる   chromeの複数ユーザー機能が使えない  多重ログイン機能はあるけどちょっと微妙  別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能      ディスプレイ  タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 バックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗  テザリング  Moto E5 とbluetoothでのテザリングが出来なかった  とりあえずUSBテザリングは刺すだけで使えたので良しとしてます    キーボード  Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない  Androidアプリ  ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない  Linux環境 OS  Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり  バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい   USB共有機能あり /opt/google/cros-containers/bin/.</description>
-    </item>
-    
-    <item>
-      <title>GCP Cloud Functions内からサービスアカウントのtoken取る</title>
-      <link>https://yaasita.github.io/2019/12/08/service-account-in-cf/</link>
-      <pubDate>Sun, 08 Dec 2019 05:12:12 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/12/08/service-account-in-cf/</guid>
-      <description>Cloud Functionsからサービスアカウントのアクセストークンをどうやって取るの？と疑問に思ったので調べた
-Google Compute Engineと同じ取り方でOK
-&amp;quot;use strict&amp;quot;; const fetch = require(&amp;quot;node-fetch&amp;quot;); exports.handler = async (req, res) =&amp;gt; { const url = &amp;quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&amp;quot; + &amp;quot;[サービスアカウント名]/token&amp;quot;; const result = await fetch(url, { method: &amp;quot;GET&amp;quot;, headers: { &amp;quot;Metadata-Flavor&amp;quot;: &amp;quot;Google&amp;quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&amp;quot;OK&amp;quot;); };  なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
-
-まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &amp;ldquo;Function Identity&amp;quot;とかクリックするとちゃんと日本語版あるんですよね
-なんかメニューがバグってるのかな・・・
-とりあえず英語版から探すのをオススメします&amp;hellip;
+      <guid>https://yaasita.github.io/2013/12/15/307/</guid>
+      <description> knife configure client /path/to/tempdir
+できたファイルをnodeに置く
+/etc/chef/client.rb
+/etc/chef/validation.pem
+で↓のコマンドでOK
+chef-client
 参考リンク
- 関数ID Compute Metadata Server   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].</description>
+http://hivecolor.com/id/46 </description>
     </item>
     
     <item>
-      <title>GCPでアクセストークンを取得する</title>
-      <link>https://yaasita.github.io/2019/11/14/gcp-access-token/</link>
-      <pubDate>Thu, 14 Nov 2019 22:32:41 +0900</pubDate>
+      <title>maildirsizeをMaildirに置くとクォータ設定できる</title>
+      <link>https://yaasita.github.io/2013/12/15/328/</link>
+      <pubDate>Sun, 15 Dec 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/11/14/gcp-access-token/</guid>
-      <description>ほとんどのサービスは クライアントライブラリ を使えば
-export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json  みたいに環境変数を設定するだけで良いのだが、Cloud Build 等は access tokenを取得して叩く必要がある
-という事でGCPのサービスアカウントからアクセストークンを取得するコード
- スコープ一覧はこちら
-https://developers.google.com/identity/protocols/googlescopes
-アクセストークンのテストは DLP とかがお手軽で良いかな
-参考リンク  jose API Document Using OAuth 2.0 for Server to Server Applications  </description>
+      <guid>https://yaasita.github.io/2013/12/15/328/</guid>
+      <description> maildirsizeをMaildirに置くとクォータの設定ができる
+dovecotとかmaildropが対応している
+~/Maildir/maildirsize
+8000C
+284871170 10382
+ </description>
     </item>
     
     <item>
-      <title>osu!taikoのskin</title>
-      <link>https://yaasita.github.io/2019/10/27/osu/</link>
-      <pubDate>Sun, 27 Oct 2019 03:00:31 +0900</pubDate>
+      <title>WindowsでSPICE接続</title>
+      <link>https://yaasita.github.io/2013/12/07/349/</link>
+      <pubDate>Sat, 07 Dec 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/10/27/osu/</guid>
-      <description>osu!taikoのスキン
-これが一番良かった
-概要欄からダウンロードできる</description>
-    </item>
-    
-    <item>
-      <title>AtCoder Beginner Contest 142のD問題</title>
-      <link>https://yaasita.github.io/2019/09/30/atcoder-abc142/</link>
-      <pubDate>Mon, 30 Sep 2019 05:05:34 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/09/30/atcoder-abc142/</guid>
-      <description>問題: D - Disjoint Set of Common Divisors
-方針はユークリッドの互除法で最大公約数を出して、最大公約数を素因数分解
-存在する素数の数+1(今回は1もお互いに素の数として含めるため)でOKぽい
-perlで書いてみる
- 解説動画</description>
-    </item>
-    
-    <item>
-      <title>systemd timerはちゃんと動いてる？</title>
-      <link>https://yaasita.github.io/2019/09/29/systemd-timer/</link>
-      <pubDate>Sun, 29 Sep 2019 16:51:09 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/09/29/systemd-timer/</guid>
-      <description>systemdタイマーがちゃんと動いてるか確認したほうが良いよというお話
-systemctl list-timers --allコマンドで一覧が見れるあれです
-debian10だと /etc/cron.daily にあるスクリプトでこんな感じに書かれてたら、systemd timerの方を使ってる
-if [ -d /run/systemd/system ]; then exit 0 fi  前回 と同様にノートパソコンのバッテリー稼働と誤って判断されることに起因する問題
-例えばlogrotateとかみると
-systemctl cat logrotate  こんな一文がある
-ConditionACPower=true  これはバッテリー駆動の時は動かさないって意味らしいんだけど、どうも判定が狂ってるみたいでずっと実行されなかった
-なので、以下のコマンドでoverride.conf作って判定を無効化した
-systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower=  というわけで
-cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
-journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  とりあえず分かった、バッテリー時の判定が入ってるtimer
- apt-daily-upgrade man-db logrotate anacron apt-daily  </description>
-    </item>
-    
-    <item>
-      <title>ビリビリ動画とcrunchyrollのIP制限をGCPで検証</title>
-      <link>https://yaasita.github.io/2019/09/14/anime-ip-block/</link>
-      <pubDate>Sat, 14 Sep 2019 22:21:43 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/09/14/anime-ip-block/</guid>
-      <description>bilibili動画とcrunchyrollのIP制限はどんな感じなのか
-GCPの各リージョンからアクセスして試してみる
-rttは自宅から該当サーバーまでのpingしたときの平均値
-なのでISPによって全然違うと思うので参考値ということで
-   region bilibili crunchyroll rtt(ms)     asia-east1 (台湾) ng ok 60.149   asia-east2 (香港) ng ok 76.986   asia-northeast1 (東京) ng ok 29.624   asia-northeast2 (大阪) ng ok 37.401   asia-south1 (ムンバイ) ng ok 144.055   asia-southeast1 (シンガポール) ng ok 89.755   australia-southeast1 (シドニー) ng ok 122.193   europe-north1 (フィンランド) ng ok 256.714   europe-west1 (ベルギー) ng ok 229.</description>
-    </item>
-    
-    <item>
-      <title>on_ac_powerコマンドについて</title>
-      <link>https://yaasita.github.io/2019/08/16/on-ac-power/</link>
-      <pubDate>Fri, 16 Aug 2019 04:45:45 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/16/on-ac-power/</guid>
-      <description>debian10にした関係でLinuxネタが続く
-PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある
-そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる
-例えば、/etc/cron.daily/mlocate の場合
-if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi  こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
-んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
-このままだと永遠にlocateコマンドが使えないので、divertで退避させた
-dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power  おしまい</description>
-    </item>
-    
-    <item>
-      <title>1から100の偶数の和を求めるやつ</title>
-      <link>https://yaasita.github.io/2019/08/15/sum-even-number/</link>
-      <pubDate>Thu, 15 Aug 2019 04:10:11 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/15/sum-even-number/</guid>
-      <description>「1から100の偶数の和を求めるワンライナー」まとめ
-perlでやってみる
-perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;eval&amp;quot;say @{[grep{$_%2==0}1..100]}&amp;quot;;&#39;  4つ思いついた
-結論 simple is best</description>
-    </item>
-    
-    <item>
-      <title>各種サーバの中間証明書の扱い</title>
-      <link>https://yaasita.github.io/2019/08/14/ssl-capath/</link>
-      <pubDate>Wed, 14 Aug 2019 10:20:33 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/14/ssl-capath/</guid>
-      <description>中間証明書をどう設定するか問題
-postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&#39;s Encryptの場合こんな感じ
-smtpd_tls_CAfileに中間証明書を指定する
-smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
-dovecot 10-ssl.conf
-ssl_ca = &amp;lt;/etc/letsencrypt/live/example.net/chain.pem  これはダメ
-この設定はクライアント証明書用ですので
-正しくは、こんな感じに、まとめたやつを指定すればOK
-ssl_cert = &amp;lt;/etc/letsencrypt/live/example.net/fullchain.pem  apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
-SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem  dovecot同様に中間証明書もまとめて指定する
-まとめ この問題はスマホのK-9 Mailでメール読もうとしたときに判明した
-(突然CertPathValidatorExceptionって怒られた)
-thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね
+      <guid>https://yaasita.github.io/2013/12/07/349/</guid>
+      <description> SPICEクライアントをダウンロード
+http://www.spice-space.org/download.html
+virt-viewer-x64-0.5.7.msiを使いました
+んでインストール
+C:\Program Files\VirtViewer\bin\remote-viewer.exe
+あたりを実行
 
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
-openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
+参考リンク
+http://www.server-world.info/query?os=Fedora_18&amp;amp;p=kvm&amp;amp;f=8 </description>
     </item>
     
     <item>
-      <title>虫よけスプレー</title>
-      <link>https://yaasita.github.io/2019/07/29/musiyoke/</link>
-      <pubDate>Mon, 29 Jul 2019 03:42:37 +0900</pubDate>
+      <title>sopcastをDebian wheezyで使ってみる</title>
+      <link>https://yaasita.github.io/2013/11/10/391/</link>
+      <pubDate>Sun, 10 Nov 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/07/29/musiyoke/</guid>
-      <description>虫除けスプレーで最近買ったこれが良かった
-ベタベタしないので気にならない
-フマキラー SKIN VAPEってやつかな
-商品名はスキンベープミスト　200mlかも
+      <guid>https://yaasita.github.io/2013/11/10/391/</guid>
+      <description> ダウンロードは公式サイトから
+file sp-sc-auth
+readelf -h sp-sc-auth
+みたいにするとELF32の実行ファイルだとわかる
+http://www.itmedia.co.jp/help/tips/linux/l0448.html
+なので、32bit用のライブラリ追加
+dpkg --add-architecture i386
+apt-get install ia32-libs-i386
 
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   そういや虫よけ剤に入ってるDEETって薬はなぜ虫が寄り付かないか謎らしい</description>
+あとはReadmeの通りこんな感じで起動
+./sp-sc-auth sop://broker.sopcast.com:3912/6001 3908 8908
+
+VLCで保存する場合はツールバー→メディア→変換／保存→ネットワークタブからできる
+チャンネル一覧はこちら
+SopCast.exeと同じフォルダに置く
+https://gist.github.com/yaasita/7390590 </description>
     </item>
     
     <item>
-      <title>例のS3署名バージョン2について</title>
-      <link>https://yaasita.github.io/2019/06/25/s3v2/</link>
-      <pubDate>Tue, 25 Jun 2019 00:31:08 +0900</pubDate>
+      <title>vimでIME制御するには</title>
+      <link>https://yaasita.github.io/2013/11/10/370/</link>
+      <pubDate>Sun, 10 Nov 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/06/25/s3v2/</guid>
-      <description>AWS S3の署名バージョン騒動
-大丈夫ぽいけど一応調べた時につかったスクリプト
-CloudTrailでログを有効化してからお使いください
+      <guid>https://yaasita.github.io/2013/11/10/370/</guid>
+      <description> 日本語とか打つときに参考にする
+https://sites.google.com/site/fudist/Home/vim-nihongo-ban/vim-japanese/ime-control/xvkbd#imctrl </description>
+    </item>
+    
+    <item>
+      <title>攻撃されてる国がわかる地図</title>
+      <link>https://yaasita.github.io/2013/10/25/412/</link>
+      <pubDate>Fri, 25 Oct 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/10/25/412/</guid>
+      <description> デジタルアタックマップ
+http://www.digitalattackmap.com/ </description>
+    </item>
+    
+    <item>
+      <title>rsyncを蹴るためのラッパーをwshで書いた</title>
+      <link>https://yaasita.github.io/2013/10/13/432/</link>
+      <pubDate>Sun, 13 Oct 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/10/13/432/</guid>
+      <description>  </description>
+    </item>
+    
+    <item>
+      <title>Cookie Clickerで遊んでみた</title>
+      <link>https://yaasita.github.io/2013/09/23/453/</link>
+      <pubDate>Mon, 23 Sep 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/09/23/453/</guid>
+      <description> 日本語版はこちら
+http://cafe-capy.net/cookieclicker/
+貯蔵数が焼いた数を上回っちゃったりしてたから不正とみなされちゃったけど最終的なデータはこちら
+MS4wMzZ8fDEzNzk3OTY0MDAxNzZ8MTExMTExfDIuODQyMjMzOTk5Mzk0ODU3M2UrMjg7MjQzODM3NDc4MTg4NjU7MjkyNDsxMDsyNjE5MDI0Njc1NzszMTstMTstMTswOzA7MDswOzY1OzI0NzN8MzI5LDMzMiw1MzcwMTczODQ3MiwwOzIwMSwyMDEsMTc4MDEzMDQ4NiwwOzIwMCwyMDAsMjc0MjQ0ODIsMDsyMDMsMjAzLDk5MzA3NDM3LDA7MTY3LDE2NywzMjk4NDc2NzIsMDsxMDYsMTA2LDM5OTE3NjQyNSwwOzEwNywxMDcsMTI2MzM4Njc5NywwOzExOSwxMTksMTY1NTgwODE5NTksMDsxMjUsMTI1LDEzNzU4NjIxMzM3NSwwOzEzNiwxMzYsMTA4OTYwMzI2OTkwOSwwO3w0NTAzNTk5NjI3MzcwNDk1OzQ1MDM1OTk2MjczNzA0OTU7MjI1MTgwMTk2MTE2ODUxMTs0NTAzNTczNzIzNDc4NTI3OzEwNDg1NzV8NDUwMjQ5ODEwMjQ3Njc5OTsxNzUxMTY1MDE2NDczNQ%3D%3D%21END%21
+
+cookie編集時に使ったスクリプト
  </description>
     </item>
     
     <item>
-      <title>Cloud Runがすごく良い</title>
-      <link>https://yaasita.github.io/2019/05/29/cloud-run/</link>
-      <pubDate>Wed, 29 May 2019 21:42:23 +0900</pubDate>
+      <title>一切のパスワード認証を無効化する</title>
+      <link>https://yaasita.github.io/2013/09/16/474/</link>
+      <pubDate>Mon, 16 Sep 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/05/29/cloud-run/</guid>
-      <description>GCPのCloud Runがめっちゃ便利
-覚えなきゃいけないルールは2つ
- Dockerにする事 環境変数 $PORT のポート番号でlistenしてレスポンスを返す事  これだけ
-コマンドとかはこの辺見ればすぐできると思います
-あと、Chunked Transferみたいな仕組みで進捗を返すみたいなAPIは難しいかもしれない
-以下のようなプログラムでちょっとずつレスポンス返しても、バッファリングされてるみたいで、最後ドバっと返ってきた
+      <guid>https://yaasita.github.io/2013/09/16/474/</guid>
+      <description> Linuxでこんな設定した
+ちょっとデモ用にLinuxデスクトップを見せたかったので・・・
+/etc/pam.d/common-auth
+の先頭に以下を追加
+ auth sufficient pam_permit.so
+
+いますぐ実践! Linux システム管理 PAM の設定を理解する </description>
+    </item>
+    
+    <item>
+      <title>smartdでHDD監視</title>
+      <link>https://yaasita.github.io/2013/08/29/494/</link>
+      <pubDate>Thu, 29 Aug 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/08/29/494/</guid>
+      <description> インストール
+apt-get install smartmontools
+
+/etc/default/smartmontoolsの以下の行を有効にする
+start_smartd=yes
+
+/etc/smartd.confを編集
+DEVICESCANをコメントアウトして設定を書く
+#DEVICESCAN -d removable -n standby -m root -M exec /usr/share/smartmontools/smartd-runner
+/dev/sda -a -d sat -o on -S on -s (S/../.././02|L/../../6/03) -m hoge@example.com
+
+こうするとメールのテストができるらしい
+/dev/sda -a -d sat -o on -S on -s (S/../.././02|L/../../6/03) -m hoge@example.com -M test
+
+参考リンク
+http://www.geocities.jp/sugachan1973/doc/funto57.html </description>
+    </item>
+    
+    <item>
+      <title>Debian WheezyにRTL8111/8168Bのドライバインストール</title>
+      <link>https://yaasita.github.io/2013/08/25/515/</link>
+      <pubDate>Sun, 25 Aug 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/08/25/515/</guid>
+      <description> Realtekのドライバはインストールしておいたほうがいいみたい
+firmware-realtekってのがnon-freeにあったからaptで入る
+ethtool -i eth0
+lspci | grep Realtek
+
+参考リンク
+http://cskimura.blogspot.jp/2010/06/rtl81118168b-on-debian.html </description>
+    </item>
+    
+    <item>
+      <title>Windows8でBlu-ray再生</title>
+      <link>https://yaasita.github.io/2013/08/25/536/</link>
+      <pubDate>Sun, 25 Aug 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/08/25/536/</guid>
+      <description> VLCをインストールして
+↓から鍵ファイルとlibaacsを所定の場所に保存
+http://vlc-bluray.whoknowsmy.name/
+参考リンク
+http://orangeprose.blog.fc2.com/blog-entry-199.html </description>
+    </item>
+    
+    <item>
+      <title>LinuxでWake On Lanを設定する</title>
+      <link>https://yaasita.github.io/2013/08/18/556/</link>
+      <pubDate>Sun, 18 Aug 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/08/18/556/</guid>
+      <description> WOLの設定は以下参照
+http://80286.blog62.fc2.com/blog-entry-37.html </description>
+    </item>
+    
+    <item>
+      <title>Windowsの無料イメージ</title>
+      <link>https://yaasita.github.io/2013/08/18/578/</link>
+      <pubDate>Sun, 18 Aug 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/08/18/578/</guid>
+      <description>IEテスト用らしい
+http://www.modern.ie/ja/virtualization-tools</description>
+    </item>
+    
+    <item>
+      <title>とっても綺麗なフォント</title>
+      <link>https://yaasita.github.io/2013/08/09/600/</link>
+      <pubDate>Fri, 09 Aug 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/08/09/600/</guid>
+      <description> フロップデザインフォント
+http://www.flopdesign.com/freefont/flopdesignfont.html </description>
+    </item>
+    
+    <item>
+      <title>sshでchrootされたsftp専用アカウントの作り方</title>
+      <link>https://yaasita.github.io/2013/08/05/620/</link>
+      <pubDate>Mon, 05 Aug 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/08/05/620/</guid>
+      <description> sshd_configを編集する
+ Match User sftpuser
+AllowTcpForwarding no
+ChrootDirectory /home/chroot
+ForceCommand internal-sftp
+PasswordAuthentication yes
+X11Forwarding no
+
+注意点としてはsftpuserは/home/chrootに書き込み権限を持たせないこと
+そうしないとうまくいかない </description>
+    </item>
+    
+    <item>
+      <title>Linuxでパッケージのアーキティクチャにamd64を追加する</title>
+      <link>https://yaasita.github.io/2013/07/29/641/</link>
+      <pubDate>Mon, 29 Jul 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/07/29/641/</guid>
+      <description> # dpkg --add-architecture amd64
  </description>
     </item>
     
     <item>
-      <title>PKCEをJavaScriptで実装する</title>
-      <link>https://yaasita.github.io/2019/04/29/pkce/</link>
-      <pubDate>Mon, 29 Apr 2019 01:23:20 +0900</pubDate>
+      <title>rubyを駆使して敵を倒していくゲーム</title>
+      <link>https://yaasita.github.io/2013/07/28/661/</link>
+      <pubDate>Sun, 28 Jul 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/04/29/pkce/</guid>
-      <description>code_verifier から code_challenge の生成方法について調べた
-code_challenge_method=S256の場合は以下のような実装ロジックになる
-node.jsで書いた
-Oauth2のPKCE
-base64エンコードじゃなくてbase64urlエンコードなのが注意点
+      <guid>https://yaasita.github.io/2013/07/28/661/</guid>
+      <description>Ruby Warrior
+https://www.bloc.io/ruby-warrior/</description>
+    </item>
+    
+    <item>
+      <title>構成管理ツールAnsible</title>
+      <link>https://yaasita.github.io/2013/07/26/682/</link>
+      <pubDate>Fri, 26 Jul 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/07/26/682/</guid>
+      <description> chefもいいけどこれもよさそう
+Ansible
+http://apatheia.info/blog/2013/04/06/about-ansible/
+http://www.ansibleworks.com/ </description>
+    </item>
+    
+    <item>
+      <title>Debian Wheezyではffmpegじゃなくてlibav-toolsを使おう</title>
+      <link>https://yaasita.github.io/2013/07/18/701/</link>
+      <pubDate>Thu, 18 Jul 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/07/18/701/</guid>
+      <description>コマンドはavconvらしい
+avconv -i 002.flv -strict experimental 002.mp4
+
+http://wiki.debian.org/NewInWheezy</description>
+    </item>
+    
+    <item>
+      <title>KVMとvirt-manager仮想マシン管理</title>
+      <link>https://yaasita.github.io/2013/07/14/742/</link>
+      <pubDate>Sun, 14 Jul 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/07/14/742/</guid>
+      <description> kvmのインストール
+ aptitude install qemu-kvm libvirt-bin virt-manager
+libvirtグループへ参加
+ usermod -a -G libvirt hogeuser
+ネットワーク設定
+auto eth0
+iface eth0 inet manual
+auto br0
+iface br0 inet static
+address 192.168.0.100
+netmask 255.255.255.0
+gateway 192.168.0.1
+bridge_ports eth0
+bridge_stp off
+
+参考リンク
+http://wiki.debian.org/KVM
+http://wiki.debian.org/QEMU#QEMU_networking_with_VDE
+http://misc.e-hdk.com/benkyokai/2012-kernel-vm-advent-calendar-21st
  </description>
     </item>
     
     <item>
-      <title>令和の対応に際して</title>
-      <link>https://yaasita.github.io/2019/04/25/reiwa/</link>
-      <pubDate>Thu, 25 Apr 2019 02:08:40 +0900</pubDate>
+      <title>LinuxでXのキーボードレイアウトの変更</title>
+      <link>https://yaasita.github.io/2013/07/14/722/</link>
+      <pubDate>Sun, 14 Jul 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/04/25/reiwa/</guid>
-      <description>techrachoの記事
-perlも追加でお願いします
+      <guid>https://yaasita.github.io/2013/07/14/722/</guid>
+      <description>ユーザーでこんな感じのコマンドを打つらしい
+setxkbmap -layout jp 
+dpkg-reconfigure keyboard-configuration
+
+参考リンク
+http://margaret-sdpara.blogspot.jp/2012/12/debian-usb-live-lxde.html</description>
+    </item>
+    
+    <item>
+      <title>squid3でviaヘッダを任意の値に変更する</title>
+      <link>https://yaasita.github.io/2013/07/13/763/</link>
+      <pubDate>Sat, 13 Jul 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/07/13/763/</guid>
+      <description>こんな感じに書けばいいらしい
+request_header_access VIA deny all
+request_header_replace VIA 1.1 Squid3
+
+http://green-rabbit.sakura.ne.jp/blog/2010/04/28/1320/</description>
+    </item>
+    
+    <item>
+      <title>sshで接続時にオプションを付与する</title>
+      <link>https://yaasita.github.io/2013/06/14/784/</link>
+      <pubDate>Fri, 14 Jun 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/06/14/784/</guid>
+      <description> こんな感じかな
+それぞれ鍵認証無効化、ホスト鍵チェックの無効化
+ssh -o &#34;PubkeyAuthentication no&#34; hogehost
+ssh -o &#34;StrictHostKeyChecking no&#34; hogehost
  </description>
     </item>
     
     <item>
-      <title>tarの差分バックアップ</title>
-      <link>https://yaasita.github.io/2019/04/01/tar-backup/</link>
-      <pubDate>Mon, 01 Apr 2019 16:12:46 +0900</pubDate>
+      <title>mysqlのレプリケーション同期設定</title>
+      <link>https://yaasita.github.io/2013/06/12/824/</link>
+      <pubDate>Wed, 12 Jun 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/04/01/tar-backup/</guid>
-      <description>前回の続き
-でctime変化しちゃってどうしたか？
-ファイルサイズとファイル名を取っておいて差分を作ることにした
- こんな感じのスクリプトで、ファイル名 + tab + ファイルサイズで保存する
-(厳密にやる場合はsha256とかで)
-そんで現在のファイルリストも取って、差分をとる
-diff -u previous.txt now.txt | egrep &amp;quot;^\+[^\+]&amp;quot; | perl -ple &#39;s/^\+//;s/\t.+//&#39; &amp;gt; tar.txt あとは-Tオプションで差分のファイルだけをtarで固める
-tar -cvaf hoge.tgz -T tar.txt </description>
+      <guid>https://yaasita.github.io/2013/06/12/824/</guid>
+      <description> マスター側で以下のコマンドを打つ
+mysql&amp;amp;gt; FLUSH LOGS;
+$ mysqldump --order-by-primary --single-transaction --master-data -uroot -p&#39;passwd&#39; databasename  databasename.dump
+mysql&amp;amp;gt; show master status;
+
+スレーブ側でこんな感じに吸い上げる
+mysql&amp;amp;gt; stop slave;
+mysql -uroot -p&#39;passwd&#39; databasename &amp;amp;lt; databasename.dump
+mysql&amp;amp;gt; start slave;
+mysql&amp;amp;gt; show slave status;
+
+参考リンク
+http://blog.nomadscafe.jp/2011/12/-mysql40dump-mysqldump-wrapper.html </description>
     </item>
     
     <item>
-      <title>tarの-gオプションについて</title>
-      <link>https://yaasita.github.io/2019/03/30/tar-g-option/</link>
-      <pubDate>Sat, 30 Mar 2019 02:32:25 +0900</pubDate>
+      <title>sshを使ったchroot環境の構築</title>
+      <link>https://yaasita.github.io/2013/06/12/805/</link>
+      <pubDate>Wed, 12 Jun 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/03/30/tar-g-option/</guid>
-      <description>-g, &amp;ndash;listed-incremental
-という増分バックアップに使われるオプションについてどうやって判定してるか？
-それはctimeの変化を見ている
-ctimeの変化で気をつけなければいけないことはハードリンクによるバックアップ
-(rsync &amp;ndash;link-dest等)
-例えば、以下のようなファイルが存在し
-work/ `-- 1.txt  以下のコマンドを発行した場合
-tar -g resume -cvf work.tar work/  初回なので当然全部がバックアップされる
-このまま以下のコマンドを打てばディレクトリだけのバックアップになる(差分がないため)
-tar -g resume -cvf work.tar work/  しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう
-stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる  なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
-うまく増分バックアップができなくなる
-続き</description>
+      <guid>https://yaasita.github.io/2013/06/12/805/</guid>
+      <description> 参考リンク
+http://team2ch.org/blog/?p=1362 </description>
     </item>
     
     <item>
-      <title>hugoアップデート</title>
-      <link>https://yaasita.github.io/2019/03/12/hugo-update/</link>
-      <pubDate>Tue, 12 Mar 2019 23:00:51 +0900</pubDate>
+      <title>作業を邪魔しないBGMを選んでくれるfocus@will</title>
+      <link>https://yaasita.github.io/2013/06/02/845/</link>
+      <pubDate>Sun, 02 Jun 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/03/12/hugo-update/</guid>
-      <description>久々にhugoをアップデート v0.41 =&amp;gt; v0.54まで上げた
-ワーニング潰し アップデートに伴い
-.Prev と .Nextが非推奨になったぽい マニュアル, コミット
-なのでこれはそれぞれ以下のように修正すればOK(意味が逆なので分かりにくいけど)
- .Prev =&amp;gt; .NextPage .Next =&amp;gt; .PrevPage  OGP設定 某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました
-上手く表示できてますか？
-修正箇所
-themes/hugo-theme-geppaku/layouts/partials/header.html
- {{ if .IsHome }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Site.Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;website&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}&amp;quot; /&amp;gt; {{ else }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;article&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}{{ .Page.Dir }}&amp;quot; /&amp;gt; {{ end }} &amp;lt;meta property=&amp;quot;og:site_name&amp;quot; content=&amp;quot;{{ .</description>
+      <guid>https://yaasita.github.io/2013/06/02/845/</guid>
+      <description> 作業用BGMとしてはいいらしい
+https://www.focusatwill.com/music/#player </description>
     </item>
     
     <item>
-      <title>Windows10のクリップボード履歴機能</title>
-      <link>https://yaasita.github.io/2019/03/10/clipboard/</link>
-      <pubDate>Sun, 10 Mar 2019 22:47:52 +0900</pubDate>
+      <title>公開VPNゲート</title>
+      <link>https://yaasita.github.io/2013/05/16/865/</link>
+      <pubDate>Thu, 16 May 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/03/10/clipboard/</guid>
-      <description>Windows10に標準でクリップボード履歴機能が付いたらしい
- https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html  Windows キー + Vで使えるようになる
-cliborの方が使いやすそうな気がするけど、しばらくこっち使ってみる</description>
+      <guid>https://yaasita.github.io/2013/05/16/865/</guid>
+      <description> http://www.vpngate.net/ja/ </description>
     </item>
     
     <item>
-      <title>AlwaysOnSSL終了のお知らせ</title>
-      <link>https://yaasita.github.io/2019/02/28/alwaysonssl/</link>
-      <pubDate>Thu, 28 Feb 2019 01:44:13 +0900</pubDate>
+      <title>X11で縦表示とか画面の回転設定</title>
+      <link>https://yaasita.github.io/2013/05/12/885/</link>
+      <pubDate>Sun, 12 May 2013 00:00:00 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/02/28/alwaysonssl/</guid>
-      <description>無料のSSL証明書AlwaysOnSSLがセキュリティ問題を指摘されてシャットダウンしたぽい
-AlwaysOnSSL web security issues
-S/MIME手に入るので良かったんだけどなぁ・・・
-前回</description>
+      <guid>https://yaasita.github.io/2013/05/12/885/</guid>
+      <description>xranderで設定した
+/etc/kde4/kdm/Xsetupに以下を追記
+xrandr --output HDMI-1 --rotate left --primary
+参考リンク
+UbuntuTips/Hardware/HowToChangeMonitorResolution</description>
+    </item>
+    
+    <item>
+      <title>postfixで複合条件アクション</title>
+      <link>https://yaasita.github.io/2013/05/04/905/</link>
+      <pubDate>Sat, 04 May 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/05/04/905/</guid>
+      <description> こんな感じでスパムメールを拒否してみた
+目標は：特定のIPかつ(123.123.123.123)、特定のアドレス(reject@)を拒否する
+まず、check_client_accessをつくる
+smtpd_restriction_classesで制限クラスをつくって
+client_accessで定義した制限クラスに飛ばす
+/etc/postfix/main.cf
+smtpd_recipient_restrictions = permit_mynetworks ,
+check_client_access hash:/etc/postfix/client_access ,
+permit_sasl_authenticated ,
+reject_unauth_destination
+smtpd_restriction_classes = spam_restriction
+spam_restriction = check_recipient_access hash:/etc/postfix/rejectaddress
+
+/etc/postfix/client_access
+123.123.123.123 spam_restriction
+
+/etc/postfix/rejectaddress
+reject@ REJECT
+
+参考リンク
+Postfix で特定の IP アドレスを拒否する設定
+[postfix-jp: 115] Re: 複合条件での送信制限は可能でしょうか？ </description>
+    </item>
+    
+    <item>
+      <title>Linuxで動画編集</title>
+      <link>https://yaasita.github.io/2013/04/29/947/</link>
+      <pubDate>Mon, 29 Apr 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/04/29/947/</guid>
+      <description> Avidemuxが良かった
+deb-multimediaに入っているので/etc/apt/sources.list.dに以下を追加
+deb http://www.deb-multimedia.org squeeze main non-free
+
+参考リンク
+http://d.hatena.ne.jp/over80/20080818/1219074708 </description>
+    </item>
+    
+    <item>
+      <title>ruby mechanizeで画像スクレイピングしてみる</title>
+      <link>https://yaasita.github.io/2013/04/29/927/</link>
+      <pubDate>Mon, 29 Apr 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/04/29/927/</guid>
+      <description>画像収集スクリプト書いた
+hogeimgダウンロード =&amp;amp;gt; id=nextなオブジェクトクリック =&amp;amp;gt; 以下くりかえし
+リトライ回数と繰り返し回数は適宜修正すること</description>
+    </item>
+    
+    <item>
+      <title>Xvfbで仮想バッファ＆x11vncの設定メモ</title>
+      <link>https://yaasita.github.io/2013/04/22/968/</link>
+      <pubDate>Mon, 22 Apr 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/04/22/968/</guid>
+      <description> xvfbで仮想バッファ作成→export DISPLAY=:1→startlxde→x11vncでvnc接続を許可する
+みたいな感じか
+
+参考リンク
+http://d.hatena.ne.jp/ishidamakot/20110717/1310890337
+http://lists.debian.or.jp/debian-users/200101/msg00057.html </description>
+    </item>
+    
+    <item>
+      <title>X環境でのDPMS</title>
+      <link>https://yaasita.github.io/2013/04/20/989/</link>
+      <pubDate>Sat, 20 Apr 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/04/20/989/</guid>
+      <description> xset -q
+で確認
+xset dpms 0 0 0 とかで設定できるのか
+なるほどね
+参考リンク
+https://forums.ubuntulinux.jp/viewtopic.php?id=1732 </description>
+    </item>
+    
+    <item>
+      <title>Thunderbirdで受信フォルダ以外も新着チェックする</title>
+      <link>https://yaasita.github.io/2013/04/18/1010/</link>
+      <pubDate>Thu, 18 Apr 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/04/18/1010/</guid>
+      <description>http://www.club.kyutech.ac.jp/~tanio/wordpress/2012/05/thunderbird-check-all-new-mail/
+http://kawama.jp/archives/2011/04/thunderbird_gmail_imap.html</description>
+    </item>
+    
+    <item>
+      <title>Googleにはない検索を実現してくれるshodan</title>
+      <link>https://yaasita.github.io/2013/04/12/1072/</link>
+      <pubDate>Fri, 12 Apr 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/04/12/1072/</guid>
+      <description> 機器のセキュリティチェックにどうぞ
+ポートスキャンでもしてるんかな？
+www.shodanhq.com </description>
+    </item>
+    
+    <item>
+      <title>opensslでstarttlsのSMTPをコマンド実行</title>
+      <link>https://yaasita.github.io/2013/04/12/1030/</link>
+      <pubDate>Fri, 12 Apr 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/04/12/1030/</guid>
+      <description> こんな感じでやってみよう
+openssl s_client -starttls smtp -crlf -quiet -connect email-smtp.us-east-1.amazonaws.com:587
+
+expectで送る場合はこんな感じ
+ </description>
+    </item>
+    
+    <item>
+      <title>大量ファイルのあるディレクトリでls</title>
+      <link>https://yaasita.github.io/2013/04/12/1052/</link>
+      <pubDate>Fri, 12 Apr 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/04/12/1052/</guid>
+      <description> http://memo.jj-net.jp/657 </description>
+    </item>
+    
+    <item>
+      <title>らじるらじるをLinux環境で聞く</title>
+      <link>https://yaasita.github.io/2013/04/08/1092/</link>
+      <pubDate>Mon, 08 Apr 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/04/08/1092/</guid>
+      <description> mplayerを使えばいけるらしい
+http://ubuntu.futene.net/tips/radiru.html </description>
+    </item>
+    
+    <item>
+      <title>iptablesで送信制限</title>
+      <link>https://yaasita.github.io/2013/04/07/1113/</link>
+      <pubDate>Sun, 07 Apr 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/04/07/1113/</guid>
+      <description>#OUTPUT limit
+iptables -A OUTPUT -p tcp -m multiport --sport 80,443 -m hashlimit \
+--hashlimit-name web_send_limit --hashlimit 1000/sec --hashlimit-burst 30000 \
+--hashlimit-mode dstip --hashlimit-htable-expire 86400000 -j ACCEPT
+iptables -A OUTPUT -p tcp -m multiport --sport 80,443 -j REJECT</description>
+    </item>
+    
+    <item>
+      <title>iptablesでIPアドレス制限（アクセス制限）</title>
+      <link>https://yaasita.github.io/2013/04/01/1134/</link>
+      <pubDate>Mon, 01 Apr 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/04/01/1134/</guid>
+      <description> こんな感じで、Webアクセスを限定させてる
+iptablesはこう書いて
+
+dropは別ファイルにすると便利
+
+参考リンク
+iptablesで日本のIPアドレスからのアクセスのみ許可する
+iptables の RETURN の使い方 </description>
+    </item>
+    
+    <item>
+      <title>opensslでSMTPするとRENEGOTIATINGになる</title>
+      <link>https://yaasita.github.io/2013/04/01/1175/</link>
+      <pubDate>Mon, 01 Apr 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/04/01/1175/</guid>
+      <description> なるほどこういうことか
+openssl s_client -quiet -connect
+みたいに-quietつければいいみたい
+http://backslash.ddo.jp/wordpress/archives/434 </description>
+    </item>
+    
+    <item>
+      <title>更新日時順にソートしてからリネームするperlスクリプト</title>
+      <link>https://yaasita.github.io/2013/04/01/1155/</link>
+      <pubDate>Mon, 01 Apr 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/04/01/1155/</guid>
+      <description> こんな感じ？
+ </description>
+    </item>
+    
+    <item>
+      <title>iptablesでDOS攻撃に対処する</title>
+      <link>https://yaasita.github.io/2013/03/30/1216/</link>
+      <pubDate>Sat, 30 Mar 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/03/30/1216/</guid>
+      <description>ipt_recentで対処するSynCookie使うhashlimit使うhashlimit使う2hashlimit使う3</description>
+    </item>
+    
+    <item>
+      <title>拡張子を一気に変換</title>
+      <link>https://yaasita.github.io/2013/03/30/1237/</link>
+      <pubDate>Sat, 30 Mar 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/03/30/1237/</guid>
+      <description> http://www.atmarkit.co.jp/flinux/rensai/linuxtips/248chngext.html </description>
+    </item>
+    
+    <item>
+      <title>自然対数(log)の割り算で任意底の対数計算</title>
+      <link>https://yaasita.github.io/2013/03/30/1196/</link>
+      <pubDate>Sat, 30 Mar 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/03/30/1196/</guid>
+      <description> 例えば512は2の何乗か調べる場合は
+（この場合底はe）
+log512/log2 = log2^9/log2 = 9log2/log2 = 9
+http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1262091227
+http://ab.sinryow.net/lesson/shisu.html </description>
+    </item>
+    
+    <item>
+      <title>DebianでVPN(PPTP)</title>
+      <link>https://yaasita.github.io/2013/03/29/1258/</link>
+      <pubDate>Fri, 29 Mar 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/03/29/1258/</guid>
+      <description>こんな感じでできた
+ Setting up a VPN-server on Amazon EC2 Debian etch に pptpdを導入  </description>
+    </item>
+    
+    <item>
+      <title>AWSのAPI toolsでセキュリティグループ制御</title>
+      <link>https://yaasita.github.io/2013/03/28/1279/</link>
+      <pubDate>Thu, 28 Mar 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/03/28/1279/</guid>
+      <description>一覧
+ec2-describe-group
+追加
+ec2-authorize sg-name -P all -s 123.123.123.123/32
+削除
+ec2-revoke sg-name -P all -s 123.123.123.123/32
+参考リンク
+AWSdocumentation</description>
+    </item>
+    
+    <item>
+      <title>AWSのec2 ai tools使い方</title>
+      <link>https://yaasita.github.io/2013/03/28/1300/</link>
+      <pubDate>Thu, 28 Mar 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/03/28/1300/</guid>
+      <description> マイアカウントからアクセス証明書（X.509証明書）を作成
+http://wiki.debian.org/Cloud/CreateEC2Imageを参考に
+環境変数を設定
+export EC2_HOME=$HOME/ec2
+export PATH=$PATH:$EC2_HOME/bin
+export EC2_PRIVATE_KEY=/mnt/pk-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.pem export EC2_CERT=/mnt/cert-XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX.pem export PATH=$PATH:$EC2_HOME/bin
+export EC2_URL=https://ec2.ap-northeast-1.amazonaws.com
+
+あとはec2コマンドがつかえるはず
+ec2-describe-regions
+
+スナップショットとか便利なやつ
+http://d.hatena.ne.jp/rx7/20100606/p1
+aptで入れる場合は
+http://qiita.com/items/216e0f8b69f20d5b07d3 </description>
+    </item>
+    
+    <item>
+      <title>Linux 101 hacks</title>
+      <link>https://yaasita.github.io/2013/03/26/1321/</link>
+      <pubDate>Tue, 26 Mar 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/03/26/1321/</guid>
+      <description> 翻訳してくれてる人いた
+http://d.hatena.ne.jp/bobchin/searchdiary?of=93&amp;amp;word=*[Linux%20101%20Hacks] </description>
+    </item>
+    
+    <item>
+      <title>opensslでstarttlsの確認とかできるらしい</title>
+      <link>https://yaasita.github.io/2013/03/25/1341/</link>
+      <pubDate>Mon, 25 Mar 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/03/25/1341/</guid>
+      <description> http://d.hatena.ne.jp/hiro-ueda/20090409/1239249624
+参考リンク
+その他確認コマンド </description>
+    </item>
+    
+    <item>
+      <title>作業用BGM探すとき</title>
+      <link>https://yaasita.github.io/2013/03/24/1361/</link>
+      <pubDate>Sun, 24 Mar 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/03/24/1361/</guid>
+      <description> exfm
+参考リンク
+http://commte.net/blog/archives/2416 </description>
+    </item>
+    
+    <item>
+      <title>仕事を探したり発注できたりするサイト</title>
+      <link>https://yaasita.github.io/2013/03/23/1381/</link>
+      <pubDate>Sat, 23 Mar 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/03/23/1381/</guid>
+      <description> ・ランサーズ
+・クラウドワークス </description>
+    </item>
+    
+    <item>
+      <title>2ch規制情報を参照できるところ</title>
+      <link>https://yaasita.github.io/2013/03/18/1400/</link>
+      <pubDate>Mon, 18 Mar 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/03/18/1400/</guid>
+      <description> http://qb7.2ch.net/_403/madakana.cgi </description>
+    </item>
+    
+    <item>
+      <title>expectでメールを送ってみる</title>
+      <link>https://yaasita.github.io/2013/02/24/1420/</link>
+      <pubDate>Sun, 24 Feb 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/02/24/1420/</guid>
+      <description> こんな感じか？
+ </description>
+    </item>
+    
+    <item>
+      <title>Spamassassinとmaildropの設定</title>
+      <link>https://yaasita.github.io/2013/02/22/1441/</link>
+      <pubDate>Fri, 22 Feb 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/02/22/1441/</guid>
+      <description> Debianでやった
+以下のプログラムをインストール
+spamassassin → デーモン spmad
+spamc → spamdとやりとりするためのインターフェイス
+maildrop →　配送プログラム
+で、こんな感じで$HOMEにおいておけばいいみたい
+~/.forward
+
+~/.mailfilter
+
+あとはspam学習するためのcron設定
+/etc/cron.daily/sa-learn
+
+以下のコマンドでシンタックスチェックもできるらしい
+maildrop -V 9 &amp;amp;lt; /dev/null
+参考リンク
+Spamassassin setup
+maildrop 利用のメモというかtips
+maildropのインストール  </description>
+    </item>
+    
+    <item>
+      <title>apacheのcombinedログのパース処理</title>
+      <link>https://yaasita.github.io/2013/02/10/1463/</link>
+      <pubDate>Sun, 10 Feb 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/02/10/1463/</guid>
+      <description> こんな感じか？
+ やっぱり面倒だからLTSVにするか </description>
+    </item>
+    
+    <item>
+      <title>Huawei 新モデル E586 モバイル</title>
+      <link>https://yaasita.github.io/2013/01/29/1483/</link>
+      <pubDate>Tue, 29 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/29/1483/</guid>
+      <description> を買ってみた
+所謂、SIMフリーの無線LANルータ </description>
+    </item>
+    
+    <item>
+      <title>ettercapで中間者攻撃（MITM）</title>
+      <link>https://yaasita.github.io/2013/01/20/1503/</link>
+      <pubDate>Sun, 20 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/20/1503/</guid>
+      <description>やり方は簡単
+以下のようにして192.168.0.2,192.168.0.11間のメッセージに割り込める
+ettercap -Tq -M arp /192.168.0.2/ /192.168.0.11/
+インターフェイスは-Tのテキスト、-Cのcurses、-GのGtkと選べる
+tcpflowで覗いてみる
+tcpflow -cse -i eth0 dst port 80
+-c コンソールに出力
+-s 印字できないもじは.へ変換
+-e カラー表示
+-i インターフェイス指定</description>
+    </item>
+    
+    <item>
+      <title>PS vitaのUserAgent</title>
+      <link>https://yaasita.github.io/2013/01/20/1523/</link>
+      <pubDate>Sun, 20 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/20/1523/</guid>
+      <description> Vitaのユーザーエージェントを調べてみました
+ </description>
+    </item>
+    
+    <item>
+      <title>マウスオーバーで単語検索</title>
+      <link>https://yaasita.github.io/2013/01/14/1543/</link>
+      <pubDate>Mon, 14 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/14/1543/</guid>
+      <description> 英単語を調べるときとかでも便利
+翻訳もできる
+1.Greasemonkeyをインストール
+2. スクリプトを追加（以下URLのINSTALL)
+http://userscripts.org/scripts/show/12901
+alt押しながら単語選択で検索
+alt+yで設定
+参考リンク
+http://mozilla-remix.seesaa.net/article/80993858.html
+http://www.simplivillage.com/trac/wiki/Userscript/FastLookupJPandEN </description>
+    </item>
+    
+    <item>
+      <title>DNSのツールをWebから出来るサイト</title>
+      <link>https://yaasita.github.io/2013/01/11/1564/</link>
+      <pubDate>Fri, 11 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/11/1564/</guid>
+      <description> http://www.dnsstuff.com/tools </description>
+    </item>
+    
+    <item>
+      <title>gistをgitで更新する</title>
+      <link>https://yaasita.github.io/2013/01/07/gist/</link>
+      <pubDate>Mon, 07 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/07/gist/</guid>
+      <description>gistは普通にgit clone してpushできます
+リポジトリが以下のURLだったら
+https://gist.github.com/1234567
+※非公開リポジトリの場合はもっと長いです
+以下のコマンドでCloneできます
+git clone git@gist.github.com:1234567  あと知っておくと便利な小技として
+以下のようにするとhogefileのみ貼り付けできます
+&amp;lt;script src=&amp;quot;https://gist.github.com/1234567.js?file=hogefile&amp;quot;&amp;gt;&amp;lt;/script&amp;gt;  </description>
+    </item>
+    
+    <item>
+      <title>PS vitaエラーコード一覧</title>
+      <link>https://yaasita.github.io/2013/01/07/1604/</link>
+      <pubDate>Mon, 07 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/07/1604/</guid>
+      <description> https://gist.github.com/raw/4140449/PS%20Vita
+http://gamegaz.com/2013010310456/ </description>
+    </item>
+    
+    <item>
+      <title>digコマンドを理解する</title>
+      <link>https://yaasita.github.io/2013/01/05/1624/</link>
+      <pubDate>Sat, 05 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/05/1624/</guid>
+      <description>* usage
+dig [@server] domain [query-type]
+
+* query-type
+a (Aレコード)
+any (任意の情報)
+mx (MXレコード)
+ns (NSレコード)
+soa (SOAレコード)
+hinfo (HINFOレコード)
+axfr (ゾーン転送)
+txt (TXTレコード)
+
+* status
+NOERROR (正常)
+NXDOMAIN (ドメインは存在しない)
+SERVFAIL (サーバの応答エラー)
+
+* flags
+qr (クエリの回答)
+aa (権威ある回答)
+tc (TCPフォールバック)
+ra (フルサービスリゾルバ)
+rd (再帰要求,+norecオプションで消える)
+
+参考リンク
+http://d.hatena.ne.jp/japanrock_pg/20090410/1239355230
+http://www.syon.co.jp/syontech/tech002.html</description>
+    </item>
+    
+    <item>
+      <title>LinuxでCDからISOイメージ作成</title>
+      <link>https://yaasita.github.io/2013/01/03/1666/</link>
+      <pubDate>Thu, 03 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/03/1666/</guid>
+      <description> dd if=/dev/cdrom of=hoge.iso
+
+http://d.hatena.ne.jp/yoshifumi1975/20071012/p1 </description>
+    </item>
+    
+    <item>
+      <title>正規表現を分かりやすく可視化してくれるサイト</title>
+      <link>https://yaasita.github.io/2013/01/03/1646/</link>
+      <pubDate>Thu, 03 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/03/1646/</guid>
+      <description> http://www.regexper.com/ </description>
+    </item>
+    
+    <item>
+      <title>apacheのログをsyslogにも出す</title>
+      <link>https://yaasita.github.io/2013/01/02/1746/</link>
+      <pubDate>Wed, 02 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/02/1746/</guid>
+      <description>CustomLog ${APACHE_LOG_DIR}/access.log combined
+CustomLog &#34;|/usr/bin/logger -p local6.info --&#34; combined
+
+参考リンク
+http://d.hatena.ne.jp/oratta/20101121/1290341166</description>
+    </item>
+    
+    <item>
+      <title>PCを破棄したくなったら</title>
+      <link>https://yaasita.github.io/2013/01/02/1705/</link>
+      <pubDate>Wed, 02 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/02/1705/</guid>
+      <description> ごみパソに送りつけると良いらしい
+http://www.53pc.com/hikitori/index.html </description>
+    </item>
+    
+    <item>
+      <title>postfix &amp;amp; dovecotを特定ユーザのみログイン可能にする</title>
+      <link>https://yaasita.github.io/2013/01/02/1726/</link>
+      <pubDate>Wed, 02 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/02/1726/</guid>
+      <description>/etc/pam.d/dovecot
+/etc/pam.d/smtp(無かったら作る)
+を以下のの内容にした
+hogeuserのみログインを許す設定
+#%PAM-1.0
+@include common-auth
+account required pam_succeed_if.so user = hogeuser
+@include common-account
+@include common-session
+
+設定を変更したら再起動を忘れずに
+/etc/init.d/saslauthd restart
+その他pamモジュールの詳しい使い方は
+man pam_listfile
+みたいにする
+あとログを見ればpamで使うサービス名を特定できた
+参考リンク
+http://wiki.debian.org/PostfixAndSASL
+http://d.hatena.ne.jp/hiro-ueda/20090901/1251811629
+http://www.usupi.org/sysad/105.html
+http://www.usupi.org/sysad/106.html</description>
+    </item>
+    
+    <item>
+      <title>postfixでバーチャルドメイン</title>
+      <link>https://yaasita.github.io/2013/01/02/1765/</link>
+      <pubDate>Wed, 02 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/02/1765/</guid>
+      <description>postfixでバーチャルドメイン
+参考リンク
+http://tmtm.org/postfix/tutorial/virtual.html
+http://bitwalker.dtiblog.com/blog-entry-151.html</description>
+    </item>
+    
+    <item>
+      <title>smtp-authの設定(Postfix)</title>
+      <link>https://yaasita.github.io/2013/01/02/1786/</link>
+      <pubDate>Wed, 02 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/02/1786/</guid>
+      <description>1. saslインストール
+aptでsasl2-binを入れる
+2. postfixの設定(main.cf)
+#mynetworks = 127.0.0.0/8 [::ffff:127.0.0.0]/104 [::1]/128
+smtpd_sasl_auth_enable = yes
+smtpd_sasl_path = smtpd
+smtpd_recipient_restrictions = permit_sasl_authenticated, reject_unauth_destination
+mynetworksからはauth無しで許可する場合はコメント外してもOK
+3. postfixの設定(master.cf)
+ポイントはchrootをnにすること
+しないとsocketを見つけられないのでエラーになる
+submission inet n - n - - smtpd
+-o smtpd_sasl_auth_enable=yes
+-o smtpd_client_restrictions=permit_sasl_authenticated,reject
+
+4.グループへ参加
+adduser postfix sasl
+
+5. smtpd.conf追加
+sasl/smtpd.conf
+pwcheck_method: saslauthd
+mech_list: plain login
+
+参考リンク
+http://www.docunext.com/wiki/Postfix#Postfix_and_SASL
+http://www.uetyi.mydns.jp/wordpress/postfix-setting/entry-465.html</description>
+    </item>
+    
+    <item>
+      <title>大量のデータをAmazonのストレージに置くサービス</title>
+      <link>https://yaasita.github.io/2013/01/02/1685/</link>
+      <pubDate>Wed, 02 Jan 2013 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2013/01/02/1685/</guid>
+      <description>Amazon Glacier
+というらしいS3よりいいのかな</description>
     </item>
     
   </channel>

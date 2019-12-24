@@ -1,305 +1,696 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title># cd ~yaasita</title>
+    <title>2017 on # cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2017/</link>
-    <description>Recent content on # cd ~yaasita</description>
-    <generator>Hugo</generator>
+    <description>Recent content in 2017 on # cd ~yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
     <lastBuildDate>Tue, 19 Dec 2017 04:34:55 +0900</lastBuildDate>
-    <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="https://yaasita.github.io/archives/2017/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
-      <title>chromebookが最高だった</title>
-      <link>https://yaasita.github.io/2019/12/23/chromebook/</link>
-      <pubDate>Mon, 23 Dec 2019 05:58:32 +0900</pubDate>
+      <title>systemd-nspawnアドベントカレンダー</title>
+      <link>https://yaasita.github.io/2017/12/19/systemd-nspawn-adcal/</link>
+      <pubDate>Tue, 19 Dec 2017 04:34:55 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/12/23/chromebook/</guid>
-      <description>ASUS の C434TA-AI0084 を買ったのでレビュー
-chromeOS  起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある  解除がちょっと遅い10秒くらい待たされる   chromeの複数ユーザー機能が使えない  多重ログイン機能はあるけどちょっと微妙  別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能      ディスプレイ  タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 バックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗  テザリング  Moto E5 とbluetoothでのテザリングが出来なかった  とりあえずUSBテザリングは刺すだけで使えたので良しとしてます    キーボード  Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない  Androidアプリ  ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない  Linux環境 OS  Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり  バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい   USB共有機能あり /opt/google/cros-containers/bin/.</description>
+      <guid>https://yaasita.github.io/2017/12/19/systemd-nspawn-adcal/</guid>
+      <description>書きました
+https://qiita.com/advent-calendar/2017/systemd-nspawn</description>
     </item>
     
     <item>
-      <title>GCP Cloud Functions内からサービスアカウントのtoken取る</title>
-      <link>https://yaasita.github.io/2019/12/08/service-account-in-cf/</link>
-      <pubDate>Sun, 08 Dec 2019 05:12:12 +0900</pubDate>
+      <title>gpgでサブキーを指定して暗号化</title>
+      <link>https://yaasita.github.io/2017/12/04/gpg-specify-subkey/</link>
+      <pubDate>Mon, 04 Dec 2017 23:27:01 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/12/08/service-account-in-cf/</guid>
-      <description>Cloud Functionsからサービスアカウントのアクセストークンをどうやって取るの？と疑問に思ったので調べた
-Google Compute Engineと同じ取り方でOK
-&amp;quot;use strict&amp;quot;; const fetch = require(&amp;quot;node-fetch&amp;quot;); exports.handler = async (req, res) =&amp;gt; { const url = &amp;quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&amp;quot; + &amp;quot;[サービスアカウント名]/token&amp;quot;; const result = await fetch(url, { method: &amp;quot;GET&amp;quot;, headers: { &amp;quot;Metadata-Flavor&amp;quot;: &amp;quot;Google&amp;quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&amp;quot;OK&amp;quot;); };  なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
+      <guid>https://yaasita.github.io/2017/12/04/gpg-specify-subkey/</guid>
+      <description>gpgで副鍵(subkey)を新しく作ったとする(addkey)
+でいざ使うと思ったら、やむ負えない事情により古い副鍵で暗号化しなきゃいけなくなったとする
+こんな感じの状態ね
+pub rsa2048 2017-04-09 [SC] XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX uid [ultimate] yamasita &amp;lt;yamasita@example.net&amp;gt; sub rsa2048 2017-04-09 [E] sub elg2048 2017-12-04 [E] んで、普通にgpg -e で暗号化すると新しい elg2048 の方が使われてしまう
+rsa2048を使いたくなったらこんな感じでrsa2048の方のIDを指定して暗号化する
+gpg --recipient BBBBBBBBBBB12345! -v -e memo  IDは&amp;ndash;edit-keysとかやれば見れるお
+あと、注意点として副鍵は追加しても古い鍵はしばらく残しておくこと
+送信側がすぐ、新しい鍵を入れてくれるとも限らないし古い鍵で暗号化されたものを復号化できなくなる
+主鍵は、副鍵を署名するだけのものであって、副鍵の秘密鍵は取っておかなきゃいけないのです</description>
+    </item>
+    
+    <item>
+      <title>MonaCoinのマイニング</title>
+      <link>https://yaasita.github.io/2017/12/03/mona-coin/</link>
+      <pubDate>Sun, 03 Dec 2017 01:30:08 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/12/03/mona-coin/</guid>
+      <description>モナコインをマイニングしてみる
+cpuminer-multiでやってみた
+スコア  IDCF Cloud (Light.S1) メモリ1GB 仮想1CPU =&amp;gt; 17.48 kH/s 自宅PC Core i5-4460 @ 3.20GHz 4コア メモリ 4GB =&amp;gt; 376 kH/s ノートパソコン LB-C110B Celeron 1037U 2コア/1.80GHz メモリ8GB =&amp;gt; 91 kH/s  まとめ CPUマイニングなんてやるもんじゃない←結論</description>
+    </item>
+    
+    <item>
+      <title>TeratermからConEmuへ移行した</title>
+      <link>https://yaasita.github.io/2017/12/02/teraterm-to-conemu/</link>
+      <pubDate>Sat, 02 Dec 2017 04:36:08 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/12/02/teraterm-to-conemu/</guid>
+      <description>長年使ってたTeratermからConEmuへ移行した
+SSHクライアントはputtyを使ってる
+WSL経由でも良かったんだけど、なんかVimのvisualモードで背景色が変わらなかったり表示が微妙だったので結局putty使った
+良かった点  絵文字も表示できる タブが便利(TeratermもCollectorで出来るけどこっちの方が使いやすい) F1キーをリモート側に送るとかそういう設定がしやすい  微妙な点  Alt-Vでペーストしてたけどこれが使えない(設定方法が分からない)  まとめ ConEmu入れた後putty設定したり、微妙に面倒だけど使いやすい</description>
+    </item>
+    
+    <item>
+      <title>PS Vita 3.67アップデートでTLS1.2対応</title>
+      <link>https://yaasita.github.io/2017/11/29/vita-new-version/</link>
+      <pubDate>Wed, 29 Nov 2017 23:20:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/11/29/vita-new-version/</guid>
+      <description>3.65時点だと対応してなかったけど、3.67でTLS1.2対応したようです🎉
+公式には
+ システムソフトウェアにおいて、動作の安定性を改善しました。
+ としか書いてないけど</description>
+    </item>
+    
+    <item>
+      <title>SSL証明書の有効期限チェック</title>
+      <link>https://yaasita.github.io/2017/11/24/ssl-check/</link>
+      <pubDate>Fri, 24 Nov 2017 01:54:56 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/11/24/ssl-check/</guid>
+      <description>なんか必要だったので、シェルとかでも良いけど
+ </description>
+    </item>
+    
+    <item>
+      <title>Teratermでreject clipbordのエラー</title>
+      <link>https://yaasita.github.io/2017/11/16/teraterm-copy/</link>
+      <pubDate>Thu, 16 Nov 2017 06:33:07 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/11/16/teraterm-copy/</guid>
+      <description>teraterm + Tmuxでコピーをすると
+Reject clipboard write access from remoteのエラーが出る
+これはOSC52っていう制御文字を使ってリモートからOSのクリップボードを書き込むことができる機能がブロックされてるよって事
+直すには Setup -&amp;gt; Addtional settings -&amp;gt; Control Sequenceタブ
+と進んで該当箇所を設定すればOK
+その下にNotifyの設定もある
 
-まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &amp;ldquo;Function Identity&amp;quot;とかクリックするとちゃんと日本語版あるんですよね
-なんかメニューがバグってるのかな・・・
-とりあえず英語版から探すのをオススメします&amp;hellip;
-参考リンク
- 関数ID Compute Metadata Server   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].</description>
+参考リンク  リモートの tmux でコピーした内容のローカルのクリップボードへの反映   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
     <item>
-      <title>GCPでアクセストークンを取得する</title>
-      <link>https://yaasita.github.io/2019/11/14/gcp-access-token/</link>
-      <pubDate>Thu, 14 Nov 2019 22:32:41 +0900</pubDate>
+      <title>s3fsとIPアドレス制限だけのpublic bucket</title>
+      <link>https://yaasita.github.io/2017/11/07/s3fs-public-bucket/</link>
+      <pubDate>Tue, 07 Nov 2017 01:36:51 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/11/14/gcp-access-token/</guid>
-      <description>ほとんどのサービスは クライアントライブラリ を使えば
-export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json  みたいに環境変数を設定するだけで良いのだが、Cloud Build 等は access tokenを取得して叩く必要がある
-という事でGCPのサービスアカウントからアクセストークンを取得するコード
- スコープ一覧はこちら
-https://developers.google.com/identity/protocols/googlescopes
-アクセストークンのテストは DLP とかがお手軽で良いかな
-参考リンク  jose API Document Using OAuth 2.0 for Server to Server Applications  </description>
+      <guid>https://yaasita.github.io/2017/11/07/s3fs-public-bucket/</guid>
+      <description>s3fsを使ってこんな感じのバケットポリシーのs3をマウントするときのやつ
+(hogehogeバケットとその中身を特定IPアドレスの人に開放する)
+{ &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Id&amp;quot;: &amp;quot;Policy1509977001523&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1509976998204&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;s3:*&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::hogehoge&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;IpAddress&amp;quot;: { &amp;quot;aws:SourceIp&amp;quot;: &amp;quot;203.0.113.1&amp;quot; } } }, { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1509976998204&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;s3:*&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::hogehoge/*&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;IpAddress&amp;quot;: { &amp;quot;aws:SourceIp&amp;quot;: &amp;quot;203.0.113.1&amp;quot; } } } ] }  んでs3fsはこんな感じ
+s3fs -o public_bucket=1,rw,allow_other,umask=0022,endpoint=ap-northeast-1,default_acl=public-read hogehoge /mnt  public_bucketがポイント</description>
     </item>
     
     <item>
-      <title>osu!taikoのskin</title>
-      <link>https://yaasita.github.io/2019/10/27/osu/</link>
-      <pubDate>Sun, 27 Oct 2019 03:00:31 +0900</pubDate>
+      <title>正しいパッケージのアップデート方法</title>
+      <link>https://yaasita.github.io/2017/10/26/pkg-update/</link>
+      <pubDate>Thu, 26 Oct 2017 01:30:38 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/10/27/osu/</guid>
-      <description>osu!taikoのスキン
-これが一番良かった
-概要欄からダウンロードできる</description>
-    </item>
-    
-    <item>
-      <title>AtCoder Beginner Contest 142のD問題</title>
-      <link>https://yaasita.github.io/2019/09/30/atcoder-abc142/</link>
-      <pubDate>Mon, 30 Sep 2019 05:05:34 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/09/30/atcoder-abc142/</guid>
-      <description>問題: D - Disjoint Set of Common Divisors
-方針はユークリッドの互除法で最大公約数を出して、最大公約数を素因数分解
-存在する素数の数+1(今回は1もお互いに素の数として含めるため)でOKぽい
-perlで書いてみる
- 解説動画</description>
-    </item>
-    
-    <item>
-      <title>systemd timerはちゃんと動いてる？</title>
-      <link>https://yaasita.github.io/2019/09/29/systemd-timer/</link>
-      <pubDate>Sun, 29 Sep 2019 16:51:09 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/09/29/systemd-timer/</guid>
-      <description>systemdタイマーがちゃんと動いてるか確認したほうが良いよというお話
-systemctl list-timers --allコマンドで一覧が見れるあれです
-debian10だと /etc/cron.daily にあるスクリプトでこんな感じに書かれてたら、systemd timerの方を使ってる
-if [ -d /run/systemd/system ]; then exit 0 fi  前回 と同様にノートパソコンのバッテリー稼働と誤って判断されることに起因する問題
-例えばlogrotateとかみると
-systemctl cat logrotate  こんな一文がある
-ConditionACPower=true  これはバッテリー駆動の時は動かさないって意味らしいんだけど、どうも判定が狂ってるみたいでずっと実行されなかった
-なので、以下のコマンドでoverride.conf作って判定を無効化した
-systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower=  というわけで
-cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
-journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  とりあえず分かった、バッテリー時の判定が入ってるtimer
- apt-daily-upgrade man-db logrotate anacron apt-daily  </description>
-    </item>
-    
-    <item>
-      <title>ビリビリ動画とcrunchyrollのIP制限をGCPで検証</title>
-      <link>https://yaasita.github.io/2019/09/14/anime-ip-block/</link>
-      <pubDate>Sat, 14 Sep 2019 22:21:43 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/09/14/anime-ip-block/</guid>
-      <description>bilibili動画とcrunchyrollのIP制限はどんな感じなのか
-GCPの各リージョンからアクセスして試してみる
-rttは自宅から該当サーバーまでのpingしたときの平均値
-なのでISPによって全然違うと思うので参考値ということで
-   region bilibili crunchyroll rtt(ms)     asia-east1 (台湾) ng ok 60.149   asia-east2 (香港) ng ok 76.986   asia-northeast1 (東京) ng ok 29.624   asia-northeast2 (大阪) ng ok 37.401   asia-south1 (ムンバイ) ng ok 144.055   asia-southeast1 (シンガポール) ng ok 89.755   australia-southeast1 (シドニー) ng ok 122.193   europe-north1 (フィンランド) ng ok 256.714   europe-west1 (ベルギー) ng ok 229.</description>
-    </item>
-    
-    <item>
-      <title>on_ac_powerコマンドについて</title>
-      <link>https://yaasita.github.io/2019/08/16/on-ac-power/</link>
-      <pubDate>Fri, 16 Aug 2019 04:45:45 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/16/on-ac-power/</guid>
-      <description>debian10にした関係でLinuxネタが続く
-PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある
-そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる
-例えば、/etc/cron.daily/mlocate の場合
-if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi  こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
-んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
-このままだと永遠にlocateコマンドが使えないので、divertで退避させた
-dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power  おしまい</description>
-    </item>
-    
-    <item>
-      <title>1から100の偶数の和を求めるやつ</title>
-      <link>https://yaasita.github.io/2019/08/15/sum-even-number/</link>
-      <pubDate>Thu, 15 Aug 2019 04:10:11 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/15/sum-even-number/</guid>
-      <description>「1から100の偶数の和を求めるワンライナー」まとめ
-perlでやってみる
-perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;eval&amp;quot;say @{[grep{$_%2==0}1..100]}&amp;quot;;&#39;  4つ思いついた
-結論 simple is best</description>
-    </item>
-    
-    <item>
-      <title>各種サーバの中間証明書の扱い</title>
-      <link>https://yaasita.github.io/2019/08/14/ssl-capath/</link>
-      <pubDate>Wed, 14 Aug 2019 10:20:33 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/14/ssl-capath/</guid>
-      <description>中間証明書をどう設定するか問題
-postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&#39;s Encryptの場合こんな感じ
-smtpd_tls_CAfileに中間証明書を指定する
-smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
-dovecot 10-ssl.conf
-ssl_ca = &amp;lt;/etc/letsencrypt/live/example.net/chain.pem  これはダメ
-この設定はクライアント証明書用ですので
-正しくは、こんな感じに、まとめたやつを指定すればOK
-ssl_cert = &amp;lt;/etc/letsencrypt/live/example.net/fullchain.pem  apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
-SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem  dovecot同様に中間証明書もまとめて指定する
-まとめ この問題はスマホのK-9 Mailでメール読もうとしたときに判明した
-(突然CertPathValidatorExceptionって怒られた)
-thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね
+      <guid>https://yaasita.github.io/2017/10/26/pkg-update/</guid>
+      <description>本番環境と検証環境があり、パッケージのアップデートを行いたい場合
+ 10月1日 検証環境のパッケージを上げる 11月1日 検証環境で問題なければ本番も上げる  この時、それぞれの日に本番環境、検証環境で apt update, apt upgradeをすると本番、検証で差分が生じ検証されていないパッケージもアップデートされる可能性がある
+正しくは10月1日に検証環境、本番環境で 同時 に以下のコマンドを実行
+apt-get update apt-get upgrade --download-only  検証環境で以下を実行
+apt-get upgrade  問題なければ本番環境で以下を実行
+apt-get upgrade  ポイントは apt-get update, apt-get upgrade --download-only を検証,本番環境ともに同じタイミングで実行して更新予定のパッケージを揃えておくこと
+またubuntuは/etc/apt/apt.conf.d/10periodicの「APT::Periodic::Update-Package-Lists」を0にしておかないと毎日自動でapt-get updateが走るので注意すること
+図にするとこんな感じ
 
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
-openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
     <item>
-      <title>虫よけスプレー</title>
-      <link>https://yaasita.github.io/2019/07/29/musiyoke/</link>
-      <pubDate>Mon, 29 Jul 2019 03:42:37 +0900</pubDate>
+      <title>銀行の通帳を捨てた</title>
+      <link>https://yaasita.github.io/2017/10/15/bank-tutyo/</link>
+      <pubDate>Sun, 15 Oct 2017 22:55:44 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/07/29/musiyoke/</guid>
-      <description>虫除けスプレーで最近買ったこれが良かった
-ベタベタしないので気にならない
-フマキラー SKIN VAPEってやつかな
-商品名はスキンベープミスト　200mlかも
+      <guid>https://yaasita.github.io/2017/10/15/bank-tutyo/</guid>
+      <description>記帳に行くのがめんどくさくなったので全部捨ててみた
+Web通帳の各行保存期間はこんな感じ
+ ゆうちょ銀行  ゆうちょダイレクトプラス: 15ヶ月分   三菱東京UFJ銀行(三菱東京ＵＦＪダイレクト)  Eco通帳: 25ヵ月分   横浜銀行(はまぎんマイダイレクト)  マイスマート通帳: 36ヵ月分    </description>
+    </item>
+    
+    <item>
+      <title>WORLD OF FINAL FANTASY(WOFF)攻略まとめ</title>
+      <link>https://yaasita.github.io/2017/10/12/woff/</link>
+      <pubDate>Thu, 12 Oct 2017 15:29:48 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/10/12/woff/</guid>
+      <description>ワールド オブ ファイナルファンタジーの攻略ページまとめ
+ アビリティ  アビリティ一覧・効果・大技組み合わせ   クエスト・ストーリー  よりみちクエスト 隠しマップの行き方 ストーリー攻略 マップ クリア後隠しダンジョン XG倒したときのパーティ   アイテム  マディンの記憶入手方法 ミラーストーン一覧と入手法   ミラージュ  WOFF攻略!ゴブリンプリンセス★、アンデッドセレブ★、クイーンアチョ★入手法 最強ミラージュランキング！ 図鑑1-10 図鑑11-20 図鑑21-22    </description>
+    </item>
+    
+    <item>
+      <title>maildropの管理UIを作った</title>
+      <link>https://yaasita.github.io/2017/09/29/maildrop-admin/</link>
+      <pubDate>Fri, 29 Sep 2017 02:38:43 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/09/29/maildrop-admin/</guid>
+      <description>フロントをVue.jsでこんな感じの構成
 
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   そういや虫よけ剤に入ってるDEETって薬はなぜ虫が寄り付かないか謎らしい</description>
+動作の様子
+
+maildropの設定ファイル(~/.mailfilter)でも良いんだけどちょっと
+日付が入れられないのとエントリーが増えてくるとちょっと管理しきれなくなった
+一旦こんな感じのJSONを経由することでマシにした感じ
+ &amp;quot;JUNKMAIL&amp;quot;: [ { &amp;quot;header&amp;quot;: &amp;quot;From&amp;quot;, &amp;quot;regex&amp;quot;: &amp;quot;.*atmarkit.co.jp&amp;quot;, &amp;quot;time&amp;quot;: &amp;quot;2017/05/08 01:58&amp;quot; }, { &amp;quot;header&amp;quot;: &amp;quot;From&amp;quot;, &amp;quot;regex&amp;quot;: &amp;quot;.*facebookmail.com&amp;quot;, &amp;quot;time&amp;quot;: &amp;quot;2017/05/08 01:58&amp;quot; }, サーバサイドの実装
+https://github.com/yaasita/maildrop-admin
+.mailfilterへの変換処理
+  function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img0&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img0&#34;).src = photos[0].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).src = photos[1].original_size.url; }   </description>
     </item>
     
     <item>
-      <title>例のS3署名バージョン2について</title>
-      <link>https://yaasita.github.io/2019/06/25/s3v2/</link>
-      <pubDate>Tue, 25 Jun 2019 00:31:08 +0900</pubDate>
+      <title>iptablesの変更をWebからやる</title>
+      <link>https://yaasita.github.io/2017/08/22/imap-iptables/</link>
+      <pubDate>Tue, 22 Aug 2017 02:17:37 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/06/25/s3v2/</guid>
-      <description>AWS S3の署名バージョン騒動
-大丈夫ぽいけど一応調べた時につかったスクリプト
-CloudTrailでログを有効化してからお使いください
+      <guid>https://yaasita.github.io/2017/08/22/imap-iptables/</guid>
+      <description>httpsのほかにもう一個ポートのアクセス制限を面倒見たくなかったのでなんとなくやってみた
+httpsでWebUIにアクセスしたらIP許可リストに入れるって処理
+
+PerlのCGIからGo言語で書いたバイナリを呼んでiptablesを更新する的な処理
+GoとPerl間はJSONで受け渡す
+Goで書いたのはSUIDビット立てたバイナリで叩きたいと思ったから
+（なんかうまくいかなくて結局sudoでやったけど)
+https://github.com/yaasita/mail-iptables
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+    </item>
+    
+    <item>
+      <title>S/MIMEの設定</title>
+      <link>https://yaasita.github.io/2017/08/12/smime/</link>
+      <pubDate>Sat, 12 Aug 2017 17:25:39 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/08/12/smime/</guid>
+      <description>StartSSL CSR作る
+emailaddressにS/MIME設定したいアドレスを入れる
+openssl req -newkey rsa:2048 -keyout yourname.key -out yourname.csr  証明書が送られてくるのでこんな感じでまとめて
+-----BEGIN PRIVATE KEY----- ... -----END PRIVATE KEY----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----  pkcs12に変換してthunderbirdにインポートする
+openssl pkcs12 -export -in sakusei.pem -out email.pfx  なんか送られてきた中間証明書がCRLFとLFが混在してるので直した
+チェーンはこんな感じになってた
+StartCom Certification Authority |_ StartCom Certification Authority ECC |_ StartCom CC2 ICA |_ 自分のメールアドレス  そういやCAAレコードを検証しなかったけどいいのかね？
+でここまでやって気づいたんだけどStartComの証明書が失効扱いで全然検証通らなかった
+これはGmailも同じなのでStartCom使うのは中止
+COMODO 今度COMODOを使うことになったんだけど既にChromeだとKEYGEN要素が使えないらしくFirefoxでアクセスするしかない
+(コードもselect[_moz-type=&amp;rdquo;-mozilla-keygen&amp;rdquo;]になってるし)
+こっちはフォームから申請して、リンククリックすればすぐに証明書がFirefoxに入るのでそれをエクスポートしてthunderbirdに入れればOK
+チェーンはこんな感じ
+COMODO RSA Certification Authority |_COMODO RSA Client Authentication and Secure Email CA |_ 自分のメールアドレス  まとめ Let&#39;s EncryptがS/MIME対応してほしい</description>
+    </item>
+    
+    <item>
+      <title>DNSのCAAレコードについて</title>
+      <link>https://yaasita.github.io/2017/08/11/dns-caa-record/</link>
+      <pubDate>Fri, 11 Aug 2017 02:03:56 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/08/11/dns-caa-record/</guid>
+      <description>CAA (Certification Authority Authorization)レコードのチェックが2017年9月8日から必須になるみたい
+ちょっと調べてみる
+DANEはクライアント用でこっちはCA用のレコードらしい
+例えばこんな感じのCAAレコードを書いて Let&#39;s Encryptで発行しようとすると
+こんなエラーが返される
+;; ANSWER SECTION: yaasita.tk. 60 IN CAA 0 issue &amp;quot;comodoca.com&amp;quot; yaasita.tk. 60 IN CAA 0 issuewild &amp;quot;\;&amp;quot; yaasita.tk. 60 IN CAA 0 iodef &amp;quot;mailto:alert@yaasita.net&amp;quot;  この場合、hoge.yaasita.tk. みたなサブドメインもcomodocaでしか発行できなくなる
+(設定はサブドメインに継承される)
+ただし、上書きは可能なのでCAAを以下のようにすればLet&#39;s Encryptだけから発行できるように変わる
+hoge IN CAA 0 issue &amp;quot;letsencrypt.org&amp;quot; hoge IN CAA 0 issuewild &amp;quot;;&amp;quot; hoge IN CAA 0 iodef &amp;quot;mailto:alert@yaasita.net&amp;quot;  例えば、google.com のCAAは以下のようになっているので、Google Trust Servicesおよびsymantecからしか発行できない
+仮に drive.google.com のwebrootに任意のファイルを置ける脆弱性があったとしても(http-01で)Let&#39;s Encryptの証明書を発行することはできないし、WoSignで偽の証明書を発行されることもない
+(WoSignがCAA無視してたら意味ないけど)
+google.com. 84592 IN CAA 0 issue &amp;quot;pki.</description>
+    </item>
+    
+    <item>
+      <title>edit-slack.vimちょっと書き直した</title>
+      <link>https://yaasita.github.io/2017/08/10/edit-slack/</link>
+      <pubDate>Thu, 10 Aug 2017 02:35:57 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/08/10/edit-slack/</guid>
+      <description>edit-slack.vim をちょっと直した
+主な変更点は以下の通り
+reactionを表示するようにした
+
+アップロードされたファイルのダウンロードリンクを表示
+
+キーワード検索ができるようにした
+例) vim slack://sw/hogehoge vim slack://sw/from:@yamasita vim slack://sw/on:today  取っ散らかってたコードをちょっと直した
+https://github.com/yaasita/edit-slack/compare/v0.2.0...v0.8.1
+ちょっと見ない間にSlackもなんか変わってて、今までのTest tokenがlegacy tokenって名前になってたり、botアクセス、userアクセスで細かくAPI使用制限がされてるようになってた(前からか？)
+ function callback(data){ photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).src = photos[1].original_size.url; }   </description>
+    </item>
+    
+    <item>
+      <title>会社員→自営業でも再就職手当は貰える</title>
+      <link>https://yaasita.github.io/2017/08/09/sitsugyou-hoken/</link>
+      <pubDate>Wed, 09 Aug 2017 16:16:21 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/08/09/sitsugyou-hoken/</guid>
+      <description>なので、辞めた後にハロワ行って雇用保険受給資格者証もらってから開業届出した後に報告しに行った方が良い
+失業状態だと偽って失業保険貰うと不正受給になるので注意</description>
+    </item>
+    
+    <item>
+      <title>apacheのログフォーマット</title>
+      <link>https://yaasita.github.io/2017/07/22/apache-log/</link>
+      <pubDate>Sat, 22 Jul 2017 17:53:24 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/07/22/apache-log/</guid>
+      <description>apacheのログフォーマットはJSONにしておいた方がパースが楽という話
+こんな感じにする
+LogFormat &amp;quot;\ { \ \&amp;quot;host\&amp;quot;:\&amp;quot;%V\&amp;quot;, \ \&amp;quot;method\&amp;quot;:\&amp;quot;%m\&amp;quot;, \ \&amp;quot;port\&amp;quot;:\&amp;quot;%p\&amp;quot;, \ \&amp;quot;processingTime\&amp;quot;:\&amp;quot;%D\&amp;quot;, \ \&amp;quot;protocol\&amp;quot;:\&amp;quot;%H\&amp;quot;, \ \&amp;quot;query\&amp;quot;:\&amp;quot;%q\&amp;quot;, \ \&amp;quot;referer\&amp;quot;:\&amp;quot;%{Referer}i\&amp;quot;, \ \&amp;quot;remoteIP\&amp;quot;:\&amp;quot;%a\&amp;quot;, \ \&amp;quot;request\&amp;quot;:\&amp;quot;%U\&amp;quot;, \ \&amp;quot;responseByte\&amp;quot;:\&amp;quot;%B\&amp;quot;, \ \&amp;quot;status\&amp;quot;:\&amp;quot;%&amp;gt;s\&amp;quot;, \ \&amp;quot;time\&amp;quot;:\&amp;quot;%t\&amp;quot;, \ \&amp;quot;unixtime\&amp;quot;:\&amp;quot;%{%s}t\&amp;quot;, \ \&amp;quot;userAgent\&amp;quot;:\&amp;quot;%{User-agent}i\&amp;quot;, \ \&amp;quot;user\&amp;quot;:\&amp;quot;%u\&amp;quot; \ }&amp;quot; \ leapache  吐き出し
+CustomLog ${APACHE_LOG_DIR}/access-json.log leapache  https://blog.logentries.com/2014/08/json-logging-in-apache-and-nginx-with-logentries/</description>
+    </item>
+    
+    <item>
+      <title>IDCFクラウド試してみた</title>
+      <link>https://yaasita.github.io/2017/07/16/idcf-cloud/</link>
+      <pubDate>Sun, 16 Jul 2017 01:47:46 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/07/16/idcf-cloud/</guid>
+      <description>conohaから引っ越し
+ ソースIP、パブリックIPの概念がちょっと難しい OP25Bはされてない 多分VMwareで動いてる conohaよりはファイヤーウォールとか細かく設定できるけど、ポートフォワードの設定とかしなきゃいけないので若干面倒  conohaとの比較 最安プランで比べてみる
+転送量のリミットはあるものの総じてIDCFの方が良いかもしれない
+   機能 conoha IDCF     メモリ 512MB 1GB   料金 680円 540円   CPU(bogomips) 4589.37 5600.00   Disk 20GB 15GB   転送量課金 なし 3,240GB/月まで無料   仮想方式 kvm VMware    </description>
+    </item>
+    
+    <item>
+      <title>githubからコードスニペットを探す</title>
+      <link>https://yaasita.github.io/2017/07/15/github-code-search/</link>
+      <pubDate>Sat, 15 Jul 2017 23:53:05 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/07/15/github-code-search/</guid>
+      <description>githubのAPIでコードスニペット探すと捗る
+  </description>
+    </item>
+    
+    <item>
+      <title>machine-idを変える時</title>
+      <link>https://yaasita.github.io/2017/07/06/dbus-uuidgen/</link>
+      <pubDate>Thu, 06 Jul 2017 13:46:49 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/07/06/dbus-uuidgen/</guid>
+      <description>systemd-nspawn使ってて
+なんか /etc/machine-id　ないよって言われたとき
+dbus-uuidgen &amp;gt; root/etc/machine-id  </description>
+    </item>
+    
+    <item>
+      <title>AWSで監視してSlackに流す設定</title>
+      <link>https://yaasita.github.io/2017/06/22/aws-monitor/</link>
+      <pubDate>Thu, 22 Jun 2017 04:17:15 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/06/22/aws-monitor/</guid>
+      <description>EC2 -&amp;gt; CloudWatch -&amp;gt; SNS -&amp;gt; Lambda -&amp;gt; Slackみたいなよくある設定例
+
+Slack Customize Slack =&amp;gt; Custom Integrations から Incoming WebHooks 選んで適当にチャンネル選んで追加
+URLをメモっておく
+EC2 とりあえずaws cli入れて、この辺の監視スクリプトをcronに登録すればOK
+apt-get install awscli # カスタムメトリクス用スクリプト apt-get install unzip libwww-perl libdatetime-perl curl http://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.1.zip -O unzip CloudWatchMonitoringScripts-1.2.1.zip rm CloudWatchMonitoringScripts-1.2.1.zip cd aws-scripts-mon cp awscreds.template awscreds.conf vim awscreds.conf # keyIDとSecretKeyを書いておく  こんな感じのやつをcronに登録
+~/aws-scripts-mon/mon-put-instance-data.pl --mem-util --swap-util --disk-path=/ --disk-space-util --from-cron  んで即座に反映されるはず
+ カスタムメトリクスをパブリッシュする  CloudWatch ダッシュボード作ったりアラーム書いたりしておく
+通知はSNSのTopicsを指定する(後述)
+SNS Topicsを新しく作ってTopicネームくらいは適当に埋めておく後で、Lambda側で指定するのでTopicさえあればOK
+Lambda 適当にNode.jsで書く</description>
+    </item>
+    
+    <item>
+      <title>PS vita向けSSL設定</title>
+      <link>https://yaasita.github.io/2017/06/13/vita-ssl/</link>
+      <pubDate>Tue, 13 Jun 2017 01:57:49 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/06/13/vita-ssl/</guid>
+      <description>PlayStation Vitaの内蔵ブラウザは
+TLSv1.1, TLSv1.2
+が使えないので、 TLSv1 を使うこと
+システムソフトウェア 3.65 時点</description>
+    </item>
+    
+    <item>
+      <title>絵文字探すときに</title>
+      <link>https://yaasita.github.io/2017/05/23/emoji/</link>
+      <pubDate>Tue, 23 May 2017 23:24:02 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/05/23/emoji/</guid>
+      <description>便利な emojipedia
+http://emojipedia.org/</description>
+    </item>
+    
+    <item>
+      <title>コピー禁止のWebサイトについて</title>
+      <link>https://yaasita.github.io/2017/05/21/web-copy-protect/</link>
+      <pubDate>Sun, 21 May 2017 01:48:56 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/05/21/web-copy-protect/</guid>
+      <description>コピー禁止のWordpressサイトが増えてきました
+ちょっと検索ワードをコピペするのに不便なので回避方法
+1. とりあえずJavaScriptをOFFる これで大半はOK wp-copyprotect って拡張だけならこれで大丈夫
+この仕組みの参考実装はこんな感じ
+https://gist.github.com/yaasita/7b07710840186561c76d7e5c4af28b2d
+chromeならURLバーの左をクリックしてJavaScriptをブロックで
+
+2. noscriptのタグを消す WP Content Copy Protection みたいなやつだと noscript タグの中に画面一杯に広げてコンテンツを見えなくするdivが入るので、chrome developers tools開いて &amp;lt;noscript&amp;gt;タグごと削除する
+Oops! It appears that you have disabled your Javascript. In order for you to see this page as it is meant to appear, we ask that you please re-enable your Javascript! みたいな文言はこれ
+
+3. cssでuser-selectをnoneにしている場合 chrome developers toolsでuser-select: text;書き換えてやる
+
+とりあえずここまでやれば大抵コピーできるようになるはず
+参考リンク  コピペ禁止サイト Webページの「コピペ禁止」を解除・回避するJavaScriptコード   function callback(data){ var photos = data.</description>
+    </item>
+    
+    <item>
+      <title>tumblrの画像を貼るときに直リンクしてはいけない</title>
+      <link>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr/</link>
+      <pubDate>Sun, 07 May 2017 02:49:05 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/05/07/dont-use-direct-link-in-tumblr/</guid>
+      <description>なぜか？画像のURLはたまに変わりリンク切れしてしまうから
+ちゃんとAPIを叩いてポストIDから画像リンクを取得した方が良い
  </description>
     </item>
     
     <item>
-      <title>Cloud Runがすごく良い</title>
-      <link>https://yaasita.github.io/2019/05/29/cloud-run/</link>
-      <pubDate>Wed, 29 May 2019 21:42:23 +0900</pubDate>
+      <title>テーマを簡素にしてtumblrを見たいとき</title>
+      <link>https://yaasita.github.io/2017/05/06/noneblr/</link>
+      <pubDate>Sat, 06 May 2017 04:55:23 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/05/29/cloud-run/</guid>
-      <description>GCPのCloud Runがめっちゃ便利
-覚えなきゃいけないルールは2つ
- Dockerにする事 環境変数 $PORT のポート番号でlistenしてレスポンスを返す事  これだけ
-コマンドとかはこの辺見ればすぐできると思います
-あと、Chunked Transferみたいな仕組みで進捗を返すみたいなAPIは難しいかもしれない
-以下のようなプログラムでちょっとずつレスポンス返しても、バッファリングされてるみたいで、最後ドバっと返ってきた
- </description>
+      <guid>https://yaasita.github.io/2017/05/06/noneblr/</guid>
+      <description>noneblrというサービスが良いかもしれない
+これでどんなBlogも一定のUIで見れる
+http://noneblr.com/
+こんな感じになる
+login押すと権限求められるけど怖いからそれはやってない</description>
     </item>
     
     <item>
-      <title>PKCEをJavaScriptで実装する</title>
-      <link>https://yaasita.github.io/2019/04/29/pkce/</link>
-      <pubDate>Mon, 29 Apr 2019 01:23:20 +0900</pubDate>
+      <title>Vue.jsのちょっとしたこと</title>
+      <link>https://yaasita.github.io/2017/04/14/vuejs-tips/</link>
+      <pubDate>Fri, 14 Apr 2017 15:57:44 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/04/29/pkce/</guid>
-      <description>code_verifier から code_challenge の生成方法について調べた
-code_challenge_method=S256の場合は以下のような実装ロジックになる
-node.jsで書いた
-Oauth2のPKCE
-base64エンコードじゃなくてbase64urlエンコードなのが注意点
- </description>
+      <guid>https://yaasita.github.io/2017/04/14/vuejs-tips/</guid>
+      <description>v-on=&amp;quot;click&amp;quot;とmodelは一緒に使えない  watchで監視する  https://github.com/vuejs/vue/issues/1146    ある要素だけが繰り返すわけじゃないときはtemplateで挟むとよい &amp;lt;template v-for=&amp;quot;item in items&amp;quot;&amp;gt; &amp;lt;a&amp;gt;&amp;lt;/a&amp;gt; &amp;lt;b&amp;gt;&amp;lt;/b&amp;gt; &amp;lt;/template&amp;gt;  https://jp.vuejs.org/v2/guide/list.html
+hash操作はリアクティブにならない https://jp.vuejs.org/v2/guide/reactivity.html
+vm.b = 2 // NG Vue.set(object, key, value) // OK  </description>
     </item>
     
     <item>
-      <title>令和の対応に際して</title>
-      <link>https://yaasita.github.io/2019/04/25/reiwa/</link>
-      <pubDate>Thu, 25 Apr 2019 02:08:40 +0900</pubDate>
+      <title>gpg鍵を変えた</title>
+      <link>https://yaasita.github.io/2017/04/09/update-gpg-key/</link>
+      <pubDate>Sun, 09 Apr 2017 23:28:13 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/04/25/reiwa/</guid>
-      <description>techrachoの記事
-perlも追加でお願いします
- </description>
+      <guid>https://yaasita.github.io/2017/04/09/update-gpg-key/</guid>
+      <description>https://keybase.io/yaasita
+有効期限を付けて1年毎に交換するのは止めよう
+keybase.ioの更新がめんどくさすぎる
+失効証明書だけ取っておいてどっか保存しておけば十分な気がしてきた
+ちなみに一回鍵消してもう一回連携やりなおしたら、Invitations が 24 まで増えたんだけどこれ無限増殖できるのでは・・・</description>
     </item>
     
     <item>
-      <title>tarの差分バックアップ</title>
-      <link>https://yaasita.github.io/2019/04/01/tar-backup/</link>
-      <pubDate>Mon, 01 Apr 2019 16:12:46 +0900</pubDate>
+      <title>Google Cloud Shellのディレクトリ削除</title>
+      <link>https://yaasita.github.io/2017/04/06/gcp-shell-homedata/</link>
+      <pubDate>Thu, 06 Apr 2017 00:21:33 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/04/01/tar-backup/</guid>
-      <description>前回の続き
-でctime変化しちゃってどうしたか？
-ファイルサイズとファイル名を取っておいて差分を作ることにした
- こんな感じのスクリプトで、ファイル名 + tab + ファイルサイズで保存する
-(厳密にやる場合はsha256とかで)
-そんで現在のファイルリストも取って、差分をとる
-diff -u previous.txt now.txt | egrep &amp;quot;^\+[^\+]&amp;quot; | perl -ple &#39;s/^\+//;s/\t.+//&#39; &amp;gt; tar.txt あとは-Tオプションで差分のファイルだけをtarで固める
-tar -cvaf hoge.tgz -T tar.txt </description>
+      <guid>https://yaasita.github.io/2017/04/06/gcp-shell-homedata/</guid>
+      <description>120日で削除されるらしい
+It&#39;s been over 120 days since you opened Cloud Shell from the Google Cloud Platform console. In 7 days, your Cloud Shell home directory will be automatically scheduled for deletion.  </description>
     </item>
     
     <item>
-      <title>tarの-gオプションについて</title>
-      <link>https://yaasita.github.io/2019/03/30/tar-g-option/</link>
-      <pubDate>Sat, 30 Mar 2019 02:32:25 +0900</pubDate>
+      <title>ginを使ってechoをLiveReload</title>
+      <link>https://yaasita.github.io/2017/04/03/gin-live-reload/</link>
+      <pubDate>Mon, 03 Apr 2017 00:05:20 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/03/30/tar-g-option/</guid>
-      <description>-g, &amp;ndash;listed-incremental
-という増分バックアップに使われるオプションについてどうやって判定してるか？
-それはctimeの変化を見ている
-ctimeの変化で気をつけなければいけないことはハードリンクによるバックアップ
-(rsync &amp;ndash;link-dest等)
-例えば、以下のようなファイルが存在し
-work/ `-- 1.txt  以下のコマンドを発行した場合
-tar -g resume -cvf work.tar work/  初回なので当然全部がバックアップされる
-このまま以下のコマンドを打てばディレクトリだけのバックアップになる(差分がないため)
-tar -g resume -cvf work.tar work/  しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう
-stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる  なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
-うまく増分バックアップができなくなる
-続き</description>
+      <guid>https://yaasita.github.io/2017/04/03/gin-live-reload/</guid>
+      <description>Golangのweb frame workの Echo のライブリロード
+ginがproxyしてくれるのでechoサーバのポートを教えてくれればよろしくリコンパイルしてくれる
+gin --appPort 8080 r go run server.go  CompileDaemonだとこんな感じか
+go get github.com/githubnemo/CompileDaemon CompileDaemon -command=&amp;quot;./run.sh&amp;quot; -include=&amp;quot;*.go&amp;quot;   参考リンク  https://github.com/codegangsta/gin https://github.com/githubnemo/CompileDaemon https://goo.gl/gp6L9z  </description>
     </item>
     
     <item>
-      <title>hugoアップデート</title>
-      <link>https://yaasita.github.io/2019/03/12/hugo-update/</link>
-      <pubDate>Tue, 12 Mar 2019 23:00:51 +0900</pubDate>
+      <title>複数ファイルアップロードの実装</title>
+      <link>https://yaasita.github.io/2017/04/02/multiple-upload/</link>
+      <pubDate>Sun, 02 Apr 2017 04:18:50 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/03/12/hugo-update/</guid>
-      <description>久々にhugoをアップデート v0.41 =&amp;gt; v0.54まで上げた
-ワーニング潰し アップデートに伴い
-.Prev と .Nextが非推奨になったぽい マニュアル, コミット
-なのでこれはそれぞれ以下のように修正すればOK(意味が逆なので分かりにくいけど)
- .Prev =&amp;gt; .NextPage .Next =&amp;gt; .PrevPage  OGP設定 某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました
-上手く表示できてますか？
-修正箇所
-themes/hugo-theme-geppaku/layouts/partials/header.html
- {{ if .IsHome }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Site.Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;website&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}&amp;quot; /&amp;gt; {{ else }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;article&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}{{ .Page.Dir }}&amp;quot; /&amp;gt; {{ end }} &amp;lt;meta property=&amp;quot;og:site_name&amp;quot; content=&amp;quot;{{ .</description>
+      <guid>https://yaasita.github.io/2017/04/02/multiple-upload/</guid>
+      <description>multiple指定してuploadフォーム作るときの話
+&amp;lt;input type=&amp;quot;file&amp;quot; name=&amp;quot;files&amp;quot; multiple /&amp;gt;  で複数ファイル選択できるが
+Perl CGIで受けるときに↓みたいにすると
+my @files = $q-&amp;gt;param(&#39;files&#39;); for my $filename (@files) { my $fn = decode(&amp;quot;UTF-8&amp;quot;, $filename); move($q-&amp;gt;tmpFileName($filename), &amp;quot;/path/to/dir&amp;quot;); }  iOSで選択するとfilenameが全部image.jpgでPOSTされてしまう可能性があるのでダメ
+(AndroidとかはOK)
+なのでこんな感じにする
+my @fhs = $q-&amp;gt;upload(&#39;files&#39;); my %fname_count; for my $fh (@fhs){ my $out_filename = non_overlapping_filenames(&amp;quot;$fh&amp;quot;); my $io_handle = $fh-&amp;gt;handle; open (my $wr,&amp;quot;&amp;gt;&amp;quot;, $out_filename) or die $!; while (&amp;lt;$io_handle&amp;gt;){ print $wr $_; } close $wr; push(@result, decode(&amp;quot;UTF-8&amp;quot;,&amp;quot;$fh&amp;quot;)); }  あと古めのアンドロイドはmultiple指定しても複数ファイル選択ができない
+Andoroid4.0はダメだけど6.0だとOKだった</description>
     </item>
     
     <item>
-      <title>Windows10のクリップボード履歴機能</title>
-      <link>https://yaasita.github.io/2019/03/10/clipboard/</link>
-      <pubDate>Sun, 10 Mar 2019 22:47:52 +0900</pubDate>
+      <title>Vimの副ファイル</title>
+      <link>https://yaasita.github.io/2017/03/30/vim-alternate-file/</link>
+      <pubDate>Thu, 30 Mar 2017 01:46:13 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/03/10/clipboard/</guid>
-      <description>Windows10に標準でクリップボード履歴機能が付いたらしい
- https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html  Windows キー + Vで使えるようになる
-cliborの方が使いやすそうな気がするけど、しばらくこっち使ってみる</description>
+      <guid>https://yaasita.github.io/2017/03/30/vim-alternate-file/</guid>
+      <description>なんか検索に引っかからないのでメモ
+英語で the alternate file ってやつを取るときは Ctrl-^コマンドでやる
+日本語配列だとCtrl-6かな
+日本語ヘルプだと代替ファイルって訳になってるけど
+E23: 副ファイルはありません  のエラーになるんだよな
+というわけで
+alternate file = 代替ファイル = 副ファイル
+という認識で</description>
     </item>
     
     <item>
-      <title>AlwaysOnSSL終了のお知らせ</title>
-      <link>https://yaasita.github.io/2019/02/28/alwaysonssl/</link>
-      <pubDate>Thu, 28 Feb 2019 01:44:13 +0900</pubDate>
+      <title>DockerでAUFSを使わない</title>
+      <link>https://yaasita.github.io/2017/03/21/do-not-use-aufs/</link>
+      <pubDate>Tue, 21 Mar 2017 23:06:46 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/2019/02/28/alwaysonssl/</guid>
-      <description>無料のSSL証明書AlwaysOnSSLがセキュリティ問題を指摘されてシャットダウンしたぽい
-AlwaysOnSSL web security issues
-S/MIME手に入るので良かったんだけどなぁ・・・
-前回</description>
+      <guid>https://yaasita.github.io/2017/03/21/do-not-use-aufs/</guid>
+      <description>AUFSっていうか/var/lib/dockerに置きたくないとかそういう話
+Dockerでもsystemd-nspawnよろしくそのディレクトリで即座にコンテナ上げたいとき
+ 要するに /proc, /dev, /sys, /net あたりを外して全部bindしちゃえばよかった</description>
+    </item>
+    
+    <item>
+      <title>AWSソリューションアーキテクト</title>
+      <link>https://yaasita.github.io/2017/03/18/aws-test/</link>
+      <pubDate>Sat, 18 Mar 2017 23:56:51 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/03/18/aws-test/</guid>
+      <description>なんか必要になったということで取ってきた
+総合スコア: 74% トピックレベルのスコア: 1.0 高可用性、コスト効率、耐障害性、スケーラブルなシステムの設計: 72% 2.0 実装/デプロイ: 83% 3.0 セキュリティ: 72% 4.0 トラブルシューティング: 80% 勉強につかったサイト
+https://aws.koiwaclub.com/
+細かい数字とか覚えるよりもどんなサービスなのかなーくらいが頭に入ってれば良さげ
+かかる費用は
+模擬試験＋本試験=2160+16200=18360円
+だった</description>
+    </item>
+    
+    <item>
+      <title>Vue.jsとモーダルウィンドウ</title>
+      <link>https://yaasita.github.io/2017/03/04/vuejs-modal/</link>
+      <pubDate>Sat, 04 Mar 2017 02:29:40 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/03/04/vuejs-modal/</guid>
+      <description>参考実装 slotで後から要素を上書きすればOK
+ https://github.com/yaasita/vuejs-modal
+参考リンク  https://jp.vuejs.org/v2/examples/modal.html  </description>
+    </item>
+    
+    <item>
+      <title>Vue.jsでドラッグ＆ドロップリスト</title>
+      <link>https://yaasita.github.io/2017/02/20/draggable-list/</link>
+      <pubDate>Mon, 20 Feb 2017 23:17:28 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/02/20/draggable-list/</guid>
+      <description>Vue.js 2.1.10でやってみる
+https://github.com/yaasita/vuejs-dad-box
+ 並び変え終わったらdragendで
+var request_url = &amp;quot;https://hogehogehoge&amp;quot; var req = new XMLHttpRequest(); req.open(&#39;POST&#39;, request_url, false); req.setRequestHeader(&amp;quot;Content-Type&amp;quot;, &amp;quot;application/json&amp;quot;); req.send(JSON.stringify(this.boxes));  とかやってどっかに飛ばす
+んで後ろ側で
+$sort_json = json_decode(file_get_contents(&amp;quot;php://input&amp;quot;),true);  とかやって受けた
+実際は毎回更新させるのは重いだろうし、交換したDOM二つだけをjsonに乗せるとか工夫の余地あり
+参考リンク  多分Vue.js 1 時代のやつ  Vue.jsのリストレンダリングとhtml5のドラッグ＆ドロップの実装   ネイティブ HTML5 ドラッグ＆ドロップ  </description>
+    </item>
+    
+    <item>
+      <title>Vimのエンコード周り</title>
+      <link>https://yaasita.github.io/2017/02/17/vim-encodeing/</link>
+      <pubDate>Fri, 17 Feb 2017 23:56:59 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/02/17/vim-encodeing/</guid>
+      <description>下図参照
+https://yaasita.tumblr.com/post/157354717792
+
+
+
+ function callback(data){ gdata = data.response.posts[0].photos; var photos = data.response.posts[0].photos; for(var i=0;i </description>
+    </item>
+    
+    <item>
+      <title>Vue.js内のメソッドはコロン省略しない方が良い</title>
+      <link>https://yaasita.github.io/2017/02/17/do-not-omit-colon-in-vuejs/</link>
+      <pubDate>Fri, 17 Feb 2017 02:06:29 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/02/17/do-not-omit-colon-in-vuejs/</guid>
+      <description>InternetExplorer11で
+SCRIPT1003: &#39;:&#39; がありません。  というエラーになるから
+// OK var ok = new Vue({ el: &#39;#example1&#39;, data: { }, methods: { HogeMethod: function(){ } } }); // NG var ng = new Vue({ el: &#39;#example2&#39;, data: { }, methods: { HogeMethod(){ } } });  chromeとかMicrosoft Edgeとかなら良いんだけどね</description>
+    </item>
+    
+    <item>
+      <title>relをtumblrテーマに加える</title>
+      <link>https://yaasita.github.io/2017/02/14/add-rel-to-tumblr/</link>
+      <pubDate>Tue, 14 Feb 2017 01:05:25 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/02/14/add-rel-to-tumblr/</guid>
+      <description>tumblrのテーマをDefaultにしてみた
+一点気になったのは
+リンクがこんな感じでrel属性が指定されてない
+&amp;lt;a href=&amp;quot;{PreviousPage}&amp;quot; class=&amp;quot;left&amp;quot;&amp;gt; &amp;lt;a rel=&amp;quot;next&amp;quot; href=&amp;quot;{NextPage}&amp;quot; class=&amp;quot;right&amp;quot;&amp;gt;  これだとvimiumの[[, ]]コマンドで辿れないのでそこだけ修正した
+ 修正後のテーマ  https://gist.github.com/yaasita/40831000ea20c85f20eeccaa7de5c9c3   参考リンク  rel=”next”とrel=”prev” の使い方    </description>
+    </item>
+    
+    <item>
+      <title>閉じるボタンとVue.js</title>
+      <link>https://yaasita.github.io/2017/02/07/close-button-with-vuejs/</link>
+      <pubDate>Tue, 07 Feb 2017 23:59:54 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/02/07/close-button-with-vuejs/</guid>
+      <description>box並べて閉じるボタンつけて、押されたらDOM消して何かするみたいなよくあるインターフェイス
+Vue.js使って書いてみた
+すごい便利
+ https://github.com/yaasita/vuejs-close-button</description>
+    </item>
+    
+    <item>
+      <title>FreenomのドメインはWebサイトないと消えちゃう</title>
+      <link>https://yaasita.github.io/2017/02/03/freenom-deletes-freely/</link>
+      <pubDate>Fri, 03 Feb 2017 02:46:27 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/02/03/freenom-deletes-freely/</guid>
+      <description>だそうです
+Dear yamasita yamasita, The Freenom Review Team has visited your website today. Unfortunately we have to say that today we cancelled your domain YAASITA.ML. The reason for the cancellation is that the website address you used for your free domain name was not accessible or did not follow the guidelines set in our terms and conditions. At this stage, anyone, including yourself, is able to (re)register the cancelled domain YAASITA.</description>
+    </item>
+    
+    <item>
+      <title>hostとdigコマンドの挙動が違う時</title>
+      <link>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different/</link>
+      <pubDate>Fri, 27 Jan 2017 01:52:29 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different/</guid>
+      <description>名前を引くときにhostコマンドでは返ってくるがdigだとおかしくなるときがある
+こんな感じにすれば同じになる
+host example.net. dig +nodnssec +noedns +noadflag example.net. a  WN-G300GRはadビット立ててると応答すらしないらしい</description>
+    </item>
+    
+    <item>
+      <title>GMOのConoha VPS使ってみた</title>
+      <link>https://yaasita.github.io/2017/01/22/conoha-vps/</link>
+      <pubDate>Sun, 22 Jan 2017 23:51:14 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/22/conoha-vps/</guid>
+      <description>非常に良い
+さくらVPSより良いかもしれない
+ DNSサーバ無料 OP25B無し SSD 20GB 初期費用なし 転送量無制限 時間課金方式と月額方式のハイブリット  今はコンテナ技術でサクッと移動できちゃうので、
+安いクラウドサービス渡り歩くのも良いと思った</description>
+    </item>
+    
+    <item>
+      <title>BCCヘッダを落とすのは誰か</title>
+      <link>https://yaasita.github.io/2017/01/22/who_drops_bccheader/</link>
+      <pubDate>Sun, 22 Jan 2017 00:48:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/22/who_drops_bccheader/</guid>
+      <description>BCCヘッダは転送しないで、MTA側で消されるというのは有名な話だけど
+実際どんな感じなのか
+まずメーラーでBCCを指定して送ったとする
+この時BCCヘッダはどのタイミングで消えるか？という問題
+MUA(thunderbird等) -&amp;gt; 送信側MTA(postfix等) -&amp;gt; 受信側MTA(postfix等)  thunderbird まずthunderbirdからBCCで送信した場合はそもそもBccヘッダはつけない(Icedove/45.6.0で検証)
+envelope toには存在するがそもそもBccヘッダなんてものを書かない
+postfix postfixもデフォルトではBccヘッダは落とすようになっている
+しかしこの設定を変更すればBccヘッダを落とさないでそのまま配送される
+message_drop_headers = bcc, content-length, resent-bcc, return-path   参考  http://www.postfix.org/postconf.5.html#message_drop_headers    まとめ 本来見られちゃいけないヘッダをMTAに渡して、多分消してくれるだろうと期待するのはあまりよくないと思う
+具体的にはBccヘッダまで綺麗に書いて sendmail -t で送るよりはちゃんとenvelope to を指定して送った方が安全度高い
+要するにthunderbirdみたいに送るべき</description>
+    </item>
+    
+    <item>
+      <title>新旧リダイレクト</title>
+      <link>https://yaasita.github.io/2017/01/16/redirect-githubpage/</link>
+      <pubDate>Mon, 16 Jan 2017 23:36:18 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/16/redirect-githubpage/</guid>
+      <description>middlemanからの移行に際してリンクが壊れまくった
+GoogleのSearch Console
+https://yaasita.tumblr.com/post/155945715637  とりあえずJavaScriptで新URL案内すればいいか
+ こんな感じ
+https://yaasita.tumblr.com/post/155945774152  旧ページ  記事ページ  https://yaasita.github.io/2010/08/30/5917.html   タグページ  https://yaasita.github.io/tags/soft.html   年ページ  https://yaasita.github.io/2008.html    </description>
+    </item>
+    
+    <item>
+      <title>ore_markdownを画像埋め込みに対応させた</title>
+      <link>https://yaasita.github.io/2017/01/15/ore_markdown_update2/</link>
+      <pubDate>Sun, 15 Jan 2017 02:47:40 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/15/ore_markdown_update2/</guid>
+      <description>またore_markdown-goの修正
+こんな感じに画像データをBase64にして埋め込めばHTMLファイル一枚で完結しそうだったので修正した
+&amp;lt;img src=&amp;quot;data:image/png;base64,(base64文字列)&amp;quot; alt=&amp;quot;img1&amp;quot;&amp;gt;  修正内容
+吐き出されたHTMLの例
+https://gist.githubusercontent.com/yaasita/d9b55cff5e52197adf4840cf702e5bd6/raw/c6a3c2f96f4360ad3fa526c6c5ae5302acd26769/preview.html
+保存してHTMLを表示させれば画像がみれるはず</description>
+    </item>
+    
+    <item>
+      <title>MacBook買ったのでサポートお願いした</title>
+      <link>https://yaasita.github.io/2017/01/09/mac-personal-setup/</link>
+      <pubDate>Mon, 09 Jan 2017 16:27:40 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/09/mac-personal-setup/</guid>
+      <description>13インチ MacBook Air 1.6GHzデュアルコアIntel Core i5 整備済製品 (\84,000)で買ったのでパーソナルセットアップをお願いしてみた
+時間は30分だったけど、電話でいろいろ質問できて良い
+http://www.apple.com/jp/retail/personalsetup/</description>
+    </item>
+    
+    <item>
+      <title>ansibleで作ったロール</title>
+      <link>https://yaasita.github.io/2017/01/09/my-ansible-role/</link>
+      <pubDate>Mon, 09 Jan 2017 16:24:41 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/09/my-ansible-role/</guid>
+      <description>成果物  ec2でスワップファイル置くとかするやつ  https://github.com/yaasita/ansible_role_amazon-ec2   aptのproxy設定  https://github.com/yaasita/ansible_role_apt-proxy   ブラックホールメールサーバ作るときの設定  https://github.com/yaasita/ansible_role_blackhole-postfix   adminユーザ作るとき  https://github.com/yaasita/ansible_role_admin-server   centosでよくやる設定  https://github.com/yaasita/ansible_role_common_centos   Ubuntuでよくやる設定  https://github.com/yaasita/ansible_role_common_ubuntu   Dockerコンテナにするときによくやる設定  https://github.com/yaasita/ansible_role_docker-care   munin-node入れるとき  https://github.com/yaasita/ansible_role_munin   mysql  https://github.com/yaasita/ansible_role_mysql   nagios nrpe  https://github.com/yaasita/ansible_role_nagios-nrpe   ネットワーク設定  https://github.com/yaasita/ansible_role_network   proxy設定(主にaptの)  https://github.com/yaasita/ansible_role_proxy   railsの初期設定  https://github.com/yaasita/ansible_role_rails   rbenv  https://github.</description>
+    </item>
+    
+    <item>
+      <title>ore_markdownをGo言語で書き直した</title>
+      <link>https://yaasita.github.io/2017/01/06/ore_markdown_to_golang/</link>
+      <pubDate>Fri, 06 Jan 2017 15:44:33 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/06/ore_markdown_to_golang/</guid>
+      <description>久々に ore_markdownを書き直した
+感想とか  Ruby(Gem: github-markdown)→Go(russross/blackfriday)で書き直し スタティックファイルもgo-bindataでバイナリに閉じ込めた OS間の違いを意識するのがめんどくさいのでVimでの判定は全部やめてGo側に寄せた 早くて良い  成果物とかライブラリ  作ったもの  https://github.com/yaasita/ore_markdown https://github.com/yaasita/ore_markdown-go   blackfriday  https://github.com/russross/blackfriday https://godoc.org/github.com/russross/blackfriday   go-bindata  https://github.com/jteeuwen/go-bindata    </description>
+    </item>
+    
+    <item>
+      <title>blogをmiddlemanからhugoに移行した</title>
+      <link>https://yaasita.github.io/2017/01/05/middleman2hugo/</link>
+      <pubDate>Thu, 05 Jan 2017 04:50:10 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2017/01/05/middleman2hugo/</guid>
+      <description>使ってみた感想  ビルドはmiddlemanで10分かかってたけど1秒になった themeはgeppakuというのを使用 シンプルで良い  Tumblrリンクのプルリクエストも快くマージしてくれた感謝m(_ _)m   pagination 周りの部分はちょっとページ数が多いとカラム落ちしたり苦しかったので書き直した taxonomiesを追加して、年別のアーカイブページを作成 アーカイブページを逆順にする対応はなぜかうまくいかなかったので後で調査する  とりあえずJavaScriptで逆順にした &amp;gt; gist   hugo serverのライブリロードがとっても良い(ブラウザも自動更新)  ただしpagination周りで変な書き方するとサーバごと落ちる   DISQUS周りはちょっとカスタマイズした  なぜかデフォルトだと読み込まなかったので   markdown周りはほぼ設定ファイルで完結  今回の設定はこんな感じ   middleman時代のリンクを維持するためにUglyURLs設定したけどcategoriesとかリンク切れが面倒だったので中止  参考: http://wdkk.co.jp/note/2015/0824-hugo-public/   Highlight.js今回無効にした過去分のcodeブロックが微妙になったので  総評
+Static Site Generatorはとても良い
+移行するにも、更新するにもメンテがすごく楽
+移行スクリプト 基本的にはファイル名にある時間のデータをTOMLに直して終わり
+/home/yamasitaにhugo,middlemanのディレクトリがある前提
+ 参考リンク  middleman hugo  </description>
     </item>
     
   </channel>
