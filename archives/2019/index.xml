@@ -22,7 +22,8 @@ hugoのバージョンを 0.56.3 =&amp;gt; v0.62.0 まで上げた
 注意点としては, v0.58.0 から .Pagesの挙動が変わっているので
 以下の通り、.Site.RegularPages に変更する必要がある
 Building sites … WARN 2019/12/23 17:34:34 In the next Hugo version (0.58.0) we will change how $home.Pages behaves. If you want to list all regular pages, replace .Pages or .Data.Pages with .Site.RegularPages in your home page template. あとインラインのHTMLがデフォルトで削除されるので使ってたらコレもconfig.tomlへ追記
-[markup] [markup.goldmark] [markup.goldmark.renderer] unsafe = true hardWraps = true なんか最近hugoのアップデートがめんどくさくなってきたな。。。</description>
+[markup] [markup.goldmark] [markup.goldmark.renderer] unsafe = true hardWraps = true 最近非互換のバージョンアップ多くない？
+アップデートがめんどくさくなってきたな。。。</description>
     </item>
     
     <item>
@@ -32,7 +33,7 @@ Building sites … WARN 2019/12/23 17:34:34 In the next Hugo version (0.58.0) we
       
       <guid>https://yaasita.github.io/2019/12/23/chromebook/</guid>
       <description>ASUS の C434TA-AI0084 を買ったのでレビュー
-chromeOS  起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある  解除がちょっと遅い10秒くらい待たされる   chromeの複数ユーザー機能が使えない  多重ログイン機能はあるけどちょっと微妙  別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能      ディスプレイ  タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 起動毎にバックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗  テザリング  Moto E5 とbluetoothでのテザリングが出来なかった  とりあえずUSBテザリングは刺すだけで使えたので良しとしてます    キーボード  Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない  Androidアプリ  ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない  Linux環境 OS  Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり  バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい   USB共有機能あり /opt/google/cros-containers/bin/.</description>
+chromeOS  起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある  解除がちょっと遅い10秒くらい待たされる   chromeの複数ユーザー機能が使えない  多重ログイン機能はあるけどちょっと微妙  別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能      ディスプレイ  タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 起動毎にバックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗  テザリング  Moto E5 とbluetoothでのテザリングが出来なかった  とりあえずUSBテザリングは刺すだけで使えたので良しとしてます    キーボード  Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない ←Alt + 明るさキーで消せました  Androidアプリ  ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない  Linux環境 OS  Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり  バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい   USB共有機能あり /opt/google/cros-containers/bin/.</description>
     </item>
     
     <item>
@@ -305,42 +306,6 @@ themes/hugo-theme-geppaku/layouts/partials/header.html
       <description>Windows10に標準でクリップボード履歴機能が付いたらしい
  https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html  Windows キー + Vで使えるようになる
 cliborの方が使いやすそうな気がするけど、しばらくこっち使ってみる</description>
-    </item>
-    
-    <item>
-      <title>AlwaysOnSSL終了のお知らせ</title>
-      <link>https://yaasita.github.io/2019/02/28/alwaysonssl/</link>
-      <pubDate>Thu, 28 Feb 2019 01:44:13 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/02/28/alwaysonssl/</guid>
-      <description>無料のSSL証明書AlwaysOnSSLがセキュリティ問題を指摘されてシャットダウンしたぽい
-AlwaysOnSSL web security issues
-S/MIME手に入るので良かったんだけどなぁ・・・
-前回</description>
-    </item>
-    
-    <item>
-      <title>最近使ってる集中アプリ</title>
-      <link>https://yaasita.github.io/2019/02/08/concentration/</link>
-      <pubDate>Fri, 08 Feb 2019 00:52:50 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/02/08/concentration/</guid>
-      <description>いろいろ試してみた
- Forest: 広告が邪魔 Focus To-Do: 複雑でよく分からなかった ブロックタイマー: なんか画面が付きっぱなしになる FLIP: 勉強用かな操作がむずい Studyplus: なんかポモドーロぽいの使えなかった  で結局Focus To-DoのWindowsアプリ版を使ってる</description>
-    </item>
-    
-    <item>
-      <title>ELB配下のどれか生きてるインスタンスのAPIを叩く</title>
-      <link>https://yaasita.github.io/2019/01/21/post-under-elb/</link>
-      <pubDate>Mon, 21 Jan 2019 03:24:13 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/01/21/post-under-elb/</guid>
-      <description>構想
-
-コード
- ELBからインスタンス一覧引っ張る所はまだ書いてない
-明けましておめでとうございます
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
   </channel>

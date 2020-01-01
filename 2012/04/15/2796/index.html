@@ -10,12 +10,31 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="nagios3でのパッシブチェックについて" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2012/04/15/2796/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content=" nagios3でのパッシブチェックは外部コマンドファイル(External Commands)に書き込むことで実現するチェックした結果を名前付パイプ(/var/lib/nagios3/rw/nagios.cmd)に書き込むことでnagios3が拾う
+以下のようなスクリプトを用意する #!/bin/sh
+echocmd=&#34;/bin/echo&#34;
+CommandFile=&#34;/var/lib/nagios3/rw/nagios.cmd&#34;
+datetime=`date &#43;%s`
+cmdline=&#34;[$datetime] PROCESS_SERVICE_CHECK_RESULT;$1;$2;$3;$4&#34;
+`$echocmd $cmdline &amp;gt;&amp;gt; $CommandFile`
+cronか何かで以下のようにスクリプトを叩く引数は4つで最初からホスト名、サービス名、ステータス、メッセージの順でサービス名はservice_descriptionで指定したもの ./result.sh localhost HTTP 2 &#34;DOWN MESSAGE&#34;
+HOSTのパッシブチェックは以下のようなコマンドで #!/bin/sh
+echocmd=&#34;/bin/echo&#34;
+CommandFile=&#34;/var/lib/nagios3/rw/nagios.cmd&#34;
+datetime=`date &#43;%s`
+cmdline=&#34;[$datetime] PROCESS_HOST_CHECK_RESULT;$1;$2;$3&#34;
+`$echocmd $cmdline &amp;gt;&amp;gt; $CommandFile`
+こう叩く ./host.sh localhost 0 &#34;OK&#34;
+
+参考リンク
+Nagios 3翻訳プロジェクトExternal Commands
+Passive Checks " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2012/04/15/2796/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2012-04-15T00:00:00+09:00" />
+<meta property="article:modified_time" content="2012-04-15T00:00:00+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +48,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -195,7 +212,7 @@ nagios3でのパッシブチェックは外部コマンドファイル(External 
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -289,6 +306,10 @@ nagios3でのパッシブチェックは外部コマンドファイル(External 
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -319,7 +340,7 @@ nagios3でのパッシブチェックは外部コマンドファイル(External 
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

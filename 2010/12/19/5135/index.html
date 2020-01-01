@@ -10,12 +10,46 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="CUIでRSSを見てみる" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2010/12/19/5135/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content="下記参考リンクがすごい参考になったのでちょっとずつ試してみた
+* Newsbeuter
+適当にRSSへのURLを書いたテキストを用意(ex.url.txt)
+url.txtは一行一URLにしておいた
+newsbeuter -u url.txtで起動
+RでリロードしてからENTERで適当に読める
+
+インターフェイスはmuttに似ているなんかメールを読むようにRSSを読める既読未読とか分かるし、マーク、検索とか出来て便利前回読んだ時の状態を~/.newsbeuterに保存しているのでまた読み返すときも便利かもしれないsを押すと記事を保存できたりする
+* Snownews 
+squeezeにパッケージが無かったのでレビュー出来なかった・・・
+lennyならある模様
+* Canto (旧NRSS)
+squeezeにはNRSSもcantoもあるけど公式サイト見るとCantoへ誘導されるのでこっちを使ってみる
+何も考えずに下記のコマンドを打つと.cantoが出来る
+canto.canto以下にconf.py.exampleが出来ているのでconf.pyへリネーム後
+好きなURLへ変更すれば使える
+jkで上下移動　SPACEで記事を読める
+
+デフォルトでviキーバインドシンプルな外観gでブラウザに渡すことも出来たりするフィードを更新するときはcanto-fetchコマンドを使う
+* rsstail
+↓こんな感じで使ってる
+rsstail -ldpcHvu http://blog.livedoor.jp/dqnplus/index.rdf-l でリンクを表示
+-d　で説明
+-p　で記事の日付
+-c でコメント表示
+-H でHTMLタグを除去
+-v 冗長オプション
+-u に続いてURLを与える
+multitailでまとめるには
+multitail -cS rsstail -l &#34;rsstail -lpcHvu http://aerial.deko8.jp/feed_ranking1d.xml&#34; -cS　rsstail -L &#34;rsstail -lpcHvu http://feeds.feedburner.com/hatena/b/hotentry&#34;
+でいけると思ったけど文字化けして駄目だった
+しょうがないから各RSSを追記リダイレクト(rsstail -u http://hoge.jp/rss.xml &amp;gt;&amp;gt; /tmp/rss.log)でそのファイルを眺めてる
+* まとめ
+newsbeuter →　メールを読むようにじっくり読みたい人向け" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2010/12/19/5135/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2010-12-19T00:00:00+09:00" />
+<meta property="article:modified_time" content="2010-12-19T00:00:00+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +63,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -195,7 +227,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -289,6 +321,10 @@ if (!doNotTrack) {
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -319,7 +355,7 @@ if (!doNotTrack) {
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

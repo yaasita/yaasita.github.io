@@ -10,12 +10,18 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="s3fs使う" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2016/06/22/s3fs/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content="s3fsはamazon S3をファイルしすてむのように使うやつ
+ただ遅い
+基本ここ見てやる
+https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes
+今回はCeontOS6を対象
+# paco入れておく yum install paco # コンパイルに必要なもの入れる yum install -y gcc libstdc&#43;&#43;-devel gcc-c&#43;&#43; curl-devel libxml2-devel openssl-devel mailcap # fuse wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.8.5.tar.gz ./configure make paco -lD &#39;make install&#39; # /usr/local/lib 追記 vi /etc/ld.so.conf ldconfig # s3fs wget http://s3fs.googlecode.com/files/s3fs-1.74.tar.gz tar xvaf s3fs-1.74.tar.gz cd s3fs-1.74/ autoreconf --install export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure --prefix=/usr make paco -lD &#39;make install&#39; # mount s3fs hoge-bucket /s3 -o rw,allow_other,uid=501,gid=501,default_acl=public-read su - apps cd /s3 date &gt; date." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2016/06/22/s3fs/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2016-06-22T13:40:00+09:00" />
+<meta property="article:modified_time" content="2016-06-22T13:40:00+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +35,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -247,7 +251,7 @@ aws s3 sync /s3/test s3://hoge-bucket/test --delete --metadata  &quot;mode=33279
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -341,6 +345,10 @@ aws s3 sync /s3/test s3://hoge-bucket/test --delete --metadata  &quot;mode=33279
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -371,7 +379,7 @@ aws s3 sync /s3/test s3://hoge-bucket/test --delete --metadata  &quot;mode=33279
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

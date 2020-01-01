@@ -10,12 +10,29 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="squidでユーザー認証を行う(Ubuntu8.04)" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2008/05/06/12366/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content="まずhtpasswdでユーザー名とパスワードのMD5値のペアtxtを用意します。
+# htpasswd -c /etc/squid/passwd hogehoge
+New password:
+Re-type new password: できたら↓のように指定します。
+auth_param basic children は認証プロセスの為のプロセス数を指定します。
+auth_param basic realm はBASIC認証時に現われるメッセージを指定します。この場合は&#34;Squid proxy-caching web server&#34;と表示されます。
+auth_param basic credentialsttl はパスワードの生存時間を指定します。（HTTPアクセスヘッダに付随させるBASIC認証で生存時間があるのはよく分からないですが・・・）
+auth_param basic casesensitive は大文字小文字を区別するかどうかです（多分）offなので区別します。最後にacl kusi proxy_auth REQUIREDでアクセスリストkusiを定義
+ローカルネットの後にhttp_access allow kusiを入れているので
+LAN内のホストなら無条件で通し、WAN側からの要求にはBASIC認証を要求します。
+auth_param basic program /usr/lib/squid/ncsa_auth /etc/squid/passwd
+auth_param basic children 5
+auth_param basic realm Squid proxy-caching web server
+auth_param basic credentialsttl 2 hours
+auth_param basic casesensitive off
+acl kusi proxy_auth REQUIRED
+http_access allow localnet" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2008/05/06/12366/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2008-05-06T00:00:00+09:00" />
+<meta property="article:modified_time" content="2008-05-06T00:00:00+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +46,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -195,7 +210,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -289,6 +304,10 @@ if (!doNotTrack) {
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -319,7 +338,7 @@ if (!doNotTrack) {
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

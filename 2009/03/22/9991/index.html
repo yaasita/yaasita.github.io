@@ -10,12 +10,43 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="WebDAVの設定をDebian lennyでやってみる" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2009/03/22/9991/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content=" 前回とちょっと違う部分があったので補足を含め書きます。
+１．a2enmodで必要なモジュール読み込む
+a2enmod dav
+a2enmod dav_fs
+２．httpd.confに↓みたいに書いとけばok
+そんでまあcalってディレクトリ作ってパーミッションとか777にしとけば
+まあ間違いないだろう
+Dav On
+Options Indexes
+AuthType Basic
+AuthName &#34;input webdav password!&#34;
+AuthUserFile &#34;/etc/apache2/passwd&#34;
+Require valid-user
+Order allow,deny
+allow from all
+
+３．ロックファイルやらうんちゃらは
+/etc/apache2/mods-enabled
+にある
+dav_fs.conf
+で定義してあるから別に書かなくてもおｋ
+3.5．Windowsのネットワークプレースでの確認方法は
+ネットワークプレースの追加→ウィザード開く→基本次へで進む→アドレスに↓を記述してOK
+
+http://hogehoge.com:8000/cal/
+↑アドレス　↑WebDAVが有効なディレクトリ
+
+４．thunderbirdにlightningって拡張いれて
+新しいカレンダーでも作ってごにょごにょすれば良いですよ 参考リンク
+休日カレンダーICS
+http://www.mozilla-japan.org/projects/calendar/holidays.html " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2009/03/22/9991/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2009-03-22T00:00:00+09:00" />
+<meta property="article:modified_time" content="2009-03-22T00:00:00+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +60,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -195,7 +224,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -289,6 +318,10 @@ if (!doNotTrack) {
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -319,7 +352,7 @@ if (!doNotTrack) {
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

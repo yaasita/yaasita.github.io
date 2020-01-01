@@ -351,56 +351,5 @@ subnet： 11111111.11111111.00000000.00000000-11111111.11111111.00000000.0000000
  </description>
     </item>
     
-    <item>
-      <title>crontabに書いてあるdomとdowは何の略？</title>
-      <link>https://yaasita.github.io/2010/10/03/5652/</link>
-      <pubDate>Sun, 03 Oct 2010 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2010/10/03/5652/</guid>
-      <description> dow・・・Day Of Week
-dom・・・Day of Month </description>
-    </item>
-    
-    <item>
-      <title>SQLの解説サイト</title>
-      <link>https://yaasita.github.io/2009/09/07/8655/</link>
-      <pubDate>Mon, 07 Sep 2009 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2009/09/07/8655/</guid>
-      <description> ためになりそうだからメモ
-http://www.techscore.com/tech/sql/ </description>
-    </item>
-    
-    <item>
-      <title>携帯端末以外のIPを制限するhtaccessを簡単生成</title>
-      <link>https://yaasita.github.io/2008/12/31/10607/</link>
-      <pubDate>Wed, 31 Dec 2008 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2008/12/31/10607/</guid>
-      <description> http://www.dspt.net/tools/mobile_ip/ </description>
-    </item>
-    
-    <item>
-      <title>telnetでSMTPコマンド叩いてメール送信</title>
-      <link>https://yaasita.github.io/2008/09/07/11328/</link>
-      <pubDate>Sun, 07 Sep 2008 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2008/09/07/11328/</guid>
-      <description> ↓を参考にどうぞ
-http://ash.jp/net/telnet_smtp.htm </description>
-    </item>
-    
-    <item>
-      <title>ASCIIコードで\x0cって何を表すか？</title>
-      <link>https://yaasita.github.io/2008/04/29/12531/</link>
-      <pubDate>Tue, 29 Apr 2008 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2008/04/29/12531/</guid>
-      <description> ASCIIコード
-改ページだそうです
-参考リンク
-http://www12.plala.or.jp/mz80k2/electronics/ascii/ascii.html </description>
-    </item>
-    
   </channel>
 </rss>

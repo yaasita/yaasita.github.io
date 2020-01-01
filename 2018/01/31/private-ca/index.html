@@ -10,12 +10,21 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="プライベートCA作るまで" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2018/01/31/private-ca/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content="Debian9でやってみた
+cd /etc/ssl /usr/lib/ssl/misc/CA.pl -newca /usr/lib/ssl/misc/CA.pl -newreq /usr/lib/ssl/misc/CA.pl -sign # /tmp/ca.pemを入れてもらう openssl x509 -outform PEM -in demoCA/cacert.pem -out /tmp/ca.pem # 変換 openssl x509 -outform PEM -in newcert.pem -out /etc/nginx/ssl/hogehoge.crt # パスフレーズ解除 openssl rsa -in newkey.pem -out /etc/nginx/ssl/hogehoge.key  データベースおかしくなったら
+index.txt空っぽすればOK
+rm demoCA/index.txt touch demoCA/index.txt  /etc/ssl/openssl.cnf は こんな感じ
+証明書の管理は
+chromeなら設定 =&gt; 詳細設定 =&gt; SSLの管理からやる
+windowsの場合はファイル名を指定して実行 =&gt; certlm.msc と同じこと
+あと注意点として、chromeはsubjectAltNameを見るので注意
+(EnableCommonNameFallbackForLocalAnchorsってやつを設定するとできるようだけど)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2018/01/31/private-ca/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2018-01-31T18:04:22+09:00" />
+<meta property="article:modified_time" content="2018-01-31T18:04:22+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +38,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -221,7 +228,7 @@ chromeなら設定 =&gt; 詳細設定 =&gt; SSLの管理からやる</p>
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -315,6 +322,10 @@ chromeなら設定 =&gt; 詳細設定 =&gt; SSLの管理からやる</p>
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -345,7 +356,7 @@ chromeなら設定 =&gt; 詳細設定 =&gt; SSLの管理からやる</p>
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

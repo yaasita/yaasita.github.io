@@ -10,12 +10,26 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="perlのワンライナー" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2009/02/28/10178/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content="よく忘れるのでメモ
+↓は普通の使い方
+perl -e &#39;print &quot;hello&quot;&#39;  ↓test.txtの中身を表示 -nオプションは
+こんな感じの意味
+perl -ne &#39;print&#39; test.txt while (&lt;&gt;) { ... # your program goes here }  ↓test.txtの中身を表示 -pオプションは
+-nの最後にプリント文をかます様なイメージ
+perl -pe &#39;&#39; test.txt while (&lt;&gt;) { ... # your program goes here print; }  ライン処理を追加する（print文の後に改行＋&lt;&gt;後にchmop）
+perl -lpe &#39;&#39; test.txt  -iオプションは対象のファイルを上書きする
+注意するのは-iはその後に変更前のファイル名を取るので
+まとめないこと（-ipleは駄目）
+上がtest.txtの頭に行番号を付加する
+下が変更前のtest.txtをtest.txt.backとして残す
+perl -i -ple &#39;s/^(.*$)/$.$1/&#39; test.txt perl -i.back -ple &#39;s/^(.*)/$. \: $1/&#39; test.txt  参考リンク
+ http://blog." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2009/02/28/10178/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2009-02-28T00:00:00+09:00" />
+<meta property="article:modified_time" content="2009-02-28T00:00:00+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +43,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -225,7 +237,7 @@ perl -i.back -ple 's/^(.*)/$. \: $1/' test.txt
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -319,6 +331,10 @@ perl -i.back -ple 's/^(.*)/$. \: $1/' test.txt
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -349,7 +365,7 @@ perl -i.back -ple 's/^(.*)/$. \: $1/' test.txt
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

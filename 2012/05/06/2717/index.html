@@ -10,12 +10,34 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="LDAPの設定メモ" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2012/05/06/2717/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content=" slapdをインストール
+mozillaAbPersonAlpha.schemaを以下へコピーする
+/etc/ldap/schema
+phpldapadminをインストール
+lighttpdのconfに以下を追加
+# Alias for pa directory
+alias.url &#43;= (
+&amp;nbsp;&amp;nbsp;&amp;nbsp; &#34;/pl&#34; =&amp;gt; &#34;/usr/share/phpldapadmin&#34;,
+)
+パスワードを忘れたら
+dpkg-reconfigure slapd
+↓で内容の確認
+slapcat
+cn=admin...
+で始まる行をメモして
+phpldapadminにログイン
+詳しくはこちら
+/usr/share/doc/slapd
+本体はこっち？
+/usr/share/slapd
+参考リンク
+Gentoo Linuxな生活​/ThunderBirdアドレス帳をLDAPで悩む " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2012/05/06/2717/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2012-05-06T00:00:00+09:00" />
+<meta property="article:modified_time" content="2012-05-06T00:00:00+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +51,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -195,7 +215,7 @@ slapdをインストール<br /><br />mozillaAbPersonAlpha.schemaを以下へコ
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -289,6 +309,10 @@ slapdをインストール<br /><br />mozillaAbPersonAlpha.schemaを以下へコ
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -319,7 +343,7 @@ slapdをインストール<br /><br />mozillaAbPersonAlpha.schemaを以下へコ
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

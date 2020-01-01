@@ -10,12 +10,21 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="GCP Cloud Functions内からサービスアカウントのtoken取る" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2019/12/08/service-account-in-cf/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content="Cloud Functionsからサービスアカウントのアクセストークンをどうやって取るの？と疑問に思ったので調べた
+Google Compute Engineと同じ取り方でOK
+&quot;use strict&quot;; const fetch = require(&quot;node-fetch&quot;); exports.handler = async (req, res) =&gt; { const url = &quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&quot; &#43; &quot;[サービスアカウント名]/token&quot;; const result = await fetch(url, { method: &quot;GET&quot;, headers: { &quot;Metadata-Flavor&quot;: &quot;Google&quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&quot;OK&quot;); };  なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
+
+まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &ldquo;Function Identity&quot;とかクリックするとちゃんと日本語版あるんですよね
+なんかメニューがバグってるのかな・・・
+とりあえず英語版から探すのをオススメします&hellip;
+参考リンク
+ 関数ID Compute Metadata Server   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0]." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2019/12/08/service-account-in-cf/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2019-12-08T05:12:12+09:00" />
+<meta property="article:modified_time" content="2019-12-08T05:12:12+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +38,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -228,7 +235,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -322,6 +329,10 @@ function callback(data){
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -352,7 +363,7 @@ function callback(data){
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

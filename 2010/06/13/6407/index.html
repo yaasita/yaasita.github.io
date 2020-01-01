@@ -10,12 +10,26 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="C/MigemoをMSVC 2010でコンパイルしてみる" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2010/06/13/6407/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content=" vimにインストールするためMSVC 2010でコンパイルしてみた
+まずは↓からMicrosoft Visual Studio Express C&#43;&#43;をダウンロード&amp;amp;インストール
+http://www.microsoft.com/japan/msdn/vstudio/express/
+（ちなみにインストールするとメイリオフォントもインストールされる Firefoxとかだと文字がにじむサイトとかでるかも・・・）
+そんでkaoriyaさんのHPから「ソースコード 1.3(予定) 開発版」をダウンロード解凍して cmigemo-1.3c\compile\vs2003のCMigemo.slnをMSVS 2010で開く→変換ウィザードでプロジェクトを変換
+プロジェクトを開いたらReleaseに変更
+
+そんでCMigemoを右クリック→リビルドすると cannot open include file &#39;afxres.h&#39;というエラーが出るのでこんな感じで直す
+修正前 #include &#34;afxres.h&#34;
+修正後 #include 
+#define IDC_STATIC -1
+あとはvs2003\CMigemo\Release\CMigemo.exeとvs2003\MigemoDLL\Release\migemo.dllを保存してvimにインストール
+辞書ファイルはCygwinで作成するかkaoriyaさんの「バイナリ(DLL) 1.2 リリース版 for Windows 」をダウンロードしてもおｋ
+ちなみにmigemo.vimは1.2版のを使った方が調子が良かった " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2010/06/13/6407/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2010-06-13T00:00:00+09:00" />
+<meta property="article:modified_time" content="2010-06-13T00:00:00+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +43,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -195,7 +207,7 @@ vimにインストールするためMSVC 2010でコンパイルしてみた<br /
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -289,6 +301,10 @@ vimにインストールするためMSVC 2010でコンパイルしてみた<br /
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -319,7 +335,7 @@ vimにインストールするためMSVC 2010でコンパイルしてみた<br /
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

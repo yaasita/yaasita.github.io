@@ -10,12 +10,34 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="postfixで複合条件アクション" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2013/05/04/905/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content=" こんな感じでスパムメールを拒否してみた
+目標は：特定のIPかつ(123.123.123.123)、特定のアドレス(reject@)を拒否する
+まず、check_client_accessをつくる
+smtpd_restriction_classesで制限クラスをつくって
+client_accessで定義した制限クラスに飛ばす
+/etc/postfix/main.cf
+smtpd_recipient_restrictions = permit_mynetworks ,
+check_client_access hash:/etc/postfix/client_access ,
+permit_sasl_authenticated ,
+reject_unauth_destination
+smtpd_restriction_classes = spam_restriction
+spam_restriction = check_recipient_access hash:/etc/postfix/rejectaddress
+
+/etc/postfix/client_access
+123.123.123.123 spam_restriction
+
+/etc/postfix/rejectaddress
+reject@ REJECT
+
+参考リンク
+Postfix で特定の IP アドレスを拒否する設定
+[postfix-jp: 115] Re: 複合条件での送信制限は可能でしょうか？ " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2013/05/04/905/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2013-05-04T00:00:00+09:00" />
+<meta property="article:modified_time" content="2013-05-04T00:00:00+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +51,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -199,7 +219,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -293,6 +313,10 @@ if (!doNotTrack) {
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -323,7 +347,7 @@ if (!doNotTrack) {
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

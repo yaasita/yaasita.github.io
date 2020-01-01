@@ -10,12 +10,40 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="sambaを入れてみよう" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2008/06/29/11847/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content=" aptかなんかでインストール
+/etc/samba/smb.confを直そうか
+[global]
+unix charset = UTF-8
+dos charset = CP932
+display charset = UTF-8
+まず↑の設定を確認unix charsetは環境に合わせてどうぞ
+workgroup = MSHOME
+次にワークグループを合わせて
+security = share
+セキュリティをshareにした。パスワード求められるとウザイので・・・
+でもこれだとvistaとかだと問題になるそうです　XPの場合は大丈夫らしいけど
+guest account = ageftp
+あとはゲストアカウントを誰にするかを決める。
+[upload]
+path = /var/www/upload/
+available = yes
+browsable = yes
+public = yes
+writable = yes
+read only = no
+create mask = 0777
+printable = no
+guest ok = yes
+あとは適当にどうぞ
+ここで別にゲストアカウントを誰々って決めなくても良いんですが、
+じつはこの/var/www/uploadディレクトリはftpのanonymousログインを
+許可しているのでotherのパーミッションに書き込みを与える事が出来ないのです " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2008/06/29/11847/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2008-06-29T00:00:00+09:00" />
+<meta property="article:modified_time" content="2008-06-29T00:00:00+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +57,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -199,7 +225,7 @@ aptかなんかでインストール<br />/etc/samba/smb.confを直そうか<br 
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -293,6 +319,10 @@ aptかなんかでインストール<br />/etc/samba/smb.confを直そうか<br 
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -323,7 +353,7 @@ aptかなんかでインストール<br />/etc/samba/smb.confを直そうか<br 
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

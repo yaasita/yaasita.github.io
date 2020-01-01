@@ -10,12 +10,48 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="定期的に/tmpを掃除してくれるソフトtmpreaper" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2009/12/05/7840/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content=" Debian Lennyで試した。
+Red hat系だとtmpwatchとかあるみたいだけど無いのでこれを使う
+まずはaptitudeでインストール
+インストールすると/etc/cron.daily/tmpreaperが作成される
+これによって毎日cronで実行される
+設定はこれをいじってもできるが基本的には
+/etc/tmpreaper.confをいじる
+まずはワーニングが出るので13行目あたりにあるSHOWWARNINGをコメント化する
+#SHOWWARNING=true
+
+次にオプションを設定する各オプションの意味は以下の通り
+TMPREAPER_TIME・・・どのくらいアクセスがないファイルを削除するか？設定値はデフォルトで7dつまり7d以上アクセスがないと削除
+TMPREAPER_PROTECT_EXTRA・・・削除しては駄目な名前を指定
+TMPREAPER_DIRS・・・削除の対象とするディレクトリ　デフォルトは/tmpのみ 複数指定するときはスペースで区切る　例）TMPREAPER_DIRS=&#39;/tmp/. /var/tmp/.&#39;
+TMPREAPER_DELAY・・・実行するまで待つ時間　デフォルトは256秒
+TMPREAPER_ADDITIONALOPTIONS・・・他に指定したいオプションがある場合はこここに入れる他のオプションはmanを参照
+あと/etc/cron.daily/tmpreaper見れば分かるけど
+デフォルトで
+以下のオプションが設定されている。ヤバイファイルは消えないようにしているようだ
+--protect &#39;/tmp/.X*-{lock,unix,unix/*}&#39; \
+--protect &#39;/tmp/.ICE-{unix,unix/*}&#39; \
+--protect &#39;/tmp/.iroha_{unix,unix/*}&#39; \
+--protect &#39;/tmp/.ki2-{unix,unix/*}&#39; \
+--protect &#39;/tmp/lost&#43;found&#39; \
+--protect &#39;/tmp/journal.dat&#39; \
+--protect &#39;/tmp/quota.{user,group}&#39; \
+
+※注意
+デフォルトのシェルだと--ctimeが設定されています↓みたいに
+nice -n10 tmpreaper --delay=$TMPREAPER_DELAY --mtime-dir --symlinks $TMPREAPER_TIME \
+$TMPREAPER_ADDITIONALOPTIONS \
+--ctime \
+これだとcronでlocateのDBを作っているので、アクセスタイムが更新され
+いつまで経っても削除されません。（ctimeオプションはatime&#43;ctimeのチェックをします）
+用途によってはここを--mtimeに変更してもいいと思います
+ " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2009/12/05/7840/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2009-12-05T00:00:00+09:00" />
+<meta property="article:modified_time" content="2009-12-05T00:00:00+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +65,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -195,7 +229,7 @@ Debian Lennyで試した。<br />Red hat系だとtmpwatchとかあるみたい�
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -289,6 +323,10 @@ Debian Lennyで試した。<br />Red hat系だとtmpwatchとかあるみたい�
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -319,7 +357,7 @@ Debian Lennyで試した。<br />Red hat系だとtmpwatchとかあるみたい�
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

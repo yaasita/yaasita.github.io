@@ -260,45 +260,5 @@ curl http://challenge-your-limits.herokuapp.com/call/me # getだめだよって�
 curl http://challenge-your-limits2.herokuapp.com/call/my/APIs # メソッドが違うらしい curl -X DELETE http://challenge-your-limits2.herokuapp.com/call/my/APIs # いろいろ試すとDELETEで通る curl http://challenge-your-limits2.herokuapp.com/c2_users/12/hacker_apply # 案内されたURLにリクエストするとなんか違うらしい curl http://challenge-your-limits2.herokuapp.com/help/me/out # とりあえず登録 curl -F &amp;quot;username=yaasita&amp;quot; -F &#39;email=hoge1@example.com&#39; \ http://challenge-your-limits2.heroku/app.com/c2_users/ # 帰ってきた値でBASIC認証 curl --user yaasita:uRd4yy-imPbHBR4W http://challenge-your-limits2.herokuapp.com/c2_users/10 # あとは帰ってきた文字列をBASE64デコード  パズル3  http://tango-ruby.hatenablog.com/entry/2016/01/10/125615 http://challenge-your-limits3.herokuapp.com/  答え</description>
     </item>
     
-    <item>
-      <title>リンク</title>
-      <link>https://yaasita.github.io/2016/01/24/link/</link>
-      <pubDate>Sun, 24 Jan 2016 02:15:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/01/24/link/</guid>
-      <description> 監視カメラまとめ  http://www.insecam.org/en/bycountry/JP/   SIはやめておけ  http://anond.hatelabo.jp/20160123131828 バックアップ    </description>
-    </item>
-    
-    <item>
-      <title>素因数分解の話</title>
-      <link>https://yaasita.github.io/2016/01/11/factor/</link>
-      <pubDate>Mon, 11 Jan 2016 02:20:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/01/11/factor/</guid>
-      <description>素因数分解してくれるサービス
-http://factordb.com/
-自分のSSH鍵がリストされてないか確認してみる
-# 公開鍵の modulus ssh-keygen -m PKCS8 -e -f authorized_keys &amp;gt; kagi openssl rsa -pubin -inform PEM -text -noout &amp;lt; kagi &amp;gt; modulus # 秘密鍵の modulus とか prime1, prime2の確認 openssl rsa -text -noout -in ~/.ssh/id_rsa  こんな感じのスクリプトで10進数にすればOK
-perlで大きめの数値計算する例も
- 載ってない一安心
-  http://goo.gl/Qqaed5
-  http://goo.gl/yKVyUH
-  参考リンク
- TeslaCrypt（vvvウイルス）によって暗号化されたファイルの復号手順メモ    </description>
-    </item>
-    
-    <item>
-      <title>systemdでの電源管理</title>
-      <link>https://yaasita.github.io/2016/01/06/acpi/</link>
-      <pubDate>Wed, 06 Jan 2016 00:47:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/01/06/acpi/</guid>
-      <description>Arch Linuxのwikiが詳しかった
-/etc/systemd/logind.conf
-あたりを直す
-ノートPC閉じたときのSuspendを止めたかったから↓みたいにした
-HandleSuspendKey=ignore HandleLidSwitch=ignore  </description>
-    </item>
-    
   </channel>
 </rss>

@@ -10,12 +10,21 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="クライアント証明書&#43;HTTP2" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2018/07/29/h2-plus-client-auth/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content="SSLRequire は 非推奨みたいなので
+クライアント証明書とIP制限を今風に書き直す
+あとCNとかも検証するようにした
+こんな感じ
+&lt;Directory /var/www&gt; Options Indexes FollowSymLinks MultiViews ExecCGI SSLVerifyClient optional &lt;RequireAny&gt; Require ip 192.168.100.0/24 &lt;RequireAll&gt; Require ssl-verify-client Require expr &quot;%{SSL_CLIENT_S_DN_CN} == &#39;hogeclient&#39;&quot; &lt;/RequireAll&gt; &lt;/RequireAny&gt; &lt;/Directory&gt;  あと
+Protocols http/1.1 h2  のようにhttp/1.1を先にしないと
+curl: (92) HTTP/2 stream 1 was not closed cleanly: HTTP_1_1_REQUIRED (err 13)  こんなエラーになるので注意
+参考リンク
+ reqexprの説明 mod_ssl変数一覧  " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2018/07/29/h2-plus-client-auth/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2018-07-29T16:36:57+09:00" />
+<meta property="article:modified_time" content="2018-07-29T16:36:57+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +38,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -219,7 +226,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -313,6 +320,10 @@ if (!doNotTrack) {
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -343,7 +354,7 @@ if (!doNotTrack) {
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

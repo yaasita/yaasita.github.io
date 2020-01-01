@@ -10,12 +10,40 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="squid3を試してみた" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2010/07/19/6181/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content=" * Debian で squid3を試す
+aptitudeとかでsquid3をインストール
+以下squid.confの設定
+1.アクセスリストlocalnetを有効化
+acl localnet src 192.168.0.0/16 # RFC1918 possible internal network 
+2.cachemgr3.cgiを見るための設定と普通のアクセス設定
+http_access allow manager localnethttp_access allow localnet
+いずれもdenyの前に置くこと
+3.ポートの変更
+http_port 8080
+4.各種設定
+cache_mem 20 MB maximum_object_size_in_memory 256 KB
+cache_dir ufs /var/spool/squid3 4000 32 256
+maximum_object_size 18000 KB #icp_port 3130 #無効化
+forwarded_for off
+5.あとcachemgr.confも変更したポートに合わせる
+localhost:8080
+なんかあったらとりあえずログを見ること
+/var/log/messages
+/var/log/syslog
+/var/log/squid3/*
+※あと注意点
+NetBIOS名で指定しないことcachemgr3を操作しようとしないこと
+↓は駄目
+http://jitaku:8000/cgi-bin/cachemgr3.cgi
+↓はおｋ
+http://192.168.0.11:8000/cgi-bin/cachemgr3.cgi
+使った感想は特に昔と変わんないかな・・・ " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2010/07/19/6181/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2010-07-19T00:00:00+09:00" />
+<meta property="article:modified_time" content="2010-07-19T00:00:00+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +57,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -195,7 +221,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -289,6 +315,10 @@ if (!doNotTrack) {
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -319,7 +349,7 @@ if (!doNotTrack) {
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

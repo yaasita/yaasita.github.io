@@ -10,12 +10,20 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="複数ファイルアップロードの実装" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2017/04/02/multiple-upload/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content="multiple指定してuploadフォーム作るときの話
+&lt;input type=&quot;file&quot; name=&quot;files&quot; multiple /&gt;  で複数ファイル選択できるが
+Perl CGIで受けるときに↓みたいにすると
+my @files = $q-&gt;param(&#39;files&#39;); for my $filename (@files) { my $fn = decode(&quot;UTF-8&quot;, $filename); move($q-&gt;tmpFileName($filename), &quot;/path/to/dir&quot;); }  iOSで選択するとfilenameが全部image.jpgでPOSTされてしまう可能性があるのでダメ
+(AndroidとかはOK)
+なのでこんな感じにする
+my @fhs = $q-&gt;upload(&#39;files&#39;); my %fname_count; for my $fh (@fhs){ my $out_filename = non_overlapping_filenames(&quot;$fh&quot;); my $io_handle = $fh-&gt;handle; open (my $wr,&quot;&gt;&quot;, $out_filename) or die $!; while (&lt;$io_handle&gt;){ print $wr $_; } close $wr; push(@result, decode(&quot;UTF-8&quot;,&quot;$fh&quot;)); }  あと古めのアンドロイドはmultiple指定しても複数ファイル選択ができない
+Andoroid4.0はダメだけど6.0だとOKだった" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2017/04/02/multiple-upload/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2017-04-02T04:18:50+09:00" />
+<meta property="article:modified_time" content="2017-04-02T04:18:50+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +37,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -225,7 +231,7 @@ Andoroid4.0はダメだけど6.0だとOKだった</p>
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -319,6 +325,10 @@ Andoroid4.0はダメだけど6.0だとOKだった</p>
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -349,7 +359,7 @@ Andoroid4.0はダメだけど6.0だとOKだった</p>
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

@@ -10,12 +10,59 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="sonb32drv.dllってウィルスに感染してた" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2009/06/14/9342/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content=" ／(＾o＾)＼ナンテコッタイ
+つーことで対処法
+とりあえずC:\WINDOWS\system32\sonb32drv.dllを削除
+つーかこの話って2008年の6月くらいの話です・・・
+どんだけウィルススキャンさぼってたんだ(；・∀・)
+↓はググって分かったこと
+・感染経路は？
+どうもXREAの広告らしい
+感染はFlash Playerの脆弱性により行われる
+バージョンが9．0．124より古いと危ないとのこと
+http://d.hatena.ne.jp/soundwing/20080614
+・ウィルスの活動は？
+IEの場合
+C:\Documents and Settings\ユーザー名\Local Settings\Temporary Internet Files\
+あたりにtaa.gifを作成後orz.exeという実行ファイルに展開されるそうです
+場所は%Temp%\orz.exeかな？
+http://www.symantec.com/ja/jp/security_response/writeup.jsp?docid=2008-052714-3021-99&amp;amp;tabid=2
+→対処方はtaa.gif、orz.exeを消す
+sonb32drv.dllを作成されます
+→対処方はsonb32drv.dllを消す
+C:\WINDOWS\system32\drivers\etc\hostsを削除されます
+→対処方はhosts.msnをコピーしhostsにリネームする
+まあhostsファイルはデフォルトでlocalhostしか書いてないので以下の内容のファイルでもok
+127.0.0.1 localhost
+以下のレジストリを追加されます
+HKEY_CLASSES_ROOT\CLSID\{F60A0B68-AF3A-C1D2-CD09-5A81AE36D2BA}
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellExecuteHooks\{F60A0B68-AF3A-C1D2-CD09-5A81AE36D2BA}
+→対処方は上記のレジストリを削除
+http://www.trendmicro.co.jp/vinfo/virusencyclo/default5.asp?VName=TROJ_GAMETHIEF.M&amp;VSect=Sn
+・被害は？
+このプログラムはキーロガーのようです
+プレイオンライン、mixi、Windowsメッセンジャーなどのアカウントハック
+に遇うかもしれません・・・・
+・その他の情報
+カスペでは
+Trojan-PSW.Win32.Nilage.djl
+という名前らしい
+Flashのバージョンを上げると勝手に削除してくれるぽい
+sonb32drv.dllを削除してくれる場合があるらしい
+http://qanda.rakuten.ne.jp/qa4097191.html
+その所為なのか自分の環境には↓のレジストリが既に無かった
+HKEY_CLASSES_ROOT\CLSID\{F60A0B68-AF3A-C1D2-CD09-5A81AE36D2BA}
+↓はあった（汗
+HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellExecuteHooks\{F60A0B68-AF3A-C1D2-CD09-5A81AE36D2BA} まあ直接は関係ないけど
+レジストリの掃除にクリーンアップセンターを使うとかね
+(上記のレジストリは削除できませんでしたｗ)
+http://onecare.live.com/site/ja-jp/center/cleanup.htm " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2009/06/14/9342/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2009-06-14T00:00:00+09:00" />
+<meta property="article:modified_time" content="2009-06-14T00:00:00+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +76,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -195,7 +240,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -289,6 +334,10 @@ if (!doNotTrack) {
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -319,7 +368,7 @@ if (!doNotTrack) {
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

@@ -10,12 +10,44 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="2chのスレを自動保存" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2008/02/27/12879/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content="2chのスレを自動で保存する方法を考えます。
+スレの進行が早いところはすぐにDAT落ちしてしまいます。プログラムによって定期的にDATを取得できたら便利です。
+いきいきwikiによるとUser-AgentをMonazilla/1.00 (ブラウザ名/バージョン)にするといいようです。
+また鯖の転送量を減らす目的でgzipを推奨しています。
+例としてJaneviewのリクエストヘッダを見て見ます。
+
+こんな感じです。
+これよりどこにアクセスし、DATを取得しているか分かります。
+取得したdatはgzipに圧縮されているのでgunzipで展開します。（gunzipコマンドのあるLinux環境を想定しています）
+ここで注意して欲しいのは必ずgzipで返ってくるとは限らない点です。gzipではなく生のDATが送られてきても対応できるようにします。
+例としてDATを取得するスクリプトをいかに示します。定期的に取得する場合はcronなどで回して下さい。
+#!/usr/bin/perl
+use Net::HTTP;
+### Initial Setting ###########################
+$server =&#34;namidame.2ch.net&#34;;
+$category =&#34;campus&#34;;
+$unixtime =&#34;1234567890&#34;;
+$backup_directory =&#39;/var/www/&#39;;
+###############################################
+unless($backup_directory=~/\/$/){
+$backup_directory.=&#39;/&#39;;
+}
+$s = Net::HTTP-new(Host = &#34;$server&#34;) || die $@;
+$s-max_line_length(0);
+$s-keep_alive(300);
+$s-write_request(GET = &#34;/$category/dat/$unixtime.dat&#34;, &#39;User-Agent&#39; = &#34;Monazilla/1.00 (perl/1.3)&#34; , &#39;Accept-Encoding&#39; = &#34;gzip&#34; );
+($code, $mess, %h) = $s-read_response_headers;
+unless($code eq &#34;200&#34;){
+print &#34;Thread not found!\n&#34;;
+exit;
+}
+open (FH,&#34;$backup_directory$unixtime.dat.gz&#34;) or die $!" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2008/02/27/12879/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2008-02-27T00:00:00+09:00" />
+<meta property="article:modified_time" content="2008-02-27T00:00:00+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +61,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -195,7 +225,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -289,6 +319,10 @@ if (!doNotTrack) {
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -319,7 +353,7 @@ if (!doNotTrack) {
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

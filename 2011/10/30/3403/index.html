@@ -10,12 +10,59 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="iotop日本語man" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2011/10/30/3403/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content="iotopを最近使ってたから日本語訳にしてみた
+結構意訳になってる
+IOTOP(1)&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;  IOTOP(1)
+
+
+NAME
+iotop - シンプルなIOモニター
+SYNOPSIS
+iotop [OPTIONS]
+DESCRIPTION
+iotopはLinuxカーネルからI/O使用情報を取得し(カーネル2.6.20以上を必要とします)、
+プロセス・スレッド毎にI/O使用状況を表示します。
+カーネルのビルドオプションに以下を含める必要があります。
+CONFIG_TASK_DELAY_ACCT, CONFIG_TASK_IO_ACCOUNTING, CONFIG_TASKSTATS and CONFIG_VM_EVENT_COUNTERS
+iotopはI/Oのプロセス/スレッドごとのI/O帯域を表示間隔毎に表示します。
+また、プロセスがI/Oの処理によって待たせれている時間の割合も表示します。
+各プロセスについてI/Oの優先度(クラス/レベル)が表示されます。
+加えて、表示間隔の間に読み書きされた総I/O帯域は一番上に表示されます。
+左矢印、右矢印キーを使うとソート項目を変更できます。rでソート順を逆転できます。
+oで--onlyオプションの有効、無効を切り替えられます。(IOを使用しているプロセスだけを表示するかどうか)
+pで--processesオプションの有効、無効を切り替えられます。(プロセスのみを表示してスレッドは表示しないかどうか)
+aで--accumulatedオプションの有効、無効を切り替えられます。(IOの累積値表示に切り替えるかどうか)
+qで終了します。
+iでスレッド/プロセスの優先度を変更できます。
+その他のキーを押すと最新の情報に更新できます。
+OPTIONS
+--version
+バージョンを表示し終了します。
+-h, --help
+使用方法を表示し、終了します。
+-o, --only
+実際にI/Oを使用しているプロセス/スレッドのみを表示します。これはoを押すことで
+表示中にも切り替えることができます。
+-b, --batch
+対話的な表示でなくなります。(バッチモード)これは状態を記録するときに便利です。
+-n NUM, --iter=NUM
+自動的に終了する時間を指定します。(デフォルトでは自動的に終了しません。)
+これはバッチモードで役に立ちます。
+-d SEC, --delay=SEC
+表示間隔を設定します。(デフォルトは1秒)　1.1秒のような少数も指定可能です。
+-p PID, --pid=PID
+表示するプロセスIDを指定します。(デフォルトは全て表示します)
+-u USER, --user=USER
+表示するユーザーIDを指定します。(デフォルトは全て表示します)
+-P, --processes
+プロセスのみ表示します。通常は全てのスレッドを表示します。
+-a, --accumulated" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2011/10/30/3403/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2011-10-30T00:00:00+09:00" />
+<meta property="article:modified_time" content="2011-10-30T00:00:00+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +76,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -195,7 +240,7 @@ iotopを最近使ってたから日本語訳にしてみた<br />結構意訳に
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -289,6 +334,10 @@ iotopを最近使ってたから日本語訳にしてみた<br />結構意訳に
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -319,7 +368,7 @@ iotopを最近使ってたから日本語訳にしてみた<br />結構意訳に
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

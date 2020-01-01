@@ -10,12 +10,52 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="init.d/とか各ランレベルごとの起動スクリプトについて" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2010/09/26/5694/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content="前回rep2の話でスタートアップとシャットダウン時に行うスクリプトについて書いた
+今回は/etc/init.d/rcを使わずにやる（正式な？）方法で起動時、終了時のスクリプトを実行してみる
+まず、Linuxは/etc/inittabの定義に従って、/etc/init.d/rcをランレベルを引数にして実行する。
+その後、/etc/rc$runlevel.dの中にあるディレクトリを順番に実行する。$runlevelは0～6の数値
+（たとえばrc1.d,rc2.d,rc3.d,rc4.d,rc5.d,rc6.d）
+/etc/init.d/rcの中を読めば分かるが、大まかな挙動は以下の通り。
+1.現在のランレベルと前回のランレベルを取得する。
+2.現在のランレベルに対応するディレクトリのKで始まるスクリプトを探し、前回のランレベルで実行されているなら（頭文字がSで始まるスクリプトが存在しているのなら）それを止める。
+3.次に、Sで始まるディレクトリを探し、前回のランレベルで起動していないと判明したらstart、もしくはstopをかける。
+ちなみに0,6はstopを引数にしてSから始まるスクリプトを順次実行する。
+実行する順番はSもしくはKから始まる次の2桁の数値の若い順。
+SとKではKが最初に実行される。
+前回のスクリプトをこの方法で実現するなら
+下記のようなスクリプトを用意すればOK
+init.d/my_script
+rc0.d/K01my_script@
+rc2.d/S99my_script@
+rc6.d/K01my_script@
+my_scriptの中身は↓
+#! /bin/sh
+### BEGIN INIT INFO
+#
+# Default-Start: 2
+# Default-Stop: 0 6
+# Short-Description: rep2
+### END INIT INFO
+#
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+case &#34;$1&#34; in
+start)
+# rep2 HDD -&amp;gt; memory
+mkdir /dev/shm/rep2mem
+rsync -av --delete /var/www/rep2mem_bk/ /dev/shm/rep2mem/
+;;
+restart|force-reload)
+# nothing to do
+:
+;;
+stop)
+#rep2 memory -&amp;gt; HDD" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2010/09/26/5694/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2010-09-26T00:00:00+09:00" />
+<meta property="article:modified_time" content="2010-09-26T00:00:00+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +69,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -195,7 +233,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -289,6 +327,10 @@ if (!doNotTrack) {
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -319,7 +361,7 @@ if (!doNotTrack) {
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

@@ -10,12 +10,33 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="rep2をLinuxにインストール" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2007/11/25/13311/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content="インストール 公式サイトからrep2をダウンロード
+以下パッケージのインストール
+apt-get install php5 php-http-request php5-gd php-pear php-compat  ※公式にはこう書いてある
+ aptitude install apache2-mpm-prefork php5 php-pear php-compat php-http-request php-pager php-file php5-curl curl unzip
+ 必要なpearパッケージも
+pear install Net_UserAgent_Mobile  ※なかったらpear search Net_UserAgent_Mobileとかで検索してみる
+リポジトリにPHP_Compatが無かった場合は追加で以下のコマンド
+pear install PHP_Compat  それ以外は公式サイト見てやる
+公式サイトの説明文
+  サーバを立ち上げて、PHPが動くようにする。PEARも忘れずに（下記参照） rep2ディレクトリをサーバからアクセスできる所（「~/Sites」とか）へ置く。 rep2ディレクトリの中にデータ保存用のディレクトリを作成する。（デフォルトでは「data」ディレクトリ） データ保存用ディレクトリのパーミッションを「707」（または777）にする。 必要に応じて、 conf/conf_admin.inc.php などのconfファイルをテキストエディタで開いて設定編集。 ブラウザから、
+http://127.0.0.1/~(ユーザ名)/rep2/index.php
+てな具合にrep2ディレクトリへアクセス。  ※PHPが確かに動いていることを確かめたい時は？
+http://127.0.0.1/~(ユーザ名)/rep2/phpinfo.php
+てなとこにアクセスしてみて下さい。
+ずらずらーっとPHPの環境情報が表示されたならば、PHPは正常に動作しています。
+（確認ができましたら、phpinfo.php はもう必要ないので削除しても構いません）
+これで動くはずです。動かなかった場合はエラーを見て判断してください。
+ 設定 conf/conf_hostcheck.php
+を編集してグローバルIP側からの接続でもrep2を利用できるようにします。
+29行目付近 customを1に設定
+// ユーザー設定 &#39;custom&#39; =&gt; 1,  36行目付近を以下のように設定" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2007/11/25/13311/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2007-11-25T00:00:00+09:00" />
+<meta property="article:modified_time" content="2007-11-25T00:00:00+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +50,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -249,7 +268,7 @@ conf/conf_admin.inc.php</p>
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -343,6 +362,10 @@ conf/conf_admin.inc.php</p>
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -373,7 +396,7 @@ conf/conf_admin.inc.php</p>
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

@@ -10,12 +10,20 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="vimのterminalモード" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2018/05/19/vim-terminal/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content="メモ
+  tmuxパカパカ開くよりは良い気がする
+  以下のマッピング追加してペーストできるようにした
+ if has(&#39;terminal&#39;) tnoremap &lt;C-T&gt; &lt;C-W&gt;&quot;&quot; tnoremap &lt;C-Q&gt; &lt;C-W&gt;N endif    ubuntu18.04でもちょい古くてなんか挙動が少し違うから手動で入れた方が良い
+  ビルド
+ apt-get build-dep vim apt-get install libperl-dev python-dev python3-dev ruby-dev git clone --depth 1 git@github.com:vim/vim.git cd vim make make install    参考リンク
+【(Neo)Vim】terminal mode のマッピングについての闇とその解決法
+結論：すごく便利だと思います" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2018/05/19/vim-terminal/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2018-05-19T05:16:04+09:00" />
+<meta property="article:modified_time" content="2018-05-19T05:16:04+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +37,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -217,7 +223,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -311,6 +317,10 @@ if (!doNotTrack) {
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -341,7 +351,7 @@ if (!doNotTrack) {
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

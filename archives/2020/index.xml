@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2020 on # cd ~yaasita</title>
+    <link>https://yaasita.github.io/archives/2020/</link>
+    <description>Recent content in 2020 on # cd ~yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 01 Jan 2020 13:27:50 +0900</lastBuildDate>
+    
+	<atom:link href="https://yaasita.github.io/archives/2020/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>chromebookの日本語入力</title>
+      <link>https://yaasita.github.io/2020/01/01/chromebook-japanese/</link>
+      <pubDate>Wed, 01 Jan 2020 13:27:50 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/01/01/chromebook-japanese/</guid>
+      <description>明けましておめでとうございます。
+chromebookで日本語入力する場合はローカルの場合はfcitx-mozcを使って入力
+リモートに接続する場合は、一旦踏み台サーバーを経由して、X転送したqterminalを使っている
+ssh humidai-server -XC export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx fcitx qterminal  自分の環境では-Cオプションを付けない場合は800kbps/sくらい通信するが、つけると100kbps/sになるので外でやる時にはつけた方が良さそう</description>
+    </item>
+    
+  </channel>
+</rss>

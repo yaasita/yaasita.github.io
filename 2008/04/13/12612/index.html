@@ -10,12 +10,38 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="squidでプロキシーサーバーを立てる" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2008/04/13/12612/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content=" まず、
+apt-get install squid
+などでインストールする。
+次に/etc/squid/squid.confを編集する
+http_port 8080
+visible_hostname 192.168.0.11
+http_portで接続ポートを設定、visible_hostnameで自分自身のホスト名を設定
+acl localnet src 192.168.0.0/255.255.255.0
+http_access allow manager localhostの下あたりに
+http_access allow localnet
+forwarded_for off
+アクセス元のIPを隠す
+via off
+viaヘッダを隠す
+header_access Cache-Control deny all
+キャッシュコントロールヘッダの無効化
+cache_dir ufs /var/spool/squid 1500 64 1024
+キャッシュディレクトリサイズの変更とか
+ufs --&amp;gt; なんかこれ指定しとけてきなあれ
+/var/spool/squid --&amp;gt; キャッシュディレクトリ
+1500 --&amp;gt; なんメガバイトのサイズを上限とするかこの例だと1500MB
+64 --&amp;gt; キャッシュディレクトリの最初の階層のフォルダ数
+1024 --&amp;gt; キャッシュディレクトリの2番目の階層のフォルダ数
+参考
+http://tech.ckme.co.jp/proxy.shtml
+http://squid.robata.org/squid2.0-conf.html " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2008/04/13/12612/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2008-04-13T00:00:00+09:00" />
+<meta property="article:modified_time" content="2008-04-13T00:00:00+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +55,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -195,7 +219,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -289,6 +313,10 @@ if (!doNotTrack) {
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -319,7 +347,7 @@ if (!doNotTrack) {
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>

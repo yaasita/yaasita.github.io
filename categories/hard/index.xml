@@ -6,10 +6,22 @@
     <description>Recent content in hard on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 23 Dec 2019 05:58:32 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jan 2020 13:27:50 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/hard/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>chromebookの日本語入力</title>
+      <link>https://yaasita.github.io/2020/01/01/chromebook-japanese/</link>
+      <pubDate>Wed, 01 Jan 2020 13:27:50 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/01/01/chromebook-japanese/</guid>
+      <description>明けましておめでとうございます。
+chromebookで日本語入力する場合はローカルの場合はfcitx-mozcを使って入力
+リモートに接続する場合は、一旦踏み台サーバーを経由して、X転送したqterminalを使っている
+ssh humidai-server -XC export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx fcitx qterminal  自分の環境では-Cオプションを付けない場合は800kbps/sくらい通信するが、つけると100kbps/sになるので外でやる時にはつけた方が良さそう</description>
+    </item>
     
     <item>
       <title>chromebookが最高だった</title>
@@ -18,7 +30,7 @@
       
       <guid>https://yaasita.github.io/2019/12/23/chromebook/</guid>
       <description>ASUS の C434TA-AI0084 を買ったのでレビュー
-chromeOS  起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある  解除がちょっと遅い10秒くらい待たされる   chromeの複数ユーザー機能が使えない  多重ログイン機能はあるけどちょっと微妙  別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能      ディスプレイ  タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 起動毎にバックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗  テザリング  Moto E5 とbluetoothでのテザリングが出来なかった  とりあえずUSBテザリングは刺すだけで使えたので良しとしてます    キーボード  Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない  Androidアプリ  ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない  Linux環境 OS  Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり  バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい   USB共有機能あり /opt/google/cros-containers/bin/.</description>
+chromeOS  起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある  解除がちょっと遅い10秒くらい待たされる   chromeの複数ユーザー機能が使えない  多重ログイン機能はあるけどちょっと微妙  別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能      ディスプレイ  タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 起動毎にバックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗  テザリング  Moto E5 とbluetoothでのテザリングが出来なかった  とりあえずUSBテザリングは刺すだけで使えたので良しとしてます    キーボード  Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない ←Alt + 明るさキーで消せました  Androidアプリ  ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない  Linux環境 OS  Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり  バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい   USB共有機能あり /opt/google/cros-containers/bin/.</description>
     </item>
     
     <item>
@@ -250,346 +262,6 @@ http://cskimura.blogspot.jp/2010/06/rtl81118168b-on-debian.html </description>
       <guid>https://yaasita.github.io/2013/08/18/556/</guid>
       <description> WOLの設定は以下参照
 http://80286.blog62.fc2.com/blog-entry-37.html </description>
-    </item>
-    
-    <item>
-      <title>X環境でのDPMS</title>
-      <link>https://yaasita.github.io/2013/04/20/989/</link>
-      <pubDate>Sat, 20 Apr 2013 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2013/04/20/989/</guid>
-      <description> xset -q
-で確認
-xset dpms 0 0 0 とかで設定できるのか
-なるほどね
-参考リンク
-https://forums.ubuntulinux.jp/viewtopic.php?id=1732 </description>
-    </item>
-    
-    <item>
-      <title>Huawei 新モデル E586 モバイル</title>
-      <link>https://yaasita.github.io/2013/01/29/1483/</link>
-      <pubDate>Tue, 29 Jan 2013 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2013/01/29/1483/</guid>
-      <description> を買ってみた
-所謂、SIMフリーの無線LANルータ </description>
-    </item>
-    
-    <item>
-      <title>PCを破棄したくなったら</title>
-      <link>https://yaasita.github.io/2013/01/02/1705/</link>
-      <pubDate>Wed, 02 Jan 2013 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2013/01/02/1705/</guid>
-      <description> ごみパソに送りつけると良いらしい
-http://www.53pc.com/hikitori/index.html </description>
-    </item>
-    
-    <item>
-      <title>HDDが故障したときにやったこと</title>
-      <link>https://yaasita.github.io/2012/03/11/2962/</link>
-      <pubDate>Sun, 11 Mar 2012 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2012/03/11/2962/</guid>
-      <description>/dev/sddが故障を検地 (S.M.A.R.T)
-まずはsmartのセルフテストをやってみる
-smartctl -t long /dev/sdd  badblocksでHDDをチェック
-今回は読み込みチェックだけやった
-badblocks -s -v /dev/hda  書き込みチェックもやるなら↓
-badblocks -s -v -n /dev/hda
--s 進捗状況表示
--v 詳細表示
--n 非破壊テスト
-http://nabe.blog.abk.nu/0245
-ファイルシステムが壊れてそうなら
-fsck
-を使うこと</description>
-    </item>
-    
-    <item>
-      <title>/dev/disk/by-uuidに無いHDDがある？</title>
-      <link>https://yaasita.github.io/2012/01/06/3236/</link>
-      <pubDate>Fri, 06 Jan 2012 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2012/01/06/3236/</guid>
-      <description> 答え
-mkfsでフォーマットしてないからです。
-フォーマットすれば出ます。
-ファイルシステム単位につけるものらしいね
-だからmkfsしなおしたら変わります
-ご注意を
-参考リンク
-http://manual.aptosid.com/ja/part-uuid-ja.htm </description>
-    </item>
-    
-    <item>
-      <title>マザーボードのチップセットとかCPU情報をLinuxで取得する</title>
-      <link>https://yaasita.github.io/2011/12/31/3257/</link>
-      <pubDate>Sat, 31 Dec 2011 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2011/12/31/3257/</guid>
-      <description> lshwというユーティリティがあった
-aptでインストールできた
-参考リンク
-PCのハードウェア情報を表示するには </description>
-    </item>
-    
-    <item>
-      <title>Linuxでスキャナを使うには</title>
-      <link>https://yaasita.github.io/2011/08/21/3487/</link>
-      <pubDate>Sun, 21 Aug 2011 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2011/08/21/3487/</guid>
-      <description> aptか何かでsaneとxsaneをインストール
-sane-find-scannerで検索
-/etc/sane.d/mustek_usb.confを編集
-以下の行だけ有効化
-option max_block_size 1024 usb 0x04b8 0x010a /dev/usb/scanner0 
-あとはrootでログインしてxsaneをメニューから選択すればできた
-ちなみに試したのはEpsonのGT-8700
-参考リンク
-http://samidarehetima.blog9.fc2.com/blog-entry-8.html
-検索した結果 </description>
-    </item>
-    
-    <item>
-      <title>簡単にRAIDが組めるHDDボックス</title>
-      <link>https://yaasita.github.io/2010/10/31/5426/</link>
-      <pubDate>Sun, 31 Oct 2010 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2010/10/31/5426/</guid>
-      <description> Drobo
-というらしい
-http://journal.mycom.co.jp/articles/2010/09/13/drobo/index.html </description>
-    </item>
-    
-    <item>
-      <title>IS02を買ったからガラケーから電話帳の移行</title>
-      <link>https://yaasita.github.io/2010/08/08/6100/</link>
-      <pubDate>Sun, 08 Aug 2010 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2010/08/08/6100/</guid>
-      <description>W43K→からIS02への移行をした
-１．W43KにマイクロSDを挿して電話帳を保存
-２．スマートフォンアドレス帳移行ツールでIMPORTすればOK
-ちなみにW43Kのアドレス帳はvcf形式になっていた
-csvに変換してから適当に編集してからIS02にIMPORTした
-vcf→csv
-#!/usr/bin/perl
-use feature qw(say);
-use warnings;
-use strict;
-our %date;
-our @order;
-while (&amp;amp;lt;DATA&amp;amp;gt;){
-chomp;
-$date{$_}=1;
-push (@order,$_);
-print &#34;$_,&#34;;
-}
-print &#34;\n&#34;;
-my $infile=shift || &#34;20100801.vcf&#34;;
-open (FH,$infile) or die $!;
-my %hash;
-while (&amp;amp;lt;FH&amp;amp;gt;){
-chomp;
-my ($key,$value) = split (/:/);
-&amp;amp;check($key);
-unless (defined $hash{$key}){
-$hash{$key}=$value;
-}
-elsif ($key eq &#34;EMAIL&#34;) {
-$hash{&#34;EMAIL2&#34;}=$value;
-}
-else {
-die &#34;Error!&#34;;
-}
-if ($key eq &#34;</description>
-    </item>
-    
-    <item>
-      <title>無線LANを中継する機能の事をなんと言うか</title>
-      <link>https://yaasita.github.io/2010/05/22/6632/</link>
-      <pubDate>Sat, 22 May 2010 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2010/05/22/6632/</guid>
-      <description> WDSというらしい
-Wireless Distribution System
-アクセスポイント間通信 </description>
-    </item>
-    
-    <item>
-      <title>LGのM237WS-PMを買った</title>
-      <link>https://yaasita.github.io/2010/05/02/6897/</link>
-      <pubDate>Sun, 02 May 2010 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2010/05/02/6897/</guid>
-      <description> 液晶モニタで
-フルHD　23インチ
-外部入力を小さく表示するPIP機能搭載だそうです
-結構いい感じ
-http://www.yomiuri.co.jp/net/newproducts/related/20090721-OYT8T00183.htm </description>
-    </item>
-    
-    <item>
-      <title>スーパーπをVistaマシンで試してみる</title>
-      <link>https://yaasita.github.io/2010/03/07/7142/</link>
-      <pubDate>Sun, 07 Mar 2010 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2010/03/07/7142/</guid>
-      <description> 
-こんな感じな結果になった
-スペックは以下のとおり
-&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp; </description>
-    </item>
-    
-    <item>
-      <title>Super π (スーパーパイ)をPhenomⅡで</title>
-      <link>https://yaasita.github.io/2010/03/06/7204/</link>
-      <pubDate>Sat, 06 Mar 2010 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2010/03/06/7204/</guid>
-      <description> AMD Phenom II X4 945 Box (Socket AM3)で計ってみた
-スペックは前に書いたとおり
- </description>
-    </item>
-    
-    <item>
-      <title>PCを新調したので恒例のFFベンチをやってみる</title>
-      <link>https://yaasita.github.io/2010/02/27/7246/</link>
-      <pubDate>Sat, 27 Feb 2010 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2010/02/27/7246/</guid>
-      <description> 前回とどのくらい変わってるか試した
-スコアは4307だった
-ちなみにこのマザーでBIOS(Winbond 25X80AVA1Z 0924)の更新しようとしたら吹っ飛んだんで、業者にお願いして交換した
-ソケットタイプ（PDIP）なので交換できます。
-【 .CPU.　】 AMD Phenom II X4 945 Box (Socket AM3)
-【 Mem 】 KVR1333D3N9K2/4G (DDR3 2G x 2)
-【　M/B　】ASRock M3A770DE
-【　VGA 】XIAiAF4850-512XD3 Green
-【VGAﾄﾞﾗｲﾊﾞ】
-【　DirectX....】 DirectX9.0c
-【　Sound 】
-【 OS 】Windows XP SP3 professional
-【 HDD 】WD5000AAKS
-【 Ver . 】
-▼スコア
-【　.Low　】
-【　High　.】4307
-リンク
-FINAL FANTASY XI for Windowsオフィシャルベンチマークソフト3のスコアについて </description>
-    </item>
-    
-    <item>
-      <title>auのUA</title>
-      <link>https://yaasita.github.io/2008/12/24/10650/</link>
-      <pubDate>Wed, 24 Dec 2008 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2008/12/24/10650/</guid>
-      <description> 携帯のUserAgentを知りたいなーってときにすぐ出てこないのでメモ
-KDDI-KC37 UP.Browser/6.2.0.11.1.2.2e (GUI) MMP/2.0 </description>
-    </item>
-    
-    <item>
-      <title>FFベンチをやってみた</title>
-      <link>https://yaasita.github.io/2008/11/26/10958/</link>
-      <pubDate>Wed, 26 Nov 2008 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2008/11/26/10958/</guid>
-      <description> 結果は3000くらい
-２ｃｈのテンプレに習って報告してみる
-構成
-【 .CPU.　】 AMD Athlon 64 3200+
-【 Mem 】 1GB DDR400
-【　M/B　】Albatron K8X890 Pro
-【　VGA 】GeForce 7300GS (AL-GF7300GS)
-【VGAﾄﾞﾗｲﾊﾞ】
-【　DirectX....】 DirectX9.0c
-【　Sound 】
-【 OS 】
-【 Ver . 】
-▼スコア
-【　.Low　】
-【　High　.】
-http://www.playonline.com/ff11/download/media/benchmark01.html </description>
-    </item>
-    
-    <item>
-      <title>ブロードバンドルータの設定や確認をperlで行う1</title>
-      <link>https://yaasita.github.io/2008/03/18/12734/</link>
-      <pubDate>Tue, 18 Mar 2008 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2008/03/18/12734/</guid>
-      <description> 市販されているブロードバンドルーターの多くがブラウザから設定を行うタイプだと思います。これはGUIにより容易に設定が行えますが、ポートの開閉やIPアドレスの定期的な確認などがしたいときには煩わしくプログラムで自動化したいと思うことがあります。
-まずは下図の様な場合を想定し、目的のスクリプトを作成したいと思います。
-
-ルーターはNP-BBRPでWAN側はPPPoE接続されています。今回は例としてNP-BBRPを想定しますが、どのルーターでも出来るように説明します。
-まず、認証方法を確認します。ブラウザからログインして設定画面に行きます。
-この場合http://192.168.0.1/にアクセスしログインします。下図のような画面が出てきました。ユーザー名、パスワード欄に適切なワードを入れてログインします。
- </description>
-    </item>
-    
-    <item>
-      <title>DebianでFNW-3600-Tを使うとインターフェイスが落ちる問題</title>
-      <link>https://yaasita.github.io/2007/12/05/13168/</link>
-      <pubDate>Wed, 05 Dec 2007 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2007/12/05/13168/</guid>
-      <description>PLANEXのFNW-3600-Tを使用している際にインターフェイスが勝手にリブートする問題があります。dmesgを見ると以下のようなログが確認できます。
-
-eth0: NE2000 (DL10019 rev 05): io 0x300, irq 3, hw_addr 00:E0:98:00:BE:63
-eth0: found link beat
-eth0: autonegotiation complete: 100baseT-FD selected
-eth0: no IPv6 routers present
-eth0: lost link beat
-eth0: found link beat
-eth0: autonegotiation complete: 100baseT-FD selected
-eth0: lost link beat
-eth0: found link beat
-eth0: autonegotiation complete: 100baseT-FD selected
-eth0: lost link beat
-eth0: interrupt(s) dropped!
-eth0: found link beat
-eth0: autonegotiation complete: 100baseT-FD selected</description>
-    </item>
-    
-    <item>
-      <title>CPU切替器は何が良いか</title>
-      <link>https://yaasita.github.io/2007/08/30/13995/</link>
-      <pubDate>Thu, 30 Aug 2007 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2007/08/30/13995/</guid>
-      <description> coregaのCG-PC2KVMAS
-切替は早いけどたまにマウスのポインタが引っかかる
-キーボードのレスポンスが悪い気がする
-サンワサプライのSW-KVM2CPA
-マウスが引っかかる事は無いし、キーボードのレスポンスも良いかもしれない </description>
-    </item>
-    
-    <item>
-      <title>ポートマッピングでブロードキャストアドレスを指定できるルーター</title>
-      <link>https://yaasita.github.io/2007/08/29/14015/</link>
-      <pubDate>Wed, 29 Aug 2007 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2007/08/29/14015/</guid>
-      <description> WOLをインターネット越しに使おうとしたときに気になるのは
-そのポート転送先アドレスにブロードキャストアドレスを指定できるかどうかだと思います。
-コレガのCG-WLBARGPは192.168.0.255を転送先に選ぶとエラーが出てしまい
-IO-DATAのNP-BBRPはブロードキャストアドレスを指定はできますが、
-192.168.0.255を探すARP要求を出してしまいうまくいきませんでした。
-NETGEARのWGU624も駄目でした。
-NECのAtermシリーズは出来るみたいです。PA-BR1500Hは確認しました。 </description>
-    </item>
-    
-    <item>
-      <title>ノートPCのHDD交換方法</title>
-      <link>https://yaasita.github.io/2007/08/15/14059/</link>
-      <pubDate>Wed, 15 Aug 2007 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2007/08/15/14059/</guid>
-      <description> http://www.iodata.jp/support/service/hd/sotec/wb3/wb3.html </description>
     </item>
     
   </channel>

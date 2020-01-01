@@ -10,12 +10,29 @@
     <meta name="generator" content="Hugo 0.62.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
-    
     <meta property="og:title" content="一定時間だけログイン可能なユーザーを作った" />
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="https://yaasita.github.io/2011/03/27/4549/" />
-    <meta property="og:site_name" content="# cd ~yaasita" />
-    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4" />
+<meta property="og:description" content=" sshのログインは基本的には鍵認証にしているのだが、
+出先などでどうしてもログインしたい場合鍵が無くて困ることがあるので、一定時間だけパスワード認証できるユーザーを作った。
+仕組みは以下のとおり
+
+1.SUIDのセットされたperlスクリプトで実行するコマンドはusermod --lockコマンド　→suidperlについて
+2.アンロックされる
+3.sshのパスワード認証によってログインする　※1
+4.cronにusermod --unlockを仕込んでおく
+※1　特定のユーザーのみパスワード認証を許可する
+hogeuserが今回の対象とする場合
+Match User hogeuser
+PasswordAuthentication yes
+AllowTcpForwarding no
+
+
+参考リンク
+http://d.hatena.ne.jp/isseium/20100923/1285225757 " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2011/03/27/4549/" />
+<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
+<meta property="article:published_time" content="2011-03-27T00:00:00+09:00" />
+<meta property="article:modified_time" content="2011-03-27T00:00:00+09:00" />
 
     
 <script type="application/javascript">
@@ -29,9 +46,7 @@ if (!doNotTrack) {
 </script>
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
-
     <script id="dsq-count-scr" src="//yaasita.disqus.com/count.js" async></script>
-
   </head>
   <body>
     <div id="wrap">
@@ -195,7 +210,7 @@ sshのログインは基本的には鍵認証にしているのだが、<br />�
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (40)</a>
+          <a href="/categories/hard"><span></span>hard (41)</a>
         </li>
         
         <li>
@@ -289,6 +304,10 @@ sshのログインは基本的には鍵認証にしているのだが、<br />�
           <a href="/archives/2019"><span></span>2019 (23)</a>
         </li>
         
+        <li>
+          <a href="/archives/2020"><span></span>2020 (1)</a>
+        </li>
+        
       </ul>
     </div>
     <script>
@@ -319,7 +338,7 @@ sshのログインは基本的には鍵認証にしているのだが、<br />�
             <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
             <span>
               
-              Copyright (c) 2019, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              Copyright (c) 2020, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
               
             </span>
           </div>
