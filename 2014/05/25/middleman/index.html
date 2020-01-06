@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>middlemanについて | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.62.0" />
+    <meta name="generator" content="Hugo 0.62.2" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="middlemanについて" />
@@ -73,13 +73,13 @@ end
 <ul>
 <li><a href="http://qiita.com/yterajima/items/d7deec7cc0caaf95982e">http://qiita.com/yterajima/items/d7deec7cc0caaf95982e</a></li>
 </ul>
-<h2 id="heading">新規投稿</h2>
+<h2 id="新規投稿">新規投稿</h2>
 <pre><code>be middleman article yamasita_test
 </code></pre>
-<h2 id="heading-1">パーマリンク修正</h2>
+<h2 id="パーマリンク修正">パーマリンク修正</h2>
 <pre><code>blog.permalink = &quot;{year}/{month}/{title}.html&quot;
 </code></pre>
-<h2 id="heading-2">アーカイブページ</h2>
+<h2 id="アーカイブページ">アーカイブページ</h2>
 <p>config.ruに以下のように書く</p>
 <pre><code>#blog.calendar_template = &quot;calendar.html&quot;
 blog.year_template = &quot;calendar.html&quot;
@@ -87,7 +87,7 @@ blog.year_template = &quot;calendar.html&quot;
 <ul>
 <li><a href="http://middlemanapp.com/jp/basics/blogging/">http://middlemanapp.com/jp/basics/blogging/</a></li>
 </ul>
-<h2 id="heading-3">ページトップのアーカイブページ</h2>
+<h2 id="ページトップのアーカイブページ">ページトップのアーカイブページ</h2>
 <pre><code>&lt;h2&gt;アーカイブページ&lt;/h2&gt;
   &lt;% blog.articles.collect{|item| item.date.year}.uniq.sort.each do |year| %&gt;
     &lt;h3&gt;&lt;%= year %&gt;&lt;/h3&gt;
@@ -98,12 +98,12 @@ blog.year_template = &quot;calendar.html&quot;
     &lt;/ul&gt;
   &lt;% end %&gt;
 </code></pre>
-<h2 id="rss">rss表示件数変更</h2>
+<h2 id="rss表示件数変更">rss表示件数変更</h2>
 <pre><code># 10件に変更
 #blog.articles[0..5].each do |article|
 blog.articles[0..9].each do |article|
 </code></pre>
-<h2 id="heading-4">参考リンク</h2>
+<h2 id="参考リンク">参考リンク</h2>
 <ul>
 <li><a href="http://kotatu.org/blog/2013/09/01/variables-available-in-middleman-templates/">http://kotatu.org/blog/2013/09/01/variables-available-in-middleman-templates/</a></li>
 </ul>
@@ -257,7 +257,7 @@ blog.articles[0..9].each do |article|
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (209)</a>
+          <a href="/categories/net"><span></span>net (210)</a>
         </li>
         
         <li>
@@ -340,7 +340,7 @@ blog.articles[0..9].each do |article|
         </li>
         
         <li>
-          <a href="/archives/2020"><span></span>2020 (1)</a>
+          <a href="/archives/2020"><span></span>2020 (2)</a>
         </li>
         
       </ul>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>mitmproxyが便利 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.62.0" />
+    <meta name="generator" content="Hugo 0.62.2" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="mitmproxyが便利" />
@@ -64,15 +64,15 @@ if (!doNotTrack) {
   </header>
   <div class="content">
     <p>とっても便利な<a href="https://mitmproxy.org/">mitmproxy</a>を使ってみた</p>
-<h2 id="heading">概要</h2>
+<h2 id="概要">概要</h2>
 <p>こんな感じでHTTPSなサイトも中間に入りこんでくれる<br>
 （root証明証を予め信頼しておく必要がある)</p>
 <pre><code>browser &lt;---(指定のCA鍵で再署名)---- mitmproxy &lt;---(HTTPSを一旦解く)----- web server
 </code></pre>
-<h2 id="heading-1">インストール</h2>
+<h2 id="インストール">インストール</h2>
 <pre><code>apt install mitmproxy
 </code></pre>
-<h2 id="heading-2">設定</h2>
+<h2 id="設定">設定</h2>
 <p><a href="/2018/01/31/private-ca/">プライベートCA</a>をやってるなら</p>
 <ul>
 <li>/etc/ssl/demoCA/private/cakey.pem</li>
@@ -86,7 +86,7 @@ if (!doNotTrack) {
 -----BEGIN CERTIFICATE-----
 ...
 -----END CERTIFICATE-----
-</code></pre><h2 id="heading-3">実行</h2>
+</code></pre><h2 id="実行">実行</h2>
 <p>こんな感じで実行できる &ndash;view-filter で表示させたいURLを絞れる<br>
 (hogedirの中にmitmproxy-ca.pemが入ってる)</p>
 <pre><code>mitmproxy --set confdir=/path/to/hogedir --view-filter m3u
@@ -101,7 +101,7 @@ mitmdump -nr /tmp/save -w outfile &quot;~m get&quot;
 # リクエスト一覧
 mitmdump -nr /tmp/save 
 </code></pre>
-<h2 id="heading-4">まとめ</h2>
+<h2 id="まとめ">まとめ</h2>
 <p>HTTPSのデバッグ時にめっちゃ便利</p>
 
   </div>
@@ -253,7 +253,7 @@ mitmdump -nr /tmp/save
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (209)</a>
+          <a href="/categories/net"><span></span>net (210)</a>
         </li>
         
         <li>
@@ -336,7 +336,7 @@ mitmdump -nr /tmp/save
         </li>
         
         <li>
-          <a href="/archives/2020"><span></span>2020 (1)</a>
+          <a href="/archives/2020"><span></span>2020 (2)</a>
         </li>
         
       </ul>

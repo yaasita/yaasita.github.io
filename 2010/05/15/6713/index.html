@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>mdadmでRAID構築（まとめ) | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.62.0" />
+    <meta name="generator" content="Hugo 0.62.2" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="mdadmでRAID構築（まとめ)" />
@@ -62,7 +62,7 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    <h2 id="raid">RAIDの構築</h2>
+    <h2 id="raidの構築">RAIDの構築</h2>
 <ul>
 <li>
 <p>fdisk等を用いてパーティションを作成<br>
@@ -86,11 +86,11 @@ if (!doNotTrack) {
 <p>/dev/hdd[123]はRAIDを構成するHDD この例では単一のHDDで構成しているが本当は/dev/hd[bcd]1みたいに物理的に違うデバイスを指定する</p>
 </li>
 </ul>
-<h2 id="heading">スペアディスクの追加</h2>
+<h2 id="スペアディスクの追加">スペアディスクの追加</h2>
 <pre><code># mdadm /dev/md0 --add /dev/hdd4
 </code></pre>
 <p>mdadm -D /dev/md0でスペアディスクが存在することを確認できる</p>
-<h2 id="raid-1">RAIDの監視</h2>
+<h2 id="raidの監視">RAIDの監視</h2>
 <ul>
 <li>
 <p>procから見る</p>
@@ -104,7 +104,7 @@ if (!doNotTrack) {
 </code></pre>
 </li>
 </ul>
-<h2 id="raidhdd">RAIDの再構築(HDD故障時の対処)</h2>
+<h2 id="raidの再構築hdd故障時の対処">RAIDの再構築(HDD故障時の対処)</h2>
 <ul>
 <li>
 <p>故障マークを付ける</p>
@@ -124,7 +124,7 @@ if (!doNotTrack) {
 </code></pre>
 </li>
 </ul>
-<h2 id="raid-2">RAIDの解除</h2>
+<h2 id="raidの解除">RAIDの解除</h2>
 <ul>
 <li>
 <p>アレイの停止</p>
@@ -137,7 +137,7 @@ if (!doNotTrack) {
 </code></pre>
 </li>
 </ul>
-<h2 id="heading-1">その他</h2>
+<h2 id="その他">その他</h2>
 <ul>
 <li>
 <p>以前存在していたRAIDデバイスを再構築しデータをサルベージ<a href="http://www.crimson-snow.net/tips/linux/mdadm_raid5.html">この辺(KNOPPIXでの認識)</a>を参考にした</p>
@@ -316,7 +316,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (209)</a>
+          <a href="/categories/net"><span></span>net (210)</a>
         </li>
         
         <li>
@@ -399,7 +399,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2020"><span></span>2020 (1)</a>
+          <a href="/archives/2020"><span></span>2020 (2)</a>
         </li>
         
       </ul>

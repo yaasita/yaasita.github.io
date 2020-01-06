@@ -6,10 +6,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 01 Jan 2020 13:27:50 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jan 2020 23:06:41 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GCPの外部IPアドレスが有料になる件</title>
+      <link>https://yaasita.github.io/2020/01/06/gcp-ex-ip/</link>
+      <pubDate>Mon, 06 Jan 2020 23:06:41 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/01/06/gcp-ex-ip/</guid>
+      <description>外部IPが有料になりそうだからどうしようかという話
+一部では無料範囲内なら課金されないみたいな書き方もされてるけど、今月の請求には不穏な項目がある
+Credit External IPs will not be charged until April 1, 2020.  
+んで、外部IPを無しにして、gcloud compute ssh で繋げるのは良いんだけど、外部IPが無いと外と通信できないからapt installもできない。。。。
+あと、上記コマンドはsshポートを解放してないと駄目ぽい（正確にはIAPからのアクセスを許可すれば良いだけぽいが）
+とりあえず課金されてから考えるか・・・
+参考リンク  外部IPを持たないGCEインスタンスでweb開発 GCP/GCE の固定グローバルIPアドレス、2020年より有料化   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>chromebookの日本語入力</title>
@@ -20,7 +35,11 @@
       <description>明けましておめでとうございます。
 chromebookで日本語入力する場合はローカルの場合はfcitx-mozcを使って入力
 リモートに接続する場合は、一旦踏み台サーバーを経由して、X転送したqterminalを使っている
-ssh humidai-server -XC export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx fcitx qterminal  自分の環境では-Cオプションを付けない場合は800kbps/sくらい通信するが、つけると100kbps/sになるので外でやる時にはつけた方が良さそう</description>
+ssh humidai-server -XC export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx fcitx qterminal  自分の環境では-Cオプションを付けない場合は800kbpsくらい通信するが、つけると100kbpsになるので外でやる時にはつけた方が良さそう
+回線が細いテザリング環境では ttyd を立てて、ポートフォワーディングでつないだ方が良いかも
+Ctrl-wがchromeのタブ閉じになってしまうので微妙かなと思ったんだけど、「その他のツール(L)」 =&amp;gt; 「ショートカットを作成」からアプリとして作れば、Ctrl-wも使えた
+こっちなら日本語入力も出来るのでこっちの方が良いかもしれない
+通信量も1kbps位だし</description>
     </item>
     
     <item>
@@ -290,23 +309,6 @@ tar -g resume -cvf work.tar work/  しかし、以下のようにハードリン
 stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる  なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
 うまく増分バックアップができなくなる
 続き</description>
-    </item>
-    
-    <item>
-      <title>hugoアップデート</title>
-      <link>https://yaasita.github.io/2019/03/12/hugo-update/</link>
-      <pubDate>Tue, 12 Mar 2019 23:00:51 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/03/12/hugo-update/</guid>
-      <description>久々にhugoをアップデート v0.41 =&amp;gt; v0.54まで上げた
-ワーニング潰し アップデートに伴い
-.Prev と .Nextが非推奨になったぽい マニュアル, コミット
-なのでこれはそれぞれ以下のように修正すればOK(意味が逆なので分かりにくいけど)
- .Prev =&amp;gt; .NextPage .Next =&amp;gt; .PrevPage  OGP設定 某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました
-上手く表示できてますか？
-修正箇所
-themes/hugo-theme-geppaku/layouts/partials/header.html
- {{ if .IsHome }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Site.Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;website&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}&amp;quot; /&amp;gt; {{ else }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;article&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}{{ .Page.Dir }}&amp;quot; /&amp;gt; {{ end }} &amp;lt;meta property=&amp;quot;og:site_name&amp;quot; content=&amp;quot;{{ .</description>
     </item>
     
   </channel>

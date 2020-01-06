@@ -20,7 +20,11 @@
       <description>明けましておめでとうございます。
 chromebookで日本語入力する場合はローカルの場合はfcitx-mozcを使って入力
 リモートに接続する場合は、一旦踏み台サーバーを経由して、X転送したqterminalを使っている
-ssh humidai-server -XC export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx fcitx qterminal  自分の環境では-Cオプションを付けない場合は800kbps/sくらい通信するが、つけると100kbps/sになるので外でやる時にはつけた方が良さそう</description>
+ssh humidai-server -XC export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx fcitx qterminal  自分の環境では-Cオプションを付けない場合は800kbpsくらい通信するが、つけると100kbpsになるので外でやる時にはつけた方が良さそう
+回線が細いテザリング環境では ttyd を立てて、ポートフォワーディングでつないだ方が良いかも
+Ctrl-wがchromeのタブ閉じになってしまうので微妙かなと思ったんだけど、「その他のツール(L)」 =&amp;gt; 「ショートカットを作成」からアプリとして作れば、Ctrl-wも使えた
+こっちなら日本語入力も出来るのでこっちの方が良いかもしれない
+通信量も1kbps位だし</description>
     </item>
     
     <item>

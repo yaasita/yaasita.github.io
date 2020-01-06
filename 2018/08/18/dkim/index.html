@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>ubuntu18.04でDKIM設定 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.62.0" />
+    <meta name="generator" content="Hugo 0.62.2" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="ubuntu18.04でDKIM設定" />
@@ -56,10 +56,10 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    <h2 id="heading">インストール</h2>
+    <h2 id="インストール">インストール</h2>
 <pre><code>apt install opendkim opendkim-tools
 </code></pre>
-<h2 id="opendkim">opendkim設定</h2>
+<h2 id="opendkim設定">opendkim設定</h2>
 <pre><code>mkdir /etc/postfix/dkim/ 
 opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail 
 # -d ドメイン
@@ -90,7 +90,7 @@ SigningTable file:/etc/postfix/dkim/signingtable
 <p>反映</p>
 <pre><code>systemctl restart opendkim.service 
 </code></pre>
-<h2 id="postfix">postfix設定</h2>
+<h2 id="postfix設定">postfix設定</h2>
 <p>以下追記</p>
 <pre><code>milter_default_action = tempfail
 milter_protocol = 2
@@ -99,7 +99,7 @@ non_smtpd_milters = inet:localhost:8891
 </code></pre>
 <p>ここで,milterを使うので<br>
 compatibility_level = 0 にしておくこと</p>
-<h2 id="dns">DNS設定</h2>
+<h2 id="dns設定">DNS設定</h2>
 <p>/etc/postfix/dkim/mail.txtにできたファイルをそのままコピペすれば BIND/NSDでそのまま使える<br>
 加工する必要なし</p>
 <pre><code>mail._domainkey	IN	TXT	( &quot;v=DKIM1; h=sha256; k=rsa; &quot;
@@ -109,11 +109,11 @@ compatibility_level = 0 にしておくこと</p>
 # チェック
 opendkim-testkey -d example.com -s mail -vvv
 </code></pre>
-<h2 id="heading-1">送ってみる</h2>
+<h2 id="送ってみる">送ってみる</h2>
 <pre><code>mail -r test@example.net -s $(date +%Y%M%d-%H%M)
 </code></pre>
 <p><a href="https://addons.thunderbird.net/ja/thunderbird/addon/dkim-verifier/">この手のプラグイン</a>でチェックしてみる</p>
-<h2 id="heading-2">参考リンク</h2>
+<h2 id="参考リンク">参考リンク</h2>
 <ul>
 <li><a href="http://opendkim.org/opendkim.conf.5.html">opendkim.conf</a></li>
 </ul>
@@ -275,7 +275,7 @@ opendkim-testkey -d example.com -s mail -vvv
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (209)</a>
+          <a href="/categories/net"><span></span>net (210)</a>
         </li>
         
         <li>
@@ -358,7 +358,7 @@ opendkim-testkey -d example.com -s mail -vvv
         </li>
         
         <li>
-          <a href="/archives/2020"><span></span>2020 (1)</a>
+          <a href="/archives/2020"><span></span>2020 (2)</a>
         </li>
         
       </ul>

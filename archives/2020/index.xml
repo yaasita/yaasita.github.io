@@ -6,10 +6,25 @@
     <description>Recent content in 2020 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 01 Jan 2020 13:27:50 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 06 Jan 2020 23:06:41 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/archives/2020/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GCPの外部IPアドレスが有料になる件</title>
+      <link>https://yaasita.github.io/2020/01/06/gcp-ex-ip/</link>
+      <pubDate>Mon, 06 Jan 2020 23:06:41 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/01/06/gcp-ex-ip/</guid>
+      <description>外部IPが有料になりそうだからどうしようかという話
+一部では無料範囲内なら課金されないみたいな書き方もされてるけど、今月の請求には不穏な項目がある
+Credit External IPs will not be charged until April 1, 2020.  
+んで、外部IPを無しにして、gcloud compute ssh で繋げるのは良いんだけど、外部IPが無いと外と通信できないからapt installもできない。。。。
+あと、上記コマンドはsshポートを解放してないと駄目ぽい（正確にはIAPからのアクセスを許可すれば良いだけぽいが）
+とりあえず課金されてから考えるか・・・
+参考リンク  外部IPを持たないGCEインスタンスでweb開発 GCP/GCE の固定グローバルIPアドレス、2020年より有料化   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>chromebookの日本語入力</title>
@@ -20,7 +35,11 @@
       <description>明けましておめでとうございます。
 chromebookで日本語入力する場合はローカルの場合はfcitx-mozcを使って入力
 リモートに接続する場合は、一旦踏み台サーバーを経由して、X転送したqterminalを使っている
-ssh humidai-server -XC export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx fcitx qterminal  自分の環境では-Cオプションを付けない場合は800kbps/sくらい通信するが、つけると100kbps/sになるので外でやる時にはつけた方が良さそう</description>
+ssh humidai-server -XC export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx fcitx qterminal  自分の環境では-Cオプションを付けない場合は800kbpsくらい通信するが、つけると100kbpsになるので外でやる時にはつけた方が良さそう
+回線が細いテザリング環境では ttyd を立てて、ポートフォワーディングでつないだ方が良いかも
+Ctrl-wがchromeのタブ閉じになってしまうので微妙かなと思ったんだけど、「その他のツール(L)」 =&amp;gt; 「ショートカットを作成」からアプリとして作れば、Ctrl-wも使えた
+こっちなら日本語入力も出来るのでこっちの方が良いかもしれない
+通信量も1kbps位だし</description>
     </item>
     
   </channel>
