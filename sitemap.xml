@@ -4,36 +4,46 @@
   
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2020-01-06T23:06:41+09:00</lastmod>
+    <lastmod>2020-01-07T18:55:03+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/archives/2020/</loc>
-    <lastmod>2020-01-06T23:06:41+09:00</lastmod>
+    <lastmod>2020-01-07T18:55:03+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/archives/</loc>
-    <lastmod>2020-01-06T23:06:41+09:00</lastmod>
+    <lastmod>2020-01-07T18:55:03+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/categories/</loc>
-    <lastmod>2020-01-06T23:06:41+09:00</lastmod>
+    <lastmod>2020-01-07T18:55:03+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://yaasita.github.io/2020/01/06/gcp-ex-ip/</loc>
-    <lastmod>2020-01-06T23:06:41+09:00</lastmod>
+    <loc>https://yaasita.github.io/2020/01/07/check-github-pages/</loc>
+    <lastmod>2020-01-07T18:55:03+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/categories/net/</loc>
-    <lastmod>2020-01-06T23:06:41+09:00</lastmod>
+    <lastmod>2020-01-07T18:55:03+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/post/</loc>
+    <lastmod>2020-01-07T18:55:03+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yaasita.github.io/categories/program/</loc>
+    <lastmod>2020-01-07T18:55:03+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yaasita.github.io/2020/01/06/gcp-ex-ip/</loc>
     <lastmod>2020-01-06T23:06:41+09:00</lastmod>
   </url>
   
@@ -74,11 +84,6 @@
   
   <url>
     <loc>https://yaasita.github.io/2019/12/08/service-account-in-cf/</loc>
-    <lastmod>2019-12-08T05:12:12+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yaasita.github.io/categories/program/</loc>
     <lastmod>2019-12-08T05:12:12+09:00</lastmod>
   </url>
   

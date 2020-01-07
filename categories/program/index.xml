@@ -6,10 +6,22 @@
     <description>Recent content in program on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 08 Dec 2019 05:12:12 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jan 2020 18:55:03 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Github Pagesになってるリポジトリをチェック</title>
+      <link>https://yaasita.github.io/2020/01/07/check-github-pages/</link>
+      <pubDate>Tue, 07 Jan 2020 18:55:03 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/01/07/check-github-pages/</guid>
+      <description>どのリポジトリがGithub Pagesの設定がされているか？
+調べたくなったので・・・
+Github pagesの設定されてるリポジトリ一覧を簡単に確認できればいいのに・・・
+ </description>
+    </item>
     
     <item>
       <title>GCP Cloud Functions内からサービスアカウントのtoken取る</title>
@@ -271,19 +283,6 @@ bootしてから3分後に実行（ちょっとインターバルないとイン
 /etc/systemd/system/gcp-calc.service
 [Unit] Description=gcp-calc Wants=network-pre.target After=multi-user.target [Install] WantedBy=multi-user.target [Service] ExecStart=/root/run.sh Type=oneshot  /etc/systemd/system/gcp-calc.timer
 [Unit] Description=gcp calc [Timer] OnBootSec=3min [Install] WantedBy=timers.target  </description>
-    </item>
-    
-    <item>
-      <title>たまにはGDBM使う</title>
-      <link>https://yaasita.github.io/2018/04/17/gdbm-file/</link>
-      <pubDate>Tue, 17 Apr 2018 01:09:31 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/04/17/gdbm-file/</guid>
-      <description>2018年にGDBM使う
-perl標準モジュールにある
-簡単なKVSならこれで
-debianだと多分入ってるけど、libperl5.24が無い環境だとダメぽい
-#!/usr/bin/perl use strict; use warnings; use feature qw(:5.10); use utf8; use GDBM_File ; my $filename = &amp;quot;gdm&amp;quot;; my %hash; tie %hash, &#39;GDBM_File&#39;, $filename, &amp;amp;GDBM_WRCREAT, 0640; $hash{hoge} = &amp;quot;huga&amp;quot;; say &amp;quot;$_ =&amp;gt; $hash{$_}&amp;quot; for keys %hash;  </description>
     </item>
     
   </channel>
