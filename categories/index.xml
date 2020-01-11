@@ -6,10 +6,19 @@
     <description>Recent content in Categories on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 07 Jan 2020 18:55:03 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jan 2020 15:47:07 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>hard</title>
+      <link>https://yaasita.github.io/categories/hard/</link>
+      <pubDate>Sat, 11 Jan 2020 15:47:07 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/categories/hard/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>net</title>
@@ -26,15 +35,6 @@
       <pubDate>Tue, 07 Jan 2020 18:55:03 +0900</pubDate>
       
       <guid>https://yaasita.github.io/categories/program/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>hard</title>
-      <link>https://yaasita.github.io/categories/hard/</link>
-      <pubDate>Wed, 01 Jan 2020 13:27:50 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/categories/hard/</guid>
       <description></description>
     </item>
     
