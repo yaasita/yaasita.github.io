@@ -6,10 +6,24 @@
     <description>Recent content in 2020 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 17 Jan 2020 17:22:02 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 28 Feb 2020 04:08:58 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/archives/2020/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GKEでCloud SQL Proxyをsocketで使う</title>
+      <link>https://yaasita.github.io/2020/02/28/k8s-cloudsql-proxy-with-socket/</link>
+      <pubDate>Fri, 28 Feb 2020 04:08:58 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/02/28/k8s-cloudsql-proxy-with-socket/</guid>
+      <description>GKEでもGAEみたいにCloud SQLに繋げたい場合の話
+公式ドキュメントのサンプルだとこんな感じにport接続にしてる
+https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/blob/master/cloudsql/mysql_wordpress_deployment.yaml
+socket接続の場合はこんな感じ
+ 参考
+k8s サイドカーコンテナについて</description>
+    </item>
     
     <item>
       <title>続 chromebookでbackslashを入力</title>
@@ -20,7 +34,7 @@
       <description>前回 の続き
 以下をvimrcに追記して事なきを得た
 inoremapって非ASCII文字でも行けるみたい
-inoremap ¥ \  </description>
+inoremap ¥ \ cnoremap ¥ \  </description>
     </item>
     
     <item>

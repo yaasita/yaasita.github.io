@@ -20,7 +20,7 @@
       <description>前回 の続き
 以下をvimrcに追記して事なきを得た
 inoremapって非ASCII文字でも行けるみたい
-inoremap ¥ \  </description>
+inoremap ¥ \ cnoremap ¥ \  </description>
     </item>
     
     <item>

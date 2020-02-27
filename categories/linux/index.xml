@@ -6,10 +6,24 @@
     <description>Recent content in linux on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 23 Dec 2019 05:58:32 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 28 Feb 2020 04:08:58 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>GKEでCloud SQL Proxyをsocketで使う</title>
+      <link>https://yaasita.github.io/2020/02/28/k8s-cloudsql-proxy-with-socket/</link>
+      <pubDate>Fri, 28 Feb 2020 04:08:58 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/02/28/k8s-cloudsql-proxy-with-socket/</guid>
+      <description>GKEでもGAEみたいにCloud SQLに繋げたい場合の話
+公式ドキュメントのサンプルだとこんな感じにport接続にしてる
+https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/blob/master/cloudsql/mysql_wordpress_deployment.yaml
+socket接続の場合はこんな感じ
+ 参考
+k8s サイドカーコンテナについて</description>
+    </item>
     
     <item>
       <title>chromebookが最高だった</title>
@@ -286,18 +300,6 @@ apt-get install klipper  初期はShift+Zになってるので設定からなお
 全般の選択とクリップボード→選択を無視する
 ってやつやると選択しただけでクリップボードに入るのを抑止
 できる</description>
-    </item>
-    
-    <item>
-      <title>Linuxのターミナルで出来るマリオらしい</title>
-      <link>https://yaasita.github.io/2015/04/13/linux-terminal-game/</link>
-      <pubDate>Mon, 13 Apr 2015 00:24:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/04/13/linux-terminal-game/</guid>
-      <description>すごいなこれ
-
-まさかの？Linuxターミナル上でプレイする『スーパーマリオブラザーズ』
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
   </channel>
