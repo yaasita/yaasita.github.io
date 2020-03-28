@@ -6,10 +6,24 @@
     <description>Recent content in soft on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 28 Feb 2020 04:08:58 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 29 Mar 2020 03:24:06 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>microk8sとskaffold</title>
+      <link>https://yaasita.github.io/2020/03/29/microk8s_and_skaffold/</link>
+      <pubDate>Sun, 29 Mar 2020 03:24:06 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/03/29/microk8s_and_skaffold/</guid>
+      <description>microk8sとskaffoldをこんな感じで使う
+
+インストール
+snap install microk8s --class microk8s.kubectl config view --raw &amp;gt; ~/.kube/config  必要サービスの起動
+microk8s.enable dns registry storage skaffold dev --no-prune=false --cache-artifacts=false --default-repo localhost:32000 -f skaffold.yaml  こんな感じにやると、リポジトリ部分を読み替えてくれるので便利
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>GKEでCloud SQL Proxyをsocketで使う</title>
@@ -288,19 +302,6 @@ curl https://example.net --key client.key --cert cert.crt --http1.1  作ると�
  apt-get build-dep vim apt-get install libperl-dev python-dev python3-dev ruby-dev git clone --depth 1 git@github.com:vim/vim.git cd vim make make install    参考リンク
 【(Neo)Vim】terminal mode のマッピングについての闇とその解決法
 結論：すごく便利だと思います</description>
-    </item>
-    
-    <item>
-      <title>Apacheでリバースプロキシ</title>
-      <link>https://yaasita.github.io/2018/02/04/apache-header/</link>
-      <pubDate>Sun, 04 Feb 2018 16:27:56 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/02/04/apache-header/</guid>
-      <description>Apacheでリバースプロキシするときこんな感じに書いた方が良いよという話
-&amp;lt;VirtualHost *:443&amp;gt; ServerName example.net &amp;lt;Proxy *&amp;gt; Require all granted &amp;lt;/Proxy&amp;gt; ProxyRequests Off ProxyPreserveHost On ProxyPass / http://192.168.0.1:8080/ keepalive=On ProxyPassReverse / http://192.168.0.1:8080/ RequestHeader set X-Forwarded-Proto &amp;quot;https&amp;quot; RequestHeader unset X-Forwarded-For RequestHeader unset X-Forwarded-Server RequestHeader unset X-Forwarded-Host Include /path/to/common.conf &amp;lt;/VirtualHost&amp;gt;  X-Forwarded-Forとかを一旦unsetしないと、
-X-Forwarded-Forとかをクライアント側から指定されると、追加されて判別が困難になる
-curl -H &amp;quot;X-Forwarded-For: 1.2.3.4&amp;quot;  みたいな感じで指定されると
- x-forwarded-for: &amp;quot;1.2.3.4, 192.168.0.100&amp;quot;  こんな感じに追加されて http://192.168.0.1:8080 側にわたってしまう</description>
     </item>
     
   </channel>

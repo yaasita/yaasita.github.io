@@ -6,10 +6,24 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 28 Feb 2020 04:08:58 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 29 Mar 2020 03:24:06 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>microk8sとskaffold</title>
+      <link>https://yaasita.github.io/2020/03/29/microk8s_and_skaffold/</link>
+      <pubDate>Sun, 29 Mar 2020 03:24:06 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/03/29/microk8s_and_skaffold/</guid>
+      <description>microk8sとskaffoldをこんな感じで使う
+
+インストール
+snap install microk8s --class microk8s.kubectl config view --raw &amp;gt; ~/.kube/config  必要サービスの起動
+microk8s.enable dns registry storage skaffold dev --no-prune=false --cache-artifacts=false --default-repo localhost:32000 -f skaffold.yaml  こんな感じにやると、リポジトリ部分を読み替えてくれるので便利
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+    </item>
     
     <item>
       <title>GKEでCloud SQL Proxyをsocketで使う</title>
@@ -284,21 +298,6 @@ openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認
       <description>AWS S3の署名バージョン騒動
 大丈夫ぽいけど一応調べた時につかったスクリプト
 CloudTrailでログを有効化してからお使いください
- </description>
-    </item>
-    
-    <item>
-      <title>Cloud Runがすごく良い</title>
-      <link>https://yaasita.github.io/2019/05/29/cloud-run/</link>
-      <pubDate>Wed, 29 May 2019 21:42:23 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/05/29/cloud-run/</guid>
-      <description>GCPのCloud Runがめっちゃ便利
-覚えなきゃいけないルールは2つ
- Dockerにする事 環境変数 $PORT のポート番号でlistenしてレスポンスを返す事  これだけ
-コマンドとかはこの辺見ればすぐできると思います
-あと、Chunked Transferみたいな仕組みで進捗を返すみたいなAPIは難しいかもしれない
-以下のようなプログラムでちょっとずつレスポンス返しても、バッファリングされてるみたいで、最後ドバっと返ってきた
  </description>
     </item>
     
