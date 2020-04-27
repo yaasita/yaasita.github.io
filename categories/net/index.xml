@@ -6,10 +6,21 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 07 Jan 2020 18:55:03 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2020 01:00:16 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>express.jsでpostのrawBodyを取得</title>
+      <link>https://yaasita.github.io/2020/04/28/rawpostdata/</link>
+      <pubDate>Tue, 28 Apr 2020 01:00:16 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/04/28/rawpostdata/</guid>
+      <description>multipart/form-dataでPOSTされた奴を、処理するCloud functionsを書いてて必要になったので
+ 呼び出し側はこんな感じでやってる
+ </description>
+    </item>
     
     <item>
       <title>Github Pagesになってるリポジトリをチェック</title>
@@ -297,26 +308,6 @@ certbot 0.22.2が来てたので使ってみる
 とりあえずこんな感じで行った
 まだサーバを指定しなきゃいけないけど、これでワイルドカード手に入るのは良い
 apt install certbot certbot certonly --manual -d yaasita.net -d *.yaasita.net --preferred-challenges dns-01 --server https://acme-v02.api.letsencrypt.org/directory  </description>
-    </item>
-    
-    <item>
-      <title>AlwaysOnSSL</title>
-      <link>https://yaasita.github.io/2018/03/21/alwaysonssl/</link>
-      <pubDate>Wed, 21 Mar 2018 01:37:01 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/03/21/alwaysonssl/</guid>
-      <description>letsencryptとは違う無料のSSLサービス使ってみた
-その名も AlwaysOnSSL
-サーバ証明書 使って見た感想
- CAAレコード違反のレポートメールは飛んでこなかった 証明書の期間は1年間 CTログはComodo CA に書くみたいでLetsencryptより少ない ワイルドカードは無理 SANに複数のドメイン入れるのも無理  チェインはこんな感じ
-DigiCert Global Root G2 |_ AlwaysOnSSL TLS RSA CA G1 |_ yourdomain.example.com  DigiCertなんで大抵のブラウザならOKなはず
-curlで簡単に叩けるのでcertbotが入らない場合はこっちの方が良いかも
-certbotが入るならLetsencryptの方が良いと思う
-S/MIME  有効期間は1年間 CSR作って署名してもらうので、秘密鍵は自分で作る安心設計  チェーンはこんな感じ
-Symantec Class 1 Public Primary CertificationAuthority - G6 |_ Symantec Class 1 Individual Subscriber CA - G7  普通にメール受信できるなら作ってもらえるとても良い
-CNにメールアドレス入れてCSR作ってからVerifyする
-そんで、My Certificatesから中間証明書と証明書ダウンロードしてpkcs12にまとめればOK
-openssl pkcs12 -export -in merged.crt -inkey secret.key -out email.pfx  まとめ S/MIMEはすごくありがたい</description>
     </item>
     
   </channel>

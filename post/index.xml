@@ -6,10 +6,21 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 29 Mar 2020 03:24:06 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2020 01:00:16 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>express.jsでpostのrawBodyを取得</title>
+      <link>https://yaasita.github.io/2020/04/28/rawpostdata/</link>
+      <pubDate>Tue, 28 Apr 2020 01:00:16 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/04/28/rawpostdata/</guid>
+      <description>multipart/form-dataでPOSTされた奴を、処理するCloud functionsを書いてて必要になったので
+ 呼び出し側はこんな感じでやってる
+ </description>
+    </item>
     
     <item>
       <title>microk8sとskaffold</title>
@@ -287,18 +298,6 @@ openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認
 商品名はスキンベープミスト　200mlかも
 
  function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   そういや虫よけ剤に入ってるDEETって薬はなぜ虫が寄り付かないか謎らしい</description>
-    </item>
-    
-    <item>
-      <title>例のS3署名バージョン2について</title>
-      <link>https://yaasita.github.io/2019/06/25/s3v2/</link>
-      <pubDate>Tue, 25 Jun 2019 00:31:08 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/06/25/s3v2/</guid>
-      <description>AWS S3の署名バージョン騒動
-大丈夫ぽいけど一応調べた時につかったスクリプト
-CloudTrailでログを有効化してからお使いください
- </description>
     </item>
     
   </channel>

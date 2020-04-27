@@ -6,10 +6,21 @@
     <description>Recent content in program on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 07 Jan 2020 18:55:03 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2020 01:00:16 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>express.jsでpostのrawBodyを取得</title>
+      <link>https://yaasita.github.io/2020/04/28/rawpostdata/</link>
+      <pubDate>Tue, 28 Apr 2020 01:00:16 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/04/28/rawpostdata/</guid>
+      <description>multipart/form-dataでPOSTされた奴を、処理するCloud functionsを書いてて必要になったので
+ 呼び出し側はこんな感じでやってる
+ </description>
+    </item>
     
     <item>
       <title>Github Pagesになってるリポジトリをチェック</title>
@@ -265,24 +276,6 @@ use feature qw(:5.10); sub func { state $count; return ++$count; }  ただstate�
       <description>perlでElasticsearch
 mojoliciousでの例
  </description>
-    </item>
-    
-    <item>
-      <title>GCPでAWS Batch的な事をやる</title>
-      <link>https://yaasita.github.io/2018/06/20/aws-batch-gcp/</link>
-      <pubDate>Wed, 20 Jun 2018 23:46:45 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/06/20/aws-batch-gcp/</guid>
-      <description>こんな感じにS3になんか置いて、ファイルがあったら起動して、終わったらshutdownするみたいな奴
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   GCPはインスタンスの起動停止が早いので結構良い感じ
-Lambda 処理するファイルが存在して、GCPが動いてたら起動かける
- GCP キュー代わりのファイル消してから
-bootしてから3分後に実行（ちょっとインターバルないとインスタンスに入るのが大変になる）
-処理の最後でshutdownすればOK
-/etc/systemd/system/gcp-calc.service
-[Unit] Description=gcp-calc Wants=network-pre.target After=multi-user.target [Install] WantedBy=multi-user.target [Service] ExecStart=/root/run.sh Type=oneshot  /etc/systemd/system/gcp-calc.timer
-[Unit] Description=gcp calc [Timer] OnBootSec=3min [Install] WantedBy=timers.target  </description>
     </item>
     
   </channel>
