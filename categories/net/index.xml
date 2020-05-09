@@ -6,10 +6,27 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 09 May 2020 04:42:51 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2020 03:22:35 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DoHを試す</title>
+      <link>https://yaasita.github.io/2020/05/10/doh/</link>
+      <pubDate>Sun, 10 May 2020 03:22:35 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/05/10/doh/</guid>
+      <description>DNS over HTTPSを試す
+こんな構成で作る
+Nginx -&amp;gt; doh-httpproxy -&amp;gt; systemd-resolved  インストール
+doh-proxy pip3でインストールすればOK
+pip3 install doh-proxy  以下のような設定でserviceを作る
+/etc/systemd/system/doh-httpproxy.service
+[Unit] Description=doh-httpproxy After=nginx.service [Install] WantedBy=multi-user.target [Service] ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 8080 --listen-address 127.0.0.1 Nginx側設定例
+server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } }  確認
+curl --doh-url https://doh.example.net/dns-query google.co.jp  </description>
+    </item>
     
     <item>
       <title>BigQueryのカラムタイプ変更</title>
@@ -297,19 +314,6 @@ SSLCACertificateFile /etc/apache2/ssl/example.crt &amp;lt;Directory /var/www&amp
 curl https://example.net --key client.key --cert cert.crt --http1.1  作るときは /usr/lib/ssl/misc/CA.pl -newreq とかで適当に作る
 鍵とセットなら良いのでcommon nameとかは適当
 参考リンク プライベートCA作るまで</description>
-    </item>
-    
-    <item>
-      <title>GoogleのCloud SDKの署名鍵エラー</title>
-      <link>https://yaasita.github.io/2018/04/07/google-cloud-sdk-gpg/</link>
-      <pubDate>Sat, 07 Apr 2018 02:24:37 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/04/07/google-cloud-sdk-gpg/</guid>
-      <description>GCP(google cloud platform)の署名鍵が変わってた
-つーか元のgpg鍵の有効期限が切れてる
-取得:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease [6,372 B] エラー:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease 公開鍵を利用できないため、以下の署名は検証できませんでした: NO_PUBKEY 6A030B21BA07F4FB なんか探してみると2018年4月1日に作った鍵にしてるみたい
-gpg2 --search-keys BA07F4FB gpg: data source: http://gpg.NebrWesleyan.edu:11371 (1) Google Cloud Packages Automatic Signing Key &amp;lt;gc-team@google.com&amp;gt; 2048 bit RSA key BA07F4FB, created: 2018-04-01, expires: 2021-03-31 ということで追加して事なきを得た
-gpg2 -a --export BA07F4FB | apt-key add - apt-key del A7317B0F </description>
     </item>
     
   </channel>

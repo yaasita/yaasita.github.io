@@ -6,10 +6,27 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 09 May 2020 04:42:51 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2020 03:22:35 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>DoHを試す</title>
+      <link>https://yaasita.github.io/2020/05/10/doh/</link>
+      <pubDate>Sun, 10 May 2020 03:22:35 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/05/10/doh/</guid>
+      <description>DNS over HTTPSを試す
+こんな構成で作る
+Nginx -&amp;gt; doh-httpproxy -&amp;gt; systemd-resolved  インストール
+doh-proxy pip3でインストールすればOK
+pip3 install doh-proxy  以下のような設定でserviceを作る
+/etc/systemd/system/doh-httpproxy.service
+[Unit] Description=doh-httpproxy After=nginx.service [Install] WantedBy=multi-user.target [Service] ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 8080 --listen-address 127.0.0.1 Nginx側設定例
+server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } }  確認
+curl --doh-url https://doh.example.net/dns-query google.co.jp  </description>
+    </item>
     
     <item>
       <title>BigQueryのカラムタイプ変更</title>
@@ -275,30 +292,6 @@ dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s 
 perlでやってみる
 perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;eval&amp;quot;say @{[grep{$_%2==0}1..100]}&amp;quot;;&#39;  4つ思いついた
 結論 simple is best</description>
-    </item>
-    
-    <item>
-      <title>各種サーバの中間証明書の扱い</title>
-      <link>https://yaasita.github.io/2019/08/14/ssl-capath/</link>
-      <pubDate>Wed, 14 Aug 2019 10:20:33 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/14/ssl-capath/</guid>
-      <description>中間証明書をどう設定するか問題
-postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&#39;s Encryptの場合こんな感じ
-smtpd_tls_CAfileに中間証明書を指定する
-smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
-dovecot 10-ssl.conf
-ssl_ca = &amp;lt;/etc/letsencrypt/live/example.net/chain.pem  これはダメ
-この設定はクライアント証明書用ですので
-正しくは、こんな感じに、まとめたやつを指定すればOK
-ssl_cert = &amp;lt;/etc/letsencrypt/live/example.net/fullchain.pem  apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
-SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem  dovecot同様に中間証明書もまとめて指定する
-まとめ この問題はスマホのK-9 Mailでメール読もうとしたときに判明した
-(突然CertPathValidatorExceptionって怒られた)
-thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
-openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
     </item>
     
   </channel>

@@ -4,36 +4,51 @@
   
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2020-05-09T04:42:51+09:00</lastmod>
+    <lastmod>2020-05-10T03:22:35+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/archives/2020/</loc>
-    <lastmod>2020-05-09T04:42:51+09:00</lastmod>
+    <lastmod>2020-05-10T03:22:35+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/archives/</loc>
-    <lastmod>2020-05-09T04:42:51+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yaasita.github.io/2020/05/09/bigquery-type-change/</loc>
-    <lastmod>2020-05-09T04:42:51+09:00</lastmod>
+    <lastmod>2020-05-10T03:22:35+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/categories/</loc>
-    <lastmod>2020-05-09T04:42:51+09:00</lastmod>
+    <lastmod>2020-05-10T03:22:35+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yaasita.github.io/2020/05/10/doh/</loc>
+    <lastmod>2020-05-10T03:22:35+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/categories/net/</loc>
-    <lastmod>2020-05-09T04:42:51+09:00</lastmod>
+    <lastmod>2020-05-10T03:22:35+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/post/</loc>
+    <lastmod>2020-05-10T03:22:35+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yaasita.github.io/categories/rule/</loc>
+    <lastmod>2020-05-10T03:22:35+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yaasita.github.io/categories/soft/</loc>
+    <lastmod>2020-05-10T03:22:35+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yaasita.github.io/2020/05/09/bigquery-type-change/</loc>
     <lastmod>2020-05-09T04:42:51+09:00</lastmod>
   </url>
   
@@ -49,11 +64,6 @@
   
   <url>
     <loc>https://yaasita.github.io/2020/03/29/microk8s_and_skaffold/</loc>
-    <lastmod>2020-03-29T03:24:06+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yaasita.github.io/categories/soft/</loc>
     <lastmod>2020-03-29T03:24:06+09:00</lastmod>
   </url>
   
@@ -184,11 +194,6 @@
   
   <url>
     <loc>https://yaasita.github.io/2019/04/29/pkce/</loc>
-    <lastmod>2019-04-29T01:23:20+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yaasita.github.io/categories/rule/</loc>
     <lastmod>2019-04-29T01:23:20+09:00</lastmod>
   </url>
   

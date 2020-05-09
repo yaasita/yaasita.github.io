@@ -6,7 +6,7 @@
     <description>Recent content in Categories on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 09 May 2020 04:42:51 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2020 03:22:35 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,9 +14,27 @@
     <item>
       <title>net</title>
       <link>https://yaasita.github.io/categories/net/</link>
-      <pubDate>Sat, 09 May 2020 04:42:51 +0900</pubDate>
+      <pubDate>Sun, 10 May 2020 03:22:35 +0900</pubDate>
       
       <guid>https://yaasita.github.io/categories/net/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rule</title>
+      <link>https://yaasita.github.io/categories/rule/</link>
+      <pubDate>Sun, 10 May 2020 03:22:35 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/categories/rule/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>soft</title>
+      <link>https://yaasita.github.io/categories/soft/</link>
+      <pubDate>Sun, 10 May 2020 03:22:35 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/categories/soft/</guid>
       <description></description>
     </item>
     
@@ -26,15 +44,6 @@
       <pubDate>Tue, 28 Apr 2020 01:00:16 +0900</pubDate>
       
       <guid>https://yaasita.github.io/categories/program/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>soft</title>
-      <link>https://yaasita.github.io/categories/soft/</link>
-      <pubDate>Sun, 29 Mar 2020 03:24:06 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/categories/soft/</guid>
       <description></description>
     </item>
     
@@ -71,15 +80,6 @@
       <pubDate>Sat, 14 Sep 2019 22:21:43 +0900</pubDate>
       
       <guid>https://yaasita.github.io/categories/life/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rule</title>
-      <link>https://yaasita.github.io/categories/rule/</link>
-      <pubDate>Mon, 29 Apr 2019 01:23:20 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/categories/rule/</guid>
       <description></description>
     </item>
     
