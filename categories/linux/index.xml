@@ -22,7 +22,8 @@
 https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/blob/master/cloudsql/mysql_wordpress_deployment.yaml
 socket接続の場合はこんな感じ
  参考
-k8s サイドカーコンテナについて</description>
+k8s サイドカーコンテナについて
+ </description>
     </item>
     
     <item>

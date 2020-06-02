@@ -25,7 +25,7 @@ pip3 install doh-proxy  以下のような設定でserviceを作る
 /etc/systemd/system/doh-httpproxy.service
 [Unit] Description=doh-httpproxy After=nginx.service [Install] WantedBy=multi-user.target [Service] ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 8080 --listen-address 127.0.0.1 Nginx側設定例
 server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } }  確認
-curl --doh-url https://doh.example.net/dns-query google.co.jp  </description>
+curl --doh-url https://doh.example.net/dns-query google.co.jp   </description>
     </item>
     
     <item>
@@ -39,7 +39,7 @@ curl --doh-url https://doh.example.net/dns-query google.co.jp  </description>
 インストール
 snap install microk8s --class microk8s.kubectl config view --raw &amp;gt; ~/.kube/config  必要サービスの起動
 microk8s.enable dns registry storage skaffold dev --no-prune=false --cache-artifacts=false --default-repo localhost:32000 -f skaffold.yaml  こんな感じにやると、リポジトリ部分を読み替えてくれるので便利
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }    </description>
     </item>
     
     <item>
@@ -53,7 +53,8 @@ microk8s.enable dns registry storage skaffold dev --no-prune=false --cache-artif
 https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/blob/master/cloudsql/mysql_wordpress_deployment.yaml
 socket接続の場合はこんな感じ
  参考
-k8s サイドカーコンテナについて</description>
+k8s サイドカーコンテナについて
+ </description>
     </item>
     
     <item>

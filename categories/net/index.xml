@@ -6,10 +6,23 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 10 May 2020 03:22:35 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jun 2020 02:59:51 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Google Domainsを使ってみた</title>
+      <link>https://yaasita.github.io/2020/06/03/google-domains/</link>
+      <pubDate>Wed, 03 Jun 2020 02:59:51 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/06/03/google-domains/</guid>
+      <description>自分のドメインを
+Value Domainから Google Domains へ移管してみた
+感想
+ .net, .com とうは安いの .jp は高い whois 代行は標準サービス 標準の権威DNSサーバーは微妙  GCPのGoogle Cloud DNSが使えるわけではない APIでの更新も難しそう HTTPリダイレクトの機能がついてるのは嬉しい ダイナミックDNSはある DNSSECは簡単にできそう SSHFPレコードを設定できる    まとめ
+みんな使うと良いと思います</description>
+    </item>
     
     <item>
       <title>DoHを試す</title>
@@ -25,7 +38,7 @@ pip3 install doh-proxy  以下のような設定でserviceを作る
 /etc/systemd/system/doh-httpproxy.service
 [Unit] Description=doh-httpproxy After=nginx.service [Install] WantedBy=multi-user.target [Service] ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 8080 --listen-address 127.0.0.1 Nginx側設定例
 server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } }  確認
-curl --doh-url https://doh.example.net/dns-query google.co.jp  </description>
+curl --doh-url https://doh.example.net/dns-query google.co.jp   </description>
     </item>
     
     <item>
@@ -51,7 +64,7 @@ echo &amp;quot;#standardSQL&amp;quot; &amp;gt; /tmp/query.sql echo &#39;select _
       <guid>https://yaasita.github.io/2020/04/28/rawpostdata/</guid>
       <description>multipart/form-dataでPOSTされた奴を、処理するCloud functionsを書いてて必要になったので
  呼び出し側はこんな感じでやってる
- </description>
+  </description>
     </item>
     
     <item>
@@ -63,7 +76,7 @@ echo &amp;quot;#standardSQL&amp;quot; &amp;gt; /tmp/query.sql echo &#39;select _
       <description>どのリポジトリがGithub Pagesの設定がされているか？
 調べたくなったので・・・
 Github pagesの設定されてるリポジトリ一覧を簡単に確認できればいいのに・・・
- </description>
+  </description>
     </item>
     
     <item>
@@ -78,7 +91,7 @@ Credit External IPs will not be charged until April 1, 2020.
 んで、外部IPを無しにして、gcloud compute ssh で繋げるのは良いんだけど、外部IPが無いと外と通信できないからapt installもできない。。。。
 あと、上記コマンドはsshポートを解放してないと駄目ぽい（正確にはIAPからのアクセスを許可すれば良いだけぽいが）
 とりあえず課金されてから考えるか・・・
-参考リンク  外部IPを持たないGCEインスタンスでweb開発 GCP/GCE の固定グローバルIPアドレス、2020年より有料化   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+参考リンク  外部IPを持たないGCEインスタンスでweb開発 GCP/GCE の固定グローバルIPアドレス、2020年より有料化   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }    </description>
     </item>
     
     <item>
@@ -300,20 +313,6 @@ bootしてから3分後に実行（ちょっとインターバルないとイン
 /etc/systemd/system/gcp-calc.service
 [Unit] Description=gcp-calc Wants=network-pre.target After=multi-user.target [Install] WantedBy=multi-user.target [Service] ExecStart=/root/run.sh Type=oneshot  /etc/systemd/system/gcp-calc.timer
 [Unit] Description=gcp calc [Timer] OnBootSec=3min [Install] WantedBy=timers.target  </description>
-    </item>
-    
-    <item>
-      <title>クライアント証明書とIP制限</title>
-      <link>https://yaasita.github.io/2018/05/26/client-auth/</link>
-      <pubDate>Sat, 26 May 2018 03:49:43 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/05/26/client-auth/</guid>
-      <description>外からはクライアント証明書を要求して、中からは素通しさせたいケース
-Apache2.4ならこんな感じ
-SSLCACertificateFile /etc/apache2/ssl/example.crt &amp;lt;Directory /var/www&amp;gt; Options Indexes FollowSymLinks MultiViews ExecCGI Require ip 192.168.100.0/24 SSLVerifyClient require Satisfy any &amp;lt;/Directory&amp;gt;  curlで確認
-curl https://example.net --key client.key --cert cert.crt --http1.1  作るときは /usr/lib/ssl/misc/CA.pl -newreq とかで適当に作る
-鍵とセットなら良いのでcommon nameとかは適当
-参考リンク プライベートCA作るまで</description>
     </item>
     
   </channel>

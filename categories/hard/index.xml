@@ -35,7 +35,7 @@ inoremap ¥ \ cnoremap ¥ \  </description>
 もしくは、Linux内なら、fcitx経由で入力すれば半角￥キーでバックスラッシュになった
 WindowsとかMacなら一発だけど、これは不便かも・・・プログラミングの時にも困るし・・・
 
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }    </description>
     </item>
     
     <item>
@@ -51,7 +51,8 @@ ssh humidai-server -XC export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx expo
 回線が細いテザリング環境では ttyd を立てて、ポートフォワーディングでつないだ方が良いかも
 Ctrl-wがchromeのタブ閉じになってしまうので微妙かなと思ったんだけど、「その他のツール(L)」 =&amp;gt; 「ショートカットを作成」からアプリとして作れば、Ctrl-wも使えた
 こっちなら日本語入力も出来るのでこっちの方が良いかもしれない
-通信量も1kbps位だし</description>
+通信量も1kbps位だし
+ </description>
     </item>
     
     <item>

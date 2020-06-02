@@ -6,10 +6,23 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 10 May 2020 03:22:35 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 03 Jun 2020 02:59:51 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Google Domainsを使ってみた</title>
+      <link>https://yaasita.github.io/2020/06/03/google-domains/</link>
+      <pubDate>Wed, 03 Jun 2020 02:59:51 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/06/03/google-domains/</guid>
+      <description>自分のドメインを
+Value Domainから Google Domains へ移管してみた
+感想
+ .net, .com とうは安いの .jp は高い whois 代行は標準サービス 標準の権威DNSサーバーは微妙  GCPのGoogle Cloud DNSが使えるわけではない APIでの更新も難しそう HTTPリダイレクトの機能がついてるのは嬉しい ダイナミックDNSはある DNSSECは簡単にできそう SSHFPレコードを設定できる    まとめ
+みんな使うと良いと思います</description>
+    </item>
     
     <item>
       <title>DoHを試す</title>
@@ -25,7 +38,7 @@ pip3 install doh-proxy  以下のような設定でserviceを作る
 /etc/systemd/system/doh-httpproxy.service
 [Unit] Description=doh-httpproxy After=nginx.service [Install] WantedBy=multi-user.target [Service] ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 8080 --listen-address 127.0.0.1 Nginx側設定例
 server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } }  確認
-curl --doh-url https://doh.example.net/dns-query google.co.jp  </description>
+curl --doh-url https://doh.example.net/dns-query google.co.jp   </description>
     </item>
     
     <item>
@@ -51,7 +64,7 @@ echo &amp;quot;#standardSQL&amp;quot; &amp;gt; /tmp/query.sql echo &#39;select _
       <guid>https://yaasita.github.io/2020/04/28/rawpostdata/</guid>
       <description>multipart/form-dataでPOSTされた奴を、処理するCloud functionsを書いてて必要になったので
  呼び出し側はこんな感じでやってる
- </description>
+  </description>
     </item>
     
     <item>
@@ -65,7 +78,7 @@ echo &amp;quot;#standardSQL&amp;quot; &amp;gt; /tmp/query.sql echo &#39;select _
 インストール
 snap install microk8s --class microk8s.kubectl config view --raw &amp;gt; ~/.kube/config  必要サービスの起動
 microk8s.enable dns registry storage skaffold dev --no-prune=false --cache-artifacts=false --default-repo localhost:32000 -f skaffold.yaml  こんな感じにやると、リポジトリ部分を読み替えてくれるので便利
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }    </description>
     </item>
     
     <item>
@@ -79,7 +92,8 @@ microk8s.enable dns registry storage skaffold dev --no-prune=false --cache-artif
 https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/blob/master/cloudsql/mysql_wordpress_deployment.yaml
 socket接続の場合はこんな感じ
  参考
-k8s サイドカーコンテナについて</description>
+k8s サイドカーコンテナについて
+ </description>
     </item>
     
     <item>
@@ -106,7 +120,7 @@ inoremap ¥ \ cnoremap ¥ \  </description>
 もしくは、Linux内なら、fcitx経由で入力すれば半角￥キーでバックスラッシュになった
 WindowsとかMacなら一発だけど、これは不便かも・・・プログラミングの時にも困るし・・・
 
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }    </description>
     </item>
     
     <item>
@@ -118,7 +132,7 @@ WindowsとかMacなら一発だけど、これは不便かも・・・プログ�
       <description>どのリポジトリがGithub Pagesの設定がされているか？
 調べたくなったので・・・
 Github pagesの設定されてるリポジトリ一覧を簡単に確認できればいいのに・・・
- </description>
+  </description>
     </item>
     
     <item>
@@ -133,7 +147,7 @@ Credit External IPs will not be charged until April 1, 2020.
 んで、外部IPを無しにして、gcloud compute ssh で繋げるのは良いんだけど、外部IPが無いと外と通信できないからapt installもできない。。。。
 あと、上記コマンドはsshポートを解放してないと駄目ぽい（正確にはIAPからのアクセスを許可すれば良いだけぽいが）
 とりあえず課金されてから考えるか・・・
-参考リンク  外部IPを持たないGCEインスタンスでweb開発 GCP/GCE の固定グローバルIPアドレス、2020年より有料化   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+参考リンク  外部IPを持たないGCEインスタンスでweb開発 GCP/GCE の固定グローバルIPアドレス、2020年より有料化   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }    </description>
     </item>
     
     <item>
@@ -149,7 +163,8 @@ ssh humidai-server -XC export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx expo
 回線が細いテザリング環境では ttyd を立てて、ポートフォワーディングでつないだ方が良いかも
 Ctrl-wがchromeのタブ閉じになってしまうので微妙かなと思ったんだけど、「その他のツール(L)」 =&amp;gt; 「ショートカットを作成」からアプリとして作れば、Ctrl-wも使えた
 こっちなら日本語入力も出来るのでこっちの方が良いかもしれない
-通信量も1kbps位だし</description>
+通信量も1kbps位だし
+ </description>
     </item>
     
     <item>
@@ -280,18 +295,6 @@ if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on
 んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
 このままだと永遠にlocateコマンドが使えないので、divertで退避させた
 dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power  おしまい</description>
-    </item>
-    
-    <item>
-      <title>1から100の偶数の和を求めるやつ</title>
-      <link>https://yaasita.github.io/2019/08/15/sum-even-number/</link>
-      <pubDate>Thu, 15 Aug 2019 04:10:11 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/15/sum-even-number/</guid>
-      <description>「1から100の偶数の和を求めるワンライナー」まとめ
-perlでやってみる
-perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;eval&amp;quot;say @{[grep{$_%2==0}1..100]}&amp;quot;;&#39;  4つ思いついた
-結論 simple is best</description>
     </item>
     
   </channel>
