@@ -6,10 +6,24 @@
     <description>Recent content in linux on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 28 Feb 2020 04:08:58 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2020 15:14:42 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>authorized_keysを適当に更新しない</title>
+      <link>https://yaasita.github.io/2020/07/08/ssh-keys-deploy/</link>
+      <pubDate>Wed, 08 Jul 2020 15:14:42 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/07/08/ssh-keys-deploy/</guid>
+      <description>概要 sshの公開鍵認証で複数人が使うシステムのauthorized_keysを場当たり的に更新してしまうと、誰の鍵が入ってるか分からなくなる
+誰の鍵が入ってるか分かるようにした方が良いと思う
+スクリプト こんなスクリプトを書いた
+使い方はREADME.md参照
+https://github.com/yaasita/ssh-keys-manager
+その他  使えるならsshの証明書認証も検討した方が良いかも ssh -F でconfig指定できるけど、~/.ssh/configに置いたときと挙動が違うのでスクリプト内にconfig入れる場合は注意  </description>
+    </item>
     
     <item>
       <title>GKEでCloud SQL Proxyをsocketで使う</title>
@@ -79,7 +93,7 @@ dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s 
       
       <guid>https://yaasita.github.io/2019/08/14/ssl-capath/</guid>
       <description>中間証明書をどう設定するか問題
-postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&#39;s Encryptの場合こんな感じ
+postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&amp;rsquo;s Encryptの場合こんな感じ
 smtpd_tls_CAfileに中間証明書を指定する
 smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
 dovecot 10-ssl.conf
@@ -285,22 +299,6 @@ systemctl daemon-reload systemctl enable saslauthd.service systemctl start sasla
 apt-get install shutter  http://www.xmisao.com/2014/02/07/get-screenshot-on-linux-by-shutter.html
 他にxwd使う方法もある
 # クリックしたウィンドウ xwd | convert - hoge.png xwd -root | convert - desktop.png  http://www.xmisao.com/2013/09/17/linux-xwindow-screenshot.html</description>
-    </item>
-    
-    <item>
-      <title>Linuxのクリップボードマネージャ</title>
-      <link>https://yaasita.github.io/2015/04/18/linux-clipboard-manager/</link>
-      <pubDate>Sat, 18 Apr 2015 01:31:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/04/18/linux-clipboard-manager/</guid>
-      <description>diodon apt-get install diodon  初期設定はCtrl + Alt + vで呼び出し
-Preferenceから以下の設定を直した
- Automatically paste selected item  自動ペーストをやめる   PluginsのApplication Indicatorのチェックを外す  なんかCtrl-Vが使えなくなったりするので使うのやめた
-klipper KDEのやつ
-apt-get install klipper  初期はShift+Zになってるので設定からなおす
-全般の選択とクリップボード→選択を無視する
-ってやつやると選択しただけでクリップボードに入るのを抑止
-できる</description>
     </item>
     
   </channel>

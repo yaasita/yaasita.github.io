@@ -6,10 +6,24 @@
     <description>Recent content in 2020 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 03 Jun 2020 02:59:51 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2020 15:14:42 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/archives/2020/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>authorized_keysを適当に更新しない</title>
+      <link>https://yaasita.github.io/2020/07/08/ssh-keys-deploy/</link>
+      <pubDate>Wed, 08 Jul 2020 15:14:42 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/07/08/ssh-keys-deploy/</guid>
+      <description>概要 sshの公開鍵認証で複数人が使うシステムのauthorized_keysを場当たり的に更新してしまうと、誰の鍵が入ってるか分からなくなる
+誰の鍵が入ってるか分かるようにした方が良いと思う
+スクリプト こんなスクリプトを書いた
+使い方はREADME.md参照
+https://github.com/yaasita/ssh-keys-manager
+その他  使えるならsshの証明書認証も検討した方が良いかも ssh -F でconfig指定できるけど、~/.ssh/configに置いたときと挙動が違うのでスクリプト内にconfig入れる場合は注意  </description>
+    </item>
     
     <item>
       <title>Google Domainsを使ってみた</title>
@@ -20,8 +34,9 @@
       <description>自分のドメインを
 Value Domainから Google Domains へ移管してみた
 感想
- .net, .com とうは安いの .jp は高い whois 代行は標準サービス 標準の権威DNSサーバーは微妙  GCPのGoogle Cloud DNSが使えるわけではない APIでの更新も難しそう HTTPリダイレクトの機能がついてるのは嬉しい ダイナミックDNSはある DNSSECは簡単にできそう SSHFPレコードを設定できる    まとめ
-みんな使うと良いと思います</description>
+ .net, .com 等は安い .jp は高い whois 代行は標準サービス 標準の権威DNSサーバーは微妙  GCPのGoogle Cloud DNSが使えるわけではない APIでの更新も難しそう HTTPリダイレクトの機能がついてるのは嬉しい ダイナミックDNSはある DNSSECは簡単にできそう SSHFPレコードを設定できる    まとめ
+みんな使うと良いと思います
+ </description>
     </item>
     
     <item>

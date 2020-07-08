@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>各種サーバの中間証明書の扱い | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.62.2" />
+    <meta name="generator" content="Hugo 0.73.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="各種サーバの中間証明書の扱い" />
 <meta property="og:description" content="中間証明書をどう設定するか問題
-postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&#39;s Encryptの場合こんな感じ
+postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&rsquo;s Encryptの場合こんな感じ
 smtpd_tls_CAfileに中間証明書を指定する
 smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
 dovecot 10-ssl.conf
@@ -85,7 +85,7 @@ if (!doNotTrack) {
 smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem
 smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem
 </code></pre>
-<p>Let's Encryptの場合こんな感じ<br>
+<p>Let&rsquo;s Encryptの場合こんな感じ<br>
 smtpd_tls_CAfileに中間証明書を指定する<br>
 smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG</p>
 <h2 id="dovecot">dovecot</h2>
@@ -265,7 +265,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (332)</a>
+          <a href="/categories/linux"><span></span>linux (333)</a>
         </li>
         
         <li>
@@ -273,7 +273,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/program"><span></span>program (162)</a>
+          <a href="/categories/program"><span></span>program (163)</a>
         </li>
         
         <li>
@@ -352,7 +352,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/archives/2020"><span></span>2020 (11)</a>
+          <a href="/archives/2020"><span></span>2020 (12)</a>
         </li>
         
       </ul>

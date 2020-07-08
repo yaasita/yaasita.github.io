@@ -160,7 +160,7 @@ perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp
       
       <guid>https://yaasita.github.io/2019/08/14/ssl-capath/</guid>
       <description>中間証明書をどう設定するか問題
-postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&#39;s Encryptの場合こんな感じ
+postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&amp;rsquo;s Encryptの場合こんな感じ
 smtpd_tls_CAfileに中間証明書を指定する
 smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
 dovecot 10-ssl.conf

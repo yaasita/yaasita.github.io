@@ -6,10 +6,24 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 03 Jun 2020 02:59:51 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2020 15:14:42 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>authorized_keysを適当に更新しない</title>
+      <link>https://yaasita.github.io/2020/07/08/ssh-keys-deploy/</link>
+      <pubDate>Wed, 08 Jul 2020 15:14:42 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/07/08/ssh-keys-deploy/</guid>
+      <description>概要 sshの公開鍵認証で複数人が使うシステムのauthorized_keysを場当たり的に更新してしまうと、誰の鍵が入ってるか分からなくなる
+誰の鍵が入ってるか分かるようにした方が良いと思う
+スクリプト こんなスクリプトを書いた
+使い方はREADME.md参照
+https://github.com/yaasita/ssh-keys-manager
+その他  使えるならsshの証明書認証も検討した方が良いかも ssh -F でconfig指定できるけど、~/.ssh/configに置いたときと挙動が違うのでスクリプト内にconfig入れる場合は注意  </description>
+    </item>
     
     <item>
       <title>Google Domainsを使ってみた</title>
@@ -20,8 +34,9 @@
       <description>自分のドメインを
 Value Domainから Google Domains へ移管してみた
 感想
- .net, .com とうは安いの .jp は高い whois 代行は標準サービス 標準の権威DNSサーバーは微妙  GCPのGoogle Cloud DNSが使えるわけではない APIでの更新も難しそう HTTPリダイレクトの機能がついてるのは嬉しい ダイナミックDNSはある DNSSECは簡単にできそう SSHFPレコードを設定できる    まとめ
-みんな使うと良いと思います</description>
+ .net, .com 等は安い .jp は高い whois 代行は標準サービス 標準の権威DNSサーバーは微妙  GCPのGoogle Cloud DNSが使えるわけではない APIでの更新も難しそう HTTPリダイレクトの機能がついてるのは嬉しい ダイナミックDNSはある DNSSECは簡単にできそう SSHFPレコードを設定できる    まとめ
+みんな使うと良いと思います
+ </description>
     </item>
     
     <item>
@@ -279,22 +294,6 @@ GCPの各リージョンからアクセスして試してみる
 rttは自宅から該当サーバーまでのpingしたときの平均値
 なのでISPによって全然違うと思うので参考値ということで
    region bilibili crunchyroll rtt(ms)     asia-east1 (台湾) ng ok 60.149   asia-east2 (香港) ng ok 76.986   asia-northeast1 (東京) ng ok 29.624   asia-northeast2 (大阪) ng ok 37.401   asia-south1 (ムンバイ) ng ok 144.055   asia-southeast1 (シンガポール) ng ok 89.755   australia-southeast1 (シドニー) ng ok 122.193   europe-north1 (フィンランド) ng ok 256.714   europe-west1 (ベルギー) ng ok 229.</description>
-    </item>
-    
-    <item>
-      <title>on_ac_powerコマンドについて</title>
-      <link>https://yaasita.github.io/2019/08/16/on-ac-power/</link>
-      <pubDate>Fri, 16 Aug 2019 04:45:45 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/16/on-ac-power/</guid>
-      <description>debian10にした関係でLinuxネタが続く
-PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある
-そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる
-例えば、/etc/cron.daily/mlocate の場合
-if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi  こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
-んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
-このままだと永遠にlocateコマンドが使えないので、divertで退避させた
-dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power  おしまい</description>
     </item>
     
   </channel>

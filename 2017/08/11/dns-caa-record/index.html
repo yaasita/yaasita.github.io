@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>DNSのCAAレコードについて | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.62.2" />
+    <meta name="generator" content="Hugo 0.73.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="DNSのCAAレコードについて" />
 <meta property="og:description" content="CAA (Certification Authority Authorization)レコードのチェックが2017年9月8日から必須になるみたい
 ちょっと調べてみる
 DANEはクライアント用でこっちはCA用のレコードらしい
-例えばこんな感じのCAAレコードを書いて Let&#39;s Encryptで発行しようとすると
+例えばこんな感じのCAAレコードを書いて Let&rsquo;s Encryptで発行しようとすると
 こんなエラーが返される
 ;; ANSWER SECTION: yaasita.tk. 60 IN CAA 0 issue &quot;comodoca.com&quot; yaasita.tk. 60 IN CAA 0 issuewild &quot;\;&quot; yaasita.tk. 60 IN CAA 0 iodef &quot;mailto:alert@yaasita.net&quot;  この場合、hoge.yaasita.tk. みたなサブドメインもcomodocaでしか発行できなくなる
 (設定はサブドメインに継承される)
-ただし、上書きは可能なのでCAAを以下のようにすればLet&#39;s Encryptだけから発行できるように変わる
+ただし、上書きは可能なのでCAAを以下のようにすればLet&rsquo;s Encryptだけから発行できるように変わる
 hoge IN CAA 0 issue &quot;letsencrypt.org&quot; hoge IN CAA 0 issuewild &quot;;&quot; hoge IN CAA 0 iodef &quot;mailto:alert@yaasita.net&quot;  例えば、google.com のCAAは以下のようになっているので、Google Trust Servicesおよびsymantecからしか発行できない
-仮に drive.google.com のwebrootに任意のファイルを置ける脆弱性があったとしても(http-01で)Let&#39;s Encryptの証明書を発行することはできないし、WoSignで偽の証明書を発行されることもない
+仮に drive.google.com のwebrootに任意のファイルを置ける脆弱性があったとしても(http-01で)Let&rsquo;s Encryptの証明書を発行することはできないし、WoSignで偽の証明書を発行されることもない
 (WoSignがCAA無視してたら意味ないけど)
 google.com. 84592 IN CAA 0 issue &quot;pki." />
 <meta property="og:type" content="article" />
@@ -78,7 +78,7 @@ if (!doNotTrack) {
     <p>CAA (Certification Authority Authorization)レコードのチェックが2017年9月8日から必須になるみたい<br>
 ちょっと調べてみる<br>
 DANEはクライアント用でこっちはCA用のレコードらしい</p>
-<p>例えばこんな感じのCAAレコードを書いて Let's Encryptで発行しようとすると<br>
+<p>例えばこんな感じのCAAレコードを書いて Let&rsquo;s Encryptで発行しようとすると<br>
 <a href="https://gist.github.com/yaasita/a5836b3f446872eb77f4af43370b9da8">こんなエラー</a>が返される</p>
 <pre><code>;; ANSWER SECTION:
 yaasita.tk.             60      IN      CAA     0 issue &quot;comodoca.com&quot;
@@ -87,13 +87,13 @@ yaasita.tk.             60      IN      CAA     0 iodef &quot;mailto:alert@yaasi
 </code></pre>
 <p>この場合、hoge.yaasita.tk. みたなサブドメインもcomodocaでしか発行できなくなる<br>
 (設定はサブドメインに継承される)<br>
-ただし、上書きは可能なのでCAAを以下のようにすればLet's Encryptだけから発行できるように変わる</p>
+ただし、上書きは可能なのでCAAを以下のようにすればLet&rsquo;s Encryptだけから発行できるように変わる</p>
 <pre><code>hoge IN CAA 0 issue &quot;letsencrypt.org&quot;
 hoge IN CAA 0 issuewild &quot;;&quot;
 hoge IN CAA 0 iodef &quot;mailto:alert@yaasita.net&quot;
 </code></pre>
 <p>例えば、google.com のCAAは以下のようになっているので、<a href="https://pki.goog/">Google Trust Services</a>およびsymantecからしか発行できない<br>
-仮に drive.google.com のwebrootに任意のファイルを置ける脆弱性があったとしても(http-01で)Let's Encryptの証明書を発行することはできないし、WoSignで偽の証明書を発行されることもない<br>
+仮に drive.google.com のwebrootに任意のファイルを置ける脆弱性があったとしても(http-01で)Let&rsquo;s Encryptの証明書を発行することはできないし、WoSignで偽の証明書を発行されることもない<br>
 (WoSignがCAA無視してたら意味ないけど)</p>
 <pre><code>google.com.             84592   IN      CAA     0 issue &quot;pki.goog&quot;
 google.com.             84592   IN      CAA     0 issue &quot;symantec.com&quot;
@@ -101,13 +101,13 @@ google.com.             84592   IN      CAA     0 issue &quot;symantec.com&quot;
 <p>という訳で、どっかのCAが事故って発行されるリスクも減らせるし自分が信頼するCAを表明しておくのは悪くないんじゃないかなー<br>
 (CTログは発見は出来るけど予防はできないので)<br>
 ただ現時点で対応してるDNSサーバ少ない気がする(Google Cloud DNSは対応してたけど、AWS Route53は対応してなかった)<br>
-iodefについてはLet's Encryptは<a href="https://community.letsencrypt.org/t/caa-setup-for-lets-encrypt/9893/3">まだ対応してない</a>ぽい<br>
+iodefについてはLet&rsquo;s Encryptは<a href="https://community.letsencrypt.org/t/caa-setup-for-lets-encrypt/9893/3">まだ対応してない</a>ぽい<br>
 iodefに対応してくれないと面白くないけどまあしょうがないか</p>
 <h2 id="参考リンク">参考リンク</h2>
 <ul>
 <li><a href="https://jp.globalsign.com/blog/2013/caa.html">GMOグローバルサインブログ</a></li>
 <li><a href="https://it.srad.jp/story/17/03/17/0644247/">DNSのCAAリソース・レコード、使っていますか スラド</a></li>
-<li><a href="https://blog.apar.jp/web/7334/">DNS CAAレコードに Let's Encrypt 認証局を設定する</a></li>
+<li><a href="https://blog.apar.jp/web/7334/">DNS CAAレコードに Let&rsquo;s Encrypt 認証局を設定する</a></li>
 <li><a href="https://sslmate.com/labs/caa/">CAA Record Generator</a></li>
 <li><a href="https://support.dnsimple.com/articles/caa-record/">dnsimple What is a CAA record?</a></li>
 </ul>
@@ -253,7 +253,7 @@ iodefに対応してくれないと面白くないけどまあしょうがない
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (332)</a>
+          <a href="/categories/linux"><span></span>linux (333)</a>
         </li>
         
         <li>
@@ -261,7 +261,7 @@ iodefに対応してくれないと面白くないけどまあしょうがない
         </li>
         
         <li>
-          <a href="/categories/program"><span></span>program (162)</a>
+          <a href="/categories/program"><span></span>program (163)</a>
         </li>
         
         <li>
@@ -340,7 +340,7 @@ iodefに対応してくれないと面白くないけどまあしょうがない
         </li>
         
         <li>
-          <a href="/archives/2020"><span></span>2020 (11)</a>
+          <a href="/archives/2020"><span></span>2020 (12)</a>
         </li>
         
       </ul>

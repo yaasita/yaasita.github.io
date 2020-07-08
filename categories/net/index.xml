@@ -20,8 +20,9 @@
       <description>自分のドメインを
 Value Domainから Google Domains へ移管してみた
 感想
- .net, .com とうは安いの .jp は高い whois 代行は標準サービス 標準の権威DNSサーバーは微妙  GCPのGoogle Cloud DNSが使えるわけではない APIでの更新も難しそう HTTPリダイレクトの機能がついてるのは嬉しい ダイナミックDNSはある DNSSECは簡単にできそう SSHFPレコードを設定できる    まとめ
-みんな使うと良いと思います</description>
+ .net, .com 等は安い .jp は高い whois 代行は標準サービス 標準の権威DNSサーバーは微妙  GCPのGoogle Cloud DNSが使えるわけではない APIでの更新も難しそう HTTPリダイレクトの機能がついてるのは嬉しい ダイナミックDNSはある DNSSECは簡単にできそう SSHFPレコードを設定できる    まとめ
+みんな使うと良いと思います
+ </description>
     </item>
     
     <item>
