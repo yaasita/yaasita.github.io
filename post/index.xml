@@ -6,10 +6,20 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 08 Jul 2020 15:14:42 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 30 Aug 2020 04:28:55 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>chromebookのLinuxが新しくなってた</title>
+      <link>https://yaasita.github.io/2020/08/30/new-linux-in-chromebook/</link>
+      <pubDate>Sun, 30 Aug 2020 04:28:55 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/08/30/new-linux-in-chromebook/</guid>
+      <description>Linuxを消して、また入れたら良くなってた
+ Debianが10になった 日本語が打てる(ただ表示はバグる) 絵文字が見れる ターミナルがタブに対応した  </description>
+    </item>
     
     <item>
       <title>authorized_keysを適当に更新しない</title>
@@ -281,19 +291,6 @@ systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower=  という�
 cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
 journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  とりあえず分かった、バッテリー時の判定が入ってるtimer
  apt-daily-upgrade man-db logrotate anacron apt-daily  </description>
-    </item>
-    
-    <item>
-      <title>ビリビリ動画とcrunchyrollのIP制限をGCPで検証</title>
-      <link>https://yaasita.github.io/2019/09/14/anime-ip-block/</link>
-      <pubDate>Sat, 14 Sep 2019 22:21:43 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/09/14/anime-ip-block/</guid>
-      <description>bilibili動画とcrunchyrollのIP制限はどんな感じなのか
-GCPの各リージョンからアクセスして試してみる
-rttは自宅から該当サーバーまでのpingしたときの平均値
-なのでISPによって全然違うと思うので参考値ということで
-   region bilibili crunchyroll rtt(ms)     asia-east1 (台湾) ng ok 60.149   asia-east2 (香港) ng ok 76.986   asia-northeast1 (東京) ng ok 29.624   asia-northeast2 (大阪) ng ok 37.401   asia-south1 (ムンバイ) ng ok 144.055   asia-southeast1 (シンガポール) ng ok 89.755   australia-southeast1 (シドニー) ng ok 122.193   europe-north1 (フィンランド) ng ok 256.714   europe-west1 (ベルギー) ng ok 229.</description>
     </item>
     
   </channel>

@@ -6,10 +6,20 @@
     <description>Recent content in 2020 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 08 Jul 2020 15:14:42 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 30 Aug 2020 04:28:55 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/archives/2020/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>chromebookのLinuxが新しくなってた</title>
+      <link>https://yaasita.github.io/2020/08/30/new-linux-in-chromebook/</link>
+      <pubDate>Sun, 30 Aug 2020 04:28:55 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/08/30/new-linux-in-chromebook/</guid>
+      <description>Linuxを消して、また入れたら良くなってた
+ Debianが10になった 日本語が打てる(ただ表示はバグる) 絵文字が見れる ターミナルがタブに対応した  </description>
+    </item>
     
     <item>
       <title>authorized_keysを適当に更新しない</title>

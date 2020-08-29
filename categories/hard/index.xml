@@ -6,10 +6,20 @@
     <description>Recent content in hard on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 17 Jan 2020 17:22:02 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 30 Aug 2020 04:28:55 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/hard/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>chromebookのLinuxが新しくなってた</title>
+      <link>https://yaasita.github.io/2020/08/30/new-linux-in-chromebook/</link>
+      <pubDate>Sun, 30 Aug 2020 04:28:55 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/08/30/new-linux-in-chromebook/</guid>
+      <description>Linuxを消して、また入れたら良くなってた
+ Debianが10になった 日本語が打てる(ただ表示はバグる) 絵文字が見れる ターミナルがタブに対応した  </description>
+    </item>
     
     <item>
       <title>続 chromebookでbackslashを入力</title>
@@ -245,30 +255,6 @@ firmware-linux-nonfree
 firmware-realtek
 lspci
 とか使ってハードウェアを調べること </description>
-    </item>
-    
-    <item>
-      <title>smartdでHDD監視</title>
-      <link>https://yaasita.github.io/2013/08/29/494/</link>
-      <pubDate>Thu, 29 Aug 2013 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2013/08/29/494/</guid>
-      <description> インストール
-apt-get install smartmontools
-
-/etc/default/smartmontoolsの以下の行を有効にする
-start_smartd=yes
-
-/etc/smartd.confを編集
-DEVICESCANをコメントアウトして設定を書く
-#DEVICESCAN -d removable -n standby -m root -M exec /usr/share/smartmontools/smartd-runner
-/dev/sda -a -d sat -o on -S on -s (S/../.././02|L/../../6/03) -m hoge@example.com
-
-こうするとメールのテストができるらしい
-/dev/sda -a -d sat -o on -S on -s (S/../.././02|L/../../6/03) -m hoge@example.com -M test
-
-参考リンク
-http://www.geocities.jp/sugachan1973/doc/funto57.html </description>
     </item>
     
   </channel>

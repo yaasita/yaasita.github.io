@@ -4,17 +4,42 @@
   
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2020-07-08T15:14:42+09:00</lastmod>
+    <lastmod>2020-08-30T04:28:55+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/archives/2020/</loc>
-    <lastmod>2020-07-08T15:14:42+09:00</lastmod>
+    <lastmod>2020-08-30T04:28:55+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/archives/</loc>
-    <lastmod>2020-07-08T15:14:42+09:00</lastmod>
+    <lastmod>2020-08-30T04:28:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yaasita.github.io/categories/</loc>
+    <lastmod>2020-08-30T04:28:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yaasita.github.io/2020/08/30/new-linux-in-chromebook/</loc>
+    <lastmod>2020-08-30T04:28:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yaasita.github.io/categories/hard/</loc>
+    <lastmod>2020-08-30T04:28:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yaasita.github.io/post/</loc>
+    <lastmod>2020-08-30T04:28:55+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yaasita.github.io/categories/soft/</loc>
+    <lastmod>2020-08-30T04:28:55+09:00</lastmod>
   </url>
   
   <url>
@@ -23,17 +48,7 @@
   </url>
   
   <url>
-    <loc>https://yaasita.github.io/categories/</loc>
-    <lastmod>2020-07-08T15:14:42+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yaasita.github.io/categories/linux/</loc>
-    <lastmod>2020-07-08T15:14:42+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yaasita.github.io/post/</loc>
     <lastmod>2020-07-08T15:14:42+09:00</lastmod>
   </url>
   
@@ -63,11 +78,6 @@
   </url>
   
   <url>
-    <loc>https://yaasita.github.io/categories/soft/</loc>
-    <lastmod>2020-05-10T03:22:35+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yaasita.github.io/2020/05/09/bigquery-type-change/</loc>
     <lastmod>2020-05-09T04:42:51+09:00</lastmod>
   </url>
@@ -85,11 +95,6 @@
   <url>
     <loc>https://yaasita.github.io/2020/02/28/k8s-cloudsql-proxy-with-socket/</loc>
     <lastmod>2020-02-28T04:08:58+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yaasita.github.io/categories/hard/</loc>
-    <lastmod>2020-01-17T17:22:02+09:00</lastmod>
   </url>
   
   <url>

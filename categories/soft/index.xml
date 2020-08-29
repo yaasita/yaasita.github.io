@@ -6,10 +6,20 @@
     <description>Recent content in soft on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 10 May 2020 03:22:35 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 30 Aug 2020 04:28:55 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>chromebookのLinuxが新しくなってた</title>
+      <link>https://yaasita.github.io/2020/08/30/new-linux-in-chromebook/</link>
+      <pubDate>Sun, 30 Aug 2020 04:28:55 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/08/30/new-linux-in-chromebook/</guid>
+      <description>Linuxを消して、また入れたら良くなってた
+ Debianが10になった 日本語が打てる(ただ表示はバグる) 絵文字が見れる ターミナルがタブに対応した  </description>
+    </item>
     
     <item>
       <title>DoHを試す</title>
@@ -290,20 +300,6 @@ curl: (92) HTTP/2 stream 1 was not closed cleanly: HTTP_1_1_REQUIRED (err 13)  �
       <description>perlでElasticsearch
 mojoliciousでの例
  </description>
-    </item>
-    
-    <item>
-      <title>クライアント証明書とIP制限</title>
-      <link>https://yaasita.github.io/2018/05/26/client-auth/</link>
-      <pubDate>Sat, 26 May 2018 03:49:43 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/05/26/client-auth/</guid>
-      <description>外からはクライアント証明書を要求して、中からは素通しさせたいケース
-Apache2.4ならこんな感じ
-SSLCACertificateFile /etc/apache2/ssl/example.crt &amp;lt;Directory /var/www&amp;gt; Options Indexes FollowSymLinks MultiViews ExecCGI Require ip 192.168.100.0/24 SSLVerifyClient require Satisfy any &amp;lt;/Directory&amp;gt;  curlで確認
-curl https://example.net --key client.key --cert cert.crt --http1.1  作るときは /usr/lib/ssl/misc/CA.pl -newreq とかで適当に作る
-鍵とセットなら良いのでcommon nameとかは適当
-参考リンク プライベートCA作るまで</description>
     </item>
     
   </channel>
