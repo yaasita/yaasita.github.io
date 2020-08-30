@@ -6,10 +6,20 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 30 Aug 2020 04:28:55 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2020 03:36:18 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>maildir形式のファイルをgmailに移す</title>
+      <link>https://yaasita.github.io/2020/08/31/maildir-to-gmail/</link>
+      <pubDate>Mon, 31 Aug 2020 03:36:18 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/08/31/maildir-to-gmail/</guid>
+      <description>IMAPのAPPENDコマンドでmaildir形式のファイルをGmailに送る
+#!/usr/bin/env node &amp;quot;use strict&amp;quot;; const simpleParser = require(&amp;quot;mailparser&amp;quot;).simpleParser; const { ImapFlow } = require(&amp;quot;imapflow&amp;quot;); const client = new ImapFlow({ host: &amp;quot;imap.gmail.com&amp;quot;, port: 993, secure: true, auth: { user: &amp;quot;hoge@gmail.com&amp;quot;, pass: &amp;quot;password&amp;quot;, }, }); const fs = require(&amp;quot;fs&amp;quot;); (async () =&amp;gt; { const mail = fs.readFileSync( process.argv[2], &amp;quot;utf8&amp;quot; ); const parsed = await simpleParser(mail); await client.connect(); await client.append(&amp;quot;INBOX&amp;quot;, mail, [&amp;quot;\\Seen&amp;quot;], parsed.date); await client.logout(); })().catch((e) =&amp;gt; { console.log(e); process.exit(1); });  </description>
+    </item>
     
     <item>
       <title>chromebookのLinuxが新しくなってた</title>
@@ -271,26 +281,6 @@ https://developers.google.com/identity/protocols/googlescopes
 存在する素数の数+1(今回は1もお互いに素の数として含めるため)でOKぽい
 perlで書いてみる
  解説動画</description>
-    </item>
-    
-    <item>
-      <title>systemd timerはちゃんと動いてる？</title>
-      <link>https://yaasita.github.io/2019/09/29/systemd-timer/</link>
-      <pubDate>Sun, 29 Sep 2019 16:51:09 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/09/29/systemd-timer/</guid>
-      <description>systemdタイマーがちゃんと動いてるか確認したほうが良いよというお話
-systemctl list-timers --allコマンドで一覧が見れるあれです
-debian10だと /etc/cron.daily にあるスクリプトでこんな感じに書かれてたら、systemd timerの方を使ってる
-if [ -d /run/systemd/system ]; then exit 0 fi  前回 と同様にノートパソコンのバッテリー稼働と誤って判断されることに起因する問題
-例えばlogrotateとかみると
-systemctl cat logrotate  こんな一文がある
-ConditionACPower=true  これはバッテリー駆動の時は動かさないって意味らしいんだけど、どうも判定が狂ってるみたいでずっと実行されなかった
-なので、以下のコマンドでoverride.conf作って判定を無効化した
-systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower=  というわけで
-cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
-journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  とりあえず分かった、バッテリー時の判定が入ってるtimer
- apt-daily-upgrade man-db logrotate anacron apt-daily  </description>
     </item>
     
   </channel>

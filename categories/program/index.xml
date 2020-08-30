@@ -6,10 +6,20 @@
     <description>Recent content in program on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 08 Jul 2020 15:14:42 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2020 03:36:18 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>maildir形式のファイルをgmailに移す</title>
+      <link>https://yaasita.github.io/2020/08/31/maildir-to-gmail/</link>
+      <pubDate>Mon, 31 Aug 2020 03:36:18 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/08/31/maildir-to-gmail/</guid>
+      <description>IMAPのAPPENDコマンドでmaildir形式のファイルをGmailに送る
+#!/usr/bin/env node &amp;quot;use strict&amp;quot;; const simpleParser = require(&amp;quot;mailparser&amp;quot;).simpleParser; const { ImapFlow } = require(&amp;quot;imapflow&amp;quot;); const client = new ImapFlow({ host: &amp;quot;imap.gmail.com&amp;quot;, port: 993, secure: true, auth: { user: &amp;quot;hoge@gmail.com&amp;quot;, pass: &amp;quot;password&amp;quot;, }, }); const fs = require(&amp;quot;fs&amp;quot;); (async () =&amp;gt; { const mail = fs.readFileSync( process.argv[2], &amp;quot;utf8&amp;quot; ); const parsed = await simpleParser(mail); await client.connect(); await client.append(&amp;quot;INBOX&amp;quot;, mail, [&amp;quot;\\Seen&amp;quot;], parsed.date); await client.logout(); })().catch((e) =&amp;gt; { console.log(e); process.exit(1); });  </description>
+    </item>
     
     <item>
       <title>authorized_keysを適当に更新しない</title>
@@ -268,17 +278,6 @@ logはsqliteで保存されている
 昔のやつ
 場所: C:\Users\username\AppData\Roaming\Skype\username\main.db
  function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;skype1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;skype1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;skype2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;skype2&#34;).src = photos[1].original_size.url; }   </description>
-    </item>
-    
-    <item>
-      <title>perlのクロージャ</title>
-      <link>https://yaasita.github.io/2018/09/06/perl-closure/</link>
-      <pubDate>Thu, 06 Sep 2018 02:43:21 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/09/06/perl-closure/</guid>
-      <description>これでも良いけど
-{ my $count; sub func { return ++$count; } }  最近ならこうstate使って
-use feature qw(:5.10); sub func { state $count; return ++$count; }  ただstateって配列とかには使えない</description>
     </item>
     
   </channel>
