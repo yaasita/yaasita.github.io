@@ -6,10 +6,27 @@
     <description>Recent content in rule on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 10 May 2020 03:22:35 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2020 02:55:16 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/rule/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Microsoft IDのOpenID connect</title>
+      <link>https://yaasita.github.io/2020/09/28/oidc/</link>
+      <pubDate>Mon, 28 Sep 2020 02:55:16 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/09/28/oidc/</guid>
+      <description>Microsoft ID プラットフォームと OpenID Connect プロトコル
+これを見ると response_mode = form_post
+に対応してるが, これはid_token(と指定した場合はstate)がPOSTで渡ってくるのだが、chrome80で導入された サードパーティCookieの規制により
+Cookieが渡ってこない
+そのためセッションと紐付けるのに面倒になりそう
+まあnonceからセッションを紐付けられる値を入れておけば何とかなりそうではあるが・・・
+jwt等をCookieに入れて、サーバー側でセッション用のストレージを持たない場合は厳しい気がする
+なので、response_mode = fragment を指定するか、SameSite=None; SecureをCookieの属性に付与するかだけど、fragmentが良いんじゃないかなぁ・・・・
+参考リンク  OpenID Connect 全フロー解説  </description>
+    </item>
     
     <item>
       <title>DoHを試す</title>
@@ -300,42 +317,6 @@ http://backslash.ddo.jp/wordpress/archives/434 </description>
 log512/log2 = log2^9/log2 = 9log2/log2 = 9
 http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1262091227
 http://ab.sinryow.net/lesson/shisu.html </description>
-    </item>
-    
-    <item>
-      <title>digコマンドを理解する</title>
-      <link>https://yaasita.github.io/2013/01/05/1624/</link>
-      <pubDate>Sat, 05 Jan 2013 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2013/01/05/1624/</guid>
-      <description>* usage
-dig [@server] domain [query-type]
-
-* query-type
-a (Aレコード)
-any (任意の情報)
-mx (MXレコード)
-ns (NSレコード)
-soa (SOAレコード)
-hinfo (HINFOレコード)
-axfr (ゾーン転送)
-txt (TXTレコード)
-
-* status
-NOERROR (正常)
-NXDOMAIN (ドメインは存在しない)
-SERVFAIL (サーバの応答エラー)
-
-* flags
-qr (クエリの回答)
-aa (権威ある回答)
-tc (TCPフォールバック)
-ra (フルサービスリゾルバ)
-rd (再帰要求,+norecオプションで消える)
-
-参考リンク
-http://d.hatena.ne.jp/japanrock_pg/20090410/1239355230
-http://www.syon.co.jp/syontech/tech002.html</description>
     </item>
     
   </channel>

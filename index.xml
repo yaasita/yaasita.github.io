@@ -6,10 +6,45 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 31 Aug 2020 03:36:18 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2020 00:50:03 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>hettyはmitmproxyの代わりになる？</title>
+      <link>https://yaasita.github.io/2020/10/04/hetty/</link>
+      <pubDate>Sun, 04 Oct 2020 00:50:03 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/10/04/hetty/</guid>
+      <description>mitmproxyみたいにhttpsのリクエストを覗くツール
+https://github.com/dstotijn/hetty
+使い方は, CAの鍵と証明書を用意して
+hetty -cert cacert.pem -key cakey.pem  でOK
+8080でlistenするのでhttp proxyとして指定する
+管理画面はproxyとて設定したブラウザで以下のURLから見れる
+http://hetty.proxy/
+感想
+ mitmproxyより重い気がする GUIでリクエストを見れるのは便利 mitmdumpとかしないでも簡単に見れるのはとても嬉しい 検索機能は今後追加予定？ リクエストをreplyする機能も追加予定みたい  まとめ
+今後に期待</description>
+    </item>
+    
+    <item>
+      <title>Microsoft IDのOpenID connect</title>
+      <link>https://yaasita.github.io/2020/09/28/oidc/</link>
+      <pubDate>Mon, 28 Sep 2020 02:55:16 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/09/28/oidc/</guid>
+      <description>Microsoft ID プラットフォームと OpenID Connect プロトコル
+これを見ると response_mode = form_post
+に対応してるが, これはid_token(と指定した場合はstate)がPOSTで渡ってくるのだが、chrome80で導入された サードパーティCookieの規制により
+Cookieが渡ってこない
+そのためセッションと紐付けるのに面倒になりそう
+まあnonceからセッションを紐付けられる値を入れておけば何とかなりそうではあるが・・・
+jwt等をCookieに入れて、サーバー側でセッション用のストレージを持たない場合は厳しい気がする
+なので、response_mode = fragment を指定するか、SameSite=None; SecureをCookieの属性に付与するかだけど、fragmentが良いんじゃないかなぁ・・・・
+参考リンク  OpenID Connect 全フロー解説  </description>
+    </item>
     
     <item>
       <title>maildir形式のファイルをgmailに移す</title>
@@ -257,30 +292,6 @@ export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json  みたい�
 https://developers.google.com/identity/protocols/googlescopes
 アクセストークンのテストは DLP とかがお手軽で良いかな
 参考リンク  jose API Document Using OAuth 2.0 for Server to Server Applications  </description>
-    </item>
-    
-    <item>
-      <title>osu!taikoのskin</title>
-      <link>https://yaasita.github.io/2019/10/27/osu/</link>
-      <pubDate>Sun, 27 Oct 2019 03:00:31 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/10/27/osu/</guid>
-      <description>osu!taikoのスキン
-これが一番良かった
-概要欄からダウンロードできる</description>
-    </item>
-    
-    <item>
-      <title>AtCoder Beginner Contest 142のD問題</title>
-      <link>https://yaasita.github.io/2019/09/30/atcoder-abc142/</link>
-      <pubDate>Mon, 30 Sep 2019 05:05:34 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/09/30/atcoder-abc142/</guid>
-      <description>問題: D - Disjoint Set of Common Divisors
-方針はユークリッドの互除法で最大公約数を出して、最大公約数を素因数分解
-存在する素数の数+1(今回は1もお互いに素の数として含めるため)でOKぽい
-perlで書いてみる
- 解説動画</description>
     </item>
     
   </channel>

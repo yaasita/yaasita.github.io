@@ -6,10 +6,45 @@
     <description>Recent content in 2020 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 31 Aug 2020 03:36:18 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2020 00:50:03 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/archives/2020/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>hettyはmitmproxyの代わりになる？</title>
+      <link>https://yaasita.github.io/2020/10/04/hetty/</link>
+      <pubDate>Sun, 04 Oct 2020 00:50:03 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/10/04/hetty/</guid>
+      <description>mitmproxyみたいにhttpsのリクエストを覗くツール
+https://github.com/dstotijn/hetty
+使い方は, CAの鍵と証明書を用意して
+hetty -cert cacert.pem -key cakey.pem  でOK
+8080でlistenするのでhttp proxyとして指定する
+管理画面はproxyとて設定したブラウザで以下のURLから見れる
+http://hetty.proxy/
+感想
+ mitmproxyより重い気がする GUIでリクエストを見れるのは便利 mitmdumpとかしないでも簡単に見れるのはとても嬉しい 検索機能は今後追加予定？ リクエストをreplyする機能も追加予定みたい  まとめ
+今後に期待</description>
+    </item>
+    
+    <item>
+      <title>Microsoft IDのOpenID connect</title>
+      <link>https://yaasita.github.io/2020/09/28/oidc/</link>
+      <pubDate>Mon, 28 Sep 2020 02:55:16 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/09/28/oidc/</guid>
+      <description>Microsoft ID プラットフォームと OpenID Connect プロトコル
+これを見ると response_mode = form_post
+に対応してるが, これはid_token(と指定した場合はstate)がPOSTで渡ってくるのだが、chrome80で導入された サードパーティCookieの規制により
+Cookieが渡ってこない
+そのためセッションと紐付けるのに面倒になりそう
+まあnonceからセッションを紐付けられる値を入れておけば何とかなりそうではあるが・・・
+jwt等をCookieに入れて、サーバー側でセッション用のストレージを持たない場合は厳しい気がする
+なので、response_mode = fragment を指定するか、SameSite=None; SecureをCookieの属性に付与するかだけど、fragmentが良いんじゃないかなぁ・・・・
+参考リンク  OpenID Connect 全フロー解説  </description>
+    </item>
     
     <item>
       <title>maildir形式のファイルをgmailに移す</title>

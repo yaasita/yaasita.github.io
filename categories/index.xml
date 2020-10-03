@@ -6,10 +6,28 @@
     <description>Recent content in Categories on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 31 Aug 2020 03:36:18 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 04 Oct 2020 00:50:03 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>soft</title>
+      <link>https://yaasita.github.io/categories/soft/</link>
+      <pubDate>Sun, 04 Oct 2020 00:50:03 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/categories/soft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rule</title>
+      <link>https://yaasita.github.io/categories/rule/</link>
+      <pubDate>Mon, 28 Sep 2020 02:55:16 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/categories/rule/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>program</title>
@@ -30,15 +48,6 @@
     </item>
     
     <item>
-      <title>soft</title>
-      <link>https://yaasita.github.io/categories/soft/</link>
-      <pubDate>Sun, 30 Aug 2020 04:28:55 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/categories/soft/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>linux</title>
       <link>https://yaasita.github.io/categories/linux/</link>
       <pubDate>Wed, 08 Jul 2020 15:14:42 +0900</pubDate>
@@ -53,15 +62,6 @@
       <pubDate>Wed, 03 Jun 2020 02:59:51 +0900</pubDate>
       
       <guid>https://yaasita.github.io/categories/net/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>rule</title>
-      <link>https://yaasita.github.io/categories/rule/</link>
-      <pubDate>Sun, 10 May 2020 03:22:35 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/categories/rule/</guid>
       <description></description>
     </item>
     
