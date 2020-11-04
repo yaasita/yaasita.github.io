@@ -26,7 +26,8 @@ hetty -cert cacert.pem -key cakey.pem  でOK
 http://hetty.proxy/
 感想
  mitmproxyより重い気がする GUIでリクエストを見れるのは便利 mitmdumpとかしないでも簡単に見れるのはとても嬉しい 検索機能は今後追加予定？ リクエストをreplyする機能も追加予定みたい  まとめ
-今後に期待</description>
+今後に期待
+今はmitmweb使う方が良いと思う</description>
     </item>
     
     <item>

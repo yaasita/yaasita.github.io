@@ -11,30 +11,27 @@
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="標準エラー出力のリダイレクト話" />
-<meta property="og:description" content=" 標準エラー出力と標準出力を混ぜたいときに使う
+<meta property="og:description" content="標準エラー出力と標準出力を混ぜたいときに使う
 この文法
-command &amp;gt; hoge 2&amp;gt;&amp;amp;1なぜ↓の様に書いては駄目なのか解説する
-command 2&amp;gt;&amp;amp;1 &amp;gt; hoge ←これはうまく出ない
-まず &amp;1 の意味は標準出力の出力先を指す
-つまり標準出力と同じ場所に出したいときにしていする
+command &gt; hoge 2&gt;&amp;1  なぜ↓の様に書いては駄目なのか解説する
+command 2&gt;&amp;1 &gt; hoge ←これはうまく出ない  まず &gt;&amp;1 の意味は標準出力の出力先を指す
+つまり標準出力と同じ場所に出したいときに指定する
 間違った例だとなぜ標準エラー出力が標準出力に出てしまうか順番に解説
 1.リダイレクトを指定しない場合
-デフォルトの画面に出力される　標準出力先：画面
-標準エラー出力先：画面 
-command
-2.標準エラー出力先を標準出力と同じに指定
+デフォルトの画面に出力される　標準出力先: 画面
+標準エラー出力先: 画面
+command  2.標準エラー出力先を標準出力と同じに指定
 標準出力先は画面なのでエラー出力を同じに指定してもまた画面になる
-標準出力先：画面
-標準エラー出力先：画面（現在の標準出力先と同じ） 
-command 2&amp;gt;&amp;amp;1
-3.標準出力先を指定
+標準出力先: 画面
+標準エラー出力先: 画面（現在の標準出力先と同じ）
+command 2&gt;&amp;1  3.標準出力先を指定
 標準出力先をリダイレクトによって指定する
-標準出力先：hoge
-標準エラー出力先：画面
-command 2&amp;gt;&amp;amp;1 &amp;gt; hoge
-つまり 2&amp;gt;&amp;amp;1 という指定はその時点の標準エラー出力を参照するため、まだ標準出力先を変更していない内に変更しても意味がないということ
+標準出力先: hoge
+標準エラー出力先: 画面
+command 2&gt;&amp;1 &amp;&gt; hoge  つまり 2&gt;&amp;1 という指定はその時点の標準エラー出力を参照するため、
+まだ標準出力先を変更していない内に変更しても意味がないということ
 参考リンク
-http://www.fireproject.jp/feature/bash/basic/redirect-pipe.html " />
+http://www.fireproject.jp/feature/bash/basic/redirect-pipe.html" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2010/09/18/5817/" />
 <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
@@ -87,10 +84,38 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-標準エラー出力と標準出力を混ぜたいときに使う<br />この文法<br /><pre>command &amp;gt; hoge 2&amp;gt;&amp;amp;1</pre>なぜ↓の様に書いては駄目なのか解説する<br /><pre>command 2&amp;gt;&amp;amp;1 &amp;gt; hoge ←これはうまく出ない</pre><br />まず >&amp;1 の意味は標準出力の出力先を指す<br />つまり標準出力と同じ場所に出したいときにしていする<br /><br />間違った例だとなぜ標準エラー出力が標準出力に出てしまうか順番に解説<br />1.リダイレクトを指定しない場合<br />デフォルトの画面に出力される　<br /><b>標準出力先：画面<br />標準エラー出力先：画面 </b><br /><pre>command</pre><br />2.標準エラー出力先を標準出力と同じに指定<br />標準出力先は画面なのでエラー出力を同じに指定してもまた画面になる<br /><b>標準出力先：画面<br />標準エラー出力先：画面（現在の標準出力先と同じ） </b><br /><pre>command 2&amp;gt;&amp;amp;1</pre><br />3.標準出力先を指定<br />標準出力先をリダイレクトによって指定する<br /><b>標準出力先：hoge<br />標準エラー出力先：画面</b><br /><pre>command 2&amp;gt;&amp;amp;1 &amp;gt; hoge</pre><br />つまり 2&amp;gt;&amp;amp;1 という指定はその時点の標準エラー出力を参照するため、まだ標準出力先を変更していない内に変更しても意味がないということ<br /><br /><br />参考リンク<br /><a href="http://www.fireproject.jp/feature/bash/basic/redirect-pipe.html">http://www.fireproject.jp/feature/bash/basic/redirect-pipe.html</a>
-
+    <p>標準エラー出力と標準出力を混ぜたいときに使う<br>
+この文法</p>
+<pre><code>command &gt; hoge 2&gt;&amp;1
+</code></pre>
+<p>なぜ↓の様に書いては駄目なのか解説する</p>
+<pre><code>command 2&gt;&amp;1 &gt; hoge ←これはうまく出ない
+</code></pre>
+<p>まず &gt;&amp;1 の意味は標準出力の出力先を指す<br>
+つまり標準出力と同じ場所に出したいときに指定する</p>
+<p>間違った例だとなぜ標準エラー出力が標準出力に出てしまうか順番に解説</p>
+<p>1.リダイレクトを指定しない場合<br>
+デフォルトの画面に出力される　</p>
+<p><strong>標準出力先</strong>: 画面<br>
+<strong>標準エラー出力先</strong>: 画面</p>
+<pre><code>command
+</code></pre>
+<p>2.標準エラー出力先を標準出力と同じに指定</p>
+<p>標準出力先は画面なのでエラー出力を同じに指定してもまた画面になる</p>
+<p><strong>標準出力先</strong>: 画面<br>
+<strong>標準エラー出力先</strong>: 画面（現在の標準出力先と同じ）</p>
+<pre><code>command 2&gt;&amp;1
+</code></pre>
+<p>3.標準出力先を指定</p>
+<p>標準出力先をリダイレクトによって指定する</p>
+<p><strong>標準出力先</strong>: hoge<br>
+<strong>標準エラー出力先</strong>: 画面</p>
+<pre><code>command 2&gt;&amp;1 &amp;&gt; hoge
+</code></pre>
+<p>つまり 2&gt;&amp;1 という指定はその時点の標準エラー出力を参照するため、<br>
+まだ標準出力先を変更していない内に変更しても意味がないということ</p>
+<p>参考リンク<br>
+<a href="http://www.fireproject.jp/feature/bash/basic/redirect-pipe.html">http://www.fireproject.jp/feature/bash/basic/redirect-pipe.html</a></p>
 
   </div>
   <footer>
@@ -225,7 +250,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/hard"><span></span>hard (44)</a>
+          <a href="/categories/hard"><span></span>hard (45)</a>
         </li>
         
         <li>
@@ -237,7 +262,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (215)</a>
+          <a href="/categories/net"><span></span>net (216)</a>
         </li>
         
         <li>
@@ -320,7 +345,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2020"><span></span>2020 (16)</a>
+          <a href="/archives/2020"><span></span>2020 (17)</a>
         </li>
         
       </ul>

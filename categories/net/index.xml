@@ -6,10 +6,22 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 03 Jun 2020 02:59:51 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2020 02:58:38 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AWSのt4gインスタンスを試す</title>
+      <link>https://yaasita.github.io/2020/11/05/t4g-instance/</link>
+      <pubDate>Thu, 05 Nov 2020 02:58:38 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/11/05/t4g-instance/</guid>
+      <description>新しくt4gインスタンスが出たみたいなので試してみた
+cpuminer アルゴリズム=lyra2rev2 で測定
+   name cpu memory hashrate(kH/s)     自宅PC Core i5-4460 3.20GHz 4コア 16G 384   ノートPC LB-C110B Celeron 1037U 1.80GHz 2コア 8G 79   t4g.micro (CPUクレジットあり) ARM CPU 2コア 1G 233   t4g.micro (CPUクレジットなし) ARM CPU 2コア 1G 24   aws lightsail (t2.nano) Xeon E5-2676 v3 2.40GHz 1コア 512M 81    前回記事
+まとめ t4g良いかもしれない</description>
+    </item>
     
     <item>
       <title>Google Domainsを使ってみた</title>
@@ -296,24 +308,6 @@ Protocols http/1.1 h2  のようにhttp/1.1を先にしないと
 curl: (92) HTTP/2 stream 1 was not closed cleanly: HTTP_1_1_REQUIRED (err 13)  こんなエラーになるので注意
 参考リンク
  reqexprの説明 mod_ssl変数一覧  </description>
-    </item>
-    
-    <item>
-      <title>GCPでAWS Batch的な事をやる</title>
-      <link>https://yaasita.github.io/2018/06/20/aws-batch-gcp/</link>
-      <pubDate>Wed, 20 Jun 2018 23:46:45 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/06/20/aws-batch-gcp/</guid>
-      <description>こんな感じにS3になんか置いて、ファイルがあったら起動して、終わったらshutdownするみたいな奴
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   GCPはインスタンスの起動停止が早いので結構良い感じ
-Lambda 処理するファイルが存在して、GCPが動いてたら起動かける
- GCP キュー代わりのファイル消してから
-bootしてから3分後に実行（ちょっとインターバルないとインスタンスに入るのが大変になる）
-処理の最後でshutdownすればOK
-/etc/systemd/system/gcp-calc.service
-[Unit] Description=gcp-calc Wants=network-pre.target After=multi-user.target [Install] WantedBy=multi-user.target [Service] ExecStart=/root/run.sh Type=oneshot  /etc/systemd/system/gcp-calc.timer
-[Unit] Description=gcp calc [Timer] OnBootSec=3min [Install] WantedBy=timers.target  </description>
     </item>
     
   </channel>

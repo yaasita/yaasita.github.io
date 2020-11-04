@@ -6,10 +6,22 @@
     <description>Recent content in 2020 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 04 Oct 2020 00:50:03 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2020 02:58:38 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/archives/2020/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AWSのt4gインスタンスを試す</title>
+      <link>https://yaasita.github.io/2020/11/05/t4g-instance/</link>
+      <pubDate>Thu, 05 Nov 2020 02:58:38 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/11/05/t4g-instance/</guid>
+      <description>新しくt4gインスタンスが出たみたいなので試してみた
+cpuminer アルゴリズム=lyra2rev2 で測定
+   name cpu memory hashrate(kH/s)     自宅PC Core i5-4460 3.20GHz 4コア 16G 384   ノートPC LB-C110B Celeron 1037U 1.80GHz 2コア 8G 79   t4g.micro (CPUクレジットあり) ARM CPU 2コア 1G 233   t4g.micro (CPUクレジットなし) ARM CPU 2コア 1G 24   aws lightsail (t2.nano) Xeon E5-2676 v3 2.40GHz 1コア 512M 81    前回記事
+まとめ t4g良いかもしれない</description>
+    </item>
     
     <item>
       <title>hettyはmitmproxyの代わりになる？</title>
@@ -26,7 +38,8 @@ hetty -cert cacert.pem -key cakey.pem  でOK
 http://hetty.proxy/
 感想
  mitmproxyより重い気がする GUIでリクエストを見れるのは便利 mitmdumpとかしないでも簡単に見れるのはとても嬉しい 検索機能は今後追加予定？ リクエストをreplyする機能も追加予定みたい  まとめ
-今後に期待</description>
+今後に期待
+今はmitmweb使う方が良いと思う</description>
     </item>
     
     <item>

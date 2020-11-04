@@ -6,10 +6,22 @@
     <description>Recent content in hard on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 30 Aug 2020 04:28:55 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 05 Nov 2020 02:58:38 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/hard/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>AWSのt4gインスタンスを試す</title>
+      <link>https://yaasita.github.io/2020/11/05/t4g-instance/</link>
+      <pubDate>Thu, 05 Nov 2020 02:58:38 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/11/05/t4g-instance/</guid>
+      <description>新しくt4gインスタンスが出たみたいなので試してみた
+cpuminer アルゴリズム=lyra2rev2 で測定
+   name cpu memory hashrate(kH/s)     自宅PC Core i5-4460 3.20GHz 4コア 16G 384   ノートPC LB-C110B Celeron 1037U 1.80GHz 2コア 8G 79   t4g.micro (CPUクレジットあり) ARM CPU 2コア 1G 233   t4g.micro (CPUクレジットなし) ARM CPU 2コア 1G 24   aws lightsail (t2.nano) Xeon E5-2676 v3 2.40GHz 1コア 512M 81    前回記事
+まとめ t4g良いかもしれない</description>
+    </item>
     
     <item>
       <title>chromebookのLinuxが新しくなってた</title>
@@ -242,19 +254,6 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E965-E325-11CE-BF
 PC構成を把握するコマンド
 ハードウェアチェックコマンド  hwinfo --short hdparm -i /dev/sda inxi -Fx lsscsi  lsscsiがいい感じ
 参考リンク  http://www.binarytides.com/linux-commands-hardware-info/  </description>
-    </item>
-    
-    <item>
-      <title>無線LANとサスペンド機能の有効化</title>
-      <link>https://yaasita.github.io/2014/03/09/145/</link>
-      <pubDate>Sun, 09 Mar 2014 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2014/03/09/145/</guid>
-      <description> 以下のパッケージとかを入れる
-firmware-linux-nonfree
-firmware-realtek
-lspci
-とか使ってハードウェアを調べること </description>
     </item>
     
   </channel>
