@@ -6,10 +6,26 @@
     <description>Recent content in linux on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 08 Jul 2020 15:14:42 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 06 Dec 2020 01:11:10 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>postfixのReceived headerを隠す</title>
+      <link>https://yaasita.github.io/2020/12/06/postfix-received-header/</link>
+      <pubDate>Sun, 06 Dec 2020 01:11:10 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/12/06/postfix-received-header/</guid>
+      <description>この回答通りなんだけど
+一応補足とか
+自分の環境だと、送信メールサーバーがセカンダリメールサーバーと兼任している
+以下のように設定した
+/etc/postfix/master.cf
+smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode=yes -o smtpd_sasl_auth_enable=yes -o smtpd_reject_unlisted_recipient=no -o smtpd_client_restrictions=$mua_client_restrictions -o smtpd_helo_restrictions=$mua_helo_restrictions -o smtpd_sender_restrictions=$mua_sender_restrictions -o smtpd_recipient_restrictions= -o smtpd_relay_restrictions=permit_sasl_authenticated,reject -o milter_macro_daemon_name=ORIGINATING -o cleanup_service_name=smtpscleanup smtpscleanup unix n - y - 0 cleanup -o header_checks=regexp:/etc/postfix/header_checks  /etc/postfix/header_checks
+/^Received:.*/ IGNORE  最初はsmtp_header_checksをmain.cfに書けば良いかなーと思ったんだけど、
+これだと外から入ってきたメール(後にプライマリサーバーにrelayされる)も一律削除されてしまうので都合が悪かった</description>
+    </item>
     
     <item>
       <title>authorized_keysを適当に更新しない</title>
@@ -36,8 +52,7 @@ https://github.com/yaasita/ssh-keys-manager
 https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/blob/master/cloudsql/mysql_wordpress_deployment.yaml
 socket接続の場合はこんな感じ
  参考
-k8s サイドカーコンテナについて
- </description>
+k8s サイドカーコンテナについて</description>
     </item>
     
     <item>
@@ -287,18 +302,6 @@ http://yaasita.tumblr.com/post/127482624497 </description>
 /etc/systemd/system/saslauthd.service
  みたいな定義を書いて
 systemctl daemon-reload systemctl enable saslauthd.service systemctl start saslauthd.service  </description>
-    </item>
-    
-    <item>
-      <title>Linuxでスクリーンショット取る</title>
-      <link>https://yaasita.github.io/2015/04/18/linux-screenshot/</link>
-      <pubDate>Sat, 18 Apr 2015 02:03:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/04/18/linux-screenshot/</guid>
-      <description>shutterというのがよさ気
-apt-get install shutter  http://www.xmisao.com/2014/02/07/get-screenshot-on-linux-by-shutter.html
-他にxwd使う方法もある
-# クリックしたウィンドウ xwd | convert - hoge.png xwd -root | convert - desktop.png  http://www.xmisao.com/2013/09/17/linux-xwindow-screenshot.html</description>
     </item>
     
   </channel>

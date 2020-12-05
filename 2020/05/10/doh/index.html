@@ -19,7 +19,7 @@ pip3 install doh-proxy  以下のような設定でserviceを作る
 /etc/systemd/system/doh-httpproxy.service
 [Unit] Description=doh-httpproxy After=nginx.service [Install] WantedBy=multi-user.target [Service] ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 8080 --listen-address 127.0.0.1 Nginx側設定例
 server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } }  確認
-curl --doh-url https://doh.example.net/dns-query google.co.jp   " />
+curl --doh-url https://doh.example.net/dns-query google.co.jp  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2020/05/10/doh/" />
 <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
@@ -39,17 +39,6 @@ if (!doNotTrack) {
 <script async src='https://www.google-analytics.com/analytics.js'></script>
 
     <script id="dsq-count-scr" src="https://yaasita.disqus.com/count.js" async></script>
-
-    
-    <script type="text/javascript">
-      amzn_assoc_ad_type = "link_enhancement_widget";
-      amzn_assoc_tracking_id = "amznafeymst-22";
-      amzn_assoc_linkid = "641f1d06132fd746df356ef17e5f5546";
-      amzn_assoc_placement = "";
-      amzn_assoc_marketplace = "amazon";
-      amzn_assoc_region = "JP";
-    </script>
-    <script src="//ws-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=JP"></script>
 
   </head>
   <body>
@@ -109,7 +98,6 @@ ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 808
 <p>確認</p>
 <pre><code>curl --doh-url https://doh.example.net/dns-query google.co.jp
 </code></pre>
-<iframe style="width:120px;height:240px;" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" src="//rcm-fe.amazon-adsystem.com/e/cm?lt1=_blank&bc1=000000&IS2=1&bg1=FFFFFF&fc1=000000&lc1=0000FF&t=amznafeymst-22&language=ja_JP&o=9&p=8&l=as4&m=amazon&f=ifr&ref=as_ss_li_til&asins=4774138630&linkId=a58f79b331f589212ff903011bf554ef"></iframe>
 
   </div>
   <footer>
@@ -260,11 +248,11 @@ ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 808
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (333)</a>
+          <a href="/categories/linux"><span></span>linux (334)</a>
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (216)</a>
+          <a href="/categories/net"><span></span>net (217)</a>
         </li>
         
         <li>
@@ -276,7 +264,7 @@ ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 808
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (405)</a>
+          <a href="/categories/soft"><span></span>soft (406)</a>
         </li>
         
         <li>
@@ -347,7 +335,7 @@ ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 808
         </li>
         
         <li>
-          <a href="/archives/2020"><span></span>2020 (17)</a>
+          <a href="/archives/2020"><span></span>2020 (18)</a>
         </li>
         
       </ul>
@@ -371,7 +359,6 @@ ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 808
       <i class="fa fa-rss-square fa-2x" aria-hidden="true"></i></a>
     </div>
   </div>
-  <iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=8&l=ez&f=ifr&linkID=7e79a9c442e22ad6b1bed43a388776c9&t=amznafeymst-22&tracking_id=amznafeymst-22" width="120" height="240" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
 </div>
 
       </div>

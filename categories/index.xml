@@ -6,24 +6,24 @@
     <description>Recent content in Categories on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 05 Nov 2020 02:58:38 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 06 Dec 2020 01:11:10 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>hard</title>
-      <link>https://yaasita.github.io/categories/hard/</link>
-      <pubDate>Thu, 05 Nov 2020 02:58:38 +0900</pubDate>
+      <title>linux</title>
+      <link>https://yaasita.github.io/categories/linux/</link>
+      <pubDate>Sun, 06 Dec 2020 01:11:10 +0900</pubDate>
       
-      <guid>https://yaasita.github.io/categories/hard/</guid>
+      <guid>https://yaasita.github.io/categories/linux/</guid>
       <description></description>
     </item>
     
     <item>
       <title>net</title>
       <link>https://yaasita.github.io/categories/net/</link>
-      <pubDate>Thu, 05 Nov 2020 02:58:38 +0900</pubDate>
+      <pubDate>Sun, 06 Dec 2020 01:11:10 +0900</pubDate>
       
       <guid>https://yaasita.github.io/categories/net/</guid>
       <description></description>
@@ -32,9 +32,18 @@
     <item>
       <title>soft</title>
       <link>https://yaasita.github.io/categories/soft/</link>
-      <pubDate>Sun, 04 Oct 2020 00:50:03 +0900</pubDate>
+      <pubDate>Sun, 06 Dec 2020 01:11:10 +0900</pubDate>
       
       <guid>https://yaasita.github.io/categories/soft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hard</title>
+      <link>https://yaasita.github.io/categories/hard/</link>
+      <pubDate>Thu, 05 Nov 2020 02:58:38 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/categories/hard/</guid>
       <description></description>
     </item>
     
@@ -53,15 +62,6 @@
       <pubDate>Mon, 31 Aug 2020 03:36:18 +0900</pubDate>
       
       <guid>https://yaasita.github.io/categories/program/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://yaasita.github.io/categories/linux/</link>
-      <pubDate>Wed, 08 Jul 2020 15:14:42 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/categories/linux/</guid>
       <description></description>
     </item>
     

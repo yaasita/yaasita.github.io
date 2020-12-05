@@ -6,10 +6,26 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 05 Nov 2020 02:58:38 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 06 Dec 2020 01:11:10 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>postfixのReceived headerを隠す</title>
+      <link>https://yaasita.github.io/2020/12/06/postfix-received-header/</link>
+      <pubDate>Sun, 06 Dec 2020 01:11:10 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/12/06/postfix-received-header/</guid>
+      <description>この回答通りなんだけど
+一応補足とか
+自分の環境だと、送信メールサーバーがセカンダリメールサーバーと兼任している
+以下のように設定した
+/etc/postfix/master.cf
+smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode=yes -o smtpd_sasl_auth_enable=yes -o smtpd_reject_unlisted_recipient=no -o smtpd_client_restrictions=$mua_client_restrictions -o smtpd_helo_restrictions=$mua_helo_restrictions -o smtpd_sender_restrictions=$mua_sender_restrictions -o smtpd_recipient_restrictions= -o smtpd_relay_restrictions=permit_sasl_authenticated,reject -o milter_macro_daemon_name=ORIGINATING -o cleanup_service_name=smtpscleanup smtpscleanup unix n - y - 0 cleanup -o header_checks=regexp:/etc/postfix/header_checks  /etc/postfix/header_checks
+/^Received:.*/ IGNORE  最初はsmtp_header_checksをmain.cfに書けば良いかなーと思ったんだけど、
+これだと外から入ってきたメール(後にプライマリサーバーにrelayされる)も一律削除されてしまうので都合が悪かった</description>
+    </item>
     
     <item>
       <title>AWSのt4gインスタンスを試す</title>
@@ -19,8 +35,7 @@
       <guid>https://yaasita.github.io/2020/11/05/t4g-instance/</guid>
       <description>新しくt4gインスタンスが出たみたいなので試してみた
 cpuminer アルゴリズム=lyra2rev2 で測定
-   name cpu memory hashrate(kH/s)     自宅PC Core i5-4460 3.20GHz 4コア 16G 384   ノートPC LB-C110B Celeron 1037U 1.80GHz 2コア 8G 79   t4g.micro (CPUクレジットあり) ARM CPU 2コア 1G 233   t4g.micro (CPUクレジットなし) ARM CPU 2コア 1G 24   aws lightsail (t2.nano) Xeon E5-2676 v3 2.40GHz 1コア 512M 81    前回記事
-まとめ t4g良いかもしれない</description>
+   name cpu memory hashrate(kH/s)     自宅PC Core i5-4460 3.20GHz 4コア 16G 384   ノートPC LB-C110B Celeron 1037U 1.80GHz 2コア 8G 79   t4g.micro (CPUクレジットあり) ARM CPU 2コア 1G 233   t4g.micro (CPUクレジットなし) ARM CPU 2コア 1G 24   aws lightsail (t2.nano, CPUクレジットあり) Xeon E5-2676 v3 2.40GHz 1コア 512M 81   aws lightsail (t2.nano, CPUクレジットなし) Xeon E5-2676 v3 2.</description>
     </item>
     
     <item>
@@ -33,8 +48,7 @@ cpuminer アルゴリズム=lyra2rev2 で測定
 Value Domainから Google Domains へ移管してみた
 感想
  .net, .com 等は安い .jp は高い whois 代行は標準サービス 標準の権威DNSサーバーは微妙  GCPのGoogle Cloud DNSが使えるわけではない APIでの更新も難しそう HTTPリダイレクトの機能がついてるのは嬉しい ダイナミックDNSはある DNSSECは簡単にできそう SSHFPレコードを設定できる    まとめ
-みんな使うと良いと思います
- </description>
+みんな使うと良いと思います</description>
     </item>
     
     <item>
@@ -51,7 +65,7 @@ pip3 install doh-proxy  以下のような設定でserviceを作る
 /etc/systemd/system/doh-httpproxy.service
 [Unit] Description=doh-httpproxy After=nginx.service [Install] WantedBy=multi-user.target [Service] ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 8080 --listen-address 127.0.0.1 Nginx側設定例
 server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } }  確認
-curl --doh-url https://doh.example.net/dns-query google.co.jp   </description>
+curl --doh-url https://doh.example.net/dns-query google.co.jp  </description>
     </item>
     
     <item>
@@ -77,7 +91,7 @@ echo &amp;quot;#standardSQL&amp;quot; &amp;gt; /tmp/query.sql echo &#39;select _
       <guid>https://yaasita.github.io/2020/04/28/rawpostdata/</guid>
       <description>multipart/form-dataでPOSTされた奴を、処理するCloud functionsを書いてて必要になったので
  呼び出し側はこんな感じでやってる
-  </description>
+ </description>
     </item>
     
     <item>
@@ -89,7 +103,7 @@ echo &amp;quot;#standardSQL&amp;quot; &amp;gt; /tmp/query.sql echo &#39;select _
       <description>どのリポジトリがGithub Pagesの設定がされているか？
 調べたくなったので・・・
 Github pagesの設定されてるリポジトリ一覧を簡単に確認できればいいのに・・・
-  </description>
+ </description>
     </item>
     
     <item>
@@ -104,7 +118,7 @@ Credit External IPs will not be charged until April 1, 2020.
 んで、外部IPを無しにして、gcloud compute ssh で繋げるのは良いんだけど、外部IPが無いと外と通信できないからapt installもできない。。。。
 あと、上記コマンドはsshポートを解放してないと駄目ぽい（正確にはIAPからのアクセスを許可すれば良いだけぽいが）
 とりあえず課金されてから考えるか・・・
-参考リンク  外部IPを持たないGCEインスタンスでweb開発 GCP/GCE の固定グローバルIPアドレス、2020年より有料化   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }    </description>
+参考リンク  外部IPを持たないGCEインスタンスでweb開発 GCP/GCE の固定グローバルIPアドレス、2020年より有料化   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
     <item>
@@ -291,23 +305,6 @@ systemctl restart opendkim.service  postfix設定 以下追記</description>
 トップページも繋がらないしもう駄目か・・・
 前回
 続き</description>
-    </item>
-    
-    <item>
-      <title>クライアント証明書&#43;HTTP2</title>
-      <link>https://yaasita.github.io/2018/07/29/h2-plus-client-auth/</link>
-      <pubDate>Sun, 29 Jul 2018 16:36:57 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/07/29/h2-plus-client-auth/</guid>
-      <description>SSLRequire は 非推奨みたいなので
-クライアント証明書とIP制限を今風に書き直す
-あとCNとかも検証するようにした
-こんな感じ
-&amp;lt;Directory /var/www&amp;gt; Options Indexes FollowSymLinks MultiViews ExecCGI SSLVerifyClient optional &amp;lt;RequireAny&amp;gt; Require ip 192.168.100.0/24 &amp;lt;RequireAll&amp;gt; Require ssl-verify-client Require expr &amp;quot;%{SSL_CLIENT_S_DN_CN} == &#39;hogeclient&#39;&amp;quot; &amp;lt;/RequireAll&amp;gt; &amp;lt;/RequireAny&amp;gt; &amp;lt;/Directory&amp;gt;  あと
-Protocols http/1.1 h2  のようにhttp/1.1を先にしないと
-curl: (92) HTTP/2 stream 1 was not closed cleanly: HTTP_1_1_REQUIRED (err 13)  こんなエラーになるので注意
-参考リンク
- reqexprの説明 mod_ssl変数一覧  </description>
     </item>
     
   </channel>

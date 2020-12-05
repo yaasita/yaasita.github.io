@@ -4,26 +4,51 @@
   
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2020-11-05T02:58:38+09:00</lastmod>
+    <lastmod>2020-12-06T01:11:10+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/archives/2020/</loc>
-    <lastmod>2020-11-05T02:58:38+09:00</lastmod>
+    <lastmod>2020-12-06T01:11:10+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/archives/</loc>
-    <lastmod>2020-11-05T02:58:38+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yaasita.github.io/2020/11/05/t4g-instance/</loc>
-    <lastmod>2020-11-05T02:58:38+09:00</lastmod>
+    <lastmod>2020-12-06T01:11:10+09:00</lastmod>
   </url>
   
   <url>
     <loc>https://yaasita.github.io/categories/</loc>
+    <lastmod>2020-12-06T01:11:10+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yaasita.github.io/categories/linux/</loc>
+    <lastmod>2020-12-06T01:11:10+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yaasita.github.io/categories/net/</loc>
+    <lastmod>2020-12-06T01:11:10+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yaasita.github.io/2020/12/06/postfix-received-header/</loc>
+    <lastmod>2020-12-06T01:11:10+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yaasita.github.io/post/</loc>
+    <lastmod>2020-12-06T01:11:10+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yaasita.github.io/categories/soft/</loc>
+    <lastmod>2020-12-06T01:11:10+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://yaasita.github.io/2020/11/05/t4g-instance/</loc>
     <lastmod>2020-11-05T02:58:38+09:00</lastmod>
   </url>
   
@@ -33,22 +58,7 @@
   </url>
   
   <url>
-    <loc>https://yaasita.github.io/categories/net/</loc>
-    <lastmod>2020-11-05T02:58:38+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yaasita.github.io/post/</loc>
-    <lastmod>2020-11-05T02:58:38+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://yaasita.github.io/2020/10/04/hetty/</loc>
-    <lastmod>2020-10-04T00:50:03+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yaasita.github.io/categories/soft/</loc>
     <lastmod>2020-10-04T00:50:03+09:00</lastmod>
   </url>
   
@@ -79,11 +89,6 @@
   
   <url>
     <loc>https://yaasita.github.io/2020/07/08/ssh-keys-deploy/</loc>
-    <lastmod>2020-07-08T15:14:42+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://yaasita.github.io/categories/linux/</loc>
     <lastmod>2020-07-08T15:14:42+09:00</lastmod>
   </url>
   

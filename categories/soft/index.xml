@@ -6,10 +6,26 @@
     <description>Recent content in soft on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 04 Oct 2020 00:50:03 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 06 Dec 2020 01:11:10 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>postfixのReceived headerを隠す</title>
+      <link>https://yaasita.github.io/2020/12/06/postfix-received-header/</link>
+      <pubDate>Sun, 06 Dec 2020 01:11:10 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/12/06/postfix-received-header/</guid>
+      <description>この回答通りなんだけど
+一応補足とか
+自分の環境だと、送信メールサーバーがセカンダリメールサーバーと兼任している
+以下のように設定した
+/etc/postfix/master.cf
+smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode=yes -o smtpd_sasl_auth_enable=yes -o smtpd_reject_unlisted_recipient=no -o smtpd_client_restrictions=$mua_client_restrictions -o smtpd_helo_restrictions=$mua_helo_restrictions -o smtpd_sender_restrictions=$mua_sender_restrictions -o smtpd_recipient_restrictions= -o smtpd_relay_restrictions=permit_sasl_authenticated,reject -o milter_macro_daemon_name=ORIGINATING -o cleanup_service_name=smtpscleanup smtpscleanup unix n - y - 0 cleanup -o header_checks=regexp:/etc/postfix/header_checks  /etc/postfix/header_checks
+/^Received:.*/ IGNORE  最初はsmtp_header_checksをmain.cfに書けば良いかなーと思ったんだけど、
+これだと外から入ってきたメール(後にプライマリサーバーにrelayされる)も一律削除されてしまうので都合が悪かった</description>
+    </item>
     
     <item>
       <title>hettyはmitmproxyの代わりになる？</title>
@@ -54,7 +70,7 @@ pip3 install doh-proxy  以下のような設定でserviceを作る
 /etc/systemd/system/doh-httpproxy.service
 [Unit] Description=doh-httpproxy After=nginx.service [Install] WantedBy=multi-user.target [Service] ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 8080 --listen-address 127.0.0.1 Nginx側設定例
 server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } }  確認
-curl --doh-url https://doh.example.net/dns-query google.co.jp   </description>
+curl --doh-url https://doh.example.net/dns-query google.co.jp  </description>
     </item>
     
     <item>
@@ -68,7 +84,7 @@ curl --doh-url https://doh.example.net/dns-query google.co.jp   </description>
 インストール
 snap install microk8s --class microk8s.kubectl config view --raw &amp;gt; ~/.kube/config  必要サービスの起動
 microk8s.enable dns registry storage skaffold dev --no-prune=false --cache-artifacts=false --default-repo localhost:32000 -f skaffold.yaml  こんな感じにやると、リポジトリ部分を読み替えてくれるので便利
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }    </description>
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
     <item>
@@ -82,8 +98,7 @@ microk8s.enable dns registry storage skaffold dev --no-prune=false --cache-artif
 https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/blob/master/cloudsql/mysql_wordpress_deployment.yaml
 socket接続の場合はこんな感じ
  参考
-k8s サイドカーコンテナについて
- </description>
+k8s サイドカーコンテナについて</description>
     </item>
     
     <item>
@@ -291,23 +306,6 @@ Syslog	yes LogWhy Yes UMask	007 Canonicalization	relaxed/relaxed Mode	sv Socket 
 mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private  /etc/postfix/dkim/signingtable
 example.net mail._domainkey.example.net  反映
 systemctl restart opendkim.service  postfix設定 以下追記</description>
-    </item>
-    
-    <item>
-      <title>クライアント証明書&#43;HTTP2</title>
-      <link>https://yaasita.github.io/2018/07/29/h2-plus-client-auth/</link>
-      <pubDate>Sun, 29 Jul 2018 16:36:57 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/07/29/h2-plus-client-auth/</guid>
-      <description>SSLRequire は 非推奨みたいなので
-クライアント証明書とIP制限を今風に書き直す
-あとCNとかも検証するようにした
-こんな感じ
-&amp;lt;Directory /var/www&amp;gt; Options Indexes FollowSymLinks MultiViews ExecCGI SSLVerifyClient optional &amp;lt;RequireAny&amp;gt; Require ip 192.168.100.0/24 &amp;lt;RequireAll&amp;gt; Require ssl-verify-client Require expr &amp;quot;%{SSL_CLIENT_S_DN_CN} == &#39;hogeclient&#39;&amp;quot; &amp;lt;/RequireAll&amp;gt; &amp;lt;/RequireAny&amp;gt; &amp;lt;/Directory&amp;gt;  あと
-Protocols http/1.1 h2  のようにhttp/1.1を先にしないと
-curl: (92) HTTP/2 stream 1 was not closed cleanly: HTTP_1_1_REQUIRED (err 13)  こんなエラーになるので注意
-参考リンク
- reqexprの説明 mod_ssl変数一覧  </description>
     </item>
     
   </channel>

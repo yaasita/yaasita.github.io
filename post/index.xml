@@ -6,10 +6,26 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 05 Nov 2020 02:58:38 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 06 Dec 2020 01:11:10 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>postfixのReceived headerを隠す</title>
+      <link>https://yaasita.github.io/2020/12/06/postfix-received-header/</link>
+      <pubDate>Sun, 06 Dec 2020 01:11:10 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/12/06/postfix-received-header/</guid>
+      <description>この回答通りなんだけど
+一応補足とか
+自分の環境だと、送信メールサーバーがセカンダリメールサーバーと兼任している
+以下のように設定した
+/etc/postfix/master.cf
+smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode=yes -o smtpd_sasl_auth_enable=yes -o smtpd_reject_unlisted_recipient=no -o smtpd_client_restrictions=$mua_client_restrictions -o smtpd_helo_restrictions=$mua_helo_restrictions -o smtpd_sender_restrictions=$mua_sender_restrictions -o smtpd_recipient_restrictions= -o smtpd_relay_restrictions=permit_sasl_authenticated,reject -o milter_macro_daemon_name=ORIGINATING -o cleanup_service_name=smtpscleanup smtpscleanup unix n - y - 0 cleanup -o header_checks=regexp:/etc/postfix/header_checks  /etc/postfix/header_checks
+/^Received:.*/ IGNORE  最初はsmtp_header_checksをmain.cfに書けば良いかなーと思ったんだけど、
+これだと外から入ってきたメール(後にプライマリサーバーにrelayされる)も一律削除されてしまうので都合が悪かった</description>
+    </item>
     
     <item>
       <title>AWSのt4gインスタンスを試す</title>
@@ -19,8 +35,7 @@
       <guid>https://yaasita.github.io/2020/11/05/t4g-instance/</guid>
       <description>新しくt4gインスタンスが出たみたいなので試してみた
 cpuminer アルゴリズム=lyra2rev2 で測定
-   name cpu memory hashrate(kH/s)     自宅PC Core i5-4460 3.20GHz 4コア 16G 384   ノートPC LB-C110B Celeron 1037U 1.80GHz 2コア 8G 79   t4g.micro (CPUクレジットあり) ARM CPU 2コア 1G 233   t4g.micro (CPUクレジットなし) ARM CPU 2コア 1G 24   aws lightsail (t2.nano) Xeon E5-2676 v3 2.40GHz 1コア 512M 81    前回記事
-まとめ t4g良いかもしれない</description>
+   name cpu memory hashrate(kH/s)     自宅PC Core i5-4460 3.20GHz 4コア 16G 384   ノートPC LB-C110B Celeron 1037U 1.80GHz 2コア 8G 79   t4g.micro (CPUクレジットあり) ARM CPU 2コア 1G 233   t4g.micro (CPUクレジットなし) ARM CPU 2コア 1G 24   aws lightsail (t2.nano, CPUクレジットあり) Xeon E5-2676 v3 2.40GHz 1コア 512M 81   aws lightsail (t2.nano, CPUクレジットなし) Xeon E5-2676 v3 2.</description>
     </item>
     
     <item>
@@ -103,8 +118,7 @@ https://github.com/yaasita/ssh-keys-manager
 Value Domainから Google Domains へ移管してみた
 感想
  .net, .com 等は安い .jp は高い whois 代行は標準サービス 標準の権威DNSサーバーは微妙  GCPのGoogle Cloud DNSが使えるわけではない APIでの更新も難しそう HTTPリダイレクトの機能がついてるのは嬉しい ダイナミックDNSはある DNSSECは簡単にできそう SSHFPレコードを設定できる    まとめ
-みんな使うと良いと思います
- </description>
+みんな使うと良いと思います</description>
     </item>
     
     <item>
@@ -121,7 +135,7 @@ pip3 install doh-proxy  以下のような設定でserviceを作る
 /etc/systemd/system/doh-httpproxy.service
 [Unit] Description=doh-httpproxy After=nginx.service [Install] WantedBy=multi-user.target [Service] ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 8080 --listen-address 127.0.0.1 Nginx側設定例
 server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } }  確認
-curl --doh-url https://doh.example.net/dns-query google.co.jp   </description>
+curl --doh-url https://doh.example.net/dns-query google.co.jp  </description>
     </item>
     
     <item>
@@ -147,7 +161,7 @@ echo &amp;quot;#standardSQL&amp;quot; &amp;gt; /tmp/query.sql echo &#39;select _
       <guid>https://yaasita.github.io/2020/04/28/rawpostdata/</guid>
       <description>multipart/form-dataでPOSTされた奴を、処理するCloud functionsを書いてて必要になったので
  呼び出し側はこんな感じでやってる
-  </description>
+ </description>
     </item>
     
     <item>
@@ -161,7 +175,7 @@ echo &amp;quot;#standardSQL&amp;quot; &amp;gt; /tmp/query.sql echo &#39;select _
 インストール
 snap install microk8s --class microk8s.kubectl config view --raw &amp;gt; ~/.kube/config  必要サービスの起動
 microk8s.enable dns registry storage skaffold dev --no-prune=false --cache-artifacts=false --default-repo localhost:32000 -f skaffold.yaml  こんな感じにやると、リポジトリ部分を読み替えてくれるので便利
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }    </description>
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
     <item>
@@ -175,8 +189,7 @@ microk8s.enable dns registry storage skaffold dev --no-prune=false --cache-artif
 https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/blob/master/cloudsql/mysql_wordpress_deployment.yaml
 socket接続の場合はこんな感じ
  参考
-k8s サイドカーコンテナについて
- </description>
+k8s サイドカーコンテナについて</description>
     </item>
     
     <item>
@@ -203,7 +216,7 @@ inoremap ¥ \ cnoremap ¥ \  </description>
 もしくは、Linux内なら、fcitx経由で入力すれば半角￥キーでバックスラッシュになった
 WindowsとかMacなら一発だけど、これは不便かも・・・プログラミングの時にも困るし・・・
 
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }    </description>
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
     <item>
@@ -215,7 +228,7 @@ WindowsとかMacなら一発だけど、これは不便かも・・・プログ�
       <description>どのリポジトリがGithub Pagesの設定がされているか？
 調べたくなったので・・・
 Github pagesの設定されてるリポジトリ一覧を簡単に確認できればいいのに・・・
-  </description>
+ </description>
     </item>
     
     <item>
@@ -230,7 +243,7 @@ Credit External IPs will not be charged until April 1, 2020.
 んで、外部IPを無しにして、gcloud compute ssh で繋げるのは良いんだけど、外部IPが無いと外と通信できないからapt installもできない。。。。
 あと、上記コマンドはsshポートを解放してないと駄目ぽい（正確にはIAPからのアクセスを許可すれば良いだけぽいが）
 とりあえず課金されてから考えるか・・・
-参考リンク  外部IPを持たないGCEインスタンスでweb開発 GCP/GCE の固定グローバルIPアドレス、2020年より有料化   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }    </description>
+参考リンク  外部IPを持たないGCEインスタンスでweb開発 GCP/GCE の固定グローバルIPアドレス、2020年より有料化   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
     <item>
@@ -246,8 +259,7 @@ ssh humidai-server -XC export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx expo
 回線が細いテザリング環境では ttyd を立てて、ポートフォワーディングでつないだ方が良いかも
 Ctrl-wがchromeのタブ閉じになってしまうので微妙かなと思ったんだけど、「その他のツール(L)」 =&amp;gt; 「ショートカットを作成」からアプリとして作れば、Ctrl-wも使えた
 こっちなら日本語入力も出来るのでこっちの方が良いかもしれない
-通信量も1kbps位だし
- </description>
+通信量も1kbps位だし</description>
     </item>
     
     <item>
@@ -273,23 +285,6 @@ Building sites … WARN 2019/12/23 17:34:34 In the next Hugo version (0.58.0) we
       <guid>https://yaasita.github.io/2019/12/23/chromebook/</guid>
       <description>ASUS の C434TA-AI0084 を買ったのでレビュー
 chromeOS  起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある  解除がちょっと遅い10秒くらい待たされる   chromeの複数ユーザー機能が使えない  多重ログイン機能はあるけどちょっと微妙  別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能      ディスプレイ  タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 起動毎にバックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗  テザリング  Moto E5 とbluetoothでのテザリングが出来なかった  とりあえずUSBテザリングは刺すだけで使えたので良しとしてます    キーボード  Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない ←Alt + 明るさキーで消せました  Androidアプリ  ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない  Linux環境 OS  Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり  バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい   USB共有機能あり /opt/google/cros-containers/bin/.</description>
-    </item>
-    
-    <item>
-      <title>GCP Cloud Functions内からサービスアカウントのtoken取る</title>
-      <link>https://yaasita.github.io/2019/12/08/service-account-in-cf/</link>
-      <pubDate>Sun, 08 Dec 2019 05:12:12 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/12/08/service-account-in-cf/</guid>
-      <description>Cloud Functionsからサービスアカウントのアクセストークンをどうやって取るの？と疑問に思ったので調べた
-Google Compute Engineと同じ取り方でOK
-&amp;quot;use strict&amp;quot;; const fetch = require(&amp;quot;node-fetch&amp;quot;); exports.handler = async (req, res) =&amp;gt; { const url = &amp;quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&amp;quot; + &amp;quot;[サービスアカウント名]/token&amp;quot;; const result = await fetch(url, { method: &amp;quot;GET&amp;quot;, headers: { &amp;quot;Metadata-Flavor&amp;quot;: &amp;quot;Google&amp;quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&amp;quot;OK&amp;quot;); };  なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
-
-まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &amp;ldquo;Function Identity&amp;quot;とかクリックするとちゃんと日本語版あるんですよね
-なんかメニューがバグってるのかな・・・
-とりあえず英語版から探すのをオススメします&amp;hellip;
-参考リンク
- 関数ID Compute Metadata Server   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].</description>
     </item>
     
   </channel>

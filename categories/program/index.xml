@@ -43,7 +43,7 @@ https://github.com/yaasita/ssh-keys-manager
       <guid>https://yaasita.github.io/2020/04/28/rawpostdata/</guid>
       <description>multipart/form-dataでPOSTされた奴を、処理するCloud functionsを書いてて必要になったので
  呼び出し側はこんな感じでやってる
-  </description>
+ </description>
     </item>
     
     <item>
@@ -55,7 +55,7 @@ https://github.com/yaasita/ssh-keys-manager
       <description>どのリポジトリがGithub Pagesの設定がされているか？
 調べたくなったので・・・
 Github pagesの設定されてるリポジトリ一覧を簡単に確認できればいいのに・・・
-  </description>
+ </description>
     </item>
     
     <item>
