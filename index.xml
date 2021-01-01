@@ -6,10 +6,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Dec 2020 01:11:10 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 01 Jan 2021 22:37:48 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>apacheのmod-auth-openidcについて</title>
+      <link>https://yaasita.github.io/2021/01/01/mod-auth-openidc/</link>
+      <pubDate>Fri, 01 Jan 2021 22:37:48 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/01/01/mod-auth-openidc/</guid>
+      <description>BASIC認証かけるみたいに簡単にGoogle認証を追加できた
+公式サイト
+https://www.mod-auth-openidc.org/
+インストール
+apt install libapache2-mod-auth-openid  リバースプロキシ的に使う例
+/adminかつ、プライベートIP以外の場合はGoogle認証で hogehoge@gmail.com のみ許可
+&amp;lt;VirtualHost *:443&amp;gt; ServerName hoge.example.jp &amp;lt;Location /&amp;gt; Require all granted &amp;lt;/Location&amp;gt; &amp;lt;Location /oidc/&amp;gt; AuthType openid-connect Require valid-user &amp;lt;/Location&amp;gt; &amp;lt;Location /admin&amp;gt; AuthType openid-connect Require claim email:hogehoge@gmail.com Require ip 192.168.0.0/24 &amp;lt;/Location&amp;gt; ProxyRequests Off ProxyPreserveHost On ProxyPass / http://127.0.0.1:8080/ keepalive=On RequestHeader set X-Forwarded-Proto &amp;quot;https&amp;quot; RequestHeader unset X-Forwarded-For RequestHeader unset X-Forwarded-Server RequestHeader unset X-Forwarded-Host # SSL設定等が続く ... &amp;lt;/VirtualHost&amp;gt;  </description>
+    </item>
     
     <item>
       <title>postfixのReceived headerを隠す</title>
@@ -275,16 +290,6 @@ hugoのバージョンを 0.56.3 =&amp;gt; v0.62.0 まで上げた
 Building sites … WARN 2019/12/23 17:34:34 In the next Hugo version (0.58.0) we will change how $home.Pages behaves. If you want to list all regular pages, replace .Pages or .Data.Pages with .Site.RegularPages in your home page template. あとインラインのHTMLがデフォルトで削除されるので使ってたらコレもconfig.tomlへ追記
 [markup] [markup.goldmark] [markup.goldmark.renderer] unsafe = true hardWraps = true 最近非互換のバージョンアップ多くない？
 アップデートがめんどくさくなってきたな。。。</description>
-    </item>
-    
-    <item>
-      <title>chromebookが最高だった</title>
-      <link>https://yaasita.github.io/2019/12/23/chromebook/</link>
-      <pubDate>Mon, 23 Dec 2019 05:58:32 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/12/23/chromebook/</guid>
-      <description>ASUS の C434TA-AI0084 を買ったのでレビュー
-chromeOS  起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある  解除がちょっと遅い10秒くらい待たされる   chromeの複数ユーザー機能が使えない  多重ログイン機能はあるけどちょっと微妙  別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能      ディスプレイ  タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 起動毎にバックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗  テザリング  Moto E5 とbluetoothでのテザリングが出来なかった  とりあえずUSBテザリングは刺すだけで使えたので良しとしてます    キーボード  Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない ←Alt + 明るさキーで消せました  Androidアプリ  ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない  Linux環境 OS  Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり  バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい   USB共有機能あり /opt/google/cros-containers/bin/.</description>
     </item>
     
   </channel>

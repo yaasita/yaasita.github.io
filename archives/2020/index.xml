@@ -6,10 +6,25 @@
     <description>Recent content in 2020 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Dec 2020 01:11:10 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 01 Jan 2021 22:37:48 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/archives/2020/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>apacheのmod-auth-openidcについて</title>
+      <link>https://yaasita.github.io/2021/01/01/mod-auth-openidc/</link>
+      <pubDate>Fri, 01 Jan 2021 22:37:48 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/01/01/mod-auth-openidc/</guid>
+      <description>BASIC認証かけるみたいに簡単にGoogle認証を追加できた
+公式サイト
+https://www.mod-auth-openidc.org/
+インストール
+apt install libapache2-mod-auth-openid  リバースプロキシ的に使う例
+/adminかつ、プライベートIP以外の場合はGoogle認証で hogehoge@gmail.com のみ許可
+&amp;lt;VirtualHost *:443&amp;gt; ServerName hoge.example.jp &amp;lt;Location /&amp;gt; Require all granted &amp;lt;/Location&amp;gt; &amp;lt;Location /oidc/&amp;gt; AuthType openid-connect Require valid-user &amp;lt;/Location&amp;gt; &amp;lt;Location /admin&amp;gt; AuthType openid-connect Require claim email:hogehoge@gmail.com Require ip 192.168.0.0/24 &amp;lt;/Location&amp;gt; ProxyRequests Off ProxyPreserveHost On ProxyPass / http://127.0.0.1:8080/ keepalive=On RequestHeader set X-Forwarded-Proto &amp;quot;https&amp;quot; RequestHeader unset X-Forwarded-For RequestHeader unset X-Forwarded-Server RequestHeader unset X-Forwarded-Host # SSL設定等が続く ... &amp;lt;/VirtualHost&amp;gt;  </description>
+    </item>
     
     <item>
       <title>postfixのReceived headerを隠す</title>
