@@ -6,10 +6,26 @@
     <description>Recent content in soft on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Dec 2020 01:11:10 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 01 Jan 2021 22:37:48 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>apacheのmod-auth-openidcについて</title>
+      <link>https://yaasita.github.io/2021/01/01/mod-auth-openidc/</link>
+      <pubDate>Fri, 01 Jan 2021 22:37:48 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/01/01/mod-auth-openidc/</guid>
+      <description>BASIC認証かけるみたいに簡単にGoogle認証を追加できた
+公式サイト
+https://www.mod-auth-openidc.org/
+インストール
+apt install libapache2-mod-auth-openid  設定 /etc/apache2/mods-enabled/auth_openidc.conf
+OIDCRedirectURI https://hoge.example.jp/oidc/redirect_uri OIDCCryptoPassphrase hogehoge-foobar OIDCProviderMetadataURL https://accounts.google.com/.well-known/openid-configuration OIDCScope &amp;quot;openid email&amp;quot; OIDCClientID xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com OIDCClientSecret XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  リバースプロキシ的に使う例
+/adminかつ、プライベートIP以外の場合はGoogle認証で hogehoge@gmail.com のみ許可
+&amp;lt;VirtualHost *:443&amp;gt; ServerName hoge.example.jp &amp;lt;Location /&amp;gt; Require all granted &amp;lt;/Location&amp;gt; &amp;lt;Location /oidc/&amp;gt; AuthType openid-connect Require valid-user &amp;lt;/Location&amp;gt; &amp;lt;Location /admin&amp;gt; AuthType openid-connect Require claim email:hogehoge@gmail.com Require ip 192.168.0.0/24 &amp;lt;/Location&amp;gt; ProxyRequests Off ProxyPreserveHost On ProxyPass / http://127.0.0.1:8080/ keepalive=On RequestHeader set X-Forwarded-Proto &amp;quot;https&amp;quot; RequestHeader unset X-Forwarded-For RequestHeader unset X-Forwarded-Server RequestHeader unset X-Forwarded-Host # SSL設定等が続く .</description>
+    </item>
     
     <item>
       <title>postfixのReceived headerを隠す</title>
@@ -293,19 +309,6 @@ openssl verify -trusted /etc/ssl/certs/AddTrust_External_Root.pem \ -untrusted c
       <guid>https://yaasita.github.io/2018/09/16/hugo-new-version/</guid>
       <description>なんかこんなプルリクも来てたのでthemeもちょいと修正
 たまにはhugoのbuild logみてwarning潰してかないとだな</description>
-    </item>
-    
-    <item>
-      <title>ubuntu18.04でDKIM設定</title>
-      <link>https://yaasita.github.io/2018/08/18/dkim/</link>
-      <pubDate>Sat, 18 Aug 2018 17:40:23 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/08/18/dkim/</guid>
-      <description>インストール apt install opendkim opendkim-tools  opendkim設定 mkdir /etc/postfix/dkim/ opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail # -d ドメイン # -s セレクタ chgrp opendkim /etc/postfix/dkim/* chmod g+r /etc/postfix/dkim/*  /etc/opendkim.conf
-Syslog	yes LogWhy Yes UMask	007 Canonicalization	relaxed/relaxed Mode	sv Socket inet:8891@localhost PidFile /var/run/opendkim/opendkim.pid OversignHeaders	From TrustAnchorFile /usr/share/dns/root.key UserID opendkim KeyTable file:/etc/postfix/dkim/keytable SigningTable file:/etc/postfix/dkim/signingtable  /etc/postfix/dkim/keytable
-mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private  /etc/postfix/dkim/signingtable
-example.net mail._domainkey.example.net  反映
-systemctl restart opendkim.service  postfix設定 以下追記</description>
     </item>
     
   </channel>

@@ -15,9 +15,10 @@
 公式サイト
 https://www.mod-auth-openidc.org/
 インストール
-apt install libapache2-mod-auth-openid  リバースプロキシ的に使う例
+apt install libapache2-mod-auth-openid  設定 /etc/apache2/mods-enabled/auth_openidc.conf
+OIDCRedirectURI https://hoge.example.jp/oidc/redirect_uri OIDCCryptoPassphrase hogehoge-foobar OIDCProviderMetadataURL https://accounts.google.com/.well-known/openid-configuration OIDCScope &quot;openid email&quot; OIDCClientID xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com OIDCClientSecret XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  リバースプロキシ的に使う例
 /adminかつ、プライベートIP以外の場合はGoogle認証で hogehoge@gmail.com のみ許可
-&lt;VirtualHost *:443&gt; ServerName hoge.example.jp &lt;Location /&gt; Require all granted &lt;/Location&gt; &lt;Location /oidc/&gt; AuthType openid-connect Require valid-user &lt;/Location&gt; &lt;Location /admin&gt; AuthType openid-connect Require claim email:hogehoge@gmail.com Require ip 192.168.0.0/24 &lt;/Location&gt; ProxyRequests Off ProxyPreserveHost On ProxyPass / http://127.0.0.1:8080/ keepalive=On RequestHeader set X-Forwarded-Proto &quot;https&quot; RequestHeader unset X-Forwarded-For RequestHeader unset X-Forwarded-Server RequestHeader unset X-Forwarded-Host # SSL設定等が続く ... &lt;/VirtualHost&gt;  " />
+&lt;VirtualHost *:443&gt; ServerName hoge.example.jp &lt;Location /&gt; Require all granted &lt;/Location&gt; &lt;Location /oidc/&gt; AuthType openid-connect Require valid-user &lt;/Location&gt; &lt;Location /admin&gt; AuthType openid-connect Require claim email:hogehoge@gmail.com Require ip 192.168.0.0/24 &lt;/Location&gt; ProxyRequests Off ProxyPreserveHost On ProxyPass / http://127.0.0.1:8080/ keepalive=On RequestHeader set X-Forwarded-Proto &quot;https&quot; RequestHeader unset X-Forwarded-For RequestHeader unset X-Forwarded-Server RequestHeader unset X-Forwarded-Host # SSL設定等が続く ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2021/01/01/mod-auth-openidc/" />
 <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
@@ -65,6 +66,14 @@ if (!doNotTrack) {
 <p>インストール</p>
 <pre><code>apt install libapache2-mod-auth-openid
 </code></pre>
+<p>設定 /etc/apache2/mods-enabled/auth_openidc.conf</p>
+<pre><code>OIDCRedirectURI https://hoge.example.jp/oidc/redirect_uri
+OIDCCryptoPassphrase hogehoge-foobar
+OIDCProviderMetadataURL https://accounts.google.com/.well-known/openid-configuration
+OIDCScope &quot;openid email&quot;
+OIDCClientID xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com
+OIDCClientSecret XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+</code></pre>
 <p>リバースプロキシ的に使う例<br>
 /adminかつ、プライベートIP以外の場合はGoogle認証で <a href="mailto:hogehoge@gmail.com">hogehoge@gmail.com</a> のみ許可</p>
 <pre><code>&lt;VirtualHost *:443&gt;
@@ -105,7 +114,7 @@ if (!doNotTrack) {
   <ul>
     
     <li>
-        <a href="/categories/"></a>
+        <a href="/categories/soft">soft</a>
     </li>
     
   </ul>
@@ -163,6 +172,11 @@ if (!doNotTrack) {
           <a href="https://yaasita.github.io/2020/12/06/postfix-received-header/">postfixのReceived headerを隠す</a>
         </div>
         
+        
+        <div id="pagenavigation-prev">
+          <span class="pagenav-label">Next</span>
+          <a href="https://yaasita.github.io/2021/02/25/gke-neg/">GKEでGCSバックエンドと併用する時</a>
+        </div>
         
       </div>
       
@@ -237,7 +251,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (217)</a>
+          <a href="/categories/net"><span></span>net (218)</a>
         </li>
         
         <li>
@@ -249,7 +263,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (406)</a>
+          <a href="/categories/soft"><span></span>soft (407)</a>
         </li>
         
         <li>
@@ -320,7 +334,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2020"><span></span>2020 (19)</a>
+          <a href="/archives/2020"><span></span>2020 (20)</a>
         </li>
         
       </ul>
