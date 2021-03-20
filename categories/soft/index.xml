@@ -6,10 +6,37 @@
     <description>Recent content in soft on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 01 Jan 2021 22:37:48 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 20 Mar 2021 14:39:05 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>mpdとncmpc</title>
+      <link>https://yaasita.github.io/2021/03/20/mpd-ncmpc/</link>
+      <pubDate>Sat, 20 Mar 2021 14:39:05 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/03/20/mpd-ncmpc/</guid>
+      <description>mpd と ncmpc の設定メモ
+インストール apt install mpd ncmpc  セットアップ /etc/mpd.confの設定
+ ~/.config/ncmpc/config
+タグで管理してないのでファイル名だけ表示します
+host = &amp;quot;127.0.0.1&amp;quot; port = 6600 list-format = &amp;quot;%file%&amp;quot; status-format = &amp;quot;%file%&amp;quot; text-editor = vim  /var/lib/mpd/music/ に音楽ファイルを入れる(symlinkでも可)
+ncmpcで起動 Ctrl-UでDBのアップデート
+歌詞表示 歌詞表示するなら ncmpcpp の方が楽ですが、最初からvimキーバインドなncmpcが好きなのでこちらを使っています
+方法は以下の記事通り歌詞検索用のスクリプトを配置するだけ
+https://www.use-strict.de/using-ncmpc-to-fetch-and-read-lyrics.html
+debianのパッケージは以下のオプションでビルドされてるので
+-Dlyrics_plugin_dir=&amp;quot;/usr/lib/ncmpc/lyrics/&amp;quot;  /usr/lib/ncmpc/lyrics/01-test.sh
+みたいなファイルをおきます
+これが歌詞検索の際に実行されます
+こんなファイルを置いて
+#!/bin/bash echo &amp;quot;$@&amp;quot; echo &amp;quot;あいうおえ&amp;quot;  artist, titleを設定
+eyeD3 -a backnumber hoge.mp3 eyeD3 -t 高嶺の花子さん takane.mp3  すると第一引数にartist, 第二引数にtitleが入ります
+
+この画面で、Sを押すと歌詞を~/.cache/ncmpc/lyrics/保存できたりもします
+ファイル名が引数に入らないので、直接ファイルを探せないですが、ファイル名を工夫すれば、mp3ファイルタグ内の歌詞情報を引っ張ることも可能だと思います</description>
+    </item>
     
     <item>
       <title>apacheのmod-auth-openidcについて</title>
@@ -299,16 +326,6 @@ AddTrust |_ ca1 |_ ca2 |_ hoge  こんな感じにコマンドを打つ
 openssl verify -trusted /etc/ssl/certs/AddTrust_External_Root.pem \ -untrusted ca/ca1.pem \ -untrusted ca/ca2.pem \ hoge.pem*  verify -CAfileを指定して検証する例を見るけど、
 インストールされてるデフォルトのrootCAも見ちゃうから
 -no-CAfile, -no-CApathで無効化しなきゃだったりするのでこっちの方が良さそう</description>
-    </item>
-    
-    <item>
-      <title>Hugoをアップデート</title>
-      <link>https://yaasita.github.io/2018/09/16/hugo-new-version/</link>
-      <pubDate>Sun, 16 Sep 2018 15:48:27 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/09/16/hugo-new-version/</guid>
-      <description>なんかこんなプルリクも来てたのでthemeもちょいと修正
-たまにはhugoのbuild logみてwarning潰してかないとだな</description>
     </item>
     
   </channel>
