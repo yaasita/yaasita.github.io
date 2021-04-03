@@ -6,10 +6,22 @@
     <description>Recent content in soft on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 20 Mar 2021 14:39:05 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 04 Apr 2021 05:08:25 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>skypeログをエクスポート出来るようになってた</title>
+      <link>https://yaasita.github.io/2021/04/04/skype-log-2021/</link>
+      <pubDate>Sun, 04 Apr 2021 05:08:25 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/04/04/skype-log-2021/</guid>
+      <description>これは便利
+こちらの手順に従えば、アップロードファイルと、メッセージのjsonが手に入る
+https://support.skype.com/ja/faq/FA34894/skype-huairutochiyatsutolu-li-woekusupotosurufang-fa
+よく見ると、結構昔の奴も入ってるので昔からサーバー側でログを取ってたみたいね</description>
+    </item>
     
     <item>
       <title>mpdとncmpc</title>
@@ -19,6 +31,7 @@
       <guid>https://yaasita.github.io/2021/03/20/mpd-ncmpc/</guid>
       <description>mpd と ncmpc の設定メモ
 インストール apt install mpd ncmpc  セットアップ /etc/mpd.confの設定
+http経由で聞くのでoutputはhttpにします
  ~/.config/ncmpc/config
 タグで管理してないのでファイル名だけ表示します
 host = &amp;quot;127.0.0.1&amp;quot; port = 6600 list-format = &amp;quot;%file%&amp;quot; status-format = &amp;quot;%file%&amp;quot; text-editor = vim  /var/lib/mpd/music/ に音楽ファイルを入れる(symlinkでも可)
@@ -34,8 +47,7 @@ debianのパッケージは以下のオプションでビルドされてるの�
 #!/bin/bash echo &amp;quot;$@&amp;quot; echo &amp;quot;あいうおえ&amp;quot;  artist, titleを設定
 eyeD3 -a backnumber hoge.mp3 eyeD3 -t 高嶺の花子さん takane.mp3  すると第一引数にartist, 第二引数にtitleが入ります
 
-この画面で、Sを押すと歌詞を~/.cache/ncmpc/lyrics/保存できたりもします
-ファイル名が引数に入らないので、直接ファイルを探せないですが、ファイル名を工夫すれば、mp3ファイルタグ内の歌詞情報を引っ張ることも可能だと思います</description>
+この画面で、Sを押すと歌詞を~/.cache/ncmpc/lyrics/保存できたりもします</description>
     </item>
     
     <item>
@@ -313,19 +325,6 @@ logはsqliteで保存されている
 昔のやつ
 場所: C:\Users\username\AppData\Roaming\Skype\username\main.db
  function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;skype1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;skype1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;skype2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;skype2&#34;).src = photos[1].original_size.url; }   </description>
-    </item>
-    
-    <item>
-      <title>SSL証明書のchain検証</title>
-      <link>https://yaasita.github.io/2018/09/23/verify-certificate-chain/</link>
-      <pubDate>Sun, 23 Sep 2018 01:02:54 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/09/23/verify-certificate-chain/</guid>
-      <description>以下のようなチェインを検証したい時
-AddTrust |_ ca1 |_ ca2 |_ hoge  こんな感じにコマンドを打つ
-openssl verify -trusted /etc/ssl/certs/AddTrust_External_Root.pem \ -untrusted ca/ca1.pem \ -untrusted ca/ca2.pem \ hoge.pem*  verify -CAfileを指定して検証する例を見るけど、
-インストールされてるデフォルトのrootCAも見ちゃうから
--no-CAfile, -no-CApathで無効化しなきゃだったりするのでこっちの方が良さそう</description>
     </item>
     
   </channel>

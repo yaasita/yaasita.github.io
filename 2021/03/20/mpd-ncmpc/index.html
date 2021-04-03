@@ -13,6 +13,7 @@
     <meta property="og:title" content="mpdとncmpc" />
 <meta property="og:description" content="mpd と ncmpc の設定メモ
 インストール apt install mpd ncmpc  セットアップ /etc/mpd.confの設定
+http経由で聞くのでoutputはhttpにします
  ~/.config/ncmpc/config
 タグで管理してないのでファイル名だけ表示します
 host = &quot;127.0.0.1&quot; port = 6600 list-format = &quot;%file%&quot; status-format = &quot;%file%&quot; text-editor = vim  /var/lib/mpd/music/ に音楽ファイルを入れる(symlinkでも可)
@@ -28,8 +29,7 @@ debianのパッケージは以下のオプションでビルドされてるの�
 #!/bin/bash echo &quot;$@&quot; echo &quot;あいうおえ&quot;  artist, titleを設定
 eyeD3 -a backnumber hoge.mp3 eyeD3 -t 高嶺の花子さん takane.mp3  すると第一引数にartist, 第二引数にtitleが入ります
 
-この画面で、Sを押すと歌詞を~/.cache/ncmpc/lyrics/保存できたりもします
-ファイル名が引数に入らないので、直接ファイルを探せないですが、ファイル名を工夫すれば、mp3ファイルタグ内の歌詞情報を引っ張ることも可能だと思います" />
+この画面で、Sを押すと歌詞を~/.cache/ncmpc/lyrics/保存できたりもします" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2021/03/20/mpd-ncmpc/" />
 <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
@@ -77,6 +77,7 @@ if (!doNotTrack) {
 </code></pre>
 <h2 id="セットアップ">セットアップ</h2>
 <p>/etc/mpd.confの設定</p>
+<p>http経由で聞くのでoutputはhttpにします</p>
 <script src="https://gist.github.com/yaasita/635cd3050e420bee772ac62210a6f0af.js"></script>
 <p>~/.config/ncmpc/config<br>
 タグで管理してないのでファイル名だけ表示します</p>
@@ -179,6 +180,11 @@ eyeD3 -t 高嶺の花子さん takane.mp3
         </div>
         
         
+        <div id="pagenavigation-prev">
+          <span class="pagenav-label">Next</span>
+          <a href="https://yaasita.github.io/2021/04/04/skype-log-2021/">skypeログをエクスポート出来るようになってた</a>
+        </div>
+        
       </div>
       
     </div>
@@ -264,7 +270,7 @@ eyeD3 -t 高嶺の花子さん takane.mp3
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (408)</a>
+          <a href="/categories/soft"><span></span>soft (409)</a>
         </li>
         
         <li>
@@ -335,7 +341,7 @@ eyeD3 -t 高嶺の花子さん takane.mp3
         </li>
         
         <li>
-          <a href="/archives/2020"><span></span>2020 (21)</a>
+          <a href="/archives/2020"><span></span>2020 (22)</a>
         </li>
         
       </ul>
