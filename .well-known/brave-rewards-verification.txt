@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: yaasita.github.io
+Token: 77447be06a0ead4e85327a77e0554fd6f5f34c150e07ef4f103825c1bdd9d623
