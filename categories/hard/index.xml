@@ -6,10 +6,22 @@
     <description>Recent content in hard on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 05 Nov 2020 02:58:38 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 17 Apr 2021 22:56:59 +0900</lastBuildDate>
     
 	<atom:link href="https://yaasita.github.io/categories/hard/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>スマホ変えた</title>
+      <link>https://yaasita.github.io/2021/04/17/sumaho/</link>
+      <pubDate>Sat, 17 Apr 2021 22:56:59 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/04/17/sumaho/</guid>
+      <description>SH-M12S AQUOS sense3
+ってやつに変えました
+https://jp.sharp/products/shm12/
+おサイフケータイ対応なので、モバイルPASMOにもしました</description>
+    </item>
     
     <item>
       <title>AWSのt4gインスタンスを試す</title>
@@ -240,18 +252,6 @@ http://nfolamp.wordpress.com/2010/10/25/dumpe2fstune2fs-manipulating-the-ext-fs-
       <guid>https://yaasita.github.io/2014/07/12/itunes-dvd-device/</guid>
       <description>レジストリの以下のキーを消すとうまくいった
 HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E965-E325-11CE-BFC1-08002BE10318}  http://michisugara.jp/archives/2013/op_drive_failure.html</description>
-    </item>
-    
-    <item>
-      <title>hardware checkコマンド</title>
-      <link>https://yaasita.github.io/2014/05/25/hardware_check/</link>
-      <pubDate>Sun, 25 May 2014 15:20:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2014/05/25/hardware_check/</guid>
-      <description>lshwだけじゃない
-PC構成を把握するコマンド
-ハードウェアチェックコマンド  hwinfo --short hdparm -i /dev/sda inxi -Fx lsscsi  lsscsiがいい感じ
-参考リンク  http://www.binarytides.com/linux-commands-hardware-info/  </description>
     </item>
     
   </channel>
