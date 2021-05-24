@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>AWSへVMイメージごと移動する手順 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.73.0" />
+    <meta name="generator" content="Hugo 0.83.1" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="AWSへVMイメージごと移動する手順" />
@@ -16,10 +16,10 @@
 # hoge-importってバケット作ったとする # 最初にimgをS3に上げておく aws s3 cp hoge.img s3://hoge-import/hoge.img # IAM周りを準備 aws iam create-role --role-name vmimport --assume-role-policy-document file://trust-policy.json aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json # インポートタスク開始 aws ec2 import-image --description &quot;hoge server&quot; --disk-containers file://containers.json # 進捗見る aws ec2 describe-import-image-tasks  使ったjsonファイル
  参考リンク  http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats http://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html  " />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://yaasita.github.io/2016/11/20/aws-vm-import/" />
-<meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/>
-<meta property="article:published_time" content="2016-11-20T20:45:00+09:00" />
-<meta property="article:modified_time" content="2016-11-20T20:45:00+09:00" />
+<meta property="og:url" content="https://yaasita.github.io/2016/11/20/aws-vm-import/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2016-11-20T20:45:00&#43;09:00" />
+<meta property="article:modified_time" content="2016-11-20T20:45:00&#43;09:00" />
+
 
     
 <script type="application/javascript">
@@ -235,11 +235,11 @@ aws ec2 describe-import-image-tasks
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (218)</a>
+          <a href="/categories/net"><span></span>net (219)</a>
         </li>
         
         <li>
-          <a href="/categories/program"><span></span>program (164)</a>
+          <a href="/categories/program"><span></span>program (165)</a>
         </li>
         
         <li>
@@ -318,7 +318,7 @@ aws ec2 describe-import-image-tasks
         </li>
         
         <li>
-          <a href="/archives/2020"><span></span>2020 (23)</a>
+          <a href="/archives/2020"><span></span>2020 (24)</a>
         </li>
         
       </ul>

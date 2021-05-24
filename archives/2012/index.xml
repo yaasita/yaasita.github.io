@@ -6,11 +6,7 @@
     <description>Recent content in 2012 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 27 Dec 2012 00:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://yaasita.github.io/archives/2012/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Thu, 27 Dec 2012 00:00:00 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2012/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>起動後一定時間経ったら○○の処理をする</title>
       <link>https://yaasita.github.io/2012/12/27/1805/</link>

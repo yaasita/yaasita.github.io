@@ -6,11 +6,7 @@
     <description>Recent content in linux on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Dec 2020 01:11:10 +0900</lastBuildDate>
-    
-	<atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 06 Dec 2020 01:11:10 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>postfixのReceived headerを隠す</title>
       <link>https://yaasita.github.io/2020/12/06/postfix-received-header/</link>

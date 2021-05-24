@@ -6,10 +6,20 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 25 Feb 2021 02:26:18 +0900</lastBuildDate>
-    
-	<atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Tue, 25 May 2021 00:53:51 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tumblrのテキスト情報を取得</title>
+      <link>https://yaasita.github.io/2021/05/25/tumblr-metadata/</link>
+      <pubDate>Tue, 25 May 2021 00:53:51 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/05/25/tumblr-metadata/</guid>
+      <description>tumblrの検索だと、上手く引っかからない事が多いので
+テキストデータはローカルに保存することにした
+最初の投稿から何番目を指定することで、ディレクトリの年別ディレクトリに保存します
+実行例
+./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ 1234   こんな感じで適度にsleep入れて取得してます
+#!/bin/bash set -eux save_file=/tmp/save_num already_get_number=$(cat $save_file) for ((i=$already_get_number; i &amp;lt; $already_get_number + 100; i++));do ./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ $i sleep 1 done echo $i &amp;gt; $save_file  </description>
+    </item>
     
     <item>
       <title>GKEでGCSバックエンドと併用する時</title>
@@ -297,19 +307,6 @@ dump mitmproxyだけだと長いURLとかは省略されちゃったりするの
 古いバージョンのライブラリが入ってしまった場合
 - restore_cache: keys: - v2-dependencies-{{ checksum &amp;quot;requirements.txt&amp;quot; }} - v2-dependencies- - run: name: install dependencies command: | python3 -m venv venv . venv/bin/activate pip install -r requirements.txt - save_cache: paths: - ./venv key: v2-dependencies-{{ checksum &amp;quot;requirements.txt&amp;quot; }} これを解消しようとして、以下のようにしてもcacheはupdateされない
 - restore_cache: keys: - v2-dependencies-{{ checksum &amp;quot;requirements.txt&amp;quot; }} - v2-dependencies- - run: name: install dependencies command: | python3 -m venv venv . venv/bin/activate pip install -r requirements.</description>
-    </item>
-    
-    <item>
-      <title>ubuntu18.04でDKIM設定</title>
-      <link>https://yaasita.github.io/2018/08/18/dkim/</link>
-      <pubDate>Sat, 18 Aug 2018 17:40:23 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/08/18/dkim/</guid>
-      <description>インストール apt install opendkim opendkim-tools  opendkim設定 mkdir /etc/postfix/dkim/ opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail # -d ドメイン # -s セレクタ chgrp opendkim /etc/postfix/dkim/* chmod g+r /etc/postfix/dkim/*  /etc/opendkim.conf
-Syslog	yes LogWhy Yes UMask	007 Canonicalization	relaxed/relaxed Mode	sv Socket inet:8891@localhost PidFile /var/run/opendkim/opendkim.pid OversignHeaders	From TrustAnchorFile /usr/share/dns/root.key UserID opendkim KeyTable file:/etc/postfix/dkim/keytable SigningTable file:/etc/postfix/dkim/signingtable  /etc/postfix/dkim/keytable
-mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private  /etc/postfix/dkim/signingtable
-example.net mail._domainkey.example.net  反映
-systemctl restart opendkim.service  postfix設定 以下追記</description>
     </item>
     
   </channel>

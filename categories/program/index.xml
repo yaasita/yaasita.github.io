@@ -6,10 +6,20 @@
     <description>Recent content in program on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 31 Aug 2020 03:36:18 +0900</lastBuildDate>
-    
-	<atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Tue, 25 May 2021 00:53:51 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tumblrのテキスト情報を取得</title>
+      <link>https://yaasita.github.io/2021/05/25/tumblr-metadata/</link>
+      <pubDate>Tue, 25 May 2021 00:53:51 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/05/25/tumblr-metadata/</guid>
+      <description>tumblrの検索だと、上手く引っかからない事が多いので
+テキストデータはローカルに保存することにした
+最初の投稿から何番目を指定することで、ディレクトリの年別ディレクトリに保存します
+実行例
+./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ 1234   こんな感じで適度にsleep入れて取得してます
+#!/bin/bash set -eux save_file=/tmp/save_num already_get_number=$(cat $save_file) for ((i=$already_get_number; i &amp;lt; $already_get_number + 100; i++));do ./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ $i sleep 1 done echo $i &amp;gt; $save_file  </description>
+    </item>
     
     <item>
       <title>maildir形式のファイルをgmailに移す</title>
@@ -259,25 +269,6 @@ https://github.com/yaasita/tokumaru-csrf-20181110
 CORSとかCORBで無理なんすよね
 でよく見るとtokenが無いときの考慮がないよってやつでした
 まとめ 最近のブラウザは良く出来てる</description>
-    </item>
-    
-    <item>
-      <title>skypeの会話ログをjsonに</title>
-      <link>https://yaasita.github.io/2018/09/25/skype-log/</link>
-      <pubDate>Tue, 25 Sep 2018 00:56:22 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/09/25/skype-log/</guid>
-      <description>skypeの会話履歴をJSONにしておくやつ作った
-https://github.com/yaasita/skype2json
-logはsqliteで保存されている
-こちらによるとskype for windows 10とskype for windows desktopの保存場所が違う
-
-こっちが最近のやつ
-場所: %localappdata%\Packages\Microsoft.SkypeApp_kzf8qxf38zg5c\LocalState
-
-昔のやつ
-場所: C:\Users\username\AppData\Roaming\Skype\username\main.db
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;skype1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;skype1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;skype2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;skype2&#34;).src = photos[1].original_size.url; }   </description>
     </item>
     
   </channel>

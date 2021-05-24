@@ -6,11 +6,7 @@
     <description>Recent content in rule on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 28 Sep 2020 02:55:16 +0900</lastBuildDate>
-    
-	<atom:link href="https://yaasita.github.io/categories/rule/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 28 Sep 2020 02:55:16 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/rule/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Microsoft IDのOpenID connect</title>
       <link>https://yaasita.github.io/2020/09/28/oidc/</link>
@@ -160,7 +156,7 @@ StartCom Certification Authority |_ StartCom Certification Authority ECC |_ Star
 でここまでやって気づいたんだけどStartComの証明書が失効扱いで全然検証通らなかった
 これはGmailも同じなのでStartCom使うのは中止
 COMODO 今度COMODOを使うことになったんだけど既にChromeだとKEYGEN要素が使えないらしくFirefoxでアクセスするしかない
-(コードもselect[_moz-type=&amp;rdquo;-mozilla-keygen&amp;rdquo;]になってるし)
+(コードもselect[_moz-type=&amp;quot;-mozilla-keygen&amp;quot;]になってるし)
 こっちはフォームから申請して、リンククリックすればすぐに証明書がFirefoxに入るのでそれをエクスポートしてthunderbirdに入れればOK
 チェーンはこんな感じ
 COMODO RSA Certification Authority |_COMODO RSA Client Authentication and Secure Email CA |_ 自分のメールアドレス  まとめ Let&amp;rsquo;s EncryptがS/MIME対応してほしい</description>

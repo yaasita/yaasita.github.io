@@ -6,11 +6,7 @@
     <description>Recent content in 2008 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 31 Dec 2008 00:00:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://yaasita.github.io/archives/2008/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 31 Dec 2008 00:00:00 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2008/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>iptablesで設定したルールを再起動後も反映したい</title>
       <link>https://yaasita.github.io/2008/12/31/10585/</link>
