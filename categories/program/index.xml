@@ -6,7 +6,21 @@
     <description>Recent content in program on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 25 May 2021 00:53:51 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Jun 2021 01:49:45 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AtCoder Beginner Contest 202のD問題</title>
+      <link>https://yaasita.github.io/2021/06/06/atcoder-d/</link>
+      <pubDate>Sun, 06 Jun 2021 01:49:45 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/06/06/atcoder-d/</guid>
+      <description>問題
+https://atcoder.jp/contests/abc202/tasks
+解説
+https://www.youtube.com/watch?v=iNSp33TT3tc
+ポイントは use bigint; を指定しないと溢れて浮動小数点になってしまう
+ </description>
+    </item>
+    
     <item>
       <title>tumblrのテキスト情報を取得</title>
       <link>https://yaasita.github.io/2021/05/25/tumblr-metadata/</link>
@@ -253,22 +267,6 @@ vimrcにこんな感じに書く
       <guid>https://yaasita.github.io/2018/11/14/github2jenkins/</guid>
       <description>無かったので作りました
 Github -&amp;gt; Mojolicious -&amp;gt; jenkins  </description>
-    </item>
-    
-    <item>
-      <title>徳丸さんのセキュリティ問題(CSRF)</title>
-      <link>https://yaasita.github.io/2018/11/11/tokumaru-csrf/</link>
-      <pubDate>Sun, 11 Nov 2018 01:33:21 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/11/11/tokumaru-csrf/</guid>
-      <description>徳丸さんがCSRFの問題を出していたので考えてみる
-問題：間違ったCSRF対策～初級編～
-解答
-https://github.com/yaasita/tokumaru-csrf-20181110
-なんか最初はXMLHttpRequestとか駆使して、chgmailform.phpからtoken引っこ抜こうと思ったんだけど
-CORSとかCORBで無理なんすよね
-でよく見るとtokenが無いときの考慮がないよってやつでした
-まとめ 最近のブラウザは良く出来てる</description>
     </item>
     
   </channel>

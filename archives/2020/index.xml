@@ -6,107 +6,7 @@
     <description>Recent content in 2020 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 25 May 2021 00:53:51 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2020/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>tumblrのテキスト情報を取得</title>
-      <link>https://yaasita.github.io/2021/05/25/tumblr-metadata/</link>
-      <pubDate>Tue, 25 May 2021 00:53:51 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/05/25/tumblr-metadata/</guid>
-      <description>tumblrの検索だと、上手く引っかからない事が多いので
-テキストデータはローカルに保存することにした
-最初の投稿から何番目を指定することで、ディレクトリの年別ディレクトリに保存します
-実行例
-./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ 1234   こんな感じで適度にsleep入れて取得してます
-#!/bin/bash set -eux save_file=/tmp/save_num already_get_number=$(cat $save_file) for ((i=$already_get_number; i &amp;lt; $already_get_number + 100; i++));do ./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ $i sleep 1 done echo $i &amp;gt; $save_file  </description>
-    </item>
-    
-    <item>
-      <title>スマホ変えた</title>
-      <link>https://yaasita.github.io/2021/04/17/sumaho/</link>
-      <pubDate>Sat, 17 Apr 2021 22:56:59 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/04/17/sumaho/</guid>
-      <description>SH-M12S AQUOS sense3
-ってやつに変えました
-https://jp.sharp/products/shm12/
-おサイフケータイ対応なので、モバイルPASMOにもしました
-androidは10まで上がりました</description>
-    </item>
-    
-    <item>
-      <title>skypeログをエクスポート出来るようになってた</title>
-      <link>https://yaasita.github.io/2021/04/04/skype-log-2021/</link>
-      <pubDate>Sun, 04 Apr 2021 05:08:25 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/04/04/skype-log-2021/</guid>
-      <description>これは便利
-こちらの手順に従えば、アップロードファイルと、メッセージのjsonが手に入る
-https://support.skype.com/ja/faq/FA34894/skype-huairutochiyatsutolu-li-woekusupotosurufang-fa
-よく見ると、結構昔の奴も入ってるので昔からサーバー側でログを取ってたみたいね</description>
-    </item>
-    
-    <item>
-      <title>mpdとncmpc</title>
-      <link>https://yaasita.github.io/2021/03/20/mpd-ncmpc/</link>
-      <pubDate>Sat, 20 Mar 2021 14:39:05 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/03/20/mpd-ncmpc/</guid>
-      <description>mpd と ncmpc の設定メモ
-インストール apt install mpd ncmpc  セットアップ /etc/mpd.confの設定
-http経由で聞くのでoutputはhttpにします
- ~/.config/ncmpc/config
-タグで管理してないのでファイル名だけ表示します
-host = &amp;quot;127.0.0.1&amp;quot; port = 6600 list-format = &amp;quot;%file%&amp;quot; status-format = &amp;quot;%file%&amp;quot; text-editor = vim  /var/lib/mpd/music/ に音楽ファイルを入れる(symlinkでも可)
-ncmpcで起動 Ctrl-UでDBのアップデート
-歌詞表示 歌詞表示するなら ncmpcpp の方が楽ですが、最初からvimキーバインドなncmpcが好きなのでこちらを使っています
-方法は以下の記事通り歌詞検索用のスクリプトを配置するだけ
-https://www.use-strict.de/using-ncmpc-to-fetch-and-read-lyrics.html
-debianのパッケージは以下のオプションでビルドされてるので
--Dlyrics_plugin_dir=&amp;quot;/usr/lib/ncmpc/lyrics/&amp;quot;  /usr/lib/ncmpc/lyrics/01-test.sh
-みたいなファイルをおきます
-これが歌詞検索の際に実行されます
-こんなファイルを置いて
-#!/bin/bash echo &amp;quot;$@&amp;quot; echo &amp;quot;あいうおえ&amp;quot;  artist, titleを設定
-eyeD3 -a backnumber hoge.mp3 eyeD3 -t 高嶺の花子さん takane.mp3  すると第一引数にartist, 第二引数にtitleが入ります
-
-この画面で、Sを押すと歌詞を~/.cache/ncmpc/lyrics/保存できたりもします</description>
-    </item>
-    
-    <item>
-      <title>GKEでGCSバックエンドと併用する時</title>
-      <link>https://yaasita.github.io/2021/02/25/gke-neg/</link>
-      <pubDate>Thu, 25 Feb 2021 02:26:18 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/02/25/gke-neg/</guid>
-      <description>よくあるこんな構成
-staticなHTML/CSSはGCSから、API部分はGKEからみたいな構成
- +---&amp;gt; GCS | ---&amp;gt; GCLB ---+ | +---&amp;gt; k8s(GKE)  これ、GCLB部分をingressにするのが良いんだけど、現状バックエンドサービスにGCSを登録できない
-1.19ならできるぽいがなんか上手く行かなかったので
-とりあえず、今の機能でやるなら、
-NEGを作って、そこをGCLBのバックエンドサービスに登録する
-https://cloud.google.com/kubernetes-engine/docs/how-to/standalone-neg
-厳密な事を言うと、nodeportもバックエンドサービスに登録できるが、こっちはノードの増減によりエンドポイントが変わってしまうので不適
-公式ドキュメント通りだけどこんな感じで作る
- あとはGCSにWebサイトの設定と、GCLBの設定すればOK</description>
-    </item>
-    
-    <item>
-      <title>apacheのmod-auth-openidcについて</title>
-      <link>https://yaasita.github.io/2021/01/01/mod-auth-openidc/</link>
-      <pubDate>Fri, 01 Jan 2021 22:37:48 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/01/01/mod-auth-openidc/</guid>
-      <description>BASIC認証かけるみたいに簡単にGoogle認証を追加できた
-公式サイト
-https://www.mod-auth-openidc.org/
-インストール
-apt install libapache2-mod-auth-openidc  設定 /etc/apache2/mods-enabled/auth_openidc.conf
-OIDCRedirectURI https://hoge.example.jp/oidc/redirect_uri OIDCCryptoPassphrase hogehoge-foobar OIDCProviderMetadataURL https://accounts.google.com/.well-known/openid-configuration OIDCScope &amp;quot;openid email&amp;quot; OIDCClientID xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com OIDCClientSecret XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  リバースプロキシ的に使う例
-/adminかつ、プライベートIP以外の場合はGoogle認証で hogehoge@gmail.com のみ許可
-&amp;lt;VirtualHost *:443&amp;gt; ServerName hoge.example.jp &amp;lt;Location /&amp;gt; Require all granted &amp;lt;/Location&amp;gt; &amp;lt;Location /oidc/&amp;gt; AuthType openid-connect Require valid-user &amp;lt;/Location&amp;gt; &amp;lt;Location /admin&amp;gt; AuthType openid-connect Require claim email:hogehoge@gmail.com Require ip 192.168.0.0/24 &amp;lt;/Location&amp;gt; ProxyRequests Off ProxyPreserveHost On ProxyPass / http://127.0.0.1:8080/ keepalive=On RequestHeader set X-Forwarded-Proto &amp;quot;https&amp;quot; RequestHeader unset X-Forwarded-For RequestHeader unset X-Forwarded-Server RequestHeader unset X-Forwarded-Host # SSL設定等が続く .</description>
-    </item>
-    
+    <lastBuildDate>Sun, 06 Dec 2020 01:11:10 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2020/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>postfixのReceived headerを隠す</title>
       <link>https://yaasita.github.io/2020/12/06/postfix-received-header/</link>
@@ -298,6 +198,64 @@ k8s サイドカーコンテナについて</description>
 以下をvimrcに追記して事なきを得た
 inoremapって非ASCII文字でも行けるみたい
 inoremap ¥ \ cnoremap ¥ \  </description>
+    </item>
+    
+    <item>
+      <title>chromebookでbackslashを入力</title>
+      <link>https://yaasita.github.io/2020/01/11/chromebook-backslash/</link>
+      <pubDate>Sat, 11 Jan 2020 15:47:07 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/01/11/chromebook-backslash/</guid>
+      <description>今持ってるchromebookだとバックスラッシュ(0x5C)が入らない
+半角モードにして￥キーを押すとU+00A5が入力されてしまう
+入力には全角モードにして、￥キー押した後に変換して、バックスラッシュを選択する必要がある
+もしくは、Linux内なら、fcitx経由で入力すれば半角￥キーでバックスラッシュになった
+WindowsとかMacなら一発だけど、これは不便かも・・・プログラミングの時にも困るし・・・
+
+ function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+    </item>
+    
+    <item>
+      <title>Github Pagesになってるリポジトリをチェック</title>
+      <link>https://yaasita.github.io/2020/01/07/check-github-pages/</link>
+      <pubDate>Tue, 07 Jan 2020 18:55:03 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/01/07/check-github-pages/</guid>
+      <description>どのリポジトリがGithub Pagesの設定がされているか？
+調べたくなったので・・・
+Github pagesの設定されてるリポジトリ一覧を簡単に確認できればいいのに・・・
+ </description>
+    </item>
+    
+    <item>
+      <title>GCPの外部IPアドレスが有料になる件</title>
+      <link>https://yaasita.github.io/2020/01/06/gcp-ex-ip/</link>
+      <pubDate>Mon, 06 Jan 2020 23:06:41 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/01/06/gcp-ex-ip/</guid>
+      <description>外部IPが有料になりそうだからどうしようかという話
+一部では無料範囲内なら課金されないみたいな書き方もされてるけど、今月の請求には不穏な項目がある
+Credit External IPs will not be charged until April 1, 2020.  
+んで、外部IPを無しにして、gcloud compute ssh で繋げるのは良いんだけど、外部IPが無いと外と通信できないからapt installもできない。。。。
+あと、上記コマンドはsshポートを解放してないと駄目ぽい（正確にはIAPからのアクセスを許可すれば良いだけぽいが）
+とりあえず課金されてから考えるか・・・
+参考リンク  外部IPを持たないGCEインスタンスでweb開発 GCP/GCE の固定グローバルIPアドレス、2020年より有料化   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+    </item>
+    
+    <item>
+      <title>chromebookの日本語入力</title>
+      <link>https://yaasita.github.io/2020/01/01/chromebook-japanese/</link>
+      <pubDate>Wed, 01 Jan 2020 13:27:50 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2020/01/01/chromebook-japanese/</guid>
+      <description>明けましておめでとうございます。
+chromebookで日本語入力する場合はローカルの場合はfcitx-mozcを使って入力
+リモートに接続する場合は、一旦踏み台サーバーを経由して、X転送したqterminalを使っている
+ssh humidai-server -XC export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx fcitx qterminal  自分の環境では-Cオプションを付けない場合は800kbpsくらい通信するが、つけると100kbpsになるので外でやる時にはつけた方が良さそう
+回線が細いテザリング環境では ttyd を立てて、ポートフォワーディングでつないだ方が良いかも
+Ctrl-wがchromeのタブ閉じになってしまうので微妙かなと思ったんだけど、「その他のツール(L)」 =&amp;gt; 「ショートカットを作成」からアプリとして作れば、Ctrl-wも使えた
+こっちなら日本語入力も出来るのでこっちの方が良いかもしれない
+通信量も1kbps位だし</description>
     </item>
     
   </channel>
