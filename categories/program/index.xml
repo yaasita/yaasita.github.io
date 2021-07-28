@@ -6,7 +6,21 @@
     <description>Recent content in program on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Jun 2021 01:49:45 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Jul 2021 00:55:40 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>nodejsのreadline</title>
+      <link>https://yaasita.github.io/2021/07/29/nodejs-readline/</link>
+      <pubDate>Thu, 29 Jul 2021 00:55:40 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/07/29/nodejs-readline/</guid>
+      <description>readlineの書き方
+https://nodejs.org/api/readline.html
+こうやって書くより
+ const rl = readline.createInterface({ // ... }); for await (const line of rl) { // Each line in the readline input will be successively available here as // `line`. } こっちの方がメモリ効率が良さそう
+ await new Promise((resolv, reject) =&amp;gt; { rl.on(&amp;quot;line&amp;quot;, (line) =&amp;gt; { // 処理 }); rl.on(&amp;quot;close&amp;quot;, () =&amp;gt; { resolv(); }); }); 詳しくは調べてないけど、巨大ファイルだと
+FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory `` が頻発する </description>
+    </item>
+    
     <item>
       <title>AtCoder Beginner Contest 202のD問題</title>
       <link>https://yaasita.github.io/2021/06/06/atcoder-d/</link>
@@ -257,16 +271,6 @@ LINEはどうしたもんか</description>
 vimrcにこんな感じに書く
  英単語の意味をちょっと調べる  翻訳  なんか微妙に画面がバグってるけど、本当はちゃんと表示されてる
 まとめ こういうちょっとした改善大事</description>
-    </item>
-    
-    <item>
-      <title>githubのwebhook受け取ってjenkins走らせる</title>
-      <link>https://yaasita.github.io/2018/11/14/github2jenkins/</link>
-      <pubDate>Wed, 14 Nov 2018 01:41:06 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/11/14/github2jenkins/</guid>
-      <description>無かったので作りました
-Github -&amp;gt; Mojolicious -&amp;gt; jenkins  </description>
     </item>
     
   </channel>

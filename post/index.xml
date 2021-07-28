@@ -6,7 +6,21 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Jun 2021 01:49:45 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 29 Jul 2021 00:55:40 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>nodejsのreadline</title>
+      <link>https://yaasita.github.io/2021/07/29/nodejs-readline/</link>
+      <pubDate>Thu, 29 Jul 2021 00:55:40 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/07/29/nodejs-readline/</guid>
+      <description>readlineの書き方
+https://nodejs.org/api/readline.html
+こうやって書くより
+ const rl = readline.createInterface({ // ... }); for await (const line of rl) { // Each line in the readline input will be successively available here as // `line`. } こっちの方がメモリ効率が良さそう
+ await new Promise((resolv, reject) =&amp;gt; { rl.on(&amp;quot;line&amp;quot;, (line) =&amp;gt; { // 処理 }); rl.on(&amp;quot;close&amp;quot;, () =&amp;gt; { resolv(); }); }); 詳しくは調べてないけど、巨大ファイルだと
+FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory `` が頻発する </description>
+    </item>
+    
     <item>
       <title>AtCoder Beginner Contest 202のD問題</title>
       <link>https://yaasita.github.io/2021/06/06/atcoder-d/</link>
@@ -286,20 +300,6 @@ echo &amp;quot;#standardSQL&amp;quot; &amp;gt; /tmp/query.sql echo &#39;select _
 snap install microk8s --class microk8s.kubectl config view --raw &amp;gt; ~/.kube/config  必要サービスの起動
 microk8s.enable dns registry storage skaffold dev --no-prune=false --cache-artifacts=false --default-repo localhost:32000 -f skaffold.yaml  こんな感じにやると、リポジトリ部分を読み替えてくれるので便利
  function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
-    </item>
-    
-    <item>
-      <title>GKEでCloud SQL Proxyをsocketで使う</title>
-      <link>https://yaasita.github.io/2020/02/28/k8s-cloudsql-proxy-with-socket/</link>
-      <pubDate>Fri, 28 Feb 2020 04:08:58 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/02/28/k8s-cloudsql-proxy-with-socket/</guid>
-      <description>GKEでもGAEみたいにCloud SQLに繋げたい場合の話
-公式ドキュメントのサンプルだとこんな感じにport接続にしてる
-https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/blob/master/cloudsql/mysql_wordpress_deployment.yaml
-socket接続の場合はこんな感じ
- 参考
-k8s サイドカーコンテナについて</description>
     </item>
     
   </channel>
