@@ -6,7 +6,20 @@
     <description>Recent content in linux on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Dec 2020 01:11:10 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Aug 2021 02:15:00 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>debian bullseyeのmlocateで引っかからないファイル</title>
+      <link>https://yaasita.github.io/2021/08/16/mlocate/</link>
+      <pubDate>Mon, 16 Aug 2021 02:15:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/08/16/mlocate/</guid>
+      <description>debian 11でlocateしても引っかからないファイル多いなと思って調べたら
+systemctl cat mlocate.service  こいうのが追加されてる
+[Service] PrivateTmp=true PrivateDevices=true PrivateNetwork=true ProtectSystem=true  debian 10 (buster) 時代はcronだったから気にしなかったけど、多分これ、ProtectSystemの所為で/usrとか見れてないぽい
+今までのように全検索したかったら以下のコマンドで上書きしたほうが良いかと
+systemctl edit mlocate.service  </description>
+    </item>
+    
     <item>
       <title>postfixのReceived headerを隠す</title>
       <link>https://yaasita.github.io/2020/12/06/postfix-received-header/</link>
@@ -285,19 +298,6 @@ apt-get handbreak  handbrake-gtk
 開始でOK
 あんま難しくない
 http://yaasita.tumblr.com/post/127482624497 </description>
-    </item>
-    
-    <item>
-      <title>saslauthd-debian</title>
-      <link>https://yaasita.github.io/2015/07/26/saslauthd-debian/</link>
-      <pubDate>Sun, 26 Jul 2015 02:42:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/07/26/saslauthd-debian/</guid>
-      <description>なんか Debian Jessie(8.1)のsaslauthdのsystemd定義が書かれてない気がする
-なので自動起動に設定したかったら自分で書く感じで
-/etc/systemd/system/saslauthd.service
- みたいな定義を書いて
-systemctl daemon-reload systemctl enable saslauthd.service systemctl start saslauthd.service  </description>
     </item>
     
   </channel>

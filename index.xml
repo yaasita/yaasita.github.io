@@ -6,7 +6,20 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 29 Jul 2021 00:55:40 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 16 Aug 2021 02:15:00 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>debian bullseyeのmlocateで引っかからないファイル</title>
+      <link>https://yaasita.github.io/2021/08/16/mlocate/</link>
+      <pubDate>Mon, 16 Aug 2021 02:15:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/08/16/mlocate/</guid>
+      <description>debian 11でlocateしても引っかからないファイル多いなと思って調べたら
+systemctl cat mlocate.service  こいうのが追加されてる
+[Service] PrivateTmp=true PrivateDevices=true PrivateNetwork=true ProtectSystem=true  debian 10 (buster) 時代はcronだったから気にしなかったけど、多分これ、ProtectSystemの所為で/usrとか見れてないぽい
+今までのように全検索したかったら以下のコマンドで上書きしたほうが良いかと
+systemctl edit mlocate.service  </description>
+    </item>
+    
     <item>
       <title>nodejsのreadline</title>
       <link>https://yaasita.github.io/2021/07/29/nodejs-readline/</link>
@@ -286,20 +299,6 @@ echo &amp;quot;#standardSQL&amp;quot; &amp;gt; /tmp/query.sql echo &#39;select _
       <description>multipart/form-dataでPOSTされた奴を、処理するCloud functionsを書いてて必要になったので
  呼び出し側はこんな感じでやってる
  </description>
-    </item>
-    
-    <item>
-      <title>microk8sとskaffold</title>
-      <link>https://yaasita.github.io/2020/03/29/microk8s_and_skaffold/</link>
-      <pubDate>Sun, 29 Mar 2020 03:24:06 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/03/29/microk8s_and_skaffold/</guid>
-      <description>microk8sとskaffoldをこんな感じで使う
-
-インストール
-snap install microk8s --class microk8s.kubectl config view --raw &amp;gt; ~/.kube/config  必要サービスの起動
-microk8s.enable dns registry storage skaffold dev --no-prune=false --cache-artifacts=false --default-repo localhost:32000 -f skaffold.yaml  こんな感じにやると、リポジトリ部分を読み替えてくれるので便利
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
     </item>
     
   </channel>
