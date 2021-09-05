@@ -6,7 +6,27 @@
     <description>Recent content in linux on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 16 Aug 2021 02:15:00 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Sep 2021 02:00:02 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bashでディレクトリのbookmark</title>
+      <link>https://yaasita.github.io/2021/09/06/bash-bookmarks/</link>
+      <pubDate>Mon, 06 Sep 2021 02:00:02 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/09/06/bash-bookmarks/</guid>
+      <description>これすごい便利だった
+https://threkk.medium.com/how-to-use-bookmarks-in-bash-zsh-6b8074e40774
+CDPATHを使うとこんな便利なことができるのね
+ただ以下の方が指摘されているようにbashだと補完が効かないので, compgenで補完候補を作る方が良さそう
+https://mobile.twitter.com/mattn_jp/status/1434205359573405696
+自分の場合は、gotoっていうコマンドよりcdで通常通り使えた方が良いので
+こんな感じの設定を追加しておいた
+cdコマンドを上書きして、@で始まってたら cd -P でsymlinkを辿るようにして、他は通常通り
+(これなら補完候補も足さなくてOK)
+export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 }  あと、bookmarkへの追加もコマンドにしておく
+bookmarkしたいディレクトリに移動してbookmarkコマンドでsymlink作るようにしておく
+function bookmark { local dirname=$(basename $(pwd)) local linkto=$(pwd) echo $dirname cd ~/.bookmarks/ ln -s $linkto @$dirname cd - }  </description>
+    </item>
+    
     <item>
       <title>debian bullseyeのmlocateで引っかからないファイル</title>
       <link>https://yaasita.github.io/2021/08/16/mlocate/</link>
@@ -284,20 +304,6 @@ docker-machine-0.5.5/ ├── Makefile ├── docker-machine ├── dock
       <guid>https://yaasita.github.io/2015/10/17/raid5_fail/</guid>
       <description>リビルド中にもう一個壊れてRAID5が終わった話
 /dev/md0: Version : 1.2 Creation Time : Fri Jan 6 12:24:44 2012 Raid Level : raid5 Array Size : 5860535808 (5589.04 GiB 6001.19 GB) Used Dev Size : 1953511936 (1863.01 GiB 2000.40 GB) Raid Devices : 4 Total Devices : 4 Persistence : Superblock is persistent Update Time : Sat Oct 17 16:59:57 2015 State : clean, FAILED Active Devices : 2 Working Devices : 3 Failed Devices : 1 Spare Devices : 1 Layout : left-symmetric Chunk Size : 512K Name : hoge:0 UUID : 55b9d6ea:4627c873:a0bcab05:a4f0c25d Events : 6755 Number Major Minor RaidDevice State 5 8 49 0 active sync /dev/sdd1 2 0 0 2 removed 2 8 33 2 active sync /dev/sdc1 6 0 0 6 removed 4 8 1 - faulty /dev/sda1 6 8 17 - spare /dev/sdb1  HDD一台が壊れたので /dev/sdb1を追加中にアレイの構成Diskがもう一個壊れた</description>
-    </item>
-    
-    <item>
-      <title>handbrakeでISOをエンコード</title>
-      <link>https://yaasita.github.io/2015/08/25/handbrake/</link>
-      <pubDate>Tue, 25 Aug 2015 00:32:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/08/25/handbrake/</guid>
-      <description>Linuxで動画のエンコード/リッピングするとき
-apt-get handbreak  handbrake-gtk
-で起動して、左側のソース選んで
-開始でOK
-あんま難しくない
-http://yaasita.tumblr.com/post/127482624497 </description>
     </item>
     
   </channel>

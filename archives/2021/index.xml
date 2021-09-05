@@ -6,7 +6,27 @@
     <description>Recent content in 2021 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 16 Aug 2021 02:15:00 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2021/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 06 Sep 2021 02:00:02 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2021/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bashでディレクトリのbookmark</title>
+      <link>https://yaasita.github.io/2021/09/06/bash-bookmarks/</link>
+      <pubDate>Mon, 06 Sep 2021 02:00:02 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/09/06/bash-bookmarks/</guid>
+      <description>これすごい便利だった
+https://threkk.medium.com/how-to-use-bookmarks-in-bash-zsh-6b8074e40774
+CDPATHを使うとこんな便利なことができるのね
+ただ以下の方が指摘されているようにbashだと補完が効かないので, compgenで補完候補を作る方が良さそう
+https://mobile.twitter.com/mattn_jp/status/1434205359573405696
+自分の場合は、gotoっていうコマンドよりcdで通常通り使えた方が良いので
+こんな感じの設定を追加しておいた
+cdコマンドを上書きして、@で始まってたら cd -P でsymlinkを辿るようにして、他は通常通り
+(これなら補完候補も足さなくてOK)
+export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 }  あと、bookmarkへの追加もコマンドにしておく
+bookmarkしたいディレクトリに移動してbookmarkコマンドでsymlink作るようにしておく
+function bookmark { local dirname=$(basename $(pwd)) local linkto=$(pwd) echo $dirname cd ~/.bookmarks/ ln -s $linkto @$dirname cd - }  </description>
+    </item>
+    
     <item>
       <title>debian bullseyeのmlocateで引っかからないファイル</title>
       <link>https://yaasita.github.io/2021/08/16/mlocate/</link>
