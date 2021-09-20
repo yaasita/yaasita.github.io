@@ -24,7 +24,7 @@ cdコマンドを上書きして、@で始まってたら cd -P でsymlinkを辿
 (これなら補完候補も足さなくてOK)
 export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 }  あと、bookmarkへの追加もコマンドにしておく
 bookmarkしたいディレクトリに移動してbookmarkコマンドでsymlink作るようにしておく
-function bookmark { local dirname=$(basename $(pwd)) local linkto=$(pwd) echo $dirname cd ~/.bookmarks/ ln -s $linkto @$dirname cd - }  </description>
+function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) }  </description>
     </item>
     
     <item>

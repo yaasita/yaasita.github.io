@@ -6,7 +6,22 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 06 Sep 2021 02:00:02 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 20 Sep 2021 17:40:54 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>dircolorsの設定</title>
+      <link>https://yaasita.github.io/2021/09/20/dircolors/</link>
+      <pubDate>Mon, 20 Sep 2021 17:40:54 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/09/20/dircolors/</guid>
+      <description>dircolorsは
+ls --color=auto  したときの色を設定するコマンド
+以下のコマンドで設定を書き出して
+dircolors -p &amp;gt; ~/.dir_colors  好きな設定に編集する
+vi ~/.dircolors  .bashrcに以下のように書いておいた
+if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^screen ]];then alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto&#39; eval &amp;quot;$(dircolors -b ~/.dircolors)&amp;quot; fi  参考
+ lsコマンドで表示されるファイルの色を変更するには  </description>
+    </item>
+    
     <item>
       <title>bashでディレクトリのbookmark</title>
       <link>https://yaasita.github.io/2021/09/06/bash-bookmarks/</link>
@@ -24,7 +39,7 @@ cdコマンドを上書きして、@で始まってたら cd -P でsymlinkを辿
 (これなら補完候補も足さなくてOK)
 export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 }  あと、bookmarkへの追加もコマンドにしておく
 bookmarkしたいディレクトリに移動してbookmarkコマンドでsymlink作るようにしておく
-function bookmark { local dirname=$(basename $(pwd)) local linkto=$(pwd) echo $dirname cd ~/.bookmarks/ ln -s $linkto @$dirname cd - }  </description>
+function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) }  </description>
     </item>
     
     <item>
@@ -293,21 +308,6 @@ pip3 install doh-proxy  以下のような設定でserviceを作る
 [Unit] Description=doh-httpproxy After=nginx.service [Install] WantedBy=multi-user.target [Service] ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 8080 --listen-address 127.0.0.1 Nginx側設定例
 server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } }  確認
 curl --doh-url https://doh.example.net/dns-query google.co.jp  </description>
-    </item>
-    
-    <item>
-      <title>BigQueryのカラムタイプ変更</title>
-      <link>https://yaasita.github.io/2020/05/09/bigquery-type-change/</link>
-      <pubDate>Sat, 09 May 2020 04:42:51 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/05/09/bigquery-type-change/</guid>
-      <description>BigQueryのカラム変更はREQUIREDをNULLABLEにする以外は出来ません
-テーブル スキーマの手動変更
-作り直すしかないんですが、分割テーブルだともう一手間必要ですよという話
-例えば以下のように分割テーブルを作るとします
-bq mk --dataset test bq mk --table \ --time_partitioning_type DAY \ test.first  データを投入
-echo -e &amp;quot;1\thoge&amp;quot; &amp;gt; /tmp/data.tsv echo -e &amp;quot;2\thuga&amp;quot; &amp;gt;&amp;gt; /tmp/data.tsv echo -e &amp;quot;3\tabcd&amp;quot; &amp;gt;&amp;gt; /tmp/data.tsv bq load --source_format=CSV --field_delimiter=&amp;quot;\t&amp;quot; \ &#39;test.first$20200501&#39; /tmp/data.tsv id:NUMERIC,description:STRING bq load --source_format=CSV --field_delimiter=&amp;quot;\t&amp;quot; \ &#39;test.first$20200502&#39; /tmp/data.tsv id:NUMERIC,description:STRING  取り込み時間別に分割されているのが分かります
-echo &amp;quot;#standardSQL&amp;quot; &amp;gt; /tmp/query.sql echo &#39;select _PARTITIONTIME as pt, count(*) as count from test.first group by _PARTITIONTIME order by pt;&#39; &amp;gt;&amp;gt; /tmp/query.</description>
     </item>
     
   </channel>
