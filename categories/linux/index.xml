@@ -6,7 +6,20 @@
     <description>Recent content in linux on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 20 Sep 2021 17:40:54 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Oct 2021 05:52:16 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bridgeインターフェイスのMACアドレス</title>
+      <link>https://yaasita.github.io/2021/10/10/machine-id/</link>
+      <pubDate>Sun, 10 Oct 2021 05:52:16 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/10/10/machine-id/</guid>
+      <description>KVMを使ったVM内でブリッジインターフェイス作ってそのVMをコピーしたらMACアドレスが重複して通信不能になった
+(/etc/systemd/network/にはこんな感じでbridge作る)
+https://gist.github.com/yaasita/d527b48f54b0e23c3097a9c69239d534
+どうやらこれ、machine-idから作られてるみたいで、VMコピーしたらmachine-id変えた方が良いぽいね
+rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machine-id-setup  </description>
+    </item>
+    
     <item>
       <title>dircolorsの設定</title>
       <link>https://yaasita.github.io/2021/09/20/dircolors/</link>
@@ -296,19 +309,6 @@ HandleSuspendKey=ignore HandleLidSwitch=ignore  </description>
 https://goo.gl/MKXvhm
 Makefile
 install: chmod +x bin/docker-compose cp bin/docker-compose /usr/local/bin/ cp bash/docker-compose /etc/bash_completion.d/  </description>
-    </item>
-    
-    <item>
-      <title>checkinstallでdocker-machineをパッケージに</title>
-      <link>https://yaasita.github.io/2015/12/30/checkinstall/</link>
-      <pubDate>Wed, 30 Dec 2015 03:16:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/12/30/checkinstall/</guid>
-      <description>debパッケージにするとアンインストールが楽になる
- https://github.com/docker/machine https://goo.gl/X5Njaz  以下のMakefileを作ってcheckinstallコマンドでおｋ
-bash補完はこの辺
-docker-machine-0.5.5/ ├── Makefile ├── docker-machine ├── docker-machine-prompt.bash ├── docker-machine-wrapper.bash └── docker-machine.bash  Makefile
- </description>
     </item>
     
   </channel>

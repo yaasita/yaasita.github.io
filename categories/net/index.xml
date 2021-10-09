@@ -6,7 +6,20 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 25 May 2021 00:53:51 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Oct 2021 05:52:16 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bridgeインターフェイスのMACアドレス</title>
+      <link>https://yaasita.github.io/2021/10/10/machine-id/</link>
+      <pubDate>Sun, 10 Oct 2021 05:52:16 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/10/10/machine-id/</guid>
+      <description>KVMを使ったVM内でブリッジインターフェイス作ってそのVMをコピーしたらMACアドレスが重複して通信不能になった
+(/etc/systemd/network/にはこんな感じでbridge作る)
+https://gist.github.com/yaasita/d527b48f54b0e23c3097a9c69239d534
+どうやらこれ、machine-idから作られてるみたいで、VMコピーしたらmachine-id変えた方が良いぽいね
+rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machine-id-setup  </description>
+    </item>
+    
     <item>
       <title>tumblrのテキスト情報を取得</title>
       <link>https://yaasita.github.io/2021/05/25/tumblr-metadata/</link>
@@ -293,20 +306,6 @@ mitmproxy --set confdir=/path/to/hogedir --view-filter m3u  画面中ではVim�
 リクエストを選んで、wでストリームを保存できる
 dump mitmproxyだけだと長いURLとかは省略されちゃったりするので、完全なものを見る場合にmitmdumpを使う
 # getだけ抽出 mitmdump -nr /tmp/save -w outfile &amp;quot;~m get&amp;quot; # リクエスト一覧 mitmdump -nr /tmp/save  まとめ HTTPSのデバッグ時にめっちゃ便利</description>
-    </item>
-    
-    <item>
-      <title>CircleCIのキャッシュについて</title>
-      <link>https://yaasita.github.io/2018/10/19/circleci/</link>
-      <pubDate>Fri, 19 Oct 2018 03:03:35 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/10/19/circleci/</guid>
-      <description>先に結論だけ
- キャッシュは一度書き込むとupdate出来ない キャッシュクリアは名前を変えて対応する  以下具体例
-以下のようなキャッシュをした際に
-古いバージョンのライブラリが入ってしまった場合
-- restore_cache: keys: - v2-dependencies-{{ checksum &amp;quot;requirements.txt&amp;quot; }} - v2-dependencies- - run: name: install dependencies command: | python3 -m venv venv . venv/bin/activate pip install -r requirements.txt - save_cache: paths: - ./venv key: v2-dependencies-{{ checksum &amp;quot;requirements.txt&amp;quot; }} これを解消しようとして、以下のようにしてもcacheはupdateされない
-- restore_cache: keys: - v2-dependencies-{{ checksum &amp;quot;requirements.txt&amp;quot; }} - v2-dependencies- - run: name: install dependencies command: | python3 -m venv venv . venv/bin/activate pip install -r requirements.</description>
     </item>
     
   </channel>

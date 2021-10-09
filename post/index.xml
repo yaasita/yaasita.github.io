@@ -6,7 +6,20 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 20 Sep 2021 17:40:54 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Oct 2021 05:52:16 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>bridgeインターフェイスのMACアドレス</title>
+      <link>https://yaasita.github.io/2021/10/10/machine-id/</link>
+      <pubDate>Sun, 10 Oct 2021 05:52:16 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/10/10/machine-id/</guid>
+      <description>KVMを使ったVM内でブリッジインターフェイス作ってそのVMをコピーしたらMACアドレスが重複して通信不能になった
+(/etc/systemd/network/にはこんな感じでbridge作る)
+https://gist.github.com/yaasita/d527b48f54b0e23c3097a9c69239d534
+どうやらこれ、machine-idから作られてるみたいで、VMコピーしたらmachine-id変えた方が良いぽいね
+rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machine-id-setup  </description>
+    </item>
+    
     <item>
       <title>dircolorsの設定</title>
       <link>https://yaasita.github.io/2021/09/20/dircolors/</link>
@@ -291,23 +304,6 @@ Value Domainから Google Domains へ移管してみた
 感想
  .net, .com 等は安い .jp は高い whois 代行は標準サービス 標準の権威DNSサーバーは微妙  GCPのGoogle Cloud DNSが使えるわけではない APIでの更新も難しそう HTTPリダイレクトの機能がついてるのは嬉しい ダイナミックDNSはある DNSSECは簡単にできそう SSHFPレコードを設定できる    まとめ
 みんな使うと良いと思います</description>
-    </item>
-    
-    <item>
-      <title>DoHを試す</title>
-      <link>https://yaasita.github.io/2020/05/10/doh/</link>
-      <pubDate>Sun, 10 May 2020 03:22:35 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/05/10/doh/</guid>
-      <description>DNS over HTTPSを試す
-こんな構成で作る
-Nginx -&amp;gt; doh-httpproxy -&amp;gt; systemd-resolved  インストール
-doh-proxy pip3でインストールすればOK
-pip3 install doh-proxy  以下のような設定でserviceを作る
-/etc/systemd/system/doh-httpproxy.service
-[Unit] Description=doh-httpproxy After=nginx.service [Install] WantedBy=multi-user.target [Service] ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 8080 --listen-address 127.0.0.1 Nginx側設定例
-server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } }  確認
-curl --doh-url https://doh.example.net/dns-query google.co.jp  </description>
     </item>
     
   </channel>
