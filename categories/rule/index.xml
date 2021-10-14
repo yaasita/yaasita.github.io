@@ -6,7 +6,19 @@
     <description>Recent content in rule on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 28 Sep 2020 02:55:16 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/rule/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Oct 2021 00:57:38 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/rule/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SPFレコードでaを指定</title>
+      <link>https://yaasita.github.io/2021/10/15/spf-rule/</link>
+      <pubDate>Fri, 15 Oct 2021 00:57:38 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/10/15/spf-rule/</guid>
+      <description>SPFレコードで
+v=spf1 a:example.net -all  みたいに指定したときにAレコードだけじゃなくて、AAAAレコードも引いてくれるので便利です
+IPv6のアドレスは長くなるので積極的に利用したいですね
+https://datatracker.ietf.org/doc/html/rfc7208#section-5.3</description>
+    </item>
+    
     <item>
       <title>Microsoft IDのOpenID connect</title>
       <link>https://yaasita.github.io/2020/09/28/oidc/</link>
@@ -300,19 +312,6 @@ expectで送る場合はこんな感じ
 openssl s_client -quiet -connect
 みたいに-quietつければいいみたい
 http://backslash.ddo.jp/wordpress/archives/434 </description>
-    </item>
-    
-    <item>
-      <title>自然対数(log)の割り算で任意底の対数計算</title>
-      <link>https://yaasita.github.io/2013/03/30/1196/</link>
-      <pubDate>Sat, 30 Mar 2013 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2013/03/30/1196/</guid>
-      <description> 例えば512は2の何乗か調べる場合は
-（この場合底はe）
-log512/log2 = log2^9/log2 = 9log2/log2 = 9
-http://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1262091227
-http://ab.sinryow.net/lesson/shisu.html </description>
     </item>
     
   </channel>

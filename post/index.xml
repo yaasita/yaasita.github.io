@@ -6,7 +6,19 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 13 Oct 2021 04:43:00 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 15 Oct 2021 00:57:38 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SPFレコードでaを指定</title>
+      <link>https://yaasita.github.io/2021/10/15/spf-rule/</link>
+      <pubDate>Fri, 15 Oct 2021 00:57:38 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/10/15/spf-rule/</guid>
+      <description>SPFレコードで
+v=spf1 a:example.net -all  みたいに指定したときにAレコードだけじゃなくて、AAAAレコードも引いてくれるので便利です
+IPv6のアドレスは長くなるので積極的に利用したいですね
+https://datatracker.ietf.org/doc/html/rfc7208#section-5.3</description>
+    </item>
+    
     <item>
       <title>長年使ったマウスコンピューターのPC</title>
       <link>https://yaasita.github.io/2021/10/13/mouse-pc/</link>
@@ -291,20 +303,6 @@ jwt等をCookieに入れて、サーバー側でセッション用のストレ�
       <guid>https://yaasita.github.io/2020/08/30/new-linux-in-chromebook/</guid>
       <description>Linuxを消して、また入れたら良くなってた
  Debianが10になった 日本語が打てる(ただ表示はバグる) 絵文字が見れる ターミナルがタブに対応した  </description>
-    </item>
-    
-    <item>
-      <title>authorized_keysを適当に更新しない</title>
-      <link>https://yaasita.github.io/2020/07/08/ssh-keys-deploy/</link>
-      <pubDate>Wed, 08 Jul 2020 15:14:42 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/07/08/ssh-keys-deploy/</guid>
-      <description>概要 sshの公開鍵認証で複数人が使うシステムのauthorized_keysを場当たり的に更新してしまうと、誰の鍵が入ってるか分からなくなる
-誰の鍵が入ってるか分かるようにした方が良いと思う
-スクリプト こんなスクリプトを書いた
-使い方はREADME.md参照
-https://github.com/yaasita/ssh-keys-manager
-その他  使えるならsshの証明書認証も検討した方が良いかも ssh -F でconfig指定できるけど、~/.ssh/configに置いたときと挙動が違うのでスクリプト内にconfig入れる場合は注意  </description>
     </item>
     
   </channel>
