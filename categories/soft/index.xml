@@ -6,7 +6,24 @@
     <description>Recent content in soft on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 20 Sep 2021 17:40:54 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Nov 2021 06:09:44 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>microk8sでargocdを動かす</title>
+      <link>https://yaasita.github.io/2021/11/28/microk8s/</link>
+      <pubDate>Sun, 28 Nov 2021 06:09:44 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/11/28/microk8s/</guid>
+      <description>microk8s で ArgoCD を動かすときのメモ
+まず手順通りにマニフェストを設定したら
+kubectl patch svc argocd-server -n argocd -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39;  ClusterIP から NodePortに変更
+こんな感じの表示になったら
+$ kubectl get svc argocd-server -n argocd argocd-server NodePort 10.152.183.43 &amp;lt;none&amp;gt; 80:30444/TCP,443:30983/TCP 20h  以下のURLでアクセス
+https:// (ホストのIP) :30983
+まあkubectl port-forward でやってもいいけど
+ついでに dashbord も同様にできる
+kubectl patch svc kubernetes-dashboard -n kube-system -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; kubectl get svc kubernetes-dashboard -n kube-system $ kubectl get svc kubernetes-dashboard -n kube-system NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE kubernetes-dashboard NodePort 10.</description>
+    </item>
+    
     <item>
       <title>dircolorsの設定</title>
       <link>https://yaasita.github.io/2021/09/20/dircolors/</link>
@@ -305,18 +322,6 @@ mitmproxy --set confdir=/path/to/hogedir --view-filter m3u  画面中ではVim�
 リクエストを選んで、wでストリームを保存できる
 dump mitmproxyだけだと長いURLとかは省略されちゃったりするので、完全なものを見る場合にmitmdumpを使う
 # getだけ抽出 mitmdump -nr /tmp/save -w outfile &amp;quot;~m get&amp;quot; # リクエスト一覧 mitmdump -nr /tmp/save  まとめ HTTPSのデバッグ時にめっちゃ便利</description>
-    </item>
-    
-    <item>
-      <title>全文検索n-gram</title>
-      <link>https://yaasita.github.io/2018/09/29/n-gram/</link>
-      <pubDate>Sat, 29 Sep 2018 04:25:33 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/09/29/n-gram/</guid>
-      <description>N-gramについて
-検索とインデックスについて作った
-検討資料用にどうぞ
-https://gist.github.com/yaasita/ea31d7bbfc839fc859fd7d713800088b</description>
     </item>
     
   </channel>

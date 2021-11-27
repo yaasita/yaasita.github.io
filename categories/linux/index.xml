@@ -6,7 +6,24 @@
     <description>Recent content in linux on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 10 Oct 2021 05:52:16 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Nov 2021 06:09:44 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>microk8sでargocdを動かす</title>
+      <link>https://yaasita.github.io/2021/11/28/microk8s/</link>
+      <pubDate>Sun, 28 Nov 2021 06:09:44 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/11/28/microk8s/</guid>
+      <description>microk8s で ArgoCD を動かすときのメモ
+まず手順通りにマニフェストを設定したら
+kubectl patch svc argocd-server -n argocd -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39;  ClusterIP から NodePortに変更
+こんな感じの表示になったら
+$ kubectl get svc argocd-server -n argocd argocd-server NodePort 10.152.183.43 &amp;lt;none&amp;gt; 80:30444/TCP,443:30983/TCP 20h  以下のURLでアクセス
+https:// (ホストのIP) :30983
+まあkubectl port-forward でやってもいいけど
+ついでに dashbord も同様にできる
+kubectl patch svc kubernetes-dashboard -n kube-system -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; kubectl get svc kubernetes-dashboard -n kube-system $ kubectl get svc kubernetes-dashboard -n kube-system NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE kubernetes-dashboard NodePort 10.</description>
+    </item>
+    
     <item>
       <title>bridgeインターフェイスのMACアドレス</title>
       <link>https://yaasita.github.io/2021/10/10/machine-id/</link>
@@ -297,18 +314,6 @@ dbus-uuidgen &amp;gt; root/etc/machine-id  </description>
 あたりを直す
 ノートPC閉じたときのSuspendを止めたかったから↓みたいにした
 HandleSuspendKey=ignore HandleLidSwitch=ignore  </description>
-    </item>
-    
-    <item>
-      <title>docker composeインストール</title>
-      <link>https://yaasita.github.io/2015/12/31/compose/</link>
-      <pubDate>Thu, 31 Dec 2015 18:16:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/12/31/compose/</guid>
-      <description>docker-composeもcheckinstallでdebパッケージにしといた
-https://goo.gl/MKXvhm
-Makefile
-install: chmod +x bin/docker-compose cp bin/docker-compose /usr/local/bin/ cp bash/docker-compose /etc/bash_completion.d/  </description>
     </item>
     
   </channel>

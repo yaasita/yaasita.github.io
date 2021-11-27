@@ -6,7 +6,24 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 15 Oct 2021 00:57:38 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 Nov 2021 06:09:44 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>microk8sでargocdを動かす</title>
+      <link>https://yaasita.github.io/2021/11/28/microk8s/</link>
+      <pubDate>Sun, 28 Nov 2021 06:09:44 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/11/28/microk8s/</guid>
+      <description>microk8s で ArgoCD を動かすときのメモ
+まず手順通りにマニフェストを設定したら
+kubectl patch svc argocd-server -n argocd -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39;  ClusterIP から NodePortに変更
+こんな感じの表示になったら
+$ kubectl get svc argocd-server -n argocd argocd-server NodePort 10.152.183.43 &amp;lt;none&amp;gt; 80:30444/TCP,443:30983/TCP 20h  以下のURLでアクセス
+https:// (ホストのIP) :30983
+まあkubectl port-forward でやってもいいけど
+ついでに dashbord も同様にできる
+kubectl patch svc kubernetes-dashboard -n kube-system -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; kubectl get svc kubernetes-dashboard -n kube-system $ kubectl get svc kubernetes-dashboard -n kube-system NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE kubernetes-dashboard NodePort 10.</description>
+    </item>
+    
     <item>
       <title>SPFレコードでaを指定</title>
       <link>https://yaasita.github.io/2021/10/15/spf-rule/</link>
@@ -293,16 +310,6 @@ jwt等をCookieに入れて、サーバー側でセッション用のストレ�
       <guid>https://yaasita.github.io/2020/08/31/maildir-to-gmail/</guid>
       <description>IMAPのAPPENDコマンドでmaildir形式のファイルをGmailに送る
 #!/usr/bin/env node &amp;quot;use strict&amp;quot;; const simpleParser = require(&amp;quot;mailparser&amp;quot;).simpleParser; const { ImapFlow } = require(&amp;quot;imapflow&amp;quot;); const client = new ImapFlow({ host: &amp;quot;imap.gmail.com&amp;quot;, port: 993, secure: true, auth: { user: &amp;quot;hoge@gmail.com&amp;quot;, pass: &amp;quot;password&amp;quot;, }, }); const fs = require(&amp;quot;fs&amp;quot;); (async () =&amp;gt; { const mail = fs.readFileSync( process.argv[2], &amp;quot;utf8&amp;quot; ); const parsed = await simpleParser(mail); await client.connect(); await client.append(&amp;quot;INBOX&amp;quot;, mail, [&amp;quot;\\Seen&amp;quot;], parsed.date); await client.logout(); })().catch((e) =&amp;gt; { console.log(e); process.exit(1); });  </description>
-    </item>
-    
-    <item>
-      <title>chromebookのLinuxが新しくなってた</title>
-      <link>https://yaasita.github.io/2020/08/30/new-linux-in-chromebook/</link>
-      <pubDate>Sun, 30 Aug 2020 04:28:55 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/08/30/new-linux-in-chromebook/</guid>
-      <description>Linuxを消して、また入れたら良くなってた
- Debianが10になった 日本語が打てる(ただ表示はバグる) 絵文字が見れる ターミナルがタブに対応した  </description>
     </item>
     
   </channel>
