@@ -6,7 +6,23 @@
     <description>Recent content in linux on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 28 Nov 2021 06:09:44 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Dec 2021 06:03:17 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>systemd-nspawnのtmpディレクトリ</title>
+      <link>https://yaasita.github.io/2021/12/12/systemd-nspawn-tmpdir/</link>
+      <pubDate>Sun, 12 Dec 2021 06:03:17 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/12/12/systemd-nspawn-tmpdir/</guid>
+      <description>systemd-nspawnで/tmpのtmpfs mountを止める方法について昔こんな記事書いた
+systemd-nspawnでのtmpディレクトリの扱いについて
+今は状況が変わってて、
+https://github.com/systemd/systemd/pull/10294/files
+こんな感じで、&amp;ldquo;SYSTEMD_NSPAWN_TMPFS_TMP&amp;rdquo; って環境変数に0を入れておけば、/tmpディレクトリをtmpfsにしない
+/etc/systemd/system/systemd-nspawn@.service
+にこんな感じで追加したらmachinectlからもできる
+Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0  </description>
+    </item>
+    
     <item>
       <title>microk8sでargocdを動かす</title>
       <link>https://yaasita.github.io/2021/11/28/microk8s/</link>
@@ -301,19 +317,6 @@ dbus-uuidgen &amp;gt; root/etc/machine-id  </description>
  DHCPを有効にしている iptablesを無効に rawでイメージを作っておく  次に以下のコマンドでインポート
 # hoge-importってバケット作ったとする # 最初にimgをS3に上げておく aws s3 cp hoge.img s3://hoge-import/hoge.img # IAM周りを準備 aws iam create-role --role-name vmimport --assume-role-policy-document file://trust-policy.json aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json # インポートタスク開始 aws ec2 import-image --description &amp;quot;hoge server&amp;quot; --disk-containers file://containers.json # 進捗見る aws ec2 describe-import-image-tasks  使ったjsonファイル
  参考リンク  http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats http://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html  </description>
-    </item>
-    
-    <item>
-      <title>systemdでの電源管理</title>
-      <link>https://yaasita.github.io/2016/01/06/acpi/</link>
-      <pubDate>Wed, 06 Jan 2016 00:47:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/01/06/acpi/</guid>
-      <description>Arch Linuxのwikiが詳しかった
-/etc/systemd/logind.conf
-あたりを直す
-ノートPC閉じたときのSuspendを止めたかったから↓みたいにした
-HandleSuspendKey=ignore HandleLidSwitch=ignore  </description>
     </item>
     
   </channel>

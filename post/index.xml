@@ -6,7 +6,23 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 28 Nov 2021 06:09:44 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Dec 2021 06:03:17 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>systemd-nspawnのtmpディレクトリ</title>
+      <link>https://yaasita.github.io/2021/12/12/systemd-nspawn-tmpdir/</link>
+      <pubDate>Sun, 12 Dec 2021 06:03:17 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2021/12/12/systemd-nspawn-tmpdir/</guid>
+      <description>systemd-nspawnで/tmpのtmpfs mountを止める方法について昔こんな記事書いた
+systemd-nspawnでのtmpディレクトリの扱いについて
+今は状況が変わってて、
+https://github.com/systemd/systemd/pull/10294/files
+こんな感じで、&amp;ldquo;SYSTEMD_NSPAWN_TMPFS_TMP&amp;rdquo; って環境変数に0を入れておけば、/tmpディレクトリをtmpfsにしない
+/etc/systemd/system/systemd-nspawn@.service
+にこんな感じで追加したらmachinectlからもできる
+Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0  </description>
+    </item>
+    
     <item>
       <title>microk8sでargocdを動かす</title>
       <link>https://yaasita.github.io/2021/11/28/microk8s/</link>
@@ -300,16 +316,6 @@ Cookieが渡ってこない
 jwt等をCookieに入れて、サーバー側でセッション用のストレージを持たない場合は厳しい気がする
 なので、response_mode = fragment を指定するか、SameSite=None; SecureをCookieの属性に付与するかだけど、fragmentが良いんじゃないかなぁ・・・・
 参考リンク  OpenID Connect 全フロー解説  </description>
-    </item>
-    
-    <item>
-      <title>maildir形式のファイルをgmailに移す</title>
-      <link>https://yaasita.github.io/2020/08/31/maildir-to-gmail/</link>
-      <pubDate>Mon, 31 Aug 2020 03:36:18 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/08/31/maildir-to-gmail/</guid>
-      <description>IMAPのAPPENDコマンドでmaildir形式のファイルをGmailに送る
-#!/usr/bin/env node &amp;quot;use strict&amp;quot;; const simpleParser = require(&amp;quot;mailparser&amp;quot;).simpleParser; const { ImapFlow } = require(&amp;quot;imapflow&amp;quot;); const client = new ImapFlow({ host: &amp;quot;imap.gmail.com&amp;quot;, port: 993, secure: true, auth: { user: &amp;quot;hoge@gmail.com&amp;quot;, pass: &amp;quot;password&amp;quot;, }, }); const fs = require(&amp;quot;fs&amp;quot;); (async () =&amp;gt; { const mail = fs.readFileSync( process.argv[2], &amp;quot;utf8&amp;quot; ); const parsed = await simpleParser(mail); await client.connect(); await client.append(&amp;quot;INBOX&amp;quot;, mail, [&amp;quot;\\Seen&amp;quot;], parsed.date); await client.logout(); })().catch((e) =&amp;gt; { console.log(e); process.exit(1); });  </description>
     </item>
     
   </channel>
