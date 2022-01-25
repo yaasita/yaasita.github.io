@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>RStudioで正規性の確認 | # cd ~yaasita</title>
+    <meta name="generator" content="Hugo 0.83.1" />
+
+    <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
+    <meta property="og:title" content="RStudioで正規性の確認" />
+<meta property="og:description" content="シャピロ-ウィルク(Shapiro-Wilk)の正規性の検定をやる流れ
+まず以下のようなデータを用意する
+ある音ゲーのスコア
+これは音ゲーのスコアを表していてタイミングよく押せた場合はPERFECT, 早すぎたり遅すぎたりした場合はFAST, SLOWに計上される
+この内ミスの割合が正規分布と見なせるか検定する
+まず、CSVを右上のEnvironmentタブ =&gt; Import Datasetから読み込む
+
+データをMISSの割合をデータフレームに追加
+library(dplyr) bandori &lt;- bandori %&gt;% mutate(MISS = (FAST &#43; SLOW) / (PERFECT &#43; FAST &#43; SLOW) * 100) ヒストグラムと近似曲線を出す
+hist(bandori$MISS, breaks = seq(0, 20, 1)) dens &lt;- density(bandori$MISS) lines(dens, lwd = 3, col = &quot;blue&quot;) 
+検定
+shapiro.test(bandori$MISS) 検定統計量とp値
+data: bandori$MISS W = 0.98162, p-value = 0.724 ここで注意なのはこの検定は帰無仮説が「正規分布している」なので
+棄却出来た場合は正規分布ではないと言えるが、
+今回のように棄却できない（受容域）の場合は正規分布していてもおかしくない程度なので何とも言えないです
+ヒストグラム見る限り正規分布としても良さそうですが
+使ったRスクリプト
+https://gist.github.com/yaasita/7c431d0493c9703c91d0a013d03349af" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2022/01/26/normal_distribution/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2022-01-26T02:50:46&#43;09:00" />
+<meta property="article:modified_time" content="2022-01-26T02:50:46&#43;09:00" />
+
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-37419565-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    <script id="dsq-count-scr" src="https://yaasita.disqus.com/count.js" async></script>
+
+  </head>
+  <body>
+    <div id="wrap">
+      <header class="site-header">
+        <div class="site-header-left">
+          <a class="site-header-title" href="https://yaasita.github.io/"># cd ~yaasita</a>
+        </div>
+      </header>
+      <div class="container">
+        <div id="main">
+
+<div class="article">
+  <header>
+    <div class="article-header">
+      <h1>RStudioで正規性の確認</h1>
+      <div class="article-meta">
+        <span class="posttime">2022/01/26 02:50</span>
+      </div>
+    </div>
+  </header>
+  <div class="content">
+    <p>シャピロ-ウィルク(Shapiro-Wilk)の正規性の検定をやる流れ</p>
+<p>まず以下のようなデータを用意する</p>
+<p><a href="https://gist.github.com/yaasita/8e831e46f4e1fd868fc1fa2cf7a16a95">ある音ゲーのスコア</a></p>
+<p>これは音ゲーのスコアを表していてタイミングよく押せた場合はPERFECT, 早すぎたり遅すぎたりした場合はFAST, SLOWに計上される<br>
+この内ミスの割合が正規分布と見なせるか検定する</p>
+<p>まず、CSVを右上のEnvironmentタブ =&gt; Import Datasetから読み込む</p>
+<p><a href="https://yaasita.tumblr.com/post/674374333735534592"><img src="https://64.media.tumblr.com/efdda5728f5bfbe02ff1ce56f69ed77b/7229a2b4b03fed0a-7f/s1280x1920/b161c85aba80b2aacd2e30747ad8b222e8c4e50b.png" alt="rstudio"></a></p>
+<p>データをMISSの割合をデータフレームに追加</p>
+<pre><code>library(dplyr)
+
+bandori &lt;- bandori %&gt;%
+  mutate(MISS = (FAST + SLOW) / (PERFECT + FAST + SLOW) * 100)
+
+</code></pre><p>ヒストグラムと近似曲線を出す</p>
+<pre><code>hist(bandori$MISS, breaks = seq(0, 20, 1))
+
+dens &lt;- density(bandori$MISS)
+lines(dens, lwd = 3, col = &quot;blue&quot;)
+</code></pre><p><a href="https://yaasita.tumblr.com/post/674375341372030976"><img src="https://64.media.tumblr.com/585f0ba45f8ee304b795da0936b9d1ba/47ce568c809d72dd-da/s1280x1920/44d12155ec05a54b2992c837e79203e1aa184d12.png" alt="hist"></a></p>
+<p>検定</p>
+<pre><code>shapiro.test(bandori$MISS)
+</code></pre><p>検定統計量とp値</p>
+<pre><code>data:  bandori$MISS
+W = 0.98162, p-value = 0.724
+</code></pre><p>ここで注意なのはこの検定は帰無仮説が「正規分布している」なので<br>
+棄却出来た場合は正規分布ではないと言えるが、<br>
+今回のように棄却できない（受容域）の場合は正規分布していてもおかしくない程度なので何とも言えないです</p>
+<p>ヒストグラム見る限り正規分布としても良さそうですが</p>
+<p>使ったRスクリプト<br>
+<a href="https://gist.github.com/yaasita/7c431d0493c9703c91d0a013d03349af">https://gist.github.com/yaasita/7c431d0493c9703c91d0a013d03349af</a></p>
+
+  </div>
+  <footer>
+    <div class="article-footer">
+      
+<div class="tags">
+  <ul>
+    
+    <li>
+        <a href="/categories/program">program</a>
+    </li>
+    
+  </ul>
+</div>
+
+
+      
+      
+<div id="share-buttons">
+  <ul>
+    
+    <li>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="yaasita">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </li>
+    
+    
+    <li>
+      <a href="http://b.hatena.ne.jp/entry/https://yaasita.github.io/2022/01/26/normal_distribution//" class="hatena-bookmark-button" data-hatena-bookmark-title="RStudioで正規性の確認" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+    </li>
+    
+    <li>
+        <a class="tumblr-share-button" data-color="blue" data-notes="right" href="https://embed.tumblr.com/share"></a>
+        <script>!function(d,s,id){var js,ajs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://assets.tumblr.com/share-button.js";ajs.parentNode.insertBefore(js,ajs);}}(document, "script", "tumblr-js");</script>
+    </li>
+  </ul>
+</div>
+
+
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yaasita" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      <div id="pagenavigation-next-prev">
+        
+        <div id="pagenavigation-next">
+          <span class="pagenav-label">Previous</span>
+          <a href="https://yaasita.github.io/2021/12/12/systemd-nspawn-tmpdir/">systemd-nspawnのtmpディレクトリ</a>
+        </div>
+        
+        
+      </div>
+      
+    </div>
+  </footer>
+</div>
+        </div>
+        <div class="sidebar">
+  
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Author</span>
+    </div>
+    <div id="author">
+      <span>yaasita: SIerから脱出した人</span>
+      <div>
+        
+        <a href="https://twitter.com/yaasita"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+        
+        
+        <a href="https://github.com/yaasita"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
+        
+        
+        
+        <a href="https://yaasita.tumblr.com/"><i class="fa fa-tumblr-square fa-2x" aria-hidden="true"></i></a>
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Search</span>
+    </div>
+    <div id="search">
+        <form action="//google.co.jp/search" method="get">
+            <fieldset role="search">
+                <input type="hidden" name="noj" value="1">
+                <input type="hidden" name="q" value="site:yaasita.github.io">
+                <input class="search" type="text" name="q" results="0" placeholder="このブログを検索">
+            </fieldset>
+        </form>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Categories</span>
+    </div>
+    <div class="categories">
+      <ul>
+        
+        <li>
+          <a href="/categories/crack"><span></span>crack (22)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/game"><span></span>game (61)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/hard"><span></span>hard (47)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/life"><span></span>life (69)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/linux"><span></span>linux (340)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/net"><span></span>net (220)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/program"><span></span>program (169)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/rule"><span></span>rule (28)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/soft"><span></span>soft (412)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/windows"><span></span>windows (58)</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Archives</span>
+    </div>
+    <div class="categories">
+      <ul id="archives">
+        
+        <li>
+          <a href="/archives/2007"><span></span>2007 (63)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2008"><span></span>2008 (119)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2009"><span></span>2009 (151)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2010"><span></span>2010 (122)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2011"><span></span>2011 (83)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2012"><span></span>2012 (71)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2013"><span></span>2013 (73)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2014"><span></span>2014 (88)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2015"><span></span>2015 (25)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2016"><span></span>2016 (23)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2017"><span></span>2017 (51)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2018"><span></span>2018 (32)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2019"><span></span>2019 (23)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2020"><span></span>2020 (18)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2021"><span></span>2021 (16)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2022"><span></span>2022 (1)</a>
+        </li>
+        
+      </ul>
+    </div>
+    <script>
+        (function () {
+            var reverse = [];
+            var elm1 = document.querySelector('#archives').querySelectorAll("li");
+            var i=0;
+            for(i=0;i<=elm1.length-1;i++){reverse.unshift(elm1[i].innerHTML)}
+            for(i=0;i<=elm1.length-1;i++){elm1[i].innerHTML=reverse[i]}
+        })();
+    </script>
+  </div>
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>RSS</span>
+    </div>
+    <div id="rss">
+      <a href="/index.xml" type="application/rss+xml" title="# cd ~yaasita" />
+      <i class="fa fa-rss-square fa-2x" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>
+
+      </div>
+      <footer>
+        <div id="site-footer-wrap">
+          <div id="site-footer">
+            <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
+            <span>
+              
+              Copyright (c) 2022, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+

@@ -6,7 +6,33 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 12 Dec 2021 06:03:17 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 26 Jan 2022 02:50:46 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RStudioで正規性の確認</title>
+      <link>https://yaasita.github.io/2022/01/26/normal_distribution/</link>
+      <pubDate>Wed, 26 Jan 2022 02:50:46 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/01/26/normal_distribution/</guid>
+      <description>シャピロ-ウィルク(Shapiro-Wilk)の正規性の検定をやる流れ
+まず以下のようなデータを用意する
+ある音ゲーのスコア
+これは音ゲーのスコアを表していてタイミングよく押せた場合はPERFECT, 早すぎたり遅すぎたりした場合はFAST, SLOWに計上される
+この内ミスの割合が正規分布と見なせるか検定する
+まず、CSVを右上のEnvironmentタブ =&amp;gt; Import Datasetから読み込む
+
+データをMISSの割合をデータフレームに追加
+library(dplyr) bandori &amp;lt;- bandori %&amp;gt;% mutate(MISS = (FAST + SLOW) / (PERFECT + FAST + SLOW) * 100) ヒストグラムと近似曲線を出す
+hist(bandori$MISS, breaks = seq(0, 20, 1)) dens &amp;lt;- density(bandori$MISS) lines(dens, lwd = 3, col = &amp;quot;blue&amp;quot;) 
+検定
+shapiro.test(bandori$MISS) 検定統計量とp値
+data: bandori$MISS W = 0.98162, p-value = 0.724 ここで注意なのはこの検定は帰無仮説が「正規分布している」なので
+棄却出来た場合は正規分布ではないと言えるが、
+今回のように棄却できない（受容域）の場合は正規分布していてもおかしくない程度なので何とも言えないです
+ヒストグラム見る限り正規分布としても良さそうですが
+使ったRスクリプト
+https://gist.github.com/yaasita/7c431d0493c9703c91d0a013d03349af</description>
+    </item>
+    
     <item>
       <title>systemd-nspawnのtmpディレクトリ</title>
       <link>https://yaasita.github.io/2021/12/12/systemd-nspawn-tmpdir/</link>
@@ -299,23 +325,6 @@ http://hetty.proxy/
  mitmproxyより重い気がする GUIでリクエストを見れるのは便利 mitmdumpとかしないでも簡単に見れるのはとても嬉しい 検索機能は今後追加予定？ リクエストをreplyする機能も追加予定みたい  まとめ
 今後に期待
 今はmitmweb使う方が良いと思う</description>
-    </item>
-    
-    <item>
-      <title>Microsoft IDのOpenID connect</title>
-      <link>https://yaasita.github.io/2020/09/28/oidc/</link>
-      <pubDate>Mon, 28 Sep 2020 02:55:16 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/09/28/oidc/</guid>
-      <description>Microsoft ID プラットフォームと OpenID Connect プロトコル
-これを見ると response_mode = form_post
-に対応してるが, これはid_token(と指定した場合はstate)がPOSTで渡ってくるのだが、chrome80で導入された サードパーティCookieの規制により
-Cookieが渡ってこない
-そのためセッションと紐付けるのに面倒になりそう
-まあnonceからセッションを紐付けられる値を入れておけば何とかなりそうではあるが・・・
-jwt等をCookieに入れて、サーバー側でセッション用のストレージを持たない場合は厳しい気がする
-なので、response_mode = fragment を指定するか、SameSite=None; SecureをCookieの属性に付与するかだけど、fragmentが良いんじゃないかなぁ・・・・
-参考リンク  OpenID Connect 全フロー解説  </description>
     </item>
     
   </channel>
