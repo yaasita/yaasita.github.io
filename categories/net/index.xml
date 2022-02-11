@@ -6,7 +6,19 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 10 Oct 2021 05:52:16 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Feb 2022 01:24:48 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SMTP-TLSRPTのチェック</title>
+      <link>https://yaasita.github.io/2022/02/12/tls-report-check/</link>
+      <pubDate>Sat, 12 Feb 2022 01:24:48 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/02/12/tls-report-check/</guid>
+      <description>SMTP-TLSRPTをチェックしてtotal-failure-session-countがゼロより大きいかチェックするスクリプト
+(対象はGoogleから貰うレポート)
+ こんな感じでメールがあるディレクトリを指定する
+./index.js ~/Maildir/cur/  </description>
+    </item>
+    
     <item>
       <title>bridgeインターフェイスのMACアドレス</title>
       <link>https://yaasita.github.io/2021/10/10/machine-id/</link>
@@ -286,26 +298,6 @@ https://github.com/yaasita/tokumaru-csrf-20181110
 CORSとかCORBで無理なんすよね
 でよく見るとtokenが無いときの考慮がないよってやつでした
 まとめ 最近のブラウザは良く出来てる</description>
-    </item>
-    
-    <item>
-      <title>mitmproxyが便利</title>
-      <link>https://yaasita.github.io/2018/11/10/mitmproxy/</link>
-      <pubDate>Sat, 10 Nov 2018 03:22:31 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/11/10/mitmproxy/</guid>
-      <description>とっても便利なmitmproxyを使ってみた
-概要 こんな感じでHTTPSなサイトも中間に入りこんでくれる
-（root証明証を予め信頼しておく必要がある)
-browser &amp;lt;---(指定のCA鍵で再署名)---- mitmproxy &amp;lt;---(HTTPSを一旦解く)----- web server  インストール apt install mitmproxy  設定 プライベートCAをやってるなら
- /etc/ssl/demoCA/private/cakey.pem /etc/ssl/demoCA/cacert.pem  この２ファイルを結合する
-こんな感じで mitmproxy-ca.pem って名前でどっかのディレクトリに置く
------BEGIN ENCRYPTED PRIVATE KEY----- ... -----END ENCRYPTED PRIVATE KEY----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE----- 実行 こんな感じで実行できる &amp;ndash;view-filter で表示させたいURLを絞れる
-(hogedirの中にmitmproxy-ca.pemが入ってる)
-mitmproxy --set confdir=/path/to/hogedir --view-filter m3u  画面中ではVimぽいキーバインドで色々操作できる
-リクエストを選んで、wでストリームを保存できる
-dump mitmproxyだけだと長いURLとかは省略されちゃったりするので、完全なものを見る場合にmitmdumpを使う
-# getだけ抽出 mitmdump -nr /tmp/save -w outfile &amp;quot;~m get&amp;quot; # リクエスト一覧 mitmdump -nr /tmp/save  まとめ HTTPSのデバッグ時にめっちゃ便利</description>
     </item>
     
   </channel>

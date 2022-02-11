@@ -6,7 +6,19 @@
     <description>Recent content in program on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 26 Jan 2022 02:50:46 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Feb 2022 01:24:48 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SMTP-TLSRPTのチェック</title>
+      <link>https://yaasita.github.io/2022/02/12/tls-report-check/</link>
+      <pubDate>Sat, 12 Feb 2022 01:24:48 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/02/12/tls-report-check/</guid>
+      <description>SMTP-TLSRPTをチェックしてtotal-failure-session-countがゼロより大きいかチェックするスクリプト
+(対象はGoogleから貰うレポート)
+ こんな感じでメールがあるディレクトリを指定する
+./index.js ~/Maildir/cur/  </description>
+    </item>
+    
     <item>
       <title>RStudioで正規性の確認</title>
       <link>https://yaasita.github.io/2022/01/26/normal_distribution/</link>
@@ -279,18 +291,6 @@ tar -cvaf hoge.tgz -T tar.txt </description>
  ELBからインスタンス一覧引っ張る所はまだ書いてない
 明けましておめでとうございます
  function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
-    </item>
-    
-    <item>
-      <title>dynamodbオンデマンド</title>
-      <link>https://yaasita.github.io/2018/12/19/dynamodb/</link>
-      <pubDate>Wed, 19 Dec 2018 00:53:21 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/12/19/dynamodb/</guid>
-      <description>re:Invent 2018で言われたアレ
-DynamoDBオンデマンド
-のベンチを取ってみた
- ベンチマークに使ったスクリプト  結論  ほとんどDynamoDB ondemand でOKだと思うj オートスケールぽい挙動なのでちょっとずつスケールしてるぽい 200とかそんくらいのスパイクアクセスがある場合はあらかじめ、プロビジョニングキャパシティにしておいた方が良いと思う ただし、オンデマンドの有効化は一日一回だけなので注意  </description>
     </item>
     
   </channel>

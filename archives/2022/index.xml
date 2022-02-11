@@ -6,7 +6,19 @@
     <description>Recent content in 2022 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 26 Jan 2022 02:50:46 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2022/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Feb 2022 01:24:48 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2022/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SMTP-TLSRPTのチェック</title>
+      <link>https://yaasita.github.io/2022/02/12/tls-report-check/</link>
+      <pubDate>Sat, 12 Feb 2022 01:24:48 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/02/12/tls-report-check/</guid>
+      <description>SMTP-TLSRPTをチェックしてtotal-failure-session-countがゼロより大きいかチェックするスクリプト
+(対象はGoogleから貰うレポート)
+ こんな感じでメールがあるディレクトリを指定する
+./index.js ~/Maildir/cur/  </description>
+    </item>
+    
     <item>
       <title>RStudioで正規性の確認</title>
       <link>https://yaasita.github.io/2022/01/26/normal_distribution/</link>

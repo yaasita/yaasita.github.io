@@ -6,7 +6,19 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 26 Jan 2022 02:50:46 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Feb 2022 01:24:48 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SMTP-TLSRPTのチェック</title>
+      <link>https://yaasita.github.io/2022/02/12/tls-report-check/</link>
+      <pubDate>Sat, 12 Feb 2022 01:24:48 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/02/12/tls-report-check/</guid>
+      <description>SMTP-TLSRPTをチェックしてtotal-failure-session-countがゼロより大きいかチェックするスクリプト
+(対象はGoogleから貰うレポート)
+ こんな感じでメールがあるディレクトリを指定する
+./index.js ~/Maildir/cur/  </description>
+    </item>
+    
     <item>
       <title>RStudioで正規性の確認</title>
       <link>https://yaasita.github.io/2022/01/26/normal_distribution/</link>
@@ -306,25 +318,6 @@ smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode
       <description>新しくt4gインスタンスが出たみたいなので試してみた
 cpuminer アルゴリズム=lyra2rev2 で測定
    name cpu memory hashrate(kH/s)     自宅PC Core i5-4460 3.20GHz 4コア 16G 384   ノートPC LB-C110B Celeron 1037U 1.80GHz 2コア 8G 79   t4g.micro (CPUクレジットあり) ARM CPU 2コア 1G 233   t4g.micro (CPUクレジットなし) ARM CPU 2コア 1G 24   aws lightsail (t2.nano, CPUクレジットあり) Xeon E5-2676 v3 2.40GHz 1コア 512M 81   aws lightsail (t2.nano, CPUクレジットなし) Xeon E5-2676 v3 2.</description>
-    </item>
-    
-    <item>
-      <title>hettyはmitmproxyの代わりになる？</title>
-      <link>https://yaasita.github.io/2020/10/04/hetty/</link>
-      <pubDate>Sun, 04 Oct 2020 00:50:03 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/10/04/hetty/</guid>
-      <description>mitmproxyみたいにhttpsのリクエストを覗くツール
-https://github.com/dstotijn/hetty
-使い方は, CAの鍵と証明書を用意して
-hetty -cert cacert.pem -key cakey.pem  でOK
-8080でlistenするのでhttp proxyとして指定する
-管理画面はproxyとて設定したブラウザで以下のURLから見れる
-http://hetty.proxy/
-感想
- mitmproxyより重い気がする GUIでリクエストを見れるのは便利 mitmdumpとかしないでも簡単に見れるのはとても嬉しい 検索機能は今後追加予定？ リクエストをreplyする機能も追加予定みたい  まとめ
-今後に期待
-今はmitmweb使う方が良いと思う</description>
     </item>
     
   </channel>
