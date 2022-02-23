@@ -6,7 +6,22 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Feb 2022 01:24:48 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Feb 2022 15:25:52 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ipv4/ipv6確認サイト</title>
+      <link>https://yaasita.github.io/2022/02/23/ipv4-ipv6/</link>
+      <pubDate>Wed, 23 Feb 2022 15:25:52 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/02/23/ipv4-ipv6/</guid>
+      <description>自分のIPv4/IPv6アドレスを確認するサイトを作った
+ipv4専用
+https://ipv4.cloud.yaasita.net/
+ipv6専用
+https://ipv6.cloud.yaasita.net/
+ipv4/ipv6両対応(どちらのIPが優先されるか確認用)
+https://ipv46.cloud.yaasita.net/</description>
+    </item>
+    
     <item>
       <title>SMTP-TLSRPTのチェック</title>
       <link>https://yaasita.github.io/2022/02/12/tls-report-check/</link>
@@ -307,17 +322,6 @@ OIDCRedirectURI https://hoge.example.jp/oidc/redirect_uri OIDCCryptoPassphrase h
 smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode=yes -o smtpd_sasl_auth_enable=yes -o smtpd_reject_unlisted_recipient=no -o smtpd_client_restrictions=$mua_client_restrictions -o smtpd_helo_restrictions=$mua_helo_restrictions -o smtpd_sender_restrictions=$mua_sender_restrictions -o smtpd_recipient_restrictions= -o smtpd_relay_restrictions=permit_sasl_authenticated,reject -o milter_macro_daemon_name=ORIGINATING -o cleanup_service_name=smtpscleanup smtpscleanup unix n - y - 0 cleanup -o header_checks=regexp:/etc/postfix/header_checks  /etc/postfix/header_checks
 /^Received:.*/ IGNORE  最初はsmtp_header_checksをmain.cfに書けば良いかなーと思ったんだけど、
 これだと外から入ってきたメール(後にプライマリサーバーにrelayされる)も一律削除されてしまうので都合が悪かった</description>
-    </item>
-    
-    <item>
-      <title>AWSのt4gインスタンスを試す</title>
-      <link>https://yaasita.github.io/2020/11/05/t4g-instance/</link>
-      <pubDate>Thu, 05 Nov 2020 02:58:38 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/11/05/t4g-instance/</guid>
-      <description>新しくt4gインスタンスが出たみたいなので試してみた
-cpuminer アルゴリズム=lyra2rev2 で測定
-   name cpu memory hashrate(kH/s)     自宅PC Core i5-4460 3.20GHz 4コア 16G 384   ノートPC LB-C110B Celeron 1037U 1.80GHz 2コア 8G 79   t4g.micro (CPUクレジットあり) ARM CPU 2コア 1G 233   t4g.micro (CPUクレジットなし) ARM CPU 2コア 1G 24   aws lightsail (t2.nano, CPUクレジットあり) Xeon E5-2676 v3 2.40GHz 1コア 512M 81   aws lightsail (t2.nano, CPUクレジットなし) Xeon E5-2676 v3 2.</description>
     </item>
     
   </channel>

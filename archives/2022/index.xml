@@ -6,7 +6,22 @@
     <description>Recent content in 2022 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Feb 2022 01:24:48 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2022/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Feb 2022 15:25:52 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2022/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ipv4/ipv6確認サイト</title>
+      <link>https://yaasita.github.io/2022/02/23/ipv4-ipv6/</link>
+      <pubDate>Wed, 23 Feb 2022 15:25:52 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/02/23/ipv4-ipv6/</guid>
+      <description>自分のIPv4/IPv6アドレスを確認するサイトを作った
+ipv4専用
+https://ipv4.cloud.yaasita.net/
+ipv6専用
+https://ipv6.cloud.yaasita.net/
+ipv4/ipv6両対応(どちらのIPが優先されるか確認用)
+https://ipv46.cloud.yaasita.net/</description>
+    </item>
+    
     <item>
       <title>SMTP-TLSRPTのチェック</title>
       <link>https://yaasita.github.io/2022/02/12/tls-report-check/</link>

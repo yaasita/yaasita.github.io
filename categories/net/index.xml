@@ -6,7 +6,22 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Feb 2022 01:24:48 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Feb 2022 15:25:52 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ipv4/ipv6確認サイト</title>
+      <link>https://yaasita.github.io/2022/02/23/ipv4-ipv6/</link>
+      <pubDate>Wed, 23 Feb 2022 15:25:52 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/02/23/ipv4-ipv6/</guid>
+      <description>自分のIPv4/IPv6アドレスを確認するサイトを作った
+ipv4専用
+https://ipv4.cloud.yaasita.net/
+ipv6専用
+https://ipv6.cloud.yaasita.net/
+ipv4/ipv6両対応(どちらのIPが優先されるか確認用)
+https://ipv46.cloud.yaasita.net/</description>
+    </item>
+    
     <item>
       <title>SMTP-TLSRPTのチェック</title>
       <link>https://yaasita.github.io/2022/02/12/tls-report-check/</link>
@@ -282,22 +297,6 @@ HSTSのサイトは証明書無視ボタンが出ない
 windowsだとやり方があるらしいが、ローカルでの確認とかはやりにくくなる
 /etc/hostsを化かして対応する、実ドメインでのリハーサル時はプライベートCA等で対応すること
  https://support.opendns.com/hc/en-us/articles/227989087-Chrome-for-Windows-only-HSTS-Certificate-Exception-Instructions https://moriya.xrea.jp/tdiary/20150827.html   function callback1(data){ var photos = data.</description>
-    </item>
-    
-    <item>
-      <title>徳丸さんのセキュリティ問題(CSRF)</title>
-      <link>https://yaasita.github.io/2018/11/11/tokumaru-csrf/</link>
-      <pubDate>Sun, 11 Nov 2018 01:33:21 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/11/11/tokumaru-csrf/</guid>
-      <description>徳丸さんがCSRFの問題を出していたので考えてみる
-問題：間違ったCSRF対策～初級編～
-解答
-https://github.com/yaasita/tokumaru-csrf-20181110
-なんか最初はXMLHttpRequestとか駆使して、chgmailform.phpからtoken引っこ抜こうと思ったんだけど
-CORSとかCORBで無理なんすよね
-でよく見るとtokenが無いときの考慮がないよってやつでした
-まとめ 最近のブラウザは良く出来てる</description>
     </item>
     
   </channel>
