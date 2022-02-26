@@ -3,24 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2022-02-23T15:25:52+09:00</lastmod>
+    <lastmod>2022-02-26T23:16:10+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/archives/2022/</loc>
-    <lastmod>2022-02-23T15:25:52+09:00</lastmod>
+    <lastmod>2022-02-26T23:16:10+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/archives/</loc>
-    <lastmod>2022-02-23T15:25:52+09:00</lastmod>
+    <lastmod>2022-02-26T23:16:10+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/categories/</loc>
-    <lastmod>2022-02-23T15:25:52+09:00</lastmod>
+    <lastmod>2022-02-26T23:16:10+09:00</lastmod>
   </url><url>
-    <loc>https://yaasita.github.io/2022/02/23/ipv4-ipv6/</loc>
-    <lastmod>2022-02-23T15:25:52+09:00</lastmod>
+    <loc>https://yaasita.github.io/categories/linux/</loc>
+    <lastmod>2022-02-26T23:16:10+09:00</lastmod>
+  </url><url>
+    <loc>https://yaasita.github.io/2022/02/26/ipv6-tempaddr/</loc>
+    <lastmod>2022-02-26T23:16:10+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/categories/net/</loc>
-    <lastmod>2022-02-23T15:25:52+09:00</lastmod>
+    <lastmod>2022-02-26T23:16:10+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/post/</loc>
+    <lastmod>2022-02-26T23:16:10+09:00</lastmod>
+  </url><url>
+    <loc>https://yaasita.github.io/2022/02/23/ipv4-ipv6/</loc>
     <lastmod>2022-02-23T15:25:52+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/categories/program/</loc>
@@ -33,9 +39,6 @@
     <lastmod>2022-01-26T02:50:46+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/archives/2021/</loc>
-    <lastmod>2021-12-12T06:03:17+09:00</lastmod>
-  </url><url>
-    <loc>https://yaasita.github.io/categories/linux/</loc>
     <lastmod>2021-12-12T06:03:17+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/categories/soft/</loc>

@@ -6,7 +6,23 @@
     <description>Recent content in linux on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 12 Dec 2021 06:03:17 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Feb 2022 23:16:10 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linuxでipv6の一時アドレス</title>
+      <link>https://yaasita.github.io/2022/02/26/ipv6-tempaddr/</link>
+      <pubDate>Sat, 26 Feb 2022 23:16:10 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/02/26/ipv6-tempaddr/</guid>
+      <description>systemd-networkdの設定にIPv6PrivacyExtensions足せばOK
+(対応するカーネルパラメータ net.ipv6.conf.xxx.use_tempaddr は自動的に設定される)
+[Network] Address=192.168.0.2/24 Gateway=192.168.0.1 IPv6PrivacyExtensions=yes  temp_valid_lft
+と
+temp_prefered_lft
+については sysctlで設定すること
+参考リンク
+ https://wiki.archlinux.jp/index.php/IPv6 http://dr.slump.jp/IPv6/rfc3041/ https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt  </description>
+    </item>
+    
     <item>
       <title>systemd-nspawnのtmpディレクトリ</title>
       <link>https://yaasita.github.io/2021/12/12/systemd-nspawn-tmpdir/</link>
@@ -305,18 +321,6 @@ apt-get upgrade  ポイントは apt-get update, apt-get upgrade --download-only
       <description>systemd-nspawn使ってて
 なんか /etc/machine-id　ないよって言われたとき
 dbus-uuidgen &amp;gt; root/etc/machine-id  </description>
-    </item>
-    
-    <item>
-      <title>AWSへVMイメージごと移動する手順</title>
-      <link>https://yaasita.github.io/2016/11/20/aws-vm-import/</link>
-      <pubDate>Sun, 20 Nov 2016 20:45:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2016/11/20/aws-vm-import/</guid>
-      <description>手順 img作る前に以下を確認しておく
- DHCPを有効にしている iptablesを無効に rawでイメージを作っておく  次に以下のコマンドでインポート
-# hoge-importってバケット作ったとする # 最初にimgをS3に上げておく aws s3 cp hoge.img s3://hoge-import/hoge.img # IAM周りを準備 aws iam create-role --role-name vmimport --assume-role-policy-document file://trust-policy.json aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json # インポートタスク開始 aws ec2 import-image --description &amp;quot;hoge server&amp;quot; --disk-containers file://containers.json # 進捗見る aws ec2 describe-import-image-tasks  使ったjsonファイル
- 参考リンク  http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats http://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html  </description>
     </item>
     
   </channel>
