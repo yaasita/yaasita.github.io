@@ -6,7 +6,20 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 01 Mar 2022 02:34:41 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Mar 2022 03:38:37 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ipv4とipv6 Happy Eyeballs</title>
+      <link>https://yaasita.github.io/2022/03/18/ipv4-ipv6-happy-eyeballs.md/</link>
+      <pubDate>Fri, 18 Mar 2022 03:38:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/03/18/ipv4-ipv6-happy-eyeballs.md/</guid>
+      <description>Happy EyeballsはTCPコネクションを先に確立させた方が勝つのでnginxのechoモジュールでsleepとかは意味ない
+初回はどちらか一方でも繋がれば遅延は感じないが
+一回接続に成功した場合はipv4を使うのかipv6を使うのかキャッシュしている状態なので切り替えに時間がかかる
+例えばipv6で繋がっていたサイト側でipv6をドロップさせると
+ip6tables -A INPUT -p tcp --dport 443 -j DROP  数秒遅延した後にipv4で接続する</description>
+    </item>
+    
     <item>
       <title>linuxのipv6一時アドレス2</title>
       <link>https://yaasita.github.io/2022/03/01/ipv6-tmpaddr/</link>
@@ -281,18 +294,6 @@ CloudTrailでログを有効化してからお使いください
 あと、Chunked Transferみたいな仕組みで進捗を返すみたいなAPIは難しいかもしれない
 以下のようなプログラムでちょっとずつレスポンス返しても、バッファリングされてるみたいで、最後ドバっと返ってきた
  </description>
-    </item>
-    
-    <item>
-      <title>AlwaysOnSSL終了のお知らせ</title>
-      <link>https://yaasita.github.io/2019/02/28/alwaysonssl/</link>
-      <pubDate>Thu, 28 Feb 2019 01:44:13 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/02/28/alwaysonssl/</guid>
-      <description>無料のSSL証明書AlwaysOnSSLがセキュリティ問題を指摘されてシャットダウンしたぽい
-AlwaysOnSSL web security issues
-S/MIME手に入るので良かったんだけどなぁ・・・
-前回</description>
     </item>
     
   </channel>
