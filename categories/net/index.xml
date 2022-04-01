@@ -6,7 +6,16 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 18 Mar 2022 03:38:37 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Apr 2022 04:11:55 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NURO光のF660AルーターでSPIを有効にする</title>
+      <link>https://yaasita.github.io/2022/04/02/nuro-ipv6-spi/</link>
+      <pubDate>Sat, 02 Apr 2022 04:11:55 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/04/02/nuro-ipv6-spi/</guid>
+      <description>これを有効にしてもpingには反応してしまうので注意</description>
+    </item>
+    
     <item>
       <title>ipv4とipv6 Happy Eyeballs</title>
       <link>https://yaasita.github.io/2022/03/18/ipv4-ipv6-happy-eyeballs.md/</link>
@@ -278,21 +287,6 @@ rttは自宅から該当サーバーまでのpingしたときの平均値
       <description>AWS S3の署名バージョン騒動
 大丈夫ぽいけど一応調べた時につかったスクリプト
 CloudTrailでログを有効化してからお使いください
- </description>
-    </item>
-    
-    <item>
-      <title>Cloud Runがすごく良い</title>
-      <link>https://yaasita.github.io/2019/05/29/cloud-run/</link>
-      <pubDate>Wed, 29 May 2019 21:42:23 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/05/29/cloud-run/</guid>
-      <description>GCPのCloud Runがめっちゃ便利
-覚えなきゃいけないルールは2つ
- Dockerにする事 環境変数 $PORT のポート番号でlistenしてレスポンスを返す事  これだけ
-コマンドとかはこの辺見ればすぐできると思います
-あと、Chunked Transferみたいな仕組みで進捗を返すみたいなAPIは難しいかもしれない
-以下のようなプログラムでちょっとずつレスポンス返しても、バッファリングされてるみたいで、最後ドバっと返ってきた
  </description>
     </item>
     

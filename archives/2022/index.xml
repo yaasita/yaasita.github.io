@@ -6,7 +6,16 @@
     <description>Recent content in 2022 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 18 Mar 2022 03:38:37 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2022/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Apr 2022 04:11:55 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2022/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NURO光のF660AルーターでSPIを有効にする</title>
+      <link>https://yaasita.github.io/2022/04/02/nuro-ipv6-spi/</link>
+      <pubDate>Sat, 02 Apr 2022 04:11:55 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/04/02/nuro-ipv6-spi/</guid>
+      <description>これを有効にしてもpingには反応してしまうので注意</description>
+    </item>
+    
     <item>
       <title>ipv4とipv6 Happy Eyeballs</title>
       <link>https://yaasita.github.io/2022/03/18/ipv4-ipv6-happy-eyeballs.md/</link>

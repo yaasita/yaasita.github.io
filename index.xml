@@ -6,7 +6,16 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 18 Mar 2022 03:38:37 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 02 Apr 2022 04:11:55 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>NURO光のF660AルーターでSPIを有効にする</title>
+      <link>https://yaasita.github.io/2022/04/02/nuro-ipv6-spi/</link>
+      <pubDate>Sat, 02 Apr 2022 04:11:55 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/04/02/nuro-ipv6-spi/</guid>
+      <description>これを有効にしてもpingには反応してしまうので注意</description>
+    </item>
+    
     <item>
       <title>ipv4とipv6 Happy Eyeballs</title>
       <link>https://yaasita.github.io/2022/03/18/ipv4-ipv6-happy-eyeballs.md/</link>
@@ -295,33 +304,6 @@ androidは10まで上がりました</description>
 こちらの手順に従えば、アップロードファイルと、メッセージのjsonが手に入る
 https://support.skype.com/ja/faq/FA34894/skype-huairutochiyatsutolu-li-woekusupotosurufang-fa
 よく見ると、結構昔の奴も入ってるので昔からサーバー側でログを取ってたみたいね</description>
-    </item>
-    
-    <item>
-      <title>mpdとncmpc</title>
-      <link>https://yaasita.github.io/2021/03/20/mpd-ncmpc/</link>
-      <pubDate>Sat, 20 Mar 2021 14:39:05 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/03/20/mpd-ncmpc/</guid>
-      <description>mpd と ncmpc の設定メモ
-インストール apt install mpd ncmpc  セットアップ /etc/mpd.confの設定
-http経由で聞くのでoutputはhttpにします
- ~/.config/ncmpc/config
-タグで管理してないのでファイル名だけ表示します
-host = &amp;quot;127.0.0.1&amp;quot; port = 6600 list-format = &amp;quot;%file%&amp;quot; status-format = &amp;quot;%file%&amp;quot; text-editor = vim  /var/lib/mpd/music/ に音楽ファイルを入れる(symlinkでも可)
-ncmpcで起動 Ctrl-UでDBのアップデート
-歌詞表示 歌詞表示するなら ncmpcpp の方が楽ですが、最初からvimキーバインドなncmpcが好きなのでこちらを使っています
-方法は以下の記事通り歌詞検索用のスクリプトを配置するだけ
-https://www.use-strict.de/using-ncmpc-to-fetch-and-read-lyrics.html
-debianのパッケージは以下のオプションでビルドされてるので
--Dlyrics_plugin_dir=&amp;quot;/usr/lib/ncmpc/lyrics/&amp;quot;  /usr/lib/ncmpc/lyrics/01-test.sh
-みたいなファイルをおきます
-これが歌詞検索の際に実行されます
-こんなファイルを置いて
-#!/bin/bash echo &amp;quot;$@&amp;quot; echo &amp;quot;あいうおえ&amp;quot;  artist, titleを設定
-eyeD3 -a backnumber hoge.mp3 eyeD3 -t 高嶺の花子さん takane.mp3  すると第一引数にartist, 第二引数にtitleが入ります
-
-この画面で、Sを押すと歌詞を~/.cache/ncmpc/lyrics/保存できたりもします</description>
     </item>
     
   </channel>
