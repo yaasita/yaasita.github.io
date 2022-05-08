@@ -6,7 +6,20 @@
     <description>Recent content in 2022 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 02 Apr 2022 04:11:55 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2022/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 09 May 2022 03:24:42 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2022/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Power Automateのtips</title>
+      <link>https://yaasita.github.io/2022/05/09/power-automate-tips/</link>
+      <pubDate>Mon, 09 May 2022 03:24:42 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/05/09/power-automate-tips/</guid>
+      <description>Desktop向けのPower Automateのちょっとしたことメモ
+Dosコマンドでchromeを立ち上げる 操作する対象じゃなくて、そのままchromeをキックすればいい場合の設定方法
+chorme.exeまでをフルパスでダブルクォートで囲む方法は上手くいかなかった
+曜日取得 powershellでコマンド実行して
+末尾に改行が入ってしまうので取り除く</description>
+    </item>
+    
     <item>
       <title>NURO光のF660AルーターでSPIを有効にする</title>
       <link>https://yaasita.github.io/2022/04/02/nuro-ipv6-spi/</link>

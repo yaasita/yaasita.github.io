@@ -3,24 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2022-04-02T04:11:55+09:00</lastmod>
+    <lastmod>2022-05-09T03:24:42+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/archives/2022/</loc>
-    <lastmod>2022-04-02T04:11:55+09:00</lastmod>
+    <lastmod>2022-05-09T03:24:42+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/archives/</loc>
-    <lastmod>2022-04-02T04:11:55+09:00</lastmod>
+    <lastmod>2022-05-09T03:24:42+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/categories/</loc>
-    <lastmod>2022-04-02T04:11:55+09:00</lastmod>
+    <lastmod>2022-05-09T03:24:42+09:00</lastmod>
+  </url><url>
+    <loc>https://yaasita.github.io/post/</loc>
+    <lastmod>2022-05-09T03:24:42+09:00</lastmod>
+  </url><url>
+    <loc>https://yaasita.github.io/2022/05/09/power-automate-tips/</loc>
+    <lastmod>2022-05-09T03:24:42+09:00</lastmod>
+  </url><url>
+    <loc>https://yaasita.github.io/categories/program/</loc>
+    <lastmod>2022-05-09T03:24:42+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/categories/net/</loc>
     <lastmod>2022-04-02T04:11:55+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/2022/04/02/nuro-ipv6-spi/</loc>
-    <lastmod>2022-04-02T04:11:55+09:00</lastmod>
-  </url><url>
-    <loc>https://yaasita.github.io/post/</loc>
     <lastmod>2022-04-02T04:11:55+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/2022/03/18/ipv4-ipv6-happy-eyeballs.md/</loc>
@@ -37,9 +43,6 @@
   </url><url>
     <loc>https://yaasita.github.io/2022/02/23/ipv4-ipv6/</loc>
     <lastmod>2022-02-23T15:25:52+09:00</lastmod>
-  </url><url>
-    <loc>https://yaasita.github.io/categories/program/</loc>
-    <lastmod>2022-02-12T01:24:48+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/2022/02/12/tls-report-check/</loc>
     <lastmod>2022-02-12T01:24:48+09:00</lastmod>
