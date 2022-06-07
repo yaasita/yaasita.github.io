@@ -6,7 +6,19 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 09 May 2022 03:24:42 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Jun 2022 02:37:21 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>budibaseをmicrok8sで動かす</title>
+      <link>https://yaasita.github.io/2022/06/08/budibase/</link>
+      <pubDate>Wed, 08 Jun 2022 02:37:21 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/06/08/budibase/</guid>
+      <description>budibaseをローカルのmicrok8sで動かしたときのメモ
+# 必要なプラグインをON microk8s.enable dns:192.168.0.10 microk8s.enable ingress microk8s.enable metallb # 192.168.0.150-192.168.0.180 みたいに指定 microk8s.enable storage # kubectlで動かせるように microk8s.config &amp;gt; ~/.kube/config # インストール helm show values budibase/budibase &amp;gt; config.yaml # hostを指定 vim config.yaml helm install --create-namespace --namespace budibase budibase budibase/budibase -f config.yaml  あとはingress部分を作る
+# 証明書を作って kubectl create secret tls &#39;cloud.yaasita.net&#39; --key=privkey.pem --cert=fullchain.pem  ingressをこんな感じで作っておく
+ </description>
+    </item>
+    
     <item>
       <title>Power Automateのtips</title>
       <link>https://yaasita.github.io/2022/05/09/power-automate-tips/</link>
@@ -292,19 +304,6 @@ https://www.youtube.com/watch?v=iNSp33TT3tc
 実行例
 ./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ 1234   こんな感じで適度にsleep入れて取得してます
 #!/bin/bash set -eux save_file=/tmp/save_num already_get_number=$(cat $save_file) for ((i=$already_get_number; i &amp;lt; $already_get_number + 100; i++));do ./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ $i sleep 1 done echo $i &amp;gt; $save_file  </description>
-    </item>
-    
-    <item>
-      <title>スマホ変えた</title>
-      <link>https://yaasita.github.io/2021/04/17/sumaho/</link>
-      <pubDate>Sat, 17 Apr 2021 22:56:59 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/04/17/sumaho/</guid>
-      <description>SH-M12S AQUOS sense3
-ってやつに変えました
-https://jp.sharp/products/shm12/
-おサイフケータイ対応なので、モバイルPASMOにもしました
-androidは10まで上がりました</description>
     </item>
     
   </channel>
