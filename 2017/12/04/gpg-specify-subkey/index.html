@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>gpgでサブキーを指定して暗号化 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="gpgでサブキーを指定して暗号化" />
@@ -16,14 +16,14 @@
 こんな感じの状態ね
 pub rsa2048 2017-04-09 [SC] XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX uid [ultimate] yamasita &lt;yamasita@example.net&gt; sub rsa2048 2017-04-09 [E] sub elg2048 2017-12-04 [E] んで、普通にgpg -e で暗号化すると新しい elg2048 の方が使われてしまう
 rsa2048を使いたくなったらこんな感じでrsa2048の方のIDを指定して暗号化する
-gpg --recipient BBBBBBBBBBB12345! -v -e memo  IDは&ndash;edit-keysとかやれば見れるお
+gpg --recipient BBBBBBBBBBB12345! -v -e memo IDは&ndash;edit-keysとかやれば見れるお
 あと、注意点として副鍵は追加しても古い鍵はしばらく残しておくこと
 送信側がすぐ、新しい鍵を入れてくれるとも限らないし古い鍵で暗号化されたものを復号化できなくなる
 主鍵は、副鍵を署名するだけのものであって、副鍵の秘密鍵は取っておかなきゃいけないのです" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2017/12/04/gpg-specify-subkey/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2017-12-04T23:27:01&#43;09:00" />
-<meta property="article:modified_time" content="2017-12-04T23:27:01&#43;09:00" />
+<meta property="article:published_time" content="2017-12-04T23:27:01+09:00" />
+<meta property="article:modified_time" content="2017-12-04T23:27:01+09:00" />
 
 
     
@@ -64,7 +64,7 @@ if (!doNotTrack) {
     <p>gpgで副鍵(subkey)を新しく作ったとする(addkey)<br>
 でいざ使うと思ったら、やむ負えない事情により古い副鍵で暗号化しなきゃいけなくなったとする</p>
 <p>こんな感じの状態ね</p>
-<pre><code>pub   rsa2048 2017-04-09 [SC]
+<pre tabindex="0"><code>pub   rsa2048 2017-04-09 [SC]
       XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
       uid           [ultimate] yamasita &lt;yamasita@example.net&gt;
       sub   rsa2048 2017-04-09 [E]
@@ -118,7 +118,7 @@ rsa2048を使いたくなったらこんな感じでrsa2048の方のIDを指定�
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -223,7 +223,7 @@ rsa2048を使いたくなったらこんな感じでrsa2048の方のIDを指定�
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -314,7 +314,7 @@ rsa2048を使いたくなったらこんな感じでrsa2048の方のIDを指定�
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

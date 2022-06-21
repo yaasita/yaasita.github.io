@@ -29,7 +29,7 @@ Building sites … WARN 2019/12/23 17:34:34 In the next Hugo version (0.58.0) we
       
       <guid>https://yaasita.github.io/2019/12/23/chromebook/</guid>
       <description>ASUS の C434TA-AI0084 を買ったのでレビュー
-chromeOS  起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある  解除がちょっと遅い10秒くらい待たされる   chromeの複数ユーザー機能が使えない  多重ログイン機能はあるけどちょっと微妙  別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能      ディスプレイ  タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 起動毎にバックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗  テザリング  Moto E5 とbluetoothでのテザリングが出来なかった  とりあえずUSBテザリングは刺すだけで使えたので良しとしてます    キーボード  Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない ←Alt + 明るさキーで消せました  Androidアプリ  ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない  Linux環境 OS  Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり  バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい   USB共有機能あり /opt/google/cros-containers/bin/.</description>
+chromeOS 起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある 解除がちょっと遅い10秒くらい待たされる chromeの複数ユーザー機能が使えない 多重ログイン機能はあるけどちょっと微妙 別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能 ディスプレイ タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 起動毎にバックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗 テザリング Moto E5 とbluetoothでのテザリングが出来なかった とりあえずUSBテザリングは刺すだけで使えたので良しとしてます キーボード Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない ←Alt + 明るさキーで消せました Androidアプリ ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない Linux環境 OS Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい USB共有機能あり /opt/google/cros-containers/bin/.. というプロセスが動いてる以外は普通のLinux, systemdも問題なし ファイル共有 右クリックから簡単に共有可能 Linux環境側では/mnt/chromeos に現れる /mnt/chromeos以下はパーミッションやownerが狂わないように制限されてるのでトラブルになることは無いと思う デフォルトでファイルアプリを使ってchromeOS側からLinux側のhomeディレクトリは自由に読み書き可能 なので共有ファイル追加しなくても特段問題なし ネットワーク こんなスクリプト だと chromeOS側から 127.0.0.1:3000 にアクセスできる でも、なぜかDockerで docker run -p 3000:80 nginx とかやって 127.</description>
     </item>
     
     <item>
@@ -40,13 +40,12 @@ chromeOS  起動もアプリの動作も全体的に速くてとても良い sma
       <guid>https://yaasita.github.io/2019/12/08/service-account-in-cf/</guid>
       <description>Cloud Functionsからサービスアカウントのアクセストークンをどうやって取るの？と疑問に思ったので調べた
 Google Compute Engineと同じ取り方でOK
-&amp;quot;use strict&amp;quot;; const fetch = require(&amp;quot;node-fetch&amp;quot;); exports.handler = async (req, res) =&amp;gt; { const url = &amp;quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&amp;quot; + &amp;quot;[サービスアカウント名]/token&amp;quot;; const result = await fetch(url, { method: &amp;quot;GET&amp;quot;, headers: { &amp;quot;Metadata-Flavor&amp;quot;: &amp;quot;Google&amp;quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&amp;quot;OK&amp;quot;); };  なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
-
+&amp;quot;use strict&amp;quot;; const fetch = require(&amp;quot;node-fetch&amp;quot;); exports.handler = async (req, res) =&amp;gt; { const url = &amp;quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&amp;quot; + &amp;quot;[サービスアカウント名]/token&amp;quot;; const result = await fetch(url, { method: &amp;quot;GET&amp;quot;, headers: { &amp;quot;Metadata-Flavor&amp;quot;: &amp;quot;Google&amp;quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&amp;quot;OK&amp;quot;); }; なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
 まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &amp;ldquo;Function Identity&amp;quot;とかクリックするとちゃんと日本語版あるんですよね
 なんかメニューがバグってるのかな・・・
 とりあえず英語版から探すのをオススメします&amp;hellip;
 参考リンク
- 関数ID Compute Metadata Server   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].</description>
+関数ID Compute Metadata Server </description>
     </item>
     
     <item>
@@ -56,12 +55,12 @@ Google Compute Engineと同じ取り方でOK
       
       <guid>https://yaasita.github.io/2019/11/14/gcp-access-token/</guid>
       <description>ほとんどのサービスは クライアントライブラリ を使えば
-export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json  みたいに環境変数を設定するだけで良いのだが、Cloud Build 等は access tokenを取得して叩く必要がある
+export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json みたいに環境変数を設定するだけで良いのだが、Cloud Build 等は access tokenを取得して叩く必要がある
 という事でGCPのサービスアカウントからアクセストークンを取得するコード
- スコープ一覧はこちら
+スコープ一覧はこちら
 https://developers.google.com/identity/protocols/googlescopes
 アクセストークンのテストは DLP とかがお手軽で良いかな
-参考リンク  jose API Document Using OAuth 2.0 for Server to Server Applications  </description>
+参考リンク jose API Document Using OAuth 2.0 for Server to Server Applications </description>
     </item>
     
     <item>
@@ -85,7 +84,7 @@ https://developers.google.com/identity/protocols/googlescopes
 方針はユークリッドの互除法で最大公約数を出して、最大公約数を素因数分解
 存在する素数の数+1(今回は1もお互いに素の数として含めるため)でOKぽい
 perlで書いてみる
- 解説動画</description>
+解説動画</description>
     </item>
     
     <item>
@@ -97,15 +96,15 @@ perlで書いてみる
       <description>systemdタイマーがちゃんと動いてるか確認したほうが良いよというお話
 systemctl list-timers --allコマンドで一覧が見れるあれです
 debian10だと /etc/cron.daily にあるスクリプトでこんな感じに書かれてたら、systemd timerの方を使ってる
-if [ -d /run/systemd/system ]; then exit 0 fi  前回 と同様にノートパソコンのバッテリー稼働と誤って判断されることに起因する問題
+if [ -d /run/systemd/system ]; then exit 0 fi 前回 と同様にノートパソコンのバッテリー稼働と誤って判断されることに起因する問題
 例えばlogrotateとかみると
-systemctl cat logrotate  こんな一文がある
-ConditionACPower=true  これはバッテリー駆動の時は動かさないって意味らしいんだけど、どうも判定が狂ってるみたいでずっと実行されなかった
+systemctl cat logrotate こんな一文がある
+ConditionACPower=true これはバッテリー駆動の時は動かさないって意味らしいんだけど、どうも判定が狂ってるみたいでずっと実行されなかった
 なので、以下のコマンドでoverride.conf作って判定を無効化した
-systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower=  というわけで
+systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower= というわけで
 cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
-journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  とりあえず分かった、バッテリー時の判定が入ってるtimer
- apt-daily-upgrade man-db logrotate anacron apt-daily  </description>
+journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot; とりあえず分かった、バッテリー時の判定が入ってるtimer
+apt-daily-upgrade man-db logrotate anacron apt-daily </description>
     </item>
     
     <item>
@@ -118,7 +117,8 @@ journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;
 GCPの各リージョンからアクセスして試してみる
 rttは自宅から該当サーバーまでのpingしたときの平均値
 なのでISPによって全然違うと思うので参考値ということで
-   region bilibili crunchyroll rtt(ms)     asia-east1 (台湾) ng ok 60.149   asia-east2 (香港) ng ok 76.986   asia-northeast1 (東京) ng ok 29.624   asia-northeast2 (大阪) ng ok 37.401   asia-south1 (ムンバイ) ng ok 144.055   asia-southeast1 (シンガポール) ng ok 89.755   australia-southeast1 (シドニー) ng ok 122.193   europe-north1 (フィンランド) ng ok 256.714   europe-west1 (ベルギー) ng ok 229.</description>
+region bilibili crunchyroll rtt(ms) asia-east1 (台湾) ng ok 60.149 asia-east2 (香港) ng ok 76.986 asia-northeast1 (東京) ng ok 29.624 asia-northeast2 (大阪) ng ok 37.401 asia-south1 (ムンバイ) ng ok 144.055 asia-southeast1 (シンガポール) ng ok 89.755 australia-southeast1 (シドニー) ng ok 122.193 europe-north1 (フィンランド) ng ok 256.714 europe-west1 (ベルギー) ng ok 229.038 europe-west2 (ロンドン) ng ok 220.693 でここまでやってあとは変わらないだろうと思って以下のリージョンは試さなかった
+europe-west3 (フランクフルト) europe-west4 (オランダ) europe-west6 (チューリッヒ) northamerica-northeast1 (モントリオール) southamerica-east1 (サンパウロ) us-central1 (アイオワ) us-east1 (サウスカロライナ) us-east4 (北バージニア) us-west1 (オレゴン) us-west2 (ロサンゼルス) 結論 crunchyrollは適当なリージョンからでも、たとえ（日本リージョンでも)見れる</description>
     </item>
     
     <item>
@@ -131,10 +131,10 @@ rttは自宅から該当サーバーまでのpingしたときの平均値
 PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある
 そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる
 例えば、/etc/cron.daily/mlocate の場合
-if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi  こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
+if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
 んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
 このままだと永遠にlocateコマンドが使えないので、divertで退避させた
-dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power  おしまい</description>
+dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power おしまい</description>
     </item>
     
     <item>
@@ -145,7 +145,7 @@ dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s 
       <guid>https://yaasita.github.io/2019/08/15/sum-even-number/</guid>
       <description>「1から100の偶数の和を求めるワンライナー」まとめ
 perlでやってみる
-perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;eval&amp;quot;say @{[grep{$_%2==0}1..100]}&amp;quot;;&#39;  4つ思いついた
+perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;eval&amp;quot;say @{[grep{$_%2==0}1..100]}&amp;quot;;&#39; 4つ思いついた
 結論 simple is best</description>
     </item>
     
@@ -156,21 +156,20 @@ perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp
       
       <guid>https://yaasita.github.io/2019/08/14/ssl-capath/</guid>
       <description>中間証明書をどう設定するか問題
-postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&amp;rsquo;s Encryptの場合こんな感じ
+postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem Let&amp;rsquo;s Encryptの場合こんな感じ
 smtpd_tls_CAfileに中間証明書を指定する
 smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
 dovecot 10-ssl.conf
-ssl_ca = &amp;lt;/etc/letsencrypt/live/example.net/chain.pem  これはダメ
+ssl_ca = &amp;lt;/etc/letsencrypt/live/example.net/chain.pem これはダメ
 この設定はクライアント証明書用ですので
 正しくは、こんな感じに、まとめたやつを指定すればOK
-ssl_cert = &amp;lt;/etc/letsencrypt/live/example.net/fullchain.pem  apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
-SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem  dovecot同様に中間証明書もまとめて指定する
+ssl_cert = &amp;lt;/etc/letsencrypt/live/example.net/fullchain.pem apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
+SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem dovecot同様に中間証明書もまとめて指定する
 まとめ この問題はスマホのK-9 Mailでメール読もうとしたときに判明した
 (突然CertPathValidatorExceptionって怒られた)
 thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
-openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
+サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
+openssl s_client -connect example.org:465 -showcerts thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
     </item>
     
     <item>
@@ -183,8 +182,7 @@ openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認
 ベタベタしないので気にならない
 フマキラー SKIN VAPEってやつかな
 商品名はスキンベープミスト　200mlかも
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   そういや虫よけ剤に入ってるDEETって薬はなぜ虫が寄り付かないか謎らしい</description>
+そういや虫よけ剤に入ってるDEETって薬はなぜ虫が寄り付かないか謎らしい</description>
     </item>
     
     <item>
@@ -195,8 +193,7 @@ openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認
       <guid>https://yaasita.github.io/2019/06/25/s3v2/</guid>
       <description>AWS S3の署名バージョン騒動
 大丈夫ぽいけど一応調べた時につかったスクリプト
-CloudTrailでログを有効化してからお使いください
- </description>
+CloudTrailでログを有効化してからお使いください</description>
     </item>
     
     <item>
@@ -207,11 +204,10 @@ CloudTrailでログを有効化してからお使いください
       <guid>https://yaasita.github.io/2019/05/29/cloud-run/</guid>
       <description>GCPのCloud Runがめっちゃ便利
 覚えなきゃいけないルールは2つ
- Dockerにする事 環境変数 $PORT のポート番号でlistenしてレスポンスを返す事  これだけ
+Dockerにする事 環境変数 $PORT のポート番号でlistenしてレスポンスを返す事 これだけ
 コマンドとかはこの辺見ればすぐできると思います
 あと、Chunked Transferみたいな仕組みで進捗を返すみたいなAPIは難しいかもしれない
-以下のようなプログラムでちょっとずつレスポンス返しても、バッファリングされてるみたいで、最後ドバっと返ってきた
- </description>
+以下のようなプログラムでちょっとずつレスポンス返しても、バッファリングされてるみたいで、最後ドバっと返ってきた</description>
     </item>
     
     <item>
@@ -224,8 +220,7 @@ CloudTrailでログを有効化してからお使いください
 code_challenge_method=S256の場合は以下のような実装ロジックになる
 node.jsで書いた
 Oauth2のPKCE
-base64エンコードじゃなくてbase64urlエンコードなのが注意点
- </description>
+base64エンコードじゃなくてbase64urlエンコードなのが注意点</description>
     </item>
     
     <item>
@@ -235,8 +230,7 @@ base64エンコードじゃなくてbase64urlエンコードなのが注意点
       
       <guid>https://yaasita.github.io/2019/04/25/reiwa/</guid>
       <description>techrachoの記事
-perlも追加でお願いします
- </description>
+perlも追加でお願いします</description>
     </item>
     
     <item>
@@ -248,10 +242,10 @@ perlも追加でお願いします
       <description>前回の続き
 でctime変化しちゃってどうしたか？
 ファイルサイズとファイル名を取っておいて差分を作ることにした
- こんな感じのスクリプトで、ファイル名 + tab + ファイルサイズで保存する
+こんな感じのスクリプトで、ファイル名 + tab + ファイルサイズで保存する
 (厳密にやる場合はsha256とかで)
 そんで現在のファイルリストも取って、差分をとる
-diff -u previous.txt now.txt | egrep &amp;quot;^\+[^\+]&amp;quot; | perl -ple &#39;s/^\+//;s/\t.+//&#39; &amp;gt; tar.txt あとは-Tオプションで差分のファイルだけをtarで固める
+diff -u previous.txt now.txt | egrep &amp;#34;^\+[^\+]&amp;#34; | perl -ple &amp;#39;s/^\+//;s/\t.+//&amp;#39; &amp;gt; tar.txt あとは-Tオプションで差分のファイルだけをtarで固める
 tar -cvaf hoge.tgz -T tar.txt </description>
     </item>
     
@@ -267,11 +261,11 @@ tar -cvaf hoge.tgz -T tar.txt </description>
 ctimeの変化で気をつけなければいけないことはハードリンクによるバックアップ
 (rsync &amp;ndash;link-dest等)
 例えば、以下のようなファイルが存在し
-work/ `-- 1.txt  以下のコマンドを発行した場合
-tar -g resume -cvf work.tar work/  初回なので当然全部がバックアップされる
+work/ `-- 1.txt 以下のコマンドを発行した場合
+tar -g resume -cvf work.tar work/ 初回なので当然全部がバックアップされる
 このまま以下のコマンドを打てばディレクトリだけのバックアップになる(差分がないため)
-tar -g resume -cvf work.tar work/  しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう
-stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる  なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
+tar -g resume -cvf work.tar work/ しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう
+stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
 うまく増分バックアップができなくなる
 続き</description>
     </item>
@@ -286,11 +280,11 @@ stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.
 ワーニング潰し アップデートに伴い
 .Prev と .Nextが非推奨になったぽい マニュアル, コミット
 なのでこれはそれぞれ以下のように修正すればOK(意味が逆なので分かりにくいけど)
- .Prev =&amp;gt; .NextPage .Next =&amp;gt; .PrevPage  OGP設定 某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました
+.Prev =&amp;gt; .NextPage .Next =&amp;gt; .PrevPage OGP設定 某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました
 上手く表示できてますか？
 修正箇所
 themes/hugo-theme-geppaku/layouts/partials/header.html
- {{ if .IsHome }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Site.Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;website&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}&amp;quot; /&amp;gt; {{ else }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;article&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}{{ .Page.Dir }}&amp;quot; /&amp;gt; {{ end }} &amp;lt;meta property=&amp;quot;og:site_name&amp;quot; content=&amp;quot;{{ .</description>
+{{ if .IsHome }} &amp;lt;meta property=&amp;#34;og:title&amp;#34; content=&amp;#34;{{ .Site.Title }}&amp;#34; /&amp;gt; &amp;lt;meta property=&amp;#34;og:type&amp;#34; content=&amp;#34;website&amp;#34; /&amp;gt; &amp;lt;meta property=&amp;#34;og:url&amp;#34; content=&amp;#34;{{ .Site.BaseURL }}&amp;#34; /&amp;gt; {{ else }} &amp;lt;meta property=&amp;#34;og:title&amp;#34; content=&amp;#34;{{ .Title }}&amp;#34; /&amp;gt; &amp;lt;meta property=&amp;#34;og:type&amp;#34; content=&amp;#34;article&amp;#34; /&amp;gt; &amp;lt;meta property=&amp;#34;og:url&amp;#34; content=&amp;#34;{{ .Site.BaseURL }}{{ .Page.Dir }}&amp;#34; /&amp;gt; {{ end }} &amp;lt;meta property=&amp;#34;og:site_name&amp;#34; content=&amp;#34;{{ .</description>
     </item>
     
     <item>
@@ -300,7 +294,7 @@ themes/hugo-theme-geppaku/layouts/partials/header.html
       
       <guid>https://yaasita.github.io/2019/03/10/clipboard/</guid>
       <description>Windows10に標準でクリップボード履歴機能が付いたらしい
- https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html  Windows キー + Vで使えるようになる
+https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html Windows キー + Vで使えるようになる
 cliborの方が使いやすそうな気がするけど、しばらくこっち使ってみる</description>
     </item>
     

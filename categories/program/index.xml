@@ -28,8 +28,8 @@ chorme.exeまでをフルパスでダブルクォートで囲む方法は上手�
       <guid>https://yaasita.github.io/2022/02/12/tls-report-check/</guid>
       <description>SMTP-TLSRPTをチェックしてtotal-failure-session-countがゼロより大きいかチェックするスクリプト
 (対象はGoogleから貰うレポート)
- こんな感じでメールがあるディレクトリを指定する
-./index.js ~/Maildir/cur/  </description>
+こんな感じでメールがあるディレクトリを指定する
+./index.js ~/Maildir/cur/ </description>
     </item>
     
     <item>
@@ -44,11 +44,9 @@ chorme.exeまでをフルパスでダブルクォートで囲む方法は上手�
 これは音ゲーのスコアを表していてタイミングよく押せた場合はPERFECT, 早すぎたり遅すぎたりした場合はFAST, SLOWに計上される
 この内ミスの割合が正規分布と見なせるか検定する
 まず、CSVを右上のEnvironmentタブ =&amp;gt; Import Datasetから読み込む
-
 データをMISSの割合をデータフレームに追加
 library(dplyr) bandori &amp;lt;- bandori %&amp;gt;% mutate(MISS = (FAST + SLOW) / (PERFECT + FAST + SLOW) * 100) ヒストグラムと近似曲線を出す
-hist(bandori$MISS, breaks = seq(0, 20, 1)) dens &amp;lt;- density(bandori$MISS) lines(dens, lwd = 3, col = &amp;quot;blue&amp;quot;) 
-検定
+hist(bandori$MISS, breaks = seq(0, 20, 1)) dens &amp;lt;- density(bandori$MISS) lines(dens, lwd = 3, col = &amp;#34;blue&amp;#34;) 検定
 shapiro.test(bandori$MISS) 検定統計量とp値
 data: bandori$MISS W = 0.98162, p-value = 0.724 ここで注意なのはこの検定は帰無仮説が「正規分布している」なので
 棄却出来た場合は正規分布ではないと言えるが、
@@ -73,9 +71,9 @@ https://mobile.twitter.com/mattn_jp/status/1434205359573405696
 こんな感じの設定を追加しておいた
 cdコマンドを上書きして、@で始まってたら cd -P でsymlinkを辿るようにして、他は通常通り
 (これなら補完候補も足さなくてOK)
-export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 }  あと、bookmarkへの追加もコマンドにしておく
+export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 } あと、bookmarkへの追加もコマンドにしておく
 bookmarkしたいディレクトリに移動してbookmarkコマンドでsymlink作るようにしておく
-function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) }  </description>
+function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) } </description>
     </item>
     
     <item>
@@ -87,8 +85,8 @@ function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(
       <description>readlineの書き方
 https://nodejs.org/api/readline.html
 こうやって書くより
- const rl = readline.createInterface({ // ... }); for await (const line of rl) { // Each line in the readline input will be successively available here as // `line`. } こっちの方がメモリ効率が良さそう
- await new Promise((resolv, reject) =&amp;gt; { rl.on(&amp;quot;line&amp;quot;, (line) =&amp;gt; { // 処理 }); rl.on(&amp;quot;close&amp;quot;, () =&amp;gt; { resolv(); }); }); 詳しくは調べてないけど、巨大ファイルだと
+const rl = readline.createInterface({ // ... }); for await (const line of rl) { // Each line in the readline input will be successively available here as // `line`. } こっちの方がメモリ効率が良さそう
+await new Promise((resolv, reject) =&amp;gt; { rl.on(&amp;#34;line&amp;#34;, (line) =&amp;gt; { // 処理 }); rl.on(&amp;#34;close&amp;#34;, () =&amp;gt; { resolv(); }); }); 詳しくは調べてないけど、巨大ファイルだと
 FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory `` が頻発する </description>
     </item>
     
@@ -102,8 +100,7 @@ FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaS
 https://atcoder.jp/contests/abc202/tasks
 解説
 https://www.youtube.com/watch?v=iNSp33TT3tc
-ポイントは use bigint; を指定しないと溢れて浮動小数点になってしまう
- </description>
+ポイントは use bigint; を指定しないと溢れて浮動小数点になってしまう</description>
     </item>
     
     <item>
@@ -116,8 +113,8 @@ https://www.youtube.com/watch?v=iNSp33TT3tc
 テキストデータはローカルに保存することにした
 最初の投稿から何番目を指定することで、ディレクトリの年別ディレクトリに保存します
 実行例
-./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ 1234   こんな感じで適度にsleep入れて取得してます
-#!/bin/bash set -eux save_file=/tmp/save_num already_get_number=$(cat $save_file) for ((i=$already_get_number; i &amp;lt; $already_get_number + 100; i++));do ./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ $i sleep 1 done echo $i &amp;gt; $save_file  </description>
+./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ 1234 こんな感じで適度にsleep入れて取得してます
+#!/bin/bash set -eux save_file=/tmp/save_num already_get_number=$(cat $save_file) for ((i=$already_get_number; i &amp;lt; $already_get_number + 100; i++));do ./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ $i sleep 1 done echo $i &amp;gt; $save_file </description>
     </item>
     
     <item>
@@ -127,7 +124,7 @@ https://www.youtube.com/watch?v=iNSp33TT3tc
       
       <guid>https://yaasita.github.io/2020/08/31/maildir-to-gmail/</guid>
       <description>IMAPのAPPENDコマンドでmaildir形式のファイルをGmailに送る
-#!/usr/bin/env node &amp;quot;use strict&amp;quot;; const simpleParser = require(&amp;quot;mailparser&amp;quot;).simpleParser; const { ImapFlow } = require(&amp;quot;imapflow&amp;quot;); const client = new ImapFlow({ host: &amp;quot;imap.gmail.com&amp;quot;, port: 993, secure: true, auth: { user: &amp;quot;hoge@gmail.com&amp;quot;, pass: &amp;quot;password&amp;quot;, }, }); const fs = require(&amp;quot;fs&amp;quot;); (async () =&amp;gt; { const mail = fs.readFileSync( process.argv[2], &amp;quot;utf8&amp;quot; ); const parsed = await simpleParser(mail); await client.connect(); await client.append(&amp;quot;INBOX&amp;quot;, mail, [&amp;quot;\\Seen&amp;quot;], parsed.date); await client.logout(); })().catch((e) =&amp;gt; { console.log(e); process.exit(1); });  </description>
+#!/usr/bin/env node &amp;quot;use strict&amp;quot;; const simpleParser = require(&amp;quot;mailparser&amp;quot;).simpleParser; const { ImapFlow } = require(&amp;quot;imapflow&amp;quot;); const client = new ImapFlow({ host: &amp;quot;imap.gmail.com&amp;quot;, port: 993, secure: true, auth: { user: &amp;quot;hoge@gmail.com&amp;quot;, pass: &amp;quot;password&amp;quot;, }, }); const fs = require(&amp;quot;fs&amp;quot;); (async () =&amp;gt; { const mail = fs.readFileSync( process.argv[2], &amp;quot;utf8&amp;quot; ); const parsed = await simpleParser(mail); await client.connect(); await client.append(&amp;quot;INBOX&amp;quot;, mail, [&amp;quot;\\Seen&amp;quot;], parsed.date); await client.logout(); })().catch((e) =&amp;gt; { console.log(e); process.exit(1); }); </description>
     </item>
     
     <item>
@@ -141,7 +138,7 @@ https://www.youtube.com/watch?v=iNSp33TT3tc
 スクリプト こんなスクリプトを書いた
 使い方はREADME.md参照
 https://github.com/yaasita/ssh-keys-manager
-その他  使えるならsshの証明書認証も検討した方が良いかも ssh -F でconfig指定できるけど、~/.ssh/configに置いたときと挙動が違うのでスクリプト内にconfig入れる場合は注意  </description>
+その他 使えるならsshの証明書認証も検討した方が良いかも ssh -F でconfig指定できるけど、~/.ssh/configに置いたときと挙動が違うのでスクリプト内にconfig入れる場合は注意 </description>
     </item>
     
     <item>
@@ -151,8 +148,7 @@ https://github.com/yaasita/ssh-keys-manager
       
       <guid>https://yaasita.github.io/2020/04/28/rawpostdata/</guid>
       <description>multipart/form-dataでPOSTされた奴を、処理するCloud functionsを書いてて必要になったので
- 呼び出し側はこんな感じでやってる
- </description>
+呼び出し側はこんな感じでやってる</description>
     </item>
     
     <item>
@@ -163,8 +159,7 @@ https://github.com/yaasita/ssh-keys-manager
       <guid>https://yaasita.github.io/2020/01/07/check-github-pages/</guid>
       <description>どのリポジトリがGithub Pagesの設定がされているか？
 調べたくなったので・・・
-Github pagesの設定されてるリポジトリ一覧を簡単に確認できればいいのに・・・
- </description>
+Github pagesの設定されてるリポジトリ一覧を簡単に確認できればいいのに・・・</description>
     </item>
     
     <item>
@@ -175,13 +170,12 @@ Github pagesの設定されてるリポジトリ一覧を簡単に確認でき�
       <guid>https://yaasita.github.io/2019/12/08/service-account-in-cf/</guid>
       <description>Cloud Functionsからサービスアカウントのアクセストークンをどうやって取るの？と疑問に思ったので調べた
 Google Compute Engineと同じ取り方でOK
-&amp;quot;use strict&amp;quot;; const fetch = require(&amp;quot;node-fetch&amp;quot;); exports.handler = async (req, res) =&amp;gt; { const url = &amp;quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&amp;quot; + &amp;quot;[サービスアカウント名]/token&amp;quot;; const result = await fetch(url, { method: &amp;quot;GET&amp;quot;, headers: { &amp;quot;Metadata-Flavor&amp;quot;: &amp;quot;Google&amp;quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&amp;quot;OK&amp;quot;); };  なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
-
+&amp;quot;use strict&amp;quot;; const fetch = require(&amp;quot;node-fetch&amp;quot;); exports.handler = async (req, res) =&amp;gt; { const url = &amp;quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&amp;quot; + &amp;quot;[サービスアカウント名]/token&amp;quot;; const result = await fetch(url, { method: &amp;quot;GET&amp;quot;, headers: { &amp;quot;Metadata-Flavor&amp;quot;: &amp;quot;Google&amp;quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&amp;quot;OK&amp;quot;); }; なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
 まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &amp;ldquo;Function Identity&amp;quot;とかクリックするとちゃんと日本語版あるんですよね
 なんかメニューがバグってるのかな・・・
 とりあえず英語版から探すのをオススメします&amp;hellip;
 参考リンク
- 関数ID Compute Metadata Server   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].</description>
+関数ID Compute Metadata Server </description>
     </item>
     
     <item>
@@ -191,12 +185,12 @@ Google Compute Engineと同じ取り方でOK
       
       <guid>https://yaasita.github.io/2019/11/14/gcp-access-token/</guid>
       <description>ほとんどのサービスは クライアントライブラリ を使えば
-export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json  みたいに環境変数を設定するだけで良いのだが、Cloud Build 等は access tokenを取得して叩く必要がある
+export GOOGLE_APPLICATION_CREDENTIALS=/path/to/service-account.json みたいに環境変数を設定するだけで良いのだが、Cloud Build 等は access tokenを取得して叩く必要がある
 という事でGCPのサービスアカウントからアクセストークンを取得するコード
- スコープ一覧はこちら
+スコープ一覧はこちら
 https://developers.google.com/identity/protocols/googlescopes
 アクセストークンのテストは DLP とかがお手軽で良いかな
-参考リンク  jose API Document Using OAuth 2.0 for Server to Server Applications  </description>
+参考リンク jose API Document Using OAuth 2.0 for Server to Server Applications </description>
     </item>
     
     <item>
@@ -209,7 +203,7 @@ https://developers.google.com/identity/protocols/googlescopes
 方針はユークリッドの互除法で最大公約数を出して、最大公約数を素因数分解
 存在する素数の数+1(今回は1もお互いに素の数として含めるため)でOKぽい
 perlで書いてみる
- 解説動画</description>
+解説動画</description>
     </item>
     
     <item>
@@ -220,7 +214,7 @@ perlで書いてみる
       <guid>https://yaasita.github.io/2019/08/15/sum-even-number/</guid>
       <description>「1から100の偶数の和を求めるワンライナー」まとめ
 perlでやってみる
-perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;eval&amp;quot;say @{[grep{$_%2==0}1..100]}&amp;quot;;&#39;  4つ思いついた
+perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;eval&amp;quot;say @{[grep{$_%2==0}1..100]}&amp;quot;;&#39; 4つ思いついた
 結論 simple is best</description>
     </item>
     
@@ -232,8 +226,7 @@ perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp
       <guid>https://yaasita.github.io/2019/06/25/s3v2/</guid>
       <description>AWS S3の署名バージョン騒動
 大丈夫ぽいけど一応調べた時につかったスクリプト
-CloudTrailでログを有効化してからお使いください
- </description>
+CloudTrailでログを有効化してからお使いください</description>
     </item>
     
     <item>
@@ -244,11 +237,10 @@ CloudTrailでログを有効化してからお使いください
       <guid>https://yaasita.github.io/2019/05/29/cloud-run/</guid>
       <description>GCPのCloud Runがめっちゃ便利
 覚えなきゃいけないルールは2つ
- Dockerにする事 環境変数 $PORT のポート番号でlistenしてレスポンスを返す事  これだけ
+Dockerにする事 環境変数 $PORT のポート番号でlistenしてレスポンスを返す事 これだけ
 コマンドとかはこの辺見ればすぐできると思います
 あと、Chunked Transferみたいな仕組みで進捗を返すみたいなAPIは難しいかもしれない
-以下のようなプログラムでちょっとずつレスポンス返しても、バッファリングされてるみたいで、最後ドバっと返ってきた
- </description>
+以下のようなプログラムでちょっとずつレスポンス返しても、バッファリングされてるみたいで、最後ドバっと返ってきた</description>
     </item>
     
     <item>
@@ -261,8 +253,7 @@ CloudTrailでログを有効化してからお使いください
 code_challenge_method=S256の場合は以下のような実装ロジックになる
 node.jsで書いた
 Oauth2のPKCE
-base64エンコードじゃなくてbase64urlエンコードなのが注意点
- </description>
+base64エンコードじゃなくてbase64urlエンコードなのが注意点</description>
     </item>
     
     <item>
@@ -272,8 +263,7 @@ base64エンコードじゃなくてbase64urlエンコードなのが注意点
       
       <guid>https://yaasita.github.io/2019/04/25/reiwa/</guid>
       <description>techrachoの記事
-perlも追加でお願いします
- </description>
+perlも追加でお願いします</description>
     </item>
     
     <item>
@@ -285,10 +275,10 @@ perlも追加でお願いします
       <description>前回の続き
 でctime変化しちゃってどうしたか？
 ファイルサイズとファイル名を取っておいて差分を作ることにした
- こんな感じのスクリプトで、ファイル名 + tab + ファイルサイズで保存する
+こんな感じのスクリプトで、ファイル名 + tab + ファイルサイズで保存する
 (厳密にやる場合はsha256とかで)
 そんで現在のファイルリストも取って、差分をとる
-diff -u previous.txt now.txt | egrep &amp;quot;^\+[^\+]&amp;quot; | perl -ple &#39;s/^\+//;s/\t.+//&#39; &amp;gt; tar.txt あとは-Tオプションで差分のファイルだけをtarで固める
+diff -u previous.txt now.txt | egrep &amp;#34;^\+[^\+]&amp;#34; | perl -ple &amp;#39;s/^\+//;s/\t.+//&amp;#39; &amp;gt; tar.txt あとは-Tオプションで差分のファイルだけをtarで固める
 tar -cvaf hoge.tgz -T tar.txt </description>
     </item>
     

@@ -27,7 +27,7 @@ Android8まで上がった
       <description>re:Invent 2018で言われたアレ
 DynamoDBオンデマンド
 のベンチを取ってみた
- ベンチマークに使ったスクリプト  結論  ほとんどDynamoDB ondemand でOKだと思うj オートスケールぽい挙動なのでちょっとずつスケールしてるぽい 200とかそんくらいのスパイクアクセスがある場合はあらかじめ、プロビジョニングキャパシティにしておいた方が良いと思う ただし、オンデマンドの有効化は一日一回だけなので注意  </description>
+ベンチマークに使ったスクリプト 結論 ほとんどDynamoDB ondemand でOKだと思うj オートスケールぽい挙動なのでちょっとずつスケールしてるぽい 200とかそんくらいのスパイクアクセスがある場合はあらかじめ、プロビジョニングキャパシティにしておいた方が良いと思う ただし、オンデマンドの有効化は一日一回だけなので注意 </description>
     </item>
     
     <item>
@@ -53,7 +53,7 @@ KRPW-AK750W/88+ という玄人志向のやつに変更した
       <guid>https://yaasita.github.io/2018/12/02/skype2json/</guid>
       <description>のでちょっとスクリプト修正した
 https://github.com/yaasita/skype2json
-修正点  yarnじゃなくても良いと聞いたのでnpmにだけにした フォーマットが歴代合わせて3つあったので、3つスクリプト書いた(年代は適当) libに共通関数をまとめた  なんか新しいフォーマットだと
+修正点 yarnじゃなくても良いと聞いたのでnpmにだけにした フォーマットが歴代合わせて3つあったので、3つスクリプト書いた(年代は適当) libに共通関数をまとめた なんか新しいフォーマットだと
 nsp_dataってカラムにjsonで突っ込んでるみたいね。json型が無いSQLiteのツライところ
 まとめ ころころフォーマットが変わるけどSQLiteになってるからSkypeは簡単にバックアップ出来て良い
 LINEはどうしたもんか</description>
@@ -67,7 +67,7 @@ LINEはどうしたもんか</description>
       <guid>https://yaasita.github.io/2018/11/23/translate/</guid>
       <description>translate-shellが便利だ
 vimrcにこんな感じに書く
- 英単語の意味をちょっと調べる  翻訳  なんか微妙に画面がバグってるけど、本当はちゃんと表示されてる
+英単語の意味をちょっと調べる 翻訳 なんか微妙に画面がバグってるけど、本当はちゃんと表示されてる
 まとめ こういうちょっとした改善大事</description>
     </item>
     
@@ -78,7 +78,7 @@ vimrcにこんな感じに書く
       
       <guid>https://yaasita.github.io/2018/11/14/github2jenkins/</guid>
       <description>無かったので作りました
-Github -&amp;gt; Mojolicious -&amp;gt; jenkins  </description>
+Github -&amp;gt; Mojolicious -&amp;gt; jenkins </description>
     </item>
     
     <item>
@@ -91,23 +91,18 @@ Github -&amp;gt; Mojolicious -&amp;gt; jenkins  </description>
 HSTSとは HTTPでの通信を減らしよりセキュアなHTTPSを使うように促す仕組み
 通常 通常HTTPリクエストをして、301、302等のリダイレクトによってHTTPSにアクセスし直す
 が、HTTPでのやりとり部分に中間者攻撃のリスクが存在する
-
 ※厳密には301リダイレクトはブラウザがキャッシュするので2回目以降はサーバー側にリクエストしない
 HSTS ヘッダ HSTSヘッダを受け取ると、ブラウザ側でHTTPをHTTPSに読み替えてリクエストする
 通常のリダイレクトは違い、一旦 HSTSヘッダを受け取ると有効期間中は決してhttpによるリクエストをしない
 (http:// ~ というリンクはブラウザ側で読み換える)
-
 付与するヘッダーは以下のようなもの
-strict-transport-security: max-age=31536000; includeSubDomains; preload   max-age: 有効時間（秒単位） includeSubDomains: サブドメインも含めるかどうか alis.to なら hoge.alis.to も有効になる preload: preloadに登録しても良いかどうか（後述）  HSTS preload HSTS preloadは予め hstspreload.org に自分のサイトを登録しておいて
+strict-transport-security: max-age=31536000; includeSubDomains; preload max-age: 有効時間（秒単位） includeSubDomains: サブドメインも含めるかどうか alis.to なら hoge.alis.to も有効になる preload: preloadに登録しても良いかどうか（後述） HSTS preload HSTS preloadは予め hstspreload.org に自分のサイトを登録しておいて
 初回リクエスト時からHTTPSを有効にしておく仕組み
-
-メリット・デメリット  メリット  observatory の点数アップ (対外アピール） 盗聴・中間者攻撃リスクを軽減しよりセキュアになる   デメリット  証明書の運用を失敗できない サブドメインを含め、HTTPでの運用を一切できなくなる ローカルでのテスト時に偽の証明書を無視しにくくなる    通常だと出てくる証明書エラー無視のリンクが・・・
-
+メリット・デメリット メリット observatory の点数アップ (対外アピール） 盗聴・中間者攻撃リスクを軽減しよりセキュアになる デメリット 証明書の運用を失敗できない サブドメインを含め、HTTPでの運用を一切できなくなる ローカルでのテスト時に偽の証明書を無視しにくくなる 通常だと出てくる証明書エラー無視のリンクが・・・
 HSTSのサイトは証明書無視ボタンが出ない
-
 windowsだとやり方があるらしいが、ローカルでの確認とかはやりにくくなる
 /etc/hostsを化かして対応する、実ドメインでのリハーサル時はプライベートCA等で対応すること
- https://support.opendns.com/hc/en-us/articles/227989087-Chrome-for-Windows-only-HSTS-Certificate-Exception-Instructions https://moriya.xrea.jp/tdiary/20150827.html   function callback1(data){ var photos = data.</description>
+https://support.opendns.com/hc/en-us/articles/227989087-Chrome-for-Windows-only-HSTS-Certificate-Exception-Instructions https://moriya.xrea.jp/tdiary/20150827.html </description>
     </item>
     
     <item>
@@ -135,15 +130,15 @@ CORSとかCORBで無理なんすよね
       <description>とっても便利なmitmproxyを使ってみた
 概要 こんな感じでHTTPSなサイトも中間に入りこんでくれる
 （root証明証を予め信頼しておく必要がある)
-browser &amp;lt;---(指定のCA鍵で再署名)---- mitmproxy &amp;lt;---(HTTPSを一旦解く)----- web server  インストール apt install mitmproxy  設定 プライベートCAをやってるなら
- /etc/ssl/demoCA/private/cakey.pem /etc/ssl/demoCA/cacert.pem  この２ファイルを結合する
+browser &amp;lt;---(指定のCA鍵で再署名)---- mitmproxy &amp;lt;---(HTTPSを一旦解く)----- web server インストール apt install mitmproxy 設定 プライベートCAをやってるなら
+/etc/ssl/demoCA/private/cakey.pem /etc/ssl/demoCA/cacert.pem この２ファイルを結合する
 こんな感じで mitmproxy-ca.pem って名前でどっかのディレクトリに置く
 -----BEGIN ENCRYPTED PRIVATE KEY----- ... -----END ENCRYPTED PRIVATE KEY----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE----- 実行 こんな感じで実行できる &amp;ndash;view-filter で表示させたいURLを絞れる
 (hogedirの中にmitmproxy-ca.pemが入ってる)
-mitmproxy --set confdir=/path/to/hogedir --view-filter m3u  画面中ではVimぽいキーバインドで色々操作できる
+mitmproxy --set confdir=/path/to/hogedir --view-filter m3u 画面中ではVimぽいキーバインドで色々操作できる
 リクエストを選んで、wでストリームを保存できる
 dump mitmproxyだけだと長いURLとかは省略されちゃったりするので、完全なものを見る場合にmitmdumpを使う
-# getだけ抽出 mitmdump -nr /tmp/save -w outfile &amp;quot;~m get&amp;quot; # リクエスト一覧 mitmdump -nr /tmp/save  まとめ HTTPSのデバッグ時にめっちゃ便利</description>
+# getだけ抽出 mitmdump -nr /tmp/save -w outfile &amp;quot;~m get&amp;quot; # リクエスト一覧 mitmdump -nr /tmp/save まとめ HTTPSのデバッグ時にめっちゃ便利</description>
     </item>
     
     <item>
@@ -153,11 +148,11 @@ dump mitmproxyだけだと長いURLとかは省略されちゃったりするの
       
       <guid>https://yaasita.github.io/2018/10/19/circleci/</guid>
       <description>先に結論だけ
- キャッシュは一度書き込むとupdate出来ない キャッシュクリアは名前を変えて対応する  以下具体例
+キャッシュは一度書き込むとupdate出来ない キャッシュクリアは名前を変えて対応する 以下具体例
 以下のようなキャッシュをした際に
 古いバージョンのライブラリが入ってしまった場合
-- restore_cache: keys: - v2-dependencies-{{ checksum &amp;quot;requirements.txt&amp;quot; }} - v2-dependencies- - run: name: install dependencies command: | python3 -m venv venv . venv/bin/activate pip install -r requirements.txt - save_cache: paths: - ./venv key: v2-dependencies-{{ checksum &amp;quot;requirements.txt&amp;quot; }} これを解消しようとして、以下のようにしてもcacheはupdateされない
-- restore_cache: keys: - v2-dependencies-{{ checksum &amp;quot;requirements.txt&amp;quot; }} - v2-dependencies- - run: name: install dependencies command: | python3 -m venv venv . venv/bin/activate pip install -r requirements.</description>
+- restore_cache: keys: - v2-dependencies-{{ checksum &amp;#34;requirements.txt&amp;#34; }} - v2-dependencies- - run: name: install dependencies command: | python3 -m venv venv . venv/bin/activate pip install -r requirements.txt - save_cache: paths: - ./venv key: v2-dependencies-{{ checksum &amp;#34;requirements.txt&amp;#34; }} これを解消しようとして、以下のようにしてもcacheはupdateされない
+- restore_cache: keys: - v2-dependencies-{{ checksum &amp;#34;requirements.txt&amp;#34; }} - v2-dependencies- - run: name: install dependencies command: | python3 -m venv venv . venv/bin/activate pip install -r requirements.</description>
     </item>
     
     <item>
@@ -182,13 +177,10 @@ https://gist.github.com/yaasita/ea31d7bbfc839fc859fd7d713800088b</description>
 https://github.com/yaasita/skype2json
 logはsqliteで保存されている
 こちらによるとskype for windows 10とskype for windows desktopの保存場所が違う
-
 こっちが最近のやつ
 場所: %localappdata%\Packages\Microsoft.SkypeApp_kzf8qxf38zg5c\LocalState
-
 昔のやつ
-場所: C:\Users\username\AppData\Roaming\Skype\username\main.db
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;skype1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;skype1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;skype2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;skype2&#34;).src = photos[1].original_size.url; }   </description>
+場所: C:\Users\username\AppData\Roaming\Skype\username\main.db</description>
     </item>
     
     <item>
@@ -198,8 +190,8 @@ logはsqliteで保存されている
       
       <guid>https://yaasita.github.io/2018/09/23/verify-certificate-chain/</guid>
       <description>以下のようなチェインを検証したい時
-AddTrust |_ ca1 |_ ca2 |_ hoge  こんな感じにコマンドを打つ
-openssl verify -trusted /etc/ssl/certs/AddTrust_External_Root.pem \ -untrusted ca/ca1.pem \ -untrusted ca/ca2.pem \ hoge.pem*  verify -CAfileを指定して検証する例を見るけど、
+AddTrust |_ ca1 |_ ca2 |_ hoge こんな感じにコマンドを打つ
+openssl verify -trusted /etc/ssl/certs/AddTrust_External_Root.pem \ -untrusted ca/ca1.pem \ -untrusted ca/ca2.pem \ hoge.pem* verify -CAfileを指定して検証する例を見るけど、
 インストールされてるデフォルトのrootCAも見ちゃうから
 -no-CAfile, -no-CApathで無効化しなきゃだったりするのでこっちの方が良さそう</description>
     </item>
@@ -221,8 +213,8 @@ openssl verify -trusted /etc/ssl/certs/AddTrust_External_Root.pem \ -untrusted c
       
       <guid>https://yaasita.github.io/2018/09/06/perl-closure/</guid>
       <description>これでも良いけど
-{ my $count; sub func { return ++$count; } }  最近ならこうstate使って
-use feature qw(:5.10); sub func { state $count; return ++$count; }  ただstateって配列とかには使えない</description>
+{ my $count; sub func { return ++$count; } } 最近ならこうstate使って
+use feature qw(:5.10); sub func { state $count; return ++$count; } ただstateって配列とかには使えない</description>
     </item>
     
     <item>
@@ -231,11 +223,12 @@ use feature qw(:5.10); sub func { state $count; return ++$count; }  ただstate�
       <pubDate>Sat, 18 Aug 2018 17:40:23 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2018/08/18/dkim/</guid>
-      <description>インストール apt install opendkim opendkim-tools  opendkim設定 mkdir /etc/postfix/dkim/ opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail # -d ドメイン # -s セレクタ chgrp opendkim /etc/postfix/dkim/* chmod g+r /etc/postfix/dkim/*  /etc/opendkim.conf
-Syslog	yes LogWhy Yes UMask	007 Canonicalization	relaxed/relaxed Mode	sv Socket inet:8891@localhost PidFile /var/run/opendkim/opendkim.pid OversignHeaders	From TrustAnchorFile /usr/share/dns/root.key UserID opendkim KeyTable file:/etc/postfix/dkim/keytable SigningTable file:/etc/postfix/dkim/signingtable  /etc/postfix/dkim/keytable
-mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private  /etc/postfix/dkim/signingtable
-example.net mail._domainkey.example.net  反映
-systemctl restart opendkim.service  postfix設定 以下追記</description>
+      <description>インストール apt install opendkim opendkim-tools opendkim設定 mkdir /etc/postfix/dkim/ opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail # -d ドメイン # -s セレクタ chgrp opendkim /etc/postfix/dkim/* chmod g+r /etc/postfix/dkim/* /etc/opendkim.conf
+Syslog	yes LogWhy Yes UMask	007 Canonicalization	relaxed/relaxed Mode	sv Socket inet:8891@localhost PidFile /var/run/opendkim/opendkim.pid OversignHeaders	From TrustAnchorFile /usr/share/dns/root.key UserID opendkim KeyTable file:/etc/postfix/dkim/keytable SigningTable file:/etc/postfix/dkim/signingtable /etc/postfix/dkim/keytable
+mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private /etc/postfix/dkim/signingtable
+example.net mail._domainkey.example.net 反映
+systemctl restart opendkim.service postfix設定 以下追記
+milter_default_action = tempfail milter_protocol = 2 smtpd_milters = inet:localhost:8891 non_smtpd_milters = inet:localhost:8891 ここで,milterを使うので</description>
     </item>
     
     <item>
@@ -245,11 +238,11 @@ systemctl restart opendkim.service  postfix設定 以下追記</description>
       
       <guid>https://yaasita.github.io/2018/08/05/private-ca-invalid/</guid>
       <description>openssl.cnf
-subjectAltName=@alt_names [ alt_names ] DNS.1 = *.example.com IP.1 = 192.168.0.1  ここに書ける値についてのお話
+subjectAltName=@alt_names [ alt_names ] DNS.1 = *.example.com IP.1 = 192.168.0.1 ここに書ける値についてのお話
 IPでこういうのはダメ
- IP.1 = 192.168.0.* IP.2 = 192.168.0.0/24  IPアドレス範囲もダメ
+IP.1 = 192.168.0.* IP.2 = 192.168.0.0/24 IPアドレス範囲もダメ
 こういうのはOKなのでテスト用の証明書だったらこの辺だけ書いて渡すのが良いのかな
- IP.1 = 127.0.0.1 DNS.1 = localhost  </description>
+IP.1 = 127.0.0.1 DNS.1 = localhost </description>
     </item>
     
     <item>
@@ -275,11 +268,11 @@ IPでこういうのはダメ
 クライアント証明書とIP制限を今風に書き直す
 あとCNとかも検証するようにした
 こんな感じ
-&amp;lt;Directory /var/www&amp;gt; Options Indexes FollowSymLinks MultiViews ExecCGI SSLVerifyClient optional &amp;lt;RequireAny&amp;gt; Require ip 192.168.100.0/24 &amp;lt;RequireAll&amp;gt; Require ssl-verify-client Require expr &amp;quot;%{SSL_CLIENT_S_DN_CN} == &#39;hogeclient&#39;&amp;quot; &amp;lt;/RequireAll&amp;gt; &amp;lt;/RequireAny&amp;gt; &amp;lt;/Directory&amp;gt;  あと
-Protocols http/1.1 h2  のようにhttp/1.1を先にしないと
-curl: (92) HTTP/2 stream 1 was not closed cleanly: HTTP_1_1_REQUIRED (err 13)  こんなエラーになるので注意
+&amp;lt;Directory /var/www&amp;gt; Options Indexes FollowSymLinks MultiViews ExecCGI SSLVerifyClient optional &amp;lt;RequireAny&amp;gt; Require ip 192.168.100.0/24 &amp;lt;RequireAll&amp;gt; Require ssl-verify-client Require expr &amp;quot;%{SSL_CLIENT_S_DN_CN} == &#39;hogeclient&#39;&amp;quot; &amp;lt;/RequireAll&amp;gt; &amp;lt;/RequireAny&amp;gt; &amp;lt;/Directory&amp;gt; あと
+Protocols http/1.1 h2 のようにhttp/1.1を先にしないと
+curl: (92) HTTP/2 stream 1 was not closed cleanly: HTTP_1_1_REQUIRED (err 13) こんなエラーになるので注意
 参考リンク
- reqexprの説明 mod_ssl変数一覧  </description>
+reqexprの説明 mod_ssl変数一覧 </description>
     </item>
     
     <item>
@@ -289,8 +282,7 @@ curl: (92) HTTP/2 stream 1 was not closed cleanly: HTTP_1_1_REQUIRED (err 13)  �
       
       <guid>https://yaasita.github.io/2018/07/04/es-perl/</guid>
       <description>perlでElasticsearch
-mojoliciousでの例
- </description>
+mojoliciousでの例</description>
     </item>
     
   </channel>

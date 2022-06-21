@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>on_ac_powerコマンドについて | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="on_ac_powerコマンドについて" />
@@ -15,14 +15,14 @@
 PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある
 そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる
 例えば、/etc/cron.daily/mlocate の場合
-if which on_ac_power &gt;/dev/null 2&gt;&amp;1; then ON_BATTERY=0 on_ac_power &gt;/dev/null 2&gt;&amp;1 || ON_BATTERY=$? if [ &quot;$ON_BATTERY&quot; -eq 1 ]; then exit 0 fi fi  こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
+if which on_ac_power &gt;/dev/null 2&gt;&amp;1; then ON_BATTERY=0 on_ac_power &gt;/dev/null 2&gt;&amp;1 || ON_BATTERY=$? if [ &quot;$ON_BATTERY&quot; -eq 1 ]; then exit 0 fi fi こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
 んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
 このままだと永遠にlocateコマンドが使えないので、divertで退避させた
-dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power  おしまい" />
+dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power おしまい" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2019/08/16/on-ac-power/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-08-16T04:45:45&#43;09:00" />
-<meta property="article:modified_time" content="2019-08-16T04:45:45&#43;09:00" />
+<meta property="article:published_time" content="2019-08-16T04:45:45+09:00" />
+<meta property="article:modified_time" content="2019-08-16T04:45:45+09:00" />
 
 
     
@@ -124,7 +124,7 @@ ln -s /bin/true /sbin/on_ac_power
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -229,7 +229,7 @@ ln -s /bin/true /sbin/on_ac_power
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -320,7 +320,7 @@ ln -s /bin/true /sbin/on_ac_power
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>RStudioで正規性の確認 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="RStudioで正規性の確認" />
@@ -17,11 +17,9 @@
 これは音ゲーのスコアを表していてタイミングよく押せた場合はPERFECT, 早すぎたり遅すぎたりした場合はFAST, SLOWに計上される
 この内ミスの割合が正規分布と見なせるか検定する
 まず、CSVを右上のEnvironmentタブ =&gt; Import Datasetから読み込む
-
 データをMISSの割合をデータフレームに追加
 library(dplyr) bandori &lt;- bandori %&gt;% mutate(MISS = (FAST &#43; SLOW) / (PERFECT &#43; FAST &#43; SLOW) * 100) ヒストグラムと近似曲線を出す
-hist(bandori$MISS, breaks = seq(0, 20, 1)) dens &lt;- density(bandori$MISS) lines(dens, lwd = 3, col = &quot;blue&quot;) 
-検定
+hist(bandori$MISS, breaks = seq(0, 20, 1)) dens &lt;- density(bandori$MISS) lines(dens, lwd = 3, col = &#34;blue&#34;) 検定
 shapiro.test(bandori$MISS) 検定統計量とp値
 data: bandori$MISS W = 0.98162, p-value = 0.724 ここで注意なのはこの検定は帰無仮説が「正規分布している」なので
 棄却出来た場合は正規分布ではないと言えるが、
@@ -31,8 +29,8 @@ data: bandori$MISS W = 0.98162, p-value = 0.724 ここで注意なのはこの�
 https://gist.github.com/yaasita/7c431d0493c9703c91d0a013d03349af" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2022/01/26/normal_distribution/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2022-01-26T02:50:46&#43;09:00" />
-<meta property="article:modified_time" content="2022-01-26T02:50:46&#43;09:00" />
+<meta property="article:published_time" content="2022-01-26T02:50:46+09:00" />
+<meta property="article:modified_time" content="2022-01-26T02:50:46+09:00" />
 
 
     
@@ -76,23 +74,22 @@ if (!doNotTrack) {
 <p>これは音ゲーのスコアを表していてタイミングよく押せた場合はPERFECT, 早すぎたり遅すぎたりした場合はFAST, SLOWに計上される<br>
 この内ミスの割合が正規分布と見なせるか検定する</p>
 <p>まず、CSVを右上のEnvironmentタブ =&gt; Import Datasetから読み込む</p>
-<p><a href="https://yaasita.tumblr.com/post/674374333735534592"><img src="https://64.media.tumblr.com/efdda5728f5bfbe02ff1ce56f69ed77b/7229a2b4b03fed0a-7f/s1280x1920/b161c85aba80b2aacd2e30747ad8b222e8c4e50b.png" alt="rstudio"></a></p>
+<p><a href="https://yaasita.tk/blog/2022/rstudio.png"><img src="https://yaasita.tk/blog/2022/rstudio.png" alt="rstudio.png"></a></p>
 <p>データをMISSの割合をデータフレームに追加</p>
-<pre><code>library(dplyr)
+<pre tabindex="0"><code>library(dplyr)
 
 bandori &lt;- bandori %&gt;%
   mutate(MISS = (FAST + SLOW) / (PERFECT + FAST + SLOW) * 100)
-
 </code></pre><p>ヒストグラムと近似曲線を出す</p>
-<pre><code>hist(bandori$MISS, breaks = seq(0, 20, 1))
+<pre tabindex="0"><code>hist(bandori$MISS, breaks = seq(0, 20, 1))
 
 dens &lt;- density(bandori$MISS)
-lines(dens, lwd = 3, col = &quot;blue&quot;)
-</code></pre><p><a href="https://yaasita.tumblr.com/post/674375341372030976"><img src="https://64.media.tumblr.com/585f0ba45f8ee304b795da0936b9d1ba/47ce568c809d72dd-da/s1280x1920/44d12155ec05a54b2992c837e79203e1aa184d12.png" alt="hist"></a></p>
+lines(dens, lwd = 3, col = &#34;blue&#34;)
+</code></pre><p><a href="https://yaasita.tk/blog/2022/hist.png"><img src="https://yaasita.tk/blog/2022/hist.png" alt="hist.png"></a></p>
 <p>検定</p>
-<pre><code>shapiro.test(bandori$MISS)
+<pre tabindex="0"><code>shapiro.test(bandori$MISS)
 </code></pre><p>検定統計量とp値</p>
-<pre><code>data:  bandori$MISS
+<pre tabindex="0"><code>data:  bandori$MISS
 W = 0.98162, p-value = 0.724
 </code></pre><p>ここで注意なのはこの検定は帰無仮説が「正規分布している」なので<br>
 棄却出来た場合は正規分布ではないと言えるが、<br>
@@ -141,7 +138,7 @@ W = 0.98162, p-value = 0.724
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -246,7 +243,7 @@ W = 0.98162, p-value = 0.724
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -337,7 +334,7 @@ W = 0.98162, p-value = 0.724
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

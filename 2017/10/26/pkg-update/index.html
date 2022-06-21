@@ -7,24 +7,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>正しいパッケージのアップデート方法 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="正しいパッケージのアップデート方法" />
 <meta property="og:description" content="本番環境と検証環境があり、パッケージのアップデートを行いたい場合
- 10月1日 検証環境のパッケージを上げる 11月1日 検証環境で問題なければ本番も上げる  この時、それぞれの日に本番環境、検証環境で apt update, apt upgradeをすると本番、検証で差分が生じ検証されていないパッケージもアップデートされる可能性がある
+10月1日 検証環境のパッケージを上げる 11月1日 検証環境で問題なければ本番も上げる この時、それぞれの日に本番環境、検証環境で apt update, apt upgradeをすると本番、検証で差分が生じ検証されていないパッケージもアップデートされる可能性がある
 正しくは10月1日に検証環境、本番環境で 同時 に以下のコマンドを実行
-apt-get update apt-get upgrade --download-only  検証環境で以下を実行
-apt-get upgrade  問題なければ本番環境で以下を実行
-apt-get upgrade  ポイントは apt-get update, apt-get upgrade --download-only を検証,本番環境ともに同じタイミングで実行して更新予定のパッケージを揃えておくこと
+apt-get update apt-get upgrade --download-only 検証環境で以下を実行
+apt-get upgrade 問題なければ本番環境で以下を実行
+apt-get upgrade ポイントは apt-get update, apt-get upgrade --download-only を検証,本番環境ともに同じタイミングで実行して更新予定のパッケージを揃えておくこと
 またubuntuは/etc/apt/apt.conf.d/10periodicの「APT::Periodic::Update-Package-Lists」を0にしておかないと毎日自動でapt-get updateが走るので注意すること
-図にするとこんな感じ
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   " />
+図にするとこんな感じ" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2017/10/26/pkg-update/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2017-10-26T01:30:38&#43;09:00" />
-<meta property="article:modified_time" content="2017-10-26T01:30:38&#43;09:00" />
+<meta property="article:published_time" content="2017-10-26T01:30:38+09:00" />
+<meta property="article:modified_time" content="2017-10-26T01:30:38+09:00" />
 
 
     
@@ -81,15 +79,7 @@ apt-get upgrade --download-only
 <p>ポイントは <code>apt-get update</code>, <code>apt-get upgrade --download-only</code> を検証,本番環境ともに同じタイミングで実行して更新予定のパッケージを揃えておくこと<br>
 またubuntuは/etc/apt/apt.conf.d/10periodicの「APT::Periodic::Update-Package-Lists」を0にしておかないと毎日自動でapt-get updateが走るので注意すること</p>
 <p>図にするとこんな感じ</p>
-<p><a href="#"><img id="tumblr-img" src=""></a></p>
-<script>
-function callback(data){
-    var photos = data.response.posts[0].photos;
-    document.getElementById("tumblr-img").parentNode.href = photos[0].original_size.url;
-    document.getElementById("tumblr-img").src = photos[0].original_size.url;
-}
-</script>
-<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=166783939672&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
+<p><a href="https://yaasita.tk/blog/2022/package-update.png"><img src="https://yaasita.tk/blog/2022/package-update.png" alt="package-update"></a></p>
 
   </div>
   <footer>
@@ -131,7 +121,7 @@ function callback(data){
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -236,7 +226,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -327,7 +317,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

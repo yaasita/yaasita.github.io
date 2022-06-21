@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>radikoを聞くperlスクリプト書いた | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="radikoを聞くperlスクリプト書いた" />
-<meta property="og:description" content=" ポイントはforkして指定した時間で落とすこと
+<meta property="og:description" content="ポイントはforkして指定した時間で落とすこと
 #!/usr/bin/perl
 ################################################
 # radiko を聞くスクリプト
@@ -26,11 +26,23 @@ use Getopt::Std;
 my %opt;
 getopts(&#34;hc:f:t:&#34;,\%opt);
 if (exists $opt{h}){
-print " />
+print &lt;&lt; &#34;HELP&#34;;
+usage: radiko.pl [-h] [-c channel] [-f outfile] [-t playtime]
+-h
+print this message
+-c channel
+select play channel
+default: LFR
+* FMT TOKYO FM
+* FMJ J-WAVE
+* LFR nippon housou
+* TBS TBS radio
+-f outfile
+default: /tmp/channel.flv" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2011/01/17/4864/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2011-01-17T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2011-01-17T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2011-01-17T00:00:00+09:00" />
+<meta property="article:modified_time" content="2011-01-17T00:00:00+09:00" />
 
 
     
@@ -117,7 +129,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -222,7 +234,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -313,7 +325,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>motdとmotd.tailの関係について（Debian Lenny） | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="motdとmotd.tailの関係について（Debian Lenny）" />
 <meta property="og:description" content=" /etc/motdは/var/run/motdへのシンボリックリンクです。
 システムのboot時に/etc/init.d/bootmisc.shによって
-uname -snrvm  /var/run/motd
-[ -f /etc/motd.tail ] &amp;&amp; cat /etc/motd.tail  /var/run/motdと、上書きされます。
+uname -snrvm &gt; /var/run/motd
+[ -f /etc/motd.tail ] &amp;&amp; cat /etc/motd.tail &gt;&gt; /var/run/motdと、上書きされます。
 つまり、再起動後も有効にしたい場合は/etc/motd.tailを直しましょう
 http://www.debian.org/releases/etch/hppa/release-notes/ch-information.ja.html " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2009/10/18/8290/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2009-10-18T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2009-10-18T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2009-10-18T00:00:00+09:00" />
+<meta property="article:modified_time" content="2009-10-18T00:00:00+09:00" />
 
 
     
@@ -103,7 +103,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -208,7 +208,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -299,7 +299,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

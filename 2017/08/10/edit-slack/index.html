@@ -7,25 +7,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>edit-slack.vimちょっと書き直した | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="edit-slack.vimちょっと書き直した" />
 <meta property="og:description" content="edit-slack.vim をちょっと直した
 主な変更点は以下の通り
 reactionを表示するようにした
-
 アップロードされたファイルのダウンロードリンクを表示
-
 キーワード検索ができるようにした
-例) vim slack://sw/hogehoge vim slack://sw/from:@yamasita vim slack://sw/on:today  取っ散らかってたコードをちょっと直した
+例) vim slack://sw/hogehoge vim slack://sw/from:@yamasita vim slack://sw/on:today 取っ散らかってたコードをちょっと直した
 https://github.com/yaasita/edit-slack/compare/v0.2.0...v0.8.1
-ちょっと見ない間にSlackもなんか変わってて、今までのTest tokenがlegacy tokenって名前になってたり、botアクセス、userアクセスで細かくAPI使用制限がされてるようになってた(前からか？)
- function callback(data){ photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).src = photos[1].original_size.url; }   " />
+ちょっと見ない間にSlackもなんか変わってて、今までのTest tokenがlegacy tokenって名前になってたり、botアクセス、userアクセスで細かくAPI使用制限がされてるようになってた(前からか？)" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2017/08/10/edit-slack/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2017-08-10T02:35:57&#43;09:00" />
-<meta property="article:modified_time" content="2017-08-10T02:35:57&#43;09:00" />
+<meta property="article:published_time" content="2017-08-10T02:35:57+09:00" />
+<meta property="article:modified_time" content="2017-08-10T02:35:57+09:00" />
 
 
     
@@ -66,9 +63,9 @@ if (!doNotTrack) {
     <p><a href="https://github.com/yaasita/edit-slack.vim">edit-slack.vim</a> をちょっと直した<br>
 主な変更点は以下の通り</p>
 <p>reactionを表示するようにした</p>
-<p><a href="#"><img id="tumblr-img2" src=""></a></p>
+<p><a href="https://yaasita.tk/blog/2022/edit-slack-tyoi-1.png"><img src="https://yaasita.tk/blog/2022/edit-slack-tyoi-1.png" alt="edit-slack-tyoi-1"></a></p>
 <p>アップロードされたファイルのダウンロードリンクを表示</p>
-<p><a href="#"><img id="tumblr-img1" src=""></a></p>
+<p><a href="https://yaasita.tk/blog/2022/edit-slack-tyoi-2.png"><img src="https://yaasita.tk/blog/2022/edit-slack-tyoi-2.png" alt="edit-slack-tyoi-2"></a></p>
 <p>キーワード検索ができるようにした</p>
 <pre><code>例)
 vim slack://sw/hogehoge
@@ -78,16 +75,6 @@ vim slack://sw/on:today
 <p>取っ散らかってたコードをちょっと直した</p>
 <p><a href="https://github.com/yaasita/edit-slack/compare/v0.2.0...v0.8.1">https://github.com/yaasita/edit-slack/compare/v0.2.0...v0.8.1</a></p>
 <p>ちょっと見ない間にSlackもなんか変わってて、今までのTest tokenが<a href="https://api.slack.com/custom-integrations/legacy-tokens">legacy token</a>って名前になってたり、botアクセス、userアクセスで細かくAPI使用制限がされてるようになってた(前からか？)</p>
-<script>
-function callback(data){
-    photos = data.response.posts[0].photos;
-    document.getElementById("tumblr-img1").parentNode.href = photos[0].original_size.url;
-    document.getElementById("tumblr-img1").src = photos[0].original_size.url;
-    document.getElementById("tumblr-img2").parentNode.href = photos[1].original_size.url;
-    document.getElementById("tumblr-img2").src = photos[1].original_size.url;
-}
-</script>
-<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=163991111927&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
 
   </div>
   <footer>
@@ -129,7 +116,7 @@ function callback(data){
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -234,7 +221,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -325,7 +312,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

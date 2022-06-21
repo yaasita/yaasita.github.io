@@ -14,7 +14,7 @@
       
       <guid>https://yaasita.github.io/2021/10/15/spf-rule/</guid>
       <description>SPFレコードで
-v=spf1 a:example.net -all  みたいに指定したときにAレコードだけじゃなくて、AAAAレコードも引いてくれるので便利です
+v=spf1 a:example.net -all みたいに指定したときにAレコードだけじゃなくて、AAAAレコードも引いてくれるので便利です
 IPv6のアドレスは長くなるので積極的に利用したいですね
 https://datatracker.ietf.org/doc/html/rfc7208#section-5.3</description>
     </item>
@@ -33,7 +33,7 @@ Cookieが渡ってこない
 まあnonceからセッションを紐付けられる値を入れておけば何とかなりそうではあるが・・・
 jwt等をCookieに入れて、サーバー側でセッション用のストレージを持たない場合は厳しい気がする
 なので、response_mode = fragment を指定するか、SameSite=None; SecureをCookieの属性に付与するかだけど、fragmentが良いんじゃないかなぁ・・・・
-参考リンク  OpenID Connect 全フロー解説  </description>
+参考リンク OpenID Connect 全フロー解説 </description>
     </item>
     
     <item>
@@ -44,13 +44,13 @@ jwt等をCookieに入れて、サーバー側でセッション用のストレ�
       <guid>https://yaasita.github.io/2020/05/10/doh/</guid>
       <description>DNS over HTTPSを試す
 こんな構成で作る
-Nginx -&amp;gt; doh-httpproxy -&amp;gt; systemd-resolved  インストール
+Nginx -&amp;gt; doh-httpproxy -&amp;gt; systemd-resolved インストール
 doh-proxy pip3でインストールすればOK
-pip3 install doh-proxy  以下のような設定でserviceを作る
+pip3 install doh-proxy 以下のような設定でserviceを作る
 /etc/systemd/system/doh-httpproxy.service
 [Unit] Description=doh-httpproxy After=nginx.service [Install] WantedBy=multi-user.target [Service] ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 8080 --listen-address 127.0.0.1 Nginx側設定例
-server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } }  確認
-curl --doh-url https://doh.example.net/dns-query google.co.jp  </description>
+server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } } 確認
+curl --doh-url https://doh.example.net/dns-query google.co.jp </description>
     </item>
     
     <item>
@@ -63,8 +63,7 @@ curl --doh-url https://doh.example.net/dns-query google.co.jp  </description>
 code_challenge_method=S256の場合は以下のような実装ロジックになる
 node.jsで書いた
 Oauth2のPKCE
-base64エンコードじゃなくてbase64urlエンコードなのが注意点
- </description>
+base64エンコードじゃなくてbase64urlエンコードなのが注意点</description>
     </item>
     
     <item>
@@ -77,23 +76,18 @@ base64エンコードじゃなくてbase64urlエンコードなのが注意点
 HSTSとは HTTPでの通信を減らしよりセキュアなHTTPSを使うように促す仕組み
 通常 通常HTTPリクエストをして、301、302等のリダイレクトによってHTTPSにアクセスし直す
 が、HTTPでのやりとり部分に中間者攻撃のリスクが存在する
-
 ※厳密には301リダイレクトはブラウザがキャッシュするので2回目以降はサーバー側にリクエストしない
 HSTS ヘッダ HSTSヘッダを受け取ると、ブラウザ側でHTTPをHTTPSに読み替えてリクエストする
 通常のリダイレクトは違い、一旦 HSTSヘッダを受け取ると有効期間中は決してhttpによるリクエストをしない
 (http:// ~ というリンクはブラウザ側で読み換える)
-
 付与するヘッダーは以下のようなもの
-strict-transport-security: max-age=31536000; includeSubDomains; preload   max-age: 有効時間（秒単位） includeSubDomains: サブドメインも含めるかどうか alis.to なら hoge.alis.to も有効になる preload: preloadに登録しても良いかどうか（後述）  HSTS preload HSTS preloadは予め hstspreload.org に自分のサイトを登録しておいて
+strict-transport-security: max-age=31536000; includeSubDomains; preload max-age: 有効時間（秒単位） includeSubDomains: サブドメインも含めるかどうか alis.to なら hoge.alis.to も有効になる preload: preloadに登録しても良いかどうか（後述） HSTS preload HSTS preloadは予め hstspreload.org に自分のサイトを登録しておいて
 初回リクエスト時からHTTPSを有効にしておく仕組み
-
-メリット・デメリット  メリット  observatory の点数アップ (対外アピール） 盗聴・中間者攻撃リスクを軽減しよりセキュアになる   デメリット  証明書の運用を失敗できない サブドメインを含め、HTTPでの運用を一切できなくなる ローカルでのテスト時に偽の証明書を無視しにくくなる    通常だと出てくる証明書エラー無視のリンクが・・・
-
+メリット・デメリット メリット observatory の点数アップ (対外アピール） 盗聴・中間者攻撃リスクを軽減しよりセキュアになる デメリット 証明書の運用を失敗できない サブドメインを含め、HTTPでの運用を一切できなくなる ローカルでのテスト時に偽の証明書を無視しにくくなる 通常だと出てくる証明書エラー無視のリンクが・・・
 HSTSのサイトは証明書無視ボタンが出ない
-
 windowsだとやり方があるらしいが、ローカルでの確認とかはやりにくくなる
 /etc/hostsを化かして対応する、実ドメインでのリハーサル時はプライベートCA等で対応すること
- https://support.opendns.com/hc/en-us/articles/227989087-Chrome-for-Windows-only-HSTS-Certificate-Exception-Instructions https://moriya.xrea.jp/tdiary/20150827.html   function callback1(data){ var photos = data.</description>
+https://support.opendns.com/hc/en-us/articles/227989087-Chrome-for-Windows-only-HSTS-Certificate-Exception-Instructions https://moriya.xrea.jp/tdiary/20150827.html </description>
     </item>
     
     <item>
@@ -114,11 +108,12 @@ https://gist.github.com/yaasita/ea31d7bbfc839fc859fd7d713800088b</description>
       <pubDate>Sat, 18 Aug 2018 17:40:23 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2018/08/18/dkim/</guid>
-      <description>インストール apt install opendkim opendkim-tools  opendkim設定 mkdir /etc/postfix/dkim/ opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail # -d ドメイン # -s セレクタ chgrp opendkim /etc/postfix/dkim/* chmod g+r /etc/postfix/dkim/*  /etc/opendkim.conf
-Syslog	yes LogWhy Yes UMask	007 Canonicalization	relaxed/relaxed Mode	sv Socket inet:8891@localhost PidFile /var/run/opendkim/opendkim.pid OversignHeaders	From TrustAnchorFile /usr/share/dns/root.key UserID opendkim KeyTable file:/etc/postfix/dkim/keytable SigningTable file:/etc/postfix/dkim/signingtable  /etc/postfix/dkim/keytable
-mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private  /etc/postfix/dkim/signingtable
-example.net mail._domainkey.example.net  反映
-systemctl restart opendkim.service  postfix設定 以下追記</description>
+      <description>インストール apt install opendkim opendkim-tools opendkim設定 mkdir /etc/postfix/dkim/ opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail # -d ドメイン # -s セレクタ chgrp opendkim /etc/postfix/dkim/* chmod g+r /etc/postfix/dkim/* /etc/opendkim.conf
+Syslog	yes LogWhy Yes UMask	007 Canonicalization	relaxed/relaxed Mode	sv Socket inet:8891@localhost PidFile /var/run/opendkim/opendkim.pid OversignHeaders	From TrustAnchorFile /usr/share/dns/root.key UserID opendkim KeyTable file:/etc/postfix/dkim/keytable SigningTable file:/etc/postfix/dkim/signingtable /etc/postfix/dkim/keytable
+mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private /etc/postfix/dkim/signingtable
+example.net mail._domainkey.example.net 反映
+systemctl restart opendkim.service postfix設定 以下追記
+milter_default_action = tempfail milter_protocol = 2 smtpd_milters = inet:localhost:8891 non_smtpd_milters = inet:localhost:8891 ここで,milterを使うので</description>
     </item>
     
     <item>
@@ -128,11 +123,11 @@ systemctl restart opendkim.service  postfix設定 以下追記</description>
       
       <guid>https://yaasita.github.io/2018/08/05/private-ca-invalid/</guid>
       <description>openssl.cnf
-subjectAltName=@alt_names [ alt_names ] DNS.1 = *.example.com IP.1 = 192.168.0.1  ここに書ける値についてのお話
+subjectAltName=@alt_names [ alt_names ] DNS.1 = *.example.com IP.1 = 192.168.0.1 ここに書ける値についてのお話
 IPでこういうのはダメ
- IP.1 = 192.168.0.* IP.2 = 192.168.0.0/24  IPアドレス範囲もダメ
+IP.1 = 192.168.0.* IP.2 = 192.168.0.0/24 IPアドレス範囲もダメ
 こういうのはOKなのでテスト用の証明書だったらこの辺だけ書いて渡すのが良いのかな
- IP.1 = 127.0.0.1 DNS.1 = localhost  </description>
+IP.1 = 127.0.0.1 DNS.1 = localhost </description>
     </item>
     
     <item>
@@ -142,9 +137,9 @@ IPでこういうのはダメ
       
       <guid>https://yaasita.github.io/2018/01/31/private-ca/</guid>
       <description>Debian9でやってみた
-cd /etc/ssl /usr/lib/ssl/misc/CA.pl -newca /usr/lib/ssl/misc/CA.pl -newreq /usr/lib/ssl/misc/CA.pl -sign # /tmp/ca.pemを入れてもらう openssl x509 -outform PEM -in demoCA/cacert.pem -out /tmp/ca.pem # 変換 openssl x509 -outform PEM -in newcert.pem -out /etc/nginx/ssl/hogehoge.crt # パスフレーズ解除 openssl rsa -in newkey.pem -out /etc/nginx/ssl/hogehoge.key  データベースおかしくなったら
+cd /etc/ssl /usr/lib/ssl/misc/CA.pl -newca /usr/lib/ssl/misc/CA.pl -newreq /usr/lib/ssl/misc/CA.pl -sign # /tmp/ca.pemを入れてもらう openssl x509 -outform PEM -in demoCA/cacert.pem -out /tmp/ca.pem # 変換 openssl x509 -outform PEM -in newcert.pem -out /etc/nginx/ssl/hogehoge.crt # パスフレーズ解除 openssl rsa -in newkey.pem -out /etc/nginx/ssl/hogehoge.key データベースおかしくなったら
 index.txt空っぽすればOK
-rm demoCA/index.txt touch demoCA/index.txt  /etc/ssl/openssl.cnf は こんな感じ
+rm demoCA/index.txt touch demoCA/index.txt /etc/ssl/openssl.cnf は こんな感じ
 証明書の管理は
 chromeなら設定 =&amp;gt; 詳細設定 =&amp;gt; SSLの管理からやる
 windowsの場合はファイル名を指定して実行 =&amp;gt; certlm.msc と同じこと
@@ -160,18 +155,18 @@ windowsの場合はファイル名を指定して実行 =&amp;gt; certlm.msc と
       <guid>https://yaasita.github.io/2017/08/12/smime/</guid>
       <description>StartSSL CSR作る
 emailaddressにS/MIME設定したいアドレスを入れる
-openssl req -newkey rsa:2048 -keyout yourname.key -out yourname.csr  証明書が送られてくるのでこんな感じでまとめて
------BEGIN PRIVATE KEY----- ... -----END PRIVATE KEY----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----  pkcs12に変換してthunderbirdにインポートする
-openssl pkcs12 -export -in sakusei.pem -out email.pfx  なんか送られてきた中間証明書がCRLFとLFが混在してるので直した
+openssl req -newkey rsa:2048 -keyout yourname.key -out yourname.csr 証明書が送られてくるのでこんな感じでまとめて
+-----BEGIN PRIVATE KEY----- ... -----END PRIVATE KEY----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE----- pkcs12に変換してthunderbirdにインポートする
+openssl pkcs12 -export -in sakusei.pem -out email.pfx なんか送られてきた中間証明書がCRLFとLFが混在してるので直した
 チェーンはこんな感じになってた
-StartCom Certification Authority |_ StartCom Certification Authority ECC |_ StartCom CC2 ICA |_ 自分のメールアドレス  そういやCAAレコードを検証しなかったけどいいのかね？
+StartCom Certification Authority |_ StartCom Certification Authority ECC |_ StartCom CC2 ICA |_ 自分のメールアドレス そういやCAAレコードを検証しなかったけどいいのかね？
 でここまでやって気づいたんだけどStartComの証明書が失効扱いで全然検証通らなかった
 これはGmailも同じなのでStartCom使うのは中止
 COMODO 今度COMODOを使うことになったんだけど既にChromeだとKEYGEN要素が使えないらしくFirefoxでアクセスするしかない
 (コードもselect[_moz-type=&amp;quot;-mozilla-keygen&amp;quot;]になってるし)
 こっちはフォームから申請して、リンククリックすればすぐに証明書がFirefoxに入るのでそれをエクスポートしてthunderbirdに入れればOK
 チェーンはこんな感じ
-COMODO RSA Certification Authority |_COMODO RSA Client Authentication and Secure Email CA |_ 自分のメールアドレス  まとめ Let&amp;rsquo;s EncryptがS/MIME対応してほしい</description>
+COMODO RSA Certification Authority |_COMODO RSA Client Authentication and Secure Email CA |_ 自分のメールアドレス まとめ Let&amp;rsquo;s EncryptがS/MIME対応してほしい</description>
     </item>
     
     <item>
@@ -185,10 +180,10 @@ COMODO RSA Certification Authority |_COMODO RSA Client Authentication and Secure
 DANEはクライアント用でこっちはCA用のレコードらしい
 例えばこんな感じのCAAレコードを書いて Let&amp;rsquo;s Encryptで発行しようとすると
 こんなエラーが返される
-;; ANSWER SECTION: yaasita.tk. 60 IN CAA 0 issue &amp;quot;comodoca.com&amp;quot; yaasita.tk. 60 IN CAA 0 issuewild &amp;quot;\;&amp;quot; yaasita.tk. 60 IN CAA 0 iodef &amp;quot;mailto:alert@yaasita.net&amp;quot;  この場合、hoge.yaasita.tk. みたなサブドメインもcomodocaでしか発行できなくなる
+;; ANSWER SECTION: yaasita.tk. 60 IN CAA 0 issue &amp;quot;comodoca.com&amp;quot; yaasita.tk. 60 IN CAA 0 issuewild &amp;quot;\;&amp;quot; yaasita.tk. 60 IN CAA 0 iodef &amp;quot;mailto:alert@yaasita.net&amp;quot; この場合、hoge.yaasita.tk. みたなサブドメインもcomodocaでしか発行できなくなる
 (設定はサブドメインに継承される)
 ただし、上書きは可能なのでCAAを以下のようにすればLet&amp;rsquo;s Encryptだけから発行できるように変わる
-hoge IN CAA 0 issue &amp;quot;letsencrypt.org&amp;quot; hoge IN CAA 0 issuewild &amp;quot;;&amp;quot; hoge IN CAA 0 iodef &amp;quot;mailto:alert@yaasita.net&amp;quot;  例えば、google.com のCAAは以下のようになっているので、Google Trust Servicesおよびsymantecからしか発行できない
+hoge IN CAA 0 issue &amp;quot;letsencrypt.org&amp;quot; hoge IN CAA 0 issuewild &amp;quot;;&amp;quot; hoge IN CAA 0 iodef &amp;quot;mailto:alert@yaasita.net&amp;quot; 例えば、google.com のCAAは以下のようになっているので、Google Trust Servicesおよびsymantecからしか発行できない
 仮に drive.google.com のwebrootに任意のファイルを置ける脆弱性があったとしても(http-01で)Let&amp;rsquo;s Encryptの証明書を発行することはできないし、WoSignで偽の証明書を発行されることもない
 (WoSignがCAA無視してたら意味ないけど)
 google.com. 84592 IN CAA 0 issue &amp;quot;pki.</description>
@@ -201,13 +196,14 @@ google.com. 84592 IN CAA 0 issue &amp;quot;pki.</description>
       
       <guid>https://yaasita.github.io/2017/04/02/multiple-upload/</guid>
       <description>multiple指定してuploadフォーム作るときの話
-&amp;lt;input type=&amp;quot;file&amp;quot; name=&amp;quot;files&amp;quot; multiple /&amp;gt;  で複数ファイル選択できるが
+&amp;lt;input type=&amp;quot;file&amp;quot; name=&amp;quot;files&amp;quot; multiple /&amp;gt; で複数ファイル選択できるが
 Perl CGIで受けるときに↓みたいにすると
-my @files = $q-&amp;gt;param(&#39;files&#39;); for my $filename (@files) { my $fn = decode(&amp;quot;UTF-8&amp;quot;, $filename); move($q-&amp;gt;tmpFileName($filename), &amp;quot;/path/to/dir&amp;quot;); }  iOSで選択するとfilenameが全部image.jpgでPOSTされてしまう可能性があるのでダメ
+my @files = $q-&amp;gt;param(&#39;files&#39;); for my $filename (@files) { my $fn = decode(&amp;quot;UTF-8&amp;quot;, $filename); move($q-&amp;gt;tmpFileName($filename), &amp;quot;/path/to/dir&amp;quot;); } iOSで選択するとfilenameが全部image.jpgでPOSTされてしまう可能性があるのでダメ
 (AndroidとかはOK)
 なのでこんな感じにする
-my @fhs = $q-&amp;gt;upload(&#39;files&#39;); my %fname_count; for my $fh (@fhs){ my $out_filename = non_overlapping_filenames(&amp;quot;$fh&amp;quot;); my $io_handle = $fh-&amp;gt;handle; open (my $wr,&amp;quot;&amp;gt;&amp;quot;, $out_filename) or die $!; while (&amp;lt;$io_handle&amp;gt;){ print $wr $_; } close $wr; push(@result, decode(&amp;quot;UTF-8&amp;quot;,&amp;quot;$fh&amp;quot;)); }  あと古めのアンドロイドはmultiple指定しても複数ファイル選択ができない
-Andoroid4.0はダメだけど6.0だとOKだった</description>
+my @fhs = $q-&amp;gt;upload(&#39;files&#39;); my %fname_count; for my $fh (@fhs){ my $out_filename = non_overlapping_filenames(&amp;quot;$fh&amp;quot;); my $io_handle = $fh-&amp;gt;handle; open (my $wr,&amp;quot;&amp;gt;&amp;quot;, $out_filename) or die $!; while (&amp;lt;$io_handle&amp;gt;){ print $wr $_; } close $wr; push(@result, decode(&amp;quot;UTF-8&amp;quot;,&amp;quot;$fh&amp;quot;)); } あと古めのアンドロイドはmultiple指定しても複数ファイル選択ができない
+Andoroid4.0はダメだけど6.0だとOKだった
+参考リンク http://stackoverflow.com/questions/22226597/how-to-upload-multiple-files-in-perl https://github.com/yaasita/simple-uploader </description>
     </item>
     
     <item>
@@ -218,7 +214,7 @@ Andoroid4.0はダメだけど6.0だとOKだった</description>
       <guid>https://yaasita.github.io/2017/01/27/host_and_dig_commands_are_different/</guid>
       <description>名前を引くときにhostコマンドでは返ってくるがdigだとおかしくなるときがある
 こんな感じにすれば同じになる
-host example.net. dig +nodnssec +noedns +noadflag example.net. a  WN-G300GRはadビット立ててると応答すらしないらしい</description>
+host example.net. dig +nodnssec +noedns +noadflag example.net. a WN-G300GRはadビット立ててると応答すらしないらしい</description>
     </item>
     
     <item>
@@ -231,11 +227,11 @@ host example.net. dig +nodnssec +noedns +noadflag example.net. a  WN-G300GRはad
 実際どんな感じなのか
 まずメーラーでBCCを指定して送ったとする
 この時BCCヘッダはどのタイミングで消えるか？という問題
-MUA(thunderbird等) -&amp;gt; 送信側MTA(postfix等) -&amp;gt; 受信側MTA(postfix等)  thunderbird まずthunderbirdからBCCで送信した場合はそもそもBccヘッダはつけない(Icedove/45.6.0で検証)
+MUA(thunderbird等) -&amp;gt; 送信側MTA(postfix等) -&amp;gt; 受信側MTA(postfix等) thunderbird まずthunderbirdからBCCで送信した場合はそもそもBccヘッダはつけない(Icedove/45.6.0で検証)
 envelope toには存在するがそもそもBccヘッダなんてものを書かない
 postfix postfixもデフォルトではBccヘッダは落とすようになっている
 しかしこの設定を変更すればBccヘッダを落とさないでそのまま配送される
-message_drop_headers = bcc, content-length, resent-bcc, return-path   参考  http://www.postfix.org/postconf.5.html#message_drop_headers    まとめ 本来見られちゃいけないヘッダをMTAに渡して、多分消してくれるだろうと期待するのはあまりよくないと思う
+message_drop_headers = bcc, content-length, resent-bcc, return-path 参考 http://www.postfix.org/postconf.5.html#message_drop_headers まとめ 本来見られちゃいけないヘッダをMTAに渡して、多分消してくれるだろうと期待するのはあまりよくないと思う
 具体的にはBccヘッダまで綺麗に書いて sendmail -t で送るよりはちゃんとenvelope to を指定して送った方が安全度高い
 要するにthunderbirdみたいに送るべき</description>
     </item>
@@ -249,7 +245,7 @@ message_drop_headers = bcc, content-length, resent-bcc, return-path   参考  ht
       <description>VALUE-DOMAIN バリュードメインの権威DNSサーバを使いつつ
 レコードにグルーレコードを追加する方法
 BINDみたくこんな感じにやる
-ns cloud cloud.example.net. a cloud.example.net. 123.123.123.123  上位の権威サーバにグルーレコードを設定する場合は
+ns cloud cloud.example.net. a cloud.example.net. 123.123.123.123 上位の権威サーバにグルーレコードを設定する場合は
 下記参照
 https://www.value-domain.com/userguide/manual/othermodns/</description>
     </item>
@@ -260,7 +256,7 @@ https://www.value-domain.com/userguide/manual/othermodns/</description>
       <pubDate>Tue, 01 Jul 2014 23:36:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2014/07/01/thunderbird-pgp/</guid>
-      <description> はじめての暗号化メール (Thunderbird編)  </description>
+      <description> はじめての暗号化メール (Thunderbird編) </description>
     </item>
     
     <item>
@@ -269,15 +265,15 @@ https://www.value-domain.com/userguide/manual/othermodns/</description>
       <pubDate>Sun, 08 Jun 2014 23:19:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2014/06/08/tumblr_api/</guid>
-      <description>手順   アプリを登録
+      <description>手順 アプリを登録
 OAuth Consumer KeyとSecret Keyを作る
-  アクセストークンリクエスト
- #!/usr/bin/env ruby require &#39;oauth&#39; require &#39;oauth/consumer&#39; @consumer=OAuth::Consumer.new( &amp;quot;consumer key&amp;quot;,&amp;quot;secret key&amp;quot;, { :site =&amp;gt; &#39;http://www.tumblr.com&#39;, :request_token_path =&amp;gt; &#39;/oauth/request_token&#39;, :authorize_path =&amp;gt; &#39;/oauth/authorize&#39;, :access_token_path =&amp;gt; &#39;/oauth/access_token&#39;, :http_method =&amp;gt; :get } ) @request_token=@consumer.get_request_token put @request_token.authorize_url    リクエストトークンを踏む
-  コールバックされる
-  verifirerをメモる
- @access_token = @request_token.get_access_token(:oauth_verifier =&amp;gt; verifier ) puts @access_token.token puts @access_token.secret    APIによってはOauthリクエスト署名いらいないやつもある
+アクセストークンリクエスト
+#!/usr/bin/env ruby require &#39;oauth&#39; require &#39;oauth/consumer&#39; @consumer=OAuth::Consumer.new( &amp;quot;consumer key&amp;quot;,&amp;quot;secret key&amp;quot;, { :site =&amp;gt; &#39;http://www.tumblr.com&#39;, :request_token_path =&amp;gt; &#39;/oauth/request_token&#39;, :authorize_path =&amp;gt; &#39;/oauth/authorize&#39;, :access_token_path =&amp;gt; &#39;/oauth/access_token&#39;, :http_method =&amp;gt; :get } ) @request_token=@consumer.get_request_token put @request_token.authorize_url リクエストトークンを踏む
+コールバックされる
+verifirerをメモる
+@access_token = @request_token.get_access_token(:oauth_verifier =&amp;gt; verifier ) puts @access_token.token puts @access_token.secret APIによってはOauthリクエスト署名いらいないやつもある
 (api_keyのみでOK)
-curl http://api.</description>
+curl http://api.tumblr.com/v2/blog/yaasita.tumblr.com/info?api_key=xxxxxxxxxxxxxxx 参考リンク Tumblr API日本語版 RubyでTumblrのOAuth認証のアクセストークンを得る手順 gist sample code </description>
     </item>
     
     <item>
@@ -286,7 +282,7 @@ curl http://api.</description>
       <pubDate>Wed, 14 May 2014 01:06:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2014/05/14/dns/</guid>
-      <description> DNSサーバーの引っ越し - JPRS DNS 浸透の都市伝説を斬る  </description>
+      <description> DNSサーバーの引っ越し - JPRS DNS 浸透の都市伝説を斬る </description>
     </item>
     
     <item>
@@ -295,11 +291,9 @@ curl http://api.</description>
       <pubDate>Fri, 12 Apr 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/04/12/1030/</guid>
-      <description> こんな感じでやってみよう
+      <description>こんな感じでやってみよう
 openssl s_client -starttls smtp -crlf -quiet -connect email-smtp.us-east-1.amazonaws.com:587
-
-expectで送る場合はこんな感じ
- </description>
+expectで送る場合はこんな感じ</description>
     </item>
     
     <item>

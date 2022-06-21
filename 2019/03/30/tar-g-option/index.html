@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>tarの-gオプションについて | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="tarの-gオプションについて" />
@@ -17,17 +17,17 @@
 ctimeの変化で気をつけなければいけないことはハードリンクによるバックアップ
 (rsync &ndash;link-dest等)
 例えば、以下のようなファイルが存在し
-work/ `-- 1.txt  以下のコマンドを発行した場合
-tar -g resume -cvf work.tar work/  初回なので当然全部がバックアップされる
+work/ `-- 1.txt 以下のコマンドを発行した場合
+tar -g resume -cvf work.tar work/ 初回なので当然全部がバックアップされる
 このまま以下のコマンドを打てばディレクトリだけのバックアップになる(差分がないため)
-tar -g resume -cvf work.tar work/  しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう
-stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる  なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
+tar -g resume -cvf work.tar work/ しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう
+stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
 うまく増分バックアップができなくなる
 続き" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2019/03/30/tar-g-option/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-03-30T02:32:25&#43;09:00" />
-<meta property="article:modified_time" content="2019-03-30T02:32:25&#43;09:00" />
+<meta property="article:published_time" content="2019-03-30T02:32:25+09:00" />
+<meta property="article:modified_time" content="2019-03-30T02:32:25+09:00" />
 
 
     
@@ -133,7 +133,7 @@ tar -g resume -cvf work.tar work/ # 1.txtは対象になる
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -238,7 +238,7 @@ tar -g resume -cvf work.tar work/ # 1.txtは対象になる
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -329,7 +329,7 @@ tar -g resume -cvf work.tar work/ # 1.txtは対象になる
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

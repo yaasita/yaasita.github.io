@@ -7,15 +7,15 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>HDDが故障したときにやったこと | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="HDDが故障したときにやったこと" />
 <meta property="og:description" content="/dev/sddが故障を検地 (S.M.A.R.T)
 まずはsmartのセルフテストをやってみる
-smartctl -t long /dev/sdd  badblocksでHDDをチェック
+smartctl -t long /dev/sdd badblocksでHDDをチェック
 今回は読み込みチェックだけやった
-badblocks -s -v /dev/hda  書き込みチェックもやるなら↓
+badblocks -s -v /dev/hda 書き込みチェックもやるなら↓
 badblocks -s -v -n /dev/hda
 -s 進捗状況表示
 -v 詳細表示
@@ -26,8 +26,8 @@ fsck
 を使うこと" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2012/03/11/2962/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2012-03-11T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2012-03-11T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2012-03-11T00:00:00+09:00" />
+<meta property="article:modified_time" content="2012-03-11T00:00:00+09:00" />
 
 
     
@@ -127,7 +127,7 @@ fsck<br>
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -232,7 +232,7 @@ fsck<br>
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -323,7 +323,7 @@ fsck<br>
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

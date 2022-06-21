@@ -6,7 +6,25 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 08 Jun 2022 02:37:21 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Jun 2022 01:43:12 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tumblrのアカウントが消されたけど復旧してもらった</title>
+      <link>https://yaasita.github.io/2022/06/22/tumblr-account/</link>
+      <pubDate>Wed, 22 Jun 2022 01:43:12 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/06/22/tumblr-account/</guid>
+      <description>経緯はこんな感じ
+2022/06/08 tumblrで消されたの確認
+ログインして、「アカウント消えました」って表示される
+その下に問題あったらサポートに連絡してねと書いてあったので、サポートに連絡
+2022/06/13 反応がないので、もう一回サポートに連絡
+2022/06/14 このお問い合わせフォームバグってないか？
+と思ったので、yaasita2アカウント作成して、その中のお問い合わせフォームから連絡
+数分で連絡が来て、yaasitaのアカウントでメールしてこいと言われる
+yaasitaアカウントのメールで再度問い合わせ
+2022/06/15 Hello, Thank you for writing back! We&amp;#39;ve restored your account. Thank you for bringing this problem to our attention. We&amp;#39;re sorry that it occurred, and we&amp;#39;ll do our best to make sure that it doesn&amp;#39;t happen again. You should now be able to log in just fine with your email address and password. Please let me know if there&amp;#39;s anything else I can help you with!</description>
+    </item>
+    
     <item>
       <title>budibaseをmicrok8sで動かす</title>
       <link>https://yaasita.github.io/2022/06/08/budibase/</link>
@@ -14,9 +32,8 @@
       
       <guid>https://yaasita.github.io/2022/06/08/budibase/</guid>
       <description>budibaseをローカルのmicrok8sで動かしたときのメモ
-# 必要なプラグインをON microk8s.enable dns:192.168.0.10 microk8s.enable ingress microk8s.enable metallb # 192.168.0.150-192.168.0.180 みたいに指定 microk8s.enable storage # kubectlで動かせるように microk8s.config &amp;gt; ~/.kube/config # インストール helm show values budibase/budibase &amp;gt; config.yaml # hostを指定 vim config.yaml helm install --create-namespace --namespace budibase budibase budibase/budibase -f config.yaml  あとはingress部分を作る
-# 証明書を作って kubectl create secret tls &#39;cloud.yaasita.net&#39; --key=privkey.pem --cert=fullchain.pem  ingressをこんな感じで作っておく
- </description>
+# 必要なプラグインをON microk8s.enable dns:192.168.0.10 microk8s.enable ingress microk8s.enable metallb # 192.168.0.150-192.168.0.180 みたいに指定 microk8s.enable storage # kubectlで動かせるように microk8s.config &amp;gt; ~/.kube/config # インストール helm show values budibase/budibase &amp;gt; config.yaml # hostを指定 vim config.yaml helm install --create-namespace --namespace budibase budibase budibase/budibase -f config.yaml あとはingress部分を作る
+# 証明書を作って kubectl create secret tls &#39;cloud.yaasita.net&#39; --key=privkey.pem --cert=fullchain.pem ingressをこんな感じで作っておく</description>
     </item>
     
     <item>
@@ -51,7 +68,7 @@ chorme.exeまでをフルパスでダブルクォートで囲む方法は上手�
 初回はどちらか一方でも繋がれば遅延は感じないが
 一回接続に成功した場合はipv4を使うのかipv6を使うのかキャッシュしている状態なので切り替えに時間がかかる
 例えばipv6で繋がっていたサイト側でipv6をドロップさせると
-ip6tables -A INPUT -p tcp --dport 443 -j DROP  数秒遅延した後にipv4で接続する</description>
+ip6tables -A INPUT -p tcp --dport 443 -j DROP 数秒遅延した後にipv4で接続する</description>
     </item>
     
     <item>
@@ -61,7 +78,7 @@ ip6tables -A INPUT -p tcp --dport 443 -j DROP  数秒遅延した後にipv4で�
       
       <guid>https://yaasita.github.io/2022/03/01/ipv6-tmpaddr/</guid>
       <description>linuxでipv6一時アドレス使う時に設定するカーネルパラメータ
-net.ipv6.conf.xxx.temp_prefered_lft = 86400 net.ipv6.conf.xxx.temp_valid_lft = 604800  これの意味は、上記のようにデフォルトの設定86400(1日), 604800(7日)だった場合
+net.ipv6.conf.xxx.temp_prefered_lft = 86400 net.ipv6.conf.xxx.temp_valid_lft = 604800 これの意味は、上記のようにデフォルトの設定86400(1日), 604800(7日)だった場合
 xxxインターフェイスにIPv6-1という一時アドレスが付いていたとする
 IPv6-1作成してから24時間後にIPv6-2という新しい一時アドレスを取得する
 取得後はIPv6-2のアドレスを使用して通信をするようになる
@@ -83,12 +100,12 @@ IPv6-1作成してから24時間後にIPv6-2という新しい一時アドレス
       <guid>https://yaasita.github.io/2022/02/26/ipv6-tempaddr/</guid>
       <description>systemd-networkdの設定にIPv6PrivacyExtensions足せばOK
 (対応するカーネルパラメータ net.ipv6.conf.xxx.use_tempaddr は自動的に設定される)
-[Network] Address=192.168.0.2/24 Gateway=192.168.0.1 IPv6PrivacyExtensions=yes  temp_valid_lft
+[Network] Address=192.168.0.2/24 Gateway=192.168.0.1 IPv6PrivacyExtensions=yes temp_valid_lft
 と
 temp_prefered_lft
 については sysctlで設定すること
 参考リンク
- https://wiki.archlinux.jp/index.php/IPv6 http://dr.slump.jp/IPv6/rfc3041/ https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt  </description>
+https://wiki.archlinux.jp/index.php/IPv6 http://dr.slump.jp/IPv6/rfc3041/ https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt </description>
     </item>
     
     <item>
@@ -114,8 +131,8 @@ https://ipv46.cloud.yaasita.net/</description>
       <guid>https://yaasita.github.io/2022/02/12/tls-report-check/</guid>
       <description>SMTP-TLSRPTをチェックしてtotal-failure-session-countがゼロより大きいかチェックするスクリプト
 (対象はGoogleから貰うレポート)
- こんな感じでメールがあるディレクトリを指定する
-./index.js ~/Maildir/cur/  </description>
+こんな感じでメールがあるディレクトリを指定する
+./index.js ~/Maildir/cur/ </description>
     </item>
     
     <item>
@@ -130,11 +147,9 @@ https://ipv46.cloud.yaasita.net/</description>
 これは音ゲーのスコアを表していてタイミングよく押せた場合はPERFECT, 早すぎたり遅すぎたりした場合はFAST, SLOWに計上される
 この内ミスの割合が正規分布と見なせるか検定する
 まず、CSVを右上のEnvironmentタブ =&amp;gt; Import Datasetから読み込む
-
 データをMISSの割合をデータフレームに追加
 library(dplyr) bandori &amp;lt;- bandori %&amp;gt;% mutate(MISS = (FAST + SLOW) / (PERFECT + FAST + SLOW) * 100) ヒストグラムと近似曲線を出す
-hist(bandori$MISS, breaks = seq(0, 20, 1)) dens &amp;lt;- density(bandori$MISS) lines(dens, lwd = 3, col = &amp;quot;blue&amp;quot;) 
-検定
+hist(bandori$MISS, breaks = seq(0, 20, 1)) dens &amp;lt;- density(bandori$MISS) lines(dens, lwd = 3, col = &amp;#34;blue&amp;#34;) 検定
 shapiro.test(bandori$MISS) 検定統計量とp値
 data: bandori$MISS W = 0.98162, p-value = 0.724 ここで注意なのはこの検定は帰無仮説が「正規分布している」なので
 棄却出来た場合は正規分布ではないと言えるが、
@@ -157,7 +172,7 @@ https://github.com/systemd/systemd/pull/10294/files
 こんな感じで、&amp;ldquo;SYSTEMD_NSPAWN_TMPFS_TMP&amp;rdquo; って環境変数に0を入れておけば、/tmpディレクトリをtmpfsにしない
 /etc/systemd/system/systemd-nspawn@.service
 にこんな感じで追加したらmachinectlからもできる
-Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0  </description>
+Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0 </description>
     </item>
     
     <item>
@@ -168,9 +183,9 @@ Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0  </description>
       <guid>https://yaasita.github.io/2021/11/28/microk8s/</guid>
       <description>microk8s で ArgoCD を動かすときのメモ
 まず手順通りにマニフェストを設定したら
-kubectl patch svc argocd-server -n argocd -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39;  ClusterIP から NodePortに変更
+kubectl patch svc argocd-server -n argocd -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; ClusterIP から NodePortに変更
 こんな感じの表示になったら
-$ kubectl get svc argocd-server -n argocd argocd-server NodePort 10.152.183.43 &amp;lt;none&amp;gt; 80:30444/TCP,443:30983/TCP 20h  以下のURLでアクセス
+$ kubectl get svc argocd-server -n argocd argocd-server NodePort 10.152.183.43 &amp;lt;none&amp;gt; 80:30444/TCP,443:30983/TCP 20h 以下のURLでアクセス
 https:// (ホストのIP) :30983
 まあkubectl port-forward でやってもいいけど
 ついでに dashbord も同様にできる
@@ -184,7 +199,7 @@ kubectl patch svc kubernetes-dashboard -n kube-system -p &#39;{&amp;quot;spec&am
       
       <guid>https://yaasita.github.io/2021/10/15/spf-rule/</guid>
       <description>SPFレコードで
-v=spf1 a:example.net -all  みたいに指定したときにAレコードだけじゃなくて、AAAAレコードも引いてくれるので便利です
+v=spf1 a:example.net -all みたいに指定したときにAレコードだけじゃなくて、AAAAレコードも引いてくれるので便利です
 IPv6のアドレスは長くなるので積極的に利用したいですね
 https://datatracker.ietf.org/doc/html/rfc7208#section-5.3</description>
     </item>
@@ -200,7 +215,7 @@ https://datatracker.ietf.org/doc/html/rfc7208#section-5.3</description>
 捨てたやつのスペック
 商品型名： LB-C110B [Windows 8.1搭載]
 商品単価： \44,940
- OS: Windows 8.1 64ビット CPU: インテル(R) Celeron(R) プロセッサー 1037U (2コア/1.80GHz/2Mキャッシュ) メモリ: \5,250 8GB メモリ [ 8GB×1 (DDR3 SO-DIMM PC3-12800) ] HDD1:【キャンペーン】500GB 5400rpm [ Western Digital製 ] VGA:インテル(R) HD グラフィックス 3.5ドライブベイ :SDカードリーダー マザーボード :インテル(R) NM70 Express チップセット ※SSD搭載時は SATAII 接続になります。( mSATA SSDを除く ) ベアボーン :LuvBook C シリーズ 液晶 :11.6型ワイド (1366x768) マルチタッチ対応光沢HD液晶パネル LAN :[ オンボード ] 10/100/1000BASE-T GigaBit-Ethernet LAN 無線LAN :無線LAN ( IEEE802.</description>
+OS: Windows 8.1 64ビット CPU: インテル(R) Celeron(R) プロセッサー 1037U (2コア/1.80GHz/2Mキャッシュ) メモリ: \5,250 8GB メモリ [ 8GB×1 (DDR3 SO-DIMM PC3-12800) ] HDD1:【キャンペーン】500GB 5400rpm [ Western Digital製 ] VGA:インテル(R) HD グラフィックス 3.5ドライブベイ :SDカードリーダー マザーボード :インテル(R) NM70 Express チップセット ※SSD搭載時は SATAII 接続になります。( mSATA SSDを除く ) ベアボーン :LuvBook C シリーズ 液晶 :11.6型ワイド (1366x768) マルチタッチ対応光沢HD液晶パネル LAN :[ オンボード ] 10/100/1000BASE-T GigaBit-Ethernet LAN 無線LAN :無線LAN ( IEEE802.</description>
     </item>
     
     <item>
@@ -213,7 +228,7 @@ https://datatracker.ietf.org/doc/html/rfc7208#section-5.3</description>
 (/etc/systemd/network/にはこんな感じでbridge作る)
 https://gist.github.com/yaasita/d527b48f54b0e23c3097a9c69239d534
 どうやらこれ、machine-idから作られてるみたいで、VMコピーしたらmachine-id変えた方が良いぽいね
-rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machine-id-setup  </description>
+rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machine-id-setup </description>
     </item>
     
     <item>
@@ -223,12 +238,12 @@ rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machin
       
       <guid>https://yaasita.github.io/2021/09/20/dircolors/</guid>
       <description>dircolorsは
-ls --color=auto  したときの色を設定するコマンド
+ls --color=auto したときの色を設定するコマンド
 以下のコマンドで設定を書き出して
-dircolors -p &amp;gt; ~/.dir_colors  好きな設定に編集する
-vi ~/.dircolors  .bashrcに以下のように書いておいた
-if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^screen ]];then alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto&#39; eval &amp;quot;$(dircolors -b ~/.dircolors)&amp;quot; fi  参考
- lsコマンドで表示されるファイルの色を変更するには  </description>
+dircolors -p &amp;gt; ~/.dir_colors 好きな設定に編集する
+vi ~/.dircolors .bashrcに以下のように書いておいた
+if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^screen ]];then alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto&#39; eval &amp;quot;$(dircolors -b ~/.dircolors)&amp;quot; fi 参考
+lsコマンドで表示されるファイルの色を変更するには </description>
     </item>
     
     <item>
@@ -246,9 +261,9 @@ https://mobile.twitter.com/mattn_jp/status/1434205359573405696
 こんな感じの設定を追加しておいた
 cdコマンドを上書きして、@で始まってたら cd -P でsymlinkを辿るようにして、他は通常通り
 (これなら補完候補も足さなくてOK)
-export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 }  あと、bookmarkへの追加もコマンドにしておく
+export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 } あと、bookmarkへの追加もコマンドにしておく
 bookmarkしたいディレクトリに移動してbookmarkコマンドでsymlink作るようにしておく
-function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) }  </description>
+function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) } </description>
     </item>
     
     <item>
@@ -258,10 +273,10 @@ function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(
       
       <guid>https://yaasita.github.io/2021/08/16/mlocate/</guid>
       <description>debian 11でlocateしても引っかからないファイル多いなと思って調べたら
-systemctl cat mlocate.service  こいうのが追加されてる
-[Service] PrivateTmp=true PrivateDevices=true PrivateNetwork=true ProtectSystem=true  debian 10 (buster) 時代はcronだったから気にしなかったけど、多分これ、ProtectSystemの所為で/usrとか見れてないぽい
+systemctl cat mlocate.service こいうのが追加されてる
+[Service] PrivateTmp=true PrivateDevices=true PrivateNetwork=true ProtectSystem=true debian 10 (buster) 時代はcronだったから気にしなかったけど、多分これ、ProtectSystemの所為で/usrとか見れてないぽい
 今までのように全検索したかったら以下のコマンドで上書きしたほうが良いかと
-systemctl edit mlocate.service  </description>
+systemctl edit mlocate.service </description>
     </item>
     
     <item>
@@ -273,8 +288,8 @@ systemctl edit mlocate.service  </description>
       <description>readlineの書き方
 https://nodejs.org/api/readline.html
 こうやって書くより
- const rl = readline.createInterface({ // ... }); for await (const line of rl) { // Each line in the readline input will be successively available here as // `line`. } こっちの方がメモリ効率が良さそう
- await new Promise((resolv, reject) =&amp;gt; { rl.on(&amp;quot;line&amp;quot;, (line) =&amp;gt; { // 処理 }); rl.on(&amp;quot;close&amp;quot;, () =&amp;gt; { resolv(); }); }); 詳しくは調べてないけど、巨大ファイルだと
+const rl = readline.createInterface({ // ... }); for await (const line of rl) { // Each line in the readline input will be successively available here as // `line`. } こっちの方がメモリ効率が良さそう
+await new Promise((resolv, reject) =&amp;gt; { rl.on(&amp;#34;line&amp;#34;, (line) =&amp;gt; { // 処理 }); rl.on(&amp;#34;close&amp;#34;, () =&amp;gt; { resolv(); }); }); 詳しくは調べてないけど、巨大ファイルだと
 FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory `` が頻発する </description>
     </item>
     
@@ -288,22 +303,7 @@ FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaS
 https://atcoder.jp/contests/abc202/tasks
 解説
 https://www.youtube.com/watch?v=iNSp33TT3tc
-ポイントは use bigint; を指定しないと溢れて浮動小数点になってしまう
- </description>
-    </item>
-    
-    <item>
-      <title>tumblrのテキスト情報を取得</title>
-      <link>https://yaasita.github.io/2021/05/25/tumblr-metadata/</link>
-      <pubDate>Tue, 25 May 2021 00:53:51 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/05/25/tumblr-metadata/</guid>
-      <description>tumblrの検索だと、上手く引っかからない事が多いので
-テキストデータはローカルに保存することにした
-最初の投稿から何番目を指定することで、ディレクトリの年別ディレクトリに保存します
-実行例
-./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ 1234   こんな感じで適度にsleep入れて取得してます
-#!/bin/bash set -eux save_file=/tmp/save_num already_get_number=$(cat $save_file) for ((i=$already_get_number; i &amp;lt; $already_get_number + 100; i++));do ./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ $i sleep 1 done echo $i &amp;gt; $save_file  </description>
+ポイントは use bigint; を指定しないと溢れて浮動小数点になってしまう</description>
     </item>
     
   </channel>

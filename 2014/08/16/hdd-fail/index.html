@@ -7,24 +7,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>HDDの故障が疑われるときにやったこと | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="HDDの故障が疑われるときにやったこと" />
 <meta property="og:description" content="なんかrsyncでバックアップしようとすると以下のエラーが出るようになった
-rsync: read errors mapping &quot;/home/yamasita/Desktop/hogehoge.dat&quot;: Input/output error (5) ERROR: /home/yamasita/Desktop/hogehoge.dat failed verification -- update discarded.  まずbadblocksで調べてみる
-badblocks /home/yamasita/Desktop/hogehoge.dat  ダメそう
+rsync: read errors mapping &quot;/home/yamasita/Desktop/hogehoge.dat&quot;: Input/output error (5) ERROR: /home/yamasita/Desktop/hogehoge.dat failed verification -- update discarded. まずbadblocksで調べてみる
+badblocks /home/yamasita/Desktop/hogehoge.dat ダメそう
 とりあえず、fsckをかけてみる
 /のパーティションなのでfsckの間隔を調整
-dumpe2fs -h /dev/sda1 | egrep -i &#39;check|mount count&#39; tune2fs -i 30d /dev/sda1  これでとりあえず不良セクタ退避させた
+dumpe2fs -h /dev/sda1 | egrep -i &#39;check|mount count&#39; tune2fs -i 30d /dev/sda1 これでとりあえず不良セクタ退避させた
 過去記事
 HDDが故障したときにやったこと
 参考リンク
 http://nfolamp.wordpress.com/2010/10/25/dumpe2fstune2fs-manipulating-the-ext-fs-auto-check-parameters/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2014/08/16/hdd-fail/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2014-08-16T19:10:00&#43;09:00" />
-<meta property="article:modified_time" content="2014-08-16T19:10:00&#43;09:00" />
+<meta property="article:published_time" content="2014-08-16T19:10:00+09:00" />
+<meta property="article:modified_time" content="2014-08-16T19:10:00+09:00" />
 
 
     
@@ -125,7 +125,7 @@ tune2fs -i 30d /dev/sda1
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -230,7 +230,7 @@ tune2fs -i 30d /dev/sda1
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -321,7 +321,7 @@ tune2fs -i 30d /dev/sda1
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

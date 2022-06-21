@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>HSTSの説明資料 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="HSTSの説明資料" />
@@ -15,27 +15,22 @@
 HSTSとは HTTPでの通信を減らしよりセキュアなHTTPSを使うように促す仕組み
 通常 通常HTTPリクエストをして、301、302等のリダイレクトによってHTTPSにアクセスし直す
 が、HTTPでのやりとり部分に中間者攻撃のリスクが存在する
-
 ※厳密には301リダイレクトはブラウザがキャッシュするので2回目以降はサーバー側にリクエストしない
 HSTS ヘッダ HSTSヘッダを受け取ると、ブラウザ側でHTTPをHTTPSに読み替えてリクエストする
 通常のリダイレクトは違い、一旦 HSTSヘッダを受け取ると有効期間中は決してhttpによるリクエストをしない
 (http:// ~ というリンクはブラウザ側で読み換える)
-
 付与するヘッダーは以下のようなもの
-strict-transport-security: max-age=31536000; includeSubDomains; preload   max-age: 有効時間（秒単位） includeSubDomains: サブドメインも含めるかどうか alis.to なら hoge.alis.to も有効になる preload: preloadに登録しても良いかどうか（後述）  HSTS preload HSTS preloadは予め hstspreload.org に自分のサイトを登録しておいて
+strict-transport-security: max-age=31536000; includeSubDomains; preload max-age: 有効時間（秒単位） includeSubDomains: サブドメインも含めるかどうか alis.to なら hoge.alis.to も有効になる preload: preloadに登録しても良いかどうか（後述） HSTS preload HSTS preloadは予め hstspreload.org に自分のサイトを登録しておいて
 初回リクエスト時からHTTPSを有効にしておく仕組み
-
-メリット・デメリット  メリット  observatory の点数アップ (対外アピール） 盗聴・中間者攻撃リスクを軽減しよりセキュアになる   デメリット  証明書の運用を失敗できない サブドメインを含め、HTTPでの運用を一切できなくなる ローカルでのテスト時に偽の証明書を無視しにくくなる    通常だと出てくる証明書エラー無視のリンクが・・・
-
+メリット・デメリット メリット observatory の点数アップ (対外アピール） 盗聴・中間者攻撃リスクを軽減しよりセキュアになる デメリット 証明書の運用を失敗できない サブドメインを含め、HTTPでの運用を一切できなくなる ローカルでのテスト時に偽の証明書を無視しにくくなる 通常だと出てくる証明書エラー無視のリンクが・・・
 HSTSのサイトは証明書無視ボタンが出ない
-
 windowsだとやり方があるらしいが、ローカルでの確認とかはやりにくくなる
 /etc/hostsを化かして対応する、実ドメインでのリハーサル時はプライベートCA等で対応すること
- https://support.opendns.com/hc/en-us/articles/227989087-Chrome-for-Windows-only-HSTS-Certificate-Exception-Instructions https://moriya.xrea.jp/tdiary/20150827.html   function callback1(data){ var photos = data." />
+https://support.opendns.com/hc/en-us/articles/227989087-Chrome-for-Windows-only-HSTS-Certificate-Exception-Instructions https://moriya.xrea.jp/tdiary/20150827.html " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2018/11/12/hsts/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2018-11-12T01:24:39&#43;09:00" />
-<meta property="article:modified_time" content="2018-11-12T01:24:39&#43;09:00" />
+<meta property="article:published_time" content="2018-11-12T01:24:39+09:00" />
+<meta property="article:modified_time" content="2018-11-12T01:24:39+09:00" />
 
 
     
@@ -79,13 +74,13 @@ if (!doNotTrack) {
 <h2 id="通常">通常</h2>
 <p>通常HTTPリクエストをして、301、302等のリダイレクトによってHTTPSにアクセスし直す<br>
 が、HTTPでのやりとり部分に中間者攻撃のリスクが存在する</p>
-<p><a href="#"><img id="tumblr-img1" src=""></a></p>
+<p><a href="https://yaasita.tk/blog/2022/hsts-1.png"><img src="https://yaasita.tk/blog/2022/hsts-1.png" alt="hsts-1"></a></p>
 <p>※厳密には301リダイレクトはブラウザがキャッシュするので2回目以降はサーバー側にリクエストしない</p>
 <h2 id="hsts-ヘッダ">HSTS ヘッダ</h2>
 <p>HSTSヘッダを受け取ると、ブラウザ側でHTTPをHTTPSに読み替えてリクエストする<br>
 通常のリダイレクトは違い、一旦 HSTSヘッダを受け取ると有効期間中は決してhttpによるリクエストをしない<br>
 (http:// ~ というリンクはブラウザ側で読み換える)</p>
-<p><a href="#"><img id="tumblr-img2" src=""></a></p>
+<p><a href="https://yaasita.tk/blog/2022/hsts-2.png"><img src="https://yaasita.tk/blog/2022/hsts-2.png" alt="hsts-2"></a></p>
 <p>付与するヘッダーは以下のようなもの</p>
 <pre><code>strict-transport-security: max-age=31536000; includeSubDomains; preload
 </code></pre>
@@ -97,7 +92,7 @@ if (!doNotTrack) {
 <h2 id="hsts-preload">HSTS preload</h2>
 <p>HSTS preloadは予め <a href="https://hstspreload.org/">hstspreload.org</a> に自分のサイトを登録しておいて<br>
 初回リクエスト時からHTTPSを有効にしておく仕組み</p>
-<p><a href="#"><img id="tumblr-img3" src=""></a></p>
+<p><a href="https://yaasita.tk/blog/2022/hsts-3.png"><img src="https://yaasita.tk/blog/2022/hsts-3.png" alt="hsts-3"></a></p>
 <h2 id="メリットデメリット">メリット・デメリット</h2>
 <ul>
 <li>メリット
@@ -115,35 +110,15 @@ if (!doNotTrack) {
 </li>
 </ul>
 <p>通常だと出てくる証明書エラー無視のリンクが・・・</p>
-<p><a href="#"><img id="tumblr-img4" src=""></a></p>
+<p><a href="https://yaasita.tk/blog/2022/hsts-4.png"><img src="https://yaasita.tk/blog/2022/hsts-4.png" alt="hsts-4"></a></p>
 <p>HSTSのサイトは証明書無視ボタンが出ない</p>
-<p><a href="#"><img id="tumblr-img5" src=""></a></p>
+<p><a href="https://yaasita.tk/blog/2022/hsts-5.png"><img src="https://yaasita.tk/blog/2022/hsts-5.png" alt="hsts-5"></a></p>
 <p>windowsだとやり方があるらしいが、ローカルでの確認とかはやりにくくなる<br>
 /etc/hostsを化かして対応する、実ドメインでのリハーサル時はプライベートCA等で対応すること</p>
 <ul>
 <li><a href="https://support.opendns.com/hc/en-us/articles/227989087-Chrome-for-Windows-only-HSTS-Certificate-Exception-Instructions">https://support.opendns.com/hc/en-us/articles/227989087-Chrome-for-Windows-only-HSTS-Certificate-Exception-Instructions</a></li>
 <li><a href="https://moriya.xrea.jp/tdiary/20150827.html">https://moriya.xrea.jp/tdiary/20150827.html</a></li>
 </ul>
-<script>
-function callback1(data){
-    var photos = data.response.posts[0].photos;
-    document.getElementById("tumblr-img1").parentNode.href = photos[0].original_size.url;
-    document.getElementById("tumblr-img1").src = photos[0].original_size.url;
-    document.getElementById("tumblr-img2").parentNode.href = photos[1].original_size.url;
-    document.getElementById("tumblr-img2").src = photos[1].original_size.url;
-    document.getElementById("tumblr-img3").parentNode.href = photos[2].original_size.url;
-    document.getElementById("tumblr-img3").src = photos[2].original_size.url;
-}
-function callback2(data){
-    var photos = data.response.posts[0].photos;
-    document.getElementById("tumblr-img4").parentNode.href = photos[0].original_size.url;
-    document.getElementById("tumblr-img4").src = photos[0].original_size.url;
-    document.getElementById("tumblr-img5").parentNode.href = photos[1].original_size.url;
-    document.getElementById("tumblr-img5").src = photos[1].original_size.url;
-}
-</script>
-<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=178564045817&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback1"></script>
-<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=178565573037&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback2"></script>
 
   </div>
   <footer>
@@ -189,7 +164,7 @@ function callback2(data){
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -294,7 +269,7 @@ function callback2(data){
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -385,7 +360,7 @@ function callback2(data){
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

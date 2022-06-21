@@ -14,9 +14,8 @@
       
       <guid>https://yaasita.github.io/2022/06/08/budibase/</guid>
       <description>budibaseをローカルのmicrok8sで動かしたときのメモ
-# 必要なプラグインをON microk8s.enable dns:192.168.0.10 microk8s.enable ingress microk8s.enable metallb # 192.168.0.150-192.168.0.180 みたいに指定 microk8s.enable storage # kubectlで動かせるように microk8s.config &amp;gt; ~/.kube/config # インストール helm show values budibase/budibase &amp;gt; config.yaml # hostを指定 vim config.yaml helm install --create-namespace --namespace budibase budibase budibase/budibase -f config.yaml  あとはingress部分を作る
-# 証明書を作って kubectl create secret tls &#39;cloud.yaasita.net&#39; --key=privkey.pem --cert=fullchain.pem  ingressをこんな感じで作っておく
- </description>
+# 必要なプラグインをON microk8s.enable dns:192.168.0.10 microk8s.enable ingress microk8s.enable metallb # 192.168.0.150-192.168.0.180 みたいに指定 microk8s.enable storage # kubectlで動かせるように microk8s.config &amp;gt; ~/.kube/config # インストール helm show values budibase/budibase &amp;gt; config.yaml # hostを指定 vim config.yaml helm install --create-namespace --namespace budibase budibase budibase/budibase -f config.yaml あとはingress部分を作る
+# 証明書を作って kubectl create secret tls &#39;cloud.yaasita.net&#39; --key=privkey.pem --cert=fullchain.pem ingressをこんな感じで作っておく</description>
     </item>
     
     <item>
@@ -32,7 +31,7 @@ https://github.com/systemd/systemd/pull/10294/files
 こんな感じで、&amp;ldquo;SYSTEMD_NSPAWN_TMPFS_TMP&amp;rdquo; って環境変数に0を入れておけば、/tmpディレクトリをtmpfsにしない
 /etc/systemd/system/systemd-nspawn@.service
 にこんな感じで追加したらmachinectlからもできる
-Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0  </description>
+Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0 </description>
     </item>
     
     <item>
@@ -43,9 +42,9 @@ Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0  </description>
       <guid>https://yaasita.github.io/2021/11/28/microk8s/</guid>
       <description>microk8s で ArgoCD を動かすときのメモ
 まず手順通りにマニフェストを設定したら
-kubectl patch svc argocd-server -n argocd -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39;  ClusterIP から NodePortに変更
+kubectl patch svc argocd-server -n argocd -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; ClusterIP から NodePortに変更
 こんな感じの表示になったら
-$ kubectl get svc argocd-server -n argocd argocd-server NodePort 10.152.183.43 &amp;lt;none&amp;gt; 80:30444/TCP,443:30983/TCP 20h  以下のURLでアクセス
+$ kubectl get svc argocd-server -n argocd argocd-server NodePort 10.152.183.43 &amp;lt;none&amp;gt; 80:30444/TCP,443:30983/TCP 20h 以下のURLでアクセス
 https:// (ホストのIP) :30983
 まあkubectl port-forward でやってもいいけど
 ついでに dashbord も同様にできる
@@ -59,12 +58,12 @@ kubectl patch svc kubernetes-dashboard -n kube-system -p &#39;{&amp;quot;spec&am
       
       <guid>https://yaasita.github.io/2021/09/20/dircolors/</guid>
       <description>dircolorsは
-ls --color=auto  したときの色を設定するコマンド
+ls --color=auto したときの色を設定するコマンド
 以下のコマンドで設定を書き出して
-dircolors -p &amp;gt; ~/.dir_colors  好きな設定に編集する
-vi ~/.dircolors  .bashrcに以下のように書いておいた
-if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^screen ]];then alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto&#39; eval &amp;quot;$(dircolors -b ~/.dircolors)&amp;quot; fi  参考
- lsコマンドで表示されるファイルの色を変更するには  </description>
+dircolors -p &amp;gt; ~/.dir_colors 好きな設定に編集する
+vi ~/.dircolors .bashrcに以下のように書いておいた
+if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^screen ]];then alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto&#39; eval &amp;quot;$(dircolors -b ~/.dircolors)&amp;quot; fi 参考
+lsコマンドで表示されるファイルの色を変更するには </description>
     </item>
     
     <item>
@@ -86,24 +85,24 @@ https://support.skype.com/ja/faq/FA34894/skype-huairutochiyatsutolu-li-woekusupo
       
       <guid>https://yaasita.github.io/2021/03/20/mpd-ncmpc/</guid>
       <description>mpd と ncmpc の設定メモ
-インストール apt install mpd ncmpc  セットアップ /etc/mpd.confの設定
+インストール apt install mpd ncmpc セットアップ /etc/mpd.confの設定
 http経由で聞くのでoutputはhttpにします
- ~/.config/ncmpc/config
+~/.config/ncmpc/config
 タグで管理してないのでファイル名だけ表示します
-host = &amp;quot;127.0.0.1&amp;quot; port = 6600 list-format = &amp;quot;%file%&amp;quot; status-format = &amp;quot;%file%&amp;quot; text-editor = vim  /var/lib/mpd/music/ に音楽ファイルを入れる(symlinkでも可)
+host = &amp;quot;127.0.0.1&amp;quot; port = 6600 list-format = &amp;quot;%file%&amp;quot; status-format = &amp;quot;%file%&amp;quot; text-editor = vim /var/lib/mpd/music/ に音楽ファイルを入れる(symlinkでも可)
 ncmpcで起動 Ctrl-UでDBのアップデート
 歌詞表示 歌詞表示するなら ncmpcpp の方が楽ですが、最初からvimキーバインドなncmpcが好きなのでこちらを使っています
 方法は以下の記事通り歌詞検索用のスクリプトを配置するだけ
 https://www.use-strict.de/using-ncmpc-to-fetch-and-read-lyrics.html
 debianのパッケージは以下のオプションでビルドされてるので
--Dlyrics_plugin_dir=&amp;quot;/usr/lib/ncmpc/lyrics/&amp;quot;  /usr/lib/ncmpc/lyrics/01-test.sh
+-Dlyrics_plugin_dir=&amp;quot;/usr/lib/ncmpc/lyrics/&amp;quot; /usr/lib/ncmpc/lyrics/01-test.sh
 みたいなファイルをおきます
 これが歌詞検索の際に実行されます
 こんなファイルを置いて
-#!/bin/bash echo &amp;quot;$@&amp;quot; echo &amp;quot;あいうおえ&amp;quot;  artist, titleを設定
-eyeD3 -a backnumber hoge.mp3 eyeD3 -t 高嶺の花子さん takane.mp3  すると第一引数にartist, 第二引数にtitleが入ります
-
-この画面で、Sを押すと歌詞を~/.cache/ncmpc/lyrics/保存できたりもします</description>
+#!/bin/bash echo &amp;quot;$@&amp;quot; echo &amp;quot;あいうおえ&amp;quot; artist, titleを設定
+eyeD3 -a backnumber hoge.mp3 eyeD3 -t 高嶺の花子さん takane.mp3 すると第一引数にartist, 第二引数にtitleが入ります
+この画面で、Sを押すと歌詞を~/.cache/ncmpc/lyrics/保存できたりもします
+ファイル名が引数に入らないので、直接ファイルを探せないですが、ファイル名を工夫すれば、mp3ファイルタグ内の歌詞情報を引っ張ることも可能だと思います</description>
     </item>
     
     <item>
@@ -116,8 +115,8 @@ eyeD3 -a backnumber hoge.mp3 eyeD3 -t 高嶺の花子さん takane.mp3  する�
 公式サイト
 https://www.mod-auth-openidc.org/
 インストール
-apt install libapache2-mod-auth-openidc  設定 /etc/apache2/mods-enabled/auth_openidc.conf
-OIDCRedirectURI https://hoge.example.jp/oidc/redirect_uri OIDCCryptoPassphrase hogehoge-foobar OIDCProviderMetadataURL https://accounts.google.com/.well-known/openid-configuration OIDCScope &amp;quot;openid email&amp;quot; OIDCClientID xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com OIDCClientSecret XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  リバースプロキシ的に使う例
+apt install libapache2-mod-auth-openidc 設定 /etc/apache2/mods-enabled/auth_openidc.conf
+OIDCRedirectURI https://hoge.example.jp/oidc/redirect_uri OIDCCryptoPassphrase hogehoge-foobar OIDCProviderMetadataURL https://accounts.google.com/.well-known/openid-configuration OIDCScope &amp;quot;openid email&amp;quot; OIDCClientID xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com OIDCClientSecret XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX リバースプロキシ的に使う例
 /adminかつ、プライベートIP以外の場合はGoogle認証で hogehoge@gmail.com のみ許可
 &amp;lt;VirtualHost *:443&amp;gt; ServerName hoge.example.jp &amp;lt;Location /&amp;gt; Require all granted &amp;lt;/Location&amp;gt; &amp;lt;Location /oidc/&amp;gt; AuthType openid-connect Require valid-user &amp;lt;/Location&amp;gt; &amp;lt;Location /admin&amp;gt; AuthType openid-connect Require claim email:hogehoge@gmail.com Require ip 192.168.0.0/24 &amp;lt;/Location&amp;gt; ProxyRequests Off ProxyPreserveHost On ProxyPass / http://127.0.0.1:8080/ keepalive=On RequestHeader set X-Forwarded-Proto &amp;quot;https&amp;quot; RequestHeader unset X-Forwarded-For RequestHeader unset X-Forwarded-Server RequestHeader unset X-Forwarded-Host # SSL設定等が続く .</description>
     </item>
@@ -133,8 +132,8 @@ OIDCRedirectURI https://hoge.example.jp/oidc/redirect_uri OIDCCryptoPassphrase h
 自分の環境だと、送信メールサーバーがセカンダリメールサーバーと兼任している
 以下のように設定した
 /etc/postfix/master.cf
-smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode=yes -o smtpd_sasl_auth_enable=yes -o smtpd_reject_unlisted_recipient=no -o smtpd_client_restrictions=$mua_client_restrictions -o smtpd_helo_restrictions=$mua_helo_restrictions -o smtpd_sender_restrictions=$mua_sender_restrictions -o smtpd_recipient_restrictions= -o smtpd_relay_restrictions=permit_sasl_authenticated,reject -o milter_macro_daemon_name=ORIGINATING -o cleanup_service_name=smtpscleanup smtpscleanup unix n - y - 0 cleanup -o header_checks=regexp:/etc/postfix/header_checks  /etc/postfix/header_checks
-/^Received:.*/ IGNORE  最初はsmtp_header_checksをmain.cfに書けば良いかなーと思ったんだけど、
+smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode=yes -o smtpd_sasl_auth_enable=yes -o smtpd_reject_unlisted_recipient=no -o smtpd_client_restrictions=$mua_client_restrictions -o smtpd_helo_restrictions=$mua_helo_restrictions -o smtpd_sender_restrictions=$mua_sender_restrictions -o smtpd_recipient_restrictions= -o smtpd_relay_restrictions=permit_sasl_authenticated,reject -o milter_macro_daemon_name=ORIGINATING -o cleanup_service_name=smtpscleanup smtpscleanup unix n - y - 0 cleanup -o header_checks=regexp:/etc/postfix/header_checks /etc/postfix/header_checks
+/^Received:.*/ IGNORE 最初はsmtp_header_checksをmain.cfに書けば良いかなーと思ったんだけど、
 これだと外から入ってきたメール(後にプライマリサーバーにrelayされる)も一律削除されてしまうので都合が悪かった</description>
     </item>
     
@@ -147,12 +146,12 @@ smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode
       <description>mitmproxyみたいにhttpsのリクエストを覗くツール
 https://github.com/dstotijn/hetty
 使い方は, CAの鍵と証明書を用意して
-hetty -cert cacert.pem -key cakey.pem  でOK
+hetty -cert cacert.pem -key cakey.pem でOK
 8080でlistenするのでhttp proxyとして指定する
 管理画面はproxyとて設定したブラウザで以下のURLから見れる
 http://hetty.proxy/
 感想
- mitmproxyより重い気がする GUIでリクエストを見れるのは便利 mitmdumpとかしないでも簡単に見れるのはとても嬉しい 検索機能は今後追加予定？ リクエストをreplyする機能も追加予定みたい  まとめ
+mitmproxyより重い気がする GUIでリクエストを見れるのは便利 mitmdumpとかしないでも簡単に見れるのはとても嬉しい 検索機能は今後追加予定？ リクエストをreplyする機能も追加予定みたい まとめ
 今後に期待
 今はmitmweb使う方が良いと思う</description>
     </item>
@@ -164,7 +163,7 @@ http://hetty.proxy/
       
       <guid>https://yaasita.github.io/2020/08/30/new-linux-in-chromebook/</guid>
       <description>Linuxを消して、また入れたら良くなってた
- Debianが10になった 日本語が打てる(ただ表示はバグる) 絵文字が見れる ターミナルがタブに対応した  </description>
+Debianが10になった 日本語が打てる(ただ表示はバグる) 絵文字が見れる ターミナルがタブに対応した </description>
     </item>
     
     <item>
@@ -175,13 +174,13 @@ http://hetty.proxy/
       <guid>https://yaasita.github.io/2020/05/10/doh/</guid>
       <description>DNS over HTTPSを試す
 こんな構成で作る
-Nginx -&amp;gt; doh-httpproxy -&amp;gt; systemd-resolved  インストール
+Nginx -&amp;gt; doh-httpproxy -&amp;gt; systemd-resolved インストール
 doh-proxy pip3でインストールすればOK
-pip3 install doh-proxy  以下のような設定でserviceを作る
+pip3 install doh-proxy 以下のような設定でserviceを作る
 /etc/systemd/system/doh-httpproxy.service
 [Unit] Description=doh-httpproxy After=nginx.service [Install] WantedBy=multi-user.target [Service] ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 8080 --listen-address 127.0.0.1 Nginx側設定例
-server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } }  確認
-curl --doh-url https://doh.example.net/dns-query google.co.jp  </description>
+server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } } 確認
+curl --doh-url https://doh.example.net/dns-query google.co.jp </description>
     </item>
     
     <item>
@@ -191,11 +190,9 @@ curl --doh-url https://doh.example.net/dns-query google.co.jp  </description>
       
       <guid>https://yaasita.github.io/2020/03/29/microk8s_and_skaffold/</guid>
       <description>microk8sとskaffoldをこんな感じで使う
-
 インストール
-snap install microk8s --class microk8s.kubectl config view --raw &amp;gt; ~/.kube/config  必要サービスの起動
-microk8s.enable dns registry storage skaffold dev --no-prune=false --cache-artifacts=false --default-repo localhost:32000 -f skaffold.yaml  こんな感じにやると、リポジトリ部分を読み替えてくれるので便利
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+snap install microk8s --class microk8s.kubectl config view --raw &amp;gt; ~/.kube/config 必要サービスの起動
+microk8s.enable dns registry storage skaffold dev --no-prune=false --cache-artifacts=false --default-repo localhost:32000 -f skaffold.yaml こんな感じにやると、リポジトリ部分を読み替えてくれるので便利</description>
     </item>
     
     <item>
@@ -208,7 +205,7 @@ microk8s.enable dns registry storage skaffold dev --no-prune=false --cache-artif
 公式ドキュメントのサンプルだとこんな感じにport接続にしてる
 https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/blob/master/cloudsql/mysql_wordpress_deployment.yaml
 socket接続の場合はこんな感じ
- 参考
+参考
 k8s サイドカーコンテナについて</description>
     </item>
     
@@ -221,7 +218,7 @@ k8s サイドカーコンテナについて</description>
       <description>前回 の続き
 以下をvimrcに追記して事なきを得た
 inoremapって非ASCII文字でも行けるみたい
-inoremap ¥ \ cnoremap ¥ \  </description>
+inoremap ¥ \ cnoremap ¥ \ </description>
     </item>
     
     <item>
@@ -249,10 +246,10 @@ Building sites … WARN 2019/12/23 17:34:34 In the next Hugo version (0.58.0) we
 PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある
 そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる
 例えば、/etc/cron.daily/mlocate の場合
-if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi  こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
+if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
 んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
 このままだと永遠にlocateコマンドが使えないので、divertで退避させた
-dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power  おしまい</description>
+dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power おしまい</description>
     </item>
     
     <item>
@@ -262,21 +259,20 @@ dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s 
       
       <guid>https://yaasita.github.io/2019/08/14/ssl-capath/</guid>
       <description>中間証明書をどう設定するか問題
-postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&amp;rsquo;s Encryptの場合こんな感じ
+postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem Let&amp;rsquo;s Encryptの場合こんな感じ
 smtpd_tls_CAfileに中間証明書を指定する
 smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
 dovecot 10-ssl.conf
-ssl_ca = &amp;lt;/etc/letsencrypt/live/example.net/chain.pem  これはダメ
+ssl_ca = &amp;lt;/etc/letsencrypt/live/example.net/chain.pem これはダメ
 この設定はクライアント証明書用ですので
 正しくは、こんな感じに、まとめたやつを指定すればOK
-ssl_cert = &amp;lt;/etc/letsencrypt/live/example.net/fullchain.pem  apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
-SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem  dovecot同様に中間証明書もまとめて指定する
+ssl_cert = &amp;lt;/etc/letsencrypt/live/example.net/fullchain.pem apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
+SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem dovecot同様に中間証明書もまとめて指定する
 まとめ この問題はスマホのK-9 Mailでメール読もうとしたときに判明した
 (突然CertPathValidatorExceptionって怒られた)
 thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
-openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
+サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
+openssl s_client -connect example.org:465 -showcerts thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
     </item>
     
     <item>
@@ -289,11 +285,11 @@ openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認
 ワーニング潰し アップデートに伴い
 .Prev と .Nextが非推奨になったぽい マニュアル, コミット
 なのでこれはそれぞれ以下のように修正すればOK(意味が逆なので分かりにくいけど)
- .Prev =&amp;gt; .NextPage .Next =&amp;gt; .PrevPage  OGP設定 某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました
+.Prev =&amp;gt; .NextPage .Next =&amp;gt; .PrevPage OGP設定 某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました
 上手く表示できてますか？
 修正箇所
 themes/hugo-theme-geppaku/layouts/partials/header.html
- {{ if .IsHome }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Site.Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;website&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}&amp;quot; /&amp;gt; {{ else }} &amp;lt;meta property=&amp;quot;og:title&amp;quot; content=&amp;quot;{{ .Title }}&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:type&amp;quot; content=&amp;quot;article&amp;quot; /&amp;gt; &amp;lt;meta property=&amp;quot;og:url&amp;quot; content=&amp;quot;{{ .Site.BaseURL }}{{ .Page.Dir }}&amp;quot; /&amp;gt; {{ end }} &amp;lt;meta property=&amp;quot;og:site_name&amp;quot; content=&amp;quot;{{ .</description>
+{{ if .IsHome }} &amp;lt;meta property=&amp;#34;og:title&amp;#34; content=&amp;#34;{{ .Site.Title }}&amp;#34; /&amp;gt; &amp;lt;meta property=&amp;#34;og:type&amp;#34; content=&amp;#34;website&amp;#34; /&amp;gt; &amp;lt;meta property=&amp;#34;og:url&amp;#34; content=&amp;#34;{{ .Site.BaseURL }}&amp;#34; /&amp;gt; {{ else }} &amp;lt;meta property=&amp;#34;og:title&amp;#34; content=&amp;#34;{{ .Title }}&amp;#34; /&amp;gt; &amp;lt;meta property=&amp;#34;og:type&amp;#34; content=&amp;#34;article&amp;#34; /&amp;gt; &amp;lt;meta property=&amp;#34;og:url&amp;#34; content=&amp;#34;{{ .Site.BaseURL }}{{ .Page.Dir }}&amp;#34; /&amp;gt; {{ end }} &amp;lt;meta property=&amp;#34;og:site_name&amp;#34; content=&amp;#34;{{ .</description>
     </item>
     
     <item>
@@ -303,7 +299,7 @@ themes/hugo-theme-geppaku/layouts/partials/header.html
       
       <guid>https://yaasita.github.io/2019/02/08/concentration/</guid>
       <description>いろいろ試してみた
- Forest: 広告が邪魔 Focus To-Do: 複雑でよく分からなかった ブロックタイマー: なんか画面が付きっぱなしになる FLIP: 勉強用かな操作がむずい Studyplus: なんかポモドーロぽいの使えなかった  で結局Focus To-DoのWindowsアプリ版を使ってる</description>
+Forest: 広告が邪魔 Focus To-Do: 複雑でよく分からなかった ブロックタイマー: なんか画面が付きっぱなしになる FLIP: 勉強用かな操作がむずい Studyplus: なんかポモドーロぽいの使えなかった で結局Focus To-DoのWindowsアプリ版を使ってる</description>
     </item>
     
     <item>
@@ -314,7 +310,7 @@ themes/hugo-theme-geppaku/layouts/partials/header.html
       <guid>https://yaasita.github.io/2018/12/02/skype2json/</guid>
       <description>のでちょっとスクリプト修正した
 https://github.com/yaasita/skype2json
-修正点  yarnじゃなくても良いと聞いたのでnpmにだけにした フォーマットが歴代合わせて3つあったので、3つスクリプト書いた(年代は適当) libに共通関数をまとめた  なんか新しいフォーマットだと
+修正点 yarnじゃなくても良いと聞いたのでnpmにだけにした フォーマットが歴代合わせて3つあったので、3つスクリプト書いた(年代は適当) libに共通関数をまとめた なんか新しいフォーマットだと
 nsp_dataってカラムにjsonで突っ込んでるみたいね。json型が無いSQLiteのツライところ
 まとめ ころころフォーマットが変わるけどSQLiteになってるからSkypeは簡単にバックアップ出来て良い
 LINEはどうしたもんか</description>

@@ -7,23 +7,21 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>iptablesの変更をWebからやる | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="iptablesの変更をWebからやる" />
 <meta property="og:description" content="httpsのほかにもう一個ポートのアクセス制限を面倒見たくなかったのでなんとなくやってみた
 httpsでWebUIにアクセスしたらIP許可リストに入れるって処理
-
 PerlのCGIからGo言語で書いたバイナリを呼んでiptablesを更新する的な処理
 GoとPerl間はJSONで受け渡す
 Goで書いたのはSUIDビット立てたバイナリで叩きたいと思ったから
 （なんかうまくいかなくて結局sudoでやったけど)
-https://github.com/yaasita/mail-iptables
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   " />
+https://github.com/yaasita/mail-iptables" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2017/08/22/imap-iptables/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2017-08-22T02:17:37&#43;09:00" />
-<meta property="article:modified_time" content="2017-08-22T02:17:37&#43;09:00" />
+<meta property="article:published_time" content="2017-08-22T02:17:37+09:00" />
+<meta property="article:modified_time" content="2017-08-22T02:17:37+09:00" />
 
 
     
@@ -63,20 +61,12 @@ if (!doNotTrack) {
   <div class="content">
     <p>httpsのほかにもう一個ポートのアクセス制限を面倒見たくなかったのでなんとなくやってみた<br>
 httpsでWebUIにアクセスしたらIP許可リストに入れるって処理</p>
-<p><a href="#"><img id="tumblr-img" src=""></a></p>
+<p><a href="https://yaasita.tk/blog/2022/iptables-web.png"><img src="https://yaasita.tk/blog/2022/iptables-web.png" alt="iptables-web"></a></p>
 <p>PerlのCGIからGo言語で書いたバイナリを呼んでiptablesを更新する的な処理</p>
 <p>GoとPerl間はJSONで受け渡す<br>
 Goで書いたのはSUIDビット立てたバイナリで叩きたいと思ったから<br>
 （なんかうまくいかなくて結局sudoでやったけど)</p>
 <p><a href="https://github.com/yaasita/mail-iptables">https://github.com/yaasita/mail-iptables</a></p>
-<script>
-function callback(data){
-    var photos = data.response.posts[0].photos;
-    document.getElementById("tumblr-img").parentNode.href = photos[0].original_size.url;
-    document.getElementById("tumblr-img").src = photos[0].original_size.url;
-}
-</script>
-<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=164450528562&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
 
   </div>
   <footer>
@@ -118,7 +108,7 @@ function callback(data){
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -223,7 +213,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -314,7 +304,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

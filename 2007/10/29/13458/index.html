@@ -7,24 +7,21 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Windows版のapache2.2 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="Windows版のapache2.2" />
 <meta property="og:description" content="Windows版の Apache は2.0系とは違いIndexオプションを指定しても下のように殺風景なものになります。
-
 ファイルサイズや更新日時を表示する下図のような従来の見え方にするには
-
 httpd.confにInclude conf/extra/httpd-autoindex.confを追加します。Index表示の細かい指定は
-C:\Program Files\Apache Software Foundation\Apache2.2\conf\extra\httpd-autoindex.conf  で設定します。
+C:\Program Files\Apache Software Foundation\Apache2.2\conf\extra\httpd-autoindex.conf で設定します。
 http://www.geocities.jp/uesssu/soft/apache.htm
 Apacheのバイナリをダウンロードするにはこちらからどうぞ
-http://www.apache.org/dist/httpd/binaries/win32/
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).src = photos[1].original_size.url; }   " />
+http://www.apache.org/dist/httpd/binaries/win32/" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2007/10/29/13458/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2007-10-29T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2007-10-29T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2007-10-29T00:00:00+09:00" />
+<meta property="article:modified_time" content="2007-10-29T00:00:00+09:00" />
 
 
     
@@ -63,9 +60,9 @@ if (!doNotTrack) {
   </header>
   <div class="content">
     <p>Windows版の <a href="http://www.apache.org/dist/httpd/binaries/win32/apache_2.2.6-win32-x86-no_ssl.msi">Apache</a> は2.0系とは違いIndexオプションを指定しても下のように殺風景なものになります。</p>
-<p><a href="#"><img id="tumblr-img1" src=""></a></p>
+<p><a href="https://yaasita.tk/blog/2022/apache-index.png"><img src="https://yaasita.tk/blog/2022/apache-index.png" alt="apache-index.png"></a></p>
 <p>ファイルサイズや更新日時を表示する下図のような従来の見え方にするには</p>
-<p><a href="#"><img id="tumblr-img2" src=""></a></p>
+<p><a href="https://yaasita.tk/blog/2022/apache-index2.png"><img src="https://yaasita.tk/blog/2022/apache-index2.png" alt="apache-index2.png"></a></p>
 <p>httpd.confにInclude conf/extra/httpd-autoindex.confを追加します。Index表示の細かい指定は</p>
 <pre><code>C:\Program Files\Apache Software Foundation\Apache2.2\conf\extra\httpd-autoindex.conf
 </code></pre>
@@ -73,16 +70,6 @@ if (!doNotTrack) {
 <p><a href="http://www.geocities.jp/uesssu/soft/apache.htm">http://www.geocities.jp/uesssu/soft/apache.htm</a></p>
 <p>Apacheのバイナリをダウンロードするにはこちらからどうぞ<br>
 <a href="http://www.apache.org/dist/httpd/binaries/win32/">http://www.apache.org/dist/httpd/binaries/win32/</a></p>
-<script>
-function callback(data){
-    var photos = data.response.posts[0].photos;
-    document.getElementById("tumblr-img1").parentNode.href = photos[0].original_size.url;
-    document.getElementById("tumblr-img1").src = photos[0].original_size.url;
-    document.getElementById("tumblr-img2").parentNode.href = photos[1].original_size.url;
-    document.getElementById("tumblr-img2").src = photos[1].original_size.url;
-}
-</script>
-<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=161203719607&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
 
   </div>
   <footer>
@@ -128,7 +115,7 @@ function callback(data){
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -233,7 +220,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -324,7 +311,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

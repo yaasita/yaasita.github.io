@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>blogをmiddlemanからhugoに移行した | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="blogをmiddlemanからhugoに移行した" />
-<meta property="og:description" content="使ってみた感想  ビルドはmiddlemanで10分かかってたけど1秒になった themeはgeppakuというのを使用 シンプルで良い  Tumblrリンクのプルリクエストも快くマージしてくれた感謝m(_ _)m   pagination 周りの部分はちょっとページ数が多いとカラム落ちしたり苦しかったので書き直した taxonomiesを追加して、年別のアーカイブページを作成 アーカイブページを逆順にする対応はなぜかうまくいかなかったので後で調査する  とりあえずJavaScriptで逆順にした &gt; gist   hugo serverのライブリロードがとっても良い(ブラウザも自動更新)  ただしpagination周りで変な書き方するとサーバごと落ちる   DISQUS周りはちょっとカスタマイズした  なぜかデフォルトだと読み込まなかったので   markdown周りはほぼ設定ファイルで完結  今回の設定はこんな感じ   middleman時代のリンクを維持するためにUglyURLs設定したけどcategoriesとかリンク切れが面倒だったので中止  参考: http://wdkk.co.jp/note/2015/0824-hugo-public/   Highlight.js今回無効にした過去分のcodeブロックが微妙になったので  総評
+<meta property="og:description" content="使ってみた感想 ビルドはmiddlemanで10分かかってたけど1秒になった themeはgeppakuというのを使用 シンプルで良い Tumblrリンクのプルリクエストも快くマージしてくれた感謝m(_ _)m pagination 周りの部分はちょっとページ数が多いとカラム落ちしたり苦しかったので書き直した taxonomiesを追加して、年別のアーカイブページを作成 アーカイブページを逆順にする対応はなぜかうまくいかなかったので後で調査する とりあえずJavaScriptで逆順にした &gt; gist hugo serverのライブリロードがとっても良い(ブラウザも自動更新) ただしpagination周りで変な書き方するとサーバごと落ちる DISQUS周りはちょっとカスタマイズした なぜかデフォルトだと読み込まなかったので markdown周りはほぼ設定ファイルで完結 今回の設定はこんな感じ middleman時代のリンクを維持するためにUglyURLs設定したけどcategoriesとかリンク切れが面倒だったので中止 参考: http://wdkk.co.jp/note/2015/0824-hugo-public/ Highlight.js今回無効にした過去分のcodeブロックが微妙になったので 総評
 Static Site Generatorはとても良い
 移行するにも、更新するにもメンテがすごく楽
 移行スクリプト 基本的にはファイル名にある時間のデータをTOMLに直して終わり
 /home/yamasitaにhugo,middlemanのディレクトリがある前提
- 参考リンク  middleman hugo  " />
+参考リンク middleman hugo " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2017/01/05/middleman2hugo/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2017-01-05T04:50:10&#43;09:00" />
-<meta property="article:modified_time" content="2017-01-05T04:50:10&#43;09:00" />
+<meta property="article:published_time" content="2017-01-05T04:50:10+09:00" />
+<meta property="article:modified_time" content="2017-01-05T04:50:10+09:00" />
 
 
     
@@ -152,7 +152,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -257,7 +257,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -348,7 +348,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

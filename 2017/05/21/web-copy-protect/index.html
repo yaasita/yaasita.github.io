@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>コピー禁止のWebサイトについて | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="コピー禁止のWebサイトについて" />
@@ -17,18 +17,15 @@
 この仕組みの参考実装はこんな感じ
 https://gist.github.com/yaasita/7b07710840186561c76d7e5c4af28b2d
 chromeならURLバーの左をクリックしてJavaScriptをブロックで
-
 2. noscriptのタグを消す WP Content Copy Protection みたいなやつだと noscript タグの中に画面一杯に広げてコンテンツを見えなくするdivが入るので、chrome developers tools開いて &lt;noscript&gt;タグごと削除する
 Oops! It appears that you have disabled your Javascript. In order for you to see this page as it is meant to appear, we ask that you please re-enable your Javascript! みたいな文言はこれ
-
 3. cssでuser-selectをnoneにしている場合 chrome developers toolsでuser-select: text;書き換えてやる
-
 とりあえずここまでやれば大抵コピーできるようになるはず
-参考リンク  コピペ禁止サイト Webページの「コピペ禁止」を解除・回避するJavaScriptコード   function callback(data){ var photos = data." />
+参考リンク コピペ禁止サイト Webページの「コピペ禁止」を解除・回避するJavaScriptコード " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2017/05/21/web-copy-protect/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2017-05-21T01:48:56&#43;09:00" />
-<meta property="article:modified_time" content="2017-05-21T01:48:56&#43;09:00" />
+<meta property="article:published_time" content="2017-05-21T01:48:56+09:00" />
+<meta property="article:modified_time" content="2017-05-21T01:48:56+09:00" />
 
 
     
@@ -73,32 +70,20 @@ if (!doNotTrack) {
 この仕組みの参考実装はこんな感じ<br>
 <a href="https://gist.github.com/yaasita/7b07710840186561c76d7e5c4af28b2d">https://gist.github.com/yaasita/7b07710840186561c76d7e5c4af28b2d</a></p>
 <p>chromeならURLバーの左をクリックしてJavaScriptをブロックで</p>
-<p><a href="#"><img id="tumblr-img1" src=""></a></p>
+<p><a href="https://yaasita.tk/blog/2022/copy-kinsi-1.png"><img src="https://yaasita.tk/blog/2022/copy-kinsi-1.png" alt="copy-kinsi-1"></a></p>
 <h2 id="2-noscriptのタグを消す">2. noscriptのタグを消す</h2>
 <p><a href="https://github.com/wp-plugins/wp-content-copy-protection/blob/master/wpccpl.php">WP Content Copy Protection</a> みたいなやつだと noscript タグの中に画面一杯に広げてコンテンツを見えなくするdivが入るので、chrome developers tools開いて &lt;noscript&gt;タグごと削除する<br>
 <code>Oops! It appears that you have disabled your Javascript. In order for you to see this page as it is meant to appear, we ask that you please re-enable your Javascript!</code> みたいな文言はこれ</p>
-<p><a href="#"><img id="tumblr-img2" src=""></a></p>
+<p><a href="https://yaasita.tk/blog/2022/copy-kinsi-2.png"><img src="https://yaasita.tk/blog/2022/copy-kinsi-2.png" alt="copy-kinsi-2"></a></p>
 <h2 id="3-cssでuser-selectをnoneにしている場合">3. cssでuser-selectをnoneにしている場合</h2>
 <p>chrome developers toolsで<code>user-select: text;</code>書き換えてやる</p>
-<p><a href="#"><img id="tumblr-img3" src=""></a></p>
+<p><a href="https://yaasita.tk/blog/2022/copy-kinsi-3.png"><img src="https://yaasita.tk/blog/2022/copy-kinsi-3.png" alt="copy-kinsi-3"></a></p>
 <p>とりあえずここまでやれば大抵コピーできるようになるはず</p>
 <h3 id="参考リンク">参考リンク</h3>
 <ul>
 <li><a href="https://yaasita.tumblr.com/post/160878594317/">コピペ禁止サイト</a></li>
 <li><a href="http://language-and-engineering.hatenablog.jp/entry/20150716/UnlockCopyPasteForbiddenOnWebPage">Webページの「コピペ禁止」を解除・回避するJavaScriptコード</a></li>
 </ul>
-<script>
-function callback(data){
-    var photos = data.response.posts[0].photos;
-    document.getElementById("tumblr-img1").parentNode.href = photos[0].original_size.url;
-    document.getElementById("tumblr-img1").src = photos[0].original_size.url;
-    document.getElementById("tumblr-img2").parentNode.href = photos[1].original_size.url;
-    document.getElementById("tumblr-img2").src = photos[1].original_size.url;
-    document.getElementById("tumblr-img3").parentNode.href = photos[2].original_size.url;
-    document.getElementById("tumblr-img3").src = photos[2].original_size.url;
-}
-</script>
-<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=160878362192&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
 
   </div>
   <footer>
@@ -144,7 +129,7 @@ function callback(data){
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -249,7 +234,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -340,7 +325,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

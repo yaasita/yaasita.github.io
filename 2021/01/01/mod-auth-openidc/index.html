@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>apacheのmod-auth-openidcについて | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="apacheのmod-auth-openidcについて" />
@@ -15,14 +15,14 @@
 公式サイト
 https://www.mod-auth-openidc.org/
 インストール
-apt install libapache2-mod-auth-openidc  設定 /etc/apache2/mods-enabled/auth_openidc.conf
-OIDCRedirectURI https://hoge.example.jp/oidc/redirect_uri OIDCCryptoPassphrase hogehoge-foobar OIDCProviderMetadataURL https://accounts.google.com/.well-known/openid-configuration OIDCScope &quot;openid email&quot; OIDCClientID xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com OIDCClientSecret XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  リバースプロキシ的に使う例
+apt install libapache2-mod-auth-openidc 設定 /etc/apache2/mods-enabled/auth_openidc.conf
+OIDCRedirectURI https://hoge.example.jp/oidc/redirect_uri OIDCCryptoPassphrase hogehoge-foobar OIDCProviderMetadataURL https://accounts.google.com/.well-known/openid-configuration OIDCScope &quot;openid email&quot; OIDCClientID xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com OIDCClientSecret XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX リバースプロキシ的に使う例
 /adminかつ、プライベートIP以外の場合はGoogle認証で hogehoge@gmail.com のみ許可
 &lt;VirtualHost *:443&gt; ServerName hoge.example.jp &lt;Location /&gt; Require all granted &lt;/Location&gt; &lt;Location /oidc/&gt; AuthType openid-connect Require valid-user &lt;/Location&gt; &lt;Location /admin&gt; AuthType openid-connect Require claim email:hogehoge@gmail.com Require ip 192.168.0.0/24 &lt;/Location&gt; ProxyRequests Off ProxyPreserveHost On ProxyPass / http://127.0.0.1:8080/ keepalive=On RequestHeader set X-Forwarded-Proto &quot;https&quot; RequestHeader unset X-Forwarded-For RequestHeader unset X-Forwarded-Server RequestHeader unset X-Forwarded-Host # SSL設定等が続く ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2021/01/01/mod-auth-openidc/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-01-01T22:37:48&#43;09:00" />
-<meta property="article:modified_time" content="2021-01-01T22:37:48&#43;09:00" />
+<meta property="article:published_time" content="2021-01-01T22:37:48+09:00" />
+<meta property="article:modified_time" content="2021-01-01T22:37:48+09:00" />
 
 
     
@@ -146,7 +146,7 @@ OIDCClientSecret XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -251,7 +251,7 @@ OIDCClientSecret XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -342,7 +342,7 @@ OIDCClientSecret XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

@@ -20,7 +20,7 @@ https://github.com/systemd/systemd/pull/10294/files
 こんな感じで、&amp;ldquo;SYSTEMD_NSPAWN_TMPFS_TMP&amp;rdquo; って環境変数に0を入れておけば、/tmpディレクトリをtmpfsにしない
 /etc/systemd/system/systemd-nspawn@.service
 にこんな感じで追加したらmachinectlからもできる
-Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0  </description>
+Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0 </description>
     </item>
     
     <item>
@@ -31,9 +31,9 @@ Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0  </description>
       <guid>https://yaasita.github.io/2021/11/28/microk8s/</guid>
       <description>microk8s で ArgoCD を動かすときのメモ
 まず手順通りにマニフェストを設定したら
-kubectl patch svc argocd-server -n argocd -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39;  ClusterIP から NodePortに変更
+kubectl patch svc argocd-server -n argocd -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; ClusterIP から NodePortに変更
 こんな感じの表示になったら
-$ kubectl get svc argocd-server -n argocd argocd-server NodePort 10.152.183.43 &amp;lt;none&amp;gt; 80:30444/TCP,443:30983/TCP 20h  以下のURLでアクセス
+$ kubectl get svc argocd-server -n argocd argocd-server NodePort 10.152.183.43 &amp;lt;none&amp;gt; 80:30444/TCP,443:30983/TCP 20h 以下のURLでアクセス
 https:// (ホストのIP) :30983
 まあkubectl port-forward でやってもいいけど
 ついでに dashbord も同様にできる
@@ -47,7 +47,7 @@ kubectl patch svc kubernetes-dashboard -n kube-system -p &#39;{&amp;quot;spec&am
       
       <guid>https://yaasita.github.io/2021/10/15/spf-rule/</guid>
       <description>SPFレコードで
-v=spf1 a:example.net -all  みたいに指定したときにAレコードだけじゃなくて、AAAAレコードも引いてくれるので便利です
+v=spf1 a:example.net -all みたいに指定したときにAレコードだけじゃなくて、AAAAレコードも引いてくれるので便利です
 IPv6のアドレスは長くなるので積極的に利用したいですね
 https://datatracker.ietf.org/doc/html/rfc7208#section-5.3</description>
     </item>
@@ -63,7 +63,7 @@ https://datatracker.ietf.org/doc/html/rfc7208#section-5.3</description>
 捨てたやつのスペック
 商品型名： LB-C110B [Windows 8.1搭載]
 商品単価： \44,940
- OS: Windows 8.1 64ビット CPU: インテル(R) Celeron(R) プロセッサー 1037U (2コア/1.80GHz/2Mキャッシュ) メモリ: \5,250 8GB メモリ [ 8GB×1 (DDR3 SO-DIMM PC3-12800) ] HDD1:【キャンペーン】500GB 5400rpm [ Western Digital製 ] VGA:インテル(R) HD グラフィックス 3.5ドライブベイ :SDカードリーダー マザーボード :インテル(R) NM70 Express チップセット ※SSD搭載時は SATAII 接続になります。( mSATA SSDを除く ) ベアボーン :LuvBook C シリーズ 液晶 :11.6型ワイド (1366x768) マルチタッチ対応光沢HD液晶パネル LAN :[ オンボード ] 10/100/1000BASE-T GigaBit-Ethernet LAN 無線LAN :無線LAN ( IEEE802.</description>
+OS: Windows 8.1 64ビット CPU: インテル(R) Celeron(R) プロセッサー 1037U (2コア/1.80GHz/2Mキャッシュ) メモリ: \5,250 8GB メモリ [ 8GB×1 (DDR3 SO-DIMM PC3-12800) ] HDD1:【キャンペーン】500GB 5400rpm [ Western Digital製 ] VGA:インテル(R) HD グラフィックス 3.5ドライブベイ :SDカードリーダー マザーボード :インテル(R) NM70 Express チップセット ※SSD搭載時は SATAII 接続になります。( mSATA SSDを除く ) ベアボーン :LuvBook C シリーズ 液晶 :11.6型ワイド (1366x768) マルチタッチ対応光沢HD液晶パネル LAN :[ オンボード ] 10/100/1000BASE-T GigaBit-Ethernet LAN 無線LAN :無線LAN ( IEEE802.</description>
     </item>
     
     <item>
@@ -76,7 +76,7 @@ https://datatracker.ietf.org/doc/html/rfc7208#section-5.3</description>
 (/etc/systemd/network/にはこんな感じでbridge作る)
 https://gist.github.com/yaasita/d527b48f54b0e23c3097a9c69239d534
 どうやらこれ、machine-idから作られてるみたいで、VMコピーしたらmachine-id変えた方が良いぽいね
-rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machine-id-setup  </description>
+rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machine-id-setup </description>
     </item>
     
     <item>
@@ -86,12 +86,12 @@ rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machin
       
       <guid>https://yaasita.github.io/2021/09/20/dircolors/</guid>
       <description>dircolorsは
-ls --color=auto  したときの色を設定するコマンド
+ls --color=auto したときの色を設定するコマンド
 以下のコマンドで設定を書き出して
-dircolors -p &amp;gt; ~/.dir_colors  好きな設定に編集する
-vi ~/.dircolors  .bashrcに以下のように書いておいた
-if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^screen ]];then alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto&#39; eval &amp;quot;$(dircolors -b ~/.dircolors)&amp;quot; fi  参考
- lsコマンドで表示されるファイルの色を変更するには  </description>
+dircolors -p &amp;gt; ~/.dir_colors 好きな設定に編集する
+vi ~/.dircolors .bashrcに以下のように書いておいた
+if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^screen ]];then alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto&#39; eval &amp;quot;$(dircolors -b ~/.dircolors)&amp;quot; fi 参考
+lsコマンドで表示されるファイルの色を変更するには </description>
     </item>
     
     <item>
@@ -109,9 +109,9 @@ https://mobile.twitter.com/mattn_jp/status/1434205359573405696
 こんな感じの設定を追加しておいた
 cdコマンドを上書きして、@で始まってたら cd -P でsymlinkを辿るようにして、他は通常通り
 (これなら補完候補も足さなくてOK)
-export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 }  あと、bookmarkへの追加もコマンドにしておく
+export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 } あと、bookmarkへの追加もコマンドにしておく
 bookmarkしたいディレクトリに移動してbookmarkコマンドでsymlink作るようにしておく
-function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) }  </description>
+function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) } </description>
     </item>
     
     <item>
@@ -121,10 +121,10 @@ function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(
       
       <guid>https://yaasita.github.io/2021/08/16/mlocate/</guid>
       <description>debian 11でlocateしても引っかからないファイル多いなと思って調べたら
-systemctl cat mlocate.service  こいうのが追加されてる
-[Service] PrivateTmp=true PrivateDevices=true PrivateNetwork=true ProtectSystem=true  debian 10 (buster) 時代はcronだったから気にしなかったけど、多分これ、ProtectSystemの所為で/usrとか見れてないぽい
+systemctl cat mlocate.service こいうのが追加されてる
+[Service] PrivateTmp=true PrivateDevices=true PrivateNetwork=true ProtectSystem=true debian 10 (buster) 時代はcronだったから気にしなかったけど、多分これ、ProtectSystemの所為で/usrとか見れてないぽい
 今までのように全検索したかったら以下のコマンドで上書きしたほうが良いかと
-systemctl edit mlocate.service  </description>
+systemctl edit mlocate.service </description>
     </item>
     
     <item>
@@ -136,8 +136,8 @@ systemctl edit mlocate.service  </description>
       <description>readlineの書き方
 https://nodejs.org/api/readline.html
 こうやって書くより
- const rl = readline.createInterface({ // ... }); for await (const line of rl) { // Each line in the readline input will be successively available here as // `line`. } こっちの方がメモリ効率が良さそう
- await new Promise((resolv, reject) =&amp;gt; { rl.on(&amp;quot;line&amp;quot;, (line) =&amp;gt; { // 処理 }); rl.on(&amp;quot;close&amp;quot;, () =&amp;gt; { resolv(); }); }); 詳しくは調べてないけど、巨大ファイルだと
+const rl = readline.createInterface({ // ... }); for await (const line of rl) { // Each line in the readline input will be successively available here as // `line`. } こっちの方がメモリ効率が良さそう
+await new Promise((resolv, reject) =&amp;gt; { rl.on(&amp;#34;line&amp;#34;, (line) =&amp;gt; { // 処理 }); rl.on(&amp;#34;close&amp;#34;, () =&amp;gt; { resolv(); }); }); 詳しくは調べてないけど、巨大ファイルだと
 FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory `` が頻発する </description>
     </item>
     
@@ -151,8 +151,7 @@ FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaS
 https://atcoder.jp/contests/abc202/tasks
 解説
 https://www.youtube.com/watch?v=iNSp33TT3tc
-ポイントは use bigint; を指定しないと溢れて浮動小数点になってしまう
- </description>
+ポイントは use bigint; を指定しないと溢れて浮動小数点になってしまう</description>
     </item>
     
     <item>
@@ -165,8 +164,8 @@ https://www.youtube.com/watch?v=iNSp33TT3tc
 テキストデータはローカルに保存することにした
 最初の投稿から何番目を指定することで、ディレクトリの年別ディレクトリに保存します
 実行例
-./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ 1234   こんな感じで適度にsleep入れて取得してます
-#!/bin/bash set -eux save_file=/tmp/save_num already_get_number=$(cat $save_file) for ((i=$already_get_number; i &amp;lt; $already_get_number + 100; i++));do ./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ $i sleep 1 done echo $i &amp;gt; $save_file  </description>
+./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ 1234 こんな感じで適度にsleep入れて取得してます
+#!/bin/bash set -eux save_file=/tmp/save_num already_get_number=$(cat $save_file) for ((i=$already_get_number; i &amp;lt; $already_get_number + 100; i++));do ./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ $i sleep 1 done echo $i &amp;gt; $save_file </description>
     </item>
     
     <item>
@@ -201,24 +200,24 @@ https://support.skype.com/ja/faq/FA34894/skype-huairutochiyatsutolu-li-woekusupo
       
       <guid>https://yaasita.github.io/2021/03/20/mpd-ncmpc/</guid>
       <description>mpd と ncmpc の設定メモ
-インストール apt install mpd ncmpc  セットアップ /etc/mpd.confの設定
+インストール apt install mpd ncmpc セットアップ /etc/mpd.confの設定
 http経由で聞くのでoutputはhttpにします
- ~/.config/ncmpc/config
+~/.config/ncmpc/config
 タグで管理してないのでファイル名だけ表示します
-host = &amp;quot;127.0.0.1&amp;quot; port = 6600 list-format = &amp;quot;%file%&amp;quot; status-format = &amp;quot;%file%&amp;quot; text-editor = vim  /var/lib/mpd/music/ に音楽ファイルを入れる(symlinkでも可)
+host = &amp;quot;127.0.0.1&amp;quot; port = 6600 list-format = &amp;quot;%file%&amp;quot; status-format = &amp;quot;%file%&amp;quot; text-editor = vim /var/lib/mpd/music/ に音楽ファイルを入れる(symlinkでも可)
 ncmpcで起動 Ctrl-UでDBのアップデート
 歌詞表示 歌詞表示するなら ncmpcpp の方が楽ですが、最初からvimキーバインドなncmpcが好きなのでこちらを使っています
 方法は以下の記事通り歌詞検索用のスクリプトを配置するだけ
 https://www.use-strict.de/using-ncmpc-to-fetch-and-read-lyrics.html
 debianのパッケージは以下のオプションでビルドされてるので
--Dlyrics_plugin_dir=&amp;quot;/usr/lib/ncmpc/lyrics/&amp;quot;  /usr/lib/ncmpc/lyrics/01-test.sh
+-Dlyrics_plugin_dir=&amp;quot;/usr/lib/ncmpc/lyrics/&amp;quot; /usr/lib/ncmpc/lyrics/01-test.sh
 みたいなファイルをおきます
 これが歌詞検索の際に実行されます
 こんなファイルを置いて
-#!/bin/bash echo &amp;quot;$@&amp;quot; echo &amp;quot;あいうおえ&amp;quot;  artist, titleを設定
-eyeD3 -a backnumber hoge.mp3 eyeD3 -t 高嶺の花子さん takane.mp3  すると第一引数にartist, 第二引数にtitleが入ります
-
-この画面で、Sを押すと歌詞を~/.cache/ncmpc/lyrics/保存できたりもします</description>
+#!/bin/bash echo &amp;quot;$@&amp;quot; echo &amp;quot;あいうおえ&amp;quot; artist, titleを設定
+eyeD3 -a backnumber hoge.mp3 eyeD3 -t 高嶺の花子さん takane.mp3 すると第一引数にartist, 第二引数にtitleが入ります
+この画面で、Sを押すと歌詞を~/.cache/ncmpc/lyrics/保存できたりもします
+ファイル名が引数に入らないので、直接ファイルを探せないですが、ファイル名を工夫すれば、mp3ファイルタグ内の歌詞情報を引っ張ることも可能だと思います</description>
     </item>
     
     <item>
@@ -229,14 +228,14 @@ eyeD3 -a backnumber hoge.mp3 eyeD3 -t 高嶺の花子さん takane.mp3  する�
       <guid>https://yaasita.github.io/2021/02/25/gke-neg/</guid>
       <description>よくあるこんな構成
 staticなHTML/CSSはGCSから、API部分はGKEからみたいな構成
- +---&amp;gt; GCS | ---&amp;gt; GCLB ---+ | +---&amp;gt; k8s(GKE)  これ、GCLB部分をingressにするのが良いんだけど、現状バックエンドサービスにGCSを登録できない
++---&amp;gt; GCS | ---&amp;gt; GCLB ---+ | +---&amp;gt; k8s(GKE) これ、GCLB部分をingressにするのが良いんだけど、現状バックエンドサービスにGCSを登録できない
 1.19ならできるぽいがなんか上手く行かなかったので
 とりあえず、今の機能でやるなら、
 NEGを作って、そこをGCLBのバックエンドサービスに登録する
 https://cloud.google.com/kubernetes-engine/docs/how-to/standalone-neg
 厳密な事を言うと、nodeportもバックエンドサービスに登録できるが、こっちはノードの増減によりエンドポイントが変わってしまうので不適
 公式ドキュメント通りだけどこんな感じで作る
- あとはGCSにWebサイトの設定と、GCLBの設定すればOK</description>
+あとはGCSにWebサイトの設定と、GCLBの設定すればOK</description>
     </item>
     
     <item>
@@ -249,8 +248,8 @@ https://cloud.google.com/kubernetes-engine/docs/how-to/standalone-neg
 公式サイト
 https://www.mod-auth-openidc.org/
 インストール
-apt install libapache2-mod-auth-openidc  設定 /etc/apache2/mods-enabled/auth_openidc.conf
-OIDCRedirectURI https://hoge.example.jp/oidc/redirect_uri OIDCCryptoPassphrase hogehoge-foobar OIDCProviderMetadataURL https://accounts.google.com/.well-known/openid-configuration OIDCScope &amp;quot;openid email&amp;quot; OIDCClientID xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com OIDCClientSecret XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX  リバースプロキシ的に使う例
+apt install libapache2-mod-auth-openidc 設定 /etc/apache2/mods-enabled/auth_openidc.conf
+OIDCRedirectURI https://hoge.example.jp/oidc/redirect_uri OIDCCryptoPassphrase hogehoge-foobar OIDCProviderMetadataURL https://accounts.google.com/.well-known/openid-configuration OIDCScope &amp;quot;openid email&amp;quot; OIDCClientID xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com OIDCClientSecret XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX リバースプロキシ的に使う例
 /adminかつ、プライベートIP以外の場合はGoogle認証で hogehoge@gmail.com のみ許可
 &amp;lt;VirtualHost *:443&amp;gt; ServerName hoge.example.jp &amp;lt;Location /&amp;gt; Require all granted &amp;lt;/Location&amp;gt; &amp;lt;Location /oidc/&amp;gt; AuthType openid-connect Require valid-user &amp;lt;/Location&amp;gt; &amp;lt;Location /admin&amp;gt; AuthType openid-connect Require claim email:hogehoge@gmail.com Require ip 192.168.0.0/24 &amp;lt;/Location&amp;gt; ProxyRequests Off ProxyPreserveHost On ProxyPass / http://127.0.0.1:8080/ keepalive=On RequestHeader set X-Forwarded-Proto &amp;quot;https&amp;quot; RequestHeader unset X-Forwarded-For RequestHeader unset X-Forwarded-Server RequestHeader unset X-Forwarded-Host # SSL設定等が続く .</description>
     </item>

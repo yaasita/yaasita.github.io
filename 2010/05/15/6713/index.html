@@ -7,25 +7,31 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>mdadmでRAID構築（まとめ) | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="mdadmでRAID構築（まとめ)" />
-<meta property="og:description" content="RAIDの構築   fdisk等を用いてパーティションを作成
+<meta property="og:description" content="RAIDの構築 fdisk等を用いてパーティションを作成
 (このときのパーティションタイプはfd(Linux RAID)にしておくと分かりやすい)
- # mdadm -C /dev/md0 -l5 -n3 /dev/hdd[123]    -Cは新規作成時に指定するオプションで&ndash;createと同じ意味
-  /dev/md0は最終的に出来上がるRAIDデバイスを指定する（無くても勝手に作ってくれる）
-  -l5はRAIDレベルを表す 0,1,5,6が指定可能 &ndash;level=raid5と指定しても同じ意味
-  -n3はデバイスの数(HDDの数) &ndash;raid-devices=3と指定しても同じ
-  /dev/hdd[123]はRAIDを構成するHDD この例では単一のHDDで構成しているが本当は/dev/hd[bcd]1みたいに物理的に違うデバイスを指定する
-  スペアディスクの追加 # mdadm /dev/md0 --add /dev/hdd4  mdadm -D /dev/md0でスペアディスクが存在することを確認できる
-RAIDの監視   procから見る
- cat /proc/mdstat (watch -n 1 cat /proc/mdstat　みたいにやると１秒ごとにこのコマンドを発行してくれるので便利)    詳細に見る
- mdadm -D /dev/md0    RAIDの再構築(HDD故障時の対処)   故障マークを付ける" />
+# mdadm -C /dev/md0 -l5 -n3 /dev/hdd[123] -Cは新規作成時に指定するオプションで&ndash;createと同じ意味
+/dev/md0は最終的に出来上がるRAIDデバイスを指定する（無くても勝手に作ってくれる）
+-l5はRAIDレベルを表す 0,1,5,6が指定可能 &ndash;level=raid5と指定しても同じ意味
+-n3はデバイスの数(HDDの数) &ndash;raid-devices=3と指定しても同じ
+/dev/hdd[123]はRAIDを構成するHDD この例では単一のHDDで構成しているが本当は/dev/hd[bcd]1みたいに物理的に違うデバイスを指定する
+スペアディスクの追加 # mdadm /dev/md0 --add /dev/hdd4 mdadm -D /dev/md0でスペアディスクが存在することを確認できる
+RAIDの監視 procから見る
+cat /proc/mdstat (watch -n 1 cat /proc/mdstat　みたいにやると１秒ごとにこのコマンドを発行してくれるので便利) 詳細に見る
+mdadm -D /dev/md0 RAIDの再構築(HDD故障時の対処) 故障マークを付ける
+# mdadm /dev/md0 -f /dev/hdd1 スペアディスクがあるなら再構築が始まるないなら交換する
+RAIDアレイから削除する
+# mdadm /dev/md0 -r /dev/hdd1 この後ディスクを交換する
+アレイに追加
+# mdadm /dev/md0 -a /dev/hdd1 RAIDの解除 アレイの停止
+# mdadm -S /dev/md0 スーパーブロックの削除" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2010/05/15/6713/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2010-05-15T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2010-05-15T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2010-05-15T00:00:00+09:00" />
+<meta property="article:modified_time" content="2010-05-15T00:00:00+09:00" />
 
 
     
@@ -212,7 +218,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -317,7 +323,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -408,7 +414,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

@@ -7,30 +7,29 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>各種サーバの中間証明書の扱い | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="各種サーバの中間証明書の扱い" />
 <meta property="og:description" content="中間証明書をどう設定するか問題
-postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&rsquo;s Encryptの場合こんな感じ
+postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem Let&rsquo;s Encryptの場合こんな感じ
 smtpd_tls_CAfileに中間証明書を指定する
 smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
 dovecot 10-ssl.conf
-ssl_ca = &lt;/etc/letsencrypt/live/example.net/chain.pem  これはダメ
+ssl_ca = &lt;/etc/letsencrypt/live/example.net/chain.pem これはダメ
 この設定はクライアント証明書用ですので
 正しくは、こんな感じに、まとめたやつを指定すればOK
-ssl_cert = &lt;/etc/letsencrypt/live/example.net/fullchain.pem  apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
-SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem  dovecot同様に中間証明書もまとめて指定する
+ssl_cert = &lt;/etc/letsencrypt/live/example.net/fullchain.pem apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
+SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem dovecot同様に中間証明書もまとめて指定する
 まとめ この問題はスマホのK-9 Mailでメール読もうとしたときに判明した
 (突然CertPathValidatorExceptionって怒られた)
 thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
-openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認すると痛い目を見るよと言うお話でした" />
+サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
+openssl s_client -connect example.org:465 -showcerts thunderbirdだけで確認すると痛い目を見るよと言うお話でした" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2019/08/14/ssl-capath/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-08-14T10:20:33&#43;09:00" />
-<meta property="article:modified_time" content="2019-08-14T10:20:33&#43;09:00" />
+<meta property="article:published_time" content="2019-08-14T10:20:33+09:00" />
+<meta property="article:modified_time" content="2019-08-14T10:20:33+09:00" />
 
 
     
@@ -95,15 +94,7 @@ smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG</p>
 <p>この問題はスマホのK-9 Mailでメール読もうとしたときに判明した<br>
 (突然CertPathValidatorExceptionって怒られた)<br>
 thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね</p>
-<p><a href="#"><img id="tumblr-img" src=""></a></p>
-<script>
-function callback(data){
-    var photos = data.response.posts[0].photos;
-    document.getElementById("tumblr-img").parentNode.href = photos[0].original_size.url;
-    document.getElementById("tumblr-img").src = photos[0].original_size.url;
-}
-</script>
-<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=187009335442&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
+<p><a href="https://yaasita.tk/blog/2022/thuder-ssl.png"><img src="https://yaasita.tk/blog/2022/thuder-ssl.png" alt="thuder-ssl"></a></p>
 <p>サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも</p>
 <pre><code>openssl s_client -connect example.org:465 -showcerts
 </code></pre>
@@ -153,7 +144,7 @@ function callback(data){
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -258,7 +249,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -349,7 +340,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

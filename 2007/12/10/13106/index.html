@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>mkfs,fdisk,parted,mkswap使い方 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="mkfs,fdisk,parted,mkswap使い方" />
 <meta property="og:description" content="fdisk パーティションの切り直しにはfdiskを使います。
 例えば、/dev/sdaのパーティションを編集するとします
-fdisk /dev/sda  で起動
-Command (m for help):  と表示されます。
+fdisk /dev/sda で起動
+Command (m for help): と表示されます。
 pでパーティションテーブルの表示
 dを押して次にパーティション番号を入力してパーティションの削除
 nで新しいパーティションの作成
@@ -22,17 +22,17 @@ tでパーティションタイプの編集（FAT32のパーティションタ�
 lでパーティションタイプ一覧表示
 wで編集したパーティションを書き込み終了
 aでブートフラグの設定
-参考リンク  swapパーティションの作成 パーティションタイプ一覧  parted fdiskの機能に加えてパーティションのリサイズが行えます。
-# parted /dev/sda  のように起動します
-(parted)  と表示されます。
+参考リンク swapパーティションの作成 パーティションタイプ一覧 parted fdiskの機能に加えてパーティションのリサイズが行えます。
+# parted /dev/sda のように起動します
+(parted) と表示されます。
 printでパーティションテーブルの表示
 resize 番号　でパーティションのリサイズ
 例）/dev/sda上のswapパーティションを縮小する
 # parted /dev/sda GNU Parted 1.7.1 Using /dev/sda Welcome to GNU Parted! Type &#39;help&#39; to view a list of commands. (parted) print Disk /dev/sda: 4326MB Sector size (logical/physical): 512B/512B Partition Table: msdos Number Start End Size Type File system Flags 1 32." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2007/12/10/13106/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2007-12-10T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2007-12-10T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2007-12-10T00:00:00+09:00" />
+<meta property="article:modified_time" content="2007-12-10T00:00:00+09:00" />
 
 
     
@@ -184,7 +184,7 @@ swapoff
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -289,7 +289,7 @@ swapoff
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -380,7 +380,7 @@ swapoff
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

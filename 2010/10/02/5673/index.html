@@ -7,17 +7,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>pingで生存確認してからsmbmountする | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="pingで生存確認してからsmbmountする" />
-<meta property="og:description" content=" 今まではsmbmountを試して駄目だったら後続の処理を止めてたけど
+<meta property="og:description" content="今まではsmbmountを試して駄目だったら後続の処理を止めてたけど
 pingしてからsmbmountすればもっと早くできると思う
 こんな感じ
 #!/bin/bash
 TargetIP=192.168.0.2
-ping -c 1 -w 1 $TargetIP  /dev/null || exit 0
-mount //$TargetIP/hoge /var/windows/ -o sec=none  /dev/null 2&amp;1
+ping -c 1 -w 1 $TargetIP &gt; /dev/null || exit 0
+mount //$TargetIP/hoge /var/windows/ -o sec=none &gt; /dev/null 2&gt;&amp;1
 if [ $? -eq 0 ]
 then
 rsync -a --delete /var/windows/ /var/samba/foo/
@@ -25,12 +25,11 @@ umount /var/windows/ || exit 1
 else
 exit 0
 fi
-exit
- " />
+exit" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2010/10/02/5673/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2010-10-02T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2010-10-02T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2010-10-02T00:00:00+09:00" />
+<meta property="article:modified_time" content="2010-10-02T00:00:00+09:00" />
 
 
     
@@ -117,7 +116,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -222,7 +221,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -313,7 +312,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

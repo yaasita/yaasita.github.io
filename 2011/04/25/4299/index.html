@@ -7,26 +7,24 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>DTIのVPSにPukiWikiをインストール | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="DTIのVPSにPukiWikiをインストール" />
-<meta property="og:description" content="必要なのはphp5オンリーなので楽  ダウンロード 公式サイトからダウンロード 今回は「pukiwiki-1.4.7_notb_utf8.tar.gz」を選択 こちらは以下のコマンドで展開すればパーミッションの設定を省けるので良い tar xvzpf pukiwiki-1.4.7_notb_utf8.tar.gz インストール 基本的には ここ に書いてある通りやればOK md5値は以下のようにして算出できる echo -n &#39;pass&#39; | md5sum  この値を設定すればOK 上記例だとこんな感じ $adminpass = &#39;{x-php-md5}1a1dc91c907325c69271ddf0c944bc72&#39; 個別設定 その他個人の設定はお好みで
-アップロードサイズの変更 vi plugin/attach.inc.php ここを参考にして アップロードサイズ上限を16MBに変更した(19行目付近) 
-// Max file size for upload on script of PukiWikiX_FILESIZE
+<meta property="og:description" content="必要なのはphp5オンリーなので楽 ダウンロード 公式サイトからダウンロード 今回は「pukiwiki-1.4.7_notb_utf8.tar.gz」を選択 こちらは以下のコマンドで展開すればパーミッションの設定を省けるので良い tar xvzpf pukiwiki-1.4.7_notb_utf8.tar.gz インストール 基本的には ここ に書いてある通りやればOK md5値は以下のようにして算出できる echo -n &#39;pass&#39; | md5sum この値を設定すればOK 上記例だとこんな感じ $adminpass = &#39;{x-php-md5}1a1dc91c907325c69271ddf0c944bc72&#39; 個別設定 その他個人の設定はお好みで
+アップロードサイズの変更 vi plugin/attach.inc.php ここを参考にして アップロードサイズ上限を16MBに変更した(19行目付近) // Max file size for upload on script of PukiWikiX_FILESIZE
 define(&#39;PLUGIN_ATTACH_MAX_FILESIZE&#39;, (16 * 1024 * 1024)); // default: 1MB
- ※ただしphp.iniの制限に引っかかっていたら意味ないので見直すこと→詳しくはこちら
+※ただしphp.iniの制限に引っかかっていたら意味ないので見直すこと→詳しくはこちら
 はてなマークを消す方法
-以下のようにnowikinameを1に変更する 
-$nowikiname = 1;
- その他
+以下のようにnowikinameを1に変更する $nowikiname = 1;
+その他
 ユーザ制御・アクセス制御
 QAユーザー認証
 セキュリティQA" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2011/04/25/4299/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2011-04-25T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2011-04-25T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2011-04-25T00:00:00+09:00" />
+<meta property="article:modified_time" content="2011-04-25T00:00:00+09:00" />
 
 
     
@@ -109,7 +107,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -214,7 +212,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -305,7 +303,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

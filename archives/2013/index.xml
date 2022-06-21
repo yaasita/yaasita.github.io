@@ -29,12 +29,11 @@ http://hivecolor.com/id/46 </description>
       <pubDate>Sun, 15 Dec 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/12/15/328/</guid>
-      <description> maildirsizeをMaildirに置くとクォータの設定ができる
+      <description>maildirsizeをMaildirに置くとクォータの設定ができる
 dovecotとかmaildropが対応している
 ~/Maildir/maildirsize
 8000C
-284871170 10382
- </description>
+284871170 10382</description>
     </item>
     
     <item>
@@ -43,15 +42,14 @@ dovecotとかmaildropが対応している
       <pubDate>Sat, 07 Dec 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/12/07/349/</guid>
-      <description> SPICEクライアントをダウンロード
+      <description>SPICEクライアントをダウンロード
 http://www.spice-space.org/download.html
 virt-viewer-x64-0.5.7.msiを使いました
 んでインストール
 C:\Program Files\VirtViewer\bin\remote-viewer.exe
 あたりを実行
-
 参考リンク
-http://www.server-world.info/query?os=Fedora_18&amp;amp;p=kvm&amp;amp;f=8 </description>
+http://www.server-world.info/query?os=Fedora_18&amp;amp;amp;p=kvm&amp;amp;amp;f=8</description>
     </item>
     
     <item>
@@ -68,10 +66,8 @@ http://www.itmedia.co.jp/help/tips/linux/l0448.html
 なので、32bit用のライブラリ追加
 dpkg --add-architecture i386
 apt-get install ia32-libs-i386
-
 あとはReadmeの通りこんな感じで起動
 ./sp-sc-auth sop://broker.sopcast.com:3912/6001 3908 8908
-
 VLCで保存する場合はツールバー→メディア→変換／保存→ネットワークタブからできる
 チャンネル一覧はこちら
 SopCast.exeと同じフォルダに置く
@@ -104,7 +100,7 @@ http://www.digitalattackmap.com/ </description>
       <pubDate>Sun, 13 Oct 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/10/13/432/</guid>
-      <description>  </description>
+      <description> </description>
     </item>
     
     <item>
@@ -113,13 +109,11 @@ http://www.digitalattackmap.com/ </description>
       <pubDate>Mon, 23 Sep 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/09/23/453/</guid>
-      <description> 日本語版はこちら
+      <description>日本語版はこちら
 http://cafe-capy.net/cookieclicker/
 貯蔵数が焼いた数を上回っちゃったりしてたから不正とみなされちゃったけど最終的なデータはこちら
 MS4wMzZ8fDEzNzk3OTY0MDAxNzZ8MTExMTExfDIuODQyMjMzOTk5Mzk0ODU3M2UrMjg7MjQzODM3NDc4MTg4NjU7MjkyNDsxMDsyNjE5MDI0Njc1NzszMTstMTstMTswOzA7MDswOzY1OzI0NzN8MzI5LDMzMiw1MzcwMTczODQ3MiwwOzIwMSwyMDEsMTc4MDEzMDQ4NiwwOzIwMCwyMDAsMjc0MjQ0ODIsMDsyMDMsMjAzLDk5MzA3NDM3LDA7MTY3LDE2NywzMjk4NDc2NzIsMDsxMDYsMTA2LDM5OTE3NjQyNSwwOzEwNywxMDcsMTI2MzM4Njc5NywwOzExOSwxMTksMTY1NTgwODE5NTksMDsxMjUsMTI1LDEzNzU4NjIxMzM3NSwwOzEzNiwxMzYsMTA4OTYwMzI2OTkwOSwwO3w0NTAzNTk5NjI3MzcwNDk1OzQ1MDM1OTk2MjczNzA0OTU7MjI1MTgwMTk2MTE2ODUxMTs0NTAzNTczNzIzNDc4NTI3OzEwNDg1NzV8NDUwMjQ5ODEwMjQ3Njc5OTsxNzUxMTY1MDE2NDczNQ%3D%3D%21END%21
-
-cookie編集時に使ったスクリプト
- </description>
+cookie編集時に使ったスクリプト</description>
     </item>
     
     <item>
@@ -132,8 +126,7 @@ cookie編集時に使ったスクリプト
 ちょっとデモ用にLinuxデスクトップを見せたかったので・・・
 /etc/pam.d/common-auth
 の先頭に以下を追加
- auth sufficient pam_permit.so
-
+auth sufficient pam_permit.so
 いますぐ実践! Linux システム管理 PAM の設定を理解する </description>
     </item>
     
@@ -145,18 +138,14 @@ cookie編集時に使ったスクリプト
       <guid>https://yaasita.github.io/2013/08/29/494/</guid>
       <description> インストール
 apt-get install smartmontools
-
 /etc/default/smartmontoolsの以下の行を有効にする
 start_smartd=yes
-
 /etc/smartd.confを編集
 DEVICESCANをコメントアウトして設定を書く
 #DEVICESCAN -d removable -n standby -m root -M exec /usr/share/smartmontools/smartd-runner
 /dev/sda -a -d sat -o on -S on -s (S/../.././02|L/../../6/03) -m hoge@example.com
-
 こうするとメールのテストができるらしい
 /dev/sda -a -d sat -o on -S on -s (S/../.././02|L/../../6/03) -m hoge@example.com -M test
-
 参考リンク
 http://www.geocities.jp/sugachan1973/doc/funto57.html </description>
     </item>
@@ -171,7 +160,6 @@ http://www.geocities.jp/sugachan1973/doc/funto57.html </description>
 firmware-realtekってのがnon-freeにあったからaptで入る
 ethtool -i eth0
 lspci | grep Realtek
-
 参考リンク
 http://cskimura.blogspot.jp/2010/06/rtl81118168b-on-debian.html </description>
     </item>
@@ -226,13 +214,12 @@ http://www.flopdesign.com/freefont/flopdesignfont.html </description>
       
       <guid>https://yaasita.github.io/2013/08/05/620/</guid>
       <description> sshd_configを編集する
- Match User sftpuser
+Match User sftpuser
 AllowTcpForwarding no
 ChrootDirectory /home/chroot
 ForceCommand internal-sftp
 PasswordAuthentication yes
 X11Forwarding no
-
 注意点としてはsftpuserは/home/chrootに書き込み権限を持たせないこと
 そうしないとうまくいかない </description>
     </item>
@@ -243,8 +230,7 @@ X11Forwarding no
       <pubDate>Mon, 29 Jul 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/07/29/641/</guid>
-      <description> # dpkg --add-architecture amd64
- </description>
+      <description># dpkg --add-architecture amd64</description>
     </item>
     
     <item>
@@ -277,7 +263,6 @@ http://www.ansibleworks.com/ </description>
       <guid>https://yaasita.github.io/2013/07/18/701/</guid>
       <description>コマンドはavconvらしい
 avconv -i 002.flv -strict experimental 002.mp4
-
 http://wiki.debian.org/NewInWheezy</description>
     </item>
     

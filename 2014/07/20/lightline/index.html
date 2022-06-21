@@ -7,20 +7,18 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>lightline.vimを使ってみた | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="lightline.vimを使ってみた" />
 <meta property="og:description" content="https://github.com/itchyny/lightline.vim
 こんな感じになる
-https://yaasita.tumblr.com/post/92242385452
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;lightline&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;lightline&#34;).src = photos[0].original_size.url; }   設定
-NeoBundle &#39;itchyny/lightline.vim&#39; let g:lightline = { \ &#39;active&#39;: { \ &#39;left&#39;: [ [ &#39;mode&#39;, &#39;paste&#39; ], \ [ &#39;readonly&#39;, &#39;filename&#39;, &#39;modified&#39; ], \ [ &#39;fugitive&#39; ] \ ], \ &#39;right&#39;: [ [ &#39;lineinfo&#39; ], \ [ &#39;percent&#39; ], \ [ &#39;filetype&#39;, &#39;fileencoding&#39;, &#39;fileformat&#39; ] ] \ }, \ &#39;component&#39;: { \ &#39;fugitive&#39;: &#39;%{exists(&quot;*fugitive#statusline()&quot;)?" />
+設定
+NeoBundle &#39;itchyny/lightline.vim&#39; let g:lightline = { \ &#39;active&#39;: { \ &#39;left&#39;: [ [ &#39;mode&#39;, &#39;paste&#39; ], \ [ &#39;readonly&#39;, &#39;filename&#39;, &#39;modified&#39; ], \ [ &#39;fugitive&#39; ] \ ], \ &#39;right&#39;: [ [ &#39;lineinfo&#39; ], \ [ &#39;percent&#39; ], \ [ &#39;filetype&#39;, &#39;fileencoding&#39;, &#39;fileformat&#39; ] ] \ }, \ &#39;component&#39;: { \ &#39;fugitive&#39;: &#39;%{exists(&quot;*fugitive#statusline()&quot;)?fugitive#statusline():&quot;&quot;}&#39; \ } \ } " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2014/07/20/lightline/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2014-07-20T00:12:00&#43;09:00" />
-<meta property="article:modified_time" content="2014-07-20T00:12:00&#43;09:00" />
+<meta property="article:published_time" content="2014-07-20T00:12:00+09:00" />
+<meta property="article:modified_time" content="2014-07-20T00:12:00+09:00" />
 
 
     
@@ -60,16 +58,7 @@ if (!doNotTrack) {
   <div class="content">
     <p><a href="https://github.com/itchyny/lightline.vim">https://github.com/itchyny/lightline.vim</a></p>
 <p>こんな感じになる</p>
-<p><a href="https://yaasita.tumblr.com/post/92242385452">https://yaasita.tumblr.com/post/92242385452</a></p>
-<p><a href="#"><img id="lightline" src=""></a></p>
-<script>
-function callback(data){
-    var photos = data.response.posts[0].photos;
-    document.getElementById("lightline").parentNode.href = photos[0].original_size.url;
-    document.getElementById("lightline").src = photos[0].original_size.url;
-}
-</script>
-<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=92242385452&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
+<p><a href="https://yaasita.tk/blog/2022/lightline-vim.png"><img src="https://yaasita.tk/blog/2022/lightline-vim.png" alt="lightline-vim"></a></p>
 <p>設定</p>
 <pre><code>NeoBundle 'itchyny/lightline.vim'
     let g:lightline = {
@@ -128,7 +117,7 @@ function callback(data){
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -233,7 +222,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -324,7 +313,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

@@ -243,7 +243,6 @@ http://contest2004.thinkquest.jp/tqj2004/70237/t/tyousan.html </description>
 ※スクリプト中に使われるファイル（list.txt,list2.txt)は複数行あるテキストファイルです。このファイルに例えば3行あれば3個の配列を用意します（空行は除く）。
 つまりcshが997が限界なのかを検証するには997行のファイルと998行のファイルを用意すればいいのです。
 まずはbash　全然平気
-
 #!/bin/bash
 array=(`cat list.txt`)
 for line in ${array[@]}
@@ -251,9 +250,7 @@ do
 echo $line
 done
 echo &#34;やっぱりbash ${#array[@]} 人のっても大丈夫&#34;
-
 続いてzsh　まあbashの強化版だし平気みたい
-
 #!/usr/bin/zsh
 array=(`cat list.txt`)
 for line in ${array[@]}
@@ -261,20 +258,20 @@ do
 echo $line
 done
 echo &#34;やっぱりzsh ${#array[@]} 人のっても大丈夫&#34;
-
 cshとは違うのだよcshとは　みたいな感じで余裕でクリア
-
 #!/bin/tcsh
 set array=`cat list.txt`
 foreach i ($array)
 echo $i
 end
 echo &#34;やっぱりtcsh ${#array} 人乗っても大丈夫&#34;
-
 流石perlだどんな配列でもなんとも無いぜ！
-
 #!/usr/bin/perl
-open (FH,&#34;</description>
+open (FH,&#34;list.txt&#34;);
+@array=&amp;amp;lt;FH&amp;amp;gt;;
+foreach (@array) {
+print;
+}</description>
     </item>
     
     <item>
@@ -307,6 +304,18 @@ Automatically back word and context　→　ポップアップにあらわれる
     </item>
     
     <item>
+      <title>％COMSPEC％→がcmd.exeを示すように・・・</title>
+      <link>https://yaasita.github.io/2008/11/30/10896/</link>
+      <pubDate>Sun, 30 Nov 2008 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2008/11/30/10896/</guid>
+      <description> 環境変数を列挙したページがあったようだ
+cd %APPDATA%
+とかやるとアプリケーションデータに行くと思うよ
+http://www.atmarkit.co.jp/fwin2k/win2ktips/267swchos/swchos.html </description>
+    </item>
+    
+    <item>
       <title>VirtualPCの設定ファイルとかの場所は？</title>
       <link>https://yaasita.github.io/2008/11/30/10916/</link>
       <pubDate>Sun, 30 Nov 2008 00:00:00 +0900</pubDate>
@@ -317,18 +326,6 @@ VirtualPCコンソール→設定(T)→ハードディスクのバーチャル�
 ・使用してるVirtualマシンは？（その他、復元ファイルなどは？）
 \Documents and Settings\ユーザー名\Application Data\Microsoft\Virtual PC\Virtual Machines
 を見ればいける </description>
-    </item>
-    
-    <item>
-      <title>％COMSPEC％→がcmd.exeを示すように・・・</title>
-      <link>https://yaasita.github.io/2008/11/30/10896/</link>
-      <pubDate>Sun, 30 Nov 2008 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2008/11/30/10896/</guid>
-      <description> 環境変数を列挙したページがあったようだ
-cd %APPDATA%
-とかやるとアプリケーションデータに行くと思うよ
-http://www.atmarkit.co.jp/fwin2k/win2ktips/267swchos/swchos.html </description>
     </item>
     
     <item>

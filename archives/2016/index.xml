@@ -15,8 +15,7 @@
       <guid>https://yaasita.github.io/2016/12/03/google-cloud-dns/</guid>
       <description>Google Cloud Platform のDNSでグルーレコード作るときは
 こんな感じでNS指定したあとに、Aレコード追加すればグルーレコード(Glue Record)に追加してくれるようだ
-
-; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.9.5-9+deb8u8-Debian &amp;lt;&amp;lt;&amp;gt;&amp;gt; +norec @ns-cloud-d1.googledomains.com. name.yaasita.xyz. a ; (2 servers found) ;; global options: +cmd ;; Got answer: ;; -&amp;gt;&amp;gt;HEADER&amp;lt;&amp;lt;- opcode: QUERY, status: NOERROR, id: 39015 ;; flags: qr; QUERY: 1, ANSWER: 0, AUTHORITY: 2, ADDITIONAL: 3 ;; OPT PSEUDOSECTION: ; EDNS: version: 0, flags:; udp: 512 ;; QUESTION SECTION: ;name.yaasita.xyz. IN A ;; AUTHORITY SECTION: name.yaasita.xyz. 300 IN NS ns1.name.yaasita.xyz. name.</description>
+; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.9.5-9+deb8u8-Debian &amp;lt;&amp;lt;&amp;gt;&amp;gt; +norec @ns-cloud-d1.googledomains.com. name.yaasita.xyz. a ; (2 servers found) ;; global options: +cmd ;; Got answer: ;; -&amp;gt;&amp;gt;HEADER&amp;lt;&amp;lt;- opcode: QUERY, status: NOERROR, id: 39015 ;; flags: qr; QUERY: 1, ANSWER: 0, AUTHORITY: 2, ADDITIONAL: 3 ;; OPT PSEUDOSECTION: ; EDNS: version: 0, flags:; udp: 512 ;; QUESTION SECTION: ;name.yaasita.xyz. IN A ;; AUTHORITY SECTION: name.yaasita.xyz. 300 IN NS ns1.name.yaasita.xyz. name.yaasita.xyz. 300 IN NS ns2.</description>
     </item>
     
     <item>
@@ -28,7 +27,7 @@
       <description>VALUE-DOMAIN バリュードメインの権威DNSサーバを使いつつ
 レコードにグルーレコードを追加する方法
 BINDみたくこんな感じにやる
-ns cloud cloud.example.net. a cloud.example.net. 123.123.123.123  上位の権威サーバにグルーレコードを設定する場合は
+ns cloud cloud.example.net. a cloud.example.net. 123.123.123.123 上位の権威サーバにグルーレコードを設定する場合は
 下記参照
 https://www.value-domain.com/userguide/manual/othermodns/</description>
     </item>
@@ -40,9 +39,9 @@ https://www.value-domain.com/userguide/manual/othermodns/</description>
       
       <guid>https://yaasita.github.io/2016/11/20/aws-vm-import/</guid>
       <description>手順 img作る前に以下を確認しておく
- DHCPを有効にしている iptablesを無効に rawでイメージを作っておく  次に以下のコマンドでインポート
-# hoge-importってバケット作ったとする # 最初にimgをS3に上げておく aws s3 cp hoge.img s3://hoge-import/hoge.img # IAM周りを準備 aws iam create-role --role-name vmimport --assume-role-policy-document file://trust-policy.json aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json # インポートタスク開始 aws ec2 import-image --description &amp;quot;hoge server&amp;quot; --disk-containers file://containers.json # 進捗見る aws ec2 describe-import-image-tasks  使ったjsonファイル
- 参考リンク  http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats http://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html  </description>
+DHCPを有効にしている iptablesを無効に rawでイメージを作っておく 次に以下のコマンドでインポート
+# hoge-importってバケット作ったとする # 最初にimgをS3に上げておく aws s3 cp hoge.img s3://hoge-import/hoge.img # IAM周りを準備 aws iam create-role --role-name vmimport --assume-role-policy-document file://trust-policy.json aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json # インポートタスク開始 aws ec2 import-image --description &amp;quot;hoge server&amp;quot; --disk-containers file://containers.json # 進捗見る aws ec2 describe-import-image-tasks 使ったjsonファイル
+参考リンク http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats http://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html </description>
     </item>
     
     <item>
@@ -64,7 +63,7 @@ NSで指定されてるサーバは CNAMEとして aws.yaasita.net. に設定し
       <pubDate>Sat, 22 Oct 2016 22:54:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2016/10/22/smart-phone/</guid>
-      <description>エイスース SIMフリースマートフォン ASUS ZenFone 2 Laser（Qualcomm Snapdragon 410/メモリ 2GB） 16GB ブラック ZE500KL-BK16  18,672円だった
+      <description>エイスース SIMフリースマートフォン ASUS ZenFone 2 Laser（Qualcomm Snapdragon 410/メモリ 2GB） 16GB ブラック ZE500KL-BK16 18,672円だった
 Androidは6.0.1まで上がった</description>
     </item>
     
@@ -74,8 +73,7 @@ Androidは6.0.1まで上がった</description>
       <pubDate>Sat, 10 Sep 2016 12:52:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2016/09/10/update-notify/</guid>
-      <description>こんな感じで、更新を促す
- </description>
+      <description>こんな感じで、更新を促す</description>
     </item>
     
     <item>
@@ -86,7 +84,7 @@ Androidは6.0.1まで上がった</description>
       <guid>https://yaasita.github.io/2016/09/04/nepu/</guid>
       <description>Vita版のやつ
 ギョウ界チ武道会 クリアしたキャラ
- ネプチューヌ ノワール ブラン ベール ネプギア ユニ ロム ラム デンゲキコ パープルハート ブラックハート ホワイトハート グリーンハート パープルシスター ブラックシスター ホワイトシスター(左) ホワイトシスター(右) ファミ通  -&amp;gt; 取得したアイテムで審議判定できる
+ネプチューヌ ノワール ブラン ベール ネプギア ユニ ロム ラム デンゲキコ パープルハート ブラックハート ホワイトハート グリーンハート パープルシスター ブラックシスター ホワイトシスター(左) ホワイトシスター(右) ファミ通 -&amp;gt; 取得したアイテムで審議判定できる
 http://catmiimi.com/nepu_military
 参考リンク http://catmiimi.com/nepu</description>
     </item>
@@ -98,7 +96,7 @@ http://catmiimi.com/nepu_military
       
       <guid>https://yaasita.github.io/2016/08/27/smplayer/</guid>
       <description>ずっとループして再生
- 再生(P) → A-Bセクション(A) → 繰り返し(R)  </description>
+再生(P) → A-Bセクション(A) → 繰り返し(R) </description>
     </item>
     
     <item>
@@ -111,9 +109,9 @@ http://catmiimi.com/nepu_military
 対応機器
 http://aws.amazon.com/jp/vpc/faqs/
 ハードウェアVPN接続
- 1つの仮想プライベートゲートウェイあたり10接続
+1つの仮想プライベートゲートウェイあたり10接続
 http://docs.aws.amazon.com/ja_jp/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html
-http://dev.classmethod.jp/cloud/aws/vpc-connect-hardware-vpn/  </description>
+http://dev.classmethod.jp/cloud/aws/vpc-connect-hardware-vpn/ </description>
     </item>
     
     <item>
@@ -172,7 +170,7 @@ botbot.meはIRCに参加させることでログを取って
       <description>https://github.com/firehol/netdata
 インストール
 https://github.com/firehol/netdata/wiki/Installation
-# 起動 /usr/sbin/netdata # 見てみる http://192.168.0.38:19999/  </description>
+# 起動 /usr/sbin/netdata # 見てみる http://192.168.0.38:19999/ </description>
     </item>
     
     <item>
@@ -189,7 +187,7 @@ Androidでも動く
 同様のソフトにBitTorrent Syncがあるみたいだけどこっちのほうが良さそう
 （同期ディレクトリに上限がないため）
 こんな感じ
-./syncthing -gui-address=&amp;quot;192.168.0.10:3184&amp;quot; -no-browser  </description>
+./syncthing -gui-address=&amp;quot;192.168.0.10:3184&amp;quot; -no-browser </description>
     </item>
     
     <item>
@@ -205,7 +203,7 @@ https://github.com/jlord/git-it-electron
 結果
 http://yaasita.github.io/patchwork/
 参考リンク
- Git-it – 手を動かしながら習得できる日本語対応のGit/GitHub学習アプリ  http://www.softantenna.com/wp/review/git-it/   プルリク練習用のリポジトリ  https://github.com/jlord/patchwork   結果確認  http://jlord.us/patchwork/    </description>
+Git-it – 手を動かしながら習得できる日本語対応のGit/GitHub学習アプリ http://www.softantenna.com/wp/review/git-it/ プルリク練習用のリポジトリ https://github.com/jlord/patchwork 結果確認 http://jlord.us/patchwork/ </description>
     </item>
     
     <item>
@@ -218,7 +216,7 @@ http://yaasita.github.io/patchwork/
 Reallocated_Sector_Ctが残ってれば使える手法
 https://github.com/yaasita/hdd_badsector
 使い方
-smartctl -a /dev/sdc | ./hdd_check.pl /dev/sdc  </description>
+smartctl -a /dev/sdc | ./hdd_check.pl /dev/sdc </description>
     </item>
     
     <item>
@@ -229,7 +227,7 @@ smartctl -a /dev/sdc | ./hdd_check.pl /dev/sdc  </description>
       <guid>https://yaasita.github.io/2016/02/21/mojolicious/</guid>
       <description>websocketの開いてもデフォルト15秒でタイムアウトするのが嫌なら
 ↓みたいな感じでtimeout伸ばす
-Mojo::IOLoop-&amp;gt;stream($self-&amp;gt;tx-&amp;gt;connection)-&amp;gt;timeout(300);    参考リンク http://kazuph.hateblo.jp/entry/20120310/1331395725 https://github.com/yuki-kimoto/mojolicious-guides-japanese/wiki  </description>
+Mojo::IOLoop-&amp;gt;stream($self-&amp;gt;tx-&amp;gt;connection)-&amp;gt;timeout(300); 参考リンク http://kazuph.hateblo.jp/entry/20120310/1331395725 https://github.com/yuki-kimoto/mojolicious-guides-japanese/wiki </description>
     </item>
     
     <item>
@@ -241,8 +239,8 @@ Mojo::IOLoop-&amp;gt;stream($self-&amp;gt;tx-&amp;gt;connection)-&amp;gt;timeout
       <description>FF10-2ラストミッション LAST MISSIONでの使用ドレス
 ラスボスが混乱攻撃してくるのでその対策は必須
 あと、アイテムに足して、呪いだったりボムだったりの状態異常がかかる場合があるので、アイテムエスナを使えるアイテムシューターも必須かと思う
- ガンナー (混乱防御のため) アイテムシューター ダークナイト (暗黒が強力) 調教師 (穴掘りでアイテム探し) 白魔導士 (ケアルガで回復)  あと装備アイテムは以下の2種類
- 満ちる月の石 (自動MP回復) トリプルティアラ(3回攻撃)  参考リンク  FF10-2ラストミッション攻略ページ 結界解除条件  </description>
+ガンナー (混乱防御のため) アイテムシューター ダークナイト (暗黒が強力) 調教師 (穴掘りでアイテム探し) 白魔導士 (ケアルガで回復) あと装備アイテムは以下の2種類
+満ちる月の石 (自動MP回復) トリプルティアラ(3回攻撃) 参考リンク FF10-2ラストミッション攻略ページ 結界解除条件 </description>
     </item>
     
     <item>
@@ -251,9 +249,10 @@ Mojo::IOLoop-&amp;gt;stream($self-&amp;gt;tx-&amp;gt;connection)-&amp;gt;timeout
       <pubDate>Mon, 25 Jan 2016 00:23:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2016/01/25/dame-engineer/</guid>
-      <description>パズル1  http://tango-ruby.hatenablog.com/entry/2015/11/30/122814 http://challenge-your-limits.herokuapp.com/  答え
-curl http://challenge-your-limits.herokuapp.com/call/me # getだめだよって怒られる curl -F &amp;quot;hoge=hoge&amp;quot; http://challenge-your-limits.herokuapp.com/call/me # 適当にPOSTすると正しいURLを教えてくれる curl -F &amp;quot;name=hoge&amp;quot; -F &amp;quot;email=huga@hoge.com&amp;quot; \ http://challenge-your-limits.herokuapp.com/challenge_users # あとはこんな感じで  パズル2  http://tango-ruby.hatenablog.com/entry/2015/12/28/212010 http://challenge-your-limits2.herokuapp.com/  答え
-curl http://challenge-your-limits2.herokuapp.com/call/my/APIs # メソッドが違うらしい curl -X DELETE http://challenge-your-limits2.herokuapp.com/call/my/APIs # いろいろ試すとDELETEで通る curl http://challenge-your-limits2.herokuapp.com/c2_users/12/hacker_apply # 案内されたURLにリクエストするとなんか違うらしい curl http://challenge-your-limits2.herokuapp.com/help/me/out # とりあえず登録 curl -F &amp;quot;username=yaasita&amp;quot; -F &#39;email=hoge1@example.com&#39; \ http://challenge-your-limits2.heroku/app.com/c2_users/ # 帰ってきた値でBASIC認証 curl --user yaasita:uRd4yy-imPbHBR4W http://challenge-your-limits2.herokuapp.com/c2_users/10 # あとは帰ってきた文字列をBASE64デコード  パズル3  http://tango-ruby.hatenablog.com/entry/2016/01/10/125615 http://challenge-your-limits3.herokuapp.com/  答え</description>
+      <description>パズル1 http://tango-ruby.hatenablog.com/entry/2015/11/30/122814 http://challenge-your-limits.herokuapp.com/ 答え
+curl http://challenge-your-limits.herokuapp.com/call/me # getだめだよって怒られる curl -F &amp;quot;hoge=hoge&amp;quot; http://challenge-your-limits.herokuapp.com/call/me # 適当にPOSTすると正しいURLを教えてくれる curl -F &amp;quot;name=hoge&amp;quot; -F &amp;quot;email=huga@hoge.com&amp;quot; \ http://challenge-your-limits.herokuapp.com/challenge_users # あとはこんな感じで パズル2 http://tango-ruby.hatenablog.com/entry/2015/12/28/212010 http://challenge-your-limits2.herokuapp.com/ 答え
+curl http://challenge-your-limits2.herokuapp.com/call/my/APIs # メソッドが違うらしい curl -X DELETE http://challenge-your-limits2.herokuapp.com/call/my/APIs # いろいろ試すとDELETEで通る curl http://challenge-your-limits2.herokuapp.com/c2_users/12/hacker_apply # 案内されたURLにリクエストするとなんか違うらしい curl http://challenge-your-limits2.herokuapp.com/help/me/out # とりあえず登録 curl -F &amp;quot;username=yaasita&amp;quot; -F &#39;email=hoge1@example.com&#39; \ http://challenge-your-limits2.heroku/app.com/c2_users/ # 帰ってきた値でBASIC認証 curl --user yaasita:uRd4yy-imPbHBR4W http://challenge-your-limits2.herokuapp.com/c2_users/10 # あとは帰ってきた文字列をBASE64デコード パズル3 http://tango-ruby.hatenablog.com/entry/2016/01/10/125615 http://challenge-your-limits3.herokuapp.com/ 答え
+# 最初にアクセスすると数式を予想せよとくる curl http://challenge-your-limits3.herokuapp.com/formula/is/x%20+5 # 登録 curl -F &amp;quot;username=huga&amp;quot; -F &amp;quot;email=huga@hoge.</description>
     </item>
     
   </channel>

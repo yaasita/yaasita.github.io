@@ -7,35 +7,34 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>perlでルーターからWAN側のIPアドレスを取得してみる | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="perlでルーターからWAN側のIPアドレスを取得してみる" />
-<meta property="og:description" content=" このときに対象にしたルーターはNP-BBRM
+<meta property="og:description" content="このときに対象にしたルーターはNP-BBRM
 #!/usr/bin/perl
 use strict;
 use warnings;
 use LWP::UserAgent;
-my $ua = LWP::UserAgent-new;
-$ua-timeout(10);
-my $req = HTTP::Request-new(GET = &#39;http://192.168.0.1/Status.htm&#39;);
-$req-authorization_basic(&#39;admin&#39;,&#39;hoge&#39;);
-my $response = $ua-request($req);
-if ($response-is_success){
-my $data = $response-content;
-$data=~s///g;
+my $ua = LWP::UserAgent-&gt;new;
+$ua-&gt;timeout(10);
+my $req = HTTP::Request-&gt;new(GET =&gt; &#39;http://192.168.0.1/Status.htm&#39;);
+$req-&gt;authorization_basic(&#39;admin&#39;,&#39;hoge&#39;);
+my $response = $ua-&gt;request($req);
+if ($response-&gt;is_success){
+my $data = $response-&gt;content;
+$data=~s/&lt;.*?&gt;//g;
 $data=~s/\&amp;nbsp;//g;
 $data=~/IP.&#43;?(\d{1,3}[\.\d]&#43;)\s/;
 print $1,&#34;\n&#34;;
 }
 else {
-die $response-status_line;
-}
- " />
+die $response-&gt;status_line;
+}" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2010/10/16/5527/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2010-10-16T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2010-10-16T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2010-10-16T00:00:00+09:00" />
+<meta property="article:modified_time" content="2010-10-16T00:00:00+09:00" />
 
 
     
@@ -118,7 +117,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -223,7 +222,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -314,7 +313,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

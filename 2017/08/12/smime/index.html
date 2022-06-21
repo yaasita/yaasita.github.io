@@ -7,28 +7,28 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>S/MIMEの設定 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="S/MIMEの設定" />
 <meta property="og:description" content="StartSSL CSR作る
 emailaddressにS/MIME設定したいアドレスを入れる
-openssl req -newkey rsa:2048 -keyout yourname.key -out yourname.csr  証明書が送られてくるのでこんな感じでまとめて
------BEGIN PRIVATE KEY----- ... -----END PRIVATE KEY----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----  pkcs12に変換してthunderbirdにインポートする
-openssl pkcs12 -export -in sakusei.pem -out email.pfx  なんか送られてきた中間証明書がCRLFとLFが混在してるので直した
+openssl req -newkey rsa:2048 -keyout yourname.key -out yourname.csr 証明書が送られてくるのでこんな感じでまとめて
+-----BEGIN PRIVATE KEY----- ... -----END PRIVATE KEY----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE----- pkcs12に変換してthunderbirdにインポートする
+openssl pkcs12 -export -in sakusei.pem -out email.pfx なんか送られてきた中間証明書がCRLFとLFが混在してるので直した
 チェーンはこんな感じになってた
-StartCom Certification Authority |_ StartCom Certification Authority ECC |_ StartCom CC2 ICA |_ 自分のメールアドレス  そういやCAAレコードを検証しなかったけどいいのかね？
+StartCom Certification Authority |_ StartCom Certification Authority ECC |_ StartCom CC2 ICA |_ 自分のメールアドレス そういやCAAレコードを検証しなかったけどいいのかね？
 でここまでやって気づいたんだけどStartComの証明書が失効扱いで全然検証通らなかった
 これはGmailも同じなのでStartCom使うのは中止
 COMODO 今度COMODOを使うことになったんだけど既にChromeだとKEYGEN要素が使えないらしくFirefoxでアクセスするしかない
 (コードもselect[_moz-type=&quot;-mozilla-keygen&quot;]になってるし)
 こっちはフォームから申請して、リンククリックすればすぐに証明書がFirefoxに入るのでそれをエクスポートしてthunderbirdに入れればOK
 チェーンはこんな感じ
-COMODO RSA Certification Authority |_COMODO RSA Client Authentication and Secure Email CA |_ 自分のメールアドレス  まとめ Let&rsquo;s EncryptがS/MIME対応してほしい" />
+COMODO RSA Certification Authority |_COMODO RSA Client Authentication and Secure Email CA |_ 自分のメールアドレス まとめ Let&rsquo;s EncryptがS/MIME対応してほしい" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2017/08/12/smime/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2017-08-12T17:25:39&#43;09:00" />
-<meta property="article:modified_time" content="2017-08-12T17:25:39&#43;09:00" />
+<meta property="article:published_time" content="2017-08-12T17:25:39+09:00" />
+<meta property="article:modified_time" content="2017-08-12T17:25:39+09:00" />
 
 
     
@@ -157,7 +157,7 @@ emailaddressにS/MIME設定したいアドレスを入れる</p>
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -262,7 +262,7 @@ emailaddressにS/MIME設定したいアドレスを入れる</p>
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -353,7 +353,7 @@ emailaddressにS/MIME設定したいアドレスを入れる</p>
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

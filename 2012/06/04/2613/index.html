@@ -7,15 +7,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>brctlでブリッジインターフェイスを作成 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="brctlでブリッジインターフェイスを作成" />
-<meta property="og:description" content=" KVMを使うときに必要になったブリッジインターフェイスの設定メモ コマンドでは以下のようにやればO 
-brctl addbr br0
+<meta property="og:description" content=" KVMを使うときに必要になったブリッジインターフェイスの設定メモ コマンドでは以下のようにやればO brctl addbr br0
 brctl addif br0 eth0
- /etc/network/interfaces 
-auto lo br0
+/etc/network/interfaces auto lo br0
 iface lo inet loopback
 allow-hotplug eth0
 auto eth0
@@ -28,12 +26,12 @@ bridge_ports eth0
 address 192.168.0.40
 netmask 255.255.255.0
 gateway 192.168.0.1
- 参考リンク
+参考リンク
 brctl でLinuxマシンをHUBにする - いますぐ実践! Linuxシステム管理第2回　KVMの導入と基本的な使い方 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2012/06/04/2613/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2012-06-04T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2012-06-04T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2012-06-04T00:00:00+09:00" />
+<meta property="article:modified_time" content="2012-06-04T00:00:00+09:00" />
 
 
     
@@ -120,7 +118,7 @@ KVMを使うときに必要になったブリッジインターフェイスの�
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -225,7 +223,7 @@ KVMを使うときに必要になったブリッジインターフェイスの�
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -316,7 +314,7 @@ KVMを使うときに必要になったブリッジインターフェイスの�
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

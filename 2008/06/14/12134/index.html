@@ -7,12 +7,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>ActivePerlでyahooにメールを送ろうか | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="ActivePerlでyahooにメールを送ろうか" />
 <meta property="og:description" content="Net::SMTPモジュールを使います。ただデフォルトでauthメソッドを使おうとしてもパケットを投げてくれないので、下のモジュールを新たにppmか何かでインストールして下さい。
-
 次にコーディングに入ります。Net::SMTPについての説明はこちらを参照してください。
 メールヘッダについてはTo:だけでいいかと思ったらうまく送信できなかったので、Thunderbirdのパケットをキャプチャしたものを丸パクリします。
 Dataヘッダについては何でもいいかと思いますが、一応現在時を取得する方が親切設計でしょう。どれが必要なヘッダか不要なヘッダかは面倒なので調べていません。
@@ -25,31 +24,11 @@ EHLO [192.168.0.6]
 EHLO localhost.localdomain
 とグリーティングします。まあどっちでも構いませんが、、、
 http://www.atmarkit.co.jp/fnetwork/rensai/netpro06/netpro01.html
-#!/usr/local/bin/perl
-use Net::SMTP;
-$user=&#34;??????&#34;;
-$passwd=&#34;?????????????&#34;;
-$maildata=Date: Sat, 14 Jun 2008 09:59:39 &#43;0900
-From: uesugi 
-User-Agent: Thunderbird 2.0.0.14 (Windows/20080421)
-MIME-Version: 1.0
-To: yahoo 
-Subject: This Mail Make Perl
-Content-Type: text/plain; charset=ISO-2022-JP
-Content-Transfer-Encoding: 7bit
-END
-$smtp = Net::SMTP-new(&#39;smtp.mail.yahoo.co.jp&#39;,Timeout=30,Debug=1);
-$smtp-auth($user, $passwd) or die &#34;Auth Fail\n&#34;;
-$smtp-mail(&#39;????????????????????@yahoo.co.jp&#39;);
-$smtp-to(&#39;????????????????????@yahoo.co.jp&#39;);
-$smtp-data();
-$smtp-datasend(&#34;$maildata&#34;);
-$smtp-datasend(&#34;\n&#34;);
-$smtp-datasend(&#34;A simple test message\n&#34;);" />
+#!/usr/local/bin/perl use Net::SMTP; $user=&quot;??????&quot;; $passwd=&quot;?????????????&quot;; $maildata=&lt;&lt;&quot;END&quot;; Message-ID: &lt;1234567890123456@yahoo.co.jp&gt; Date: Sat, 14 Jun 2008 09:59:39 &#43;0900 From: uesugi &lt;????????????????2000@yahoo.co.jp&gt; User-Agent: Thunderbird 2.0.0.14 (Windows/20080421) MIME-Version: 1.0 To: yahoo &lt;????????????????????@yahoo.co.jp&gt; Subject: This Mail Make Perl Content-Type: text/plain; charset=ISO-2022-JP Content-Transfer-Encoding: 7bit END $smtp = Net::SMTP-&gt;new(&#39;smtp.mail.yahoo.co.jp&#39;,Timeout=&gt;30,Debug=&gt;1); $smtp-&gt;auth($user, $passwd) or die &quot;Auth Fail\n&quot;; $smtp-&gt;mail(&#39;????????????????????@yahoo.co.jp&#39;); $smtp-&gt;to(&#39;????????????????????@yahoo.co.jp&#39;); $smtp-&gt;data(); $smtp-&gt;datasend(&quot;$maildata&quot;); $smtp-&gt;datasend(&quot;\n&quot;); $smtp-&gt;datasend(&quot;A simple test message\n&quot;); $smtp-&gt;dataend(); $smtp-&gt;quit; print $smtp-&gt;domain,&quot;\n&quot;; $smtp-&gt;quit; " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2008/06/14/12134/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2008-06-14T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2008-06-14T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2008-06-14T00:00:00+09:00" />
+<meta property="article:modified_time" content="2008-06-14T00:00:00+09:00" />
 
 
     
@@ -87,10 +66,58 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
+    <p>Net::SMTPモジュールを使います。ただデフォルトでauthメソッドを使おうとしてもパケットを投げてくれないので、下のモジュールを新たにppmか何かでインストールして下さい。</p>
+<p><a href="https://yaasita.tk/blog/2022/activeperl-install-module.png"><img src="https://yaasita.tk/blog/2022/activeperl-install-module.png" alt="activeperl-install-module"></a></p>
+<p>次にコーディングに入ります。Net::SMTPについての説明は<a href="http://perldoc.jp/docs/modules/libnet-1.12/Net/SMTP.pod">こちら</a>を参照してください。<br>
+メールヘッダについてはTo:だけでいいかと思ったらうまく送信できなかったので、Thunderbirdのパケットをキャプチャしたものを丸パクリします。<br>
+Dataヘッダについては何でもいいかと思いますが、一応現在時を取得する方が親切設計でしょう。どれが必要なヘッダか不要なヘッダかは面倒なので調べていません。<br>
+Message-IDですが<a href="http://www.ccjc-net.or.jp/~kouza/header/header33.html">こちら</a>を見る限り何でもいいそうです。好きな命名規則で良いでしょう。<br>
+＊参考<br>
+yahooの鯖はSMTPを拡張したESMTPで運用されています。ESMTPではグリーティングの際にEHLOコマンドを用います。（SMTPではHELOコマンド）<br>
+EHLOコマンドでは自分のホストを通知します。Thunderbirdでは</p>
+<p>EHLO [192.168.0.6]</p>
+<p>とグリーティングしますが、Net::SMTPでは</p>
+<p>EHLO localhost.localdomain</p>
+<p>とグリーティングします。まあどっちでも構いませんが、、、<br>
+<a href="http://www.atmarkit.co.jp/fnetwork/rensai/netpro06/netpro01.html">http://www.atmarkit.co.jp/fnetwork/rensai/netpro06/netpro01.html</a></p>
+<pre><code>#!/usr/local/bin/perl
 
-Net::SMTPモジュールを使います。ただデフォルトでauthメソッドを使おうとしてもパケットを投げてくれないので、下のモジュールを新たにppmか何かでインストールして下さい。<br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://1.bp.blogspot.com/_51uwrZcw3_U/SFMnMWwSsoI/AAAAAAAAADc/UuqVgLWGx0o/s1600-h/installmodule.png"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;" src="http://1.bp.blogspot.com/_51uwrZcw3_U/SFMnMWwSsoI/AAAAAAAAADc/UuqVgLWGx0o/s320/installmodule.png" border="0" alt=""id="BLOGGER_PHOTO_ID_5211552287017841282" /></a><br />次にコーディングに入ります。Net::SMTPについての説明は<a href="http://perldoc.jp/docs/modules/libnet-1.12/Net/SMTP.pod">こちら</a>を参照してください。<br />メールヘッダについてはTo:だけでいいかと思ったらうまく送信できなかったので、Thunderbirdのパケットをキャプチャしたものを丸パクリします。<br />Dataヘッダについては何でもいいかと思いますが、一応現在時を取得する方が親切設計でしょう。どれが必要なヘッダか不要なヘッダかは面倒なので調べていません。<br />Message-IDですが<a href="http://www.ccjc-net.or.jp/~kouza/header/header33.html">こちら</a>を見る限り何でもいいそうです。好きな命名規則で良いでしょう。<br />＊参考<br />yahooの鯖はSMTPを拡張したESMTPで運用されています。ESMTPではグリーティングの際にEHLOコマンドを用います。（SMTPではHELOコマンド）<br />EHLOコマンドでは自分のホストを通知します。Thunderbirdでは<br /><br />EHLO [192.168.0.6]<br /><br />とグリーティングしますが、Net::SMTPでは<br /><br />EHLO localhost.localdomain<br /><br />とグリーティングします。まあどっちでも構いませんが、、、<br /><a href="http://www.atmarkit.co.jp/fnetwork/rensai/netpro06/netpro01.html">http://www.atmarkit.co.jp/fnetwork/rensai/netpro06/netpro01.html</a><br /><br /><br />#!/usr/local/bin/perl<br /><br />use Net::SMTP;<br /><br />$user="??????";<br />$passwd="?????????????";<br />$maildata=<<"END";<br />Message-ID: <1234567890123456@yahoo.co.jp><br />Date: Sat, 14 Jun 2008 09:59:39 +0900<br />From: uesugi <????????????????2000@yahoo.co.jp><br />User-Agent: Thunderbird 2.0.0.14 (Windows/20080421)<br />MIME-Version: 1.0<br />To: yahoo <????????????????????@yahoo.co.jp><br />Subject: This Mail Make Perl<br />Content-Type: text/plain; charset=ISO-2022-JP<br />Content-Transfer-Encoding: 7bit<br />END<br /><br /><br />$smtp = Net::SMTP->new('smtp.mail.yahoo.co.jp',Timeout=>30,Debug=>1);<br /><br /><br />$smtp->auth($user, $passwd) or die "Auth Fail\n";<br />$smtp->mail('????????????????????@yahoo.co.jp');<br />$smtp->to('????????????????????@yahoo.co.jp');<br /><br />$smtp->data();<br />$smtp->datasend("$maildata");<br />$smtp->datasend("\n");<br />$smtp->datasend("A simple test message\n");<br />$smtp->dataend();<br /><br />$smtp->quit;<br /><br /><br />print $smtp->domain,"\n";<br />$smtp->quit;
+use Net::SMTP;
 
+$user=&quot;??????&quot;;
+$passwd=&quot;?????????????&quot;;
+$maildata=&lt;&lt;&quot;END&quot;;
+Message-ID: &lt;1234567890123456@yahoo.co.jp&gt;
+Date: Sat, 14 Jun 2008 09:59:39 +0900
+From: uesugi &lt;????????????????2000@yahoo.co.jp&gt;
+User-Agent: Thunderbird 2.0.0.14 (Windows/20080421)
+MIME-Version: 1.0
+To: yahoo &lt;????????????????????@yahoo.co.jp&gt;
+Subject: This Mail Make Perl
+Content-Type: text/plain; charset=ISO-2022-JP
+Content-Transfer-Encoding: 7bit
+END
+
+
+$smtp = Net::SMTP-&gt;new('smtp.mail.yahoo.co.jp',Timeout=&gt;30,Debug=&gt;1);
+
+
+$smtp-&gt;auth($user, $passwd) or die &quot;Auth Fail\n&quot;;
+$smtp-&gt;mail('????????????????????@yahoo.co.jp');
+$smtp-&gt;to('????????????????????@yahoo.co.jp');
+
+$smtp-&gt;data();
+$smtp-&gt;datasend(&quot;$maildata&quot;);
+$smtp-&gt;datasend(&quot;\n&quot;);
+$smtp-&gt;datasend(&quot;A simple test message\n&quot;);
+$smtp-&gt;dataend();
+
+$smtp-&gt;quit;
+
+
+print $smtp-&gt;domain,&quot;\n&quot;;
+$smtp-&gt;quit;
+</code></pre>
 
   </div>
   <footer>
@@ -132,7 +159,7 @@ Net::SMTPモジュールを使います。ただデフォルトでauthメソッ�
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -237,7 +264,7 @@ Net::SMTPモジュールを使います。ただデフォルトでauthメソッ�
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -328,7 +355,7 @@ Net::SMTPモジュールを使います。ただデフォルトでauthメソッ�
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

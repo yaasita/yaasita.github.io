@@ -13,7 +13,7 @@
       <pubDate>Sun, 21 Dec 2014 04:50:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2014/12/21/vim-adventures/</guid>
-      <description>vim-adventures 攻略情報 level1  海のところはカーソルを右端に置いてjで下に行けば越えられる  j,k移動は現在行の位置と同じ縦位置に移動しようとするということがわかればOKそう    level2  w,bとかとって適当に宝箱取る 30秒以内に島を渡ってxキーとる スタート地点付近の宝箱をBキーで取る  level3  なんか間違った英文をxキーを使って削除して鍵GET その後スタート地点付近にある宝箱取って終わり  https://github.com/yaasita/bpsvim/wiki/vim-adventures
+      <description>vim-adventures 攻略情報 level1 海のところはカーソルを右端に置いてjで下に行けば越えられる j,k移動は現在行の位置と同じ縦位置に移動しようとするということがわかればOKそう level2 w,bとかとって適当に宝箱取る 30秒以内に島を渡ってxキーとる スタート地点付近の宝箱をBキーで取る level3 なんか間違った英文をxキーを使って削除して鍵GET その後スタート地点付近にある宝箱取って終わり https://github.com/yaasita/bpsvim/wiki/vim-adventures
 http://vim-adventures.com/</description>
     </item>
     
@@ -44,7 +44,7 @@ https://picasaweb.google.com/home?hl=ja</description>
       <guid>https://yaasita.github.io/2014/11/15/chrome-chache-jpg/</guid>
       <description>キャッシュはC:\Users\hogeuser\AppData\Local\Google\Chrome\User Data\Default\Cacheに保存されている
 そっから引っ張ってきてLinuxとかで以下のコマンドで変換する
-file f_000* | grep JPEG | perl -F: -nlae &#39;print $F[0]&#39; | xargs -i mv {} {}.jpg  Twitterの画像引っ張って来るためにやった
+file f_000* | grep JPEG | perl -F: -nlae &#39;print $F[0]&#39; | xargs -i mv {} {}.jpg Twitterの画像引っ張って来るためにやった
 本当はキャッシュを削除して該当のページだけを見てから保存する方法がいいのかも</description>
     </item>
     
@@ -55,8 +55,7 @@ file f_000* | grep JPEG | perl -F: -nlae &#39;print $F[0]&#39; | xargs -i mv {} 
       
       <guid>https://yaasita.github.io/2014/10/30/onenote-autocorrect/</guid>
       <description>ファイル⇒オプション開いて
-文章校正⇒オートコレクトのオプション
-https://yaasita.tumblr.com/post/101260507767  https://yaasita.tumblr.com/post/101260507767</description>
+文章校正⇒オートコレクトのオプション</description>
     </item>
     
     <item>
@@ -78,7 +77,7 @@ Linux版もあっていい感じ</description>
       <guid>https://yaasita.github.io/2014/10/22/mysql-workbench/</guid>
       <description>https://registry.hub.docker.com/u/yaasita/docker-mysql/
 使い方
-docker run -d -p 22 -v /tmp:/tmp mysql /usr/bin/supervisord ssh localhost -p49153 export DISPLAY=192.168.0.2:0 mysql-workbench  </description>
+docker run -d -p 22 -v /tmp:/tmp mysql /usr/bin/supervisord ssh localhost -p49153 export DISPLAY=192.168.0.2:0 mysql-workbench </description>
     </item>
     
     <item>
@@ -89,9 +88,9 @@ docker run -d -p 22 -v /tmp:/tmp mysql /usr/bin/supervisord ssh localhost -p4915
       <guid>https://yaasita.github.io/2014/10/21/jquery-file-upload-patch/</guid>
       <description>デフォルトだとHTTP_X_FORWARDED_HOST等のヘッダは解釈してくれないので、
 以下のような設定にしてHOSTヘッダも化かす(apacheの場合)
-ProxyPreserveHost On ProxyPass / http://hoge.example.com/ ProxyPassReverse / http://hoge.example.com/  HTTP_X_FORWARDED_HOSTも解釈して欲しかったら以下のようなパッチを当てる
- パッチの当て方
-patch -p0 &amp;lt; rproxy.patch  </description>
+ProxyPreserveHost On ProxyPass / http://hoge.example.com/ ProxyPassReverse / http://hoge.example.com/ HTTP_X_FORWARDED_HOSTも解釈して欲しかったら以下のようなパッチを当てる
+パッチの当て方
+patch -p0 &amp;lt; rproxy.patch </description>
     </item>
     
     <item>
@@ -103,7 +102,7 @@ patch -p0 &amp;lt; rproxy.patch  </description>
       <description>作ったリポジトリを横断的に検索したいときbareリポジトリだと
 検索しにくいので、Work Tree付きの共有リポジトリ作った
 ついでに、bitbucketのリポジトリもローカルに持ってきたときのメモ
- 関連
+関連
 gitでbareじゃない共有リポジトリを作る</description>
     </item>
     
@@ -126,8 +125,7 @@ https://registry.hub.docker.com/u/yaasita/docker-pukiwiki/</description>
       <description>CGIでメール送るときの例
 POSTされる文字コードがよくわからない場合は
 nkf通してヨロシクやってもらう
-CSRF対策は前の画面でセッション作っておけば良いです
- </description>
+CSRF対策は前の画面でセッション作っておけば良いです</description>
     </item>
     
     <item>
@@ -145,10 +143,7 @@ CSRF対策は前の画面でセッション作っておけば良いです
       <pubDate>Sun, 05 Oct 2014 03:50:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2014/10/05/itunes-purchase/</guid>
-      <description>itunes開いてiTunes Storeからナビリンクの購入済み
-https://yaasita.tumblr.com/post/99156026702
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+      <description>itunes開いてiTunes Storeからナビリンクの購入済み</description>
     </item>
     
     <item>
@@ -169,9 +164,9 @@ http://asciiflow.com/</description>
       <guid>https://yaasita.github.io/2014/09/23/modern-ie/</guid>
       <description>モダンIEというIEテスト用のVM配ってるサイト
 sfxの解凍はunrarでできた
-unrar e IE11.Win7.ForLinuxVirtualBox.part1.sfx  https://www.modern.ie/ja-jp
+unrar e IE11.Win7.ForLinuxVirtualBox.part1.sfx https://www.modern.ie/ja-jp
 Windows7の日本語化について
- WindowsUpdateでオプション選択してLanguage Pack入れる コントロールパネルの Clock, Language, and Regionを選択 TimeZone変更  http://qiita.com/hnakamur/items/5f2f9e817dd0de60abb2</description>
+WindowsUpdateでオプション選択してLanguage Pack入れる コントロールパネルの Clock, Language, and Regionを選択 TimeZone変更 http://qiita.com/hnakamur/items/5f2f9e817dd0de60abb2</description>
     </item>
     
     <item>
@@ -185,7 +180,7 @@ IMAPしか対応してないけど、localhost以外のメールも読める
 Dockerイメージにしてみた
 https://registry.hub.docker.com/u/yaasita/docker-squirrelmail/
 sshで入って以下のコマンドで設定できる
-/etc/squirrelmail/conf.pl  設定箇所  IMAPの接続情報 IMAPのTLS接続の有無  2. Server Settings =&amp;gt; A. Update IMAP Settings   言語  10. Languages  1. Default Language =&amp;gt; ja_JP 2. Default Charset =&amp;gt; iso-2022-jp      参考リンク  http://centossrv.com/squirrelmail.shtml  </description>
+/etc/squirrelmail/conf.pl 設定箇所 IMAPの接続情報 IMAPのTLS接続の有無 2. Server Settings =&amp;gt; A. Update IMAP Settings 言語 10. Languages 1. Default Language =&amp;gt; ja_JP 2. Default Charset =&amp;gt; iso-2022-jp 参考リンク http://centossrv.com/squirrelmail.shtml </description>
     </item>
     
     <item>
@@ -194,7 +189,7 @@ sshで入って以下のコマンドで設定できる
       <pubDate>Thu, 11 Sep 2014 02:53:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2014/09/11/yami_sier/</guid>
-      <description> 闇SIer 元ファイル  </description>
+      <description> 闇SIer 元ファイル </description>
     </item>
     
     <item>

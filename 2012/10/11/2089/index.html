@@ -7,30 +7,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>tumblrのリンクと要素まとめ（使う分だけ） | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="tumblrのリンクと要素まとめ（使う分だけ）" />
-<meta property="og:description" content=" 自分がフォローしている人をブログに表示する
-HTMLの編集からどうぞ
- following
-&amp;lt;div&amp;gt;
-{block:Followed} &amp;lt;a href=&#34;{FollowedURL}&#34;&amp;gt;&amp;lt;img src=&#34;{FollowedPortraitURL-48}&#34;/&amp;gt;&amp;lt;/a&amp;gt;
-{/block:Followed}
-&amp;lt;/div&amp;gt;
-{/block:Following}
-
-リンク
-(hogeをユーザ名に変更すること)
-アーカイブ（http://hoge.tumblr.com/archive）ランダム表示（http://hoge.tumblr.com/random）RSS（http://hoge.tumblr.com/rss）携帯向け簡易表示（http://hoge.tumblr.com/mobile）Like一覧（http://www.tumblr.com/liked/by/hoge）ログイン時有効リンク
-自分がフォローしている人一覧（http://www.tumblr.com/following）自分をフォローしている人一覧（http://www.tumblr.com/followers）
-参考リンク
-http://tagblr.tumblr.com/post/340724562 
-http://ryo-skd.tumblr.com/post/311289824/tumblr-tumblr-nplll-mutter " />
+<meta property="og:description" content="自分がフォローしている人をブログに表示する HTMLの編集からどうぞ
+following &lt;div&gt; {block:Followed} &lt;a href=&quot;{FollowedURL}&quot;&gt;&lt;img src=&quot;{FollowedPortraitURL-48}&quot;/&gt;&lt;/a&gt; {/block:Followed} &lt;/div&gt; {/block:Following} リンク (hogeをユーザ名に変更すること)
+アーカイブ（http://hoge.tumblr.com/archive） ランダム表示（http://hoge.tumblr.com/random） RSS（http://hoge.tumblr.com/rss） 携帯向け簡易表示（http://hoge.tumblr.com/mobile） Like一覧（http://www.tumblr.com/liked/by/hoge） ログイン時有効リンク 自分がフォローしている人一覧（ http://www.tumblr.com/following ） 自分をフォローしている人一覧（ http://www.tumblr.com/followers ） 参考リンク
+http://tagblr.tumblr.com/post/340724562
+http://ryo-skd.tumblr.com/post/311289824/tumblr-tumblr-nplll-mutter" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2012/10/11/2089/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2012-10-11T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2012-10-11T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2012-10-11T00:00:00+09:00" />
+<meta property="article:modified_time" content="2012-10-11T00:00:00+09:00" />
 
 
     
@@ -68,10 +57,33 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<br /><b>自分がフォローしている人をブログに表示する</b><br />HTMLの編集からどうぞ<br /><pre>    following<br />    &amp;lt;div&amp;gt;<br />        {block:Followed}                <br />                &amp;lt;a href="{FollowedURL}"&amp;gt;&amp;lt;img src="{FollowedPortraitURL-48}"/&amp;gt;&amp;lt;/a&amp;gt;<br />        {/block:Followed}<br />    &amp;lt;/div&amp;gt;<br />    {/block:Following}<br /></pre><br /><b>リンク</b><br />(hogeをユーザ名に変更すること)<br /><ul><li>アーカイブ（http://hoge.tumblr.com/archive）</li><li>ランダム表示（http://hoge.tumblr.com/random）</li><li>RSS（http://hoge.tumblr.com/rss）</li><li>携帯向け簡易表示（http://hoge.tumblr.com/mobile）</li><li>Like一覧（http://www.tumblr.com/liked/by/hoge）</li></ul><b>ログイン時有効リンク</b><br /><ul><li>自分がフォローしている人一覧（<a href="http://www.tumblr.com/following">http://www.tumblr.com/following</a>）</li><li>自分をフォローしている人一覧（<a href="http://www.tumblr.com/followers">http://www.tumblr.com/followers</a>）</li></ul><br />参考リンク<br /><a href="http://tagblr.tumblr.com/post/340724562">http://tagblr.tumblr.com/post/340724562 </a><br /><a href="http://ryo-skd.tumblr.com/post/311289824/tumblr-tumblr-nplll-mutter">http://ryo-skd.tumblr.com/post/311289824/tumblr-tumblr-nplll-mutter</a>
-
+    <h2 id="自分がフォローしている人をブログに表示する">自分がフォローしている人をブログに表示する</h2>
+<p>HTMLの編集からどうぞ</p>
+<pre><code>following
+&lt;div&gt;
+    {block:Followed}                
+            &lt;a href=&quot;{FollowedURL}&quot;&gt;&lt;img src=&quot;{FollowedPortraitURL-48}&quot;/&gt;&lt;/a&gt;
+    {/block:Followed}
+&lt;/div&gt;
+{/block:Following}
+</code></pre>
+<h2 id="リンク">リンク</h2>
+<p>(hogeをユーザ名に変更すること)</p>
+<ul>
+<li>アーカイブ（http://hoge.tumblr.com/archive）</li>
+<li>ランダム表示（http://hoge.tumblr.com/random）</li>
+<li>RSS（http://hoge.tumblr.com/rss）</li>
+<li>携帯向け簡易表示（http://hoge.tumblr.com/mobile）</li>
+<li>Like一覧（http://www.tumblr.com/liked/by/hoge）</li>
+</ul>
+<h2 id="ログイン時有効リンク">ログイン時有効リンク</h2>
+<ul>
+<li>自分がフォローしている人一覧（ <a href="http://www.tumblr.com/following">http://www.tumblr.com/following</a> ）</li>
+<li>自分をフォローしている人一覧（ <a href="http://www.tumblr.com/followers">http://www.tumblr.com/followers</a> ）</li>
+</ul>
+<p>参考リンク<br>
+<a href="http://tagblr.tumblr.com/post/340724562">http://tagblr.tumblr.com/post/340724562</a><br>
+<a href="http://ryo-skd.tumblr.com/post/311289824/tumblr-tumblr-nplll-mutter">http://ryo-skd.tumblr.com/post/311289824/tumblr-tumblr-nplll-mutter</a></p>
 
   </div>
   <footer>
@@ -113,7 +125,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -218,7 +230,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -309,7 +321,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

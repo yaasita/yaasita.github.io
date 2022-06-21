@@ -7,30 +7,26 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>vsftpdをinetd経由で動かす | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="vsftpdをinetd経由で動かす" />
 <meta property="og:description" content=" なんかネット探してもみんなxinetdで動かしてるからinetdでの動かし方をメモ
 １．/etc/vsftpd.confを以下のように変更
 listen=NO
-
 ２．/etc/inetd.confに以下の記述を追加　※&amp;lt;args&amp;gt;の項は不要みたい
-
 ftp stream tcp nowait root /usr/sbin/vsftpd
-
 ３．下記コマンドでinetdを再起動
 /etc/init.d/openbsd-inetd restart
 再起動／起動スクリプトの名前はopenbsd-inetdなので注意　前も書いたかも
-
 あと最近はxinetdの方が主流みたいなので次はxinetdでやろうかな・・・
 xinetdは単体でinetd &#43; TCP wrapper(tcpd)の機能を持っているそうです
 http://www.aconus.com/~oyaji/suse/vsftpd_suse.htm
 http://www.express.nec.co.jp/linux/distributions/knowledge/network/xinetd.html " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2009/10/18/8269/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2009-10-18T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2009-10-18T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2009-10-18T00:00:00+09:00" />
+<meta property="article:modified_time" content="2009-10-18T00:00:00+09:00" />
 
 
     
@@ -117,7 +113,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -222,7 +218,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -313,7 +309,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

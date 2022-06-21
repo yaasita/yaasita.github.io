@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>DNSのCAAレコードについて | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="DNSのCAAレコードについて" />
@@ -16,17 +16,17 @@
 DANEはクライアント用でこっちはCA用のレコードらしい
 例えばこんな感じのCAAレコードを書いて Let&rsquo;s Encryptで発行しようとすると
 こんなエラーが返される
-;; ANSWER SECTION: yaasita.tk. 60 IN CAA 0 issue &quot;comodoca.com&quot; yaasita.tk. 60 IN CAA 0 issuewild &quot;\;&quot; yaasita.tk. 60 IN CAA 0 iodef &quot;mailto:alert@yaasita.net&quot;  この場合、hoge.yaasita.tk. みたなサブドメインもcomodocaでしか発行できなくなる
+;; ANSWER SECTION: yaasita.tk. 60 IN CAA 0 issue &quot;comodoca.com&quot; yaasita.tk. 60 IN CAA 0 issuewild &quot;\;&quot; yaasita.tk. 60 IN CAA 0 iodef &quot;mailto:alert@yaasita.net&quot; この場合、hoge.yaasita.tk. みたなサブドメインもcomodocaでしか発行できなくなる
 (設定はサブドメインに継承される)
 ただし、上書きは可能なのでCAAを以下のようにすればLet&rsquo;s Encryptだけから発行できるように変わる
-hoge IN CAA 0 issue &quot;letsencrypt.org&quot; hoge IN CAA 0 issuewild &quot;;&quot; hoge IN CAA 0 iodef &quot;mailto:alert@yaasita.net&quot;  例えば、google.com のCAAは以下のようになっているので、Google Trust Servicesおよびsymantecからしか発行できない
+hoge IN CAA 0 issue &quot;letsencrypt.org&quot; hoge IN CAA 0 issuewild &quot;;&quot; hoge IN CAA 0 iodef &quot;mailto:alert@yaasita.net&quot; 例えば、google.com のCAAは以下のようになっているので、Google Trust Servicesおよびsymantecからしか発行できない
 仮に drive.google.com のwebrootに任意のファイルを置ける脆弱性があったとしても(http-01で)Let&rsquo;s Encryptの証明書を発行することはできないし、WoSignで偽の証明書を発行されることもない
 (WoSignがCAA無視してたら意味ないけど)
 google.com. 84592 IN CAA 0 issue &quot;pki." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2017/08/11/dns-caa-record/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2017-08-11T02:03:56&#43;09:00" />
-<meta property="article:modified_time" content="2017-08-11T02:03:56&#43;09:00" />
+<meta property="article:published_time" content="2017-08-11T02:03:56+09:00" />
+<meta property="article:modified_time" content="2017-08-11T02:03:56+09:00" />
 
 
     
@@ -141,7 +141,7 @@ iodefに対応してくれないと面白くないけどまあしょうがない
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -246,7 +246,7 @@ iodefに対応してくれないと面白くないけどまあしょうがない
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -337,7 +337,7 @@ iodefに対応してくれないと面白くないけどまあしょうがない
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

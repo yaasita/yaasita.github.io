@@ -7,26 +7,26 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>mitmproxyが便利 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="mitmproxyが便利" />
 <meta property="og:description" content="とっても便利なmitmproxyを使ってみた
 概要 こんな感じでHTTPSなサイトも中間に入りこんでくれる
 （root証明証を予め信頼しておく必要がある)
-browser &lt;---(指定のCA鍵で再署名)---- mitmproxy &lt;---(HTTPSを一旦解く)----- web server  インストール apt install mitmproxy  設定 プライベートCAをやってるなら
- /etc/ssl/demoCA/private/cakey.pem /etc/ssl/demoCA/cacert.pem  この２ファイルを結合する
+browser &lt;---(指定のCA鍵で再署名)---- mitmproxy &lt;---(HTTPSを一旦解く)----- web server インストール apt install mitmproxy 設定 プライベートCAをやってるなら
+/etc/ssl/demoCA/private/cakey.pem /etc/ssl/demoCA/cacert.pem この２ファイルを結合する
 こんな感じで mitmproxy-ca.pem って名前でどっかのディレクトリに置く
 -----BEGIN ENCRYPTED PRIVATE KEY----- ... -----END ENCRYPTED PRIVATE KEY----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE----- 実行 こんな感じで実行できる &ndash;view-filter で表示させたいURLを絞れる
 (hogedirの中にmitmproxy-ca.pemが入ってる)
-mitmproxy --set confdir=/path/to/hogedir --view-filter m3u  画面中ではVimぽいキーバインドで色々操作できる
+mitmproxy --set confdir=/path/to/hogedir --view-filter m3u 画面中ではVimぽいキーバインドで色々操作できる
 リクエストを選んで、wでストリームを保存できる
 dump mitmproxyだけだと長いURLとかは省略されちゃったりするので、完全なものを見る場合にmitmdumpを使う
-# getだけ抽出 mitmdump -nr /tmp/save -w outfile &quot;~m get&quot; # リクエスト一覧 mitmdump -nr /tmp/save  まとめ HTTPSのデバッグ時にめっちゃ便利" />
+# getだけ抽出 mitmdump -nr /tmp/save -w outfile &quot;~m get&quot; # リクエスト一覧 mitmdump -nr /tmp/save まとめ HTTPSのデバッグ時にめっちゃ便利" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2018/11/10/mitmproxy/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2018-11-10T03:22:31&#43;09:00" />
-<meta property="article:modified_time" content="2018-11-10T03:22:31&#43;09:00" />
+<meta property="article:published_time" content="2018-11-10T03:22:31+09:00" />
+<meta property="article:modified_time" content="2018-11-10T03:22:31+09:00" />
 
 
     
@@ -81,7 +81,7 @@ if (!doNotTrack) {
 </ul>
 <p>この２ファイルを結合する<br>
 こんな感じで mitmproxy-ca.pem って名前でどっかのディレクトリに置く</p>
-<pre><code>-----BEGIN ENCRYPTED PRIVATE KEY-----
+<pre tabindex="0"><code>-----BEGIN ENCRYPTED PRIVATE KEY-----
 ...
 -----END ENCRYPTED PRIVATE KEY-----
 -----BEGIN CERTIFICATE-----
@@ -149,7 +149,7 @@ mitmdump -nr /tmp/save
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -254,7 +254,7 @@ mitmdump -nr /tmp/save
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -345,7 +345,7 @@ mitmdump -nr /tmp/save
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

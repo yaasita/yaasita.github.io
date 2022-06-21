@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>postfixでOP25B対策 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="postfixでOP25B対策" />
-<meta property="og:description" content=" OP25Bを実施しているISPの場合、25番ポートへの出力が制限されているからリレーしてもらうように設定する
+<meta property="og:description" content="OP25Bを実施しているISPの場合、25番ポートへの出力が制限されているからリレーしてもらうように設定する
 /etc/postfix/main.cfを編集 (hoge.ne.jpがSMPTサーバーだとする）
 ispauthはユーザー名とパスワードを書くファイル名前はなんでもOK
 relayhost = [hoge.ne.jp]:587
@@ -23,7 +23,6 @@ ispauthには以下のようなものを書く
 [プロバイダのSMTPサーバー]:587 プロバイダのユーザーID:プロバイダのパスワード
 サーバーがhoge.ne.jp、ログインIDがfoobar、パスワードがbuzzだった場合は以下のように書く
 [hoge.ne.jp]:587 foobar:buzz
-
 そんで以下のコマンド投入
 chmod 640 /etc/postfix/ispauth
 postmap /etc/postfix/ispauth
@@ -38,14 +37,12 @@ EHLO hoge.ne.jp
 参考リンク
 http://www.aconus.com/~oyaji/mail2/op25b.htm
 ※注意 SMTP認証を使う場合はlibsasl2-modulesがインストールされていることを確認してください
-
 どうしても出来なかったら↓みたいな感じでパケットキャプチャー→Wiresharkで見て考える感じで
-tcpdump -s 1500 ip host ?.?.?.? -w out.cap
- " />
+tcpdump -s 1500 ip host ?.?.?.? -w out.cap" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2009/12/05/7861/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2009-12-05T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2009-12-05T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2009-12-05T00:00:00+09:00" />
+<meta property="article:modified_time" content="2009-12-05T00:00:00+09:00" />
 
 
     
@@ -132,7 +129,7 @@ OP25Bを実施しているISPの場合、25番ポートへの出力が制限さ�
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -237,7 +234,7 @@ OP25Bを実施しているISPの場合、25番ポートへの出力が制限さ�
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -328,7 +325,7 @@ OP25Bを実施しているISPの場合、25番ポートへの出力が制限さ�
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

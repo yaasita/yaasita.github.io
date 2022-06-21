@@ -35,14 +35,11 @@ CORSとかCORBで無理なんすよね
 この仕組みの参考実装はこんな感じ
 https://gist.github.com/yaasita/7b07710840186561c76d7e5c4af28b2d
 chromeならURLバーの左をクリックしてJavaScriptをブロックで
-
 2. noscriptのタグを消す WP Content Copy Protection みたいなやつだと noscript タグの中に画面一杯に広げてコンテンツを見えなくするdivが入るので、chrome developers tools開いて &amp;lt;noscript&amp;gt;タグごと削除する
 Oops! It appears that you have disabled your Javascript. In order for you to see this page as it is meant to appear, we ask that you please re-enable your Javascript! みたいな文言はこれ
-
 3. cssでuser-selectをnoneにしている場合 chrome developers toolsでuser-select: text;書き換えてやる
-
 とりあえずここまでやれば大抵コピーできるようになるはず
-参考リンク  コピペ禁止サイト Webページの「コピペ禁止」を解除・回避するJavaScriptコード   function callback(data){ var photos = data.</description>
+参考リンク コピペ禁止サイト Webページの「コピペ禁止」を解除・回避するJavaScriptコード </description>
     </item>
     
     <item>
@@ -72,7 +69,6 @@ tcpflow -cse -i eth0 dst port 80
       <description> Torは匿名のプロキシとして動作する
 インストール
 apt-get install tor
-
 /etc/tor/torrcを編集
 SocksListenAddress 192.168.0.4(Torが入っているサーバーのアドレス)
 を追加
@@ -81,11 +77,9 @@ SocksListenAddress 192.168.0.4(Torが入っているサーバーのアドレス)
 SocksPort 9050 # what port to open for local application connections
 SocksListenAddress 127.0.0.1 # accept connections only from localhost
 SocksListenAddress 192.168.0.4
-
 あとは再起動でOK
 killall tor
 tor
-
 これで192.168.0.2から接続できた
 SocksPolicyは何も設定しなければ全て許可 </description>
     </item>
@@ -114,13 +108,13 @@ http://backslash.ddo.jp/wordpress/index.php/archives/584 </description>
 有線LANの盗聴にはいくつか種類があって調べた限りだと以下の方法がある
 以下の方法の殆どを行えるソフトはettercapがあるman ettercapとやるだけで勉強になる
 →MAC Floodはdsniffの中にあるmacofを使うと良いかも
- ARP Spoofing ICMP Redirect DHCP Spoofing Port Stealing MAC Flood  APR Spoofing 偽のARP応答を返すことでARPテーブルを変更し中間者攻撃を行う手法
+ARP Spoofing ICMP Redirect DHCP Spoofing Port Stealing MAC Flood APR Spoofing 偽のARP応答を返すことでARPテーブルを変更し中間者攻撃を行う手法
 ARP Spoofingについてはこちらが参考になる
 ICMP Redirect ICMPリダイレクトを使って経路情報を書き換え
 DHCP Spoofing DHCPを使ってIPアドレスを振るときにGWを盗聴できるように変更
 Port Stealing L2スイッチのポート情報を書き換えることでパケットをこちらに流すようにする
 MAC Flood L2スイッチのMACテーブルを溢れさせて馬鹿ハブにして盗聴する荒業
-参考リンク  LAN内の盗聴とその予防 スプーフィング MACアドレス書き換えで通信傍受！ ARPスプーフィングで通信傍受！ ファイアウォール/IDS の回避とスプーフィング オキテ破りにトライ！　ネットワーク実験室 見えざる脅威，ネットワーク盗聴を見つけ出す 社内の盗聴者を見つけ出すフリーツール「PromiScan」の使い方 社内LANが危ない? 今どきの社内セキュリティ対策 外部からの攻撃 SwitchingHubの特性を利用して盗聴する！  </description>
+参考リンク LAN内の盗聴とその予防 スプーフィング MACアドレス書き換えで通信傍受！ ARPスプーフィングで通信傍受！ ファイアウォール/IDS の回避とスプーフィング オキテ破りにトライ！　ネットワーク実験室 見えざる脅威，ネットワーク盗聴を見つけ出す 社内の盗聴者を見つけ出すフリーツール「PromiScan」の使い方 社内LANが危ない? 今どきの社内セキュリティ対策 外部からの攻撃 SwitchingHubの特性を利用して盗聴する！ </description>
     </item>
     
     <item>
@@ -137,7 +131,6 @@ while :; do
 $0 &amp;amp;
 sleep 10m
 done &amp;amp;
-
 詳しくはWikipediaで </description>
     </item>
     

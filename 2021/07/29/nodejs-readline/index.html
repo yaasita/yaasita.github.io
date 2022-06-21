@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>nodejsのreadline | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="nodejsのreadline" />
 <meta property="og:description" content="readlineの書き方
 https://nodejs.org/api/readline.html
 こうやって書くより
- const rl = readline.createInterface({ // ... }); for await (const line of rl) { // Each line in the readline input will be successively available here as // `line`. } こっちの方がメモリ効率が良さそう
- await new Promise((resolv, reject) =&gt; { rl.on(&quot;line&quot;, (line) =&gt; { // 処理 }); rl.on(&quot;close&quot;, () =&gt; { resolv(); }); }); 詳しくは調べてないけど、巨大ファイルだと
+const rl = readline.createInterface({ // ... }); for await (const line of rl) { // Each line in the readline input will be successively available here as // `line`. } こっちの方がメモリ効率が良さそう
+await new Promise((resolv, reject) =&gt; { rl.on(&#34;line&#34;, (line) =&gt; { // 処理 }); rl.on(&#34;close&#34;, () =&gt; { resolv(); }); }); 詳しくは調べてないけど、巨大ファイルだと
 FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory `` が頻発する " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2021/07/29/nodejs-readline/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-07-29T00:55:40&#43;09:00" />
-<meta property="article:modified_time" content="2021-07-29T00:55:40&#43;09:00" />
+<meta property="article:published_time" content="2021-07-29T00:55:40+09:00" />
+<meta property="article:modified_time" content="2021-07-29T00:55:40+09:00" />
 
 
     
@@ -61,7 +61,7 @@ if (!doNotTrack) {
     <p>readlineの書き方<br>
 <a href="https://nodejs.org/api/readline.html">https://nodejs.org/api/readline.html</a></p>
 <p>こうやって書くより</p>
-<pre><code>  const rl = readline.createInterface({
+<pre tabindex="0"><code>  const rl = readline.createInterface({
     // ...
   });
 
@@ -69,18 +69,17 @@ if (!doNotTrack) {
     // Each line in the readline input will be successively available here as
     // `line`.
   }
-
 </code></pre><p>こっちの方がメモリ効率が良さそう</p>
-<pre><code>    await new Promise((resolv, reject) =&gt; {
-      rl.on(&quot;line&quot;, (line) =&gt; {
+<pre tabindex="0"><code>    await new Promise((resolv, reject) =&gt; {
+      rl.on(&#34;line&#34;, (line) =&gt; {
       // 処理
       });
-      rl.on(&quot;close&quot;, () =&gt; {
+      rl.on(&#34;close&#34;, () =&gt; {
         resolv();
       });
     });
 </code></pre><p>詳しくは調べてないけど、巨大ファイルだと</p>
-<pre><code>FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
+<pre tabindex="0"><code>FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory
 ``
 が頻発する
 </code></pre>
@@ -124,7 +123,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -229,7 +228,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -320,7 +319,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

@@ -7,23 +7,23 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>DoHを試す | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="DoHを試す" />
 <meta property="og:description" content="DNS over HTTPSを試す
 こんな構成で作る
-Nginx -&gt; doh-httpproxy -&gt; systemd-resolved  インストール
+Nginx -&gt; doh-httpproxy -&gt; systemd-resolved インストール
 doh-proxy pip3でインストールすればOK
-pip3 install doh-proxy  以下のような設定でserviceを作る
+pip3 install doh-proxy 以下のような設定でserviceを作る
 /etc/systemd/system/doh-httpproxy.service
 [Unit] Description=doh-httpproxy After=nginx.service [Install] WantedBy=multi-user.target [Service] ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 8080 --listen-address 127.0.0.1 Nginx側設定例
-server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } }  確認
-curl --doh-url https://doh.example.net/dns-query google.co.jp  " />
+server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } } 確認
+curl --doh-url https://doh.example.net/dns-query google.co.jp " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2020/05/10/doh/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-05-10T03:22:35&#43;09:00" />
-<meta property="article:modified_time" content="2020-05-10T03:22:35&#43;09:00" />
+<meta property="article:published_time" content="2020-05-10T03:22:35+09:00" />
+<meta property="article:modified_time" content="2020-05-10T03:22:35+09:00" />
 
 
     
@@ -71,7 +71,7 @@ if (!doNotTrack) {
 </code></pre>
 <p>以下のような設定でserviceを作る<br>
 /etc/systemd/system/doh-httpproxy.service</p>
-<pre><code>[Unit]
+<pre tabindex="0"><code>[Unit]
 Description=doh-httpproxy
 After=nginx.service 
 
@@ -147,7 +147,7 @@ ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 808
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -252,7 +252,7 @@ ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 808
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -343,7 +343,7 @@ ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 808
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

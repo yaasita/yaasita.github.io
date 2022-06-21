@@ -7,24 +7,23 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>sources.listを編集してunstableパッケージと混在させる | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="sources.listを編集してunstableパッケージと混在させる" />
-<meta property="og:description" content=" http://mikilab.doshisha.ac.jp/dia/research/report/2005/0811/001/report20050811001.html
+<meta property="og:description" content="http://mikilab.doshisha.ac.jp/dia/research/report/2005/0811/001/report20050811001.html
 ↑を参考にして/etc/apt/sources.listに下記2行を追加
-deb http://ftp.jp.debian.org/debian/ sid main contrib non-free
-deb-src http://ftp.jp.debian.org/debian/ sid main contrib non-free/etc/apt/apt.conf.d/70debconfに下記を追加
-APT::Default-Release &#34;stable&#34;;apt-getでunstableのパッケージをインストールするにはパッケージ名の後ろに
+deb http://ftp.jp.debian.org/debian/ sid main contrib non-free deb-src http://ftp.jp.debian.org/debian/ sid main contrib non-free /etc/apt/apt.conf.d/70debconfに下記を追加
+APT::Default-Release &quot;stable&quot;; apt-getでunstableのパッケージをインストールするにはパッケージ名の後ろに
 バージョンも明記するか、こんな感じで-tオプションとかあるらしい
 apt-get install -s -t unstable hoge
 で、aptitudeでやるには
 パッケージ一覧を更新→パッケージを選択→下の方を良く見ると選べるようになってるのでそれ選択して&#43;とか押す
-↓の例だと1.5がstableで1.6がunstable  " />
+↓の例だと1.5がstableで1.6がunstable" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2010/06/13/6386/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2010-06-13T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2010-06-13T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2010-06-13T00:00:00+09:00" />
+<meta property="article:modified_time" content="2010-06-13T00:00:00+09:00" />
 
 
     
@@ -62,10 +61,21 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-<a href="http://mikilab.doshisha.ac.jp/dia/research/report/2005/0811/001/report20050811001.html">http://mikilab.doshisha.ac.jp/dia/research/report/2005/0811/001/report20050811001.html</a><br />↑を参考にして/etc/apt/sources.listに下記2行を追加<br /><blockquote>deb http://ftp.jp.debian.org/debian/ sid main contrib non-free<br />deb-src http://ftp.jp.debian.org/debian/ sid main contrib non-free</blockquote>/etc/apt/apt.conf.d/70debconfに下記を追加<br /><blockquote>APT::Default-Release "stable";</blockquote>apt-getでunstableのパッケージをインストールするにはパッケージ名の後ろに<br />バージョンも明記するか、<a href="http://d.hatena.ne.jp/akm/20070113">こんな感じ</a>で-tオプションとかあるらしい<br />apt-get install -s -t unstable hoge<br /><br />で、aptitudeでやるには<br />パッケージ一覧を更新→パッケージを選択→下の方を良く見ると選べるようになってるのでそれ選択して+とか押す<br />↓の例だと1.5がstableで1.6がunstable <br /><div class="separator" style="clear: both; text-align: center;"><a href="http://2.bp.blogspot.com/_51uwrZcw3_U/TBR5q-fgtKI/AAAAAAAAAPY/SGvB5wzy3I8/s1600/svn.PNG" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://2.bp.blogspot.com/_51uwrZcw3_U/TBR5q-fgtKI/AAAAAAAAAPY/SGvB5wzy3I8/s320/svn.PNG" /></a></div>
-
+    <p><a href="http://mikilab.doshisha.ac.jp/dia/research/report/2005/0811/001/report20050811001.html">http://mikilab.doshisha.ac.jp/dia/research/report/2005/0811/001/report20050811001.html</a></p>
+<p>↑を参考にして/etc/apt/sources.listに下記2行を追加</p>
+<pre><code>deb http://ftp.jp.debian.org/debian/ sid main contrib non-free
+deb-src http://ftp.jp.debian.org/debian/ sid main contrib non-free
+</code></pre>
+<p>/etc/apt/apt.conf.d/70debconfに下記を追加</p>
+<pre><code>APT::Default-Release &quot;stable&quot;;
+</code></pre>
+<p>apt-getでunstableのパッケージをインストールするにはパッケージ名の後ろに<br>
+バージョンも明記するか、<a href="http://d.hatena.ne.jp/akm/20070113">こんな感じ</a>で-tオプションとかあるらしい<br>
+apt-get install -s -t unstable hoge</p>
+<p>で、aptitudeでやるには<br>
+パッケージ一覧を更新→パッケージを選択→下の方を良く見ると選べるようになってるのでそれ選択して+とか押す<br>
+↓の例だと1.5がstableで1.6がunstable</p>
+<p><a href="https://yaasita.tk/blog/2022/sourcelist.PNG"><img src="https://yaasita.tk/blog/2022/sourcelist.PNG" alt="sourcelist"></a></p>
 
   </div>
   <footer>
@@ -107,7 +117,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -212,7 +222,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -303,7 +313,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

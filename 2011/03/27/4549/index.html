@@ -7,31 +7,25 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>一定時間だけログイン可能なユーザーを作った | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="一定時間だけログイン可能なユーザーを作った" />
-<meta property="og:description" content=" sshのログインは基本的には鍵認証にしているのだが、
+<meta property="og:description" content="sshのログインは基本的には鍵認証にしているのだが、
 出先などでどうしてもログインしたい場合鍵が無くて困ることがあるので、一定時間だけパスワード認証できるユーザーを作った。
 仕組みは以下のとおり
-
-1.SUIDのセットされたperlスクリプトで実行するコマンドはusermod --lockコマンド　→suidperlについて
+1.SUIDのセットされたperlスクリプトで実行するコマンドはusermod &ndash;lockコマンド　→suidperlについて
 2.アンロックされる
 3.sshのパスワード認証によってログインする　※1
-4.cronにusermod --unlockを仕込んでおく
+4.cronにusermod &ndash;unlockを仕込んでおく
 ※1　特定のユーザーのみパスワード認証を許可する
 hogeuserが今回の対象とする場合
-Match User hogeuser
-PasswordAuthentication yes
-AllowTcpForwarding no
-
-
-参考リンク
-http://d.hatena.ne.jp/isseium/20100923/1285225757 " />
+Match User hogeuser PasswordAuthentication yes AllowTcpForwarding no 参考リンク
+http://d.hatena.ne.jp/isseium/20100923/1285225757" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2011/03/27/4549/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2011-03-27T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2011-03-27T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2011-03-27T00:00:00+09:00" />
+<meta property="article:modified_time" content="2011-03-27T00:00:00+09:00" />
 
 
     
@@ -69,10 +63,23 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-sshのログインは基本的には鍵認証にしているのだが、<br />出先などでどうしてもログインしたい場合鍵が無くて困ることがあるので、一定時間だけパスワード認証できるユーザーを作った。<br /><br />仕組みは以下のとおり<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-4wiNxV-7cUU/TY8ALQaqMHI/AAAAAAAAARw/-Qv0rLjFpKI/s1600/lock.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="320" width="226" src="http://1.bp.blogspot.com/-4wiNxV-7cUU/TY8ALQaqMHI/AAAAAAAAARw/-Qv0rLjFpKI/s320/lock.png" /></a></div><br />1.SUIDのセットされたperlスクリプトで実行するコマンドはusermod --lockコマンド　→<a href="http://rdt17.blogspot.com/2011/03/suidperlsuidperl.html">suidperlについて</a><br />2.アンロックされる<br />3.sshのパスワード認証によってログインする　※1<br />4.cronにusermod --unlockを仕込んでおく<br /><br />※1　特定のユーザーのみパスワード認証を許可する<br />hogeuserが今回の対象とする場合<br /><pre>Match User hogeuser<br />      PasswordAuthentication yes<br />      AllowTcpForwarding no<br /></pre><br /><script src="https://gist.github.com/yaasita/7736386.js"></script><br /><br />参考リンク<br /><a href="http://d.hatena.ne.jp/isseium/20100923/1285225757">http://d.hatena.ne.jp/isseium/20100923/1285225757</a>
-
+    <p>sshのログインは基本的には鍵認証にしているのだが、<br>
+出先などでどうしてもログインしたい場合鍵が無くて困ることがあるので、一定時間だけパスワード認証できるユーザーを作った。</p>
+<p>仕組みは以下のとおり</p>
+<p><a href="https://yaasita.tk/blog/2022/user-lock.png"><img src="https://yaasita.tk/blog/2022/user-lock.png" alt="user-lock"></a></p>
+<p>1.SUIDのセットされたperlスクリプトで実行するコマンドはusermod &ndash;lockコマンド　→<a href="http://rdt17.blogspot.com/2011/03/suidperlsuidperl.html">suidperl</a>について<br>
+2.アンロックされる<br>
+3.sshのパスワード認証によってログインする　※1<br>
+4.cronにusermod &ndash;unlockを仕込んでおく</p>
+<p>※1　特定のユーザーのみパスワード認証を許可する<br>
+hogeuserが今回の対象とする場合</p>
+<pre><code>Match User hogeuser
+  PasswordAuthentication yes
+  AllowTcpForwarding no
+</code></pre>
+<script src="https://gist.github.com/yaasita/7736386.js"></script>
+<p>参考リンク<br>
+<a href="http://d.hatena.ne.jp/isseium/20100923/1285225757">http://d.hatena.ne.jp/isseium/20100923/1285225757</a></p>
 
   </div>
   <footer>
@@ -118,7 +125,7 @@ sshのログインは基本的には鍵認証にしているのだが、<br />�
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -223,7 +230,7 @@ sshのログインは基本的には鍵認証にしているのだが、<br />�
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -314,7 +321,7 @@ sshのログインは基本的には鍵認証にしているのだが、<br />�
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

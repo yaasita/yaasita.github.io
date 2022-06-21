@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>s3fs使う | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="s3fs使う" />
@@ -19,8 +19,8 @@ https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes
 # paco入れておく yum install paco # コンパイルに必要なもの入れる yum install -y gcc libstdc&#43;&#43;-devel gcc-c&#43;&#43; curl-devel libxml2-devel openssl-devel mailcap # fuse wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.8.5.tar.gz ./configure make paco -lD &#39;make install&#39; # /usr/local/lib 追記 vi /etc/ld.so.conf ldconfig # s3fs wget http://s3fs.googlecode.com/files/s3fs-1.74.tar.gz tar xvaf s3fs-1.74.tar.gz cd s3fs-1.74/ autoreconf --install export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure --prefix=/usr make paco -lD &#39;make install&#39; # mount s3fs hoge-bucket /s3 -o rw,allow_other,uid=501,gid=501,default_acl=public-read su - apps cd /s3 date &gt; date." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2016/06/22/s3fs/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2016-06-22T13:40:00&#43;09:00" />
-<meta property="article:modified_time" content="2016-06-22T13:40:00&#43;09:00" />
+<meta property="article:published_time" content="2016-06-22T13:40:00+09:00" />
+<meta property="article:modified_time" content="2016-06-22T13:40:00+09:00" />
 
 
     
@@ -159,7 +159,7 @@ aws s3 sync /s3/test s3://hoge-bucket/test --delete --metadata  &quot;mode=33279
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -264,7 +264,7 @@ aws s3 sync /s3/test s3://hoge-bucket/test --delete --metadata  &quot;mode=33279
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -355,7 +355,7 @@ aws s3 sync /s3/test s3://hoge-bucket/test --delete --metadata  &quot;mode=33279
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

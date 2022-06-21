@@ -7,24 +7,21 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>rtmpdump試してみた | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="rtmpdump試してみた" />
 <meta property="og:description" content="NHKオンデマンドに挑戦
 1.URLを解析
 fms0000.nod.ipcasting.jp
-
 2.hostsを変更
 今回は192.168.0.4にrtmpsuckを走らせておく
 192.168.0.4 fms0000.nod.ipcasting.jp
-
 3.でダウンロード
 出来るはずだったが、なんか出来なかったOTZ
 因みにこんな方法もあるLinuxならiptablesで転送する
 hogeuserをすべてlocalhostへ飛ばす例
 iptables -t nat -A OUTPUT -p tcp --dport 1935 -m owner \! --uid-owner hogeuser -j REDIRECT
-
 iptables -t nat -n -L で確認
 iptables -t nat -D OUTPUT 1　で削除
 参考リンク
@@ -37,11 +34,13 @@ rtmpdump -v -e -s &#39;http://radiko.jp/player/swf/player_2.0.1.00.swf&#39; \
 --playpath &#39;simul-stream?ucid=1dbab2acb98174787146465a40ba9eba&#39; \
 -p &#39;http://radiko.jp/player/player.html&#39; \
 -f &#39;WIN 10,1,102,64&#39; \
--o FMJ" />
+-o FMJ
+FMJの部分を変更すれば他の曲にもなる
+FMT・・・TOKYO FM" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2011/01/15/4947/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2011-01-15T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2011-01-15T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2011-01-15T00:00:00+09:00" />
+<meta property="article:modified_time" content="2011-01-15T00:00:00+09:00" />
 
 
     
@@ -136,7 +135,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -241,7 +240,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -332,7 +331,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

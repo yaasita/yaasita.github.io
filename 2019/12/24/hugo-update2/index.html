@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>再度hugoアップデート | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="再度hugoアップデート" />
@@ -20,8 +20,8 @@ Building sites … WARN 2019/12/23 17:34:34 In the next Hugo version (0.58.0) we
 アップデートがめんどくさくなってきたな。。。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2019/12/24/hugo-update2/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-12-24T17:58:35&#43;09:00" />
-<meta property="article:modified_time" content="2019-12-24T17:58:35&#43;09:00" />
+<meta property="article:published_time" content="2019-12-24T17:58:35+09:00" />
+<meta property="article:modified_time" content="2019-12-24T17:58:35+09:00" />
 
 
     
@@ -63,10 +63,10 @@ if (!doNotTrack) {
 hugoのバージョンを 0.56.3 =&gt; v0.62.0 まで上げた</p>
 <p>注意点としては, v0.58.0 から .Pagesの挙動が変わっているので</p>
 <p>以下の通り、.Site.RegularPages に変更する必要がある</p>
-<pre><code>Building sites … WARN 2019/12/23 17:34:34 In the next Hugo version (0.58.0) we will change how $home.Pages behaves. If you want to list all regular pages, replace .Pages or .Data.Pages with
+<pre tabindex="0"><code>Building sites … WARN 2019/12/23 17:34:34 In the next Hugo version (0.58.0) we will change how $home.Pages behaves. If you want to list all regular pages, replace .Pages or .Data.Pages with
  .Site.RegularPages in your home page template.
 </code></pre><p>あとインラインのHTMLがデフォルトで削除されるので使ってたらコレもconfig.tomlへ追記</p>
-<pre><code>[markup]
+<pre tabindex="0"><code>[markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
@@ -114,7 +114,7 @@ hugoのバージョンを 0.56.3 =&gt; v0.62.0 まで上げた</p>
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -219,7 +219,7 @@ hugoのバージョンを 0.56.3 =&gt; v0.62.0 まで上げた</p>
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -310,7 +310,7 @@ hugoのバージョンを 0.56.3 =&gt; v0.62.0 まで上げた</p>
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

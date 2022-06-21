@@ -7,11 +7,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>定期的に/tmpを掃除してくれるソフトtmpreaper | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="定期的に/tmpを掃除してくれるソフトtmpreaper" />
-<meta property="og:description" content=" Debian Lennyで試した。
+<meta property="og:description" content="Debian Lennyで試した。
 Red hat系だとtmpwatchとかあるみたいだけど無いのでこれを使う
 まずはaptitudeでインストール
 インストールすると/etc/cron.daily/tmpreaperが作成される
@@ -20,7 +20,6 @@ Red hat系だとtmpwatchとかあるみたいだけど無いのでこれを使�
 /etc/tmpreaper.confをいじる
 まずはワーニングが出るので13行目あたりにあるSHOWWARNINGをコメント化する
 #SHOWWARNING=true
-
 次にオプションを設定する各オプションの意味は以下の通り
 TMPREAPER_TIME・・・どのくらいアクセスがないファイルを削除するか？設定値はデフォルトで7dつまり7d以上アクセスがないと削除
 TMPREAPER_PROTECT_EXTRA・・・削除しては駄目な名前を指定
@@ -37,7 +36,6 @@ TMPREAPER_ADDITIONALOPTIONS・・・他に指定したいオプションがあ�
 --protect &#39;/tmp/lost&#43;found&#39; \
 --protect &#39;/tmp/journal.dat&#39; \
 --protect &#39;/tmp/quota.{user,group}&#39; \
-
 ※注意
 デフォルトのシェルだと--ctimeが設定されています↓みたいに
 nice -n10 tmpreaper --delay=$TMPREAPER_DELAY --mtime-dir --symlinks $TMPREAPER_TIME \
@@ -45,12 +43,11 @@ $TMPREAPER_ADDITIONALOPTIONS \
 --ctime \
 これだとcronでlocateのDBを作っているので、アクセスタイムが更新され
 いつまで経っても削除されません。（ctimeオプションはatime&#43;ctimeのチェックをします）
-用途によってはここを--mtimeに変更してもいいと思います
- " />
+用途によってはここを--mtimeに変更してもいいと思います" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2009/12/05/7840/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2009-12-05T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2009-12-05T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2009-12-05T00:00:00+09:00" />
+<meta property="article:modified_time" content="2009-12-05T00:00:00+09:00" />
 
 
     
@@ -137,7 +134,7 @@ Debian Lennyで試した。<br />Red hat系だとtmpwatchとかあるみたい�
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -242,7 +239,7 @@ Debian Lennyで試した。<br />Red hat系だとtmpwatchとかあるみたい�
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -333,7 +330,7 @@ Debian Lennyで試した。<br />Red hat系だとtmpwatchとかあるみたい�
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

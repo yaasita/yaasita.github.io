@@ -7,35 +7,35 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>標準エラー出力のリダイレクト話 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="標準エラー出力のリダイレクト話" />
 <meta property="og:description" content="標準エラー出力と標準出力を混ぜたいときに使う
 この文法
-command &gt; hoge 2&gt;&amp;1  なぜ↓の様に書いては駄目なのか解説する
-command 2&gt;&amp;1 &gt; hoge ←これはうまく出ない  まず &gt;&amp;1 の意味は標準出力の出力先を指す
+command &gt; hoge 2&gt;&amp;1 なぜ↓の様に書いては駄目なのか解説する
+command 2&gt;&amp;1 &gt; hoge ←これはうまく出ない まず &gt;&amp;1 の意味は標準出力の出力先を指す
 つまり標準出力と同じ場所に出したいときに指定する
 間違った例だとなぜ標準エラー出力が標準出力に出てしまうか順番に解説
 1.リダイレクトを指定しない場合
 デフォルトの画面に出力される　標準出力先: 画面
 標準エラー出力先: 画面
-command  2.標準エラー出力先を標準出力と同じに指定
+command 2.標準エラー出力先を標準出力と同じに指定
 標準出力先は画面なのでエラー出力を同じに指定してもまた画面になる
 標準出力先: 画面
 標準エラー出力先: 画面（現在の標準出力先と同じ）
-command 2&gt;&amp;1  3.標準出力先を指定
+command 2&gt;&amp;1 3.標準出力先を指定
 標準出力先をリダイレクトによって指定する
 標準出力先: hoge
 標準エラー出力先: 画面
-command 2&gt;&amp;1 &amp;&gt; hoge  つまり 2&gt;&amp;1 という指定はその時点の標準エラー出力を参照するため、
+command 2&gt;&amp;1 &amp;&gt; hoge つまり 2&gt;&amp;1 という指定はその時点の標準エラー出力を参照するため、
 まだ標準出力先を変更していない内に変更しても意味がないということ
 参考リンク
 http://www.fireproject.jp/feature/bash/basic/redirect-pipe.html" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2010/09/18/5817/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2010-09-18T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2010-09-18T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2010-09-18T00:00:00+09:00" />
+<meta property="article:modified_time" content="2010-09-18T00:00:00+09:00" />
 
 
     
@@ -146,7 +146,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -251,7 +251,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -342,7 +342,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

@@ -7,24 +7,22 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>/boot/grub/grub.cfgのrootってどこから設定されている？ | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="/boot/grub/grub.cfgのrootってどこから設定されている？" />
-<meta property="og:description" content=" というわけで調べてみた
+<meta property="og:description" content="というわけで調べてみた
 update-grub2のコールスタック
-
 /etc/grub.d/10_linuxを見れば分かるとおり
 grub.cfgの$linux_root_device_thisversionによって作られています。
 で、これは$GRUB_DEVICEから作られています。（grub-mkconfig参照）
 結局、$GRUB_DEVICEはどこを参照しているかというと以下のコマンドで出してます。
-grub-probe --target=device /
-というわけでgrub-probeというコマンドの結果を入れているので、grub legacyみたいに設定値ではありません。じゃあどうやってrootパラメータを変更するの？って話になるけど、それはchrootするとか
-GRUBメニュー選択時にEDITするとかが良いんじゃないでしょうか？ " />
+grub-probe --target=device / というわけでgrub-probeというコマンドの結果を入れているので、grub legacyみたいに設定値ではありません。じゃあどうやってrootパラメータを変更するの？って話になるけど、それはchrootするとか
+GRUBメニュー選択時にEDITするとかが良いんじゃないでしょうか？" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2012/01/06/3214/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2012-01-06T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2012-01-06T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2012-01-06T00:00:00+09:00" />
+<meta property="article:modified_time" content="2012-01-06T00:00:00+09:00" />
 
 
     
@@ -62,10 +60,17 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-というわけで調べてみた<br />update-grub2のコールスタック<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-RJcxEsRG0Z4/TwXcO0ORQ6I/AAAAAAAAAS0/jX34lGrEMyE/s1600/call.png" imageanchor="1" style="margin-left:1em; margin-right:1em"><img border="0" height="200" width="300" src="http://4.bp.blogspot.com/-RJcxEsRG0Z4/TwXcO0ORQ6I/AAAAAAAAAS0/jX34lGrEMyE/s320/call.png" /></a></div><br />/etc/grub.d/10_linuxを見れば分かるとおり<br />grub.cfgの$linux_root_device_thisversionによって作られています。<br />で、これは$GRUB_DEVICEから作られています。（grub-mkconfig参照）<br /><br />結局、$GRUB_DEVICEはどこを参照しているかというと以下のコマンドで出してます。<br /><pre>grub-probe --target=device /</pre><br />というわけでgrub-probeというコマンドの結果を入れているので、grub legacyみたいに設定値ではありません。じゃあどうやってrootパラメータを変更するの？って話になるけど、それはchrootするとか<br />GRUBメニュー選択時にEDITするとかが良いんじゃないでしょうか？
-
+    <p>というわけで調べてみた<br>
+update-grub2のコールスタック</p>
+<p><a href="https://yaasita.tk/blog/2022/grub2.png"><img src="https://yaasita.tk/blog/2022/grub2.png" alt="grub2"></a></p>
+<p>/etc/grub.d/10_linuxを見れば分かるとおり<br>
+grub.cfgの$linux_root_device_thisversionによって作られています。<br>
+で、これは$GRUB_DEVICEから作られています。（grub-mkconfig参照）</p>
+<p>結局、$GRUB_DEVICEはどこを参照しているかというと以下のコマンドで出してます。</p>
+<pre><code>grub-probe --target=device /
+</code></pre>
+<p>というわけでgrub-probeというコマンドの結果を入れているので、grub legacyみたいに設定値ではありません。じゃあどうやってrootパラメータを変更するの？って話になるけど、それはchrootするとか<br>
+GRUBメニュー選択時にEDITするとかが良いんじゃないでしょうか？</p>
 
   </div>
   <footer>
@@ -111,7 +116,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -216,7 +221,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -307,7 +312,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

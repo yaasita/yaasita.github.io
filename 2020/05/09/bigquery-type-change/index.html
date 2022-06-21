@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>BigQueryのカラムタイプ変更 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="BigQueryのカラムタイプ変更" />
@@ -15,13 +15,13 @@
 テーブル スキーマの手動変更
 作り直すしかないんですが、分割テーブルだともう一手間必要ですよという話
 例えば以下のように分割テーブルを作るとします
-bq mk --dataset test bq mk --table \ --time_partitioning_type DAY \ test.first  データを投入
-echo -e &quot;1\thoge&quot; &gt; /tmp/data.tsv echo -e &quot;2\thuga&quot; &gt;&gt; /tmp/data.tsv echo -e &quot;3\tabcd&quot; &gt;&gt; /tmp/data.tsv bq load --source_format=CSV --field_delimiter=&quot;\t&quot; \ &#39;test.first$20200501&#39; /tmp/data.tsv id:NUMERIC,description:STRING bq load --source_format=CSV --field_delimiter=&quot;\t&quot; \ &#39;test.first$20200502&#39; /tmp/data.tsv id:NUMERIC,description:STRING  取り込み時間別に分割されているのが分かります
+bq mk --dataset test bq mk --table \ --time_partitioning_type DAY \ test.first データを投入
+echo -e &quot;1\thoge&quot; &gt; /tmp/data.tsv echo -e &quot;2\thuga&quot; &gt;&gt; /tmp/data.tsv echo -e &quot;3\tabcd&quot; &gt;&gt; /tmp/data.tsv bq load --source_format=CSV --field_delimiter=&quot;\t&quot; \ &#39;test.first$20200501&#39; /tmp/data.tsv id:NUMERIC,description:STRING bq load --source_format=CSV --field_delimiter=&quot;\t&quot; \ &#39;test.first$20200502&#39; /tmp/data.tsv id:NUMERIC,description:STRING 取り込み時間別に分割されているのが分かります
 echo &quot;#standardSQL&quot; &gt; /tmp/query.sql echo &#39;select _PARTITIONTIME as pt, count(*) as count from test.first group by _PARTITIONTIME order by pt;&#39; &gt;&gt; /tmp/query." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2020/05/09/bigquery-type-change/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2020-05-09T04:42:51&#43;09:00" />
-<meta property="article:modified_time" content="2020-05-09T04:42:51&#43;09:00" />
+<meta property="article:published_time" content="2020-05-09T04:42:51+09:00" />
+<meta property="article:modified_time" content="2020-05-09T04:42:51+09:00" />
 
 
     
@@ -167,7 +167,7 @@ cat /tmp/query.sql | bq query
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -272,7 +272,7 @@ cat /tmp/query.sql | bq query
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -363,7 +363,7 @@ cat /tmp/query.sql | bq query
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

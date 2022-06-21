@@ -17,7 +17,8 @@
 GCPの各リージョンからアクセスして試してみる
 rttは自宅から該当サーバーまでのpingしたときの平均値
 なのでISPによって全然違うと思うので参考値ということで
-   region bilibili crunchyroll rtt(ms)     asia-east1 (台湾) ng ok 60.149   asia-east2 (香港) ng ok 76.986   asia-northeast1 (東京) ng ok 29.624   asia-northeast2 (大阪) ng ok 37.401   asia-south1 (ムンバイ) ng ok 144.055   asia-southeast1 (シンガポール) ng ok 89.755   australia-southeast1 (シドニー) ng ok 122.193   europe-north1 (フィンランド) ng ok 256.714   europe-west1 (ベルギー) ng ok 229.</description>
+region bilibili crunchyroll rtt(ms) asia-east1 (台湾) ng ok 60.149 asia-east2 (香港) ng ok 76.986 asia-northeast1 (東京) ng ok 29.624 asia-northeast2 (大阪) ng ok 37.401 asia-south1 (ムンバイ) ng ok 144.055 asia-southeast1 (シンガポール) ng ok 89.755 australia-southeast1 (シドニー) ng ok 122.193 europe-north1 (フィンランド) ng ok 256.714 europe-west1 (ベルギー) ng ok 229.038 europe-west2 (ロンドン) ng ok 220.693 でここまでやってあとは変わらないだろうと思って以下のリージョンは試さなかった
+europe-west3 (フランクフルト) europe-west4 (オランダ) europe-west6 (チューリッヒ) northamerica-northeast1 (モントリオール) southamerica-east1 (サンパウロ) us-central1 (アイオワ) us-east1 (サウスカロライナ) us-east4 (北バージニア) us-west1 (オレゴン) us-west2 (ロサンゼルス) 結論 crunchyrollは適当なリージョンからでも、たとえ（日本リージョンでも)見れる</description>
     </item>
     
     <item>
@@ -30,8 +31,7 @@ rttは自宅から該当サーバーまでのpingしたときの平均値
 ベタベタしないので気にならない
 フマキラー SKIN VAPEってやつかな
 商品名はスキンベープミスト　200mlかも
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   そういや虫よけ剤に入ってるDEETって薬はなぜ虫が寄り付かないか謎らしい</description>
+そういや虫よけ剤に入ってるDEETって薬はなぜ虫が寄り付かないか謎らしい</description>
     </item>
     
     <item>
@@ -57,7 +57,7 @@ KRPW-AK750W/88+ という玄人志向のやつに変更した
       <guid>https://yaasita.github.io/2017/12/03/mona-coin/</guid>
       <description>モナコインをマイニングしてみる
 cpuminer-multiでやってみた
-スコア  IDCF Cloud (Light.S1) メモリ1GB 仮想1CPU =&amp;gt; 17.48 kH/s 自宅PC Core i5-4460 @ 3.20GHz 4コア メモリ 4GB =&amp;gt; 376 kH/s ノートパソコン LB-C110B Celeron 1037U 2コア/1.80GHz メモリ8GB =&amp;gt; 91 kH/s  まとめ CPUマイニングなんてやるもんじゃない←結論</description>
+スコア IDCF Cloud (Light.S1) メモリ1GB 仮想1CPU =&amp;gt; 17.48 kH/s 自宅PC Core i5-4460 @ 3.20GHz 4コア メモリ 4GB =&amp;gt; 376 kH/s ノートパソコン LB-C110B Celeron 1037U 2コア/1.80GHz メモリ8GB =&amp;gt; 91 kH/s まとめ CPUマイニングなんてやるもんじゃない←結論</description>
     </item>
     
     <item>
@@ -68,7 +68,7 @@ cpuminer-multiでやってみた
       <guid>https://yaasita.github.io/2017/10/15/bank-tutyo/</guid>
       <description>記帳に行くのがめんどくさくなったので全部捨ててみた
 Web通帳の各行保存期間はこんな感じ
- ゆうちょ銀行  ゆうちょダイレクトプラス: 15ヶ月分   三菱東京UFJ銀行(三菱東京ＵＦＪダイレクト)  Eco通帳: 25ヵ月分   横浜銀行(はまぎんマイダイレクト)  マイスマート通帳: 36ヵ月分    </description>
+ゆうちょ銀行 ゆうちょダイレクトプラス: 15ヶ月分 三菱東京UFJ銀行(三菱東京ＵＦＪダイレクト) Eco通帳: 25ヵ月分 横浜銀行(はまぎんマイダイレクト) マイスマート通帳: 36ヵ月分 </description>
     </item>
     
     <item>
@@ -113,7 +113,7 @@ http://www.apple.com/jp/retail/personalsetup/</description>
       <pubDate>Sun, 24 Jan 2016 02:15:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2016/01/24/link/</guid>
-      <description> 監視カメラまとめ  http://www.insecam.org/en/bycountry/JP/   SIはやめておけ  http://anond.hatelabo.jp/20160123131828 バックアップ    </description>
+      <description> 監視カメラまとめ http://www.insecam.org/en/bycountry/JP/ SIはやめておけ http://anond.hatelabo.jp/20160123131828 バックアップ </description>
     </item>
     
     <item>
@@ -122,7 +122,7 @@ http://www.apple.com/jp/retail/personalsetup/</description>
       <pubDate>Sun, 29 Nov 2015 22:39:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2015/11/29/sier/</guid>
-      <description> IT業界で客先常駐という働き方はもうやめにできないか 大手Sierで見た！ 日本でプログラマが少ない理由は戦う戦場を間違えているからです  </description>
+      <description> IT業界で客先常駐という働き方はもうやめにできないか 大手Sierで見た！ 日本でプログラマが少ない理由は戦う戦場を間違えているからです </description>
     </item>
     
     <item>
@@ -134,7 +134,7 @@ http://www.apple.com/jp/retail/personalsetup/</description>
       <description>ISUCON5に参加してきました
 T・D・U！T・D・U！という名前で出てみました
 最高スコアは5000ちょっとでしたOTZ
-感想  ISUCON  会社以外の人ととチーム組むと他社の事情とか聞けて結構良いかもしれない idobata,GCE(Google Compute Engine)とか使ったことなかったからいい機会だったかも VM渡されて時間内に早くするんだ！って競技はルールも分かりやすくて面白い 惨敗だったけど楽しかったし勉強になった   GCP(Google Cloud Platform)  なんかAWS慣れてる所為もあるんだろうけど結構手間取った ついでに触ったGoogle Cloud DNSはRoute53の方が高機能かな～ あらかじめユーザ名＋鍵登録しておけばインスタンス立ち上げ時にユーザ作って鍵設定までしてくれて便利(小並感   idobata  slackと違って1ユーザのアカウントをチーム内で共有するみたいな感じなので  会社内のチャット→slack 会社を跨いだメンバーとのやり取り→idobataみたいな感じがよいのかな   ちょっとISUCON中は重かったけどこれからに期待    反省  最初に落ち着いて計測してみたほうが良かったかも  制限時間があるから焦って、手当たり次第に対応してたけどもっと計測に時間とってやることやらない事決めてから取り掛かれば良かったかも   troterにほぼ任せちゃったので。。。   役割決めないとだったな お前これやる、俺これやる的な話してから取り掛かるべきだったかも   やっぱコード読まなきゃダメ  パラメータチューニングとかでもちょっとはスコア上がるけど、ロジック見て良い感じの実装にするのは必須ですた 例年 sinatraアプリらしいので一個くらいは作ってから望むべきだったかも    参考リンク  ISUCON5の予選に参加して惨敗してきました #isucon   function callback(data){ var photos = data.</description>
+感想 ISUCON 会社以外の人ととチーム組むと他社の事情とか聞けて結構良いかもしれない idobata,GCE(Google Compute Engine)とか使ったことなかったからいい機会だったかも VM渡されて時間内に早くするんだ！って競技はルールも分かりやすくて面白い 惨敗だったけど楽しかったし勉強になった GCP(Google Cloud Platform) なんかAWS慣れてる所為もあるんだろうけど結構手間取った ついでに触ったGoogle Cloud DNSはRoute53の方が高機能かな～ あらかじめユーザ名＋鍵登録しておけばインスタンス立ち上げ時にユーザ作って鍵設定までしてくれて便利(小並感 idobata slackと違って1ユーザのアカウントをチーム内で共有するみたいな感じなので 会社内のチャット→slack 会社を跨いだメンバーとのやり取り→idobataみたいな感じがよいのかな ちょっとISUCON中は重かったけどこれからに期待 反省 最初に落ち着いて計測してみたほうが良かったかも 制限時間があるから焦って、手当たり次第に対応してたけどもっと計測に時間とってやることやらない事決めてから取り掛かれば良かったかも troterにほぼ任せちゃったので。。。 役割決めないとだったな お前これやる、俺これやる的な話してから取り掛かるべきだったかも やっぱコード読まなきゃダメ パラメータチューニングとかでもちょっとはスコア上がるけど、ロジック見て良い感じの実装にするのは必須ですた 例年 sinatraアプリらしいので一個くらいは作ってから望むべきだったかも 参考リンク ISUCON5の予選に参加して惨敗してきました #isucon </description>
     </item>
     
     <item>
@@ -162,7 +162,7 @@ http://hajimete-sangokushi.com/</description>
       <pubDate>Thu, 11 Sep 2014 02:53:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2014/09/11/yami_sier/</guid>
-      <description> 闇SIer 元ファイル  </description>
+      <description> 闇SIer 元ファイル </description>
     </item>
     
     <item>
@@ -173,10 +173,9 @@ http://hajimete-sangokushi.com/</description>
       <guid>https://yaasita.github.io/2014/05/26/itunes_books/</guid>
       <description>手元のPDFをipadに転送したくていろいろ探したら
 下記画像みたいなブックという項目を出さないとダメみたい
-
 iTunesStoreでブック押したりなんかいろいろしたら出るようになった
 あとPDFを追加するときは以下のフォルダに置くと良いみたい（入れると自動的に消える）
-C:\Users\hogeuser\Music\iTunes\iTunes Media\iTunes に自動的に追加   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+C:\Users\hogeuser\Music\iTunes\iTunes Media\iTunes に自動的に追加 </description>
     </item>
     
     <item>
@@ -246,7 +245,6 @@ http://item.rakuten.co.jp/angers/121696/ </description>
 働いてる時間　148400h
 自由な時間　173009h
 合計　482113h
-
 自由な時間は全体の35％しかないことが分かります。
 何か仕事とは別にやりたい事や目標がある場合、残された173009時間でやる必要があります。
 年にすると約20年しかないですので結構少ない気がします。

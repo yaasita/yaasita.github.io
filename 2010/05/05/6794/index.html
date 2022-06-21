@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>rsyncで差分バックアップ | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="rsyncで差分バックアップ" />
@@ -15,21 +15,18 @@
 たとえばしたのようにすると差分のあったファイルのみバックアップされます。
 （なのでこのバックアップした時点のsorceフォルダを復元したいならdstにdst2を上書く）
 rsync -av --delete-excluded --compare-dest=/root/dst/ /root/sorce/ /root/dst2/
-
 ↓のようにすると差分の無いファイルは転送を行わずに元ディレクトリdstからコピーします
 ローカルコピーだとあまり意味はありません
 rsync -av --delete-excluded --copy-dest=/root/dst/ /root/sorce/ /root/dst2/
-
 ↓のようにすると差分の無いファイルは前回のもののハードリンクになります
 ディスク容量を節約できて便利です
 rsync -av --delete-excluded --link-dest=/root/dst/ /root/sorce/ /root/dst2/
-
 参考リンク
 http://www.itmedia.co.jp/enterprise/articles/0804/25/news034.html " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2010/05/05/6794/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2010-05-05T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2010-05-05T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2010-05-05T00:00:00+09:00" />
+<meta property="article:modified_time" content="2010-05-05T00:00:00+09:00" />
 
 
     
@@ -116,7 +113,7 @@ rsyncで差分バックアップするにはcompare-dest、copy-dest、link-dest
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -221,7 +218,7 @@ rsyncで差分バックアップするにはcompare-dest、copy-dest、link-dest
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -312,7 +309,7 @@ rsyncで差分バックアップするにはcompare-dest、copy-dest、link-dest
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

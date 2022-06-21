@@ -7,47 +7,21 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>自宅サーバーとレンタルサーバーでメールの同期を図る | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="自宅サーバーとレンタルサーバーでメールの同期を図る" />
 <meta property="og:description" content="私の環境は以下のようにレンタルサーバーと自宅サーバーそれぞれでメールを受信している
 自宅サーバーは24時間動かしているわけではないため、自宅サーバーが電源OFFした場合はDynDNSのドメインのIPアドレスをレンタルサーバーに設定。逆に電源がONになった場合はその逆でドメインのIPを自宅サーバーへ向けるようにする。
 つまりDNSを更新して現用系(自宅)と待機系(レンタルサーバー)でスイッチさせている
-
 でその時に問題なるのはレンタルサーバーで受信したメールをどうやってこちらに移すか？
 今回はsftpを使って同期する
 userが対象のユーザ、hoge.netがレンタルサーバーのアドレスとする
-#!/bin/bash
-my_maildir=/home/user/Maildir/
-{
-cat /dev/null 2&amp;1
-cd ${my_maildir}/tmp
-for i in $( ls ); do
-dst=`echo $i | cut -d: -f 1`
-if [ $i != $dst ] ; then
-mv $i $dst
-fi
-chmod a&#43;rw $dst
-mv $dst ${my_maildir}/new
-done
-
-適当な解説
-・sftpについて
-sftpはバッチモードというのがあり、-bで指定してその後に命令の書かれたファイルを指定します。今回は標準入力から読み込むため-を指定。get rmはftpでおなじみのコマンドで、
-最初に-がついてるのはエラーになっても続行すると言う意味です。（curなどにファイルが無い場合はエラーとなる）
-ここら辺に具体的な説明が書かれていますが、-Pはポート指定では無いなどこちらの環境と少し違う箇所がありました。man sftpで見た方が良いかもしれません。
-・Maildirのファイル名について
-命名の規約は下記参考リンクを参照するとして今回はレンタルサーバーにたまっていた物を新着メールとして処理したいので、ファイル名の:（コロン）以降を取り外しています。
-ファイル名は以下のような構造になっています
-1234567890.ABCDEFGHI123456789.hostname:2,S
-1234567890 → UNIX時間
-ABCDEFGHI123456789 →　メールごとにユニークな識別文字
-hostname → ホスト名" />
+#!/bin/bash my_maildir=/home/user/Maildir/ { cat &lt;&lt; BAT lcd ${my_maildir}tmp -get Maildir/cur/* -get Maildir/new/* -rm Maildir/cur/* -rm Maildir/new/* exit BAT } | sftp -C \ -b - \ -oIdentityFile=/home/user/.ssh/dti_id_rsa \ -oPort=443 \ user@hoge.net &gt; /dev/null 2&gt;&amp;amp;1 cd ${my_maildir}/tmp for i in $( ls ); do dst=`echo $i | cut -d: -f 1` if [ $i != $dst ] ; then mv $i $dst fi chmod a&#43;rw $dst mv $dst ${my_maildir}/new done 適当な解説 sftpについて sftpはバッチモードというのがあり、-bで指定してその後に命令の書かれたファイルを指定します。今回は標準入力から読み込むため-を指定。get rmはftpでおなじみのコマンドで、" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2010/09/19/5755/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2010-09-19T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2010-09-19T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2010-09-19T00:00:00+09:00" />
+<meta property="article:modified_time" content="2010-09-19T00:00:00+09:00" />
 
 
     
@@ -85,10 +59,67 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
+    <p>私の環境は以下のようにレンタルサーバーと自宅サーバーそれぞれでメールを受信している<br>
+自宅サーバーは24時間動かしているわけではないため、自宅サーバーが電源OFFした場合はDynDNSのドメインのIPアドレスをレンタルサーバーに設定。逆に電源がONになった場合はその逆でドメインのIPを自宅サーバーへ向けるようにする。<br>
+つまりDNSを更新して現用系(自宅)と待機系(レンタルサーバー)でスイッチさせている</p>
+<p><a href="https://yaasita.tk/blog/2022/rentaru-mail.png"><img src="https://yaasita.tk/blog/2022/rentaru-mail.png" alt="rentaru-mail"></a></p>
+<p>でその時に問題なるのはレンタルサーバーで受信したメールをどうやってこちらに移すか？<br>
+今回はsftpを使って同期する</p>
+<p>userが対象のユーザ、hoge.netがレンタルサーバーのアドレスとする</p>
+<pre><code>#!/bin/bash
+my_maildir=/home/user/Maildir/
+{
+cat &lt;&lt; BAT
+lcd ${my_maildir}tmp
+-get Maildir/cur/*
+-get Maildir/new/*
+-rm  Maildir/cur/*
+-rm  Maildir/new/*
+exit
+BAT
+} | sftp   -C \
+    -b - \
+    -oIdentityFile=/home/user/.ssh/dti_id_rsa \
+       -oPort=443 \
+    user@hoge.net &gt; /dev/null 2&gt;&amp;amp;1
 
-私の環境は以下のようにレンタルサーバーと自宅サーバーそれぞれでメールを受信している<br />自宅サーバーは24時間動かしているわけではないため、自宅サーバーが電源OFFした場合はDynDNSのドメインのIPアドレスをレンタルサーバーに設定。逆に電源がONになった場合はその逆でドメインのIPを自宅サーバーへ向けるようにする。<br />つまりDNSを更新して現用系(自宅)と待機系(レンタルサーバー)でスイッチさせている<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/_51uwrZcw3_U/TJTJHiQXAfI/AAAAAAAAAQQ/0_OxS1DGZ3I/s1600/mail.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/_51uwrZcw3_U/TJTJHiQXAfI/AAAAAAAAAQQ/0_OxS1DGZ3I/s320/mail.png" /></a></div><br />でその時に問題なるのはレンタルサーバーで受信したメールをどうやってこちらに移すか？<br />今回はsftpを使って同期する<br /><br />userが対象のユーザ、hoge.netがレンタルサーバーのアドレスとする<br /><pre>#!/bin/bash<br /><br />my_maildir=/home/user/Maildir/<br />{<br />cat << BAT<br />lcd ${my_maildir}tmp<br />-get Maildir/cur/*<br />-get Maildir/new/*<br />-rm  Maildir/cur/*<br />-rm  Maildir/new/*<br />exit<br />BAT<br />} | sftp   -C \<br />    -b - \<br />    -oIdentityFile=/home/user/.ssh/dti_id_rsa \<br />       -oPort=443 \<br />    user@hoge.net > /dev/null 2>&amp;1<br /><br />cd ${my_maildir}/tmp<br />for i in $( ls ); do<br /> dst=`echo $i | cut -d: -f 1`<br /> if [ $i != $dst ] ; then<br />  mv $i $dst<br /> fi<br /> chmod a+rw $dst<br /> mv $dst ${my_maildir}/new<br />done<br /></pre><br /><b>適当な解説</b><br />・sftpについて<br />sftpはバッチモードというのがあり、-bで指定してその後に命令の書かれたファイルを指定します。今回は標準入力から読み込むため-を指定。get rmはftpでおなじみのコマンドで、<br />最初に-がついてるのはエラーになっても続行すると言う意味です。（curなどにファイルが無い場合はエラーとなる）<br /><a href="http://www.unixuser.org/~euske/doc/openssh/jman/sftp.html">ここら辺</a>に具体的な説明が書かれていますが、-Pはポート指定では無いなどこちらの環境と少し違う箇所がありました。man sftpで見た方が良いかもしれません。<br /><br />・Maildirのファイル名について<br />　命名の規約は下記参考リンクを参照するとして今回はレンタルサーバーにたまっていた物を新着メールとして処理したいので、ファイル名の:（コロン）以降を取り外しています。<br />ファイル名は以下のような構造になっています<br /><pre>1234567890.ABCDEFGHI123456789.hostname:2,S</pre><br />1234567890 → UNIX時間<br />ABCDEFGHI123456789 →　メールごとにユニークな識別文字<br />hostname → ホスト名<br />:2 → 普通は:2を指定してそれ以降に意味のあるフラグ文字を続ける<br />,S → この例だと既読の意味 Thunderbird上で捨てると,STとかフラグが追加される<br /><br />参考にフラグの例を記載<br />* Flag "P" (passed): 転送とかしたときに付くらしい？<br />* Flag "R" (replied): そのメッセージに対して返信した場合につく<br />* Flag "S" (seen): 既読のメッセージ<br />* Flag "T" (trashed): 削除した場合につく<br />* Flag "D" (draft): 下書きを意味する<br />* Flag "F" (flagged): フラグ付きを意味する ThunderbirdだとスターをつけるとFがつく<br /><br /><br />参考リンク<br /><a href="http://www.dovecot.jp/wiki/MailboxFormat.Maildir.txt">http://www.dovecot.jp/wiki/MailboxFormat.Maildir.txt</a><br /><a href="http://cr.yp.to/proto/maildir.html ">http://cr.yp.to/proto/maildir.html </a>
-
+cd ${my_maildir}/tmp
+for i in $( ls ); do
+ dst=`echo $i | cut -d: -f 1`
+ if [ $i != $dst ] ; then
+  mv $i $dst
+ fi
+ chmod a+rw $dst
+ mv $dst ${my_maildir}/new
+done
+</code></pre>
+<h2 id="適当な解説">適当な解説</h2>
+<h3 id="sftpについて">sftpについて</h3>
+<p>sftpはバッチモードというのがあり、-bで指定してその後に命令の書かれたファイルを指定します。今回は標準入力から読み込むため-を指定。get rmはftpでおなじみのコマンドで、<br>
+最初に-がついてるのはエラーになっても続行すると言う意味です。（curなどにファイルが無い場合はエラーとなる）<br>
+<a href="http://www.unixuser.org/~euske/doc/openssh/jman/sftp.html">ここら辺</a>に具体的な説明が書かれていますが、-Pはポート指定では無いなどこちらの環境と少し違う箇所がありました。man sftpで見た方が良いかもしれません。</p>
+<h3 id="maildirのファイル名について">Maildirのファイル名について</h3>
+<p>　命名の規約は下記参考リンクを参照するとして今回はレンタルサーバーにたまっていた物を新着メールとして処理したいので、ファイル名の:（コロン）以降を取り外しています。<br>
+ファイル名は以下のような構造になっています</p>
+<pre><code>1234567890.ABCDEFGHI123456789.hostname:2,S
+</code></pre>
+<p>1234567890 → UNIX時間<br>
+ABCDEFGHI123456789 →　メールごとにユニークな識別文字<br>
+hostname → ホスト名<br>
+:2 → 普通は:2を指定してそれ以降に意味のあるフラグ文字を続ける<br>
+,S → この例だと既読の意味 Thunderbird上で捨てると,STとかフラグが追加される</p>
+<p>参考にフラグの例を記載</p>
+<ul>
+<li>Flag &ldquo;P&rdquo; (passed): 転送とかしたときに付くらしい？</li>
+<li>Flag &ldquo;R&rdquo; (replied): そのメッセージに対して返信した場合につく</li>
+<li>Flag &ldquo;S&rdquo; (seen): 既読のメッセージ</li>
+<li>Flag &ldquo;T&rdquo; (trashed): 削除した場合につく</li>
+<li>Flag &ldquo;D&rdquo; (draft): 下書きを意味する</li>
+<li>Flag &ldquo;F&rdquo; (flagged): フラグ付きを意味する ThunderbirdだとスターをつけるとFがつく</li>
+</ul>
+<p>参考リンク<br>
+<a href="http://www.dovecot.jp/wiki/MailboxFormat.Maildir.txt">http://www.dovecot.jp/wiki/MailboxFormat.Maildir.txt</a><br>
+<a href="http://cr.yp.to/proto/maildir.html">http://cr.yp.to/proto/maildir.html</a></p>
 
   </div>
   <footer>
@@ -130,7 +161,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -235,7 +266,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -326,7 +357,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

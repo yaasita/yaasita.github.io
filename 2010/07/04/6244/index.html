@@ -7,32 +7,23 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>screenにウィンドウリストのタブを表示 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="screenにウィンドウリストのタブを表示" />
-<meta property="og:description" content=" .screenrcに以下を追記すればOKらしい
+<meta property="og:description" content=".screenrcに以下を追記すればOKらしい
 自分はcaptionよりもhardstatus alwayslastlineの方が良かったので
 ↓を使ってる(captionにするとバッファ毎にステータスラインができる)
-hardstatus alwayslastline &#34;%{= wg} %-w%{=bu dr}%n %t%{-}%&#43;w %= %{=b kw} %Y/%m/%d %0c&#34;
-
-あと分割色を指定するために↓を書いておくといいかも
-sorendition &#34;&#43;rb .G&#34;
-
-ちなみに自分の.screenrcはこんな感じ
- startup_message off
-hardstatus alwayslastline &#34;%{= wg} %-w%{=bu dr}%n %t%{-}%&#43;w %= %{=b kw} %Y/%m/%d %0c&#34;
-sorendition &#34;&#43;rb .G&#34;
-vbell off
-
-参考リンク
+hardstatus alwayslastline &quot;%{= wg} %-w%{=bu dr}%n %t%{-}%&#43;w %= %{=b kw} %Y/%m/%d %0c&quot; あと分割色を指定するために↓を書いておくといいかも
+sorendition &quot;&#43;rb .G&quot; ちなみに自分の.screenrcはこんな感じ
+startup_message off hardstatus alwayslastline &quot;%{= wg} %-w%{=bu dr}%n %t%{-}%&#43;w %= %{=b kw} %Y/%m/%d %0c&quot; sorendition &quot;&#43;rb .G&quot; vbell off 参考リンク
 http://d.hatena.ne.jp/winebarrel/20070223/p4
 http://www.tees.ne.jp/~sin-x/200406a.html#0102c
-http://shyouhei.tumblr.com/post/313410522/screenrc " />
+http://shyouhei.tumblr.com/post/313410522/screenrc" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2010/07/04/6244/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2010-07-04T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2010-07-04T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2010-07-04T00:00:00+09:00" />
+<meta property="article:modified_time" content="2010-07-04T00:00:00+09:00" />
 
 
     
@@ -70,10 +61,24 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-.screenrcに以下を追記すればOKらしい<br />自分はcaptionよりもhardstatus alwayslastlineの方が良かったので<br />↓を使ってる(captionにするとバッファ毎にステータスラインができる)<br /><blockquote>hardstatus alwayslastline "%{= wg} %-w%{=bu dr}%n %t%{-}%+w %= %{=b kw} %Y/%m/%d %0c"<br /></blockquote><br />あと分割色を指定するために↓を書いておくといいかも<br /><blockquote>sorendition "+rb .G"<br /></blockquote><br />ちなみに自分の.screenrcはこんな感じ<br /><blockquote>  startup_message off<br />  hardstatus alwayslastline "%{= wg} %-w%{=bu dr}%n %t%{-}%+w %= %{=b kw} %Y/%m/%d %0c"<br />  sorendition "+rb .G"<br />  vbell off<br /></blockquote><br /><br />参考リンク<br /><a href="http://d.hatena.ne.jp/winebarrel/20070223/p4">http://d.hatena.ne.jp/winebarrel/20070223/p4</a><br /><a href="http://www.tees.ne.jp/~sin-x/200406a.html#0102c">http://www.tees.ne.jp/~sin-x/200406a.html#0102c</a><br /><a href="http://shyouhei.tumblr.com/post/313410522/screenrc">http://shyouhei.tumblr.com/post/313410522/screenrc</a>
-
+    <p>.screenrcに以下を追記すればOKらしい<br>
+自分はcaptionよりもhardstatus alwayslastlineの方が良かったので<br>
+↓を使ってる(captionにするとバッファ毎にステータスラインができる)</p>
+<pre><code>hardstatus alwayslastline &quot;%{= wg} %-w%{=bu dr}%n %t%{-}%+w %= %{=b kw} %Y/%m/%d %0c&quot;
+</code></pre>
+<p>あと分割色を指定するために↓を書いておくといいかも</p>
+<pre><code>sorendition &quot;+rb .G&quot;
+</code></pre>
+<p>ちなみに自分の.screenrcはこんな感じ</p>
+<pre><code>startup_message off
+hardstatus alwayslastline &quot;%{= wg} %-w%{=bu dr}%n %t%{-}%+w %= %{=b kw} %Y/%m/%d %0c&quot;
+sorendition &quot;+rb .G&quot;
+vbell off
+</code></pre>
+<p>参考リンク<br>
+<a href="http://d.hatena.ne.jp/winebarrel/20070223/p4">http://d.hatena.ne.jp/winebarrel/20070223/p4</a><br>
+<a href="http://www.tees.ne.jp/~sin-x/200406a.html#0102c">http://www.tees.ne.jp/~sin-x/200406a.html#0102c</a><br>
+<a href="http://shyouhei.tumblr.com/post/313410522/screenrc">http://shyouhei.tumblr.com/post/313410522/screenrc</a></p>
 
   </div>
   <footer>
@@ -115,7 +120,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -220,7 +225,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -311,7 +316,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

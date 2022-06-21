@@ -6,7 +6,25 @@
     <description>Recent content in 2022 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 08 Jun 2022 02:37:21 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2022/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Jun 2022 01:43:12 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2022/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tumblrのアカウントが消されたけど復旧してもらった</title>
+      <link>https://yaasita.github.io/2022/06/22/tumblr-account/</link>
+      <pubDate>Wed, 22 Jun 2022 01:43:12 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/06/22/tumblr-account/</guid>
+      <description>経緯はこんな感じ
+2022/06/08 tumblrで消されたの確認
+ログインして、「アカウント消えました」って表示される
+その下に問題あったらサポートに連絡してねと書いてあったので、サポートに連絡
+2022/06/13 反応がないので、もう一回サポートに連絡
+2022/06/14 このお問い合わせフォームバグってないか？
+と思ったので、yaasita2アカウント作成して、その中のお問い合わせフォームから連絡
+数分で連絡が来て、yaasitaのアカウントでメールしてこいと言われる
+yaasitaアカウントのメールで再度問い合わせ
+2022/06/15 Hello, Thank you for writing back! We&amp;#39;ve restored your account. Thank you for bringing this problem to our attention. We&amp;#39;re sorry that it occurred, and we&amp;#39;ll do our best to make sure that it doesn&amp;#39;t happen again. You should now be able to log in just fine with your email address and password. Please let me know if there&amp;#39;s anything else I can help you with!</description>
+    </item>
+    
     <item>
       <title>budibaseをmicrok8sで動かす</title>
       <link>https://yaasita.github.io/2022/06/08/budibase/</link>
@@ -14,9 +32,8 @@
       
       <guid>https://yaasita.github.io/2022/06/08/budibase/</guid>
       <description>budibaseをローカルのmicrok8sで動かしたときのメモ
-# 必要なプラグインをON microk8s.enable dns:192.168.0.10 microk8s.enable ingress microk8s.enable metallb # 192.168.0.150-192.168.0.180 みたいに指定 microk8s.enable storage # kubectlで動かせるように microk8s.config &amp;gt; ~/.kube/config # インストール helm show values budibase/budibase &amp;gt; config.yaml # hostを指定 vim config.yaml helm install --create-namespace --namespace budibase budibase budibase/budibase -f config.yaml  あとはingress部分を作る
-# 証明書を作って kubectl create secret tls &#39;cloud.yaasita.net&#39; --key=privkey.pem --cert=fullchain.pem  ingressをこんな感じで作っておく
- </description>
+# 必要なプラグインをON microk8s.enable dns:192.168.0.10 microk8s.enable ingress microk8s.enable metallb # 192.168.0.150-192.168.0.180 みたいに指定 microk8s.enable storage # kubectlで動かせるように microk8s.config &amp;gt; ~/.kube/config # インストール helm show values budibase/budibase &amp;gt; config.yaml # hostを指定 vim config.yaml helm install --create-namespace --namespace budibase budibase budibase/budibase -f config.yaml あとはingress部分を作る
+# 証明書を作って kubectl create secret tls &#39;cloud.yaasita.net&#39; --key=privkey.pem --cert=fullchain.pem ingressをこんな感じで作っておく</description>
     </item>
     
     <item>
@@ -51,7 +68,7 @@ chorme.exeまでをフルパスでダブルクォートで囲む方法は上手�
 初回はどちらか一方でも繋がれば遅延は感じないが
 一回接続に成功した場合はipv4を使うのかipv6を使うのかキャッシュしている状態なので切り替えに時間がかかる
 例えばipv6で繋がっていたサイト側でipv6をドロップさせると
-ip6tables -A INPUT -p tcp --dport 443 -j DROP  数秒遅延した後にipv4で接続する</description>
+ip6tables -A INPUT -p tcp --dport 443 -j DROP 数秒遅延した後にipv4で接続する</description>
     </item>
     
     <item>
@@ -61,7 +78,7 @@ ip6tables -A INPUT -p tcp --dport 443 -j DROP  数秒遅延した後にipv4で�
       
       <guid>https://yaasita.github.io/2022/03/01/ipv6-tmpaddr/</guid>
       <description>linuxでipv6一時アドレス使う時に設定するカーネルパラメータ
-net.ipv6.conf.xxx.temp_prefered_lft = 86400 net.ipv6.conf.xxx.temp_valid_lft = 604800  これの意味は、上記のようにデフォルトの設定86400(1日), 604800(7日)だった場合
+net.ipv6.conf.xxx.temp_prefered_lft = 86400 net.ipv6.conf.xxx.temp_valid_lft = 604800 これの意味は、上記のようにデフォルトの設定86400(1日), 604800(7日)だった場合
 xxxインターフェイスにIPv6-1という一時アドレスが付いていたとする
 IPv6-1作成してから24時間後にIPv6-2という新しい一時アドレスを取得する
 取得後はIPv6-2のアドレスを使用して通信をするようになる
@@ -83,12 +100,12 @@ IPv6-1作成してから24時間後にIPv6-2という新しい一時アドレス
       <guid>https://yaasita.github.io/2022/02/26/ipv6-tempaddr/</guid>
       <description>systemd-networkdの設定にIPv6PrivacyExtensions足せばOK
 (対応するカーネルパラメータ net.ipv6.conf.xxx.use_tempaddr は自動的に設定される)
-[Network] Address=192.168.0.2/24 Gateway=192.168.0.1 IPv6PrivacyExtensions=yes  temp_valid_lft
+[Network] Address=192.168.0.2/24 Gateway=192.168.0.1 IPv6PrivacyExtensions=yes temp_valid_lft
 と
 temp_prefered_lft
 については sysctlで設定すること
 参考リンク
- https://wiki.archlinux.jp/index.php/IPv6 http://dr.slump.jp/IPv6/rfc3041/ https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt  </description>
+https://wiki.archlinux.jp/index.php/IPv6 http://dr.slump.jp/IPv6/rfc3041/ https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt </description>
     </item>
     
     <item>
@@ -114,8 +131,8 @@ https://ipv46.cloud.yaasita.net/</description>
       <guid>https://yaasita.github.io/2022/02/12/tls-report-check/</guid>
       <description>SMTP-TLSRPTをチェックしてtotal-failure-session-countがゼロより大きいかチェックするスクリプト
 (対象はGoogleから貰うレポート)
- こんな感じでメールがあるディレクトリを指定する
-./index.js ~/Maildir/cur/  </description>
+こんな感じでメールがあるディレクトリを指定する
+./index.js ~/Maildir/cur/ </description>
     </item>
     
     <item>
@@ -130,11 +147,9 @@ https://ipv46.cloud.yaasita.net/</description>
 これは音ゲーのスコアを表していてタイミングよく押せた場合はPERFECT, 早すぎたり遅すぎたりした場合はFAST, SLOWに計上される
 この内ミスの割合が正規分布と見なせるか検定する
 まず、CSVを右上のEnvironmentタブ =&amp;gt; Import Datasetから読み込む
-
 データをMISSの割合をデータフレームに追加
 library(dplyr) bandori &amp;lt;- bandori %&amp;gt;% mutate(MISS = (FAST + SLOW) / (PERFECT + FAST + SLOW) * 100) ヒストグラムと近似曲線を出す
-hist(bandori$MISS, breaks = seq(0, 20, 1)) dens &amp;lt;- density(bandori$MISS) lines(dens, lwd = 3, col = &amp;quot;blue&amp;quot;) 
-検定
+hist(bandori$MISS, breaks = seq(0, 20, 1)) dens &amp;lt;- density(bandori$MISS) lines(dens, lwd = 3, col = &amp;#34;blue&amp;#34;) 検定
 shapiro.test(bandori$MISS) 検定統計量とp値
 data: bandori$MISS W = 0.98162, p-value = 0.724 ここで注意なのはこの検定は帰無仮説が「正規分布している」なので
 棄却出来た場合は正規分布ではないと言えるが、

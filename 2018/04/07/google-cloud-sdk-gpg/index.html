@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>GoogleのCloud SDKの署名鍵エラー | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="GoogleのCloud SDKの署名鍵エラー" />
@@ -18,8 +18,8 @@ gpg2 --search-keys BA07F4FB gpg: data source: http://gpg.NebrWesleyan.edu:11371 
 gpg2 -a --export BA07F4FB | apt-key add - apt-key del A7317B0F " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2018/04/07/google-cloud-sdk-gpg/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2018-04-07T02:24:37&#43;09:00" />
-<meta property="article:modified_time" content="2018-04-07T02:24:37&#43;09:00" />
+<meta property="article:published_time" content="2018-04-07T02:24:37+09:00" />
+<meta property="article:modified_time" content="2018-04-07T02:24:37+09:00" />
 
 
     
@@ -59,17 +59,16 @@ if (!doNotTrack) {
   <div class="content">
     <p>GCP(google cloud platform)の署名鍵が変わってた<br>
 つーか元のgpg鍵の有効期限が切れてる</p>
-<pre><code>取得:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease [6,372 B]
+<pre tabindex="0"><code>取得:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease [6,372 B]
 エラー:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease
   公開鍵を利用できないため、以下の署名は検証できませんでした: NO_PUBKEY 6A030B21BA07F4FB
 </code></pre><p>なんか探してみると2018年4月1日に作った鍵にしてるみたい</p>
-<pre><code>gpg2 --search-keys BA07F4FB
+<pre tabindex="0"><code>gpg2 --search-keys BA07F4FB
 gpg: data source: http://gpg.NebrWesleyan.edu:11371
 (1)     Google Cloud Packages Automatic Signing Key &lt;gc-team@google.com&gt;
           2048 bit RSA key BA07F4FB, created: 2018-04-01, expires: 2021-03-31
-
 </code></pre><p>ということで追加して事なきを得た</p>
-<pre><code>gpg2 -a --export BA07F4FB | apt-key add -
+<pre tabindex="0"><code>gpg2 -a --export BA07F4FB | apt-key add -
 apt-key del A7317B0F
 </code></pre>
   </div>
@@ -116,7 +115,7 @@ apt-key del A7317B0F
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -221,7 +220,7 @@ apt-key del A7317B0F
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -312,7 +311,7 @@ apt-key del A7317B0F
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

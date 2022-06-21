@@ -7,19 +7,19 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Apacheでリバースプロキシ | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="Apacheでリバースプロキシ" />
 <meta property="og:description" content="Apacheでリバースプロキシするときこんな感じに書いた方が良いよという話
-&lt;VirtualHost *:443&gt; ServerName example.net &lt;Proxy *&gt; Require all granted &lt;/Proxy&gt; ProxyRequests Off ProxyPreserveHost On ProxyPass / http://192.168.0.1:8080/ keepalive=On ProxyPassReverse / http://192.168.0.1:8080/ RequestHeader set X-Forwarded-Proto &quot;https&quot; RequestHeader unset X-Forwarded-For RequestHeader unset X-Forwarded-Server RequestHeader unset X-Forwarded-Host Include /path/to/common.conf &lt;/VirtualHost&gt;  X-Forwarded-Forとかを一旦unsetしないと、
+&lt;VirtualHost *:443&gt; ServerName example.net &lt;Proxy *&gt; Require all granted &lt;/Proxy&gt; ProxyRequests Off ProxyPreserveHost On ProxyPass / http://192.168.0.1:8080/ keepalive=On ProxyPassReverse / http://192.168.0.1:8080/ RequestHeader set X-Forwarded-Proto &quot;https&quot; RequestHeader unset X-Forwarded-For RequestHeader unset X-Forwarded-Server RequestHeader unset X-Forwarded-Host Include /path/to/common.conf &lt;/VirtualHost&gt; X-Forwarded-Forとかを一旦unsetしないと、
 X-Forwarded-Forとかをクライアント側から指定されると、追加されて判別が困難になる
-curl -H &quot;X-Forwarded-For: 1.2.3.4&quot;  みたいな感じで指定されると
- x-forwarded-for: &quot;1.2.3.4, 192.168.0.100&quot;  こんな感じに追加されて http://192.168.0.1:8080 側にわたってしまう" />
+curl -H &quot;X-Forwarded-For: 1.2.3.4&quot; みたいな感じで指定されると
+x-forwarded-for: &quot;1.2.3.4, 192.168.0.100&quot; こんな感じに追加されて http://192.168.0.1:8080 側にわたってしまう" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2018/02/04/apache-header/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2018-02-04T16:27:56&#43;09:00" />
-<meta property="article:modified_time" content="2018-02-04T16:27:56&#43;09:00" />
+<meta property="article:published_time" content="2018-02-04T16:27:56+09:00" />
+<meta property="article:modified_time" content="2018-02-04T16:27:56+09:00" />
 
 
     
@@ -123,7 +123,7 @@ X-Forwarded-Forとかをクライアント側から指定されると、追加�
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -228,7 +228,7 @@ X-Forwarded-Forとかをクライアント側から指定されると、追加�
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -319,7 +319,7 @@ X-Forwarded-Forとかをクライアント側から指定されると、追加�
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

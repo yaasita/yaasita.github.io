@@ -7,32 +7,29 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>TightVNCをインストールしてみた | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="TightVNCをインストールしてみた" />
-<meta property="og:description" content=" Windows版のTightVNCを試してみた
+<meta property="og:description" content="Windows版のTightVNCを試してみた
 公式サイトから「Self-installing package for Windows」を落としてみてインストール使用した感じはRealVNCより軽い感じがする・・・
 使い方１　サービスとして起動する
 スタートメニュー⇒ TightVNC ⇒ Administration　⇒ Install VNC Serviceを選んでクリック
 コンパネの管理ツール⇒サービスを見てVNC Serverがあるのを確認する（制御はここで行う）
-
 で設定はスタートメニュー⇒ TightVNC ⇒ Administration ⇒　Show Default Settingsからどうぞ
 ちなみに設定でログを採取する設定にした際に作られる場所はC:\WINDOWS\system32の中のWinVNC.log
 注意）上記の設定で手動で起動した場合タスクトレイに表示されないが再起動すると表示される
-
 使い方２　ユーザーモードで起動する
 スタートメニュー⇒ TightVNC ⇒ Launch TightVNC Serverで起動
 ユーザーモードならタスクトレイにアイコンが出るのでそこを右クリックして設定を開いても良いし、
 TightVNCの中にあるShow User Settingsで設定を開いても良い。
 ちなみにログを採取するように設定した場合の吐き出される場所はC:\Program Files\TightVNCの中のWinVNC.log
 あとWindows版のVNCはUNIXのようなconfファイルを使用しないので以下のレジストリに設定を保存する
-HKEY_LOCAL_MACHINE\Software\ORL\WinVNC3
-HKEY_CURRENT_USER\Software\ORL\WinVNC3 " />
+HKEY_LOCAL_MACHINE\Software\ORL\WinVNC3 HKEY_CURRENT_USER\Software\ORL\WinVNC3 " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2010/01/11/7430/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2010-01-11T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2010-01-11T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2010-01-11T00:00:00+09:00" />
+<meta property="article:modified_time" content="2010-01-11T00:00:00+09:00" />
 
 
     
@@ -70,10 +67,24 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-Windows版のTightVNCを試してみた<br /><a href="http://www.tightvnc.com/">公式サイト</a>から「Self-installing package for Windows」を落としてみてインストール使用した感じはRealVNCより軽い感じがする・・・<br /><br />使い方１　サービスとして起動する<br />スタートメニュー⇒ TightVNC ⇒ Administration　⇒ Install VNC Serviceを選んでクリック<br />コンパネの管理ツール⇒サービスを見てVNC Serverがあるのを確認する（制御はここで行う）<br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/_51uwrZcw3_U/S0s4QiuJwQI/AAAAAAAAAME/I_xY5vGN_AA/s1600-h/servicevnc.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://1.bp.blogspot.com/_51uwrZcw3_U/S0s4QiuJwQI/AAAAAAAAAME/I_xY5vGN_AA/s320/servicevnc.png" /></a><br /></div>で設定はスタートメニュー⇒ TightVNC ⇒ Administration ⇒　Show Default Settingsからどうぞ<br />ちなみに設定でログを採取する設定にした際に作られる場所はC:\WINDOWS\system32の中のWinVNC.log<br /><div style="color: red;">注意）上記の設定で手動で起動した場合タスクトレイに表示されないが再起動すると表示される<br /></div><br />使い方２　ユーザーモードで起動する<br />スタートメニュー⇒ TightVNC ⇒ Launch TightVNC Serverで起動<br />ユーザーモードならタスクトレイにアイコンが出るのでそこを右クリックして設定を開いても良いし、<br />TightVNCの中にあるShow User Settingsで設定を開いても良い。<br />ちなみにログを採取するように設定した場合の吐き出される場所はC:\Program Files\TightVNCの中のWinVNC.log<br /><br /><br />あとWindows版のVNCはUNIXのようなconfファイルを使用しないので以下のレジストリに設定を保存する<br />HKEY_LOCAL_MACHINE\Software\ORL\WinVNC3<br />HKEY_CURRENT_USER\Software\ORL\WinVNC3
-
+    <p>Windows版のTightVNCを試してみた<br>
+<a href="http://www.tightvnc.com/">公式サイト</a>から「Self-installing package for Windows」を落としてみてインストール使用した感じはRealVNCより軽い感じがする・・・</p>
+<p>使い方１　サービスとして起動する<br>
+スタートメニュー⇒ TightVNC ⇒ Administration　⇒ Install VNC Serviceを選んでクリック<br>
+コンパネの管理ツール⇒サービスを見てVNC Serverがあるのを確認する（制御はここで行う）</p>
+<p><a href="https://yaasita.tk/blog/2022/tight-vnc.png"><img src="https://yaasita.tk/blog/2022/tight-vnc.png" alt="tight-vnc"></a></p>
+<p>で設定はスタートメニュー⇒ TightVNC ⇒ Administration ⇒　Show Default Settingsからどうぞ<br>
+ちなみに設定でログを採取する設定にした際に作られる場所はC:\WINDOWS\system32の中のWinVNC.log</p>
+<p><strong>注意）上記の設定で手動で起動した場合タスクトレイに表示されないが再起動すると表示される</strong></p>
+<p>使い方２　ユーザーモードで起動する<br>
+スタートメニュー⇒ TightVNC ⇒ Launch TightVNC Serverで起動<br>
+ユーザーモードならタスクトレイにアイコンが出るのでそこを右クリックして設定を開いても良いし、<br>
+TightVNCの中にあるShow User Settingsで設定を開いても良い。<br>
+ちなみにログを採取するように設定した場合の吐き出される場所はC:\Program Files\TightVNCの中のWinVNC.log</p>
+<p>あとWindows版のVNCはUNIXのようなconfファイルを使用しないので以下のレジストリに設定を保存する</p>
+<pre><code>HKEY_LOCAL_MACHINE\Software\ORL\WinVNC3
+HKEY_CURRENT_USER\Software\ORL\WinVNC3
+</code></pre>
 
   </div>
   <footer>
@@ -115,7 +126,7 @@ Windows版のTightVNCを試してみた<br /><a href="http://www.tightvnc.com/">
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -220,7 +231,7 @@ Windows版のTightVNCを試してみた<br /><a href="http://www.tightvnc.com/">
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -311,7 +322,7 @@ Windows版のTightVNCを試してみた<br /><a href="http://www.tightvnc.com/">
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

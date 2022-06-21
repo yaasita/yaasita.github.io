@@ -41,21 +41,19 @@
 |-- d
 |-- e
 `-- f
-
 まずsrcフォルダからdstフォルダへ同期するとします
 1の注意点から
 ↓のようにやっても何一つ同期されません。最初に全部弾いているので駄目
 rsync -av --delete-excluded --exclude=&#34;*&#34; --include=&#34;a&#34; src/ dst/
 下記のようにexcludeを後に置けばすればaだけ同期できます
 rsync -av --delete-excluded --include=&#34;a&#34; --exclude=&#34;*&#34; src/ dst/
-
 2の注意点について
 ABCディレクトリ配下のみ同期したい場合
 こうしてもうまくいきません(excludeで全部弾かれてしまいます)
 rsync -av --delete-excluded --include=&#34;ABC/*&#34; --exclude=&#34;*&#34; src/ dst/
 ABC配下のみ同期したい場合はまずABCをincludeします
 ↓のようにやればOK
-rsync -av --delete-excluded --include=&#34;</description>
+rsync -av --delete-excluded --include=&#34;ABC&#34; --include=&#34;ABC/*&#34; --exclude=&#34;</description>
     </item>
     
     <item>
@@ -76,7 +74,7 @@ http://www.gamefz.com/a.asp?id=2420 </description>
       <guid>https://yaasita.github.io/2010/12/24/5072/</guid>
       <description>紙飛行機を飛ばすゲーム
 http://armorgames.com/play/7598/flight
-←→　角度調節 SPACE ジェット噴射 R レインボースター  参考リンク
+←→　角度調節 SPACE ジェット噴射 R レインボースター 参考リンク
 http://blog.livedoor.jp/lkrejg/archives/65520026.html</description>
     </item>
     
@@ -99,10 +97,9 @@ hでヘルプ
 A problem occured at line 511 in function mynewwin (from file term.c):
 Failed to create window with dimensions 54x9 at offset -27,-4 (terminal size: 76,24)
 Binary build at Dec 10 2009 23:58:27
-
 参考リンク
 http://www.kichise.com/modules/pico/other/multitail.html
-http://www.vanheusden.com/multitail/  </description>
+http://www.vanheusden.com/multitail/ </description>
     </item>
     
     <item>
@@ -124,27 +121,18 @@ http://d.hatena.ne.jp/orangeclover/20100406/1270564074 </description>
       
       <guid>https://yaasita.github.io/2010/12/19/5135/</guid>
       <description>下記参考リンクがすごい参考になったのでちょっとずつ試してみた
-* Newsbeuter
-適当にRSSへのURLを書いたテキストを用意(ex.url.txt)
+Newsbeuter 適当にRSSへのURLを書いたテキストを用意(ex.url.txt)
 url.txtは一行一URLにしておいた
-newsbeuter -u url.txtで起動
+newsbeuter -u url.txt で起動
 RでリロードしてからENTERで適当に読める
-
-インターフェイスはmuttに似ているなんかメールを読むようにRSSを読める既読未読とか分かるし、マーク、検索とか出来て便利前回読んだ時の状態を~/.newsbeuterに保存しているのでまた読み返すときも便利かもしれないsを押すと記事を保存できたりする
-* Snownews 
-squeezeにパッケージが無かったのでレビュー出来なかった・・・
+インターフェイスはmuttに似ている なんかメールを読むようにRSSを読める 既読未読とか分かるし、マーク、検索とか出来て便利 前回読んだ時の状態を~/.newsbeuterに保存しているのでまた読み返すときも便利かもしれない sを押すと記事を保存できたりする Snownews squeezeにパッケージが無かったのでレビュー出来なかった・・・
 lennyならある模様
-* Canto (旧NRSS)
-squeezeにはNRSSもcantoもあるけど公式サイト見るとCantoへ誘導されるのでこっちを使ってみる
+Canto (旧NRSS) squeezeにはNRSSもcantoもあるけど公式サイト見るとCantoへ誘導されるのでこっちを使ってみる
 何も考えずに下記のコマンドを打つと.cantoが出来る
-canto.canto以下にconf.py.exampleが出来ているのでconf.pyへリネーム後
-好きなURLへ変更すれば使える
+canto .canto以下にconf.py.exampleが出来ているのでconf.pyへリネーム後好きなURLへ変更すれば使える
 jkで上下移動　SPACEで記事を読める
-
-デフォルトでviキーバインドシンプルな外観gでブラウザに渡すことも出来たりするフィードを更新するときはcanto-fetchコマンドを使う
-* rsstail
-↓こんな感じで使ってる
-rsstail -ldpcHvu http://blog.livedoor.jp/dqnplus/index.rdf-l でリンクを表示
+デフォルトでviキーバインド シンプルな外観 gでブラウザに渡すことも出来たりする フィードを更新するときはcanto-fetchコマンドを使う rsstail ↓こんな感じで使ってる
+rsstail -ldpcHvu http://blog.livedoor.jp/dqnplus/index.rdf -l でリンクを表示
 -d　で説明
 -p　で記事の日付
 -c でコメント表示
@@ -152,11 +140,9 @@ rsstail -ldpcHvu http://blog.livedoor.jp/dqnplus/index.rdf-l でリンクを表�
 -v 冗長オプション
 -u に続いてURLを与える
 multitailでまとめるには
-multitail -cS rsstail -l &#34;rsstail -lpcHvu http://aerial.deko8.jp/feed_ranking1d.xml&#34; -cS　rsstail -L &#34;rsstail -lpcHvu http://feeds.feedburner.com/hatena/b/hotentry&#34;
-でいけると思ったけど文字化けして駄目だった
-しょうがないから各RSSを追記リダイレクト(rsstail -u http://hoge.jp/rss.xml &amp;amp;gt;&amp;amp;gt; /tmp/rss.log)でそのファイルを眺めてる
-* まとめ
-newsbeuter →　メールを読むようにじっくり読みたい人向け</description>
+multitail -cS rsstail -l &amp;quot;rsstail -lpcHvu http://aerial.deko8.jp/feed_ranking1d.xml&amp;quot; -cS　rsstail -L &amp;quot;rsstail -lpcHvu http://feeds.feedburner.com/hatena/b/hotentry&amp;quot; でいけると思ったけど文字化けして駄目だった
+しょうがないから各RSSを追記リダイレクト(rsstail -u http://hoge.jp/rss.xml &amp;gt;&amp;gt; /tmp/rss.log)でそのファイルを眺めてる
+まとめ newsbeuter →　メールを読むようにじっくり読みたい人向け Canto → とりあえずシンプルに読みたい人向け rsstail →　記事をただ流すだけで良いと向け 迷ったらとりあえずCantoを使ってみると良いかもしれない</description>
     </item>
     
     <item>
@@ -170,7 +156,7 @@ newsbeuter →　メールを読むようにじっくり読みたい人向け</d
 ようはprofileとかなければ呼ばれないらしい
 http://blog.jojo.jp/?eid=1013034
 呼ばれ方
-~/.profile - ~/.bashrc </description>
+~/.profile -&gt; ~/.bashrc </description>
     </item>
     
     <item>
@@ -246,20 +232,19 @@ http://d.hatena.ne.jp/toromoti/20100610/1276167033 </description>
       <pubDate>Sun, 28 Nov 2010 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2010/11/28/5259/</guid>
-      <description> tightvncserver(vncserver)で起動
+      <description>tightvncserver(vncserver)で起動
 (XvncだけでXだけを起動することも出来るが普通は使用しない vncserverがラッパーになっている)
 Xvncのオプションも使えるので
 こんな感じで起動
-tightvncserver :5 -geometry 1280x1024 -depth 16 -rfbport 6000ディスプレイ番号5番で画面は1280x1024、色深度16ビット、ポート6000で待機
+tightvncserver :5 -geometry 1280x1024 -depth 16 -rfbport 6000 ディスプレイ番号5番で画面は1280x1024、色深度16ビット、ポート6000で待機
 終了はこんな感じ
-tightvncserver -kill :5
-パスワードはvncpasswd等で作成しておく
-あとはつなげればOK 
+tightvncserver -kill :5 パスワードはvncpasswd等で作成しておく
+あとはつなげればOK
 ちなみにvncpasswdでパスワードを作る際に短すぎるとエラーになる
 家で使うので1文字のパスワードでも良いというのなら
 こんな感じで-fオプションを使って標準入力から受け取るようにすればOK
 -fオプションで起動→aを入力後にCtrl-Dで終了
-user@squeeze:~/.vnc$ vncpasswd -f  passwd a user@squeeze:~/.vnc$  </description>
+user@squeeze:~/.vnc$ vncpasswd -f &amp;gt; passwd a user@squeeze:~/.vnc$ </description>
     </item>
     
     <item>
@@ -268,9 +253,8 @@ user@squeeze:~/.vnc$ vncpasswd -f  passwd a user@squeeze:~/.vnc$  </description>
       <pubDate>Tue, 23 Nov 2010 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2010/11/23/5303/</guid>
-      <description> 192.168.0.11がsambaサーバだったとすると
-smbclient -L 192.168.0.11
- </description>
+      <description>192.168.0.11がsambaサーバだったとすると
+smbclient -L 192.168.0.11</description>
     </item>
     
     <item>
@@ -289,26 +273,24 @@ aptitude -P install xen-hypervisor-4.0-amd64 linux-image-xen-amd64 xen-tools
 なんか知らんがこうするといいらしい
 mv -i /etc/grub.d/10_linux /etc/grub.d/50_linux
 update-grub2
-echo &#34;&#34;  /etc/default/grub
-echo &#34;# Disable OS prober to prevent virtual machines on logical volumes from appearing in the boot menu.&#34;  /etc/default/grub
-echo &#34;GRUB_DISABLE_OS_PROBER=true&#34;  /etc/default/grub
+echo &#34;&#34; &gt;&gt; /etc/default/grub
+echo &#34;# Disable OS prober to prevent virtual machines on logical volumes from appearing in the boot menu.&#34; &gt;&gt; /etc/default/grub
+echo &#34;GRUB_DISABLE_OS_PROBER=true&#34; &gt;&gt; /etc/default/grub
 update-grub2
-
 3./etc/default/xendomainsを編集して状態保存を無効化
 XENDOMAINS_RESTORE=false
 XENDOMAINS_SAVE=&#34;&#34;
-
 4.ネットワークブリッジの設定
 /etc/xen/xend-config.sxpを編集
 以下の行のコメントアウトを解除
 (network-script network-bridge)
-
 5.VMイメージ作成する際のデフォルト値を設定
 今回はLVM上にイメージファイルを作らないのでdir を指定
 ここで設定しなくても全部コマンドラインでやるのも可→参考リンク
 pygrubっていうのはdom0からカーネルを一々VM上に持っていかなくても済む
 仕組み　→　参考リンク
-dir = /home/xen</description>
+dir = /home/xen
+size = 4Gb # Disk image size.</description>
     </item>
     
     <item>
@@ -329,12 +311,12 @@ http://enchanting.cside.com/security/flashcookie.html </description>
       <pubDate>Thu, 04 Nov 2010 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2010/11/04/5365/</guid>
-      <description> 文字通りありえない画像を検索します
+      <description>文字通りありえない画像を検索します
 元はyahooの画像検索らしい
 http://eroy.8-bit.jp/gazou/
 あとTumblrとかいうのもあった
 参考リンク
-http://blog.livedoor.jp/darkm/archives/51088800.html </description>
+http://blog.livedoor.jp/darkm/archives/51088800.html</description>
     </item>
     
     <item>

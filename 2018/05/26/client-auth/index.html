@@ -7,20 +7,20 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>クライアント証明書とIP制限 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="クライアント証明書とIP制限" />
 <meta property="og:description" content="外からはクライアント証明書を要求して、中からは素通しさせたいケース
 Apache2.4ならこんな感じ
-SSLCACertificateFile /etc/apache2/ssl/example.crt &lt;Directory /var/www&gt; Options Indexes FollowSymLinks MultiViews ExecCGI Require ip 192.168.100.0/24 SSLVerifyClient require Satisfy any &lt;/Directory&gt;  curlで確認
-curl https://example.net --key client.key --cert cert.crt --http1.1  作るときは /usr/lib/ssl/misc/CA.pl -newreq とかで適当に作る
+SSLCACertificateFile /etc/apache2/ssl/example.crt &lt;Directory /var/www&gt; Options Indexes FollowSymLinks MultiViews ExecCGI Require ip 192.168.100.0/24 SSLVerifyClient require Satisfy any &lt;/Directory&gt; curlで確認
+curl https://example.net --key client.key --cert cert.crt --http1.1 作るときは /usr/lib/ssl/misc/CA.pl -newreq とかで適当に作る
 鍵とセットなら良いのでcommon nameとかは適当
 参考リンク プライベートCA作るまで" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2018/05/26/client-auth/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2018-05-26T03:49:43&#43;09:00" />
-<meta property="article:modified_time" content="2018-05-26T03:49:43&#43;09:00" />
+<meta property="article:published_time" content="2018-05-26T03:49:43+09:00" />
+<meta property="article:modified_time" content="2018-05-26T03:49:43+09:00" />
 
 
     
@@ -121,7 +121,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -226,7 +226,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -317,7 +317,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

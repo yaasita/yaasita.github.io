@@ -14,7 +14,7 @@
       
       <guid>https://yaasita.github.io/2022/03/01/ipv6-tmpaddr/</guid>
       <description>linuxでipv6一時アドレス使う時に設定するカーネルパラメータ
-net.ipv6.conf.xxx.temp_prefered_lft = 86400 net.ipv6.conf.xxx.temp_valid_lft = 604800  これの意味は、上記のようにデフォルトの設定86400(1日), 604800(7日)だった場合
+net.ipv6.conf.xxx.temp_prefered_lft = 86400 net.ipv6.conf.xxx.temp_valid_lft = 604800 これの意味は、上記のようにデフォルトの設定86400(1日), 604800(7日)だった場合
 xxxインターフェイスにIPv6-1という一時アドレスが付いていたとする
 IPv6-1作成してから24時間後にIPv6-2という新しい一時アドレスを取得する
 取得後はIPv6-2のアドレスを使用して通信をするようになる
@@ -36,12 +36,12 @@ IPv6-1作成してから24時間後にIPv6-2という新しい一時アドレス
       <guid>https://yaasita.github.io/2022/02/26/ipv6-tempaddr/</guid>
       <description>systemd-networkdの設定にIPv6PrivacyExtensions足せばOK
 (対応するカーネルパラメータ net.ipv6.conf.xxx.use_tempaddr は自動的に設定される)
-[Network] Address=192.168.0.2/24 Gateway=192.168.0.1 IPv6PrivacyExtensions=yes  temp_valid_lft
+[Network] Address=192.168.0.2/24 Gateway=192.168.0.1 IPv6PrivacyExtensions=yes temp_valid_lft
 と
 temp_prefered_lft
 については sysctlで設定すること
 参考リンク
- https://wiki.archlinux.jp/index.php/IPv6 http://dr.slump.jp/IPv6/rfc3041/ https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt  </description>
+https://wiki.archlinux.jp/index.php/IPv6 http://dr.slump.jp/IPv6/rfc3041/ https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt </description>
     </item>
     
     <item>
@@ -57,7 +57,7 @@ https://github.com/systemd/systemd/pull/10294/files
 こんな感じで、&amp;ldquo;SYSTEMD_NSPAWN_TMPFS_TMP&amp;rdquo; って環境変数に0を入れておけば、/tmpディレクトリをtmpfsにしない
 /etc/systemd/system/systemd-nspawn@.service
 にこんな感じで追加したらmachinectlからもできる
-Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0  </description>
+Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0 </description>
     </item>
     
     <item>
@@ -68,9 +68,9 @@ Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0  </description>
       <guid>https://yaasita.github.io/2021/11/28/microk8s/</guid>
       <description>microk8s で ArgoCD を動かすときのメモ
 まず手順通りにマニフェストを設定したら
-kubectl patch svc argocd-server -n argocd -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39;  ClusterIP から NodePortに変更
+kubectl patch svc argocd-server -n argocd -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; ClusterIP から NodePortに変更
 こんな感じの表示になったら
-$ kubectl get svc argocd-server -n argocd argocd-server NodePort 10.152.183.43 &amp;lt;none&amp;gt; 80:30444/TCP,443:30983/TCP 20h  以下のURLでアクセス
+$ kubectl get svc argocd-server -n argocd argocd-server NodePort 10.152.183.43 &amp;lt;none&amp;gt; 80:30444/TCP,443:30983/TCP 20h 以下のURLでアクセス
 https:// (ホストのIP) :30983
 まあkubectl port-forward でやってもいいけど
 ついでに dashbord も同様にできる
@@ -87,7 +87,7 @@ kubectl patch svc kubernetes-dashboard -n kube-system -p &#39;{&amp;quot;spec&am
 (/etc/systemd/network/にはこんな感じでbridge作る)
 https://gist.github.com/yaasita/d527b48f54b0e23c3097a9c69239d534
 どうやらこれ、machine-idから作られてるみたいで、VMコピーしたらmachine-id変えた方が良いぽいね
-rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machine-id-setup  </description>
+rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machine-id-setup </description>
     </item>
     
     <item>
@@ -97,12 +97,12 @@ rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machin
       
       <guid>https://yaasita.github.io/2021/09/20/dircolors/</guid>
       <description>dircolorsは
-ls --color=auto  したときの色を設定するコマンド
+ls --color=auto したときの色を設定するコマンド
 以下のコマンドで設定を書き出して
-dircolors -p &amp;gt; ~/.dir_colors  好きな設定に編集する
-vi ~/.dircolors  .bashrcに以下のように書いておいた
-if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^screen ]];then alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto&#39; eval &amp;quot;$(dircolors -b ~/.dircolors)&amp;quot; fi  参考
- lsコマンドで表示されるファイルの色を変更するには  </description>
+dircolors -p &amp;gt; ~/.dir_colors 好きな設定に編集する
+vi ~/.dircolors .bashrcに以下のように書いておいた
+if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^screen ]];then alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto&#39; eval &amp;quot;$(dircolors -b ~/.dircolors)&amp;quot; fi 参考
+lsコマンドで表示されるファイルの色を変更するには </description>
     </item>
     
     <item>
@@ -120,9 +120,9 @@ https://mobile.twitter.com/mattn_jp/status/1434205359573405696
 こんな感じの設定を追加しておいた
 cdコマンドを上書きして、@で始まってたら cd -P でsymlinkを辿るようにして、他は通常通り
 (これなら補完候補も足さなくてOK)
-export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 }  あと、bookmarkへの追加もコマンドにしておく
+export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 } あと、bookmarkへの追加もコマンドにしておく
 bookmarkしたいディレクトリに移動してbookmarkコマンドでsymlink作るようにしておく
-function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) }  </description>
+function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) } </description>
     </item>
     
     <item>
@@ -132,10 +132,10 @@ function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(
       
       <guid>https://yaasita.github.io/2021/08/16/mlocate/</guid>
       <description>debian 11でlocateしても引っかからないファイル多いなと思って調べたら
-systemctl cat mlocate.service  こいうのが追加されてる
-[Service] PrivateTmp=true PrivateDevices=true PrivateNetwork=true ProtectSystem=true  debian 10 (buster) 時代はcronだったから気にしなかったけど、多分これ、ProtectSystemの所為で/usrとか見れてないぽい
+systemctl cat mlocate.service こいうのが追加されてる
+[Service] PrivateTmp=true PrivateDevices=true PrivateNetwork=true ProtectSystem=true debian 10 (buster) 時代はcronだったから気にしなかったけど、多分これ、ProtectSystemの所為で/usrとか見れてないぽい
 今までのように全検索したかったら以下のコマンドで上書きしたほうが良いかと
-systemctl edit mlocate.service  </description>
+systemctl edit mlocate.service </description>
     </item>
     
     <item>
@@ -149,8 +149,8 @@ systemctl edit mlocate.service  </description>
 自分の環境だと、送信メールサーバーがセカンダリメールサーバーと兼任している
 以下のように設定した
 /etc/postfix/master.cf
-smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode=yes -o smtpd_sasl_auth_enable=yes -o smtpd_reject_unlisted_recipient=no -o smtpd_client_restrictions=$mua_client_restrictions -o smtpd_helo_restrictions=$mua_helo_restrictions -o smtpd_sender_restrictions=$mua_sender_restrictions -o smtpd_recipient_restrictions= -o smtpd_relay_restrictions=permit_sasl_authenticated,reject -o milter_macro_daemon_name=ORIGINATING -o cleanup_service_name=smtpscleanup smtpscleanup unix n - y - 0 cleanup -o header_checks=regexp:/etc/postfix/header_checks  /etc/postfix/header_checks
-/^Received:.*/ IGNORE  最初はsmtp_header_checksをmain.cfに書けば良いかなーと思ったんだけど、
+smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode=yes -o smtpd_sasl_auth_enable=yes -o smtpd_reject_unlisted_recipient=no -o smtpd_client_restrictions=$mua_client_restrictions -o smtpd_helo_restrictions=$mua_helo_restrictions -o smtpd_sender_restrictions=$mua_sender_restrictions -o smtpd_recipient_restrictions= -o smtpd_relay_restrictions=permit_sasl_authenticated,reject -o milter_macro_daemon_name=ORIGINATING -o cleanup_service_name=smtpscleanup smtpscleanup unix n - y - 0 cleanup -o header_checks=regexp:/etc/postfix/header_checks /etc/postfix/header_checks
+/^Received:.*/ IGNORE 最初はsmtp_header_checksをmain.cfに書けば良いかなーと思ったんだけど、
 これだと外から入ってきたメール(後にプライマリサーバーにrelayされる)も一律削除されてしまうので都合が悪かった</description>
     </item>
     
@@ -165,7 +165,7 @@ smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode
 スクリプト こんなスクリプトを書いた
 使い方はREADME.md参照
 https://github.com/yaasita/ssh-keys-manager
-その他  使えるならsshの証明書認証も検討した方が良いかも ssh -F でconfig指定できるけど、~/.ssh/configに置いたときと挙動が違うのでスクリプト内にconfig入れる場合は注意  </description>
+その他 使えるならsshの証明書認証も検討した方が良いかも ssh -F でconfig指定できるけど、~/.ssh/configに置いたときと挙動が違うのでスクリプト内にconfig入れる場合は注意 </description>
     </item>
     
     <item>
@@ -178,7 +178,7 @@ https://github.com/yaasita/ssh-keys-manager
 公式ドキュメントのサンプルだとこんな感じにport接続にしてる
 https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/blob/master/cloudsql/mysql_wordpress_deployment.yaml
 socket接続の場合はこんな感じ
- 参考
+参考
 k8s サイドカーコンテナについて</description>
     </item>
     
@@ -189,7 +189,7 @@ k8s サイドカーコンテナについて</description>
       
       <guid>https://yaasita.github.io/2019/12/23/chromebook/</guid>
       <description>ASUS の C434TA-AI0084 を買ったのでレビュー
-chromeOS  起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある  解除がちょっと遅い10秒くらい待たされる   chromeの複数ユーザー機能が使えない  多重ログイン機能はあるけどちょっと微妙  別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能      ディスプレイ  タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 起動毎にバックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗  テザリング  Moto E5 とbluetoothでのテザリングが出来なかった  とりあえずUSBテザリングは刺すだけで使えたので良しとしてます    キーボード  Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない ←Alt + 明るさキーで消せました  Androidアプリ  ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない  Linux環境 OS  Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり  バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい   USB共有機能あり /opt/google/cros-containers/bin/.</description>
+chromeOS 起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある 解除がちょっと遅い10秒くらい待たされる chromeの複数ユーザー機能が使えない 多重ログイン機能はあるけどちょっと微妙 別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能 ディスプレイ タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 起動毎にバックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗 テザリング Moto E5 とbluetoothでのテザリングが出来なかった とりあえずUSBテザリングは刺すだけで使えたので良しとしてます キーボード Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない ←Alt + 明るさキーで消せました Androidアプリ ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない Linux環境 OS Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい USB共有機能あり /opt/google/cros-containers/bin/.. というプロセスが動いてる以外は普通のLinux, systemdも問題なし ファイル共有 右クリックから簡単に共有可能 Linux環境側では/mnt/chromeos に現れる /mnt/chromeos以下はパーミッションやownerが狂わないように制限されてるのでトラブルになることは無いと思う デフォルトでファイルアプリを使ってchromeOS側からLinux側のhomeディレクトリは自由に読み書き可能 なので共有ファイル追加しなくても特段問題なし ネットワーク こんなスクリプト だと chromeOS側から 127.0.0.1:3000 にアクセスできる でも、なぜかDockerで docker run -p 3000:80 nginx とかやって 127.</description>
     </item>
     
     <item>
@@ -201,15 +201,15 @@ chromeOS  起動もアプリの動作も全体的に速くてとても良い sma
       <description>systemdタイマーがちゃんと動いてるか確認したほうが良いよというお話
 systemctl list-timers --allコマンドで一覧が見れるあれです
 debian10だと /etc/cron.daily にあるスクリプトでこんな感じに書かれてたら、systemd timerの方を使ってる
-if [ -d /run/systemd/system ]; then exit 0 fi  前回 と同様にノートパソコンのバッテリー稼働と誤って判断されることに起因する問題
+if [ -d /run/systemd/system ]; then exit 0 fi 前回 と同様にノートパソコンのバッテリー稼働と誤って判断されることに起因する問題
 例えばlogrotateとかみると
-systemctl cat logrotate  こんな一文がある
-ConditionACPower=true  これはバッテリー駆動の時は動かさないって意味らしいんだけど、どうも判定が狂ってるみたいでずっと実行されなかった
+systemctl cat logrotate こんな一文がある
+ConditionACPower=true これはバッテリー駆動の時は動かさないって意味らしいんだけど、どうも判定が狂ってるみたいでずっと実行されなかった
 なので、以下のコマンドでoverride.conf作って判定を無効化した
-systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower=  というわけで
+systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower= というわけで
 cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
-journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot;  とりあえず分かった、バッテリー時の判定が入ってるtimer
- apt-daily-upgrade man-db logrotate anacron apt-daily  </description>
+journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot; とりあえず分かった、バッテリー時の判定が入ってるtimer
+apt-daily-upgrade man-db logrotate anacron apt-daily </description>
     </item>
     
     <item>
@@ -222,10 +222,10 @@ journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;
 PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある
 そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる
 例えば、/etc/cron.daily/mlocate の場合
-if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi  こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
+if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
 んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
 このままだと永遠にlocateコマンドが使えないので、divertで退避させた
-dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power  おしまい</description>
+dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power おしまい</description>
     </item>
     
     <item>
@@ -235,21 +235,20 @@ dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s 
       
       <guid>https://yaasita.github.io/2019/08/14/ssl-capath/</guid>
       <description>中間証明書をどう設定するか問題
-postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem  Let&amp;rsquo;s Encryptの場合こんな感じ
+postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem Let&amp;rsquo;s Encryptの場合こんな感じ
 smtpd_tls_CAfileに中間証明書を指定する
 smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
 dovecot 10-ssl.conf
-ssl_ca = &amp;lt;/etc/letsencrypt/live/example.net/chain.pem  これはダメ
+ssl_ca = &amp;lt;/etc/letsencrypt/live/example.net/chain.pem これはダメ
 この設定はクライアント証明書用ですので
 正しくは、こんな感じに、まとめたやつを指定すればOK
-ssl_cert = &amp;lt;/etc/letsencrypt/live/example.net/fullchain.pem  apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
-SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem  dovecot同様に中間証明書もまとめて指定する
+ssl_cert = &amp;lt;/etc/letsencrypt/live/example.net/fullchain.pem apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
+SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem dovecot同様に中間証明書もまとめて指定する
 まとめ この問題はスマホのK-9 Mailでメール読もうとしたときに判明した
 (突然CertPathValidatorExceptionって怒られた)
 thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
-openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
+サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
+openssl s_client -connect example.org:465 -showcerts thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
     </item>
     
     <item>
@@ -261,10 +260,10 @@ openssl s_client -connect example.org:465 -showcerts  thunderbirdだけで確認
       <description>前回の続き
 でctime変化しちゃってどうしたか？
 ファイルサイズとファイル名を取っておいて差分を作ることにした
- こんな感じのスクリプトで、ファイル名 + tab + ファイルサイズで保存する
+こんな感じのスクリプトで、ファイル名 + tab + ファイルサイズで保存する
 (厳密にやる場合はsha256とかで)
 そんで現在のファイルリストも取って、差分をとる
-diff -u previous.txt now.txt | egrep &amp;quot;^\+[^\+]&amp;quot; | perl -ple &#39;s/^\+//;s/\t.+//&#39; &amp;gt; tar.txt あとは-Tオプションで差分のファイルだけをtarで固める
+diff -u previous.txt now.txt | egrep &amp;#34;^\+[^\+]&amp;#34; | perl -ple &amp;#39;s/^\+//;s/\t.+//&amp;#39; &amp;gt; tar.txt あとは-Tオプションで差分のファイルだけをtarで固める
 tar -cvaf hoge.tgz -T tar.txt </description>
     </item>
     
@@ -280,11 +279,11 @@ tar -cvaf hoge.tgz -T tar.txt </description>
 ctimeの変化で気をつけなければいけないことはハードリンクによるバックアップ
 (rsync &amp;ndash;link-dest等)
 例えば、以下のようなファイルが存在し
-work/ `-- 1.txt  以下のコマンドを発行した場合
-tar -g resume -cvf work.tar work/  初回なので当然全部がバックアップされる
+work/ `-- 1.txt 以下のコマンドを発行した場合
+tar -g resume -cvf work.tar work/ 初回なので当然全部がバックアップされる
 このまま以下のコマンドを打てばディレクトリだけのバックアップになる(差分がないため)
-tar -g resume -cvf work.tar work/  しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう
-stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる  なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
+tar -g resume -cvf work.tar work/ しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう
+stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
 うまく増分バックアップができなくなる
 続き</description>
     </item>
@@ -295,11 +294,12 @@ stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.
       <pubDate>Sat, 18 Aug 2018 17:40:23 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2018/08/18/dkim/</guid>
-      <description>インストール apt install opendkim opendkim-tools  opendkim設定 mkdir /etc/postfix/dkim/ opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail # -d ドメイン # -s セレクタ chgrp opendkim /etc/postfix/dkim/* chmod g+r /etc/postfix/dkim/*  /etc/opendkim.conf
-Syslog	yes LogWhy Yes UMask	007 Canonicalization	relaxed/relaxed Mode	sv Socket inet:8891@localhost PidFile /var/run/opendkim/opendkim.pid OversignHeaders	From TrustAnchorFile /usr/share/dns/root.key UserID opendkim KeyTable file:/etc/postfix/dkim/keytable SigningTable file:/etc/postfix/dkim/signingtable  /etc/postfix/dkim/keytable
-mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private  /etc/postfix/dkim/signingtable
-example.net mail._domainkey.example.net  反映
-systemctl restart opendkim.service  postfix設定 以下追記</description>
+      <description>インストール apt install opendkim opendkim-tools opendkim設定 mkdir /etc/postfix/dkim/ opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail # -d ドメイン # -s セレクタ chgrp opendkim /etc/postfix/dkim/* chmod g+r /etc/postfix/dkim/* /etc/opendkim.conf
+Syslog	yes LogWhy Yes UMask	007 Canonicalization	relaxed/relaxed Mode	sv Socket inet:8891@localhost PidFile /var/run/opendkim/opendkim.pid OversignHeaders	From TrustAnchorFile /usr/share/dns/root.key UserID opendkim KeyTable file:/etc/postfix/dkim/keytable SigningTable file:/etc/postfix/dkim/signingtable /etc/postfix/dkim/keytable
+mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private /etc/postfix/dkim/signingtable
+example.net mail._domainkey.example.net 反映
+systemctl restart opendkim.service postfix設定 以下追記
+milter_default_action = tempfail milter_protocol = 2 smtpd_milters = inet:localhost:8891 non_smtpd_milters = inet:localhost:8891 ここで,milterを使うので</description>
     </item>
     
     <item>
@@ -322,15 +322,13 @@ gpg2 -a --export BA07F4FB | apt-key add - apt-key del A7317B0F </description>
       
       <guid>https://yaasita.github.io/2017/10/26/pkg-update/</guid>
       <description>本番環境と検証環境があり、パッケージのアップデートを行いたい場合
- 10月1日 検証環境のパッケージを上げる 11月1日 検証環境で問題なければ本番も上げる  この時、それぞれの日に本番環境、検証環境で apt update, apt upgradeをすると本番、検証で差分が生じ検証されていないパッケージもアップデートされる可能性がある
+10月1日 検証環境のパッケージを上げる 11月1日 検証環境で問題なければ本番も上げる この時、それぞれの日に本番環境、検証環境で apt update, apt upgradeをすると本番、検証で差分が生じ検証されていないパッケージもアップデートされる可能性がある
 正しくは10月1日に検証環境、本番環境で 同時 に以下のコマンドを実行
-apt-get update apt-get upgrade --download-only  検証環境で以下を実行
-apt-get upgrade  問題なければ本番環境で以下を実行
-apt-get upgrade  ポイントは apt-get update, apt-get upgrade --download-only を検証,本番環境ともに同じタイミングで実行して更新予定のパッケージを揃えておくこと
+apt-get update apt-get upgrade --download-only 検証環境で以下を実行
+apt-get upgrade 問題なければ本番環境で以下を実行
+apt-get upgrade ポイントは apt-get update, apt-get upgrade --download-only を検証,本番環境ともに同じタイミングで実行して更新予定のパッケージを揃えておくこと
 またubuntuは/etc/apt/apt.conf.d/10periodicの「APT::Periodic::Update-Package-Lists」を0にしておかないと毎日自動でapt-get updateが走るので注意すること
-図にするとこんな感じ
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+図にするとこんな感じ</description>
     </item>
     
   </channel>

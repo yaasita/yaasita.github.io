@@ -86,7 +86,7 @@ IT部門の人からすれば自分は使わないのだから丸投げできる
       
       <guid>https://yaasita.github.io/2011/12/24/3299/</guid>
       <description>例の軍曹のデスマーチ話です
- 前編 後編  </description>
+前編 後編 </description>
     </item>
     
     <item>
@@ -153,9 +153,7 @@ http://www.dailyfx.com/charts/netdaniachart/ </description>
       <guid>https://yaasita.github.io/2011/10/30/3403/</guid>
       <description>iotopを最近使ってたから日本語訳にしてみた
 結構意訳になってる
-IOTOP(1)&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;  IOTOP(1)
-
-
+IOTOP(1)&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp;&amp;amp;nbsp; IOTOP(1)
 NAME
 iotop - シンプルなIOモニター
 SYNOPSIS
@@ -197,7 +195,9 @@ OPTIONS
 表示するユーザーIDを指定します。(デフォルトは全て表示します)
 -P, --processes
 プロセスのみ表示します。通常は全てのスレッドを表示します。
--a, --accumulated</description>
+-a, --accumulated
+I/O帯域幅の代わりにI/Oの累積値を表示します。
+iotopを実行してから、プロセスが使用したI/Oの量を示します。</description>
     </item>
     
     <item>
@@ -250,8 +250,7 @@ MARVEL　VS　CAPCOM２　攻略
 sane-find-scannerで検索
 /etc/sane.d/mustek_usb.confを編集
 以下の行だけ有効化
-option max_block_size 1024 usb 0x04b8 0x010a /dev/usb/scanner0 
-あとはrootでログインしてxsaneをメニューから選択すればできた
+option max_block_size 1024 usb 0x04b8 0x010a /dev/usb/scanner0 あとはrootでログインしてxsaneをメニューから選択すればできた
 ちなみに試したのはEpsonのGT-8700
 参考リンク
 http://samidarehetima.blog9.fc2.com/blog-entry-8.html
@@ -303,8 +302,7 @@ hogehoge.netのホスト(HTTP_HOST)またはプライベートIPで指定して�
 /var/wwwを見せる
 それ以外なら/var/www2を見せる
 という制御にした
-server.document-root = &#34;/var/www2&#34; $HTTP[&#34;host&#34;] == &#34;hogehoge.net&#34; { server.document-root = &#34;/var/www&#34; } else $HTTP[&#34;host&#34;] == &#34;192.168.0.4&#34; { server.document-root = &#34;/var/www&#34; } 
-今回はドキュメントルート以外は全部同じ設定にしてあるので、conf-enabled/05-auth.confとかも同じ設定になるので注意 </description>
+server.document-root = &#34;/var/www2&#34; $HTTP[&#34;host&#34;] == &#34;hogehoge.net&#34; { server.document-root = &#34;/var/www&#34; } else $HTTP[&#34;host&#34;] == &#34;192.168.0.4&#34; { server.document-root = &#34;/var/www&#34; } 今回はドキュメントルート以外は全部同じ設定にしてあるので、conf-enabled/05-auth.confとかも同じ設定になるので注意 </description>
     </item>
     
     <item>
@@ -321,7 +319,7 @@ update-rc.dというコマンドで行える
 詳しくは/etc/init.d/READMEを見れば分かる
 関連記事
 init.d/とか各ランレベルごとの起動スクリプトについて
-rep2をオンメモリーにして高速化2  </description>
+rep2をオンメモリーにして高速化2 </description>
     </item>
     
     <item>

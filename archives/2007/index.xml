@@ -49,10 +49,10 @@ hdaのパーティション1番をアクティブにし、他のアクティブ�
       
       <guid>https://yaasita.github.io/2007/12/10/13107/</guid>
       <description>まず、パーティションを切るFATでフォーマットしアクティブフラグをセットする。
-mkdir /mnt/usb/grub cp /boot/grub/stage* /boot/grub/fat_stage1_5 /mnt/usb/grub/ umount /mnt/usb  とし
-grub grub&amp;gt; device (hd0) /dev/sda grub&amp;gt; root (hd0,0) grub&amp;gt; setup (hd0) grub&amp;gt; quit  と入力する。（USBメモリを/dev/sdaとする）
+mkdir /mnt/usb/grub cp /boot/grub/stage* /boot/grub/fat_stage1_5 /mnt/usb/grub/ umount /mnt/usb とし
+grub grub&amp;gt; device (hd0) /dev/sda grub&amp;gt; root (hd0,0) grub&amp;gt; setup (hd0) grub&amp;gt; quit と入力する。（USBメモリを/dev/sdaとする）
 参考リンク
- http://opentechpress.jp/developer/article.pl?sid=07/06/18/0135208&amp;amp;amp;pagenum=3 http://d.hatena.ne.jp/kamopapa/20071118  </description>
+http://opentechpress.jp/developer/article.pl?sid=07/06/18/0135208&amp;amp;amp;pagenum=3 http://d.hatena.ne.jp/kamopapa/20071118 </description>
     </item>
     
     <item>
@@ -63,8 +63,8 @@ grub grub&amp;gt; device (hd0) /dev/sda grub&amp;gt; root (hd0,0) grub&amp;gt; s
       <guid>https://yaasita.github.io/2007/12/10/13106/</guid>
       <description>fdisk パーティションの切り直しにはfdiskを使います。
 例えば、/dev/sdaのパーティションを編集するとします
-fdisk /dev/sda  で起動
-Command (m for help):  と表示されます。
+fdisk /dev/sda で起動
+Command (m for help): と表示されます。
 pでパーティションテーブルの表示
 dを押して次にパーティション番号を入力してパーティションの削除
 nで新しいパーティションの作成
@@ -72,9 +72,9 @@ tでパーティションタイプの編集（FAT32のパーティションタ�
 lでパーティションタイプ一覧表示
 wで編集したパーティションを書き込み終了
 aでブートフラグの設定
-参考リンク  swapパーティションの作成 パーティションタイプ一覧  parted fdiskの機能に加えてパーティションのリサイズが行えます。
-# parted /dev/sda  のように起動します
-(parted)  と表示されます。
+参考リンク swapパーティションの作成 パーティションタイプ一覧 parted fdiskの機能に加えてパーティションのリサイズが行えます。
+# parted /dev/sda のように起動します
+(parted) と表示されます。
 printでパーティションテーブルの表示
 resize 番号　でパーティションのリサイズ
 例）/dev/sda上のswapパーティションを縮小する
@@ -99,7 +99,6 @@ resize 番号　でパーティションのリサイズ
       <description> IEは標準でftpクライアントを持っています。
 ログインした際は通常のファイルのようにドラッグ＆ドロップによるアップロードやダウンロード。右クリックで削除、パーミッションの設定も出来ます。
 ftp://hoge.jp/という風にアドレスバーに入れてもvsftpdの場合は下図の様なエラーになります。
-
 iswebやgeocitiesのFTPサーバーへは上のようなエラーは出ず、この後にユーザー名とパスワードの入力を求められます。
 vsftpdのサーバーへログインする際にはアドレスの前にユーザー名を書いてください。例えばfoobarというユーザーでログインしたいのなら
 ftp://foobar@hoge.jp/
@@ -116,7 +115,6 @@ ftp://foobar:passwd@hoge.jp/
       
       <guid>https://yaasita.github.io/2007/12/05/13168/</guid>
       <description>PLANEXのFNW-3600-Tを使用している際にインターフェイスが勝手にリブートする問題があります。dmesgを見ると以下のようなログが確認できます。
-
 eth0: NE2000 (DL10019 rev 05): io 0x300, irq 3, hw_addr 00:E0:98:00:BE:63
 eth0: found link beat
 eth0: autonegotiation complete: 100baseT-FD selected
@@ -130,16 +128,8 @@ eth0: autonegotiation complete: 100baseT-FD selected
 eth0: lost link beat
 eth0: interrupt(s) dropped!
 eth0: found link beat
-eth0: autonegotiation complete: 100baseT-FD selected</description>
-    </item>
-    
-    <item>
-      <title>Debianにnslookupが無い件</title>
-      <link>https://yaasita.github.io/2007/12/01/13209/</link>
-      <pubDate>Sat, 01 Dec 2007 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2007/12/01/13209/</guid>
-      <description>#apt-get install dnsutils</description>
+eth0: autonegotiation complete: 100baseT-FD selected
+eth0: lost link beat</description>
     </item>
     
     <item>
@@ -155,12 +145,21 @@ eth0: autonegotiation complete: 100baseT-FD selected</description>
     </item>
     
     <item>
+      <title>Debianにnslookupが無い件</title>
+      <link>https://yaasita.github.io/2007/12/01/13209/</link>
+      <pubDate>Sat, 01 Dec 2007 00:00:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2007/12/01/13209/</guid>
+      <description>#apt-get install dnsutils</description>
+    </item>
+    
+    <item>
       <title>Apacheのパスワード制御をサブディレクトリだけ外すには</title>
       <link>https://yaasita.github.io/2007/11/30/13229/</link>
       <pubDate>Fri, 30 Nov 2007 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2007/11/30/13229/</guid>
-      <description> そのディレクトリ中に.htaccessを作り
+      <description>そのディレクトリ中に.htaccessを作り
 Satisfy Any
 Allow from all
 と書く
@@ -168,8 +167,7 @@ Allow from all
 AuthType Basic
 AuthUserFile &#34;/etc/apache2/pass&#34;
 AuthName &#34;Enter passwd&#34;
-Require user hoge
- </description>
+Require user hoge</description>
     </item>
     
     <item>
@@ -214,25 +212,26 @@ To:hogehoge &amp;amp;lt;yamaooo310@yahoo.co.jp&amp;amp;gt;
       <guid>https://yaasita.github.io/2007/11/25/13311/</guid>
       <description>インストール 公式サイトからrep2をダウンロード
 以下パッケージのインストール
-apt-get install php5 php-http-request php5-gd php-pear php-compat  ※公式にはこう書いてある
- aptitude install apache2-mpm-prefork php5 php-pear php-compat php-http-request php-pager php-file php5-curl curl unzip
- 必要なpearパッケージも
-pear install Net_UserAgent_Mobile  ※なかったらpear search Net_UserAgent_Mobileとかで検索してみる
+apt-get install php5 php-http-request php5-gd php-pear php-compat ※公式にはこう書いてある
+aptitude install apache2-mpm-prefork php5 php-pear php-compat php-http-request php-pager php-file php5-curl curl unzip
+必要なpearパッケージも
+pear install Net_UserAgent_Mobile ※なかったらpear search Net_UserAgent_Mobileとかで検索してみる
 リポジトリにPHP_Compatが無かった場合は追加で以下のコマンド
-pear install PHP_Compat  それ以外は公式サイト見てやる
+pear install PHP_Compat それ以外は公式サイト見てやる
 公式サイトの説明文
-  サーバを立ち上げて、PHPが動くようにする。PEARも忘れずに（下記参照） rep2ディレクトリをサーバからアクセスできる所（「~/Sites」とか）へ置く。 rep2ディレクトリの中にデータ保存用のディレクトリを作成する。（デフォルトでは「data」ディレクトリ） データ保存用ディレクトリのパーミッションを「707」（または777）にする。 必要に応じて、 conf/conf_admin.inc.php などのconfファイルをテキストエディタで開いて設定編集。 ブラウザから、
+サーバを立ち上げて、PHPが動くようにする。PEARも忘れずに（下記参照） rep2ディレクトリをサーバからアクセスできる所（「~/Sites」とか）へ置く。 rep2ディレクトリの中にデータ保存用のディレクトリを作成する。（デフォルトでは「data」ディレクトリ） データ保存用ディレクトリのパーミッションを「707」（または777）にする。 必要に応じて、 conf/conf_admin.inc.php などのconfファイルをテキストエディタで開いて設定編集。 ブラウザから、
 http://127.0.0.1/~(ユーザ名)/rep2/index.php
-てな具合にrep2ディレクトリへアクセス。  ※PHPが確かに動いていることを確かめたい時は？
+てな具合にrep2ディレクトリへアクセス。 ※PHPが確かに動いていることを確かめたい時は？
 http://127.0.0.1/~(ユーザ名)/rep2/phpinfo.php
 てなとこにアクセスしてみて下さい。
 ずらずらーっとPHPの環境情報が表示されたならば、PHPは正常に動作しています。
 （確認ができましたら、phpinfo.php はもう必要ないので削除しても構いません）
 これで動くはずです。動かなかった場合はエラーを見て判断してください。
- 設定 conf/conf_hostcheck.php
+設定 conf/conf_hostcheck.php
 を編集してグローバルIP側からの接続でもrep2を利用できるようにします。
 29行目付近 customを1に設定
-// ユーザー設定 &#39;custom&#39; =&amp;gt; 1,  36行目付近を以下のように設定</description>
+// ユーザー設定 &#39;custom&#39; =&amp;gt; 1, 36行目付近を以下のように設定
+$GLOBALS[&#39;_HOSTCHKCONF&#39;][&#39;custom_allowed_host&#39;] = array( &#39;0.0.0.0&#39; =&amp;gt; 0, ); なんかapacheのdeflateと相性悪いらしくスマホで検索するとContent-Encodingエラーになる</description>
     </item>
     
     <item>
@@ -241,8 +240,7 @@ http://127.0.0.1/~(ユーザ名)/rep2/phpinfo.php
       <pubDate>Sun, 25 Nov 2007 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2007/11/25/13290/</guid>
-      <description>
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+      <description></description>
     </item>
     
     <item>
@@ -254,11 +252,9 @@ http://127.0.0.1/~(ユーザ名)/rep2/phpinfo.php
       <description>フリーのC/C++コンパイラのインストールメモです。
 まず http://www.mingw.org/ に行きダウンロードします。
 ダウンロードは sourceforge から行ってください。現時点で最新版のAutomated MinGW InstallerのMinGW-5.1.3をダウンロードします。このダウンロードしたexeを実行すると自動的にダウンロードとインストールが行えます。
-
 途中、↑のようにダウンロードするバージョンを聞かれますが、currentを選択すればいいでしょう。
 インストールを C:\MinGW\ にした場合は C:\MinGW\bin にPATHを設定します。この時、PATH=C:\MinGW\bin;%system%....
-の様に先頭にしておけば検索が早くなり結果的に早くコンパイルできるはずです。
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+の様に先頭にしておけば検索が早くなり結果的に早くコンパイルできるはずです。</description>
     </item>
     
     <item>
@@ -290,7 +286,6 @@ rcファイルを作りオプションを保存することができます。
       <description> コンソールを含めて、いかなる場合もビープ音を鳴らしたくない場合は、次のコマンドを実行します。
 $ sudo rmmod pcspkr
 再起動後もビープ音を鳴らしたくなければ、/etc/modprobe.d/blacklistに次の行を加えます。
-
 blacklist pcspkr
 だそうです
 https://wiki.ubuntulinux.jp/UbuntuTips/Hardware/StopBeepSound </description>

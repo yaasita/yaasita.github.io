@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>rsyncのinclude,excludeで注意すること | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="rsyncのinclude,excludeで注意すること" />
@@ -30,25 +30,23 @@
 |-- d
 |-- e
 `-- f
-
 まずsrcフォルダからdstフォルダへ同期するとします
 1の注意点から
 ↓のようにやっても何一つ同期されません。最初に全部弾いているので駄目
 rsync -av --delete-excluded --exclude=&#34;*&#34; --include=&#34;a&#34; src/ dst/
 下記のようにexcludeを後に置けばすればaだけ同期できます
 rsync -av --delete-excluded --include=&#34;a&#34; --exclude=&#34;*&#34; src/ dst/
-
 2の注意点について
 ABCディレクトリ配下のみ同期したい場合
 こうしてもうまくいきません(excludeで全部弾かれてしまいます)
 rsync -av --delete-excluded --include=&#34;ABC/*&#34; --exclude=&#34;*&#34; src/ dst/
 ABC配下のみ同期したい場合はまずABCをincludeします
 ↓のようにやればOK
-rsync -av --delete-excluded --include=&#34;" />
+rsync -av --delete-excluded --include=&#34;ABC&#34; --include=&#34;ABC/*&#34; --exclude=&#34;" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2010/12/26/5031/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2010-12-26T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2010-12-26T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2010-12-26T00:00:00+09:00" />
+<meta property="article:modified_time" content="2010-12-26T00:00:00+09:00" />
 
 
     
@@ -135,7 +133,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -240,7 +238,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -331,7 +329,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

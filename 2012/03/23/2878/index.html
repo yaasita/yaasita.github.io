@@ -7,19 +7,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Ruby on Railsのインストール | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="Ruby on Railsのインストール" />
-<meta property="og:description" content="必要なパッケージのインストール適当に以下のパッケージをインストール 
-build-essential imagemagick zlib1g-dev libssl-dev libreadline-dev libmagick-dev libmagickcore-dev
+<meta property="og:description" content="必要なパッケージのインストール適当に以下のパッケージをインストール build-essential imagemagick zlib1g-dev libssl-dev libreadline-dev libmagick-dev libmagickcore-dev
 libmagickwand-dev sqlite3 libsqlite3-dev automake bison mysql-server mysql-client libmysqld-dev libmysqlclient-dev libcurl4-openssl-dev
 libapr1-dev libaprutil1-dev libxslt-dev libxml2-dev
 ※この時点ではRubyは入れない RVMのインストールRVMはRubyのバージョンのスイッチとか簡単に出来るので便利
-公式サイトどおりに以下のコマンドですぐインストールされる 
-curl -L get.rvm.io | bash -s stable
+公式サイトどおりに以下のコマンドですぐインストールされる curl -L get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
- Rubyのインストール
+Rubyのインストール
 rvm install ruby
 rvm list
 rvm use 1.9.3 --default
@@ -28,15 +26,15 @@ gem install bundler
 gem install rails
 gem install unicron
 その他の設定あとJavaScriptエンジンが足りないとか起こられたら こちらを参照して設定する
-Gemfileに以下を追記 
-gem &#39;execjs&#39;
+Gemfileに以下を追記 gem &#39;execjs&#39;
 gem &#39;therubyracer&#39;
-
-rails new hoge" />
+rails new hoge
+cd hoge
+rails server" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2012/03/23/2878/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2012-03-23T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2012-03-23T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2012-03-23T00:00:00+09:00" />
+<meta property="article:modified_time" content="2012-03-23T00:00:00+09:00" />
 
 
     
@@ -123,7 +121,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -228,7 +226,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -319,7 +317,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

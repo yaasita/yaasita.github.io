@@ -7,44 +7,41 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>lighttpdでSSL設定 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="lighttpdでSSL設定" />
 <meta property="og:description" content="Debian(squeeze)でやってみた
 1.モジュールの有効化
-
 lighty-enable-mod ssl
-
 2.認証局(CA)の作成
-
 /usr/lib/ssl/misc/CA.sh -newca
-
 最初はエンター
 後は対話形式に適当に入力する
 入力項目についてはここら辺を参照 A challenge passwordとAn optional company nameは飛ばした
 3.サーバーの秘密鍵,CRTの作成
-
 openssl genrsa -out server.key 2048
 openssl req -new -days 365 -key server.key -out csr.pem
-
 4.署名(CRT)ファイルの作成
-
 openssl ca -in csr.pem -keyfile demoCA/private/cakey.pem -cert demoCA/cacert.pem -out crt.pem
-エラーが出る場合は以下のようにindex.txtを空にする（ここら辺参照） 
-rm demoCA/index.txt
+エラーが出る場合は以下のようにindex.txtを空にする（ここら辺参照） rm demoCA/index.txt
 touch demoCA/index.txt
-
 5. ファイルの設置
-
 ファイルをvim等で適当に編集して
 -----BEGIN RSA PRIVATE KEY-----
 hogehogehogehoge.....
------END RSA PRIVATE KEY-----" />
+-----END RSA PRIVATE KEY-----
+-----BEGIN CERTIFICATE-----
+hogehogehogehoge.....
+-----END CERTIFICATE-----
+みたいになるようにする
+あとは再起動でOK
+参考リンク
+13. SSL自己証明書 Apache/SSL自己証明書の作成とmod sslの設定" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2012/05/07/2698/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2012-05-07T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2012-05-07T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2012-05-07T00:00:00+09:00" />
+<meta property="article:modified_time" content="2012-05-07T00:00:00+09:00" />
 
 
     
@@ -127,7 +124,7 @@ Debian(squeeze)でやってみた<br /><b>1.モジュールの有効化</b><br /
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -232,7 +229,7 @@ Debian(squeeze)でやってみた<br /><b>1.モジュールの有効化</b><br /
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -323,7 +320,7 @@ Debian(squeeze)でやってみた<br /><b>1.モジュールの有効化</b><br /
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

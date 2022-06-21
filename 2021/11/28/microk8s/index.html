@@ -7,23 +7,23 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>microk8sでargocdを動かす | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="microk8sでargocdを動かす" />
 <meta property="og:description" content="microk8s で ArgoCD を動かすときのメモ
 まず手順通りにマニフェストを設定したら
-kubectl patch svc argocd-server -n argocd -p &#39;{&quot;spec&quot;: {&quot;type&quot;: &quot;NodePort&quot;}}&#39;  ClusterIP から NodePortに変更
+kubectl patch svc argocd-server -n argocd -p &#39;{&quot;spec&quot;: {&quot;type&quot;: &quot;NodePort&quot;}}&#39; ClusterIP から NodePortに変更
 こんな感じの表示になったら
-$ kubectl get svc argocd-server -n argocd argocd-server NodePort 10.152.183.43 &lt;none&gt; 80:30444/TCP,443:30983/TCP 20h  以下のURLでアクセス
+$ kubectl get svc argocd-server -n argocd argocd-server NodePort 10.152.183.43 &lt;none&gt; 80:30444/TCP,443:30983/TCP 20h 以下のURLでアクセス
 https:// (ホストのIP) :30983
 まあkubectl port-forward でやってもいいけど
 ついでに dashbord も同様にできる
 kubectl patch svc kubernetes-dashboard -n kube-system -p &#39;{&quot;spec&quot;: {&quot;type&quot;: &quot;NodePort&quot;}}&#39; kubectl get svc kubernetes-dashboard -n kube-system $ kubectl get svc kubernetes-dashboard -n kube-system NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE kubernetes-dashboard NodePort 10." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2021/11/28/microk8s/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-11-28T06:09:44&#43;09:00" />
-<meta property="article:modified_time" content="2021-11-28T06:09:44&#43;09:00" />
+<meta property="article:published_time" content="2021-11-28T06:09:44+09:00" />
+<meta property="article:modified_time" content="2021-11-28T06:09:44+09:00" />
 
 
     
@@ -129,7 +129,7 @@ https:// (ホストのIP) :30995<br>
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -234,7 +234,7 @@ https:// (ホストのIP) :30995<br>
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -325,7 +325,7 @@ https:// (ホストのIP) :30995<br>
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

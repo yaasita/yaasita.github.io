@@ -7,28 +7,27 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Debian squeezeにtightvncをインストール | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="Debian squeezeにtightvncをインストール" />
-<meta property="og:description" content=" tightvncserver(vncserver)で起動
+<meta property="og:description" content="tightvncserver(vncserver)で起動
 (XvncだけでXだけを起動することも出来るが普通は使用しない vncserverがラッパーになっている)
 Xvncのオプションも使えるので
 こんな感じで起動
-tightvncserver :5 -geometry 1280x1024 -depth 16 -rfbport 6000ディスプレイ番号5番で画面は1280x1024、色深度16ビット、ポート6000で待機
+tightvncserver :5 -geometry 1280x1024 -depth 16 -rfbport 6000 ディスプレイ番号5番で画面は1280x1024、色深度16ビット、ポート6000で待機
 終了はこんな感じ
-tightvncserver -kill :5
-パスワードはvncpasswd等で作成しておく
-あとはつなげればOK 
+tightvncserver -kill :5 パスワードはvncpasswd等で作成しておく
+あとはつなげればOK
 ちなみにvncpasswdでパスワードを作る際に短すぎるとエラーになる
 家で使うので1文字のパスワードでも良いというのなら
 こんな感じで-fオプションを使って標準入力から受け取るようにすればOK
 -fオプションで起動→aを入力後にCtrl-Dで終了
-user@squeeze:~/.vnc$ vncpasswd -f  passwd a user@squeeze:~/.vnc$  " />
+user@squeeze:~/.vnc$ vncpasswd -f &gt; passwd a user@squeeze:~/.vnc$ " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2010/11/28/5259/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2010-11-28T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2010-11-28T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2010-11-28T00:00:00+09:00" />
+<meta property="article:modified_time" content="2010-11-28T00:00:00+09:00" />
 
 
     
@@ -66,13 +65,27 @@ if (!doNotTrack) {
     </div>
   </header>
   <div class="content">
-    
-
-tightvncserver(vncserver)で起動<br />(XvncだけでXだけを起動することも出来るが普通は使用しない vncserverがラッパーになっている)<br /><br />Xvncのオプションも使えるので<br /><br />こんな感じで起動<br /><blockquote>tightvncserver :5 -geometry 1280x1024 -depth 16 -rfbport 6000</blockquote>ディスプレイ番号5番で画面は1280x1024、色深度16ビット、ポート6000で待機<br /><br />終了はこんな感じ<br /><blockquote>tightvncserver -kill :5</blockquote><br />パスワードはvncpasswd等で作成しておく<br />あとはつなげればOK <br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/_51uwrZcw3_U/TPICxG8SdVI/AAAAAAAAAQY/N7UcXCZ0Ofg/s1600/vncviewer.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="117" src="http://1.bp.blogspot.com/_51uwrZcw3_U/TPICxG8SdVI/AAAAAAAAAQY/N7UcXCZ0Ofg/s320/vncviewer.png" width="320" /></a></div><br /><br />ちなみにvncpasswdでパスワードを作る際に短すぎるとエラーになる<br />家で使うので1文字のパスワードでも良いというのなら<br />こんな感じで-fオプションを使って標準入力から受け取るようにすればOK<br /><br />-fオプションで起動→aを入力後にCtrl-Dで終了<br /><pre>user@squeeze:~/.vnc$ vncpasswd -f > passwd
-<br />a
-<br />user@squeeze:~/.vnc$
-<br /></pre>
-
+    <p>tightvncserver(vncserver)で起動<br>
+(XvncだけでXだけを起動することも出来るが普通は使用しない vncserverがラッパーになっている)</p>
+<p>Xvncのオプションも使えるので</p>
+<p>こんな感じで起動</p>
+<pre><code>tightvncserver :5 -geometry 1280x1024 -depth 16 -rfbport 6000
+</code></pre>
+<p>ディスプレイ番号5番で画面は1280x1024、色深度16ビット、ポート6000で待機</p>
+<p>終了はこんな感じ</p>
+<pre><code>tightvncserver -kill :5
+</code></pre>
+<p>パスワードはvncpasswd等で作成しておく<br>
+あとはつなげればOK</p>
+<p><a href="https://yaasita.tk/blog/2022/vncviewer.png"><img src="https://yaasita.tk/blog/2022/vncviewer.png" alt="vncviewer"></a></p>
+<p>ちなみにvncpasswdでパスワードを作る際に短すぎるとエラーになる<br>
+家で使うので1文字のパスワードでも良いというのなら<br>
+こんな感じで-fオプションを使って標準入力から受け取るようにすればOK</p>
+<p>-fオプションで起動→aを入力後にCtrl-Dで終了</p>
+<pre><code>user@squeeze:~/.vnc$ vncpasswd -f &gt; passwd
+a
+user@squeeze:~/.vnc$
+</code></pre>
 
   </div>
   <footer>
@@ -114,7 +127,7 @@ tightvncserver(vncserver)で起動<br />(XvncだけでXだけを起動するこ�
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -219,7 +232,7 @@ tightvncserver(vncserver)で起動<br />(XvncだけでXだけを起動するこ�
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -310,7 +323,7 @@ tightvncserver(vncserver)で起動<br />(XvncだけでXだけを起動するこ�
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

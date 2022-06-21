@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>hugoアップデート | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="hugoアップデート" />
@@ -15,15 +15,15 @@
 ワーニング潰し アップデートに伴い
 .Prev と .Nextが非推奨になったぽい マニュアル, コミット
 なのでこれはそれぞれ以下のように修正すればOK(意味が逆なので分かりにくいけど)
- .Prev =&gt; .NextPage .Next =&gt; .PrevPage  OGP設定 某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました
+.Prev =&gt; .NextPage .Next =&gt; .PrevPage OGP設定 某会社でこのブログのRSSフィードをSlackに流していると聞いたので設定してみました
 上手く表示できてますか？
 修正箇所
 themes/hugo-theme-geppaku/layouts/partials/header.html
- {{ if .IsHome }} &lt;meta property=&quot;og:title&quot; content=&quot;{{ .Site.Title }}&quot; /&gt; &lt;meta property=&quot;og:type&quot; content=&quot;website&quot; /&gt; &lt;meta property=&quot;og:url&quot; content=&quot;{{ .Site.BaseURL }}&quot; /&gt; {{ else }} &lt;meta property=&quot;og:title&quot; content=&quot;{{ .Title }}&quot; /&gt; &lt;meta property=&quot;og:type&quot; content=&quot;article&quot; /&gt; &lt;meta property=&quot;og:url&quot; content=&quot;{{ .Site.BaseURL }}{{ .Page.Dir }}&quot; /&gt; {{ end }} &lt;meta property=&quot;og:site_name&quot; content=&quot;{{ ." />
+{{ if .IsHome }} &lt;meta property=&#34;og:title&#34; content=&#34;{{ .Site.Title }}&#34; /&gt; &lt;meta property=&#34;og:type&#34; content=&#34;website&#34; /&gt; &lt;meta property=&#34;og:url&#34; content=&#34;{{ .Site.BaseURL }}&#34; /&gt; {{ else }} &lt;meta property=&#34;og:title&#34; content=&#34;{{ .Title }}&#34; /&gt; &lt;meta property=&#34;og:type&#34; content=&#34;article&#34; /&gt; &lt;meta property=&#34;og:url&#34; content=&#34;{{ .Site.BaseURL }}{{ .Page.Dir }}&#34; /&gt; {{ end }} &lt;meta property=&#34;og:site_name&#34; content=&#34;{{ ." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2019/03/12/hugo-update/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2019-03-12T23:00:51&#43;09:00" />
-<meta property="article:modified_time" content="2019-03-12T23:00:51&#43;09:00" />
+<meta property="article:published_time" content="2019-03-12T23:00:51+09:00" />
+<meta property="article:modified_time" content="2019-03-12T23:00:51+09:00" />
 
 
     
@@ -75,17 +75,17 @@ if (!doNotTrack) {
 上手く表示できてますか？</p>
 <p>修正箇所</p>
 <p>themes/hugo-theme-geppaku/layouts/partials/header.html</p>
-<pre><code>    {{ if .IsHome }}
-    &lt;meta property=&quot;og:title&quot; content=&quot;{{ .Site.Title }}&quot; /&gt;
-    &lt;meta property=&quot;og:type&quot; content=&quot;website&quot; /&gt;
-    &lt;meta property=&quot;og:url&quot; content=&quot;{{ .Site.BaseURL }}&quot; /&gt;
+<pre tabindex="0"><code>    {{ if .IsHome }}
+    &lt;meta property=&#34;og:title&#34; content=&#34;{{ .Site.Title }}&#34; /&gt;
+    &lt;meta property=&#34;og:type&#34; content=&#34;website&#34; /&gt;
+    &lt;meta property=&#34;og:url&#34; content=&#34;{{ .Site.BaseURL }}&#34; /&gt;
     {{ else }}
-    &lt;meta property=&quot;og:title&quot; content=&quot;{{ .Title }}&quot; /&gt;
-    &lt;meta property=&quot;og:type&quot; content=&quot;article&quot; /&gt;
-    &lt;meta property=&quot;og:url&quot; content=&quot;{{ .Site.BaseURL }}{{ .Page.Dir }}&quot; /&gt;
+    &lt;meta property=&#34;og:title&#34; content=&#34;{{ .Title }}&#34; /&gt;
+    &lt;meta property=&#34;og:type&#34; content=&#34;article&#34; /&gt;
+    &lt;meta property=&#34;og:url&#34; content=&#34;{{ .Site.BaseURL }}{{ .Page.Dir }}&#34; /&gt;
     {{ end }}
-    &lt;meta property=&quot;og:site_name&quot; content=&quot;{{ .Site.Title }}&quot; /&gt;
-    &lt;meta property=&quot;og:image&quot; content=&quot;https://avatars3.githubusercontent.com/u/1515338?s=300&amp;v=4&quot; /&gt;
+    &lt;meta property=&#34;og:site_name&#34; content=&#34;{{ .Site.Title }}&#34; /&gt;
+    &lt;meta property=&#34;og:image&#34; content=&#34;https://avatars3.githubusercontent.com/u/1515338?s=300&amp;v=4&#34; /&gt;
 </code></pre>
   </div>
   <footer>
@@ -127,7 +127,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -232,7 +232,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -323,7 +323,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

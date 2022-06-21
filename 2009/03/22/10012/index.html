@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>vimのtips2 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="vimのtips2" />
@@ -39,7 +39,7 @@
 &ldquo;ステータスラインを長さによって表示項目変更
 &ldquo;:function STline()
 &ldquo;if winwidth(0) &amp;gt;= 120
-&quot; set statusline=%&amp;lt;%f\ %m%r%h%w%=%{&#39;[&#39;.(&amp;fenc!=&#39;&#39;?&amp;fenc:&amp;enc).&#39;][&#39;.&amp;ff.&#39;]&#39;}\ \ %2*%y%0*%6l,%c%V%1*%8P
+&quot; set statusline=%&amp;lt;%f\ %m%r%h%w%=%{&rsquo;[&rsquo;.(&amp;fenc!=&rsquo;&rsquo;?&amp;fenc:&amp;enc).&rsquo;][&rsquo;.&amp;ff.&rsquo;]&rsquo;}\ \ %2*%y%0*%6l,%c%V%1*%8P
 &ldquo;else
 &quot; set stl&amp;
 &ldquo;endif
@@ -48,8 +48,8 @@
 &ldquo;autocmd VimResized * call STline()" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2009/03/22/10012/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2009-03-22T00:00:00&#43;09:00" />
-<meta property="article:modified_time" content="2009-03-22T00:00:00&#43;09:00" />
+<meta property="article:published_time" content="2009-03-22T00:00:00+09:00" />
+<meta property="article:modified_time" content="2009-03-22T00:00:00+09:00" />
 
 
     
@@ -115,7 +115,7 @@ if (!doNotTrack) {
 <p>&ldquo;ステータスラインを長さによって表示項目変更<br>
 &ldquo;:function STline()<br>
 &ldquo;if winwidth(0) &amp;gt;= 120<br>
-&quot; set statusline=%&amp;lt;%f\ %m%r%h%w%=%{'['.(&amp;fenc!=''?&amp;fenc:&amp;enc).']['.&amp;ff.']'}\ \ %2*%y%0*%6l,%c%V%1*%8P<br>
+&quot; set statusline=%&amp;lt;%f\ %m%r%h%w%=%{&rsquo;[&rsquo;.(&amp;fenc!=&rsquo;&rsquo;?&amp;fenc:&amp;enc).&rsquo;][&rsquo;.&amp;ff.&rsquo;]&rsquo;}\ \ %2*%y%0*%6l,%c%V%1*%8P<br>
 &ldquo;else<br>
 &quot; set stl&amp;<br>
 &ldquo;endif<br>
@@ -163,7 +163,7 @@ if (!doNotTrack) {
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -268,7 +268,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -359,7 +359,7 @@ if (!doNotTrack) {
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

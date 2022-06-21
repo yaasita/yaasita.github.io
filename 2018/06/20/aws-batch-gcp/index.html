@@ -7,24 +7,23 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>GCPでAWS Batch的な事をやる | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="GCPでAWS Batch的な事をやる" />
 <meta property="og:description" content="こんな感じにS3になんか置いて、ファイルがあったら起動して、終わったらshutdownするみたいな奴
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   GCPはインスタンスの起動停止が早いので結構良い感じ
+GCPはインスタンスの起動停止が早いので結構良い感じ
 Lambda 処理するファイルが存在して、GCPが動いてたら起動かける
- GCP キュー代わりのファイル消してから
+GCP キュー代わりのファイル消してから
 bootしてから3分後に実行（ちょっとインターバルないとインスタンスに入るのが大変になる）
 処理の最後でshutdownすればOK
 /etc/systemd/system/gcp-calc.service
-[Unit] Description=gcp-calc Wants=network-pre.target After=multi-user.target [Install] WantedBy=multi-user.target [Service] ExecStart=/root/run.sh Type=oneshot  /etc/systemd/system/gcp-calc.timer
-[Unit] Description=gcp calc [Timer] OnBootSec=3min [Install] WantedBy=timers.target  " />
+[Unit] Description=gcp-calc Wants=network-pre.target After=multi-user.target [Install] WantedBy=multi-user.target [Service] ExecStart=/root/run.sh Type=oneshot /etc/systemd/system/gcp-calc.timer
+[Unit] Description=gcp calc [Timer] OnBootSec=3min [Install] WantedBy=timers.target " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2018/06/20/aws-batch-gcp/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2018-06-20T23:46:45&#43;09:00" />
-<meta property="article:modified_time" content="2018-06-20T23:46:45&#43;09:00" />
+<meta property="article:published_time" content="2018-06-20T23:46:45+09:00" />
+<meta property="article:modified_time" content="2018-06-20T23:46:45+09:00" />
 
 
     
@@ -63,15 +62,7 @@ if (!doNotTrack) {
   </header>
   <div class="content">
     <p>こんな感じにS3になんか置いて、ファイルがあったら起動して、終わったらshutdownするみたいな奴</p>
-<p><a href="#"><img id="tumblr-img" src=""></a></p>
-<script>
-function callback(data){
-    var photos = data.response.posts[0].photos;
-    document.getElementById("tumblr-img").parentNode.href = photos[0].original_size.url;
-    document.getElementById("tumblr-img").src = photos[0].original_size.url;
-}
-</script>
-<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=175076628407&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
+<p><a href="https://yaasita.tk/blog/2022/gcp-aws-batch.png"><img src="https://yaasita.tk/blog/2022/gcp-aws-batch.png" alt="gcp-aws-batch"></a></p>
 <p>GCPはインスタンスの起動停止が早いので結構良い感じ</p>
 <h2 id="lambda">Lambda</h2>
 <p>処理するファイルが存在して、GCPが動いてたら起動かける</p>
@@ -148,7 +139,7 @@ WantedBy=timers.target
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -253,7 +244,7 @@ WantedBy=timers.target
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -344,7 +335,7 @@ WantedBy=timers.target
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

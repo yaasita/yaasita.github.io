@@ -28,7 +28,7 @@ https://qiita.com/advent-calendar/2017/systemd-nspawn</description>
 こんな感じの状態ね
 pub rsa2048 2017-04-09 [SC] XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX uid [ultimate] yamasita &amp;lt;yamasita@example.net&amp;gt; sub rsa2048 2017-04-09 [E] sub elg2048 2017-12-04 [E] んで、普通にgpg -e で暗号化すると新しい elg2048 の方が使われてしまう
 rsa2048を使いたくなったらこんな感じでrsa2048の方のIDを指定して暗号化する
-gpg --recipient BBBBBBBBBBB12345! -v -e memo  IDは&amp;ndash;edit-keysとかやれば見れるお
+gpg --recipient BBBBBBBBBBB12345! -v -e memo IDは&amp;ndash;edit-keysとかやれば見れるお
 あと、注意点として副鍵は追加しても古い鍵はしばらく残しておくこと
 送信側がすぐ、新しい鍵を入れてくれるとも限らないし古い鍵で暗号化されたものを復号化できなくなる
 主鍵は、副鍵を署名するだけのものであって、副鍵の秘密鍵は取っておかなきゃいけないのです</description>
@@ -42,7 +42,7 @@ gpg --recipient BBBBBBBBBBB12345! -v -e memo  IDは&amp;ndash;edit-keysとかや
       <guid>https://yaasita.github.io/2017/12/03/mona-coin/</guid>
       <description>モナコインをマイニングしてみる
 cpuminer-multiでやってみた
-スコア  IDCF Cloud (Light.S1) メモリ1GB 仮想1CPU =&amp;gt; 17.48 kH/s 自宅PC Core i5-4460 @ 3.20GHz 4コア メモリ 4GB =&amp;gt; 376 kH/s ノートパソコン LB-C110B Celeron 1037U 2コア/1.80GHz メモリ8GB =&amp;gt; 91 kH/s  まとめ CPUマイニングなんてやるもんじゃない←結論</description>
+スコア IDCF Cloud (Light.S1) メモリ1GB 仮想1CPU =&amp;gt; 17.48 kH/s 自宅PC Core i5-4460 @ 3.20GHz 4コア メモリ 4GB =&amp;gt; 376 kH/s ノートパソコン LB-C110B Celeron 1037U 2コア/1.80GHz メモリ8GB =&amp;gt; 91 kH/s まとめ CPUマイニングなんてやるもんじゃない←結論</description>
     </item>
     
     <item>
@@ -54,7 +54,7 @@ cpuminer-multiでやってみた
       <description>長年使ってたTeratermからConEmuへ移行した
 SSHクライアントはputtyを使ってる
 WSL経由でも良かったんだけど、なんかVimのvisualモードで背景色が変わらなかったり表示が微妙だったので結局putty使った
-良かった点  絵文字も表示できる タブが便利(TeratermもCollectorで出来るけどこっちの方が使いやすい) F1キーをリモート側に送るとかそういう設定がしやすい  微妙な点  Alt-Vでペーストしてたけどこれが使えない(設定方法が分からない)  まとめ ConEmu入れた後putty設定したり、微妙に面倒だけど使いやすい</description>
+良かった点 絵文字も表示できる タブが便利(TeratermもCollectorで出来るけどこっちの方が使いやすい) F1キーをリモート側に送るとかそういう設定がしやすい 微妙な点 Alt-Vでペーストしてたけどこれが使えない(設定方法が分からない) まとめ ConEmu入れた後putty設定したり、微妙に面倒だけど使いやすい</description>
     </item>
     
     <item>
@@ -65,8 +65,8 @@ WSL経由でも良かったんだけど、なんかVimのvisualモードで背�
       <guid>https://yaasita.github.io/2017/11/29/vita-new-version/</guid>
       <description>3.65時点だと対応してなかったけど、3.67でTLS1.2対応したようです🎉
 公式には
- システムソフトウェアにおいて、動作の安定性を改善しました。
- としか書いてないけど</description>
+システムソフトウェアにおいて、動作の安定性を改善しました。
+としか書いてないけど</description>
     </item>
     
     <item>
@@ -75,8 +75,7 @@ WSL経由でも良かったんだけど、なんかVimのvisualモードで背�
       <pubDate>Fri, 24 Nov 2017 01:54:56 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2017/11/24/ssl-check/</guid>
-      <description>なんか必要だったので、シェルとかでも良いけど
- </description>
+      <description>なんか必要だったので、シェルとかでも良いけど</description>
     </item>
     
     <item>
@@ -91,8 +90,7 @@ Reject clipboard write access from remoteのエラーが出る
 直すには Setup -&amp;gt; Addtional settings -&amp;gt; Control Sequenceタブ
 と進んで該当箇所を設定すればOK
 その下にNotifyの設定もある
-
-参考リンク  リモートの tmux でコピーした内容のローカルのクリップボードへの反映   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+参考リンク リモートの tmux でコピーした内容のローカルのクリップボードへの反映 </description>
     </item>
     
     <item>
@@ -103,8 +101,8 @@ Reject clipboard write access from remoteのエラーが出る
       <guid>https://yaasita.github.io/2017/11/07/s3fs-public-bucket/</guid>
       <description>s3fsを使ってこんな感じのバケットポリシーのs3をマウントするときのやつ
 (hogehogeバケットとその中身を特定IPアドレスの人に開放する)
-{ &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Id&amp;quot;: &amp;quot;Policy1509977001523&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1509976998204&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;s3:*&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::hogehoge&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;IpAddress&amp;quot;: { &amp;quot;aws:SourceIp&amp;quot;: &amp;quot;203.0.113.1&amp;quot; } } }, { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1509976998204&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;s3:*&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::hogehoge/*&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;IpAddress&amp;quot;: { &amp;quot;aws:SourceIp&amp;quot;: &amp;quot;203.0.113.1&amp;quot; } } } ] }  んでs3fsはこんな感じ
-s3fs -o public_bucket=1,rw,allow_other,umask=0022,endpoint=ap-northeast-1,default_acl=public-read hogehoge /mnt  public_bucketがポイント</description>
+{ &amp;quot;Version&amp;quot;: &amp;quot;2012-10-17&amp;quot;, &amp;quot;Id&amp;quot;: &amp;quot;Policy1509977001523&amp;quot;, &amp;quot;Statement&amp;quot;: [ { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1509976998204&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;s3:*&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::hogehoge&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;IpAddress&amp;quot;: { &amp;quot;aws:SourceIp&amp;quot;: &amp;quot;203.0.113.1&amp;quot; } } }, { &amp;quot;Sid&amp;quot;: &amp;quot;Stmt1509976998204&amp;quot;, &amp;quot;Effect&amp;quot;: &amp;quot;Allow&amp;quot;, &amp;quot;Principal&amp;quot;: &amp;quot;*&amp;quot;, &amp;quot;Action&amp;quot;: &amp;quot;s3:*&amp;quot;, &amp;quot;Resource&amp;quot;: &amp;quot;arn:aws:s3:::hogehoge/*&amp;quot;, &amp;quot;Condition&amp;quot;: { &amp;quot;IpAddress&amp;quot;: { &amp;quot;aws:SourceIp&amp;quot;: &amp;quot;203.0.113.1&amp;quot; } } } ] } んでs3fsはこんな感じ
+s3fs -o public_bucket=1,rw,allow_other,umask=0022,endpoint=ap-northeast-1,default_acl=public-read hogehoge /mnt public_bucketがポイント</description>
     </item>
     
     <item>
@@ -114,15 +112,13 @@ s3fs -o public_bucket=1,rw,allow_other,umask=0022,endpoint=ap-northeast-1,defaul
       
       <guid>https://yaasita.github.io/2017/10/26/pkg-update/</guid>
       <description>本番環境と検証環境があり、パッケージのアップデートを行いたい場合
- 10月1日 検証環境のパッケージを上げる 11月1日 検証環境で問題なければ本番も上げる  この時、それぞれの日に本番環境、検証環境で apt update, apt upgradeをすると本番、検証で差分が生じ検証されていないパッケージもアップデートされる可能性がある
+10月1日 検証環境のパッケージを上げる 11月1日 検証環境で問題なければ本番も上げる この時、それぞれの日に本番環境、検証環境で apt update, apt upgradeをすると本番、検証で差分が生じ検証されていないパッケージもアップデートされる可能性がある
 正しくは10月1日に検証環境、本番環境で 同時 に以下のコマンドを実行
-apt-get update apt-get upgrade --download-only  検証環境で以下を実行
-apt-get upgrade  問題なければ本番環境で以下を実行
-apt-get upgrade  ポイントは apt-get update, apt-get upgrade --download-only を検証,本番環境ともに同じタイミングで実行して更新予定のパッケージを揃えておくこと
+apt-get update apt-get upgrade --download-only 検証環境で以下を実行
+apt-get upgrade 問題なければ本番環境で以下を実行
+apt-get upgrade ポイントは apt-get update, apt-get upgrade --download-only を検証,本番環境ともに同じタイミングで実行して更新予定のパッケージを揃えておくこと
 またubuntuは/etc/apt/apt.conf.d/10periodicの「APT::Periodic::Update-Package-Lists」を0にしておかないと毎日自動でapt-get updateが走るので注意すること
-図にするとこんな感じ
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+図にするとこんな感じ</description>
     </item>
     
     <item>
@@ -133,7 +129,7 @@ apt-get upgrade  ポイントは apt-get update, apt-get upgrade --download-only
       <guid>https://yaasita.github.io/2017/10/15/bank-tutyo/</guid>
       <description>記帳に行くのがめんどくさくなったので全部捨ててみた
 Web通帳の各行保存期間はこんな感じ
- ゆうちょ銀行  ゆうちょダイレクトプラス: 15ヶ月分   三菱東京UFJ銀行(三菱東京ＵＦＪダイレクト)  Eco通帳: 25ヵ月分   横浜銀行(はまぎんマイダイレクト)  マイスマート通帳: 36ヵ月分    </description>
+ゆうちょ銀行 ゆうちょダイレクトプラス: 15ヶ月分 三菱東京UFJ銀行(三菱東京ＵＦＪダイレクト) Eco通帳: 25ヵ月分 横浜銀行(はまぎんマイダイレクト) マイスマート通帳: 36ヵ月分 </description>
     </item>
     
     <item>
@@ -143,7 +139,7 @@ Web通帳の各行保存期間はこんな感じ
       
       <guid>https://yaasita.github.io/2017/10/12/woff/</guid>
       <description>ワールド オブ ファイナルファンタジーの攻略ページまとめ
- アビリティ  アビリティ一覧・効果・大技組み合わせ   クエスト・ストーリー  よりみちクエスト 隠しマップの行き方 ストーリー攻略 マップ クリア後隠しダンジョン XG倒したときのパーティ   アイテム  マディンの記憶入手方法 ミラーストーン一覧と入手法   ミラージュ  WOFF攻略!ゴブリンプリンセス★、アンデッドセレブ★、クイーンアチョ★入手法 最強ミラージュランキング！ 図鑑1-10 図鑑11-20 図鑑21-22    </description>
+アビリティ アビリティ一覧・効果・大技組み合わせ クエスト・ストーリー よりみちクエスト 隠しマップの行き方 ストーリー攻略 マップ クリア後隠しダンジョン XG倒したときのパーティ アイテム マディンの記憶入手方法 ミラーストーン一覧と入手法 ミラージュ WOFF攻略!ゴブリンプリンセス★、アンデッドセレブ★、クイーンアチョ★入手法 最強ミラージュランキング！ 図鑑1-10 図鑑11-20 図鑑21-22 </description>
     </item>
     
     <item>
@@ -153,16 +149,13 @@ Web通帳の各行保存期間はこんな感じ
       
       <guid>https://yaasita.github.io/2017/09/29/maildrop-admin/</guid>
       <description>フロントをVue.jsでこんな感じの構成
-
 動作の様子
-
 maildropの設定ファイル(~/.mailfilter)でも良いんだけどちょっと
 日付が入れられないのとエントリーが増えてくるとちょっと管理しきれなくなった
 一旦こんな感じのJSONを経由することでマシにした感じ
- &amp;quot;JUNKMAIL&amp;quot;: [ { &amp;quot;header&amp;quot;: &amp;quot;From&amp;quot;, &amp;quot;regex&amp;quot;: &amp;quot;.*atmarkit.co.jp&amp;quot;, &amp;quot;time&amp;quot;: &amp;quot;2017/05/08 01:58&amp;quot; }, { &amp;quot;header&amp;quot;: &amp;quot;From&amp;quot;, &amp;quot;regex&amp;quot;: &amp;quot;.*facebookmail.com&amp;quot;, &amp;quot;time&amp;quot;: &amp;quot;2017/05/08 01:58&amp;quot; }, サーバサイドの実装
+&amp;#34;JUNKMAIL&amp;#34;: [ { &amp;#34;header&amp;#34;: &amp;#34;From&amp;#34;, &amp;#34;regex&amp;#34;: &amp;#34;.*atmarkit.co.jp&amp;#34;, &amp;#34;time&amp;#34;: &amp;#34;2017/05/08 01:58&amp;#34; }, { &amp;#34;header&amp;#34;: &amp;#34;From&amp;#34;, &amp;#34;regex&amp;#34;: &amp;#34;.*facebookmail.com&amp;#34;, &amp;#34;time&amp;#34;: &amp;#34;2017/05/08 01:58&amp;#34; }, サーバサイドの実装
 https://github.com/yaasita/maildrop-admin
-.mailfilterへの変換処理
-  function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img0&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img0&#34;).src = photos[0].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).src = photos[1].original_size.url; }   </description>
+.mailfilterへの変換処理</description>
     </item>
     
     <item>
@@ -173,13 +166,11 @@ https://github.com/yaasita/maildrop-admin
       <guid>https://yaasita.github.io/2017/08/22/imap-iptables/</guid>
       <description>httpsのほかにもう一個ポートのアクセス制限を面倒見たくなかったのでなんとなくやってみた
 httpsでWebUIにアクセスしたらIP許可リストに入れるって処理
-
 PerlのCGIからGo言語で書いたバイナリを呼んでiptablesを更新する的な処理
 GoとPerl間はJSONで受け渡す
 Goで書いたのはSUIDビット立てたバイナリで叩きたいと思ったから
 （なんかうまくいかなくて結局sudoでやったけど)
-https://github.com/yaasita/mail-iptables
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+https://github.com/yaasita/mail-iptables</description>
     </item>
     
     <item>
@@ -190,18 +181,18 @@ https://github.com/yaasita/mail-iptables
       <guid>https://yaasita.github.io/2017/08/12/smime/</guid>
       <description>StartSSL CSR作る
 emailaddressにS/MIME設定したいアドレスを入れる
-openssl req -newkey rsa:2048 -keyout yourname.key -out yourname.csr  証明書が送られてくるのでこんな感じでまとめて
------BEGIN PRIVATE KEY----- ... -----END PRIVATE KEY----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----  pkcs12に変換してthunderbirdにインポートする
-openssl pkcs12 -export -in sakusei.pem -out email.pfx  なんか送られてきた中間証明書がCRLFとLFが混在してるので直した
+openssl req -newkey rsa:2048 -keyout yourname.key -out yourname.csr 証明書が送られてくるのでこんな感じでまとめて
+-----BEGIN PRIVATE KEY----- ... -----END PRIVATE KEY----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE----- pkcs12に変換してthunderbirdにインポートする
+openssl pkcs12 -export -in sakusei.pem -out email.pfx なんか送られてきた中間証明書がCRLFとLFが混在してるので直した
 チェーンはこんな感じになってた
-StartCom Certification Authority |_ StartCom Certification Authority ECC |_ StartCom CC2 ICA |_ 自分のメールアドレス  そういやCAAレコードを検証しなかったけどいいのかね？
+StartCom Certification Authority |_ StartCom Certification Authority ECC |_ StartCom CC2 ICA |_ 自分のメールアドレス そういやCAAレコードを検証しなかったけどいいのかね？
 でここまでやって気づいたんだけどStartComの証明書が失効扱いで全然検証通らなかった
 これはGmailも同じなのでStartCom使うのは中止
 COMODO 今度COMODOを使うことになったんだけど既にChromeだとKEYGEN要素が使えないらしくFirefoxでアクセスするしかない
 (コードもselect[_moz-type=&amp;quot;-mozilla-keygen&amp;quot;]になってるし)
 こっちはフォームから申請して、リンククリックすればすぐに証明書がFirefoxに入るのでそれをエクスポートしてthunderbirdに入れればOK
 チェーンはこんな感じ
-COMODO RSA Certification Authority |_COMODO RSA Client Authentication and Secure Email CA |_ 自分のメールアドレス  まとめ Let&amp;rsquo;s EncryptがS/MIME対応してほしい</description>
+COMODO RSA Certification Authority |_COMODO RSA Client Authentication and Secure Email CA |_ 自分のメールアドレス まとめ Let&amp;rsquo;s EncryptがS/MIME対応してほしい</description>
     </item>
     
     <item>
@@ -215,10 +206,10 @@ COMODO RSA Certification Authority |_COMODO RSA Client Authentication and Secure
 DANEはクライアント用でこっちはCA用のレコードらしい
 例えばこんな感じのCAAレコードを書いて Let&amp;rsquo;s Encryptで発行しようとすると
 こんなエラーが返される
-;; ANSWER SECTION: yaasita.tk. 60 IN CAA 0 issue &amp;quot;comodoca.com&amp;quot; yaasita.tk. 60 IN CAA 0 issuewild &amp;quot;\;&amp;quot; yaasita.tk. 60 IN CAA 0 iodef &amp;quot;mailto:alert@yaasita.net&amp;quot;  この場合、hoge.yaasita.tk. みたなサブドメインもcomodocaでしか発行できなくなる
+;; ANSWER SECTION: yaasita.tk. 60 IN CAA 0 issue &amp;quot;comodoca.com&amp;quot; yaasita.tk. 60 IN CAA 0 issuewild &amp;quot;\;&amp;quot; yaasita.tk. 60 IN CAA 0 iodef &amp;quot;mailto:alert@yaasita.net&amp;quot; この場合、hoge.yaasita.tk. みたなサブドメインもcomodocaでしか発行できなくなる
 (設定はサブドメインに継承される)
 ただし、上書きは可能なのでCAAを以下のようにすればLet&amp;rsquo;s Encryptだけから発行できるように変わる
-hoge IN CAA 0 issue &amp;quot;letsencrypt.org&amp;quot; hoge IN CAA 0 issuewild &amp;quot;;&amp;quot; hoge IN CAA 0 iodef &amp;quot;mailto:alert@yaasita.net&amp;quot;  例えば、google.com のCAAは以下のようになっているので、Google Trust Servicesおよびsymantecからしか発行できない
+hoge IN CAA 0 issue &amp;quot;letsencrypt.org&amp;quot; hoge IN CAA 0 issuewild &amp;quot;;&amp;quot; hoge IN CAA 0 iodef &amp;quot;mailto:alert@yaasita.net&amp;quot; 例えば、google.com のCAAは以下のようになっているので、Google Trust Servicesおよびsymantecからしか発行できない
 仮に drive.google.com のwebrootに任意のファイルを置ける脆弱性があったとしても(http-01で)Let&amp;rsquo;s Encryptの証明書を発行することはできないし、WoSignで偽の証明書を発行されることもない
 (WoSignがCAA無視してたら意味ないけど)
 google.com. 84592 IN CAA 0 issue &amp;quot;pki.</description>
@@ -233,14 +224,11 @@ google.com. 84592 IN CAA 0 issue &amp;quot;pki.</description>
       <description>edit-slack.vim をちょっと直した
 主な変更点は以下の通り
 reactionを表示するようにした
-
 アップロードされたファイルのダウンロードリンクを表示
-
 キーワード検索ができるようにした
-例) vim slack://sw/hogehoge vim slack://sw/from:@yamasita vim slack://sw/on:today  取っ散らかってたコードをちょっと直した
+例) vim slack://sw/hogehoge vim slack://sw/from:@yamasita vim slack://sw/on:today 取っ散らかってたコードをちょっと直した
 https://github.com/yaasita/edit-slack/compare/v0.2.0...v0.8.1
-ちょっと見ない間にSlackもなんか変わってて、今までのTest tokenがlegacy tokenって名前になってたり、botアクセス、userアクセスで細かくAPI使用制限がされてるようになってた(前からか？)
- function callback(data){ photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;tumblr-img2&#34;).src = photos[1].original_size.url; }   </description>
+ちょっと見ない間にSlackもなんか変わってて、今までのTest tokenがlegacy tokenって名前になってたり、botアクセス、userアクセスで細かくAPI使用制限がされてるようになってた(前からか？)</description>
     </item>
     
     <item>
@@ -261,8 +249,8 @@ https://github.com/yaasita/edit-slack/compare/v0.2.0...v0.8.1
       <guid>https://yaasita.github.io/2017/07/22/apache-log/</guid>
       <description>apacheのログフォーマットはJSONにしておいた方がパースが楽という話
 こんな感じにする
-LogFormat &amp;quot;\ { \ \&amp;quot;host\&amp;quot;:\&amp;quot;%V\&amp;quot;, \ \&amp;quot;method\&amp;quot;:\&amp;quot;%m\&amp;quot;, \ \&amp;quot;port\&amp;quot;:\&amp;quot;%p\&amp;quot;, \ \&amp;quot;processingTime\&amp;quot;:\&amp;quot;%D\&amp;quot;, \ \&amp;quot;protocol\&amp;quot;:\&amp;quot;%H\&amp;quot;, \ \&amp;quot;query\&amp;quot;:\&amp;quot;%q\&amp;quot;, \ \&amp;quot;referer\&amp;quot;:\&amp;quot;%{Referer}i\&amp;quot;, \ \&amp;quot;remoteIP\&amp;quot;:\&amp;quot;%a\&amp;quot;, \ \&amp;quot;request\&amp;quot;:\&amp;quot;%U\&amp;quot;, \ \&amp;quot;responseByte\&amp;quot;:\&amp;quot;%B\&amp;quot;, \ \&amp;quot;status\&amp;quot;:\&amp;quot;%&amp;gt;s\&amp;quot;, \ \&amp;quot;time\&amp;quot;:\&amp;quot;%t\&amp;quot;, \ \&amp;quot;unixtime\&amp;quot;:\&amp;quot;%{%s}t\&amp;quot;, \ \&amp;quot;userAgent\&amp;quot;:\&amp;quot;%{User-agent}i\&amp;quot;, \ \&amp;quot;user\&amp;quot;:\&amp;quot;%u\&amp;quot; \ }&amp;quot; \ leapache  吐き出し
-CustomLog ${APACHE_LOG_DIR}/access-json.log leapache  https://blog.logentries.com/2014/08/json-logging-in-apache-and-nginx-with-logentries/</description>
+LogFormat &amp;quot;\ { \ \&amp;quot;host\&amp;quot;:\&amp;quot;%V\&amp;quot;, \ \&amp;quot;method\&amp;quot;:\&amp;quot;%m\&amp;quot;, \ \&amp;quot;port\&amp;quot;:\&amp;quot;%p\&amp;quot;, \ \&amp;quot;processingTime\&amp;quot;:\&amp;quot;%D\&amp;quot;, \ \&amp;quot;protocol\&amp;quot;:\&amp;quot;%H\&amp;quot;, \ \&amp;quot;query\&amp;quot;:\&amp;quot;%q\&amp;quot;, \ \&amp;quot;referer\&amp;quot;:\&amp;quot;%{Referer}i\&amp;quot;, \ \&amp;quot;remoteIP\&amp;quot;:\&amp;quot;%a\&amp;quot;, \ \&amp;quot;request\&amp;quot;:\&amp;quot;%U\&amp;quot;, \ \&amp;quot;responseByte\&amp;quot;:\&amp;quot;%B\&amp;quot;, \ \&amp;quot;status\&amp;quot;:\&amp;quot;%&amp;gt;s\&amp;quot;, \ \&amp;quot;time\&amp;quot;:\&amp;quot;%t\&amp;quot;, \ \&amp;quot;unixtime\&amp;quot;:\&amp;quot;%{%s}t\&amp;quot;, \ \&amp;quot;userAgent\&amp;quot;:\&amp;quot;%{User-agent}i\&amp;quot;, \ \&amp;quot;user\&amp;quot;:\&amp;quot;%u\&amp;quot; \ }&amp;quot; \ leapache 吐き出し
+CustomLog ${APACHE_LOG_DIR}/access-json.log leapache https://blog.logentries.com/2014/08/json-logging-in-apache-and-nginx-with-logentries/</description>
     </item>
     
     <item>
@@ -272,9 +260,9 @@ CustomLog ${APACHE_LOG_DIR}/access-json.log leapache  https://blog.logentries.co
       
       <guid>https://yaasita.github.io/2017/07/16/idcf-cloud/</guid>
       <description>conohaから引っ越し
- ソースIP、パブリックIPの概念がちょっと難しい OP25Bはされてない 多分VMwareで動いてる conohaよりはファイヤーウォールとか細かく設定できるけど、ポートフォワードの設定とかしなきゃいけないので若干面倒  conohaとの比較 最安プランで比べてみる
+ソースIP、パブリックIPの概念がちょっと難しい OP25Bはされてない 多分VMwareで動いてる conohaよりはファイヤーウォールとか細かく設定できるけど、ポートフォワードの設定とかしなきゃいけないので若干面倒 conohaとの比較 最安プランで比べてみる
 転送量のリミットはあるものの総じてIDCFの方が良いかもしれない
-   機能 conoha IDCF     メモリ 512MB 1GB   料金 680円 540円   CPU(bogomips) 4589.37 5600.00   Disk 20GB 15GB   転送量課金 なし 3,240GB/月まで無料   仮想方式 kvm VMware    </description>
+機能 conoha IDCF メモリ 512MB 1GB 料金 680円 540円 CPU(bogomips) 4589.37 5600.00 Disk 20GB 15GB 転送量課金 なし 3,240GB/月まで無料 仮想方式 kvm VMware </description>
     </item>
     
     <item>
@@ -283,8 +271,7 @@ CustomLog ${APACHE_LOG_DIR}/access-json.log leapache  https://blog.logentries.co
       <pubDate>Sat, 15 Jul 2017 23:53:05 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2017/07/15/github-code-search/</guid>
-      <description>githubのAPIでコードスニペット探すと捗る
-  </description>
+      <description>githubのAPIでコードスニペット探すと捗る</description>
     </item>
     
   </channel>

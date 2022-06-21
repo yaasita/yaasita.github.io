@@ -280,26 +280,20 @@ http://sonic64.com/2006-04-05.html </description>
       <pubDate>Sun, 06 Dec 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/12/06/7738/</guid>
-      <description> インストールはDebian Lennyならaptitudeで簡単に入る
+      <description>インストールはDebian Lennyならaptitudeで簡単に入る
 そんで使い方
 基本的な使い方とかはこことか見れば大体分かる
 Maildirを指定して
-mutt -f ~/Maildirこれでとりあえず見れる
+mutt -f ~/Maildir これでとりあえず見れる
 メールボックスとかは一々指定するのは面倒なので~/.muttrcを作成して
-set folder=&#34;~/Maildir&#34;
-set spoolfile=&#34;~/Maildir&#34;
-set keep_flagged=yes
-set mbox=&#34;&#34;
-set postponed=&#34;/tmp/postponed&#34;
-set sort=&#34;reverse-date-received&#34;
-↑みたいなのを書いておく意味はここら辺を見るとわかるかも
+set folder=&amp;quot;~/Maildir&amp;quot; set spoolfile=&amp;quot;~/Maildir&amp;quot; set keep_flagged=yes set mbox=&amp;quot;&amp;quot; set postponed=&amp;quot;/tmp/postponed&amp;quot; set sort=&amp;quot;reverse-date-received&amp;quot; ↑みたいなのを書いておく意味はここら辺を見るとわかるかも
 設定ファイルを書けば以降はmuttのみで起動できる
 mutt操作方法
 PageUpとPageDownで次とか後のメールを選択（vim風にjkでもできるけど削除が選択できない）
 ?でヘルプ
 mで新規メール作成
 参考リンク
-http://www.emaillab.org/mutt/whatis.html </description>
+http://www.emaillab.org/mutt/whatis.html</description>
     </item>
     
     <item>
@@ -308,7 +302,7 @@ http://www.emaillab.org/mutt/whatis.html </description>
       <pubDate>Sat, 05 Dec 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/12/05/7861/</guid>
-      <description> OP25Bを実施しているISPの場合、25番ポートへの出力が制限されているからリレーしてもらうように設定する
+      <description>OP25Bを実施しているISPの場合、25番ポートへの出力が制限されているからリレーしてもらうように設定する
 /etc/postfix/main.cfを編集 (hoge.ne.jpがSMPTサーバーだとする）
 ispauthはユーザー名とパスワードを書くファイル名前はなんでもOK
 relayhost = [hoge.ne.jp]:587
@@ -320,7 +314,6 @@ ispauthには以下のようなものを書く
 [プロバイダのSMTPサーバー]:587 プロバイダのユーザーID:プロバイダのパスワード
 サーバーがhoge.ne.jp、ログインIDがfoobar、パスワードがbuzzだった場合は以下のように書く
 [hoge.ne.jp]:587 foobar:buzz
-
 そんで以下のコマンド投入
 chmod 640 /etc/postfix/ispauth
 postmap /etc/postfix/ispauth
@@ -335,10 +328,8 @@ EHLO hoge.ne.jp
 参考リンク
 http://www.aconus.com/~oyaji/mail2/op25b.htm
 ※注意 SMTP認証を使う場合はlibsasl2-modulesがインストールされていることを確認してください
-
 どうしても出来なかったら↓みたいな感じでパケットキャプチャー→Wiresharkで見て考える感じで
-tcpdump -s 1500 ip host ?.?.?.? -w out.cap
- </description>
+tcpdump -s 1500 ip host ?.?.?.? -w out.cap</description>
     </item>
     
     <item>
@@ -347,7 +338,7 @@ tcpdump -s 1500 ip host ?.?.?.? -w out.cap
       <pubDate>Sat, 05 Dec 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/12/05/7840/</guid>
-      <description> Debian Lennyで試した。
+      <description>Debian Lennyで試した。
 Red hat系だとtmpwatchとかあるみたいだけど無いのでこれを使う
 まずはaptitudeでインストール
 インストールすると/etc/cron.daily/tmpreaperが作成される
@@ -356,7 +347,6 @@ Red hat系だとtmpwatchとかあるみたいだけど無いのでこれを使�
 /etc/tmpreaper.confをいじる
 まずはワーニングが出るので13行目あたりにあるSHOWWARNINGをコメント化する
 #SHOWWARNING=true
-
 次にオプションを設定する各オプションの意味は以下の通り
 TMPREAPER_TIME・・・どのくらいアクセスがないファイルを削除するか？設定値はデフォルトで7dつまり7d以上アクセスがないと削除
 TMPREAPER_PROTECT_EXTRA・・・削除しては駄目な名前を指定
@@ -373,7 +363,6 @@ TMPREAPER_ADDITIONALOPTIONS・・・他に指定したいオプションがあ�
 --protect &#39;/tmp/lost+found&#39; \
 --protect &#39;/tmp/journal.dat&#39; \
 --protect &#39;/tmp/quota.{user,group}&#39; \
-
 ※注意
 デフォルトのシェルだと--ctimeが設定されています↓みたいに
 nice -n10 tmpreaper --delay=$TMPREAPER_DELAY --mtime-dir --symlinks $TMPREAPER_TIME \
@@ -381,8 +370,7 @@ $TMPREAPER_ADDITIONALOPTIONS \
 --ctime \
 これだとcronでlocateのDBを作っているので、アクセスタイムが更新され
 いつまで経っても削除されません。（ctimeオプションはatime+ctimeのチェックをします）
-用途によってはここを--mtimeに変更してもいいと思います
- </description>
+用途によってはここを--mtimeに変更してもいいと思います</description>
     </item>
     
     <item>
@@ -391,33 +379,17 @@ $TMPREAPER_ADDITIONALOPTIONS \
       <pubDate>Tue, 01 Dec 2009 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2009/12/01/7882/</guid>
-      <description> メールの容量を制限する（クォータの設定）するには？
+      <description>メールの容量を制限する（クォータの設定）するには？
 Plugin settingsの部分に以下を追記
 ↓がグローバルなクォータ設定（ユーザー個別に設定すればそちらが優先される）
-参考リンク→http://wiki.dovecot.org/Quota/1.0
-plugin {
-quota = maildir:storage=10240:messages=1000
-}
-上記の設定後
+参考リンク→ http://wiki.dovecot.org/Quota/1.0
+plugin { quota = maildir:storage=10240:messages=1000 } 上記の設定後
 protocol imapに次の文を追記
-参考リンク→http://wiki.dovecot.org/Quota/1.0
-protocol imap {
-mail_plugins = quota imap_quota
-}
-Thunderbirdで試すとクォータが有効なら↓のようなメッセージが出る
-
-で、クォータ当てただけじゃ不便だから古いメッセージから自動で削除してくれるように設定するにはTrashプラグインを使う
-protocol imap {
-mail_plugins = quota imap_quota trash
-}
-plugin {
-quota = maildir:storage=10240:messages=1000
-trash = trash = /etc/dovecot/dovecot-trash.conf
-}
-さっき指定したdovecot-trash.conf　(無ければ作る）　を編集する
+protocol imap { mail_plugins = quota imap_quota } Thunderbirdで試すとクォータが有効なら↓のようなメッセージが出る
+で、クォータ当てただけじゃ不便だから古いメッセージから自動で削除してくれるように設定するには Trashプラグイン を使う
+protocol imap { mail_plugins = quota imap_quota trash } plugin { quota = maildir:storage=10240:messages=1000 trash = trash = /etc/dovecot/dovecot-trash.conf } さっき指定したdovecot-trash.conf　(無ければ作る）　を編集する
 ↓はTrashだけ削除の対象とする例
-1 Trash
-↑のファイルを1行つくればOK </description>
+1 Trash ↑のファイルを1行つくればOK</description>
     </item>
     
     <item>

@@ -13,10 +13,9 @@
       <pubDate>Thu, 27 Dec 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/12/27/1805/</guid>
-      <description> というスクリプトの例
+      <description>というスクリプトの例
 uptimeから取ってくる
-以下は3時間経ったらhoge.shを実行する
- </description>
+以下は3時間経ったらhoge.shを実行する</description>
     </item>
     
     <item>
@@ -31,7 +30,6 @@ uptimeから取ってくる
 unbound.conf
 interface: 0.0.0.0
 access-control: 192.168.0.0/24 allow
-
 3.レコード設定
 local-data: &#34;hoge.net. IN A 192.168.0.4&#34;
 local-data: &#34;hoge.net. IN MX 10 hoge.net.&#34;
@@ -52,13 +50,11 @@ ulimit -n 4140
       <guid>https://yaasita.github.io/2012/12/23/1848/</guid>
       <description>1.インストール
 # apt-get install postfixadmin
-
 2.Webサーバ設定
 /etc/postfixadminに設定ファイルがあるのでリンクを張る
 今回はlighttpdで
 # ln -s /etc/postfixadmin/lighttpd.conf /etc/lighttpd/conf-enabled/60-postfixadmin.conf
 # /etc/init.d/lighttpd restart
-
 3.初期セットアップ
 http://yourdomain.com/postfixadmin/setup.php
 にアクセスしてセットアップ
@@ -88,7 +84,6 @@ http://dotinstall.com/ </description>
 ↓みたいにする
 この例だとvimに必要なパッケージ
 apt-get build-dep vim
-
 http://vim-jp.org/docs/build_linux.html </description>
     </item>
     
@@ -101,7 +96,6 @@ http://vim-jp.org/docs/build_linux.html </description>
       <description> Esc押したらIMEをオフにしてくれれば良いので以下のような設定にした
 あと、無変換キー＋Rでsudoしてくれる設定も追加しておいた
 AutoHotkey.ahk
-
 注意点としてはEscがEscを再帰的に呼んで無限ループするので、Escの頭に$を付ける必要があること
 IMEのOn/Offの切り替えはえらい人がスクリプトを作ってくれていたので、そっちからコピペ
 http://www6.atwiki.jp/eamat/pub/MyScript/Lib/
@@ -139,10 +133,11 @@ http://www.lifehacker.jp/2012/08/120820_raining_fm.html </description>
       <guid>https://yaasita.github.io/2012/11/24/1971/</guid>
       <description> Teratermが新しくなっていたので、ここでまとめておく
 1.TERATERM.INI
- 2.KEYBOARD.CNF
+2.KEYBOARD.CNF
 https://raw.github.com/gist/4140449/2bad78bfe24a407764f13c7055fc0ed452f1affd/KEYBOARD.CNF
 3.テーマファイル
-テーマファイルとかあればhttps://raw.github.com/gist/4140449/91748dba84035a7a0f0ac7dfa8b8ec480b8ed93c/yamasita.ini </description>
+テーマファイルとかあれば
+https://raw.github.com/gist/4140449/91748dba84035a7a0f0ac7dfa8b8ec480b8ed93c/yamasita.ini </description>
     </item>
     
     <item>
@@ -153,11 +148,9 @@ https://raw.github.com/gist/4140449/2bad78bfe24a407764f13c7055fc0ed452f1affd/KEY
       <guid>https://yaasita.github.io/2012/11/22/1990/</guid>
       <description> phpが入ってるディレクトリで
 ctags -a -R --langmap=PHP:.php --php-types=c+f+d+v+i .
-
 でOKみたい
 ↓で種類みれる
 ctags --list-kinds=php
-
 こうすればtagsファイルが作られる
 参考リンク
 http://blog.veryposi.info/programing/php/php-ctags-vim/ </description>
@@ -179,9 +172,8 @@ ThunderbirdDisplay Mail User AgentLightningMailHops</description>
       <pubDate>Sun, 28 Oct 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/10/28/2029/</guid>
-      <description> 
-bashで出来たシステムモニタ
-各ディストリのマークとか出る </description>
+      <description>bashで出来たシステムモニタ
+各ディストリのマークとか出る</description>
     </item>
     
     <item>
@@ -190,15 +182,20 @@ bashで出来たシステムモニタ
       <pubDate>Sat, 20 Oct 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/10/20/2051/</guid>
-      <description> ダッシュボードで使えるよ j（ジェイ） 次のpostへ移動 k（ケー） 前のpostへ移動
-l（エル） like / like解除 n（エヌ） notesを開く / 閉じる r（アール） reblog（別ウィンドウが開く）
+      <description>ダッシュボードで使えるよ
+j（ジェイ） 次のpostへ移動
+k（ケー） 前のpostへ移動
+l（エル） like / like解除
+n（エヌ） notesを開く / 閉じる
+r（アール） reblog（別ウィンドウが開く）
 R（Shift＋アール） 即時reblog
 E（Shift＋イー） キュー（投稿予約）へreblog
 スペース 動画再生？（未確認）
-カーソルキー左 前のページへ カーソルキー右 次のページへ
+カーソルキー左 前のページへ
+カーソルキー右 次のページへ
 z+tab 切り替え
-http://dara-j.asablo.jp/blog/2012/10/17/6605357&amp;amp;nbsp;
-http://www.tumblr.com/tips#keyboard_shortcuts </description>
+http://dara-j.asablo.jp/blog/2012/10/17/6605357
+http://www.tumblr.com/tips#keyboard_shortcuts</description>
     </item>
     
     <item>
@@ -224,22 +221,11 @@ http://www.atmarkit.co.jp/flinux/rensai/linuxtips/254usedpmsx3x.html</descriptio
       <pubDate>Thu, 11 Oct 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/10/11/2089/</guid>
-      <description> 自分がフォローしている人をブログに表示する
-HTMLの編集からどうぞ
- following
-&amp;amp;lt;div&amp;amp;gt;
-{block:Followed} &amp;amp;lt;a href=&#34;{FollowedURL}&#34;&amp;amp;gt;&amp;amp;lt;img src=&#34;{FollowedPortraitURL-48}&#34;/&amp;amp;gt;&amp;amp;lt;/a&amp;amp;gt;
-{/block:Followed}
-&amp;amp;lt;/div&amp;amp;gt;
-{/block:Following}
-
-リンク
-(hogeをユーザ名に変更すること)
-アーカイブ（http://hoge.tumblr.com/archive）ランダム表示（http://hoge.tumblr.com/random）RSS（http://hoge.tumblr.com/rss）携帯向け簡易表示（http://hoge.tumblr.com/mobile）Like一覧（http://www.tumblr.com/liked/by/hoge）ログイン時有効リンク
-自分がフォローしている人一覧（http://www.tumblr.com/following）自分をフォローしている人一覧（http://www.tumblr.com/followers）
-参考リンク
-http://tagblr.tumblr.com/post/340724562 
-http://ryo-skd.tumblr.com/post/311289824/tumblr-tumblr-nplll-mutter </description>
+      <description>自分がフォローしている人をブログに表示する HTMLの編集からどうぞ
+following &amp;lt;div&amp;gt; {block:Followed} &amp;lt;a href=&amp;quot;{FollowedURL}&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;{FollowedPortraitURL-48}&amp;quot;/&amp;gt;&amp;lt;/a&amp;gt; {/block:Followed} &amp;lt;/div&amp;gt; {/block:Following} リンク (hogeをユーザ名に変更すること)
+アーカイブ（http://hoge.tumblr.com/archive） ランダム表示（http://hoge.tumblr.com/random） RSS（http://hoge.tumblr.com/rss） 携帯向け簡易表示（http://hoge.tumblr.com/mobile） Like一覧（http://www.tumblr.com/liked/by/hoge） ログイン時有効リンク 自分がフォローしている人一覧（ http://www.tumblr.com/following ） 自分をフォローしている人一覧（ http://www.tumblr.com/followers ） 参考リンク
+http://tagblr.tumblr.com/post/340724562
+http://ryo-skd.tumblr.com/post/311289824/tumblr-tumblr-nplll-mutter</description>
     </item>
     
     <item>
@@ -252,7 +238,7 @@ http://ryo-skd.tumblr.com/post/311289824/tumblr-tumblr-nplll-mutter </descriptio
 CONSUMER_KEYとCONSUMER_SECRETの取得 アプリの登録を行う
 このページから飛んで適当に入力する
 ユーザに許可してもらいアクセストークンをもらう スクリプト実行⇒authページ⇒許可を押す⇒数値をメモ⇒スクリプトに入力
-#!/usr/bin/env ruby # coding: utf-8 require &#39;rubygems&#39; require &#39;oauth&#39; OAUTH_CONSUMER_KEY=&#39;XXXXXXXXXXXXXXXXXXXXXXXXXX&#39; OAUTH_CONSUMER_SECRET=&#39;XXXXXXXXXXXXXXXXXXXXXXXX&#39; consumer = OAuth::Consumer.new( OAUTH_CONSUMER_KEY , OAUTH_CONSUMER_SECRET , { :site=&amp;amp;amp;gt;&amp;quot;http://twitter.com&amp;quot; }) #optprm = { :oauth_callback=&amp;amp;amp;gt;&amp;quot;（コールバック先のURL）&amp;quot; } request_token = consumer.get_request_token puts &amp;quot;Access this URL and approve =&amp;amp;amp;gt; #{request_token.authorize_url}&amp;quot; print &amp;quot;Input OAuth Verifier: &amp;quot; oauth_verifier = gets.chomp.strip access_token = request_token.get_access_token( :oauth_verifier =&amp;amp;amp;gt; oauth_verifier ) puts &amp;quot;Access token: #{access_token.token}&amp;quot; puts &amp;quot;Access token secret: #{access_token.secret}&amp;quot;  後はもらったアクセストークン＆コンシューマIDでスクリプトを書く twitter のgemでもoauthのgemでも簡単なことをやる場合はあんま変わんない感じ</description>
+#!/usr/bin/env ruby # coding: utf-8 require &#39;rubygems&#39; require &#39;oauth&#39; OAUTH_CONSUMER_KEY=&#39;XXXXXXXXXXXXXXXXXXXXXXXXXX&#39; OAUTH_CONSUMER_SECRET=&#39;XXXXXXXXXXXXXXXXXXXXXXXX&#39; consumer = OAuth::Consumer.new( OAUTH_CONSUMER_KEY , OAUTH_CONSUMER_SECRET , { :site=&amp;amp;amp;gt;&amp;quot;http://twitter.com&amp;quot; }) #optprm = { :oauth_callback=&amp;amp;amp;gt;&amp;quot;（コールバック先のURL）&amp;quot; } request_token = consumer.get_request_token puts &amp;quot;Access this URL and approve =&amp;amp;amp;gt; #{request_token.authorize_url}&amp;quot; print &amp;quot;Input OAuth Verifier: &amp;quot; oauth_verifier = gets.chomp.strip access_token = request_token.get_access_token( :oauth_verifier =&amp;amp;amp;gt; oauth_verifier ) puts &amp;quot;Access token: #{access_token.token}&amp;quot; puts &amp;quot;Access token secret: #{access_token.secret}&amp;quot; 後はもらったアクセストークン＆コンシューマIDでスクリプトを書く twitter のgemでもoauthのgemでも簡単なことをやる場合はあんま変わんない感じ</description>
     </item>
     
     <item>
@@ -287,30 +273,20 @@ http://yosilove.blog.shinobi.jp/Entry/603/ </description>
       <pubDate>Wed, 26 Sep 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/09/26/2171/</guid>
-      <description> rvmとかあるらしいけど今回はrbenvを使ってみます 
-cd
+      <description>rvmとかあるらしいけど今回はrbenvを使ってみます cd
 git clone git://github.com/sstephenson/rbenv.git .rbenv
 echo &#39;export PATH=&#34;$HOME/.rbenv/bin:$PATH&#34;&#39; &amp;amp;gt;&amp;amp;gt; ~/.bash_profile
 echo &#39;eval &#34;$(rbenv init -)&#34;&#39; &amp;amp;gt;&amp;amp;gt; ~/.bash_profile
-
 ここで、シェルのリスタート
-次にrbenv installが使えるようにbuildプラグインをインストール 
-mkdir -p ~/.rbenv/plugins
+次にrbenv installが使えるようにbuildプラグインをインストール mkdir -p ~/.rbenv/plugins
 cd ~/.rbenv/plugins
 git clone git://github.com/sstephenson/ruby-build.git
-
 これでrbenv installコマンドが使えるようになります
-インストールできるバージョンを確認 
-rbenv install -l
- インストール 
-rbenv install 1.9.3-xxxxx
- 使用中のバージョンを確認 
-rbenv versions
- バージョンの切り替え 
-rbenv global 1.9.2-p290
- リフレッシュ変更を反映 
-rbenv rehash
- </description>
+インストールできるバージョンを確認 rbenv install -l
+インストール rbenv install 1.9.3-xxxxx
+使用中のバージョンを確認 rbenv versions
+バージョンの切り替え rbenv global 1.9.2-p290
+リフレッシュ変更を反映 rbenv rehash</description>
     </item>
     
     <item>

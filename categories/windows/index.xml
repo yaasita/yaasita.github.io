@@ -14,7 +14,7 @@
       
       <guid>https://yaasita.github.io/2019/03/10/clipboard/</guid>
       <description>Windows10に標準でクリップボード履歴機能が付いたらしい
- https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html  Windows キー + Vで使えるようになる
+https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html Windows キー + Vで使えるようになる
 cliborの方が使いやすそうな気がするけど、しばらくこっち使ってみる</description>
     </item>
     
@@ -28,13 +28,10 @@ cliborの方が使いやすそうな気がするけど、しばらくこっち�
 https://github.com/yaasita/skype2json
 logはsqliteで保存されている
 こちらによるとskype for windows 10とskype for windows desktopの保存場所が違う
-
 こっちが最近のやつ
 場所: %localappdata%\Packages\Microsoft.SkypeApp_kzf8qxf38zg5c\LocalState
-
 昔のやつ
-場所: C:\Users\username\AppData\Roaming\Skype\username\main.db
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;skype1&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;skype1&#34;).src = photos[0].original_size.url; document.getElementById(&#34;skype2&#34;).parentNode.href = photos[1].original_size.url; document.getElementById(&#34;skype2&#34;).src = photos[1].original_size.url; }   </description>
+場所: C:\Users\username\AppData\Roaming\Skype\username\main.db</description>
     </item>
     
     <item>
@@ -46,7 +43,7 @@ logはsqliteで保存されている
       <description>長年使ってたTeratermからConEmuへ移行した
 SSHクライアントはputtyを使ってる
 WSL経由でも良かったんだけど、なんかVimのvisualモードで背景色が変わらなかったり表示が微妙だったので結局putty使った
-良かった点  絵文字も表示できる タブが便利(TeratermもCollectorで出来るけどこっちの方が使いやすい) F1キーをリモート側に送るとかそういう設定がしやすい  微妙な点  Alt-Vでペーストしてたけどこれが使えない(設定方法が分からない)  まとめ ConEmu入れた後putty設定したり、微妙に面倒だけど使いやすい</description>
+良かった点 絵文字も表示できる タブが便利(TeratermもCollectorで出来るけどこっちの方が使いやすい) F1キーをリモート側に送るとかそういう設定がしやすい 微妙な点 Alt-Vでペーストしてたけどこれが使えない(設定方法が分からない) まとめ ConEmu入れた後putty設定したり、微妙に面倒だけど使いやすい</description>
     </item>
     
     <item>
@@ -61,8 +58,7 @@ Reject clipboard write access from remoteのエラーが出る
 直すには Setup -&amp;gt; Addtional settings -&amp;gt; Control Sequenceタブ
 と進んで該当箇所を設定すればOK
 その下にNotifyの設定もある
-
-参考リンク  リモートの tmux でコピーした内容のローカルのクリップボードへの反映   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+参考リンク リモートの tmux でコピーした内容のローカルのクリップボードへの反映 </description>
     </item>
     
     <item>
@@ -72,7 +68,7 @@ Reject clipboard write access from remoteのエラーが出る
       
       <guid>https://yaasita.github.io/2014/07/12/itunes-dvd-device/</guid>
       <description>レジストリの以下のキーを消すとうまくいった
-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E965-E325-11CE-BFC1-08002BE10318}  http://michisugara.jp/archives/2013/op_drive_failure.html</description>
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E965-E325-11CE-BFC1-08002BE10318} http://michisugara.jp/archives/2013/op_drive_failure.html</description>
     </item>
     
     <item>
@@ -81,7 +77,7 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E965-E325-11CE-BF
       <pubDate>Wed, 18 Jun 2014 00:03:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2014/06/18/windows8_1_shutdown/</guid>
-      <description>Win+cで設定ボタン⇒PC設定の変更⇒保守と管理⇒回復⇒今すぐ再起動する⇒PCの電源を切る  https://www2.mouse-jp.co.jp/ssl/user_support2/sc_faq_documents.asp?FaqID=13460</description>
+      <description>Win+cで設定ボタン⇒PC設定の変更⇒保守と管理⇒回復⇒今すぐ再起動する⇒PCの電源を切る https://www2.mouse-jp.co.jp/ssl/user_support2/sc_faq_documents.asp?FaqID=13460</description>
     </item>
     
     <item>
@@ -92,9 +88,8 @@ HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E965-E325-11CE-BF
       <guid>https://yaasita.github.io/2014/06/01/key_display/</guid>
       <description>windows用のキーボード操作表示ソフト
 osdHotkey
-
 参考リンク
- 押したキーを表示してくれるソフトのまとめ   function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+押したキーを表示してくれるソフトのまとめ </description>
     </item>
     
     <item>
@@ -103,15 +98,14 @@ osdHotkey
       <pubDate>Sat, 07 Dec 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/12/07/349/</guid>
-      <description> SPICEクライアントをダウンロード
+      <description>SPICEクライアントをダウンロード
 http://www.spice-space.org/download.html
 virt-viewer-x64-0.5.7.msiを使いました
 んでインストール
 C:\Program Files\VirtViewer\bin\remote-viewer.exe
 あたりを実行
-
 参考リンク
-http://www.server-world.info/query?os=Fedora_18&amp;amp;p=kvm&amp;amp;f=8 </description>
+http://www.server-world.info/query?os=Fedora_18&amp;amp;amp;p=kvm&amp;amp;amp;f=8</description>
     </item>
     
     <item>
@@ -120,7 +114,7 @@ http://www.server-world.info/query?os=Fedora_18&amp;amp;p=kvm&amp;amp;f=8 </desc
       <pubDate>Sun, 13 Oct 2013 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2013/10/13/432/</guid>
-      <description>  </description>
+      <description> </description>
     </item>
     
     <item>
@@ -163,10 +157,8 @@ http://www.forest.impress.co.jp/lib/sys/hrdbnch/hardinfo/crdiskinfo.html </descr
       <pubDate>Sat, 09 Jun 2012 00:00:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2012/06/09/2530/</guid>
-      <description> xfreerdpでいけます
-
-apt-get install freerdp-x11
- </description>
+      <description>xfreerdpでいけます
+apt-get install freerdp-x11</description>
     </item>
     
     <item>
@@ -190,14 +182,12 @@ mv dwm.exe /usr/bin/
 あとは~/.xinitrcに適当に書いてstartxでOK
 xhost +192.168.0.4
 dwm
-
 ３．その他設定
 あとは便利に使うコマンドとしてcygstartを覚えておくと良いかも
 詳しくはこちら
 コンソールの設定だけど右クリック→Options→Looks→背景色とか透過とかカーソルをいじる
 Xサーバーに飛ばしたかったらアプリ起動側で変数設定すること
 export DISPLAY=&#34;192.168.0.3:0&#34;
-
 関連記事
 http://rdt17.blogspot.com/2011/05/xming.html </description>
     </item>
@@ -249,7 +239,6 @@ Video→Screenをえらんでディスプレイ先を切り替えること</desc
       <description> レジストリを以下のようにすればOKらしい
 [HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
 &#34;NoDriveTypeAutoRun&#34;=dword:000000b5
-
 先日、友人からもらったUSB見たら6bi8wr29.exeというウィルスがUSBドライブの直下にあったからこれやっといてよかった危ない危ない・・・
 参考リンク
 http://www.mnet.ne.jp/~angie/kbase/xp-autorun.html
@@ -266,10 +255,8 @@ http://yonyon-blog.net/youmei/2008/05/27/cddvd%E3%82%84usb%E3%83%A1%E3%83%A2%E3%
 ここからダウンロードしてインストール
 とりあえず使ってみるにはWindows側で以下のコマンドでXサーバーを起動
 Xming.exe -ac -multiwindow -clipboard
-
 Linux側で以下のコマンドを実行（Windows側のIPアドレスが192.168.0.3だった場合）
 export DISPLAY=&#34;192.168.0.6:0&#34;
-
 あとはXのアプリを起動すればWindows側に現れるはず
 本当はこの方法だとセキュリティ的にまずいのでX11転送とかを使う方がいいかも
 参考リンク
@@ -304,36 +291,26 @@ bug.nというらしい
 アクティブウィンドウの切り替え
 Win+↑
 Win+↓
-
 ウィンドウのリサイズ
 Win+←
 Win+→
-
 ウィンドウのクローズ
 Win+c
-
 分割の縦横切り替え
 Win+Ctrl+Tab
-
 タイトルバーの表示非表示
 Win+Shift+d
-
 ウィンドウの入れ替え
 Win+Shift+Enter
-
 マスターウィンドウの左右切り替え
 Win+Ctrl+Enter
-
 よく分からないけどレイアウトの変更
 Win+Ctrl+←
 Win+Ctrl+→
-
 タスクバーの表示非表示
 Win+Space
-
 bug.nの終了
 Win+Shift+q
-
 参考リンク
 http://sourceforge.jp/projects/tilingwm/wiki/FrontPage </description>
     </item>

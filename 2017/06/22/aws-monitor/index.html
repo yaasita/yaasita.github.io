@@ -7,25 +7,27 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>AWSで監視してSlackに流す設定 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="generator" content="Hugo 0.101.0" />
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
     <meta property="og:title" content="AWSで監視してSlackに流す設定" />
 <meta property="og:description" content="EC2 -&gt; CloudWatch -&gt; SNS -&gt; Lambda -&gt; Slackみたいなよくある設定例
-
 Slack Customize Slack =&gt; Custom Integrations から Incoming WebHooks 選んで適当にチャンネル選んで追加
 URLをメモっておく
 EC2 とりあえずaws cli入れて、この辺の監視スクリプトをcronに登録すればOK
-apt-get install awscli # カスタムメトリクス用スクリプト apt-get install unzip libwww-perl libdatetime-perl curl http://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.1.zip -O unzip CloudWatchMonitoringScripts-1.2.1.zip rm CloudWatchMonitoringScripts-1.2.1.zip cd aws-scripts-mon cp awscreds.template awscreds.conf vim awscreds.conf # keyIDとSecretKeyを書いておく  こんな感じのやつをcronに登録
-~/aws-scripts-mon/mon-put-instance-data.pl --mem-util --swap-util --disk-path=/ --disk-space-util --from-cron  んで即座に反映されるはず
- カスタムメトリクスをパブリッシュする  CloudWatch ダッシュボード作ったりアラーム書いたりしておく
+apt-get install awscli # カスタムメトリクス用スクリプト apt-get install unzip libwww-perl libdatetime-perl curl http://aws-cloudwatch.s3.amazonaws.com/downloads/CloudWatchMonitoringScripts-1.2.1.zip -O unzip CloudWatchMonitoringScripts-1.2.1.zip rm CloudWatchMonitoringScripts-1.2.1.zip cd aws-scripts-mon cp awscreds.template awscreds.conf vim awscreds.conf # keyIDとSecretKeyを書いておく こんな感じのやつをcronに登録
+~/aws-scripts-mon/mon-put-instance-data.pl --mem-util --swap-util --disk-path=/ --disk-space-util --from-cron んで即座に反映されるはず
+カスタムメトリクスをパブリッシュする CloudWatch ダッシュボード作ったりアラーム書いたりしておく
 通知はSNSのTopicsを指定する(後述)
 SNS Topicsを新しく作ってTopicネームくらいは適当に埋めておく後で、Lambda側で指定するのでTopicさえあればOK
-Lambda 適当にNode.jsで書く" />
+Lambda 適当にNode.jsで書く
+こんな感じのスクリプトをZipで固めてアップロード
+https://github.com/yaasita/aws-lambda-slack-post
+zip -r my-func.zip index." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2017/06/22/aws-monitor/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2017-06-22T04:17:15&#43;09:00" />
-<meta property="article:modified_time" content="2017-06-22T04:17:15&#43;09:00" />
+<meta property="article:published_time" content="2017-06-22T04:17:15+09:00" />
+<meta property="article:modified_time" content="2017-06-22T04:17:15+09:00" />
 
 
     
@@ -64,7 +66,7 @@ if (!doNotTrack) {
   </header>
   <div class="content">
     <p>EC2 -&gt; CloudWatch -&gt; SNS -&gt; Lambda -&gt; Slackみたいなよくある設定例</p>
-<p><a href="#"><img id="tumblr-img" src=""></a></p>
+<p><a href="https://yaasita.tk/blog/2022/aws-to-slack.png"><img src="https://yaasita.tk/blog/2022/aws-to-slack.png" alt="aws-to-slack"></a></p>
 <h2 id="slack">Slack</h2>
 <p>Customize Slack =&gt; Custom Integrations から <code>Incoming WebHooks</code> 選んで適当にチャンネル選んで追加<br>
 URLをメモっておく</p>
@@ -103,14 +105,6 @@ vim awscreds.conf # keyIDとSecretKeyを書いておく
 <ul>
 <li><a href="http://qiita.com/tmtysk/items/7161b11e20ac5e2dfc01">CloudWatchのAlertをAWS Lambda経由でSlackに飛ばす</a></li>
 </ul>
-<script>
-function callback(data){
-    var photos = data.response.posts[0].photos;
-    document.getElementById("tumblr-img").parentNode.href = photos[0].original_size.url;
-    document.getElementById("tumblr-img").src = photos[0].original_size.url;
-}
-</script>
-<script src="https://api.tumblr.com/v2/blog/yaasita.tumblr.com/posts/photo?id=162094255532&api_key=jbUOCHVG82yLvRKfRsyLwTTIyYQAhNiF2WZ1v9DJQn0aNuswQg&jsonp=callback"></script>
 
   </div>
   <footer>
@@ -156,7 +150,7 @@ function callback(data){
 
       <div id="disqus_thread"></div>
 <script type="application/javascript">
-    var disqus_config = function () {
+    window.disqus_config = function () {
     
     
     
@@ -261,7 +255,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (226)</a>
+          <a href="/categories/net"><span></span>net (227)</a>
         </li>
         
         <li>
@@ -352,7 +346,7 @@ function callback(data){
         </li>
         
         <li>
-          <a href="/archives/2022"><span></span>2022 (9)</a>
+          <a href="/archives/2022"><span></span>2022 (10)</a>
         </li>
         
       </ul>

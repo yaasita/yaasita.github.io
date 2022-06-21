@@ -18,7 +18,7 @@
 捨てたやつのスペック
 商品型名： LB-C110B [Windows 8.1搭載]
 商品単価： \44,940
- OS: Windows 8.1 64ビット CPU: インテル(R) Celeron(R) プロセッサー 1037U (2コア/1.80GHz/2Mキャッシュ) メモリ: \5,250 8GB メモリ [ 8GB×1 (DDR3 SO-DIMM PC3-12800) ] HDD1:【キャンペーン】500GB 5400rpm [ Western Digital製 ] VGA:インテル(R) HD グラフィックス 3.5ドライブベイ :SDカードリーダー マザーボード :インテル(R) NM70 Express チップセット ※SSD搭載時は SATAII 接続になります。( mSATA SSDを除く ) ベアボーン :LuvBook C シリーズ 液晶 :11.6型ワイド (1366x768) マルチタッチ対応光沢HD液晶パネル LAN :[ オンボード ] 10/100/1000BASE-T GigaBit-Ethernet LAN 無線LAN :無線LAN ( IEEE802.</description>
+OS: Windows 8.1 64ビット CPU: インテル(R) Celeron(R) プロセッサー 1037U (2コア/1.80GHz/2Mキャッシュ) メモリ: \5,250 8GB メモリ [ 8GB×1 (DDR3 SO-DIMM PC3-12800) ] HDD1:【キャンペーン】500GB 5400rpm [ Western Digital製 ] VGA:インテル(R) HD グラフィックス 3.5ドライブベイ :SDカードリーダー マザーボード :インテル(R) NM70 Express チップセット ※SSD搭載時は SATAII 接続になります。( mSATA SSDを除く ) ベアボーン :LuvBook C シリーズ 液晶 :11.6型ワイド (1366x768) マルチタッチ対応光沢HD液晶パネル LAN :[ オンボード ] 10/100/1000BASE-T GigaBit-Ethernet LAN 無線LAN :無線LAN ( IEEE802.</description>
     </item>
     
     <item>
@@ -42,7 +42,8 @@ androidは10まで上がりました</description>
       <guid>https://yaasita.github.io/2020/11/05/t4g-instance/</guid>
       <description>新しくt4gインスタンスが出たみたいなので試してみた
 cpuminer アルゴリズム=lyra2rev2 で測定
-   name cpu memory hashrate(kH/s)     自宅PC Core i5-4460 3.20GHz 4コア 16G 384   ノートPC LB-C110B Celeron 1037U 1.80GHz 2コア 8G 79   t4g.micro (CPUクレジットあり) ARM CPU 2コア 1G 233   t4g.micro (CPUクレジットなし) ARM CPU 2コア 1G 24   aws lightsail (t2.nano, CPUクレジットあり) Xeon E5-2676 v3 2.40GHz 1コア 512M 81   aws lightsail (t2.nano, CPUクレジットなし) Xeon E5-2676 v3 2.</description>
+name cpu memory hashrate(kH/s) 自宅PC Core i5-4460 3.20GHz 4コア 16G 384 ノートPC LB-C110B Celeron 1037U 1.80GHz 2コア 8G 79 t4g.micro (CPUクレジットあり) ARM CPU 2コア 1G 233 t4g.micro (CPUクレジットなし) ARM CPU 2コア 1G 24 aws lightsail (t2.nano, CPUクレジットあり) Xeon E5-2676 v3 2.40GHz 1コア 512M 81 aws lightsail (t2.nano, CPUクレジットなし) Xeon E5-2676 v3 2.40GHz 1コア 512M 6 前回記事
+まとめ t4g良いかもしれない</description>
     </item>
     
     <item>
@@ -52,7 +53,7 @@ cpuminer アルゴリズム=lyra2rev2 で測定
       
       <guid>https://yaasita.github.io/2020/08/30/new-linux-in-chromebook/</guid>
       <description>Linuxを消して、また入れたら良くなってた
- Debianが10になった 日本語が打てる(ただ表示はバグる) 絵文字が見れる ターミナルがタブに対応した  </description>
+Debianが10になった 日本語が打てる(ただ表示はバグる) 絵文字が見れる ターミナルがタブに対応した </description>
     </item>
     
     <item>
@@ -64,7 +65,7 @@ cpuminer アルゴリズム=lyra2rev2 で測定
       <description>前回 の続き
 以下をvimrcに追記して事なきを得た
 inoremapって非ASCII文字でも行けるみたい
-inoremap ¥ \ cnoremap ¥ \  </description>
+inoremap ¥ \ cnoremap ¥ \ </description>
     </item>
     
     <item>
@@ -77,9 +78,7 @@ inoremap ¥ \ cnoremap ¥ \  </description>
 半角モードにして￥キーを押すとU+00A5が入力されてしまう
 入力には全角モードにして、￥キー押した後に変換して、バックスラッシュを選択する必要がある
 もしくは、Linux内なら、fcitx経由で入力すれば半角￥キーでバックスラッシュになった
-WindowsとかMacなら一発だけど、これは不便かも・・・プログラミングの時にも困るし・・・
-
- function callback(data){ var photos = data.response.posts[0].photos; document.getElementById(&#34;tumblr-img&#34;).parentNode.href = photos[0].original_size.url; document.getElementById(&#34;tumblr-img&#34;).src = photos[0].original_size.url; }   </description>
+WindowsとかMacなら一発だけど、これは不便かも・・・プログラミングの時にも困るし・・・</description>
     </item>
     
     <item>
@@ -91,7 +90,7 @@ WindowsとかMacなら一発だけど、これは不便かも・・・プログ�
       <description>明けましておめでとうございます。
 chromebookで日本語入力する場合はローカルの場合はfcitx-mozcを使って入力
 リモートに接続する場合は、一旦踏み台サーバーを経由して、X転送したqterminalを使っている
-ssh humidai-server -XC export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx fcitx qterminal  自分の環境では-Cオプションを付けない場合は800kbpsくらい通信するが、つけると100kbpsになるので外でやる時にはつけた方が良さそう
+ssh humidai-server -XC export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx fcitx qterminal 自分の環境では-Cオプションを付けない場合は800kbpsくらい通信するが、つけると100kbpsになるので外でやる時にはつけた方が良さそう
 回線が細いテザリング環境では ttyd を立てて、ポートフォワーディングでつないだ方が良いかも
 Ctrl-wがchromeのタブ閉じになってしまうので微妙かなと思ったんだけど、「その他のツール(L)」 =&amp;gt; 「ショートカットを作成」からアプリとして作れば、Ctrl-wも使えた
 こっちなら日本語入力も出来るのでこっちの方が良いかもしれない
@@ -105,7 +104,7 @@ Ctrl-wがchromeのタブ閉じになってしまうので微妙かなと思っ�
       
       <guid>https://yaasita.github.io/2019/12/23/chromebook/</guid>
       <description>ASUS の C434TA-AI0084 を買ったのでレビュー
-chromeOS  起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある  解除がちょっと遅い10秒くらい待たされる   chromeの複数ユーザー機能が使えない  多重ログイン機能はあるけどちょっと微妙  別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能      ディスプレイ  タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 起動毎にバックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗  テザリング  Moto E5 とbluetoothでのテザリングが出来なかった  とりあえずUSBテザリングは刺すだけで使えたので良しとしてます    キーボード  Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない ←Alt + 明るさキーで消せました  Androidアプリ  ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない  Linux環境 OS  Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり  バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい   USB共有機能あり /opt/google/cros-containers/bin/.</description>
+chromeOS 起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある 解除がちょっと遅い10秒くらい待たされる chromeの複数ユーザー機能が使えない 多重ログイン機能はあるけどちょっと微妙 別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能 ディスプレイ タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 起動毎にバックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗 テザリング Moto E5 とbluetoothでのテザリングが出来なかった とりあえずUSBテザリングは刺すだけで使えたので良しとしてます キーボード Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない ←Alt + 明るさキーで消せました Androidアプリ ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない Linux環境 OS Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい USB共有機能あり /opt/google/cros-containers/bin/.. というプロセスが動いてる以外は普通のLinux, systemdも問題なし ファイル共有 右クリックから簡単に共有可能 Linux環境側では/mnt/chromeos に現れる /mnt/chromeos以下はパーミッションやownerが狂わないように制限されてるのでトラブルになることは無いと思う デフォルトでファイルアプリを使ってchromeOS側からLinux側のhomeディレクトリは自由に読み書き可能 なので共有ファイル追加しなくても特段問題なし ネットワーク こんなスクリプト だと chromeOS側から 127.0.0.1:3000 にアクセスできる でも、なぜかDockerで docker run -p 3000:80 nginx とかやって 127.</description>
     </item>
     
     <item>
@@ -142,8 +141,8 @@ KRPW-AK750W/88+ という玄人志向のやつに変更した
       <guid>https://yaasita.github.io/2017/11/29/vita-new-version/</guid>
       <description>3.65時点だと対応してなかったけど、3.67でTLS1.2対応したようです🎉
 公式には
- システムソフトウェアにおいて、動作の安定性を改善しました。
- としか書いてないけど</description>
+システムソフトウェアにおいて、動作の安定性を改善しました。
+としか書いてないけど</description>
     </item>
     
     <item>
@@ -175,7 +174,7 @@ http://www.apple.com/jp/retail/personalsetup/</description>
       <pubDate>Sat, 22 Oct 2016 22:54:00 +0900</pubDate>
       
       <guid>https://yaasita.github.io/2016/10/22/smart-phone/</guid>
-      <description>エイスース SIMフリースマートフォン ASUS ZenFone 2 Laser（Qualcomm Snapdragon 410/メモリ 2GB） 16GB ブラック ZE500KL-BK16  18,672円だった
+      <description>エイスース SIMフリースマートフォン ASUS ZenFone 2 Laser（Qualcomm Snapdragon 410/メモリ 2GB） 16GB ブラック ZE500KL-BK16 18,672円だった
 Androidは6.0.1まで上がった</description>
     </item>
     
@@ -189,7 +188,7 @@ Androidは6.0.1まで上がった</description>
 Reallocated_Sector_Ctが残ってれば使える手法
 https://github.com/yaasita/hdd_badsector
 使い方
-smartctl -a /dev/sdc | ./hdd_check.pl /dev/sdc  </description>
+smartctl -a /dev/sdc | ./hdd_check.pl /dev/sdc </description>
     </item>
     
     <item>
@@ -202,7 +201,7 @@ smartctl -a /dev/sdc | ./hdd_check.pl /dev/sdc  </description>
 /etc/systemd/logind.conf
 あたりを直す
 ノートPC閉じたときのSuspendを止めたかったから↓みたいにした
-HandleSuspendKey=ignore HandleLidSwitch=ignore  </description>
+HandleSuspendKey=ignore HandleLidSwitch=ignore </description>
     </item>
     
     <item>
@@ -212,7 +211,7 @@ HandleSuspendKey=ignore HandleLidSwitch=ignore  </description>
       
       <guid>https://yaasita.github.io/2015/10/17/raid5_fail/</guid>
       <description>リビルド中にもう一個壊れてRAID5が終わった話
-/dev/md0: Version : 1.2 Creation Time : Fri Jan 6 12:24:44 2012 Raid Level : raid5 Array Size : 5860535808 (5589.04 GiB 6001.19 GB) Used Dev Size : 1953511936 (1863.01 GiB 2000.40 GB) Raid Devices : 4 Total Devices : 4 Persistence : Superblock is persistent Update Time : Sat Oct 17 16:59:57 2015 State : clean, FAILED Active Devices : 2 Working Devices : 3 Failed Devices : 1 Spare Devices : 1 Layout : left-symmetric Chunk Size : 512K Name : hoge:0 UUID : 55b9d6ea:4627c873:a0bcab05:a4f0c25d Events : 6755 Number Major Minor RaidDevice State 5 8 49 0 active sync /dev/sdd1 2 0 0 2 removed 2 8 33 2 active sync /dev/sdc1 6 0 0 6 removed 4 8 1 - faulty /dev/sda1 6 8 17 - spare /dev/sdb1  HDD一台が壊れたので /dev/sdb1を追加中にアレイの構成Diskがもう一個壊れた</description>
+/dev/md0: Version : 1.2 Creation Time : Fri Jan 6 12:24:44 2012 Raid Level : raid5 Array Size : 5860535808 (5589.04 GiB 6001.19 GB) Used Dev Size : 1953511936 (1863.01 GiB 2000.40 GB) Raid Devices : 4 Total Devices : 4 Persistence : Superblock is persistent Update Time : Sat Oct 17 16:59:57 2015 State : clean, FAILED Active Devices : 2 Working Devices : 3 Failed Devices : 1 Spare Devices : 1 Layout : left-symmetric Chunk Size : 512K Name : hoge:0 UUID : 55b9d6ea:4627c873:a0bcab05:a4f0c25d Events : 6755 Number Major Minor RaidDevice State 5 8 49 0 active sync /dev/sdd1 2 0 0 2 removed 2 8 33 2 active sync /dev/sdc1 6 0 0 6 removed 4 8 1 - faulty /dev/sda1 6 8 17 - spare /dev/sdb1 HDD一台が壊れたので /dev/sdb1を追加中にアレイの構成Diskがもう一個壊れた</description>
     </item>
     
     <item>
@@ -222,8 +221,8 @@ HandleSuspendKey=ignore HandleLidSwitch=ignore  </description>
       
       <guid>https://yaasita.github.io/2015/07/26/xperia/</guid>
       <description>EXPANSYSで買った
-Sony Xperia E4g E2003 (Unlocked LTE, 8GB, White) 18,737円  SIMフリーはIIJ MIO
-IIJ IIJmio SIM ウェルカムパック microSIM ( SMS 機能付き ) 版 1,900円  </description>
+Sony Xperia E4g E2003 (Unlocked LTE, 8GB, White) 18,737円 SIMフリーはIIJ MIO
+IIJ IIJmio SIM ウェルカムパック microSIM ( SMS 機能付き ) 版 1,900円 </description>
     </item>
     
     <item>
@@ -244,11 +243,11 @@ MACアドレスの上位3バイトを検索窓に入れる
       
       <guid>https://yaasita.github.io/2014/08/16/hdd-fail/</guid>
       <description>なんかrsyncでバックアップしようとすると以下のエラーが出るようになった
-rsync: read errors mapping &amp;quot;/home/yamasita/Desktop/hogehoge.dat&amp;quot;: Input/output error (5) ERROR: /home/yamasita/Desktop/hogehoge.dat failed verification -- update discarded.  まずbadblocksで調べてみる
-badblocks /home/yamasita/Desktop/hogehoge.dat  ダメそう
+rsync: read errors mapping &amp;quot;/home/yamasita/Desktop/hogehoge.dat&amp;quot;: Input/output error (5) ERROR: /home/yamasita/Desktop/hogehoge.dat failed verification -- update discarded. まずbadblocksで調べてみる
+badblocks /home/yamasita/Desktop/hogehoge.dat ダメそう
 とりあえず、fsckをかけてみる
 /のパーティションなのでfsckの間隔を調整
-dumpe2fs -h /dev/sda1 | egrep -i &#39;check|mount count&#39; tune2fs -i 30d /dev/sda1  これでとりあえず不良セクタ退避させた
+dumpe2fs -h /dev/sda1 | egrep -i &#39;check|mount count&#39; tune2fs -i 30d /dev/sda1 これでとりあえず不良セクタ退避させた
 過去記事
 HDDが故障したときにやったこと
 参考リンク
