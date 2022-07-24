@@ -6,7 +6,21 @@
     <description>Recent content in soft on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 08 Jun 2022 02:37:21 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 25 Jul 2022 00:52:55 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>hugoのshortcode</title>
+      <link>https://yaasita.github.io/2022/07/25/hugo-shortcode/</link>
+      <pubDate>Mon, 25 Jul 2022 00:52:55 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/07/25/hugo-shortcode/</guid>
+      <description>ここにあるように定型文を登録しておくと省力化できる
+https://gohugo.io/content-management/shortcodes/
+例えば、config.tomlにこんな感じで書いておけば
+[params] imagesite = &amp;quot;img.yaasita.net&amp;quot; markdownの中で
+https://{{&amp;lt; param imagesite &amp;gt;}}/hoge/hoge こう書くと
+https://img.yaasita.net/hoge/hoge みたいに展開される</description>
+    </item>
+    
     <item>
       <title>budibaseをmicrok8sで動かす</title>
       <link>https://yaasita.github.io/2022/06/08/budibase/</link>
@@ -300,20 +314,6 @@ themes/hugo-theme-geppaku/layouts/partials/header.html
       <guid>https://yaasita.github.io/2019/02/08/concentration/</guid>
       <description>いろいろ試してみた
 Forest: 広告が邪魔 Focus To-Do: 複雑でよく分からなかった ブロックタイマー: なんか画面が付きっぱなしになる FLIP: 勉強用かな操作がむずい Studyplus: なんかポモドーロぽいの使えなかった で結局Focus To-DoのWindowsアプリ版を使ってる</description>
-    </item>
-    
-    <item>
-      <title>skypeのログフォーマットが変わってた</title>
-      <link>https://yaasita.github.io/2018/12/02/skype2json/</link>
-      <pubDate>Sun, 02 Dec 2018 01:28:21 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/12/02/skype2json/</guid>
-      <description>のでちょっとスクリプト修正した
-https://github.com/yaasita/skype2json
-修正点 yarnじゃなくても良いと聞いたのでnpmにだけにした フォーマットが歴代合わせて3つあったので、3つスクリプト書いた(年代は適当) libに共通関数をまとめた なんか新しいフォーマットだと
-nsp_dataってカラムにjsonで突っ込んでるみたいね。json型が無いSQLiteのツライところ
-まとめ ころころフォーマットが変わるけどSQLiteになってるからSkypeは簡単にバックアップ出来て良い
-LINEはどうしたもんか</description>
     </item>
     
   </channel>
