@@ -6,7 +6,18 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 25 Jul 2022 00:52:55 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 24 Aug 2022 02:39:41 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mitmproxyを使うときのブラウザ設定</title>
+      <link>https://yaasita.github.io/2022/08/24/mitmproxy-chrome/</link>
+      <pubDate>Wed, 24 Aug 2022 02:39:41 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/08/24/mitmproxy-chrome/</guid>
+      <description>なんかたまにgoogleにつながらなくなるとき
+chrome系のやつならこの辺を弄ってみるとうまくいくかもしれない
+chrome://settings/security</description>
+    </item>
+    
     <item>
       <title>hugoのshortcode</title>
       <link>https://yaasita.github.io/2022/07/25/hugo-shortcode/</link>
@@ -291,20 +302,6 @@ systemctl cat mlocate.service こいうのが追加されてる
 [Service] PrivateTmp=true PrivateDevices=true PrivateNetwork=true ProtectSystem=true debian 10 (buster) 時代はcronだったから気にしなかったけど、多分これ、ProtectSystemの所為で/usrとか見れてないぽい
 今までのように全検索したかったら以下のコマンドで上書きしたほうが良いかと
 systemctl edit mlocate.service </description>
-    </item>
-    
-    <item>
-      <title>nodejsのreadline</title>
-      <link>https://yaasita.github.io/2021/07/29/nodejs-readline/</link>
-      <pubDate>Thu, 29 Jul 2021 00:55:40 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/07/29/nodejs-readline/</guid>
-      <description>readlineの書き方
-https://nodejs.org/api/readline.html
-こうやって書くより
-const rl = readline.createInterface({ // ... }); for await (const line of rl) { // Each line in the readline input will be successively available here as // `line`. } こっちの方がメモリ効率が良さそう
-await new Promise((resolv, reject) =&amp;gt; { rl.on(&amp;#34;line&amp;#34;, (line) =&amp;gt; { // 処理 }); rl.on(&amp;#34;close&amp;#34;, () =&amp;gt; { resolv(); }); }); 詳しくは調べてないけど、巨大ファイルだと
-FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory `` が頻発する </description>
     </item>
     
   </channel>
