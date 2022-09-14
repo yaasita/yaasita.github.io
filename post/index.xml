@@ -6,7 +6,19 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 24 Aug 2022 02:39:41 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Sep 2022 03:58:50 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>apacheのautoindex経由で画像のスライドショー</title>
+      <link>https://yaasita.github.io/2022/09/15/slideshow/</link>
+      <pubDate>Thu, 15 Sep 2022 03:58:50 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/09/15/slideshow/</guid>
+      <description>apacheのmod_autoindexが有効な状態でスライドショーを作る
+こんな状態のディレクトリに
+こんな感じのHTMLを置いて
+スライドショー的に見る</description>
+    </item>
+    
     <item>
       <title>mitmproxyを使うときのブラウザ設定</title>
       <link>https://yaasita.github.io/2022/08/24/mitmproxy-chrome/</link>
@@ -289,19 +301,6 @@ cdコマンドを上書きして、@で始まってたら cd -P でsymlinkを辿
 export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 } あと、bookmarkへの追加もコマンドにしておく
 bookmarkしたいディレクトリに移動してbookmarkコマンドでsymlink作るようにしておく
 function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) } </description>
-    </item>
-    
-    <item>
-      <title>debian bullseyeのmlocateで引っかからないファイル</title>
-      <link>https://yaasita.github.io/2021/08/16/mlocate/</link>
-      <pubDate>Mon, 16 Aug 2021 02:15:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/08/16/mlocate/</guid>
-      <description>debian 11でlocateしても引っかからないファイル多いなと思って調べたら
-systemctl cat mlocate.service こいうのが追加されてる
-[Service] PrivateTmp=true PrivateDevices=true PrivateNetwork=true ProtectSystem=true debian 10 (buster) 時代はcronだったから気にしなかったけど、多分これ、ProtectSystemの所為で/usrとか見れてないぽい
-今までのように全検索したかったら以下のコマンドで上書きしたほうが良いかと
-systemctl edit mlocate.service </description>
     </item>
     
   </channel>

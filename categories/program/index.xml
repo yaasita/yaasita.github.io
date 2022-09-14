@@ -6,7 +6,19 @@
     <description>Recent content in program on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 09 May 2022 03:24:42 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 15 Sep 2022 03:58:50 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>apacheのautoindex経由で画像のスライドショー</title>
+      <link>https://yaasita.github.io/2022/09/15/slideshow/</link>
+      <pubDate>Thu, 15 Sep 2022 03:58:50 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/09/15/slideshow/</guid>
+      <description>apacheのmod_autoindexが有効な状態でスライドショーを作る
+こんな状態のディレクトリに
+こんな感じのHTMLを置いて
+スライドショー的に見る</description>
+    </item>
+    
     <item>
       <title>Power Automateのtips</title>
       <link>https://yaasita.github.io/2022/05/09/power-automate-tips/</link>
@@ -264,22 +276,6 @@ base64エンコードじゃなくてbase64urlエンコードなのが注意点</
       <guid>https://yaasita.github.io/2019/04/25/reiwa/</guid>
       <description>techrachoの記事
 perlも追加でお願いします</description>
-    </item>
-    
-    <item>
-      <title>tarの差分バックアップ</title>
-      <link>https://yaasita.github.io/2019/04/01/tar-backup/</link>
-      <pubDate>Mon, 01 Apr 2019 16:12:46 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/04/01/tar-backup/</guid>
-      <description>前回の続き
-でctime変化しちゃってどうしたか？
-ファイルサイズとファイル名を取っておいて差分を作ることにした
-こんな感じのスクリプトで、ファイル名 + tab + ファイルサイズで保存する
-(厳密にやる場合はsha256とかで)
-そんで現在のファイルリストも取って、差分をとる
-diff -u previous.txt now.txt | egrep &amp;#34;^\+[^\+]&amp;#34; | perl -ple &amp;#39;s/^\+//;s/\t.+//&amp;#39; &amp;gt; tar.txt あとは-Tオプションで差分のファイルだけをtarで固める
-tar -cvaf hoge.tgz -T tar.txt </description>
     </item>
     
   </channel>
