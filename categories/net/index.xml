@@ -6,7 +6,19 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 22 Jun 2022 01:43:12 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Sep 2022 22:41:18 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WebARENA Indigoを使ってみた</title>
+      <link>https://yaasita.github.io/2022/09/25/webarena/</link>
+      <pubDate>Sun, 25 Sep 2022 22:41:18 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/09/25/webarena/</guid>
+      <description>円安でAWSが高いのでこっちにサーバーを移行した
+https://web.arena.ne.jp/indigo/
+以下気づいたこと箇条書きで
+めっちゃ安い 機能は仮想サーバーの起動(kvm),スナップショット,ファイヤーウォールくらい 追加オプションで権威DNSサーバーが使える(500円) 管理画面は少し重い ipv6の設定は手動でやる 1vCPU/1GB memory(Uubuntu 22.04)の場合はnetplanの設定がコメントアウトされてた ファイヤーウォールはipv6非対応 なので、やる場合はnftablesを自分で設定する 管理画面でコンソール開く場合は広告ブロックをOFFにしないとダメ 最初はsshでのアクセスのみコンソール画面に入る場合 はsshで入ってから、パスワード設定が必要 API での操作も可能 OP25Bはされていない 対応OS 圧倒的に安いのでlightsailみたいなサービスから移行するには良いんじゃないかな</description>
+    </item>
+    
     <item>
       <title>tumblrのアカウントが消されたけど復旧してもらった</title>
       <link>https://yaasita.github.io/2022/06/22/tumblr-account/</link>
@@ -278,20 +290,6 @@ Google Compute Engineと同じ取り方でOK
 とりあえず英語版から探すのをオススメします&amp;hellip;
 参考リンク
 関数ID Compute Metadata Server </description>
-    </item>
-    
-    <item>
-      <title>ビリビリ動画とcrunchyrollのIP制限をGCPで検証</title>
-      <link>https://yaasita.github.io/2019/09/14/anime-ip-block/</link>
-      <pubDate>Sat, 14 Sep 2019 22:21:43 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/09/14/anime-ip-block/</guid>
-      <description>bilibili動画とcrunchyrollのIP制限はどんな感じなのか
-GCPの各リージョンからアクセスして試してみる
-rttは自宅から該当サーバーまでのpingしたときの平均値
-なのでISPによって全然違うと思うので参考値ということで
-region bilibili crunchyroll rtt(ms) asia-east1 (台湾) ng ok 60.149 asia-east2 (香港) ng ok 76.986 asia-northeast1 (東京) ng ok 29.624 asia-northeast2 (大阪) ng ok 37.401 asia-south1 (ムンバイ) ng ok 144.055 asia-southeast1 (シンガポール) ng ok 89.755 australia-southeast1 (シドニー) ng ok 122.193 europe-north1 (フィンランド) ng ok 256.714 europe-west1 (ベルギー) ng ok 229.038 europe-west2 (ロンドン) ng ok 220.693 でここまでやってあとは変わらないだろうと思って以下のリージョンは試さなかった
-europe-west3 (フランクフルト) europe-west4 (オランダ) europe-west6 (チューリッヒ) northamerica-northeast1 (モントリオール) southamerica-east1 (サンパウロ) us-central1 (アイオワ) us-east1 (サウスカロライナ) us-east4 (北バージニア) us-west1 (オレゴン) us-west2 (ロサンゼルス) 結論 crunchyrollは適当なリージョンからでも、たとえ（日本リージョンでも)見れる</description>
     </item>
     
   </channel>

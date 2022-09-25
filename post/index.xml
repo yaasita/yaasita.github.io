@@ -6,7 +6,19 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 15 Sep 2022 03:58:50 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Sep 2022 22:41:18 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WebARENA Indigoを使ってみた</title>
+      <link>https://yaasita.github.io/2022/09/25/webarena/</link>
+      <pubDate>Sun, 25 Sep 2022 22:41:18 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/09/25/webarena/</guid>
+      <description>円安でAWSが高いのでこっちにサーバーを移行した
+https://web.arena.ne.jp/indigo/
+以下気づいたこと箇条書きで
+めっちゃ安い 機能は仮想サーバーの起動(kvm),スナップショット,ファイヤーウォールくらい 追加オプションで権威DNSサーバーが使える(500円) 管理画面は少し重い ipv6の設定は手動でやる 1vCPU/1GB memory(Uubuntu 22.04)の場合はnetplanの設定がコメントアウトされてた ファイヤーウォールはipv6非対応 なので、やる場合はnftablesを自分で設定する 管理画面でコンソール開く場合は広告ブロックをOFFにしないとダメ 最初はsshでのアクセスのみコンソール画面に入る場合 はsshで入ってから、パスワード設定が必要 API での操作も可能 OP25Bはされていない 対応OS 圧倒的に安いのでlightsailみたいなサービスから移行するには良いんじゃないかな</description>
+    </item>
+    
     <item>
       <title>apacheのautoindex経由で画像のスライドショー</title>
       <link>https://yaasita.github.io/2022/09/15/slideshow/</link>
@@ -281,26 +293,6 @@ dircolors -p &amp;gt; ~/.dir_colors 好きな設定に編集する
 vi ~/.dircolors .bashrcに以下のように書いておいた
 if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^screen ]];then alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto&#39; eval &amp;quot;$(dircolors -b ~/.dircolors)&amp;quot; fi 参考
 lsコマンドで表示されるファイルの色を変更するには </description>
-    </item>
-    
-    <item>
-      <title>bashでディレクトリのbookmark</title>
-      <link>https://yaasita.github.io/2021/09/06/bash-bookmarks/</link>
-      <pubDate>Mon, 06 Sep 2021 02:00:02 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/09/06/bash-bookmarks/</guid>
-      <description>これすごい便利だった
-https://threkk.medium.com/how-to-use-bookmarks-in-bash-zsh-6b8074e40774
-CDPATHを使うとこんな便利なことができるのね
-ただ以下の方が指摘されているようにbashだと補完が効かないので, compgenで補完候補を作る方が良さそう
-https://mobile.twitter.com/mattn_jp/status/1434205359573405696
-自分の場合は、gotoっていうコマンドよりcdで通常通り使えた方が良いので
-こんな感じの設定を追加しておいた
-cdコマンドを上書きして、@で始まってたら cd -P でsymlinkを辿るようにして、他は通常通り
-(これなら補完候補も足さなくてOK)
-export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 } あと、bookmarkへの追加もコマンドにしておく
-bookmarkしたいディレクトリに移動してbookmarkコマンドでsymlink作るようにしておく
-function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) } </description>
     </item>
     
   </channel>

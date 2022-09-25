@@ -6,7 +6,19 @@
     <description>Recent content in linux on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 01 Mar 2022 02:34:41 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Sep 2022 22:41:18 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>WebARENA Indigoを使ってみた</title>
+      <link>https://yaasita.github.io/2022/09/25/webarena/</link>
+      <pubDate>Sun, 25 Sep 2022 22:41:18 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/09/25/webarena/</guid>
+      <description>円安でAWSが高いのでこっちにサーバーを移行した
+https://web.arena.ne.jp/indigo/
+以下気づいたこと箇条書きで
+めっちゃ安い 機能は仮想サーバーの起動(kvm),スナップショット,ファイヤーウォールくらい 追加オプションで権威DNSサーバーが使える(500円) 管理画面は少し重い ipv6の設定は手動でやる 1vCPU/1GB memory(Uubuntu 22.04)の場合はnetplanの設定がコメントアウトされてた ファイヤーウォールはipv6非対応 なので、やる場合はnftablesを自分で設定する 管理画面でコンソール開く場合は広告ブロックをOFFにしないとダメ 最初はsshでのアクセスのみコンソール画面に入る場合 はsshで入ってから、パスワード設定が必要 API での操作も可能 OP25Bはされていない 対応OS 圧倒的に安いのでlightsailみたいなサービスから移行するには良いんじゃないかな</description>
+    </item>
+    
     <item>
       <title>linuxのipv6一時アドレス2</title>
       <link>https://yaasita.github.io/2022/03/01/ipv6-tmpaddr/</link>
@@ -313,22 +325,6 @@ milter_default_action = tempfail milter_protocol = 2 smtpd_milters = inet:localh
 取得:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease [6,372 B] エラー:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease 公開鍵を利用できないため、以下の署名は検証できませんでした: NO_PUBKEY 6A030B21BA07F4FB なんか探してみると2018年4月1日に作った鍵にしてるみたい
 gpg2 --search-keys BA07F4FB gpg: data source: http://gpg.NebrWesleyan.edu:11371 (1) Google Cloud Packages Automatic Signing Key &amp;lt;gc-team@google.com&amp;gt; 2048 bit RSA key BA07F4FB, created: 2018-04-01, expires: 2021-03-31 ということで追加して事なきを得た
 gpg2 -a --export BA07F4FB | apt-key add - apt-key del A7317B0F </description>
-    </item>
-    
-    <item>
-      <title>正しいパッケージのアップデート方法</title>
-      <link>https://yaasita.github.io/2017/10/26/pkg-update/</link>
-      <pubDate>Thu, 26 Oct 2017 01:30:38 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2017/10/26/pkg-update/</guid>
-      <description>本番環境と検証環境があり、パッケージのアップデートを行いたい場合
-10月1日 検証環境のパッケージを上げる 11月1日 検証環境で問題なければ本番も上げる この時、それぞれの日に本番環境、検証環境で apt update, apt upgradeをすると本番、検証で差分が生じ検証されていないパッケージもアップデートされる可能性がある
-正しくは10月1日に検証環境、本番環境で 同時 に以下のコマンドを実行
-apt-get update apt-get upgrade --download-only 検証環境で以下を実行
-apt-get upgrade 問題なければ本番環境で以下を実行
-apt-get upgrade ポイントは apt-get update, apt-get upgrade --download-only を検証,本番環境ともに同じタイミングで実行して更新予定のパッケージを揃えておくこと
-またubuntuは/etc/apt/apt.conf.d/10periodicの「APT::Periodic::Update-Package-Lists」を0にしておかないと毎日自動でapt-get updateが走るので注意すること
-図にするとこんな感じ</description>
     </item>
     
   </channel>
