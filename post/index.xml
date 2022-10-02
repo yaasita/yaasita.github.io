@@ -6,7 +6,18 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 25 Sep 2022 22:41:18 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Oct 2022 22:06:36 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>webページの存在証明</title>
+      <link>https://yaasita.github.io/2022/10/02/exists/</link>
+      <pubDate>Sun, 02 Oct 2022 22:06:36 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/10/02/exists/</guid>
+      <description>このgpg鍵でwebページをpdfにしたやつに署名するという
+まったく意味のないサービスを作った
+https://exists.cloud.yaasita.net/</description>
+    </item>
+    
     <item>
       <title>WebARENA Indigoを使ってみた</title>
       <link>https://yaasita.github.io/2022/09/25/webarena/</link>
@@ -16,7 +27,7 @@
       <description>円安でAWSが高いのでこっちにサーバーを移行した
 https://web.arena.ne.jp/indigo/
 以下気づいたこと箇条書きで
-めっちゃ安い 機能は仮想サーバーの起動(kvm),スナップショット,ファイヤーウォールくらい 追加オプションで権威DNSサーバーが使える(500円) 管理画面は少し重い ipv6の設定は手動でやる 1vCPU/1GB memory(Uubuntu 22.04)の場合はnetplanの設定がコメントアウトされてた ファイヤーウォールはipv6非対応 なので、やる場合はnftablesを自分で設定する 管理画面でコンソール開く場合は広告ブロックをOFFにしないとダメ 最初はsshでのアクセスのみコンソール画面に入る場合 はsshで入ってから、パスワード設定が必要 API での操作も可能 OP25Bはされていない 対応OS 圧倒的に安いのでlightsailみたいなサービスから移行するには良いんじゃないかな</description>
+めっちゃ安い 機能は仮想サーバーの起動(kvm),スナップショット,ファイヤーウォールくらい 追加オプションで権威DNSサーバーが使える(500円) 管理画面は少し重い ipv6の設定は手動でやる 1vCPU/1GB memory(Uubuntu 22.04)の場合はnetplanの設定がコメントアウトされてた ファイヤーウォールはipv6非対応 なので、やる場合はnftablesを自分で設定する 管理画面でコンソール開く場合は広告ブロックをOFFにしないとダメ 最初はsshでのアクセスのみコンソール画面に入る場合 はsshで入ってから、パスワード設定が必要 API での操作も可能 OP25Bはされていない 対応OS 転送料金に課金なし 圧倒的に安いのでlightsailみたいなサービスから移行するには良いんじゃないかな</description>
     </item>
     
     <item>
@@ -278,21 +289,6 @@ OS: Windows 8.1 64ビット CPU: インテル(R) Celeron(R) プロセッサー 1
 https://gist.github.com/yaasita/d527b48f54b0e23c3097a9c69239d534
 どうやらこれ、machine-idから作られてるみたいで、VMコピーしたらmachine-id変えた方が良いぽいね
 rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machine-id-setup </description>
-    </item>
-    
-    <item>
-      <title>dircolorsの設定</title>
-      <link>https://yaasita.github.io/2021/09/20/dircolors/</link>
-      <pubDate>Mon, 20 Sep 2021 17:40:54 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/09/20/dircolors/</guid>
-      <description>dircolorsは
-ls --color=auto したときの色を設定するコマンド
-以下のコマンドで設定を書き出して
-dircolors -p &amp;gt; ~/.dir_colors 好きな設定に編集する
-vi ~/.dircolors .bashrcに以下のように書いておいた
-if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^screen ]];then alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto&#39; eval &amp;quot;$(dircolors -b ~/.dircolors)&amp;quot; fi 参考
-lsコマンドで表示されるファイルの色を変更するには </description>
     </item>
     
   </channel>

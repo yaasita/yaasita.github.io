@@ -6,7 +6,18 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 25 Sep 2022 22:41:18 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Oct 2022 22:06:36 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>webページの存在証明</title>
+      <link>https://yaasita.github.io/2022/10/02/exists/</link>
+      <pubDate>Sun, 02 Oct 2022 22:06:36 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/10/02/exists/</guid>
+      <description>このgpg鍵でwebページをpdfにしたやつに署名するという
+まったく意味のないサービスを作った
+https://exists.cloud.yaasita.net/</description>
+    </item>
+    
     <item>
       <title>WebARENA Indigoを使ってみた</title>
       <link>https://yaasita.github.io/2022/09/25/webarena/</link>
@@ -16,7 +27,7 @@
       <description>円安でAWSが高いのでこっちにサーバーを移行した
 https://web.arena.ne.jp/indigo/
 以下気づいたこと箇条書きで
-めっちゃ安い 機能は仮想サーバーの起動(kvm),スナップショット,ファイヤーウォールくらい 追加オプションで権威DNSサーバーが使える(500円) 管理画面は少し重い ipv6の設定は手動でやる 1vCPU/1GB memory(Uubuntu 22.04)の場合はnetplanの設定がコメントアウトされてた ファイヤーウォールはipv6非対応 なので、やる場合はnftablesを自分で設定する 管理画面でコンソール開く場合は広告ブロックをOFFにしないとダメ 最初はsshでのアクセスのみコンソール画面に入る場合 はsshで入ってから、パスワード設定が必要 API での操作も可能 OP25Bはされていない 対応OS 圧倒的に安いのでlightsailみたいなサービスから移行するには良いんじゃないかな</description>
+めっちゃ安い 機能は仮想サーバーの起動(kvm),スナップショット,ファイヤーウォールくらい 追加オプションで権威DNSサーバーが使える(500円) 管理画面は少し重い ipv6の設定は手動でやる 1vCPU/1GB memory(Uubuntu 22.04)の場合はnetplanの設定がコメントアウトされてた ファイヤーウォールはipv6非対応 なので、やる場合はnftablesを自分で設定する 管理画面でコンソール開く場合は広告ブロックをOFFにしないとダメ 最初はsshでのアクセスのみコンソール画面に入る場合 はsshで入ってから、パスワード設定が必要 API での操作も可能 OP25Bはされていない 対応OS 転送料金に課金なし 圧倒的に安いのでlightsailみたいなサービスから移行するには良いんじゃないかな</description>
     </item>
     
     <item>
@@ -274,22 +285,6 @@ Credit External IPs will not be charged until April 1, 2020. んで、外部IP�
 あと、上記コマンドはsshポートを解放してないと駄目ぽい（正確にはIAPからのアクセスを許可すれば良いだけぽいが）
 とりあえず課金されてから考えるか・・・
 参考リンク 外部IPを持たないGCEインスタンスでweb開発 GCP/GCE の固定グローバルIPアドレス、2020年より有料化 </description>
-    </item>
-    
-    <item>
-      <title>GCP Cloud Functions内からサービスアカウントのtoken取る</title>
-      <link>https://yaasita.github.io/2019/12/08/service-account-in-cf/</link>
-      <pubDate>Sun, 08 Dec 2019 05:12:12 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/12/08/service-account-in-cf/</guid>
-      <description>Cloud Functionsからサービスアカウントのアクセストークンをどうやって取るの？と疑問に思ったので調べた
-Google Compute Engineと同じ取り方でOK
-&amp;quot;use strict&amp;quot;; const fetch = require(&amp;quot;node-fetch&amp;quot;); exports.handler = async (req, res) =&amp;gt; { const url = &amp;quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&amp;quot; + &amp;quot;[サービスアカウント名]/token&amp;quot;; const result = await fetch(url, { method: &amp;quot;GET&amp;quot;, headers: { &amp;quot;Metadata-Flavor&amp;quot;: &amp;quot;Google&amp;quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&amp;quot;OK&amp;quot;); }; なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
-まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &amp;ldquo;Function Identity&amp;quot;とかクリックするとちゃんと日本語版あるんですよね
-なんかメニューがバグってるのかな・・・
-とりあえず英語版から探すのをオススメします&amp;hellip;
-参考リンク
-関数ID Compute Metadata Server </description>
     </item>
     
   </channel>

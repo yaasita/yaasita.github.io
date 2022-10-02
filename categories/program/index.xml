@@ -6,7 +6,18 @@
     <description>Recent content in program on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 15 Sep 2022 03:58:50 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 02 Oct 2022 22:06:36 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>webページの存在証明</title>
+      <link>https://yaasita.github.io/2022/10/02/exists/</link>
+      <pubDate>Sun, 02 Oct 2022 22:06:36 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/10/02/exists/</guid>
+      <description>このgpg鍵でwebページをpdfにしたやつに署名するという
+まったく意味のないサービスを作った
+https://exists.cloud.yaasita.net/</description>
+    </item>
+    
     <item>
       <title>apacheのautoindex経由で画像のスライドショー</title>
       <link>https://yaasita.github.io/2022/09/15/slideshow/</link>
@@ -266,16 +277,6 @@ code_challenge_method=S256の場合は以下のような実装ロジックにな
 node.jsで書いた
 Oauth2のPKCE
 base64エンコードじゃなくてbase64urlエンコードなのが注意点</description>
-    </item>
-    
-    <item>
-      <title>令和の対応に際して</title>
-      <link>https://yaasita.github.io/2019/04/25/reiwa/</link>
-      <pubDate>Thu, 25 Apr 2019 02:08:40 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/04/25/reiwa/</guid>
-      <description>techrachoの記事
-perlも追加でお願いします</description>
     </item>
     
   </channel>
