@@ -6,7 +6,17 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 02 Oct 2022 22:06:36 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Nov 2022 01:45:42 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>fargateでメタデータ取得</title>
+      <link>https://yaasita.github.io/2022/11/20/get-metadata/</link>
+      <pubDate>Sun, 20 Nov 2022 01:45:42 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/11/20/get-metadata/</guid>
+      <description>ECS内からメタデータ叩いて、自分と同じタスク定義のコンテナが何個あるか数える
+何に使うか分からんけど一応おいておく</description>
+    </item>
+    
     <item>
       <title>webページの存在証明</title>
       <link>https://yaasita.github.io/2022/10/02/exists/</link>
@@ -276,19 +286,6 @@ https://datatracker.ietf.org/doc/html/rfc7208#section-5.3</description>
 商品型名： LB-C110B [Windows 8.1搭載]
 商品単価： \44,940
 OS: Windows 8.1 64ビット CPU: インテル(R) Celeron(R) プロセッサー 1037U (2コア/1.80GHz/2Mキャッシュ) メモリ: \5,250 8GB メモリ [ 8GB×1 (DDR3 SO-DIMM PC3-12800) ] HDD1:【キャンペーン】500GB 5400rpm [ Western Digital製 ] VGA:インテル(R) HD グラフィックス 3.5ドライブベイ :SDカードリーダー マザーボード :インテル(R) NM70 Express チップセット ※SSD搭載時は SATAII 接続になります。( mSATA SSDを除く ) ベアボーン :LuvBook C シリーズ 液晶 :11.6型ワイド (1366x768) マルチタッチ対応光沢HD液晶パネル LAN :[ オンボード ] 10/100/1000BASE-T GigaBit-Ethernet LAN 無線LAN :無線LAN ( IEEE802.</description>
-    </item>
-    
-    <item>
-      <title>bridgeインターフェイスのMACアドレス</title>
-      <link>https://yaasita.github.io/2021/10/10/machine-id/</link>
-      <pubDate>Sun, 10 Oct 2021 05:52:16 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/10/10/machine-id/</guid>
-      <description>KVMを使ったVM内でブリッジインターフェイス作ってそのVMをコピーしたらMACアドレスが重複して通信不能になった
-(/etc/systemd/network/にはこんな感じでbridge作る)
-https://gist.github.com/yaasita/d527b48f54b0e23c3097a9c69239d534
-どうやらこれ、machine-idから作られてるみたいで、VMコピーしたらmachine-id変えた方が良いぽいね
-rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machine-id-setup </description>
     </item>
     
   </channel>

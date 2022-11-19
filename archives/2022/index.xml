@@ -6,7 +6,17 @@
     <description>Recent content in 2022 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 02 Oct 2022 22:06:36 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2022/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Nov 2022 01:45:42 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2022/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>fargateでメタデータ取得</title>
+      <link>https://yaasita.github.io/2022/11/20/get-metadata/</link>
+      <pubDate>Sun, 20 Nov 2022 01:45:42 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/11/20/get-metadata/</guid>
+      <description>ECS内からメタデータ叩いて、自分と同じタスク定義のコンテナが何個あるか数える
+何に使うか分からんけど一応おいておく</description>
+    </item>
+    
     <item>
       <title>webページの存在証明</title>
       <link>https://yaasita.github.io/2022/10/02/exists/</link>
