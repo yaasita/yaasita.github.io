@@ -6,7 +6,23 @@
     <description>Recent content in hard on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 13 Oct 2021 04:43:00 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/hard/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Dec 2022 04:35:15 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/hard/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>androidのdevice protection</title>
+      <link>https://yaasita.github.io/2022/12/24/android-device-protection/</link>
+      <pubDate>Sat, 24 Dec 2022 04:35:15 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/12/24/android-device-protection/</guid>
+      <description>説明
+https://spdic.biz/termdic/deviceprotection/
+デバイスプロテクション解除
+https://spdic.biz/category/services/dp-unlock/
+AQUOS Sense3解除
+https://spdic.biz/services/dp-unlock/frp-aquoss-se3-v10/
+Unlock FRP(Factory reset protection)
+https://www.youtube.com/watch?v=3ECcn7tXWDs</description>
+    </item>
+    
     <item>
       <title>長年使ったマウスコンピューターのPC</title>
       <link>https://yaasita.github.io/2021/10/13/mouse-pc/</link>
@@ -234,24 +250,6 @@ IIJ IIJmio SIM ウェルカムパック microSIM ( SMS 機能付き ) 版 1,900�
       <description>http://standards.ieee.org/develop/regauth/oui/public.html
 MACアドレスの上位3バイトを検索窓に入れる
 例) 00-22-68</description>
-    </item>
-    
-    <item>
-      <title>HDDの故障が疑われるときにやったこと</title>
-      <link>https://yaasita.github.io/2014/08/16/hdd-fail/</link>
-      <pubDate>Sat, 16 Aug 2014 19:10:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2014/08/16/hdd-fail/</guid>
-      <description>なんかrsyncでバックアップしようとすると以下のエラーが出るようになった
-rsync: read errors mapping &amp;quot;/home/yamasita/Desktop/hogehoge.dat&amp;quot;: Input/output error (5) ERROR: /home/yamasita/Desktop/hogehoge.dat failed verification -- update discarded. まずbadblocksで調べてみる
-badblocks /home/yamasita/Desktop/hogehoge.dat ダメそう
-とりあえず、fsckをかけてみる
-/のパーティションなのでfsckの間隔を調整
-dumpe2fs -h /dev/sda1 | egrep -i &#39;check|mount count&#39; tune2fs -i 30d /dev/sda1 これでとりあえず不良セクタ退避させた
-過去記事
-HDDが故障したときにやったこと
-参考リンク
-http://nfolamp.wordpress.com/2010/10/25/dumpe2fstune2fs-manipulating-the-ext-fs-auto-check-parameters/</description>
     </item>
     
   </channel>

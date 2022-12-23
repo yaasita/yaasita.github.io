@@ -6,7 +6,23 @@
     <description>Recent content in crack on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 24 Aug 2022 02:39:41 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/crack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Dec 2022 04:35:15 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/crack/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>androidのdevice protection</title>
+      <link>https://yaasita.github.io/2022/12/24/android-device-protection/</link>
+      <pubDate>Sat, 24 Dec 2022 04:35:15 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/12/24/android-device-protection/</guid>
+      <description>説明
+https://spdic.biz/termdic/deviceprotection/
+デバイスプロテクション解除
+https://spdic.biz/category/services/dp-unlock/
+AQUOS Sense3解除
+https://spdic.biz/services/dp-unlock/frp-aquoss-se3-v10/
+Unlock FRP(Factory reset protection)
+https://www.youtube.com/watch?v=3ECcn7tXWDs</description>
+    </item>
+    
     <item>
       <title>mitmproxyを使うときのブラウザ設定</title>
       <link>https://yaasita.github.io/2022/08/24/mitmproxy-chrome/</link>
@@ -358,19 +374,6 @@ http://www.hehehe.net/game/ </description>
       
       <guid>https://yaasita.github.io/2007/11/12/13395/</guid>
       <description> https://wiki.ubuntulinux.jp/UbuntuTips/Application/P2Ptv </description>
-    </item>
-    
-    <item>
-      <title>アイコンを偽装できる拡張子はexeとsrcだけ</title>
-      <link>https://yaasita.github.io/2007/10/27/13502/</link>
-      <pubDate>Sat, 27 Oct 2007 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2007/10/27/13502/</guid>
-      <description> ウイルスの拡張子をtxtにするともとのアイコンに戻るのはそのためです。
-よって下の記事は正確ではないようです。
-http://www.atmarkit.co.jp/fsecurity/special/90winny/winny05.html
-参考リンク
-http://www.tokix.net/txt/WinnyVirus.html </description>
     </item>
     
   </channel>

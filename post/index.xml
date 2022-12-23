@@ -6,7 +6,23 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 20 Nov 2022 01:45:42 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Dec 2022 04:35:15 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>androidのdevice protection</title>
+      <link>https://yaasita.github.io/2022/12/24/android-device-protection/</link>
+      <pubDate>Sat, 24 Dec 2022 04:35:15 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2022/12/24/android-device-protection/</guid>
+      <description>説明
+https://spdic.biz/termdic/deviceprotection/
+デバイスプロテクション解除
+https://spdic.biz/category/services/dp-unlock/
+AQUOS Sense3解除
+https://spdic.biz/services/dp-unlock/frp-aquoss-se3-v10/
+Unlock FRP(Factory reset protection)
+https://www.youtube.com/watch?v=3ECcn7tXWDs</description>
+    </item>
+    
     <item>
       <title>fargateでメタデータ取得</title>
       <link>https://yaasita.github.io/2022/11/20/get-metadata/</link>
@@ -272,20 +288,6 @@ kubectl patch svc kubernetes-dashboard -n kube-system -p &#39;{&amp;quot;spec&am
 v=spf1 a:example.net -all みたいに指定したときにAレコードだけじゃなくて、AAAAレコードも引いてくれるので便利です
 IPv6のアドレスは長くなるので積極的に利用したいですね
 https://datatracker.ietf.org/doc/html/rfc7208#section-5.3</description>
-    </item>
-    
-    <item>
-      <title>長年使ったマウスコンピューターのPC</title>
-      <link>https://yaasita.github.io/2021/10/13/mouse-pc/</link>
-      <pubDate>Wed, 13 Oct 2021 04:43:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/10/13/mouse-pc/</guid>
-      <description>長年使ったmouse computerのPCを廃棄した
-めっちゃくちゃな長くもったし、まだHDDも壊れてなかったすごい
-捨てたやつのスペック
-商品型名： LB-C110B [Windows 8.1搭載]
-商品単価： \44,940
-OS: Windows 8.1 64ビット CPU: インテル(R) Celeron(R) プロセッサー 1037U (2コア/1.80GHz/2Mキャッシュ) メモリ: \5,250 8GB メモリ [ 8GB×1 (DDR3 SO-DIMM PC3-12800) ] HDD1:【キャンペーン】500GB 5400rpm [ Western Digital製 ] VGA:インテル(R) HD グラフィックス 3.5ドライブベイ :SDカードリーダー マザーボード :インテル(R) NM70 Express チップセット ※SSD搭載時は SATAII 接続になります。( mSATA SSDを除く ) ベアボーン :LuvBook C シリーズ 液晶 :11.6型ワイド (1366x768) マルチタッチ対応光沢HD液晶パネル LAN :[ オンボード ] 10/100/1000BASE-T GigaBit-Ethernet LAN 無線LAN :無線LAN ( IEEE802.</description>
     </item>
     
   </channel>
