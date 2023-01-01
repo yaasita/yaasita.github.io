@@ -6,7 +6,17 @@
     <description>Recent content in 2022 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 24 Dec 2022 04:35:15 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2022/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Jan 2023 23:21:03 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2022/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ESMではNODEPATH使わない</title>
+      <link>https://yaasita.github.io/2023/01/01/nodepath/</link>
+      <pubDate>Sun, 01 Jan 2023 23:21:03 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/01/01/nodepath/</guid>
+      <description>node.jsでNODE_PATHはESMで使えないみたいです
+https://github.com/nodejs/node/issues/38687</description>
+    </item>
+    
     <item>
       <title>androidのdevice protection</title>
       <link>https://yaasita.github.io/2022/12/24/android-device-protection/</link>

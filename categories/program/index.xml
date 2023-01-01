@@ -6,7 +6,17 @@
     <description>Recent content in program on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 20 Nov 2022 01:45:42 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Jan 2023 23:21:03 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ESMではNODEPATH使わない</title>
+      <link>https://yaasita.github.io/2023/01/01/nodepath/</link>
+      <pubDate>Sun, 01 Jan 2023 23:21:03 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/01/01/nodepath/</guid>
+      <description>node.jsでNODE_PATHはESMで使えないみたいです
+https://github.com/nodejs/node/issues/38687</description>
+    </item>
+    
     <item>
       <title>fargateでメタデータ取得</title>
       <link>https://yaasita.github.io/2022/11/20/get-metadata/</link>
@@ -260,20 +270,6 @@ perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp
       <description>AWS S3の署名バージョン騒動
 大丈夫ぽいけど一応調べた時につかったスクリプト
 CloudTrailでログを有効化してからお使いください</description>
-    </item>
-    
-    <item>
-      <title>Cloud Runがすごく良い</title>
-      <link>https://yaasita.github.io/2019/05/29/cloud-run/</link>
-      <pubDate>Wed, 29 May 2019 21:42:23 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/05/29/cloud-run/</guid>
-      <description>GCPのCloud Runがめっちゃ便利
-覚えなきゃいけないルールは2つ
-Dockerにする事 環境変数 $PORT のポート番号でlistenしてレスポンスを返す事 これだけ
-コマンドとかはこの辺見ればすぐできると思います
-あと、Chunked Transferみたいな仕組みで進捗を返すみたいなAPIは難しいかもしれない
-以下のようなプログラムでちょっとずつレスポンス返しても、バッファリングされてるみたいで、最後ドバっと返ってきた</description>
     </item>
     
   </channel>
