@@ -6,7 +6,23 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 01 Jan 2023 23:21:03 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Jan 2023 23:24:59 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>楽天証券の手数料ゼロETF</title>
+      <link>https://yaasita.github.io/2023/01/04/etf/</link>
+      <pubDate>Wed, 04 Jan 2023 23:24:59 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/01/04/etf/</guid>
+      <description>手数料0円ETF
+(このページなぜかログイン状態だと空っぽになる)
+https://www.rakuten-sec.co.jp/web/domestic/etf-etn-reit/lineup/0-etf.html
+信託報酬が書いてなかったので、調べておいた
+https://gist.github.com/yaasita/727267f20177ce13e99750191311c23e
+信託報酬だけ取ってくるときに使ったスクリプト
+実体は rakuten-sec.co.jp ドメインじゃなくて www.trkd-asia.com にあるので注意
+#!/usr/bin/env node &amp;quot;use strict&amp;quot;; import fs from &amp;quot;fs&amp;quot;; import readline from &amp;quot;readline&amp;quot;; import fetch from &amp;quot;node-fetch&amp;quot;; import jsdom from &amp;quot;jsdom&amp;quot;; const { JSDOM } = jsdom; const content = fs.readFileSync(&amp;quot;list.txt&amp;quot;, &amp;quot;utf8&amp;quot;); const codes = content.split(&amp;quot;\n&amp;quot;); for (const code of codes) { await getSintaku(code); } async function getSintaku(code) { const url = `https://www.trkd-asia.com/rakutensec/quote.jsp?ric=${code}.T&amp;amp;c=ja&amp;amp;ind=2`; const res = await fetch(url); const html = await res.</description>
+    </item>
+    
     <item>
       <title>ESMではNODEPATH使わない</title>
       <link>https://yaasita.github.io/2023/01/01/nodepath/</link>
@@ -269,23 +285,6 @@ https://github.com/systemd/systemd/pull/10294/files
 /etc/systemd/system/systemd-nspawn@.service
 にこんな感じで追加したらmachinectlからもできる
 Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0 </description>
-    </item>
-    
-    <item>
-      <title>microk8sでargocdを動かす</title>
-      <link>https://yaasita.github.io/2021/11/28/microk8s/</link>
-      <pubDate>Sun, 28 Nov 2021 06:09:44 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/11/28/microk8s/</guid>
-      <description>microk8s で ArgoCD を動かすときのメモ
-まず手順通りにマニフェストを設定したら
-kubectl patch svc argocd-server -n argocd -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; ClusterIP から NodePortに変更
-こんな感じの表示になったら
-$ kubectl get svc argocd-server -n argocd argocd-server NodePort 10.152.183.43 &amp;lt;none&amp;gt; 80:30444/TCP,443:30983/TCP 20h 以下のURLでアクセス
-https:// (ホストのIP) :30983
-まあkubectl port-forward でやってもいいけど
-ついでに dashbord も同様にできる
-kubectl patch svc kubernetes-dashboard -n kube-system -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; kubectl get svc kubernetes-dashboard -n kube-system $ kubectl get svc kubernetes-dashboard -n kube-system NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE kubernetes-dashboard NodePort 10.</description>
     </item>
     
   </channel>

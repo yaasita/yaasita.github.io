@@ -6,7 +6,23 @@
     <description>Recent content in life on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 14 Sep 2019 22:21:43 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Jan 2023 23:24:59 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>楽天証券の手数料ゼロETF</title>
+      <link>https://yaasita.github.io/2023/01/04/etf/</link>
+      <pubDate>Wed, 04 Jan 2023 23:24:59 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/01/04/etf/</guid>
+      <description>手数料0円ETF
+(このページなぜかログイン状態だと空っぽになる)
+https://www.rakuten-sec.co.jp/web/domestic/etf-etn-reit/lineup/0-etf.html
+信託報酬が書いてなかったので、調べておいた
+https://gist.github.com/yaasita/727267f20177ce13e99750191311c23e
+信託報酬だけ取ってくるときに使ったスクリプト
+実体は rakuten-sec.co.jp ドメインじゃなくて www.trkd-asia.com にあるので注意
+#!/usr/bin/env node &amp;quot;use strict&amp;quot;; import fs from &amp;quot;fs&amp;quot;; import readline from &amp;quot;readline&amp;quot;; import fetch from &amp;quot;node-fetch&amp;quot;; import jsdom from &amp;quot;jsdom&amp;quot;; const { JSDOM } = jsdom; const content = fs.readFileSync(&amp;quot;list.txt&amp;quot;, &amp;quot;utf8&amp;quot;); const codes = content.split(&amp;quot;\n&amp;quot;); for (const code of codes) { await getSintaku(code); } async function getSintaku(code) { const url = `https://www.trkd-asia.com/rakutensec/quote.jsp?ric=${code}.T&amp;amp;c=ja&amp;amp;ind=2`; const res = await fetch(url); const html = await res.</description>
+    </item>
+    
     <item>
       <title>ビリビリ動画とcrunchyrollのIP制限をGCPで検証</title>
       <link>https://yaasita.github.io/2019/09/14/anime-ip-block/</link>
@@ -224,32 +240,6 @@ http://www.53pc.com/hikitori/index.html </description>
       <guid>https://yaasita.github.io/2012/09/23/2212/</guid>
       <description> 結構便利
 http://item.rakuten.co.jp/angers/121696/ </description>
-    </item>
-    
-    <item>
-      <title>自分があとどれくらいの時間生きていられるか？</title>
-      <link>https://yaasita.github.io/2012/01/09/3174/</link>
-      <pubDate>Mon, 09 Jan 2012 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2012/01/09/3174/</guid>
-      <description> 自分があとどれくらいの時間生きていられるか簡単にわかるサイトです
-ライフカウンター
-残された時間がすぐに分かって便利です。
-例えば本日1/9誕生日の25歳の場合、残された時間は482113時間です。（寿命80歳までと仮定して）
-毎日8時間寝るとすると人生の1/3ですから160704時間寝ています
-この人はSEをしていて、毎日残業して14時間働き、休日出勤も多いので年間休日は100日です
-定年は65歳にあがったみたいなので、65歳とします
-14 x (365 - 100) x (65-25) = 148400時間が働いている時間です。
-まとめると以下のようになります
-寝ている時間　160704h
-働いてる時間　148400h
-自由な時間　173009h
-合計　482113h
-自由な時間は全体の35％しかないことが分かります。
-何か仕事とは別にやりたい事や目標がある場合、残された173009時間でやる必要があります。
-年にすると約20年しかないですので結構少ない気がします。
-（実際には自由な時間中に家事、食事、冠婚葬祭等がありますのでずっと少ないです）
-もし、働いている時間も自由な時間も充実していなかったとしたら死ぬ時に後悔するんじゃないでしょうか？もしこの例のような生活をしているSEの方が居ましたら考え直した方が良いかもしれないです。 </description>
     </item>
     
   </channel>

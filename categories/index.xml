@@ -6,7 +6,16 @@
     <description>Recent content in Categories on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 01 Jan 2023 23:21:03 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Jan 2023 23:24:59 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>life</title>
+      <link>https://yaasita.github.io/categories/life/</link>
+      <pubDate>Wed, 04 Jan 2023 23:24:59 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/categories/life/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>program</title>
       <link>https://yaasita.github.io/categories/program/</link>
@@ -76,15 +85,6 @@
       <pubDate>Sun, 27 Oct 2019 03:00:31 +0900</pubDate>
       
       <guid>https://yaasita.github.io/categories/game/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>life</title>
-      <link>https://yaasita.github.io/categories/life/</link>
-      <pubDate>Sat, 14 Sep 2019 22:21:43 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/categories/life/</guid>
       <description></description>
     </item>
     
