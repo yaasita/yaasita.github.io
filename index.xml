@@ -6,7 +6,20 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 04 Jan 2023 23:24:59 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 18 Feb 2023 04:35:50 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FF13感想とか</title>
+      <link>https://yaasita.github.io/2023/02/18/ff13/</link>
+      <pubDate>Sat, 18 Feb 2023 04:35:50 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/02/18/ff13/</guid>
+      <description>MPもないし、戦闘終るごとに全回復、装備も武器とアクセサリしかないので面倒な部分が無いので良いけど
+飽きるのは早いかもしれない
+ストーリーはよく分からないかった
+戦闘システムは結構好き
+攻略情報リンク ミッション一覧 アダマンタイマイの倒し方 効率的な改造 トラペゾヘドロンを増やす方法 </description>
+    </item>
+    
     <item>
       <title>楽天証券の手数料ゼロETF</title>
       <link>https://yaasita.github.io/2023/01/04/etf/</link>
@@ -269,22 +282,6 @@ data: bandori$MISS W = 0.98162, p-value = 0.724 ここで注意なのはこの�
 ヒストグラム見る限り正規分布としても良さそうですが
 使ったRスクリプト
 https://gist.github.com/yaasita/7c431d0493c9703c91d0a013d03349af</description>
-    </item>
-    
-    <item>
-      <title>systemd-nspawnのtmpディレクトリ</title>
-      <link>https://yaasita.github.io/2021/12/12/systemd-nspawn-tmpdir/</link>
-      <pubDate>Sun, 12 Dec 2021 06:03:17 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/12/12/systemd-nspawn-tmpdir/</guid>
-      <description>systemd-nspawnで/tmpのtmpfs mountを止める方法について昔こんな記事書いた
-systemd-nspawnでのtmpディレクトリの扱いについて
-今は状況が変わってて、
-https://github.com/systemd/systemd/pull/10294/files
-こんな感じで、&amp;ldquo;SYSTEMD_NSPAWN_TMPFS_TMP&amp;rdquo; って環境変数に0を入れておけば、/tmpディレクトリをtmpfsにしない
-/etc/systemd/system/systemd-nspawn@.service
-にこんな感じで追加したらmachinectlからもできる
-Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0 </description>
     </item>
     
   </channel>
