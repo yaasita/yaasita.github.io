@@ -6,7 +6,20 @@
     <description>Recent content in life on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 04 Jan 2023 23:24:59 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Mar 2023 03:26:44 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>金価格に連動するETF</title>
+      <link>https://yaasita.github.io/2023/03/22/etf-gold/</link>
+      <pubDate>Wed, 22 Mar 2023 03:26:44 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/03/22/etf-gold/</guid>
+      <description>金価格が上がってるので買おうかなと
+ここで探した
+https://money-bu-jpx.com/
+銘柄検索 =&amp;gt; ETF・ETNの種類から探す =&amp;gt; 商品ETF =&amp;gt; 検索結果へ =&amp;gt; 信託報酬が低い順で並べ替え
+ＳＰＤＲゴールド・シェア（1326） 純金上場信託（現物国内保管型）（1540） この辺かな</description>
+    </item>
+    
     <item>
       <title>楽天証券の手数料ゼロETF</title>
       <link>https://yaasita.github.io/2023/01/04/etf/</link>
@@ -230,16 +243,6 @@ http://www.simplivillage.com/trac/wiki/Userscript/FastLookupJPandEN </descriptio
       <guid>https://yaasita.github.io/2013/01/02/1705/</guid>
       <description> ごみパソに送りつけると良いらしい
 http://www.53pc.com/hikitori/index.html </description>
-    </item>
-    
-    <item>
-      <title>最近使ってるダンボールの収納ボックス</title>
-      <link>https://yaasita.github.io/2012/09/23/2212/</link>
-      <pubDate>Sun, 23 Sep 2012 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2012/09/23/2212/</guid>
-      <description> 結構便利
-http://item.rakuten.co.jp/angers/121696/ </description>
     </item>
     
   </channel>

@@ -6,7 +6,20 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 18 Feb 2023 04:35:50 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Mar 2023 03:26:44 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>金価格に連動するETF</title>
+      <link>https://yaasita.github.io/2023/03/22/etf-gold/</link>
+      <pubDate>Wed, 22 Mar 2023 03:26:44 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/03/22/etf-gold/</guid>
+      <description>金価格が上がってるので買おうかなと
+ここで探した
+https://money-bu-jpx.com/
+銘柄検索 =&amp;gt; ETF・ETNの種類から探す =&amp;gt; 商品ETF =&amp;gt; 検索結果へ =&amp;gt; 信託報酬が低い順で並べ替え
+ＳＰＤＲゴールド・シェア（1326） 純金上場信託（現物国内保管型）（1540） この辺かな</description>
+    </item>
+    
     <item>
       <title>FF13感想とか</title>
       <link>https://yaasita.github.io/2023/02/18/ff13/</link>
@@ -258,30 +271,6 @@ https://ipv46.cloud.yaasita.net/</description>
 (対象はGoogleから貰うレポート)
 こんな感じでメールがあるディレクトリを指定する
 ./index.js ~/Maildir/cur/ </description>
-    </item>
-    
-    <item>
-      <title>RStudioで正規性の確認</title>
-      <link>https://yaasita.github.io/2022/01/26/normal_distribution/</link>
-      <pubDate>Wed, 26 Jan 2022 02:50:46 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2022/01/26/normal_distribution/</guid>
-      <description>シャピロ-ウィルク(Shapiro-Wilk)の正規性の検定をやる流れ
-まず以下のようなデータを用意する
-ある音ゲーのスコア
-これは音ゲーのスコアを表していてタイミングよく押せた場合はPERFECT, 早すぎたり遅すぎたりした場合はFAST, SLOWに計上される
-この内ミスの割合が正規分布と見なせるか検定する
-まず、CSVを右上のEnvironmentタブ =&amp;gt; Import Datasetから読み込む
-データをMISSの割合をデータフレームに追加
-library(dplyr) bandori &amp;lt;- bandori %&amp;gt;% mutate(MISS = (FAST + SLOW) / (PERFECT + FAST + SLOW) * 100) ヒストグラムと近似曲線を出す
-hist(bandori$MISS, breaks = seq(0, 20, 1)) dens &amp;lt;- density(bandori$MISS) lines(dens, lwd = 3, col = &amp;#34;blue&amp;#34;) 検定
-shapiro.test(bandori$MISS) 検定統計量とp値
-data: bandori$MISS W = 0.98162, p-value = 0.724 ここで注意なのはこの検定は帰無仮説が「正規分布している」なので
-棄却出来た場合は正規分布ではないと言えるが、
-今回のように棄却できない（受容域）の場合は正規分布していてもおかしくない程度なので何とも言えないです
-ヒストグラム見る限り正規分布としても良さそうですが
-使ったRスクリプト
-https://gist.github.com/yaasita/7c431d0493c9703c91d0a013d03349af</description>
     </item>
     
   </channel>
