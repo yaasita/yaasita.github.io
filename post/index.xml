@@ -6,7 +6,36 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 22 Mar 2023 03:26:44 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 01 Apr 2023 01:54:35 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>二項分布の計算について</title>
+      <link>https://yaasita.github.io/2023/04/01/binomial-distribution/</link>
+      <pubDate>Sat, 01 Apr 2023 01:54:35 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/04/01/binomial-distribution/</guid>
+      <description>100回コインを投げて80回以上表が出る確率
+bingに聞いてみると
+こんにちは、こちらはBingです。😊
+コインを100回投げて、表が80回以上出る確率は、二項分布という統計学の分布を使って計算できます。1
+二項分布の確率は、以下の式で求められます。
+P(X=k) = nCk * p^k * (1-p)^(n-k)
+ここで、nは試行回数、kは成功回数、pは成功確率、nCkはn個からk個を選ぶ組み合わせの数です。
+コインの場合、表が出る確率はp=0.5です。2
+コインを100回投げて、表が80回出る確率は、
+P(X=80) = 100C80 * 0.5^80 * 0.5^20 ≒ 0.000000000000000000000000000000000000000000000001
+となります。
+表が80回以上出る確率は、表が80回から100回出る確率の合計です。
+P(X≧80) = P(X=80) + P(X=81) + … + P(X=100)
+これを計算すると、
+P(X≧80) ≒ 0.000000000000000000000000000000000000000000000002
+となります。
+つまり、コインを100回投げて、表が80回以上出る確率は非常に低いと言えます。
+式はあってそうですが計算が間違っていそうです
+まず正確に計算してみます
+&amp;#x2211; i = 80 100 { 100 C 80 &amp;#x22C5; ( 1 2 ) i &amp;#x22C5; ( 1 2 ) 100 &amp;#x2212; i } Rで書くならこう
+sum &amp;lt;- 0 for (i in 80:100) { sum &amp;lt;- choose(100, i) * (1 / 2) ^ 100 + sum print(paste(i, &amp;quot;= &amp;quot;, sum)) } 結果は 5.</description>
+    </item>
+    
     <item>
       <title>金価格に連動するETF</title>
       <link>https://yaasita.github.io/2023/03/22/etf-gold/</link>
@@ -259,18 +288,6 @@ ipv6専用
 https://ipv6.cloud.yaasita.net/
 ipv4/ipv6両対応(どちらのIPが優先されるか確認用)
 https://ipv46.cloud.yaasita.net/</description>
-    </item>
-    
-    <item>
-      <title>SMTP-TLSRPTのチェック</title>
-      <link>https://yaasita.github.io/2022/02/12/tls-report-check/</link>
-      <pubDate>Sat, 12 Feb 2022 01:24:48 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2022/02/12/tls-report-check/</guid>
-      <description>SMTP-TLSRPTをチェックしてtotal-failure-session-countがゼロより大きいかチェックするスクリプト
-(対象はGoogleから貰うレポート)
-こんな感じでメールがあるディレクトリを指定する
-./index.js ~/Maildir/cur/ </description>
     </item>
     
   </channel>

@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>二項分布の計算について | # cd ~yaasita</title>
+    <meta name="generator" content="Hugo 0.109.0">
+
+    <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
+    <meta property="og:title" content="二項分布の計算について" />
+<meta property="og:description" content="100回コインを投げて80回以上表が出る確率
+bingに聞いてみると
+こんにちは、こちらはBingです。😊
+コインを100回投げて、表が80回以上出る確率は、二項分布という統計学の分布を使って計算できます。1
+二項分布の確率は、以下の式で求められます。
+P(X=k) = nCk * p^k * (1-p)^(n-k)
+ここで、nは試行回数、kは成功回数、pは成功確率、nCkはn個からk個を選ぶ組み合わせの数です。
+コインの場合、表が出る確率はp=0.5です。2
+コインを100回投げて、表が80回出る確率は、
+P(X=80) = 100C80 * 0.5^80 * 0.5^20 ≒ 0.000000000000000000000000000000000000000000000001
+となります。
+表が80回以上出る確率は、表が80回から100回出る確率の合計です。
+P(X≧80) = P(X=80) &#43; P(X=81) &#43; … &#43; P(X=100)
+これを計算すると、
+P(X≧80) ≒ 0.000000000000000000000000000000000000000000000002
+となります。
+つまり、コインを100回投げて、表が80回以上出る確率は非常に低いと言えます。
+式はあってそうですが計算が間違っていそうです
+まず正確に計算してみます
+&#x2211; i = 80 100 { 100 C 80 &#x22C5; ( 1 2 ) i &#x22C5; ( 1 2 ) 100 &#x2212; i } Rで書くならこう
+sum &lt;- 0 for (i in 80:100) { sum &lt;- choose(100, i) * (1 / 2) ^ 100 &#43; sum print(paste(i, &quot;= &quot;, sum)) } 結果は 5." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2023/04/01/binomial-distribution/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2023-04-01T01:54:35+09:00" />
+<meta property="article:modified_time" content="2023-04-01T01:54:35+09:00" />
+
+    
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-37419565-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    <script id="dsq-count-scr" src="https://yaasita.disqus.com/count.js" async></script>
+
+  </head>
+  <body>
+    <div id="wrap">
+      <header class="site-header">
+        <div class="site-header-left">
+          <a class="site-header-title" href="https://yaasita.github.io/"># cd ~yaasita</a>
+        </div>
+      </header>
+      <div class="container">
+        <div id="main">
+
+<div class="article">
+  <header>
+    <div class="article-header">
+      <h1>二項分布の計算について</h1>
+      <div class="article-meta">
+        <span class="posttime">2023/04/01 01:54</span>
+      </div>
+    </div>
+  </header>
+  <div class="content">
+    <p>100回コインを投げて80回以上表が出る確率<br>
+bingに聞いてみると</p>
+<p><a href="https://yaasita.tk/blog/2023/bing.png"><img src="https://yaasita.tk/blog/2023/bing.png" alt="bing"></a></p>
+<blockquote>
+<p>こんにちは、こちらはBingです。😊<br>
+コインを100回投げて、表が80回以上出る確率は、二項分布という統計学の分布を使って計算できます。1<br>
+二項分布の確率は、以下の式で求められます。<br>
+P(X=k) = nCk * p^k * (1-p)^(n-k)<br>
+ここで、nは試行回数、kは成功回数、pは成功確率、nCkはn個からk個を選ぶ組み合わせの数です。<br>
+コインの場合、表が出る確率はp=0.5です。2<br>
+コインを100回投げて、表が80回出る確率は、<br>
+P(X=80) = 100C80 * 0.5^80 * 0.5^20 ≒ 0.000000000000000000000000000000000000000000000001<br>
+となります。<br>
+表が80回以上出る確率は、表が80回から100回出る確率の合計です。<br>
+P(X≧80) = P(X=80) + P(X=81) + … + P(X=100)<br>
+これを計算すると、<br>
+P(X≧80) ≒ 0.000000000000000000000000000000000000000000000002<br>
+となります。<br>
+つまり、コインを100回投げて、表が80回以上出る確率は非常に低いと言えます。</p>
+</blockquote>
+<p>式はあってそうですが計算が間違っていそうです</p>
+<p>まず正確に計算してみます</p>
+<!-- \sum\limits_{i=80}^{100}{\left\{ {}_{100} C_{80}\cdot\left(\frac{1}{2}\right)^{i}\cdot\left(\frac{1}{2}\right)^{100-i}\right\}} -->
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle displaystyle="true">
+    <mrow class="MJX-TeXAtom-ORD">
+      <munderover>
+        <mo movablelimits="false">&#x2211;<!-- ∑ --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi>i</mi>
+          <mo>=</mo>
+          <mn>80</mn>
+        </mrow>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mn>100</mn>
+        </mrow>
+      </munderover>
+      <mrow class="MJX-TeXAtom-ORD">
+        <mrow>
+          <mo>{</mo>
+          <msub>
+            <mrow class="MJX-TeXAtom-ORD">
+            </mrow>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mn>100</mn>
+            </mrow>
+          </msub>
+          <msub>
+            <mi>C</mi>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mn>80</mn>
+            </mrow>
+          </msub>
+          <mo>&#x22C5;<!-- ⋅ --></mo>
+          <msup>
+            <mrow>
+              <mo>(</mo>
+              <mfrac>
+                <mn>1</mn>
+                <mn>2</mn>
+              </mfrac>
+              <mo>)</mo>
+            </mrow>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mi>i</mi>
+            </mrow>
+          </msup>
+          <mo>&#x22C5;<!-- ⋅ --></mo>
+          <msup>
+            <mrow>
+              <mo>(</mo>
+              <mfrac>
+                <mn>1</mn>
+                <mn>2</mn>
+              </mfrac>
+              <mo>)</mo>
+            </mrow>
+            <mrow class="MJX-TeXAtom-ORD">
+              <mn>100</mn>
+              <mo>&#x2212;<!-- − --></mo>
+              <mi>i</mi>
+            </mrow>
+          </msup>
+          <mo>}</mo>
+        </mrow>
+      </mrow>
+    </mrow>
+  </mstyle>
+</math>
+<p>Rで書くならこう</p>
+<pre><code>sum &lt;- 0
+for (i in 80:100) {
+  sum &lt;- choose(100, i) * (1 / 2) ^ 100 + sum
+  print(paste(i, &quot;= &quot;, sum))
+}
+</code></pre>
+<p>結果は <code>5.579545e-10</code></p>
+<p>標本比率の計算でやるなら</p>
+<!-- \bar{X}= \frac{1}{100}\cdot \sum\limits_{i=1}^{100}{X_{i}} \sim  N(\frac{1}{2},\frac{ \left( \frac{1}{2}\right)\cdot \left( \frac{1}{2}\right) }{100}  )   -->
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle displaystyle="true">
+    <mrow class="MJX-TeXAtom-ORD">
+      <mrow class="MJX-TeXAtom-ORD">
+        <mover>
+          <mi>X</mi>
+          <mo stretchy="false">&#x00AF;<!-- ¯ --></mo>
+        </mover>
+      </mrow>
+      <mo>=</mo>
+      <mfrac>
+        <mn>1</mn>
+        <mn>100</mn>
+      </mfrac>
+      <mo>&#x22C5;<!-- ⋅ --></mo>
+      <munderover>
+        <mo movablelimits="false">&#x2211;<!-- ∑ --></mo>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mi>i</mi>
+          <mo>=</mo>
+          <mn>1</mn>
+        </mrow>
+        <mrow class="MJX-TeXAtom-ORD">
+          <mn>100</mn>
+        </mrow>
+      </munderover>
+      <mrow class="MJX-TeXAtom-ORD">
+        <msub>
+          <mi>X</mi>
+          <mrow class="MJX-TeXAtom-ORD">
+            <mi>i</mi>
+          </mrow>
+        </msub>
+      </mrow>
+      <mo>&#x223C;<!-- ∼ --></mo>
+      <mi>N</mi>
+      <mo stretchy="false">(</mo>
+      <mfrac>
+        <mn>1</mn>
+        <mn>2</mn>
+      </mfrac>
+      <mo>,</mo>
+      <mfrac>
+        <mrow>
+          <mrow>
+            <mo>(</mo>
+            <mfrac>
+              <mn>1</mn>
+              <mn>2</mn>
+            </mfrac>
+            <mo>)</mo>
+          </mrow>
+          <mo>&#x22C5;<!-- ⋅ --></mo>
+          <mrow>
+            <mo>(</mo>
+            <mfrac>
+              <mn>1</mn>
+              <mn>2</mn>
+            </mfrac>
+            <mo>)</mo>
+          </mrow>
+        </mrow>
+        <mn>100</mn>
+      </mfrac>
+      <mo stretchy="false">)</mo>
+    </mrow>
+  </mstyle>
+</math>
+<p>Rでやるなら</p>
+<pre><code>pnorm(0.8,0.5,sqrt(0.25/100), lower.tail = FALSE)
+</code></pre>
+<p>結果は <code>9.865876e-10</code></p>
+<p>同じことですけど<br>
+二項分布の正規分布近似でやるなら</p>
+<!-- X\sim  N(\frac{100}{2},100\cdot\frac{1}{2}\cdot\frac{1}{2} ) -->
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle displaystyle="true">
+    <mrow class="MJX-TeXAtom-ORD">
+      <mi>X</mi>
+      <mo>&#x223C;<!-- ∼ --></mo>
+      <mi>N</mi>
+      <mo stretchy="false">(</mo>
+      <mfrac>
+        <mn>100</mn>
+        <mn>2</mn>
+      </mfrac>
+      <mo>,</mo>
+      <mn>100</mn>
+      <mo>&#x22C5;<!-- ⋅ --></mo>
+      <mfrac>
+        <mn>1</mn>
+        <mn>2</mn>
+      </mfrac>
+      <mo>&#x22C5;<!-- ⋅ --></mo>
+      <mfrac>
+        <mn>1</mn>
+        <mn>2</mn>
+      </mfrac>
+      <mo stretchy="false">)</mo>
+    </mrow>
+  </mstyle>
+</math>
+<p>Rなら</p>
+<pre><code>pnorm(80,50,sqrt(100/4), lower.tail = FALSE)
+</code></pre>
+<p>結果は当然同じで <code>9.865876e-10</code></p>
+<p>グラフはこんな感じ</p>
+<pre><code>curve(dnorm(x,50,sqrt(100/4)),from = 0, to = 100)
+</code></pre>
+<p><a href="https://yaasita.tk/blog/2023/rplot-2.png"><img src="https://yaasita.tk/blog/2023/rplot-2.png" alt="rplot-2"></a></p>
+<p>というわけでBingの計算結果はどっから出てきたかは謎</p>
+
+  </div>
+  <footer>
+    <div class="article-footer">
+      
+<div class="tags">
+  <ul>
+    
+    <li>
+        <a href="/categories/life">life</a>
+    </li>
+    
+  </ul>
+</div>
+
+
+      
+      
+<div id="share-buttons">
+  <ul>
+    
+    <li>
+      <a href="https://twitter.com/share" class="twitter-share-button" data-via="yaasita">Tweet</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </li>
+    
+    
+    <li>
+      <a href="http://b.hatena.ne.jp/entry/https://yaasita.github.io/2023/04/01/binomial-distribution//" class="hatena-bookmark-button" data-hatena-bookmark-title="二項分布の計算について" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
+    </li>
+    
+    <li>
+        <a class="tumblr-share-button" data-color="blue" data-notes="right" href="https://embed.tumblr.com/share"></a>
+        <script>!function(d,s,id){var js,ajs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://assets.tumblr.com/share-button.js";ajs.parentNode.insertBefore(js,ajs);}}(document, "script", "tumblr-js");</script>
+    </li>
+  </ul>
+</div>
+
+
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yaasita" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      <div id="pagenavigation-next-prev">
+        
+        <div id="pagenavigation-next">
+          <span class="pagenav-label">Previous</span>
+          <a href="https://yaasita.github.io/2023/03/22/etf-gold/">金価格に連動するETF</a>
+        </div>
+        
+        
+      </div>
+      
+    </div>
+  </footer>
+</div>
+        </div>
+        <div class="sidebar">
+  
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Author</span>
+    </div>
+    <div id="author">
+      <span>yaasita: SIerから脱出した人</span>
+      <div>
+        
+        <a href="https://twitter.com/yaasita"><i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a>
+        
+        
+        <a href="https://github.com/yaasita"><i class="fa fa-github-square fa-2x" aria-hidden="true"></i></a>
+        
+        
+        
+        <a href="https://yaasita.tumblr.com/"><i class="fa fa-tumblr-square fa-2x" aria-hidden="true"></i></a>
+        
+      </div>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Search</span>
+    </div>
+    <div id="search">
+        <form action="//google.co.jp/search" method="get">
+            <fieldset role="search">
+                <input type="hidden" name="noj" value="1">
+                <input type="hidden" name="q" value="site:yaasita.github.io">
+                <input class="search" type="text" name="q" results="0" placeholder="このブログを検索">
+            </fieldset>
+        </form>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Categories</span>
+    </div>
+    <div class="categories">
+      <ul>
+        
+        <li>
+          <a href="/categories/crack"><span></span>crack (24)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/game"><span></span>game (62)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/hard"><span></span>hard (48)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/life"><span></span>life (72)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/linux"><span></span>linux (343)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/net"><span></span>net (229)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/program"><span></span>program (175)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/rule"><span></span>rule (28)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/soft"><span></span>soft (416)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/windows"><span></span>windows (58)</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Archives</span>
+    </div>
+    <div class="categories">
+      <ul id="archives">
+        
+        <li>
+          <a href="/archives/2007"><span></span>2007 (63)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2008"><span></span>2008 (119)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2009"><span></span>2009 (151)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2010"><span></span>2010 (122)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2011"><span></span>2011 (83)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2012"><span></span>2012 (71)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2013"><span></span>2013 (73)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2014"><span></span>2014 (88)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2015"><span></span>2015 (25)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2016"><span></span>2016 (23)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2017"><span></span>2017 (51)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2018"><span></span>2018 (32)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2019"><span></span>2019 (23)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2020"><span></span>2020 (18)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2021"><span></span>2021 (16)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2022"><span></span>2022 (17)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2023"><span></span>2023 (5)</a>
+        </li>
+        
+      </ul>
+    </div>
+    <script>
+        (function () {
+            var reverse = [];
+            var elm1 = document.querySelector('#archives').querySelectorAll("li");
+            var i=0;
+            for(i=0;i<=elm1.length-1;i++){reverse.unshift(elm1[i].innerHTML)}
+            for(i=0;i<=elm1.length-1;i++){elm1[i].innerHTML=reverse[i]}
+        })();
+    </script>
+  </div>
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>RSS</span>
+    </div>
+    <div id="rss">
+      <a href="/index.xml" type="application/rss+xml" title="# cd ~yaasita" />
+      <i class="fa fa-rss-square fa-2x" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>
+
+      </div>
+      <footer>
+        <div id="site-footer-wrap">
+          <div id="site-footer">
+            <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
+            <span>
+              
+              Copyright (c) 2023, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+
