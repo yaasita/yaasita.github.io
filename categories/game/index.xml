@@ -6,7 +6,22 @@
     <description>Recent content in game on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 18 Feb 2023 04:35:50 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/game/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 May 2023 02:35:27 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/game/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mBGAチートコードサーチ</title>
+      <link>https://yaasita.github.io/2023/05/22/gbc-cheat/</link>
+      <pubDate>Mon, 22 May 2023 02:35:27 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/05/22/gbc-cheat/</guid>
+      <description>ツール =&amp;gt; Game state views =&amp;gt; メモリ検索
+を使って
+値を入れて新規検索 =&amp;gt; 値更新して検索範囲を繰り返す
+目的のアドレスが以下のように 0000d00b だったとすると
+このルールに即して変更する
+上記の場合は値をFFに固定したいとすると
+01FF0BD0 がチートコードになる</description>
+    </item>
+    
     <item>
       <title>FF13感想とか</title>
       <link>https://yaasita.github.io/2023/02/18/ff13/</link>
@@ -225,15 +240,6 @@ https://www.bloc.io/ruby-warrior/</description>
       <guid>https://yaasita.github.io/2013/01/07/1604/</guid>
       <description> https://gist.github.com/raw/4140449/PS%20Vita
 http://gamegaz.com/2013010310456/ </description>
-    </item>
-    
-    <item>
-      <title>機動戦士ガンダムSEED BATTLE DESTINY攻略HP</title>
-      <link>https://yaasita.github.io/2012/09/02/2253/</link>
-      <pubDate>Sun, 02 Sep 2012 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2012/09/02/2253/</guid>
-      <description>http://sakray06.blog.so-net.ne.jp/2012-06-12</description>
     </item>
     
   </channel>

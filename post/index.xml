@@ -6,7 +6,22 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 01 Apr 2023 01:54:35 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 22 May 2023 02:35:27 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>mBGAチートコードサーチ</title>
+      <link>https://yaasita.github.io/2023/05/22/gbc-cheat/</link>
+      <pubDate>Mon, 22 May 2023 02:35:27 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/05/22/gbc-cheat/</guid>
+      <description>ツール =&amp;gt; Game state views =&amp;gt; メモリ検索
+を使って
+値を入れて新規検索 =&amp;gt; 値更新して検索範囲を繰り返す
+目的のアドレスが以下のように 0000d00b だったとすると
+このルールに即して変更する
+上記の場合は値をFFに固定したいとすると
+01FF0BD0 がチートコードになる</description>
+    </item>
+    
     <item>
       <title>二項分布の計算について</title>
       <link>https://yaasita.github.io/2023/04/01/binomial-distribution/</link>
@@ -273,21 +288,6 @@ temp_prefered_lft
 については sysctlで設定すること
 参考リンク
 https://wiki.archlinux.jp/index.php/IPv6 http://dr.slump.jp/IPv6/rfc3041/ https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt </description>
-    </item>
-    
-    <item>
-      <title>ipv4/ipv6確認サイト</title>
-      <link>https://yaasita.github.io/2022/02/23/ipv4-ipv6/</link>
-      <pubDate>Wed, 23 Feb 2022 15:25:52 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2022/02/23/ipv4-ipv6/</guid>
-      <description>自分のIPv4/IPv6アドレスを確認するサイトを作った
-ipv4専用
-https://ipv4.cloud.yaasita.net/
-ipv6専用
-https://ipv6.cloud.yaasita.net/
-ipv4/ipv6両対応(どちらのIPが優先されるか確認用)
-https://ipv46.cloud.yaasita.net/</description>
     </item>
     
   </channel>
