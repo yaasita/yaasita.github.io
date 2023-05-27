@@ -6,7 +6,20 @@
     <description>Recent content in hard on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 24 Dec 2022 04:35:15 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/hard/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 May 2023 02:16:54 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/hard/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ゲームパッド使用感ANS-PF069</title>
+      <link>https://yaasita.github.io/2023/05/28/gamepad-ans-pf069/</link>
+      <pubDate>Sun, 28 May 2023 02:16:54 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/05/28/gamepad-ans-pf069/</guid>
+      <description>PS4/PS3/PC用 シンプルターボコントローラ 零～ZERO～
+このゲームパッド使ってたけど、なんかUSBを指しっぱなしで起動するとランプの部分が青くなって識別不能になる
+抜き差しすれば直るけどなんかめんどくさい
+それ以外の使用感は不満なかったんだけど・・・
+結局、F310rに戻した</description>
+    </item>
+    
     <item>
       <title>androidのdevice protection</title>
       <link>https://yaasita.github.io/2022/12/24/android-device-protection/</link>
@@ -239,17 +252,6 @@ HandleSuspendKey=ignore HandleLidSwitch=ignore </description>
       <description>EXPANSYSで買った
 Sony Xperia E4g E2003 (Unlocked LTE, 8GB, White) 18,737円 SIMフリーはIIJ MIO
 IIJ IIJmio SIM ウェルカムパック microSIM ( SMS 機能付き ) 版 1,900円 </description>
-    </item>
-    
-    <item>
-      <title>MACアドレスのベンダーを調べる</title>
-      <link>https://yaasita.github.io/2014/08/25/mac-address-search/</link>
-      <pubDate>Mon, 25 Aug 2014 23:54:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2014/08/25/mac-address-search/</guid>
-      <description>http://standards.ieee.org/develop/regauth/oui/public.html
-MACアドレスの上位3バイトを検索窓に入れる
-例) 00-22-68</description>
     </item>
     
   </channel>

@@ -6,7 +6,20 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 22 May 2023 02:35:27 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 May 2023 02:16:54 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ゲームパッド使用感ANS-PF069</title>
+      <link>https://yaasita.github.io/2023/05/28/gamepad-ans-pf069/</link>
+      <pubDate>Sun, 28 May 2023 02:16:54 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/05/28/gamepad-ans-pf069/</guid>
+      <description>PS4/PS3/PC用 シンプルターボコントローラ 零～ZERO～
+このゲームパッド使ってたけど、なんかUSBを指しっぱなしで起動するとランプの部分が青くなって識別不能になる
+抜き差しすれば直るけどなんかめんどくさい
+それ以外の使用感は不満なかったんだけど・・・
+結局、F310rに戻した</description>
+    </item>
+    
     <item>
       <title>mBGAチートコードサーチ</title>
       <link>https://yaasita.github.io/2023/05/22/gbc-cheat/</link>
@@ -272,22 +285,6 @@ IPv6-1作成してから24時間後にIPv6-2という新しい一時アドレス
 3日目: IPv6-1, IPv6-2, IPv6-3,
 という風に増えていく
 前回</description>
-    </item>
-    
-    <item>
-      <title>Linuxでipv6の一時アドレス</title>
-      <link>https://yaasita.github.io/2022/02/26/ipv6-tempaddr/</link>
-      <pubDate>Sat, 26 Feb 2022 23:16:10 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2022/02/26/ipv6-tempaddr/</guid>
-      <description>systemd-networkdの設定にIPv6PrivacyExtensions足せばOK
-(対応するカーネルパラメータ net.ipv6.conf.xxx.use_tempaddr は自動的に設定される)
-[Network] Address=192.168.0.2/24 Gateway=192.168.0.1 IPv6PrivacyExtensions=yes temp_valid_lft
-と
-temp_prefered_lft
-については sysctlで設定すること
-参考リンク
-https://wiki.archlinux.jp/index.php/IPv6 http://dr.slump.jp/IPv6/rfc3041/ https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt </description>
     </item>
     
   </channel>

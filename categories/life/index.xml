@@ -6,7 +6,20 @@
     <description>Recent content in life on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 01 Apr 2023 01:54:35 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 28 May 2023 02:16:54 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ゲームパッド使用感ANS-PF069</title>
+      <link>https://yaasita.github.io/2023/05/28/gamepad-ans-pf069/</link>
+      <pubDate>Sun, 28 May 2023 02:16:54 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/05/28/gamepad-ans-pf069/</guid>
+      <description>PS4/PS3/PC用 シンプルターボコントローラ 零～ZERO～
+このゲームパッド使ってたけど、なんかUSBを指しっぱなしで起動するとランプの部分が青くなって識別不能になる
+抜き差しすれば直るけどなんかめんどくさい
+それ以外の使用感は不満なかったんだけど・・・
+結局、F310rに戻した</description>
+    </item>
+    
     <item>
       <title>二項分布の計算について</title>
       <link>https://yaasita.github.io/2023/04/01/binomial-distribution/</link>
@@ -244,24 +257,6 @@ C:\Users\hogeuser\Music\iTunes\iTunes Media\iTunes に自動的に追加 </descr
       <guid>https://yaasita.github.io/2013/03/23/1381/</guid>
       <description> ・ランサーズ
 ・クラウドワークス </description>
-    </item>
-    
-    <item>
-      <title>マウスオーバーで単語検索</title>
-      <link>https://yaasita.github.io/2013/01/14/1543/</link>
-      <pubDate>Mon, 14 Jan 2013 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2013/01/14/1543/</guid>
-      <description> 英単語を調べるときとかでも便利
-翻訳もできる
-1.Greasemonkeyをインストール
-2. スクリプトを追加（以下URLのINSTALL)
-http://userscripts.org/scripts/show/12901
-alt押しながら単語選択で検索
-alt+yで設定
-参考リンク
-http://mozilla-remix.seesaa.net/article/80993858.html
-http://www.simplivillage.com/trac/wiki/Userscript/FastLookupJPandEN </description>
     </item>
     
   </channel>
