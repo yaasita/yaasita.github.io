@@ -6,7 +6,16 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 22 Jun 2023 01:33:41 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Jul 2023 02:29:04 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>5chのスレをパースする</title>
+      <link>https://yaasita.github.io/2023/07/22/5ch-parse/</link>
+      <pubDate>Sat, 22 Jul 2023 02:29:04 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/07/22/5ch-parse/</guid>
+      <description>utf8にしたhtmlファイルを渡す</description>
+    </item>
+    
     <item>
       <title>NURO光のIPアドレスはほぼ変わらない</title>
       <link>https://yaasita.github.io/2023/06/22/nuro-ip/</link>
@@ -261,19 +270,6 @@ chorme.exeまでをフルパスでダブルクォートで囲む方法は上手�
       
       <guid>https://yaasita.github.io/2022/04/02/nuro-ipv6-spi/</guid>
       <description>これを有効にしてもpingには反応してしまうので注意</description>
-    </item>
-    
-    <item>
-      <title>ipv4とipv6 Happy Eyeballs</title>
-      <link>https://yaasita.github.io/2022/03/18/ipv4-ipv6-happy-eyeballs.md/</link>
-      <pubDate>Fri, 18 Mar 2022 03:38:37 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2022/03/18/ipv4-ipv6-happy-eyeballs.md/</guid>
-      <description>Happy EyeballsはTCPコネクションを先に確立させた方が勝つのでnginxのechoモジュールでsleepとかは意味ない
-初回はどちらか一方でも繋がれば遅延は感じないが
-一回接続に成功した場合はipv4を使うのかipv6を使うのかキャッシュしている状態なので切り替えに時間がかかる
-例えばipv6で繋がっていたサイト側でipv6をドロップさせると
-ip6tables -A INPUT -p tcp --dport 443 -j DROP 数秒遅延した後にipv4で接続する</description>
     </item>
     
   </channel>
