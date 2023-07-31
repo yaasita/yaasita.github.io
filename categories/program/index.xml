@@ -6,7 +6,29 @@
     <description>Recent content in program on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 22 Jul 2023 02:29:04 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Aug 2023 01:22:00 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tumblrのoauth2</title>
+      <link>https://yaasita.github.io/2023/08/01/tumblr-oauth-api/</link>
+      <pubDate>Tue, 01 Aug 2023 01:22:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/08/01/tumblr-oauth-api/</guid>
+      <description>これの通り
+https://www.tumblr.com/docs/en/api/v2#oauth2-authorization
+とりあえずAPI叩くまで解説
+アプリの登録を以下のURLから行う
+https://www.tumblr.com/oauth/register
+次にパラメータを組み立てて認可リクエスト
+scopeにoffline_accessがあるとrefresh_tokenがもらえて永続的に使えるけど、無い場合は認可リクエストからやり直す一時的なアクセストークンしかもらえない
+let params = new URLSearchParams(); params.append(&#39;client_id&#39;, &#39;xxxxxxxxxxxxxxxxxxxxx&#39;); params.append(&#39;response_type&#39;, &#39;code&#39;); params.append(&#39;scope&#39;, &#39;basic offline_access&#39;); params.append(&#39;state&#39;, &#39;hogehoge1&#39;); let urlParams = params.toString(); console.log(`https://www.tumblr.com/oauth2/authorize?${urlParams}`) あとはリダイレクトURLにコードとstate付きで返ってくるので
+https://example.com/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&amp;amp;state=hogehoge1#_=_ それみてアクセストークンと交換
+コードの有効期限は結構短いので急ぐこと
+curl -F grant_type=authorization_code -F code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_id=xxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_secret=xxxxxxxxxxxxxxx https://api.tumblr.com/v2/oauth2/token リフレッシュトークンからアクセストークンを取得
+ちなみにアクセストークンは40分くらいで有効期限が切れる
+curl -F grant_type=refresh_token -F refresh_token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_id=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_secret=xxxxxxxxxxxxxxxxxxxxxxxxxxx https://api.tumblr.com/v2/oauth2/token あと注意なんだけど、refresh_tokenは使ったら、上記APIから新しいrefresh_tokenが来るので次回はそれを使うこと
+（一度使ったrefresh_tokenはもう使えなくなる)</description>
+    </item>
+    
     <item>
       <title>5chのスレをパースする</title>
       <link>https://yaasita.github.io/2023/07/22/5ch-parse/</link>
@@ -256,18 +278,6 @@ https://developers.google.com/identity/protocols/googlescopes
 存在する素数の数+1(今回は1もお互いに素の数として含めるため)でOKぽい
 perlで書いてみる
 解説動画</description>
-    </item>
-    
-    <item>
-      <title>1から100の偶数の和を求めるやつ</title>
-      <link>https://yaasita.github.io/2019/08/15/sum-even-number/</link>
-      <pubDate>Thu, 15 Aug 2019 04:10:11 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/15/sum-even-number/</guid>
-      <description>「1から100の偶数の和を求めるワンライナー」まとめ
-perlでやってみる
-perl -E &#39;$s+=$_%2?0:$_ for 1..100;say$s&#39; perl -E &#39;s/.+/$s+=$&amp;amp;%2?0:$&amp;amp;/e for 1..100;say$s&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;$a=&amp;quot;@{[1..100]}&amp;quot;;$a=~s/\d+/$&amp;amp;%2?0:$&amp;amp;/eg;eval&amp;quot;say $a&amp;quot;&#39; perl -E &#39;$&amp;quot;=&amp;quot;+&amp;quot;;eval&amp;quot;say @{[grep{$_%2==0}1..100]}&amp;quot;;&#39; 4つ思いついた
-結論 simple is best</description>
     </item>
     
   </channel>

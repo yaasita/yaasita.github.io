@@ -6,7 +6,29 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 22 Jul 2023 02:29:04 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 01 Aug 2023 01:22:00 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tumblrのoauth2</title>
+      <link>https://yaasita.github.io/2023/08/01/tumblr-oauth-api/</link>
+      <pubDate>Tue, 01 Aug 2023 01:22:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/08/01/tumblr-oauth-api/</guid>
+      <description>これの通り
+https://www.tumblr.com/docs/en/api/v2#oauth2-authorization
+とりあえずAPI叩くまで解説
+アプリの登録を以下のURLから行う
+https://www.tumblr.com/oauth/register
+次にパラメータを組み立てて認可リクエスト
+scopeにoffline_accessがあるとrefresh_tokenがもらえて永続的に使えるけど、無い場合は認可リクエストからやり直す一時的なアクセストークンしかもらえない
+let params = new URLSearchParams(); params.append(&#39;client_id&#39;, &#39;xxxxxxxxxxxxxxxxxxxxx&#39;); params.append(&#39;response_type&#39;, &#39;code&#39;); params.append(&#39;scope&#39;, &#39;basic offline_access&#39;); params.append(&#39;state&#39;, &#39;hogehoge1&#39;); let urlParams = params.toString(); console.log(`https://www.tumblr.com/oauth2/authorize?${urlParams}`) あとはリダイレクトURLにコードとstate付きで返ってくるので
+https://example.com/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&amp;amp;state=hogehoge1#_=_ それみてアクセストークンと交換
+コードの有効期限は結構短いので急ぐこと
+curl -F grant_type=authorization_code -F code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_id=xxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_secret=xxxxxxxxxxxxxxx https://api.tumblr.com/v2/oauth2/token リフレッシュトークンからアクセストークンを取得
+ちなみにアクセストークンは40分くらいで有効期限が切れる
+curl -F grant_type=refresh_token -F refresh_token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_id=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_secret=xxxxxxxxxxxxxxxxxxxxxxxxxxx https://api.tumblr.com/v2/oauth2/token あと注意なんだけど、refresh_tokenは使ったら、上記APIから新しいrefresh_tokenが来るので次回はそれを使うこと
+（一度使ったrefresh_tokenはもう使えなくなる)</description>
+    </item>
+    
     <item>
       <title>5chのスレをパースする</title>
       <link>https://yaasita.github.io/2023/07/22/5ch-parse/</link>
@@ -261,15 +283,6 @@ Dosコマンドでchromeを立ち上げる 操作する対象じゃなくて、�
 chorme.exeまでをフルパスでダブルクォートで囲む方法は上手くいかなかった
 曜日取得 powershellでコマンド実行して
 末尾に改行が入ってしまうので取り除く</description>
-    </item>
-    
-    <item>
-      <title>NURO光のF660AルーターでSPIを有効にする</title>
-      <link>https://yaasita.github.io/2022/04/02/nuro-ipv6-spi/</link>
-      <pubDate>Sat, 02 Apr 2022 04:11:55 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2022/04/02/nuro-ipv6-spi/</guid>
-      <description>これを有効にしてもpingには反応してしまうので注意</description>
     </item>
     
   </channel>
