@@ -6,7 +6,22 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 01 Aug 2023 01:22:00 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Aug 2023 01:45:09 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>perlでglobを使うときの注意</title>
+      <link>https://yaasita.github.io/2023/08/02/perl-glob/</link>
+      <pubDate>Wed, 02 Aug 2023 01:45:09 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/08/02/perl-glob/</guid>
+      <description>スカラーコンテキストで評価する場合は注意
+こんな感じでやると
+#!/usr/bin/perl use strict; use warnings; use feature qw(:5.10); use utf8; testglob(); testglob(); sub testglob { my $path = glob(&amp;quot;~/hoge.txt&amp;quot;); say &amp;quot;file = $path&amp;quot;; } 結果はこうなる
+file = /home/yamasita/hoge.txt Use of uninitialized value $path in concatenation (.) or string at test.pl line 12. file = 2回目はundefが返ってる
+これはイテレーターになってるので、配列1個と、打ち止めのundefが返ってるから
+というわけで、こういうときは配列で受け取ってイテレータを最後まで進めたほうが良い
+my $path = @{[glob(&amp;quot;~/hoge.txt&amp;quot;)]}[0]; </description>
+    </item>
+    
     <item>
       <title>tumblrのoauth2</title>
       <link>https://yaasita.github.io/2023/08/01/tumblr-oauth-api/</link>
@@ -270,19 +285,6 @@ yaasitaアカウントのメールで再度問い合わせ
       <description>budibaseをローカルのmicrok8sで動かしたときのメモ
 # 必要なプラグインをON microk8s.enable dns:192.168.0.10 microk8s.enable ingress microk8s.enable metallb # 192.168.0.150-192.168.0.180 みたいに指定 microk8s.enable storage # kubectlで動かせるように microk8s.config &amp;gt; ~/.kube/config # インストール helm show values budibase/budibase &amp;gt; config.yaml # hostを指定 vim config.yaml helm install --create-namespace --namespace budibase budibase budibase/budibase -f config.yaml あとはingress部分を作る
 # 証明書を作って kubectl create secret tls &#39;cloud.yaasita.net&#39; --key=privkey.pem --cert=fullchain.pem ingressをこんな感じで作っておく</description>
-    </item>
-    
-    <item>
-      <title>Power Automateのtips</title>
-      <link>https://yaasita.github.io/2022/05/09/power-automate-tips/</link>
-      <pubDate>Mon, 09 May 2022 03:24:42 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2022/05/09/power-automate-tips/</guid>
-      <description>Desktop向けのPower Automateのちょっとしたことメモ
-Dosコマンドでchromeを立ち上げる 操作する対象じゃなくて、そのままchromeをキックすればいい場合の設定方法
-chorme.exeまでをフルパスでダブルクォートで囲む方法は上手くいかなかった
-曜日取得 powershellでコマンド実行して
-末尾に改行が入ってしまうので取り除く</description>
     </item>
     
   </channel>

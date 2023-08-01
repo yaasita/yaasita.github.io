@@ -6,7 +6,22 @@
     <description>Recent content in 2023 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 01 Aug 2023 01:22:00 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2023/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 02 Aug 2023 01:45:09 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2023/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>perlでglobを使うときの注意</title>
+      <link>https://yaasita.github.io/2023/08/02/perl-glob/</link>
+      <pubDate>Wed, 02 Aug 2023 01:45:09 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/08/02/perl-glob/</guid>
+      <description>スカラーコンテキストで評価する場合は注意
+こんな感じでやると
+#!/usr/bin/perl use strict; use warnings; use feature qw(:5.10); use utf8; testglob(); testglob(); sub testglob { my $path = glob(&amp;quot;~/hoge.txt&amp;quot;); say &amp;quot;file = $path&amp;quot;; } 結果はこうなる
+file = /home/yamasita/hoge.txt Use of uninitialized value $path in concatenation (.) or string at test.pl line 12. file = 2回目はundefが返ってる
+これはイテレーターになってるので、配列1個と、打ち止めのundefが返ってるから
+というわけで、こういうときは配列で受け取ってイテレータを最後まで進めたほうが良い
+my $path = @{[glob(&amp;quot;~/hoge.txt&amp;quot;)]}[0]; </description>
+    </item>
+    
     <item>
       <title>tumblrのoauth2</title>
       <link>https://yaasita.github.io/2023/08/01/tumblr-oauth-api/</link>
