@@ -6,11 +6,20 @@
     <description>Recent content in Categories on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 02 Aug 2023 01:45:09 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Aug 2023 04:02:09 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>life</title>
+      <link>https://yaasita.github.io/categories/life/</link>
+      <pubDate>Sat, 12 Aug 2023 04:02:09 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/categories/life/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>program</title>
       <link>https://yaasita.github.io/categories/program/</link>
-      <pubDate>Wed, 02 Aug 2023 01:45:09 +0900</pubDate>
+      <pubDate>Sat, 12 Aug 2023 04:02:09 +0900</pubDate>
       
       <guid>https://yaasita.github.io/categories/program/</guid>
       <description></description>
@@ -40,15 +49,6 @@
       <pubDate>Sun, 28 May 2023 02:16:54 +0900</pubDate>
       
       <guid>https://yaasita.github.io/categories/hard/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>life</title>
-      <link>https://yaasita.github.io/categories/life/</link>
-      <pubDate>Sun, 28 May 2023 02:16:54 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/categories/life/</guid>
       <description></description>
     </item>
     

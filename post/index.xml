@@ -6,7 +6,18 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 02 Aug 2023 01:45:09 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Aug 2023 04:02:09 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>経済指標をチェック</title>
+      <link>https://yaasita.github.io/2023/08/12/okasan-fx/</link>
+      <pubDate>Sat, 12 Aug 2023 04:02:09 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/08/12/okasan-fx/</guid>
+      <description>この重要経済指標をチェックしてる
+https://www.okasan-online.co.jp/tradeinfo/indicator_event/economic_indicators/
+以下の例はアメリカの★5のイベントを抽出するやつ</description>
+    </item>
+    
     <item>
       <title>perlでglobを使うときの注意</title>
       <link>https://yaasita.github.io/2023/08/02/perl-glob/</link>
@@ -274,17 +285,6 @@ https://img.yaasita.net/hoge/hoge みたいに展開される</description>
 数分で連絡が来て、yaasitaのアカウントでメールしてこいと言われる
 yaasitaアカウントのメールで再度問い合わせ
 2022/06/15 Hello, Thank you for writing back! We&amp;#39;ve restored your account. Thank you for bringing this problem to our attention. We&amp;#39;re sorry that it occurred, and we&amp;#39;ll do our best to make sure that it doesn&amp;#39;t happen again. You should now be able to log in just fine with your email address and password. Please let me know if there&amp;#39;s anything else I can help you with!</description>
-    </item>
-    
-    <item>
-      <title>budibaseをmicrok8sで動かす</title>
-      <link>https://yaasita.github.io/2022/06/08/budibase/</link>
-      <pubDate>Wed, 08 Jun 2022 02:37:21 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2022/06/08/budibase/</guid>
-      <description>budibaseをローカルのmicrok8sで動かしたときのメモ
-# 必要なプラグインをON microk8s.enable dns:192.168.0.10 microk8s.enable ingress microk8s.enable metallb # 192.168.0.150-192.168.0.180 みたいに指定 microk8s.enable storage # kubectlで動かせるように microk8s.config &amp;gt; ~/.kube/config # インストール helm show values budibase/budibase &amp;gt; config.yaml # hostを指定 vim config.yaml helm install --create-namespace --namespace budibase budibase budibase/budibase -f config.yaml あとはingress部分を作る
-# 証明書を作って kubectl create secret tls &#39;cloud.yaasita.net&#39; --key=privkey.pem --cert=fullchain.pem ingressをこんな感じで作っておく</description>
     </item>
     
   </channel>

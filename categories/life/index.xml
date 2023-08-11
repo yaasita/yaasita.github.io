@@ -6,7 +6,18 @@
     <description>Recent content in life on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 28 May 2023 02:16:54 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Aug 2023 04:02:09 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>経済指標をチェック</title>
+      <link>https://yaasita.github.io/2023/08/12/okasan-fx/</link>
+      <pubDate>Sat, 12 Aug 2023 04:02:09 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/08/12/okasan-fx/</guid>
+      <description>この重要経済指標をチェックしてる
+https://www.okasan-online.co.jp/tradeinfo/indicator_event/economic_indicators/
+以下の例はアメリカの★5のイベントを抽出するやつ</description>
+    </item>
+    
     <item>
       <title>ゲームパッド使用感ANS-PF069</title>
       <link>https://yaasita.github.io/2023/05/28/gamepad-ans-pf069/</link>
@@ -247,16 +258,6 @@ http://hajimete-sangokushi.com/</description>
 iTunesStoreでブック押したりなんかいろいろしたら出るようになった
 あとPDFを追加するときは以下のフォルダに置くと良いみたい（入れると自動的に消える）
 C:\Users\hogeuser\Music\iTunes\iTunes Media\iTunes に自動的に追加 </description>
-    </item>
-    
-    <item>
-      <title>仕事を探したり発注できたりするサイト</title>
-      <link>https://yaasita.github.io/2013/03/23/1381/</link>
-      <pubDate>Sat, 23 Mar 2013 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2013/03/23/1381/</guid>
-      <description> ・ランサーズ
-・クラウドワークス </description>
     </item>
     
   </channel>
