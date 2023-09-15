@@ -6,7 +6,20 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Aug 2023 04:02:09 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Sep 2023 03:20:21 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>紙飛行機飛ばすゲーム</title>
+      <link>https://yaasita.github.io/2023/09/16/kami-hikouki/</link>
+      <pubDate>Sat, 16 Sep 2023 03:20:21 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/09/16/kami-hikouki/</guid>
+      <description>昔、ハマった紙飛行機飛ばすゲーム
+https://yaasita.github.io/2010/12/24/5072/
+似たやつはあった
+https://www.silvergames.com/en/flight https://www.silvergames.com/en/paper-flight-2 android版もあったけどメンテされてなさそう
+https://play.google.com/store/apps/details?id=com.armorgames.Flight</description>
+    </item>
+    
     <item>
       <title>経済指標をチェック</title>
       <link>https://yaasita.github.io/2023/08/12/okasan-fx/</link>
@@ -267,24 +280,6 @@ https://gohugo.io/content-management/shortcodes/
 [params] imagesite = &amp;quot;img.yaasita.net&amp;quot; markdownの中で
 https://{{&amp;lt; param imagesite &amp;gt;}}/hoge/hoge こう書くと
 https://img.yaasita.net/hoge/hoge みたいに展開される</description>
-    </item>
-    
-    <item>
-      <title>tumblrのアカウントが消されたけど復旧してもらった</title>
-      <link>https://yaasita.github.io/2022/06/22/tumblr-account/</link>
-      <pubDate>Wed, 22 Jun 2022 01:43:12 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2022/06/22/tumblr-account/</guid>
-      <description>経緯はこんな感じ
-2022/06/08 tumblrで消されたの確認
-ログインして、「アカウント消えました」って表示される
-その下に問題あったらサポートに連絡してねと書いてあったので、サポートに連絡
-2022/06/13 反応がないので、もう一回サポートに連絡
-2022/06/14 このお問い合わせフォームバグってないか？
-と思ったので、yaasita2アカウント作成して、その中のお問い合わせフォームから連絡
-数分で連絡が来て、yaasitaのアカウントでメールしてこいと言われる
-yaasitaアカウントのメールで再度問い合わせ
-2022/06/15 Hello, Thank you for writing back! We&amp;#39;ve restored your account. Thank you for bringing this problem to our attention. We&amp;#39;re sorry that it occurred, and we&amp;#39;ll do our best to make sure that it doesn&amp;#39;t happen again. You should now be able to log in just fine with your email address and password. Please let me know if there&amp;#39;s anything else I can help you with!</description>
     </item>
     
   </channel>
