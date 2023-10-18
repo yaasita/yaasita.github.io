@@ -6,7 +6,24 @@
     <description>Recent content in program on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Aug 2023 04:02:09 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Oct 2023 01:16:16 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>npmのmysql2パッケージでTLS有効でRDS接続</title>
+      <link>https://yaasita.github.io/2023/10/19/node-mysql2/</link>
+      <pubDate>Thu, 19 Oct 2023 01:16:16 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/10/19/node-mysql2/</guid>
+      <description>nodeのmysql2パッケージには
+こんな感じで、ssl接続のオプションに&amp;quot;Amazon RDS&amp;quot;を指定できるが
+RDSの証明書更新を行うと不都合があるよという話
+証明書更新は以下のrds-ca-2019を置き換える話ね
+https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html
+これ、パッケージ内にCA証明書が入ってるんだけど更新後の証明書が入ってない
+そんで、CA証明書更新のPRは出てるんだけど、これ適用するとaurora serverlessとかRDS proxy経由の検証が失敗する
+なぜなら、証明書のチェーンがこんな感じになってるので
+C = US, O = &amp;#34;Starfield Technologies, Inc.&amp;#34;, OU = Starfield Class 2 Certification Authority C = US, ST = Arizona, L = Scottsdale, O = &amp;#34;Starfield Technologies, Inc.&amp;#34;, CN = Starfield Services Root Certificate Authority - G2 C = US, O = Amazon, CN = Amazon Root CA 1 C = US, O = Amazon, CN = Amazon RSA 2048 M02 CN = *.</description>
+    </item>
+    
     <item>
       <title>経済指標をチェック</title>
       <link>https://yaasita.github.io/2023/08/12/okasan-fx/</link>
@@ -260,22 +277,6 @@ https://github.com/yaasita/ssh-keys-manager
       <description>どのリポジトリがGithub Pagesの設定がされているか？
 調べたくなったので・・・
 Github pagesの設定されてるリポジトリ一覧を簡単に確認できればいいのに・・・</description>
-    </item>
-    
-    <item>
-      <title>GCP Cloud Functions内からサービスアカウントのtoken取る</title>
-      <link>https://yaasita.github.io/2019/12/08/service-account-in-cf/</link>
-      <pubDate>Sun, 08 Dec 2019 05:12:12 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/12/08/service-account-in-cf/</guid>
-      <description>Cloud Functionsからサービスアカウントのアクセストークンをどうやって取るの？と疑問に思ったので調べた
-Google Compute Engineと同じ取り方でOK
-&amp;quot;use strict&amp;quot;; const fetch = require(&amp;quot;node-fetch&amp;quot;); exports.handler = async (req, res) =&amp;gt; { const url = &amp;quot;http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/&amp;quot; + &amp;quot;[サービスアカウント名]/token&amp;quot;; const result = await fetch(url, { method: &amp;quot;GET&amp;quot;, headers: { &amp;quot;Metadata-Flavor&amp;quot;: &amp;quot;Google&amp;quot; } }); const token = await result.text(); console.log(token); res.status(200).send(&amp;quot;OK&amp;quot;); }; なんでドキュメントにも書いてある今更な事を書くかというと日本語ドキュメントには見出しが無いんですよね。。。。
-まだ翻訳終わってないならまだしも（本当は英文のままで良いからタイトルくらいは残してほしいが) &amp;ldquo;Function Identity&amp;quot;とかクリックするとちゃんと日本語版あるんですよね
-なんかメニューがバグってるのかな・・・
-とりあえず英語版から探すのをオススメします&amp;hellip;
-参考リンク
-関数ID Compute Metadata Server </description>
     </item>
     
   </channel>

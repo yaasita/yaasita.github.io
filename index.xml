@@ -6,7 +6,24 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 16 Sep 2023 03:20:21 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 19 Oct 2023 01:16:16 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>npmのmysql2パッケージでTLS有効でRDS接続</title>
+      <link>https://yaasita.github.io/2023/10/19/node-mysql2/</link>
+      <pubDate>Thu, 19 Oct 2023 01:16:16 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/10/19/node-mysql2/</guid>
+      <description>nodeのmysql2パッケージには
+こんな感じで、ssl接続のオプションに&amp;quot;Amazon RDS&amp;quot;を指定できるが
+RDSの証明書更新を行うと不都合があるよという話
+証明書更新は以下のrds-ca-2019を置き換える話ね
+https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html
+これ、パッケージ内にCA証明書が入ってるんだけど更新後の証明書が入ってない
+そんで、CA証明書更新のPRは出てるんだけど、これ適用するとaurora serverlessとかRDS proxy経由の検証が失敗する
+なぜなら、証明書のチェーンがこんな感じになってるので
+C = US, O = &amp;#34;Starfield Technologies, Inc.&amp;#34;, OU = Starfield Class 2 Certification Authority C = US, ST = Arizona, L = Scottsdale, O = &amp;#34;Starfield Technologies, Inc.&amp;#34;, CN = Starfield Services Root Certificate Authority - G2 C = US, O = Amazon, CN = Amazon Root CA 1 C = US, O = Amazon, CN = Amazon RSA 2048 M02 CN = *.</description>
+    </item>
+    
     <item>
       <title>紙飛行機飛ばすゲーム</title>
       <link>https://yaasita.github.io/2023/09/16/kami-hikouki/</link>
@@ -17,7 +34,9 @@
 https://yaasita.github.io/2010/12/24/5072/
 似たやつはあった
 https://www.silvergames.com/en/flight https://www.silvergames.com/en/paper-flight-2 android版もあったけどメンテされてなさそう
-https://play.google.com/store/apps/details?id=com.armorgames.Flight</description>
+https://play.google.com/store/apps/details?id=com.armorgames.Flight
+FLASHをエミュレータで動かすやつもあった
+https://www.gameszap.com/game/6397/flight.html</description>
     </item>
     
     <item>
@@ -266,20 +285,6 @@ https://web.arena.ne.jp/indigo/
       <description>なんかたまにgoogleにつながらなくなるとき
 chrome系のやつならこの辺を弄ってみるとうまくいくかもしれない
 chrome://settings/security</description>
-    </item>
-    
-    <item>
-      <title>hugoのshortcode</title>
-      <link>https://yaasita.github.io/2022/07/25/hugo-shortcode/</link>
-      <pubDate>Mon, 25 Jul 2022 00:52:55 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2022/07/25/hugo-shortcode/</guid>
-      <description>ここにあるように定型文を登録しておくと省力化できる
-https://gohugo.io/content-management/shortcodes/
-例えば、config.tomlにこんな感じで書いておけば
-[params] imagesite = &amp;quot;img.yaasita.net&amp;quot; markdownの中で
-https://{{&amp;lt; param imagesite &amp;gt;}}/hoge/hoge こう書くと
-https://img.yaasita.net/hoge/hoge みたいに展開される</description>
     </item>
     
   </channel>
