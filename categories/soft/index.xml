@@ -6,9 +6,25 @@
     <description>Recent content in soft on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 19 Oct 2023 01:16:16 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Nov 2023 02:41:29 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>npmのmysql2パッケージでTLS有効でRDS接続</title>
+      <title>codeiumがとても良い</title>
+      <link>https://yaasita.github.io/2023/11/21/codeium/</link>
+      <pubDate>Tue, 21 Nov 2023 02:41:29 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/11/21/codeium/</guid>
+      <description>codeium がとても良い
+個人利用なら無料 vimにも対応 対応言語が豊富 など
+競合との比較はこちら
+https://codeium.com/compare
+とりあえず自分がVimに入れてる設定
+if v:version &amp;gt;= 900 let g:codeium_disable_bindings = 1 let g:codeium_manual = v:true let g:codeium_enabled = v:false imap &amp;lt;script&amp;gt;&amp;lt;silent&amp;gt;&amp;lt;nowait&amp;gt;&amp;lt;expr&amp;gt; &amp;lt;Right&amp;gt; codeium#Accept() imap &amp;lt;Down&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#CycleCompletions(1)&amp;lt;CR&amp;gt; imap &amp;lt;Up&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#CycleCompletions(-1)&amp;lt;CR&amp;gt; imap &amp;lt;Left&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#Clear()&amp;lt;CR&amp;gt; imap &amp;lt;C-A&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#Complete()&amp;lt;CR&amp;gt; set statusline=%&amp;lt;%f\ %2*%{&amp;amp;mod&amp;amp;&amp;amp;&amp;amp;bt!=#&#39;terminal&#39;?&#39;[+]&#39;:&#39;&#39;}%0*%{&amp;amp;ro?&#39;[RO]&#39;:&#39;&#39;}%h%w%=codeium:%3{codeium#GetStatusString()}\ %{&#39;[&#39;.(&amp;amp;fenc!=&#39;&#39;?&amp;amp;fenc:&amp;amp;enc).&#39;][&#39;.&amp;amp;ff.&#39;]&#39;}\ %2*%y%0*%6l,%c%V%1*%8P endif 手動で有効にする設定を入れて
+Ctrl-Aで保管候補出す
+矢印で保管候補の決定</description>
+    </item>
+    
+    <item>
+      <title>npmのmysql2パッケージでTLS有効にしてRDS接続</title>
       <link>https://yaasita.github.io/2023/10/19/node-mysql2/</link>
       <pubDate>Thu, 19 Oct 2023 01:16:16 +0900</pubDate>
       
@@ -288,22 +304,6 @@ hugoのバージョンを 0.56.3 =&amp;gt; v0.62.0 まで上げた
 Building sites … WARN 2019/12/23 17:34:34 In the next Hugo version (0.58.0) we will change how $home.Pages behaves. If you want to list all regular pages, replace .Pages or .Data.Pages with .Site.RegularPages in your home page template. あとインラインのHTMLがデフォルトで削除されるので使ってたらコレもconfig.tomlへ追記
 [markup] [markup.goldmark] [markup.goldmark.renderer] unsafe = true hardWraps = true 最近非互換のバージョンアップ多くない？
 アップデートがめんどくさくなってきたな。。。</description>
-    </item>
-    
-    <item>
-      <title>on_ac_powerコマンドについて</title>
-      <link>https://yaasita.github.io/2019/08/16/on-ac-power/</link>
-      <pubDate>Fri, 16 Aug 2019 04:45:45 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/16/on-ac-power/</guid>
-      <description>debian10にした関係でLinuxネタが続く
-PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある
-そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる
-例えば、/etc/cron.daily/mlocate の場合
-if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
-んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
-このままだと永遠にlocateコマンドが使えないので、divertで退避させた
-dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power おしまい</description>
     </item>
     
   </channel>

@@ -6,7 +6,23 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 22 Jun 2023 01:33:41 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Nov 2023 02:41:29 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>codeiumがとても良い</title>
+      <link>https://yaasita.github.io/2023/11/21/codeium/</link>
+      <pubDate>Tue, 21 Nov 2023 02:41:29 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/11/21/codeium/</guid>
+      <description>codeium がとても良い
+個人利用なら無料 vimにも対応 対応言語が豊富 など
+競合との比較はこちら
+https://codeium.com/compare
+とりあえず自分がVimに入れてる設定
+if v:version &amp;gt;= 900 let g:codeium_disable_bindings = 1 let g:codeium_manual = v:true let g:codeium_enabled = v:false imap &amp;lt;script&amp;gt;&amp;lt;silent&amp;gt;&amp;lt;nowait&amp;gt;&amp;lt;expr&amp;gt; &amp;lt;Right&amp;gt; codeium#Accept() imap &amp;lt;Down&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#CycleCompletions(1)&amp;lt;CR&amp;gt; imap &amp;lt;Up&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#CycleCompletions(-1)&amp;lt;CR&amp;gt; imap &amp;lt;Left&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#Clear()&amp;lt;CR&amp;gt; imap &amp;lt;C-A&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#Complete()&amp;lt;CR&amp;gt; set statusline=%&amp;lt;%f\ %2*%{&amp;amp;mod&amp;amp;&amp;amp;&amp;amp;bt!=#&#39;terminal&#39;?&#39;[+]&#39;:&#39;&#39;}%0*%{&amp;amp;ro?&#39;[RO]&#39;:&#39;&#39;}%h%w%=codeium:%3{codeium#GetStatusString()}\ %{&#39;[&#39;.(&amp;amp;fenc!=&#39;&#39;?&amp;amp;fenc:&amp;amp;enc).&#39;][&#39;.&amp;amp;ff.&#39;]&#39;}\ %2*%y%0*%6l,%c%V%1*%8P endif 手動で有効にする設定を入れて
+Ctrl-Aで保管候補出す
+矢印で保管候補の決定</description>
+    </item>
+    
     <item>
       <title>NURO光のIPアドレスはほぼ変わらない</title>
       <link>https://yaasita.github.io/2023/06/22/nuro-ip/</link>
@@ -270,17 +286,6 @@ echo &amp;quot;#standardSQL&amp;quot; &amp;gt; /tmp/query.sql echo &#39;select _
       <guid>https://yaasita.github.io/2020/04/28/rawpostdata/</guid>
       <description>multipart/form-dataでPOSTされた奴を、処理するCloud functionsを書いてて必要になったので
 呼び出し側はこんな感じでやってる</description>
-    </item>
-    
-    <item>
-      <title>Github Pagesになってるリポジトリをチェック</title>
-      <link>https://yaasita.github.io/2020/01/07/check-github-pages/</link>
-      <pubDate>Tue, 07 Jan 2020 18:55:03 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/01/07/check-github-pages/</guid>
-      <description>どのリポジトリがGithub Pagesの設定がされているか？
-調べたくなったので・・・
-Github pagesの設定されてるリポジトリ一覧を簡単に確認できればいいのに・・・</description>
     </item>
     
   </channel>
