@@ -6,7 +6,21 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 21 Nov 2023 02:41:29 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Dec 2023 02:20:37 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rana8を試す</title>
+      <link>https://yaasita.github.io/2023/12/22/rana8/</link>
+      <pubDate>Fri, 22 Dec 2023 02:20:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/12/22/rana8/</guid>
+      <description>これ
+https://web.arena.ne.jp/service/rana8poc.html
+なんかほぼGoogleCloudのcloud runだった
+サービスはサービスアカウントの鍵をもらって gcloudでdeployするみたいな奴
+マニュアル通りやっても以下のようになって使えなかった
+ERROR: (gcloud.run.deploy) User [xxxxxxxxxx@rana8-poc.iam.gserviceaccount.com] does not have permission to access projects instance [rana8-poc] (or it may not exist): Permission &#39;cloudbuild.locations.list&#39; denied on &#39;projects/rana8-poc/lo cations/global&#39; cloud runを素で使うより何が良いのかは分からない</description>
+    </item>
+    
     <item>
       <title>codeiumがとても良い</title>
       <link>https://yaasita.github.io/2023/11/21/codeium/</link>
@@ -278,18 +292,6 @@ https://exists.cloud.yaasita.net/</description>
 https://web.arena.ne.jp/indigo/
 以下気づいたこと箇条書きで
 めっちゃ安い 機能は仮想サーバーの起動(kvm),スナップショット,ファイヤーウォールくらい 追加オプションで権威DNSサーバーが使える(500円) 管理画面は少し重い ipv6の設定は手動でやる 1vCPU/1GB memory(Uubuntu 22.04)の場合はnetplanの設定がコメントアウトされてた ファイヤーウォールはipv6非対応 なので、やる場合はnftablesを自分で設定する 管理画面でコンソール開く場合は広告ブロックをOFFにしないとダメ 最初はsshでのアクセスのみコンソール画面に入る場合 はsshで入ってから、パスワード設定が必要 API での操作も可能 OP25Bはされていない 対応OS 転送料金に課金なし 圧倒的に安いのでlightsailみたいなサービスから移行するには良いんじゃないかな</description>
-    </item>
-    
-    <item>
-      <title>apacheのautoindex経由で画像のスライドショー</title>
-      <link>https://yaasita.github.io/2022/09/15/slideshow/</link>
-      <pubDate>Thu, 15 Sep 2022 03:58:50 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2022/09/15/slideshow/</guid>
-      <description>apacheのmod_autoindexが有効な状態でスライドショーを作る
-こんな状態のディレクトリに
-こんな感じのHTMLを置いて
-スライドショー的に見る</description>
     </item>
     
   </channel>

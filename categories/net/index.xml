@@ -6,7 +6,21 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 21 Nov 2023 02:41:29 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Dec 2023 02:20:37 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rana8を試す</title>
+      <link>https://yaasita.github.io/2023/12/22/rana8/</link>
+      <pubDate>Fri, 22 Dec 2023 02:20:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/12/22/rana8/</guid>
+      <description>これ
+https://web.arena.ne.jp/service/rana8poc.html
+なんかほぼGoogleCloudのcloud runだった
+サービスはサービスアカウントの鍵をもらって gcloudでdeployするみたいな奴
+マニュアル通りやっても以下のようになって使えなかった
+ERROR: (gcloud.run.deploy) User [xxxxxxxxxx@rana8-poc.iam.gserviceaccount.com] does not have permission to access projects instance [rana8-poc] (or it may not exist): Permission &#39;cloudbuild.locations.list&#39; denied on &#39;projects/rana8-poc/lo cations/global&#39; cloud runを素で使うより何が良いのかは分からない</description>
+    </item>
+    
     <item>
       <title>codeiumがとても良い</title>
       <link>https://yaasita.github.io/2023/11/21/codeium/</link>
@@ -276,16 +290,6 @@ curl --doh-url https://doh.example.net/dns-query google.co.jp </description>
 bq mk --dataset test bq mk --table \ --time_partitioning_type DAY \ test.first データを投入
 echo -e &amp;quot;1\thoge&amp;quot; &amp;gt; /tmp/data.tsv echo -e &amp;quot;2\thuga&amp;quot; &amp;gt;&amp;gt; /tmp/data.tsv echo -e &amp;quot;3\tabcd&amp;quot; &amp;gt;&amp;gt; /tmp/data.tsv bq load --source_format=CSV --field_delimiter=&amp;quot;\t&amp;quot; \ &#39;test.first$20200501&#39; /tmp/data.tsv id:NUMERIC,description:STRING bq load --source_format=CSV --field_delimiter=&amp;quot;\t&amp;quot; \ &#39;test.first$20200502&#39; /tmp/data.tsv id:NUMERIC,description:STRING 取り込み時間別に分割されているのが分かります
 echo &amp;quot;#standardSQL&amp;quot; &amp;gt; /tmp/query.sql echo &#39;select _PARTITIONTIME as pt, count(*) as count from test.first group by _PARTITIONTIME order by pt;&#39; &amp;gt;&amp;gt; /tmp/query.</description>
-    </item>
-    
-    <item>
-      <title>express.jsでpostのrawBodyを取得</title>
-      <link>https://yaasita.github.io/2020/04/28/rawpostdata/</link>
-      <pubDate>Tue, 28 Apr 2020 01:00:16 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/04/28/rawpostdata/</guid>
-      <description>multipart/form-dataでPOSTされた奴を、処理するCloud functionsを書いてて必要になったので
-呼び出し側はこんな感じでやってる</description>
     </item>
     
   </channel>

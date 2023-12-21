@@ -6,7 +6,21 @@
     <description>Recent content in 2023 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 21 Nov 2023 02:41:29 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2023/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Dec 2023 02:20:37 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2023/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>rana8を試す</title>
+      <link>https://yaasita.github.io/2023/12/22/rana8/</link>
+      <pubDate>Fri, 22 Dec 2023 02:20:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/12/22/rana8/</guid>
+      <description>これ
+https://web.arena.ne.jp/service/rana8poc.html
+なんかほぼGoogleCloudのcloud runだった
+サービスはサービスアカウントの鍵をもらって gcloudでdeployするみたいな奴
+マニュアル通りやっても以下のようになって使えなかった
+ERROR: (gcloud.run.deploy) User [xxxxxxxxxx@rana8-poc.iam.gserviceaccount.com] does not have permission to access projects instance [rana8-poc] (or it may not exist): Permission &#39;cloudbuild.locations.list&#39; denied on &#39;projects/rana8-poc/lo cations/global&#39; cloud runを素で使うより何が良いのかは分からない</description>
+    </item>
+    
     <item>
       <title>codeiumがとても良い</title>
       <link>https://yaasita.github.io/2023/11/21/codeium/</link>
