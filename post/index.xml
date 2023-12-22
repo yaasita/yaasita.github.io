@@ -6,7 +6,21 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 22 Dec 2023 02:20:37 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Dec 2023 01:11:41 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tumblrの投稿は消えることがある</title>
+      <link>https://yaasita.github.io/2023/12/23/tumblr/</link>
+      <pubDate>Sat, 23 Dec 2023 01:11:41 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/12/23/tumblr/</guid>
+      <description>tumblrの投稿は突然消える場合があるので注意
+例えば以下の投稿は/posts APIで取得できるが
+https://gist.github.com/yaasita/c1c8dcfda063305f3db70bfedee9e0cb
+blogページからは消えている
+https://yaasita.tumblr.com/post/165399040492/asagaonosakukisetu-mklater-xmixkox
+なぜ発生するかは不明</description>
+    </item>
+    
     <item>
       <title>rana8を試す</title>
       <link>https://yaasita.github.io/2023/12/22/rana8/</link>
@@ -280,18 +294,6 @@ https://www.youtube.com/watch?v=3ECcn7tXWDs</description>
       <description>このgpg鍵でwebページをpdfにしたやつに署名するという
 まったく意味のないサービスを作った
 https://exists.cloud.yaasita.net/</description>
-    </item>
-    
-    <item>
-      <title>WebARENA Indigoを使ってみた</title>
-      <link>https://yaasita.github.io/2022/09/25/webarena/</link>
-      <pubDate>Sun, 25 Sep 2022 22:41:18 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2022/09/25/webarena/</guid>
-      <description>円安でAWSが高いのでこっちにサーバーを移行した
-https://web.arena.ne.jp/indigo/
-以下気づいたこと箇条書きで
-めっちゃ安い 機能は仮想サーバーの起動(kvm),スナップショット,ファイヤーウォールくらい 追加オプションで権威DNSサーバーが使える(500円) 管理画面は少し重い ipv6の設定は手動でやる 1vCPU/1GB memory(Uubuntu 22.04)の場合はnetplanの設定がコメントアウトされてた ファイヤーウォールはipv6非対応 なので、やる場合はnftablesを自分で設定する 管理画面でコンソール開く場合は広告ブロックをOFFにしないとダメ 最初はsshでのアクセスのみコンソール画面に入る場合 はsshで入ってから、パスワード設定が必要 API での操作も可能 OP25Bはされていない 対応OS 転送料金に課金なし 圧倒的に安いのでlightsailみたいなサービスから移行するには良いんじゃないかな</description>
     </item>
     
   </channel>

@@ -6,7 +6,21 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 22 Dec 2023 02:20:37 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Dec 2023 01:11:41 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>tumblrの投稿は消えることがある</title>
+      <link>https://yaasita.github.io/2023/12/23/tumblr/</link>
+      <pubDate>Sat, 23 Dec 2023 01:11:41 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2023/12/23/tumblr/</guid>
+      <description>tumblrの投稿は突然消える場合があるので注意
+例えば以下の投稿は/posts APIで取得できるが
+https://gist.github.com/yaasita/c1c8dcfda063305f3db70bfedee9e0cb
+blogページからは消えている
+https://yaasita.tumblr.com/post/165399040492/asagaonosakukisetu-mklater-xmixkox
+なぜ発生するかは不明</description>
+    </item>
+    
     <item>
       <title>rana8を試す</title>
       <link>https://yaasita.github.io/2023/12/22/rana8/</link>
@@ -275,21 +289,6 @@ pip3 install doh-proxy 以下のような設定でserviceを作る
 [Unit] Description=doh-httpproxy After=nginx.service [Install] WantedBy=multi-user.target [Service] ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 8080 --listen-address 127.0.0.1 Nginx側設定例
 server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } } 確認
 curl --doh-url https://doh.example.net/dns-query google.co.jp </description>
-    </item>
-    
-    <item>
-      <title>BigQueryのカラムタイプ変更</title>
-      <link>https://yaasita.github.io/2020/05/09/bigquery-type-change/</link>
-      <pubDate>Sat, 09 May 2020 04:42:51 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/05/09/bigquery-type-change/</guid>
-      <description>BigQueryのカラム変更はREQUIREDをNULLABLEにする以外は出来ません
-テーブル スキーマの手動変更
-作り直すしかないんですが、分割テーブルだともう一手間必要ですよという話
-例えば以下のように分割テーブルを作るとします
-bq mk --dataset test bq mk --table \ --time_partitioning_type DAY \ test.first データを投入
-echo -e &amp;quot;1\thoge&amp;quot; &amp;gt; /tmp/data.tsv echo -e &amp;quot;2\thuga&amp;quot; &amp;gt;&amp;gt; /tmp/data.tsv echo -e &amp;quot;3\tabcd&amp;quot; &amp;gt;&amp;gt; /tmp/data.tsv bq load --source_format=CSV --field_delimiter=&amp;quot;\t&amp;quot; \ &#39;test.first$20200501&#39; /tmp/data.tsv id:NUMERIC,description:STRING bq load --source_format=CSV --field_delimiter=&amp;quot;\t&amp;quot; \ &#39;test.first$20200502&#39; /tmp/data.tsv id:NUMERIC,description:STRING 取り込み時間別に分割されているのが分かります
-echo &amp;quot;#standardSQL&amp;quot; &amp;gt; /tmp/query.sql echo &#39;select _PARTITIONTIME as pt, count(*) as count from test.first group by _PARTITIONTIME order by pt;&#39; &amp;gt;&amp;gt; /tmp/query.</description>
     </item>
     
   </channel>
