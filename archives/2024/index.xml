@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2024 on # cd ~yaasita</title>
+    <link>https://yaasita.github.io/archives/2024/</link>
+    <description>Recent content in 2024 on # cd ~yaasita</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <lastBuildDate>Sun, 07 Jan 2024 06:22:21 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2024/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linuxネットワークの設定</title>
+      <link>https://yaasita.github.io/2024/01/07/network/</link>
+      <pubDate>Sun, 07 Jan 2024 06:22:21 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/01/07/network/</guid>
+      <description>たまに忘れるのでメモ
+Linuxで通信を見たいときに、あるホストをルーターにする場合
+/etc/sysctl.conf に以下のような設定を入れる
+net.ipv4.ip_forward = 1 net.ipv4.conf.all.accept_redirects = 0 net.ipv4.conf.all.send_redirects = 0 が、ICMMP redirectの送信はallじゃなくてインターフェイス名をちゃんと指定する必要があるぽい
+net.ipv4.conf.eth0.send_redirects = 0 ちなみにICMP redirectで曲がってしまったルーティングは
+以下のコマンドで参照とクリアができる
+ip route show cache ip route flush cache あとIPv6をsystemd-networkdで無効化する場合こんな感じ
+[Match] Name=host0 [Network] DHCP=no LinkLocalAddressing=no Address=192.168.0.100/24 Gateway=192.168.0.10 IPv6PrivacyExtensions=no [IPv6] Address= Gateway= AddressGenerator=none 一時アドレス消す場合は以下のコマンド
+ip -6 addr flush dev eth0 scope global dynamic </description>
+    </item>
+    
+  </channel>
+</rss>

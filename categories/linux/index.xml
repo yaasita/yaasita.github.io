@@ -6,7 +6,24 @@
     <description>Recent content in linux on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 25 Sep 2022 22:41:18 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 07 Jan 2024 06:22:21 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Linuxネットワークの設定</title>
+      <link>https://yaasita.github.io/2024/01/07/network/</link>
+      <pubDate>Sun, 07 Jan 2024 06:22:21 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/01/07/network/</guid>
+      <description>たまに忘れるのでメモ
+Linuxで通信を見たいときに、あるホストをルーターにする場合
+/etc/sysctl.conf に以下のような設定を入れる
+net.ipv4.ip_forward = 1 net.ipv4.conf.all.accept_redirects = 0 net.ipv4.conf.all.send_redirects = 0 が、ICMMP redirectの送信はallじゃなくてインターフェイス名をちゃんと指定する必要があるぽい
+net.ipv4.conf.eth0.send_redirects = 0 ちなみにICMP redirectで曲がってしまったルーティングは
+以下のコマンドで参照とクリアができる
+ip route show cache ip route flush cache あとIPv6をsystemd-networkdで無効化する場合こんな感じ
+[Match] Name=host0 [Network] DHCP=no LinkLocalAddressing=no Address=192.168.0.100/24 Gateway=192.168.0.10 IPv6PrivacyExtensions=no [IPv6] Address= Gateway= AddressGenerator=none 一時アドレス消す場合は以下のコマンド
+ip -6 addr flush dev eth0 scope global dynamic </description>
+    </item>
+    
     <item>
       <title>WebARENA Indigoを使ってみた</title>
       <link>https://yaasita.github.io/2022/09/25/webarena/</link>
@@ -312,19 +329,6 @@ mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private /etc
 example.net mail._domainkey.example.net 反映
 systemctl restart opendkim.service postfix設定 以下追記
 milter_default_action = tempfail milter_protocol = 2 smtpd_milters = inet:localhost:8891 non_smtpd_milters = inet:localhost:8891 ここで,milterを使うので</description>
-    </item>
-    
-    <item>
-      <title>GoogleのCloud SDKの署名鍵エラー</title>
-      <link>https://yaasita.github.io/2018/04/07/google-cloud-sdk-gpg/</link>
-      <pubDate>Sat, 07 Apr 2018 02:24:37 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2018/04/07/google-cloud-sdk-gpg/</guid>
-      <description>GCP(google cloud platform)の署名鍵が変わってた
-つーか元のgpg鍵の有効期限が切れてる
-取得:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease [6,372 B] エラー:1 http://packages.cloud.google.com/apt cloud-sdk-xenial InRelease 公開鍵を利用できないため、以下の署名は検証できませんでした: NO_PUBKEY 6A030B21BA07F4FB なんか探してみると2018年4月1日に作った鍵にしてるみたい
-gpg2 --search-keys BA07F4FB gpg: data source: http://gpg.NebrWesleyan.edu:11371 (1) Google Cloud Packages Automatic Signing Key &amp;lt;gc-team@google.com&amp;gt; 2048 bit RSA key BA07F4FB, created: 2018-04-01, expires: 2021-03-31 ということで追加して事なきを得た
-gpg2 -a --export BA07F4FB | apt-key add - apt-key del A7317B0F </description>
     </item>
     
   </channel>
