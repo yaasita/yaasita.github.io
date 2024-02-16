@@ -6,7 +6,21 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 07 Jan 2024 06:22:21 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Feb 2024 05:35:13 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ipv6のICMPリダイレクト</title>
+      <link>https://yaasita.github.io/2024/02/17/ipv6-icmp/</link>
+      <pubDate>Sat, 17 Feb 2024 05:35:13 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/02/17/ipv6-icmp/</guid>
+      <description>ipv4ならカーネルパラメータ net.ipv4.conf.all.send_redirectsでICMPリダイレクトの送信を抑止できるが
+ipv6はそういうオプションが無いらしい
+https://askubuntu.com/questions/1164239/how-to-disable-ipv6-redirect
+/etc/nftables.conf に以下追加してとりあえず ipv6-icmpを抑止する
+chain output { type filter hook output priority filter; meta l4proto ipv6-icmp icmpv6 type nd-redirect counter drop } リダイレクトで曲がったルーティングの確認はこんな感じ
+ip -6 route show cache </description>
+    </item>
+    
     <item>
       <title>Linuxネットワークの設定</title>
       <link>https://yaasita.github.io/2024/01/07/network/</link>
@@ -290,16 +304,6 @@ AQUOS Sense3解除
 https://spdic.biz/services/dp-unlock/frp-aquoss-se3-v10/
 Unlock FRP(Factory reset protection)
 https://www.youtube.com/watch?v=3ECcn7tXWDs</description>
-    </item>
-    
-    <item>
-      <title>fargateでメタデータ取得</title>
-      <link>https://yaasita.github.io/2022/11/20/get-metadata/</link>
-      <pubDate>Sun, 20 Nov 2022 01:45:42 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2022/11/20/get-metadata/</guid>
-      <description>ECS内からメタデータ叩いて、自分と同じタスク定義のコンテナが何個あるか数える
-何に使うか分からんけど一応おいておく</description>
     </item>
     
   </channel>

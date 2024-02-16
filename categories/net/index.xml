@@ -6,7 +6,21 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 07 Jan 2024 06:22:21 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 Feb 2024 05:35:13 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ipv6のICMPリダイレクト</title>
+      <link>https://yaasita.github.io/2024/02/17/ipv6-icmp/</link>
+      <pubDate>Sat, 17 Feb 2024 05:35:13 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/02/17/ipv6-icmp/</guid>
+      <description>ipv4ならカーネルパラメータ net.ipv4.conf.all.send_redirectsでICMPリダイレクトの送信を抑止できるが
+ipv6はそういうオプションが無いらしい
+https://askubuntu.com/questions/1164239/how-to-disable-ipv6-redirect
+/etc/nftables.conf に以下追加してとりあえず ipv6-icmpを抑止する
+chain output { type filter hook output priority filter; meta l4proto ipv6-icmp icmpv6 type nd-redirect counter drop } リダイレクトで曲がったルーティングの確認はこんな感じ
+ip -6 route show cache </description>
+    </item>
+    
     <item>
       <title>Linuxネットワークの設定</title>
       <link>https://yaasita.github.io/2024/01/07/network/</link>
@@ -276,19 +290,6 @@ smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode
 cpuminer アルゴリズム=lyra2rev2 で測定
 name cpu memory hashrate(kH/s) 自宅PC Core i5-4460 3.20GHz 4コア 16G 384 ノートPC LB-C110B Celeron 1037U 1.80GHz 2コア 8G 79 t4g.micro (CPUクレジットあり) ARM CPU 2コア 1G 233 t4g.micro (CPUクレジットなし) ARM CPU 2コア 1G 24 aws lightsail (t2.nano, CPUクレジットあり) Xeon E5-2676 v3 2.40GHz 1コア 512M 81 aws lightsail (t2.nano, CPUクレジットなし) Xeon E5-2676 v3 2.40GHz 1コア 512M 6 前回記事
 まとめ t4g良いかもしれない</description>
-    </item>
-    
-    <item>
-      <title>Google Domainsを使ってみた</title>
-      <link>https://yaasita.github.io/2020/06/03/google-domains/</link>
-      <pubDate>Wed, 03 Jun 2020 02:59:51 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/06/03/google-domains/</guid>
-      <description>自分のドメインを
-Value Domainから Google Domains へ移管してみた
-感想
-.net, .com 等は安い .jp は高い whois 代行は標準サービス 標準の権威DNSサーバーは微妙 GCPのGoogle Cloud DNSが使えるわけではない APIでの更新も難しそう HTTPリダイレクトの機能がついてるのは嬉しい ダイナミックDNSはある DNSSECは簡単にできそう SSHFPレコードを設定できる まとめ
-みんな使うと良いと思います</description>
     </item>
     
   </channel>
