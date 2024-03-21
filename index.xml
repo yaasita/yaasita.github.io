@@ -6,7 +6,21 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 17 Feb 2024 05:35:13 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Mar 2024 02:58:55 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IPv6回りのちょっとしたこと</title>
+      <link>https://yaasita.github.io/2024/03/22/ipv6-tips/</link>
+      <pubDate>Fri, 22 Mar 2024 02:58:55 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/03/22/ipv6-tips/</guid>
+      <description>public NAT64サービス: https://nat64.net/
+使用するキャッシュDNSサーバーだけ変えればOKなので使いやすい
+IPv6 テストサイト: https://ipv6test.app/
+curlで手軽にチェックできる
+curl ipv6test.app curl v4.ipv6test.app curl v6.ipv6test.app tcpdumpでICMPv6を見る
+tcpdump -n -X icmp6 </description>
+    </item>
+    
     <item>
       <title>ipv6のICMPリダイレクト</title>
       <link>https://yaasita.github.io/2024/02/17/ipv6-icmp/</link>
@@ -288,22 +302,6 @@ https://gist.github.com/yaasita/727267f20177ce13e99750191311c23e
       <guid>https://yaasita.github.io/2023/01/01/nodepath/</guid>
       <description>node.jsでNODE_PATHはESMで使えないみたいです
 https://github.com/nodejs/node/issues/38687</description>
-    </item>
-    
-    <item>
-      <title>androidのdevice protection</title>
-      <link>https://yaasita.github.io/2022/12/24/android-device-protection/</link>
-      <pubDate>Sat, 24 Dec 2022 04:35:15 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2022/12/24/android-device-protection/</guid>
-      <description>説明
-https://spdic.biz/termdic/deviceprotection/
-デバイスプロテクション解除
-https://spdic.biz/category/services/dp-unlock/
-AQUOS Sense3解除
-https://spdic.biz/services/dp-unlock/frp-aquoss-se3-v10/
-Unlock FRP(Factory reset protection)
-https://www.youtube.com/watch?v=3ECcn7tXWDs</description>
     </item>
     
   </channel>

@@ -6,7 +6,21 @@
     <description>Recent content in linux on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 17 Feb 2024 05:35:13 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Mar 2024 02:58:55 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IPv6回りのちょっとしたこと</title>
+      <link>https://yaasita.github.io/2024/03/22/ipv6-tips/</link>
+      <pubDate>Fri, 22 Mar 2024 02:58:55 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/03/22/ipv6-tips/</guid>
+      <description>public NAT64サービス: https://nat64.net/
+使用するキャッシュDNSサーバーだけ変えればOKなので使いやすい
+IPv6 テストサイト: https://ipv6test.app/
+curlで手軽にチェックできる
+curl ipv6test.app curl v4.ipv6test.app curl v6.ipv6test.app tcpdumpでICMPv6を見る
+tcpdump -n -X icmp6 </description>
+    </item>
+    
     <item>
       <title>ipv6のICMPリダイレクト</title>
       <link>https://yaasita.github.io/2024/02/17/ipv6-icmp/</link>
@@ -308,27 +322,6 @@ openssl s_client -connect example.org:465 -showcerts thunderbirdだけで確認�
 そんで現在のファイルリストも取って、差分をとる
 diff -u previous.txt now.txt | egrep &amp;#34;^\+[^\+]&amp;#34; | perl -ple &amp;#39;s/^\+//;s/\t.+//&amp;#39; &amp;gt; tar.txt あとは-Tオプションで差分のファイルだけをtarで固める
 tar -cvaf hoge.tgz -T tar.txt </description>
-    </item>
-    
-    <item>
-      <title>tarの-gオプションについて</title>
-      <link>https://yaasita.github.io/2019/03/30/tar-g-option/</link>
-      <pubDate>Sat, 30 Mar 2019 02:32:25 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/03/30/tar-g-option/</guid>
-      <description>-g, &amp;ndash;listed-incremental
-という増分バックアップに使われるオプションについてどうやって判定してるか？
-それはctimeの変化を見ている
-ctimeの変化で気をつけなければいけないことはハードリンクによるバックアップ
-(rsync &amp;ndash;link-dest等)
-例えば、以下のようなファイルが存在し
-work/ `-- 1.txt 以下のコマンドを発行した場合
-tar -g resume -cvf work.tar work/ 初回なので当然全部がバックアップされる
-このまま以下のコマンドを打てばディレクトリだけのバックアップになる(差分がないため)
-tar -g resume -cvf work.tar work/ しかし、以下のようにハードリンクをするとctimeが変わってしまいバックアップ対象にリストされてしまう
-stat work/1.txt # ctime確認 cp -al work work2 # linksを増やす stat work/1.txt # ctime更新されている tar -g resume -cvf work.tar work/ # 1.txtは対象になる rm -rf work2 # linksを減らす tar -g resume -cvf work.tar work/ # 1.txtは対象になる なので、rsyncの差分バックアップの対象ディレクトリだったり、cp -alでのバックアップを取っている際はこれに注意する
-うまく増分バックアップができなくなる
-続き</description>
     </item>
     
   </channel>

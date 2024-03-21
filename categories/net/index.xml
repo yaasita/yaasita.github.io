@@ -6,7 +6,21 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 17 Feb 2024 05:35:13 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 22 Mar 2024 02:58:55 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IPv6回りのちょっとしたこと</title>
+      <link>https://yaasita.github.io/2024/03/22/ipv6-tips/</link>
+      <pubDate>Fri, 22 Mar 2024 02:58:55 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/03/22/ipv6-tips/</guid>
+      <description>public NAT64サービス: https://nat64.net/
+使用するキャッシュDNSサーバーだけ変えればOKなので使いやすい
+IPv6 テストサイト: https://ipv6test.app/
+curlで手軽にチェックできる
+curl ipv6test.app curl v4.ipv6test.app curl v6.ipv6test.app tcpdumpでICMPv6を見る
+tcpdump -n -X icmp6 </description>
+    </item>
+    
     <item>
       <title>ipv6のICMPリダイレクト</title>
       <link>https://yaasita.github.io/2024/02/17/ipv6-icmp/</link>
@@ -278,18 +292,6 @@ https://cloud.google.com/kubernetes-engine/docs/how-to/standalone-neg
 smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode=yes -o smtpd_sasl_auth_enable=yes -o smtpd_reject_unlisted_recipient=no -o smtpd_client_restrictions=$mua_client_restrictions -o smtpd_helo_restrictions=$mua_helo_restrictions -o smtpd_sender_restrictions=$mua_sender_restrictions -o smtpd_recipient_restrictions= -o smtpd_relay_restrictions=permit_sasl_authenticated,reject -o milter_macro_daemon_name=ORIGINATING -o cleanup_service_name=smtpscleanup smtpscleanup unix n - y - 0 cleanup -o header_checks=regexp:/etc/postfix/header_checks /etc/postfix/header_checks
 /^Received:.*/ IGNORE 最初はsmtp_header_checksをmain.cfに書けば良いかなーと思ったんだけど、
 これだと外から入ってきたメール(後にプライマリサーバーにrelayされる)も一律削除されてしまうので都合が悪かった</description>
-    </item>
-    
-    <item>
-      <title>AWSのt4gインスタンスを試す</title>
-      <link>https://yaasita.github.io/2020/11/05/t4g-instance/</link>
-      <pubDate>Thu, 05 Nov 2020 02:58:38 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/11/05/t4g-instance/</guid>
-      <description>新しくt4gインスタンスが出たみたいなので試してみた
-cpuminer アルゴリズム=lyra2rev2 で測定
-name cpu memory hashrate(kH/s) 自宅PC Core i5-4460 3.20GHz 4コア 16G 384 ノートPC LB-C110B Celeron 1037U 1.80GHz 2コア 8G 79 t4g.micro (CPUクレジットあり) ARM CPU 2コア 1G 233 t4g.micro (CPUクレジットなし) ARM CPU 2コア 1G 24 aws lightsail (t2.nano, CPUクレジットあり) Xeon E5-2676 v3 2.40GHz 1コア 512M 81 aws lightsail (t2.nano, CPUクレジットなし) Xeon E5-2676 v3 2.40GHz 1コア 512M 6 前回記事
-まとめ t4g良いかもしれない</description>
     </item>
     
   </channel>
