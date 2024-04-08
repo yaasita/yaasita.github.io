@@ -93,7 +93,7 @@ smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG</p>
 <p>この問題はスマホのK-9 Mailでメール読もうとしたときに判明した<br>
 (突然CertPathValidatorExceptionって怒られた)<br>
 thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね</p>
-<p><a href="https://yaasita.tk/blog/2022/thuder-ssl.png"><img src="https://yaasita.tk/blog/2022/thuder-ssl.png" alt="thuder-ssl"></a></p>
+<p><a href="https://img.cloud.yaasita.net/2022/thuder-ssl.png"><img src="https://img.cloud.yaasita.net/2022/thuder-ssl.png" alt="thuder-ssl"></a></p>
 <p>サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも</p>
 <pre><code>openssl s_client -connect example.org:465 -showcerts
 </code></pre>

@@ -69,14 +69,14 @@ if (!doNotTrack) {
 この仕組みの参考実装はこんな感じ<br>
 <a href="https://gist.github.com/yaasita/7b07710840186561c76d7e5c4af28b2d">https://gist.github.com/yaasita/7b07710840186561c76d7e5c4af28b2d</a></p>
 <p>chromeならURLバーの左をクリックしてJavaScriptをブロックで</p>
-<p><a href="https://yaasita.tk/blog/2022/copy-kinsi-1.png"><img src="https://yaasita.tk/blog/2022/copy-kinsi-1.png" alt="copy-kinsi-1"></a></p>
+<p><a href="https://img.cloud.yaasita.net/2022/copy-kinsi-1.png"><img src="https://img.cloud.yaasita.net/2022/copy-kinsi-1.png" alt="copy-kinsi-1"></a></p>
 <h2 id="2-noscriptのタグを消す">2. noscriptのタグを消す</h2>
 <p><a href="https://github.com/wp-plugins/wp-content-copy-protection/blob/master/wpccpl.php">WP Content Copy Protection</a> みたいなやつだと noscript タグの中に画面一杯に広げてコンテンツを見えなくするdivが入るので、chrome developers tools開いて &lt;noscript&gt;タグごと削除する<br>
 <code>Oops! It appears that you have disabled your Javascript. In order for you to see this page as it is meant to appear, we ask that you please re-enable your Javascript!</code> みたいな文言はこれ</p>
-<p><a href="https://yaasita.tk/blog/2022/copy-kinsi-2.png"><img src="https://yaasita.tk/blog/2022/copy-kinsi-2.png" alt="copy-kinsi-2"></a></p>
+<p><a href="https://img.cloud.yaasita.net/2022/copy-kinsi-2.png"><img src="https://img.cloud.yaasita.net/2022/copy-kinsi-2.png" alt="copy-kinsi-2"></a></p>
 <h2 id="3-cssでuser-selectをnoneにしている場合">3. cssでuser-selectをnoneにしている場合</h2>
 <p>chrome developers toolsで<code>user-select: text;</code>書き換えてやる</p>
-<p><a href="https://yaasita.tk/blog/2022/copy-kinsi-3.png"><img src="https://yaasita.tk/blog/2022/copy-kinsi-3.png" alt="copy-kinsi-3"></a></p>
+<p><a href="https://img.cloud.yaasita.net/2022/copy-kinsi-3.png"><img src="https://img.cloud.yaasita.net/2022/copy-kinsi-3.png" alt="copy-kinsi-3"></a></p>
 <p>とりあえずここまでやれば大抵コピーできるようになるはず</p>
 <h3 id="参考リンク">参考リンク</h3>
 <ul>

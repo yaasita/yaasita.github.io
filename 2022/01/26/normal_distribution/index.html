@@ -73,7 +73,7 @@ if (!doNotTrack) {
 <p>これは音ゲーのスコアを表していてタイミングよく押せた場合はPERFECT, 早すぎたり遅すぎたりした場合はFAST, SLOWに計上される<br>
 この内ミスの割合が正規分布と見なせるか検定する</p>
 <p>まず、CSVを右上のEnvironmentタブ =&gt; Import Datasetから読み込む</p>
-<p><a href="https://yaasita.tk/blog/2022/rstudio.png"><img src="https://yaasita.tk/blog/2022/rstudio.png" alt="rstudio.png"></a></p>
+<p><a href="https://img.cloud.yaasita.net/2022/rstudio.png"><img src="https://img.cloud.yaasita.net/2022/rstudio.png" alt="rstudio.png"></a></p>
 <p>データをMISSの割合をデータフレームに追加</p>
 <pre tabindex="0"><code>library(dplyr)
 
@@ -84,7 +84,7 @@ bandori &lt;- bandori %&gt;%
 
 dens &lt;- density(bandori$MISS)
 lines(dens, lwd = 3, col = &#34;blue&#34;)
-</code></pre><p><a href="https://yaasita.tk/blog/2022/hist.png"><img src="https://yaasita.tk/blog/2022/hist.png" alt="hist.png"></a></p>
+</code></pre><p><a href="https://img.cloud.yaasita.net/2022/hist.png"><img src="https://img.cloud.yaasita.net/2022/hist.png" alt="hist.png"></a></p>
 <p>検定</p>
 <pre tabindex="0"><code>shapiro.test(bandori$MISS)
 </code></pre><p>検定統計量とp値</p>

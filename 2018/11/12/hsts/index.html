@@ -73,13 +73,13 @@ if (!doNotTrack) {
 <h2 id="通常">通常</h2>
 <p>通常HTTPリクエストをして、301、302等のリダイレクトによってHTTPSにアクセスし直す<br>
 が、HTTPでのやりとり部分に中間者攻撃のリスクが存在する</p>
-<p><a href="https://yaasita.tk/blog/2022/hsts-1.png"><img src="https://yaasita.tk/blog/2022/hsts-1.png" alt="hsts-1"></a></p>
+<p><a href="https://img.cloud.yaasita.net/2022/hsts-1.png"><img src="https://img.cloud.yaasita.net/2022/hsts-1.png" alt="hsts-1"></a></p>
 <p>※厳密には301リダイレクトはブラウザがキャッシュするので2回目以降はサーバー側にリクエストしない</p>
 <h2 id="hsts-ヘッダ">HSTS ヘッダ</h2>
 <p>HSTSヘッダを受け取ると、ブラウザ側でHTTPをHTTPSに読み替えてリクエストする<br>
 通常のリダイレクトは違い、一旦 HSTSヘッダを受け取ると有効期間中は決してhttpによるリクエストをしない<br>
 (http:// ~ というリンクはブラウザ側で読み換える)</p>
-<p><a href="https://yaasita.tk/blog/2022/hsts-2.png"><img src="https://yaasita.tk/blog/2022/hsts-2.png" alt="hsts-2"></a></p>
+<p><a href="https://img.cloud.yaasita.net/2022/hsts-2.png"><img src="https://img.cloud.yaasita.net/2022/hsts-2.png" alt="hsts-2"></a></p>
 <p>付与するヘッダーは以下のようなもの</p>
 <pre><code>strict-transport-security: max-age=31536000; includeSubDomains; preload
 </code></pre>
@@ -91,7 +91,7 @@ if (!doNotTrack) {
 <h2 id="hsts-preload">HSTS preload</h2>
 <p>HSTS preloadは予め <a href="https://hstspreload.org/">hstspreload.org</a> に自分のサイトを登録しておいて<br>
 初回リクエスト時からHTTPSを有効にしておく仕組み</p>
-<p><a href="https://yaasita.tk/blog/2022/hsts-3.png"><img src="https://yaasita.tk/blog/2022/hsts-3.png" alt="hsts-3"></a></p>
+<p><a href="https://img.cloud.yaasita.net/2022/hsts-3.png"><img src="https://img.cloud.yaasita.net/2022/hsts-3.png" alt="hsts-3"></a></p>
 <h2 id="メリットデメリット">メリット・デメリット</h2>
 <ul>
 <li>メリット
@@ -109,9 +109,9 @@ if (!doNotTrack) {
 </li>
 </ul>
 <p>通常だと出てくる証明書エラー無視のリンクが・・・</p>
-<p><a href="https://yaasita.tk/blog/2022/hsts-4.png"><img src="https://yaasita.tk/blog/2022/hsts-4.png" alt="hsts-4"></a></p>
+<p><a href="https://img.cloud.yaasita.net/2022/hsts-4.png"><img src="https://img.cloud.yaasita.net/2022/hsts-4.png" alt="hsts-4"></a></p>
 <p>HSTSのサイトは証明書無視ボタンが出ない</p>
-<p><a href="https://yaasita.tk/blog/2022/hsts-5.png"><img src="https://yaasita.tk/blog/2022/hsts-5.png" alt="hsts-5"></a></p>
+<p><a href="https://img.cloud.yaasita.net/2022/hsts-5.png"><img src="https://img.cloud.yaasita.net/2022/hsts-5.png" alt="hsts-5"></a></p>
 <p>windowsだとやり方があるらしいが、ローカルでの確認とかはやりにくくなる<br>
 /etc/hostsを化かして対応する、実ドメインでのリハーサル時はプライベートCA等で対応すること</p>
 <ul>

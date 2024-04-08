@@ -77,7 +77,7 @@ mail_plugins = quota imap_quota
 }
 </code></pre>
 <p>Thunderbirdで試すとクォータが有効なら↓のようなメッセージが出る</p>
-<p><a href="https://yaasita.tk/blog/2022/dovecot-alert.png"><img src="https://yaasita.tk/blog/2022/dovecot-alert.png" alt="dovecot-alert"></a></p>
+<p><a href="https://img.cloud.yaasita.net/2022/dovecot-alert.png"><img src="https://img.cloud.yaasita.net/2022/dovecot-alert.png" alt="dovecot-alert"></a></p>
 <p>で、クォータ当てただけじゃ不便だから古いメッセージから自動で削除してくれるように設定するには <a href="http://wiki.dovecot.org/Plugins/Trash/">Trashプラグイン</a> を使う</p>
 <pre><code>protocol imap {
 mail_plugins = quota imap_quota trash
