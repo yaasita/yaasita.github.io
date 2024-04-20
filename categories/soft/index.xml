@@ -6,7 +6,17 @@
     <description>Recent content in soft on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 21 Nov 2023 02:41:29 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Apr 2024 04:22:59 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>shotcutで編集すると音ズレ</title>
+      <link>https://yaasita.github.io/2024/04/21/shotcut/</link>
+      <pubDate>Sun, 21 Apr 2024 04:22:59 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/04/21/shotcut/</guid>
+      <description>編集前にこれやっておくと良いかもしれない
+ffmpeg -i input.mp4 output.mp4 </description>
+    </item>
+    
     <item>
       <title>codeiumがとても良い</title>
       <link>https://yaasita.github.io/2023/11/21/codeium/</link>
@@ -289,21 +299,6 @@ k8s サイドカーコンテナについて</description>
 以下をvimrcに追記して事なきを得た
 inoremapって非ASCII文字でも行けるみたい
 inoremap ¥ \ cnoremap ¥ \ </description>
-    </item>
-    
-    <item>
-      <title>再度hugoアップデート</title>
-      <link>https://yaasita.github.io/2019/12/24/hugo-update2/</link>
-      <pubDate>Tue, 24 Dec 2019 17:58:35 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/12/24/hugo-update2/</guid>
-      <description>前回からまたアップデート
-hugoのバージョンを 0.56.3 =&amp;gt; v0.62.0 まで上げた
-注意点としては, v0.58.0 から .Pagesの挙動が変わっているので
-以下の通り、.Site.RegularPages に変更する必要がある
-Building sites … WARN 2019/12/23 17:34:34 In the next Hugo version (0.58.0) we will change how $home.Pages behaves. If you want to list all regular pages, replace .Pages or .Data.Pages with .Site.RegularPages in your home page template. あとインラインのHTMLがデフォルトで削除されるので使ってたらコレもconfig.tomlへ追記
-[markup] [markup.goldmark] [markup.goldmark.renderer] unsafe = true hardWraps = true 最近非互換のバージョンアップ多くない？
-アップデートがめんどくさくなってきたな。。。</description>
     </item>
     
   </channel>

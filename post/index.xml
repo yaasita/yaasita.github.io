@@ -6,7 +6,17 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 21 Apr 2024 04:06:53 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Apr 2024 04:22:59 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>shotcutで編集すると音ズレ</title>
+      <link>https://yaasita.github.io/2024/04/21/shotcut/</link>
+      <pubDate>Sun, 21 Apr 2024 04:22:59 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/04/21/shotcut/</guid>
+      <description>編集前にこれやっておくと良いかもしれない
+ffmpeg -i input.mp4 output.mp4 </description>
+    </item>
+    
     <item>
       <title>ポケモン言えるかテスト</title>
       <link>https://yaasita.github.io/2024/04/21/pokemon/</link>
@@ -287,22 +297,6 @@ https://money-bu-jpx.com/
 ストーリーはよく分からないかった
 戦闘システムは結構好き
 攻略情報リンク ミッション一覧 アダマンタイマイの倒し方 効率的な改造 トラペゾヘドロンを増やす方法 </description>
-    </item>
-    
-    <item>
-      <title>楽天証券の手数料ゼロETF</title>
-      <link>https://yaasita.github.io/2023/01/04/etf/</link>
-      <pubDate>Wed, 04 Jan 2023 23:24:59 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2023/01/04/etf/</guid>
-      <description>手数料0円ETF
-(このページなぜかログイン状態だと空っぽになる)
-https://www.rakuten-sec.co.jp/web/domestic/etf-etn-reit/lineup/0-etf.html
-信託報酬が書いてなかったので、調べておいた
-https://gist.github.com/yaasita/727267f20177ce13e99750191311c23e
-信託報酬だけ取ってくるときに使ったスクリプト
-実体は rakuten-sec.co.jp ドメインじゃなくて www.trkd-asia.com にあるので注意
-#!/usr/bin/env node &amp;quot;use strict&amp;quot;; import fs from &amp;quot;fs&amp;quot;; import readline from &amp;quot;readline&amp;quot;; import fetch from &amp;quot;node-fetch&amp;quot;; import jsdom from &amp;quot;jsdom&amp;quot;; const { JSDOM } = jsdom; const content = fs.readFileSync(&amp;quot;list.txt&amp;quot;, &amp;quot;utf8&amp;quot;); const codes = content.split(&amp;quot;\n&amp;quot;); for (const code of codes) { await getSintaku(code); } async function getSintaku(code) { const url = `https://www.trkd-asia.com/rakutensec/quote.jsp?ric=${code}.T&amp;amp;c=ja&amp;amp;ind=2`; const res = await fetch(url); const html = await res.</description>
     </item>
     
   </channel>
