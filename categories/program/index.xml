@@ -6,7 +6,18 @@
     <description>Recent content in program on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 21 Nov 2023 02:41:29 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Apr 2024 04:06:53 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ポケモン言えるかテスト</title>
+      <link>https://yaasita.github.io/2024/04/21/pokemon/</link>
+      <pubDate>Sun, 21 Apr 2024 04:06:53 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/04/21/pokemon/</guid>
+      <description>初代ポケモン151匹を言えるかテストするサイトを作った
+https://pub-5023d102c14f43daa46c69bd2286d601.r2.dev/2024/poke.html
+コーディングはgemini</description>
+    </item>
+    
     <item>
       <title>codeiumがとても良い</title>
       <link>https://yaasita.github.io/2023/11/21/codeium/</link>
@@ -272,16 +283,6 @@ https://www.youtube.com/watch?v=iNSp33TT3tc
 使い方はREADME.md参照
 https://github.com/yaasita/ssh-keys-manager
 その他 使えるならsshの証明書認証も検討した方が良いかも ssh -F でconfig指定できるけど、~/.ssh/configに置いたときと挙動が違うのでスクリプト内にconfig入れる場合は注意 </description>
-    </item>
-    
-    <item>
-      <title>express.jsでpostのrawBodyを取得</title>
-      <link>https://yaasita.github.io/2020/04/28/rawpostdata/</link>
-      <pubDate>Tue, 28 Apr 2020 01:00:16 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/04/28/rawpostdata/</guid>
-      <description>multipart/form-dataでPOSTされた奴を、処理するCloud functionsを書いてて必要になったので
-呼び出し側はこんな感じでやってる</description>
     </item>
     
   </channel>

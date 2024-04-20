@@ -6,7 +6,18 @@
     <description>Recent content in game on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 16 Sep 2023 03:20:21 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/game/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Apr 2024 04:06:53 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/game/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ポケモン言えるかテスト</title>
+      <link>https://yaasita.github.io/2024/04/21/pokemon/</link>
+      <pubDate>Sun, 21 Apr 2024 04:06:53 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/04/21/pokemon/</guid>
+      <description>初代ポケモン151匹を言えるかテストするサイトを作った
+https://pub-5023d102c14f43daa46c69bd2286d601.r2.dev/2024/poke.html
+コーディングはgemini</description>
+    </item>
+    
     <item>
       <title>紙飛行機飛ばすゲーム</title>
       <link>https://yaasita.github.io/2023/09/16/kami-hikouki/</link>
@@ -236,15 +247,6 @@ http://armorgames.com/play/12557/blueprint3d</description>
       <guid>https://yaasita.github.io/2013/07/28/661/</guid>
       <description>Ruby Warrior
 https://www.bloc.io/ruby-warrior/</description>
-    </item>
-    
-    <item>
-      <title>PS vitaのUserAgent</title>
-      <link>https://yaasita.github.io/2013/01/20/1523/</link>
-      <pubDate>Sun, 20 Jan 2013 00:00:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2013/01/20/1523/</guid>
-      <description>Vitaのユーザーエージェントを調べてみました</description>
     </item>
     
   </channel>

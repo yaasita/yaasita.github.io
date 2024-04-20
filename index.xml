@@ -6,7 +6,18 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 22 Mar 2024 02:58:55 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Apr 2024 04:06:53 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ポケモン言えるかテスト</title>
+      <link>https://yaasita.github.io/2024/04/21/pokemon/</link>
+      <pubDate>Sun, 21 Apr 2024 04:06:53 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/04/21/pokemon/</guid>
+      <description>初代ポケモン151匹を言えるかテストするサイトを作った
+https://pub-5023d102c14f43daa46c69bd2286d601.r2.dev/2024/poke.html
+コーディングはgemini</description>
+    </item>
+    
     <item>
       <title>IPv6回りのちょっとしたこと</title>
       <link>https://yaasita.github.io/2024/03/22/ipv6-tips/</link>
@@ -292,16 +303,6 @@ https://gist.github.com/yaasita/727267f20177ce13e99750191311c23e
 信託報酬だけ取ってくるときに使ったスクリプト
 実体は rakuten-sec.co.jp ドメインじゃなくて www.trkd-asia.com にあるので注意
 #!/usr/bin/env node &amp;quot;use strict&amp;quot;; import fs from &amp;quot;fs&amp;quot;; import readline from &amp;quot;readline&amp;quot;; import fetch from &amp;quot;node-fetch&amp;quot;; import jsdom from &amp;quot;jsdom&amp;quot;; const { JSDOM } = jsdom; const content = fs.readFileSync(&amp;quot;list.txt&amp;quot;, &amp;quot;utf8&amp;quot;); const codes = content.split(&amp;quot;\n&amp;quot;); for (const code of codes) { await getSintaku(code); } async function getSintaku(code) { const url = `https://www.trkd-asia.com/rakutensec/quote.jsp?ric=${code}.T&amp;amp;c=ja&amp;amp;ind=2`; const res = await fetch(url); const html = await res.</description>
-    </item>
-    
-    <item>
-      <title>ESMではNODEPATH使わない</title>
-      <link>https://yaasita.github.io/2023/01/01/nodepath/</link>
-      <pubDate>Sun, 01 Jan 2023 23:21:03 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2023/01/01/nodepath/</guid>
-      <description>node.jsでNODE_PATHはESMで使えないみたいです
-https://github.com/nodejs/node/issues/38687</description>
     </item>
     
   </channel>
