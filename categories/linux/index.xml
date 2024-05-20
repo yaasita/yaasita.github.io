@@ -6,7 +6,19 @@
     <description>Recent content in linux on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 22 Mar 2024 02:58:55 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 May 2024 03:42:37 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>nftablesでDNSサーバーのレート制限</title>
+      <link>https://yaasita.github.io/2024/05/21/nftables-dns/</link>
+      <pubDate>Tue, 21 May 2024 03:42:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/05/21/nftables-dns/</guid>
+      <description>/etc/nftables.conf に書くやつ
+まずはこんな感じで、どれくらいの流量が入って来るか測定しておく
+meta l4proto {tcp, udp} th dport 53 counter accept それから以下のように制限する
+meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit1 { ip saddr timeout 1h limit rate 20/minute } counter accept meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit2 { ip6 saddr timeout 1h limit rate 20/minute } counter accept ちなみにudpの場合はいつも ct state new にマッチするっぽい</description>
+    </item>
+    
     <item>
       <title>IPv6回りのちょっとしたこと</title>
       <link>https://yaasita.github.io/2024/03/22/ipv6-tips/</link>
@@ -306,22 +318,6 @@ SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem dovecot同様
 thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね
 サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
 openssl s_client -connect example.org:465 -showcerts thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
-    </item>
-    
-    <item>
-      <title>tarの差分バックアップ</title>
-      <link>https://yaasita.github.io/2019/04/01/tar-backup/</link>
-      <pubDate>Mon, 01 Apr 2019 16:12:46 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/04/01/tar-backup/</guid>
-      <description>前回の続き
-でctime変化しちゃってどうしたか？
-ファイルサイズとファイル名を取っておいて差分を作ることにした
-こんな感じのスクリプトで、ファイル名 + tab + ファイルサイズで保存する
-(厳密にやる場合はsha256とかで)
-そんで現在のファイルリストも取って、差分をとる
-diff -u previous.txt now.txt | egrep &amp;#34;^\+[^\+]&amp;#34; | perl -ple &amp;#39;s/^\+//;s/\t.+//&amp;#39; &amp;gt; tar.txt あとは-Tオプションで差分のファイルだけをtarで固める
-tar -cvaf hoge.tgz -T tar.txt </description>
     </item>
     
   </channel>

@@ -6,7 +6,19 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 21 Apr 2024 04:22:59 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 May 2024 03:42:37 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>nftablesでDNSサーバーのレート制限</title>
+      <link>https://yaasita.github.io/2024/05/21/nftables-dns/</link>
+      <pubDate>Tue, 21 May 2024 03:42:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/05/21/nftables-dns/</guid>
+      <description>/etc/nftables.conf に書くやつ
+まずはこんな感じで、どれくらいの流量が入って来るか測定しておく
+meta l4proto {tcp, udp} th dport 53 counter accept それから以下のように制限する
+meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit1 { ip saddr timeout 1h limit rate 20/minute } counter accept meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit2 { ip6 saddr timeout 1h limit rate 20/minute } counter accept ちなみにudpの場合はいつも ct state new にマッチするっぽい</description>
+    </item>
+    
     <item>
       <title>shotcutで編集すると音ズレ</title>
       <link>https://yaasita.github.io/2024/04/21/shotcut/</link>
@@ -284,19 +296,6 @@ sum &amp;lt;- 0 for (i in 80:100) { sum &amp;lt;- choose(100, i) * (1 / 2) ^ 100
 https://money-bu-jpx.com/
 銘柄検索 =&amp;gt; ETF・ETNの種類から探す =&amp;gt; 商品ETF =&amp;gt; 検索結果へ =&amp;gt; 信託報酬が低い順で並べ替え
 ＳＰＤＲゴールド・シェア（1326） 純金上場信託（現物国内保管型）（1540） この辺かな</description>
-    </item>
-    
-    <item>
-      <title>FF13感想とか</title>
-      <link>https://yaasita.github.io/2023/02/18/ff13/</link>
-      <pubDate>Sat, 18 Feb 2023 04:35:50 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2023/02/18/ff13/</guid>
-      <description>MPもないし、戦闘終るごとに全回復、装備も武器とアクセサリしかないので面倒な部分が無いので良いけど
-飽きるのは早いかもしれない
-ストーリーはよく分からないかった
-戦闘システムは結構好き
-攻略情報リンク ミッション一覧 アダマンタイマイの倒し方 効率的な改造 トラペゾヘドロンを増やす方法 </description>
     </item>
     
   </channel>

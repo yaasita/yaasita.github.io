@@ -6,7 +6,19 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 22 Mar 2024 02:58:55 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 May 2024 03:42:37 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>nftablesでDNSサーバーのレート制限</title>
+      <link>https://yaasita.github.io/2024/05/21/nftables-dns/</link>
+      <pubDate>Tue, 21 May 2024 03:42:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/05/21/nftables-dns/</guid>
+      <description>/etc/nftables.conf に書くやつ
+まずはこんな感じで、どれくらいの流量が入って来るか測定しておく
+meta l4proto {tcp, udp} th dport 53 counter accept それから以下のように制限する
+meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit1 { ip saddr timeout 1h limit rate 20/minute } counter accept meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit2 { ip6 saddr timeout 1h limit rate 20/minute } counter accept ちなみにudpの場合はいつも ct state new にマッチするっぽい</description>
+    </item>
+    
     <item>
       <title>IPv6回りのちょっとしたこと</title>
       <link>https://yaasita.github.io/2024/03/22/ipv6-tips/</link>
@@ -276,22 +288,6 @@ https://cloud.google.com/kubernetes-engine/docs/how-to/standalone-neg
 厳密な事を言うと、nodeportもバックエンドサービスに登録できるが、こっちはノードの増減によりエンドポイントが変わってしまうので不適
 公式ドキュメント通りだけどこんな感じで作る
 あとはGCSにWebサイトの設定と、GCLBの設定すればOK</description>
-    </item>
-    
-    <item>
-      <title>postfixのReceived headerを隠す</title>
-      <link>https://yaasita.github.io/2020/12/06/postfix-received-header/</link>
-      <pubDate>Sun, 06 Dec 2020 01:11:10 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/12/06/postfix-received-header/</guid>
-      <description>この回答通りなんだけど
-一応補足とか
-自分の環境だと、送信メールサーバーがセカンダリメールサーバーと兼任している
-以下のように設定した
-/etc/postfix/master.cf
-smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode=yes -o smtpd_sasl_auth_enable=yes -o smtpd_reject_unlisted_recipient=no -o smtpd_client_restrictions=$mua_client_restrictions -o smtpd_helo_restrictions=$mua_helo_restrictions -o smtpd_sender_restrictions=$mua_sender_restrictions -o smtpd_recipient_restrictions= -o smtpd_relay_restrictions=permit_sasl_authenticated,reject -o milter_macro_daemon_name=ORIGINATING -o cleanup_service_name=smtpscleanup smtpscleanup unix n - y - 0 cleanup -o header_checks=regexp:/etc/postfix/header_checks /etc/postfix/header_checks
-/^Received:.*/ IGNORE 最初はsmtp_header_checksをmain.cfに書けば良いかなーと思ったんだけど、
-これだと外から入ってきたメール(後にプライマリサーバーにrelayされる)も一律削除されてしまうので都合が悪かった</description>
     </item>
     
   </channel>

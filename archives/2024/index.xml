@@ -6,7 +6,19 @@
     <description>Recent content in 2024 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 21 Apr 2024 04:22:59 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2024/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 May 2024 03:42:37 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2024/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>nftablesでDNSサーバーのレート制限</title>
+      <link>https://yaasita.github.io/2024/05/21/nftables-dns/</link>
+      <pubDate>Tue, 21 May 2024 03:42:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/05/21/nftables-dns/</guid>
+      <description>/etc/nftables.conf に書くやつ
+まずはこんな感じで、どれくらいの流量が入って来るか測定しておく
+meta l4proto {tcp, udp} th dport 53 counter accept それから以下のように制限する
+meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit1 { ip saddr timeout 1h limit rate 20/minute } counter accept meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit2 { ip6 saddr timeout 1h limit rate 20/minute } counter accept ちなみにudpの場合はいつも ct state new にマッチするっぽい</description>
+    </item>
+    
     <item>
       <title>shotcutで編集すると音ズレ</title>
       <link>https://yaasita.github.io/2024/04/21/shotcut/</link>

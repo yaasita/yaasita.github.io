@@ -6,7 +6,25 @@
     <description>Recent content in Categories on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 21 Apr 2024 04:22:59 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 May 2024 03:42:37 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>linux</title>
+      <link>https://yaasita.github.io/categories/linux/</link>
+      <pubDate>Tue, 21 May 2024 03:42:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/categories/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>net</title>
+      <link>https://yaasita.github.io/categories/net/</link>
+      <pubDate>Tue, 21 May 2024 03:42:37 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/categories/net/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>soft</title>
       <link>https://yaasita.github.io/categories/soft/</link>
@@ -31,24 +49,6 @@
       <pubDate>Sun, 21 Apr 2024 04:06:53 +0900</pubDate>
       
       <guid>https://yaasita.github.io/categories/program/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>linux</title>
-      <link>https://yaasita.github.io/categories/linux/</link>
-      <pubDate>Fri, 22 Mar 2024 02:58:55 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/categories/linux/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>net</title>
-      <link>https://yaasita.github.io/categories/net/</link>
-      <pubDate>Fri, 22 Mar 2024 02:58:55 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/categories/net/</guid>
       <description></description>
     </item>
     
