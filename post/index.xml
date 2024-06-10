@@ -6,7 +6,17 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 21 May 2024 03:42:37 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Jun 2024 01:28:19 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>windowsでファイルリスト作成</title>
+      <link>https://yaasita.github.io/2024/06/11/windows-dir/</link>
+      <pubDate>Tue, 11 Jun 2024 01:28:19 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/06/11/windows-dir/</guid>
+      <description>こんな感じのbatファイルでOK
+dir /S /A:d /B &amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir /S /B *.pdf &amp;gt;&amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt https://pub-5023d102c14f43daa46c69bd2286d601.r2.dev/2024/dir.bat</description>
+    </item>
+    
     <item>
       <title>nftablesでDNSサーバーのレート制限</title>
       <link>https://yaasita.github.io/2024/05/21/nftables-dns/</link>
@@ -283,19 +293,6 @@ P(X≧80) ≒ 0.000000000000000000000000000000000000000000000002
 まず正確に計算してみます
 &amp;#x2211; i = 80 100 { 100 C 80 &amp;#x22C5; ( 1 2 ) i &amp;#x22C5; ( 1 2 ) 100 &amp;#x2212; i } Rで書くならこう
 sum &amp;lt;- 0 for (i in 80:100) { sum &amp;lt;- choose(100, i) * (1 / 2) ^ 100 + sum print(paste(i, &amp;quot;= &amp;quot;, sum)) } 結果は 5.</description>
-    </item>
-    
-    <item>
-      <title>金価格に連動するETF</title>
-      <link>https://yaasita.github.io/2023/03/22/etf-gold/</link>
-      <pubDate>Wed, 22 Mar 2023 03:26:44 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2023/03/22/etf-gold/</guid>
-      <description>金価格が上がってるので買おうかなと
-ここで探した
-https://money-bu-jpx.com/
-銘柄検索 =&amp;gt; ETF・ETNの種類から探す =&amp;gt; 商品ETF =&amp;gt; 検索結果へ =&amp;gt; 信託報酬が低い順で並べ替え
-ＳＰＤＲゴールド・シェア（1326） 純金上場信託（現物国内保管型）（1540） この辺かな</description>
     </item>
     
   </channel>

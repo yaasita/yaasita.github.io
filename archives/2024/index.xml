@@ -6,7 +6,17 @@
     <description>Recent content in 2024 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 21 May 2024 03:42:37 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2024/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Jun 2024 01:28:19 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2024/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>windowsでファイルリスト作成</title>
+      <link>https://yaasita.github.io/2024/06/11/windows-dir/</link>
+      <pubDate>Tue, 11 Jun 2024 01:28:19 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/06/11/windows-dir/</guid>
+      <description>こんな感じのbatファイルでOK
+dir /S /A:d /B &amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir /S /B *.pdf &amp;gt;&amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt https://pub-5023d102c14f43daa46c69bd2286d601.r2.dev/2024/dir.bat</description>
+    </item>
+    
     <item>
       <title>nftablesでDNSサーバーのレート制限</title>
       <link>https://yaasita.github.io/2024/05/21/nftables-dns/</link>
