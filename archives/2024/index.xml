@@ -6,7 +6,22 @@
     <description>Recent content in 2024 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 11 Jun 2024 01:28:19 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2024/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Jul 2024 03:52:41 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2024/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>opendkimメモ</title>
+      <link>https://yaasita.github.io/2024/07/06/dkim/</link>
+      <pubDate>Sat, 06 Jul 2024 03:52:41 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/07/06/dkim/</guid>
+      <description>DKIMの公開鍵取得 opendkim-testkeyとかで検証する際に、DNSはroot DNSサーバーから自力で名前解決しようとするのでDNSキャッシュサーバー使いたかったら以下を指定
+/etc/opendkim.conf
+Nameservers 192.168.0.10 thunderbirdの拡張も同じ挙動だった
+公開鍵を作る場合 2048bitを指定しておく方がいい
+(最近のopendkimはデフォルトで2048bit)
+opendkim-genkey -D /etc/postfix/dkim/ -b 2048 -d example.jp -s mail unboundに入れるときは長いので分割する
+local-data: &#39;mail._domainkey.example.jp. IN TXT &amp;quot;v=DKIM1; k=rsa; &amp;quot; &amp;quot;p=xxxxxxxx...&amp;quot; &amp;quot;xxxxxxx...&amp;quot;&#39; ローカルでの検証 opendkim-testmsg &amp;lt; mail.eml </description>
+    </item>
+    
     <item>
       <title>windowsでファイルリスト作成</title>
       <link>https://yaasita.github.io/2024/06/11/windows-dir/</link>
@@ -14,7 +29,7 @@
       
       <guid>https://yaasita.github.io/2024/06/11/windows-dir/</guid>
       <description>こんな感じのbatファイルでOK
-dir /S /A:d /B &amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir /S /B *.pdf &amp;gt;&amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt https://pub-5023d102c14f43daa46c69bd2286d601.r2.dev/2024/dir.bat</description>
+dir /S /A:d /B &amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir /S /B *.pdf &amp;gt;&amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir.bat</description>
     </item>
     
     <item>
@@ -46,7 +61,7 @@ ffmpeg -i input.mp4 output.mp4 </description>
       
       <guid>https://yaasita.github.io/2024/04/21/pokemon/</guid>
       <description>初代ポケモン151匹を言えるかテストするサイトを作った
-https://pub-5023d102c14f43daa46c69bd2286d601.r2.dev/2024/poke.html
+poke.html
 コーディングはgemini</description>
     </item>
     

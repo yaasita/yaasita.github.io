@@ -14,7 +14,7 @@
       
       <guid>https://yaasita.github.io/2024/06/11/windows-dir/</guid>
       <description>こんな感じのbatファイルでOK
-dir /S /A:d /B &amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir /S /B *.pdf &amp;gt;&amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt https://pub-5023d102c14f43daa46c69bd2286d601.r2.dev/2024/dir.bat</description>
+dir /S /A:d /B &amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir /S /B *.pdf &amp;gt;&amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir.bat</description>
     </item>
     
     <item>

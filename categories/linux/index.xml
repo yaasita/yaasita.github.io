@@ -6,7 +6,22 @@
     <description>Recent content in linux on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 21 May 2024 03:42:37 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Jul 2024 03:52:41 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>opendkimメモ</title>
+      <link>https://yaasita.github.io/2024/07/06/dkim/</link>
+      <pubDate>Sat, 06 Jul 2024 03:52:41 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/07/06/dkim/</guid>
+      <description>DKIMの公開鍵取得 opendkim-testkeyとかで検証する際に、DNSはroot DNSサーバーから自力で名前解決しようとするのでDNSキャッシュサーバー使いたかったら以下を指定
+/etc/opendkim.conf
+Nameservers 192.168.0.10 thunderbirdの拡張も同じ挙動だった
+公開鍵を作る場合 2048bitを指定しておく方がいい
+(最近のopendkimはデフォルトで2048bit)
+opendkim-genkey -D /etc/postfix/dkim/ -b 2048 -d example.jp -s mail unboundに入れるときは長いので分割する
+local-data: &#39;mail._domainkey.example.jp. IN TXT &amp;quot;v=DKIM1; k=rsa; &amp;quot; &amp;quot;p=xxxxxxxx...&amp;quot; &amp;quot;xxxxxxx...&amp;quot;&#39; ローカルでの検証 opendkim-testmsg &amp;lt; mail.eml </description>
+    </item>
+    
     <item>
       <title>nftablesでDNSサーバーのレート制限</title>
       <link>https://yaasita.github.io/2024/05/21/nftables-dns/</link>
@@ -295,29 +310,6 @@ if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on
 んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
 このままだと永遠にlocateコマンドが使えないので、divertで退避させた
 dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power おしまい</description>
-    </item>
-    
-    <item>
-      <title>各種サーバの中間証明書の扱い</title>
-      <link>https://yaasita.github.io/2019/08/14/ssl-capath/</link>
-      <pubDate>Wed, 14 Aug 2019 10:20:33 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/14/ssl-capath/</guid>
-      <description>中間証明書をどう設定するか問題
-postfix smtpd_tls_cert_file = /etc/letsencrypt/live/example.net/cert.pem smtpd_tls_key_file = /etc/letsencrypt/live/example.net/privkey.pem smtpd_tls_CAfile = /etc/letsencrypt/live/example.net/chain.pem Let&amp;rsquo;s Encryptの場合こんな感じ
-smtpd_tls_CAfileに中間証明書を指定する
-smtpd_tls_cert_fileにfullchain.pemを指定するやり方はNG
-dovecot 10-ssl.conf
-ssl_ca = &amp;lt;/etc/letsencrypt/live/example.net/chain.pem これはダメ
-この設定はクライアント証明書用ですので
-正しくは、こんな感じに、まとめたやつを指定すればOK
-ssl_cert = &amp;lt;/etc/letsencrypt/live/example.net/fullchain.pem apache SSLCACertificateFileという設定はクライアント証明書用なのでここに入れない
-SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem dovecot同様に中間証明書もまとめて指定する
-まとめ この問題はスマホのK-9 Mailでメール読もうとしたときに判明した
-(突然CertPathValidatorExceptionって怒られた)
-thunderbirdでメール読んでた時には発生しなかったのでなんだろなーと思ったんだけどこっちは多めにroot証明書入ってるみたいね
-サーバー設定後はこんな感じで中間証明書まで確認したほうが良いかも
-openssl s_client -connect example.org:465 -showcerts thunderbirdだけで確認すると痛い目を見るよと言うお話でした</description>
     </item>
     
   </channel>

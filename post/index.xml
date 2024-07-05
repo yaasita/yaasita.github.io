@@ -6,7 +6,22 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 11 Jun 2024 01:28:19 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Jul 2024 03:52:41 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>opendkimメモ</title>
+      <link>https://yaasita.github.io/2024/07/06/dkim/</link>
+      <pubDate>Sat, 06 Jul 2024 03:52:41 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/07/06/dkim/</guid>
+      <description>DKIMの公開鍵取得 opendkim-testkeyとかで検証する際に、DNSはroot DNSサーバーから自力で名前解決しようとするのでDNSキャッシュサーバー使いたかったら以下を指定
+/etc/opendkim.conf
+Nameservers 192.168.0.10 thunderbirdの拡張も同じ挙動だった
+公開鍵を作る場合 2048bitを指定しておく方がいい
+(最近のopendkimはデフォルトで2048bit)
+opendkim-genkey -D /etc/postfix/dkim/ -b 2048 -d example.jp -s mail unboundに入れるときは長いので分割する
+local-data: &#39;mail._domainkey.example.jp. IN TXT &amp;quot;v=DKIM1; k=rsa; &amp;quot; &amp;quot;p=xxxxxxxx...&amp;quot; &amp;quot;xxxxxxx...&amp;quot;&#39; ローカルでの検証 opendkim-testmsg &amp;lt; mail.eml </description>
+    </item>
+    
     <item>
       <title>windowsでファイルリスト作成</title>
       <link>https://yaasita.github.io/2024/06/11/windows-dir/</link>
@@ -14,7 +29,7 @@
       
       <guid>https://yaasita.github.io/2024/06/11/windows-dir/</guid>
       <description>こんな感じのbatファイルでOK
-dir /S /A:d /B &amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir /S /B *.pdf &amp;gt;&amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt https://pub-5023d102c14f43daa46c69bd2286d601.r2.dev/2024/dir.bat</description>
+dir /S /A:d /B &amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir /S /B *.pdf &amp;gt;&amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir.bat</description>
     </item>
     
     <item>
@@ -46,7 +61,7 @@ ffmpeg -i input.mp4 output.mp4 </description>
       
       <guid>https://yaasita.github.io/2024/04/21/pokemon/</guid>
       <description>初代ポケモン151匹を言えるかテストするサイトを作った
-https://pub-5023d102c14f43daa46c69bd2286d601.r2.dev/2024/poke.html
+poke.html
 コーディングはgemini</description>
     </item>
     
@@ -264,35 +279,6 @@ WAN側IPは一年以上変わってない</description>
 このルールに即して変更する
 上記の場合は値をFFに固定したいとすると
 01FF0BD0 がチートコードになる</description>
-    </item>
-    
-    <item>
-      <title>二項分布の計算について</title>
-      <link>https://yaasita.github.io/2023/04/01/binomial-distribution/</link>
-      <pubDate>Sat, 01 Apr 2023 01:54:35 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2023/04/01/binomial-distribution/</guid>
-      <description>100回コインを投げて80回以上表が出る確率
-bingに聞いてみると
-こんにちは、こちらはBingです。😊
-コインを100回投げて、表が80回以上出る確率は、二項分布という統計学の分布を使って計算できます。1
-二項分布の確率は、以下の式で求められます。
-P(X=k) = nCk * p^k * (1-p)^(n-k)
-ここで、nは試行回数、kは成功回数、pは成功確率、nCkはn個からk個を選ぶ組み合わせの数です。
-コインの場合、表が出る確率はp=0.5です。2
-コインを100回投げて、表が80回出る確率は、
-P(X=80) = 100C80 * 0.5^80 * 0.5^20 ≒ 0.000000000000000000000000000000000000000000000001
-となります。
-表が80回以上出る確率は、表が80回から100回出る確率の合計です。
-P(X≧80) = P(X=80) + P(X=81) + … + P(X=100)
-これを計算すると、
-P(X≧80) ≒ 0.000000000000000000000000000000000000000000000002
-となります。
-つまり、コインを100回投げて、表が80回以上出る確率は非常に低いと言えます。
-式はあってそうですが計算が間違っていそうです
-まず正確に計算してみます
-&amp;#x2211; i = 80 100 { 100 C 80 &amp;#x22C5; ( 1 2 ) i &amp;#x22C5; ( 1 2 ) 100 &amp;#x2212; i } Rで書くならこう
-sum &amp;lt;- 0 for (i in 80:100) { sum &amp;lt;- choose(100, i) * (1 / 2) ^ 100 + sum print(paste(i, &amp;quot;= &amp;quot;, sum)) } 結果は 5.</description>
     </item>
     
   </channel>

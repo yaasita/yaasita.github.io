@@ -6,7 +6,22 @@
     <description>Recent content in soft on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 21 Apr 2024 04:22:59 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 06 Jul 2024 03:52:41 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>opendkimメモ</title>
+      <link>https://yaasita.github.io/2024/07/06/dkim/</link>
+      <pubDate>Sat, 06 Jul 2024 03:52:41 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/07/06/dkim/</guid>
+      <description>DKIMの公開鍵取得 opendkim-testkeyとかで検証する際に、DNSはroot DNSサーバーから自力で名前解決しようとするのでDNSキャッシュサーバー使いたかったら以下を指定
+/etc/opendkim.conf
+Nameservers 192.168.0.10 thunderbirdの拡張も同じ挙動だった
+公開鍵を作る場合 2048bitを指定しておく方がいい
+(最近のopendkimはデフォルトで2048bit)
+opendkim-genkey -D /etc/postfix/dkim/ -b 2048 -d example.jp -s mail unboundに入れるときは長いので分割する
+local-data: &#39;mail._domainkey.example.jp. IN TXT &amp;quot;v=DKIM1; k=rsa; &amp;quot; &amp;quot;p=xxxxxxxx...&amp;quot; &amp;quot;xxxxxxx...&amp;quot;&#39; ローカルでの検証 opendkim-testmsg &amp;lt; mail.eml </description>
+    </item>
+    
     <item>
       <title>shotcutで編集すると音ズレ</title>
       <link>https://yaasita.github.io/2024/04/21/shotcut/</link>
@@ -287,18 +302,6 @@ https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/blob/master/clo
 socket接続の場合はこんな感じ
 参考
 k8s サイドカーコンテナについて</description>
-    </item>
-    
-    <item>
-      <title>続 chromebookでbackslashを入力</title>
-      <link>https://yaasita.github.io/2020/01/17/backslash-with-vim/</link>
-      <pubDate>Fri, 17 Jan 2020 17:22:02 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/01/17/backslash-with-vim/</guid>
-      <description>前回 の続き
-以下をvimrcに追記して事なきを得た
-inoremapって非ASCII文字でも行けるみたい
-inoremap ¥ \ cnoremap ¥ \ </description>
     </item>
     
   </channel>
