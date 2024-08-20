@@ -6,7 +6,18 @@
     <description>Recent content in soft on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 06 Jul 2024 03:52:41 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 21 Aug 2024 03:04:05 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>thunderbirdでHTMLメールを作る</title>
+      <link>https://yaasita.github.io/2024/08/21/html-mail/</link>
+      <pubDate>Wed, 21 Aug 2024 03:04:05 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/08/21/html-mail/</guid>
+      <description>設定箇所は2ヶ所
+ツール -&amp;gt; 設定
+アカウント設定の方にもある</description>
+    </item>
+    
     <item>
       <title>opendkimメモ</title>
       <link>https://yaasita.github.io/2024/07/06/dkim/</link>
@@ -288,20 +299,6 @@ curl --doh-url https://doh.example.net/dns-query google.co.jp </description>
 インストール
 snap install microk8s --class microk8s.kubectl config view --raw &amp;gt; ~/.kube/config 必要サービスの起動
 microk8s.enable dns registry storage skaffold dev --no-prune=false --cache-artifacts=false --default-repo localhost:32000 -f skaffold.yaml こんな感じにやると、リポジトリ部分を読み替えてくれるので便利</description>
-    </item>
-    
-    <item>
-      <title>GKEでCloud SQL Proxyをsocketで使う</title>
-      <link>https://yaasita.github.io/2020/02/28/k8s-cloudsql-proxy-with-socket/</link>
-      <pubDate>Fri, 28 Feb 2020 04:08:58 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/02/28/k8s-cloudsql-proxy-with-socket/</guid>
-      <description>GKEでもGAEみたいにCloud SQLに繋げたい場合の話
-公式ドキュメントのサンプルだとこんな感じにport接続にしてる
-https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/blob/master/cloudsql/mysql_wordpress_deployment.yaml
-socket接続の場合はこんな感じ
-参考
-k8s サイドカーコンテナについて</description>
     </item>
     
   </channel>
