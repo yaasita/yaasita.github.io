@@ -6,7 +6,18 @@
     <description>Recent content in soft on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 21 Aug 2024 03:04:05 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Aug 2024 02:50:00 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>muttでHTMLメールを扱う</title>
+      <link>https://yaasita.github.io/2024/08/22/mutt/</link>
+      <pubDate>Thu, 22 Aug 2024 02:50:00 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/08/22/mutt/</guid>
+      <description>Your browser does not support the video tag. ~/.muttrc に以下追記
+# html mailを読むための設定 set mailcap_path=~/.mutt/mailcap auto_view text/html alternative_order text/plain text/html # HTMLメールを開く vで添付画面へ行ってそこでctrl-sを押すとHTMLを保存 macro attach \cs &amp;quot;&amp;lt;pipe-entry&amp;gt;cat &amp;gt; /tmp/mutt-mail.html&amp;quot; # HTML内のリンクを表示 macro index \cv |urlview macro pager \cv |urlview ~/.mutt/mailcap
+text/html; w3m -I %{charset} -T text/html; copiousoutput; 参考リンク https://wiki.archlinux.jp/index.php/Mutt</description>
+    </item>
+    
     <item>
       <title>thunderbirdでHTMLメールを作る</title>
       <link>https://yaasita.github.io/2024/08/21/html-mail/</link>
@@ -287,18 +298,6 @@ pip3 install doh-proxy 以下のような設定でserviceを作る
 [Unit] Description=doh-httpproxy After=nginx.service [Install] WantedBy=multi-user.target [Service] ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 8080 --listen-address 127.0.0.1 Nginx側設定例
 server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } } 確認
 curl --doh-url https://doh.example.net/dns-query google.co.jp </description>
-    </item>
-    
-    <item>
-      <title>microk8sとskaffold</title>
-      <link>https://yaasita.github.io/2020/03/29/microk8s_and_skaffold/</link>
-      <pubDate>Sun, 29 Mar 2020 03:24:06 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/03/29/microk8s_and_skaffold/</guid>
-      <description>microk8sとskaffoldをこんな感じで使う
-インストール
-snap install microk8s --class microk8s.kubectl config view --raw &amp;gt; ~/.kube/config 必要サービスの起動
-microk8s.enable dns registry storage skaffold dev --no-prune=false --cache-artifacts=false --default-repo localhost:32000 -f skaffold.yaml こんな感じにやると、リポジトリ部分を読み替えてくれるので便利</description>
     </item>
     
   </channel>
