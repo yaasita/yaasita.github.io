@@ -6,7 +6,20 @@
     <description>Recent content in soft on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 22 Aug 2024 02:50:00 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Sep 2024 23:43:03 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vim-lsp設定</title>
+      <link>https://yaasita.github.io/2024/09/21/vim-lsp/</link>
+      <pubDate>Sat, 21 Sep 2024 23:43:03 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/09/21/vim-lsp/</guid>
+      <description>よく使うやつ
+perl cpan i PLS
+if executable(&#39;pls&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;perl&#39;, \ &#39;cmd&#39;: [&#39;pls&#39;], \ &#39;allowlist&#39;: [&#39;perl&#39;], \ }) endif bash npm i -g bash-language-server
+if executable(&#39;bash-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;bash-language-server&#39;, \ &#39;cmd&#39;: [&#39;bash-language-server&#39;, &#39;start&#39;], \ &#39;allowlist&#39;: [&#39;sh&#39;, &#39;bash&#39;], \ }) endif vim npm i -g vim-language-server
+if executable(&#39;vim-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;vm-ls&#39;, \ &#39;cmd&#39;: [&#39;vim-language-server&#39;, &#39;--stdio&#39;], \ &#39;allowlist&#39;: [&#39;vim&#39;], \ }) endif terraform https://www.</description>
+    </item>
+    
     <item>
       <title>muttでHTMLメールを扱う</title>
       <link>https://yaasita.github.io/2024/08/22/mutt/</link>
@@ -281,23 +294,6 @@ mitmproxyより重い気がする GUIでリクエストを見れるのは便利 
       <guid>https://yaasita.github.io/2020/08/30/new-linux-in-chromebook/</guid>
       <description>Linuxを消して、また入れたら良くなってた
 Debianが10になった 日本語が打てる(ただ表示はバグる) 絵文字が見れる ターミナルがタブに対応した </description>
-    </item>
-    
-    <item>
-      <title>DoHを試す</title>
-      <link>https://yaasita.github.io/2020/05/10/doh/</link>
-      <pubDate>Sun, 10 May 2020 03:22:35 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/05/10/doh/</guid>
-      <description>DNS over HTTPSを試す
-こんな構成で作る
-Nginx -&amp;gt; doh-httpproxy -&amp;gt; systemd-resolved インストール
-doh-proxy pip3でインストールすればOK
-pip3 install doh-proxy 以下のような設定でserviceを作る
-/etc/systemd/system/doh-httpproxy.service
-[Unit] Description=doh-httpproxy After=nginx.service [Install] WantedBy=multi-user.target [Service] ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 8080 --listen-address 127.0.0.1 Nginx側設定例
-server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } } 確認
-curl --doh-url https://doh.example.net/dns-query google.co.jp </description>
     </item>
     
   </channel>

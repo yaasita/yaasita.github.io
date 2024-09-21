@@ -6,7 +6,20 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 22 Aug 2024 02:50:00 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Sep 2024 23:43:03 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vim-lsp設定</title>
+      <link>https://yaasita.github.io/2024/09/21/vim-lsp/</link>
+      <pubDate>Sat, 21 Sep 2024 23:43:03 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/09/21/vim-lsp/</guid>
+      <description>よく使うやつ
+perl cpan i PLS
+if executable(&#39;pls&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;perl&#39;, \ &#39;cmd&#39;: [&#39;pls&#39;], \ &#39;allowlist&#39;: [&#39;perl&#39;], \ }) endif bash npm i -g bash-language-server
+if executable(&#39;bash-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;bash-language-server&#39;, \ &#39;cmd&#39;: [&#39;bash-language-server&#39;, &#39;start&#39;], \ &#39;allowlist&#39;: [&#39;sh&#39;, &#39;bash&#39;], \ }) endif vim npm i -g vim-language-server
+if executable(&#39;vim-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;vm-ls&#39;, \ &#39;cmd&#39;: [&#39;vim-language-server&#39;, &#39;--stdio&#39;], \ &#39;allowlist&#39;: [&#39;vim&#39;], \ }) endif terraform https://www.</description>
+    </item>
+    
     <item>
       <title>muttでHTMLメールを扱う</title>
       <link>https://yaasita.github.io/2024/08/22/mutt/</link>
@@ -263,16 +276,6 @@ curl -F grant_type=refresh_token -F refresh_token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
       
       <guid>https://yaasita.github.io/2023/07/22/5ch-parse/</guid>
       <description>utf8にしたhtmlファイルを渡す</description>
-    </item>
-    
-    <item>
-      <title>NURO光のIPアドレスはほぼ変わらない</title>
-      <link>https://yaasita.github.io/2023/06/22/nuro-ip/</link>
-      <pubDate>Thu, 22 Jun 2023 01:33:41 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2023/06/22/nuro-ip/</guid>
-      <description>タイトルの通り
-WAN側IPは一年以上変わってない</description>
     </item>
     
   </channel>
