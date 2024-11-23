@@ -6,7 +6,17 @@
     <description>Recent content in game on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 21 Oct 2024 02:53:36 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/game/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Nov 2024 04:55:50 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/game/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>天穂のサクナヒメ</title>
+      <link>https://yaasita.github.io/2024/11/24/sakunahime/</link>
+      <pubDate>Sun, 24 Nov 2024 04:55:50 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/11/24/sakunahime/</guid>
+      <description>トロコンまでやった
+天返宮 第300層まではやってない</description>
+    </item>
+    
     <item>
       <title>FF7クライシスコアリユニオン</title>
       <link>https://yaasita.github.io/2024/10/21/ff7ccr/</link>
@@ -242,15 +252,6 @@ Habits(習慣)
       <description>3Dのパーツを重ねて絵にするゲーム
 Blueprint3D
 http://armorgames.com/play/12557/blueprint3d</description>
-    </item>
-    
-    <item>
-      <title>CookieClicker</title>
-      <link>https://yaasita.github.io/2014/07/13/cookie-clicker/</link>
-      <pubDate>Sun, 13 Jul 2014 14:30:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2014/07/13/cookie-clicker/</guid>
-      <description>クッキークリッカーのセーブデータ</description>
     </item>
     
   </channel>

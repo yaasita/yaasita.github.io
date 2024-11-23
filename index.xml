@@ -6,7 +6,17 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 21 Oct 2024 02:53:36 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 24 Nov 2024 04:55:50 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>天穂のサクナヒメ</title>
+      <link>https://yaasita.github.io/2024/11/24/sakunahime/</link>
+      <pubDate>Sun, 24 Nov 2024 04:55:50 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/11/24/sakunahime/</guid>
+      <description>トロコンまでやった
+天返宮 第300層まではやってない</description>
+    </item>
+    
     <item>
       <title>FF7クライシスコアリユニオン</title>
       <link>https://yaasita.github.io/2024/10/21/ff7ccr/</link>
@@ -259,28 +269,6 @@ file = /home/yamasita/hoge.txt Use of uninitialized value $path in concatenation
 これはイテレーターになってるので、配列1個と、打ち止めのundefが返ってるから
 というわけで、こういうときは配列で受け取ってイテレータを最後まで進めたほうが良い
 my $path = @{[glob(&amp;quot;~/hoge.txt&amp;quot;)]}[0]; </description>
-    </item>
-    
-    <item>
-      <title>tumblrのoauth2</title>
-      <link>https://yaasita.github.io/2023/08/01/tumblr-oauth-api/</link>
-      <pubDate>Tue, 01 Aug 2023 01:22:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2023/08/01/tumblr-oauth-api/</guid>
-      <description>これの通り
-https://www.tumblr.com/docs/en/api/v2#oauth2-authorization
-とりあえずAPI叩くまで解説
-アプリの登録を以下のURLから行う
-https://www.tumblr.com/oauth/register
-次にパラメータを組み立てて認可リクエスト
-scopeにoffline_accessがあるとrefresh_tokenがもらえて永続的に使えるけど、無い場合は認可リクエストからやり直す一時的なアクセストークンしかもらえない
-let params = new URLSearchParams(); params.append(&#39;client_id&#39;, &#39;xxxxxxxxxxxxxxxxxxxxx&#39;); params.append(&#39;response_type&#39;, &#39;code&#39;); params.append(&#39;scope&#39;, &#39;basic offline_access&#39;); params.append(&#39;state&#39;, &#39;hogehoge1&#39;); let urlParams = params.toString(); console.log(`https://www.tumblr.com/oauth2/authorize?${urlParams}`) あとはリダイレクトURLにコードとstate付きで返ってくるので
-https://example.com/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&amp;amp;state=hogehoge1#_=_ それみてアクセストークンと交換
-コードの有効期限は結構短いので急ぐこと
-curl -F grant_type=authorization_code -F code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_id=xxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_secret=xxxxxxxxxxxxxxx https://api.tumblr.com/v2/oauth2/token リフレッシュトークンからアクセストークンを取得
-ちなみにアクセストークンは40分くらいで有効期限が切れる
-curl -F grant_type=refresh_token -F refresh_token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_id=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_secret=xxxxxxxxxxxxxxxxxxxxxxxxxxx https://api.tumblr.com/v2/oauth2/token あと注意なんだけど、refresh_tokenは使ったら、上記APIから新しいrefresh_tokenが来るので次回はそれを使うこと
-（一度使ったrefresh_tokenはもう使えなくなる)</description>
     </item>
     
   </channel>
