@@ -246,23 +246,42 @@ a:hover img {
  * author
  */
 #author {
-  margin-left: 14px;
+  clear: left;
+}
+
+#author li {
+    list-style: none;
+    margin-bottom: 3px;
+    white-space: nowrap;
 }
 
 #author span {
   display: inline-block;
-  margin-bottom: 5px;
+  background: #B4B3BA;
+  width: 6px;
+  height: 6px;
+  margin-bottom: 3px;
+  margin-right: 10px;
 }
 
 #author a {
   color: #747474;
-  margin-right: 5px;
-  list-style: none;
+  text-decoration: none;
+  padding: 5px 20px;
+  text-align: center;
 }
 
 #author a:hover {
   color: #4078C0;
+  list-style: none;
+  text-decoration: underline;
 }
+
+#author .profile {
+    margin-bottom: 10px;
+    margin-left: 15px;
+}
+
 
 /**
  * RSS
@@ -729,6 +748,3 @@ h4:before {
   }
 }
 
-#author ul {
-    padding: 5px;
-}

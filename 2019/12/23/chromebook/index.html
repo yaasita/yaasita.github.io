@@ -9,6 +9,7 @@
     <meta name="generator" content="Hugo 0.111.3">
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
+
     <meta property="og:title" content="chromebookが最高だった" />
 <meta property="og:description" content="ASUS の C434TA-AI0084 を買ったのでレビュー
 chromeOS 起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある 解除がちょっと遅い10秒くらい待たされる chromeの複数ユーザー機能が使えない 多重ログイン機能はあるけどちょっと微妙 別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能 ディスプレイ タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 起動毎にバックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗 テザリング Moto E5 とbluetoothでのテザリングが出来なかった とりあえずUSBテザリングは刺すだけで使えたので良しとしてます キーボード Deleteキーが無いけど、Alt &#43; Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない ←Alt &#43; 明るさキーで消せました Androidアプリ ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない Linux環境 OS Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい USB共有機能あり /opt/google/cros-containers/bin/.. というプロセスが動いてる以外は普通のLinux, systemdも問題なし ファイル共有 右クリックから簡単に共有可能 Linux環境側では/mnt/chromeos に現れる /mnt/chromeos以下はパーミッションやownerが狂わないように制限されてるのでトラブルになることは無いと思う デフォルトでファイルアプリを使ってchromeOS側からLinux側のhomeディレクトリは自由に読み書き可能 なので共有ファイル追加しなくても特段問題なし ネットワーク こんなスクリプト だと chromeOS側から 127.0.0.1:3000 にアクセスできる でも、なぜかDockerで docker run -p 3000:80 nginx とかやって 127." />
@@ -17,7 +18,6 @@ chromeOS 起動もアプリの動作も全体的に速くてとても良い smar
 <meta property="article:published_time" content="2019-12-23T05:58:32+09:00" />
 <meta property="article:modified_time" content="2019-12-23T05:58:32+09:00" />
 
-    
     <script id="dsq-count-scr" src="https://yaasita.disqus.com/count.js" async></script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="36937576-b2d5-4494-aba8-d0b70a153691"></script>
 
@@ -179,28 +179,6 @@ X11のアプリがなんの設定もなしに普通に動くことに感動し�
 
 
       
-      
-<div id="share-buttons">
-  <ul>
-    
-    <li>
-      <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-    </li>
-    
-    
-    <li>
-      <a href="http://b.hatena.ne.jp/entry/https://yaasita.github.io/2019/12/23/chromebook//" class="hatena-bookmark-button" data-hatena-bookmark-title="chromebookが最高だった" data-hatena-bookmark-layout="standard-balloon" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>
-    </li>
-    
-    <li>
-        <a class="tumblr-share-button" data-color="blue" data-notes="right" href="https://embed.tumblr.com/share"></a>
-        <script>!function(d,s,id){var js,ajs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://assets.tumblr.com/share-button.js";ajs.parentNode.insertBefore(js,ajs);}}(document, "script", "tumblr-js");</script>
-    </li>
-  </ul>
-</div>
-
-
       <div id="disqus_thread"></div>
 <script type="application/javascript">
     window.disqus_config = function () {
@@ -249,14 +227,14 @@ X11のアプリがなんの設定もなしに普通に動くことに感動し�
       <span>Author</span>
     </div>
     <div id="author">
-      <span>yaasita: SIerから脱出した人</span>
+      <div class="profile">yaasita: SIerから脱出した人</div>
       <div>
         <ul>
-          <li><a href="https://github.com/yaasita">GitHub</a></li>
-          <li><a href="https://qiita.com/yaasita">Qiita</a></li>
-          <li><a href="https://x.com/yaasita">X(twitter)</a></li>
-          <li><a href="https://yaasita.tumblr.com/">Tumblr</a></li>
-          <li><a href="https://zenn.dev/yaasita">Zenn</a></li>
+          <li><a href="https://github.com/yaasita"><span></span>GitHub</a></li>
+          <li><a href="https://qiita.com/yaasita"><span></span>Qiita</a></li>
+          <li><a href="https://x.com/yaasita"><span></span>X(twitter)</a></li>
+          <li><a href="https://yaasita.tumblr.com/"><span></span>Tumblr</a></li>
+          <li><a href="https://zenn.dev/yaasita"><span></span>Zenn</a></li>
         </ul>
       </div>
     </div>
@@ -424,7 +402,7 @@ X11のアプリがなんの設定もなしに普通に動くことに感動し�
       <span>RSS</span>
     </div>
     <div id="rss">
-      <a href="/index.xml" type="application/rss+xml" title="%s" /><img src="/images/rss.svg" width="32" height="32"></a>
+      <a href="/index.xml" type="application/rss+xml" /><img src="/images/rss.svg" width="32" height="32"></a>
     </div>
   </div>
 </div>
