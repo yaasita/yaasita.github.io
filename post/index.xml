@@ -6,7 +6,28 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 24 Nov 2024 04:55:50 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Dec 2024 19:03:33 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>pulseaudioのリモートプレイ設定</title>
+      <link>https://yaasita.github.io/2024/12/08/pulseaudio/</link>
+      <pubDate>Sun, 08 Dec 2024 19:03:33 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/12/08/pulseaudio/</guid>
+      <description>概要 サウンドデバイスを持たない端末でもネットワーク経由でオーディオストリームを流せる
+インストール apt install pulseaudio pavucontrol-qt スタート/ストップ pulseaudio --start pactl stat paplay -v hoge.wav pulseaudio --kill 設定 設定ファイル場所: /etc/pulse/
+pavucontrol-qt 起動
+プロファイルタブ選択 -&amp;gt; ミュートになってる箇所外す
+再生タブと出力デバイスタブ両方確認
+自動起動しないように以下を消しておく
+ちなみにfirefoxとかpaplayすると勝手に立ち上がる
+/etc/systemd/user/default.target.wants/pulseaudio.service /etc/systemd/user/sockets.target.wants/pulseaudio.socket 参考リンク
+https://zenn.dev/noraworld/articles/disable-pulseaudio-autospawn
+リモート接続 https://wiki.archlinux.jp/index.php/PulseAudio/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB
+server側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-default-pa load-module module-native-protocol-tcp auth-anonymous=1 を追加 client側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-client-conf default-server = 192.168.0.10 を指定する サーバー本体とclientが同一サーバーの場合は変更の必要なし 上記設定したら server側はpulseaudio &amp;ndash;start
+client側は特に起動する必要なし(pulseaudioデーモンすら不要)
+あとはclient側で paplay hoge.wav でテスト</description>
+    </item>
+    
     <item>
       <title>天穂のサクナヒメ</title>
       <link>https://yaasita.github.io/2024/11/24/sakunahime/</link>
@@ -254,21 +275,6 @@ https://www.gameszap.com/game/6397/flight.html</description>
       <description>この重要経済指標をチェックしてる
 https://www.okasan-online.co.jp/tradeinfo/indicator_event/economic_indicators/
 以下の例はアメリカの★5のイベントを抽出するやつ</description>
-    </item>
-    
-    <item>
-      <title>perlでglobを使うときの注意</title>
-      <link>https://yaasita.github.io/2023/08/02/perl-glob/</link>
-      <pubDate>Wed, 02 Aug 2023 01:45:09 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2023/08/02/perl-glob/</guid>
-      <description>スカラーコンテキストで評価する場合は注意
-こんな感じでやると
-#!/usr/bin/perl use strict; use warnings; use feature qw(:5.10); use utf8; testglob(); testglob(); sub testglob { my $path = glob(&amp;quot;~/hoge.txt&amp;quot;); say &amp;quot;file = $path&amp;quot;; } 結果はこうなる
-file = /home/yamasita/hoge.txt Use of uninitialized value $path in concatenation (.) or string at test.pl line 12. file = 2回目はundefが返ってる
-これはイテレーターになってるので、配列1個と、打ち止めのundefが返ってるから
-というわけで、こういうときは配列で受け取ってイテレータを最後まで進めたほうが良い
-my $path = @{[glob(&amp;quot;~/hoge.txt&amp;quot;)]}[0]; </description>
     </item>
     
   </channel>

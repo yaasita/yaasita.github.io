@@ -6,7 +6,28 @@
     <description>Recent content in linux on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 06 Jul 2024 03:52:41 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Dec 2024 19:03:33 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>pulseaudioのリモートプレイ設定</title>
+      <link>https://yaasita.github.io/2024/12/08/pulseaudio/</link>
+      <pubDate>Sun, 08 Dec 2024 19:03:33 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/12/08/pulseaudio/</guid>
+      <description>概要 サウンドデバイスを持たない端末でもネットワーク経由でオーディオストリームを流せる
+インストール apt install pulseaudio pavucontrol-qt スタート/ストップ pulseaudio --start pactl stat paplay -v hoge.wav pulseaudio --kill 設定 設定ファイル場所: /etc/pulse/
+pavucontrol-qt 起動
+プロファイルタブ選択 -&amp;gt; ミュートになってる箇所外す
+再生タブと出力デバイスタブ両方確認
+自動起動しないように以下を消しておく
+ちなみにfirefoxとかpaplayすると勝手に立ち上がる
+/etc/systemd/user/default.target.wants/pulseaudio.service /etc/systemd/user/sockets.target.wants/pulseaudio.socket 参考リンク
+https://zenn.dev/noraworld/articles/disable-pulseaudio-autospawn
+リモート接続 https://wiki.archlinux.jp/index.php/PulseAudio/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB
+server側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-default-pa load-module module-native-protocol-tcp auth-anonymous=1 を追加 client側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-client-conf default-server = 192.168.0.10 を指定する サーバー本体とclientが同一サーバーの場合は変更の必要なし 上記設定したら server側はpulseaudio &amp;ndash;start
+client側は特に起動する必要なし(pulseaudioデーモンすら不要)
+あとはclient側で paplay hoge.wav でテスト</description>
+    </item>
+    
     <item>
       <title>opendkimメモ</title>
       <link>https://yaasita.github.io/2024/07/06/dkim/</link>
@@ -294,22 +315,6 @@ systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower= というわ
 cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
 journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot; とりあえず分かった、バッテリー時の判定が入ってるtimer
 apt-daily-upgrade man-db logrotate anacron apt-daily </description>
-    </item>
-    
-    <item>
-      <title>on_ac_powerコマンドについて</title>
-      <link>https://yaasita.github.io/2019/08/16/on-ac-power/</link>
-      <pubDate>Fri, 16 Aug 2019 04:45:45 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/08/16/on-ac-power/</guid>
-      <description>debian10にした関係でLinuxネタが続く
-PCがバッテリーで動いてるかどうか判定するのにon_ac_powerってコマンドがある
-そんで、バッテリー駆動の場合は電力を節約したいので、anacronとかを動かなくする制御がはいってる
-例えば、/etc/cron.daily/mlocate の場合
-if which on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1; then ON_BATTERY=0 on_ac_power &amp;gt;/dev/null 2&amp;gt;&amp;amp;1 || ON_BATTERY=$? if [ &amp;quot;$ON_BATTERY&amp;quot; -eq 1 ]; then exit 0 fi fi こんな感じでon_ac_powerが1を返したらバッテリー駆動と判断しすぐに処理を止めてしまう
-んで LB-C110B っていうひと昔前のノートPCだとこの判定が狂ってしまい常にバッテリー駆動と判定されてしまった
-このままだと永遠にlocateコマンドが使えないので、divertで退避させた
-dpkg-divert --divert /sbin/on_ac_power.disable --rename /sbin/on_ac_power ln -s /bin/true /sbin/on_ac_power おしまい</description>
     </item>
     
   </channel>
