@@ -729,3 +729,6 @@ h4:before {
   }
 }
 
+#author ul {
+    padding: 5px;
+}
