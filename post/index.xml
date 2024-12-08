@@ -6,7 +6,21 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 08 Dec 2024 19:03:33 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Dec 2024 21:11:39 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>fontawesome止めた</title>
+      <link>https://yaasita.github.io/2024/12/08/fontawesome/</link>
+      <pubDate>Sun, 08 Dec 2024 21:11:39 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/12/08/fontawesome/</guid>
+      <description>アイコン表示に使ってたFont Awesome
+アップデートしようとしたらメールアドレス要求されたのでこの機会に乗り換え
+というかアイコンほぼ使ってなかったので不要だった
+ここからRSSのアイコンだけ落として設定
+https://feathericons.com/
+右サイドバーのAuthor部分のGithub, Tumblrとかのアイコンは文字に変更</description>
+    </item>
+    
     <item>
       <title>pulseaudioのリモートプレイ設定</title>
       <link>https://yaasita.github.io/2024/12/08/pulseaudio/</link>
@@ -264,17 +278,6 @@ https://www.silvergames.com/en/flight https://www.silvergames.com/en/paper-fligh
 https://play.google.com/store/apps/details?id=com.armorgames.Flight
 FLASHをエミュレータで動かすやつもあった
 https://www.gameszap.com/game/6397/flight.html</description>
-    </item>
-    
-    <item>
-      <title>経済指標をチェック</title>
-      <link>https://yaasita.github.io/2023/08/12/okasan-fx/</link>
-      <pubDate>Sat, 12 Aug 2023 04:02:09 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2023/08/12/okasan-fx/</guid>
-      <description>この重要経済指標をチェックしてる
-https://www.okasan-online.co.jp/tradeinfo/indicator_event/economic_indicators/
-以下の例はアメリカの★5のイベントを抽出するやつ</description>
     </item>
     
   </channel>

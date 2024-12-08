@@ -6,7 +6,21 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 21 May 2024 03:42:37 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 08 Dec 2024 21:11:39 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>fontawesome止めた</title>
+      <link>https://yaasita.github.io/2024/12/08/fontawesome/</link>
+      <pubDate>Sun, 08 Dec 2024 21:11:39 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/12/08/fontawesome/</guid>
+      <description>アイコン表示に使ってたFont Awesome
+アップデートしようとしたらメールアドレス要求されたのでこの機会に乗り換え
+というかアイコンほぼ使ってなかったので不要だった
+ここからRSSのアイコンだけ落として設定
+https://feathericons.com/
+右サイドバーのAuthor部分のGithub, Tumblrとかのアイコンは文字に変更</description>
+    </item>
+    
     <item>
       <title>nftablesでDNSサーバーのレート制限</title>
       <link>https://yaasita.github.io/2024/05/21/nftables-dns/</link>
@@ -270,24 +284,6 @@ rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machin
 実行例
 ./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ 1234 こんな感じで適度にsleep入れて取得してます
 #!/bin/bash set -eux save_file=/tmp/save_num already_get_number=$(cat $save_file) for ((i=$already_get_number; i &amp;lt; $already_get_number + 100; i++));do ./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ $i sleep 1 done echo $i &amp;gt; $save_file </description>
-    </item>
-    
-    <item>
-      <title>GKEでGCSバックエンドと併用する時</title>
-      <link>https://yaasita.github.io/2021/02/25/gke-neg/</link>
-      <pubDate>Thu, 25 Feb 2021 02:26:18 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/02/25/gke-neg/</guid>
-      <description>よくあるこんな構成
-staticなHTML/CSSはGCSから、API部分はGKEからみたいな構成
-+---&amp;gt; GCS | ---&amp;gt; GCLB ---+ | +---&amp;gt; k8s(GKE) これ、GCLB部分をingressにするのが良いんだけど、現状バックエンドサービスにGCSを登録できない
-1.19ならできるぽいがなんか上手く行かなかったので
-とりあえず、今の機能でやるなら、
-NEGを作って、そこをGCLBのバックエンドサービスに登録する
-https://cloud.google.com/kubernetes-engine/docs/how-to/standalone-neg
-厳密な事を言うと、nodeportもバックエンドサービスに登録できるが、こっちはノードの増減によりエンドポイントが変わってしまうので不適
-公式ドキュメント通りだけどこんな感じで作る
-あとはGCSにWebサイトの設定と、GCLBの設定すればOK</description>
     </item>
     
   </channel>
