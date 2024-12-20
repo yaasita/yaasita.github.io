@@ -6,7 +6,27 @@
     <description>Recent content in linux on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 08 Dec 2024 19:03:33 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Dec 2024 02:00:01 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vimでGitHub Copilot</title>
+      <link>https://yaasita.github.io/2024/12/21/vim-copilot/</link>
+      <pubDate>Sat, 21 Dec 2024 02:00:01 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/12/21/vim-copilot/</guid>
+      <description>Microsoft傘下のGitHub、「GitHub Copilot」を無料に（制限あり）
+https://www.itmedia.co.jp/news/articles/2412/19/news111.html
+ということで使ってみる
+以下インストール
+https://github.com/github/copilot.vim
+vimrcはこんな感じ
+常に補完が効くのは嫌なので使うときだけ有効にする
+候補表示はCtrl-c
+let g:copilot_filetypes = { &#39;*&#39;: v:false } imap &amp;lt;C-c&amp;gt; &amp;lt;Plug&amp;gt;(copilot-next) command! -nargs=0 ToggleCopilot call ToggleCopilot() function! ToggleCopilot() if exists(&#39;g:copilot_filetypes&#39;) unlet g:copilot_filetypes else let g:copilot_filetypes = { &#39;*&#39;: v:false } endif Copilot status endfunction :Copilot setup で設定
+~/.config/github-copilot/ に credentials が入る
+あとチャットはここから出来る
+https://github.com/copilot</description>
+    </item>
+    
     <item>
       <title>pulseaudioのリモートプレイ設定</title>
       <link>https://yaasita.github.io/2024/12/08/pulseaudio/</link>
@@ -295,26 +315,6 @@ k8s サイドカーコンテナについて</description>
       <guid>https://yaasita.github.io/2019/12/23/chromebook/</guid>
       <description>ASUS の C434TA-AI0084 を買ったのでレビュー
 chromeOS 起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある 解除がちょっと遅い10秒くらい待たされる chromeの複数ユーザー機能が使えない 多重ログイン機能はあるけどちょっと微妙 別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能 ディスプレイ タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 起動毎にバックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗 テザリング Moto E5 とbluetoothでのテザリングが出来なかった とりあえずUSBテザリングは刺すだけで使えたので良しとしてます キーボード Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない ←Alt + 明るさキーで消せました Androidアプリ ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない Linux環境 OS Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい USB共有機能あり /opt/google/cros-containers/bin/.. というプロセスが動いてる以外は普通のLinux, systemdも問題なし ファイル共有 右クリックから簡単に共有可能 Linux環境側では/mnt/chromeos に現れる /mnt/chromeos以下はパーミッションやownerが狂わないように制限されてるのでトラブルになることは無いと思う デフォルトでファイルアプリを使ってchromeOS側からLinux側のhomeディレクトリは自由に読み書き可能 なので共有ファイル追加しなくても特段問題なし ネットワーク こんなスクリプト だと chromeOS側から 127.0.0.1:3000 にアクセスできる でも、なぜかDockerで docker run -p 3000:80 nginx とかやって 127.</description>
-    </item>
-    
-    <item>
-      <title>systemd timerはちゃんと動いてる？</title>
-      <link>https://yaasita.github.io/2019/09/29/systemd-timer/</link>
-      <pubDate>Sun, 29 Sep 2019 16:51:09 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2019/09/29/systemd-timer/</guid>
-      <description>systemdタイマーがちゃんと動いてるか確認したほうが良いよというお話
-systemctl list-timers --allコマンドで一覧が見れるあれです
-debian10だと /etc/cron.daily にあるスクリプトでこんな感じに書かれてたら、systemd timerの方を使ってる
-if [ -d /run/systemd/system ]; then exit 0 fi 前回 と同様にノートパソコンのバッテリー稼働と誤って判断されることに起因する問題
-例えばlogrotateとかみると
-systemctl cat logrotate こんな一文がある
-ConditionACPower=true これはバッテリー駆動の時は動かさないって意味らしいんだけど、どうも判定が狂ってるみたいでずっと実行されなかった
-なので、以下のコマンドでoverride.conf作って判定を無効化した
-systemctl edit logrotate # 書いた内容 [Unit] ConditionACPower= というわけで
-cronだけじゃなくて, systemd-timerもちゃんと見ておかないといけない
-journalctl -n 10 -u logrotate | egrep -i &amp;quot;condition check.*skipped&amp;quot; とりあえず分かった、バッテリー時の判定が入ってるtimer
-apt-daily-upgrade man-db logrotate anacron apt-daily </description>
     </item>
     
   </channel>

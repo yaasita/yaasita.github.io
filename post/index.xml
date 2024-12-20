@@ -6,7 +6,27 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 08 Dec 2024 21:11:39 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Dec 2024 02:00:01 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vimでGitHub Copilot</title>
+      <link>https://yaasita.github.io/2024/12/21/vim-copilot/</link>
+      <pubDate>Sat, 21 Dec 2024 02:00:01 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/12/21/vim-copilot/</guid>
+      <description>Microsoft傘下のGitHub、「GitHub Copilot」を無料に（制限あり）
+https://www.itmedia.co.jp/news/articles/2412/19/news111.html
+ということで使ってみる
+以下インストール
+https://github.com/github/copilot.vim
+vimrcはこんな感じ
+常に補完が効くのは嫌なので使うときだけ有効にする
+候補表示はCtrl-c
+let g:copilot_filetypes = { &#39;*&#39;: v:false } imap &amp;lt;C-c&amp;gt; &amp;lt;Plug&amp;gt;(copilot-next) command! -nargs=0 ToggleCopilot call ToggleCopilot() function! ToggleCopilot() if exists(&#39;g:copilot_filetypes&#39;) unlet g:copilot_filetypes else let g:copilot_filetypes = { &#39;*&#39;: v:false } endif Copilot status endfunction :Copilot setup で設定
+~/.config/github-copilot/ に credentials が入る
+あとチャットはここから出来る
+https://github.com/copilot</description>
+    </item>
+    
     <item>
       <title>fontawesome止めた</title>
       <link>https://yaasita.github.io/2024/12/08/fontawesome/</link>
@@ -263,21 +283,6 @@ https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html
 そんで、CA証明書更新のPRは出てるんだけど、これ適用するとaurora serverlessとかRDS proxy経由の検証が失敗する
 なぜなら、証明書のチェーンがこんな感じになってるので
 C = US, O = &amp;#34;Starfield Technologies, Inc.&amp;#34;, OU = Starfield Class 2 Certification Authority C = US, ST = Arizona, L = Scottsdale, O = &amp;#34;Starfield Technologies, Inc.&amp;#34;, CN = Starfield Services Root Certificate Authority - G2 C = US, O = Amazon, CN = Amazon Root CA 1 C = US, O = Amazon, CN = Amazon RSA 2048 M02 CN = *.</description>
-    </item>
-    
-    <item>
-      <title>紙飛行機飛ばすゲーム</title>
-      <link>https://yaasita.github.io/2023/09/16/kami-hikouki/</link>
-      <pubDate>Sat, 16 Sep 2023 03:20:21 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2023/09/16/kami-hikouki/</guid>
-      <description>昔、ハマった紙飛行機飛ばすゲーム
-https://yaasita.github.io/2010/12/24/5072/
-似たやつはあった
-https://www.silvergames.com/en/flight https://www.silvergames.com/en/paper-flight-2 android版もあったけどメンテされてなさそう
-https://play.google.com/store/apps/details?id=com.armorgames.Flight
-FLASHをエミュレータで動かすやつもあった
-https://www.gameszap.com/game/6397/flight.html</description>
     </item>
     
   </channel>

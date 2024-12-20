@@ -6,7 +6,27 @@
     <description>Recent content in soft on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 08 Dec 2024 19:03:33 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Dec 2024 02:00:01 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>vimでGitHub Copilot</title>
+      <link>https://yaasita.github.io/2024/12/21/vim-copilot/</link>
+      <pubDate>Sat, 21 Dec 2024 02:00:01 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2024/12/21/vim-copilot/</guid>
+      <description>Microsoft傘下のGitHub、「GitHub Copilot」を無料に（制限あり）
+https://www.itmedia.co.jp/news/articles/2412/19/news111.html
+ということで使ってみる
+以下インストール
+https://github.com/github/copilot.vim
+vimrcはこんな感じ
+常に補完が効くのは嫌なので使うときだけ有効にする
+候補表示はCtrl-c
+let g:copilot_filetypes = { &#39;*&#39;: v:false } imap &amp;lt;C-c&amp;gt; &amp;lt;Plug&amp;gt;(copilot-next) command! -nargs=0 ToggleCopilot call ToggleCopilot() function! ToggleCopilot() if exists(&#39;g:copilot_filetypes&#39;) unlet g:copilot_filetypes else let g:copilot_filetypes = { &#39;*&#39;: v:false } endif Copilot status endfunction :Copilot setup で設定
+~/.config/github-copilot/ に credentials が入る
+あとチャットはここから出来る
+https://github.com/copilot</description>
+    </item>
+    
     <item>
       <title>pulseaudioのリモートプレイ設定</title>
       <link>https://yaasita.github.io/2024/12/08/pulseaudio/</link>
@@ -286,25 +306,6 @@ OIDCRedirectURI https://hoge.example.jp/oidc/redirect_uri OIDCCryptoPassphrase h
 smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode=yes -o smtpd_sasl_auth_enable=yes -o smtpd_reject_unlisted_recipient=no -o smtpd_client_restrictions=$mua_client_restrictions -o smtpd_helo_restrictions=$mua_helo_restrictions -o smtpd_sender_restrictions=$mua_sender_restrictions -o smtpd_recipient_restrictions= -o smtpd_relay_restrictions=permit_sasl_authenticated,reject -o milter_macro_daemon_name=ORIGINATING -o cleanup_service_name=smtpscleanup smtpscleanup unix n - y - 0 cleanup -o header_checks=regexp:/etc/postfix/header_checks /etc/postfix/header_checks
 /^Received:.*/ IGNORE 最初はsmtp_header_checksをmain.cfに書けば良いかなーと思ったんだけど、
 これだと外から入ってきたメール(後にプライマリサーバーにrelayされる)も一律削除されてしまうので都合が悪かった</description>
-    </item>
-    
-    <item>
-      <title>hettyはmitmproxyの代わりになる？</title>
-      <link>https://yaasita.github.io/2020/10/04/hetty/</link>
-      <pubDate>Sun, 04 Oct 2020 00:50:03 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/10/04/hetty/</guid>
-      <description>mitmproxyみたいにhttpsのリクエストを覗くツール
-https://github.com/dstotijn/hetty
-使い方は, CAの鍵と証明書を用意して
-hetty -cert cacert.pem -key cakey.pem でOK
-8080でlistenするのでhttp proxyとして指定する
-管理画面はproxyとて設定したブラウザで以下のURLから見れる
-http://hetty.proxy/
-感想
-mitmproxyより重い気がする GUIでリクエストを見れるのは便利 mitmdumpとかしないでも簡単に見れるのはとても嬉しい 検索機能は今後追加予定？ リクエストをreplyする機能も追加予定みたい まとめ
-今後に期待
-今はmitmweb使う方が良いと思う</description>
     </item>
     
   </channel>
