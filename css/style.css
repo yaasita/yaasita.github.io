@@ -50,14 +50,6 @@ a:hover {
   color: #4078C0;
 }
 
-a:hover img {
-    opacity: 0.5;
-    border:1px solid #4078C0;
-    filter: alpha(opacity=50);
-    -ms-filter: "alpha(opacity=50)";
-}
-
-
 #wrap {
   width: 100%;
   position: relative;
