@@ -6,7 +6,28 @@
     <description>Recent content in soft on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 21 Dec 2024 02:00:01 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Jan 2025 15:59:47 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cody使ってみる</title>
+      <link>https://yaasita.github.io/2025/01/01/cody/</link>
+      <pubDate>Wed, 01 Jan 2025 15:59:47 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/01/01/cody/</guid>
+      <description>cody が良いという評判を聞いたので使ってみる
+コーディングAI課金するならCodyが断トツ良い話
+https://zenn.dev/sanami/articles/7c24ce973b7e7c
+vimには codeium と github copilot を設定しているので補完AIはもう要らない
+CLIを設定してみる
+マニュアル
+https://sourcegraph.com/docs/cody/clients/install-cli
+ここからアクセストークンを発行
+https://sourcegraph.com/users/gitlab-etjbc/settings/tokens
+環境変数に設定
+export SRC_ACCESS_TOKEN=sgp_xxxxxxxxxxxxxxxxxxxxxx インストール
+npm install -g @sourcegraph/cody cody auth whoami こんな感じで使える
+cody chat -m &#39;Explain React hooks&#39; git diff | cody chat --stdin -m &#39;Write a commit message for this diff&#39; cody chat --context-file src/controller.ts -m &#39;Are there code smells in this file?&#39; ターミナルから使えて良いかもしれない</description>
+    </item>
+    
     <item>
       <title>vimでGitHub Copilot</title>
       <link>https://yaasita.github.io/2024/12/21/vim-copilot/</link>
@@ -290,22 +311,6 @@ apt install libapache2-mod-auth-openidc 設定 /etc/apache2/mods-enabled/auth_op
 OIDCRedirectURI https://hoge.example.jp/oidc/redirect_uri OIDCCryptoPassphrase hogehoge-foobar OIDCProviderMetadataURL https://accounts.google.com/.well-known/openid-configuration OIDCScope &amp;quot;openid email&amp;quot; OIDCClientID xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com OIDCClientSecret XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX リバースプロキシ的に使う例
 /adminかつ、プライベートIP以外の場合はGoogle認証で hogehoge@gmail.com のみ許可
 &amp;lt;VirtualHost *:443&amp;gt; ServerName hoge.example.jp &amp;lt;Location /&amp;gt; Require all granted &amp;lt;/Location&amp;gt; &amp;lt;Location /oidc/&amp;gt; AuthType openid-connect Require valid-user &amp;lt;/Location&amp;gt; &amp;lt;Location /admin&amp;gt; AuthType openid-connect Require claim email:hogehoge@gmail.com Require ip 192.168.0.0/24 &amp;lt;/Location&amp;gt; ProxyRequests Off ProxyPreserveHost On ProxyPass / http://127.0.0.1:8080/ keepalive=On RequestHeader set X-Forwarded-Proto &amp;quot;https&amp;quot; RequestHeader unset X-Forwarded-For RequestHeader unset X-Forwarded-Server RequestHeader unset X-Forwarded-Host # SSL設定等が続く .</description>
-    </item>
-    
-    <item>
-      <title>postfixのReceived headerを隠す</title>
-      <link>https://yaasita.github.io/2020/12/06/postfix-received-header/</link>
-      <pubDate>Sun, 06 Dec 2020 01:11:10 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/12/06/postfix-received-header/</guid>
-      <description>この回答通りなんだけど
-一応補足とか
-自分の環境だと、送信メールサーバーがセカンダリメールサーバーと兼任している
-以下のように設定した
-/etc/postfix/master.cf
-smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode=yes -o smtpd_sasl_auth_enable=yes -o smtpd_reject_unlisted_recipient=no -o smtpd_client_restrictions=$mua_client_restrictions -o smtpd_helo_restrictions=$mua_helo_restrictions -o smtpd_sender_restrictions=$mua_sender_restrictions -o smtpd_recipient_restrictions= -o smtpd_relay_restrictions=permit_sasl_authenticated,reject -o milter_macro_daemon_name=ORIGINATING -o cleanup_service_name=smtpscleanup smtpscleanup unix n - y - 0 cleanup -o header_checks=regexp:/etc/postfix/header_checks /etc/postfix/header_checks
-/^Received:.*/ IGNORE 最初はsmtp_header_checksをmain.cfに書けば良いかなーと思ったんだけど、
-これだと外から入ってきたメール(後にプライマリサーバーにrelayされる)も一律削除されてしまうので都合が悪かった</description>
     </item>
     
   </channel>

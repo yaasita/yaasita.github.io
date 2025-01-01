@@ -6,7 +6,28 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 08 Dec 2024 21:11:39 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Jan 2025 15:59:47 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>cody使ってみる</title>
+      <link>https://yaasita.github.io/2025/01/01/cody/</link>
+      <pubDate>Wed, 01 Jan 2025 15:59:47 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/01/01/cody/</guid>
+      <description>cody が良いという評判を聞いたので使ってみる
+コーディングAI課金するならCodyが断トツ良い話
+https://zenn.dev/sanami/articles/7c24ce973b7e7c
+vimには codeium と github copilot を設定しているので補完AIはもう要らない
+CLIを設定してみる
+マニュアル
+https://sourcegraph.com/docs/cody/clients/install-cli
+ここからアクセストークンを発行
+https://sourcegraph.com/users/gitlab-etjbc/settings/tokens
+環境変数に設定
+export SRC_ACCESS_TOKEN=sgp_xxxxxxxxxxxxxxxxxxxxxx インストール
+npm install -g @sourcegraph/cody cody auth whoami こんな感じで使える
+cody chat -m &#39;Explain React hooks&#39; git diff | cody chat --stdin -m &#39;Write a commit message for this diff&#39; cody chat --context-file src/controller.ts -m &#39;Are there code smells in this file?&#39; ターミナルから使えて良いかもしれない</description>
+    </item>
+    
     <item>
       <title>fontawesome止めた</title>
       <link>https://yaasita.github.io/2024/12/08/fontawesome/</link>
@@ -270,20 +291,6 @@ https://ipv46.cloud.yaasita.net/</description>
 https://gist.github.com/yaasita/d527b48f54b0e23c3097a9c69239d534
 どうやらこれ、machine-idから作られてるみたいで、VMコピーしたらmachine-id変えた方が良いぽいね
 rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machine-id-setup </description>
-    </item>
-    
-    <item>
-      <title>tumblrのテキスト情報を取得</title>
-      <link>https://yaasita.github.io/2021/05/25/tumblr-metadata/</link>
-      <pubDate>Tue, 25 May 2021 00:53:51 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/05/25/tumblr-metadata/</guid>
-      <description>tumblrの検索だと、上手く引っかからない事が多いので
-テキストデータはローカルに保存することにした
-最初の投稿から何番目を指定することで、ディレクトリの年別ディレクトリに保存します
-実行例
-./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ 1234 こんな感じで適度にsleep入れて取得してます
-#!/bin/bash set -eux save_file=/tmp/save_num already_get_number=$(cat $save_file) for ((i=$already_get_number; i &amp;lt; $already_get_number + 100; i++));do ./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ $i sleep 1 done echo $i &amp;gt; $save_file </description>
     </item>
     
   </channel>
