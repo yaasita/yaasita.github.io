@@ -6,7 +6,29 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 01 Jan 2025 15:59:47 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Jan 2025 13:33:58 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DoHを使う</title>
+      <link>https://yaasita.github.io/2025/01/02/doh/</link>
+      <pubDate>Thu, 02 Jan 2025 13:33:58 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/01/02/doh/</guid>
+      <description>DNS over HTTPSを使ってpi-holeに接続する設定
+出先で広告ブロック使いたくなったのでやってみる
+こんな構成
+apache -&amp;gt; doh-proxy -&amp;gt; pi-hole -&amp;gt; unbound サーバーはこれ
+https://github.com/DNSCrypt/doh-server
+/etc/systemd/system/doh-proxy.service って名前で保存
+[Unit] Description=DoH Proxy After=network.target [Service] ExecStart=/usr/local/bin/doh-proxy -u 127.0.0.1:53 -l 0.0.0.0:3000 User=root Group=root Restart=always RestartSec=5 [Install] WantedBy=multi-user.target TLS部分はapacheがやる
+こんな感じでproxy
+&amp;lt;VirtualHost *:443&amp;gt; ServerName dns.example.net ProxyRequests Off ProxyPreserveHost On ProxyPass / http://192.168.0.123:3000/ retry=2 ProxyPassReverse / http://192.168.0.123:3000/ SSLEngine on SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem SSLCertificateKeyFile /etc/letsencrypt/live/example.net/privkey.pem &amp;lt;/VirtualHost&amp;gt; テストはこんな感じ
+curl --doh-url https://dns.example.net/dns-query https://example.jp dnslookup コマンドでもOK
+dnslookup example.jp https://dns.example.net/dns-query chromebookの場合は&amp;quot;確認済みアクセスを有効にする&amp;quot;のチェックを外しておいた方が良い
+このチェックの挙動がよく分からないけど、DoHサーバーの名前解決後のIPアドレスがLAN内のプライベートIPなら通るけど、グローバルIPだと通さないみたいな挙動になってた
+あと設定直後はちゃんとHTTPのリクエストを発行するにもかかわらず1～2分後にエラーになるみたいな動きもする
+まあ広告ブロックしたいだけなら</description>
+    </item>
+    
     <item>
       <title>cody使ってみる</title>
       <link>https://yaasita.github.io/2025/01/01/cody/</link>
@@ -278,19 +300,6 @@ https://ipv46.cloud.yaasita.net/</description>
 (対象はGoogleから貰うレポート)
 こんな感じでメールがあるディレクトリを指定する
 ./index.js ~/Maildir/cur/ </description>
-    </item>
-    
-    <item>
-      <title>bridgeインターフェイスのMACアドレス</title>
-      <link>https://yaasita.github.io/2021/10/10/machine-id/</link>
-      <pubDate>Sun, 10 Oct 2021 05:52:16 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/10/10/machine-id/</guid>
-      <description>KVMを使ったVM内でブリッジインターフェイス作ってそのVMをコピーしたらMACアドレスが重複して通信不能になった
-(/etc/systemd/network/にはこんな感じでbridge作る)
-https://gist.github.com/yaasita/d527b48f54b0e23c3097a9c69239d534
-どうやらこれ、machine-idから作られてるみたいで、VMコピーしたらmachine-id変えた方が良いぽいね
-rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machine-id-setup </description>
     </item>
     
   </channel>

@@ -11,7 +11,7 @@
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
 
     <meta property="og:title" content="muttでHTMLメールを扱う" />
-<meta property="og:description" content="Your browser does not support the video tag. ~/.muttrc に以下追記
+<meta property="og:description" content="~/.muttrc に以下追記
 # html mailを読むための設定 set mailcap_path=~/.mutt/mailcap auto_view text/html alternative_order text/plain text/html # HTMLメールを開く vで添付画面へ行ってそこでctrl-sを押すとHTMLを保存 macro attach \cs &quot;&lt;pipe-entry&gt;cat &gt; /tmp/mutt-mail.html&quot; # HTML内のリンクを表示 macro index \cv |urlview macro pager \cv |urlview ~/.mutt/mailcap
 text/html; w3m -I %{charset} -T text/html; copiousoutput; 参考リンク https://wiki.archlinux.jp/index.php/Mutt" />
 <meta property="og:type" content="article" />
@@ -43,9 +43,8 @@ text/html; w3m -I %{charset} -T text/html; copiousoutput; 参考リンク https:
     </div>
   </header>
   <div class="content">
-    <video controls>
+    <video style="width: calc(100% - 20px);" controls>
   <source src="https://img.cloud.yaasita.net/2024/mutt.mp4" type="video/mp4">
-  Your browser does not support the video tag.
 </video>
 <p>~/.muttrc に以下追記</p>
 <pre><code># html mailを読むための設定
@@ -180,11 +179,11 @@ macro pager \cv |urlview
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (350)</a>
+          <a href="/categories/linux"><span></span>linux (351)</a>
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (239)</a>
+          <a href="/categories/net"><span></span>net (240)</a>
         </li>
         
         <li>
@@ -287,7 +286,7 @@ macro pager \cv |urlview
         </li>
         
         <li>
-          <a href="/archives/2025"><span></span>2025 (1)</a>
+          <a href="/archives/2025"><span></span>2025 (2)</a>
         </li>
         
       </ul>
