@@ -58,6 +58,10 @@ a:hover {
   min-height: 100%;
 }
 
+video {
+  width: calc(100% - 20px);
+}
+
 .container {
   width: 1000px;
   margin-right: auto;

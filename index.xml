@@ -6,7 +6,17 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 02 Jan 2025 13:33:58 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 22 Feb 2025 03:56:22 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>バイオハザードRE4</title>
+      <link>https://yaasita.github.io/2025/02/22/biore4/</link>
+      <pubDate>Sat, 22 Feb 2025 03:56:22 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/02/22/biore4/</guid>
+      <description>感想
+背景やオブジェクトの作り込みが素晴らしい オリジナル版よりなんか怖かった ホラー要素が強化されてるけど、びっくりさせるようなギミックは微妙だった(突然足場抜けるとか、急に敵出てくるとか) QTEが微妙に残ってて気になった ナイフの耐久値は微妙 ナイフによるパリィは楽しいかもしれない ステルスキル(敵に見つからないように背後を取るとナイフ一撃で倒せるやつ)は特に楽しい DLC(エイダ編)も良かった 赤い邪教徒が呪文唱えるとエイムしにくくなったり回りの敵が寄生体飛び出て強化される仕組みは良いと思った(赤い邪教徒を率先して倒す理由になる) パズルは全体的に微妙だった/そもそもパズル必要なのか？特に孤島での電気回路パズルと面倒だった 火を吹く巨大サラザールロボとか出てきてちょっとバカゲー要素ある 背景とかオブジェクトはリアリティあるのに急にそういうの出るギャップすごい 総合的には良作</description>
+    </item>
+    
     <item>
       <title>DoHを使う</title>
       <link>https://yaasita.github.io/2025/01/02/doh/</link>
@@ -279,20 +289,6 @@ https://gist.github.com/yaasita/c1c8dcfda063305f3db70bfedee9e0cb
 blogページからは消えている
 https://yaasita.tumblr.com/post/165399040492/asagaonosakukisetu-mklater-xmixkox
 なぜ発生するかは不明</description>
-    </item>
-    
-    <item>
-      <title>rana8を試す</title>
-      <link>https://yaasita.github.io/2023/12/22/rana8/</link>
-      <pubDate>Fri, 22 Dec 2023 02:20:37 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2023/12/22/rana8/</guid>
-      <description>これ
-https://web.arena.ne.jp/service/rana8poc.html
-なんかほぼGoogleCloudのcloud runだった
-サービスはサービスアカウントの鍵をもらって gcloudでdeployするみたいな奴
-マニュアル通りやっても以下のようになって使えなかった
-ERROR: (gcloud.run.deploy) User [xxxxxxxxxx@rana8-poc.iam.gserviceaccount.com] does not have permission to access projects instance [rana8-poc] (or it may not exist): Permission &#39;cloudbuild.locations.list&#39; denied on &#39;projects/rana8-poc/lo cations/global&#39; cloud runを素で使うより何が良いのかは分からない</description>
     </item>
     
   </channel>
