@@ -6,7 +6,29 @@
     <description>Recent content in hard on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 28 May 2023 02:16:54 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/hard/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Mar 2025 01:28:35 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/hard/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>スマホ変えて楽天モバイルにした</title>
+      <link>https://yaasita.github.io/2025/03/03/rakuten-mobile/</link>
+      <pubDate>Mon, 03 Mar 2025 01:28:35 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/03/03/rakuten-mobile/</guid>
+      <description>スマホ変えました
+Sharp AQUOS wish4 の Docomo版にしました
+androidは14
+Docomo版なので、Docomo用のプリインアプリが沢山あって無効化が面倒
+ただ画面がでかくて良いかもしれない
+あとMNPで楽天モバイルにしました
+イオンモバイルからワンストップMNPでやろうとしたんだけどなんか申請途中でエラー
+イオン側は申請受付状態、楽天側は未申請状態になって詰んだと思ったけど
+1日くらい待つと、イオンモバイル側にMNP予約番号が表示見されるようになってたのでそれを楽天モバイル側に手動で入力して申請
+何とかなった
+あとAPN設定しないとつながらない
+https://network.mobile.rakuten.co.jp/faq/detail/00001495/
+今回からeSIMにしてみたけど便利
+ただ、eSIMでも楽天モバイルからの郵便物(楽天モバイルの取説)は届くし受け取り必要でした</description>
+    </item>
+    
     <item>
       <title>ゲームパッド使用感ANS-PF069</title>
       <link>https://yaasita.github.io/2023/05/28/gamepad-ans-pf069/</link>
@@ -241,17 +263,6 @@ HandleSuspendKey=ignore HandleLidSwitch=ignore </description>
       <guid>https://yaasita.github.io/2015/10/17/raid5_fail/</guid>
       <description>リビルド中にもう一個壊れてRAID5が終わった話
 /dev/md0: Version : 1.2 Creation Time : Fri Jan 6 12:24:44 2012 Raid Level : raid5 Array Size : 5860535808 (5589.04 GiB 6001.19 GB) Used Dev Size : 1953511936 (1863.01 GiB 2000.40 GB) Raid Devices : 4 Total Devices : 4 Persistence : Superblock is persistent Update Time : Sat Oct 17 16:59:57 2015 State : clean, FAILED Active Devices : 2 Working Devices : 3 Failed Devices : 1 Spare Devices : 1 Layout : left-symmetric Chunk Size : 512K Name : hoge:0 UUID : 55b9d6ea:4627c873:a0bcab05:a4f0c25d Events : 6755 Number Major Minor RaidDevice State 5 8 49 0 active sync /dev/sdd1 2 0 0 2 removed 2 8 33 2 active sync /dev/sdc1 6 0 0 6 removed 4 8 1 - faulty /dev/sda1 6 8 17 - spare /dev/sdb1 HDD一台が壊れたので /dev/sdb1を追加中にアレイの構成Diskがもう一個壊れた</description>
-    </item>
-    
-    <item>
-      <title>最近買ったスマホ</title>
-      <link>https://yaasita.github.io/2015/07/26/xperia/</link>
-      <pubDate>Sun, 26 Jul 2015 02:29:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2015/07/26/xperia/</guid>
-      <description>EXPANSYSで買った
-Sony Xperia E4g E2003 (Unlocked LTE, 8GB, White) 18,737円 SIMフリーはIIJ MIO
-IIJ IIJmio SIM ウェルカムパック microSIM ( SMS 機能付き ) 版 1,900円 </description>
     </item>
     
   </channel>

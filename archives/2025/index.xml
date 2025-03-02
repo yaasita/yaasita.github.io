@@ -6,7 +6,29 @@
     <description>Recent content in 2025 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 22 Feb 2025 03:56:22 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2025/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Mar 2025 01:28:35 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>スマホ変えて楽天モバイルにした</title>
+      <link>https://yaasita.github.io/2025/03/03/rakuten-mobile/</link>
+      <pubDate>Mon, 03 Mar 2025 01:28:35 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/03/03/rakuten-mobile/</guid>
+      <description>スマホ変えました
+Sharp AQUOS wish4 の Docomo版にしました
+androidは14
+Docomo版なので、Docomo用のプリインアプリが沢山あって無効化が面倒
+ただ画面がでかくて良いかもしれない
+あとMNPで楽天モバイルにしました
+イオンモバイルからワンストップMNPでやろうとしたんだけどなんか申請途中でエラー
+イオン側は申請受付状態、楽天側は未申請状態になって詰んだと思ったけど
+1日くらい待つと、イオンモバイル側にMNP予約番号が表示見されるようになってたのでそれを楽天モバイル側に手動で入力して申請
+何とかなった
+あとAPN設定しないとつながらない
+https://network.mobile.rakuten.co.jp/faq/detail/00001495/
+今回からeSIMにしてみたけど便利
+ただ、eSIMでも楽天モバイルからの郵便物(楽天モバイルの取説)は届くし受け取り必要でした</description>
+    </item>
+    
     <item>
       <title>バイオハザードRE4</title>
       <link>https://yaasita.github.io/2025/02/22/biore4/</link>
