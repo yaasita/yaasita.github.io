@@ -6,7 +6,29 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 03 Mar 2025 01:28:35 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 17 Apr 2025 03:32:19 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ロックマンX6攻略情報</title>
+      <link>https://yaasita.github.io/2025/04/17/rockman6/</link>
+      <pubDate>Thu, 17 Apr 2025 03:32:19 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/04/17/rockman6/</guid>
+      <description>自分用メモ ナイトメアを上書きする方法
+https://penpengames.blog.fc2.com/blog-entry-43.html
+途中で右下に出てくるビックリマークは？
+R3ボタンでオペレーターからのヒントを聞ける
+強化パーツ
+https://ameblo.jp/megamanblack/entry-12459899904.html
+アイテム一覧
+https://rockmanx6.gorillawiki.jp/entry/21
+アーマー場所
+https://www.youtube.com/watch?v=QtN-EFOMrEA
+ライフアップ取り方
+https://www.youtube.com/watch?v=qzuumF5boOk&amp;amp;t=34s
+サブタンク/EXアイテム
+https://www.youtube.com/watch?v=0l2LVclq804</description>
+    </item>
+    
     <item>
       <title>スマホ変えて楽天モバイルにした</title>
       <link>https://yaasita.github.io/2025/03/03/rakuten-mobile/</link>
@@ -280,23 +302,6 @@ https://askubuntu.com/questions/1164239/how-to-disable-ipv6-redirect
 /etc/nftables.conf に以下追加してとりあえず ipv6-icmpを抑止する
 chain output { type filter hook output priority filter; meta l4proto ipv6-icmp icmpv6 type nd-redirect counter drop } リダイレクトで曲がったルーティングの確認はこんな感じ
 ip -6 route show cache </description>
-    </item>
-    
-    <item>
-      <title>Linuxネットワークの設定</title>
-      <link>https://yaasita.github.io/2024/01/07/network/</link>
-      <pubDate>Sun, 07 Jan 2024 06:22:21 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2024/01/07/network/</guid>
-      <description>たまに忘れるのでメモ
-Linuxで通信を見たいときに、あるホストをルーターにする場合
-/etc/sysctl.conf に以下のような設定を入れる
-net.ipv4.ip_forward = 1 net.ipv4.conf.all.accept_redirects = 0 net.ipv4.conf.all.send_redirects = 0 が、ICMMP redirectの送信はallじゃなくてインターフェイス名をちゃんと指定する必要があるぽい
-net.ipv4.conf.eth0.send_redirects = 0 ちなみにICMP redirectで曲がってしまったルーティングは
-以下のコマンドで参照とクリアができる
-ip route show cache ip route flush cache あとIPv6をsystemd-networkdで無効化する場合こんな感じ
-[Match] Name=host0 [Network] DHCP=no LinkLocalAddressing=no Address=192.168.0.100/24 Gateway=192.168.0.10 IPv6PrivacyExtensions=no [IPv6] Address= Gateway= AddressGenerator=none 一時アドレス消す場合は以下のコマンド
-ip -6 addr flush dev eth0 scope global dynamic </description>
     </item>
     
   </channel>
