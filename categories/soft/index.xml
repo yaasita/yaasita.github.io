@@ -6,7 +6,22 @@
     <description>Recent content in soft on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 01 Jan 2025 15:59:47 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 May 2025 16:45:58 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>動画ファイルのダミーデータ</title>
+      <link>https://yaasita.github.io/2025/05/16/download-stream-png-dummy/</link>
+      <pubDate>Fri, 16 May 2025 16:45:58 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/05/16/download-stream-png-dummy/</guid>
+      <description>m3uから動画をダウンロードすると
+PNG image data, 1 x 1, 8-bit/color RGBA, non-interlacedのデータになることがある
+こんな感じで先頭8byteを飛ばして
+ffmpegで再エンコードするとよい
+とりあえずffmpeg通せばヘッダは復活する
+ffmpeg -i merged_output.ts -c copy out.mp4 参考リンク
+https://github.com/yt-dlp/yt-dlp/issues/4381</description>
+    </item>
+    
     <item>
       <title>cody使ってみる</title>
       <link>https://yaasita.github.io/2025/01/01/cody/</link>
@@ -295,22 +310,6 @@ debianのパッケージは以下のオプションでビルドされてるの�
 eyeD3 -a backnumber hoge.mp3 eyeD3 -t 高嶺の花子さん takane.mp3 すると第一引数にartist, 第二引数にtitleが入ります
 この画面で、Sを押すと歌詞を~/.cache/ncmpc/lyrics/保存できたりもします
 ファイル名が引数に入らないので、直接ファイルを探せないですが、ファイル名を工夫すれば、mp3ファイルタグ内の歌詞情報を引っ張ることも可能だと思います</description>
-    </item>
-    
-    <item>
-      <title>apacheのmod-auth-openidcについて</title>
-      <link>https://yaasita.github.io/2021/01/01/mod-auth-openidc/</link>
-      <pubDate>Fri, 01 Jan 2021 22:37:48 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/01/01/mod-auth-openidc/</guid>
-      <description>BASIC認証かけるみたいに簡単にGoogle認証を追加できた
-公式サイト
-https://www.mod-auth-openidc.org/
-インストール
-apt install libapache2-mod-auth-openidc 設定 /etc/apache2/mods-enabled/auth_openidc.conf
-OIDCRedirectURI https://hoge.example.jp/oidc/redirect_uri OIDCCryptoPassphrase hogehoge-foobar OIDCProviderMetadataURL https://accounts.google.com/.well-known/openid-configuration OIDCScope &amp;quot;openid email&amp;quot; OIDCClientID xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com OIDCClientSecret XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX リバースプロキシ的に使う例
-/adminかつ、プライベートIP以外の場合はGoogle認証で hogehoge@gmail.com のみ許可
-&amp;lt;VirtualHost *:443&amp;gt; ServerName hoge.example.jp &amp;lt;Location /&amp;gt; Require all granted &amp;lt;/Location&amp;gt; &amp;lt;Location /oidc/&amp;gt; AuthType openid-connect Require valid-user &amp;lt;/Location&amp;gt; &amp;lt;Location /admin&amp;gt; AuthType openid-connect Require claim email:hogehoge@gmail.com Require ip 192.168.0.0/24 &amp;lt;/Location&amp;gt; ProxyRequests Off ProxyPreserveHost On ProxyPass / http://127.0.0.1:8080/ keepalive=On RequestHeader set X-Forwarded-Proto &amp;quot;https&amp;quot; RequestHeader unset X-Forwarded-For RequestHeader unset X-Forwarded-Server RequestHeader unset X-Forwarded-Host # SSL設定等が続く .</description>
     </item>
     
   </channel>

@@ -6,7 +6,22 @@
     <description>Recent content in program on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 01 Jan 2025 15:59:47 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 May 2025 16:45:58 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>動画ファイルのダミーデータ</title>
+      <link>https://yaasita.github.io/2025/05/16/download-stream-png-dummy/</link>
+      <pubDate>Fri, 16 May 2025 16:45:58 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/05/16/download-stream-png-dummy/</guid>
+      <description>m3uから動画をダウンロードすると
+PNG image data, 1 x 1, 8-bit/color RGBA, non-interlacedのデータになることがある
+こんな感じで先頭8byteを飛ばして
+ffmpegで再エンコードするとよい
+とりあえずffmpeg通せばヘッダは復活する
+ffmpeg -i merged_output.ts -c copy out.mp4 参考リンク
+https://github.com/yt-dlp/yt-dlp/issues/4381</description>
+    </item>
+    
     <item>
       <title>cody使ってみる</title>
       <link>https://yaasita.github.io/2025/01/01/cody/</link>
@@ -286,19 +301,6 @@ https://nodejs.org/api/readline.html
 const rl = readline.createInterface({ // ... }); for await (const line of rl) { // Each line in the readline input will be successively available here as // `line`. } こっちの方がメモリ効率が良さそう
 await new Promise((resolv, reject) =&amp;gt; { rl.on(&amp;#34;line&amp;#34;, (line) =&amp;gt; { // 処理 }); rl.on(&amp;#34;close&amp;#34;, () =&amp;gt; { resolv(); }); }); 詳しくは調べてないけど、巨大ファイルだと
 FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory `` が頻発する </description>
-    </item>
-    
-    <item>
-      <title>AtCoder Beginner Contest 202のD問題</title>
-      <link>https://yaasita.github.io/2021/06/06/atcoder-d/</link>
-      <pubDate>Sun, 06 Jun 2021 01:49:45 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/06/06/atcoder-d/</guid>
-      <description>問題
-https://atcoder.jp/contests/abc202/tasks
-解説
-https://www.youtube.com/watch?v=iNSp33TT3tc
-ポイントは use bigint; を指定しないと溢れて浮動小数点になってしまう</description>
     </item>
     
   </channel>

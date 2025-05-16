@@ -6,7 +6,22 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 17 Apr 2025 03:32:19 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 May 2025 16:45:58 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>動画ファイルのダミーデータ</title>
+      <link>https://yaasita.github.io/2025/05/16/download-stream-png-dummy/</link>
+      <pubDate>Fri, 16 May 2025 16:45:58 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/05/16/download-stream-png-dummy/</guid>
+      <description>m3uから動画をダウンロードすると
+PNG image data, 1 x 1, 8-bit/color RGBA, non-interlacedのデータになることがある
+こんな感じで先頭8byteを飛ばして
+ffmpegで再エンコードするとよい
+とりあえずffmpeg通せばヘッダは復活する
+ffmpeg -i merged_output.ts -c copy out.mp4 参考リンク
+https://github.com/yt-dlp/yt-dlp/issues/4381</description>
+    </item>
+    
     <item>
       <title>ロックマンX6攻略情報</title>
       <link>https://yaasita.github.io/2025/04/17/rockman6/</link>
@@ -288,20 +303,6 @@ IPv6 テストサイト: https://ipv6test.app/
 curlで手軽にチェックできる
 curl ipv6test.app curl v4.ipv6test.app curl v6.ipv6test.app tcpdumpでICMPv6を見る
 tcpdump -n -X icmp6 </description>
-    </item>
-    
-    <item>
-      <title>ipv6のICMPリダイレクト</title>
-      <link>https://yaasita.github.io/2024/02/17/ipv6-icmp/</link>
-      <pubDate>Sat, 17 Feb 2024 05:35:13 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2024/02/17/ipv6-icmp/</guid>
-      <description>ipv4ならカーネルパラメータ net.ipv4.conf.all.send_redirectsでICMPリダイレクトの送信を抑止できるが
-ipv6はそういうオプションが無いらしい
-https://askubuntu.com/questions/1164239/how-to-disable-ipv6-redirect
-/etc/nftables.conf に以下追加してとりあえず ipv6-icmpを抑止する
-chain output { type filter hook output priority filter; meta l4proto ipv6-icmp icmpv6 type nd-redirect counter drop } リダイレクトで曲がったルーティングの確認はこんな感じ
-ip -6 route show cache </description>
     </item>
     
   </channel>
