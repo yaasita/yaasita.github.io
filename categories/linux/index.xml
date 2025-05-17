@@ -6,7 +6,18 @@
     <description>Recent content in linux on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 02 Jan 2025 13:33:58 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 May 2025 13:23:08 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>sysstatのデータをbigqueryに入れる</title>
+      <link>https://yaasita.github.io/2025/05/17/sysstat/</link>
+      <pubDate>Sat, 17 May 2025 13:23:08 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/05/17/sysstat/</guid>
+      <description>こんな感じでレポート出して
+sadf -T -j /var/log/sysstat/sa\$(date -d yesterday +%d) -- -ruq -n DEV &amp;gt; /tmp/sadf.json bigquery用のフォーマットに変更
+あとは Looker Studio で見るとか</description>
+    </item>
+    
     <item>
       <title>DoHを使う</title>
       <link>https://yaasita.github.io/2025/01/02/doh/</link>
@@ -313,20 +324,6 @@ smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode
 使い方はREADME.md参照
 https://github.com/yaasita/ssh-keys-manager
 その他 使えるならsshの証明書認証も検討した方が良いかも ssh -F でconfig指定できるけど、~/.ssh/configに置いたときと挙動が違うのでスクリプト内にconfig入れる場合は注意 </description>
-    </item>
-    
-    <item>
-      <title>GKEでCloud SQL Proxyをsocketで使う</title>
-      <link>https://yaasita.github.io/2020/02/28/k8s-cloudsql-proxy-with-socket/</link>
-      <pubDate>Fri, 28 Feb 2020 04:08:58 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/02/28/k8s-cloudsql-proxy-with-socket/</guid>
-      <description>GKEでもGAEみたいにCloud SQLに繋げたい場合の話
-公式ドキュメントのサンプルだとこんな感じにport接続にしてる
-https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/blob/master/cloudsql/mysql_wordpress_deployment.yaml
-socket接続の場合はこんな感じ
-参考
-k8s サイドカーコンテナについて</description>
     </item>
     
   </channel>

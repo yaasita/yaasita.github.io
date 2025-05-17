@@ -6,7 +6,18 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 16 May 2025 16:45:58 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 May 2025 13:23:08 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>sysstatのデータをbigqueryに入れる</title>
+      <link>https://yaasita.github.io/2025/05/17/sysstat/</link>
+      <pubDate>Sat, 17 May 2025 13:23:08 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/05/17/sysstat/</guid>
+      <description>こんな感じでレポート出して
+sadf -T -j /var/log/sysstat/sa\$(date -d yesterday +%d) -- -ruq -n DEV &amp;gt; /tmp/sadf.json bigquery用のフォーマットに変更
+あとは Looker Studio で見るとか</description>
+    </item>
+    
     <item>
       <title>動画ファイルのダミーデータ</title>
       <link>https://yaasita.github.io/2025/05/16/download-stream-png-dummy/</link>
@@ -289,20 +300,6 @@ ffmpeg -i input.mp4 output.mp4 </description>
       <description>初代ポケモン151匹を言えるかテストするサイトを作った
 poke.html
 コーディングはgemini</description>
-    </item>
-    
-    <item>
-      <title>IPv6回りのちょっとしたこと</title>
-      <link>https://yaasita.github.io/2024/03/22/ipv6-tips/</link>
-      <pubDate>Fri, 22 Mar 2024 02:58:55 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2024/03/22/ipv6-tips/</guid>
-      <description>public NAT64サービス: https://nat64.net/
-使用するキャッシュDNSサーバーだけ変えればOKなので使いやすい
-IPv6 テストサイト: https://ipv6test.app/
-curlで手軽にチェックできる
-curl ipv6test.app curl v4.ipv6test.app curl v6.ipv6test.app tcpdumpでICMPv6を見る
-tcpdump -n -X icmp6 </description>
     </item>
     
   </channel>

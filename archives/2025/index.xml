@@ -6,7 +6,18 @@
     <description>Recent content in 2025 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 16 May 2025 16:45:58 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2025/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 May 2025 13:23:08 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>sysstatのデータをbigqueryに入れる</title>
+      <link>https://yaasita.github.io/2025/05/17/sysstat/</link>
+      <pubDate>Sat, 17 May 2025 13:23:08 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/05/17/sysstat/</guid>
+      <description>こんな感じでレポート出して
+sadf -T -j /var/log/sysstat/sa\$(date -d yesterday +%d) -- -ruq -n DEV &amp;gt; /tmp/sadf.json bigquery用のフォーマットに変更
+あとは Looker Studio で見るとか</description>
+    </item>
+    
     <item>
       <title>動画ファイルのダミーデータ</title>
       <link>https://yaasita.github.io/2025/05/16/download-stream-png-dummy/</link>

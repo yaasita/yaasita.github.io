@@ -6,7 +6,18 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 02 Jan 2025 13:33:58 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 May 2025 13:23:08 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>sysstatのデータをbigqueryに入れる</title>
+      <link>https://yaasita.github.io/2025/05/17/sysstat/</link>
+      <pubDate>Sat, 17 May 2025 13:23:08 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/05/17/sysstat/</guid>
+      <description>こんな感じでレポート出して
+sadf -T -j /var/log/sysstat/sa\$(date -d yesterday +%d) -- -ruq -n DEV &amp;gt; /tmp/sadf.json bigquery用のフォーマットに変更
+あとは Looker Studio で見るとか</description>
+    </item>
+    
     <item>
       <title>DoHを使う</title>
       <link>https://yaasita.github.io/2025/01/02/doh/</link>
@@ -288,18 +299,6 @@ ipv6専用
 https://ipv6.cloud.yaasita.net/
 ipv4/ipv6両対応(どちらのIPが優先されるか確認用)
 https://ipv46.cloud.yaasita.net/</description>
-    </item>
-    
-    <item>
-      <title>SMTP-TLSRPTのチェック</title>
-      <link>https://yaasita.github.io/2022/02/12/tls-report-check/</link>
-      <pubDate>Sat, 12 Feb 2022 01:24:48 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2022/02/12/tls-report-check/</guid>
-      <description>SMTP-TLSRPTをチェックしてtotal-failure-session-countがゼロより大きいかチェックするスクリプト
-(対象はGoogleから貰うレポート)
-こんな感じでメールがあるディレクトリを指定する
-./index.js ~/Maildir/cur/ </description>
     </item>
     
   </channel>

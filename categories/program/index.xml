@@ -6,7 +6,18 @@
     <description>Recent content in program on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 16 May 2025 16:45:58 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 May 2025 13:23:08 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>sysstatのデータをbigqueryに入れる</title>
+      <link>https://yaasita.github.io/2025/05/17/sysstat/</link>
+      <pubDate>Sat, 17 May 2025 13:23:08 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/05/17/sysstat/</guid>
+      <description>こんな感じでレポート出して
+sadf -T -j /var/log/sysstat/sa\$(date -d yesterday +%d) -- -ruq -n DEV &amp;gt; /tmp/sadf.json bigquery用のフォーマットに変更
+あとは Looker Studio で見るとか</description>
+    </item>
+    
     <item>
       <title>動画ファイルのダミーデータ</title>
       <link>https://yaasita.github.io/2025/05/16/download-stream-png-dummy/</link>
@@ -287,20 +298,6 @@ cdコマンドを上書きして、@で始まってたら cd -P でsymlinkを辿
 export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 } あと、bookmarkへの追加もコマンドにしておく
 bookmarkしたいディレクトリに移動してbookmarkコマンドでsymlink作るようにしておく
 function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) } </description>
-    </item>
-    
-    <item>
-      <title>nodejsのreadline</title>
-      <link>https://yaasita.github.io/2021/07/29/nodejs-readline/</link>
-      <pubDate>Thu, 29 Jul 2021 00:55:40 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/07/29/nodejs-readline/</guid>
-      <description>readlineの書き方
-https://nodejs.org/api/readline.html
-こうやって書くより
-const rl = readline.createInterface({ // ... }); for await (const line of rl) { // Each line in the readline input will be successively available here as // `line`. } こっちの方がメモリ効率が良さそう
-await new Promise((resolv, reject) =&amp;gt; { rl.on(&amp;#34;line&amp;#34;, (line) =&amp;gt; { // 処理 }); rl.on(&amp;#34;close&amp;#34;, () =&amp;gt; { resolv(); }); }); 詳しくは調べてないけど、巨大ファイルだと
-FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory `` が頻発する </description>
     </item>
     
   </channel>
