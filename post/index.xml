@@ -6,7 +6,22 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 17 May 2025 13:23:08 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Jun 2025 15:30:58 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>s3のマルチパートアップロード料金</title>
+      <link>https://yaasita.github.io/2025/06/21/aws-s3-multipart/</link>
+      <pubDate>Sat, 21 Jun 2025 15:30:58 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/06/21/aws-s3-multipart/</guid>
+      <description>こんな感じで始めるマルチパートアップロードを開始
+aws s3api create-multipart-upload --bucket $BUCKET --key $UPLOAD_KEY --storage-class DEEP_ARCHIVE glacierを指定しても
+アップロード途中の料金はs3のスタンダード料金よりはちょっと安いくらいのお金がかかる
+バージニア北部(us-east-1)リージョンでこんな感じ
+請求書にStagingって書いてあるので気づけるはず
+$0.021 per GB-Month of storage used in GlacierStagingStorage マルチパートアップロードの途中がないか定期的に確認したほうがよい
+aws s3api list-multipart-uploads --bucket バケット名 </description>
+    </item>
+    
     <item>
       <title>sysstatのデータをbigqueryに入れる</title>
       <link>https://yaasita.github.io/2025/05/17/sysstat/</link>
@@ -289,17 +304,6 @@ meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit1 { ip saddr tim
       <guid>https://yaasita.github.io/2024/04/21/shotcut/</guid>
       <description>編集前にこれやっておくと良いかもしれない
 ffmpeg -i input.mp4 output.mp4 </description>
-    </item>
-    
-    <item>
-      <title>ポケモン言えるかテスト</title>
-      <link>https://yaasita.github.io/2024/04/21/pokemon/</link>
-      <pubDate>Sun, 21 Apr 2024 04:06:53 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2024/04/21/pokemon/</guid>
-      <description>初代ポケモン151匹を言えるかテストするサイトを作った
-poke.html
-コーディングはgemini</description>
     </item>
     
   </channel>

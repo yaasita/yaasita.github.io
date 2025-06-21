@@ -11,7 +11,7 @@
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
 
     <meta property="og:title" content="mdadmでメール送信メモ postfix" />
-<meta property="og:description" content=" mdadmが動いているAサーバーからBサーバーに(relay)転送したい
+<meta property="og:description" content="mdadmが動いているAサーバーからBサーバーに(relay)転送したい
 とりあえず以下のように設定192.168.0.11が転送サーバーとする
 relayhost = [192.168.0.11]:25
 しかしsmtpd_helo_restrictionsが転送サーバーに設定されているため
@@ -22,7 +22,7 @@ mtp_helo_name = [192.168.0.5]
 参考リンク
 milter_helo_macros
 3.Bサーバーの方のsmtpd_helo_restrictionsを設定する
-こことかここに書いてある
+こことかに書いてある
 smtpd_helo_restrictions = permit_mynetworks,reject_non_fqdn_hostname
 他にもcheck_helo_accessを設定する方法もある
 ちなみにDebianの場合モニタモードで動いているプロセスは
@@ -30,7 +30,7 @@ ps aux | grep mdadm
 で確認してみると分かる
 /etc/init.d/mdadmの方を再起動すれば設定ファイルが読み込まれる
 設定ができたら↓のコマンドで送信できるか試してみると良い
-mdadm --monitor --scan --test -1 " />
+mdadm --monitor --scan --test -1" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yaasita.github.io/2010/05/16/6692/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2010-05-16T00:00:00+09:00" />
@@ -60,10 +60,26 @@ mdadm --monitor --scan --test -1 " />
     </div>
   </header>
   <div class="content">
-    
-
-mdadmが動いているAサーバーからBサーバーに(relay)転送したい<br />とりあえず以下のように設定192.168.0.11が転送サーバーとする<br /><blockquote>relayhost = [192.168.0.11]:25</blockquote><br />しかしsmtpd_helo_restrictionsが転送サーバーに設定されているため<br />Aサーバーのホスト名がFQDNでないため拒否されてしまう<br /><br />1.↓のように設定する(中括弧を忘れずに)<br /><blockquote>mtp_helo_name = [192.168.0.5]</blockquote><br />2.外部PGを使って動的に変更<br /><a href="http://www.postfix-jp.info/trans-2.3/jhtml/MILTER_README.html">参考リンク</a><br /><blockquote>milter_helo_macros</blockquote><br />3.Bサーバーの方のsmtpd_helo_restrictionsを設定する<br /><a href="http://www.postfix-jp.info/jhtml/uce.html">ここ</a>とか<a href="http://linux.kororo.jp/cont/server/postfix_security.php">ここ</a>に書いてある<br /><blockquote>smtpd_helo_restrictions = permit_mynetworks,reject_non_fqdn_hostname</blockquote><br />他にもcheck_helo_accessを設定する方法もある<br /><br />ちなみにDebianの場合モニタモードで動いているプロセスは<br />ps aux | grep mdadm<br />で確認してみると分かる<br />/etc/init.d/mdadmの方を再起動すれば設定ファイルが読み込まれる<br /><br />設定ができたら↓のコマンドで送信できるか試してみると良い<br /><blockquote>mdadm --monitor --scan --test -1</blockquote>
-
+    <p>mdadmが動いているAサーバーからBサーバーに(relay)転送したい<br>
+とりあえず以下のように設定192.168.0.11が転送サーバーとする</p>
+<p><code>relayhost = [192.168.0.11]:25</code></p>
+<p>しかしsmtpd_helo_restrictionsが転送サーバーに設定されているため<br>
+Aサーバーのホスト名がFQDNでないため拒否されてしまう</p>
+<p>1.↓のように設定する(中括弧を忘れずに)<br>
+<code>mtp_helo_name = [192.168.0.5]</code></p>
+<p>2.外部PGを使って動的に変更<br>
+<a href="http://www.postfix-jp.info/trans-2.3/jhtml/MILTER_README.html">参考リンク</a></p>
+<p><code>milter_helo_macros</code></p>
+<p>3.Bサーバーの方のsmtpd_helo_restrictionsを設定する<br>
+<a href="http://www.postfix-jp.info/jhtml/uce.html">ここ</a>とかに書いてある<br>
+<code>smtpd_helo_restrictions = permit_mynetworks,reject_non_fqdn_hostname</code><br>
+他にもcheck_helo_accessを設定する方法もある</p>
+<p>ちなみにDebianの場合モニタモードで動いているプロセスは<br>
+ps aux | grep mdadm<br>
+で確認してみると分かる<br>
+/etc/init.d/mdadmの方を再起動すれば設定ファイルが読み込まれる</p>
+<p>設定ができたら↓のコマンドで送信できるか試してみると良い<br>
+<code>mdadm --monitor --scan --test -1</code></p>
 
   </div>
   <footer>
@@ -189,7 +205,7 @@ mdadmが動いているAサーバーからBサーバーに(relay)転送したい
         </li>
         
         <li>
-          <a href="/categories/net"><span></span>net (241)</a>
+          <a href="/categories/net"><span></span>net (242)</a>
         </li>
         
         <li>
@@ -292,7 +308,7 @@ mdadmが動いているAサーバーからBサーバーに(relay)転送したい
         </li>
         
         <li>
-          <a href="/archives/2025"><span></span>2025 (7)</a>
+          <a href="/archives/2025"><span></span>2025 (8)</a>
         </li>
         
       </ul>

@@ -6,7 +6,22 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 17 May 2025 13:23:08 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Jun 2025 15:30:58 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>s3のマルチパートアップロード料金</title>
+      <link>https://yaasita.github.io/2025/06/21/aws-s3-multipart/</link>
+      <pubDate>Sat, 21 Jun 2025 15:30:58 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/06/21/aws-s3-multipart/</guid>
+      <description>こんな感じで始めるマルチパートアップロードを開始
+aws s3api create-multipart-upload --bucket $BUCKET --key $UPLOAD_KEY --storage-class DEEP_ARCHIVE glacierを指定しても
+アップロード途中の料金はs3のスタンダード料金よりはちょっと安いくらいのお金がかかる
+バージニア北部(us-east-1)リージョンでこんな感じ
+請求書にStagingって書いてあるので気づけるはず
+$0.021 per GB-Month of storage used in GlacierStagingStorage マルチパートアップロードの途中がないか定期的に確認したほうがよい
+aws s3api list-multipart-uploads --bucket バケット名 </description>
+    </item>
+    
     <item>
       <title>sysstatのデータをbigqueryに入れる</title>
       <link>https://yaasita.github.io/2025/05/17/sysstat/</link>
@@ -284,21 +299,6 @@ temp_prefered_lft
 については sysctlで設定すること
 参考リンク
 https://wiki.archlinux.jp/index.php/IPv6 http://dr.slump.jp/IPv6/rfc3041/ https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt </description>
-    </item>
-    
-    <item>
-      <title>ipv4/ipv6確認サイト</title>
-      <link>https://yaasita.github.io/2022/02/23/ipv4-ipv6/</link>
-      <pubDate>Wed, 23 Feb 2022 15:25:52 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2022/02/23/ipv4-ipv6/</guid>
-      <description>自分のIPv4/IPv6アドレスを確認するサイトを作った
-ipv4専用
-https://ipv4.cloud.yaasita.net/
-ipv6専用
-https://ipv6.cloud.yaasita.net/
-ipv4/ipv6両対応(どちらのIPが優先されるか確認用)
-https://ipv46.cloud.yaasita.net/</description>
     </item>
     
   </channel>
