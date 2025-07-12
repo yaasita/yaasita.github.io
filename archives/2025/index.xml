@@ -6,7 +6,21 @@
     <description>Recent content in 2025 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 21 Jun 2025 15:30:58 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2025/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Jul 2025 14:10:30 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>aws s3 glacier</title>
+      <link>https://yaasita.github.io/2025/07/12/aws-s3-glacier/</link>
+      <pubDate>Sat, 12 Jul 2025 14:10:30 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/07/12/aws-s3-glacier/</guid>
+      <description>aws s3 glacier で取り出しするときに
+こんなコマンドを打つ
+これはdeep archiveにあったファイルをstandardクラスのストレージに7日移してダウンロードできるようにするというもの
+aws s3api restore-object \ --bucket $s3bucket \ --key $s3key \ --restore-request &#39;{&amp;quot;Days&amp;quot;:7,&amp;quot;GlacierJobParameters&amp;quot;:{&amp;quot;Tier&amp;quot;:&amp;quot;Bulk&amp;quot;}}&#39; Bulkでリクエストすると大体48時間後ぐらいに取り出せるようになる
+でこれ7日間はstandardクラスの料金がかかるのでダウンロードしたらすぐにこんなコマンドを打って、残存期間を短くした方がいい
+aws s3api restore-object \ --bucket $s3bucket \ --key $s3key \ --restore-request &#39;{&amp;quot;Days&amp;quot;:1,&amp;quot;GlacierJobParameters&amp;quot;:{&amp;quot;Tier&amp;quot;:&amp;quot;Bulk&amp;quot;}}&#39; ちなみに Days: 0 はエラーになる</description>
+    </item>
+    
     <item>
       <title>s3のマルチパートアップロード料金</title>
       <link>https://yaasita.github.io/2025/06/21/aws-s3-multipart/</link>

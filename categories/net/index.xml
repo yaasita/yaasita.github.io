@@ -6,7 +6,21 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 21 Jun 2025 15:30:58 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Jul 2025 14:10:30 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>aws s3 glacier</title>
+      <link>https://yaasita.github.io/2025/07/12/aws-s3-glacier/</link>
+      <pubDate>Sat, 12 Jul 2025 14:10:30 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/07/12/aws-s3-glacier/</guid>
+      <description>aws s3 glacier で取り出しするときに
+こんなコマンドを打つ
+これはdeep archiveにあったファイルをstandardクラスのストレージに7日移してダウンロードできるようにするというもの
+aws s3api restore-object \ --bucket $s3bucket \ --key $s3key \ --restore-request &#39;{&amp;quot;Days&amp;quot;:7,&amp;quot;GlacierJobParameters&amp;quot;:{&amp;quot;Tier&amp;quot;:&amp;quot;Bulk&amp;quot;}}&#39; Bulkでリクエストすると大体48時間後ぐらいに取り出せるようになる
+でこれ7日間はstandardクラスの料金がかかるのでダウンロードしたらすぐにこんなコマンドを打って、残存期間を短くした方がいい
+aws s3api restore-object \ --bucket $s3bucket \ --key $s3key \ --restore-request &#39;{&amp;quot;Days&amp;quot;:1,&amp;quot;GlacierJobParameters&amp;quot;:{&amp;quot;Tier&amp;quot;:&amp;quot;Bulk&amp;quot;}}&#39; ちなみに Days: 0 はエラーになる</description>
+    </item>
+    
     <item>
       <title>s3のマルチパートアップロード料金</title>
       <link>https://yaasita.github.io/2025/06/21/aws-s3-multipart/</link>
@@ -283,22 +297,6 @@ IPv6-1作成してから24時間後にIPv6-2という新しい一時アドレス
 3日目: IPv6-1, IPv6-2, IPv6-3,
 という風に増えていく
 前回</description>
-    </item>
-    
-    <item>
-      <title>Linuxでipv6の一時アドレス</title>
-      <link>https://yaasita.github.io/2022/02/26/ipv6-tempaddr/</link>
-      <pubDate>Sat, 26 Feb 2022 23:16:10 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2022/02/26/ipv6-tempaddr/</guid>
-      <description>systemd-networkdの設定にIPv6PrivacyExtensions足せばOK
-(対応するカーネルパラメータ net.ipv6.conf.xxx.use_tempaddr は自動的に設定される)
-[Network] Address=192.168.0.2/24 Gateway=192.168.0.1 IPv6PrivacyExtensions=yes temp_valid_lft
-と
-temp_prefered_lft
-については sysctlで設定すること
-参考リンク
-https://wiki.archlinux.jp/index.php/IPv6 http://dr.slump.jp/IPv6/rfc3041/ https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt </description>
     </item>
     
   </channel>

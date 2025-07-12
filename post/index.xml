@@ -6,7 +6,21 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 21 Jun 2025 15:30:58 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 12 Jul 2025 14:10:30 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>aws s3 glacier</title>
+      <link>https://yaasita.github.io/2025/07/12/aws-s3-glacier/</link>
+      <pubDate>Sat, 12 Jul 2025 14:10:30 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/07/12/aws-s3-glacier/</guid>
+      <description>aws s3 glacier で取り出しするときに
+こんなコマンドを打つ
+これはdeep archiveにあったファイルをstandardクラスのストレージに7日移してダウンロードできるようにするというもの
+aws s3api restore-object \ --bucket $s3bucket \ --key $s3key \ --restore-request &#39;{&amp;quot;Days&amp;quot;:7,&amp;quot;GlacierJobParameters&amp;quot;:{&amp;quot;Tier&amp;quot;:&amp;quot;Bulk&amp;quot;}}&#39; Bulkでリクエストすると大体48時間後ぐらいに取り出せるようになる
+でこれ7日間はstandardクラスの料金がかかるのでダウンロードしたらすぐにこんなコマンドを打って、残存期間を短くした方がいい
+aws s3api restore-object \ --bucket $s3bucket \ --key $s3key \ --restore-request &#39;{&amp;quot;Days&amp;quot;:1,&amp;quot;GlacierJobParameters&amp;quot;:{&amp;quot;Tier&amp;quot;:&amp;quot;Bulk&amp;quot;}}&#39; ちなみに Days: 0 はエラーになる</description>
+    </item>
+    
     <item>
       <title>s3のマルチパートアップロード料金</title>
       <link>https://yaasita.github.io/2025/06/21/aws-s3-multipart/</link>
@@ -294,16 +308,6 @@ dir /S /A:d /B &amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir /S /
 まずはこんな感じで、どれくらいの流量が入って来るか測定しておく
 meta l4proto {tcp, udp} th dport 53 counter accept それから以下のように制限する
 meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit1 { ip saddr timeout 1h limit rate 20/minute } counter accept meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit2 { ip6 saddr timeout 1h limit rate 20/minute } counter accept ちなみにudpの場合はいつも ct state new にマッチするっぽい</description>
-    </item>
-    
-    <item>
-      <title>shotcutで編集すると音ズレ</title>
-      <link>https://yaasita.github.io/2024/04/21/shotcut/</link>
-      <pubDate>Sun, 21 Apr 2024 04:22:59 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2024/04/21/shotcut/</guid>
-      <description>編集前にこれやっておくと良いかもしれない
-ffmpeg -i input.mp4 output.mp4 </description>
     </item>
     
   </channel>
