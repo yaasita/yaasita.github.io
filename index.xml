@@ -6,9 +6,20 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Jul 2025 14:10:30 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Jul 2025 00:48:32 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>aws s3 glacier</title>
+      <title>TVerをLinuxで見る</title>
+      <link>https://yaasita.github.io/2025/07/20/tver-with-linux/</link>
+      <pubDate>Sun, 20 Jul 2025 00:48:32 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/07/20/tver-with-linux/</guid>
+      <description>firefox(esr)ならそのまま見れるけど、chromeだとPC判定されなくて&amp;quot;アプリで視聴する&amp;quot;ボタンになってしまう
+User-Agentとか、クライアントヒントを以下のように設定すればOK
+header value Sec-Ch-Ua &amp;ldquo;Not)A;Brand&amp;rdquo;;v=&amp;ldquo;8&amp;rdquo;, &amp;ldquo;Chromium&amp;rdquo;;v=&amp;ldquo;138&amp;rdquo;, &amp;ldquo;Google Chrome&amp;rdquo;;v=&amp;ldquo;138&amp;rdquo; Sec-Ch-Ua-Mobile ?0 Sec-Ch-Ua-Platform &amp;ldquo;Windows&amp;rdquo; User-Agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 chrome dev tool -&amp;gt; 設定 -&amp;gt; デバイスで設定</description>
+    </item>
+    
+    <item>
+      <title>glacierで取り出し期間は後から変更できる</title>
       <link>https://yaasita.github.io/2025/07/12/aws-s3-glacier/</link>
       <pubDate>Sat, 12 Jul 2025 14:10:30 +0900</pubDate>
       
@@ -296,18 +307,6 @@ local-data: &#39;mail._domainkey.example.jp. IN TXT &amp;quot;v=DKIM1; k=rsa; &a
       <guid>https://yaasita.github.io/2024/06/11/windows-dir/</guid>
       <description>こんな感じのbatファイルでOK
 dir /S /A:d /B &amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir /S /B *.pdf &amp;gt;&amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir.bat</description>
-    </item>
-    
-    <item>
-      <title>nftablesでDNSサーバーのレート制限</title>
-      <link>https://yaasita.github.io/2024/05/21/nftables-dns/</link>
-      <pubDate>Tue, 21 May 2024 03:42:37 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2024/05/21/nftables-dns/</guid>
-      <description>/etc/nftables.conf に書くやつ
-まずはこんな感じで、どれくらいの流量が入って来るか測定しておく
-meta l4proto {tcp, udp} th dport 53 counter accept それから以下のように制限する
-meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit1 { ip saddr timeout 1h limit rate 20/minute } counter accept meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit2 { ip6 saddr timeout 1h limit rate 20/minute } counter accept ちなみにudpの場合はいつも ct state new にマッチするっぽい</description>
     </item>
     
   </channel>

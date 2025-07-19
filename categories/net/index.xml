@@ -6,9 +6,20 @@
     <description>Recent content in net on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Jul 2025 14:10:30 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Jul 2025 00:48:32 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>aws s3 glacier</title>
+      <title>TVerをLinuxで見る</title>
+      <link>https://yaasita.github.io/2025/07/20/tver-with-linux/</link>
+      <pubDate>Sun, 20 Jul 2025 00:48:32 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/07/20/tver-with-linux/</guid>
+      <description>firefox(esr)ならそのまま見れるけど、chromeだとPC判定されなくて&amp;quot;アプリで視聴する&amp;quot;ボタンになってしまう
+User-Agentとか、クライアントヒントを以下のように設定すればOK
+header value Sec-Ch-Ua &amp;ldquo;Not)A;Brand&amp;rdquo;;v=&amp;ldquo;8&amp;rdquo;, &amp;ldquo;Chromium&amp;rdquo;;v=&amp;ldquo;138&amp;rdquo;, &amp;ldquo;Google Chrome&amp;rdquo;;v=&amp;ldquo;138&amp;rdquo; Sec-Ch-Ua-Mobile ?0 Sec-Ch-Ua-Platform &amp;ldquo;Windows&amp;rdquo; User-Agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 chrome dev tool -&amp;gt; 設定 -&amp;gt; デバイスで設定</description>
+    </item>
+    
+    <item>
+      <title>glacierで取り出し期間は後から変更できる</title>
       <link>https://yaasita.github.io/2025/07/12/aws-s3-glacier/</link>
       <pubDate>Sat, 12 Jul 2025 14:10:30 +0900</pubDate>
       
@@ -276,27 +287,6 @@ yaasitaアカウントのメールで再度問い合わせ
 一回接続に成功した場合はipv4を使うのかipv6を使うのかキャッシュしている状態なので切り替えに時間がかかる
 例えばipv6で繋がっていたサイト側でipv6をドロップさせると
 ip6tables -A INPUT -p tcp --dport 443 -j DROP 数秒遅延した後にipv4で接続する</description>
-    </item>
-    
-    <item>
-      <title>linuxのipv6一時アドレス2</title>
-      <link>https://yaasita.github.io/2022/03/01/ipv6-tmpaddr/</link>
-      <pubDate>Tue, 01 Mar 2022 02:34:41 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2022/03/01/ipv6-tmpaddr/</guid>
-      <description>linuxでipv6一時アドレス使う時に設定するカーネルパラメータ
-net.ipv6.conf.xxx.temp_prefered_lft = 86400 net.ipv6.conf.xxx.temp_valid_lft = 604800 これの意味は、上記のようにデフォルトの設定86400(1日), 604800(7日)だった場合
-xxxインターフェイスにIPv6-1という一時アドレスが付いていたとする
-IPv6-1作成してから24時間後にIPv6-2という新しい一時アドレスを取得する
-取得後はIPv6-2のアドレスを使用して通信をするようになる
-使わなくなったIPv6-1アドレスも7日間は有効なので受信することは可能
-という仕組み
-つまり、最大で7アドレスになるということ
-1日目: IPv6-1
-2日目: IPv6-1, IPv6-2
-3日目: IPv6-1, IPv6-2, IPv6-3,
-という風に増えていく
-前回</description>
     </item>
     
   </channel>
