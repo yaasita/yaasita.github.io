@@ -6,7 +6,44 @@
     <description>Recent content in soft on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 16 May 2025 16:45:58 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Aug 2025 04:43:38 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>preloadの効果</title>
+      <link>https://yaasita.github.io/2025/08/11/preload/</link>
+      <pubDate>Mon, 11 Aug 2025 04:43:38 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/08/11/preload/</guid>
+      <description>なんとなくdebianに入れてたpreload
+設定はこんな感じ /etc/preload.conf
+意味あるか測定してみた
+測定はtimeコマンド経由で以下の条件を満たしたらウィンドウを閉じてrealtimeを比較
+firefox: ホームメニューが出るまで chrome: ホームメニューが出るまで thunderbird: 受信ボックスが見れるまで preloadあり 2025/07/21 (月) 14:52:42
+firefox-esr: 0m24.578s
+google-chrome-stable: 0m35.277s
+thunderbird: 0m24.932s
+2025/07/22 (火) 04:04:37
+firefox-esr: 0m21.119s
+google-chrome-stable: 0m34.912s
+thunderbird: 0m24.668s
+2025/07/27 (日) 02:51:35
+firefox-esr: 0m12.906s
+google-chrome-stable: 0m15.793s
+thunderbird: 0m20.732s
+2025/07/27 (日) 17:10:02
+firefox-esr: 0m21.614s
+google-chrome-stable: 0m38.979s
+thunderbird: 0m25.449s
+preloadなし 2025/08/03 (日) 02:16:58
+firefox-esr: 0m21.507s
+google-chrome-stable: 0m14.986s
+thunderbird: 0m11.729s
+2025/08/11 (月) 04:38:53
+firefox-esr: 0m22.632s
+google-chrome-stable: 0m36.524s
+thunderbird: 0m21.813s
+結論 自分の環境だと意味なさそうなので止めた</description>
+    </item>
+    
     <item>
       <title>動画ファイルのダミーデータ</title>
       <link>https://yaasita.github.io/2025/05/16/download-stream-png-dummy/</link>
@@ -283,33 +320,6 @@ lsコマンドで表示されるファイルの色を変更するには </descri
 こちらの手順に従えば、アップロードファイルと、メッセージのjsonが手に入る
 https://support.skype.com/ja/faq/FA34894/skype-huairutochiyatsutolu-li-woekusupotosurufang-fa
 よく見ると、結構昔の奴も入ってるので昔からサーバー側でログを取ってたみたいね</description>
-    </item>
-    
-    <item>
-      <title>mpdとncmpc</title>
-      <link>https://yaasita.github.io/2021/03/20/mpd-ncmpc/</link>
-      <pubDate>Sat, 20 Mar 2021 14:39:05 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/03/20/mpd-ncmpc/</guid>
-      <description>mpd と ncmpc の設定メモ
-インストール apt install mpd ncmpc セットアップ /etc/mpd.confの設定
-http経由で聞くのでoutputはhttpにします
-~/.config/ncmpc/config
-タグで管理してないのでファイル名だけ表示します
-host = &amp;quot;127.0.0.1&amp;quot; port = 6600 list-format = &amp;quot;%file%&amp;quot; status-format = &amp;quot;%file%&amp;quot; text-editor = vim /var/lib/mpd/music/ に音楽ファイルを入れる(symlinkでも可)
-ncmpcで起動 Ctrl-UでDBのアップデート
-歌詞表示 歌詞表示するなら ncmpcpp の方が楽ですが、最初からvimキーバインドなncmpcが好きなのでこちらを使っています
-方法は以下の記事通り歌詞検索用のスクリプトを配置するだけ
-https://www.use-strict.de/using-ncmpc-to-fetch-and-read-lyrics.html
-debianのパッケージは以下のオプションでビルドされてるので
--Dlyrics_plugin_dir=&amp;quot;/usr/lib/ncmpc/lyrics/&amp;quot; /usr/lib/ncmpc/lyrics/01-test.sh
-みたいなファイルをおきます
-これが歌詞検索の際に実行されます
-こんなファイルを置いて
-#!/bin/bash echo &amp;quot;$@&amp;quot; echo &amp;quot;あいうおえ&amp;quot; artist, titleを設定
-eyeD3 -a backnumber hoge.mp3 eyeD3 -t 高嶺の花子さん takane.mp3 すると第一引数にartist, 第二引数にtitleが入ります
-この画面で、Sを押すと歌詞を~/.cache/ncmpc/lyrics/保存できたりもします
-ファイル名が引数に入らないので、直接ファイルを探せないですが、ファイル名を工夫すれば、mp3ファイルタグ内の歌詞情報を引っ張ることも可能だと思います</description>
     </item>
     
   </channel>

@@ -6,7 +6,44 @@
     <description>Recent content in linux on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 20 Jul 2025 00:48:32 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Aug 2025 04:43:38 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>preloadの効果</title>
+      <link>https://yaasita.github.io/2025/08/11/preload/</link>
+      <pubDate>Mon, 11 Aug 2025 04:43:38 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/08/11/preload/</guid>
+      <description>なんとなくdebianに入れてたpreload
+設定はこんな感じ /etc/preload.conf
+意味あるか測定してみた
+測定はtimeコマンド経由で以下の条件を満たしたらウィンドウを閉じてrealtimeを比較
+firefox: ホームメニューが出るまで chrome: ホームメニューが出るまで thunderbird: 受信ボックスが見れるまで preloadあり 2025/07/21 (月) 14:52:42
+firefox-esr: 0m24.578s
+google-chrome-stable: 0m35.277s
+thunderbird: 0m24.932s
+2025/07/22 (火) 04:04:37
+firefox-esr: 0m21.119s
+google-chrome-stable: 0m34.912s
+thunderbird: 0m24.668s
+2025/07/27 (日) 02:51:35
+firefox-esr: 0m12.906s
+google-chrome-stable: 0m15.793s
+thunderbird: 0m20.732s
+2025/07/27 (日) 17:10:02
+firefox-esr: 0m21.614s
+google-chrome-stable: 0m38.979s
+thunderbird: 0m25.449s
+preloadなし 2025/08/03 (日) 02:16:58
+firefox-esr: 0m21.507s
+google-chrome-stable: 0m14.986s
+thunderbird: 0m11.729s
+2025/08/11 (月) 04:38:53
+firefox-esr: 0m22.632s
+google-chrome-stable: 0m36.524s
+thunderbird: 0m21.813s
+結論 自分の環境だと意味なさそうなので止めた</description>
+    </item>
+    
     <item>
       <title>TVerをLinuxで見る</title>
       <link>https://yaasita.github.io/2025/07/20/tver-with-linux/</link>
@@ -305,22 +342,6 @@ systemctl cat mlocate.service こいうのが追加されてる
 [Service] PrivateTmp=true PrivateDevices=true PrivateNetwork=true ProtectSystem=true debian 10 (buster) 時代はcronだったから気にしなかったけど、多分これ、ProtectSystemの所為で/usrとか見れてないぽい
 今までのように全検索したかったら以下のコマンドで上書きしたほうが良いかと
 systemctl edit mlocate.service </description>
-    </item>
-    
-    <item>
-      <title>postfixのReceived headerを隠す</title>
-      <link>https://yaasita.github.io/2020/12/06/postfix-received-header/</link>
-      <pubDate>Sun, 06 Dec 2020 01:11:10 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2020/12/06/postfix-received-header/</guid>
-      <description>この回答通りなんだけど
-一応補足とか
-自分の環境だと、送信メールサーバーがセカンダリメールサーバーと兼任している
-以下のように設定した
-/etc/postfix/master.cf
-smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode=yes -o smtpd_sasl_auth_enable=yes -o smtpd_reject_unlisted_recipient=no -o smtpd_client_restrictions=$mua_client_restrictions -o smtpd_helo_restrictions=$mua_helo_restrictions -o smtpd_sender_restrictions=$mua_sender_restrictions -o smtpd_recipient_restrictions= -o smtpd_relay_restrictions=permit_sasl_authenticated,reject -o milter_macro_daemon_name=ORIGINATING -o cleanup_service_name=smtpscleanup smtpscleanup unix n - y - 0 cleanup -o header_checks=regexp:/etc/postfix/header_checks /etc/postfix/header_checks
-/^Received:.*/ IGNORE 最初はsmtp_header_checksをmain.cfに書けば良いかなーと思ったんだけど、
-これだと外から入ってきたメール(後にプライマリサーバーにrelayされる)も一律削除されてしまうので都合が悪かった</description>
     </item>
     
   </channel>

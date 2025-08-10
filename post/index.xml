@@ -6,7 +6,44 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 20 Jul 2025 00:48:32 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Aug 2025 04:43:38 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>preloadの効果</title>
+      <link>https://yaasita.github.io/2025/08/11/preload/</link>
+      <pubDate>Mon, 11 Aug 2025 04:43:38 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/08/11/preload/</guid>
+      <description>なんとなくdebianに入れてたpreload
+設定はこんな感じ /etc/preload.conf
+意味あるか測定してみた
+測定はtimeコマンド経由で以下の条件を満たしたらウィンドウを閉じてrealtimeを比較
+firefox: ホームメニューが出るまで chrome: ホームメニューが出るまで thunderbird: 受信ボックスが見れるまで preloadあり 2025/07/21 (月) 14:52:42
+firefox-esr: 0m24.578s
+google-chrome-stable: 0m35.277s
+thunderbird: 0m24.932s
+2025/07/22 (火) 04:04:37
+firefox-esr: 0m21.119s
+google-chrome-stable: 0m34.912s
+thunderbird: 0m24.668s
+2025/07/27 (日) 02:51:35
+firefox-esr: 0m12.906s
+google-chrome-stable: 0m15.793s
+thunderbird: 0m20.732s
+2025/07/27 (日) 17:10:02
+firefox-esr: 0m21.614s
+google-chrome-stable: 0m38.979s
+thunderbird: 0m25.449s
+preloadなし 2025/08/03 (日) 02:16:58
+firefox-esr: 0m21.507s
+google-chrome-stable: 0m14.986s
+thunderbird: 0m11.729s
+2025/08/11 (月) 04:38:53
+firefox-esr: 0m22.632s
+google-chrome-stable: 0m36.524s
+thunderbird: 0m21.813s
+結論 自分の環境だと意味なさそうなので止めた</description>
+    </item>
+    
     <item>
       <title>TVerをLinuxで見る</title>
       <link>https://yaasita.github.io/2025/07/20/tver-with-linux/</link>
@@ -297,16 +334,6 @@ Nameservers 192.168.0.10 thunderbirdの拡張も同じ挙動だった
 (最近のopendkimはデフォルトで2048bit)
 opendkim-genkey -D /etc/postfix/dkim/ -b 2048 -d example.jp -s mail unboundに入れるときは長いので分割する
 local-data: &#39;mail._domainkey.example.jp. IN TXT &amp;quot;v=DKIM1; k=rsa; &amp;quot; &amp;quot;p=xxxxxxxx...&amp;quot; &amp;quot;xxxxxxx...&amp;quot;&#39; ローカルでの検証 opendkim-testmsg &amp;lt; mail.eml </description>
-    </item>
-    
-    <item>
-      <title>windowsでファイルリスト作成</title>
-      <link>https://yaasita.github.io/2024/06/11/windows-dir/</link>
-      <pubDate>Tue, 11 Jun 2024 01:28:19 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2024/06/11/windows-dir/</guid>
-      <description>こんな感じのbatファイルでOK
-dir /S /A:d /B &amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir /S /B *.pdf &amp;gt;&amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir.bat</description>
     </item>
     
   </channel>
