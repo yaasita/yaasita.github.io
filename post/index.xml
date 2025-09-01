@@ -6,7 +6,21 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 11 Aug 2025 04:43:38 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Sep 2025 16:51:45 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>piholeのブロックリスト</title>
+      <link>https://yaasita.github.io/2025/09/01/pihole-block-list/</link>
+      <pubDate>Mon, 01 Sep 2025 16:51:45 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/09/01/pihole-block-list/</guid>
+      <description>こんな感じのhosts形式だけじゃなく
+https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+ABP形式もOKらしい
+https://pi-hole.net/blog/2023/03/22/pi-hole-ftl-v5-22-web-v5-19-and-core-v5-16-1-released/#page-content
+サブドメインも含めてyoutube.comをブロックする場合
+||youtube.com^ </description>
+    </item>
+    
     <item>
       <title>preloadの効果</title>
       <link>https://yaasita.github.io/2025/08/11/preload/</link>
@@ -139,7 +153,7 @@ https://www.youtube.com/watch?v=0l2LVclq804</description>
       
       <guid>https://yaasita.github.io/2025/03/03/rakuten-mobile/</guid>
       <description>スマホ変えました
-Sharp AQUOS wish4 の Docomo版にしました
+Sharp AQUOS wish4 (15680円) の Docomo版にしました
 androidは14
 Docomo版なので、Docomo用のプリインアプリが沢山あって無効化が面倒
 ただ画面がでかくて良いかもしれない
@@ -319,21 +333,6 @@ text/html; w3m -I %{charset} -T text/html; copiousoutput; 参考リンク https:
       <description>設定箇所は2ヶ所
 ツール -&amp;gt; 設定
 アカウント設定の方にもある</description>
-    </item>
-    
-    <item>
-      <title>opendkimメモ</title>
-      <link>https://yaasita.github.io/2024/07/06/dkim/</link>
-      <pubDate>Sat, 06 Jul 2024 03:52:41 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2024/07/06/dkim/</guid>
-      <description>DKIMの公開鍵取得 opendkim-testkeyとかで検証する際に、DNSはroot DNSサーバーから自力で名前解決しようとするのでDNSキャッシュサーバー使いたかったら以下を指定
-/etc/opendkim.conf
-Nameservers 192.168.0.10 thunderbirdの拡張も同じ挙動だった
-公開鍵を作る場合 2048bitを指定しておく方がいい
-(最近のopendkimはデフォルトで2048bit)
-opendkim-genkey -D /etc/postfix/dkim/ -b 2048 -d example.jp -s mail unboundに入れるときは長いので分割する
-local-data: &#39;mail._domainkey.example.jp. IN TXT &amp;quot;v=DKIM1; k=rsa; &amp;quot; &amp;quot;p=xxxxxxxx...&amp;quot; &amp;quot;xxxxxxx...&amp;quot;&#39; ローカルでの検証 opendkim-testmsg &amp;lt; mail.eml </description>
     </item>
     
   </channel>

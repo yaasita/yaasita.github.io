@@ -6,7 +6,21 @@
     <description>Recent content in soft on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 11 Aug 2025 04:43:38 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Sep 2025 16:51:45 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>piholeのブロックリスト</title>
+      <link>https://yaasita.github.io/2025/09/01/pihole-block-list/</link>
+      <pubDate>Mon, 01 Sep 2025 16:51:45 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/09/01/pihole-block-list/</guid>
+      <description>こんな感じのhosts形式だけじゃなく
+https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+ABP形式もOKらしい
+https://pi-hole.net/blog/2023/03/22/pi-hole-ftl-v5-22-web-v5-19-and-core-v5-16-1-released/#page-content
+サブドメインも含めてyoutube.comをブロックする場合
+||youtube.com^ </description>
+    </item>
+    
     <item>
       <title>preloadの効果</title>
       <link>https://yaasita.github.io/2025/08/11/preload/</link>
@@ -308,18 +322,6 @@ dircolors -p &amp;gt; ~/.dir_colors 好きな設定に編集する
 vi ~/.dircolors .bashrcに以下のように書いておいた
 if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^screen ]];then alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto&#39; eval &amp;quot;$(dircolors -b ~/.dircolors)&amp;quot; fi 参考
 lsコマンドで表示されるファイルの色を変更するには </description>
-    </item>
-    
-    <item>
-      <title>skypeログをエクスポート出来るようになってた</title>
-      <link>https://yaasita.github.io/2021/04/04/skype-log-2021/</link>
-      <pubDate>Sun, 04 Apr 2021 05:08:25 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/04/04/skype-log-2021/</guid>
-      <description>これは便利
-こちらの手順に従えば、アップロードファイルと、メッセージのjsonが手に入る
-https://support.skype.com/ja/faq/FA34894/skype-huairutochiyatsutolu-li-woekusupotosurufang-fa
-よく見ると、結構昔の奴も入ってるので昔からサーバー側でログを取ってたみたいね</description>
     </item>
     
   </channel>

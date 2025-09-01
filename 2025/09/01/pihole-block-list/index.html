@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <title>piholeのブロックリスト | # cd ~yaasita</title>
+    <meta name="generator" content="Hugo 0.111.3">
+
+    <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
+
+    <meta property="og:title" content="piholeのブロックリスト" />
+<meta property="og:description" content="こんな感じのhosts形式だけじゃなく
+https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+ABP形式もOKらしい
+https://pi-hole.net/blog/2023/03/22/pi-hole-ftl-v5-22-web-v5-19-and-core-v5-16-1-released/#page-content
+サブドメインも含めてyoutube.comをブロックする場合
+||youtube.com^ " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yaasita.github.io/2025/09/01/pihole-block-list/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2025-09-01T16:51:45+09:00" />
+<meta property="article:modified_time" content="2025-09-01T16:51:45+09:00" />
+
+    <script id="dsq-count-scr" src="https://yaasita.disqus.com/count.js" async></script>
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="36937576-b2d5-4494-aba8-d0b70a153691"></script>
+
+  </head>
+  <body>
+    <div id="wrap">
+      <header class="site-header">
+        <div class="site-header-left">
+          <a class="site-header-title" href="https://yaasita.github.io/"># cd ~yaasita</a>
+        </div>
+      </header>
+      <div class="container">
+        <div id="main">
+
+<div class="article">
+  <header>
+    <div class="article-header">
+      <h1>piholeのブロックリスト</h1>
+      <div class="article-meta">
+        <span class="posttime">2025/09/01 16:51</span>
+      </div>
+    </div>
+  </header>
+  <div class="content">
+    <p>こんな感じのhosts形式だけじゃなく<br>
+<a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts">https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts</a></p>
+<p>ABP形式もOKらしい<br>
+<a href="https://pi-hole.net/blog/2023/03/22/pi-hole-ftl-v5-22-web-v5-19-and-core-v5-16-1-released/#page-content">https://pi-hole.net/blog/2023/03/22/pi-hole-ftl-v5-22-web-v5-19-and-core-v5-16-1-released/#page-content</a></p>
+<p>サブドメインも含めてyoutube.comをブロックする場合</p>
+<pre><code>||youtube.com^
+</code></pre>
+
+  </div>
+  <footer>
+    <div class="article-footer">
+      
+<div class="tags">
+  <ul>
+    
+    <li>
+        <a href="/categories/soft">soft</a>
+    </li>
+    
+  </ul>
+</div>
+
+
+      
+      <div id="disqus_thread"></div>
+<script type="application/javascript">
+    window.disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yaasita" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      
+      <div id="pagenavigation-next-prev">
+        
+        <div id="pagenavigation-next">
+          <span class="pagenav-label">Previous</span>
+          <a href="https://yaasita.github.io/2025/08/11/preload/">preloadの効果</a>
+        </div>
+        
+        
+      </div>
+      
+    </div>
+  </footer>
+</div>
+        </div>
+        <div class="sidebar">
+  
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Author</span>
+    </div>
+    <div id="author">
+      <div class="profile">yaasita: SIerから脱出した人</div>
+      <div>
+        <ul>
+          <li><a href="https://github.com/yaasita"><span></span>GitHub</a></li>
+          <li><a href="https://qiita.com/yaasita"><span></span>Qiita</a></li>
+          <li><a href="https://x.com/yaasita"><span></span>X(twitter)</a></li>
+          <li><a href="https://yaasita.tumblr.com/"><span></span>Tumblr</a></li>
+          <li><a href="https://zenn.dev/yaasita"><span></span>Zenn</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Search</span>
+    </div>
+    <div id="search">
+        <form action="//google.co.jp/search" method="get">
+            <fieldset role="search">
+                <input type="hidden" name="noj" value="1">
+                <input type="hidden" name="q" value="site:yaasita.github.io">
+                <input class="search" type="text" name="q" results="0" placeholder="このブログを検索">
+            </fieldset>
+        </form>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Categories</span>
+    </div>
+    <div class="categories">
+      <ul>
+        
+        <li>
+          <a href="/categories/crack"><span></span>crack (25)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/game"><span></span>game (69)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/hard"><span></span>hard (50)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/life"><span></span>life (74)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/linux"><span></span>linux (354)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/net"><span></span>net (244)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/program"><span></span>program (187)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/rule"><span></span>rule (29)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/soft"><span></span>soft (429)</a>
+        </li>
+        
+        <li>
+          <a href="/categories/windows"><span></span>windows (59)</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>Archives</span>
+    </div>
+    <div class="categories">
+      <ul id="archives">
+        
+        <li>
+          <a href="/archives/2007"><span></span>2007 (63)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2008"><span></span>2008 (119)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2009"><span></span>2009 (151)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2010"><span></span>2010 (122)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2011"><span></span>2011 (83)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2012"><span></span>2012 (71)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2013"><span></span>2013 (73)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2014"><span></span>2014 (88)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2015"><span></span>2015 (25)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2016"><span></span>2016 (23)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2017"><span></span>2017 (51)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2018"><span></span>2018 (32)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2019"><span></span>2019 (23)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2020"><span></span>2020 (18)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2021"><span></span>2021 (16)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2022"><span></span>2022 (17)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2023"><span></span>2023 (17)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2024"><span></span>2024 (16)</a>
+        </li>
+        
+        <li>
+          <a href="/archives/2025"><span></span>2025 (12)</a>
+        </li>
+        
+      </ul>
+    </div>
+    <script>
+        (function () {
+            var reverse = [];
+            var elm1 = document.querySelector('#archives').querySelectorAll("li");
+            var i=0;
+            for(i=0;i<=elm1.length-1;i++){reverse.unshift(elm1[i].innerHTML)}
+            for(i=0;i<=elm1.length-1;i++){elm1[i].innerHTML=reverse[i]}
+        })();
+    </script>
+  </div>
+  <div class="sidebar-content">
+    <div class="sidebar-header">
+      <span>RSS</span>
+    </div>
+    <div id="rss">
+      <a href="/index.xml" type="application/rss+xml" /><img src="/images/rss.svg" width="32" height="32"></a>
+    </div>
+  </div>
+</div>
+
+      </div>
+      <footer>
+        <div id="site-footer-wrap">
+          <div id="site-footer">
+            <span>Powered by <a href="https://gohugo.io/">Hugo</a>.</span>
+            <span>
+              
+              Copyright (c) 2025, <a href="https://github.com/yaasita/yaasita.github.io">yaasita</a>
+              
+            </span>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
+

@@ -6,7 +6,21 @@
     <description>Recent content in 2025 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 11 Aug 2025 04:43:38 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2025/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 01 Sep 2025 16:51:45 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>piholeのブロックリスト</title>
+      <link>https://yaasita.github.io/2025/09/01/pihole-block-list/</link>
+      <pubDate>Mon, 01 Sep 2025 16:51:45 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/09/01/pihole-block-list/</guid>
+      <description>こんな感じのhosts形式だけじゃなく
+https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+ABP形式もOKらしい
+https://pi-hole.net/blog/2023/03/22/pi-hole-ftl-v5-22-web-v5-19-and-core-v5-16-1-released/#page-content
+サブドメインも含めてyoutube.comをブロックする場合
+||youtube.com^ </description>
+    </item>
+    
     <item>
       <title>preloadの効果</title>
       <link>https://yaasita.github.io/2025/08/11/preload/</link>
@@ -139,7 +153,7 @@ https://www.youtube.com/watch?v=0l2LVclq804</description>
       
       <guid>https://yaasita.github.io/2025/03/03/rakuten-mobile/</guid>
       <description>スマホ変えました
-Sharp AQUOS wish4 の Docomo版にしました
+Sharp AQUOS wish4 (15680円) の Docomo版にしました
 androidは14
 Docomo版なので、Docomo用のプリインアプリが沢山あって無効化が面倒
 ただ画面がでかくて良いかもしれない
