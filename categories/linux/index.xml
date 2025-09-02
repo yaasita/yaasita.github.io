@@ -6,7 +6,23 @@
     <description>Recent content in linux on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 11 Aug 2025 04:43:38 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Sep 2025 21:42:31 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>debian13にdanteが無い</title>
+      <link>https://yaasita.github.io/2025/09/02/debian-dante/</link>
+      <pubDate>Tue, 02 Sep 2025 21:42:31 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/09/02/debian-dante/</guid>
+      <description>なぜかdebian13にはdanteが無かった
+forkyにはあるのでそっから持ってくるか
+https://packages.debian.org/forky/dante-server
+公式から持ってきてmakeするしかないかな
+https://www.inet.no/dante/download.html
+普通にmakeすればいいだけ
+./configure make install /etc/sockd.conf
+/etc/systemd/system/sockd.service</description>
+    </item>
+    
     <item>
       <title>preloadの効果</title>
       <link>https://yaasita.github.io/2025/08/11/preload/</link>
@@ -329,19 +345,6 @@ cdコマンドを上書きして、@で始まってたら cd -P でsymlinkを辿
 export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 } あと、bookmarkへの追加もコマンドにしておく
 bookmarkしたいディレクトリに移動してbookmarkコマンドでsymlink作るようにしておく
 function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) } </description>
-    </item>
-    
-    <item>
-      <title>debian bullseyeのmlocateで引っかからないファイル</title>
-      <link>https://yaasita.github.io/2021/08/16/mlocate/</link>
-      <pubDate>Mon, 16 Aug 2021 02:15:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/08/16/mlocate/</guid>
-      <description>debian 11でlocateしても引っかからないファイル多いなと思って調べたら
-systemctl cat mlocate.service こいうのが追加されてる
-[Service] PrivateTmp=true PrivateDevices=true PrivateNetwork=true ProtectSystem=true debian 10 (buster) 時代はcronだったから気にしなかったけど、多分これ、ProtectSystemの所為で/usrとか見れてないぽい
-今までのように全検索したかったら以下のコマンドで上書きしたほうが良いかと
-systemctl edit mlocate.service </description>
     </item>
     
   </channel>

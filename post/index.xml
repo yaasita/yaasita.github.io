@@ -6,7 +6,23 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 01 Sep 2025 16:51:45 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Sep 2025 21:42:31 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>debian13にdanteが無い</title>
+      <link>https://yaasita.github.io/2025/09/02/debian-dante/</link>
+      <pubDate>Tue, 02 Sep 2025 21:42:31 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/09/02/debian-dante/</guid>
+      <description>なぜかdebian13にはdanteが無かった
+forkyにはあるのでそっから持ってくるか
+https://packages.debian.org/forky/dante-server
+公式から持ってきてmakeするしかないかな
+https://www.inet.no/dante/download.html
+普通にmakeすればいいだけ
+./configure make install /etc/sockd.conf
+/etc/systemd/system/sockd.service</description>
+    </item>
+    
     <item>
       <title>piholeのブロックリスト</title>
       <link>https://yaasita.github.io/2025/09/01/pihole-block-list/</link>
@@ -322,17 +338,6 @@ if executable(&#39;vim-language-server&#39;) au User lsp_setup call lsp#register
       <description>~/.muttrc に以下追記
 # html mailを読むための設定 set mailcap_path=~/.mutt/mailcap auto_view text/html alternative_order text/plain text/html # HTMLメールを開く vで添付画面へ行ってそこでctrl-sを押すとHTMLを保存 macro attach \cs &amp;quot;&amp;lt;pipe-entry&amp;gt;cat &amp;gt; /tmp/mutt-mail.html&amp;quot; # HTML内のリンクを表示 macro index \cv |urlview macro pager \cv |urlview ~/.mutt/mailcap
 text/html; w3m -I %{charset} -T text/html; copiousoutput; 参考リンク https://wiki.archlinux.jp/index.php/Mutt</description>
-    </item>
-    
-    <item>
-      <title>thunderbirdでHTMLメールを作る</title>
-      <link>https://yaasita.github.io/2024/08/21/html-mail/</link>
-      <pubDate>Wed, 21 Aug 2024 03:04:05 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2024/08/21/html-mail/</guid>
-      <description>設定箇所は2ヶ所
-ツール -&amp;gt; 設定
-アカウント設定の方にもある</description>
     </item>
     
   </channel>

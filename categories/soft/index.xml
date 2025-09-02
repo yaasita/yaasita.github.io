@@ -6,7 +6,23 @@
     <description>Recent content in soft on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 01 Sep 2025 16:51:45 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Sep 2025 21:42:31 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>debian13にdanteが無い</title>
+      <link>https://yaasita.github.io/2025/09/02/debian-dante/</link>
+      <pubDate>Tue, 02 Sep 2025 21:42:31 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/09/02/debian-dante/</guid>
+      <description>なぜかdebian13にはdanteが無かった
+forkyにはあるのでそっから持ってくるか
+https://packages.debian.org/forky/dante-server
+公式から持ってきてmakeするしかないかな
+https://www.inet.no/dante/download.html
+普通にmakeすればいいだけ
+./configure make install /etc/sockd.conf
+/etc/systemd/system/sockd.service</description>
+    </item>
+    
     <item>
       <title>piholeのブロックリスト</title>
       <link>https://yaasita.github.io/2025/09/01/pihole-block-list/</link>
@@ -307,21 +323,6 @@ https:// (ホストのIP) :30983
 まあkubectl port-forward でやってもいいけど
 ついでに dashbord も同様にできる
 kubectl patch svc kubernetes-dashboard -n kube-system -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; kubectl get svc kubernetes-dashboard -n kube-system $ kubectl get svc kubernetes-dashboard -n kube-system NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE kubernetes-dashboard NodePort 10.</description>
-    </item>
-    
-    <item>
-      <title>dircolorsの設定</title>
-      <link>https://yaasita.github.io/2021/09/20/dircolors/</link>
-      <pubDate>Mon, 20 Sep 2021 17:40:54 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/09/20/dircolors/</guid>
-      <description>dircolorsは
-ls --color=auto したときの色を設定するコマンド
-以下のコマンドで設定を書き出して
-dircolors -p &amp;gt; ~/.dir_colors 好きな設定に編集する
-vi ~/.dircolors .bashrcに以下のように書いておいた
-if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^screen ]];then alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto&#39; eval &amp;quot;$(dircolors -b ~/.dircolors)&amp;quot; fi 参考
-lsコマンドで表示されるファイルの色を変更するには </description>
     </item>
     
   </channel>

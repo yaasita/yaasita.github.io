@@ -6,7 +6,23 @@
     <description>Recent content in 2025 on # cd ~yaasita</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 01 Sep 2025 16:51:45 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2025/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 02 Sep 2025 21:42:31 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>debian13にdanteが無い</title>
+      <link>https://yaasita.github.io/2025/09/02/debian-dante/</link>
+      <pubDate>Tue, 02 Sep 2025 21:42:31 +0900</pubDate>
+      
+      <guid>https://yaasita.github.io/2025/09/02/debian-dante/</guid>
+      <description>なぜかdebian13にはdanteが無かった
+forkyにはあるのでそっから持ってくるか
+https://packages.debian.org/forky/dante-server
+公式から持ってきてmakeするしかないかな
+https://www.inet.no/dante/download.html
+普通にmakeすればいいだけ
+./configure make install /etc/sockd.conf
+/etc/systemd/system/sockd.service</description>
+    </item>
+    
     <item>
       <title>piholeのブロックリスト</title>
       <link>https://yaasita.github.io/2025/09/01/pihole-block-list/</link>
