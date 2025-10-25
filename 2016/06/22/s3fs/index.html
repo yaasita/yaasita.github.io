@@ -6,21 +6,25 @@
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>s3fs使う | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.111.3">
+    <meta name="generator" content="Hugo 0.131.0">
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
 
-    <meta property="og:title" content="s3fs使う" />
-<meta property="og:description" content="s3fsはamazon S3をファイルしすてむのように使うやつ
+    <meta property="og:url" content="https://yaasita.github.io/2016/06/22/s3fs/">
+  <meta property="og:site_name" content="# cd ~yaasita">
+  <meta property="og:title" content="s3fs使う">
+  <meta property="og:description" content="s3fsはamazon S3をファイルしすてむのように使うやつ
 ただ遅い
 基本ここ見てやる
 https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes
 今回はCeontOS6を対象
-# paco入れておく yum install paco # コンパイルに必要なもの入れる yum install -y gcc libstdc&#43;&#43;-devel gcc-c&#43;&#43; curl-devel libxml2-devel openssl-devel mailcap # fuse wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.8.5.tar.gz ./configure make paco -lD &#39;make install&#39; # /usr/local/lib 追記 vi /etc/ld.so.conf ldconfig # s3fs wget http://s3fs.googlecode.com/files/s3fs-1.74.tar.gz tar xvaf s3fs-1.74.tar.gz cd s3fs-1.74/ autoreconf --install export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure --prefix=/usr make paco -lD &#39;make install&#39; # mount s3fs hoge-bucket /s3 -o rw,allow_other,uid=501,gid=501,default_acl=public-read su - apps cd /s3 date &gt; date." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://yaasita.github.io/2016/06/22/s3fs/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2016-06-22T13:40:00+09:00" />
-<meta property="article:modified_time" content="2016-06-22T13:40:00+09:00" />
+# paco入れておく yum install paco # コンパイルに必要なもの入れる yum install -y gcc libstdc&#43;&#43;-devel gcc-c&#43;&#43; curl-devel libxml2-devel openssl-devel mailcap # fuse wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.8.5.tar.gz ./configure make paco -lD &#39;make install&#39; # /usr/local/lib 追記 vi /etc/ld.so.conf ldconfig # s3fs wget http://s3fs.googlecode.com/files/s3fs-1.74.tar.gz tar xvaf s3fs-1.74.tar.gz cd s3fs-1.74/ autoreconf --install export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure --prefix=/usr make paco -lD &#39;make install&#39; # mount s3fs hoge-bucket /s3 -o rw,allow_other,uid=501,gid=501,default_acl=public-read su - apps cd /s3 date &gt; date.">
+  <meta property="og:locale" content="ja">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2016-06-22T13:40:00+09:00">
+    <meta property="article:modified_time" content="2016-06-22T13:40:00+09:00">
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&amp;v=4">
 
     <script id="dsq-count-scr" src="https://yaasita.disqus.com/count.js" async></script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="36937576-b2d5-4494-aba8-d0b70a153691"></script>
@@ -124,7 +128,7 @@ aws s3 sync /s3/test s3://hoge-bucket/test --delete --metadata  &quot;mode=33279
 
       
       <div id="disqus_thread"></div>
-<script type="application/javascript">
+<script>
     window.disqus_config = function () {
     
     
@@ -223,7 +227,7 @@ aws s3 sync /s3/test s3://hoge-bucket/test --delete --metadata  &quot;mode=33279
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (355)</a>
+          <a href="/categories/linux"><span></span>linux (356)</a>
         </li>
         
         <li>
@@ -239,7 +243,7 @@ aws s3 sync /s3/test s3://hoge-bucket/test --delete --metadata  &quot;mode=33279
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (430)</a>
+          <a href="/categories/soft"><span></span>soft (431)</a>
         </li>
         
         <li>
@@ -330,7 +334,7 @@ aws s3 sync /s3/test s3://hoge-bucket/test --delete --metadata  &quot;mode=33279
         </li>
         
         <li>
-          <a href="/archives/2025"><span></span>2025 (13)</a>
+          <a href="/archives/2025"><span></span>2025 (14)</a>
         </li>
         
       </ul>

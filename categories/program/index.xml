@@ -1,304 +1,152 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>program on # cd ~yaasita</title>
+    <title>Program on # cd ~yaasita</title>
     <link>https://yaasita.github.io/categories/program/</link>
-    <description>Recent content in program on # cd ~yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Program on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 17 May 2025 13:23:08 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 17 May 2025 13:23:08 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>sysstatのデータをbigqueryに入れる</title>
       <link>https://yaasita.github.io/2025/05/17/sysstat/</link>
       <pubDate>Sat, 17 May 2025 13:23:08 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/05/17/sysstat/</guid>
-      <description>こんな感じでレポート出して
-sadf -T -j /var/log/sysstat/sa\$(date -d yesterday +%d) -- -ruq -n DEV &amp;gt; /tmp/sadf.json bigquery用のフォーマットに変更
-あとは Looker Studio で見るとか</description>
+      <description>こんな感じでレポート出して&#xA;sadf -T -j /var/log/sysstat/sa\$(date -d yesterday +%d) -- -ruq -n DEV &amp;gt; /tmp/sadf.json bigquery用のフォーマットに変更&#xA;あとは Looker Studio で見るとか</description>
     </item>
-    
     <item>
       <title>動画ファイルのダミーデータ</title>
       <link>https://yaasita.github.io/2025/05/16/download-stream-png-dummy/</link>
       <pubDate>Fri, 16 May 2025 16:45:58 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/05/16/download-stream-png-dummy/</guid>
-      <description>m3uから動画をダウンロードすると
-PNG image data, 1 x 1, 8-bit/color RGBA, non-interlacedのデータになることがある
-こんな感じで先頭8byteを飛ばして
-ffmpegで再エンコードするとよい
-とりあえずffmpeg通せばヘッダは復活する
-ffmpeg -i merged_output.ts -c copy out.mp4 参考リンク
-https://github.com/yt-dlp/yt-dlp/issues/4381</description>
+      <description>m3uから動画をダウンロードすると&#xA;PNG image data, 1 x 1, 8-bit/color RGBA, non-interlacedのデータになることがある&#xA;こんな感じで先頭8byteを飛ばして&#xA;ffmpegで再エンコードするとよい&#xA;とりあえずffmpeg通せばヘッダは復活する&#xA;ffmpeg -i merged_output.ts -c copy out.mp4 参考リンク&#xA;https://github.com/yt-dlp/yt-dlp/issues/4381</description>
     </item>
-    
     <item>
       <title>cody使ってみる</title>
       <link>https://yaasita.github.io/2025/01/01/cody/</link>
       <pubDate>Wed, 01 Jan 2025 15:59:47 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/01/01/cody/</guid>
-      <description>cody が良いという評判を聞いたので使ってみる
-コーディングAI課金するならCodyが断トツ良い話
-https://zenn.dev/sanami/articles/7c24ce973b7e7c
-vimには codeium と github copilot を設定しているので補完AIはもう要らない
-CLIを設定してみる
-マニュアル
-https://sourcegraph.com/docs/cody/clients/install-cli
-ここからアクセストークンを発行
-https://sourcegraph.com/users/gitlab-etjbc/settings/tokens
-環境変数に設定
-export SRC_ACCESS_TOKEN=sgp_xxxxxxxxxxxxxxxxxxxxxx インストール
-npm install -g @sourcegraph/cody cody auth whoami こんな感じで使える
-cody chat -m &#39;Explain React hooks&#39; git diff | cody chat --stdin -m &#39;Write a commit message for this diff&#39; cody chat --context-file src/controller.ts -m &#39;Are there code smells in this file?&#39; ターミナルから使えて良いかもしれない</description>
+      <description>cody が良いという評判を聞いたので使ってみる&#xA;コーディングAI課金するならCodyが断トツ良い話&#xA;https://zenn.dev/sanami/articles/7c24ce973b7e7c&#xA;vimには codeium と github copilot を設定しているので補完AIはもう要らない&#xA;CLIを設定してみる&#xA;マニュアル&#xA;https://sourcegraph.com/docs/cody/clients/install-cli&#xA;ここからアクセストークンを発行&#xA;https://sourcegraph.com/users/gitlab-etjbc/settings/tokens&#xA;環境変数に設定&#xA;export SRC_ACCESS_TOKEN=sgp_xxxxxxxxxxxxxxxxxxxxxx インストール&#xA;npm install -g @sourcegraph/cody cody auth whoami こんな感じで使える&#xA;cody chat -m &#39;Explain React hooks&#39; git diff | cody chat --stdin -m &#39;Write a commit message for this diff&#39; cody chat --context-file src/controller.ts -m &#39;Are there code smells in this file?&#39; ターミナルから使えて良いかもしれない</description>
     </item>
-    
     <item>
       <title>vimでGitHub Copilot</title>
       <link>https://yaasita.github.io/2024/12/21/vim-copilot/</link>
       <pubDate>Sat, 21 Dec 2024 02:00:01 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/12/21/vim-copilot/</guid>
-      <description>Microsoft傘下のGitHub、「GitHub Copilot」を無料に（制限あり）
-https://www.itmedia.co.jp/news/articles/2412/19/news111.html
-ということで使ってみる
-以下インストール
-https://github.com/github/copilot.vim
-vimrcはこんな感じ
-常に補完が効くのは嫌なので使うときだけ有効にする
-候補表示はCtrl-c
-let g:copilot_filetypes = { &#39;*&#39;: v:false } imap &amp;lt;C-c&amp;gt; &amp;lt;Plug&amp;gt;(copilot-next) command! -nargs=0 ToggleCopilot call ToggleCopilot() function! ToggleCopilot() if exists(&#39;g:copilot_filetypes&#39;) unlet g:copilot_filetypes else let g:copilot_filetypes = { &#39;*&#39;: v:false } endif Copilot status endfunction :Copilot setup で設定
-~/.config/github-copilot/ に credentials が入る
-あとチャットはここから出来る
-https://github.com/copilot</description>
+      <description>Microsoft傘下のGitHub、「GitHub Copilot」を無料に（制限あり）&#xA;https://www.itmedia.co.jp/news/articles/2412/19/news111.html&#xA;ということで使ってみる&#xA;以下インストール&#xA;https://github.com/github/copilot.vim&#xA;vimrcはこんな感じ&#xA;常に補完が効くのは嫌なので使うときだけ有効にする&#xA;候補表示はCtrl-c&#xA;let g:copilot_filetypes = { &#39;*&#39;: v:false } imap &amp;lt;C-c&amp;gt; &amp;lt;Plug&amp;gt;(copilot-next) command! -nargs=0 ToggleCopilot call ToggleCopilot() function! ToggleCopilot() if exists(&#39;g:copilot_filetypes&#39;) unlet g:copilot_filetypes else let g:copilot_filetypes = { &#39;*&#39;: v:false } endif Copilot status endfunction :Copilot setup で設定&#xA;~/.config/github-copilot/ に credentials が入る&#xA;あとチャットはここから出来る&#xA;https://github.com/copilot</description>
     </item>
-    
     <item>
       <title>vim-lsp設定</title>
       <link>https://yaasita.github.io/2024/09/21/vim-lsp/</link>
       <pubDate>Sat, 21 Sep 2024 23:43:03 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/09/21/vim-lsp/</guid>
-      <description>よく使うやつ
-perl cpan i PLS
-if executable(&#39;pls&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;perl&#39;, \ &#39;cmd&#39;: [&#39;pls&#39;], \ &#39;allowlist&#39;: [&#39;perl&#39;], \ }) endif bash npm i -g bash-language-server
-if executable(&#39;bash-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;bash-language-server&#39;, \ &#39;cmd&#39;: [&#39;bash-language-server&#39;, &#39;start&#39;], \ &#39;allowlist&#39;: [&#39;sh&#39;, &#39;bash&#39;], \ }) endif vim npm i -g vim-language-server
-if executable(&#39;vim-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;vm-ls&#39;, \ &#39;cmd&#39;: [&#39;vim-language-server&#39;, &#39;--stdio&#39;], \ &#39;allowlist&#39;: [&#39;vim&#39;], \ }) endif terraform https://www.</description>
+      <description>よく使うやつ&#xA;perl cpan i PLS&#xA;if executable(&#39;pls&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;perl&#39;, \ &#39;cmd&#39;: [&#39;pls&#39;], \ &#39;allowlist&#39;: [&#39;perl&#39;], \ }) endif bash npm i -g bash-language-server&#xA;if executable(&#39;bash-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;bash-language-server&#39;, \ &#39;cmd&#39;: [&#39;bash-language-server&#39;, &#39;start&#39;], \ &#39;allowlist&#39;: [&#39;sh&#39;, &#39;bash&#39;], \ }) endif vim npm i -g vim-language-server&#xA;if executable(&#39;vim-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;vm-ls&#39;, \ &#39;cmd&#39;: [&#39;vim-language-server&#39;, &#39;--stdio&#39;], \ &#39;allowlist&#39;: [&#39;vim&#39;], \ }) endif terraform https://www.</description>
     </item>
-    
     <item>
       <title>ポケモン言えるかテスト</title>
       <link>https://yaasita.github.io/2024/04/21/pokemon/</link>
       <pubDate>Sun, 21 Apr 2024 04:06:53 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/04/21/pokemon/</guid>
-      <description>初代ポケモン151匹を言えるかテストするサイトを作った
-poke.html
-コーディングはgemini</description>
+      <description>初代ポケモン151匹を言えるかテストするサイトを作った&#xA;poke.html&#xA;コーディングはgemini</description>
     </item>
-    
     <item>
       <title>codeiumがとても良い</title>
       <link>https://yaasita.github.io/2023/11/21/codeium/</link>
       <pubDate>Tue, 21 Nov 2023 02:41:29 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/11/21/codeium/</guid>
-      <description>codeium がとても良い
-個人利用なら無料 vimにも対応 対応言語が豊富 など
-競合との比較はこちら
-https://codeium.com/compare
-とりあえず自分がVimに入れてる設定
-if v:version &amp;gt;= 900 let g:codeium_disable_bindings = 1 let g:codeium_manual = v:true let g:codeium_enabled = v:false imap &amp;lt;script&amp;gt;&amp;lt;silent&amp;gt;&amp;lt;nowait&amp;gt;&amp;lt;expr&amp;gt; &amp;lt;Right&amp;gt; codeium#Accept() imap &amp;lt;Down&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#CycleCompletions(1)&amp;lt;CR&amp;gt; imap &amp;lt;Up&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#CycleCompletions(-1)&amp;lt;CR&amp;gt; imap &amp;lt;Left&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#Clear()&amp;lt;CR&amp;gt; imap &amp;lt;C-A&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#Complete()&amp;lt;CR&amp;gt; set statusline=%&amp;lt;%f\ %2*%{&amp;amp;mod&amp;amp;&amp;amp;&amp;amp;bt!=#&#39;terminal&#39;?&#39;[+]&#39;:&#39;&#39;}%0*%{&amp;amp;ro?&#39;[RO]&#39;:&#39;&#39;}%h%w%=codeium:%3{codeium#GetStatusString()}\ %{&#39;[&#39;.(&amp;amp;fenc!=&#39;&#39;?&amp;amp;fenc:&amp;amp;enc).&#39;][&#39;.&amp;amp;ff.&#39;]&#39;}\ %2*%y%0*%6l,%c%V%1*%8P endif 手動で有効にする設定を入れて
-Ctrl-Aで保管候補出す
-矢印で保管候補の決定</description>
+      <description>codeium がとても良い&#xA;個人利用なら無料 vimにも対応 対応言語が豊富 など&#xA;競合との比較はこちら&#xA;https://codeium.com/compare&#xA;とりあえず自分がVimに入れてる設定&#xA;if v:version &amp;gt;= 900 let g:codeium_disable_bindings = 1 let g:codeium_manual = v:true let g:codeium_enabled = v:false imap &amp;lt;script&amp;gt;&amp;lt;silent&amp;gt;&amp;lt;nowait&amp;gt;&amp;lt;expr&amp;gt; &amp;lt;Right&amp;gt; codeium#Accept() imap &amp;lt;Down&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#CycleCompletions(1)&amp;lt;CR&amp;gt; imap &amp;lt;Up&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#CycleCompletions(-1)&amp;lt;CR&amp;gt; imap &amp;lt;Left&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#Clear()&amp;lt;CR&amp;gt; imap &amp;lt;C-A&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#Complete()&amp;lt;CR&amp;gt; set statusline=%&amp;lt;%f\ %2*%{&amp;amp;mod&amp;amp;&amp;amp;&amp;amp;bt!=#&#39;terminal&#39;?&#39;[+]&#39;:&#39;&#39;}%0*%{&amp;amp;ro?&#39;[RO]&#39;:&#39;&#39;}%h%w%=codeium:%3{codeium#GetStatusString()}\ %{&#39;[&#39;.(&amp;amp;fenc!=&#39;&#39;?&amp;amp;fenc:&amp;amp;enc).&#39;][&#39;.&amp;amp;ff.&#39;]&#39;}\ %2*%y%0*%6l,%c%V%1*%8P endif 手動で有効にする設定を入れて&#xA;Ctrl-Aで保管候補出す&#xA;矢印で保管候補の決定</description>
     </item>
-    
     <item>
       <title>npmのmysql2パッケージでTLS有効にしてRDS接続</title>
       <link>https://yaasita.github.io/2023/10/19/node-mysql2/</link>
       <pubDate>Thu, 19 Oct 2023 01:16:16 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/10/19/node-mysql2/</guid>
-      <description>nodeのmysql2パッケージには
-こんな感じで、ssl接続のオプションに&amp;quot;Amazon RDS&amp;quot;を指定できるが
-RDSの証明書更新を行うと不都合があるよという話
-証明書更新は以下のrds-ca-2019を置き換える話ね
-https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html
-これ、パッケージ内にCA証明書が入ってるんだけど更新後の証明書が入ってない
-そんで、CA証明書更新のPRは出てるんだけど、これ適用するとaurora serverlessとかRDS proxy経由の検証が失敗する
-なぜなら、証明書のチェーンがこんな感じになってるので
-C = US, O = &amp;#34;Starfield Technologies, Inc.&amp;#34;, OU = Starfield Class 2 Certification Authority C = US, ST = Arizona, L = Scottsdale, O = &amp;#34;Starfield Technologies, Inc.&amp;#34;, CN = Starfield Services Root Certificate Authority - G2 C = US, O = Amazon, CN = Amazon Root CA 1 C = US, O = Amazon, CN = Amazon RSA 2048 M02 CN = *.</description>
+      <description>nodeのmysql2パッケージには&#xA;こんな感じで、ssl接続のオプションに&amp;quot;Amazon RDS&amp;quot;を指定できるが&#xA;RDSの証明書更新を行うと不都合があるよという話&#xA;証明書更新は以下のrds-ca-2019を置き換える話ね&#xA;https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html&#xA;これ、パッケージ内にCA証明書が入ってるんだけど更新後の証明書が入ってない&#xA;そんで、CA証明書更新のPRは出てるんだけど、これ適用するとaurora serverlessとかRDS proxy経由の検証が失敗する&#xA;なぜなら、証明書のチェーンがこんな感じになってるので&#xA;C = US, O = &amp;#34;Starfield Technologies, Inc.&amp;#34;, OU = Starfield Class 2 Certification Authority C = US, ST = Arizona, L = Scottsdale, O = &amp;#34;Starfield Technologies, Inc.&amp;#34;, CN = Starfield Services Root Certificate Authority - G2 C = US, O = Amazon, CN = Amazon Root CA 1 C = US, O = Amazon, CN = Amazon RSA 2048 M02 CN = *.</description>
     </item>
-    
     <item>
       <title>経済指標をチェック</title>
       <link>https://yaasita.github.io/2023/08/12/okasan-fx/</link>
       <pubDate>Sat, 12 Aug 2023 04:02:09 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/08/12/okasan-fx/</guid>
-      <description>この重要経済指標をチェックしてる
-https://www.okasan-online.co.jp/tradeinfo/indicator_event/economic_indicators/
-以下の例はアメリカの★5のイベントを抽出するやつ</description>
+      <description>この重要経済指標をチェックしてる&#xA;https://www.okasan-online.co.jp/tradeinfo/indicator_event/economic_indicators/&#xA;以下の例はアメリカの★5のイベントを抽出するやつ</description>
     </item>
-    
     <item>
       <title>perlでglobを使うときの注意</title>
       <link>https://yaasita.github.io/2023/08/02/perl-glob/</link>
       <pubDate>Wed, 02 Aug 2023 01:45:09 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/08/02/perl-glob/</guid>
-      <description>スカラーコンテキストで評価する場合は注意
-こんな感じでやると
-#!/usr/bin/perl use strict; use warnings; use feature qw(:5.10); use utf8; testglob(); testglob(); sub testglob { my $path = glob(&amp;quot;~/hoge.txt&amp;quot;); say &amp;quot;file = $path&amp;quot;; } 結果はこうなる
-file = /home/yamasita/hoge.txt Use of uninitialized value $path in concatenation (.) or string at test.pl line 12. file = 2回目はundefが返ってる
-これはイテレーターになってるので、配列1個と、打ち止めのundefが返ってるから
-というわけで、こういうときは配列で受け取ってイテレータを最後まで進めたほうが良い
-my $path = @{[glob(&amp;quot;~/hoge.txt&amp;quot;)]}[0]; </description>
+      <description>スカラーコンテキストで評価する場合は注意&#xA;こんな感じでやると&#xA;#!/usr/bin/perl use strict; use warnings; use feature qw(:5.10); use utf8; testglob(); testglob(); sub testglob { my $path = glob(&amp;quot;~/hoge.txt&amp;quot;); say &amp;quot;file = $path&amp;quot;; } 結果はこうなる&#xA;file = /home/yamasita/hoge.txt Use of uninitialized value $path in concatenation (.) or string at test.pl line 12. file = 2回目はundefが返ってる&#xA;これはイテレーターになってるので、配列1個と、打ち止めのundefが返ってるから&#xA;というわけで、こういうときは配列で受け取ってイテレータを最後まで進めたほうが良い&#xA;my $path = @{[glob(&amp;quot;~/hoge.txt&amp;quot;)]}[0]; </description>
     </item>
-    
     <item>
       <title>tumblrのoauth2</title>
       <link>https://yaasita.github.io/2023/08/01/tumblr-oauth-api/</link>
       <pubDate>Tue, 01 Aug 2023 01:22:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/08/01/tumblr-oauth-api/</guid>
-      <description>これの通り
-https://www.tumblr.com/docs/en/api/v2#oauth2-authorization
-とりあえずAPI叩くまで解説
-アプリの登録を以下のURLから行う
-https://www.tumblr.com/oauth/register
-次にパラメータを組み立てて認可リクエスト
-scopeにoffline_accessがあるとrefresh_tokenがもらえて永続的に使えるけど、無い場合は認可リクエストからやり直す一時的なアクセストークンしかもらえない
-let params = new URLSearchParams(); params.append(&#39;client_id&#39;, &#39;xxxxxxxxxxxxxxxxxxxxx&#39;); params.append(&#39;response_type&#39;, &#39;code&#39;); params.append(&#39;scope&#39;, &#39;basic offline_access&#39;); params.append(&#39;state&#39;, &#39;hogehoge1&#39;); let urlParams = params.toString(); console.log(`https://www.tumblr.com/oauth2/authorize?${urlParams}`) あとはリダイレクトURLにコードとstate付きで返ってくるので
-https://example.com/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&amp;amp;state=hogehoge1#_=_ それみてアクセストークンと交換
-コードの有効期限は結構短いので急ぐこと
-curl -F grant_type=authorization_code -F code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_id=xxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_secret=xxxxxxxxxxxxxxx https://api.tumblr.com/v2/oauth2/token リフレッシュトークンからアクセストークンを取得
-ちなみにアクセストークンは40分くらいで有効期限が切れる
-curl -F grant_type=refresh_token -F refresh_token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_id=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_secret=xxxxxxxxxxxxxxxxxxxxxxxxxxx https://api.tumblr.com/v2/oauth2/token あと注意なんだけど、refresh_tokenは使ったら、上記APIから新しいrefresh_tokenが来るので次回はそれを使うこと
-（一度使ったrefresh_tokenはもう使えなくなる)</description>
+      <description>これの通り&#xA;https://www.tumblr.com/docs/en/api/v2#oauth2-authorization&#xA;とりあえずAPI叩くまで解説&#xA;アプリの登録を以下のURLから行う&#xA;https://www.tumblr.com/oauth/register&#xA;次にパラメータを組み立てて認可リクエスト&#xA;scopeにoffline_accessがあるとrefresh_tokenがもらえて永続的に使えるけど、無い場合は認可リクエストからやり直す一時的なアクセストークンしかもらえない&#xA;let params = new URLSearchParams(); params.append(&#39;client_id&#39;, &#39;xxxxxxxxxxxxxxxxxxxxx&#39;); params.append(&#39;response_type&#39;, &#39;code&#39;); params.append(&#39;scope&#39;, &#39;basic offline_access&#39;); params.append(&#39;state&#39;, &#39;hogehoge1&#39;); let urlParams = params.toString(); console.log(`https://www.tumblr.com/oauth2/authorize?${urlParams}`) あとはリダイレクトURLにコードとstate付きで返ってくるので&#xA;https://example.com/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&amp;amp;state=hogehoge1#_=_ それみてアクセストークンと交換&#xA;コードの有効期限は結構短いので急ぐこと&#xA;curl -F grant_type=authorization_code -F code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_id=xxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_secret=xxxxxxxxxxxxxxx https://api.tumblr.com/v2/oauth2/token リフレッシュトークンからアクセストークンを取得&#xA;ちなみにアクセストークンは40分くらいで有効期限が切れる&#xA;curl -F grant_type=refresh_token -F refresh_token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_id=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_secret=xxxxxxxxxxxxxxxxxxxxxxxxxxx https://api.tumblr.com/v2/oauth2/token あと注意なんだけど、refresh_tokenは使ったら、上記APIから新しいrefresh_tokenが来るので次回はそれを使うこと&#xA;（一度使ったrefresh_tokenはもう使えなくなる)</description>
     </item>
-    
     <item>
       <title>5chのスレをパースする</title>
       <link>https://yaasita.github.io/2023/07/22/5ch-parse/</link>
       <pubDate>Sat, 22 Jul 2023 02:29:04 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/07/22/5ch-parse/</guid>
       <description>utf8にしたhtmlファイルを渡す</description>
     </item>
-    
     <item>
       <title>ESMではNODEPATH使わない</title>
       <link>https://yaasita.github.io/2023/01/01/nodepath/</link>
       <pubDate>Sun, 01 Jan 2023 23:21:03 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/01/01/nodepath/</guid>
-      <description>node.jsでNODE_PATHはESMで使えないみたいです
-https://github.com/nodejs/node/issues/38687</description>
+      <description>node.jsでNODE_PATHはESMで使えないみたいです&#xA;https://github.com/nodejs/node/issues/38687</description>
     </item>
-    
     <item>
       <title>fargateでメタデータ取得</title>
       <link>https://yaasita.github.io/2022/11/20/get-metadata/</link>
       <pubDate>Sun, 20 Nov 2022 01:45:42 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/11/20/get-metadata/</guid>
-      <description>ECS内からメタデータ叩いて、自分と同じタスク定義のコンテナが何個あるか数える
-何に使うか分からんけど一応おいておく</description>
+      <description>ECS内からメタデータ叩いて、自分と同じタスク定義のコンテナが何個あるか数える&#xA;何に使うか分からんけど一応おいておく</description>
     </item>
-    
     <item>
       <title>webページの存在証明</title>
       <link>https://yaasita.github.io/2022/10/02/exists/</link>
       <pubDate>Sun, 02 Oct 2022 22:06:36 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/10/02/exists/</guid>
-      <description>このgpg鍵でwebページをpdfにしたやつに署名するという
-まったく意味のないサービスを作った
-https://exists.cloud.yaasita.net/</description>
+      <description>このgpg鍵でwebページをpdfにしたやつに署名するという&#xA;まったく意味のないサービスを作った&#xA;https://exists.cloud.yaasita.net/</description>
     </item>
-    
     <item>
       <title>apacheのautoindex経由で画像のスライドショー</title>
       <link>https://yaasita.github.io/2022/09/15/slideshow/</link>
       <pubDate>Thu, 15 Sep 2022 03:58:50 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/09/15/slideshow/</guid>
-      <description>apacheのmod_autoindexが有効な状態でスライドショーを作る
-こんな状態のディレクトリに
-こんな感じのHTMLを置いて
-スライドショー的に見る</description>
+      <description>apacheのmod_autoindexが有効な状態でスライドショーを作る&#xA;こんな状態のディレクトリに&#xA;こんな感じのHTMLを置いて&#xA;スライドショー的に見る</description>
     </item>
-    
     <item>
       <title>Power Automateのtips</title>
       <link>https://yaasita.github.io/2022/05/09/power-automate-tips/</link>
       <pubDate>Mon, 09 May 2022 03:24:42 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/05/09/power-automate-tips/</guid>
-      <description>Desktop向けのPower Automateのちょっとしたことメモ
-Dosコマンドでchromeを立ち上げる 操作する対象じゃなくて、そのままchromeをキックすればいい場合の設定方法
-chorme.exeまでをフルパスでダブルクォートで囲む方法は上手くいかなかった
-曜日取得 powershellでコマンド実行して
-末尾に改行が入ってしまうので取り除く</description>
+      <description>Desktop向けのPower Automateのちょっとしたことメモ&#xA;Dosコマンドでchromeを立ち上げる 操作する対象じゃなくて、そのままchromeをキックすればいい場合の設定方法&#xA;chorme.exeまでをフルパスでダブルクォートで囲む方法は上手くいかなかった&#xA;曜日取得 powershellでコマンド実行して&#xA;末尾に改行が入ってしまうので取り除く</description>
     </item>
-    
     <item>
       <title>SMTP-TLSRPTのチェック</title>
       <link>https://yaasita.github.io/2022/02/12/tls-report-check/</link>
       <pubDate>Sat, 12 Feb 2022 01:24:48 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/02/12/tls-report-check/</guid>
-      <description>SMTP-TLSRPTをチェックしてtotal-failure-session-countがゼロより大きいかチェックするスクリプト
-(対象はGoogleから貰うレポート)
-こんな感じでメールがあるディレクトリを指定する
-./index.js ~/Maildir/cur/ </description>
+      <description>SMTP-TLSRPTをチェックしてtotal-failure-session-countがゼロより大きいかチェックするスクリプト&#xA;(対象はGoogleから貰うレポート)&#xA;こんな感じでメールがあるディレクトリを指定する&#xA;./index.js ~/Maildir/cur/ </description>
     </item>
-    
     <item>
       <title>RStudioで正規性の確認</title>
       <link>https://yaasita.github.io/2022/01/26/normal_distribution/</link>
       <pubDate>Wed, 26 Jan 2022 02:50:46 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/01/26/normal_distribution/</guid>
-      <description>シャピロ-ウィルク(Shapiro-Wilk)の正規性の検定をやる流れ
-まず以下のようなデータを用意する
-ある音ゲーのスコア
-これは音ゲーのスコアを表していてタイミングよく押せた場合はPERFECT, 早すぎたり遅すぎたりした場合はFAST, SLOWに計上される
-この内ミスの割合が正規分布と見なせるか検定する
-まず、CSVを右上のEnvironmentタブ =&amp;gt; Import Datasetから読み込む
-データをMISSの割合をデータフレームに追加
-library(dplyr) bandori &amp;lt;- bandori %&amp;gt;% mutate(MISS = (FAST + SLOW) / (PERFECT + FAST + SLOW) * 100) ヒストグラムと近似曲線を出す
-hist(bandori$MISS, breaks = seq(0, 20, 1)) dens &amp;lt;- density(bandori$MISS) lines(dens, lwd = 3, col = &amp;#34;blue&amp;#34;) 検定
-shapiro.test(bandori$MISS) 検定統計量とp値
-data: bandori$MISS W = 0.98162, p-value = 0.724 ここで注意なのはこの検定は帰無仮説が「正規分布している」なので
-棄却出来た場合は正規分布ではないと言えるが、
-今回のように棄却できない（受容域）の場合は正規分布していてもおかしくない程度なので何とも言えないです
-ヒストグラム見る限り正規分布としても良さそうですが
-使ったRスクリプト
-https://gist.github.com/yaasita/7c431d0493c9703c91d0a013d03349af</description>
+      <description>シャピロ-ウィルク(Shapiro-Wilk)の正規性の検定をやる流れ&#xA;まず以下のようなデータを用意する&#xA;ある音ゲーのスコア&#xA;これは音ゲーのスコアを表していてタイミングよく押せた場合はPERFECT, 早すぎたり遅すぎたりした場合はFAST, SLOWに計上される&#xA;この内ミスの割合が正規分布と見なせるか検定する&#xA;まず、CSVを右上のEnvironmentタブ =&amp;gt; Import Datasetから読み込む&#xA;データをMISSの割合をデータフレームに追加&#xA;library(dplyr) bandori &amp;lt;- bandori %&amp;gt;% mutate(MISS = (FAST + SLOW) / (PERFECT + FAST + SLOW) * 100) ヒストグラムと近似曲線を出す&#xA;hist(bandori$MISS, breaks = seq(0, 20, 1)) dens &amp;lt;- density(bandori$MISS) lines(dens, lwd = 3, col = &amp;#34;blue&amp;#34;) 検定&#xA;shapiro.test(bandori$MISS) 検定統計量とp値&#xA;data: bandori$MISS W = 0.98162, p-value = 0.724 ここで注意なのはこの検定は帰無仮説が「正規分布している」なので&#xA;棄却出来た場合は正規分布ではないと言えるが、&#xA;今回のように棄却できない（受容域）の場合は正規分布していてもおかしくない程度なので何とも言えないです&#xA;ヒストグラム見る限り正規分布としても良さそうですが&#xA;使ったRスクリプト&#xA;https://gist.github.com/yaasita/7c431d0493c9703c91d0a013d03349af</description>
     </item>
-    
     <item>
       <title>bashでディレクトリのbookmark</title>
       <link>https://yaasita.github.io/2021/09/06/bash-bookmarks/</link>
       <pubDate>Mon, 06 Sep 2021 02:00:02 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/09/06/bash-bookmarks/</guid>
-      <description>これすごい便利だった
-https://threkk.medium.com/how-to-use-bookmarks-in-bash-zsh-6b8074e40774
-CDPATHを使うとこんな便利なことができるのね
-ただ以下の方が指摘されているようにbashだと補完が効かないので, compgenで補完候補を作る方が良さそう
-https://mobile.twitter.com/mattn_jp/status/1434205359573405696
-自分の場合は、gotoっていうコマンドよりcdで通常通り使えた方が良いので
-こんな感じの設定を追加しておいた
-cdコマンドを上書きして、@で始まってたら cd -P でsymlinkを辿るようにして、他は通常通り
-(これなら補完候補も足さなくてOK)
-export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 } あと、bookmarkへの追加もコマンドにしておく
-bookmarkしたいディレクトリに移動してbookmarkコマンドでsymlink作るようにしておく
-function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) } </description>
+      <description>これすごい便利だった&#xA;https://threkk.medium.com/how-to-use-bookmarks-in-bash-zsh-6b8074e40774&#xA;CDPATHを使うとこんな便利なことができるのね&#xA;ただ以下の方が指摘されているようにbashだと補完が効かないので, compgenで補完候補を作る方が良さそう&#xA;https://mobile.twitter.com/mattn_jp/status/1434205359573405696&#xA;自分の場合は、gotoっていうコマンドよりcdで通常通り使えた方が良いので&#xA;こんな感じの設定を追加しておいた&#xA;cdコマンドを上書きして、@で始まってたら cd -P でsymlinkを辿るようにして、他は通常通り&#xA;(これなら補完候補も足さなくてOK)&#xA;export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 } あと、bookmarkへの追加もコマンドにしておく&#xA;bookmarkしたいディレクトリに移動してbookmarkコマンドでsymlink作るようにしておく&#xA;function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) } </description>
     </item>
-    
   </channel>
 </rss>

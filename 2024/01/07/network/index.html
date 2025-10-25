@@ -6,12 +6,14 @@
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>Linuxネットワークの設定 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.111.3">
+    <meta name="generator" content="Hugo 0.131.0">
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
 
-    <meta property="og:title" content="Linuxネットワークの設定" />
-<meta property="og:description" content="たまに忘れるのでメモ
+    <meta property="og:url" content="https://yaasita.github.io/2024/01/07/network/">
+  <meta property="og:site_name" content="# cd ~yaasita">
+  <meta property="og:title" content="Linuxネットワークの設定">
+  <meta property="og:description" content="たまに忘れるのでメモ
 Linuxで通信を見たいときに、あるホストをルーターにする場合
 /etc/sysctl.conf に以下のような設定を入れる
 net.ipv4.ip_forward = 1 net.ipv4.conf.all.accept_redirects = 0 net.ipv4.conf.all.send_redirects = 0 が、ICMMP redirectの送信はallじゃなくてインターフェイス名をちゃんと指定する必要があるぽい
@@ -19,11 +21,13 @@ net.ipv4.conf.eth0.send_redirects = 0 ちなみにICMP redirectで曲がって�
 以下のコマンドで参照とクリアができる
 ip route show cache ip route flush cache あとIPv6をsystemd-networkdで無効化する場合こんな感じ
 [Match] Name=host0 [Network] DHCP=no LinkLocalAddressing=no Address=192.168.0.100/24 Gateway=192.168.0.10 IPv6PrivacyExtensions=no [IPv6] Address= Gateway= AddressGenerator=none 一時アドレス消す場合は以下のコマンド
-ip -6 addr flush dev eth0 scope global dynamic " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://yaasita.github.io/2024/01/07/network/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2024-01-07T06:22:21+09:00" />
-<meta property="article:modified_time" content="2024-01-07T06:22:21+09:00" />
+ip -6 addr flush dev eth0 scope global dynamic ">
+  <meta property="og:locale" content="ja">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-01-07T06:22:21+09:00">
+    <meta property="article:modified_time" content="2024-01-07T06:22:21+09:00">
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&amp;v=4">
 
     <script id="dsq-count-scr" src="https://yaasita.disqus.com/count.js" async></script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="36937576-b2d5-4494-aba8-d0b70a153691"></script>
@@ -104,7 +108,7 @@ AddressGenerator=none
 
       
       <div id="disqus_thread"></div>
-<script type="application/javascript">
+<script>
     window.disqus_config = function () {
     
     
@@ -203,7 +207,7 @@ AddressGenerator=none
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (355)</a>
+          <a href="/categories/linux"><span></span>linux (356)</a>
         </li>
         
         <li>
@@ -219,7 +223,7 @@ AddressGenerator=none
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (430)</a>
+          <a href="/categories/soft"><span></span>soft (431)</a>
         </li>
         
         <li>
@@ -310,7 +314,7 @@ AddressGenerator=none
         </li>
         
         <li>
-          <a href="/archives/2025"><span></span>2025 (13)</a>
+          <a href="/archives/2025"><span></span>2025 (14)</a>
         </li>
         
       </ul>

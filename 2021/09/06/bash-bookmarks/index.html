@@ -6,12 +6,14 @@
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>bashでディレクトリのbookmark | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.111.3">
+    <meta name="generator" content="Hugo 0.131.0">
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
 
-    <meta property="og:title" content="bashでディレクトリのbookmark" />
-<meta property="og:description" content="これすごい便利だった
+    <meta property="og:url" content="https://yaasita.github.io/2021/09/06/bash-bookmarks/">
+  <meta property="og:site_name" content="# cd ~yaasita">
+  <meta property="og:title" content="bashでディレクトリのbookmark">
+  <meta property="og:description" content="これすごい便利だった
 https://threkk.medium.com/how-to-use-bookmarks-in-bash-zsh-6b8074e40774
 CDPATHを使うとこんな便利なことができるのね
 ただ以下の方が指摘されているようにbashだと補完が効かないので, compgenで補完候補を作る方が良さそう
@@ -20,13 +22,15 @@ https://mobile.twitter.com/mattn_jp/status/1434205359573405696
 こんな感じの設定を追加しておいた
 cdコマンドを上書きして、@で始まってたら cd -P でsymlinkを辿るようにして、他は通常通り
 (これなら補完候補も足さなくてOK)
-export CDPATH=&quot;.:$HOME/.bookmarks&quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &quot;$@&quot; || return 1 } あと、bookmarkへの追加もコマンドにしておく
+export CDPATH=&#34;.:$HOME/.bookmarks&#34; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &#34;$@&#34; || return 1 } あと、bookmarkへの追加もコマンドにしておく
 bookmarkしたいディレクトリに移動してbookmarkコマンドでsymlink作るようにしておく
-function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) } " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://yaasita.github.io/2021/09/06/bash-bookmarks/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-09-06T02:00:02+09:00" />
-<meta property="article:modified_time" content="2021-09-06T02:00:02+09:00" />
+function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) } ">
+  <meta property="og:locale" content="ja">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2021-09-06T02:00:02+09:00">
+    <meta property="article:modified_time" content="2021-09-06T02:00:02+09:00">
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&amp;v=4">
 
     <script id="dsq-count-scr" src="https://yaasita.disqus.com/count.js" async></script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="36937576-b2d5-4494-aba8-d0b70a153691"></script>
@@ -99,7 +103,7 @@ bookmarkしたいディレクトリに移動して<code>bookmark</code>コマン
 
       
       <div id="disqus_thread"></div>
-<script type="application/javascript">
+<script>
     window.disqus_config = function () {
     
     
@@ -198,7 +202,7 @@ bookmarkしたいディレクトリに移動して<code>bookmark</code>コマン
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (355)</a>
+          <a href="/categories/linux"><span></span>linux (356)</a>
         </li>
         
         <li>
@@ -214,7 +218,7 @@ bookmarkしたいディレクトリに移動して<code>bookmark</code>コマン
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (430)</a>
+          <a href="/categories/soft"><span></span>soft (431)</a>
         </li>
         
         <li>
@@ -305,7 +309,7 @@ bookmarkしたいディレクトリに移動して<code>bookmark</code>コマン
         </li>
         
         <li>
-          <a href="/archives/2025"><span></span>2025 (13)</a>
+          <a href="/archives/2025"><span></span>2025 (14)</a>
         </li>
         
       </ul>

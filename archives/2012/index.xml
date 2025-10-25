@@ -4,301 +4,149 @@
     <title>2012 on # cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2012/</link>
     <description>Recent content in 2012 on # cd ~yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 27 Dec 2012 00:00:00 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2012/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 27 Dec 2012 00:00:00 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/archives/2012/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>起動後一定時間経ったら○○の処理をする</title>
       <link>https://yaasita.github.io/2012/12/27/1805/</link>
       <pubDate>Thu, 27 Dec 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/12/27/1805/</guid>
-      <description>というスクリプトの例
-uptimeから取ってくる
-以下は3時間経ったらhoge.shを実行する</description>
+      <description>というスクリプトの例&#xA;uptimeから取ってくる&#xA;以下は3時間経ったらhoge.shを実行する</description>
     </item>
-    
     <item>
       <title>unboundのインストールと初期設定</title>
       <link>https://yaasita.github.io/2012/12/24/1826/</link>
       <pubDate>Mon, 24 Dec 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/12/24/1826/</guid>
-      <description> 1.インストール
-普通にaptで入れる
-2.初期設定
-unbound.conf
-interface: 0.0.0.0
-access-control: 192.168.0.0/24 allow
-3.レコード設定
-local-data: &#34;hoge.net. IN A 192.168.0.4&#34;
-local-data: &#34;hoge.net. IN MX 10 hoge.net.&#34;
-local-data-ptr: &#34;192.168.0.4 hoge.net.&#34;
-※ hoge.netのAレコードを設定してしまうと、hoge.netのMXレコードを
-本物のDNSに問い合わせないで無しで返してしまうので注意
-4.ulimitの設定
-warningsがうるさいなら
-ulimit -n 4140
-を/etc/init.d/unboundの頭の方に書いておくと良いんじゃないでしょうか？ </description>
+      <description> 1.インストール&#xA;普通にaptで入れる&#xA;2.初期設定&#xA;unbound.conf&#xA;interface: 0.0.0.0&#xA;access-control: 192.168.0.0/24 allow&#xA;3.レコード設定&#xA;local-data: &#34;hoge.net. IN A 192.168.0.4&#34;&#xA;local-data: &#34;hoge.net. IN MX 10 hoge.net.&#34;&#xA;local-data-ptr: &#34;192.168.0.4 hoge.net.&#34;&#xA;※ hoge.netのAレコードを設定してしまうと、hoge.netのMXレコードを&#xA;本物のDNSに問い合わせないで無しで返してしまうので注意&#xA;4.ulimitの設定&#xA;warningsがうるさいなら&#xA;ulimit -n 4140&#xA;を/etc/init.d/unboundの頭の方に書いておくと良いんじゃないでしょうか？ </description>
     </item>
-    
     <item>
       <title>Debianにpostfixadminをインストール</title>
       <link>https://yaasita.github.io/2012/12/23/1848/</link>
       <pubDate>Sun, 23 Dec 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/12/23/1848/</guid>
-      <description>1.インストール
-# apt-get install postfixadmin
-2.Webサーバ設定
-/etc/postfixadminに設定ファイルがあるのでリンクを張る
-今回はlighttpdで
-# ln -s /etc/postfixadmin/lighttpd.conf /etc/lighttpd/conf-enabled/60-postfixadmin.conf
-# /etc/init.d/lighttpd restart
-3.初期セットアップ
-http://yourdomain.com/postfixadmin/setup.php
-にアクセスしてセットアップ
-初期パスワードとadminアカウントを作成
-4.その他の設定
-/usr/share/doc/postfixadmin/DOCUMENTS
-↑を読む</description>
+      <description>1.インストール&#xA;# apt-get install postfixadmin&#xA;2.Webサーバ設定&#xA;/etc/postfixadminに設定ファイルがあるのでリンクを張る&#xA;今回はlighttpdで&#xA;# ln -s /etc/postfixadmin/lighttpd.conf /etc/lighttpd/conf-enabled/60-postfixadmin.conf&#xA;# /etc/init.d/lighttpd restart&#xA;3.初期セットアップ&#xA;http://yourdomain.com/postfixadmin/setup.php&#xA;にアクセスしてセットアップ&#xA;初期パスワードとadminアカウントを作成&#xA;4.その他の設定&#xA;/usr/share/doc/postfixadmin/DOCUMENTS&#xA;↑を読む</description>
     </item>
-    
     <item>
       <title>動画でプログラミングを学べるサイト</title>
       <link>https://yaasita.github.io/2012/12/21/1869/</link>
       <pubDate>Fri, 21 Dec 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/12/21/1869/</guid>
-      <description> ドットインストール
-http://dotinstall.com/ </description>
+      <description> ドットインストール&#xA;http://dotinstall.com/ </description>
     </item>
-    
     <item>
       <title>ビルドするためにインストールするパッケージをまとめて</title>
       <link>https://yaasita.github.io/2012/12/19/1889/</link>
       <pubDate>Wed, 19 Dec 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/12/19/1889/</guid>
-      <description> 入れる方法は
-↓みたいにする
-この例だとvimに必要なパッケージ
-apt-get build-dep vim
-http://vim-jp.org/docs/build_linux.html </description>
+      <description> 入れる方法は&#xA;↓みたいにする&#xA;この例だとvimに必要なパッケージ&#xA;apt-get build-dep vim&#xA;http://vim-jp.org/docs/build_linux.html </description>
     </item>
-    
     <item>
       <title>AutoHotkeyを使ってTeraTerm &#43; vimを快適にする</title>
       <link>https://yaasita.github.io/2012/11/25/1951/</link>
       <pubDate>Sun, 25 Nov 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/11/25/1951/</guid>
-      <description> Esc押したらIMEをオフにしてくれれば良いので以下のような設定にした
-あと、無変換キー＋Rでsudoしてくれる設定も追加しておいた
-AutoHotkey.ahk
-注意点としてはEscがEscを再帰的に呼んで無限ループするので、Escの頭に$を付ける必要があること
-IMEのOn/Offの切り替えはえらい人がスクリプトを作ってくれていたので、そっちからコピペ
-http://www6.atwiki.jp/eamat/pub/MyScript/Lib/
-参考リンク
-https://sites.google.com/site/autohotkeyjp/reference/AutoHotkey_L/index </description>
+      <description> Esc押したらIMEをオフにしてくれれば良いので以下のような設定にした&#xA;あと、無変換キー＋Rでsudoしてくれる設定も追加しておいた&#xA;AutoHotkey.ahk&#xA;注意点としてはEscがEscを再帰的に呼んで無限ループするので、Escの頭に$を付ける必要があること&#xA;IMEのOn/Offの切り替えはえらい人がスクリプトを作ってくれていたので、そっちからコピペ&#xA;http://www6.atwiki.jp/eamat/pub/MyScript/Lib/&#xA;参考リンク&#xA;https://sites.google.com/site/autohotkeyjp/reference/AutoHotkey_L/index </description>
     </item>
-    
     <item>
       <title>Web上でプログラミングの勉強が出来るサイト</title>
       <link>https://yaasita.github.io/2012/11/25/1910/</link>
       <pubDate>Sun, 25 Nov 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/11/25/1910/</guid>
-      <description> http://www.codecademy.com
-http://www.codeschool.com/ </description>
+      <description> http://www.codecademy.com&#xA;http://www.codeschool.com/ </description>
     </item>
-    
     <item>
       <title>雨の音を流してくれるサイト</title>
       <link>https://yaasita.github.io/2012/11/25/1931/</link>
       <pubDate>Sun, 25 Nov 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/11/25/1931/</guid>
-      <description> http://www.rainymood.com/
-http://raining.fm/
-参考リンク
-http://www.lifehacker.jp/2012/08/120820_raining_fm.html </description>
+      <description> http://www.rainymood.com/&#xA;http://raining.fm/&#xA;参考リンク&#xA;http://www.lifehacker.jp/2012/08/120820_raining_fm.html </description>
     </item>
-    
     <item>
       <title>teratermインストール後にやることメモ</title>
       <link>https://yaasita.github.io/2012/11/24/1971/</link>
       <pubDate>Sat, 24 Nov 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/11/24/1971/</guid>
-      <description> Teratermが新しくなっていたので、ここでまとめておく
-1.TERATERM.INI
-2.KEYBOARD.CNF
-https://raw.github.com/gist/4140449/2bad78bfe24a407764f13c7055fc0ed452f1affd/KEYBOARD.CNF
-3.テーマファイル
-テーマファイルとかあれば
-https://raw.github.com/gist/4140449/91748dba84035a7a0f0ac7dfa8b8ec480b8ed93c/yamasita.ini </description>
+      <description> Teratermが新しくなっていたので、ここでまとめておく&#xA;1.TERATERM.INI&#xA;2.KEYBOARD.CNF&#xA;https://raw.github.com/gist/4140449/2bad78bfe24a407764f13c7055fc0ed452f1affd/KEYBOARD.CNF&#xA;3.テーマファイル&#xA;テーマファイルとかあれば&#xA;https://raw.github.com/gist/4140449/91748dba84035a7a0f0ac7dfa8b8ec480b8ed93c/yamasita.ini </description>
     </item>
-    
     <item>
       <title>phpでctagsを使う</title>
       <link>https://yaasita.github.io/2012/11/22/1990/</link>
       <pubDate>Thu, 22 Nov 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/11/22/1990/</guid>
-      <description> phpが入ってるディレクトリで
-ctags -a -R --langmap=PHP:.php --php-types=c+f+d+v+i .
-でOKみたい
-↓で種類みれる
-ctags --list-kinds=php
-こうすればtagsファイルが作られる
-参考リンク
-http://blog.veryposi.info/programing/php/php-ctags-vim/ </description>
+      <description> phpが入ってるディレクトリで&#xA;ctags -a -R --langmap=PHP:.php --php-types=c+f+d+v+i .&#xA;でOKみたい&#xA;↓で種類みれる&#xA;ctags --list-kinds=php&#xA;こうすればtagsファイルが作られる&#xA;参考リンク&#xA;http://blog.veryposi.info/programing/php/php-ctags-vim/ </description>
     </item>
-    
     <item>
       <title>2012版 Firefox Thunderbird 使ってるアドオンまとめ</title>
       <link>https://yaasita.github.io/2012/11/03/2009/</link>
       <pubDate>Sat, 03 Nov 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/11/03/2009/</guid>
-      <description>FirefoxautotranslatorVideo DownloadHelperelasticfox-ec2tagFirebugFireMobileSimulatorLiveNavigate UpNicoFoxPersonas PlusQuickJavaScrapBookTomblooViewSourceWithVimiumテキストリンク
-ThunderbirdDisplay Mail User AgentLightningMailHops</description>
+      <description>FirefoxautotranslatorVideo DownloadHelperelasticfox-ec2tagFirebugFireMobileSimulatorLiveNavigate UpNicoFoxPersonas PlusQuickJavaScrapBookTomblooViewSourceWithVimiumテキストリンク&#xA;ThunderbirdDisplay Mail User AgentLightningMailHops</description>
     </item>
-    
     <item>
       <title>screenfetch</title>
       <link>https://yaasita.github.io/2012/10/28/2029/</link>
       <pubDate>Sun, 28 Oct 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/10/28/2029/</guid>
-      <description>bashで出来たシステムモニタ
-各ディストリのマークとか出る</description>
+      <description>bashで出来たシステムモニタ&#xA;各ディストリのマークとか出る</description>
     </item>
-    
     <item>
       <title>tumblrのショートカットキー</title>
       <link>https://yaasita.github.io/2012/10/20/2051/</link>
       <pubDate>Sat, 20 Oct 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/10/20/2051/</guid>
-      <description>ダッシュボードで使えるよ
-j（ジェイ） 次のpostへ移動
-k（ケー） 前のpostへ移動
-l（エル） like / like解除
-n（エヌ） notesを開く / 閉じる
-r（アール） reblog（別ウィンドウが開く）
-R（Shift＋アール） 即時reblog
-E（Shift＋イー） キュー（投稿予約）へreblog
-スペース 動画再生？（未確認）
-カーソルキー左 前のページへ
-カーソルキー右 次のページへ
-z+tab 切り替え
-http://dara-j.asablo.jp/blog/2012/10/17/6605357
-http://www.tumblr.com/tips#keyboard_shortcuts</description>
+      <description>ダッシュボードで使えるよ&#xA;j（ジェイ） 次のpostへ移動&#xA;k（ケー） 前のpostへ移動&#xA;l（エル） like / like解除&#xA;n（エヌ） notesを開く / 閉じる&#xA;r（アール） reblog（別ウィンドウが開く）&#xA;R（Shift＋アール） 即時reblog&#xA;E（Shift＋イー） キュー（投稿予約）へreblog&#xA;スペース 動画再生？（未確認）&#xA;カーソルキー左 前のページへ&#xA;カーソルキー右 次のページへ&#xA;z+tab 切り替え&#xA;http://dara-j.asablo.jp/blog/2012/10/17/6605357&#xA;http://www.tumblr.com/tips#keyboard_shortcuts</description>
     </item>
-    
     <item>
       <title>xsetで省電力モードを解除</title>
       <link>https://yaasita.github.io/2012/10/16/2070/</link>
       <pubDate>Tue, 16 Oct 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/10/16/2070/</guid>
-      <description>現在の設定を確認 xset q
-DPMSを無効化
-xset -dpmsxset dpms force off
-DPMSを有効化
-xset +dpms スタンバイ、サスペンド、パワーオフ時間を設定（有効化時しか意味は無い）
-xset dpms 300 600 900
-参考リンク
-http://kakurasan.ehoh.net/summary/xset.cmd.term.html
-http://www.atmarkit.co.jp/flinux/rensai/linuxtips/254usedpmsx3x.html</description>
+      <description>現在の設定を確認 xset q&#xA;DPMSを無効化&#xA;xset -dpmsxset dpms force off&#xA;DPMSを有効化&#xA;xset +dpms スタンバイ、サスペンド、パワーオフ時間を設定（有効化時しか意味は無い）&#xA;xset dpms 300 600 900&#xA;参考リンク&#xA;http://kakurasan.ehoh.net/summary/xset.cmd.term.html&#xA;http://www.atmarkit.co.jp/flinux/rensai/linuxtips/254usedpmsx3x.html</description>
     </item>
-    
     <item>
       <title>tumblrのリンクと要素まとめ（使う分だけ）</title>
       <link>https://yaasita.github.io/2012/10/11/2089/</link>
       <pubDate>Thu, 11 Oct 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/10/11/2089/</guid>
-      <description>自分がフォローしている人をブログに表示する HTMLの編集からどうぞ
-following &amp;lt;div&amp;gt; {block:Followed} &amp;lt;a href=&amp;quot;{FollowedURL}&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;{FollowedPortraitURL-48}&amp;quot;/&amp;gt;&amp;lt;/a&amp;gt; {/block:Followed} &amp;lt;/div&amp;gt; {/block:Following} リンク (hogeをユーザ名に変更すること)
-アーカイブ（http://hoge.tumblr.com/archive） ランダム表示（http://hoge.tumblr.com/random） RSS（http://hoge.tumblr.com/rss） 携帯向け簡易表示（http://hoge.tumblr.com/mobile） Like一覧（http://www.tumblr.com/liked/by/hoge） ログイン時有効リンク 自分がフォローしている人一覧（ http://www.tumblr.com/following ） 自分をフォローしている人一覧（ http://www.tumblr.com/followers ） 参考リンク
-http://tagblr.tumblr.com/post/340724562
-http://ryo-skd.tumblr.com/post/311289824/tumblr-tumblr-nplll-mutter</description>
+      <description>自分がフォローしている人をブログに表示する HTMLの編集からどうぞ&#xA;following &amp;lt;div&amp;gt; {block:Followed} &amp;lt;a href=&amp;quot;{FollowedURL}&amp;quot;&amp;gt;&amp;lt;img src=&amp;quot;{FollowedPortraitURL-48}&amp;quot;/&amp;gt;&amp;lt;/a&amp;gt; {/block:Followed} &amp;lt;/div&amp;gt; {/block:Following} リンク (hogeをユーザ名に変更すること)&#xA;アーカイブ（http://hoge.tumblr.com/archive） ランダム表示（http://hoge.tumblr.com/random） RSS（http://hoge.tumblr.com/rss） 携帯向け簡易表示（http://hoge.tumblr.com/mobile） Like一覧（http://www.tumblr.com/liked/by/hoge） ログイン時有効リンク 自分がフォローしている人一覧（ http://www.tumblr.com/following ） 自分をフォローしている人一覧（ http://www.tumblr.com/followers ） 参考リンク&#xA;http://tagblr.tumblr.com/post/340724562&#xA;http://ryo-skd.tumblr.com/post/311289824/tumblr-tumblr-nplll-mutter</description>
     </item>
-    
     <item>
       <title>twitterのbotを作る</title>
       <link>https://yaasita.github.io/2012/10/09/2109/</link>
       <pubDate>Tue, 09 Oct 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/10/09/2109/</guid>
-      <description>そんなに難しくないと思った・・・
-CONSUMER_KEYとCONSUMER_SECRETの取得 アプリの登録を行う
-このページから飛んで適当に入力する
-ユーザに許可してもらいアクセストークンをもらう スクリプト実行⇒authページ⇒許可を押す⇒数値をメモ⇒スクリプトに入力
-#!/usr/bin/env ruby # coding: utf-8 require &#39;rubygems&#39; require &#39;oauth&#39; OAUTH_CONSUMER_KEY=&#39;XXXXXXXXXXXXXXXXXXXXXXXXXX&#39; OAUTH_CONSUMER_SECRET=&#39;XXXXXXXXXXXXXXXXXXXXXXXX&#39; consumer = OAuth::Consumer.new( OAUTH_CONSUMER_KEY , OAUTH_CONSUMER_SECRET , { :site=&amp;amp;amp;gt;&amp;quot;http://twitter.com&amp;quot; }) #optprm = { :oauth_callback=&amp;amp;amp;gt;&amp;quot;（コールバック先のURL）&amp;quot; } request_token = consumer.get_request_token puts &amp;quot;Access this URL and approve =&amp;amp;amp;gt; #{request_token.authorize_url}&amp;quot; print &amp;quot;Input OAuth Verifier: &amp;quot; oauth_verifier = gets.chomp.strip access_token = request_token.get_access_token( :oauth_verifier =&amp;amp;amp;gt; oauth_verifier ) puts &amp;quot;Access token: #{access_token.token}&amp;quot; puts &amp;quot;Access token secret: #{access_token.secret}&amp;quot; 後はもらったアクセストークン＆コンシューマIDでスクリプトを書く twitter のgemでもoauthのgemでも簡単なことをやる場合はあんま変わんない感じ</description>
+      <description>そんなに難しくないと思った・・・&#xA;CONSUMER_KEYとCONSUMER_SECRETの取得 アプリの登録を行う&#xA;このページから飛んで適当に入力する&#xA;ユーザに許可してもらいアクセストークンをもらう スクリプト実行⇒authページ⇒許可を押す⇒数値をメモ⇒スクリプトに入力&#xA;#!/usr/bin/env ruby # coding: utf-8 require &#39;rubygems&#39; require &#39;oauth&#39; OAUTH_CONSUMER_KEY=&#39;XXXXXXXXXXXXXXXXXXXXXXXXXX&#39; OAUTH_CONSUMER_SECRET=&#39;XXXXXXXXXXXXXXXXXXXXXXXX&#39; consumer = OAuth::Consumer.new( OAUTH_CONSUMER_KEY , OAUTH_CONSUMER_SECRET , { :site=&amp;amp;amp;gt;&amp;quot;http://twitter.com&amp;quot; }) #optprm = { :oauth_callback=&amp;amp;amp;gt;&amp;quot;（コールバック先のURL）&amp;quot; } request_token = consumer.get_request_token puts &amp;quot;Access this URL and approve =&amp;amp;amp;gt; #{request_token.authorize_url}&amp;quot; print &amp;quot;Input OAuth Verifier: &amp;quot; oauth_verifier = gets.chomp.strip access_token = request_token.get_access_token( :oauth_verifier =&amp;amp;amp;gt; oauth_verifier ) puts &amp;quot;Access token: #{access_token.token}&amp;quot; puts &amp;quot;Access token secret: #{access_token.secret}&amp;quot; 後はもらったアクセストークン＆コンシューマIDでスクリプトを書く twitter のgemでもoauthのgemでも簡単なことをやる場合はあんま変わんない感じ</description>
     </item>
-    
     <item>
       <title>munin2.0が出てるらしい</title>
       <link>https://yaasita.github.io/2012/10/02/2129/</link>
       <pubDate>Tue, 02 Oct 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/10/02/2129/</guid>
-      <description> http://pocketstudio.jp/log3/2012/06/04/new-features-of-munin2/
-http://dozen.dip.jp/archives/212 </description>
+      <description> http://pocketstudio.jp/log3/2012/06/04/new-features-of-munin2/&#xA;http://dozen.dip.jp/archives/212 </description>
     </item>
-    
     <item>
       <title>ffmpegの使い方</title>
       <link>https://yaasita.github.io/2012/09/30/2150/</link>
       <pubDate>Sun, 30 Sep 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/09/30/2150/</guid>
-      <description> &amp;amp;nbsp;ffmpeg -i 入力ファイル 出力ファイル
-みたいな感じでOKらしい
-ffmpeg -i hoge.flv hoge.mp4
-でもいけた
-mp3のビットレート調整とかも出来る
-ffmpeg -i input.mp3 -ab 128k output.mp3
-http://d.hatena.ne.jp/takuya_1st/20120225/1330189927
-http://yosilove.blog.shinobi.jp/Entry/603/ </description>
+      <description> &amp;amp;nbsp;ffmpeg -i 入力ファイル 出力ファイル&#xA;みたいな感じでOKらしい&#xA;ffmpeg -i hoge.flv hoge.mp4&#xA;でもいけた&#xA;mp3のビットレート調整とかも出来る&#xA;ffmpeg -i input.mp3 -ab 128k output.mp3&#xA;http://d.hatena.ne.jp/takuya_1st/20120225/1330189927&#xA;http://yosilove.blog.shinobi.jp/Entry/603/ </description>
     </item>
-    
     <item>
       <title>rubyのバージョン管理 rbenv試してみた</title>
       <link>https://yaasita.github.io/2012/09/26/2171/</link>
       <pubDate>Wed, 26 Sep 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/09/26/2171/</guid>
-      <description>rvmとかあるらしいけど今回はrbenvを使ってみます cd
-git clone git://github.com/sstephenson/rbenv.git .rbenv
-echo &#39;export PATH=&#34;$HOME/.rbenv/bin:$PATH&#34;&#39; &amp;amp;gt;&amp;amp;gt; ~/.bash_profile
-echo &#39;eval &#34;$(rbenv init -)&#34;&#39; &amp;amp;gt;&amp;amp;gt; ~/.bash_profile
-ここで、シェルのリスタート
-次にrbenv installが使えるようにbuildプラグインをインストール mkdir -p ~/.rbenv/plugins
-cd ~/.rbenv/plugins
-git clone git://github.com/sstephenson/ruby-build.git
-これでrbenv installコマンドが使えるようになります
-インストールできるバージョンを確認 rbenv install -l
-インストール rbenv install 1.9.3-xxxxx
-使用中のバージョンを確認 rbenv versions
-バージョンの切り替え rbenv global 1.9.2-p290
-リフレッシュ変更を反映 rbenv rehash</description>
+      <description>rvmとかあるらしいけど今回はrbenvを使ってみます cd&#xA;git clone git://github.com/sstephenson/rbenv.git .rbenv&#xA;echo &#39;export PATH=&#34;$HOME/.rbenv/bin:$PATH&#34;&#39; &amp;amp;gt;&amp;amp;gt; ~/.bash_profile&#xA;echo &#39;eval &#34;$(rbenv init -)&#34;&#39; &amp;amp;gt;&amp;amp;gt; ~/.bash_profile&#xA;ここで、シェルのリスタート&#xA;次にrbenv installが使えるようにbuildプラグインをインストール mkdir -p ~/.rbenv/plugins&#xA;cd ~/.rbenv/plugins&#xA;git clone git://github.com/sstephenson/ruby-build.git&#xA;これでrbenv installコマンドが使えるようになります&#xA;インストールできるバージョンを確認 rbenv install -l&#xA;インストール rbenv install 1.9.3-xxxxx&#xA;使用中のバージョンを確認 rbenv versions&#xA;バージョンの切り替え rbenv global 1.9.2-p290&#xA;リフレッシュ変更を反映 rbenv rehash</description>
     </item>
-    
     <item>
       <title>WindowsでS.M.A.R.T情報を取得</title>
       <link>https://yaasita.github.io/2012/09/23/2191/</link>
       <pubDate>Sun, 23 Sep 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/09/23/2191/</guid>
-      <description> Linuxだとsmartctlとかだけど、Windowsだとこれがいい感じ
-CrystalDiskInfo
-http://www.forest.impress.co.jp/lib/sys/hrdbnch/hardinfo/crdiskinfo.html </description>
+      <description> Linuxだとsmartctlとかだけど、Windowsだとこれがいい感じ&#xA;CrystalDiskInfo&#xA;http://www.forest.impress.co.jp/lib/sys/hrdbnch/hardinfo/crdiskinfo.html </description>
     </item>
-    
   </channel>
 </rss>

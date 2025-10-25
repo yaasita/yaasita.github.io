@@ -4,256 +4,149 @@
     <title>2016 on # cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2016/</link>
     <description>Recent content in 2016 on # cd ~yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 03 Dec 2016 23:22:00 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2016/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 03 Dec 2016 23:22:00 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/archives/2016/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>GCPの Cloud DNSでグルーレコード</title>
       <link>https://yaasita.github.io/2016/12/03/google-cloud-dns/</link>
       <pubDate>Sat, 03 Dec 2016 23:22:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/12/03/google-cloud-dns/</guid>
-      <description>Google Cloud Platform のDNSでグルーレコード作るときは
-こんな感じでNS指定したあとに、Aレコード追加すればグルーレコード(Glue Record)に追加してくれるようだ
-; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.9.5-9+deb8u8-Debian &amp;lt;&amp;lt;&amp;gt;&amp;gt; +norec @ns-cloud-d1.googledomains.com. name.yaasita.xyz. a ; (2 servers found) ;; global options: +cmd ;; Got answer: ;; -&amp;gt;&amp;gt;HEADER&amp;lt;&amp;lt;- opcode: QUERY, status: NOERROR, id: 39015 ;; flags: qr; QUERY: 1, ANSWER: 0, AUTHORITY: 2, ADDITIONAL: 3 ;; OPT PSEUDOSECTION: ; EDNS: version: 0, flags:; udp: 512 ;; QUESTION SECTION: ;name.yaasita.xyz. IN A ;; AUTHORITY SECTION: name.yaasita.xyz. 300 IN NS ns1.name.yaasita.xyz. name.yaasita.xyz. 300 IN NS ns2.</description>
+      <description>Google Cloud Platform のDNSでグルーレコード作るときは&#xA;こんな感じでNS指定したあとに、Aレコード追加すればグルーレコード(Glue Record)に追加してくれるようだ&#xA;; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.9.5-9+deb8u8-Debian &amp;lt;&amp;lt;&amp;gt;&amp;gt; +norec @ns-cloud-d1.googledomains.com. name.yaasita.xyz. a ; (2 servers found) ;; global options: +cmd ;; Got answer: ;; -&amp;gt;&amp;gt;HEADER&amp;lt;&amp;lt;- opcode: QUERY, status: NOERROR, id: 39015 ;; flags: qr; QUERY: 1, ANSWER: 0, AUTHORITY: 2, ADDITIONAL: 3 ;; OPT PSEUDOSECTION: ; EDNS: version: 0, flags:; udp: 512 ;; QUESTION SECTION: ;name.yaasita.xyz. IN A ;; AUTHORITY SECTION: name.yaasita.xyz. 300 IN NS ns1.name.yaasita.xyz. name.yaasita.xyz. 300 IN NS ns2.</description>
     </item>
-    
     <item>
       <title>VALUE-DOMAINでグルーレコード追加</title>
       <link>https://yaasita.github.io/2016/11/25/value-domain/</link>
       <pubDate>Fri, 25 Nov 2016 01:31:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/11/25/value-domain/</guid>
-      <description>VALUE-DOMAIN バリュードメインの権威DNSサーバを使いつつ
-レコードにグルーレコードを追加する方法
-BINDみたくこんな感じにやる
-ns cloud cloud.example.net. a cloud.example.net. 123.123.123.123 上位の権威サーバにグルーレコードを設定する場合は
-下記参照
-https://www.value-domain.com/userguide/manual/othermodns/</description>
+      <description>VALUE-DOMAIN バリュードメインの権威DNSサーバを使いつつ&#xA;レコードにグルーレコードを追加する方法&#xA;BINDみたくこんな感じにやる&#xA;ns cloud cloud.example.net. a cloud.example.net. 123.123.123.123 上位の権威サーバにグルーレコードを設定する場合は&#xA;下記参照&#xA;https://www.value-domain.com/userguide/manual/othermodns/</description>
     </item>
-    
     <item>
       <title>AWSへVMイメージごと移動する手順</title>
       <link>https://yaasita.github.io/2016/11/20/aws-vm-import/</link>
       <pubDate>Sun, 20 Nov 2016 20:45:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/11/20/aws-vm-import/</guid>
-      <description>手順 img作る前に以下を確認しておく
-DHCPを有効にしている iptablesを無効に rawでイメージを作っておく 次に以下のコマンドでインポート
-# hoge-importってバケット作ったとする # 最初にimgをS3に上げておく aws s3 cp hoge.img s3://hoge-import/hoge.img # IAM周りを準備 aws iam create-role --role-name vmimport --assume-role-policy-document file://trust-policy.json aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json # インポートタスク開始 aws ec2 import-image --description &amp;quot;hoge server&amp;quot; --disk-containers file://containers.json # 進捗見る aws ec2 describe-import-image-tasks 使ったjsonファイル
-参考リンク http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats http://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html </description>
+      <description>手順 img作る前に以下を確認しておく&#xA;DHCPを有効にしている iptablesを無効に rawでイメージを作っておく 次に以下のコマンドでインポート&#xA;# hoge-importってバケット作ったとする # 最初にimgをS3に上げておく aws s3 cp hoge.img s3://hoge-import/hoge.img # IAM周りを準備 aws iam create-role --role-name vmimport --assume-role-policy-document file://trust-policy.json aws iam put-role-policy --role-name vmimport --policy-name vmimport --policy-document file://role-policy.json # インポートタスク開始 aws ec2 import-image --description &amp;quot;hoge server&amp;quot; --disk-containers file://containers.json # 進捗見る aws ec2 describe-import-image-tasks 使ったjsonファイル&#xA;参考リンク http://docs.aws.amazon.com/ja_jp/AWSEC2/latest/UserGuide/VMImportPrerequisites.html#vmimport-image-formats http://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html </description>
     </item>
-    
     <item>
       <title>フレッツのDNS挙動</title>
       <link>https://yaasita.github.io/2016/10/31/flets-dns/</link>
       <pubDate>Mon, 31 Oct 2016 00:42:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/10/31/flets-dns/</guid>
-      <description>NSレコードに指定したホスト名にCNAMEを持たせてはいけない
-という話は有名だがどのように挙動が変わるか見てみる
-準備 yaasita.ml. の権威サーバは ns1.aws.yaasita.net. にしておく
-NSで指定されてるサーバは CNAMEとして aws.yaasita.net. に設定しておく
-; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.9.5-9+deb8u7-Debian &amp;lt;&amp;lt;&amp;gt;&amp;gt; +norec @aws.yaasita.net. ns1.aws.yaasita.net. a ; (1 server found) ;; global options: +cmd ;; Got answer: ;; -&amp;gt;&amp;gt;HEADER&amp;lt;&amp;lt;- opcode: QUERY, status: NOERROR, id: 31880 ;; flags: qr aa; QUERY: 1, ANSWER: 2, AUTHORITY: 1, ADDITIONAL: 1 ;; OPT PSEUDOSECTION: ; EDNS: version: 0, flags:; udp: 4096 ;; QUESTION SECTION: ;ns1.aws.yaasita.net. IN A ;; ANSWER SECTION: ns1.</description>
+      <description>NSレコードに指定したホスト名にCNAMEを持たせてはいけない&#xA;という話は有名だがどのように挙動が変わるか見てみる&#xA;準備 yaasita.ml. の権威サーバは ns1.aws.yaasita.net. にしておく&#xA;NSで指定されてるサーバは CNAMEとして aws.yaasita.net. に設定しておく&#xA;; &amp;lt;&amp;lt;&amp;gt;&amp;gt; DiG 9.9.5-9+deb8u7-Debian &amp;lt;&amp;lt;&amp;gt;&amp;gt; +norec @aws.yaasita.net. ns1.aws.yaasita.net. a ; (1 server found) ;; global options: +cmd ;; Got answer: ;; -&amp;gt;&amp;gt;HEADER&amp;lt;&amp;lt;- opcode: QUERY, status: NOERROR, id: 31880 ;; flags: qr aa; QUERY: 1, ANSWER: 2, AUTHORITY: 1, ADDITIONAL: 1 ;; OPT PSEUDOSECTION: ; EDNS: version: 0, flags:; udp: 4096 ;; QUESTION SECTION: ;ns1.aws.yaasita.net. IN A ;; ANSWER SECTION: ns1.</description>
     </item>
-    
     <item>
       <title>最近買ったスマホ</title>
       <link>https://yaasita.github.io/2016/10/22/smart-phone/</link>
       <pubDate>Sat, 22 Oct 2016 22:54:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/10/22/smart-phone/</guid>
-      <description>エイスース SIMフリースマートフォン ASUS ZenFone 2 Laser（Qualcomm Snapdragon 410/メモリ 2GB） 16GB ブラック ZE500KL-BK16 18,672円だった
-Androidは6.0.1まで上がった</description>
+      <description>エイスース SIMフリースマートフォン ASUS ZenFone 2 Laser（Qualcomm Snapdragon 410/メモリ 2GB） 16GB ブラック ZE500KL-BK16 18,672円だった&#xA;Androidは6.0.1まで上がった</description>
     </item>
-    
     <item>
       <title>更新通知のbashrc</title>
       <link>https://yaasita.github.io/2016/09/10/update-notify/</link>
       <pubDate>Sat, 10 Sep 2016 12:52:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/09/10/update-notify/</guid>
       <description>こんな感じで、更新を促す</description>
     </item>
-    
     <item>
       <title>超次元アクション ネプテューヌU</title>
       <link>https://yaasita.github.io/2016/09/04/nepu/</link>
       <pubDate>Sun, 04 Sep 2016 03:13:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/09/04/nepu/</guid>
-      <description>Vita版のやつ
-ギョウ界チ武道会 クリアしたキャラ
-ネプチューヌ ノワール ブラン ベール ネプギア ユニ ロム ラム デンゲキコ パープルハート ブラックハート ホワイトハート グリーンハート パープルシスター ブラックシスター ホワイトシスター(左) ホワイトシスター(右) ファミ通 -&amp;gt; 取得したアイテムで審議判定できる
-http://catmiimi.com/nepu_military
-参考リンク http://catmiimi.com/nepu</description>
+      <description>Vita版のやつ&#xA;ギョウ界チ武道会 クリアしたキャラ&#xA;ネプチューヌ ノワール ブラン ベール ネプギア ユニ ロム ラム デンゲキコ パープルハート ブラックハート ホワイトハート グリーンハート パープルシスター ブラックシスター ホワイトシスター(左) ホワイトシスター(右) ファミ通 -&amp;gt; 取得したアイテムで審議判定できる&#xA;http://catmiimi.com/nepu_military&#xA;参考リンク http://catmiimi.com/nepu</description>
     </item>
-    
     <item>
       <title>smplayerでリピート再生</title>
       <link>https://yaasita.github.io/2016/08/27/smplayer/</link>
       <pubDate>Sat, 27 Aug 2016 14:33:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/08/27/smplayer/</guid>
-      <description>ずっとループして再生
-再生(P) → A-Bセクション(A) → 繰り返し(R) </description>
+      <description>ずっとループして再生&#xA;再生(P) → A-Bセクション(A) → 繰り返し(R) </description>
     </item>
-    
     <item>
       <title>AWSのVPNまわり</title>
       <link>https://yaasita.github.io/2016/07/31/aws-vpn/</link>
       <pubDate>Sun, 31 Jul 2016 00:36:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/07/31/aws-vpn/</guid>
-      <description>よくある質問
-対応機器
-http://aws.amazon.com/jp/vpc/faqs/
-ハードウェアVPN接続
-1つの仮想プライベートゲートウェイあたり10接続
-http://docs.aws.amazon.com/ja_jp/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html
-http://dev.classmethod.jp/cloud/aws/vpc-connect-hardware-vpn/ </description>
+      <description>よくある質問&#xA;対応機器&#xA;http://aws.amazon.com/jp/vpc/faqs/&#xA;ハードウェアVPN接続&#xA;1つの仮想プライベートゲートウェイあたり10接続&#xA;http://docs.aws.amazon.com/ja_jp/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html&#xA;http://dev.classmethod.jp/cloud/aws/vpc-connect-hardware-vpn/ </description>
     </item>
-    
     <item>
       <title>s3fs使う</title>
       <link>https://yaasita.github.io/2016/06/22/s3fs/</link>
       <pubDate>Wed, 22 Jun 2016 13:40:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/06/22/s3fs/</guid>
-      <description>s3fsはamazon S3をファイルしすてむのように使うやつ
-ただ遅い
-基本ここ見てやる
-https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes
-今回はCeontOS6を対象
-# paco入れておく yum install paco # コンパイルに必要なもの入れる yum install -y gcc libstdc++-devel gcc-c++ curl-devel libxml2-devel openssl-devel mailcap # fuse wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.8.5.tar.gz ./configure make paco -lD &#39;make install&#39; # /usr/local/lib 追記 vi /etc/ld.so.conf ldconfig # s3fs wget http://s3fs.googlecode.com/files/s3fs-1.74.tar.gz tar xvaf s3fs-1.74.tar.gz cd s3fs-1.74/ autoreconf --install export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure --prefix=/usr make paco -lD &#39;make install&#39; # mount s3fs hoge-bucket /s3 -o rw,allow_other,uid=501,gid=501,default_acl=public-read su - apps cd /s3 date &amp;gt; date.</description>
+      <description>s3fsはamazon S3をファイルしすてむのように使うやつ&#xA;ただ遅い&#xA;基本ここ見てやる&#xA;https://github.com/s3fs-fuse/s3fs-fuse/wiki/Installation-Notes&#xA;今回はCeontOS6を対象&#xA;# paco入れておく yum install paco # コンパイルに必要なもの入れる yum install -y gcc libstdc++-devel gcc-c++ curl-devel libxml2-devel openssl-devel mailcap # fuse wget https://github.com/libfuse/libfuse/releases/download/fuse_2_9_4/fuse-2.8.5.tar.gz ./configure make paco -lD &#39;make install&#39; # /usr/local/lib 追記 vi /etc/ld.so.conf ldconfig # s3fs wget http://s3fs.googlecode.com/files/s3fs-1.74.tar.gz tar xvaf s3fs-1.74.tar.gz cd s3fs-1.74/ autoreconf --install export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig ./configure --prefix=/usr make paco -lD &#39;make install&#39; # mount s3fs hoge-bucket /s3 -o rw,allow_other,uid=501,gid=501,default_acl=public-read su - apps cd /s3 date &amp;gt; date.</description>
     </item>
-    
     <item>
       <title>やる夫で学ぶ機械学習シリーズ</title>
       <link>https://yaasita.github.io/2016/06/11/deep-learning/</link>
       <pubDate>Sat, 11 Jun 2016 23:55:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/06/11/deep-learning/</guid>
       <description>http://tkengo.github.io/blog/2016/06/06/yaruo-machine-learning0/</description>
     </item>
-    
     <item>
       <title>戦国無双クロニクル3(Vita)攻略</title>
       <link>https://yaasita.github.io/2016/05/10/sengoku-musou/</link>
       <pubDate>Tue, 10 May 2016 00:36:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/05/10/sengoku-musou/</guid>
-      <description>攻略サイト
-http://goo.gl/bAfbfX
-この全武将お手軽さ評価づけが参考になる
-http://goo.gl/uenJG4</description>
+      <description>攻略サイト&#xA;http://goo.gl/bAfbfX&#xA;この全武将お手軽さ評価づけが参考になる&#xA;http://goo.gl/uenJG4</description>
     </item>
-    
     <item>
       <title>IRCのログを記録するbotbot.me</title>
       <link>https://yaasita.github.io/2016/05/04/botbot-me/</link>
       <pubDate>Wed, 04 May 2016 23:10:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/05/04/botbot-me/</guid>
-      <description>https://botbot.me/
-botbot.meはIRCに参加させることでログを取って
-公開できるbotだ
-便利そう</description>
+      <description>https://botbot.me/&#xA;botbot.meはIRCに参加させることでログを取って&#xA;公開できるbotだ&#xA;便利そう</description>
     </item>
-    
     <item>
       <title>リアルタイム監視ソフトnetdata</title>
       <link>https://yaasita.github.io/2016/04/25/netdata/</link>
       <pubDate>Mon, 25 Apr 2016 23:24:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/04/25/netdata/</guid>
-      <description>https://github.com/firehol/netdata
-インストール
-https://github.com/firehol/netdata/wiki/Installation
-# 起動 /usr/sbin/netdata # 見てみる http://192.168.0.38:19999/ </description>
+      <description>https://github.com/firehol/netdata&#xA;インストール&#xA;https://github.com/firehol/netdata/wiki/Installation&#xA;# 起動 /usr/sbin/netdata # 見てみる http://192.168.0.38:19999/ </description>
     </item>
-    
     <item>
       <title>ファイル同期ソフトSyncthing</title>
       <link>https://yaasita.github.io/2016/04/25/syncthing/</link>
       <pubDate>Mon, 25 Apr 2016 23:16:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/04/25/syncthing/</guid>
-      <description>ファイル同期ソフトSyncthingを試してみる
-公式
-https://syncthing.net/
-Go言語で出来ていてクロスプラットフォーム
-Androidでも動く
-同様のソフトにBitTorrent Syncがあるみたいだけどこっちのほうが良さそう
-（同期ディレクトリに上限がないため）
-こんな感じ
-./syncthing -gui-address=&amp;quot;192.168.0.10:3184&amp;quot; -no-browser </description>
+      <description>ファイル同期ソフトSyncthingを試してみる&#xA;公式&#xA;https://syncthing.net/&#xA;Go言語で出来ていてクロスプラットフォーム&#xA;Androidでも動く&#xA;同様のソフトにBitTorrent Syncがあるみたいだけどこっちのほうが良さそう&#xA;（同期ディレクトリに上限がないため）&#xA;こんな感じ&#xA;./syncthing -gui-address=&amp;quot;192.168.0.10:3184&amp;quot; -no-browser </description>
     </item>
-    
     <item>
       <title>Git-itやってみた</title>
       <link>https://yaasita.github.io/2016/04/24/git-it/</link>
       <pubDate>Sun, 24 Apr 2016 02:05:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/04/24/git-it/</guid>
-      <description>日本語も選択できるElectron製のアプリで
-ステップバイステップで勉強できる
-ここのリリースページからバイナリを落として実行する
-https://github.com/jlord/git-it-electron
-結果
-http://yaasita.github.io/patchwork/
-参考リンク
-Git-it – 手を動かしながら習得できる日本語対応のGit/GitHub学習アプリ http://www.softantenna.com/wp/review/git-it/ プルリク練習用のリポジトリ https://github.com/jlord/patchwork 結果確認 http://jlord.us/patchwork/ </description>
+      <description>日本語も選択できるElectron製のアプリで&#xA;ステップバイステップで勉強できる&#xA;ここのリリースページからバイナリを落として実行する&#xA;https://github.com/jlord/git-it-electron&#xA;結果&#xA;http://yaasita.github.io/patchwork/&#xA;参考リンク&#xA;Git-it – 手を動かしながら習得できる日本語対応のGit/GitHub学習アプリ http://www.softantenna.com/wp/review/git-it/ プルリク練習用のリポジトリ https://github.com/jlord/patchwork 結果確認 http://jlord.us/patchwork/ </description>
     </item>
-    
     <item>
       <title>HDDの不良セクタ埋める</title>
       <link>https://yaasita.github.io/2016/03/26/hdd_bad_sector/</link>
       <pubDate>Sat, 26 Mar 2016 00:43:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/03/26/hdd_bad_sector/</guid>
-      <description>HDDの不良セクタ代替処理を自動化
-Reallocated_Sector_Ctが残ってれば使える手法
-https://github.com/yaasita/hdd_badsector
-使い方
-smartctl -a /dev/sdc | ./hdd_check.pl /dev/sdc </description>
+      <description>HDDの不良セクタ代替処理を自動化&#xA;Reallocated_Sector_Ctが残ってれば使える手法&#xA;https://github.com/yaasita/hdd_badsector&#xA;使い方&#xA;smartctl -a /dev/sdc | ./hdd_check.pl /dev/sdc </description>
     </item>
-    
     <item>
       <title>Mojoliciousのwebsocket回り</title>
       <link>https://yaasita.github.io/2016/02/21/mojolicious/</link>
       <pubDate>Sun, 21 Feb 2016 02:29:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/02/21/mojolicious/</guid>
-      <description>websocketの開いてもデフォルト15秒でタイムアウトするのが嫌なら
-↓みたいな感じでtimeout伸ばす
-Mojo::IOLoop-&amp;gt;stream($self-&amp;gt;tx-&amp;gt;connection)-&amp;gt;timeout(300); 参考リンク http://kazuph.hateblo.jp/entry/20120310/1331395725 https://github.com/yuki-kimoto/mojolicious-guides-japanese/wiki </description>
+      <description>websocketの開いてもデフォルト15秒でタイムアウトするのが嫌なら&#xA;↓みたいな感じでtimeout伸ばす&#xA;Mojo::IOLoop-&amp;gt;stream($self-&amp;gt;tx-&amp;gt;connection)-&amp;gt;timeout(300); 参考リンク http://kazuph.hateblo.jp/entry/20120310/1331395725 https://github.com/yuki-kimoto/mojolicious-guides-japanese/wiki </description>
     </item>
-    
     <item>
       <title>ff10-2</title>
       <link>https://yaasita.github.io/2016/02/15/ff10-2/</link>
       <pubDate>Mon, 15 Feb 2016 01:13:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/02/15/ff10-2/</guid>
-      <description>FF10-2ラストミッション LAST MISSIONでの使用ドレス
-ラスボスが混乱攻撃してくるのでその対策は必須
-あと、アイテムに足して、呪いだったりボムだったりの状態異常がかかる場合があるので、アイテムエスナを使えるアイテムシューターも必須かと思う
-ガンナー (混乱防御のため) アイテムシューター ダークナイト (暗黒が強力) 調教師 (穴掘りでアイテム探し) 白魔導士 (ケアルガで回復) あと装備アイテムは以下の2種類
-満ちる月の石 (自動MP回復) トリプルティアラ(3回攻撃) 参考リンク FF10-2ラストミッション攻略ページ 結界解除条件 </description>
+      <description>FF10-2ラストミッション LAST MISSIONでの使用ドレス&#xA;ラスボスが混乱攻撃してくるのでその対策は必須&#xA;あと、アイテムに足して、呪いだったりボムだったりの状態異常がかかる場合があるので、アイテムエスナを使えるアイテムシューターも必須かと思う&#xA;ガンナー (混乱防御のため) アイテムシューター ダークナイト (暗黒が強力) 調教師 (穴掘りでアイテム探し) 白魔導士 (ケアルガで回復) あと装備アイテムは以下の2種類&#xA;満ちる月の石 (自動MP回復) トリプルティアラ(3回攻撃) 参考リンク FF10-2ラストミッション攻略ページ 結界解除条件 </description>
     </item>
-    
     <item>
       <title>下位10%のダメなエンジニアシリーズ</title>
       <link>https://yaasita.github.io/2016/01/25/dame-engineer/</link>
       <pubDate>Mon, 25 Jan 2016 00:23:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/01/25/dame-engineer/</guid>
-      <description>パズル1 http://tango-ruby.hatenablog.com/entry/2015/11/30/122814 http://challenge-your-limits.herokuapp.com/ 答え
-curl http://challenge-your-limits.herokuapp.com/call/me # getだめだよって怒られる curl -F &amp;quot;hoge=hoge&amp;quot; http://challenge-your-limits.herokuapp.com/call/me # 適当にPOSTすると正しいURLを教えてくれる curl -F &amp;quot;name=hoge&amp;quot; -F &amp;quot;email=huga@hoge.com&amp;quot; \ http://challenge-your-limits.herokuapp.com/challenge_users # あとはこんな感じで パズル2 http://tango-ruby.hatenablog.com/entry/2015/12/28/212010 http://challenge-your-limits2.herokuapp.com/ 答え
-curl http://challenge-your-limits2.herokuapp.com/call/my/APIs # メソッドが違うらしい curl -X DELETE http://challenge-your-limits2.herokuapp.com/call/my/APIs # いろいろ試すとDELETEで通る curl http://challenge-your-limits2.herokuapp.com/c2_users/12/hacker_apply # 案内されたURLにリクエストするとなんか違うらしい curl http://challenge-your-limits2.herokuapp.com/help/me/out # とりあえず登録 curl -F &amp;quot;username=yaasita&amp;quot; -F &#39;email=hoge1@example.com&#39; \ http://challenge-your-limits2.heroku/app.com/c2_users/ # 帰ってきた値でBASIC認証 curl --user yaasita:uRd4yy-imPbHBR4W http://challenge-your-limits2.herokuapp.com/c2_users/10 # あとは帰ってきた文字列をBASE64デコード パズル3 http://tango-ruby.hatenablog.com/entry/2016/01/10/125615 http://challenge-your-limits3.herokuapp.com/ 答え
-# 最初にアクセスすると数式を予想せよとくる curl http://challenge-your-limits3.herokuapp.com/formula/is/x%20+5 # 登録 curl -F &amp;quot;username=huga&amp;quot; -F &amp;quot;email=huga@hoge.</description>
+      <description>パズル1 http://tango-ruby.hatenablog.com/entry/2015/11/30/122814 http://challenge-your-limits.herokuapp.com/ 答え&#xA;curl http://challenge-your-limits.herokuapp.com/call/me # getだめだよって怒られる curl -F &amp;quot;hoge=hoge&amp;quot; http://challenge-your-limits.herokuapp.com/call/me # 適当にPOSTすると正しいURLを教えてくれる curl -F &amp;quot;name=hoge&amp;quot; -F &amp;quot;email=huga@hoge.com&amp;quot; \ http://challenge-your-limits.herokuapp.com/challenge_users # あとはこんな感じで パズル2 http://tango-ruby.hatenablog.com/entry/2015/12/28/212010 http://challenge-your-limits2.herokuapp.com/ 答え&#xA;curl http://challenge-your-limits2.herokuapp.com/call/my/APIs # メソッドが違うらしい curl -X DELETE http://challenge-your-limits2.herokuapp.com/call/my/APIs # いろいろ試すとDELETEで通る curl http://challenge-your-limits2.herokuapp.com/c2_users/12/hacker_apply # 案内されたURLにリクエストするとなんか違うらしい curl http://challenge-your-limits2.herokuapp.com/help/me/out # とりあえず登録 curl -F &amp;quot;username=yaasita&amp;quot; -F &#39;email=hoge1@example.com&#39; \ http://challenge-your-limits2.heroku/app.com/c2_users/ # 帰ってきた値でBASIC認証 curl --user yaasita:uRd4yy-imPbHBR4W http://challenge-your-limits2.herokuapp.com/c2_users/10 # あとは帰ってきた文字列をBASE64デコード パズル3 http://tango-ruby.hatenablog.com/entry/2016/01/10/125615 http://challenge-your-limits3.herokuapp.com/ 答え&#xA;# 最初にアクセスすると数式を予想せよとくる curl http://challenge-your-limits3.herokuapp.com/formula/is/x%20+5 # 登録 curl -F &amp;quot;username=huga&amp;quot; -F &amp;quot;email=huga@hoge.</description>
     </item>
-    
   </channel>
 </rss>

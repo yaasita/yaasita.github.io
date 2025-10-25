@@ -4,253 +4,135 @@
     <title>2020 on # cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2020/</link>
     <description>Recent content in 2020 on # cd ~yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 06 Dec 2020 01:11:10 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2020/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Dec 2020 01:11:10 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/archives/2020/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>postfixのReceived headerを隠す</title>
       <link>https://yaasita.github.io/2020/12/06/postfix-received-header/</link>
       <pubDate>Sun, 06 Dec 2020 01:11:10 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/12/06/postfix-received-header/</guid>
-      <description>この回答通りなんだけど
-一応補足とか
-自分の環境だと、送信メールサーバーがセカンダリメールサーバーと兼任している
-以下のように設定した
-/etc/postfix/master.cf
-smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode=yes -o smtpd_sasl_auth_enable=yes -o smtpd_reject_unlisted_recipient=no -o smtpd_client_restrictions=$mua_client_restrictions -o smtpd_helo_restrictions=$mua_helo_restrictions -o smtpd_sender_restrictions=$mua_sender_restrictions -o smtpd_recipient_restrictions= -o smtpd_relay_restrictions=permit_sasl_authenticated,reject -o milter_macro_daemon_name=ORIGINATING -o cleanup_service_name=smtpscleanup smtpscleanup unix n - y - 0 cleanup -o header_checks=regexp:/etc/postfix/header_checks /etc/postfix/header_checks
-/^Received:.*/ IGNORE 最初はsmtp_header_checksをmain.cfに書けば良いかなーと思ったんだけど、
-これだと外から入ってきたメール(後にプライマリサーバーにrelayされる)も一律削除されてしまうので都合が悪かった</description>
+      <description>この回答通りなんだけど&#xA;一応補足とか&#xA;自分の環境だと、送信メールサーバーがセカンダリメールサーバーと兼任している&#xA;以下のように設定した&#xA;/etc/postfix/master.cf&#xA;smtps inet n - n - - smtpd -o syslog_name=postfix/smtps -o smtpd_tls_wrappermode=yes -o smtpd_sasl_auth_enable=yes -o smtpd_reject_unlisted_recipient=no -o smtpd_client_restrictions=$mua_client_restrictions -o smtpd_helo_restrictions=$mua_helo_restrictions -o smtpd_sender_restrictions=$mua_sender_restrictions -o smtpd_recipient_restrictions= -o smtpd_relay_restrictions=permit_sasl_authenticated,reject -o milter_macro_daemon_name=ORIGINATING -o cleanup_service_name=smtpscleanup smtpscleanup unix n - y - 0 cleanup -o header_checks=regexp:/etc/postfix/header_checks /etc/postfix/header_checks&#xA;/^Received:.*/ IGNORE 最初はsmtp_header_checksをmain.cfに書けば良いかなーと思ったんだけど、&#xA;これだと外から入ってきたメール(後にプライマリサーバーにrelayされる)も一律削除されてしまうので都合が悪かった</description>
     </item>
-    
     <item>
       <title>AWSのt4gインスタンスを試す</title>
       <link>https://yaasita.github.io/2020/11/05/t4g-instance/</link>
       <pubDate>Thu, 05 Nov 2020 02:58:38 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/11/05/t4g-instance/</guid>
-      <description>新しくt4gインスタンスが出たみたいなので試してみた
-cpuminer アルゴリズム=lyra2rev2 で測定
-name cpu memory hashrate(kH/s) 自宅PC Core i5-4460 3.20GHz 4コア 16G 384 ノートPC LB-C110B Celeron 1037U 1.80GHz 2コア 8G 79 t4g.micro (CPUクレジットあり) ARM CPU 2コア 1G 233 t4g.micro (CPUクレジットなし) ARM CPU 2コア 1G 24 aws lightsail (t2.nano, CPUクレジットあり) Xeon E5-2676 v3 2.40GHz 1コア 512M 81 aws lightsail (t2.nano, CPUクレジットなし) Xeon E5-2676 v3 2.40GHz 1コア 512M 6 前回記事
-まとめ t4g良いかもしれない</description>
+      <description>新しくt4gインスタンスが出たみたいなので試してみた&#xA;cpuminer アルゴリズム=lyra2rev2 で測定&#xA;name cpu memory hashrate(kH/s) 自宅PC Core i5-4460 3.20GHz 4コア 16G 384 ノートPC LB-C110B Celeron 1037U 1.80GHz 2コア 8G 79 t4g.micro (CPUクレジットあり) ARM CPU 2コア 1G 233 t4g.micro (CPUクレジットなし) ARM CPU 2コア 1G 24 aws lightsail (t2.nano, CPUクレジットあり) Xeon E5-2676 v3 2.40GHz 1コア 512M 81 aws lightsail (t2.nano, CPUクレジットなし) Xeon E5-2676 v3 2.40GHz 1コア 512M 6 前回記事&#xA;まとめ t4g良いかもしれない</description>
     </item>
-    
     <item>
       <title>hettyはmitmproxyの代わりになる？</title>
       <link>https://yaasita.github.io/2020/10/04/hetty/</link>
       <pubDate>Sun, 04 Oct 2020 00:50:03 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/10/04/hetty/</guid>
-      <description>mitmproxyみたいにhttpsのリクエストを覗くツール
-https://github.com/dstotijn/hetty
-使い方は, CAの鍵と証明書を用意して
-hetty -cert cacert.pem -key cakey.pem でOK
-8080でlistenするのでhttp proxyとして指定する
-管理画面はproxyとて設定したブラウザで以下のURLから見れる
-http://hetty.proxy/
-感想
-mitmproxyより重い気がする GUIでリクエストを見れるのは便利 mitmdumpとかしないでも簡単に見れるのはとても嬉しい 検索機能は今後追加予定？ リクエストをreplyする機能も追加予定みたい まとめ
-今後に期待
-今はmitmweb使う方が良いと思う</description>
+      <description>mitmproxyみたいにhttpsのリクエストを覗くツール&#xA;https://github.com/dstotijn/hetty&#xA;使い方は, CAの鍵と証明書を用意して&#xA;hetty -cert cacert.pem -key cakey.pem でOK&#xA;8080でlistenするのでhttp proxyとして指定する&#xA;管理画面はproxyとて設定したブラウザで以下のURLから見れる&#xA;http://hetty.proxy/&#xA;感想&#xA;mitmproxyより重い気がする GUIでリクエストを見れるのは便利 mitmdumpとかしないでも簡単に見れるのはとても嬉しい 検索機能は今後追加予定？ リクエストをreplyする機能も追加予定みたい まとめ&#xA;今後に期待&#xA;今はmitmweb使う方が良いと思う</description>
     </item>
-    
     <item>
       <title>Microsoft IDのOpenID connect</title>
       <link>https://yaasita.github.io/2020/09/28/oidc/</link>
       <pubDate>Mon, 28 Sep 2020 02:55:16 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/09/28/oidc/</guid>
-      <description>Microsoft ID プラットフォームと OpenID Connect プロトコル
-これを見ると response_mode = form_post
-に対応してるが, これはid_token(と指定した場合はstate)がPOSTで渡ってくるのだが、chrome80で導入された サードパーティCookieの規制により
-Cookieが渡ってこない
-そのためセッションと紐付けるのに面倒になりそう
-まあnonceからセッションを紐付けられる値を入れておけば何とかなりそうではあるが・・・
-jwt等をCookieに入れて、サーバー側でセッション用のストレージを持たない場合は厳しい気がする
-なので、response_mode = fragment を指定するか、SameSite=None; SecureをCookieの属性に付与するかだけど、fragmentが良いんじゃないかなぁ・・・・
-参考リンク OpenID Connect 全フロー解説 </description>
+      <description>Microsoft ID プラットフォームと OpenID Connect プロトコル&#xA;これを見ると response_mode = form_post&#xA;に対応してるが, これはid_token(と指定した場合はstate)がPOSTで渡ってくるのだが、chrome80で導入された サードパーティCookieの規制により&#xA;Cookieが渡ってこない&#xA;そのためセッションと紐付けるのに面倒になりそう&#xA;まあnonceからセッションを紐付けられる値を入れておけば何とかなりそうではあるが・・・&#xA;jwt等をCookieに入れて、サーバー側でセッション用のストレージを持たない場合は厳しい気がする&#xA;なので、response_mode = fragment を指定するか、SameSite=None; SecureをCookieの属性に付与するかだけど、fragmentが良いんじゃないかなぁ・・・・&#xA;参考リンク OpenID Connect 全フロー解説 </description>
     </item>
-    
     <item>
       <title>maildir形式のファイルをgmailに移す</title>
       <link>https://yaasita.github.io/2020/08/31/maildir-to-gmail/</link>
       <pubDate>Mon, 31 Aug 2020 03:36:18 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/08/31/maildir-to-gmail/</guid>
-      <description>IMAPのAPPENDコマンドでmaildir形式のファイルをGmailに送る
-#!/usr/bin/env node &amp;quot;use strict&amp;quot;; const simpleParser = require(&amp;quot;mailparser&amp;quot;).simpleParser; const { ImapFlow } = require(&amp;quot;imapflow&amp;quot;); const client = new ImapFlow({ host: &amp;quot;imap.gmail.com&amp;quot;, port: 993, secure: true, auth: { user: &amp;quot;hoge@gmail.com&amp;quot;, pass: &amp;quot;password&amp;quot;, }, }); const fs = require(&amp;quot;fs&amp;quot;); (async () =&amp;gt; { const mail = fs.readFileSync( process.argv[2], &amp;quot;utf8&amp;quot; ); const parsed = await simpleParser(mail); await client.connect(); await client.append(&amp;quot;INBOX&amp;quot;, mail, [&amp;quot;\\Seen&amp;quot;], parsed.date); await client.logout(); })().catch((e) =&amp;gt; { console.log(e); process.exit(1); }); </description>
+      <description>IMAPのAPPENDコマンドでmaildir形式のファイルをGmailに送る&#xA;#!/usr/bin/env node &amp;quot;use strict&amp;quot;; const simpleParser = require(&amp;quot;mailparser&amp;quot;).simpleParser; const { ImapFlow } = require(&amp;quot;imapflow&amp;quot;); const client = new ImapFlow({ host: &amp;quot;imap.gmail.com&amp;quot;, port: 993, secure: true, auth: { user: &amp;quot;hoge@gmail.com&amp;quot;, pass: &amp;quot;password&amp;quot;, }, }); const fs = require(&amp;quot;fs&amp;quot;); (async () =&amp;gt; { const mail = fs.readFileSync( process.argv[2], &amp;quot;utf8&amp;quot; ); const parsed = await simpleParser(mail); await client.connect(); await client.append(&amp;quot;INBOX&amp;quot;, mail, [&amp;quot;\\Seen&amp;quot;], parsed.date); await client.logout(); })().catch((e) =&amp;gt; { console.log(e); process.exit(1); }); </description>
     </item>
-    
     <item>
       <title>chromebookのLinuxが新しくなってた</title>
       <link>https://yaasita.github.io/2020/08/30/new-linux-in-chromebook/</link>
       <pubDate>Sun, 30 Aug 2020 04:28:55 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/08/30/new-linux-in-chromebook/</guid>
-      <description>Linuxを消して、また入れたら良くなってた
-Debianが10になった 日本語が打てる(ただ表示はバグる) 絵文字が見れる ターミナルがタブに対応した </description>
+      <description>Linuxを消して、また入れたら良くなってた&#xA;Debianが10になった 日本語が打てる(ただ表示はバグる) 絵文字が見れる ターミナルがタブに対応した </description>
     </item>
-    
     <item>
       <title>authorized_keysを適当に更新しない</title>
       <link>https://yaasita.github.io/2020/07/08/ssh-keys-deploy/</link>
       <pubDate>Wed, 08 Jul 2020 15:14:42 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/07/08/ssh-keys-deploy/</guid>
-      <description>概要 sshの公開鍵認証で複数人が使うシステムのauthorized_keysを場当たり的に更新してしまうと、誰の鍵が入ってるか分からなくなる
-誰の鍵が入ってるか分かるようにした方が良いと思う
-スクリプト こんなスクリプトを書いた
-使い方はREADME.md参照
-https://github.com/yaasita/ssh-keys-manager
-その他 使えるならsshの証明書認証も検討した方が良いかも ssh -F でconfig指定できるけど、~/.ssh/configに置いたときと挙動が違うのでスクリプト内にconfig入れる場合は注意 </description>
+      <description>概要 sshの公開鍵認証で複数人が使うシステムのauthorized_keysを場当たり的に更新してしまうと、誰の鍵が入ってるか分からなくなる&#xA;誰の鍵が入ってるか分かるようにした方が良いと思う&#xA;スクリプト こんなスクリプトを書いた&#xA;使い方はREADME.md参照&#xA;https://github.com/yaasita/ssh-keys-manager&#xA;その他 使えるならsshの証明書認証も検討した方が良いかも ssh -F でconfig指定できるけど、~/.ssh/configに置いたときと挙動が違うのでスクリプト内にconfig入れる場合は注意 </description>
     </item>
-    
     <item>
       <title>Google Domainsを使ってみた</title>
       <link>https://yaasita.github.io/2020/06/03/google-domains/</link>
       <pubDate>Wed, 03 Jun 2020 02:59:51 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/06/03/google-domains/</guid>
-      <description>自分のドメインを
-Value Domainから Google Domains へ移管してみた
-感想
-.net, .com 等は安い .jp は高い whois 代行は標準サービス 標準の権威DNSサーバーは微妙 GCPのGoogle Cloud DNSが使えるわけではない APIでの更新も難しそう HTTPリダイレクトの機能がついてるのは嬉しい ダイナミックDNSはある DNSSECは簡単にできそう SSHFPレコードを設定できる まとめ
-みんな使うと良いと思います</description>
+      <description>自分のドメインを&#xA;Value Domainから Google Domains へ移管してみた&#xA;感想&#xA;.net, .com 等は安い .jp は高い whois 代行は標準サービス 標準の権威DNSサーバーは微妙 GCPのGoogle Cloud DNSが使えるわけではない APIでの更新も難しそう HTTPリダイレクトの機能がついてるのは嬉しい ダイナミックDNSはある DNSSECは簡単にできそう SSHFPレコードを設定できる まとめ&#xA;みんな使うと良いと思います</description>
     </item>
-    
     <item>
       <title>DoHを試す</title>
       <link>https://yaasita.github.io/2020/05/10/doh/</link>
       <pubDate>Sun, 10 May 2020 03:22:35 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/05/10/doh/</guid>
-      <description>DNS over HTTPSを試す
-こんな構成で作る
-Nginx -&amp;gt; doh-httpproxy -&amp;gt; systemd-resolved インストール
-doh-proxy pip3でインストールすればOK
-pip3 install doh-proxy 以下のような設定でserviceを作る
-/etc/systemd/system/doh-httpproxy.service
-[Unit] Description=doh-httpproxy After=nginx.service [Install] WantedBy=multi-user.target [Service] ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 8080 --listen-address 127.0.0.1 Nginx側設定例
-server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } } 確認
-curl --doh-url https://doh.example.net/dns-query google.co.jp </description>
+      <description>DNS over HTTPSを試す&#xA;こんな構成で作る&#xA;Nginx -&amp;gt; doh-httpproxy -&amp;gt; systemd-resolved インストール&#xA;doh-proxy pip3でインストールすればOK&#xA;pip3 install doh-proxy 以下のような設定でserviceを作る&#xA;/etc/systemd/system/doh-httpproxy.service&#xA;[Unit] Description=doh-httpproxy After=nginx.service [Install] WantedBy=multi-user.target [Service] ExecStart=/usr/local/bin/doh-httpproxy --upstream-resolver=127.0.0.53 --port 8080 --listen-address 127.0.0.1 Nginx側設定例&#xA;server { listen 443 ssl http2; server_name doh.example.net; ssl_certificate /etc/letsencrypt/live/doh.example.net/fullchain.pem; ssl_certificate_key /etc/letsencrypt/live/doh.example.net/privkey.pem; location /dns-query { proxy_set_header X-Forwarded-Proto $scheme; proxy_set_header Host $http_host; proxy_set_header X-Real-IP $remote_addr; proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; proxy_pass http://127.0.0.1:8080; } } 確認&#xA;curl --doh-url https://doh.example.net/dns-query google.co.jp </description>
     </item>
-    
     <item>
       <title>BigQueryのカラムタイプ変更</title>
       <link>https://yaasita.github.io/2020/05/09/bigquery-type-change/</link>
       <pubDate>Sat, 09 May 2020 04:42:51 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/05/09/bigquery-type-change/</guid>
-      <description>BigQueryのカラム変更はREQUIREDをNULLABLEにする以外は出来ません
-テーブル スキーマの手動変更
-作り直すしかないんですが、分割テーブルだともう一手間必要ですよという話
-例えば以下のように分割テーブルを作るとします
-bq mk --dataset test bq mk --table \ --time_partitioning_type DAY \ test.first データを投入
-echo -e &amp;quot;1\thoge&amp;quot; &amp;gt; /tmp/data.tsv echo -e &amp;quot;2\thuga&amp;quot; &amp;gt;&amp;gt; /tmp/data.tsv echo -e &amp;quot;3\tabcd&amp;quot; &amp;gt;&amp;gt; /tmp/data.tsv bq load --source_format=CSV --field_delimiter=&amp;quot;\t&amp;quot; \ &#39;test.first$20200501&#39; /tmp/data.tsv id:NUMERIC,description:STRING bq load --source_format=CSV --field_delimiter=&amp;quot;\t&amp;quot; \ &#39;test.first$20200502&#39; /tmp/data.tsv id:NUMERIC,description:STRING 取り込み時間別に分割されているのが分かります
-echo &amp;quot;#standardSQL&amp;quot; &amp;gt; /tmp/query.sql echo &#39;select _PARTITIONTIME as pt, count(*) as count from test.first group by _PARTITIONTIME order by pt;&#39; &amp;gt;&amp;gt; /tmp/query.</description>
+      <description>BigQueryのカラム変更はREQUIREDをNULLABLEにする以外は出来ません&#xA;テーブル スキーマの手動変更&#xA;作り直すしかないんですが、分割テーブルだともう一手間必要ですよという話&#xA;例えば以下のように分割テーブルを作るとします&#xA;bq mk --dataset test bq mk --table \ --time_partitioning_type DAY \ test.first データを投入&#xA;echo -e &amp;quot;1\thoge&amp;quot; &amp;gt; /tmp/data.tsv echo -e &amp;quot;2\thuga&amp;quot; &amp;gt;&amp;gt; /tmp/data.tsv echo -e &amp;quot;3\tabcd&amp;quot; &amp;gt;&amp;gt; /tmp/data.tsv bq load --source_format=CSV --field_delimiter=&amp;quot;\t&amp;quot; \ &#39;test.first$20200501&#39; /tmp/data.tsv id:NUMERIC,description:STRING bq load --source_format=CSV --field_delimiter=&amp;quot;\t&amp;quot; \ &#39;test.first$20200502&#39; /tmp/data.tsv id:NUMERIC,description:STRING 取り込み時間別に分割されているのが分かります&#xA;echo &amp;quot;#standardSQL&amp;quot; &amp;gt; /tmp/query.sql echo &#39;select _PARTITIONTIME as pt, count(*) as count from test.first group by _PARTITIONTIME order by pt;&#39; &amp;gt;&amp;gt; /tmp/query.</description>
     </item>
-    
     <item>
       <title>express.jsでpostのrawBodyを取得</title>
       <link>https://yaasita.github.io/2020/04/28/rawpostdata/</link>
       <pubDate>Tue, 28 Apr 2020 01:00:16 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/04/28/rawpostdata/</guid>
-      <description>multipart/form-dataでPOSTされた奴を、処理するCloud functionsを書いてて必要になったので
-呼び出し側はこんな感じでやってる</description>
+      <description>multipart/form-dataでPOSTされた奴を、処理するCloud functionsを書いてて必要になったので&#xA;呼び出し側はこんな感じでやってる</description>
     </item>
-    
     <item>
       <title>microk8sとskaffold</title>
       <link>https://yaasita.github.io/2020/03/29/microk8s_and_skaffold/</link>
       <pubDate>Sun, 29 Mar 2020 03:24:06 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/03/29/microk8s_and_skaffold/</guid>
-      <description>microk8sとskaffoldをこんな感じで使う
-インストール
-snap install microk8s --class microk8s.kubectl config view --raw &amp;gt; ~/.kube/config 必要サービスの起動
-microk8s.enable dns registry storage skaffold dev --no-prune=false --cache-artifacts=false --default-repo localhost:32000 -f skaffold.yaml こんな感じにやると、リポジトリ部分を読み替えてくれるので便利</description>
+      <description>microk8sとskaffoldをこんな感じで使う&#xA;インストール&#xA;snap install microk8s --class microk8s.kubectl config view --raw &amp;gt; ~/.kube/config 必要サービスの起動&#xA;microk8s.enable dns registry storage skaffold dev --no-prune=false --cache-artifacts=false --default-repo localhost:32000 -f skaffold.yaml こんな感じにやると、リポジトリ部分を読み替えてくれるので便利</description>
     </item>
-    
     <item>
       <title>GKEでCloud SQL Proxyをsocketで使う</title>
       <link>https://yaasita.github.io/2020/02/28/k8s-cloudsql-proxy-with-socket/</link>
       <pubDate>Fri, 28 Feb 2020 04:08:58 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/02/28/k8s-cloudsql-proxy-with-socket/</guid>
-      <description>GKEでもGAEみたいにCloud SQLに繋げたい場合の話
-公式ドキュメントのサンプルだとこんな感じにport接続にしてる
-https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/blob/master/cloudsql/mysql_wordpress_deployment.yaml
-socket接続の場合はこんな感じ
-参考
-k8s サイドカーコンテナについて</description>
+      <description>GKEでもGAEみたいにCloud SQLに繋げたい場合の話&#xA;公式ドキュメントのサンプルだとこんな感じにport接続にしてる&#xA;https://github.com/GoogleCloudPlatform/kubernetes-engine-samples/blob/master/cloudsql/mysql_wordpress_deployment.yaml&#xA;socket接続の場合はこんな感じ&#xA;参考&#xA;k8s サイドカーコンテナについて</description>
     </item>
-    
     <item>
       <title>続 chromebookでbackslashを入力</title>
       <link>https://yaasita.github.io/2020/01/17/backslash-with-vim/</link>
       <pubDate>Fri, 17 Jan 2020 17:22:02 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/01/17/backslash-with-vim/</guid>
-      <description>前回 の続き
-以下をvimrcに追記して事なきを得た
-inoremapって非ASCII文字でも行けるみたい
-inoremap ¥ \ cnoremap ¥ \ </description>
+      <description>前回 の続き&#xA;以下をvimrcに追記して事なきを得た&#xA;inoremapって非ASCII文字でも行けるみたい&#xA;inoremap ¥ \ cnoremap ¥ \ </description>
     </item>
-    
     <item>
       <title>chromebookでbackslashを入力</title>
       <link>https://yaasita.github.io/2020/01/11/chromebook-backslash/</link>
       <pubDate>Sat, 11 Jan 2020 15:47:07 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/01/11/chromebook-backslash/</guid>
-      <description>今持ってるchromebookだとバックスラッシュ(0x5C)が入らない
-半角モードにして￥キーを押すとU+00A5が入力されてしまう
-入力には全角モードにして、￥キー押した後に変換して、バックスラッシュを選択する必要がある
-もしくは、Linux内なら、fcitx経由で入力すれば半角￥キーでバックスラッシュになった
-WindowsとかMacなら一発だけど、これは不便かも・・・プログラミングの時にも困るし・・・</description>
+      <description>今持ってるchromebookだとバックスラッシュ(0x5C)が入らない&#xA;半角モードにして￥キーを押すとU+00A5が入力されてしまう&#xA;入力には全角モードにして、￥キー押した後に変換して、バックスラッシュを選択する必要がある&#xA;もしくは、Linux内なら、fcitx経由で入力すれば半角￥キーでバックスラッシュになった&#xA;WindowsとかMacなら一発だけど、これは不便かも・・・プログラミングの時にも困るし・・・</description>
     </item>
-    
     <item>
       <title>Github Pagesになってるリポジトリをチェック</title>
       <link>https://yaasita.github.io/2020/01/07/check-github-pages/</link>
       <pubDate>Tue, 07 Jan 2020 18:55:03 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/01/07/check-github-pages/</guid>
-      <description>どのリポジトリがGithub Pagesの設定がされているか？
-調べたくなったので・・・
-Github pagesの設定されてるリポジトリ一覧を簡単に確認できればいいのに・・・</description>
+      <description>どのリポジトリがGithub Pagesの設定がされているか？&#xA;調べたくなったので・・・&#xA;Github pagesの設定されてるリポジトリ一覧を簡単に確認できればいいのに・・・</description>
     </item>
-    
     <item>
       <title>GCPの外部IPアドレスが有料になる件</title>
       <link>https://yaasita.github.io/2020/01/06/gcp-ex-ip/</link>
       <pubDate>Mon, 06 Jan 2020 23:06:41 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/01/06/gcp-ex-ip/</guid>
-      <description>外部IPが有料になりそうだからどうしようかという話
-一部では無料範囲内なら課金されないみたいな書き方もされてるけど、今月の請求には不穏な項目がある
-Credit External IPs will not be charged until April 1, 2020. んで、外部IPを無しにして、gcloud compute ssh で繋げるのは良いんだけど、外部IPが無いと外と通信できないからapt installもできない。。。。
-あと、上記コマンドはsshポートを解放してないと駄目ぽい（正確にはIAPからのアクセスを許可すれば良いだけぽいが）
-とりあえず課金されてから考えるか・・・
-参考リンク 外部IPを持たないGCEインスタンスでweb開発 GCP/GCE の固定グローバルIPアドレス、2020年より有料化 </description>
+      <description>外部IPが有料になりそうだからどうしようかという話&#xA;一部では無料範囲内なら課金されないみたいな書き方もされてるけど、今月の請求には不穏な項目がある&#xA;Credit External IPs will not be charged until April 1, 2020. んで、外部IPを無しにして、gcloud compute ssh で繋げるのは良いんだけど、外部IPが無いと外と通信できないからapt installもできない。。。。&#xA;あと、上記コマンドはsshポートを解放してないと駄目ぽい（正確にはIAPからのアクセスを許可すれば良いだけぽいが）&#xA;とりあえず課金されてから考えるか・・・&#xA;参考リンク 外部IPを持たないGCEインスタンスでweb開発 GCP/GCE の固定グローバルIPアドレス、2020年より有料化 </description>
     </item>
-    
     <item>
       <title>chromebookの日本語入力</title>
       <link>https://yaasita.github.io/2020/01/01/chromebook-japanese/</link>
       <pubDate>Wed, 01 Jan 2020 13:27:50 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/01/01/chromebook-japanese/</guid>
-      <description>明けましておめでとうございます。
-chromebookで日本語入力する場合はローカルの場合はfcitx-mozcを使って入力
-リモートに接続する場合は、一旦踏み台サーバーを経由して、X転送したqterminalを使っている
-ssh humidai-server -XC export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx fcitx qterminal 自分の環境では-Cオプションを付けない場合は800kbpsくらい通信するが、つけると100kbpsになるので外でやる時にはつけた方が良さそう
-回線が細いテザリング環境では ttyd を立てて、ポートフォワーディングでつないだ方が良いかも
-Ctrl-wがchromeのタブ閉じになってしまうので微妙かなと思ったんだけど、「その他のツール(L)」 =&amp;gt; 「ショートカットを作成」からアプリとして作れば、Ctrl-wも使えた
-こっちなら日本語入力も出来るのでこっちの方が良いかもしれない
-通信量も1kbps位だし</description>
+      <description>明けましておめでとうございます。&#xA;chromebookで日本語入力する場合はローカルの場合はfcitx-mozcを使って入力&#xA;リモートに接続する場合は、一旦踏み台サーバーを経由して、X転送したqterminalを使っている&#xA;ssh humidai-server -XC export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx fcitx qterminal 自分の環境では-Cオプションを付けない場合は800kbpsくらい通信するが、つけると100kbpsになるので外でやる時にはつけた方が良さそう&#xA;回線が細いテザリング環境では ttyd を立てて、ポートフォワーディングでつないだ方が良いかも&#xA;Ctrl-wがchromeのタブ閉じになってしまうので微妙かなと思ったんだけど、「その他のツール(L)」 =&amp;gt; 「ショートカットを作成」からアプリとして作れば、Ctrl-wも使えた&#xA;こっちなら日本語入力も出来るのでこっちの方が良いかもしれない&#xA;通信量も1kbps位だし</description>
     </item>
-    
   </channel>
 </rss>

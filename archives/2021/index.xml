@@ -4,255 +4,121 @@
     <title>2021 on # cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2021/</link>
     <description>Recent content in 2021 on # cd ~yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 12 Dec 2021 06:03:17 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2021/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 12 Dec 2021 06:03:17 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/archives/2021/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>systemd-nspawnのtmpディレクトリ</title>
       <link>https://yaasita.github.io/2021/12/12/systemd-nspawn-tmpdir/</link>
       <pubDate>Sun, 12 Dec 2021 06:03:17 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/12/12/systemd-nspawn-tmpdir/</guid>
-      <description>systemd-nspawnで/tmpのtmpfs mountを止める方法について昔こんな記事書いた
-systemd-nspawnでのtmpディレクトリの扱いについて
-今は状況が変わってて、
-https://github.com/systemd/systemd/pull/10294/files
-こんな感じで、&amp;ldquo;SYSTEMD_NSPAWN_TMPFS_TMP&amp;rdquo; って環境変数に0を入れておけば、/tmpディレクトリをtmpfsにしない
-/etc/systemd/system/systemd-nspawn@.service
-にこんな感じで追加したらmachinectlからもできる
-Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0 </description>
+      <description>systemd-nspawnで/tmpのtmpfs mountを止める方法について昔こんな記事書いた&#xA;systemd-nspawnでのtmpディレクトリの扱いについて&#xA;今は状況が変わってて、&#xA;https://github.com/systemd/systemd/pull/10294/files&#xA;こんな感じで、&amp;ldquo;SYSTEMD_NSPAWN_TMPFS_TMP&amp;rdquo; って環境変数に0を入れておけば、/tmpディレクトリをtmpfsにしない&#xA;/etc/systemd/system/systemd-nspawn@.service&#xA;にこんな感じで追加したらmachinectlからもできる&#xA;Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0 </description>
     </item>
-    
     <item>
       <title>microk8sでargocdを動かす</title>
       <link>https://yaasita.github.io/2021/11/28/microk8s/</link>
       <pubDate>Sun, 28 Nov 2021 06:09:44 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/11/28/microk8s/</guid>
-      <description>microk8s で ArgoCD を動かすときのメモ
-まず手順通りにマニフェストを設定したら
-kubectl patch svc argocd-server -n argocd -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; ClusterIP から NodePortに変更
-こんな感じの表示になったら
-$ kubectl get svc argocd-server -n argocd argocd-server NodePort 10.152.183.43 &amp;lt;none&amp;gt; 80:30444/TCP,443:30983/TCP 20h 以下のURLでアクセス
-https:// (ホストのIP) :30983
-まあkubectl port-forward でやってもいいけど
-ついでに dashbord も同様にできる
-kubectl patch svc kubernetes-dashboard -n kube-system -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; kubectl get svc kubernetes-dashboard -n kube-system $ kubectl get svc kubernetes-dashboard -n kube-system NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE kubernetes-dashboard NodePort 10.</description>
+      <description>microk8s で ArgoCD を動かすときのメモ&#xA;まず手順通りにマニフェストを設定したら&#xA;kubectl patch svc argocd-server -n argocd -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; ClusterIP から NodePortに変更&#xA;こんな感じの表示になったら&#xA;$ kubectl get svc argocd-server -n argocd argocd-server NodePort 10.152.183.43 &amp;lt;none&amp;gt; 80:30444/TCP,443:30983/TCP 20h 以下のURLでアクセス&#xA;https:// (ホストのIP) :30983&#xA;まあkubectl port-forward でやってもいいけど&#xA;ついでに dashbord も同様にできる&#xA;kubectl patch svc kubernetes-dashboard -n kube-system -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; kubectl get svc kubernetes-dashboard -n kube-system $ kubectl get svc kubernetes-dashboard -n kube-system NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE kubernetes-dashboard NodePort 10.</description>
     </item>
-    
     <item>
       <title>SPFレコードでaを指定</title>
       <link>https://yaasita.github.io/2021/10/15/spf-rule/</link>
       <pubDate>Fri, 15 Oct 2021 00:57:38 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/10/15/spf-rule/</guid>
-      <description>SPFレコードで
-v=spf1 a:example.net -all みたいに指定したときにAレコードだけじゃなくて、AAAAレコードも引いてくれるので便利です
-IPv6のアドレスは長くなるので積極的に利用したいですね
-https://datatracker.ietf.org/doc/html/rfc7208#section-5.3</description>
+      <description>SPFレコードで&#xA;v=spf1 a:example.net -all みたいに指定したときにAレコードだけじゃなくて、AAAAレコードも引いてくれるので便利です&#xA;IPv6のアドレスは長くなるので積極的に利用したいですね&#xA;https://datatracker.ietf.org/doc/html/rfc7208#section-5.3</description>
     </item>
-    
     <item>
       <title>長年使ったマウスコンピューターのPC</title>
       <link>https://yaasita.github.io/2021/10/13/mouse-pc/</link>
       <pubDate>Wed, 13 Oct 2021 04:43:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/10/13/mouse-pc/</guid>
-      <description>長年使ったmouse computerのPCを廃棄した
-めっちゃくちゃな長くもったし、まだHDDも壊れてなかったすごい
-捨てたやつのスペック
-商品型名： LB-C110B [Windows 8.1搭載]
-商品単価： \44,940
-OS: Windows 8.1 64ビット CPU: インテル(R) Celeron(R) プロセッサー 1037U (2コア/1.80GHz/2Mキャッシュ) メモリ: \5,250 8GB メモリ [ 8GB×1 (DDR3 SO-DIMM PC3-12800) ] HDD1:【キャンペーン】500GB 5400rpm [ Western Digital製 ] VGA:インテル(R) HD グラフィックス 3.5ドライブベイ :SDカードリーダー マザーボード :インテル(R) NM70 Express チップセット ※SSD搭載時は SATAII 接続になります。( mSATA SSDを除く ) ベアボーン :LuvBook C シリーズ 液晶 :11.6型ワイド (1366x768) マルチタッチ対応光沢HD液晶パネル LAN :[ オンボード ] 10/100/1000BASE-T GigaBit-Ethernet LAN 無線LAN :無線LAN ( IEEE802.</description>
+      <description>長年使ったmouse computerのPCを廃棄した&#xA;めっちゃくちゃな長くもったし、まだHDDも壊れてなかったすごい&#xA;捨てたやつのスペック&#xA;商品型名： LB-C110B [Windows 8.1搭載]&#xA;商品単価： \44,940&#xA;OS: Windows 8.1 64ビット CPU: インテル(R) Celeron(R) プロセッサー 1037U (2コア/1.80GHz/2Mキャッシュ) メモリ: \5,250 8GB メモリ [ 8GB×1 (DDR3 SO-DIMM PC3-12800) ] HDD1:【キャンペーン】500GB 5400rpm [ Western Digital製 ] VGA:インテル(R) HD グラフィックス 3.5ドライブベイ :SDカードリーダー マザーボード :インテル(R) NM70 Express チップセット ※SSD搭載時は SATAII 接続になります。( mSATA SSDを除く ) ベアボーン :LuvBook C シリーズ 液晶 :11.6型ワイド (1366x768) マルチタッチ対応光沢HD液晶パネル LAN :[ オンボード ] 10/100/1000BASE-T GigaBit-Ethernet LAN 無線LAN :無線LAN ( IEEE802.</description>
     </item>
-    
     <item>
       <title>bridgeインターフェイスのMACアドレス</title>
       <link>https://yaasita.github.io/2021/10/10/machine-id/</link>
       <pubDate>Sun, 10 Oct 2021 05:52:16 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/10/10/machine-id/</guid>
-      <description>KVMを使ったVM内でブリッジインターフェイス作ってそのVMをコピーしたらMACアドレスが重複して通信不能になった
-(/etc/systemd/network/にはこんな感じでbridge作る)
-https://gist.github.com/yaasita/d527b48f54b0e23c3097a9c69239d534
-どうやらこれ、machine-idから作られてるみたいで、VMコピーしたらmachine-id変えた方が良いぽいね
-rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machine-id-setup </description>
+      <description>KVMを使ったVM内でブリッジインターフェイス作ってそのVMをコピーしたらMACアドレスが重複して通信不能になった&#xA;(/etc/systemd/network/にはこんな感じでbridge作る)&#xA;https://gist.github.com/yaasita/d527b48f54b0e23c3097a9c69239d534&#xA;どうやらこれ、machine-idから作られてるみたいで、VMコピーしたらmachine-id変えた方が良いぽいね&#xA;rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machine-id-setup </description>
     </item>
-    
     <item>
       <title>dircolorsの設定</title>
       <link>https://yaasita.github.io/2021/09/20/dircolors/</link>
       <pubDate>Mon, 20 Sep 2021 17:40:54 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/09/20/dircolors/</guid>
-      <description>dircolorsは
-ls --color=auto したときの色を設定するコマンド
-以下のコマンドで設定を書き出して
-dircolors -p &amp;gt; ~/.dir_colors 好きな設定に編集する
-vi ~/.dircolors .bashrcに以下のように書いておいた
-if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^screen ]];then alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto&#39; eval &amp;quot;$(dircolors -b ~/.dircolors)&amp;quot; fi 参考
-lsコマンドで表示されるファイルの色を変更するには </description>
+      <description>dircolorsは&#xA;ls --color=auto したときの色を設定するコマンド&#xA;以下のコマンドで設定を書き出して&#xA;dircolors -p &amp;gt; ~/.dir_colors 好きな設定に編集する&#xA;vi ~/.dircolors .bashrcに以下のように書いておいた&#xA;if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^screen ]];then alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto&#39; eval &amp;quot;$(dircolors -b ~/.dircolors)&amp;quot; fi 参考&#xA;lsコマンドで表示されるファイルの色を変更するには </description>
     </item>
-    
     <item>
       <title>bashでディレクトリのbookmark</title>
       <link>https://yaasita.github.io/2021/09/06/bash-bookmarks/</link>
       <pubDate>Mon, 06 Sep 2021 02:00:02 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/09/06/bash-bookmarks/</guid>
-      <description>これすごい便利だった
-https://threkk.medium.com/how-to-use-bookmarks-in-bash-zsh-6b8074e40774
-CDPATHを使うとこんな便利なことができるのね
-ただ以下の方が指摘されているようにbashだと補完が効かないので, compgenで補完候補を作る方が良さそう
-https://mobile.twitter.com/mattn_jp/status/1434205359573405696
-自分の場合は、gotoっていうコマンドよりcdで通常通り使えた方が良いので
-こんな感じの設定を追加しておいた
-cdコマンドを上書きして、@で始まってたら cd -P でsymlinkを辿るようにして、他は通常通り
-(これなら補完候補も足さなくてOK)
-export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 } あと、bookmarkへの追加もコマンドにしておく
-bookmarkしたいディレクトリに移動してbookmarkコマンドでsymlink作るようにしておく
-function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) } </description>
+      <description>これすごい便利だった&#xA;https://threkk.medium.com/how-to-use-bookmarks-in-bash-zsh-6b8074e40774&#xA;CDPATHを使うとこんな便利なことができるのね&#xA;ただ以下の方が指摘されているようにbashだと補完が効かないので, compgenで補完候補を作る方が良さそう&#xA;https://mobile.twitter.com/mattn_jp/status/1434205359573405696&#xA;自分の場合は、gotoっていうコマンドよりcdで通常通り使えた方が良いので&#xA;こんな感じの設定を追加しておいた&#xA;cdコマンドを上書きして、@で始まってたら cd -P でsymlinkを辿るようにして、他は通常通り&#xA;(これなら補完候補も足さなくてOK)&#xA;export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 } あと、bookmarkへの追加もコマンドにしておく&#xA;bookmarkしたいディレクトリに移動してbookmarkコマンドでsymlink作るようにしておく&#xA;function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) } </description>
     </item>
-    
     <item>
       <title>debian bullseyeのmlocateで引っかからないファイル</title>
       <link>https://yaasita.github.io/2021/08/16/mlocate/</link>
       <pubDate>Mon, 16 Aug 2021 02:15:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/08/16/mlocate/</guid>
-      <description>debian 11でlocateしても引っかからないファイル多いなと思って調べたら
-systemctl cat mlocate.service こいうのが追加されてる
-[Service] PrivateTmp=true PrivateDevices=true PrivateNetwork=true ProtectSystem=true debian 10 (buster) 時代はcronだったから気にしなかったけど、多分これ、ProtectSystemの所為で/usrとか見れてないぽい
-今までのように全検索したかったら以下のコマンドで上書きしたほうが良いかと
-systemctl edit mlocate.service </description>
+      <description>debian 11でlocateしても引っかからないファイル多いなと思って調べたら&#xA;systemctl cat mlocate.service こいうのが追加されてる&#xA;[Service] PrivateTmp=true PrivateDevices=true PrivateNetwork=true ProtectSystem=true debian 10 (buster) 時代はcronだったから気にしなかったけど、多分これ、ProtectSystemの所為で/usrとか見れてないぽい&#xA;今までのように全検索したかったら以下のコマンドで上書きしたほうが良いかと&#xA;systemctl edit mlocate.service </description>
     </item>
-    
     <item>
       <title>nodejsのreadline</title>
       <link>https://yaasita.github.io/2021/07/29/nodejs-readline/</link>
       <pubDate>Thu, 29 Jul 2021 00:55:40 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/07/29/nodejs-readline/</guid>
-      <description>readlineの書き方
-https://nodejs.org/api/readline.html
-こうやって書くより
-const rl = readline.createInterface({ // ... }); for await (const line of rl) { // Each line in the readline input will be successively available here as // `line`. } こっちの方がメモリ効率が良さそう
-await new Promise((resolv, reject) =&amp;gt; { rl.on(&amp;#34;line&amp;#34;, (line) =&amp;gt; { // 処理 }); rl.on(&amp;#34;close&amp;#34;, () =&amp;gt; { resolv(); }); }); 詳しくは調べてないけど、巨大ファイルだと
-FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory `` が頻発する </description>
+      <description>readlineの書き方&#xA;https://nodejs.org/api/readline.html&#xA;こうやって書くより&#xA;const rl = readline.createInterface({ // ... }); for await (const line of rl) { // Each line in the readline input will be successively available here as // `line`. } こっちの方がメモリ効率が良さそう&#xA;await new Promise((resolv, reject) =&amp;gt; { rl.on(&amp;#34;line&amp;#34;, (line) =&amp;gt; { // 処理 }); rl.on(&amp;#34;close&amp;#34;, () =&amp;gt; { resolv(); }); }); 詳しくは調べてないけど、巨大ファイルだと&#xA;FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory `` が頻発する </description>
     </item>
-    
     <item>
       <title>AtCoder Beginner Contest 202のD問題</title>
       <link>https://yaasita.github.io/2021/06/06/atcoder-d/</link>
       <pubDate>Sun, 06 Jun 2021 01:49:45 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/06/06/atcoder-d/</guid>
-      <description>問題
-https://atcoder.jp/contests/abc202/tasks
-解説
-https://www.youtube.com/watch?v=iNSp33TT3tc
-ポイントは use bigint; を指定しないと溢れて浮動小数点になってしまう</description>
+      <description>問題&#xA;https://atcoder.jp/contests/abc202/tasks&#xA;解説&#xA;https://www.youtube.com/watch?v=iNSp33TT3tc&#xA;ポイントは use bigint; を指定しないと溢れて浮動小数点になってしまう</description>
     </item>
-    
     <item>
       <title>tumblrのテキスト情報を取得</title>
       <link>https://yaasita.github.io/2021/05/25/tumblr-metadata/</link>
       <pubDate>Tue, 25 May 2021 00:53:51 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/05/25/tumblr-metadata/</guid>
-      <description>tumblrの検索だと、上手く引っかからない事が多いので
-テキストデータはローカルに保存することにした
-最初の投稿から何番目を指定することで、ディレクトリの年別ディレクトリに保存します
-実行例
-./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ 1234 こんな感じで適度にsleep入れて取得してます
-#!/bin/bash set -eux save_file=/tmp/save_num already_get_number=$(cat $save_file) for ((i=$already_get_number; i &amp;lt; $already_get_number + 100; i++));do ./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ $i sleep 1 done echo $i &amp;gt; $save_file </description>
+      <description>tumblrの検索だと、上手く引っかからない事が多いので&#xA;テキストデータはローカルに保存することにした&#xA;最初の投稿から何番目を指定することで、ディレクトリの年別ディレクトリに保存します&#xA;実行例&#xA;./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ 1234 こんな感じで適度にsleep入れて取得してます&#xA;#!/bin/bash set -eux save_file=/tmp/save_num already_get_number=$(cat $save_file) for ((i=$already_get_number; i &amp;lt; $already_get_number + 100; i++));do ./get-tumblr-text.pl --tumblr_id yaasita --save_dir /tmp/ $i sleep 1 done echo $i &amp;gt; $save_file </description>
     </item>
-    
     <item>
       <title>スマホ変えた</title>
       <link>https://yaasita.github.io/2021/04/17/sumaho/</link>
       <pubDate>Sat, 17 Apr 2021 22:56:59 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/04/17/sumaho/</guid>
-      <description>SH-M12S AQUOS sense3
-ってやつに変えました
-https://jp.sharp/products/shm12/
-おサイフケータイ対応なので、モバイルPASMOにもしました
-androidは10まで上がりました</description>
+      <description>SH-M12S AQUOS sense3&#xA;ってやつに変えました&#xA;https://jp.sharp/products/shm12/&#xA;おサイフケータイ対応なので、モバイルPASMOにもしました&#xA;androidは10まで上がりました</description>
     </item>
-    
     <item>
       <title>skypeログをエクスポート出来るようになってた</title>
       <link>https://yaasita.github.io/2021/04/04/skype-log-2021/</link>
       <pubDate>Sun, 04 Apr 2021 05:08:25 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/04/04/skype-log-2021/</guid>
-      <description>これは便利
-こちらの手順に従えば、アップロードファイルと、メッセージのjsonが手に入る
-https://support.skype.com/ja/faq/FA34894/skype-huairutochiyatsutolu-li-woekusupotosurufang-fa
-よく見ると、結構昔の奴も入ってるので昔からサーバー側でログを取ってたみたいね</description>
+      <description>これは便利&#xA;こちらの手順に従えば、アップロードファイルと、メッセージのjsonが手に入る&#xA;https://support.skype.com/ja/faq/FA34894/skype-huairutochiyatsutolu-li-woekusupotosurufang-fa&#xA;よく見ると、結構昔の奴も入ってるので昔からサーバー側でログを取ってたみたいね</description>
     </item>
-    
     <item>
       <title>mpdとncmpc</title>
       <link>https://yaasita.github.io/2021/03/20/mpd-ncmpc/</link>
       <pubDate>Sat, 20 Mar 2021 14:39:05 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/03/20/mpd-ncmpc/</guid>
-      <description>mpd と ncmpc の設定メモ
-インストール apt install mpd ncmpc セットアップ /etc/mpd.confの設定
-http経由で聞くのでoutputはhttpにします
-~/.config/ncmpc/config
-タグで管理してないのでファイル名だけ表示します
-host = &amp;quot;127.0.0.1&amp;quot; port = 6600 list-format = &amp;quot;%file%&amp;quot; status-format = &amp;quot;%file%&amp;quot; text-editor = vim /var/lib/mpd/music/ に音楽ファイルを入れる(symlinkでも可)
-ncmpcで起動 Ctrl-UでDBのアップデート
-歌詞表示 歌詞表示するなら ncmpcpp の方が楽ですが、最初からvimキーバインドなncmpcが好きなのでこちらを使っています
-方法は以下の記事通り歌詞検索用のスクリプトを配置するだけ
-https://www.use-strict.de/using-ncmpc-to-fetch-and-read-lyrics.html
-debianのパッケージは以下のオプションでビルドされてるので
--Dlyrics_plugin_dir=&amp;quot;/usr/lib/ncmpc/lyrics/&amp;quot; /usr/lib/ncmpc/lyrics/01-test.sh
-みたいなファイルをおきます
-これが歌詞検索の際に実行されます
-こんなファイルを置いて
-#!/bin/bash echo &amp;quot;$@&amp;quot; echo &amp;quot;あいうおえ&amp;quot; artist, titleを設定
-eyeD3 -a backnumber hoge.mp3 eyeD3 -t 高嶺の花子さん takane.mp3 すると第一引数にartist, 第二引数にtitleが入ります
-この画面で、Sを押すと歌詞を~/.cache/ncmpc/lyrics/保存できたりもします
-ファイル名が引数に入らないので、直接ファイルを探せないですが、ファイル名を工夫すれば、mp3ファイルタグ内の歌詞情報を引っ張ることも可能だと思います</description>
+      <description>mpd と ncmpc の設定メモ&#xA;インストール apt install mpd ncmpc セットアップ /etc/mpd.confの設定&#xA;http経由で聞くのでoutputはhttpにします&#xA;~/.config/ncmpc/config&#xA;タグで管理してないのでファイル名だけ表示します&#xA;host = &amp;quot;127.0.0.1&amp;quot; port = 6600 list-format = &amp;quot;%file%&amp;quot; status-format = &amp;quot;%file%&amp;quot; text-editor = vim /var/lib/mpd/music/ に音楽ファイルを入れる(symlinkでも可)&#xA;ncmpcで起動 Ctrl-UでDBのアップデート&#xA;歌詞表示 歌詞表示するなら ncmpcpp の方が楽ですが、最初からvimキーバインドなncmpcが好きなのでこちらを使っています&#xA;方法は以下の記事通り歌詞検索用のスクリプトを配置するだけ&#xA;https://www.use-strict.de/using-ncmpc-to-fetch-and-read-lyrics.html&#xA;debianのパッケージは以下のオプションでビルドされてるので&#xA;-Dlyrics_plugin_dir=&amp;quot;/usr/lib/ncmpc/lyrics/&amp;quot; /usr/lib/ncmpc/lyrics/01-test.sh&#xA;みたいなファイルをおきます&#xA;これが歌詞検索の際に実行されます&#xA;こんなファイルを置いて&#xA;#!/bin/bash echo &amp;quot;$@&amp;quot; echo &amp;quot;あいうおえ&amp;quot; artist, titleを設定&#xA;eyeD3 -a backnumber hoge.mp3 eyeD3 -t 高嶺の花子さん takane.mp3 すると第一引数にartist, 第二引数にtitleが入ります&#xA;この画面で、Sを押すと歌詞を~/.cache/ncmpc/lyrics/保存できたりもします&#xA;ファイル名が引数に入らないので、直接ファイルを探せないですが、ファイル名を工夫すれば、mp3ファイルタグ内の歌詞情報を引っ張ることも可能だと思います</description>
     </item>
-    
     <item>
       <title>GKEでGCSバックエンドと併用する時</title>
       <link>https://yaasita.github.io/2021/02/25/gke-neg/</link>
       <pubDate>Thu, 25 Feb 2021 02:26:18 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/02/25/gke-neg/</guid>
-      <description>よくあるこんな構成
-staticなHTML/CSSはGCSから、API部分はGKEからみたいな構成
-+---&amp;gt; GCS | ---&amp;gt; GCLB ---+ | +---&amp;gt; k8s(GKE) これ、GCLB部分をingressにするのが良いんだけど、現状バックエンドサービスにGCSを登録できない
-1.19ならできるぽいがなんか上手く行かなかったので
-とりあえず、今の機能でやるなら、
-NEGを作って、そこをGCLBのバックエンドサービスに登録する
-https://cloud.google.com/kubernetes-engine/docs/how-to/standalone-neg
-厳密な事を言うと、nodeportもバックエンドサービスに登録できるが、こっちはノードの増減によりエンドポイントが変わってしまうので不適
-公式ドキュメント通りだけどこんな感じで作る
-あとはGCSにWebサイトの設定と、GCLBの設定すればOK</description>
+      <description>よくあるこんな構成&#xA;staticなHTML/CSSはGCSから、API部分はGKEからみたいな構成&#xA;+---&amp;gt; GCS | ---&amp;gt; GCLB ---+ | +---&amp;gt; k8s(GKE) これ、GCLB部分をingressにするのが良いんだけど、現状バックエンドサービスにGCSを登録できない&#xA;1.19ならできるぽいがなんか上手く行かなかったので&#xA;とりあえず、今の機能でやるなら、&#xA;NEGを作って、そこをGCLBのバックエンドサービスに登録する&#xA;https://cloud.google.com/kubernetes-engine/docs/how-to/standalone-neg&#xA;厳密な事を言うと、nodeportもバックエンドサービスに登録できるが、こっちはノードの増減によりエンドポイントが変わってしまうので不適&#xA;公式ドキュメント通りだけどこんな感じで作る&#xA;あとはGCSにWebサイトの設定と、GCLBの設定すればOK</description>
     </item>
-    
     <item>
       <title>apacheのmod-auth-openidcについて</title>
       <link>https://yaasita.github.io/2021/01/01/mod-auth-openidc/</link>
       <pubDate>Fri, 01 Jan 2021 22:37:48 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/01/01/mod-auth-openidc/</guid>
-      <description>BASIC認証かけるみたいに簡単にGoogle認証を追加できた
-公式サイト
-https://www.mod-auth-openidc.org/
-インストール
-apt install libapache2-mod-auth-openidc 設定 /etc/apache2/mods-enabled/auth_openidc.conf
-OIDCRedirectURI https://hoge.example.jp/oidc/redirect_uri OIDCCryptoPassphrase hogehoge-foobar OIDCProviderMetadataURL https://accounts.google.com/.well-known/openid-configuration OIDCScope &amp;quot;openid email&amp;quot; OIDCClientID xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com OIDCClientSecret XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX リバースプロキシ的に使う例
-/adminかつ、プライベートIP以外の場合はGoogle認証で hogehoge@gmail.com のみ許可
-&amp;lt;VirtualHost *:443&amp;gt; ServerName hoge.example.jp &amp;lt;Location /&amp;gt; Require all granted &amp;lt;/Location&amp;gt; &amp;lt;Location /oidc/&amp;gt; AuthType openid-connect Require valid-user &amp;lt;/Location&amp;gt; &amp;lt;Location /admin&amp;gt; AuthType openid-connect Require claim email:hogehoge@gmail.com Require ip 192.168.0.0/24 &amp;lt;/Location&amp;gt; ProxyRequests Off ProxyPreserveHost On ProxyPass / http://127.0.0.1:8080/ keepalive=On RequestHeader set X-Forwarded-Proto &amp;quot;https&amp;quot; RequestHeader unset X-Forwarded-For RequestHeader unset X-Forwarded-Server RequestHeader unset X-Forwarded-Host # SSL設定等が続く .</description>
+      <description>BASIC認証かけるみたいに簡単にGoogle認証を追加できた&#xA;公式サイト&#xA;https://www.mod-auth-openidc.org/&#xA;インストール&#xA;apt install libapache2-mod-auth-openidc 設定 /etc/apache2/mods-enabled/auth_openidc.conf&#xA;OIDCRedirectURI https://hoge.example.jp/oidc/redirect_uri OIDCCryptoPassphrase hogehoge-foobar OIDCProviderMetadataURL https://accounts.google.com/.well-known/openid-configuration OIDCScope &amp;quot;openid email&amp;quot; OIDCClientID xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.apps.googleusercontent.com OIDCClientSecret XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX リバースプロキシ的に使う例&#xA;/adminかつ、プライベートIP以外の場合はGoogle認証で hogehoge@gmail.com のみ許可&#xA;&amp;lt;VirtualHost *:443&amp;gt; ServerName hoge.example.jp &amp;lt;Location /&amp;gt; Require all granted &amp;lt;/Location&amp;gt; &amp;lt;Location /oidc/&amp;gt; AuthType openid-connect Require valid-user &amp;lt;/Location&amp;gt; &amp;lt;Location /admin&amp;gt; AuthType openid-connect Require claim email:hogehoge@gmail.com Require ip 192.168.0.0/24 &amp;lt;/Location&amp;gt; ProxyRequests Off ProxyPreserveHost On ProxyPass / http://127.0.0.1:8080/ keepalive=On RequestHeader set X-Forwarded-Proto &amp;quot;https&amp;quot; RequestHeader unset X-Forwarded-For RequestHeader unset X-Forwarded-Server RequestHeader unset X-Forwarded-Host # SSL設定等が続く .</description>
     </item>
-    
   </channel>
 </rss>

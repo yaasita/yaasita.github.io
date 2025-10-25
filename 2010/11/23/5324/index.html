@@ -6,43 +6,20 @@
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>XenをDebian squeezeにインストールしてみる | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.111.3">
+    <meta name="generator" content="Hugo 0.131.0">
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
 
-    <meta property="og:title" content="XenをDebian squeezeにインストールしてみる" />
-<meta property="og:description" content="はやっている様なのでXenを使ってみた
-基本的にはDebian Wikiの通りやればOK
-1.必要なパッケージのインストール
-amd64じゃなかったら686とか自分のPCに合わせる
-bridge-utils debootstrapも忘れずに
-aptitude -P install xen-hypervisor-4.0-amd64 linux-image-xen-amd64 xen-tools
-2.grubの起動順位、設定の変更？
-なんか知らんがこうするといいらしい
-mv -i /etc/grub.d/10_linux /etc/grub.d/50_linux
-update-grub2
-echo &#34;&#34; &gt;&gt; /etc/default/grub
-echo &#34;# Disable OS prober to prevent virtual machines on logical volumes from appearing in the boot menu.&#34; &gt;&gt; /etc/default/grub
-echo &#34;GRUB_DISABLE_OS_PROBER=true&#34; &gt;&gt; /etc/default/grub
-update-grub2
-3./etc/default/xendomainsを編集して状態保存を無効化
-XENDOMAINS_RESTORE=false
-XENDOMAINS_SAVE=&#34;&#34;
-4.ネットワークブリッジの設定
-/etc/xen/xend-config.sxpを編集
-以下の行のコメントアウトを解除
-(network-script network-bridge)
-5.VMイメージ作成する際のデフォルト値を設定
-今回はLVM上にイメージファイルを作らないのでdir を指定
-ここで設定しなくても全部コマンドラインでやるのも可→参考リンク
-pygrubっていうのはdom0からカーネルを一々VM上に持っていかなくても済む
-仕組み　→　参考リンク
-dir = /home/xen
-size = 4Gb # Disk image size." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://yaasita.github.io/2010/11/23/5324/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2010-11-23T00:00:00+09:00" />
-<meta property="article:modified_time" content="2010-11-23T00:00:00+09:00" />
+    <meta property="og:url" content="https://yaasita.github.io/2010/11/23/5324/">
+  <meta property="og:site_name" content="# cd ~yaasita">
+  <meta property="og:title" content="XenをDebian squeezeにインストールしてみる">
+  <meta property="og:description" content="はやっている様なのでXenを使ってみた 基本的にはDebian Wikiの通りやればOK 1.必要なパッケージのインストール amd64じゃなかったら686とか自分のPCに合わせる bridge-utils debootstrapも忘れずに aptitude -P install xen-hypervisor-4.0-amd64 linux-image-xen-amd64 xen-tools 2.grubの起動順位、設定の変更？ なんか知らんがこうするといいらしい mv -i /etc/grub.d/10_linux /etc/grub.d/50_linux update-grub2 echo &#34;&#34; &gt;&gt; /etc/default/grub echo &#34;# Disable OS prober to prevent virtual machines on logical volumes from appearing in the boot menu.&#34; &gt;&gt; /etc/default/grub echo &#34;GRUB_DISABLE_OS_PROBER=true&#34; &gt;&gt; /etc/default/grub update-grub2 3./etc/default/xendomainsを編集して状態保存を無効化 XENDOMAINS_RESTORE=false XENDOMAINS_SAVE=&#34;&#34; 4.ネットワークブリッジの設定 /etc/xen/xend-config.sxpを編集 以下の行のコメントアウトを解除 (network-script network-bridge) 5.VMイメージ作成する際のデフォルト値を設定 今回はLVM上にイメージファイルを作らないのでdir を指定 ここで設定しなくても全部コマンドラインでやるのも可→参考リンク pygrubっていうのはdom0からカーネルを一々VM上に持っていかなくても済む 仕組み　→　参考リンク dir = /home/xen size = 4Gb # Disk image size.">
+  <meta property="og:locale" content="ja">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2010-11-23T00:00:00+09:00">
+    <meta property="article:modified_time" content="2010-11-23T00:00:00+09:00">
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&amp;v=4">
 
     <script id="dsq-count-scr" src="https://yaasita.disqus.com/count.js" async></script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="36937576-b2d5-4494-aba8-d0b70a153691"></script>
@@ -94,7 +71,7 @@ size = 4Gb # Disk image size." />
 
       
       <div id="disqus_thread"></div>
-<script type="application/javascript">
+<script>
     window.disqus_config = function () {
     
     
@@ -193,7 +170,7 @@ size = 4Gb # Disk image size." />
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (355)</a>
+          <a href="/categories/linux"><span></span>linux (356)</a>
         </li>
         
         <li>
@@ -209,7 +186,7 @@ size = 4Gb # Disk image size." />
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (430)</a>
+          <a href="/categories/soft"><span></span>soft (431)</a>
         </li>
         
         <li>
@@ -300,7 +277,7 @@ size = 4Gb # Disk image size." />
         </li>
         
         <li>
-          <a href="/archives/2025"><span></span>2025 (13)</a>
+          <a href="/archives/2025"><span></span>2025 (14)</a>
         </li>
         
       </ul>

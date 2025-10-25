@@ -4,260 +4,128 @@
     <title>2023 on # cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2023/</link>
     <description>Recent content in 2023 on # cd ~yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 23 Dec 2023 01:11:41 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2023/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 23 Dec 2023 01:11:41 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/archives/2023/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>tumblrの投稿は消えることがある</title>
       <link>https://yaasita.github.io/2023/12/23/tumblr/</link>
       <pubDate>Sat, 23 Dec 2023 01:11:41 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/12/23/tumblr/</guid>
-      <description>tumblrの投稿は突然消える場合があるので注意
-例えば以下の投稿は/posts APIで取得できるが
-https://gist.github.com/yaasita/c1c8dcfda063305f3db70bfedee9e0cb
-blogページからは消えている
-https://yaasita.tumblr.com/post/165399040492/asagaonosakukisetu-mklater-xmixkox
-なぜ発生するかは不明</description>
+      <description>tumblrの投稿は突然消える場合があるので注意&#xA;例えば以下の投稿は/posts APIで取得できるが&#xA;https://gist.github.com/yaasita/c1c8dcfda063305f3db70bfedee9e0cb&#xA;blogページからは消えている&#xA;https://yaasita.tumblr.com/post/165399040492/asagaonosakukisetu-mklater-xmixkox&#xA;なぜ発生するかは不明</description>
     </item>
-    
     <item>
       <title>rana8を試す</title>
       <link>https://yaasita.github.io/2023/12/22/rana8/</link>
       <pubDate>Fri, 22 Dec 2023 02:20:37 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/12/22/rana8/</guid>
-      <description>これ
-https://web.arena.ne.jp/service/rana8poc.html
-なんかほぼGoogleCloudのcloud runだった
-サービスはサービスアカウントの鍵をもらって gcloudでdeployするみたいな奴
-マニュアル通りやっても以下のようになって使えなかった
-ERROR: (gcloud.run.deploy) User [xxxxxxxxxx@rana8-poc.iam.gserviceaccount.com] does not have permission to access projects instance [rana8-poc] (or it may not exist): Permission &#39;cloudbuild.locations.list&#39; denied on &#39;projects/rana8-poc/lo cations/global&#39; cloud runを素で使うより何が良いのかは分からない</description>
+      <description>これ&#xA;https://web.arena.ne.jp/service/rana8poc.html&#xA;なんかほぼGoogleCloudのcloud runだった&#xA;サービスはサービスアカウントの鍵をもらって gcloudでdeployするみたいな奴&#xA;マニュアル通りやっても以下のようになって使えなかった&#xA;ERROR: (gcloud.run.deploy) User [xxxxxxxxxx@rana8-poc.iam.gserviceaccount.com] does not have permission to access projects instance [rana8-poc] (or it may not exist): Permission &#39;cloudbuild.locations.list&#39; denied on &#39;projects/rana8-poc/lo cations/global&#39; cloud runを素で使うより何が良いのかは分からない</description>
     </item>
-    
     <item>
       <title>codeiumがとても良い</title>
       <link>https://yaasita.github.io/2023/11/21/codeium/</link>
       <pubDate>Tue, 21 Nov 2023 02:41:29 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/11/21/codeium/</guid>
-      <description>codeium がとても良い
-個人利用なら無料 vimにも対応 対応言語が豊富 など
-競合との比較はこちら
-https://codeium.com/compare
-とりあえず自分がVimに入れてる設定
-if v:version &amp;gt;= 900 let g:codeium_disable_bindings = 1 let g:codeium_manual = v:true let g:codeium_enabled = v:false imap &amp;lt;script&amp;gt;&amp;lt;silent&amp;gt;&amp;lt;nowait&amp;gt;&amp;lt;expr&amp;gt; &amp;lt;Right&amp;gt; codeium#Accept() imap &amp;lt;Down&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#CycleCompletions(1)&amp;lt;CR&amp;gt; imap &amp;lt;Up&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#CycleCompletions(-1)&amp;lt;CR&amp;gt; imap &amp;lt;Left&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#Clear()&amp;lt;CR&amp;gt; imap &amp;lt;C-A&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#Complete()&amp;lt;CR&amp;gt; set statusline=%&amp;lt;%f\ %2*%{&amp;amp;mod&amp;amp;&amp;amp;&amp;amp;bt!=#&#39;terminal&#39;?&#39;[+]&#39;:&#39;&#39;}%0*%{&amp;amp;ro?&#39;[RO]&#39;:&#39;&#39;}%h%w%=codeium:%3{codeium#GetStatusString()}\ %{&#39;[&#39;.(&amp;amp;fenc!=&#39;&#39;?&amp;amp;fenc:&amp;amp;enc).&#39;][&#39;.&amp;amp;ff.&#39;]&#39;}\ %2*%y%0*%6l,%c%V%1*%8P endif 手動で有効にする設定を入れて
-Ctrl-Aで保管候補出す
-矢印で保管候補の決定</description>
+      <description>codeium がとても良い&#xA;個人利用なら無料 vimにも対応 対応言語が豊富 など&#xA;競合との比較はこちら&#xA;https://codeium.com/compare&#xA;とりあえず自分がVimに入れてる設定&#xA;if v:version &amp;gt;= 900 let g:codeium_disable_bindings = 1 let g:codeium_manual = v:true let g:codeium_enabled = v:false imap &amp;lt;script&amp;gt;&amp;lt;silent&amp;gt;&amp;lt;nowait&amp;gt;&amp;lt;expr&amp;gt; &amp;lt;Right&amp;gt; codeium#Accept() imap &amp;lt;Down&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#CycleCompletions(1)&amp;lt;CR&amp;gt; imap &amp;lt;Up&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#CycleCompletions(-1)&amp;lt;CR&amp;gt; imap &amp;lt;Left&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#Clear()&amp;lt;CR&amp;gt; imap &amp;lt;C-A&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#Complete()&amp;lt;CR&amp;gt; set statusline=%&amp;lt;%f\ %2*%{&amp;amp;mod&amp;amp;&amp;amp;&amp;amp;bt!=#&#39;terminal&#39;?&#39;[+]&#39;:&#39;&#39;}%0*%{&amp;amp;ro?&#39;[RO]&#39;:&#39;&#39;}%h%w%=codeium:%3{codeium#GetStatusString()}\ %{&#39;[&#39;.(&amp;amp;fenc!=&#39;&#39;?&amp;amp;fenc:&amp;amp;enc).&#39;][&#39;.&amp;amp;ff.&#39;]&#39;}\ %2*%y%0*%6l,%c%V%1*%8P endif 手動で有効にする設定を入れて&#xA;Ctrl-Aで保管候補出す&#xA;矢印で保管候補の決定</description>
     </item>
-    
     <item>
       <title>npmのmysql2パッケージでTLS有効にしてRDS接続</title>
       <link>https://yaasita.github.io/2023/10/19/node-mysql2/</link>
       <pubDate>Thu, 19 Oct 2023 01:16:16 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/10/19/node-mysql2/</guid>
-      <description>nodeのmysql2パッケージには
-こんな感じで、ssl接続のオプションに&amp;quot;Amazon RDS&amp;quot;を指定できるが
-RDSの証明書更新を行うと不都合があるよという話
-証明書更新は以下のrds-ca-2019を置き換える話ね
-https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html
-これ、パッケージ内にCA証明書が入ってるんだけど更新後の証明書が入ってない
-そんで、CA証明書更新のPRは出てるんだけど、これ適用するとaurora serverlessとかRDS proxy経由の検証が失敗する
-なぜなら、証明書のチェーンがこんな感じになってるので
-C = US, O = &amp;#34;Starfield Technologies, Inc.&amp;#34;, OU = Starfield Class 2 Certification Authority C = US, ST = Arizona, L = Scottsdale, O = &amp;#34;Starfield Technologies, Inc.&amp;#34;, CN = Starfield Services Root Certificate Authority - G2 C = US, O = Amazon, CN = Amazon Root CA 1 C = US, O = Amazon, CN = Amazon RSA 2048 M02 CN = *.</description>
+      <description>nodeのmysql2パッケージには&#xA;こんな感じで、ssl接続のオプションに&amp;quot;Amazon RDS&amp;quot;を指定できるが&#xA;RDSの証明書更新を行うと不都合があるよという話&#xA;証明書更新は以下のrds-ca-2019を置き換える話ね&#xA;https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html&#xA;これ、パッケージ内にCA証明書が入ってるんだけど更新後の証明書が入ってない&#xA;そんで、CA証明書更新のPRは出てるんだけど、これ適用するとaurora serverlessとかRDS proxy経由の検証が失敗する&#xA;なぜなら、証明書のチェーンがこんな感じになってるので&#xA;C = US, O = &amp;#34;Starfield Technologies, Inc.&amp;#34;, OU = Starfield Class 2 Certification Authority C = US, ST = Arizona, L = Scottsdale, O = &amp;#34;Starfield Technologies, Inc.&amp;#34;, CN = Starfield Services Root Certificate Authority - G2 C = US, O = Amazon, CN = Amazon Root CA 1 C = US, O = Amazon, CN = Amazon RSA 2048 M02 CN = *.</description>
     </item>
-    
     <item>
       <title>紙飛行機飛ばすゲーム</title>
       <link>https://yaasita.github.io/2023/09/16/kami-hikouki/</link>
       <pubDate>Sat, 16 Sep 2023 03:20:21 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/09/16/kami-hikouki/</guid>
-      <description>昔、ハマった紙飛行機飛ばすゲーム
-https://yaasita.github.io/2010/12/24/5072/
-似たやつはあった
-https://www.silvergames.com/en/flight https://www.silvergames.com/en/paper-flight-2 android版もあったけどメンテされてなさそう
-https://play.google.com/store/apps/details?id=com.armorgames.Flight
-FLASHをエミュレータで動かすやつもあった
-https://www.gameszap.com/game/6397/flight.html</description>
+      <description>昔、ハマった紙飛行機飛ばすゲーム&#xA;https://yaasita.github.io/2010/12/24/5072/&#xA;似たやつはあった&#xA;https://www.silvergames.com/en/flight https://www.silvergames.com/en/paper-flight-2 android版もあったけどメンテされてなさそう&#xA;https://play.google.com/store/apps/details?id=com.armorgames.Flight&#xA;FLASHをエミュレータで動かすやつもあった&#xA;https://www.gameszap.com/game/6397/flight.html</description>
     </item>
-    
     <item>
       <title>経済指標をチェック</title>
       <link>https://yaasita.github.io/2023/08/12/okasan-fx/</link>
       <pubDate>Sat, 12 Aug 2023 04:02:09 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/08/12/okasan-fx/</guid>
-      <description>この重要経済指標をチェックしてる
-https://www.okasan-online.co.jp/tradeinfo/indicator_event/economic_indicators/
-以下の例はアメリカの★5のイベントを抽出するやつ</description>
+      <description>この重要経済指標をチェックしてる&#xA;https://www.okasan-online.co.jp/tradeinfo/indicator_event/economic_indicators/&#xA;以下の例はアメリカの★5のイベントを抽出するやつ</description>
     </item>
-    
     <item>
       <title>perlでglobを使うときの注意</title>
       <link>https://yaasita.github.io/2023/08/02/perl-glob/</link>
       <pubDate>Wed, 02 Aug 2023 01:45:09 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/08/02/perl-glob/</guid>
-      <description>スカラーコンテキストで評価する場合は注意
-こんな感じでやると
-#!/usr/bin/perl use strict; use warnings; use feature qw(:5.10); use utf8; testglob(); testglob(); sub testglob { my $path = glob(&amp;quot;~/hoge.txt&amp;quot;); say &amp;quot;file = $path&amp;quot;; } 結果はこうなる
-file = /home/yamasita/hoge.txt Use of uninitialized value $path in concatenation (.) or string at test.pl line 12. file = 2回目はundefが返ってる
-これはイテレーターになってるので、配列1個と、打ち止めのundefが返ってるから
-というわけで、こういうときは配列で受け取ってイテレータを最後まで進めたほうが良い
-my $path = @{[glob(&amp;quot;~/hoge.txt&amp;quot;)]}[0]; </description>
+      <description>スカラーコンテキストで評価する場合は注意&#xA;こんな感じでやると&#xA;#!/usr/bin/perl use strict; use warnings; use feature qw(:5.10); use utf8; testglob(); testglob(); sub testglob { my $path = glob(&amp;quot;~/hoge.txt&amp;quot;); say &amp;quot;file = $path&amp;quot;; } 結果はこうなる&#xA;file = /home/yamasita/hoge.txt Use of uninitialized value $path in concatenation (.) or string at test.pl line 12. file = 2回目はundefが返ってる&#xA;これはイテレーターになってるので、配列1個と、打ち止めのundefが返ってるから&#xA;というわけで、こういうときは配列で受け取ってイテレータを最後まで進めたほうが良い&#xA;my $path = @{[glob(&amp;quot;~/hoge.txt&amp;quot;)]}[0]; </description>
     </item>
-    
     <item>
       <title>tumblrのoauth2</title>
       <link>https://yaasita.github.io/2023/08/01/tumblr-oauth-api/</link>
       <pubDate>Tue, 01 Aug 2023 01:22:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/08/01/tumblr-oauth-api/</guid>
-      <description>これの通り
-https://www.tumblr.com/docs/en/api/v2#oauth2-authorization
-とりあえずAPI叩くまで解説
-アプリの登録を以下のURLから行う
-https://www.tumblr.com/oauth/register
-次にパラメータを組み立てて認可リクエスト
-scopeにoffline_accessがあるとrefresh_tokenがもらえて永続的に使えるけど、無い場合は認可リクエストからやり直す一時的なアクセストークンしかもらえない
-let params = new URLSearchParams(); params.append(&#39;client_id&#39;, &#39;xxxxxxxxxxxxxxxxxxxxx&#39;); params.append(&#39;response_type&#39;, &#39;code&#39;); params.append(&#39;scope&#39;, &#39;basic offline_access&#39;); params.append(&#39;state&#39;, &#39;hogehoge1&#39;); let urlParams = params.toString(); console.log(`https://www.tumblr.com/oauth2/authorize?${urlParams}`) あとはリダイレクトURLにコードとstate付きで返ってくるので
-https://example.com/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&amp;amp;state=hogehoge1#_=_ それみてアクセストークンと交換
-コードの有効期限は結構短いので急ぐこと
-curl -F grant_type=authorization_code -F code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_id=xxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_secret=xxxxxxxxxxxxxxx https://api.tumblr.com/v2/oauth2/token リフレッシュトークンからアクセストークンを取得
-ちなみにアクセストークンは40分くらいで有効期限が切れる
-curl -F grant_type=refresh_token -F refresh_token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_id=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_secret=xxxxxxxxxxxxxxxxxxxxxxxxxxx https://api.tumblr.com/v2/oauth2/token あと注意なんだけど、refresh_tokenは使ったら、上記APIから新しいrefresh_tokenが来るので次回はそれを使うこと
-（一度使ったrefresh_tokenはもう使えなくなる)</description>
+      <description>これの通り&#xA;https://www.tumblr.com/docs/en/api/v2#oauth2-authorization&#xA;とりあえずAPI叩くまで解説&#xA;アプリの登録を以下のURLから行う&#xA;https://www.tumblr.com/oauth/register&#xA;次にパラメータを組み立てて認可リクエスト&#xA;scopeにoffline_accessがあるとrefresh_tokenがもらえて永続的に使えるけど、無い場合は認可リクエストからやり直す一時的なアクセストークンしかもらえない&#xA;let params = new URLSearchParams(); params.append(&#39;client_id&#39;, &#39;xxxxxxxxxxxxxxxxxxxxx&#39;); params.append(&#39;response_type&#39;, &#39;code&#39;); params.append(&#39;scope&#39;, &#39;basic offline_access&#39;); params.append(&#39;state&#39;, &#39;hogehoge1&#39;); let urlParams = params.toString(); console.log(`https://www.tumblr.com/oauth2/authorize?${urlParams}`) あとはリダイレクトURLにコードとstate付きで返ってくるので&#xA;https://example.com/?code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx&amp;amp;state=hogehoge1#_=_ それみてアクセストークンと交換&#xA;コードの有効期限は結構短いので急ぐこと&#xA;curl -F grant_type=authorization_code -F code=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_id=xxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_secret=xxxxxxxxxxxxxxx https://api.tumblr.com/v2/oauth2/token リフレッシュトークンからアクセストークンを取得&#xA;ちなみにアクセストークンは40分くらいで有効期限が切れる&#xA;curl -F grant_type=refresh_token -F refresh_token=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_id=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx \ -F client_secret=xxxxxxxxxxxxxxxxxxxxxxxxxxx https://api.tumblr.com/v2/oauth2/token あと注意なんだけど、refresh_tokenは使ったら、上記APIから新しいrefresh_tokenが来るので次回はそれを使うこと&#xA;（一度使ったrefresh_tokenはもう使えなくなる)</description>
     </item>
-    
     <item>
       <title>5chのスレをパースする</title>
       <link>https://yaasita.github.io/2023/07/22/5ch-parse/</link>
       <pubDate>Sat, 22 Jul 2023 02:29:04 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/07/22/5ch-parse/</guid>
       <description>utf8にしたhtmlファイルを渡す</description>
     </item>
-    
     <item>
       <title>NURO光のIPアドレスはほぼ変わらない</title>
       <link>https://yaasita.github.io/2023/06/22/nuro-ip/</link>
       <pubDate>Thu, 22 Jun 2023 01:33:41 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/06/22/nuro-ip/</guid>
-      <description>タイトルの通り
-WAN側IPは一年以上変わってない</description>
+      <description>タイトルの通り&#xA;WAN側IPは一年以上変わってない</description>
     </item>
-    
     <item>
       <title>ゲームパッド使用感ANS-PF069</title>
       <link>https://yaasita.github.io/2023/05/28/gamepad-ans-pf069/</link>
       <pubDate>Sun, 28 May 2023 02:16:54 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/05/28/gamepad-ans-pf069/</guid>
-      <description>PS4/PS3/PC用 シンプルターボコントローラ 零～ZERO～
-このゲームパッド使ってたけど、なんかUSBを指しっぱなしで起動するとランプの部分が青くなって識別不能になる
-抜き差しすれば直るけどなんかめんどくさい
-それ以外の使用感は不満なかったんだけど・・・
-結局、F310rに戻した</description>
+      <description>PS4/PS3/PC用 シンプルターボコントローラ 零～ZERO～&#xA;このゲームパッド使ってたけど、なんかUSBを指しっぱなしで起動するとランプの部分が青くなって識別不能になる&#xA;抜き差しすれば直るけどなんかめんどくさい&#xA;それ以外の使用感は不満なかったんだけど・・・&#xA;結局、F310rに戻した</description>
     </item>
-    
     <item>
       <title>mBGAチートコードサーチ</title>
       <link>https://yaasita.github.io/2023/05/22/gbc-cheat/</link>
       <pubDate>Mon, 22 May 2023 02:35:27 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/05/22/gbc-cheat/</guid>
-      <description>ツール =&amp;gt; Game state views =&amp;gt; メモリ検索
-を使って
-値を入れて新規検索 =&amp;gt; 値更新して検索範囲を繰り返す
-目的のアドレスが以下のように 0000d00b だったとすると
-このルールに即して変更する
-上記の場合は値をFFに固定したいとすると
-01FF0BD0 がチートコードになる</description>
+      <description>ツール =&amp;gt; Game state views =&amp;gt; メモリ検索&#xA;を使って&#xA;値を入れて新規検索 =&amp;gt; 値更新して検索範囲を繰り返す&#xA;目的のアドレスが以下のように 0000d00b だったとすると&#xA;このルールに即して変更する&#xA;上記の場合は値をFFに固定したいとすると&#xA;01FF0BD0 がチートコードになる</description>
     </item>
-    
     <item>
       <title>二項分布の計算について</title>
       <link>https://yaasita.github.io/2023/04/01/binomial-distribution/</link>
       <pubDate>Sat, 01 Apr 2023 01:54:35 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/04/01/binomial-distribution/</guid>
-      <description>100回コインを投げて80回以上表が出る確率
-bingに聞いてみると
-こんにちは、こちらはBingです。😊
-コインを100回投げて、表が80回以上出る確率は、二項分布という統計学の分布を使って計算できます。1
-二項分布の確率は、以下の式で求められます。
-P(X=k) = nCk * p^k * (1-p)^(n-k)
-ここで、nは試行回数、kは成功回数、pは成功確率、nCkはn個からk個を選ぶ組み合わせの数です。
-コインの場合、表が出る確率はp=0.5です。2
-コインを100回投げて、表が80回出る確率は、
-P(X=80) = 100C80 * 0.5^80 * 0.5^20 ≒ 0.000000000000000000000000000000000000000000000001
-となります。
-表が80回以上出る確率は、表が80回から100回出る確率の合計です。
-P(X≧80) = P(X=80) + P(X=81) + … + P(X=100)
-これを計算すると、
-P(X≧80) ≒ 0.000000000000000000000000000000000000000000000002
-となります。
-つまり、コインを100回投げて、表が80回以上出る確率は非常に低いと言えます。
-式はあってそうですが計算が間違っていそうです
-まず正確に計算してみます
-&amp;#x2211; i = 80 100 { 100 C 80 &amp;#x22C5; ( 1 2 ) i &amp;#x22C5; ( 1 2 ) 100 &amp;#x2212; i } Rで書くならこう
-sum &amp;lt;- 0 for (i in 80:100) { sum &amp;lt;- choose(100, i) * (1 / 2) ^ 100 + sum print(paste(i, &amp;quot;= &amp;quot;, sum)) } 結果は 5.</description>
+      <description>100回コインを投げて80回以上表が出る確率&#xA;bingに聞いてみると&#xA;こんにちは、こちらはBingです。😊&#xA;コインを100回投げて、表が80回以上出る確率は、二項分布という統計学の分布を使って計算できます。1&#xA;二項分布の確率は、以下の式で求められます。&#xA;P(X=k) = nCk * p^k * (1-p)^(n-k)&#xA;ここで、nは試行回数、kは成功回数、pは成功確率、nCkはn個からk個を選ぶ組み合わせの数です。&#xA;コインの場合、表が出る確率はp=0.5です。2&#xA;コインを100回投げて、表が80回出る確率は、&#xA;P(X=80) = 100C80 * 0.5^80 * 0.5^20 ≒ 0.000000000000000000000000000000000000000000000001&#xA;となります。&#xA;表が80回以上出る確率は、表が80回から100回出る確率の合計です。&#xA;P(X≧80) = P(X=80) + P(X=81) + … + P(X=100)&#xA;これを計算すると、&#xA;P(X≧80) ≒ 0.000000000000000000000000000000000000000000000002&#xA;となります。&#xA;つまり、コインを100回投げて、表が80回以上出る確率は非常に低いと言えます。&#xA;式はあってそうですが計算が間違っていそうです&#xA;まず正確に計算してみます&#xA;&amp;#x2211; i = 80 100 { 100 C 80 &amp;#x22C5; ( 1 2 ) i &amp;#x22C5; ( 1 2 ) 100 &amp;#x2212; i } Rで書くならこう&#xA;sum &amp;lt;- 0 for (i in 80:100) { sum &amp;lt;- choose(100, i) * (1 / 2) ^ 100 + sum print(paste(i, &amp;quot;= &amp;quot;, sum)) } 結果は 5.</description>
     </item>
-    
     <item>
       <title>金価格に連動するETF</title>
       <link>https://yaasita.github.io/2023/03/22/etf-gold/</link>
       <pubDate>Wed, 22 Mar 2023 03:26:44 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/03/22/etf-gold/</guid>
-      <description>金価格が上がってるので買おうかなと
-ここで探した
-https://money-bu-jpx.com/
-銘柄検索 =&amp;gt; ETF・ETNの種類から探す =&amp;gt; 商品ETF =&amp;gt; 検索結果へ =&amp;gt; 信託報酬が低い順で並べ替え
-ＳＰＤＲゴールド・シェア（1326） 純金上場信託（現物国内保管型）（1540） この辺かな</description>
+      <description>金価格が上がってるので買おうかなと&#xA;ここで探した&#xA;https://money-bu-jpx.com/&#xA;銘柄検索 =&amp;gt; ETF・ETNの種類から探す =&amp;gt; 商品ETF =&amp;gt; 検索結果へ =&amp;gt; 信託報酬が低い順で並べ替え&#xA;ＳＰＤＲゴールド・シェア（1326） 純金上場信託（現物国内保管型）（1540） この辺かな</description>
     </item>
-    
     <item>
       <title>FF13感想とか</title>
       <link>https://yaasita.github.io/2023/02/18/ff13/</link>
       <pubDate>Sat, 18 Feb 2023 04:35:50 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/02/18/ff13/</guid>
-      <description>MPもないし、戦闘終るごとに全回復、装備も武器とアクセサリしかないので面倒な部分が無いので良いけど
-飽きるのは早いかもしれない
-ストーリーはよく分からないかった
-戦闘システムは結構好き
-攻略情報リンク ミッション一覧 アダマンタイマイの倒し方 効率的な改造 トラペゾヘドロンを増やす方法 </description>
+      <description>MPもないし、戦闘終るごとに全回復、装備も武器とアクセサリしかないので面倒な部分が無いので良いけど&#xA;飽きるのは早いかもしれない&#xA;ストーリーはよく分からないかった&#xA;戦闘システムは結構好き&#xA;攻略情報リンク ミッション一覧 アダマンタイマイの倒し方 効率的な改造 トラペゾヘドロンを増やす方法 </description>
     </item>
-    
     <item>
       <title>楽天証券の手数料ゼロETF</title>
       <link>https://yaasita.github.io/2023/01/04/etf/</link>
       <pubDate>Wed, 04 Jan 2023 23:24:59 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/01/04/etf/</guid>
-      <description>手数料0円ETF
-(このページなぜかログイン状態だと空っぽになる)
-https://www.rakuten-sec.co.jp/web/domestic/etf-etn-reit/lineup/0-etf.html
-信託報酬が書いてなかったので、調べておいた
-https://gist.github.com/yaasita/727267f20177ce13e99750191311c23e
-信託報酬だけ取ってくるときに使ったスクリプト
-実体は rakuten-sec.co.jp ドメインじゃなくて www.trkd-asia.com にあるので注意
-#!/usr/bin/env node &amp;quot;use strict&amp;quot;; import fs from &amp;quot;fs&amp;quot;; import readline from &amp;quot;readline&amp;quot;; import fetch from &amp;quot;node-fetch&amp;quot;; import jsdom from &amp;quot;jsdom&amp;quot;; const { JSDOM } = jsdom; const content = fs.readFileSync(&amp;quot;list.txt&amp;quot;, &amp;quot;utf8&amp;quot;); const codes = content.split(&amp;quot;\n&amp;quot;); for (const code of codes) { await getSintaku(code); } async function getSintaku(code) { const url = `https://www.trkd-asia.com/rakutensec/quote.jsp?ric=${code}.T&amp;amp;c=ja&amp;amp;ind=2`; const res = await fetch(url); const html = await res.</description>
+      <description>手数料0円ETF&#xA;(このページなぜかログイン状態だと空っぽになる)&#xA;https://www.rakuten-sec.co.jp/web/domestic/etf-etn-reit/lineup/0-etf.html&#xA;信託報酬が書いてなかったので、調べておいた&#xA;https://gist.github.com/yaasita/727267f20177ce13e99750191311c23e&#xA;信託報酬だけ取ってくるときに使ったスクリプト&#xA;実体は rakuten-sec.co.jp ドメインじゃなくて www.trkd-asia.com にあるので注意&#xA;#!/usr/bin/env node &amp;quot;use strict&amp;quot;; import fs from &amp;quot;fs&amp;quot;; import readline from &amp;quot;readline&amp;quot;; import fetch from &amp;quot;node-fetch&amp;quot;; import jsdom from &amp;quot;jsdom&amp;quot;; const { JSDOM } = jsdom; const content = fs.readFileSync(&amp;quot;list.txt&amp;quot;, &amp;quot;utf8&amp;quot;); const codes = content.split(&amp;quot;\n&amp;quot;); for (const code of codes) { await getSintaku(code); } async function getSintaku(code) { const url = `https://www.trkd-asia.com/rakutensec/quote.jsp?ric=${code}.T&amp;amp;c=ja&amp;amp;ind=2`; const res = await fetch(url); const html = await res.</description>
     </item>
-    
     <item>
       <title>ESMではNODEPATH使わない</title>
       <link>https://yaasita.github.io/2023/01/01/nodepath/</link>
       <pubDate>Sun, 01 Jan 2023 23:21:03 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/01/01/nodepath/</guid>
-      <description>node.jsでNODE_PATHはESMで使えないみたいです
-https://github.com/nodejs/node/issues/38687</description>
+      <description>node.jsでNODE_PATHはESMで使えないみたいです&#xA;https://github.com/nodejs/node/issues/38687</description>
     </item>
-    
   </channel>
 </rss>

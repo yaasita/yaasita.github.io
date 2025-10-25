@@ -4,246 +4,128 @@
     <title>2022 on # cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2022/</link>
     <description>Recent content in 2022 on # cd ~yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 24 Dec 2022 04:35:15 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2022/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 24 Dec 2022 04:35:15 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/archives/2022/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>androidのdevice protection</title>
       <link>https://yaasita.github.io/2022/12/24/android-device-protection/</link>
       <pubDate>Sat, 24 Dec 2022 04:35:15 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/12/24/android-device-protection/</guid>
-      <description>説明
-https://spdic.biz/termdic/deviceprotection/
-デバイスプロテクション解除
-https://spdic.biz/category/services/dp-unlock/
-AQUOS Sense3解除
-https://spdic.biz/services/dp-unlock/frp-aquoss-se3-v10/
-Unlock FRP(Factory reset protection)
-https://www.youtube.com/watch?v=3ECcn7tXWDs</description>
+      <description>説明&#xA;https://spdic.biz/termdic/deviceprotection/&#xA;デバイスプロテクション解除&#xA;https://spdic.biz/category/services/dp-unlock/&#xA;AQUOS Sense3解除&#xA;https://spdic.biz/services/dp-unlock/frp-aquoss-se3-v10/&#xA;Unlock FRP(Factory reset protection)&#xA;https://www.youtube.com/watch?v=3ECcn7tXWDs</description>
     </item>
-    
     <item>
       <title>fargateでメタデータ取得</title>
       <link>https://yaasita.github.io/2022/11/20/get-metadata/</link>
       <pubDate>Sun, 20 Nov 2022 01:45:42 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/11/20/get-metadata/</guid>
-      <description>ECS内からメタデータ叩いて、自分と同じタスク定義のコンテナが何個あるか数える
-何に使うか分からんけど一応おいておく</description>
+      <description>ECS内からメタデータ叩いて、自分と同じタスク定義のコンテナが何個あるか数える&#xA;何に使うか分からんけど一応おいておく</description>
     </item>
-    
     <item>
       <title>webページの存在証明</title>
       <link>https://yaasita.github.io/2022/10/02/exists/</link>
       <pubDate>Sun, 02 Oct 2022 22:06:36 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/10/02/exists/</guid>
-      <description>このgpg鍵でwebページをpdfにしたやつに署名するという
-まったく意味のないサービスを作った
-https://exists.cloud.yaasita.net/</description>
+      <description>このgpg鍵でwebページをpdfにしたやつに署名するという&#xA;まったく意味のないサービスを作った&#xA;https://exists.cloud.yaasita.net/</description>
     </item>
-    
     <item>
       <title>WebARENA Indigoを使ってみた</title>
       <link>https://yaasita.github.io/2022/09/25/webarena/</link>
       <pubDate>Sun, 25 Sep 2022 22:41:18 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/09/25/webarena/</guid>
-      <description>円安でAWSが高いのでこっちにサーバーを移行した
-https://web.arena.ne.jp/indigo/
-以下気づいたこと箇条書きで
-めっちゃ安い 機能は仮想サーバーの起動(kvm),スナップショット,ファイヤーウォールくらい 追加オプションで権威DNSサーバーが使える(500円) 管理画面は少し重い ipv6の設定は手動でやる 1vCPU/1GB memory(Uubuntu 22.04)の場合はnetplanの設定がコメントアウトされてた ファイヤーウォールはipv6非対応 なので、やる場合はnftablesを自分で設定する 管理画面でコンソール開く場合は広告ブロックをOFFにしないとダメ 最初はsshでのアクセスのみコンソール画面に入る場合 はsshで入ってから、パスワード設定が必要 API での操作も可能 OP25Bはされていない 対応OS 転送料金に課金なし 圧倒的に安いのでlightsailみたいなサービスから移行するには良いんじゃないかな</description>
+      <description>円安でAWSが高いのでこっちにサーバーを移行した&#xA;https://web.arena.ne.jp/indigo/&#xA;以下気づいたこと箇条書きで&#xA;めっちゃ安い 機能は仮想サーバーの起動(kvm),スナップショット,ファイヤーウォールくらい 追加オプションで権威DNSサーバーが使える(500円) 管理画面は少し重い ipv6の設定は手動でやる 1vCPU/1GB memory(Uubuntu 22.04)の場合はnetplanの設定がコメントアウトされてた ファイヤーウォールはipv6非対応 なので、やる場合はnftablesを自分で設定する 管理画面でコンソール開く場合は広告ブロックをOFFにしないとダメ 最初はsshでのアクセスのみコンソール画面に入る場合 はsshで入ってから、パスワード設定が必要 API での操作も可能 OP25Bはされていない 対応OS 転送料金に課金なし 圧倒的に安いのでlightsailみたいなサービスから移行するには良いんじゃないかな</description>
     </item>
-    
     <item>
       <title>apacheのautoindex経由で画像のスライドショー</title>
       <link>https://yaasita.github.io/2022/09/15/slideshow/</link>
       <pubDate>Thu, 15 Sep 2022 03:58:50 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/09/15/slideshow/</guid>
-      <description>apacheのmod_autoindexが有効な状態でスライドショーを作る
-こんな状態のディレクトリに
-こんな感じのHTMLを置いて
-スライドショー的に見る</description>
+      <description>apacheのmod_autoindexが有効な状態でスライドショーを作る&#xA;こんな状態のディレクトリに&#xA;こんな感じのHTMLを置いて&#xA;スライドショー的に見る</description>
     </item>
-    
     <item>
       <title>mitmproxyを使うときのブラウザ設定</title>
       <link>https://yaasita.github.io/2022/08/24/mitmproxy-chrome/</link>
       <pubDate>Wed, 24 Aug 2022 02:39:41 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/08/24/mitmproxy-chrome/</guid>
-      <description>なんかたまにgoogleにつながらなくなるとき
-chrome系のやつならこの辺を弄ってみるとうまくいくかもしれない
-chrome://settings/security</description>
+      <description>なんかたまにgoogleにつながらなくなるとき&#xA;chrome系のやつならこの辺を弄ってみるとうまくいくかもしれない&#xA;chrome://settings/security</description>
     </item>
-    
     <item>
       <title>hugoのshortcode</title>
       <link>https://yaasita.github.io/2022/07/25/hugo-shortcode/</link>
       <pubDate>Mon, 25 Jul 2022 00:52:55 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/07/25/hugo-shortcode/</guid>
-      <description>ここにあるように定型文を登録しておくと省力化できる
-https://gohugo.io/content-management/shortcodes/
-例えば、config.tomlにこんな感じで書いておけば
-[params] imagesite = &amp;quot;img.yaasita.net&amp;quot; markdownの中で
-https://{{&amp;lt; param imagesite &amp;gt;}}/hoge/hoge こう書くと
-https://img.yaasita.net/hoge/hoge みたいに展開される</description>
+      <description>ここにあるように定型文を登録しておくと省力化できる&#xA;https://gohugo.io/content-management/shortcodes/&#xA;例えば、config.tomlにこんな感じで書いておけば&#xA;[params] imagesite = &amp;quot;img.yaasita.net&amp;quot; markdownの中で&#xA;https://{{&amp;lt; param imagesite &amp;gt;}}/hoge/hoge こう書くと&#xA;https://img.yaasita.net/hoge/hoge みたいに展開される</description>
     </item>
-    
     <item>
       <title>tumblrのアカウントが消されたけど復旧してもらった</title>
       <link>https://yaasita.github.io/2022/06/22/tumblr-account/</link>
       <pubDate>Wed, 22 Jun 2022 01:43:12 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/06/22/tumblr-account/</guid>
-      <description>経緯はこんな感じ
-2022/06/08 tumblrで消されたの確認
-ログインして、「アカウント消えました」って表示される
-その下に問題あったらサポートに連絡してねと書いてあったので、サポートに連絡
-2022/06/13 反応がないので、もう一回サポートに連絡
-2022/06/14 このお問い合わせフォームバグってないか？
-と思ったので、yaasita2アカウント作成して、その中のお問い合わせフォームから連絡
-数分で連絡が来て、yaasitaのアカウントでメールしてこいと言われる
-yaasitaアカウントのメールで再度問い合わせ
-2022/06/15 Hello, Thank you for writing back! We&amp;#39;ve restored your account. Thank you for bringing this problem to our attention. We&amp;#39;re sorry that it occurred, and we&amp;#39;ll do our best to make sure that it doesn&amp;#39;t happen again. You should now be able to log in just fine with your email address and password. Please let me know if there&amp;#39;s anything else I can help you with!</description>
+      <description>経緯はこんな感じ&#xA;2022/06/08 tumblrで消されたの確認&#xA;ログインして、「アカウント消えました」って表示される&#xA;その下に問題あったらサポートに連絡してねと書いてあったので、サポートに連絡&#xA;2022/06/13 反応がないので、もう一回サポートに連絡&#xA;2022/06/14 このお問い合わせフォームバグってないか？&#xA;と思ったので、yaasita2アカウント作成して、その中のお問い合わせフォームから連絡&#xA;数分で連絡が来て、yaasitaのアカウントでメールしてこいと言われる&#xA;yaasitaアカウントのメールで再度問い合わせ&#xA;2022/06/15 Hello, Thank you for writing back! We&amp;#39;ve restored your account. Thank you for bringing this problem to our attention. We&amp;#39;re sorry that it occurred, and we&amp;#39;ll do our best to make sure that it doesn&amp;#39;t happen again. You should now be able to log in just fine with your email address and password. Please let me know if there&amp;#39;s anything else I can help you with!</description>
     </item>
-    
     <item>
       <title>budibaseをmicrok8sで動かす</title>
       <link>https://yaasita.github.io/2022/06/08/budibase/</link>
       <pubDate>Wed, 08 Jun 2022 02:37:21 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/06/08/budibase/</guid>
-      <description>budibaseをローカルのmicrok8sで動かしたときのメモ
-# 必要なプラグインをON microk8s.enable dns:192.168.0.10 microk8s.enable ingress microk8s.enable metallb # 192.168.0.150-192.168.0.180 みたいに指定 microk8s.enable storage # kubectlで動かせるように microk8s.config &amp;gt; ~/.kube/config # インストール helm show values budibase/budibase &amp;gt; config.yaml # hostを指定 vim config.yaml helm install --create-namespace --namespace budibase budibase budibase/budibase -f config.yaml あとはingress部分を作る
-# 証明書を作って kubectl create secret tls &#39;cloud.yaasita.net&#39; --key=privkey.pem --cert=fullchain.pem ingressをこんな感じで作っておく</description>
+      <description>budibaseをローカルのmicrok8sで動かしたときのメモ&#xA;# 必要なプラグインをON microk8s.enable dns:192.168.0.10 microk8s.enable ingress microk8s.enable metallb # 192.168.0.150-192.168.0.180 みたいに指定 microk8s.enable storage # kubectlで動かせるように microk8s.config &amp;gt; ~/.kube/config # インストール helm show values budibase/budibase &amp;gt; config.yaml # hostを指定 vim config.yaml helm install --create-namespace --namespace budibase budibase budibase/budibase -f config.yaml あとはingress部分を作る&#xA;# 証明書を作って kubectl create secret tls &#39;cloud.yaasita.net&#39; --key=privkey.pem --cert=fullchain.pem ingressをこんな感じで作っておく</description>
     </item>
-    
     <item>
       <title>Power Automateのtips</title>
       <link>https://yaasita.github.io/2022/05/09/power-automate-tips/</link>
       <pubDate>Mon, 09 May 2022 03:24:42 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/05/09/power-automate-tips/</guid>
-      <description>Desktop向けのPower Automateのちょっとしたことメモ
-Dosコマンドでchromeを立ち上げる 操作する対象じゃなくて、そのままchromeをキックすればいい場合の設定方法
-chorme.exeまでをフルパスでダブルクォートで囲む方法は上手くいかなかった
-曜日取得 powershellでコマンド実行して
-末尾に改行が入ってしまうので取り除く</description>
+      <description>Desktop向けのPower Automateのちょっとしたことメモ&#xA;Dosコマンドでchromeを立ち上げる 操作する対象じゃなくて、そのままchromeをキックすればいい場合の設定方法&#xA;chorme.exeまでをフルパスでダブルクォートで囲む方法は上手くいかなかった&#xA;曜日取得 powershellでコマンド実行して&#xA;末尾に改行が入ってしまうので取り除く</description>
     </item>
-    
     <item>
       <title>NURO光のF660AルーターでSPIを有効にする</title>
       <link>https://yaasita.github.io/2022/04/02/nuro-ipv6-spi/</link>
       <pubDate>Sat, 02 Apr 2022 04:11:55 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/04/02/nuro-ipv6-spi/</guid>
       <description>これを有効にしてもpingには反応してしまうので注意</description>
     </item>
-    
     <item>
       <title>ipv4とipv6 Happy Eyeballs</title>
       <link>https://yaasita.github.io/2022/03/18/ipv4-ipv6-happy-eyeballs.md/</link>
       <pubDate>Fri, 18 Mar 2022 03:38:37 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/03/18/ipv4-ipv6-happy-eyeballs.md/</guid>
-      <description>Happy EyeballsはTCPコネクションを先に確立させた方が勝つのでnginxのechoモジュールでsleepとかは意味ない
-初回はどちらか一方でも繋がれば遅延は感じないが
-一回接続に成功した場合はipv4を使うのかipv6を使うのかキャッシュしている状態なので切り替えに時間がかかる
-例えばipv6で繋がっていたサイト側でipv6をドロップさせると
-ip6tables -A INPUT -p tcp --dport 443 -j DROP 数秒遅延した後にipv4で接続する</description>
+      <description>Happy EyeballsはTCPコネクションを先に確立させた方が勝つのでnginxのechoモジュールでsleepとかは意味ない&#xA;初回はどちらか一方でも繋がれば遅延は感じないが&#xA;一回接続に成功した場合はipv4を使うのかipv6を使うのかキャッシュしている状態なので切り替えに時間がかかる&#xA;例えばipv6で繋がっていたサイト側でipv6をドロップさせると&#xA;ip6tables -A INPUT -p tcp --dport 443 -j DROP 数秒遅延した後にipv4で接続する</description>
     </item>
-    
     <item>
       <title>linuxのipv6一時アドレス2</title>
       <link>https://yaasita.github.io/2022/03/01/ipv6-tmpaddr/</link>
       <pubDate>Tue, 01 Mar 2022 02:34:41 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/03/01/ipv6-tmpaddr/</guid>
-      <description>linuxでipv6一時アドレス使う時に設定するカーネルパラメータ
-net.ipv6.conf.xxx.temp_prefered_lft = 86400 net.ipv6.conf.xxx.temp_valid_lft = 604800 これの意味は、上記のようにデフォルトの設定86400(1日), 604800(7日)だった場合
-xxxインターフェイスにIPv6-1という一時アドレスが付いていたとする
-IPv6-1作成してから24時間後にIPv6-2という新しい一時アドレスを取得する
-取得後はIPv6-2のアドレスを使用して通信をするようになる
-使わなくなったIPv6-1アドレスも7日間は有効なので受信することは可能
-という仕組み
-つまり、最大で7アドレスになるということ
-1日目: IPv6-1
-2日目: IPv6-1, IPv6-2
-3日目: IPv6-1, IPv6-2, IPv6-3,
-という風に増えていく
-前回</description>
+      <description>linuxでipv6一時アドレス使う時に設定するカーネルパラメータ&#xA;net.ipv6.conf.xxx.temp_prefered_lft = 86400 net.ipv6.conf.xxx.temp_valid_lft = 604800 これの意味は、上記のようにデフォルトの設定86400(1日), 604800(7日)だった場合&#xA;xxxインターフェイスにIPv6-1という一時アドレスが付いていたとする&#xA;IPv6-1作成してから24時間後にIPv6-2という新しい一時アドレスを取得する&#xA;取得後はIPv6-2のアドレスを使用して通信をするようになる&#xA;使わなくなったIPv6-1アドレスも7日間は有効なので受信することは可能&#xA;という仕組み&#xA;つまり、最大で7アドレスになるということ&#xA;1日目: IPv6-1&#xA;2日目: IPv6-1, IPv6-2&#xA;3日目: IPv6-1, IPv6-2, IPv6-3,&#xA;という風に増えていく&#xA;前回</description>
     </item>
-    
     <item>
       <title>Linuxでipv6の一時アドレス</title>
       <link>https://yaasita.github.io/2022/02/26/ipv6-tempaddr/</link>
       <pubDate>Sat, 26 Feb 2022 23:16:10 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/02/26/ipv6-tempaddr/</guid>
-      <description>systemd-networkdの設定にIPv6PrivacyExtensions足せばOK
-(対応するカーネルパラメータ net.ipv6.conf.xxx.use_tempaddr は自動的に設定される)
-[Network] Address=192.168.0.2/24 Gateway=192.168.0.1 IPv6PrivacyExtensions=yes temp_valid_lft
-と
-temp_prefered_lft
-については sysctlで設定すること
-参考リンク
-https://wiki.archlinux.jp/index.php/IPv6 http://dr.slump.jp/IPv6/rfc3041/ https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt </description>
+      <description>systemd-networkdの設定にIPv6PrivacyExtensions足せばOK&#xA;(対応するカーネルパラメータ net.ipv6.conf.xxx.use_tempaddr は自動的に設定される)&#xA;[Network] Address=192.168.0.2/24 Gateway=192.168.0.1 IPv6PrivacyExtensions=yes temp_valid_lft&#xA;と&#xA;temp_prefered_lft&#xA;については sysctlで設定すること&#xA;参考リンク&#xA;https://wiki.archlinux.jp/index.php/IPv6 http://dr.slump.jp/IPv6/rfc3041/ https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt </description>
     </item>
-    
     <item>
       <title>ipv4/ipv6確認サイト</title>
       <link>https://yaasita.github.io/2022/02/23/ipv4-ipv6/</link>
       <pubDate>Wed, 23 Feb 2022 15:25:52 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/02/23/ipv4-ipv6/</guid>
-      <description>自分のIPv4/IPv6アドレスを確認するサイトを作った
-ipv4専用
-https://ipv4.cloud.yaasita.net/
-ipv6専用
-https://ipv6.cloud.yaasita.net/
-ipv4/ipv6両対応(どちらのIPが優先されるか確認用)
-https://ipv46.cloud.yaasita.net/</description>
+      <description>自分のIPv4/IPv6アドレスを確認するサイトを作った&#xA;ipv4専用&#xA;https://ipv4.cloud.yaasita.net/&#xA;ipv6専用&#xA;https://ipv6.cloud.yaasita.net/&#xA;ipv4/ipv6両対応(どちらのIPが優先されるか確認用)&#xA;https://ipv46.cloud.yaasita.net/</description>
     </item>
-    
     <item>
       <title>SMTP-TLSRPTのチェック</title>
       <link>https://yaasita.github.io/2022/02/12/tls-report-check/</link>
       <pubDate>Sat, 12 Feb 2022 01:24:48 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/02/12/tls-report-check/</guid>
-      <description>SMTP-TLSRPTをチェックしてtotal-failure-session-countがゼロより大きいかチェックするスクリプト
-(対象はGoogleから貰うレポート)
-こんな感じでメールがあるディレクトリを指定する
-./index.js ~/Maildir/cur/ </description>
+      <description>SMTP-TLSRPTをチェックしてtotal-failure-session-countがゼロより大きいかチェックするスクリプト&#xA;(対象はGoogleから貰うレポート)&#xA;こんな感じでメールがあるディレクトリを指定する&#xA;./index.js ~/Maildir/cur/ </description>
     </item>
-    
     <item>
       <title>RStudioで正規性の確認</title>
       <link>https://yaasita.github.io/2022/01/26/normal_distribution/</link>
       <pubDate>Wed, 26 Jan 2022 02:50:46 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/01/26/normal_distribution/</guid>
-      <description>シャピロ-ウィルク(Shapiro-Wilk)の正規性の検定をやる流れ
-まず以下のようなデータを用意する
-ある音ゲーのスコア
-これは音ゲーのスコアを表していてタイミングよく押せた場合はPERFECT, 早すぎたり遅すぎたりした場合はFAST, SLOWに計上される
-この内ミスの割合が正規分布と見なせるか検定する
-まず、CSVを右上のEnvironmentタブ =&amp;gt; Import Datasetから読み込む
-データをMISSの割合をデータフレームに追加
-library(dplyr) bandori &amp;lt;- bandori %&amp;gt;% mutate(MISS = (FAST + SLOW) / (PERFECT + FAST + SLOW) * 100) ヒストグラムと近似曲線を出す
-hist(bandori$MISS, breaks = seq(0, 20, 1)) dens &amp;lt;- density(bandori$MISS) lines(dens, lwd = 3, col = &amp;#34;blue&amp;#34;) 検定
-shapiro.test(bandori$MISS) 検定統計量とp値
-data: bandori$MISS W = 0.98162, p-value = 0.724 ここで注意なのはこの検定は帰無仮説が「正規分布している」なので
-棄却出来た場合は正規分布ではないと言えるが、
-今回のように棄却できない（受容域）の場合は正規分布していてもおかしくない程度なので何とも言えないです
-ヒストグラム見る限り正規分布としても良さそうですが
-使ったRスクリプト
-https://gist.github.com/yaasita/7c431d0493c9703c91d0a013d03349af</description>
+      <description>シャピロ-ウィルク(Shapiro-Wilk)の正規性の検定をやる流れ&#xA;まず以下のようなデータを用意する&#xA;ある音ゲーのスコア&#xA;これは音ゲーのスコアを表していてタイミングよく押せた場合はPERFECT, 早すぎたり遅すぎたりした場合はFAST, SLOWに計上される&#xA;この内ミスの割合が正規分布と見なせるか検定する&#xA;まず、CSVを右上のEnvironmentタブ =&amp;gt; Import Datasetから読み込む&#xA;データをMISSの割合をデータフレームに追加&#xA;library(dplyr) bandori &amp;lt;- bandori %&amp;gt;% mutate(MISS = (FAST + SLOW) / (PERFECT + FAST + SLOW) * 100) ヒストグラムと近似曲線を出す&#xA;hist(bandori$MISS, breaks = seq(0, 20, 1)) dens &amp;lt;- density(bandori$MISS) lines(dens, lwd = 3, col = &amp;#34;blue&amp;#34;) 検定&#xA;shapiro.test(bandori$MISS) 検定統計量とp値&#xA;data: bandori$MISS W = 0.98162, p-value = 0.724 ここで注意なのはこの検定は帰無仮説が「正規分布している」なので&#xA;棄却出来た場合は正規分布ではないと言えるが、&#xA;今回のように棄却できない（受容域）の場合は正規分布していてもおかしくない程度なので何とも言えないです&#xA;ヒストグラム見る限り正規分布としても良さそうですが&#xA;使ったRスクリプト&#xA;https://gist.github.com/yaasita/7c431d0493c9703c91d0a013d03349af</description>
     </item>
-    
   </channel>
 </rss>

@@ -1,351 +1,152 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>linux on # cd ~yaasita</title>
+    <title>Linux on # cd ~yaasita</title>
     <link>https://yaasita.github.io/categories/linux/</link>
-    <description>Recent content in linux on # cd ~yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Linux on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 02 Sep 2025 21:42:31 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Oct 2025 03:24:35 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amazon Q Developer CLI使うまで</title>
+      <link>https://yaasita.github.io/2025/10/26/amazon-q-developer-cli/</link>
+      <pubDate>Sun, 26 Oct 2025 03:24:35 +0900</pubDate>
+      <guid>https://yaasita.github.io/2025/10/26/amazon-q-developer-cli/</guid>
+      <description>公式&#xA;https://github.com/aws/amazon-q-developer-cli&#xA;debパッケージで入れる方法もあるが、upgradeしやすいzipファイルからのインストールがお勧め&#xA;ユーザー権限でOK&#xA;curl &amp;quot;https://desktop-release.q.us-east-1.amazonaws.com/latest/q-x86_64-linux.zip&amp;quot; -o &amp;quot;q.zip&amp;quot; 解凍して./install.sh叩けばOK&#xA;シェル設定を変更しても良いか聞かれるのでyを押すと ~/.bashrc の先頭と最後に以下のような設定が追加される&#xA;# Amazon Q pre block. Keep at the top of this file. [[ -f &amp;quot;${HOME}/.local/share/amazon-q/shell/bashrc.pre.bash&amp;quot; ]] &amp;amp;&amp;amp; builtin source &amp;quot;${HOME}/.local/share/amazon-q/shell/bashrc.pre.bash&amp;quot; # 元々.bashrcに書かれていた内容 # Amazon Q post block. Keep at the bottom of this file. [[ -f &amp;quot;${HOME}/.local/share/amazon-q/shell/bashrc.post.bash&amp;quot; ]] &amp;amp;&amp;amp; builtin source &amp;quot;${HOME}/.local/share/amazon-q/shell/bashrc.post.bash&amp;quot; 以下のコマンドでログイン処理&#xA;q login agentって単位で設定を分割できるので作っておく&#xA;下記コマンドで~/.aws/amazonq/cli-agents/aws.json に設定ファイルが作成される&#xA;/agent create -n aws デフォルトのagent設定&#xA;q settings chat.defaultAgent my こんな感じでaws用とazure用で分けるなんてことも出来る</description>
+    </item>
     <item>
       <title>debian13にdanteが無い</title>
       <link>https://yaasita.github.io/2025/09/02/debian-dante/</link>
       <pubDate>Tue, 02 Sep 2025 21:42:31 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/09/02/debian-dante/</guid>
-      <description>なぜかdebian13にはdanteが無かった
-forkyにはあるのでそっから持ってくるか
-https://packages.debian.org/forky/dante-server
-公式から持ってきてmakeするしかないかな
-https://www.inet.no/dante/download.html
-普通にmakeすればいいだけ
-./configure make install /etc/sockd.conf
-/etc/systemd/system/sockd.service</description>
+      <description>なぜかdebian13にはdanteが無かった&#xA;forkyにはあるのでそっから持ってくるか&#xA;https://packages.debian.org/forky/dante-server&#xA;公式から持ってきてmakeするしかないかな&#xA;https://www.inet.no/dante/download.html&#xA;普通にmakeすればいいだけ&#xA;./configure make install /etc/sockd.conf&#xA;/etc/systemd/system/sockd.service</description>
     </item>
-    
     <item>
       <title>preloadの効果</title>
       <link>https://yaasita.github.io/2025/08/11/preload/</link>
       <pubDate>Mon, 11 Aug 2025 04:43:38 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/08/11/preload/</guid>
-      <description>なんとなくdebianに入れてたpreload
-設定はこんな感じ /etc/preload.conf
-意味あるか測定してみた
-測定はtimeコマンド経由で以下の条件を満たしたらウィンドウを閉じてrealtimeを比較
-firefox: ホームメニューが出るまで chrome: ホームメニューが出るまで thunderbird: 受信ボックスが見れるまで preloadあり 2025/07/21 (月) 14:52:42
-firefox-esr: 0m24.578s
-google-chrome-stable: 0m35.277s
-thunderbird: 0m24.932s
-2025/07/22 (火) 04:04:37
-firefox-esr: 0m21.119s
-google-chrome-stable: 0m34.912s
-thunderbird: 0m24.668s
-2025/07/27 (日) 02:51:35
-firefox-esr: 0m12.906s
-google-chrome-stable: 0m15.793s
-thunderbird: 0m20.732s
-2025/07/27 (日) 17:10:02
-firefox-esr: 0m21.614s
-google-chrome-stable: 0m38.979s
-thunderbird: 0m25.449s
-preloadなし 2025/08/03 (日) 02:16:58
-firefox-esr: 0m21.507s
-google-chrome-stable: 0m14.986s
-thunderbird: 0m11.729s
-2025/08/11 (月) 04:38:53
-firefox-esr: 0m22.632s
-google-chrome-stable: 0m36.524s
-thunderbird: 0m21.813s
-結論 自分の環境だと意味なさそうなので止めた</description>
+      <description>なんとなくdebianに入れてたpreload&#xA;設定はこんな感じ /etc/preload.conf&#xA;意味あるか測定してみた&#xA;測定はtimeコマンド経由で以下の条件を満たしたらウィンドウを閉じてrealtimeを比較&#xA;firefox: ホームメニューが出るまで chrome: ホームメニューが出るまで thunderbird: 受信ボックスが見れるまで preloadあり 2025/07/21 (月) 14:52:42&#xA;firefox-esr: 0m24.578s&#xA;google-chrome-stable: 0m35.277s&#xA;thunderbird: 0m24.932s&#xA;2025/07/22 (火) 04:04:37&#xA;firefox-esr: 0m21.119s&#xA;google-chrome-stable: 0m34.912s&#xA;thunderbird: 0m24.668s&#xA;2025/07/27 (日) 02:51:35&#xA;firefox-esr: 0m12.906s&#xA;google-chrome-stable: 0m15.793s&#xA;thunderbird: 0m20.732s&#xA;2025/07/27 (日) 17:10:02&#xA;firefox-esr: 0m21.614s&#xA;google-chrome-stable: 0m38.979s&#xA;thunderbird: 0m25.449s&#xA;preloadなし 2025/08/03 (日) 02:16:58&#xA;firefox-esr: 0m21.507s&#xA;google-chrome-stable: 0m14.986s&#xA;thunderbird: 0m11.729s&#xA;2025/08/11 (月) 04:38:53&#xA;firefox-esr: 0m22.632s&#xA;google-chrome-stable: 0m36.524s&#xA;thunderbird: 0m21.813s&#xA;結論 自分の環境だと意味なさそうなので止めた</description>
     </item>
-    
     <item>
       <title>TVerをLinuxで見る</title>
       <link>https://yaasita.github.io/2025/07/20/tver-with-linux/</link>
       <pubDate>Sun, 20 Jul 2025 00:48:32 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/07/20/tver-with-linux/</guid>
-      <description>firefox(esr)ならそのまま見れるけど、chromeだとPC判定されなくて&amp;quot;アプリで視聴する&amp;quot;ボタンになってしまう
-User-Agentとか、クライアントヒントを以下のように設定すればOK
-header value Sec-Ch-Ua &amp;ldquo;Not)A;Brand&amp;rdquo;;v=&amp;ldquo;8&amp;rdquo;, &amp;ldquo;Chromium&amp;rdquo;;v=&amp;ldquo;138&amp;rdquo;, &amp;ldquo;Google Chrome&amp;rdquo;;v=&amp;ldquo;138&amp;rdquo; Sec-Ch-Ua-Mobile ?0 Sec-Ch-Ua-Platform &amp;ldquo;Windows&amp;rdquo; User-Agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 chrome dev tool -&amp;gt; 設定 -&amp;gt; デバイスで設定</description>
+      <description>firefox(esr)ならそのまま見れるけど、chromeだとPC判定されなくて&amp;quot;アプリで視聴する&amp;quot;ボタンになってしまう&#xA;User-Agentとか、クライアントヒントを以下のように設定すればOK&#xA;header value Sec-Ch-Ua &amp;ldquo;Not)A;Brand&amp;rdquo;;v=&amp;ldquo;8&amp;rdquo;, &amp;ldquo;Chromium&amp;rdquo;;v=&amp;ldquo;138&amp;rdquo;, &amp;ldquo;Google Chrome&amp;rdquo;;v=&amp;ldquo;138&amp;rdquo; Sec-Ch-Ua-Mobile ?0 Sec-Ch-Ua-Platform &amp;ldquo;Windows&amp;rdquo; User-Agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 chrome dev tool -&amp;gt; 設定 -&amp;gt; デバイスで設定</description>
     </item>
-    
     <item>
       <title>sysstatのデータをbigqueryに入れる</title>
       <link>https://yaasita.github.io/2025/05/17/sysstat/</link>
       <pubDate>Sat, 17 May 2025 13:23:08 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/05/17/sysstat/</guid>
-      <description>こんな感じでレポート出して
-sadf -T -j /var/log/sysstat/sa\$(date -d yesterday +%d) -- -ruq -n DEV &amp;gt; /tmp/sadf.json bigquery用のフォーマットに変更
-あとは Looker Studio で見るとか</description>
+      <description>こんな感じでレポート出して&#xA;sadf -T -j /var/log/sysstat/sa\$(date -d yesterday +%d) -- -ruq -n DEV &amp;gt; /tmp/sadf.json bigquery用のフォーマットに変更&#xA;あとは Looker Studio で見るとか</description>
     </item>
-    
     <item>
       <title>DoHを使う</title>
       <link>https://yaasita.github.io/2025/01/02/doh/</link>
       <pubDate>Thu, 02 Jan 2025 13:33:58 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/01/02/doh/</guid>
-      <description>DNS over HTTPSを使ってpi-holeに接続する設定
-出先で広告ブロック使いたくなったのでやってみる
-こんな構成
-apache -&amp;gt; doh-proxy -&amp;gt; pi-hole -&amp;gt; unbound サーバーはこれ
-https://github.com/DNSCrypt/doh-server
-/etc/systemd/system/doh-proxy.service って名前で保存
-[Unit] Description=DoH Proxy After=network.target [Service] ExecStart=/usr/local/bin/doh-proxy -u 127.0.0.1:53 -l 0.0.0.0:3000 User=root Group=root Restart=always RestartSec=5 [Install] WantedBy=multi-user.target TLS部分はapacheがやる
-こんな感じでproxy
-&amp;lt;VirtualHost *:443&amp;gt; ServerName dns.example.net ProxyRequests Off ProxyPreserveHost On ProxyPass / http://192.168.0.123:3000/ retry=2 ProxyPassReverse / http://192.168.0.123:3000/ SSLEngine on SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem SSLCertificateKeyFile /etc/letsencrypt/live/example.net/privkey.pem &amp;lt;/VirtualHost&amp;gt; テストはこんな感じ
-curl --doh-url https://dns.example.net/dns-query https://example.jp dnslookup コマンドでもOK
-dnslookup example.jp https://dns.example.net/dns-query chromebookの場合は&amp;quot;確認済みアクセスを有効にする&amp;quot;のチェックを外しておいた方が良い
-このチェックの挙動がよく分からないけど、DoHサーバーの名前解決後のIPアドレスがLAN内のプライベートIPなら通るけど、グローバルIPだと通さないみたいな挙動になってた
-あと設定直後はちゃんとHTTPのリクエストを発行するにもかかわらず1～2分後にエラーになるみたいな動きもする
-まあ広告ブロックしたいだけなら</description>
+      <description>DNS over HTTPSを使ってpi-holeに接続する設定&#xA;出先で広告ブロック使いたくなったのでやってみる&#xA;こんな構成&#xA;apache -&amp;gt; doh-proxy -&amp;gt; pi-hole -&amp;gt; unbound サーバーはこれ&#xA;https://github.com/DNSCrypt/doh-server&#xA;/etc/systemd/system/doh-proxy.service って名前で保存&#xA;[Unit] Description=DoH Proxy After=network.target [Service] ExecStart=/usr/local/bin/doh-proxy -u 127.0.0.1:53 -l 0.0.0.0:3000 User=root Group=root Restart=always RestartSec=5 [Install] WantedBy=multi-user.target TLS部分はapacheがやる&#xA;こんな感じでproxy&#xA;&amp;lt;VirtualHost *:443&amp;gt; ServerName dns.example.net ProxyRequests Off ProxyPreserveHost On ProxyPass / http://192.168.0.123:3000/ retry=2 ProxyPassReverse / http://192.168.0.123:3000/ SSLEngine on SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem SSLCertificateKeyFile /etc/letsencrypt/live/example.net/privkey.pem &amp;lt;/VirtualHost&amp;gt; テストはこんな感じ&#xA;curl --doh-url https://dns.example.net/dns-query https://example.jp dnslookup コマンドでもOK&#xA;dnslookup example.jp https://dns.example.net/dns-query chromebookの場合は&amp;quot;確認済みアクセスを有効にする&amp;quot;のチェックを外しておいた方が良い&#xA;このチェックの挙動がよく分からないけど、DoHサーバーの名前解決後のIPアドレスがLAN内のプライベートIPなら通るけど、グローバルIPだと通さないみたいな挙動になってた&#xA;あと設定直後はちゃんとHTTPのリクエストを発行するにもかかわらず1～2分後にエラーになるみたいな動きもする&#xA;まあ広告ブロックしたいだけなら</description>
     </item>
-    
     <item>
       <title>vimでGitHub Copilot</title>
       <link>https://yaasita.github.io/2024/12/21/vim-copilot/</link>
       <pubDate>Sat, 21 Dec 2024 02:00:01 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/12/21/vim-copilot/</guid>
-      <description>Microsoft傘下のGitHub、「GitHub Copilot」を無料に（制限あり）
-https://www.itmedia.co.jp/news/articles/2412/19/news111.html
-ということで使ってみる
-以下インストール
-https://github.com/github/copilot.vim
-vimrcはこんな感じ
-常に補完が効くのは嫌なので使うときだけ有効にする
-候補表示はCtrl-c
-let g:copilot_filetypes = { &#39;*&#39;: v:false } imap &amp;lt;C-c&amp;gt; &amp;lt;Plug&amp;gt;(copilot-next) command! -nargs=0 ToggleCopilot call ToggleCopilot() function! ToggleCopilot() if exists(&#39;g:copilot_filetypes&#39;) unlet g:copilot_filetypes else let g:copilot_filetypes = { &#39;*&#39;: v:false } endif Copilot status endfunction :Copilot setup で設定
-~/.config/github-copilot/ に credentials が入る
-あとチャットはここから出来る
-https://github.com/copilot</description>
+      <description>Microsoft傘下のGitHub、「GitHub Copilot」を無料に（制限あり）&#xA;https://www.itmedia.co.jp/news/articles/2412/19/news111.html&#xA;ということで使ってみる&#xA;以下インストール&#xA;https://github.com/github/copilot.vim&#xA;vimrcはこんな感じ&#xA;常に補完が効くのは嫌なので使うときだけ有効にする&#xA;候補表示はCtrl-c&#xA;let g:copilot_filetypes = { &#39;*&#39;: v:false } imap &amp;lt;C-c&amp;gt; &amp;lt;Plug&amp;gt;(copilot-next) command! -nargs=0 ToggleCopilot call ToggleCopilot() function! ToggleCopilot() if exists(&#39;g:copilot_filetypes&#39;) unlet g:copilot_filetypes else let g:copilot_filetypes = { &#39;*&#39;: v:false } endif Copilot status endfunction :Copilot setup で設定&#xA;~/.config/github-copilot/ に credentials が入る&#xA;あとチャットはここから出来る&#xA;https://github.com/copilot</description>
     </item>
-    
     <item>
       <title>pulseaudioのリモートプレイ設定</title>
       <link>https://yaasita.github.io/2024/12/08/pulseaudio/</link>
       <pubDate>Sun, 08 Dec 2024 19:03:33 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/12/08/pulseaudio/</guid>
-      <description>概要 サウンドデバイスを持たない端末でもネットワーク経由でオーディオストリームを流せる
-インストール apt install pulseaudio pavucontrol-qt スタート/ストップ pulseaudio --start pactl stat paplay -v hoge.wav pulseaudio --kill 設定 設定ファイル場所: /etc/pulse/
-pavucontrol-qt 起動
-プロファイルタブ選択 -&amp;gt; ミュートになってる箇所外す
-再生タブと出力デバイスタブ両方確認
-自動起動しないように以下を消しておく
-ちなみにfirefoxとかpaplayすると勝手に立ち上がる
-/etc/systemd/user/default.target.wants/pulseaudio.service /etc/systemd/user/sockets.target.wants/pulseaudio.socket 参考リンク
-https://zenn.dev/noraworld/articles/disable-pulseaudio-autospawn
-リモート接続 https://wiki.archlinux.jp/index.php/PulseAudio/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB
-server側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-default-pa load-module module-native-protocol-tcp auth-anonymous=1 を追加 client側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-client-conf default-server = 192.168.0.10 を指定する サーバー本体とclientが同一サーバーの場合は変更の必要なし 上記設定したら server側はpulseaudio &amp;ndash;start
-client側は特に起動する必要なし(pulseaudioデーモンすら不要)
-あとはclient側で paplay hoge.wav でテスト</description>
+      <description>概要 サウンドデバイスを持たない端末でもネットワーク経由でオーディオストリームを流せる&#xA;インストール apt install pulseaudio pavucontrol-qt スタート/ストップ pulseaudio --start pactl stat paplay -v hoge.wav pulseaudio --kill 設定 設定ファイル場所: /etc/pulse/&#xA;pavucontrol-qt 起動&#xA;プロファイルタブ選択 -&amp;gt; ミュートになってる箇所外す&#xA;再生タブと出力デバイスタブ両方確認&#xA;自動起動しないように以下を消しておく&#xA;ちなみにfirefoxとかpaplayすると勝手に立ち上がる&#xA;/etc/systemd/user/default.target.wants/pulseaudio.service /etc/systemd/user/sockets.target.wants/pulseaudio.socket 参考リンク&#xA;https://zenn.dev/noraworld/articles/disable-pulseaudio-autospawn&#xA;リモート接続 https://wiki.archlinux.jp/index.php/PulseAudio/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB&#xA;server側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-default-pa load-module module-native-protocol-tcp auth-anonymous=1 を追加 client側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-client-conf default-server = 192.168.0.10 を指定する サーバー本体とclientが同一サーバーの場合は変更の必要なし 上記設定したら server側はpulseaudio &amp;ndash;start&#xA;client側は特に起動する必要なし(pulseaudioデーモンすら不要)&#xA;あとはclient側で paplay hoge.wav でテスト</description>
     </item>
-    
     <item>
       <title>opendkimメモ</title>
       <link>https://yaasita.github.io/2024/07/06/dkim/</link>
       <pubDate>Sat, 06 Jul 2024 03:52:41 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/07/06/dkim/</guid>
-      <description>DKIMの公開鍵取得 opendkim-testkeyとかで検証する際に、DNSはroot DNSサーバーから自力で名前解決しようとするのでDNSキャッシュサーバー使いたかったら以下を指定
-/etc/opendkim.conf
-Nameservers 192.168.0.10 thunderbirdの拡張も同じ挙動だった
-公開鍵を作る場合 2048bitを指定しておく方がいい
-(最近のopendkimはデフォルトで2048bit)
-opendkim-genkey -D /etc/postfix/dkim/ -b 2048 -d example.jp -s mail unboundに入れるときは長いので分割する
-local-data: &#39;mail._domainkey.example.jp. IN TXT &amp;quot;v=DKIM1; k=rsa; &amp;quot; &amp;quot;p=xxxxxxxx...&amp;quot; &amp;quot;xxxxxxx...&amp;quot;&#39; ローカルでの検証 opendkim-testmsg &amp;lt; mail.eml </description>
+      <description>DKIMの公開鍵取得 opendkim-testkeyとかで検証する際に、DNSはroot DNSサーバーから自力で名前解決しようとするのでDNSキャッシュサーバー使いたかったら以下を指定&#xA;/etc/opendkim.conf&#xA;Nameservers 192.168.0.10 thunderbirdの拡張も同じ挙動だった&#xA;公開鍵を作る場合 2048bitを指定しておく方がいい&#xA;(最近のopendkimはデフォルトで2048bit)&#xA;opendkim-genkey -D /etc/postfix/dkim/ -b 2048 -d example.jp -s mail unboundに入れるときは長いので分割する&#xA;local-data: &#39;mail._domainkey.example.jp. IN TXT &amp;quot;v=DKIM1; k=rsa; &amp;quot; &amp;quot;p=xxxxxxxx...&amp;quot; &amp;quot;xxxxxxx...&amp;quot;&#39; ローカルでの検証 opendkim-testmsg &amp;lt; mail.eml </description>
     </item>
-    
     <item>
       <title>nftablesでDNSサーバーのレート制限</title>
       <link>https://yaasita.github.io/2024/05/21/nftables-dns/</link>
       <pubDate>Tue, 21 May 2024 03:42:37 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/05/21/nftables-dns/</guid>
-      <description>/etc/nftables.conf に書くやつ
-まずはこんな感じで、どれくらいの流量が入って来るか測定しておく
-meta l4proto {tcp, udp} th dport 53 counter accept それから以下のように制限する
-meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit1 { ip saddr timeout 1h limit rate 20/minute } counter accept meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit2 { ip6 saddr timeout 1h limit rate 20/minute } counter accept ちなみにudpの場合はいつも ct state new にマッチするっぽい</description>
+      <description>/etc/nftables.conf に書くやつ&#xA;まずはこんな感じで、どれくらいの流量が入って来るか測定しておく&#xA;meta l4proto {tcp, udp} th dport 53 counter accept それから以下のように制限する&#xA;meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit1 { ip saddr timeout 1h limit rate 20/minute } counter accept meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit2 { ip6 saddr timeout 1h limit rate 20/minute } counter accept ちなみにudpの場合はいつも ct state new にマッチするっぽい</description>
     </item>
-    
     <item>
       <title>IPv6回りのちょっとしたこと</title>
       <link>https://yaasita.github.io/2024/03/22/ipv6-tips/</link>
       <pubDate>Fri, 22 Mar 2024 02:58:55 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/03/22/ipv6-tips/</guid>
-      <description>public NAT64サービス: https://nat64.net/
-使用するキャッシュDNSサーバーだけ変えればOKなので使いやすい
-IPv6 テストサイト: https://ipv6test.app/
-curlで手軽にチェックできる
-curl ipv6test.app curl v4.ipv6test.app curl v6.ipv6test.app tcpdumpでICMPv6を見る
-tcpdump -n -X icmp6 </description>
+      <description>public NAT64サービス: https://nat64.net/&#xA;使用するキャッシュDNSサーバーだけ変えればOKなので使いやすい&#xA;IPv6 テストサイト: https://ipv6test.app/&#xA;curlで手軽にチェックできる&#xA;curl ipv6test.app curl v4.ipv6test.app curl v6.ipv6test.app tcpdumpでICMPv6を見る&#xA;tcpdump -n -X icmp6 </description>
     </item>
-    
     <item>
       <title>ipv6のICMPリダイレクト</title>
       <link>https://yaasita.github.io/2024/02/17/ipv6-icmp/</link>
       <pubDate>Sat, 17 Feb 2024 05:35:13 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/02/17/ipv6-icmp/</guid>
-      <description>ipv4ならカーネルパラメータ net.ipv4.conf.all.send_redirectsでICMPリダイレクトの送信を抑止できるが
-ipv6はそういうオプションが無いらしい
-https://askubuntu.com/questions/1164239/how-to-disable-ipv6-redirect
-/etc/nftables.conf に以下追加してとりあえず ipv6-icmpを抑止する
-chain output { type filter hook output priority filter; meta l4proto ipv6-icmp icmpv6 type nd-redirect counter drop } リダイレクトで曲がったルーティングの確認はこんな感じ
-ip -6 route show cache </description>
+      <description>ipv4ならカーネルパラメータ net.ipv4.conf.all.send_redirectsでICMPリダイレクトの送信を抑止できるが&#xA;ipv6はそういうオプションが無いらしい&#xA;https://askubuntu.com/questions/1164239/how-to-disable-ipv6-redirect&#xA;/etc/nftables.conf に以下追加してとりあえず ipv6-icmpを抑止する&#xA;chain output { type filter hook output priority filter; meta l4proto ipv6-icmp icmpv6 type nd-redirect counter drop } リダイレクトで曲がったルーティングの確認はこんな感じ&#xA;ip -6 route show cache </description>
     </item>
-    
     <item>
       <title>Linuxネットワークの設定</title>
       <link>https://yaasita.github.io/2024/01/07/network/</link>
       <pubDate>Sun, 07 Jan 2024 06:22:21 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/01/07/network/</guid>
-      <description>たまに忘れるのでメモ
-Linuxで通信を見たいときに、あるホストをルーターにする場合
-/etc/sysctl.conf に以下のような設定を入れる
-net.ipv4.ip_forward = 1 net.ipv4.conf.all.accept_redirects = 0 net.ipv4.conf.all.send_redirects = 0 が、ICMMP redirectの送信はallじゃなくてインターフェイス名をちゃんと指定する必要があるぽい
-net.ipv4.conf.eth0.send_redirects = 0 ちなみにICMP redirectで曲がってしまったルーティングは
-以下のコマンドで参照とクリアができる
-ip route show cache ip route flush cache あとIPv6をsystemd-networkdで無効化する場合こんな感じ
-[Match] Name=host0 [Network] DHCP=no LinkLocalAddressing=no Address=192.168.0.100/24 Gateway=192.168.0.10 IPv6PrivacyExtensions=no [IPv6] Address= Gateway= AddressGenerator=none 一時アドレス消す場合は以下のコマンド
-ip -6 addr flush dev eth0 scope global dynamic </description>
+      <description>たまに忘れるのでメモ&#xA;Linuxで通信を見たいときに、あるホストをルーターにする場合&#xA;/etc/sysctl.conf に以下のような設定を入れる&#xA;net.ipv4.ip_forward = 1 net.ipv4.conf.all.accept_redirects = 0 net.ipv4.conf.all.send_redirects = 0 が、ICMMP redirectの送信はallじゃなくてインターフェイス名をちゃんと指定する必要があるぽい&#xA;net.ipv4.conf.eth0.send_redirects = 0 ちなみにICMP redirectで曲がってしまったルーティングは&#xA;以下のコマンドで参照とクリアができる&#xA;ip route show cache ip route flush cache あとIPv6をsystemd-networkdで無効化する場合こんな感じ&#xA;[Match] Name=host0 [Network] DHCP=no LinkLocalAddressing=no Address=192.168.0.100/24 Gateway=192.168.0.10 IPv6PrivacyExtensions=no [IPv6] Address= Gateway= AddressGenerator=none 一時アドレス消す場合は以下のコマンド&#xA;ip -6 addr flush dev eth0 scope global dynamic </description>
     </item>
-    
     <item>
       <title>WebARENA Indigoを使ってみた</title>
       <link>https://yaasita.github.io/2022/09/25/webarena/</link>
       <pubDate>Sun, 25 Sep 2022 22:41:18 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/09/25/webarena/</guid>
-      <description>円安でAWSが高いのでこっちにサーバーを移行した
-https://web.arena.ne.jp/indigo/
-以下気づいたこと箇条書きで
-めっちゃ安い 機能は仮想サーバーの起動(kvm),スナップショット,ファイヤーウォールくらい 追加オプションで権威DNSサーバーが使える(500円) 管理画面は少し重い ipv6の設定は手動でやる 1vCPU/1GB memory(Uubuntu 22.04)の場合はnetplanの設定がコメントアウトされてた ファイヤーウォールはipv6非対応 なので、やる場合はnftablesを自分で設定する 管理画面でコンソール開く場合は広告ブロックをOFFにしないとダメ 最初はsshでのアクセスのみコンソール画面に入る場合 はsshで入ってから、パスワード設定が必要 API での操作も可能 OP25Bはされていない 対応OS 転送料金に課金なし 圧倒的に安いのでlightsailみたいなサービスから移行するには良いんじゃないかな</description>
+      <description>円安でAWSが高いのでこっちにサーバーを移行した&#xA;https://web.arena.ne.jp/indigo/&#xA;以下気づいたこと箇条書きで&#xA;めっちゃ安い 機能は仮想サーバーの起動(kvm),スナップショット,ファイヤーウォールくらい 追加オプションで権威DNSサーバーが使える(500円) 管理画面は少し重い ipv6の設定は手動でやる 1vCPU/1GB memory(Uubuntu 22.04)の場合はnetplanの設定がコメントアウトされてた ファイヤーウォールはipv6非対応 なので、やる場合はnftablesを自分で設定する 管理画面でコンソール開く場合は広告ブロックをOFFにしないとダメ 最初はsshでのアクセスのみコンソール画面に入る場合 はsshで入ってから、パスワード設定が必要 API での操作も可能 OP25Bはされていない 対応OS 転送料金に課金なし 圧倒的に安いのでlightsailみたいなサービスから移行するには良いんじゃないかな</description>
     </item>
-    
     <item>
       <title>linuxのipv6一時アドレス2</title>
       <link>https://yaasita.github.io/2022/03/01/ipv6-tmpaddr/</link>
       <pubDate>Tue, 01 Mar 2022 02:34:41 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/03/01/ipv6-tmpaddr/</guid>
-      <description>linuxでipv6一時アドレス使う時に設定するカーネルパラメータ
-net.ipv6.conf.xxx.temp_prefered_lft = 86400 net.ipv6.conf.xxx.temp_valid_lft = 604800 これの意味は、上記のようにデフォルトの設定86400(1日), 604800(7日)だった場合
-xxxインターフェイスにIPv6-1という一時アドレスが付いていたとする
-IPv6-1作成してから24時間後にIPv6-2という新しい一時アドレスを取得する
-取得後はIPv6-2のアドレスを使用して通信をするようになる
-使わなくなったIPv6-1アドレスも7日間は有効なので受信することは可能
-という仕組み
-つまり、最大で7アドレスになるということ
-1日目: IPv6-1
-2日目: IPv6-1, IPv6-2
-3日目: IPv6-1, IPv6-2, IPv6-3,
-という風に増えていく
-前回</description>
+      <description>linuxでipv6一時アドレス使う時に設定するカーネルパラメータ&#xA;net.ipv6.conf.xxx.temp_prefered_lft = 86400 net.ipv6.conf.xxx.temp_valid_lft = 604800 これの意味は、上記のようにデフォルトの設定86400(1日), 604800(7日)だった場合&#xA;xxxインターフェイスにIPv6-1という一時アドレスが付いていたとする&#xA;IPv6-1作成してから24時間後にIPv6-2という新しい一時アドレスを取得する&#xA;取得後はIPv6-2のアドレスを使用して通信をするようになる&#xA;使わなくなったIPv6-1アドレスも7日間は有効なので受信することは可能&#xA;という仕組み&#xA;つまり、最大で7アドレスになるということ&#xA;1日目: IPv6-1&#xA;2日目: IPv6-1, IPv6-2&#xA;3日目: IPv6-1, IPv6-2, IPv6-3,&#xA;という風に増えていく&#xA;前回</description>
     </item>
-    
     <item>
       <title>Linuxでipv6の一時アドレス</title>
       <link>https://yaasita.github.io/2022/02/26/ipv6-tempaddr/</link>
       <pubDate>Sat, 26 Feb 2022 23:16:10 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/02/26/ipv6-tempaddr/</guid>
-      <description>systemd-networkdの設定にIPv6PrivacyExtensions足せばOK
-(対応するカーネルパラメータ net.ipv6.conf.xxx.use_tempaddr は自動的に設定される)
-[Network] Address=192.168.0.2/24 Gateway=192.168.0.1 IPv6PrivacyExtensions=yes temp_valid_lft
-と
-temp_prefered_lft
-については sysctlで設定すること
-参考リンク
-https://wiki.archlinux.jp/index.php/IPv6 http://dr.slump.jp/IPv6/rfc3041/ https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt </description>
+      <description>systemd-networkdの設定にIPv6PrivacyExtensions足せばOK&#xA;(対応するカーネルパラメータ net.ipv6.conf.xxx.use_tempaddr は自動的に設定される)&#xA;[Network] Address=192.168.0.2/24 Gateway=192.168.0.1 IPv6PrivacyExtensions=yes temp_valid_lft&#xA;と&#xA;temp_prefered_lft&#xA;については sysctlで設定すること&#xA;参考リンク&#xA;https://wiki.archlinux.jp/index.php/IPv6 http://dr.slump.jp/IPv6/rfc3041/ https://www.kernel.org/doc/Documentation/networking/ip-sysctl.txt </description>
     </item>
-    
     <item>
       <title>systemd-nspawnのtmpディレクトリ</title>
       <link>https://yaasita.github.io/2021/12/12/systemd-nspawn-tmpdir/</link>
       <pubDate>Sun, 12 Dec 2021 06:03:17 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/12/12/systemd-nspawn-tmpdir/</guid>
-      <description>systemd-nspawnで/tmpのtmpfs mountを止める方法について昔こんな記事書いた
-systemd-nspawnでのtmpディレクトリの扱いについて
-今は状況が変わってて、
-https://github.com/systemd/systemd/pull/10294/files
-こんな感じで、&amp;ldquo;SYSTEMD_NSPAWN_TMPFS_TMP&amp;rdquo; って環境変数に0を入れておけば、/tmpディレクトリをtmpfsにしない
-/etc/systemd/system/systemd-nspawn@.service
-にこんな感じで追加したらmachinectlからもできる
-Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0 </description>
+      <description>systemd-nspawnで/tmpのtmpfs mountを止める方法について昔こんな記事書いた&#xA;systemd-nspawnでのtmpディレクトリの扱いについて&#xA;今は状況が変わってて、&#xA;https://github.com/systemd/systemd/pull/10294/files&#xA;こんな感じで、&amp;ldquo;SYSTEMD_NSPAWN_TMPFS_TMP&amp;rdquo; って環境変数に0を入れておけば、/tmpディレクトリをtmpfsにしない&#xA;/etc/systemd/system/systemd-nspawn@.service&#xA;にこんな感じで追加したらmachinectlからもできる&#xA;Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0 </description>
     </item>
-    
     <item>
       <title>microk8sでargocdを動かす</title>
       <link>https://yaasita.github.io/2021/11/28/microk8s/</link>
       <pubDate>Sun, 28 Nov 2021 06:09:44 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/11/28/microk8s/</guid>
-      <description>microk8s で ArgoCD を動かすときのメモ
-まず手順通りにマニフェストを設定したら
-kubectl patch svc argocd-server -n argocd -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; ClusterIP から NodePortに変更
-こんな感じの表示になったら
-$ kubectl get svc argocd-server -n argocd argocd-server NodePort 10.152.183.43 &amp;lt;none&amp;gt; 80:30444/TCP,443:30983/TCP 20h 以下のURLでアクセス
-https:// (ホストのIP) :30983
-まあkubectl port-forward でやってもいいけど
-ついでに dashbord も同様にできる
-kubectl patch svc kubernetes-dashboard -n kube-system -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; kubectl get svc kubernetes-dashboard -n kube-system $ kubectl get svc kubernetes-dashboard -n kube-system NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE kubernetes-dashboard NodePort 10.</description>
+      <description>microk8s で ArgoCD を動かすときのメモ&#xA;まず手順通りにマニフェストを設定したら&#xA;kubectl patch svc argocd-server -n argocd -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; ClusterIP から NodePortに変更&#xA;こんな感じの表示になったら&#xA;$ kubectl get svc argocd-server -n argocd argocd-server NodePort 10.152.183.43 &amp;lt;none&amp;gt; 80:30444/TCP,443:30983/TCP 20h 以下のURLでアクセス&#xA;https:// (ホストのIP) :30983&#xA;まあkubectl port-forward でやってもいいけど&#xA;ついでに dashbord も同様にできる&#xA;kubectl patch svc kubernetes-dashboard -n kube-system -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; kubectl get svc kubernetes-dashboard -n kube-system $ kubectl get svc kubernetes-dashboard -n kube-system NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE kubernetes-dashboard NodePort 10.</description>
     </item>
-    
     <item>
       <title>bridgeインターフェイスのMACアドレス</title>
       <link>https://yaasita.github.io/2021/10/10/machine-id/</link>
       <pubDate>Sun, 10 Oct 2021 05:52:16 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/10/10/machine-id/</guid>
-      <description>KVMを使ったVM内でブリッジインターフェイス作ってそのVMをコピーしたらMACアドレスが重複して通信不能になった
-(/etc/systemd/network/にはこんな感じでbridge作る)
-https://gist.github.com/yaasita/d527b48f54b0e23c3097a9c69239d534
-どうやらこれ、machine-idから作られてるみたいで、VMコピーしたらmachine-id変えた方が良いぽいね
-rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machine-id-setup </description>
+      <description>KVMを使ったVM内でブリッジインターフェイス作ってそのVMをコピーしたらMACアドレスが重複して通信不能になった&#xA;(/etc/systemd/network/にはこんな感じでbridge作る)&#xA;https://gist.github.com/yaasita/d527b48f54b0e23c3097a9c69239d534&#xA;どうやらこれ、machine-idから作られてるみたいで、VMコピーしたらmachine-id変えた方が良いぽいね&#xA;rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machine-id-setup </description>
     </item>
-    
     <item>
       <title>dircolorsの設定</title>
       <link>https://yaasita.github.io/2021/09/20/dircolors/</link>
       <pubDate>Mon, 20 Sep 2021 17:40:54 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/09/20/dircolors/</guid>
-      <description>dircolorsは
-ls --color=auto したときの色を設定するコマンド
-以下のコマンドで設定を書き出して
-dircolors -p &amp;gt; ~/.dir_colors 好きな設定に編集する
-vi ~/.dircolors .bashrcに以下のように書いておいた
-if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^screen ]];then alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto&#39; eval &amp;quot;$(dircolors -b ~/.dircolors)&amp;quot; fi 参考
-lsコマンドで表示されるファイルの色を変更するには </description>
+      <description>dircolorsは&#xA;ls --color=auto したときの色を設定するコマンド&#xA;以下のコマンドで設定を書き出して&#xA;dircolors -p &amp;gt; ~/.dir_colors 好きな設定に編集する&#xA;vi ~/.dircolors .bashrcに以下のように書いておいた&#xA;if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^screen ]];then alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto&#39; eval &amp;quot;$(dircolors -b ~/.dircolors)&amp;quot; fi 参考&#xA;lsコマンドで表示されるファイルの色を変更するには </description>
     </item>
-    
-    <item>
-      <title>bashでディレクトリのbookmark</title>
-      <link>https://yaasita.github.io/2021/09/06/bash-bookmarks/</link>
-      <pubDate>Mon, 06 Sep 2021 02:00:02 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/09/06/bash-bookmarks/</guid>
-      <description>これすごい便利だった
-https://threkk.medium.com/how-to-use-bookmarks-in-bash-zsh-6b8074e40774
-CDPATHを使うとこんな便利なことができるのね
-ただ以下の方が指摘されているようにbashだと補完が効かないので, compgenで補完候補を作る方が良さそう
-https://mobile.twitter.com/mattn_jp/status/1434205359573405696
-自分の場合は、gotoっていうコマンドよりcdで通常通り使えた方が良いので
-こんな感じの設定を追加しておいた
-cdコマンドを上書きして、@で始まってたら cd -P でsymlinkを辿るようにして、他は通常通り
-(これなら補完候補も足さなくてOK)
-export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 } あと、bookmarkへの追加もコマンドにしておく
-bookmarkしたいディレクトリに移動してbookmarkコマンドでsymlink作るようにしておく
-function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) } </description>
-    </item>
-    
   </channel>
 </rss>

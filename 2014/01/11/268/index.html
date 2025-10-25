@@ -6,40 +6,20 @@
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>let&#39;s noteにacpid入れてバックライト調整 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.111.3">
+    <meta name="generator" content="Hugo 0.131.0">
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
 
-    <meta property="og:title" content="let&#39;s noteにacpid入れてバックライト調整" />
-<meta property="og:description" content=" debian jessieでやってみた
-使用したPCはLet&#39;s Note CF-W5
-acpi-supportインストール
-apt-get install acpi-support
-Enabling backlight controlを参考にする
-/etc/acpi/bright.sh
-#!/bin/sh
-bl_dev=/sys/class/backlight/panasonic/brightness
-step=1
-case $1 in
--)
-echo $( expr `cat $bl_dev` - $step ) &gt; $bl_dev
-;;
-&#43;)
-echo $( expr `cat $bl_dev` &#43; $step ) &gt; $bl_dev
-;;
-esac
-/etc/acpi/events/bright_d
-event=video/brightnessdown
-action=/etc/acpi/bright.sh -
-/etc/acpi/events/bright_u
-event=video/brightnessup
-action=/etc/acpi/bright.sh &#43;
-参考リンク
-https://wiki.archlinux.org/index.php/acpid " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://yaasita.github.io/2014/01/11/268/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2014-01-11T00:00:00+09:00" />
-<meta property="article:modified_time" content="2014-01-11T00:00:00+09:00" />
+    <meta property="og:url" content="https://yaasita.github.io/2014/01/11/268/">
+  <meta property="og:site_name" content="# cd ~yaasita">
+  <meta property="og:title" content="let&#39;s noteにacpid入れてバックライト調整">
+  <meta property="og:description" content=" debian jessieでやってみた 使用したPCはLet&#39;s Note CF-W5 acpi-supportインストール apt-get install acpi-support Enabling backlight controlを参考にする /etc/acpi/bright.sh #!/bin/sh bl_dev=/sys/class/backlight/panasonic/brightness step=1 case $1 in -) echo $( expr `cat $bl_dev` - $step ) &gt; $bl_dev ;; &#43;) echo $( expr `cat $bl_dev` &#43; $step ) &gt; $bl_dev ;; esac /etc/acpi/events/bright_d event=video/brightnessdown action=/etc/acpi/bright.sh - /etc/acpi/events/bright_u event=video/brightnessup action=/etc/acpi/bright.sh &#43; 参考リンク https://wiki.archlinux.org/index.php/acpid ">
+  <meta property="og:locale" content="ja">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2014-01-11T00:00:00+09:00">
+    <meta property="article:modified_time" content="2014-01-11T00:00:00+09:00">
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&amp;v=4">
 
     <script id="dsq-count-scr" src="https://yaasita.disqus.com/count.js" async></script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="36937576-b2d5-4494-aba8-d0b70a153691"></script>
@@ -87,7 +67,7 @@ https://wiki.archlinux.org/index.php/acpid " />
 
       
       <div id="disqus_thread"></div>
-<script type="application/javascript">
+<script>
     window.disqus_config = function () {
     
     
@@ -186,7 +166,7 @@ https://wiki.archlinux.org/index.php/acpid " />
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (355)</a>
+          <a href="/categories/linux"><span></span>linux (356)</a>
         </li>
         
         <li>
@@ -202,7 +182,7 @@ https://wiki.archlinux.org/index.php/acpid " />
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (430)</a>
+          <a href="/categories/soft"><span></span>soft (431)</a>
         </li>
         
         <li>
@@ -293,7 +273,7 @@ https://wiki.archlinux.org/index.php/acpid " />
         </li>
         
         <li>
-          <a href="/archives/2025"><span></span>2025 (13)</a>
+          <a href="/archives/2025"><span></span>2025 (14)</a>
         </li>
         
       </ul>

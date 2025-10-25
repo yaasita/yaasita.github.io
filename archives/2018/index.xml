@@ -4,286 +4,149 @@
     <title>2018 on # cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2018/</link>
     <description>Recent content in 2018 on # cd ~yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Wed, 19 Dec 2018 01:06:14 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2018/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 19 Dec 2018 01:06:14 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/archives/2018/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>スマホ変えた</title>
       <link>https://yaasita.github.io/2018/12/19/sumaho/</link>
       <pubDate>Wed, 19 Dec 2018 01:06:14 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/12/19/sumaho/</guid>
-      <description>Moto E5 2GB/16GBってやつに変更した
-Android8まで上がった
-ついでにSIMもIIJ mioからLINEモバイルに変えた</description>
+      <description>Moto E5 2GB/16GBってやつに変更した&#xA;Android8まで上がった&#xA;ついでにSIMもIIJ mioからLINEモバイルに変えた</description>
     </item>
-    
     <item>
       <title>dynamodbオンデマンド</title>
       <link>https://yaasita.github.io/2018/12/19/dynamodb/</link>
       <pubDate>Wed, 19 Dec 2018 00:53:21 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/12/19/dynamodb/</guid>
-      <description>re:Invent 2018で言われたアレ
-DynamoDBオンデマンド
-のベンチを取ってみた
-ベンチマークに使ったスクリプト 結論 ほとんどDynamoDB ondemand でOKだと思うj オートスケールぽい挙動なのでちょっとずつスケールしてるぽい 200とかそんくらいのスパイクアクセスがある場合はあらかじめ、プロビジョニングキャパシティにしておいた方が良いと思う ただし、オンデマンドの有効化は一日一回だけなので注意 </description>
+      <description>re:Invent 2018で言われたアレ&#xA;DynamoDBオンデマンド&#xA;のベンチを取ってみた&#xA;ベンチマークに使ったスクリプト 結論 ほとんどDynamoDB ondemand でOKだと思うj オートスケールぽい挙動なのでちょっとずつスケールしてるぽい 200とかそんくらいのスパイクアクセスがある場合はあらかじめ、プロビジョニングキャパシティにしておいた方が良いと思う ただし、オンデマンドの有効化は一日一回だけなので注意 </description>
     </item>
-    
     <item>
       <title>電源を変えた</title>
       <link>https://yaasita.github.io/2018/12/17/power-supply/</link>
       <pubDate>Mon, 17 Dec 2018 00:02:37 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/12/17/power-supply/</guid>
-      <description>寒いせいでPCの調子が悪くなった
-ANTEC(アンテック) NeoECO Classicシリーズ 650Wモデル NE650C
-って3年くらい使った電源が、寒い日にうまくついてくれない。
-（電源つけて2,3秒で再起動を繰り返す)
-なので
-KRPW-AK750W/88+ という玄人志向のやつに変更した
-8000円くらいのやつ</description>
+      <description>寒いせいでPCの調子が悪くなった&#xA;ANTEC(アンテック) NeoECO Classicシリーズ 650Wモデル NE650C&#xA;って3年くらい使った電源が、寒い日にうまくついてくれない。&#xA;（電源つけて2,3秒で再起動を繰り返す)&#xA;なので&#xA;KRPW-AK750W/88+ という玄人志向のやつに変更した&#xA;8000円くらいのやつ</description>
     </item>
-    
     <item>
       <title>skypeのログフォーマットが変わってた</title>
       <link>https://yaasita.github.io/2018/12/02/skype2json/</link>
       <pubDate>Sun, 02 Dec 2018 01:28:21 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/12/02/skype2json/</guid>
-      <description>のでちょっとスクリプト修正した
-https://github.com/yaasita/skype2json
-修正点 yarnじゃなくても良いと聞いたのでnpmにだけにした フォーマットが歴代合わせて3つあったので、3つスクリプト書いた(年代は適当) libに共通関数をまとめた なんか新しいフォーマットだと
-nsp_dataってカラムにjsonで突っ込んでるみたいね。json型が無いSQLiteのツライところ
-まとめ ころころフォーマットが変わるけどSQLiteになってるからSkypeは簡単にバックアップ出来て良い
-LINEはどうしたもんか</description>
+      <description>のでちょっとスクリプト修正した&#xA;https://github.com/yaasita/skype2json&#xA;修正点 yarnじゃなくても良いと聞いたのでnpmにだけにした フォーマットが歴代合わせて3つあったので、3つスクリプト書いた(年代は適当) libに共通関数をまとめた なんか新しいフォーマットだと&#xA;nsp_dataってカラムにjsonで突っ込んでるみたいね。json型が無いSQLiteのツライところ&#xA;まとめ ころころフォーマットが変わるけどSQLiteになってるからSkypeは簡単にバックアップ出来て良い&#xA;LINEはどうしたもんか</description>
     </item>
-    
     <item>
       <title>vimとtranslate-shellを連携する</title>
       <link>https://yaasita.github.io/2018/11/23/translate/</link>
       <pubDate>Fri, 23 Nov 2018 00:54:50 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/11/23/translate/</guid>
-      <description>translate-shellが便利だ
-vimrcにこんな感じに書く
-英単語の意味をちょっと調べる 翻訳 なんか微妙に画面がバグってるけど、本当はちゃんと表示されてる
-まとめ こういうちょっとした改善大事</description>
+      <description>translate-shellが便利だ&#xA;vimrcにこんな感じに書く&#xA;英単語の意味をちょっと調べる 翻訳 なんか微妙に画面がバグってるけど、本当はちゃんと表示されてる&#xA;まとめ こういうちょっとした改善大事</description>
     </item>
-    
     <item>
       <title>githubのwebhook受け取ってjenkins走らせる</title>
       <link>https://yaasita.github.io/2018/11/14/github2jenkins/</link>
       <pubDate>Wed, 14 Nov 2018 01:41:06 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/11/14/github2jenkins/</guid>
-      <description>無かったので作りました
-Github -&amp;gt; Mojolicious -&amp;gt; jenkins </description>
+      <description>無かったので作りました&#xA;Github -&amp;gt; Mojolicious -&amp;gt; jenkins </description>
     </item>
-    
     <item>
       <title>HSTSの説明資料</title>
       <link>https://yaasita.github.io/2018/11/12/hsts/</link>
       <pubDate>Mon, 12 Nov 2018 01:24:39 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/11/12/hsts/</guid>
-      <description>なんかで作ったので
-HSTSとは HTTPでの通信を減らしよりセキュアなHTTPSを使うように促す仕組み
-通常 通常HTTPリクエストをして、301、302等のリダイレクトによってHTTPSにアクセスし直す
-が、HTTPでのやりとり部分に中間者攻撃のリスクが存在する
-※厳密には301リダイレクトはブラウザがキャッシュするので2回目以降はサーバー側にリクエストしない
-HSTS ヘッダ HSTSヘッダを受け取ると、ブラウザ側でHTTPをHTTPSに読み替えてリクエストする
-通常のリダイレクトは違い、一旦 HSTSヘッダを受け取ると有効期間中は決してhttpによるリクエストをしない
-(http:// ~ というリンクはブラウザ側で読み換える)
-付与するヘッダーは以下のようなもの
-strict-transport-security: max-age=31536000; includeSubDomains; preload max-age: 有効時間（秒単位） includeSubDomains: サブドメインも含めるかどうか alis.to なら hoge.alis.to も有効になる preload: preloadに登録しても良いかどうか（後述） HSTS preload HSTS preloadは予め hstspreload.org に自分のサイトを登録しておいて
-初回リクエスト時からHTTPSを有効にしておく仕組み
-メリット・デメリット メリット observatory の点数アップ (対外アピール） 盗聴・中間者攻撃リスクを軽減しよりセキュアになる デメリット 証明書の運用を失敗できない サブドメインを含め、HTTPでの運用を一切できなくなる ローカルでのテスト時に偽の証明書を無視しにくくなる 通常だと出てくる証明書エラー無視のリンクが・・・
-HSTSのサイトは証明書無視ボタンが出ない
-windowsだとやり方があるらしいが、ローカルでの確認とかはやりにくくなる
-/etc/hostsを化かして対応する、実ドメインでのリハーサル時はプライベートCA等で対応すること
-https://support.opendns.com/hc/en-us/articles/227989087-Chrome-for-Windows-only-HSTS-Certificate-Exception-Instructions https://moriya.xrea.jp/tdiary/20150827.html </description>
+      <description>なんかで作ったので&#xA;HSTSとは HTTPでの通信を減らしよりセキュアなHTTPSを使うように促す仕組み&#xA;通常 通常HTTPリクエストをして、301、302等のリダイレクトによってHTTPSにアクセスし直す&#xA;が、HTTPでのやりとり部分に中間者攻撃のリスクが存在する&#xA;※厳密には301リダイレクトはブラウザがキャッシュするので2回目以降はサーバー側にリクエストしない&#xA;HSTS ヘッダ HSTSヘッダを受け取ると、ブラウザ側でHTTPをHTTPSに読み替えてリクエストする&#xA;通常のリダイレクトは違い、一旦 HSTSヘッダを受け取ると有効期間中は決してhttpによるリクエストをしない&#xA;(http:// ~ というリンクはブラウザ側で読み換える)&#xA;付与するヘッダーは以下のようなもの&#xA;strict-transport-security: max-age=31536000; includeSubDomains; preload max-age: 有効時間（秒単位） includeSubDomains: サブドメインも含めるかどうか alis.to なら hoge.alis.to も有効になる preload: preloadに登録しても良いかどうか（後述） HSTS preload HSTS preloadは予め hstspreload.org に自分のサイトを登録しておいて&#xA;初回リクエスト時からHTTPSを有効にしておく仕組み&#xA;メリット・デメリット メリット observatory の点数アップ (対外アピール） 盗聴・中間者攻撃リスクを軽減しよりセキュアになる デメリット 証明書の運用を失敗できない サブドメインを含め、HTTPでの運用を一切できなくなる ローカルでのテスト時に偽の証明書を無視しにくくなる 通常だと出てくる証明書エラー無視のリンクが・・・&#xA;HSTSのサイトは証明書無視ボタンが出ない&#xA;windowsだとやり方があるらしいが、ローカルでの確認とかはやりにくくなる&#xA;/etc/hostsを化かして対応する、実ドメインでのリハーサル時はプライベートCA等で対応すること&#xA;https://support.opendns.com/hc/en-us/articles/227989087-Chrome-for-Windows-only-HSTS-Certificate-Exception-Instructions https://moriya.xrea.jp/tdiary/20150827.html </description>
     </item>
-    
     <item>
       <title>徳丸さんのセキュリティ問題(CSRF)</title>
       <link>https://yaasita.github.io/2018/11/11/tokumaru-csrf/</link>
       <pubDate>Sun, 11 Nov 2018 01:33:21 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/11/11/tokumaru-csrf/</guid>
-      <description>徳丸さんがCSRFの問題を出していたので考えてみる
-問題：間違ったCSRF対策～初級編～
-解答
-https://github.com/yaasita/tokumaru-csrf-20181110
-なんか最初はXMLHttpRequestとか駆使して、chgmailform.phpからtoken引っこ抜こうと思ったんだけど
-CORSとかCORBで無理なんすよね
-でよく見るとtokenが無いときの考慮がないよってやつでした
-まとめ 最近のブラウザは良く出来てる</description>
+      <description>徳丸さんがCSRFの問題を出していたので考えてみる&#xA;問題：間違ったCSRF対策～初級編～&#xA;解答&#xA;https://github.com/yaasita/tokumaru-csrf-20181110&#xA;なんか最初はXMLHttpRequestとか駆使して、chgmailform.phpからtoken引っこ抜こうと思ったんだけど&#xA;CORSとかCORBで無理なんすよね&#xA;でよく見るとtokenが無いときの考慮がないよってやつでした&#xA;まとめ 最近のブラウザは良く出来てる</description>
     </item>
-    
     <item>
       <title>mitmproxyが便利</title>
       <link>https://yaasita.github.io/2018/11/10/mitmproxy/</link>
       <pubDate>Sat, 10 Nov 2018 03:22:31 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/11/10/mitmproxy/</guid>
-      <description>とっても便利なmitmproxyを使ってみた
-概要 こんな感じでHTTPSなサイトも中間に入りこんでくれる
-（root証明証を予め信頼しておく必要がある)
-browser &amp;lt;---(指定のCA鍵で再署名)---- mitmproxy &amp;lt;---(HTTPSを一旦解く)----- web server インストール apt install mitmproxy 設定 プライベートCAをやってるなら
-/etc/ssl/demoCA/private/cakey.pem /etc/ssl/demoCA/cacert.pem この２ファイルを結合する
-こんな感じで mitmproxy-ca.pem って名前でどっかのディレクトリに置く
------BEGIN ENCRYPTED PRIVATE KEY----- ... -----END ENCRYPTED PRIVATE KEY----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE----- 実行 こんな感じで実行できる &amp;ndash;view-filter で表示させたいURLを絞れる
-(hogedirの中にmitmproxy-ca.pemが入ってる)
-mitmproxy --set confdir=/path/to/hogedir --view-filter m3u 画面中ではVimぽいキーバインドで色々操作できる
-リクエストを選んで、wでストリームを保存できる
-dump mitmproxyだけだと長いURLとかは省略されちゃったりするので、完全なものを見る場合にmitmdumpを使う
-# getだけ抽出 mitmdump -nr /tmp/save -w outfile &amp;quot;~m get&amp;quot; # リクエスト一覧 mitmdump -nr /tmp/save まとめ HTTPSのデバッグ時にめっちゃ便利</description>
+      <description>とっても便利なmitmproxyを使ってみた&#xA;概要 こんな感じでHTTPSなサイトも中間に入りこんでくれる&#xA;（root証明証を予め信頼しておく必要がある)&#xA;browser &amp;lt;---(指定のCA鍵で再署名)---- mitmproxy &amp;lt;---(HTTPSを一旦解く)----- web server インストール apt install mitmproxy 設定 プライベートCAをやってるなら&#xA;/etc/ssl/demoCA/private/cakey.pem /etc/ssl/demoCA/cacert.pem この２ファイルを結合する&#xA;こんな感じで mitmproxy-ca.pem って名前でどっかのディレクトリに置く&#xA;-----BEGIN ENCRYPTED PRIVATE KEY----- ... -----END ENCRYPTED PRIVATE KEY----- -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE----- 実行 こんな感じで実行できる &amp;ndash;view-filter で表示させたいURLを絞れる&#xA;(hogedirの中にmitmproxy-ca.pemが入ってる)&#xA;mitmproxy --set confdir=/path/to/hogedir --view-filter m3u 画面中ではVimぽいキーバインドで色々操作できる&#xA;リクエストを選んで、wでストリームを保存できる&#xA;dump mitmproxyだけだと長いURLとかは省略されちゃったりするので、完全なものを見る場合にmitmdumpを使う&#xA;# getだけ抽出 mitmdump -nr /tmp/save -w outfile &amp;quot;~m get&amp;quot; # リクエスト一覧 mitmdump -nr /tmp/save まとめ HTTPSのデバッグ時にめっちゃ便利</description>
     </item>
-    
     <item>
       <title>CircleCIのキャッシュについて</title>
       <link>https://yaasita.github.io/2018/10/19/circleci/</link>
       <pubDate>Fri, 19 Oct 2018 03:03:35 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/10/19/circleci/</guid>
-      <description>先に結論だけ
-キャッシュは一度書き込むとupdate出来ない キャッシュクリアは名前を変えて対応する 以下具体例
-以下のようなキャッシュをした際に
-古いバージョンのライブラリが入ってしまった場合
-- restore_cache: keys: - v2-dependencies-{{ checksum &amp;#34;requirements.txt&amp;#34; }} - v2-dependencies- - run: name: install dependencies command: | python3 -m venv venv . venv/bin/activate pip install -r requirements.txt - save_cache: paths: - ./venv key: v2-dependencies-{{ checksum &amp;#34;requirements.txt&amp;#34; }} これを解消しようとして、以下のようにしてもcacheはupdateされない
-- restore_cache: keys: - v2-dependencies-{{ checksum &amp;#34;requirements.txt&amp;#34; }} - v2-dependencies- - run: name: install dependencies command: | python3 -m venv venv . venv/bin/activate pip install -r requirements.</description>
+      <description>先に結論だけ&#xA;キャッシュは一度書き込むとupdate出来ない キャッシュクリアは名前を変えて対応する 以下具体例&#xA;以下のようなキャッシュをした際に&#xA;古いバージョンのライブラリが入ってしまった場合&#xA;- restore_cache: keys: - v2-dependencies-{{ checksum &amp;#34;requirements.txt&amp;#34; }} - v2-dependencies- - run: name: install dependencies command: | python3 -m venv venv . venv/bin/activate pip install -r requirements.txt - save_cache: paths: - ./venv key: v2-dependencies-{{ checksum &amp;#34;requirements.txt&amp;#34; }} これを解消しようとして、以下のようにしてもcacheはupdateされない&#xA;- restore_cache: keys: - v2-dependencies-{{ checksum &amp;#34;requirements.txt&amp;#34; }} - v2-dependencies- - run: name: install dependencies command: | python3 -m venv venv . venv/bin/activate pip install -r requirements.</description>
     </item>
-    
     <item>
       <title>全文検索n-gram</title>
       <link>https://yaasita.github.io/2018/09/29/n-gram/</link>
       <pubDate>Sat, 29 Sep 2018 04:25:33 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/09/29/n-gram/</guid>
-      <description>N-gramについて
-検索とインデックスについて作った
-検討資料用にどうぞ
-https://gist.github.com/yaasita/ea31d7bbfc839fc859fd7d713800088b</description>
+      <description>N-gramについて&#xA;検索とインデックスについて作った&#xA;検討資料用にどうぞ&#xA;https://gist.github.com/yaasita/ea31d7bbfc839fc859fd7d713800088b</description>
     </item>
-    
     <item>
       <title>skypeの会話ログをjsonに</title>
       <link>https://yaasita.github.io/2018/09/25/skype-log/</link>
       <pubDate>Tue, 25 Sep 2018 00:56:22 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/09/25/skype-log/</guid>
-      <description>skypeの会話履歴をJSONにしておくやつ作った
-https://github.com/yaasita/skype2json
-logはsqliteで保存されている
-こちらによるとskype for windows 10とskype for windows desktopの保存場所が違う
-こっちが最近のやつ
-場所: %localappdata%\Packages\Microsoft.SkypeApp_kzf8qxf38zg5c\LocalState
-昔のやつ
-場所: C:\Users\username\AppData\Roaming\Skype\username\main.db</description>
+      <description>skypeの会話履歴をJSONにしておくやつ作った&#xA;https://github.com/yaasita/skype2json&#xA;logはsqliteで保存されている&#xA;こちらによるとskype for windows 10とskype for windows desktopの保存場所が違う&#xA;こっちが最近のやつ&#xA;場所: %localappdata%\Packages\Microsoft.SkypeApp_kzf8qxf38zg5c\LocalState&#xA;昔のやつ&#xA;場所: C:\Users\username\AppData\Roaming\Skype\username\main.db</description>
     </item>
-    
     <item>
       <title>SSL証明書のchain検証</title>
       <link>https://yaasita.github.io/2018/09/23/verify-certificate-chain/</link>
       <pubDate>Sun, 23 Sep 2018 01:02:54 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/09/23/verify-certificate-chain/</guid>
-      <description>以下のようなチェインを検証したい時
-AddTrust |_ ca1 |_ ca2 |_ hoge こんな感じにコマンドを打つ
-openssl verify -trusted /etc/ssl/certs/AddTrust_External_Root.pem \ -untrusted ca/ca1.pem \ -untrusted ca/ca2.pem \ hoge.pem* verify -CAfileを指定して検証する例を見るけど、
-インストールされてるデフォルトのrootCAも見ちゃうから
--no-CAfile, -no-CApathで無効化しなきゃだったりするのでこっちの方が良さそう</description>
+      <description>以下のようなチェインを検証したい時&#xA;AddTrust |_ ca1 |_ ca2 |_ hoge こんな感じにコマンドを打つ&#xA;openssl verify -trusted /etc/ssl/certs/AddTrust_External_Root.pem \ -untrusted ca/ca1.pem \ -untrusted ca/ca2.pem \ hoge.pem* verify -CAfileを指定して検証する例を見るけど、&#xA;インストールされてるデフォルトのrootCAも見ちゃうから&#xA;-no-CAfile, -no-CApathで無効化しなきゃだったりするのでこっちの方が良さそう</description>
     </item>
-    
     <item>
       <title>Hugoをアップデート</title>
       <link>https://yaasita.github.io/2018/09/16/hugo-new-version/</link>
       <pubDate>Sun, 16 Sep 2018 15:48:27 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/09/16/hugo-new-version/</guid>
-      <description>なんかこんなプルリクも来てたのでthemeもちょいと修正
-たまにはhugoのbuild logみてwarning潰してかないとだな</description>
+      <description>なんかこんなプルリクも来てたのでthemeもちょいと修正&#xA;たまにはhugoのbuild logみてwarning潰してかないとだな</description>
     </item>
-    
     <item>
       <title>perlのクロージャ</title>
       <link>https://yaasita.github.io/2018/09/06/perl-closure/</link>
       <pubDate>Thu, 06 Sep 2018 02:43:21 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/09/06/perl-closure/</guid>
-      <description>これでも良いけど
-{ my $count; sub func { return ++$count; } } 最近ならこうstate使って
-use feature qw(:5.10); sub func { state $count; return ++$count; } ただstateって配列とかには使えない</description>
+      <description>これでも良いけど&#xA;{ my $count; sub func { return ++$count; } } 最近ならこうstate使って&#xA;use feature qw(:5.10); sub func { state $count; return ++$count; } ただstateって配列とかには使えない</description>
     </item>
-    
     <item>
       <title>ubuntu18.04でDKIM設定</title>
       <link>https://yaasita.github.io/2018/08/18/dkim/</link>
       <pubDate>Sat, 18 Aug 2018 17:40:23 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/08/18/dkim/</guid>
-      <description>インストール apt install opendkim opendkim-tools opendkim設定 mkdir /etc/postfix/dkim/ opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail # -d ドメイン # -s セレクタ chgrp opendkim /etc/postfix/dkim/* chmod g+r /etc/postfix/dkim/* /etc/opendkim.conf
-Syslog	yes LogWhy Yes UMask	007 Canonicalization	relaxed/relaxed Mode	sv Socket inet:8891@localhost PidFile /var/run/opendkim/opendkim.pid OversignHeaders	From TrustAnchorFile /usr/share/dns/root.key UserID opendkim KeyTable file:/etc/postfix/dkim/keytable SigningTable file:/etc/postfix/dkim/signingtable /etc/postfix/dkim/keytable
-mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private /etc/postfix/dkim/signingtable
-example.net mail._domainkey.example.net 反映
-systemctl restart opendkim.service postfix設定 以下追記
-milter_default_action = tempfail milter_protocol = 2 smtpd_milters = inet:localhost:8891 non_smtpd_milters = inet:localhost:8891 ここで,milterを使うので</description>
+      <description>インストール apt install opendkim opendkim-tools opendkim設定 mkdir /etc/postfix/dkim/ opendkim-genkey -D /etc/postfix/dkim/ -d example.com -s mail # -d ドメイン # -s セレクタ chgrp opendkim /etc/postfix/dkim/* chmod g+r /etc/postfix/dkim/* /etc/opendkim.conf&#xA;Syslog&#x9;yes LogWhy Yes UMask&#x9;007 Canonicalization&#x9;relaxed/relaxed Mode&#x9;sv Socket inet:8891@localhost PidFile /var/run/opendkim/opendkim.pid OversignHeaders&#x9;From TrustAnchorFile /usr/share/dns/root.key UserID opendkim KeyTable file:/etc/postfix/dkim/keytable SigningTable file:/etc/postfix/dkim/signingtable /etc/postfix/dkim/keytable&#xA;mail._domainkey.example.net example.net:mail:/etc/postfix/dkim/mail.private /etc/postfix/dkim/signingtable&#xA;example.net mail._domainkey.example.net 反映&#xA;systemctl restart opendkim.service postfix設定 以下追記&#xA;milter_default_action = tempfail milter_protocol = 2 smtpd_milters = inet:localhost:8891 non_smtpd_milters = inet:localhost:8891 ここで,milterを使うので</description>
     </item>
-    
     <item>
       <title>プライベートCAでダメなaltname</title>
       <link>https://yaasita.github.io/2018/08/05/private-ca-invalid/</link>
       <pubDate>Sun, 05 Aug 2018 00:57:46 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/08/05/private-ca-invalid/</guid>
-      <description>openssl.cnf
-subjectAltName=@alt_names [ alt_names ] DNS.1 = *.example.com IP.1 = 192.168.0.1 ここに書ける値についてのお話
-IPでこういうのはダメ
-IP.1 = 192.168.0.* IP.2 = 192.168.0.0/24 IPアドレス範囲もダメ
-こういうのはOKなのでテスト用の証明書だったらこの辺だけ書いて渡すのが良いのかな
-IP.1 = 127.0.0.1 DNS.1 = localhost </description>
+      <description>openssl.cnf&#xA;subjectAltName=@alt_names [ alt_names ] DNS.1 = *.example.com IP.1 = 192.168.0.1 ここに書ける値についてのお話&#xA;IPでこういうのはダメ&#xA;IP.1 = 192.168.0.* IP.2 = 192.168.0.0/24 IPアドレス範囲もダメ&#xA;こういうのはOKなのでテスト用の証明書だったらこの辺だけ書いて渡すのが良いのかな&#xA;IP.1 = 127.0.0.1 DNS.1 = localhost </description>
     </item>
-    
     <item>
       <title>AlwaysOnSSLがダメぽい</title>
       <link>https://yaasita.github.io/2018/08/01/alwaysonssl-breaking/</link>
       <pubDate>Wed, 01 Aug 2018 01:03:14 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/08/01/alwaysonssl-breaking/</guid>
-      <description>S/MIMEもSSL証明書も取れない
-(´；ω；｀)ﾌﾞﾜｯ
-トップページも繋がらないしもう駄目か・・・
-前回
-続き</description>
+      <description>S/MIMEもSSL証明書も取れない&#xA;(´；ω；｀)ﾌﾞﾜｯ&#xA;トップページも繋がらないしもう駄目か・・・&#xA;前回&#xA;続き</description>
     </item>
-    
     <item>
       <title>クライアント証明書&#43;HTTP2</title>
       <link>https://yaasita.github.io/2018/07/29/h2-plus-client-auth/</link>
       <pubDate>Sun, 29 Jul 2018 16:36:57 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/07/29/h2-plus-client-auth/</guid>
-      <description>SSLRequire は 非推奨みたいなので
-クライアント証明書とIP制限を今風に書き直す
-あとCNとかも検証するようにした
-こんな感じ
-&amp;lt;Directory /var/www&amp;gt; Options Indexes FollowSymLinks MultiViews ExecCGI SSLVerifyClient optional &amp;lt;RequireAny&amp;gt; Require ip 192.168.100.0/24 &amp;lt;RequireAll&amp;gt; Require ssl-verify-client Require expr &amp;quot;%{SSL_CLIENT_S_DN_CN} == &#39;hogeclient&#39;&amp;quot; &amp;lt;/RequireAll&amp;gt; &amp;lt;/RequireAny&amp;gt; &amp;lt;/Directory&amp;gt; あと
-Protocols http/1.1 h2 のようにhttp/1.1を先にしないと
-curl: (92) HTTP/2 stream 1 was not closed cleanly: HTTP_1_1_REQUIRED (err 13) こんなエラーになるので注意
-参考リンク
-reqexprの説明 mod_ssl変数一覧 </description>
+      <description>SSLRequire は 非推奨みたいなので&#xA;クライアント証明書とIP制限を今風に書き直す&#xA;あとCNとかも検証するようにした&#xA;こんな感じ&#xA;&amp;lt;Directory /var/www&amp;gt; Options Indexes FollowSymLinks MultiViews ExecCGI SSLVerifyClient optional &amp;lt;RequireAny&amp;gt; Require ip 192.168.100.0/24 &amp;lt;RequireAll&amp;gt; Require ssl-verify-client Require expr &amp;quot;%{SSL_CLIENT_S_DN_CN} == &#39;hogeclient&#39;&amp;quot; &amp;lt;/RequireAll&amp;gt; &amp;lt;/RequireAny&amp;gt; &amp;lt;/Directory&amp;gt; あと&#xA;Protocols http/1.1 h2 のようにhttp/1.1を先にしないと&#xA;curl: (92) HTTP/2 stream 1 was not closed cleanly: HTTP_1_1_REQUIRED (err 13) こんなエラーになるので注意&#xA;参考リンク&#xA;reqexprの説明 mod_ssl変数一覧 </description>
     </item>
-    
     <item>
       <title>PerlでElasticsearch</title>
       <link>https://yaasita.github.io/2018/07/04/es-perl/</link>
       <pubDate>Wed, 04 Jul 2018 03:06:02 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/07/04/es-perl/</guid>
-      <description>perlでElasticsearch
-mojoliciousでの例</description>
+      <description>perlでElasticsearch&#xA;mojoliciousでの例</description>
     </item>
-    
   </channel>
 </rss>

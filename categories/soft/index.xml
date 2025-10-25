@@ -1,329 +1,152 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>soft on # cd ~yaasita</title>
+    <title>Soft on # cd ~yaasita</title>
     <link>https://yaasita.github.io/categories/soft/</link>
-    <description>Recent content in soft on # cd ~yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Soft on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 02 Sep 2025 21:42:31 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Oct 2025 03:24:35 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amazon Q Developer CLI使うまで</title>
+      <link>https://yaasita.github.io/2025/10/26/amazon-q-developer-cli/</link>
+      <pubDate>Sun, 26 Oct 2025 03:24:35 +0900</pubDate>
+      <guid>https://yaasita.github.io/2025/10/26/amazon-q-developer-cli/</guid>
+      <description>公式&#xA;https://github.com/aws/amazon-q-developer-cli&#xA;debパッケージで入れる方法もあるが、upgradeしやすいzipファイルからのインストールがお勧め&#xA;ユーザー権限でOK&#xA;curl &amp;quot;https://desktop-release.q.us-east-1.amazonaws.com/latest/q-x86_64-linux.zip&amp;quot; -o &amp;quot;q.zip&amp;quot; 解凍して./install.sh叩けばOK&#xA;シェル設定を変更しても良いか聞かれるのでyを押すと ~/.bashrc の先頭と最後に以下のような設定が追加される&#xA;# Amazon Q pre block. Keep at the top of this file. [[ -f &amp;quot;${HOME}/.local/share/amazon-q/shell/bashrc.pre.bash&amp;quot; ]] &amp;amp;&amp;amp; builtin source &amp;quot;${HOME}/.local/share/amazon-q/shell/bashrc.pre.bash&amp;quot; # 元々.bashrcに書かれていた内容 # Amazon Q post block. Keep at the bottom of this file. [[ -f &amp;quot;${HOME}/.local/share/amazon-q/shell/bashrc.post.bash&amp;quot; ]] &amp;amp;&amp;amp; builtin source &amp;quot;${HOME}/.local/share/amazon-q/shell/bashrc.post.bash&amp;quot; 以下のコマンドでログイン処理&#xA;q login agentって単位で設定を分割できるので作っておく&#xA;下記コマンドで~/.aws/amazonq/cli-agents/aws.json に設定ファイルが作成される&#xA;/agent create -n aws デフォルトのagent設定&#xA;q settings chat.defaultAgent my こんな感じでaws用とazure用で分けるなんてことも出来る</description>
+    </item>
     <item>
       <title>debian13にdanteが無い</title>
       <link>https://yaasita.github.io/2025/09/02/debian-dante/</link>
       <pubDate>Tue, 02 Sep 2025 21:42:31 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/09/02/debian-dante/</guid>
-      <description>なぜかdebian13にはdanteが無かった
-forkyにはあるのでそっから持ってくるか
-https://packages.debian.org/forky/dante-server
-公式から持ってきてmakeするしかないかな
-https://www.inet.no/dante/download.html
-普通にmakeすればいいだけ
-./configure make install /etc/sockd.conf
-/etc/systemd/system/sockd.service</description>
+      <description>なぜかdebian13にはdanteが無かった&#xA;forkyにはあるのでそっから持ってくるか&#xA;https://packages.debian.org/forky/dante-server&#xA;公式から持ってきてmakeするしかないかな&#xA;https://www.inet.no/dante/download.html&#xA;普通にmakeすればいいだけ&#xA;./configure make install /etc/sockd.conf&#xA;/etc/systemd/system/sockd.service</description>
     </item>
-    
     <item>
       <title>piholeのブロックリスト</title>
       <link>https://yaasita.github.io/2025/09/01/pihole-block-list/</link>
       <pubDate>Mon, 01 Sep 2025 16:51:45 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/09/01/pihole-block-list/</guid>
-      <description>こんな感じのhosts形式だけじゃなく
-https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
-ABP形式もOKらしい
-https://pi-hole.net/blog/2023/03/22/pi-hole-ftl-v5-22-web-v5-19-and-core-v5-16-1-released/#page-content
-サブドメインも含めてyoutube.comをブロックする場合
-||youtube.com^ </description>
+      <description>こんな感じのhosts形式だけじゃなく&#xA;https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts&#xA;ABP形式もOKらしい&#xA;https://pi-hole.net/blog/2023/03/22/pi-hole-ftl-v5-22-web-v5-19-and-core-v5-16-1-released/#page-content&#xA;サブドメインも含めてyoutube.comをブロックする場合&#xA;||youtube.com^ </description>
     </item>
-    
     <item>
       <title>preloadの効果</title>
       <link>https://yaasita.github.io/2025/08/11/preload/</link>
       <pubDate>Mon, 11 Aug 2025 04:43:38 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/08/11/preload/</guid>
-      <description>なんとなくdebianに入れてたpreload
-設定はこんな感じ /etc/preload.conf
-意味あるか測定してみた
-測定はtimeコマンド経由で以下の条件を満たしたらウィンドウを閉じてrealtimeを比較
-firefox: ホームメニューが出るまで chrome: ホームメニューが出るまで thunderbird: 受信ボックスが見れるまで preloadあり 2025/07/21 (月) 14:52:42
-firefox-esr: 0m24.578s
-google-chrome-stable: 0m35.277s
-thunderbird: 0m24.932s
-2025/07/22 (火) 04:04:37
-firefox-esr: 0m21.119s
-google-chrome-stable: 0m34.912s
-thunderbird: 0m24.668s
-2025/07/27 (日) 02:51:35
-firefox-esr: 0m12.906s
-google-chrome-stable: 0m15.793s
-thunderbird: 0m20.732s
-2025/07/27 (日) 17:10:02
-firefox-esr: 0m21.614s
-google-chrome-stable: 0m38.979s
-thunderbird: 0m25.449s
-preloadなし 2025/08/03 (日) 02:16:58
-firefox-esr: 0m21.507s
-google-chrome-stable: 0m14.986s
-thunderbird: 0m11.729s
-2025/08/11 (月) 04:38:53
-firefox-esr: 0m22.632s
-google-chrome-stable: 0m36.524s
-thunderbird: 0m21.813s
-結論 自分の環境だと意味なさそうなので止めた</description>
+      <description>なんとなくdebianに入れてたpreload&#xA;設定はこんな感じ /etc/preload.conf&#xA;意味あるか測定してみた&#xA;測定はtimeコマンド経由で以下の条件を満たしたらウィンドウを閉じてrealtimeを比較&#xA;firefox: ホームメニューが出るまで chrome: ホームメニューが出るまで thunderbird: 受信ボックスが見れるまで preloadあり 2025/07/21 (月) 14:52:42&#xA;firefox-esr: 0m24.578s&#xA;google-chrome-stable: 0m35.277s&#xA;thunderbird: 0m24.932s&#xA;2025/07/22 (火) 04:04:37&#xA;firefox-esr: 0m21.119s&#xA;google-chrome-stable: 0m34.912s&#xA;thunderbird: 0m24.668s&#xA;2025/07/27 (日) 02:51:35&#xA;firefox-esr: 0m12.906s&#xA;google-chrome-stable: 0m15.793s&#xA;thunderbird: 0m20.732s&#xA;2025/07/27 (日) 17:10:02&#xA;firefox-esr: 0m21.614s&#xA;google-chrome-stable: 0m38.979s&#xA;thunderbird: 0m25.449s&#xA;preloadなし 2025/08/03 (日) 02:16:58&#xA;firefox-esr: 0m21.507s&#xA;google-chrome-stable: 0m14.986s&#xA;thunderbird: 0m11.729s&#xA;2025/08/11 (月) 04:38:53&#xA;firefox-esr: 0m22.632s&#xA;google-chrome-stable: 0m36.524s&#xA;thunderbird: 0m21.813s&#xA;結論 自分の環境だと意味なさそうなので止めた</description>
     </item>
-    
     <item>
       <title>動画ファイルのダミーデータ</title>
       <link>https://yaasita.github.io/2025/05/16/download-stream-png-dummy/</link>
       <pubDate>Fri, 16 May 2025 16:45:58 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/05/16/download-stream-png-dummy/</guid>
-      <description>m3uから動画をダウンロードすると
-PNG image data, 1 x 1, 8-bit/color RGBA, non-interlacedのデータになることがある
-こんな感じで先頭8byteを飛ばして
-ffmpegで再エンコードするとよい
-とりあえずffmpeg通せばヘッダは復活する
-ffmpeg -i merged_output.ts -c copy out.mp4 参考リンク
-https://github.com/yt-dlp/yt-dlp/issues/4381</description>
+      <description>m3uから動画をダウンロードすると&#xA;PNG image data, 1 x 1, 8-bit/color RGBA, non-interlacedのデータになることがある&#xA;こんな感じで先頭8byteを飛ばして&#xA;ffmpegで再エンコードするとよい&#xA;とりあえずffmpeg通せばヘッダは復活する&#xA;ffmpeg -i merged_output.ts -c copy out.mp4 参考リンク&#xA;https://github.com/yt-dlp/yt-dlp/issues/4381</description>
     </item>
-    
     <item>
       <title>cody使ってみる</title>
       <link>https://yaasita.github.io/2025/01/01/cody/</link>
       <pubDate>Wed, 01 Jan 2025 15:59:47 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/01/01/cody/</guid>
-      <description>cody が良いという評判を聞いたので使ってみる
-コーディングAI課金するならCodyが断トツ良い話
-https://zenn.dev/sanami/articles/7c24ce973b7e7c
-vimには codeium と github copilot を設定しているので補完AIはもう要らない
-CLIを設定してみる
-マニュアル
-https://sourcegraph.com/docs/cody/clients/install-cli
-ここからアクセストークンを発行
-https://sourcegraph.com/users/gitlab-etjbc/settings/tokens
-環境変数に設定
-export SRC_ACCESS_TOKEN=sgp_xxxxxxxxxxxxxxxxxxxxxx インストール
-npm install -g @sourcegraph/cody cody auth whoami こんな感じで使える
-cody chat -m &#39;Explain React hooks&#39; git diff | cody chat --stdin -m &#39;Write a commit message for this diff&#39; cody chat --context-file src/controller.ts -m &#39;Are there code smells in this file?&#39; ターミナルから使えて良いかもしれない</description>
+      <description>cody が良いという評判を聞いたので使ってみる&#xA;コーディングAI課金するならCodyが断トツ良い話&#xA;https://zenn.dev/sanami/articles/7c24ce973b7e7c&#xA;vimには codeium と github copilot を設定しているので補完AIはもう要らない&#xA;CLIを設定してみる&#xA;マニュアル&#xA;https://sourcegraph.com/docs/cody/clients/install-cli&#xA;ここからアクセストークンを発行&#xA;https://sourcegraph.com/users/gitlab-etjbc/settings/tokens&#xA;環境変数に設定&#xA;export SRC_ACCESS_TOKEN=sgp_xxxxxxxxxxxxxxxxxxxxxx インストール&#xA;npm install -g @sourcegraph/cody cody auth whoami こんな感じで使える&#xA;cody chat -m &#39;Explain React hooks&#39; git diff | cody chat --stdin -m &#39;Write a commit message for this diff&#39; cody chat --context-file src/controller.ts -m &#39;Are there code smells in this file?&#39; ターミナルから使えて良いかもしれない</description>
     </item>
-    
     <item>
       <title>vimでGitHub Copilot</title>
       <link>https://yaasita.github.io/2024/12/21/vim-copilot/</link>
       <pubDate>Sat, 21 Dec 2024 02:00:01 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/12/21/vim-copilot/</guid>
-      <description>Microsoft傘下のGitHub、「GitHub Copilot」を無料に（制限あり）
-https://www.itmedia.co.jp/news/articles/2412/19/news111.html
-ということで使ってみる
-以下インストール
-https://github.com/github/copilot.vim
-vimrcはこんな感じ
-常に補完が効くのは嫌なので使うときだけ有効にする
-候補表示はCtrl-c
-let g:copilot_filetypes = { &#39;*&#39;: v:false } imap &amp;lt;C-c&amp;gt; &amp;lt;Plug&amp;gt;(copilot-next) command! -nargs=0 ToggleCopilot call ToggleCopilot() function! ToggleCopilot() if exists(&#39;g:copilot_filetypes&#39;) unlet g:copilot_filetypes else let g:copilot_filetypes = { &#39;*&#39;: v:false } endif Copilot status endfunction :Copilot setup で設定
-~/.config/github-copilot/ に credentials が入る
-あとチャットはここから出来る
-https://github.com/copilot</description>
+      <description>Microsoft傘下のGitHub、「GitHub Copilot」を無料に（制限あり）&#xA;https://www.itmedia.co.jp/news/articles/2412/19/news111.html&#xA;ということで使ってみる&#xA;以下インストール&#xA;https://github.com/github/copilot.vim&#xA;vimrcはこんな感じ&#xA;常に補完が効くのは嫌なので使うときだけ有効にする&#xA;候補表示はCtrl-c&#xA;let g:copilot_filetypes = { &#39;*&#39;: v:false } imap &amp;lt;C-c&amp;gt; &amp;lt;Plug&amp;gt;(copilot-next) command! -nargs=0 ToggleCopilot call ToggleCopilot() function! ToggleCopilot() if exists(&#39;g:copilot_filetypes&#39;) unlet g:copilot_filetypes else let g:copilot_filetypes = { &#39;*&#39;: v:false } endif Copilot status endfunction :Copilot setup で設定&#xA;~/.config/github-copilot/ に credentials が入る&#xA;あとチャットはここから出来る&#xA;https://github.com/copilot</description>
     </item>
-    
     <item>
       <title>pulseaudioのリモートプレイ設定</title>
       <link>https://yaasita.github.io/2024/12/08/pulseaudio/</link>
       <pubDate>Sun, 08 Dec 2024 19:03:33 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/12/08/pulseaudio/</guid>
-      <description>概要 サウンドデバイスを持たない端末でもネットワーク経由でオーディオストリームを流せる
-インストール apt install pulseaudio pavucontrol-qt スタート/ストップ pulseaudio --start pactl stat paplay -v hoge.wav pulseaudio --kill 設定 設定ファイル場所: /etc/pulse/
-pavucontrol-qt 起動
-プロファイルタブ選択 -&amp;gt; ミュートになってる箇所外す
-再生タブと出力デバイスタブ両方確認
-自動起動しないように以下を消しておく
-ちなみにfirefoxとかpaplayすると勝手に立ち上がる
-/etc/systemd/user/default.target.wants/pulseaudio.service /etc/systemd/user/sockets.target.wants/pulseaudio.socket 参考リンク
-https://zenn.dev/noraworld/articles/disable-pulseaudio-autospawn
-リモート接続 https://wiki.archlinux.jp/index.php/PulseAudio/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB
-server側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-default-pa load-module module-native-protocol-tcp auth-anonymous=1 を追加 client側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-client-conf default-server = 192.168.0.10 を指定する サーバー本体とclientが同一サーバーの場合は変更の必要なし 上記設定したら server側はpulseaudio &amp;ndash;start
-client側は特に起動する必要なし(pulseaudioデーモンすら不要)
-あとはclient側で paplay hoge.wav でテスト</description>
+      <description>概要 サウンドデバイスを持たない端末でもネットワーク経由でオーディオストリームを流せる&#xA;インストール apt install pulseaudio pavucontrol-qt スタート/ストップ pulseaudio --start pactl stat paplay -v hoge.wav pulseaudio --kill 設定 設定ファイル場所: /etc/pulse/&#xA;pavucontrol-qt 起動&#xA;プロファイルタブ選択 -&amp;gt; ミュートになってる箇所外す&#xA;再生タブと出力デバイスタブ両方確認&#xA;自動起動しないように以下を消しておく&#xA;ちなみにfirefoxとかpaplayすると勝手に立ち上がる&#xA;/etc/systemd/user/default.target.wants/pulseaudio.service /etc/systemd/user/sockets.target.wants/pulseaudio.socket 参考リンク&#xA;https://zenn.dev/noraworld/articles/disable-pulseaudio-autospawn&#xA;リモート接続 https://wiki.archlinux.jp/index.php/PulseAudio/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB&#xA;server側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-default-pa load-module module-native-protocol-tcp auth-anonymous=1 を追加 client側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-client-conf default-server = 192.168.0.10 を指定する サーバー本体とclientが同一サーバーの場合は変更の必要なし 上記設定したら server側はpulseaudio &amp;ndash;start&#xA;client側は特に起動する必要なし(pulseaudioデーモンすら不要)&#xA;あとはclient側で paplay hoge.wav でテスト</description>
     </item>
-    
     <item>
       <title>vim-lsp設定</title>
       <link>https://yaasita.github.io/2024/09/21/vim-lsp/</link>
       <pubDate>Sat, 21 Sep 2024 23:43:03 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/09/21/vim-lsp/</guid>
-      <description>よく使うやつ
-perl cpan i PLS
-if executable(&#39;pls&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;perl&#39;, \ &#39;cmd&#39;: [&#39;pls&#39;], \ &#39;allowlist&#39;: [&#39;perl&#39;], \ }) endif bash npm i -g bash-language-server
-if executable(&#39;bash-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;bash-language-server&#39;, \ &#39;cmd&#39;: [&#39;bash-language-server&#39;, &#39;start&#39;], \ &#39;allowlist&#39;: [&#39;sh&#39;, &#39;bash&#39;], \ }) endif vim npm i -g vim-language-server
-if executable(&#39;vim-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;vm-ls&#39;, \ &#39;cmd&#39;: [&#39;vim-language-server&#39;, &#39;--stdio&#39;], \ &#39;allowlist&#39;: [&#39;vim&#39;], \ }) endif terraform https://www.</description>
+      <description>よく使うやつ&#xA;perl cpan i PLS&#xA;if executable(&#39;pls&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;perl&#39;, \ &#39;cmd&#39;: [&#39;pls&#39;], \ &#39;allowlist&#39;: [&#39;perl&#39;], \ }) endif bash npm i -g bash-language-server&#xA;if executable(&#39;bash-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;bash-language-server&#39;, \ &#39;cmd&#39;: [&#39;bash-language-server&#39;, &#39;start&#39;], \ &#39;allowlist&#39;: [&#39;sh&#39;, &#39;bash&#39;], \ }) endif vim npm i -g vim-language-server&#xA;if executable(&#39;vim-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;vm-ls&#39;, \ &#39;cmd&#39;: [&#39;vim-language-server&#39;, &#39;--stdio&#39;], \ &#39;allowlist&#39;: [&#39;vim&#39;], \ }) endif terraform https://www.</description>
     </item>
-    
     <item>
       <title>muttでHTMLメールを扱う</title>
       <link>https://yaasita.github.io/2024/08/22/mutt/</link>
       <pubDate>Thu, 22 Aug 2024 02:50:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/08/22/mutt/</guid>
-      <description>~/.muttrc に以下追記
-# html mailを読むための設定 set mailcap_path=~/.mutt/mailcap auto_view text/html alternative_order text/plain text/html # HTMLメールを開く vで添付画面へ行ってそこでctrl-sを押すとHTMLを保存 macro attach \cs &amp;quot;&amp;lt;pipe-entry&amp;gt;cat &amp;gt; /tmp/mutt-mail.html&amp;quot; # HTML内のリンクを表示 macro index \cv |urlview macro pager \cv |urlview ~/.mutt/mailcap
-text/html; w3m -I %{charset} -T text/html; copiousoutput; 参考リンク https://wiki.archlinux.jp/index.php/Mutt</description>
+      <description>~/.muttrc に以下追記&#xA;# html mailを読むための設定 set mailcap_path=~/.mutt/mailcap auto_view text/html alternative_order text/plain text/html # HTMLメールを開く vで添付画面へ行ってそこでctrl-sを押すとHTMLを保存 macro attach \cs &amp;quot;&amp;lt;pipe-entry&amp;gt;cat &amp;gt; /tmp/mutt-mail.html&amp;quot; # HTML内のリンクを表示 macro index \cv |urlview macro pager \cv |urlview ~/.mutt/mailcap&#xA;text/html; w3m -I %{charset} -T text/html; copiousoutput; 参考リンク https://wiki.archlinux.jp/index.php/Mutt</description>
     </item>
-    
     <item>
       <title>thunderbirdでHTMLメールを作る</title>
       <link>https://yaasita.github.io/2024/08/21/html-mail/</link>
       <pubDate>Wed, 21 Aug 2024 03:04:05 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/08/21/html-mail/</guid>
-      <description>設定箇所は2ヶ所
-ツール -&amp;gt; 設定
-アカウント設定の方にもある</description>
+      <description>設定箇所は2ヶ所&#xA;ツール -&amp;gt; 設定&#xA;アカウント設定の方にもある</description>
     </item>
-    
     <item>
       <title>opendkimメモ</title>
       <link>https://yaasita.github.io/2024/07/06/dkim/</link>
       <pubDate>Sat, 06 Jul 2024 03:52:41 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/07/06/dkim/</guid>
-      <description>DKIMの公開鍵取得 opendkim-testkeyとかで検証する際に、DNSはroot DNSサーバーから自力で名前解決しようとするのでDNSキャッシュサーバー使いたかったら以下を指定
-/etc/opendkim.conf
-Nameservers 192.168.0.10 thunderbirdの拡張も同じ挙動だった
-公開鍵を作る場合 2048bitを指定しておく方がいい
-(最近のopendkimはデフォルトで2048bit)
-opendkim-genkey -D /etc/postfix/dkim/ -b 2048 -d example.jp -s mail unboundに入れるときは長いので分割する
-local-data: &#39;mail._domainkey.example.jp. IN TXT &amp;quot;v=DKIM1; k=rsa; &amp;quot; &amp;quot;p=xxxxxxxx...&amp;quot; &amp;quot;xxxxxxx...&amp;quot;&#39; ローカルでの検証 opendkim-testmsg &amp;lt; mail.eml </description>
+      <description>DKIMの公開鍵取得 opendkim-testkeyとかで検証する際に、DNSはroot DNSサーバーから自力で名前解決しようとするのでDNSキャッシュサーバー使いたかったら以下を指定&#xA;/etc/opendkim.conf&#xA;Nameservers 192.168.0.10 thunderbirdの拡張も同じ挙動だった&#xA;公開鍵を作る場合 2048bitを指定しておく方がいい&#xA;(最近のopendkimはデフォルトで2048bit)&#xA;opendkim-genkey -D /etc/postfix/dkim/ -b 2048 -d example.jp -s mail unboundに入れるときは長いので分割する&#xA;local-data: &#39;mail._domainkey.example.jp. IN TXT &amp;quot;v=DKIM1; k=rsa; &amp;quot; &amp;quot;p=xxxxxxxx...&amp;quot; &amp;quot;xxxxxxx...&amp;quot;&#39; ローカルでの検証 opendkim-testmsg &amp;lt; mail.eml </description>
     </item>
-    
     <item>
       <title>shotcutで編集すると音ズレ</title>
       <link>https://yaasita.github.io/2024/04/21/shotcut/</link>
       <pubDate>Sun, 21 Apr 2024 04:22:59 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/04/21/shotcut/</guid>
-      <description>編集前にこれやっておくと良いかもしれない
-ffmpeg -i input.mp4 output.mp4 </description>
+      <description>編集前にこれやっておくと良いかもしれない&#xA;ffmpeg -i input.mp4 output.mp4 </description>
     </item>
-    
     <item>
       <title>codeiumがとても良い</title>
       <link>https://yaasita.github.io/2023/11/21/codeium/</link>
       <pubDate>Tue, 21 Nov 2023 02:41:29 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/11/21/codeium/</guid>
-      <description>codeium がとても良い
-個人利用なら無料 vimにも対応 対応言語が豊富 など
-競合との比較はこちら
-https://codeium.com/compare
-とりあえず自分がVimに入れてる設定
-if v:version &amp;gt;= 900 let g:codeium_disable_bindings = 1 let g:codeium_manual = v:true let g:codeium_enabled = v:false imap &amp;lt;script&amp;gt;&amp;lt;silent&amp;gt;&amp;lt;nowait&amp;gt;&amp;lt;expr&amp;gt; &amp;lt;Right&amp;gt; codeium#Accept() imap &amp;lt;Down&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#CycleCompletions(1)&amp;lt;CR&amp;gt; imap &amp;lt;Up&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#CycleCompletions(-1)&amp;lt;CR&amp;gt; imap &amp;lt;Left&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#Clear()&amp;lt;CR&amp;gt; imap &amp;lt;C-A&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#Complete()&amp;lt;CR&amp;gt; set statusline=%&amp;lt;%f\ %2*%{&amp;amp;mod&amp;amp;&amp;amp;&amp;amp;bt!=#&#39;terminal&#39;?&#39;[+]&#39;:&#39;&#39;}%0*%{&amp;amp;ro?&#39;[RO]&#39;:&#39;&#39;}%h%w%=codeium:%3{codeium#GetStatusString()}\ %{&#39;[&#39;.(&amp;amp;fenc!=&#39;&#39;?&amp;amp;fenc:&amp;amp;enc).&#39;][&#39;.&amp;amp;ff.&#39;]&#39;}\ %2*%y%0*%6l,%c%V%1*%8P endif 手動で有効にする設定を入れて
-Ctrl-Aで保管候補出す
-矢印で保管候補の決定</description>
+      <description>codeium がとても良い&#xA;個人利用なら無料 vimにも対応 対応言語が豊富 など&#xA;競合との比較はこちら&#xA;https://codeium.com/compare&#xA;とりあえず自分がVimに入れてる設定&#xA;if v:version &amp;gt;= 900 let g:codeium_disable_bindings = 1 let g:codeium_manual = v:true let g:codeium_enabled = v:false imap &amp;lt;script&amp;gt;&amp;lt;silent&amp;gt;&amp;lt;nowait&amp;gt;&amp;lt;expr&amp;gt; &amp;lt;Right&amp;gt; codeium#Accept() imap &amp;lt;Down&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#CycleCompletions(1)&amp;lt;CR&amp;gt; imap &amp;lt;Up&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#CycleCompletions(-1)&amp;lt;CR&amp;gt; imap &amp;lt;Left&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#Clear()&amp;lt;CR&amp;gt; imap &amp;lt;C-A&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#Complete()&amp;lt;CR&amp;gt; set statusline=%&amp;lt;%f\ %2*%{&amp;amp;mod&amp;amp;&amp;amp;&amp;amp;bt!=#&#39;terminal&#39;?&#39;[+]&#39;:&#39;&#39;}%0*%{&amp;amp;ro?&#39;[RO]&#39;:&#39;&#39;}%h%w%=codeium:%3{codeium#GetStatusString()}\ %{&#39;[&#39;.(&amp;amp;fenc!=&#39;&#39;?&amp;amp;fenc:&amp;amp;enc).&#39;][&#39;.&amp;amp;ff.&#39;]&#39;}\ %2*%y%0*%6l,%c%V%1*%8P endif 手動で有効にする設定を入れて&#xA;Ctrl-Aで保管候補出す&#xA;矢印で保管候補の決定</description>
     </item>
-    
     <item>
       <title>npmのmysql2パッケージでTLS有効にしてRDS接続</title>
       <link>https://yaasita.github.io/2023/10/19/node-mysql2/</link>
       <pubDate>Thu, 19 Oct 2023 01:16:16 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/10/19/node-mysql2/</guid>
-      <description>nodeのmysql2パッケージには
-こんな感じで、ssl接続のオプションに&amp;quot;Amazon RDS&amp;quot;を指定できるが
-RDSの証明書更新を行うと不都合があるよという話
-証明書更新は以下のrds-ca-2019を置き換える話ね
-https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html
-これ、パッケージ内にCA証明書が入ってるんだけど更新後の証明書が入ってない
-そんで、CA証明書更新のPRは出てるんだけど、これ適用するとaurora serverlessとかRDS proxy経由の検証が失敗する
-なぜなら、証明書のチェーンがこんな感じになってるので
-C = US, O = &amp;#34;Starfield Technologies, Inc.&amp;#34;, OU = Starfield Class 2 Certification Authority C = US, ST = Arizona, L = Scottsdale, O = &amp;#34;Starfield Technologies, Inc.&amp;#34;, CN = Starfield Services Root Certificate Authority - G2 C = US, O = Amazon, CN = Amazon Root CA 1 C = US, O = Amazon, CN = Amazon RSA 2048 M02 CN = *.</description>
+      <description>nodeのmysql2パッケージには&#xA;こんな感じで、ssl接続のオプションに&amp;quot;Amazon RDS&amp;quot;を指定できるが&#xA;RDSの証明書更新を行うと不都合があるよという話&#xA;証明書更新は以下のrds-ca-2019を置き換える話ね&#xA;https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html&#xA;これ、パッケージ内にCA証明書が入ってるんだけど更新後の証明書が入ってない&#xA;そんで、CA証明書更新のPRは出てるんだけど、これ適用するとaurora serverlessとかRDS proxy経由の検証が失敗する&#xA;なぜなら、証明書のチェーンがこんな感じになってるので&#xA;C = US, O = &amp;#34;Starfield Technologies, Inc.&amp;#34;, OU = Starfield Class 2 Certification Authority C = US, ST = Arizona, L = Scottsdale, O = &amp;#34;Starfield Technologies, Inc.&amp;#34;, CN = Starfield Services Root Certificate Authority - G2 C = US, O = Amazon, CN = Amazon Root CA 1 C = US, O = Amazon, CN = Amazon RSA 2048 M02 CN = *.</description>
     </item>
-    
     <item>
       <title>apacheのautoindex経由で画像のスライドショー</title>
       <link>https://yaasita.github.io/2022/09/15/slideshow/</link>
       <pubDate>Thu, 15 Sep 2022 03:58:50 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/09/15/slideshow/</guid>
-      <description>apacheのmod_autoindexが有効な状態でスライドショーを作る
-こんな状態のディレクトリに
-こんな感じのHTMLを置いて
-スライドショー的に見る</description>
+      <description>apacheのmod_autoindexが有効な状態でスライドショーを作る&#xA;こんな状態のディレクトリに&#xA;こんな感じのHTMLを置いて&#xA;スライドショー的に見る</description>
     </item>
-    
     <item>
       <title>mitmproxyを使うときのブラウザ設定</title>
       <link>https://yaasita.github.io/2022/08/24/mitmproxy-chrome/</link>
       <pubDate>Wed, 24 Aug 2022 02:39:41 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/08/24/mitmproxy-chrome/</guid>
-      <description>なんかたまにgoogleにつながらなくなるとき
-chrome系のやつならこの辺を弄ってみるとうまくいくかもしれない
-chrome://settings/security</description>
+      <description>なんかたまにgoogleにつながらなくなるとき&#xA;chrome系のやつならこの辺を弄ってみるとうまくいくかもしれない&#xA;chrome://settings/security</description>
     </item>
-    
     <item>
       <title>hugoのshortcode</title>
       <link>https://yaasita.github.io/2022/07/25/hugo-shortcode/</link>
       <pubDate>Mon, 25 Jul 2022 00:52:55 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/07/25/hugo-shortcode/</guid>
-      <description>ここにあるように定型文を登録しておくと省力化できる
-https://gohugo.io/content-management/shortcodes/
-例えば、config.tomlにこんな感じで書いておけば
-[params] imagesite = &amp;quot;img.yaasita.net&amp;quot; markdownの中で
-https://{{&amp;lt; param imagesite &amp;gt;}}/hoge/hoge こう書くと
-https://img.yaasita.net/hoge/hoge みたいに展開される</description>
+      <description>ここにあるように定型文を登録しておくと省力化できる&#xA;https://gohugo.io/content-management/shortcodes/&#xA;例えば、config.tomlにこんな感じで書いておけば&#xA;[params] imagesite = &amp;quot;img.yaasita.net&amp;quot; markdownの中で&#xA;https://{{&amp;lt; param imagesite &amp;gt;}}/hoge/hoge こう書くと&#xA;https://img.yaasita.net/hoge/hoge みたいに展開される</description>
     </item>
-    
     <item>
       <title>budibaseをmicrok8sで動かす</title>
       <link>https://yaasita.github.io/2022/06/08/budibase/</link>
       <pubDate>Wed, 08 Jun 2022 02:37:21 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/06/08/budibase/</guid>
-      <description>budibaseをローカルのmicrok8sで動かしたときのメモ
-# 必要なプラグインをON microk8s.enable dns:192.168.0.10 microk8s.enable ingress microk8s.enable metallb # 192.168.0.150-192.168.0.180 みたいに指定 microk8s.enable storage # kubectlで動かせるように microk8s.config &amp;gt; ~/.kube/config # インストール helm show values budibase/budibase &amp;gt; config.yaml # hostを指定 vim config.yaml helm install --create-namespace --namespace budibase budibase budibase/budibase -f config.yaml あとはingress部分を作る
-# 証明書を作って kubectl create secret tls &#39;cloud.yaasita.net&#39; --key=privkey.pem --cert=fullchain.pem ingressをこんな感じで作っておく</description>
+      <description>budibaseをローカルのmicrok8sで動かしたときのメモ&#xA;# 必要なプラグインをON microk8s.enable dns:192.168.0.10 microk8s.enable ingress microk8s.enable metallb # 192.168.0.150-192.168.0.180 みたいに指定 microk8s.enable storage # kubectlで動かせるように microk8s.config &amp;gt; ~/.kube/config # インストール helm show values budibase/budibase &amp;gt; config.yaml # hostを指定 vim config.yaml helm install --create-namespace --namespace budibase budibase budibase/budibase -f config.yaml あとはingress部分を作る&#xA;# 証明書を作って kubectl create secret tls &#39;cloud.yaasita.net&#39; --key=privkey.pem --cert=fullchain.pem ingressをこんな感じで作っておく</description>
     </item>
-    
     <item>
       <title>systemd-nspawnのtmpディレクトリ</title>
       <link>https://yaasita.github.io/2021/12/12/systemd-nspawn-tmpdir/</link>
       <pubDate>Sun, 12 Dec 2021 06:03:17 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/12/12/systemd-nspawn-tmpdir/</guid>
-      <description>systemd-nspawnで/tmpのtmpfs mountを止める方法について昔こんな記事書いた
-systemd-nspawnでのtmpディレクトリの扱いについて
-今は状況が変わってて、
-https://github.com/systemd/systemd/pull/10294/files
-こんな感じで、&amp;ldquo;SYSTEMD_NSPAWN_TMPFS_TMP&amp;rdquo; って環境変数に0を入れておけば、/tmpディレクトリをtmpfsにしない
-/etc/systemd/system/systemd-nspawn@.service
-にこんな感じで追加したらmachinectlからもできる
-Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0 </description>
+      <description>systemd-nspawnで/tmpのtmpfs mountを止める方法について昔こんな記事書いた&#xA;systemd-nspawnでのtmpディレクトリの扱いについて&#xA;今は状況が変わってて、&#xA;https://github.com/systemd/systemd/pull/10294/files&#xA;こんな感じで、&amp;ldquo;SYSTEMD_NSPAWN_TMPFS_TMP&amp;rdquo; って環境変数に0を入れておけば、/tmpディレクトリをtmpfsにしない&#xA;/etc/systemd/system/systemd-nspawn@.service&#xA;にこんな感じで追加したらmachinectlからもできる&#xA;Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0 </description>
     </item>
-    
-    <item>
-      <title>microk8sでargocdを動かす</title>
-      <link>https://yaasita.github.io/2021/11/28/microk8s/</link>
-      <pubDate>Sun, 28 Nov 2021 06:09:44 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2021/11/28/microk8s/</guid>
-      <description>microk8s で ArgoCD を動かすときのメモ
-まず手順通りにマニフェストを設定したら
-kubectl patch svc argocd-server -n argocd -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; ClusterIP から NodePortに変更
-こんな感じの表示になったら
-$ kubectl get svc argocd-server -n argocd argocd-server NodePort 10.152.183.43 &amp;lt;none&amp;gt; 80:30444/TCP,443:30983/TCP 20h 以下のURLでアクセス
-https:// (ホストのIP) :30983
-まあkubectl port-forward でやってもいいけど
-ついでに dashbord も同様にできる
-kubectl patch svc kubernetes-dashboard -n kube-system -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; kubectl get svc kubernetes-dashboard -n kube-system $ kubectl get svc kubernetes-dashboard -n kube-system NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE kubernetes-dashboard NodePort 10.</description>
-    </item>
-    
   </channel>
 </rss>

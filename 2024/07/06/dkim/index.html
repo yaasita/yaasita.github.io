@@ -6,22 +6,26 @@
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>opendkimメモ | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.111.3">
+    <meta name="generator" content="Hugo 0.131.0">
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
 
-    <meta property="og:title" content="opendkimメモ" />
-<meta property="og:description" content="DKIMの公開鍵取得 opendkim-testkeyとかで検証する際に、DNSはroot DNSサーバーから自力で名前解決しようとするのでDNSキャッシュサーバー使いたかったら以下を指定
+    <meta property="og:url" content="https://yaasita.github.io/2024/07/06/dkim/">
+  <meta property="og:site_name" content="# cd ~yaasita">
+  <meta property="og:title" content="opendkimメモ">
+  <meta property="og:description" content="DKIMの公開鍵取得 opendkim-testkeyとかで検証する際に、DNSはroot DNSサーバーから自力で名前解決しようとするのでDNSキャッシュサーバー使いたかったら以下を指定
 /etc/opendkim.conf
 Nameservers 192.168.0.10 thunderbirdの拡張も同じ挙動だった
 公開鍵を作る場合 2048bitを指定しておく方がいい
 (最近のopendkimはデフォルトで2048bit)
 opendkim-genkey -D /etc/postfix/dkim/ -b 2048 -d example.jp -s mail unboundに入れるときは長いので分割する
-local-data: &#39;mail._domainkey.example.jp. IN TXT &quot;v=DKIM1; k=rsa; &quot; &quot;p=xxxxxxxx...&quot; &quot;xxxxxxx...&quot;&#39; ローカルでの検証 opendkim-testmsg &lt; mail.eml " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://yaasita.github.io/2024/07/06/dkim/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2024-07-06T03:52:41+09:00" />
-<meta property="article:modified_time" content="2024-07-06T03:52:41+09:00" />
+local-data: &#39;mail._domainkey.example.jp. IN TXT &#34;v=DKIM1; k=rsa; &#34; &#34;p=xxxxxxxx...&#34; &#34;xxxxxxx...&#34;&#39; ローカルでの検証 opendkim-testmsg &lt; mail.eml ">
+  <meta property="og:locale" content="ja">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2024-07-06T03:52:41+09:00">
+    <meta property="article:modified_time" content="2024-07-06T03:52:41+09:00">
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&amp;v=4">
 
     <script id="dsq-count-scr" src="https://yaasita.disqus.com/count.js" async></script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="36937576-b2d5-4494-aba8-d0b70a153691"></script>
@@ -86,7 +90,7 @@ local-data: &#39;mail._domainkey.example.jp. IN TXT &quot;v=DKIM1; k=rsa; &quot;
 
       
       <div id="disqus_thread"></div>
-<script type="application/javascript">
+<script>
     window.disqus_config = function () {
     
     
@@ -185,7 +189,7 @@ local-data: &#39;mail._domainkey.example.jp. IN TXT &quot;v=DKIM1; k=rsa; &quot;
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (355)</a>
+          <a href="/categories/linux"><span></span>linux (356)</a>
         </li>
         
         <li>
@@ -201,7 +205,7 @@ local-data: &#39;mail._domainkey.example.jp. IN TXT &quot;v=DKIM1; k=rsa; &quot;
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (430)</a>
+          <a href="/categories/soft"><span></span>soft (431)</a>
         </li>
         
         <li>
@@ -292,7 +296,7 @@ local-data: &#39;mail._domainkey.example.jp. IN TXT &quot;v=DKIM1; k=rsa; &quot;
         </li>
         
         <li>
-          <a href="/archives/2025"><span></span>2025 (13)</a>
+          <a href="/archives/2025"><span></span>2025 (14)</a>
         </li>
         
       </ul>

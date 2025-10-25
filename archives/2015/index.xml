@@ -4,252 +4,149 @@
     <title>2015 on # cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2015/</link>
     <description>Recent content in 2015 on # cd ~yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Thu, 31 Dec 2015 18:16:00 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2015/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 31 Dec 2015 18:16:00 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/archives/2015/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>docker composeインストール</title>
       <link>https://yaasita.github.io/2015/12/31/compose/</link>
       <pubDate>Thu, 31 Dec 2015 18:16:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/12/31/compose/</guid>
-      <description>docker-composeもcheckinstallでdebパッケージにしといた
-https://goo.gl/MKXvhm
-Makefile
-install: chmod +x bin/docker-compose cp bin/docker-compose /usr/local/bin/ cp bash/docker-compose /etc/bash_completion.d/ </description>
+      <description>docker-composeもcheckinstallでdebパッケージにしといた&#xA;https://goo.gl/MKXvhm&#xA;Makefile&#xA;install: chmod +x bin/docker-compose cp bin/docker-compose /usr/local/bin/ cp bash/docker-compose /etc/bash_completion.d/ </description>
     </item>
-    
     <item>
       <title>checkinstallでdocker-machineをパッケージに</title>
       <link>https://yaasita.github.io/2015/12/30/checkinstall/</link>
       <pubDate>Wed, 30 Dec 2015 03:16:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/12/30/checkinstall/</guid>
-      <description>debパッケージにするとアンインストールが楽になる
-https://github.com/docker/machine https://goo.gl/X5Njaz 以下のMakefileを作ってcheckinstallコマンドでおｋ
-bash補完はこの辺
-docker-machine-0.5.5/ ├── Makefile ├── docker-machine ├── docker-machine-prompt.bash ├── docker-machine-wrapper.bash └── docker-machine.bash Makefile</description>
+      <description>debパッケージにするとアンインストールが楽になる&#xA;https://github.com/docker/machine https://goo.gl/X5Njaz 以下のMakefileを作ってcheckinstallコマンドでおｋ&#xA;bash補完はこの辺&#xA;docker-machine-0.5.5/ ├── Makefile ├── docker-machine ├── docker-machine-prompt.bash ├── docker-machine-wrapper.bash └── docker-machine.bash Makefile</description>
     </item>
-    
     <item>
       <title>最近のSIer記事</title>
       <link>https://yaasita.github.io/2015/11/29/sier/</link>
       <pubDate>Sun, 29 Nov 2015 22:39:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/11/29/sier/</guid>
       <description> IT業界で客先常駐という働き方はもうやめにできないか 大手Sierで見た！ 日本でプログラマが少ない理由は戦う戦場を間違えているからです </description>
     </item>
-    
     <item>
       <title>RAID5のリビルド中にもう一個壊れるってやつ</title>
       <link>https://yaasita.github.io/2015/10/17/raid5_fail/</link>
       <pubDate>Sat, 17 Oct 2015 16:52:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/10/17/raid5_fail/</guid>
-      <description>リビルド中にもう一個壊れてRAID5が終わった話
-/dev/md0: Version : 1.2 Creation Time : Fri Jan 6 12:24:44 2012 Raid Level : raid5 Array Size : 5860535808 (5589.04 GiB 6001.19 GB) Used Dev Size : 1953511936 (1863.01 GiB 2000.40 GB) Raid Devices : 4 Total Devices : 4 Persistence : Superblock is persistent Update Time : Sat Oct 17 16:59:57 2015 State : clean, FAILED Active Devices : 2 Working Devices : 3 Failed Devices : 1 Spare Devices : 1 Layout : left-symmetric Chunk Size : 512K Name : hoge:0 UUID : 55b9d6ea:4627c873:a0bcab05:a4f0c25d Events : 6755 Number Major Minor RaidDevice State 5 8 49 0 active sync /dev/sdd1 2 0 0 2 removed 2 8 33 2 active sync /dev/sdc1 6 0 0 6 removed 4 8 1 - faulty /dev/sda1 6 8 17 - spare /dev/sdb1 HDD一台が壊れたので /dev/sdb1を追加中にアレイの構成Diskがもう一個壊れた</description>
+      <description>リビルド中にもう一個壊れてRAID5が終わった話&#xA;/dev/md0: Version : 1.2 Creation Time : Fri Jan 6 12:24:44 2012 Raid Level : raid5 Array Size : 5860535808 (5589.04 GiB 6001.19 GB) Used Dev Size : 1953511936 (1863.01 GiB 2000.40 GB) Raid Devices : 4 Total Devices : 4 Persistence : Superblock is persistent Update Time : Sat Oct 17 16:59:57 2015 State : clean, FAILED Active Devices : 2 Working Devices : 3 Failed Devices : 1 Spare Devices : 1 Layout : left-symmetric Chunk Size : 512K Name : hoge:0 UUID : 55b9d6ea:4627c873:a0bcab05:a4f0c25d Events : 6755 Number Major Minor RaidDevice State 5 8 49 0 active sync /dev/sdd1 2 0 0 2 removed 2 8 33 2 active sync /dev/sdc1 6 0 0 6 removed 4 8 1 - faulty /dev/sda1 6 8 17 - spare /dev/sdb1 HDD一台が壊れたので /dev/sdb1を追加中にアレイの構成Diskがもう一個壊れた</description>
     </item>
-    
     <item>
       <title>ISUCON5で惨敗した件</title>
       <link>https://yaasita.github.io/2015/09/30/isucon5/</link>
       <pubDate>Wed, 30 Sep 2015 00:38:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/09/30/isucon5/</guid>
-      <description>ISUCON5に参加してきました
-T・D・U！T・D・U！という名前で出てみました
-最高スコアは5000ちょっとでしたOTZ
-感想 ISUCON 会社以外の人ととチーム組むと他社の事情とか聞けて結構良いかもしれない idobata,GCE(Google Compute Engine)とか使ったことなかったからいい機会だったかも VM渡されて時間内に早くするんだ！って競技はルールも分かりやすくて面白い 惨敗だったけど楽しかったし勉強になった GCP(Google Cloud Platform) なんかAWS慣れてる所為もあるんだろうけど結構手間取った ついでに触ったGoogle Cloud DNSはRoute53の方が高機能かな～ あらかじめユーザ名＋鍵登録しておけばインスタンス立ち上げ時にユーザ作って鍵設定までしてくれて便利(小並感 idobata slackと違って1ユーザのアカウントをチーム内で共有するみたいな感じなので 会社内のチャット→slack 会社を跨いだメンバーとのやり取り→idobataみたいな感じがよいのかな ちょっとISUCON中は重かったけどこれからに期待 反省 最初に落ち着いて計測してみたほうが良かったかも 制限時間があるから焦って、手当たり次第に対応してたけどもっと計測に時間とってやることやらない事決めてから取り掛かれば良かったかも troterにほぼ任せちゃったので。。。 役割決めないとだったな お前これやる、俺これやる的な話してから取り掛かるべきだったかも やっぱコード読まなきゃダメ パラメータチューニングとかでもちょっとはスコア上がるけど、ロジック見て良い感じの実装にするのは必須ですた 例年 sinatraアプリらしいので一個くらいは作ってから望むべきだったかも 参考リンク ISUCON5の予選に参加して惨敗してきました #isucon </description>
+      <description>ISUCON5に参加してきました&#xA;T・D・U！T・D・U！という名前で出てみました&#xA;最高スコアは5000ちょっとでしたOTZ&#xA;感想 ISUCON 会社以外の人ととチーム組むと他社の事情とか聞けて結構良いかもしれない idobata,GCE(Google Compute Engine)とか使ったことなかったからいい機会だったかも VM渡されて時間内に早くするんだ！って競技はルールも分かりやすくて面白い 惨敗だったけど楽しかったし勉強になった GCP(Google Cloud Platform) なんかAWS慣れてる所為もあるんだろうけど結構手間取った ついでに触ったGoogle Cloud DNSはRoute53の方が高機能かな～ あらかじめユーザ名＋鍵登録しておけばインスタンス立ち上げ時にユーザ作って鍵設定までしてくれて便利(小並感 idobata slackと違って1ユーザのアカウントをチーム内で共有するみたいな感じなので 会社内のチャット→slack 会社を跨いだメンバーとのやり取り→idobataみたいな感じがよいのかな ちょっとISUCON中は重かったけどこれからに期待 反省 最初に落ち着いて計測してみたほうが良かったかも 制限時間があるから焦って、手当たり次第に対応してたけどもっと計測に時間とってやることやらない事決めてから取り掛かれば良かったかも troterにほぼ任せちゃったので。。。 役割決めないとだったな お前これやる、俺これやる的な話してから取り掛かるべきだったかも やっぱコード読まなきゃダメ パラメータチューニングとかでもちょっとはスコア上がるけど、ロジック見て良い感じの実装にするのは必須ですた 例年 sinatraアプリらしいので一個くらいは作ってから望むべきだったかも 参考リンク ISUCON5の予選に参加して惨敗してきました #isucon </description>
     </item>
-    
     <item>
       <title>handbrakeでISOをエンコード</title>
       <link>https://yaasita.github.io/2015/08/25/handbrake/</link>
       <pubDate>Tue, 25 Aug 2015 00:32:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/08/25/handbrake/</guid>
-      <description>Linuxで動画のエンコード/リッピングするとき
-apt-get handbreak handbrake-gtk
-で起動して、左側のソース選んで
-開始でOK
-あんま難しくない</description>
+      <description>Linuxで動画のエンコード/リッピングするとき&#xA;apt-get handbreak handbrake-gtk&#xA;で起動して、左側のソース選んで&#xA;開始でOK&#xA;あんま難しくない</description>
     </item>
-    
     <item>
       <title>saslauthd-debian</title>
       <link>https://yaasita.github.io/2015/07/26/saslauthd-debian/</link>
       <pubDate>Sun, 26 Jul 2015 02:42:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/07/26/saslauthd-debian/</guid>
-      <description>なんか Debian Jessie(8.1)のsaslauthdのsystemd定義が書かれてない気がする
-なので自動起動に設定したかったら自分で書く感じで
-/etc/systemd/system/saslauthd.service
-みたいな定義を書いて
-systemctl daemon-reload systemctl enable saslauthd.service systemctl start saslauthd.service </description>
+      <description>なんか Debian Jessie(8.1)のsaslauthdのsystemd定義が書かれてない気がする&#xA;なので自動起動に設定したかったら自分で書く感じで&#xA;/etc/systemd/system/saslauthd.service&#xA;みたいな定義を書いて&#xA;systemctl daemon-reload systemctl enable saslauthd.service systemctl start saslauthd.service </description>
     </item>
-    
     <item>
       <title>最近買ったスマホ</title>
       <link>https://yaasita.github.io/2015/07/26/xperia/</link>
       <pubDate>Sun, 26 Jul 2015 02:29:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/07/26/xperia/</guid>
-      <description>EXPANSYSで買った
-Sony Xperia E4g E2003 (Unlocked LTE, 8GB, White) 18,737円 SIMフリーはIIJ MIO
-IIJ IIJmio SIM ウェルカムパック microSIM ( SMS 機能付き ) 版 1,900円 </description>
+      <description>EXPANSYSで買った&#xA;Sony Xperia E4g E2003 (Unlocked LTE, 8GB, White) 18,737円 SIMフリーはIIJ MIO&#xA;IIJ IIJmio SIM ウェルカムパック microSIM ( SMS 機能付き ) 版 1,900円 </description>
     </item>
-    
     <item>
       <title>IIJ(MIO SIM)のIPアドレス帯</title>
       <link>https://yaasita.github.io/2015/07/20/iij-ip/</link>
       <pubDate>Mon, 20 Jul 2015 20:38:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/07/20/iij-ip/</guid>
       <description>調べた限りだとこんな感じ</description>
     </item>
-    
     <item>
       <title>コードを書いて実力判定</title>
       <link>https://yaasita.github.io/2015/06/06/codeeval/</link>
       <pubDate>Sat, 06 Jun 2015 21:50:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/06/06/codeeval/</guid>
-      <description>コード書くと評価してくれるようなサービス
-https://www.codeeval.com/browse/1/</description>
+      <description>コード書くと評価してくれるようなサービス&#xA;https://www.codeeval.com/browse/1/</description>
     </item>
-    
     <item>
       <title>簡易監視スクリプト</title>
       <link>https://yaasita.github.io/2015/06/02/kanshi/</link>
       <pubDate>Tue, 02 Jun 2015 00:02:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/06/02/kanshi/</guid>
-      <description>自分で自分を監視するperlスクリプト
-https://github.com/yaasita/kanshi-self</description>
+      <description>自分で自分を監視するperlスクリプト&#xA;https://github.com/yaasita/kanshi-self</description>
     </item>
-    
     <item>
       <title>オンライン囲碁ゲームCOSUMI</title>
       <link>https://yaasita.github.io/2015/06/01/igo/</link>
       <pubDate>Mon, 01 Jun 2015 00:01:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/06/01/igo/</guid>
-      <description>やってみた
-5路盤しか勝てない
-結果</description>
+      <description>やってみた&#xA;5路盤しか勝てない&#xA;結果</description>
     </item>
-    
     <item>
       <title>MySQLの地図情報</title>
       <link>https://yaasita.github.io/2015/05/31/mysql-gis/</link>
       <pubDate>Sun, 31 May 2015 01:58:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/05/31/mysql-gis/</guid>
-      <description>MySQLのGIS回り
-こんな感じで使うぽい
-# インサート insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;旭鮨総本店 新宿住友ビル50F店&#39; ,GeomFromText(&#39;POINT(35.691421 139.692595)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;久兵衛 京王プラザホテル店&#39; ,GeomFromText(&#39;POINT(35.689685 13 9.694664)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;白金寿司&#39; ,GeomFromText(&#39;POINT(35.693417 139.687282)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;喜与し&#39; ,GeomFromText(&#39;POINT(35.692192 139.742396)&#39;) ); # 現在の位置から近い順に表示 コンシェリア西新宿= 35.692777 139.687362 select shop_name, GLength( GeomFromText( concat(&#39;LineString(35.</description>
+      <description>MySQLのGIS回り&#xA;こんな感じで使うぽい&#xA;# インサート insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;旭鮨総本店 新宿住友ビル50F店&#39; ,GeomFromText(&#39;POINT(35.691421 139.692595)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;久兵衛 京王プラザホテル店&#39; ,GeomFromText(&#39;POINT(35.689685 13 9.694664)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;白金寿司&#39; ,GeomFromText(&#39;POINT(35.693417 139.687282)&#39;) ); insert into `gis_tbl` ( `shop_name` , `latlng` ) values ( &#39;喜与し&#39; ,GeomFromText(&#39;POINT(35.692192 139.742396)&#39;) ); # 現在の位置から近い順に表示 コンシェリア西新宿= 35.692777 139.687362 select shop_name, GLength( GeomFromText( concat(&#39;LineString(35.</description>
     </item>
-    
     <item>
       <title>クラシックダンジョンX2のインストール機能</title>
       <link>https://yaasita.github.io/2015/05/19/classic-dungeon-x2/</link>
       <pubDate>Tue, 19 May 2015 00:15:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/05/19/classic-dungeon-x2/</guid>
-      <description>クラシックダンジョンX2にはインストール機能ってやつがあるけど、
-UMDとかなら意味あるらしいけど、vitaでダウンロード版だと
-むしろ遅くなるしなんか不具合おきるぽい
-vitaの場合はコンテンツ管理からアンインストールできた
-61MBくらいのデータ(ゲームデータ)ってやつを消せばおｋ</description>
+      <description>クラシックダンジョンX2にはインストール機能ってやつがあるけど、&#xA;UMDとかなら意味あるらしいけど、vitaでダウンロード版だと&#xA;むしろ遅くなるしなんか不具合おきるぽい&#xA;vitaの場合はコンテンツ管理からアンインストールできた&#xA;61MBくらいのデータ(ゲームデータ)ってやつを消せばおｋ</description>
     </item>
-    
     <item>
       <title>Meteor チュートリアル 01</title>
       <link>https://yaasita.github.io/2015/05/10/meteor-tutorial01/</link>
       <pubDate>Sun, 10 May 2015 00:28:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/05/10/meteor-tutorial01/</guid>
-      <description>話題のMeteorを触ってみた
-discovermeteorっていうチュートリアル本があるのでやってみる
-なんか原文は有料になってる気がするけど翻訳版は読めるみたい
-http://ja.discovermeteor.com/
-とりあえず最初の方だけ
-Getting Started インストール
-途中でsudoするので出来るようにしておく
-curl https://install.meteor.com | sh 最初に以下のコマンドを発行して作る
-meteor create microscope ちなみにこの.meteor/.gitignoreに書かれてる
-.meteor/.local/の中を消せばリセットされる
-パッケージの追加
-meteor add mizzao:bootstrap-3 meteor add underscore ディレクトリ追加
-mkdir server client public lib 実行について
-server =&amp;gt; サーバ上でのみ実行 client =&amp;gt; クライアント上でのみ実行 それ以外はどちらでも動く publicには静的ファイルを置く libはどのファイルよりも先に実行される main.*というファイル名は一番最後に実行される CSSを追加
-mkdir client/stylesheets vi client/stylesheets/style.css https://github.com/yaasita/meteor-microscope/tree/88cc746c372b13dae6a669c014c764320a8e776e
-Deployment deployしてみる
-meteor deploy yaasita.meteor.com なんかこれでできるぽい
-modulusというのを使うのがいいらしい
-npm install -g modulus ndenv rehash modulus login modulus project create modulusでmongodb使うにはダッシュボードからDATABASESを選んでいける
-modulus env set MONGO_URL &amp;quot;mongodb://&amp;lt;user&amp;gt;:&amp;lt;pass&amp;gt;@mongo.</description>
+      <description>話題のMeteorを触ってみた&#xA;discovermeteorっていうチュートリアル本があるのでやってみる&#xA;なんか原文は有料になってる気がするけど翻訳版は読めるみたい&#xA;http://ja.discovermeteor.com/&#xA;とりあえず最初の方だけ&#xA;Getting Started インストール&#xA;途中でsudoするので出来るようにしておく&#xA;curl https://install.meteor.com | sh 最初に以下のコマンドを発行して作る&#xA;meteor create microscope ちなみにこの.meteor/.gitignoreに書かれてる&#xA;.meteor/.local/の中を消せばリセットされる&#xA;パッケージの追加&#xA;meteor add mizzao:bootstrap-3 meteor add underscore ディレクトリ追加&#xA;mkdir server client public lib 実行について&#xA;server =&amp;gt; サーバ上でのみ実行 client =&amp;gt; クライアント上でのみ実行 それ以外はどちらでも動く publicには静的ファイルを置く libはどのファイルよりも先に実行される main.*というファイル名は一番最後に実行される CSSを追加&#xA;mkdir client/stylesheets vi client/stylesheets/style.css https://github.com/yaasita/meteor-microscope/tree/88cc746c372b13dae6a669c014c764320a8e776e&#xA;Deployment deployしてみる&#xA;meteor deploy yaasita.meteor.com なんかこれでできるぽい&#xA;modulusというのを使うのがいいらしい&#xA;npm install -g modulus ndenv rehash modulus login modulus project create modulusでmongodb使うにはダッシュボードからDATABASESを選んでいける&#xA;modulus env set MONGO_URL &amp;quot;mongodb://&amp;lt;user&amp;gt;:&amp;lt;pass&amp;gt;@mongo.</description>
     </item>
-    
     <item>
       <title>Linuxでスクリーンショット取る</title>
       <link>https://yaasita.github.io/2015/04/18/linux-screenshot/</link>
       <pubDate>Sat, 18 Apr 2015 02:03:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/04/18/linux-screenshot/</guid>
-      <description>shutterというのがよさ気
-apt-get install shutter http://www.xmisao.com/2014/02/07/get-screenshot-on-linux-by-shutter.html
-他にxwd使う方法もある
-# クリックしたウィンドウ xwd | convert - hoge.png xwd -root | convert - desktop.png http://www.xmisao.com/2013/09/17/linux-xwindow-screenshot.html</description>
+      <description>shutterというのがよさ気&#xA;apt-get install shutter http://www.xmisao.com/2014/02/07/get-screenshot-on-linux-by-shutter.html&#xA;他にxwd使う方法もある&#xA;# クリックしたウィンドウ xwd | convert - hoge.png xwd -root | convert - desktop.png http://www.xmisao.com/2013/09/17/linux-xwindow-screenshot.html</description>
     </item>
-    
     <item>
       <title>Linuxのクリップボードマネージャ</title>
       <link>https://yaasita.github.io/2015/04/18/linux-clipboard-manager/</link>
       <pubDate>Sat, 18 Apr 2015 01:31:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/04/18/linux-clipboard-manager/</guid>
-      <description>diodon apt-get install diodon 初期設定はCtrl + Alt + vで呼び出し
-Preferenceから以下の設定を直した
-Automatically paste selected item 自動ペーストをやめる PluginsのApplication Indicatorのチェックを外す なんかCtrl-Vが使えなくなったりするので使うのやめた
-klipper KDEのやつ
-apt-get install klipper 初期はShift+Zになってるので設定からなおす
-全般の選択とクリップボード→選択を無視する
-ってやつやると選択しただけでクリップボードに入るのを抑止
-できる</description>
+      <description>diodon apt-get install diodon 初期設定はCtrl + Alt + vで呼び出し&#xA;Preferenceから以下の設定を直した&#xA;Automatically paste selected item 自動ペーストをやめる PluginsのApplication Indicatorのチェックを外す なんかCtrl-Vが使えなくなったりするので使うのやめた&#xA;klipper KDEのやつ&#xA;apt-get install klipper 初期はShift+Zになってるので設定からなおす&#xA;全般の選択とクリップボード→選択を無視する&#xA;ってやつやると選択しただけでクリップボードに入るのを抑止&#xA;できる</description>
     </item>
-    
     <item>
       <title>Linuxのターミナルで出来るマリオらしい</title>
       <link>https://yaasita.github.io/2015/04/13/linux-terminal-game/</link>
       <pubDate>Mon, 13 Apr 2015 00:24:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/04/13/linux-terminal-game/</guid>
-      <description>すごいなこれ
-まさかの？Linuxターミナル上でプレイする『スーパーマリオブラザーズ』</description>
+      <description>すごいなこれ&#xA;まさかの？Linuxターミナル上でプレイする『スーパーマリオブラザーズ』</description>
     </item>
-    
     <item>
       <title>boxesっていうソフト</title>
       <link>https://yaasita.github.io/2015/03/29/boxes/</link>
       <pubDate>Sun, 29 Mar 2015 03:06:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/03/29/boxes/</guid>
-      <description>vimでも使える
-apt-get install boxes Visual Modeで選択して
-!boxes -d shell とかやる
-参考リンク 毎日のスクリプト作成にちょっとしたコダワリを加えるboxes</description>
+      <description>vimでも使える&#xA;apt-get install boxes Visual Modeで選択して&#xA;!boxes -d shell とかやる&#xA;参考リンク 毎日のスクリプト作成にちょっとしたコダワリを加えるboxes</description>
     </item>
-    
     <item>
       <title>ロックマンX5攻略</title>
       <link>https://yaasita.github.io/2015/03/22/rockmanx5/</link>
       <pubDate>Sun, 22 Mar 2015 23:09:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/03/22/rockmanx5/</guid>
-      <description>エンディング 以下の3種類
-ゼロがプレイヤーキャラから外れていない状態で、エックスでクリア。 シャトル成功でOK ゼロがプレイヤーキャラから外れている状態で、エックスでクリア。 エニグマ、シャトルどっちも失敗すればOK ゼロでクリア。 シャトル成功でOK ステージ攻略 クレッセント・グリズリー(左一番上) 弱点 エックス：スパイクロープ ゼロ：双幻夢 サブタンク 暴走トラックの途中に普通においてある ライフアップ 暴走トラック面中間の屋根の上(ファルコン or ガイアアーマ必須) パーツ ファルコン・フットパーツ 暴走トラックから飛び降りてすぐ上の岩を壁蹴りで登る。 強化パーツ ライフ: ショックアブソーバー エナジー: ハイパーダッシュ ボルト・クラーケン(左上から2番目) 弱点 クレッセントショット or 三日月斬 ライフアップ ガイアアーマー必須 ステージ最後のトラップの上Vと書かれた箱をチャージショット パーツ ファルコン・ヘッドパーツ ライドチェイサーでエネルギー8個全部取る 強化パーツ ライフ: ハイパーチャージ エナジー: ゼットセイバーエクステンド（ゼロ用） シャイニング・ホタルニクス(左下から2番目) 弱点 エックス：トライサンダー ゼロ：電刃 ライフアップ ステージ最初の針の下 ファルコンかガイア使って取る パーツ ファルコン・アームパーツ クレッセントショット(エックス) or 三日月斬(ゼロ) 天井にあるプラズマ放題を↑の武器で壊す EXアイテム 木の天井をグランドファイヤで燃やす 強化パーツ ライフ: ラピッド５（エックス用） エナジー: ショットイレイザー（ゼロ用） タイダル・マッコイーン(左一番下) 弱点 エックス：クレッセントショット ゼロ：三日月斬 ライフアップ ファルコンアーマー or ガイアアーマー or 電刃 水の引いた船の中 ゼロの場合はブロック破壊 エックスの場合はアーマ使って取る パーツ ファルコン・ボディパーツ ジュエルシェイバー(エックス) 水の引いた船の中↑の武器で扉を破壊 強化パーツ ライフ: スーパーリカバー エナジー: エナジーセイバー スパイラル・ペガシオン(右一番上) 弱点 エックス：ダークホールド ゼロ：ダークホールド ライフアップ 上に登るリフトの2番目停止位置にある 右に行けば普通に取れる パーツ ガイア・ボディパーツ ファルコンアーマーが必要 斜めリフトに乗るところを上に飛ぶ サブタンク 下に降りていくリフトの下 強化パーツ ライフ: ハイジャンプ エナジー: スピードムーブ スパイク・ローズレッド(右上から2番目) 弱点 エックス：グランドファイア ゼロ：断地炎 ライフアップ ガイアアーマー ステージ最初のVとかかれた箱をチャージショットで壊す ダッシュでブロック動かして足場作ってジャンプ パーツ ファルコンアーマー(フットパーツ) ロープ掴みの連続で横に進む途中の岩の間を上に 強化パーツ ライフ: アルティメットバスター エナジー: ゼットセイバープラス（ゼロ用） ダーク・ネクロバット(右下から2番目) 弱点 ウイルレーザー 滅閃光 サブタンク ステージ後半に置いてある ファルコンアーマーで取る ライフアップ 重力逆転のところにある パーツ ガイア・ヘッドパーツ ウィルレーザーが必要 ボス手前の穴を下に降りる。 サブタンク リフトで進む場所の最後 強化パーツ ライフ: ウィルスバリアー エナジー: ウィルスバスター バーン・ディノレックス(右一番下) 弱点 ウィングスパイラル 疾風 ライフアップ マグマが左から出てくるところの一番左にある パーツ ガイア・アームパーツ ライドアーマーにのってマグマ進んで一番奥 ファルコンアーマーで行くのもOK 強化パーツ ライフ: スピードショット エナジー: バスタープラス 零空間1(真ん中) シャドーデビル</description>
+      <description>エンディング 以下の3種類&#xA;ゼロがプレイヤーキャラから外れていない状態で、エックスでクリア。 シャトル成功でOK ゼロがプレイヤーキャラから外れている状態で、エックスでクリア。 エニグマ、シャトルどっちも失敗すればOK ゼロでクリア。 シャトル成功でOK ステージ攻略 クレッセント・グリズリー(左一番上) 弱点 エックス：スパイクロープ ゼロ：双幻夢 サブタンク 暴走トラックの途中に普通においてある ライフアップ 暴走トラック面中間の屋根の上(ファルコン or ガイアアーマ必須) パーツ ファルコン・フットパーツ 暴走トラックから飛び降りてすぐ上の岩を壁蹴りで登る。 強化パーツ ライフ: ショックアブソーバー エナジー: ハイパーダッシュ ボルト・クラーケン(左上から2番目) 弱点 クレッセントショット or 三日月斬 ライフアップ ガイアアーマー必須 ステージ最後のトラップの上Vと書かれた箱をチャージショット パーツ ファルコン・ヘッドパーツ ライドチェイサーでエネルギー8個全部取る 強化パーツ ライフ: ハイパーチャージ エナジー: ゼットセイバーエクステンド（ゼロ用） シャイニング・ホタルニクス(左下から2番目) 弱点 エックス：トライサンダー ゼロ：電刃 ライフアップ ステージ最初の針の下 ファルコンかガイア使って取る パーツ ファルコン・アームパーツ クレッセントショット(エックス) or 三日月斬(ゼロ) 天井にあるプラズマ放題を↑の武器で壊す EXアイテム 木の天井をグランドファイヤで燃やす 強化パーツ ライフ: ラピッド５（エックス用） エナジー: ショットイレイザー（ゼロ用） タイダル・マッコイーン(左一番下) 弱点 エックス：クレッセントショット ゼロ：三日月斬 ライフアップ ファルコンアーマー or ガイアアーマー or 電刃 水の引いた船の中 ゼロの場合はブロック破壊 エックスの場合はアーマ使って取る パーツ ファルコン・ボディパーツ ジュエルシェイバー(エックス) 水の引いた船の中↑の武器で扉を破壊 強化パーツ ライフ: スーパーリカバー エナジー: エナジーセイバー スパイラル・ペガシオン(右一番上) 弱点 エックス：ダークホールド ゼロ：ダークホールド ライフアップ 上に登るリフトの2番目停止位置にある 右に行けば普通に取れる パーツ ガイア・ボディパーツ ファルコンアーマーが必要 斜めリフトに乗るところを上に飛ぶ サブタンク 下に降りていくリフトの下 強化パーツ ライフ: ハイジャンプ エナジー: スピードムーブ スパイク・ローズレッド(右上から2番目) 弱点 エックス：グランドファイア ゼロ：断地炎 ライフアップ ガイアアーマー ステージ最初のVとかかれた箱をチャージショットで壊す ダッシュでブロック動かして足場作ってジャンプ パーツ ファルコンアーマー(フットパーツ) ロープ掴みの連続で横に進む途中の岩の間を上に 強化パーツ ライフ: アルティメットバスター エナジー: ゼットセイバープラス（ゼロ用） ダーク・ネクロバット(右下から2番目) 弱点 ウイルレーザー 滅閃光 サブタンク ステージ後半に置いてある ファルコンアーマーで取る ライフアップ 重力逆転のところにある パーツ ガイア・ヘッドパーツ ウィルレーザーが必要 ボス手前の穴を下に降りる。 サブタンク リフトで進む場所の最後 強化パーツ ライフ: ウィルスバリアー エナジー: ウィルスバスター バーン・ディノレックス(右一番下) 弱点 ウィングスパイラル 疾風 ライフアップ マグマが左から出てくるところの一番左にある パーツ ガイア・アームパーツ ライドアーマーにのってマグマ進んで一番奥 ファルコンアーマーで行くのもOK 強化パーツ ライフ: スピードショット エナジー: バスタープラス 零空間1(真ん中) シャドーデビル</description>
     </item>
-    
   </channel>
 </rss>

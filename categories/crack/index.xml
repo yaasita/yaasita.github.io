@@ -1,386 +1,152 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>crack on # cd ~yaasita</title>
+    <title>Crack on # cd ~yaasita</title>
     <link>https://yaasita.github.io/categories/crack/</link>
-    <description>Recent content in crack on # cd ~yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Crack on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 16 May 2025 16:45:58 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/crack/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 16 May 2025 16:45:58 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/categories/crack/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>動画ファイルのダミーデータ</title>
       <link>https://yaasita.github.io/2025/05/16/download-stream-png-dummy/</link>
       <pubDate>Fri, 16 May 2025 16:45:58 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/05/16/download-stream-png-dummy/</guid>
-      <description>m3uから動画をダウンロードすると
-PNG image data, 1 x 1, 8-bit/color RGBA, non-interlacedのデータになることがある
-こんな感じで先頭8byteを飛ばして
-ffmpegで再エンコードするとよい
-とりあえずffmpeg通せばヘッダは復活する
-ffmpeg -i merged_output.ts -c copy out.mp4 参考リンク
-https://github.com/yt-dlp/yt-dlp/issues/4381</description>
+      <description>m3uから動画をダウンロードすると&#xA;PNG image data, 1 x 1, 8-bit/color RGBA, non-interlacedのデータになることがある&#xA;こんな感じで先頭8byteを飛ばして&#xA;ffmpegで再エンコードするとよい&#xA;とりあえずffmpeg通せばヘッダは復活する&#xA;ffmpeg -i merged_output.ts -c copy out.mp4 参考リンク&#xA;https://github.com/yt-dlp/yt-dlp/issues/4381</description>
     </item>
-    
     <item>
       <title>androidのdevice protection</title>
       <link>https://yaasita.github.io/2022/12/24/android-device-protection/</link>
       <pubDate>Sat, 24 Dec 2022 04:35:15 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/12/24/android-device-protection/</guid>
-      <description>説明
-https://spdic.biz/termdic/deviceprotection/
-デバイスプロテクション解除
-https://spdic.biz/category/services/dp-unlock/
-AQUOS Sense3解除
-https://spdic.biz/services/dp-unlock/frp-aquoss-se3-v10/
-Unlock FRP(Factory reset protection)
-https://www.youtube.com/watch?v=3ECcn7tXWDs</description>
+      <description>説明&#xA;https://spdic.biz/termdic/deviceprotection/&#xA;デバイスプロテクション解除&#xA;https://spdic.biz/category/services/dp-unlock/&#xA;AQUOS Sense3解除&#xA;https://spdic.biz/services/dp-unlock/frp-aquoss-se3-v10/&#xA;Unlock FRP(Factory reset protection)&#xA;https://www.youtube.com/watch?v=3ECcn7tXWDs</description>
     </item>
-    
     <item>
       <title>mitmproxyを使うときのブラウザ設定</title>
       <link>https://yaasita.github.io/2022/08/24/mitmproxy-chrome/</link>
       <pubDate>Wed, 24 Aug 2022 02:39:41 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/08/24/mitmproxy-chrome/</guid>
-      <description>なんかたまにgoogleにつながらなくなるとき
-chrome系のやつならこの辺を弄ってみるとうまくいくかもしれない
-chrome://settings/security</description>
+      <description>なんかたまにgoogleにつながらなくなるとき&#xA;chrome系のやつならこの辺を弄ってみるとうまくいくかもしれない&#xA;chrome://settings/security</description>
     </item>
-    
     <item>
       <title>徳丸さんのセキュリティ問題(CSRF)</title>
       <link>https://yaasita.github.io/2018/11/11/tokumaru-csrf/</link>
       <pubDate>Sun, 11 Nov 2018 01:33:21 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/11/11/tokumaru-csrf/</guid>
-      <description>徳丸さんがCSRFの問題を出していたので考えてみる
-問題：間違ったCSRF対策～初級編～
-解答
-https://github.com/yaasita/tokumaru-csrf-20181110
-なんか最初はXMLHttpRequestとか駆使して、chgmailform.phpからtoken引っこ抜こうと思ったんだけど
-CORSとかCORBで無理なんすよね
-でよく見るとtokenが無いときの考慮がないよってやつでした
-まとめ 最近のブラウザは良く出来てる</description>
+      <description>徳丸さんがCSRFの問題を出していたので考えてみる&#xA;問題：間違ったCSRF対策～初級編～&#xA;解答&#xA;https://github.com/yaasita/tokumaru-csrf-20181110&#xA;なんか最初はXMLHttpRequestとか駆使して、chgmailform.phpからtoken引っこ抜こうと思ったんだけど&#xA;CORSとかCORBで無理なんすよね&#xA;でよく見るとtokenが無いときの考慮がないよってやつでした&#xA;まとめ 最近のブラウザは良く出来てる</description>
     </item>
-    
     <item>
       <title>コピー禁止のWebサイトについて</title>
       <link>https://yaasita.github.io/2017/05/21/web-copy-protect/</link>
       <pubDate>Sun, 21 May 2017 01:48:56 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2017/05/21/web-copy-protect/</guid>
-      <description>コピー禁止のWordpressサイトが増えてきました
-ちょっと検索ワードをコピペするのに不便なので回避方法
-1. とりあえずJavaScriptをOFFる これで大半はOK wp-copyprotect って拡張だけならこれで大丈夫
-この仕組みの参考実装はこんな感じ
-https://gist.github.com/yaasita/7b07710840186561c76d7e5c4af28b2d
-chromeならURLバーの左をクリックしてJavaScriptをブロックで
-2. noscriptのタグを消す WP Content Copy Protection みたいなやつだと noscript タグの中に画面一杯に広げてコンテンツを見えなくするdivが入るので、chrome developers tools開いて &amp;lt;noscript&amp;gt;タグごと削除する
-Oops! It appears that you have disabled your Javascript. In order for you to see this page as it is meant to appear, we ask that you please re-enable your Javascript! みたいな文言はこれ
-3. cssでuser-selectをnoneにしている場合 chrome developers toolsでuser-select: text;書き換えてやる
-とりあえずここまでやれば大抵コピーできるようになるはず
-参考リンク コピペ禁止サイト Webページの「コピペ禁止」を解除・回避するJavaScriptコード </description>
+      <description>コピー禁止のWordpressサイトが増えてきました&#xA;ちょっと検索ワードをコピペするのに不便なので回避方法&#xA;1. とりあえずJavaScriptをOFFる これで大半はOK wp-copyprotect って拡張だけならこれで大丈夫&#xA;この仕組みの参考実装はこんな感じ&#xA;https://gist.github.com/yaasita/7b07710840186561c76d7e5c4af28b2d&#xA;chromeならURLバーの左をクリックしてJavaScriptをブロックで&#xA;2. noscriptのタグを消す WP Content Copy Protection みたいなやつだと noscript タグの中に画面一杯に広げてコンテンツを見えなくするdivが入るので、chrome developers tools開いて &amp;lt;noscript&amp;gt;タグごと削除する&#xA;Oops! It appears that you have disabled your Javascript. In order for you to see this page as it is meant to appear, we ask that you please re-enable your Javascript! みたいな文言はこれ&#xA;3. cssでuser-selectをnoneにしている場合 chrome developers toolsでuser-select: text;書き換えてやる&#xA;とりあえずここまでやれば大抵コピーできるようになるはず&#xA;参考リンク コピペ禁止サイト Webページの「コピペ禁止」を解除・回避するJavaScriptコード </description>
     </item>
-    
     <item>
       <title>ettercapで中間者攻撃（MITM）</title>
       <link>https://yaasita.github.io/2013/01/20/1503/</link>
       <pubDate>Sun, 20 Jan 2013 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2013/01/20/1503/</guid>
-      <description>やり方は簡単
-以下のようにして192.168.0.2,192.168.0.11間のメッセージに割り込める
-ettercap -Tq -M arp /192.168.0.2/ /192.168.0.11/
-インターフェイスは-Tのテキスト、-Cのcurses、-GのGtkと選べる
-tcpflowで覗いてみる
-tcpflow -cse -i eth0 dst port 80
--c コンソールに出力
--s 印字できないもじは.へ変換
--e カラー表示
--i インターフェイス指定</description>
+      <description>やり方は簡単&#xA;以下のようにして192.168.0.2,192.168.0.11間のメッセージに割り込める&#xA;ettercap -Tq -M arp /192.168.0.2/ /192.168.0.11/&#xA;インターフェイスは-Tのテキスト、-Cのcurses、-GのGtkと選べる&#xA;tcpflowで覗いてみる&#xA;tcpflow -cse -i eth0 dst port 80&#xA;-c コンソールに出力&#xA;-s 印字できないもじは.へ変換&#xA;-e カラー表示&#xA;-i インターフェイス指定</description>
     </item>
-    
     <item>
       <title>Linuxでtorを使ってみる</title>
       <link>https://yaasita.github.io/2012/01/31/3068/</link>
       <pubDate>Tue, 31 Jan 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/01/31/3068/</guid>
-      <description> Torは匿名のプロキシとして動作する
-インストール
-apt-get install tor
-/etc/tor/torrcを編集
-SocksListenAddress 192.168.0.4(Torが入っているサーバーのアドレス)
-を追加
-## Replace this with &#34;SocksPort 0&#34; if you plan to run Tor only as a
-## relay, and not make any local application connections yourself.
-SocksPort 9050 # what port to open for local application connections
-SocksListenAddress 127.0.0.1 # accept connections only from localhost
-SocksListenAddress 192.168.0.4
-あとは再起動でOK
-killall tor
-tor
-これで192.168.0.2から接続できた
-SocksPolicyは何も設定しなければ全て許可 </description>
+      <description> Torは匿名のプロキシとして動作する&#xA;インストール&#xA;apt-get install tor&#xA;/etc/tor/torrcを編集&#xA;SocksListenAddress 192.168.0.4(Torが入っているサーバーのアドレス)&#xA;を追加&#xA;## Replace this with &#34;SocksPort 0&#34; if you plan to run Tor only as a&#xA;## relay, and not make any local application connections yourself.&#xA;SocksPort 9050 # what port to open for local application connections&#xA;SocksListenAddress 127.0.0.1 # accept connections only from localhost&#xA;SocksListenAddress 192.168.0.4&#xA;あとは再起動でOK&#xA;killall tor&#xA;tor&#xA;これで192.168.0.2から接続できた&#xA;SocksPolicyは何も設定しなければ全て許可 </description>
     </item>
-    
     <item>
       <title>ハッシュ解析の常套手段レインボーテーブル</title>
       <link>https://yaasita.github.io/2011/05/11/4006/</link>
       <pubDate>Wed, 11 May 2011 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2011/05/11/4006/</guid>
-      <description> レインボーテーブルとはあらかじめ作っておいたハッシュテーブルと平分の対応表を照らし合わせ、平分を得るテクニックらしいです。
-チェインと呼ばれる単位に集約されているので、テーブルの容量が少なくてすむ利点があります。
-ソフトはここら辺からどうぞ
-http://project-rainbowcrack.com/index.htm
-参考リンク
-http://backslash.ddo.jp/wordpress/index.php/archives/584 </description>
+      <description> レインボーテーブルとはあらかじめ作っておいたハッシュテーブルと平分の対応表を照らし合わせ、平分を得るテクニックらしいです。&#xA;チェインと呼ばれる単位に集約されているので、テーブルの容量が少なくてすむ利点があります。&#xA;ソフトはここら辺からどうぞ&#xA;http://project-rainbowcrack.com/index.htm&#xA;参考リンク&#xA;http://backslash.ddo.jp/wordpress/index.php/archives/584 </description>
     </item>
-    
     <item>
       <title>LANの盗聴について</title>
       <link>https://yaasita.github.io/2011/05/10/4046/</link>
       <pubDate>Tue, 10 May 2011 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2011/05/10/4046/</guid>
-      <description>昔、調べたことがあったのでメモ
-有線LANの盗聴にはいくつか種類があって調べた限りだと以下の方法がある
-以下の方法の殆どを行えるソフトはettercapがあるman ettercapとやるだけで勉強になる
-→MAC Floodはdsniffの中にあるmacofを使うと良いかも
-ARP Spoofing ICMP Redirect DHCP Spoofing Port Stealing MAC Flood APR Spoofing 偽のARP応答を返すことでARPテーブルを変更し中間者攻撃を行う手法
-ARP Spoofingについてはこちらが参考になる
-ICMP Redirect ICMPリダイレクトを使って経路情報を書き換え
-DHCP Spoofing DHCPを使ってIPアドレスを振るときにGWを盗聴できるように変更
-Port Stealing L2スイッチのポート情報を書き換えることでパケットをこちらに流すようにする
-MAC Flood L2スイッチのMACテーブルを溢れさせて馬鹿ハブにして盗聴する荒業
-参考リンク LAN内の盗聴とその予防 スプーフィング MACアドレス書き換えで通信傍受！ ARPスプーフィングで通信傍受！ ファイアウォール/IDS の回避とスプーフィング オキテ破りにトライ！　ネットワーク実験室 見えざる脅威，ネットワーク盗聴を見つけ出す 社内の盗聴者を見つけ出すフリーツール「PromiScan」の使い方 社内LANが危ない? 今どきの社内セキュリティ対策 外部からの攻撃 SwitchingHubの特性を利用して盗聴する！ </description>
+      <description>昔、調べたことがあったのでメモ&#xA;有線LANの盗聴にはいくつか種類があって調べた限りだと以下の方法がある&#xA;以下の方法の殆どを行えるソフトはettercapがあるman ettercapとやるだけで勉強になる&#xA;→MAC Floodはdsniffの中にあるmacofを使うと良いかも&#xA;ARP Spoofing ICMP Redirect DHCP Spoofing Port Stealing MAC Flood APR Spoofing 偽のARP応答を返すことでARPテーブルを変更し中間者攻撃を行う手法&#xA;ARP Spoofingについてはこちらが参考になる&#xA;ICMP Redirect ICMPリダイレクトを使って経路情報を書き換え&#xA;DHCP Spoofing DHCPを使ってIPアドレスを振るときにGWを盗聴できるように変更&#xA;Port Stealing L2スイッチのポート情報を書き換えることでパケットをこちらに流すようにする&#xA;MAC Flood L2スイッチのMACテーブルを溢れさせて馬鹿ハブにして盗聴する荒業&#xA;参考リンク LAN内の盗聴とその予防 スプーフィング MACアドレス書き換えで通信傍受！ ARPスプーフィングで通信傍受！ ファイアウォール/IDS の回避とスプーフィング オキテ破りにトライ！　ネットワーク実験室 見えざる脅威，ネットワーク盗聴を見つけ出す 社内の盗聴者を見つけ出すフリーツール「PromiScan」の使い方 社内LANが危ない? 今どきの社内セキュリティ対策 外部からの攻撃 SwitchingHubの特性を利用して盗聴する！ </description>
     </item>
-    
     <item>
       <title>fork爆弾を試してみる</title>
       <link>https://yaasita.github.io/2011/05/08/4129/</link>
       <pubDate>Sun, 08 May 2011 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2011/05/08/4129/</guid>
-      <description> sleepだけなら大丈夫かな？と思って以下のスクリプトを実行してみた
-→結果すぐに応答なしになってkillallも効かない状態に＼(^o^)／
-電源を切るしかなくなった
-#!/bin/bash
-while :; do
-$0 &amp;amp;
-sleep 10m
-done &amp;amp;
-詳しくはWikipediaで </description>
+      <description> sleepだけなら大丈夫かな？と思って以下のスクリプトを実行してみた&#xA;→結果すぐに応答なしになってkillallも効かない状態に＼(^o^)／&#xA;電源を切るしかなくなった&#xA;#!/bin/bash&#xA;while :; do&#xA;$0 &amp;amp;&#xA;sleep 10m&#xA;done &amp;amp;&#xA;詳しくはWikipediaで </description>
     </item>
-    
     <item>
       <title>tinyhoneypotを使ってみる</title>
       <link>https://yaasita.github.io/2011/02/06/4778/</link>
       <pubDate>Sun, 06 Feb 2011 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2011/02/06/4778/</guid>
-      <description> aptかなんかでインストールコマンドは→thpot
-thpotはxinetdかinetdを通してでも起動できます
-接続とセッションを通しての命令は全てログに記録されます
-以下のどれかの引数を与えてサービスを起動します
-shell, ftp, http, mssql, smtp, pop3 ,ssh
-ドキュメントは以下
-/usr/share/doc/tinyhoneypot </description>
+      <description> aptかなんかでインストールコマンドは→thpot&#xA;thpotはxinetdかinetdを通してでも起動できます&#xA;接続とセッションを通しての命令は全てログに記録されます&#xA;以下のどれかの引数を与えてサービスを起動します&#xA;shell, ftp, http, mssql, smtp, pop3 ,ssh&#xA;ドキュメントは以下&#xA;/usr/share/doc/tinyhoneypot </description>
     </item>
-    
     <item>
       <title>ライブカメラを検索する</title>
       <link>https://yaasita.github.io/2010/02/21/7286/</link>
       <pubDate>Sun, 21 Feb 2010 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2010/02/21/7286/</guid>
-      <description> inurl:ViewerFrame?Mode=で検索
-2ch記事
-ちょｗグーグルで「inurl:ViewerFrame?Mode= 」って検索してみｗｗｗ </description>
+      <description> inurl:ViewerFrame?Mode=で検索&#xA;2ch記事&#xA;ちょｗグーグルで「inurl:ViewerFrame?Mode= 」って検索してみｗｗｗ </description>
     </item>
-    
     <item>
       <title>なんか知らないがROM配ってるサイト</title>
       <link>https://yaasita.github.io/2009/09/06/8695/</link>
       <pubDate>Sun, 06 Sep 2009 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2009/09/06/8695/</guid>
       <description> http://ja.nitroroms.com/roms </description>
     </item>
-    
     <item>
       <title>sonb32drv.dllってウィルスに感染してた</title>
       <link>https://yaasita.github.io/2009/06/14/9342/</link>
       <pubDate>Sun, 14 Jun 2009 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2009/06/14/9342/</guid>
-      <description> ／(＾o＾)＼ナンテコッタイ
-つーことで対処法
-とりあえずC:\WINDOWS\system32\sonb32drv.dllを削除
-つーかこの話って2008年の6月くらいの話です・・・
-どんだけウィルススキャンさぼってたんだ(；・∀・)
-↓はググって分かったこと
-・感染経路は？
-どうもXREAの広告らしい
-感染はFlash Playerの脆弱性により行われる
-バージョンが9．0．124より古いと危ないとのこと
-http://d.hatena.ne.jp/soundwing/20080614
-・ウィルスの活動は？
-IEの場合
-C:\Documents and Settings\ユーザー名\Local Settings\Temporary Internet Files\
-あたりにtaa.gifを作成後orz.exeという実行ファイルに展開されるそうです
-場所は%Temp%\orz.exeかな？
-http://www.symantec.com/ja/jp/security_response/writeup.jsp?docid=2008-052714-3021-99&amp;amp;amp;tabid=2
-→対処方はtaa.gif、orz.exeを消す
-sonb32drv.dllを作成されます
-→対処方はsonb32drv.dllを消す
-C:\WINDOWS\system32\drivers\etc\hostsを削除されます
-→対処方はhosts.msnをコピーしhostsにリネームする
-まあhostsファイルはデフォルトでlocalhostしか書いてないので以下の内容のファイルでもok
-127.0.0.1 localhost
-以下のレジストリを追加されます
-HKEY_CLASSES_ROOT\CLSID\{F60A0B68-AF3A-C1D2-CD09-5A81AE36D2BA}
-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellExecuteHooks\{F60A0B68-AF3A-C1D2-CD09-5A81AE36D2BA}
-→対処方は上記のレジストリを削除
-http://www.trendmicro.co.jp/vinfo/virusencyclo/default5.asp?VName=TROJ_GAMETHIEF.M&amp;amp;VSect=Sn
-・被害は？
-このプログラムはキーロガーのようです
-プレイオンライン、mixi、Windowsメッセンジャーなどのアカウントハック
-に遇うかもしれません・・・・
-・その他の情報
-カスペでは
-Trojan-PSW.Win32.Nilage.djl
-という名前らしい
-Flashのバージョンを上げると勝手に削除してくれるぽい
-sonb32drv.dllを削除してくれる場合があるらしい
-http://qanda.rakuten.ne.jp/qa4097191.html
-その所為なのか自分の環境には↓のレジストリが既に無かった
-HKEY_CLASSES_ROOT\CLSID\{F60A0B68-AF3A-C1D2-CD09-5A81AE36D2BA}
-↓はあった（汗
-HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellExecuteHooks\{F60A0B68-AF3A-C1D2-CD09-5A81AE36D2BA} まあ直接は関係ないけど
-レジストリの掃除にクリーンアップセンターを使うとかね
-(上記のレジストリは削除できませんでしたｗ)
-http://onecare.live.com/site/ja-jp/center/cleanup.htm </description>
+      <description> ／(＾o＾)＼ナンテコッタイ&#xA;つーことで対処法&#xA;とりあえずC:\WINDOWS\system32\sonb32drv.dllを削除&#xA;つーかこの話って2008年の6月くらいの話です・・・&#xA;どんだけウィルススキャンさぼってたんだ(；・∀・)&#xA;↓はググって分かったこと&#xA;・感染経路は？&#xA;どうもXREAの広告らしい&#xA;感染はFlash Playerの脆弱性により行われる&#xA;バージョンが9．0．124より古いと危ないとのこと&#xA;http://d.hatena.ne.jp/soundwing/20080614&#xA;・ウィルスの活動は？&#xA;IEの場合&#xA;C:\Documents and Settings\ユーザー名\Local Settings\Temporary Internet Files\&#xA;あたりにtaa.gifを作成後orz.exeという実行ファイルに展開されるそうです&#xA;場所は%Temp%\orz.exeかな？&#xA;http://www.symantec.com/ja/jp/security_response/writeup.jsp?docid=2008-052714-3021-99&amp;amp;amp;tabid=2&#xA;→対処方はtaa.gif、orz.exeを消す&#xA;sonb32drv.dllを作成されます&#xA;→対処方はsonb32drv.dllを消す&#xA;C:\WINDOWS\system32\drivers\etc\hostsを削除されます&#xA;→対処方はhosts.msnをコピーしhostsにリネームする&#xA;まあhostsファイルはデフォルトでlocalhostしか書いてないので以下の内容のファイルでもok&#xA;127.0.0.1 localhost&#xA;以下のレジストリを追加されます&#xA;HKEY_CLASSES_ROOT\CLSID\{F60A0B68-AF3A-C1D2-CD09-5A81AE36D2BA}&#xA;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellExecuteHooks\{F60A0B68-AF3A-C1D2-CD09-5A81AE36D2BA}&#xA;→対処方は上記のレジストリを削除&#xA;http://www.trendmicro.co.jp/vinfo/virusencyclo/default5.asp?VName=TROJ_GAMETHIEF.M&amp;amp;VSect=Sn&#xA;・被害は？&#xA;このプログラムはキーロガーのようです&#xA;プレイオンライン、mixi、Windowsメッセンジャーなどのアカウントハック&#xA;に遇うかもしれません・・・・&#xA;・その他の情報&#xA;カスペでは&#xA;Trojan-PSW.Win32.Nilage.djl&#xA;という名前らしい&#xA;Flashのバージョンを上げると勝手に削除してくれるぽい&#xA;sonb32drv.dllを削除してくれる場合があるらしい&#xA;http://qanda.rakuten.ne.jp/qa4097191.html&#xA;その所為なのか自分の環境には↓のレジストリが既に無かった&#xA;HKEY_CLASSES_ROOT\CLSID\{F60A0B68-AF3A-C1D2-CD09-5A81AE36D2BA}&#xA;↓はあった（汗&#xA;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\ShellExecuteHooks\{F60A0B68-AF3A-C1D2-CD09-5A81AE36D2BA} まあ直接は関係ないけど&#xA;レジストリの掃除にクリーンアップセンターを使うとかね&#xA;(上記のレジストリは削除できませんでしたｗ)&#xA;http://onecare.live.com/site/ja-jp/center/cleanup.htm </description>
     </item>
-    
     <item>
       <title>PDFのパスワードを解析するソフトpdfcrack</title>
       <link>https://yaasita.github.io/2009/04/19/9704/</link>
       <pubDate>Sun, 19 Apr 2009 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2009/04/19/9704/</guid>
-      <description> Debian(lenny)のレポジトリにありました。
-aptで簡単インストール。
-使い方は
-pdfcrack hoge.pdf
-みたいに使う
-途中でCtrl+Cで止めてもカレントディレクトリにsavedstate.savが出来るから
-また再開したいときには
-pdfcrack -l savedstate.sav hoge.pdf
-みたいな感じで
-参考リンク
-http://gigazine.net/index.php?/news/comments/20090219_pdfcrack/ </description>
+      <description> Debian(lenny)のレポジトリにありました。&#xA;aptで簡単インストール。&#xA;使い方は&#xA;pdfcrack hoge.pdf&#xA;みたいに使う&#xA;途中でCtrl+Cで止めてもカレントディレクトリにsavedstate.savが出来るから&#xA;また再開したいときには&#xA;pdfcrack -l savedstate.sav hoge.pdf&#xA;みたいな感じで&#xA;参考リンク&#xA;http://gigazine.net/index.php?/news/comments/20090219_pdfcrack/ </description>
     </item>
-    
     <item>
       <title>オラバウトが閉鎖されちゃうよー｡･ﾟ･(ﾉд`)･ﾟ･｡</title>
       <link>https://yaasita.github.io/2009/04/15/9765/</link>
       <pubDate>Wed, 15 Apr 2009 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2009/04/15/9765/</guid>
-      <description> そんなあなたに
-シナバウト
-http://www.alabout.com/
-オラバウトNEXT
-http://gazouch.net/allabout/
-ヨロバウト
-http://reafin.net/
-オラバウト跡地
-http://www.genie.x0.com/alabout/closed.phtml </description>
+      <description> そんなあなたに&#xA;シナバウト&#xA;http://www.alabout.com/&#xA;オラバウトNEXT&#xA;http://gazouch.net/allabout/&#xA;ヨロバウト&#xA;http://reafin.net/&#xA;オラバウト跡地&#xA;http://www.genie.x0.com/alabout/closed.phtml </description>
     </item>
-    
     <item>
       <title>解析テンプレ</title>
       <link>https://yaasita.github.io/2008/10/24/11060/</link>
       <pubDate>Fri, 24 Oct 2008 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2008/10/24/11060/</guid>
-      <description> 定番解析ソフトと解析勉強サイト
-●デバッガ OllyDbg
-Digital Travesiaで再配布
-●プロセスメモリエディタ兼デバッガ スペシャルねこまんま57号
-http://www.vector.co.jp/soft/win95/hardware/se254476.html
-●プロセスメモリエディタ兼デバッガ うさみみハリケーン
-http://hp.vector.co.jp/authors/VA028184/
-●ヘキサエディタ Stirling
-http://www.vector.co.jp/soft/win95/util/se079072.html
-●PCゲーム解析指南+OllyDbg日本語化パッチ Digital Travesia
-http://hp.vector.co.jp/authors/VA028184/
-参考書
-・解析魔法少女美咲ちゃん マジカル・オープン!
-ISBN:4-7980-0853-2 2,730円 A5判 280 頁
-・クラッカー・プログラム大全―禁断のシリアルナンバー解析テクニック
-ISBN:4-88718-746-7 2625円 A5判 304頁
-・はじめて読む8086
-ISBN:4871482456 1,682円 286頁
-購入回避推奨
-ゲーム解析スレ・書評サイト等で酷評されている参考書
-・いまどきのアセンブラプログラミング [橋本和明(著)]
-・いまどきのアセンブラの教科書 [橋本和明(著)]
-・アセンブラ読本 for Game ゼロからはじめるゲーム改造 [橋本和明(著)] </description>
+      <description> 定番解析ソフトと解析勉強サイト&#xA;●デバッガ OllyDbg&#xA;Digital Travesiaで再配布&#xA;●プロセスメモリエディタ兼デバッガ スペシャルねこまんま57号&#xA;http://www.vector.co.jp/soft/win95/hardware/se254476.html&#xA;●プロセスメモリエディタ兼デバッガ うさみみハリケーン&#xA;http://hp.vector.co.jp/authors/VA028184/&#xA;●ヘキサエディタ Stirling&#xA;http://www.vector.co.jp/soft/win95/util/se079072.html&#xA;●PCゲーム解析指南+OllyDbg日本語化パッチ Digital Travesia&#xA;http://hp.vector.co.jp/authors/VA028184/&#xA;参考書&#xA;・解析魔法少女美咲ちゃん マジカル・オープン!&#xA;ISBN:4-7980-0853-2 2,730円 A5判 280 頁&#xA;・クラッカー・プログラム大全―禁断のシリアルナンバー解析テクニック&#xA;ISBN:4-88718-746-7 2625円 A5判 304頁&#xA;・はじめて読む8086&#xA;ISBN:4871482456 1,682円 286頁&#xA;購入回避推奨&#xA;ゲーム解析スレ・書評サイト等で酷評されている参考書&#xA;・いまどきのアセンブラプログラミング [橋本和明(著)]&#xA;・いまどきのアセンブラの教科書 [橋本和明(著)]&#xA;・アセンブラ読本 for Game ゼロからはじめるゲーム改造 [橋本和明(著)] </description>
     </item>
-    
     <item>
       <title>nmapを使う</title>
       <link>https://yaasita.github.io/2008/03/31/12673/</link>
       <pubDate>Mon, 31 Mar 2008 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2008/03/31/12673/</guid>
-      <description> nmap -sS -P0 -T2 -p 1-65535 -oN kaons.txt -r -v -sV hoge.co.jp
--sS　ステルススキャン
--P0 ホストの発見を省略する（確実にそのホストが存在していると分かっている場合はこれを使用する）
--T2 スキャン速度。T1、T2、T3、T4、T5と早くなっていく。T5は高速回線が望ましい。
--p ポートスキャンする範囲↑の例では1から65535番まで(全部)
--oN 出力するファイル
--r ランダムにスキャンしない
--v 冗長オプション。多くの情報を出力する。
--sV そのポートで使用されているアプリを特定する
--O OSを特定する
-※注意
-家庭用のブロードバンドルーターを使っている人はスキャン速度をT3以下にしないと落ちる場合があります。 </description>
+      <description> nmap -sS -P0 -T2 -p 1-65535 -oN kaons.txt -r -v -sV hoge.co.jp&#xA;-sS　ステルススキャン&#xA;-P0 ホストの発見を省略する（確実にそのホストが存在していると分かっている場合はこれを使用する）&#xA;-T2 スキャン速度。T1、T2、T3、T4、T5と早くなっていく。T5は高速回線が望ましい。&#xA;-p ポートスキャンする範囲↑の例では1から65535番まで(全部)&#xA;-oN 出力するファイル&#xA;-r ランダムにスキャンしない&#xA;-v 冗長オプション。多くの情報を出力する。&#xA;-sV そのポートで使用されているアプリを特定する&#xA;-O OSを特定する&#xA;※注意&#xA;家庭用のブロードバンドルーターを使っている人はスキャン速度をT3以下にしないと落ちる場合があります。 </description>
     </item>
-    
     <item>
       <title>School Days LxHの動画を抽出する</title>
       <link>https://yaasita.github.io/2008/01/20/12983/</link>
       <pubDate>Sun, 20 Jan 2008 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2008/01/20/12983/</guid>
-      <description> まずDVDの読めるPCでディスクを検索します。
-次にMV.AFSという1.15GBくらいのファイルがあるのでHDDにコピーします。
-この中にpssファイルがアーカイブされているので抽出します。
-こちらで配布されているAFS Cutter Ver.1.00を使ってPSSファイルを抽出します。抽出したファイルはbinという拡張子になっていますがPSSファイルです。再生はVLCプレイヤーなどで出来ます。
-ゲームで使われていないムービーは
-AFS_0836・・・niceboatと書かれた延々と続くスタッフロール
-AFS_0855・・・工事中でちゅ!と書かれた世界の落書き
-参考
-http://freeuse.ddo.jp/contents/game/ps2/ps2mov.html </description>
+      <description> まずDVDの読めるPCでディスクを検索します。&#xA;次にMV.AFSという1.15GBくらいのファイルがあるのでHDDにコピーします。&#xA;この中にpssファイルがアーカイブされているので抽出します。&#xA;こちらで配布されているAFS Cutter Ver.1.00を使ってPSSファイルを抽出します。抽出したファイルはbinという拡張子になっていますがPSSファイルです。再生はVLCプレイヤーなどで出来ます。&#xA;ゲームで使われていないムービーは&#xA;AFS_0836・・・niceboatと書かれた延々と続くスタッフロール&#xA;AFS_0855・・・工事中でちゅ!と書かれた世界の落書き&#xA;参考&#xA;http://freeuse.ddo.jp/contents/game/ps2/ps2mov.html </description>
     </item>
-    
     <item>
       <title>昔、流行った地下ゲーム</title>
       <link>https://yaasita.github.io/2007/12/31/13045/</link>
       <pubDate>Mon, 31 Dec 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/12/31/13045/</guid>
-      <description> ブラックユーモア溢れるゲームたちです。
-倉庫番はHDDがフォーマットされる可能性があります。
-WindowsXP環境では平気でした。
-http://www.hehehe.net/game/ </description>
+      <description> ブラックユーモア溢れるゲームたちです。&#xA;倉庫番はHDDがフォーマットされる可能性があります。&#xA;WindowsXP環境では平気でした。&#xA;http://www.hehehe.net/game/ </description>
     </item>
-    
   </channel>
 </rss>

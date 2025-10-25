@@ -4,311 +4,149 @@
     <title>2007 on # cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2007/</link>
     <description>Recent content in 2007 on # cd ~yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 31 Dec 2007 00:00:00 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2007/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 31 Dec 2007 00:00:00 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/archives/2007/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>昔、流行った地下ゲーム</title>
       <link>https://yaasita.github.io/2007/12/31/13045/</link>
       <pubDate>Mon, 31 Dec 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/12/31/13045/</guid>
-      <description> ブラックユーモア溢れるゲームたちです。
-倉庫番はHDDがフォーマットされる可能性があります。
-WindowsXP環境では平気でした。
-http://www.hehehe.net/game/ </description>
+      <description> ブラックユーモア溢れるゲームたちです。&#xA;倉庫番はHDDがフォーマットされる可能性があります。&#xA;WindowsXP環境では平気でした。&#xA;http://www.hehehe.net/game/ </description>
     </item>
-    
     <item>
       <title>Linuxでメモリの使用状況を把握する</title>
       <link>https://yaasita.github.io/2007/12/25/13066/</link>
       <pubDate>Tue, 25 Dec 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/12/25/13066/</guid>
-      <description> free
-vmstat
-cat /proc/meminfo
-cat /proc/swaps
-などなど・・・ </description>
+      <description> free&#xA;vmstat&#xA;cat /proc/meminfo&#xA;cat /proc/swaps&#xA;などなど・・・ </description>
     </item>
-    
     <item>
       <title>Linuxでパーティションのアクティブフラグをセットするには</title>
       <link>https://yaasita.github.io/2007/12/11/13086/</link>
       <pubDate>Tue, 11 Dec 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/12/11/13086/</guid>
-      <description> # sfdisk -A1 /dev/hda
-hdaのパーティション1番をアクティブにし、他のアクティブフラグを削除する。 </description>
+      <description> # sfdisk -A1 /dev/hda&#xA;hdaのパーティション1番をアクティブにし、他のアクティブフラグを削除する。 </description>
     </item>
-    
     <item>
       <title>GRUBをUSBメモリにインストールする</title>
       <link>https://yaasita.github.io/2007/12/10/13107/</link>
       <pubDate>Mon, 10 Dec 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/12/10/13107/</guid>
-      <description>まず、パーティションを切るFATでフォーマットしアクティブフラグをセットする。
-mkdir /mnt/usb/grub cp /boot/grub/stage* /boot/grub/fat_stage1_5 /mnt/usb/grub/ umount /mnt/usb とし
-grub grub&amp;gt; device (hd0) /dev/sda grub&amp;gt; root (hd0,0) grub&amp;gt; setup (hd0) grub&amp;gt; quit と入力する。（USBメモリを/dev/sdaとする）
-参考リンク
-http://opentechpress.jp/developer/article.pl?sid=07/06/18/0135208&amp;amp;amp;pagenum=3 http://d.hatena.ne.jp/kamopapa/20071118 </description>
+      <description>まず、パーティションを切るFATでフォーマットしアクティブフラグをセットする。&#xA;mkdir /mnt/usb/grub cp /boot/grub/stage* /boot/grub/fat_stage1_5 /mnt/usb/grub/ umount /mnt/usb とし&#xA;grub grub&amp;gt; device (hd0) /dev/sda grub&amp;gt; root (hd0,0) grub&amp;gt; setup (hd0) grub&amp;gt; quit と入力する。（USBメモリを/dev/sdaとする）&#xA;参考リンク&#xA;http://opentechpress.jp/developer/article.pl?sid=07/06/18/0135208&amp;amp;amp;pagenum=3 http://d.hatena.ne.jp/kamopapa/20071118 </description>
     </item>
-    
     <item>
       <title>mkfs,fdisk,parted,mkswap使い方</title>
       <link>https://yaasita.github.io/2007/12/10/13106/</link>
       <pubDate>Mon, 10 Dec 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/12/10/13106/</guid>
-      <description>fdisk パーティションの切り直しにはfdiskを使います。
-例えば、/dev/sdaのパーティションを編集するとします
-fdisk /dev/sda で起動
-Command (m for help): と表示されます。
-pでパーティションテーブルの表示
-dを押して次にパーティション番号を入力してパーティションの削除
-nで新しいパーティションの作成
-tでパーティションタイプの編集（FAT32のパーティションタイプは0b）
-lでパーティションタイプ一覧表示
-wで編集したパーティションを書き込み終了
-aでブートフラグの設定
-参考リンク swapパーティションの作成 パーティションタイプ一覧 parted fdiskの機能に加えてパーティションのリサイズが行えます。
-# parted /dev/sda のように起動します
-(parted) と表示されます。
-printでパーティションテーブルの表示
-resize 番号　でパーティションのリサイズ
-例）/dev/sda上のswapパーティションを縮小する
-# parted /dev/sda GNU Parted 1.7.1 Using /dev/sda Welcome to GNU Parted! Type &#39;help&#39; to view a list of commands. (parted) print Disk /dev/sda: 4326MB Sector size (logical/physical): 512B/512B Partition Table: msdos Number Start End Size Type File system Flags 1 32.</description>
+      <description>fdisk パーティションの切り直しにはfdiskを使います。&#xA;例えば、/dev/sdaのパーティションを編集するとします&#xA;fdisk /dev/sda で起動&#xA;Command (m for help): と表示されます。&#xA;pでパーティションテーブルの表示&#xA;dを押して次にパーティション番号を入力してパーティションの削除&#xA;nで新しいパーティションの作成&#xA;tでパーティションタイプの編集（FAT32のパーティションタイプは0b）&#xA;lでパーティションタイプ一覧表示&#xA;wで編集したパーティションを書き込み終了&#xA;aでブートフラグの設定&#xA;参考リンク swapパーティションの作成 パーティションタイプ一覧 parted fdiskの機能に加えてパーティションのリサイズが行えます。&#xA;# parted /dev/sda のように起動します&#xA;(parted) と表示されます。&#xA;printでパーティションテーブルの表示&#xA;resize 番号　でパーティションのリサイズ&#xA;例）/dev/sda上のswapパーティションを縮小する&#xA;# parted /dev/sda GNU Parted 1.7.1 Using /dev/sda Welcome to GNU Parted! Type &#39;help&#39; to view a list of commands. (parted) print Disk /dev/sda: 4326MB Sector size (logical/physical): 512B/512B Partition Table: msdos Number Start End Size Type File system Flags 1 32.</description>
     </item>
-    
     <item>
       <title>96KBの3Dゲーム</title>
       <link>https://yaasita.github.io/2007/12/09/13148/</link>
       <pubDate>Sun, 09 Dec 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/12/09/13148/</guid>
       <description> http://www.4gamer.net/patch/demo/kkrieger/kkrieger.html </description>
     </item>
-    
     <item>
       <title>vsftpdへIEを使ってログインする</title>
       <link>https://yaasita.github.io/2007/12/09/13126/</link>
       <pubDate>Sun, 09 Dec 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/12/09/13126/</guid>
-      <description> IEは標準でftpクライアントを持っています。
-ログインした際は通常のファイルのようにドラッグ＆ドロップによるアップロードやダウンロード。右クリックで削除、パーミッションの設定も出来ます。
-ftp://hoge.jp/という風にアドレスバーに入れてもvsftpdの場合は下図の様なエラーになります。
-iswebやgeocitiesのFTPサーバーへは上のようなエラーは出ず、この後にユーザー名とパスワードの入力を求められます。
-vsftpdのサーバーへログインする際にはアドレスの前にユーザー名を書いてください。例えばfoobarというユーザーでログインしたいのなら
-ftp://foobar@hoge.jp/
-のようにアドレスバーに入力してください。この次にパスワードの入力を求められます。
-パスワードも同時に入力したいのなら（例としてパスワードをpasswdとします）
-ftp://foobar:passwd@hoge.jp/
-と入力します。ログインした後にお気に入りに追加した場合、ftp://hoge.jp/としてお気に入りに追加されてしまうため、お気に入りの項目を右クリック→プロパティから上記アドレスに書き換えてください。 </description>
+      <description> IEは標準でftpクライアントを持っています。&#xA;ログインした際は通常のファイルのようにドラッグ＆ドロップによるアップロードやダウンロード。右クリックで削除、パーミッションの設定も出来ます。&#xA;ftp://hoge.jp/という風にアドレスバーに入れてもvsftpdの場合は下図の様なエラーになります。&#xA;iswebやgeocitiesのFTPサーバーへは上のようなエラーは出ず、この後にユーザー名とパスワードの入力を求められます。&#xA;vsftpdのサーバーへログインする際にはアドレスの前にユーザー名を書いてください。例えばfoobarというユーザーでログインしたいのなら&#xA;ftp://foobar@hoge.jp/&#xA;のようにアドレスバーに入力してください。この次にパスワードの入力を求められます。&#xA;パスワードも同時に入力したいのなら（例としてパスワードをpasswdとします）&#xA;ftp://foobar:passwd@hoge.jp/&#xA;と入力します。ログインした後にお気に入りに追加した場合、ftp://hoge.jp/としてお気に入りに追加されてしまうため、お気に入りの項目を右クリック→プロパティから上記アドレスに書き換えてください。 </description>
     </item>
-    
     <item>
       <title>DebianでFNW-3600-Tを使うとインターフェイスが落ちる問題</title>
       <link>https://yaasita.github.io/2007/12/05/13168/</link>
       <pubDate>Wed, 05 Dec 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/12/05/13168/</guid>
-      <description>PLANEXのFNW-3600-Tを使用している際にインターフェイスが勝手にリブートする問題があります。dmesgを見ると以下のようなログが確認できます。
-eth0: NE2000 (DL10019 rev 05): io 0x300, irq 3, hw_addr 00:E0:98:00:BE:63
-eth0: found link beat
-eth0: autonegotiation complete: 100baseT-FD selected
-eth0: no IPv6 routers present
-eth0: lost link beat
-eth0: found link beat
-eth0: autonegotiation complete: 100baseT-FD selected
-eth0: lost link beat
-eth0: found link beat
-eth0: autonegotiation complete: 100baseT-FD selected
-eth0: lost link beat
-eth0: interrupt(s) dropped!
-eth0: found link beat
-eth0: autonegotiation complete: 100baseT-FD selected
-eth0: lost link beat</description>
+      <description>PLANEXのFNW-3600-Tを使用している際にインターフェイスが勝手にリブートする問題があります。dmesgを見ると以下のようなログが確認できます。&#xA;eth0: NE2000 (DL10019 rev 05): io 0x300, irq 3, hw_addr 00:E0:98:00:BE:63&#xA;eth0: found link beat&#xA;eth0: autonegotiation complete: 100baseT-FD selected&#xA;eth0: no IPv6 routers present&#xA;eth0: lost link beat&#xA;eth0: found link beat&#xA;eth0: autonegotiation complete: 100baseT-FD selected&#xA;eth0: lost link beat&#xA;eth0: found link beat&#xA;eth0: autonegotiation complete: 100baseT-FD selected&#xA;eth0: lost link beat&#xA;eth0: interrupt(s) dropped!&#xA;eth0: found link beat&#xA;eth0: autonegotiation complete: 100baseT-FD selected&#xA;eth0: lost link beat</description>
     </item>
-    
     <item>
       <title>Debianコマンドラインからのパッケージアップデート</title>
       <link>https://yaasita.github.io/2007/12/01/13189/</link>
       <pubDate>Sat, 01 Dec 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/12/01/13189/</guid>
-      <description> # apt-get update
-新しいパッケージリストの取得
-# apt-get upgrade -s アップデートされるパッケージの確認
-# apt-get upgrade アップグレードの適用 </description>
+      <description> # apt-get update&#xA;新しいパッケージリストの取得&#xA;# apt-get upgrade -s アップデートされるパッケージの確認&#xA;# apt-get upgrade アップグレードの適用 </description>
     </item>
-    
     <item>
       <title>Debianにnslookupが無い件</title>
       <link>https://yaasita.github.io/2007/12/01/13209/</link>
       <pubDate>Sat, 01 Dec 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/12/01/13209/</guid>
       <description>#apt-get install dnsutils</description>
     </item>
-    
     <item>
       <title>Apacheのパスワード制御をサブディレクトリだけ外すには</title>
       <link>https://yaasita.github.io/2007/11/30/13229/</link>
       <pubDate>Fri, 30 Nov 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/11/30/13229/</guid>
-      <description>そのディレクトリ中に.htaccessを作り
-Satisfy Any
-Allow from all
-と書く
-またあるディレクトリだけBASIC認証の挙動を変えたい場合は以下のような.htaccessファイルをつくる。
-AuthType Basic
-AuthUserFile &#34;/etc/apache2/pass&#34;
-AuthName &#34;Enter passwd&#34;
-Require user hoge</description>
+      <description>そのディレクトリ中に.htaccessを作り&#xA;Satisfy Any&#xA;Allow from all&#xA;と書く&#xA;またあるディレクトリだけBASIC認証の挙動を変えたい場合は以下のような.htaccessファイルをつくる。&#xA;AuthType Basic&#xA;AuthUserFile &#34;/etc/apache2/pass&#34;&#xA;AuthName &#34;Enter passwd&#34;&#xA;Require user hoge</description>
     </item>
-    
     <item>
       <title>Debian(etch)にtelnetdをインストール</title>
       <link>https://yaasita.github.io/2007/11/30/13249/</link>
       <pubDate>Fri, 30 Nov 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/11/30/13249/</guid>
-      <description> apt-get install telnetd
-その後
-/etc/init.d/openbsd-inetd start
-で起動します。
-telnetでのrootログインを許可したいなら
-/etc/pam.d/login
-にある
-auth required/lib/security/pam_securetty.so
-Debian Lennyの場合は
-auth [success=ok ignore=ignore user_unknown=ignore default=die] pam_securetty.so
-をコメントアウトしてください
-また動いているプロセスは/usr/sbin/inetdです
-参考
-http://www.itmedia.co.jp/help/tips/linux/l0370.html </description>
+      <description> apt-get install telnetd&#xA;その後&#xA;/etc/init.d/openbsd-inetd start&#xA;で起動します。&#xA;telnetでのrootログインを許可したいなら&#xA;/etc/pam.d/login&#xA;にある&#xA;auth required/lib/security/pam_securetty.so&#xA;Debian Lennyの場合は&#xA;auth [success=ok ignore=ignore user_unknown=ignore default=die] pam_securetty.so&#xA;をコメントアウトしてください&#xA;また動いているプロセスは/usr/sbin/inetdです&#xA;参考&#xA;http://www.itmedia.co.jp/help/tips/linux/l0370.html </description>
     </item>
-    
     <item>
       <title>Thunderbirdの表示名がメールアドレス前に入ってしまう</title>
       <link>https://yaasita.github.io/2007/11/28/13270/</link>
       <pubDate>Wed, 28 Nov 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/11/28/13270/</guid>
-      <description> 例えば表示名を「hogehoge」としてアドレス帳に登録しておき、example@test.comに送ろうとしたときにToヘッダは
-To:hogehoge &amp;amp;lt;yamaooo310@yahoo.co.jp&amp;amp;gt;
-となり表示名が入ってしまいます。
-これを止めるにはアドレス帳に登録する際に表示名には登録せず姓名の欄に名前を登録します。このようにした場合、アドレス帳がメールアドレスが表示されて見にくくなるのでアドレス帳→表示→名前の表示→姓　名前を選択します。 </description>
+      <description> 例えば表示名を「hogehoge」としてアドレス帳に登録しておき、example@test.comに送ろうとしたときにToヘッダは&#xA;To:hogehoge &amp;amp;lt;yamaooo310@yahoo.co.jp&amp;amp;gt;&#xA;となり表示名が入ってしまいます。&#xA;これを止めるにはアドレス帳に登録する際に表示名には登録せず姓名の欄に名前を登録します。このようにした場合、アドレス帳がメールアドレスが表示されて見にくくなるのでアドレス帳→表示→名前の表示→姓　名前を選択します。 </description>
     </item>
-    
     <item>
       <title>rep2をLinuxにインストール</title>
       <link>https://yaasita.github.io/2007/11/25/13311/</link>
       <pubDate>Sun, 25 Nov 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/11/25/13311/</guid>
-      <description>インストール 公式サイトからrep2をダウンロード
-以下パッケージのインストール
-apt-get install php5 php-http-request php5-gd php-pear php-compat ※公式にはこう書いてある
-aptitude install apache2-mpm-prefork php5 php-pear php-compat php-http-request php-pager php-file php5-curl curl unzip
-必要なpearパッケージも
-pear install Net_UserAgent_Mobile ※なかったらpear search Net_UserAgent_Mobileとかで検索してみる
-リポジトリにPHP_Compatが無かった場合は追加で以下のコマンド
-pear install PHP_Compat それ以外は公式サイト見てやる
-公式サイトの説明文
-サーバを立ち上げて、PHPが動くようにする。PEARも忘れずに（下記参照） rep2ディレクトリをサーバからアクセスできる所（「~/Sites」とか）へ置く。 rep2ディレクトリの中にデータ保存用のディレクトリを作成する。（デフォルトでは「data」ディレクトリ） データ保存用ディレクトリのパーミッションを「707」（または777）にする。 必要に応じて、 conf/conf_admin.inc.php などのconfファイルをテキストエディタで開いて設定編集。 ブラウザから、
-http://127.0.0.1/~(ユーザ名)/rep2/index.php
-てな具合にrep2ディレクトリへアクセス。 ※PHPが確かに動いていることを確かめたい時は？
-http://127.0.0.1/~(ユーザ名)/rep2/phpinfo.php
-てなとこにアクセスしてみて下さい。
-ずらずらーっとPHPの環境情報が表示されたならば、PHPは正常に動作しています。
-（確認ができましたら、phpinfo.php はもう必要ないので削除しても構いません）
-これで動くはずです。動かなかった場合はエラーを見て判断してください。
-設定 conf/conf_hostcheck.php
-を編集してグローバルIP側からの接続でもrep2を利用できるようにします。
-29行目付近 customを1に設定
-// ユーザー設定 &#39;custom&#39; =&amp;gt; 1, 36行目付近を以下のように設定
-$GLOBALS[&#39;_HOSTCHKCONF&#39;][&#39;custom_allowed_host&#39;] = array( &#39;0.0.0.0&#39; =&amp;gt; 0, ); なんかapacheのdeflateと相性悪いらしくスマホで検索するとContent-Encodingエラーになる</description>
+      <description>インストール 公式サイトからrep2をダウンロード&#xA;以下パッケージのインストール&#xA;apt-get install php5 php-http-request php5-gd php-pear php-compat ※公式にはこう書いてある&#xA;aptitude install apache2-mpm-prefork php5 php-pear php-compat php-http-request php-pager php-file php5-curl curl unzip&#xA;必要なpearパッケージも&#xA;pear install Net_UserAgent_Mobile ※なかったらpear search Net_UserAgent_Mobileとかで検索してみる&#xA;リポジトリにPHP_Compatが無かった場合は追加で以下のコマンド&#xA;pear install PHP_Compat それ以外は公式サイト見てやる&#xA;公式サイトの説明文&#xA;サーバを立ち上げて、PHPが動くようにする。PEARも忘れずに（下記参照） rep2ディレクトリをサーバからアクセスできる所（「~/Sites」とか）へ置く。 rep2ディレクトリの中にデータ保存用のディレクトリを作成する。（デフォルトでは「data」ディレクトリ） データ保存用ディレクトリのパーミッションを「707」（または777）にする。 必要に応じて、 conf/conf_admin.inc.php などのconfファイルをテキストエディタで開いて設定編集。 ブラウザから、&#xA;http://127.0.0.1/~(ユーザ名)/rep2/index.php&#xA;てな具合にrep2ディレクトリへアクセス。 ※PHPが確かに動いていることを確かめたい時は？&#xA;http://127.0.0.1/~(ユーザ名)/rep2/phpinfo.php&#xA;てなとこにアクセスしてみて下さい。&#xA;ずらずらーっとPHPの環境情報が表示されたならば、PHPは正常に動作しています。&#xA;（確認ができましたら、phpinfo.php はもう必要ないので削除しても構いません）&#xA;これで動くはずです。動かなかった場合はエラーを見て判断してください。&#xA;設定 conf/conf_hostcheck.php&#xA;を編集してグローバルIP側からの接続でもrep2を利用できるようにします。&#xA;29行目付近 customを1に設定&#xA;// ユーザー設定 &#39;custom&#39; =&amp;gt; 1, 36行目付近を以下のように設定&#xA;$GLOBALS[&#39;_HOSTCHKCONF&#39;][&#39;custom_allowed_host&#39;] = array( &#39;0.0.0.0&#39; =&amp;gt; 0, ); なんかapacheのdeflateと相性悪いらしくスマホで検索するとContent-Encodingエラーになる</description>
     </item>
-    
     <item>
       <title>URLの書式</title>
       <link>https://yaasita.github.io/2007/11/25/13290/</link>
       <pubDate>Sun, 25 Nov 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/11/25/13290/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>MinGWをWindowsにインストールする</title>
       <link>https://yaasita.github.io/2007/11/24/13332/</link>
       <pubDate>Sat, 24 Nov 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/11/24/13332/</guid>
-      <description>フリーのC/C++コンパイラのインストールメモです。
-まず http://www.mingw.org/ に行きダウンロードします。
-ダウンロードは sourceforge から行ってください。現時点で最新版のAutomated MinGW InstallerのMinGW-5.1.3をダウンロードします。このダウンロードしたexeを実行すると自動的にダウンロードとインストールが行えます。
-途中、↑のようにダウンロードするバージョンを聞かれますが、currentを選択すればいいでしょう。
-インストールを C:\MinGW\ にした場合は C:\MinGW\bin にPATHを設定します。この時、PATH=C:\MinGW\bin;%system%....
-の様に先頭にしておけば検索が早くなり結果的に早くコンパイルできるはずです。</description>
+      <description>フリーのC/C++コンパイラのインストールメモです。&#xA;まず http://www.mingw.org/ に行きダウンロードします。&#xA;ダウンロードは sourceforge から行ってください。現時点で最新版のAutomated MinGW InstallerのMinGW-5.1.3をダウンロードします。このダウンロードしたexeを実行すると自動的にダウンロードとインストールが行えます。&#xA;途中、↑のようにダウンロードするバージョンを聞かれますが、currentを選択すればいいでしょう。&#xA;インストールを C:\MinGW\ にした場合は C:\MinGW\bin にPATHを設定します。この時、PATH=C:\MinGW\bin;%system%....&#xA;の様に先頭にしておけば検索が早くなり結果的に早くコンパイルできるはずです。</description>
     </item>
-    
     <item>
       <title>x11vncの設定を保存するには</title>
       <link>https://yaasita.github.io/2007/11/18/13354/</link>
       <pubDate>Sun, 18 Nov 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/11/18/13354/</guid>
-      <description> 前回の設定では長いオプションをいちいち入力する必要がありましたが
-rcファイルを作りオプションを保存することができます。
-設定ファイルは~/.x11vncrcとして保存します。
-前回の設定を保存するなら
--forever
--rfbauth /home/hogehoge/.vnc/passwd
--rfbport 5000
--display :00
-のように書いて保存します。#を入れるとそれ以降の文字はコメントとして扱われます。
-もし.x11vncrcを読み込みたくないなら
--norc
-オプションを付けて下さい。 </description>
+      <description> 前回の設定では長いオプションをいちいち入力する必要がありましたが&#xA;rcファイルを作りオプションを保存することができます。&#xA;設定ファイルは~/.x11vncrcとして保存します。&#xA;前回の設定を保存するなら&#xA;-forever&#xA;-rfbauth /home/hogehoge/.vnc/passwd&#xA;-rfbport 5000&#xA;-display :00&#xA;のように書いて保存します。#を入れるとそれ以降の文字はコメントとして扱われます。&#xA;もし.x11vncrcを読み込みたくないなら&#xA;-norc&#xA;オプションを付けて下さい。 </description>
     </item>
-    
     <item>
       <title>Linuxでビープ音を消す</title>
       <link>https://yaasita.github.io/2007/11/17/13375/</link>
       <pubDate>Sat, 17 Nov 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/11/17/13375/</guid>
-      <description> コンソールを含めて、いかなる場合もビープ音を鳴らしたくない場合は、次のコマンドを実行します。
-$ sudo rmmod pcspkr
-再起動後もビープ音を鳴らしたくなければ、/etc/modprobe.d/blacklistに次の行を加えます。
-blacklist pcspkr
-だそうです
-https://wiki.ubuntulinux.jp/UbuntuTips/Hardware/StopBeepSound </description>
+      <description> コンソールを含めて、いかなる場合もビープ音を鳴らしたくない場合は、次のコマンドを実行します。&#xA;$ sudo rmmod pcspkr&#xA;再起動後もビープ音を鳴らしたくなければ、/etc/modprobe.d/blacklistに次の行を加えます。&#xA;blacklist pcspkr&#xA;だそうです&#xA;https://wiki.ubuntulinux.jp/UbuntuTips/Hardware/StopBeepSound </description>
     </item>
-    
     <item>
       <title>中国系P2Pテレビを視聴するには？</title>
       <link>https://yaasita.github.io/2007/11/12/13395/</link>
       <pubDate>Mon, 12 Nov 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/11/12/13395/</guid>
       <description> https://wiki.ubuntulinux.jp/UbuntuTips/Application/P2Ptv </description>
     </item>
-    
     <item>
       <title>ubuntu7.10にApache2を入れる</title>
       <link>https://yaasita.github.io/2007/11/11/13417/</link>
       <pubDate>Sun, 11 Nov 2007 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2007/11/11/13417/</guid>
-      <description> ファイル名が日本語の場合、Indexが文字化けする場合は/etc/apache2/conf.d/charset をUTF-8がデフォルトになるように書き換える。
-Indexの細かい指定は/etc/apache2/mods-available/autoindex.conf で設定する。 </description>
+      <description> ファイル名が日本語の場合、Indexが文字化けする場合は/etc/apache2/conf.d/charset をUTF-8がデフォルトになるように書き換える。&#xA;Indexの細かい指定は/etc/apache2/mods-available/autoindex.conf で設定する。 </description>
     </item>
-    
   </channel>
 </rss>

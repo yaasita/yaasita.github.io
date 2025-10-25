@@ -1,291 +1,152 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>windows on # cd ~yaasita</title>
+    <title>Windows on # cd ~yaasita</title>
     <link>https://yaasita.github.io/categories/windows/</link>
-    <description>Recent content in windows on # cd ~yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Windows on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 11 Jun 2024 01:28:19 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/windows/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 11 Jun 2024 01:28:19 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/categories/windows/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>windowsでファイルリスト作成</title>
       <link>https://yaasita.github.io/2024/06/11/windows-dir/</link>
       <pubDate>Tue, 11 Jun 2024 01:28:19 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/06/11/windows-dir/</guid>
-      <description>こんな感じのbatファイルでOK
-dir /S /A:d /B &amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir /S /B *.pdf &amp;gt;&amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir.bat</description>
+      <description>こんな感じのbatファイルでOK&#xA;dir /S /A:d /B &amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir /S /B *.pdf &amp;gt;&amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir.bat</description>
     </item>
-    
     <item>
       <title>Windows10のクリップボード履歴機能</title>
       <link>https://yaasita.github.io/2019/03/10/clipboard/</link>
       <pubDate>Sun, 10 Mar 2019 22:47:52 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2019/03/10/clipboard/</guid>
-      <description>Windows10に標準でクリップボード履歴機能が付いたらしい
-https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html Windows キー + Vで使えるようになる
-cliborの方が使いやすそうな気がするけど、しばらくこっち使ってみる</description>
+      <description>Windows10に標準でクリップボード履歴機能が付いたらしい&#xA;https://www.atmarkit.co.jp/ait/articles/1903/08/news028.html Windows キー + Vで使えるようになる&#xA;cliborの方が使いやすそうな気がするけど、しばらくこっち使ってみる</description>
     </item>
-    
     <item>
       <title>skypeの会話ログをjsonに</title>
       <link>https://yaasita.github.io/2018/09/25/skype-log/</link>
       <pubDate>Tue, 25 Sep 2018 00:56:22 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/09/25/skype-log/</guid>
-      <description>skypeの会話履歴をJSONにしておくやつ作った
-https://github.com/yaasita/skype2json
-logはsqliteで保存されている
-こちらによるとskype for windows 10とskype for windows desktopの保存場所が違う
-こっちが最近のやつ
-場所: %localappdata%\Packages\Microsoft.SkypeApp_kzf8qxf38zg5c\LocalState
-昔のやつ
-場所: C:\Users\username\AppData\Roaming\Skype\username\main.db</description>
+      <description>skypeの会話履歴をJSONにしておくやつ作った&#xA;https://github.com/yaasita/skype2json&#xA;logはsqliteで保存されている&#xA;こちらによるとskype for windows 10とskype for windows desktopの保存場所が違う&#xA;こっちが最近のやつ&#xA;場所: %localappdata%\Packages\Microsoft.SkypeApp_kzf8qxf38zg5c\LocalState&#xA;昔のやつ&#xA;場所: C:\Users\username\AppData\Roaming\Skype\username\main.db</description>
     </item>
-    
     <item>
       <title>TeratermからConEmuへ移行した</title>
       <link>https://yaasita.github.io/2017/12/02/teraterm-to-conemu/</link>
       <pubDate>Sat, 02 Dec 2017 04:36:08 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2017/12/02/teraterm-to-conemu/</guid>
-      <description>長年使ってたTeratermからConEmuへ移行した
-SSHクライアントはputtyを使ってる
-WSL経由でも良かったんだけど、なんかVimのvisualモードで背景色が変わらなかったり表示が微妙だったので結局putty使った
-良かった点 絵文字も表示できる タブが便利(TeratermもCollectorで出来るけどこっちの方が使いやすい) F1キーをリモート側に送るとかそういう設定がしやすい 微妙な点 Alt-Vでペーストしてたけどこれが使えない(設定方法が分からない) まとめ ConEmu入れた後putty設定したり、微妙に面倒だけど使いやすい</description>
+      <description>長年使ってたTeratermからConEmuへ移行した&#xA;SSHクライアントはputtyを使ってる&#xA;WSL経由でも良かったんだけど、なんかVimのvisualモードで背景色が変わらなかったり表示が微妙だったので結局putty使った&#xA;良かった点 絵文字も表示できる タブが便利(TeratermもCollectorで出来るけどこっちの方が使いやすい) F1キーをリモート側に送るとかそういう設定がしやすい 微妙な点 Alt-Vでペーストしてたけどこれが使えない(設定方法が分からない) まとめ ConEmu入れた後putty設定したり、微妙に面倒だけど使いやすい</description>
     </item>
-    
     <item>
       <title>Teratermでreject clipbordのエラー</title>
       <link>https://yaasita.github.io/2017/11/16/teraterm-copy/</link>
       <pubDate>Thu, 16 Nov 2017 06:33:07 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2017/11/16/teraterm-copy/</guid>
-      <description>teraterm + Tmuxでコピーをすると
-Reject clipboard write access from remoteのエラーが出る
-これはOSC52っていう制御文字を使ってリモートからOSのクリップボードを書き込むことができる機能がブロックされてるよって事
-直すには Setup -&amp;gt; Addtional settings -&amp;gt; Control Sequenceタブ
-と進んで該当箇所を設定すればOK
-その下にNotifyの設定もある
-参考リンク リモートの tmux でコピーした内容のローカルのクリップボードへの反映 </description>
+      <description>teraterm + Tmuxでコピーをすると&#xA;Reject clipboard write access from remoteのエラーが出る&#xA;これはOSC52っていう制御文字を使ってリモートからOSのクリップボードを書き込むことができる機能がブロックされてるよって事&#xA;直すには Setup -&amp;gt; Addtional settings -&amp;gt; Control Sequenceタブ&#xA;と進んで該当箇所を設定すればOK&#xA;その下にNotifyの設定もある&#xA;参考リンク リモートの tmux でコピーした内容のローカルのクリップボードへの反映 </description>
     </item>
-    
     <item>
       <title>itunes入れるとDVDドライブが認識しない</title>
       <link>https://yaasita.github.io/2014/07/12/itunes-dvd-device/</link>
       <pubDate>Sat, 12 Jul 2014 23:54:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/07/12/itunes-dvd-device/</guid>
-      <description>レジストリの以下のキーを消すとうまくいった
-HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E965-E325-11CE-BFC1-08002BE10318} http://michisugara.jp/archives/2013/op_drive_failure.html</description>
+      <description>レジストリの以下のキーを消すとうまくいった&#xA;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Class\{4D36E965-E325-11CE-BFC1-08002BE10318} http://michisugara.jp/archives/2013/op_drive_failure.html</description>
     </item>
-    
     <item>
       <title>Windows8.1の完全シャットダウン方法</title>
       <link>https://yaasita.github.io/2014/06/18/windows8_1_shutdown/</link>
       <pubDate>Wed, 18 Jun 2014 00:03:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/06/18/windows8_1_shutdown/</guid>
       <description>Win+cで設定ボタン⇒PC設定の変更⇒保守と管理⇒回復⇒今すぐ再起動する⇒PCの電源を切る https://www2.mouse-jp.co.jp/ssl/user_support2/sc_faq_documents.asp?FaqID=13460</description>
     </item>
-    
     <item>
       <title>キーボード操作を表示してくれるソフト</title>
       <link>https://yaasita.github.io/2014/06/01/key_display/</link>
       <pubDate>Sun, 01 Jun 2014 02:37:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/06/01/key_display/</guid>
-      <description>windows用のキーボード操作表示ソフト
-osdHotkey
-参考リンク
-押したキーを表示してくれるソフトのまとめ </description>
+      <description>windows用のキーボード操作表示ソフト&#xA;osdHotkey&#xA;参考リンク&#xA;押したキーを表示してくれるソフトのまとめ </description>
     </item>
-    
     <item>
       <title>WindowsでSPICE接続</title>
       <link>https://yaasita.github.io/2013/12/07/349/</link>
       <pubDate>Sat, 07 Dec 2013 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2013/12/07/349/</guid>
-      <description>SPICEクライアントをダウンロード
-http://www.spice-space.org/download.html
-virt-viewer-x64-0.5.7.msiを使いました
-んでインストール
-C:\Program Files\VirtViewer\bin\remote-viewer.exe
-あたりを実行
-参考リンク
-http://www.server-world.info/query?os=Fedora_18&amp;amp;amp;p=kvm&amp;amp;amp;f=8</description>
+      <description>SPICEクライアントをダウンロード&#xA;http://www.spice-space.org/download.html&#xA;virt-viewer-x64-0.5.7.msiを使いました&#xA;んでインストール&#xA;C:\Program Files\VirtViewer\bin\remote-viewer.exe&#xA;あたりを実行&#xA;参考リンク&#xA;http://www.server-world.info/query?os=Fedora_18&amp;amp;amp;p=kvm&amp;amp;amp;f=8</description>
     </item>
-    
     <item>
       <title>rsyncを蹴るためのラッパーをwshで書いた</title>
       <link>https://yaasita.github.io/2013/10/13/432/</link>
       <pubDate>Sun, 13 Oct 2013 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2013/10/13/432/</guid>
       <description> </description>
     </item>
-    
     <item>
       <title>Windows8でBlu-ray再生</title>
       <link>https://yaasita.github.io/2013/08/25/536/</link>
       <pubDate>Sun, 25 Aug 2013 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2013/08/25/536/</guid>
-      <description> VLCをインストールして
-↓から鍵ファイルとlibaacsを所定の場所に保存
-http://vlc-bluray.whoknowsmy.name/
-参考リンク
-http://orangeprose.blog.fc2.com/blog-entry-199.html </description>
+      <description> VLCをインストールして&#xA;↓から鍵ファイルとlibaacsを所定の場所に保存&#xA;http://vlc-bluray.whoknowsmy.name/&#xA;参考リンク&#xA;http://orangeprose.blog.fc2.com/blog-entry-199.html </description>
     </item>
-    
     <item>
       <title>Windowsの無料イメージ</title>
       <link>https://yaasita.github.io/2013/08/18/578/</link>
       <pubDate>Sun, 18 Aug 2013 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2013/08/18/578/</guid>
-      <description>IEテスト用らしい
-http://www.modern.ie/ja/virtualization-tools</description>
+      <description>IEテスト用らしい&#xA;http://www.modern.ie/ja/virtualization-tools</description>
     </item>
-    
     <item>
       <title>WindowsでS.M.A.R.T情報を取得</title>
       <link>https://yaasita.github.io/2012/09/23/2191/</link>
       <pubDate>Sun, 23 Sep 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/09/23/2191/</guid>
-      <description> Linuxだとsmartctlとかだけど、Windowsだとこれがいい感じ
-CrystalDiskInfo
-http://www.forest.impress.co.jp/lib/sys/hrdbnch/hardinfo/crdiskinfo.html </description>
+      <description> Linuxだとsmartctlとかだけど、Windowsだとこれがいい感じ&#xA;CrystalDiskInfo&#xA;http://www.forest.impress.co.jp/lib/sys/hrdbnch/hardinfo/crdiskinfo.html </description>
     </item>
-    
     <item>
       <title>Linuxからリモートデスクトップ(RDP)</title>
       <link>https://yaasita.github.io/2012/06/09/2530/</link>
       <pubDate>Sat, 09 Jun 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/06/09/2530/</guid>
-      <description>xfreerdpでいけます
-apt-get install freerdp-x11</description>
+      <description>xfreerdpでいけます&#xA;apt-get install freerdp-x11</description>
     </item>
-    
     <item>
       <title>最近のCygwinをインストール</title>
       <link>https://yaasita.github.io/2012/01/26/3111/</link>
       <pubDate>Thu, 26 Jan 2012 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2012/01/26/3111/</guid>
-      <description> 最近のCygwinが便利になってたので導入メモ
-１．インストール
-公式サイトからsetup.exeを持ってくる
-ソフトのインストールに毎回setup.exeを使うのは面倒なので、apt-cygを導入する
-２．Xサーバの導入
-setup.exeからX11を選択して全部入れる
-そんでウィンドウマネージャとしてdwmを入れる
-ソースは公式サイトから拾ってビルド
-tar xzf dwm-6.0.tar.gz
-cd dwm-6.0
-make
-mv dwm.exe /usr/bin/
-あとは~/.xinitrcに適当に書いてstartxでOK
-xhost +192.168.0.4
-dwm
-３．その他設定
-あとは便利に使うコマンドとしてcygstartを覚えておくと良いかも
-詳しくはこちら
-コンソールの設定だけど右クリック→Options→Looks→背景色とか透過とかカーソルをいじる
-Xサーバーに飛ばしたかったらアプリ起動側で変数設定すること
-export DISPLAY=&#34;192.168.0.3:0&#34;
-関連記事
-http://rdt17.blogspot.com/2011/05/xming.html </description>
+      <description> 最近のCygwinが便利になってたので導入メモ&#xA;１．インストール&#xA;公式サイトからsetup.exeを持ってくる&#xA;ソフトのインストールに毎回setup.exeを使うのは面倒なので、apt-cygを導入する&#xA;２．Xサーバの導入&#xA;setup.exeからX11を選択して全部入れる&#xA;そんでウィンドウマネージャとしてdwmを入れる&#xA;ソースは公式サイトから拾ってビルド&#xA;tar xzf dwm-6.0.tar.gz&#xA;cd dwm-6.0&#xA;make&#xA;mv dwm.exe /usr/bin/&#xA;あとは~/.xinitrcに適当に書いてstartxでOK&#xA;xhost +192.168.0.4&#xA;dwm&#xA;３．その他設定&#xA;あとは便利に使うコマンドとしてcygstartを覚えておくと良いかも&#xA;詳しくはこちら&#xA;コンソールの設定だけど右クリック→Options→Looks→背景色とか透過とかカーソルをいじる&#xA;Xサーバーに飛ばしたかったらアプリ起動側で変数設定すること&#xA;export DISPLAY=&#34;192.168.0.3:0&#34;&#xA;関連記事&#xA;http://rdt17.blogspot.com/2011/05/xming.html </description>
     </item>
-    
     <item>
       <title>HJSplitって何だ？</title>
       <link>https://yaasita.github.io/2011/11/06/3361/</link>
       <pubDate>Sun, 06 Nov 2011 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2011/11/06/3361/</guid>
-      <description> ファイルを分割＆結合してくれるソフトです
-主に海外のダウンロードサイトなどで目にします。
-公式サイトはこちら
-そこからLinux版とWinodws版が選べます
-今回はLinux版を使います
-公式ページからtarファイルを拾ってきて解凍すればOK
-その中にあるhjsplitを蹴れば実行されますXが動いている＋GTKが入っていれば多分大丈夫
-※まあLinuxならcatでつなげてもいいと思う </description>
+      <description> ファイルを分割＆結合してくれるソフトです&#xA;主に海外のダウンロードサイトなどで目にします。&#xA;公式サイトはこちら&#xA;そこからLinux版とWinodws版が選べます&#xA;今回はLinux版を使います&#xA;公式ページからtarファイルを拾ってきて解凍すればOK&#xA;その中にあるhjsplitを蹴れば実行されますXが動いている＋GTKが入っていれば多分大丈夫&#xA;※まあLinuxならcatでつなげてもいいと思う </description>
     </item>
-    
     <item>
       <title>WindowsでもMplayerを使う</title>
       <link>https://yaasita.github.io/2011/08/14/3533/</link>
       <pubDate>Sun, 14 Aug 2011 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2011/08/14/3533/</guid>
-      <description>Mplayerはオープンソースのメディアプレイヤー
-公式サイトからDownloadと進んで
-「MPlayer SVN Windows with SMPlayer GUI (recommended)」をえらんだ
-最初に設定したのは以下の通り
-GeneralMedia Settingで「Remember Settings for all files」を外した
-Screenshotsの場所を変更
-※これはファイル毎に再生ポジションを記憶してくれたりする
-設定ファイルはC:\Documents and Settings\hoge\.smplayerにある
-InterfaceRecent filesを20に変更
-Instancesタブで一つのウィンドウしか開かないようにした
-File types関連付けする拡張子にチェック
-あと注意しなければならないことは
-マルチディスプレイだと左のウィンドウに移動したときに
-Video→Screenをえらんでディスプレイ先を切り替えること</description>
+      <description>Mplayerはオープンソースのメディアプレイヤー&#xA;公式サイトからDownloadと進んで&#xA;「MPlayer SVN Windows with SMPlayer GUI (recommended)」をえらんだ&#xA;最初に設定したのは以下の通り&#xA;GeneralMedia Settingで「Remember Settings for all files」を外した&#xA;Screenshotsの場所を変更&#xA;※これはファイル毎に再生ポジションを記憶してくれたりする&#xA;設定ファイルはC:\Documents and Settings\hoge\.smplayerにある&#xA;InterfaceRecent filesを20に変更&#xA;Instancesタブで一つのウィンドウしか開かないようにした&#xA;File types関連付けする拡張子にチェック&#xA;あと注意しなければならないことは&#xA;マルチディスプレイだと左のウィンドウに移動したときに&#xA;Video→Screenをえらんでディスプレイ先を切り替えること</description>
     </item>
-    
     <item>
       <title>WindowsXPの自動起動（オートラン）機能を無効化する</title>
       <link>https://yaasita.github.io/2011/05/14/3986/</link>
       <pubDate>Sat, 14 May 2011 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2011/05/14/3986/</guid>
-      <description> レジストリを以下のようにすればOKらしい
-[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]
-&#34;NoDriveTypeAutoRun&#34;=dword:000000b5
-先日、友人からもらったUSB見たら6bi8wr29.exeというウィルスがUSBドライブの直下にあったからこれやっといてよかった危ない危ない・・・
-参考リンク
-http://www.mnet.ne.jp/~angie/kbase/xp-autorun.html
-http://yonyon-blog.net/youmei/2008/05/27/cddvd%E3%82%84usb%E3%83%A1%E3%83%A2%E3%83%AA%E3%81%AE%E8%87%AA%E5%8B%95%E5%AE%9F%E8%A1%8C%E3%82%92%E7%84%A1%E5%8A%B9%E3%81%AB%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/ </description>
+      <description> レジストリを以下のようにすればOKらしい&#xA;[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer]&#xA;&#34;NoDriveTypeAutoRun&#34;=dword:000000b5&#xA;先日、友人からもらったUSB見たら6bi8wr29.exeというウィルスがUSBドライブの直下にあったからこれやっといてよかった危ない危ない・・・&#xA;参考リンク&#xA;http://www.mnet.ne.jp/~angie/kbase/xp-autorun.html&#xA;http://yonyon-blog.net/youmei/2008/05/27/cddvd%E3%82%84usb%E3%83%A1%E3%83%A2%E3%83%AA%E3%81%AE%E8%87%AA%E5%8B%95%E5%AE%9F%E8%A1%8C%E3%82%92%E7%84%A1%E5%8A%B9%E3%81%AB%E3%81%99%E3%82%8B%E6%96%B9%E6%B3%95/ </description>
     </item>
-    
     <item>
       <title>Xmingを試してみる</title>
       <link>https://yaasita.github.io/2011/05/01/4235/</link>
       <pubDate>Sun, 01 May 2011 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2011/05/01/4235/</guid>
-      <description> Xmingはwindowsで使えるXサーバー
-ここからダウンロードしてインストール
-とりあえず使ってみるにはWindows側で以下のコマンドでXサーバーを起動
-Xming.exe -ac -multiwindow -clipboard
-Linux側で以下のコマンドを実行（Windows側のIPアドレスが192.168.0.3だった場合）
-export DISPLAY=&#34;192.168.0.6:0&#34;
-あとはXのアプリを起動すればWindows側に現れるはず
-本当はこの方法だとセキュリティ的にまずいのでX11転送とかを使う方がいいかも
-参考リンク
-公式サイト </description>
+      <description> Xmingはwindowsで使えるXサーバー&#xA;ここからダウンロードしてインストール&#xA;とりあえず使ってみるにはWindows側で以下のコマンドでXサーバーを起動&#xA;Xming.exe -ac -multiwindow -clipboard&#xA;Linux側で以下のコマンドを実行（Windows側のIPアドレスが192.168.0.3だった場合）&#xA;export DISPLAY=&#34;192.168.0.6:0&#34;&#xA;あとはXのアプリを起動すればWindows側に現れるはず&#xA;本当はこの方法だとセキュリティ的にまずいのでX11転送とかを使う方がいいかも&#xA;参考リンク&#xA;公式サイト </description>
     </item>
-    
     <item>
       <title>タスク切り替えソフトを選ぶ</title>
       <link>https://yaasita.github.io/2011/05/01/4214/</link>
       <pubDate>Sun, 01 May 2011 00:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2011/05/01/4214/</guid>
-      <description> 使いやすい＋早いと思ったのは
-ufsかなぁ
-ctclもなかなか良い感じだけど
-切替の早さはufsかなぁ・・・
-参考リンク
-http://d.hatena.ne.jp/ampll/20090602/1243924925 </description>
+      <description> 使いやすい＋早いと思ったのは&#xA;ufsかなぁ&#xA;ctclもなかなか良い感じだけど&#xA;切替の早さはufsかなぁ・・・&#xA;参考リンク&#xA;http://d.hatena.ne.jp/ampll/20090602/1243924925 </description>
     </item>
-    
   </channel>
 </rss>

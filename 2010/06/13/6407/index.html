@@ -6,27 +6,31 @@
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>C/MigemoをMSVC 2010でコンパイルしてみる | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.111.3">
+    <meta name="generator" content="Hugo 0.131.0">
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
 
-    <meta property="og:title" content="C/MigemoをMSVC 2010でコンパイルしてみる" />
-<meta property="og:description" content="vimにインストールするためMSVC 2010でコンパイルしてみた
+    <meta property="og:url" content="https://yaasita.github.io/2010/06/13/6407/">
+  <meta property="og:site_name" content="# cd ~yaasita">
+  <meta property="og:title" content="C/MigemoをMSVC 2010でコンパイルしてみる">
+  <meta property="og:description" content="vimにインストールするためMSVC 2010でコンパイルしてみた
 まずは↓からMicrosoft Visual Studio Express C&#43;&#43;をダウンロード&amp;インストール
 http://www.microsoft.com/japan/msdn/vstudio/express/
 （ちなみにインストールするとメイリオフォントもインストールされる Firefoxとかだと文字がにじむサイトとかでるかも・・・）
 そんでkaoriyaさんのHPから「ソースコード 1.3(予定) 開発版」をダウンロード解凍して cmigemo-1.3c\compile\vs2003のCMigemo.slnをMSVS 2010で開く→変換ウィザードでプロジェクトを変換
 プロジェクトを開いたらReleaseに変更
-そんでCMigemoを右クリック→リビルドすると cannot open include file &lsquo;afxres.h&rsquo;というエラーが出るのでこんな感じで直す
+そんでCMigemoを右クリック→リビルドすると cannot open include file ‘afxres.h’というエラーが出るのでこんな感じで直す
 修正前
-#include &quot;afxres.h&quot; 修正後
+#include &#34;afxres.h&#34; 修正後
 #include &lt;windows.h&gt; #define IDC_STATIC -1 あとはvs2003\CMigemo\Release\CMigemo.exeとvs2003\MigemoDLL\Release\migemo.dllを保存してvimにインストール
 辞書ファイルはCygwinで作成するかkaoriyaさんの「バイナリ(DLL) 1.2 リリース版 for Windows 」をダウンロードしてもおｋ
-ちなみにmigemo.vimは1.2版のを使った方が調子が良かった" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://yaasita.github.io/2010/06/13/6407/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2010-06-13T00:00:00+09:00" />
-<meta property="article:modified_time" content="2010-06-13T00:00:00+09:00" />
+ちなみにmigemo.vimは1.2版のを使った方が調子が良かった">
+  <meta property="og:locale" content="ja">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2010-06-13T00:00:00+09:00">
+    <meta property="article:modified_time" content="2010-06-13T00:00:00+09:00">
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&amp;v=4">
 
     <script id="dsq-count-scr" src="https://yaasita.disqus.com/count.js" async></script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="36937576-b2d5-4494-aba8-d0b70a153691"></script>
@@ -92,7 +96,7 @@ http://www.microsoft.com/japan/msdn/vstudio/express/
 
       
       <div id="disqus_thread"></div>
-<script type="application/javascript">
+<script>
     window.disqus_config = function () {
     
     
@@ -191,7 +195,7 @@ http://www.microsoft.com/japan/msdn/vstudio/express/
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (355)</a>
+          <a href="/categories/linux"><span></span>linux (356)</a>
         </li>
         
         <li>
@@ -207,7 +211,7 @@ http://www.microsoft.com/japan/msdn/vstudio/express/
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (430)</a>
+          <a href="/categories/soft"><span></span>soft (431)</a>
         </li>
         
         <li>
@@ -298,7 +302,7 @@ http://www.microsoft.com/japan/msdn/vstudio/express/
         </li>
         
         <li>
-          <a href="/archives/2025"><span></span>2025 (13)</a>
+          <a href="/archives/2025"><span></span>2025 (14)</a>
         </li>
         
       </ul>

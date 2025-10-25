@@ -6,24 +6,28 @@
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>クライアント証明書&#43;HTTP2 | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.111.3">
+    <meta name="generator" content="Hugo 0.131.0">
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
 
-    <meta property="og:title" content="クライアント証明書&#43;HTTP2" />
-<meta property="og:description" content="SSLRequire は 非推奨みたいなので
+    <meta property="og:url" content="https://yaasita.github.io/2018/07/29/h2-plus-client-auth/">
+  <meta property="og:site_name" content="# cd ~yaasita">
+  <meta property="og:title" content="クライアント証明書&#43;HTTP2">
+  <meta property="og:description" content="SSLRequire は 非推奨みたいなので
 クライアント証明書とIP制限を今風に書き直す
 あとCNとかも検証するようにした
 こんな感じ
-&lt;Directory /var/www&gt; Options Indexes FollowSymLinks MultiViews ExecCGI SSLVerifyClient optional &lt;RequireAny&gt; Require ip 192.168.100.0/24 &lt;RequireAll&gt; Require ssl-verify-client Require expr &quot;%{SSL_CLIENT_S_DN_CN} == &#39;hogeclient&#39;&quot; &lt;/RequireAll&gt; &lt;/RequireAny&gt; &lt;/Directory&gt; あと
+&lt;Directory /var/www&gt; Options Indexes FollowSymLinks MultiViews ExecCGI SSLVerifyClient optional &lt;RequireAny&gt; Require ip 192.168.100.0/24 &lt;RequireAll&gt; Require ssl-verify-client Require expr &#34;%{SSL_CLIENT_S_DN_CN} == &#39;hogeclient&#39;&#34; &lt;/RequireAll&gt; &lt;/RequireAny&gt; &lt;/Directory&gt; あと
 Protocols http/1.1 h2 のようにhttp/1.1を先にしないと
 curl: (92) HTTP/2 stream 1 was not closed cleanly: HTTP_1_1_REQUIRED (err 13) こんなエラーになるので注意
 参考リンク
-reqexprの説明 mod_ssl変数一覧 " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://yaasita.github.io/2018/07/29/h2-plus-client-auth/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2018-07-29T16:36:57+09:00" />
-<meta property="article:modified_time" content="2018-07-29T16:36:57+09:00" />
+reqexprの説明 mod_ssl変数一覧 ">
+  <meta property="og:locale" content="ja">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2018-07-29T16:36:57+09:00">
+    <meta property="article:modified_time" content="2018-07-29T16:36:57+09:00">
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&amp;v=4">
 
     <script id="dsq-count-scr" src="https://yaasita.disqus.com/count.js" async></script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="36937576-b2d5-4494-aba8-d0b70a153691"></script>
@@ -99,7 +103,7 @@ reqexprの説明 mod_ssl変数一覧 " />
 
       
       <div id="disqus_thread"></div>
-<script type="application/javascript">
+<script>
     window.disqus_config = function () {
     
     
@@ -198,7 +202,7 @@ reqexprの説明 mod_ssl変数一覧 " />
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (355)</a>
+          <a href="/categories/linux"><span></span>linux (356)</a>
         </li>
         
         <li>
@@ -214,7 +218,7 @@ reqexprの説明 mod_ssl変数一覧 " />
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (430)</a>
+          <a href="/categories/soft"><span></span>soft (431)</a>
         </li>
         
         <li>
@@ -305,7 +309,7 @@ reqexprの説明 mod_ssl変数一覧 " />
         </li>
         
         <li>
-          <a href="/archives/2025"><span></span>2025 (13)</a>
+          <a href="/archives/2025"><span></span>2025 (14)</a>
         </li>
         
       </ul>

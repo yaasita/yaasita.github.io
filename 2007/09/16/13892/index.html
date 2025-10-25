@@ -6,12 +6,14 @@
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>ActivePerlとLinuxのPerlで挙動が違う | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.111.3">
+    <meta name="generator" content="Hugo 0.131.0">
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
 
-    <meta property="og:title" content="ActivePerlとLinuxのPerlで挙動が違う" />
-<meta property="og:description" content=" ブロードキャストアドレスを指定したsend関数で挙動の違いがあります。
+    <meta property="og:url" content="https://yaasita.github.io/2007/09/16/13892/">
+  <meta property="og:site_name" content="# cd ~yaasita">
+  <meta property="og:title" content="ActivePerlとLinuxのPerlで挙動が違う">
+  <meta property="og:description" content=" ブロードキャストアドレスを指定したsend関数で挙動の違いがあります。
 たとえばUDPパケットを送ろうと、次のようなsocketを作ります。
 socket(SOCKET, PF_INET, SOCK_DGRAM, 0) ;
 そして次のように送ろうとします。
@@ -21,11 +23,13 @@ LinuxのPerlだった場合はSocketの生成後に
 setsockopt(SOCKET, SOL_SOCKET, SO_BROADCAST,1) ;としてソケットオプションSO_BROADCASTを指定しなければエラーを返し、送信できません。
 ソケットについては以下を参照して下さい。
 Socket(2)
-Socket(7) " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://yaasita.github.io/2007/09/16/13892/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2007-09-16T00:00:00+09:00" />
-<meta property="article:modified_time" content="2007-09-16T00:00:00+09:00" />
+Socket(7) ">
+  <meta property="og:locale" content="ja">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2007-09-16T00:00:00+09:00">
+    <meta property="article:modified_time" content="2007-09-16T00:00:00+09:00">
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&amp;v=4">
 
     <script id="dsq-count-scr" src="https://yaasita.disqus.com/count.js" async></script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="36937576-b2d5-4494-aba8-d0b70a153691"></script>
@@ -81,7 +85,7 @@ Socket(7) " />
 
       
       <div id="disqus_thread"></div>
-<script type="application/javascript">
+<script>
     window.disqus_config = function () {
     
     
@@ -180,7 +184,7 @@ Socket(7) " />
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (355)</a>
+          <a href="/categories/linux"><span></span>linux (356)</a>
         </li>
         
         <li>
@@ -196,7 +200,7 @@ Socket(7) " />
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (430)</a>
+          <a href="/categories/soft"><span></span>soft (431)</a>
         </li>
         
         <li>
@@ -287,7 +291,7 @@ Socket(7) " />
         </li>
         
         <li>
-          <a href="/archives/2025"><span></span>2025 (13)</a>
+          <a href="/archives/2025"><span></span>2025 (14)</a>
         </li>
         
       </ul>

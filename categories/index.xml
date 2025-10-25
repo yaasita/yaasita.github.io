@@ -4,98 +4,79 @@
     <title>Categories on # cd ~yaasita</title>
     <link>https://yaasita.github.io/categories/</link>
     <description>Recent content in Categories on # cd ~yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 02 Sep 2025 21:42:31 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Oct 2025 03:24:35 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>linux</title>
+      <title>Linux</title>
       <link>https://yaasita.github.io/categories/linux/</link>
-      <pubDate>Tue, 02 Sep 2025 21:42:31 +0900</pubDate>
-      
+      <pubDate>Sun, 26 Oct 2025 03:24:35 +0900</pubDate>
       <guid>https://yaasita.github.io/categories/linux/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>soft</title>
+      <title>Soft</title>
       <link>https://yaasita.github.io/categories/soft/</link>
-      <pubDate>Tue, 02 Sep 2025 21:42:31 +0900</pubDate>
-      
+      <pubDate>Sun, 26 Oct 2025 03:24:35 +0900</pubDate>
       <guid>https://yaasita.github.io/categories/soft/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>net</title>
+      <title>Net</title>
       <link>https://yaasita.github.io/categories/net/</link>
       <pubDate>Sun, 20 Jul 2025 00:48:32 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/categories/net/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>program</title>
+      <title>Program</title>
       <link>https://yaasita.github.io/categories/program/</link>
       <pubDate>Sat, 17 May 2025 13:23:08 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/categories/program/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>crack</title>
+      <title>Crack</title>
       <link>https://yaasita.github.io/categories/crack/</link>
       <pubDate>Fri, 16 May 2025 16:45:58 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/categories/crack/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>game</title>
+      <title>Game</title>
       <link>https://yaasita.github.io/categories/game/</link>
       <pubDate>Thu, 17 Apr 2025 03:32:19 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/categories/game/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>hard</title>
+      <title>Hard</title>
       <link>https://yaasita.github.io/categories/hard/</link>
       <pubDate>Mon, 03 Mar 2025 01:28:35 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/categories/hard/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>windows</title>
+      <title>Windows</title>
       <link>https://yaasita.github.io/categories/windows/</link>
       <pubDate>Tue, 11 Jun 2024 01:28:19 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/categories/windows/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>life</title>
+      <title>Life</title>
       <link>https://yaasita.github.io/categories/life/</link>
       <pubDate>Sat, 12 Aug 2023 04:02:09 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/categories/life/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>rule</title>
+      <title>Rule</title>
       <link>https://yaasita.github.io/categories/rule/</link>
       <pubDate>Tue, 01 Aug 2023 01:22:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/categories/rule/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

@@ -6,21 +6,25 @@
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>cgroupでcpuリミットをあてる | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.111.3">
+    <meta name="generator" content="Hugo 0.131.0">
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
 
-    <meta property="og:title" content="cgroupでcpuリミットをあてる" />
-<meta property="og:description" content="microインスタンスはstealの関係でCPUリミットを設定するとよいらしい
+    <meta property="og:url" content="https://yaasita.github.io/2014/06/22/cgroup-cpu-limit/">
+  <meta property="og:site_name" content="# cd ~yaasita">
+  <meta property="og:title" content="cgroupでcpuリミットをあてる">
+  <meta property="og:description" content="microインスタンスはstealの関係でCPUリミットを設定するとよいらしい
 microインスタンスはlimitかけると大きくパフォーマンスが向上する
 なのでやってみました
 環境はt1.micro (ubuntu 14.04)
 cgcreate -g cpu:ruby cgexec -g cpu:ruby ./install_ruby.sh cgset -r cpu.cfs_quota_us=250000 ruby cgset -r cpu.cfs_period_us=1000000 ruby # 確認 cd /sys/fs/cgroup ls cpu/ruby cat cpu/ruby/tasks cgget -r cpu.cfs_quota_us -r cpu.cfs_period_us ruby 参考リンク
-cgroup について理解する cgroup でメモリと走行時間に制限を加える " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://yaasita.github.io/2014/06/22/cgroup-cpu-limit/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2014-06-22T15:57:00+09:00" />
-<meta property="article:modified_time" content="2014-06-22T15:57:00+09:00" />
+cgroup について理解する cgroup でメモリと走行時間に制限を加える ">
+  <meta property="og:locale" content="ja">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2014-06-22T15:57:00+09:00">
+    <meta property="article:modified_time" content="2014-06-22T15:57:00+09:00">
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&amp;v=4">
 
     <script id="dsq-count-scr" src="https://yaasita.disqus.com/count.js" async></script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="36937576-b2d5-4494-aba8-d0b70a153691"></script>
@@ -83,7 +87,7 @@ cgget -r cpu.cfs_quota_us -r cpu.cfs_period_us ruby
 
       
       <div id="disqus_thread"></div>
-<script type="application/javascript">
+<script>
     window.disqus_config = function () {
     
     
@@ -182,7 +186,7 @@ cgget -r cpu.cfs_quota_us -r cpu.cfs_period_us ruby
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (355)</a>
+          <a href="/categories/linux"><span></span>linux (356)</a>
         </li>
         
         <li>
@@ -198,7 +202,7 @@ cgget -r cpu.cfs_quota_us -r cpu.cfs_period_us ruby
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (430)</a>
+          <a href="/categories/soft"><span></span>soft (431)</a>
         </li>
         
         <li>
@@ -289,7 +293,7 @@ cgget -r cpu.cfs_quota_us -r cpu.cfs_period_us ruby
         </li>
         
         <li>
-          <a href="/archives/2025"><span></span>2025 (13)</a>
+          <a href="/archives/2025"><span></span>2025 (14)</a>
         </li>
         
       </ul>

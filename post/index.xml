@@ -4,341 +4,149 @@
     <title>Posts on # cd ~yaasita</title>
     <link>https://yaasita.github.io/post/</link>
     <description>Recent content in Posts on # cd ~yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 02 Sep 2025 21:42:31 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 26 Oct 2025 03:24:35 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Amazon Q Developer CLI使うまで</title>
+      <link>https://yaasita.github.io/2025/10/26/amazon-q-developer-cli/</link>
+      <pubDate>Sun, 26 Oct 2025 03:24:35 +0900</pubDate>
+      <guid>https://yaasita.github.io/2025/10/26/amazon-q-developer-cli/</guid>
+      <description>公式&#xA;https://github.com/aws/amazon-q-developer-cli&#xA;debパッケージで入れる方法もあるが、upgradeしやすいzipファイルからのインストールがお勧め&#xA;ユーザー権限でOK&#xA;curl &amp;quot;https://desktop-release.q.us-east-1.amazonaws.com/latest/q-x86_64-linux.zip&amp;quot; -o &amp;quot;q.zip&amp;quot; 解凍して./install.sh叩けばOK&#xA;シェル設定を変更しても良いか聞かれるのでyを押すと ~/.bashrc の先頭と最後に以下のような設定が追加される&#xA;# Amazon Q pre block. Keep at the top of this file. [[ -f &amp;quot;${HOME}/.local/share/amazon-q/shell/bashrc.pre.bash&amp;quot; ]] &amp;amp;&amp;amp; builtin source &amp;quot;${HOME}/.local/share/amazon-q/shell/bashrc.pre.bash&amp;quot; # 元々.bashrcに書かれていた内容 # Amazon Q post block. Keep at the bottom of this file. [[ -f &amp;quot;${HOME}/.local/share/amazon-q/shell/bashrc.post.bash&amp;quot; ]] &amp;amp;&amp;amp; builtin source &amp;quot;${HOME}/.local/share/amazon-q/shell/bashrc.post.bash&amp;quot; 以下のコマンドでログイン処理&#xA;q login agentって単位で設定を分割できるので作っておく&#xA;下記コマンドで~/.aws/amazonq/cli-agents/aws.json に設定ファイルが作成される&#xA;/agent create -n aws デフォルトのagent設定&#xA;q settings chat.defaultAgent my こんな感じでaws用とazure用で分けるなんてことも出来る</description>
+    </item>
     <item>
       <title>debian13にdanteが無い</title>
       <link>https://yaasita.github.io/2025/09/02/debian-dante/</link>
       <pubDate>Tue, 02 Sep 2025 21:42:31 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/09/02/debian-dante/</guid>
-      <description>なぜかdebian13にはdanteが無かった
-forkyにはあるのでそっから持ってくるか
-https://packages.debian.org/forky/dante-server
-公式から持ってきてmakeするしかないかな
-https://www.inet.no/dante/download.html
-普通にmakeすればいいだけ
-./configure make install /etc/sockd.conf
-/etc/systemd/system/sockd.service</description>
+      <description>なぜかdebian13にはdanteが無かった&#xA;forkyにはあるのでそっから持ってくるか&#xA;https://packages.debian.org/forky/dante-server&#xA;公式から持ってきてmakeするしかないかな&#xA;https://www.inet.no/dante/download.html&#xA;普通にmakeすればいいだけ&#xA;./configure make install /etc/sockd.conf&#xA;/etc/systemd/system/sockd.service</description>
     </item>
-    
     <item>
       <title>piholeのブロックリスト</title>
       <link>https://yaasita.github.io/2025/09/01/pihole-block-list/</link>
       <pubDate>Mon, 01 Sep 2025 16:51:45 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/09/01/pihole-block-list/</guid>
-      <description>こんな感じのhosts形式だけじゃなく
-https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
-ABP形式もOKらしい
-https://pi-hole.net/blog/2023/03/22/pi-hole-ftl-v5-22-web-v5-19-and-core-v5-16-1-released/#page-content
-サブドメインも含めてyoutube.comをブロックする場合
-||youtube.com^ </description>
+      <description>こんな感じのhosts形式だけじゃなく&#xA;https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts&#xA;ABP形式もOKらしい&#xA;https://pi-hole.net/blog/2023/03/22/pi-hole-ftl-v5-22-web-v5-19-and-core-v5-16-1-released/#page-content&#xA;サブドメインも含めてyoutube.comをブロックする場合&#xA;||youtube.com^ </description>
     </item>
-    
     <item>
       <title>preloadの効果</title>
       <link>https://yaasita.github.io/2025/08/11/preload/</link>
       <pubDate>Mon, 11 Aug 2025 04:43:38 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/08/11/preload/</guid>
-      <description>なんとなくdebianに入れてたpreload
-設定はこんな感じ /etc/preload.conf
-意味あるか測定してみた
-測定はtimeコマンド経由で以下の条件を満たしたらウィンドウを閉じてrealtimeを比較
-firefox: ホームメニューが出るまで chrome: ホームメニューが出るまで thunderbird: 受信ボックスが見れるまで preloadあり 2025/07/21 (月) 14:52:42
-firefox-esr: 0m24.578s
-google-chrome-stable: 0m35.277s
-thunderbird: 0m24.932s
-2025/07/22 (火) 04:04:37
-firefox-esr: 0m21.119s
-google-chrome-stable: 0m34.912s
-thunderbird: 0m24.668s
-2025/07/27 (日) 02:51:35
-firefox-esr: 0m12.906s
-google-chrome-stable: 0m15.793s
-thunderbird: 0m20.732s
-2025/07/27 (日) 17:10:02
-firefox-esr: 0m21.614s
-google-chrome-stable: 0m38.979s
-thunderbird: 0m25.449s
-preloadなし 2025/08/03 (日) 02:16:58
-firefox-esr: 0m21.507s
-google-chrome-stable: 0m14.986s
-thunderbird: 0m11.729s
-2025/08/11 (月) 04:38:53
-firefox-esr: 0m22.632s
-google-chrome-stable: 0m36.524s
-thunderbird: 0m21.813s
-結論 自分の環境だと意味なさそうなので止めた</description>
+      <description>なんとなくdebianに入れてたpreload&#xA;設定はこんな感じ /etc/preload.conf&#xA;意味あるか測定してみた&#xA;測定はtimeコマンド経由で以下の条件を満たしたらウィンドウを閉じてrealtimeを比較&#xA;firefox: ホームメニューが出るまで chrome: ホームメニューが出るまで thunderbird: 受信ボックスが見れるまで preloadあり 2025/07/21 (月) 14:52:42&#xA;firefox-esr: 0m24.578s&#xA;google-chrome-stable: 0m35.277s&#xA;thunderbird: 0m24.932s&#xA;2025/07/22 (火) 04:04:37&#xA;firefox-esr: 0m21.119s&#xA;google-chrome-stable: 0m34.912s&#xA;thunderbird: 0m24.668s&#xA;2025/07/27 (日) 02:51:35&#xA;firefox-esr: 0m12.906s&#xA;google-chrome-stable: 0m15.793s&#xA;thunderbird: 0m20.732s&#xA;2025/07/27 (日) 17:10:02&#xA;firefox-esr: 0m21.614s&#xA;google-chrome-stable: 0m38.979s&#xA;thunderbird: 0m25.449s&#xA;preloadなし 2025/08/03 (日) 02:16:58&#xA;firefox-esr: 0m21.507s&#xA;google-chrome-stable: 0m14.986s&#xA;thunderbird: 0m11.729s&#xA;2025/08/11 (月) 04:38:53&#xA;firefox-esr: 0m22.632s&#xA;google-chrome-stable: 0m36.524s&#xA;thunderbird: 0m21.813s&#xA;結論 自分の環境だと意味なさそうなので止めた</description>
     </item>
-    
     <item>
       <title>TVerをLinuxで見る</title>
       <link>https://yaasita.github.io/2025/07/20/tver-with-linux/</link>
       <pubDate>Sun, 20 Jul 2025 00:48:32 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/07/20/tver-with-linux/</guid>
-      <description>firefox(esr)ならそのまま見れるけど、chromeだとPC判定されなくて&amp;quot;アプリで視聴する&amp;quot;ボタンになってしまう
-User-Agentとか、クライアントヒントを以下のように設定すればOK
-header value Sec-Ch-Ua &amp;ldquo;Not)A;Brand&amp;rdquo;;v=&amp;ldquo;8&amp;rdquo;, &amp;ldquo;Chromium&amp;rdquo;;v=&amp;ldquo;138&amp;rdquo;, &amp;ldquo;Google Chrome&amp;rdquo;;v=&amp;ldquo;138&amp;rdquo; Sec-Ch-Ua-Mobile ?0 Sec-Ch-Ua-Platform &amp;ldquo;Windows&amp;rdquo; User-Agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 chrome dev tool -&amp;gt; 設定 -&amp;gt; デバイスで設定</description>
+      <description>firefox(esr)ならそのまま見れるけど、chromeだとPC判定されなくて&amp;quot;アプリで視聴する&amp;quot;ボタンになってしまう&#xA;User-Agentとか、クライアントヒントを以下のように設定すればOK&#xA;header value Sec-Ch-Ua &amp;ldquo;Not)A;Brand&amp;rdquo;;v=&amp;ldquo;8&amp;rdquo;, &amp;ldquo;Chromium&amp;rdquo;;v=&amp;ldquo;138&amp;rdquo;, &amp;ldquo;Google Chrome&amp;rdquo;;v=&amp;ldquo;138&amp;rdquo; Sec-Ch-Ua-Mobile ?0 Sec-Ch-Ua-Platform &amp;ldquo;Windows&amp;rdquo; User-Agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 chrome dev tool -&amp;gt; 設定 -&amp;gt; デバイスで設定</description>
     </item>
-    
     <item>
       <title>glacierで取り出し期間は後から変更できる</title>
       <link>https://yaasita.github.io/2025/07/12/aws-s3-glacier/</link>
       <pubDate>Sat, 12 Jul 2025 14:10:30 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/07/12/aws-s3-glacier/</guid>
-      <description>aws s3 glacier で取り出しするときに
-こんなコマンドを打つ
-これはdeep archiveにあったファイルをstandardクラスのストレージに7日移してダウンロードできるようにするというもの
-aws s3api restore-object \ --bucket $s3bucket \ --key $s3key \ --restore-request &#39;{&amp;quot;Days&amp;quot;:7,&amp;quot;GlacierJobParameters&amp;quot;:{&amp;quot;Tier&amp;quot;:&amp;quot;Bulk&amp;quot;}}&#39; Bulkでリクエストすると大体48時間後ぐらいに取り出せるようになる
-でこれ7日間はstandardクラスの料金がかかるのでダウンロードしたらすぐにこんなコマンドを打って、残存期間を短くした方がいい
-aws s3api restore-object \ --bucket $s3bucket \ --key $s3key \ --restore-request &#39;{&amp;quot;Days&amp;quot;:1,&amp;quot;GlacierJobParameters&amp;quot;:{&amp;quot;Tier&amp;quot;:&amp;quot;Bulk&amp;quot;}}&#39; ちなみに Days: 0 はエラーになる</description>
+      <description>aws s3 glacier で取り出しするときに&#xA;こんなコマンドを打つ&#xA;これはdeep archiveにあったファイルをstandardクラスのストレージに7日移してダウンロードできるようにするというもの&#xA;aws s3api restore-object \ --bucket $s3bucket \ --key $s3key \ --restore-request &#39;{&amp;quot;Days&amp;quot;:7,&amp;quot;GlacierJobParameters&amp;quot;:{&amp;quot;Tier&amp;quot;:&amp;quot;Bulk&amp;quot;}}&#39; Bulkでリクエストすると大体48時間後ぐらいに取り出せるようになる&#xA;でこれ7日間はstandardクラスの料金がかかるのでダウンロードしたらすぐにこんなコマンドを打って、残存期間を短くした方がいい&#xA;aws s3api restore-object \ --bucket $s3bucket \ --key $s3key \ --restore-request &#39;{&amp;quot;Days&amp;quot;:1,&amp;quot;GlacierJobParameters&amp;quot;:{&amp;quot;Tier&amp;quot;:&amp;quot;Bulk&amp;quot;}}&#39; ちなみに Days: 0 はエラーになる</description>
     </item>
-    
     <item>
       <title>s3のマルチパートアップロード料金</title>
       <link>https://yaasita.github.io/2025/06/21/aws-s3-multipart/</link>
       <pubDate>Sat, 21 Jun 2025 15:30:58 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/06/21/aws-s3-multipart/</guid>
-      <description>こんな感じで始めるマルチパートアップロードを開始
-aws s3api create-multipart-upload --bucket $BUCKET --key $UPLOAD_KEY --storage-class DEEP_ARCHIVE glacierを指定しても
-アップロード途中の料金はs3のスタンダード料金よりはちょっと安いくらいのお金がかかる
-バージニア北部(us-east-1)リージョンでこんな感じ
-請求書にStagingって書いてあるので気づけるはず
-$0.021 per GB-Month of storage used in GlacierStagingStorage マルチパートアップロードの途中がないか定期的に確認したほうがよい
-aws s3api list-multipart-uploads --bucket バケット名 </description>
+      <description>こんな感じで始めるマルチパートアップロードを開始&#xA;aws s3api create-multipart-upload --bucket $BUCKET --key $UPLOAD_KEY --storage-class DEEP_ARCHIVE glacierを指定しても&#xA;アップロード途中の料金はs3のスタンダード料金よりはちょっと安いくらいのお金がかかる&#xA;バージニア北部(us-east-1)リージョンでこんな感じ&#xA;請求書にStagingって書いてあるので気づけるはず&#xA;$0.021 per GB-Month of storage used in GlacierStagingStorage マルチパートアップロードの途中がないか定期的に確認したほうがよい&#xA;aws s3api list-multipart-uploads --bucket バケット名 </description>
     </item>
-    
     <item>
       <title>sysstatのデータをbigqueryに入れる</title>
       <link>https://yaasita.github.io/2025/05/17/sysstat/</link>
       <pubDate>Sat, 17 May 2025 13:23:08 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/05/17/sysstat/</guid>
-      <description>こんな感じでレポート出して
-sadf -T -j /var/log/sysstat/sa\$(date -d yesterday +%d) -- -ruq -n DEV &amp;gt; /tmp/sadf.json bigquery用のフォーマットに変更
-あとは Looker Studio で見るとか</description>
+      <description>こんな感じでレポート出して&#xA;sadf -T -j /var/log/sysstat/sa\$(date -d yesterday +%d) -- -ruq -n DEV &amp;gt; /tmp/sadf.json bigquery用のフォーマットに変更&#xA;あとは Looker Studio で見るとか</description>
     </item>
-    
     <item>
       <title>動画ファイルのダミーデータ</title>
       <link>https://yaasita.github.io/2025/05/16/download-stream-png-dummy/</link>
       <pubDate>Fri, 16 May 2025 16:45:58 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/05/16/download-stream-png-dummy/</guid>
-      <description>m3uから動画をダウンロードすると
-PNG image data, 1 x 1, 8-bit/color RGBA, non-interlacedのデータになることがある
-こんな感じで先頭8byteを飛ばして
-ffmpegで再エンコードするとよい
-とりあえずffmpeg通せばヘッダは復活する
-ffmpeg -i merged_output.ts -c copy out.mp4 参考リンク
-https://github.com/yt-dlp/yt-dlp/issues/4381</description>
+      <description>m3uから動画をダウンロードすると&#xA;PNG image data, 1 x 1, 8-bit/color RGBA, non-interlacedのデータになることがある&#xA;こんな感じで先頭8byteを飛ばして&#xA;ffmpegで再エンコードするとよい&#xA;とりあえずffmpeg通せばヘッダは復活する&#xA;ffmpeg -i merged_output.ts -c copy out.mp4 参考リンク&#xA;https://github.com/yt-dlp/yt-dlp/issues/4381</description>
     </item>
-    
     <item>
       <title>ロックマンX6攻略情報</title>
       <link>https://yaasita.github.io/2025/04/17/rockman6/</link>
       <pubDate>Thu, 17 Apr 2025 03:32:19 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/04/17/rockman6/</guid>
-      <description>自分用メモ ナイトメアを上書きする方法
-https://penpengames.blog.fc2.com/blog-entry-43.html
-途中で右下に出てくるビックリマークは？
-R3ボタンでオペレーターからのヒントを聞ける
-強化パーツ
-https://ameblo.jp/megamanblack/entry-12459899904.html
-アイテム一覧
-https://rockmanx6.gorillawiki.jp/entry/21
-アーマー場所
-https://www.youtube.com/watch?v=QtN-EFOMrEA
-ライフアップ取り方
-https://www.youtube.com/watch?v=qzuumF5boOk&amp;amp;t=34s
-サブタンク/EXアイテム
-https://www.youtube.com/watch?v=0l2LVclq804</description>
+      <description>自分用メモ ナイトメアを上書きする方法&#xA;https://penpengames.blog.fc2.com/blog-entry-43.html&#xA;途中で右下に出てくるビックリマークは？&#xA;R3ボタンでオペレーターからのヒントを聞ける&#xA;強化パーツ&#xA;https://ameblo.jp/megamanblack/entry-12459899904.html&#xA;アイテム一覧&#xA;https://rockmanx6.gorillawiki.jp/entry/21&#xA;アーマー場所&#xA;https://www.youtube.com/watch?v=QtN-EFOMrEA&#xA;ライフアップ取り方&#xA;https://www.youtube.com/watch?v=qzuumF5boOk&amp;amp;t=34s&#xA;サブタンク/EXアイテム&#xA;https://www.youtube.com/watch?v=0l2LVclq804</description>
     </item>
-    
     <item>
       <title>スマホ変えて楽天モバイルにした</title>
       <link>https://yaasita.github.io/2025/03/03/rakuten-mobile/</link>
       <pubDate>Mon, 03 Mar 2025 01:28:35 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/03/03/rakuten-mobile/</guid>
-      <description>スマホ変えました
-Sharp AQUOS wish4 (15680円) の Docomo版にしました
-androidは14
-Docomo版なので、Docomo用のプリインアプリが沢山あって無効化が面倒
-ただ画面がでかくて良いかもしれない
-あとMNPで楽天モバイルにしました
-イオンモバイルからワンストップMNPでやろうとしたんだけどなんか申請途中でエラー
-イオン側は申請受付状態、楽天側は未申請状態になって詰んだと思ったけど
-1日くらい待つと、イオンモバイル側にMNP予約番号が表示見されるようになってたのでそれを楽天モバイル側に手動で入力して申請
-何とかなった
-あとAPN設定しないとつながらない
-https://network.mobile.rakuten.co.jp/faq/detail/00001495/
-今回からeSIMにしてみたけど便利
-ただ、eSIMでも楽天モバイルからの郵便物(楽天モバイルの取説)は届くし受け取り必要でした</description>
+      <description>スマホ変えました&#xA;Sharp AQUOS wish4 (15680円) の Docomo版にしました&#xA;androidは14&#xA;Docomo版なので、Docomo用のプリインアプリが沢山あって無効化が面倒&#xA;ただ画面がでかくて良いかもしれない&#xA;あとMNPで楽天モバイルにしました&#xA;イオンモバイルからワンストップMNPでやろうとしたんだけどなんか申請途中でエラー&#xA;イオン側は申請受付状態、楽天側は未申請状態になって詰んだと思ったけど&#xA;1日くらい待つと、イオンモバイル側にMNP予約番号が表示見されるようになってたのでそれを楽天モバイル側に手動で入力して申請&#xA;何とかなった&#xA;あとAPN設定しないとつながらない&#xA;https://network.mobile.rakuten.co.jp/faq/detail/00001495/&#xA;今回からeSIMにしてみたけど便利&#xA;ただ、eSIMでも楽天モバイルからの郵便物(楽天モバイルの取説)は届くし受け取り必要でした</description>
     </item>
-    
     <item>
       <title>バイオハザードRE4</title>
       <link>https://yaasita.github.io/2025/02/22/biore4/</link>
       <pubDate>Sat, 22 Feb 2025 03:56:22 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/02/22/biore4/</guid>
-      <description>感想
-背景やオブジェクトの作り込みが素晴らしい オリジナル版よりなんか怖かった ホラー要素が強化されてるけど、びっくりさせるようなギミックは微妙だった(突然足場抜けるとか、急に敵出てくるとか) QTEが微妙に残ってて気になった ナイフの耐久値は微妙 ナイフによるパリィは楽しいかもしれない ステルスキル(敵に見つからないように背後を取るとナイフ一撃で倒せるやつ)は特に楽しい DLC(エイダ編)も良かった 赤い邪教徒が呪文唱えるとエイムしにくくなったり回りの敵が寄生体飛び出て強化される仕組みは良いと思った(赤い邪教徒を率先して倒す理由になる) パズルは全体的に微妙だった/そもそもパズル必要なのか？特に孤島での電気回路パズルと面倒だった 火を吹く巨大サラザールロボとか出てきてちょっとバカゲー要素ある 背景とかオブジェクトはリアリティあるのに急にそういうの出るギャップすごい 総合的には良作</description>
+      <description>感想&#xA;背景やオブジェクトの作り込みが素晴らしい オリジナル版よりなんか怖かった ホラー要素が強化されてるけど、びっくりさせるようなギミックは微妙だった(突然足場抜けるとか、急に敵出てくるとか) QTEが微妙に残ってて気になった ナイフの耐久値は微妙 ナイフによるパリィは楽しいかもしれない ステルスキル(敵に見つからないように背後を取るとナイフ一撃で倒せるやつ)は特に楽しい DLC(エイダ編)も良かった 赤い邪教徒が呪文唱えるとエイムしにくくなったり回りの敵が寄生体飛び出て強化される仕組みは良いと思った(赤い邪教徒を率先して倒す理由になる) パズルは全体的に微妙だった/そもそもパズル必要なのか？特に孤島での電気回路パズルと面倒だった 火を吹く巨大サラザールロボとか出てきてちょっとバカゲー要素ある 背景とかオブジェクトはリアリティあるのに急にそういうの出るギャップすごい 総合的には良作</description>
     </item>
-    
     <item>
       <title>DoHを使う</title>
       <link>https://yaasita.github.io/2025/01/02/doh/</link>
       <pubDate>Thu, 02 Jan 2025 13:33:58 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/01/02/doh/</guid>
-      <description>DNS over HTTPSを使ってpi-holeに接続する設定
-出先で広告ブロック使いたくなったのでやってみる
-こんな構成
-apache -&amp;gt; doh-proxy -&amp;gt; pi-hole -&amp;gt; unbound サーバーはこれ
-https://github.com/DNSCrypt/doh-server
-/etc/systemd/system/doh-proxy.service って名前で保存
-[Unit] Description=DoH Proxy After=network.target [Service] ExecStart=/usr/local/bin/doh-proxy -u 127.0.0.1:53 -l 0.0.0.0:3000 User=root Group=root Restart=always RestartSec=5 [Install] WantedBy=multi-user.target TLS部分はapacheがやる
-こんな感じでproxy
-&amp;lt;VirtualHost *:443&amp;gt; ServerName dns.example.net ProxyRequests Off ProxyPreserveHost On ProxyPass / http://192.168.0.123:3000/ retry=2 ProxyPassReverse / http://192.168.0.123:3000/ SSLEngine on SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem SSLCertificateKeyFile /etc/letsencrypt/live/example.net/privkey.pem &amp;lt;/VirtualHost&amp;gt; テストはこんな感じ
-curl --doh-url https://dns.example.net/dns-query https://example.jp dnslookup コマンドでもOK
-dnslookup example.jp https://dns.example.net/dns-query chromebookの場合は&amp;quot;確認済みアクセスを有効にする&amp;quot;のチェックを外しておいた方が良い
-このチェックの挙動がよく分からないけど、DoHサーバーの名前解決後のIPアドレスがLAN内のプライベートIPなら通るけど、グローバルIPだと通さないみたいな挙動になってた
-あと設定直後はちゃんとHTTPのリクエストを発行するにもかかわらず1～2分後にエラーになるみたいな動きもする
-まあ広告ブロックしたいだけなら</description>
+      <description>DNS over HTTPSを使ってpi-holeに接続する設定&#xA;出先で広告ブロック使いたくなったのでやってみる&#xA;こんな構成&#xA;apache -&amp;gt; doh-proxy -&amp;gt; pi-hole -&amp;gt; unbound サーバーはこれ&#xA;https://github.com/DNSCrypt/doh-server&#xA;/etc/systemd/system/doh-proxy.service って名前で保存&#xA;[Unit] Description=DoH Proxy After=network.target [Service] ExecStart=/usr/local/bin/doh-proxy -u 127.0.0.1:53 -l 0.0.0.0:3000 User=root Group=root Restart=always RestartSec=5 [Install] WantedBy=multi-user.target TLS部分はapacheがやる&#xA;こんな感じでproxy&#xA;&amp;lt;VirtualHost *:443&amp;gt; ServerName dns.example.net ProxyRequests Off ProxyPreserveHost On ProxyPass / http://192.168.0.123:3000/ retry=2 ProxyPassReverse / http://192.168.0.123:3000/ SSLEngine on SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem SSLCertificateKeyFile /etc/letsencrypt/live/example.net/privkey.pem &amp;lt;/VirtualHost&amp;gt; テストはこんな感じ&#xA;curl --doh-url https://dns.example.net/dns-query https://example.jp dnslookup コマンドでもOK&#xA;dnslookup example.jp https://dns.example.net/dns-query chromebookの場合は&amp;quot;確認済みアクセスを有効にする&amp;quot;のチェックを外しておいた方が良い&#xA;このチェックの挙動がよく分からないけど、DoHサーバーの名前解決後のIPアドレスがLAN内のプライベートIPなら通るけど、グローバルIPだと通さないみたいな挙動になってた&#xA;あと設定直後はちゃんとHTTPのリクエストを発行するにもかかわらず1～2分後にエラーになるみたいな動きもする&#xA;まあ広告ブロックしたいだけなら</description>
     </item>
-    
     <item>
       <title>cody使ってみる</title>
       <link>https://yaasita.github.io/2025/01/01/cody/</link>
       <pubDate>Wed, 01 Jan 2025 15:59:47 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/01/01/cody/</guid>
-      <description>cody が良いという評判を聞いたので使ってみる
-コーディングAI課金するならCodyが断トツ良い話
-https://zenn.dev/sanami/articles/7c24ce973b7e7c
-vimには codeium と github copilot を設定しているので補完AIはもう要らない
-CLIを設定してみる
-マニュアル
-https://sourcegraph.com/docs/cody/clients/install-cli
-ここからアクセストークンを発行
-https://sourcegraph.com/users/gitlab-etjbc/settings/tokens
-環境変数に設定
-export SRC_ACCESS_TOKEN=sgp_xxxxxxxxxxxxxxxxxxxxxx インストール
-npm install -g @sourcegraph/cody cody auth whoami こんな感じで使える
-cody chat -m &#39;Explain React hooks&#39; git diff | cody chat --stdin -m &#39;Write a commit message for this diff&#39; cody chat --context-file src/controller.ts -m &#39;Are there code smells in this file?&#39; ターミナルから使えて良いかもしれない</description>
+      <description>cody が良いという評判を聞いたので使ってみる&#xA;コーディングAI課金するならCodyが断トツ良い話&#xA;https://zenn.dev/sanami/articles/7c24ce973b7e7c&#xA;vimには codeium と github copilot を設定しているので補完AIはもう要らない&#xA;CLIを設定してみる&#xA;マニュアル&#xA;https://sourcegraph.com/docs/cody/clients/install-cli&#xA;ここからアクセストークンを発行&#xA;https://sourcegraph.com/users/gitlab-etjbc/settings/tokens&#xA;環境変数に設定&#xA;export SRC_ACCESS_TOKEN=sgp_xxxxxxxxxxxxxxxxxxxxxx インストール&#xA;npm install -g @sourcegraph/cody cody auth whoami こんな感じで使える&#xA;cody chat -m &#39;Explain React hooks&#39; git diff | cody chat --stdin -m &#39;Write a commit message for this diff&#39; cody chat --context-file src/controller.ts -m &#39;Are there code smells in this file?&#39; ターミナルから使えて良いかもしれない</description>
     </item>
-    
     <item>
       <title>vimでGitHub Copilot</title>
       <link>https://yaasita.github.io/2024/12/21/vim-copilot/</link>
       <pubDate>Sat, 21 Dec 2024 02:00:01 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/12/21/vim-copilot/</guid>
-      <description>Microsoft傘下のGitHub、「GitHub Copilot」を無料に（制限あり）
-https://www.itmedia.co.jp/news/articles/2412/19/news111.html
-ということで使ってみる
-以下インストール
-https://github.com/github/copilot.vim
-vimrcはこんな感じ
-常に補完が効くのは嫌なので使うときだけ有効にする
-候補表示はCtrl-c
-let g:copilot_filetypes = { &#39;*&#39;: v:false } imap &amp;lt;C-c&amp;gt; &amp;lt;Plug&amp;gt;(copilot-next) command! -nargs=0 ToggleCopilot call ToggleCopilot() function! ToggleCopilot() if exists(&#39;g:copilot_filetypes&#39;) unlet g:copilot_filetypes else let g:copilot_filetypes = { &#39;*&#39;: v:false } endif Copilot status endfunction :Copilot setup で設定
-~/.config/github-copilot/ に credentials が入る
-あとチャットはここから出来る
-https://github.com/copilot</description>
+      <description>Microsoft傘下のGitHub、「GitHub Copilot」を無料に（制限あり）&#xA;https://www.itmedia.co.jp/news/articles/2412/19/news111.html&#xA;ということで使ってみる&#xA;以下インストール&#xA;https://github.com/github/copilot.vim&#xA;vimrcはこんな感じ&#xA;常に補完が効くのは嫌なので使うときだけ有効にする&#xA;候補表示はCtrl-c&#xA;let g:copilot_filetypes = { &#39;*&#39;: v:false } imap &amp;lt;C-c&amp;gt; &amp;lt;Plug&amp;gt;(copilot-next) command! -nargs=0 ToggleCopilot call ToggleCopilot() function! ToggleCopilot() if exists(&#39;g:copilot_filetypes&#39;) unlet g:copilot_filetypes else let g:copilot_filetypes = { &#39;*&#39;: v:false } endif Copilot status endfunction :Copilot setup で設定&#xA;~/.config/github-copilot/ に credentials が入る&#xA;あとチャットはここから出来る&#xA;https://github.com/copilot</description>
     </item>
-    
     <item>
       <title>fontawesome止めた</title>
       <link>https://yaasita.github.io/2024/12/08/fontawesome/</link>
       <pubDate>Sun, 08 Dec 2024 21:11:39 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/12/08/fontawesome/</guid>
-      <description>アイコン表示に使ってたFont Awesome
-アップデートしようとしたらメールアドレス要求されたのでこの機会に乗り換え
-というかアイコンほぼ使ってなかったので不要だった
-ここからRSSのアイコンだけ落として設定
-https://feathericons.com/
-右サイドバーのAuthor部分のGithub, Tumblrとかのアイコンは文字に変更</description>
+      <description>アイコン表示に使ってたFont Awesome&#xA;アップデートしようとしたらメールアドレス要求されたのでこの機会に乗り換え&#xA;というかアイコンほぼ使ってなかったので不要だった&#xA;ここからRSSのアイコンだけ落として設定&#xA;https://feathericons.com/&#xA;右サイドバーのAuthor部分のGithub, Tumblrとかのアイコンは文字に変更</description>
     </item>
-    
     <item>
       <title>pulseaudioのリモートプレイ設定</title>
       <link>https://yaasita.github.io/2024/12/08/pulseaudio/</link>
       <pubDate>Sun, 08 Dec 2024 19:03:33 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/12/08/pulseaudio/</guid>
-      <description>概要 サウンドデバイスを持たない端末でもネットワーク経由でオーディオストリームを流せる
-インストール apt install pulseaudio pavucontrol-qt スタート/ストップ pulseaudio --start pactl stat paplay -v hoge.wav pulseaudio --kill 設定 設定ファイル場所: /etc/pulse/
-pavucontrol-qt 起動
-プロファイルタブ選択 -&amp;gt; ミュートになってる箇所外す
-再生タブと出力デバイスタブ両方確認
-自動起動しないように以下を消しておく
-ちなみにfirefoxとかpaplayすると勝手に立ち上がる
-/etc/systemd/user/default.target.wants/pulseaudio.service /etc/systemd/user/sockets.target.wants/pulseaudio.socket 参考リンク
-https://zenn.dev/noraworld/articles/disable-pulseaudio-autospawn
-リモート接続 https://wiki.archlinux.jp/index.php/PulseAudio/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB
-server側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-default-pa load-module module-native-protocol-tcp auth-anonymous=1 を追加 client側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-client-conf default-server = 192.168.0.10 を指定する サーバー本体とclientが同一サーバーの場合は変更の必要なし 上記設定したら server側はpulseaudio &amp;ndash;start
-client側は特に起動する必要なし(pulseaudioデーモンすら不要)
-あとはclient側で paplay hoge.wav でテスト</description>
+      <description>概要 サウンドデバイスを持たない端末でもネットワーク経由でオーディオストリームを流せる&#xA;インストール apt install pulseaudio pavucontrol-qt スタート/ストップ pulseaudio --start pactl stat paplay -v hoge.wav pulseaudio --kill 設定 設定ファイル場所: /etc/pulse/&#xA;pavucontrol-qt 起動&#xA;プロファイルタブ選択 -&amp;gt; ミュートになってる箇所外す&#xA;再生タブと出力デバイスタブ両方確認&#xA;自動起動しないように以下を消しておく&#xA;ちなみにfirefoxとかpaplayすると勝手に立ち上がる&#xA;/etc/systemd/user/default.target.wants/pulseaudio.service /etc/systemd/user/sockets.target.wants/pulseaudio.socket 参考リンク&#xA;https://zenn.dev/noraworld/articles/disable-pulseaudio-autospawn&#xA;リモート接続 https://wiki.archlinux.jp/index.php/PulseAudio/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB&#xA;server側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-default-pa load-module module-native-protocol-tcp auth-anonymous=1 を追加 client側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-client-conf default-server = 192.168.0.10 を指定する サーバー本体とclientが同一サーバーの場合は変更の必要なし 上記設定したら server側はpulseaudio &amp;ndash;start&#xA;client側は特に起動する必要なし(pulseaudioデーモンすら不要)&#xA;あとはclient側で paplay hoge.wav でテスト</description>
     </item>
-    
     <item>
       <title>天穂のサクナヒメ</title>
       <link>https://yaasita.github.io/2024/11/24/sakunahime/</link>
       <pubDate>Sun, 24 Nov 2024 04:55:50 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/11/24/sakunahime/</guid>
-      <description>トロコンまでやった
-天返宮 第300層まではやってない</description>
+      <description>トロコンまでやった&#xA;天返宮 第300層まではやってない</description>
     </item>
-    
     <item>
       <title>FF7クライシスコアリユニオン</title>
       <link>https://yaasita.github.io/2024/10/21/ff7ccr/</link>
       <pubDate>Mon, 21 Oct 2024 02:53:36 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/10/21/ff7ccr/</guid>
-      <description>FF7クライシスコアリユニオンクリアした
-トロコンまでした
-最終的な最終装備
-カッコ内は補正パラメータ
-戦闘用 スカイドレイン(HP) すてみパンチ(HP) クエイク(魔力) 暗黒(力) アルテマ(精神) ケアルガ(精神)でもOK アイテム達人(体力) ザイドリッツ 源氏の盾 源氏の鎧 源氏の小手 アイテム回収用 ぶんどる(力) スカイドレイン(HP) すてみパンチ(HP) クエイク(魔力) ヘルブリザガ(精神) ステータス防御(体力) ザイドリッツ 源氏の盾 源氏の小手 モグのお守り クリア後は源氏の盾、源氏の小手はジュエルリング、ゴッドスレイヤーに変更 マテリア成長用: 運を上げて、リジェネで戦闘放置する スカイドレイン(HP) モーグリパワー 空き 成長させたいマテリアを入れる 空き 成長させたいマテリアを入れる 空き 成長させたいマテリアを入れる 空き 成長させたいマテリアを入れる 源氏の鎧 お守り お守り お守り マテリア成長は弱い敵と対峙して放置してれば勝手にスロットが揃ってマテリアのLvを上げてくれる
-パラメータ+100とか+999%はライブラと星のペンダントで合成していけばすぐできる</description>
+      <description>FF7クライシスコアリユニオンクリアした&#xA;トロコンまでした&#xA;最終的な最終装備&#xA;カッコ内は補正パラメータ&#xA;戦闘用 スカイドレイン(HP) すてみパンチ(HP) クエイク(魔力) 暗黒(力) アルテマ(精神) ケアルガ(精神)でもOK アイテム達人(体力) ザイドリッツ 源氏の盾 源氏の鎧 源氏の小手 アイテム回収用 ぶんどる(力) スカイドレイン(HP) すてみパンチ(HP) クエイク(魔力) ヘルブリザガ(精神) ステータス防御(体力) ザイドリッツ 源氏の盾 源氏の小手 モグのお守り クリア後は源氏の盾、源氏の小手はジュエルリング、ゴッドスレイヤーに変更 マテリア成長用: 運を上げて、リジェネで戦闘放置する スカイドレイン(HP) モーグリパワー 空き 成長させたいマテリアを入れる 空き 成長させたいマテリアを入れる 空き 成長させたいマテリアを入れる 空き 成長させたいマテリアを入れる 源氏の鎧 お守り お守り お守り マテリア成長は弱い敵と対峙して放置してれば勝手にスロットが揃ってマテリアのLvを上げてくれる&#xA;パラメータ+100とか+999%はライブラと星のペンダントで合成していけばすぐできる</description>
     </item>
-    
     <item>
       <title>vim-lsp設定</title>
       <link>https://yaasita.github.io/2024/09/21/vim-lsp/</link>
       <pubDate>Sat, 21 Sep 2024 23:43:03 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/09/21/vim-lsp/</guid>
-      <description>よく使うやつ
-perl cpan i PLS
-if executable(&#39;pls&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;perl&#39;, \ &#39;cmd&#39;: [&#39;pls&#39;], \ &#39;allowlist&#39;: [&#39;perl&#39;], \ }) endif bash npm i -g bash-language-server
-if executable(&#39;bash-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;bash-language-server&#39;, \ &#39;cmd&#39;: [&#39;bash-language-server&#39;, &#39;start&#39;], \ &#39;allowlist&#39;: [&#39;sh&#39;, &#39;bash&#39;], \ }) endif vim npm i -g vim-language-server
-if executable(&#39;vim-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;vm-ls&#39;, \ &#39;cmd&#39;: [&#39;vim-language-server&#39;, &#39;--stdio&#39;], \ &#39;allowlist&#39;: [&#39;vim&#39;], \ }) endif terraform https://www.</description>
+      <description>よく使うやつ&#xA;perl cpan i PLS&#xA;if executable(&#39;pls&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;perl&#39;, \ &#39;cmd&#39;: [&#39;pls&#39;], \ &#39;allowlist&#39;: [&#39;perl&#39;], \ }) endif bash npm i -g bash-language-server&#xA;if executable(&#39;bash-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;bash-language-server&#39;, \ &#39;cmd&#39;: [&#39;bash-language-server&#39;, &#39;start&#39;], \ &#39;allowlist&#39;: [&#39;sh&#39;, &#39;bash&#39;], \ }) endif vim npm i -g vim-language-server&#xA;if executable(&#39;vim-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;vm-ls&#39;, \ &#39;cmd&#39;: [&#39;vim-language-server&#39;, &#39;--stdio&#39;], \ &#39;allowlist&#39;: [&#39;vim&#39;], \ }) endif terraform https://www.</description>
     </item>
-    
-    <item>
-      <title>muttでHTMLメールを扱う</title>
-      <link>https://yaasita.github.io/2024/08/22/mutt/</link>
-      <pubDate>Thu, 22 Aug 2024 02:50:00 +0900</pubDate>
-      
-      <guid>https://yaasita.github.io/2024/08/22/mutt/</guid>
-      <description>~/.muttrc に以下追記
-# html mailを読むための設定 set mailcap_path=~/.mutt/mailcap auto_view text/html alternative_order text/plain text/html # HTMLメールを開く vで添付画面へ行ってそこでctrl-sを押すとHTMLを保存 macro attach \cs &amp;quot;&amp;lt;pipe-entry&amp;gt;cat &amp;gt; /tmp/mutt-mail.html&amp;quot; # HTML内のリンクを表示 macro index \cv |urlview macro pager \cv |urlview ~/.mutt/mailcap
-text/html; w3m -I %{charset} -T text/html; copiousoutput; 参考リンク https://wiki.archlinux.jp/index.php/Mutt</description>
-    </item>
-    
   </channel>
 </rss>

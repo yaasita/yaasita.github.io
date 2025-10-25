@@ -4,225 +4,121 @@
     <title>2024 on # cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2024/</link>
     <description>Recent content in 2024 on # cd ~yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 21 Dec 2024 02:00:01 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2024/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 21 Dec 2024 02:00:01 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/archives/2024/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>vimでGitHub Copilot</title>
       <link>https://yaasita.github.io/2024/12/21/vim-copilot/</link>
       <pubDate>Sat, 21 Dec 2024 02:00:01 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/12/21/vim-copilot/</guid>
-      <description>Microsoft傘下のGitHub、「GitHub Copilot」を無料に（制限あり）
-https://www.itmedia.co.jp/news/articles/2412/19/news111.html
-ということで使ってみる
-以下インストール
-https://github.com/github/copilot.vim
-vimrcはこんな感じ
-常に補完が効くのは嫌なので使うときだけ有効にする
-候補表示はCtrl-c
-let g:copilot_filetypes = { &#39;*&#39;: v:false } imap &amp;lt;C-c&amp;gt; &amp;lt;Plug&amp;gt;(copilot-next) command! -nargs=0 ToggleCopilot call ToggleCopilot() function! ToggleCopilot() if exists(&#39;g:copilot_filetypes&#39;) unlet g:copilot_filetypes else let g:copilot_filetypes = { &#39;*&#39;: v:false } endif Copilot status endfunction :Copilot setup で設定
-~/.config/github-copilot/ に credentials が入る
-あとチャットはここから出来る
-https://github.com/copilot</description>
+      <description>Microsoft傘下のGitHub、「GitHub Copilot」を無料に（制限あり）&#xA;https://www.itmedia.co.jp/news/articles/2412/19/news111.html&#xA;ということで使ってみる&#xA;以下インストール&#xA;https://github.com/github/copilot.vim&#xA;vimrcはこんな感じ&#xA;常に補完が効くのは嫌なので使うときだけ有効にする&#xA;候補表示はCtrl-c&#xA;let g:copilot_filetypes = { &#39;*&#39;: v:false } imap &amp;lt;C-c&amp;gt; &amp;lt;Plug&amp;gt;(copilot-next) command! -nargs=0 ToggleCopilot call ToggleCopilot() function! ToggleCopilot() if exists(&#39;g:copilot_filetypes&#39;) unlet g:copilot_filetypes else let g:copilot_filetypes = { &#39;*&#39;: v:false } endif Copilot status endfunction :Copilot setup で設定&#xA;~/.config/github-copilot/ に credentials が入る&#xA;あとチャットはここから出来る&#xA;https://github.com/copilot</description>
     </item>
-    
     <item>
       <title>fontawesome止めた</title>
       <link>https://yaasita.github.io/2024/12/08/fontawesome/</link>
       <pubDate>Sun, 08 Dec 2024 21:11:39 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/12/08/fontawesome/</guid>
-      <description>アイコン表示に使ってたFont Awesome
-アップデートしようとしたらメールアドレス要求されたのでこの機会に乗り換え
-というかアイコンほぼ使ってなかったので不要だった
-ここからRSSのアイコンだけ落として設定
-https://feathericons.com/
-右サイドバーのAuthor部分のGithub, Tumblrとかのアイコンは文字に変更</description>
+      <description>アイコン表示に使ってたFont Awesome&#xA;アップデートしようとしたらメールアドレス要求されたのでこの機会に乗り換え&#xA;というかアイコンほぼ使ってなかったので不要だった&#xA;ここからRSSのアイコンだけ落として設定&#xA;https://feathericons.com/&#xA;右サイドバーのAuthor部分のGithub, Tumblrとかのアイコンは文字に変更</description>
     </item>
-    
     <item>
       <title>pulseaudioのリモートプレイ設定</title>
       <link>https://yaasita.github.io/2024/12/08/pulseaudio/</link>
       <pubDate>Sun, 08 Dec 2024 19:03:33 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/12/08/pulseaudio/</guid>
-      <description>概要 サウンドデバイスを持たない端末でもネットワーク経由でオーディオストリームを流せる
-インストール apt install pulseaudio pavucontrol-qt スタート/ストップ pulseaudio --start pactl stat paplay -v hoge.wav pulseaudio --kill 設定 設定ファイル場所: /etc/pulse/
-pavucontrol-qt 起動
-プロファイルタブ選択 -&amp;gt; ミュートになってる箇所外す
-再生タブと出力デバイスタブ両方確認
-自動起動しないように以下を消しておく
-ちなみにfirefoxとかpaplayすると勝手に立ち上がる
-/etc/systemd/user/default.target.wants/pulseaudio.service /etc/systemd/user/sockets.target.wants/pulseaudio.socket 参考リンク
-https://zenn.dev/noraworld/articles/disable-pulseaudio-autospawn
-リモート接続 https://wiki.archlinux.jp/index.php/PulseAudio/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB
-server側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-default-pa load-module module-native-protocol-tcp auth-anonymous=1 を追加 client側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-client-conf default-server = 192.168.0.10 を指定する サーバー本体とclientが同一サーバーの場合は変更の必要なし 上記設定したら server側はpulseaudio &amp;ndash;start
-client側は特に起動する必要なし(pulseaudioデーモンすら不要)
-あとはclient側で paplay hoge.wav でテスト</description>
+      <description>概要 サウンドデバイスを持たない端末でもネットワーク経由でオーディオストリームを流せる&#xA;インストール apt install pulseaudio pavucontrol-qt スタート/ストップ pulseaudio --start pactl stat paplay -v hoge.wav pulseaudio --kill 設定 設定ファイル場所: /etc/pulse/&#xA;pavucontrol-qt 起動&#xA;プロファイルタブ選択 -&amp;gt; ミュートになってる箇所外す&#xA;再生タブと出力デバイスタブ両方確認&#xA;自動起動しないように以下を消しておく&#xA;ちなみにfirefoxとかpaplayすると勝手に立ち上がる&#xA;/etc/systemd/user/default.target.wants/pulseaudio.service /etc/systemd/user/sockets.target.wants/pulseaudio.socket 参考リンク&#xA;https://zenn.dev/noraworld/articles/disable-pulseaudio-autospawn&#xA;リモート接続 https://wiki.archlinux.jp/index.php/PulseAudio/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB&#xA;server側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-default-pa load-module module-native-protocol-tcp auth-anonymous=1 を追加 client側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-client-conf default-server = 192.168.0.10 を指定する サーバー本体とclientが同一サーバーの場合は変更の必要なし 上記設定したら server側はpulseaudio &amp;ndash;start&#xA;client側は特に起動する必要なし(pulseaudioデーモンすら不要)&#xA;あとはclient側で paplay hoge.wav でテスト</description>
     </item>
-    
     <item>
       <title>天穂のサクナヒメ</title>
       <link>https://yaasita.github.io/2024/11/24/sakunahime/</link>
       <pubDate>Sun, 24 Nov 2024 04:55:50 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/11/24/sakunahime/</guid>
-      <description>トロコンまでやった
-天返宮 第300層まではやってない</description>
+      <description>トロコンまでやった&#xA;天返宮 第300層まではやってない</description>
     </item>
-    
     <item>
       <title>FF7クライシスコアリユニオン</title>
       <link>https://yaasita.github.io/2024/10/21/ff7ccr/</link>
       <pubDate>Mon, 21 Oct 2024 02:53:36 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/10/21/ff7ccr/</guid>
-      <description>FF7クライシスコアリユニオンクリアした
-トロコンまでした
-最終的な最終装備
-カッコ内は補正パラメータ
-戦闘用 スカイドレイン(HP) すてみパンチ(HP) クエイク(魔力) 暗黒(力) アルテマ(精神) ケアルガ(精神)でもOK アイテム達人(体力) ザイドリッツ 源氏の盾 源氏の鎧 源氏の小手 アイテム回収用 ぶんどる(力) スカイドレイン(HP) すてみパンチ(HP) クエイク(魔力) ヘルブリザガ(精神) ステータス防御(体力) ザイドリッツ 源氏の盾 源氏の小手 モグのお守り クリア後は源氏の盾、源氏の小手はジュエルリング、ゴッドスレイヤーに変更 マテリア成長用: 運を上げて、リジェネで戦闘放置する スカイドレイン(HP) モーグリパワー 空き 成長させたいマテリアを入れる 空き 成長させたいマテリアを入れる 空き 成長させたいマテリアを入れる 空き 成長させたいマテリアを入れる 源氏の鎧 お守り お守り お守り マテリア成長は弱い敵と対峙して放置してれば勝手にスロットが揃ってマテリアのLvを上げてくれる
-パラメータ+100とか+999%はライブラと星のペンダントで合成していけばすぐできる</description>
+      <description>FF7クライシスコアリユニオンクリアした&#xA;トロコンまでした&#xA;最終的な最終装備&#xA;カッコ内は補正パラメータ&#xA;戦闘用 スカイドレイン(HP) すてみパンチ(HP) クエイク(魔力) 暗黒(力) アルテマ(精神) ケアルガ(精神)でもOK アイテム達人(体力) ザイドリッツ 源氏の盾 源氏の鎧 源氏の小手 アイテム回収用 ぶんどる(力) スカイドレイン(HP) すてみパンチ(HP) クエイク(魔力) ヘルブリザガ(精神) ステータス防御(体力) ザイドリッツ 源氏の盾 源氏の小手 モグのお守り クリア後は源氏の盾、源氏の小手はジュエルリング、ゴッドスレイヤーに変更 マテリア成長用: 運を上げて、リジェネで戦闘放置する スカイドレイン(HP) モーグリパワー 空き 成長させたいマテリアを入れる 空き 成長させたいマテリアを入れる 空き 成長させたいマテリアを入れる 空き 成長させたいマテリアを入れる 源氏の鎧 お守り お守り お守り マテリア成長は弱い敵と対峙して放置してれば勝手にスロットが揃ってマテリアのLvを上げてくれる&#xA;パラメータ+100とか+999%はライブラと星のペンダントで合成していけばすぐできる</description>
     </item>
-    
     <item>
       <title>vim-lsp設定</title>
       <link>https://yaasita.github.io/2024/09/21/vim-lsp/</link>
       <pubDate>Sat, 21 Sep 2024 23:43:03 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/09/21/vim-lsp/</guid>
-      <description>よく使うやつ
-perl cpan i PLS
-if executable(&#39;pls&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;perl&#39;, \ &#39;cmd&#39;: [&#39;pls&#39;], \ &#39;allowlist&#39;: [&#39;perl&#39;], \ }) endif bash npm i -g bash-language-server
-if executable(&#39;bash-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;bash-language-server&#39;, \ &#39;cmd&#39;: [&#39;bash-language-server&#39;, &#39;start&#39;], \ &#39;allowlist&#39;: [&#39;sh&#39;, &#39;bash&#39;], \ }) endif vim npm i -g vim-language-server
-if executable(&#39;vim-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;vm-ls&#39;, \ &#39;cmd&#39;: [&#39;vim-language-server&#39;, &#39;--stdio&#39;], \ &#39;allowlist&#39;: [&#39;vim&#39;], \ }) endif terraform https://www.</description>
+      <description>よく使うやつ&#xA;perl cpan i PLS&#xA;if executable(&#39;pls&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;perl&#39;, \ &#39;cmd&#39;: [&#39;pls&#39;], \ &#39;allowlist&#39;: [&#39;perl&#39;], \ }) endif bash npm i -g bash-language-server&#xA;if executable(&#39;bash-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;bash-language-server&#39;, \ &#39;cmd&#39;: [&#39;bash-language-server&#39;, &#39;start&#39;], \ &#39;allowlist&#39;: [&#39;sh&#39;, &#39;bash&#39;], \ }) endif vim npm i -g vim-language-server&#xA;if executable(&#39;vim-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;vm-ls&#39;, \ &#39;cmd&#39;: [&#39;vim-language-server&#39;, &#39;--stdio&#39;], \ &#39;allowlist&#39;: [&#39;vim&#39;], \ }) endif terraform https://www.</description>
     </item>
-    
     <item>
       <title>muttでHTMLメールを扱う</title>
       <link>https://yaasita.github.io/2024/08/22/mutt/</link>
       <pubDate>Thu, 22 Aug 2024 02:50:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/08/22/mutt/</guid>
-      <description>~/.muttrc に以下追記
-# html mailを読むための設定 set mailcap_path=~/.mutt/mailcap auto_view text/html alternative_order text/plain text/html # HTMLメールを開く vで添付画面へ行ってそこでctrl-sを押すとHTMLを保存 macro attach \cs &amp;quot;&amp;lt;pipe-entry&amp;gt;cat &amp;gt; /tmp/mutt-mail.html&amp;quot; # HTML内のリンクを表示 macro index \cv |urlview macro pager \cv |urlview ~/.mutt/mailcap
-text/html; w3m -I %{charset} -T text/html; copiousoutput; 参考リンク https://wiki.archlinux.jp/index.php/Mutt</description>
+      <description>~/.muttrc に以下追記&#xA;# html mailを読むための設定 set mailcap_path=~/.mutt/mailcap auto_view text/html alternative_order text/plain text/html # HTMLメールを開く vで添付画面へ行ってそこでctrl-sを押すとHTMLを保存 macro attach \cs &amp;quot;&amp;lt;pipe-entry&amp;gt;cat &amp;gt; /tmp/mutt-mail.html&amp;quot; # HTML内のリンクを表示 macro index \cv |urlview macro pager \cv |urlview ~/.mutt/mailcap&#xA;text/html; w3m -I %{charset} -T text/html; copiousoutput; 参考リンク https://wiki.archlinux.jp/index.php/Mutt</description>
     </item>
-    
     <item>
       <title>thunderbirdでHTMLメールを作る</title>
       <link>https://yaasita.github.io/2024/08/21/html-mail/</link>
       <pubDate>Wed, 21 Aug 2024 03:04:05 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/08/21/html-mail/</guid>
-      <description>設定箇所は2ヶ所
-ツール -&amp;gt; 設定
-アカウント設定の方にもある</description>
+      <description>設定箇所は2ヶ所&#xA;ツール -&amp;gt; 設定&#xA;アカウント設定の方にもある</description>
     </item>
-    
     <item>
       <title>opendkimメモ</title>
       <link>https://yaasita.github.io/2024/07/06/dkim/</link>
       <pubDate>Sat, 06 Jul 2024 03:52:41 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/07/06/dkim/</guid>
-      <description>DKIMの公開鍵取得 opendkim-testkeyとかで検証する際に、DNSはroot DNSサーバーから自力で名前解決しようとするのでDNSキャッシュサーバー使いたかったら以下を指定
-/etc/opendkim.conf
-Nameservers 192.168.0.10 thunderbirdの拡張も同じ挙動だった
-公開鍵を作る場合 2048bitを指定しておく方がいい
-(最近のopendkimはデフォルトで2048bit)
-opendkim-genkey -D /etc/postfix/dkim/ -b 2048 -d example.jp -s mail unboundに入れるときは長いので分割する
-local-data: &#39;mail._domainkey.example.jp. IN TXT &amp;quot;v=DKIM1; k=rsa; &amp;quot; &amp;quot;p=xxxxxxxx...&amp;quot; &amp;quot;xxxxxxx...&amp;quot;&#39; ローカルでの検証 opendkim-testmsg &amp;lt; mail.eml </description>
+      <description>DKIMの公開鍵取得 opendkim-testkeyとかで検証する際に、DNSはroot DNSサーバーから自力で名前解決しようとするのでDNSキャッシュサーバー使いたかったら以下を指定&#xA;/etc/opendkim.conf&#xA;Nameservers 192.168.0.10 thunderbirdの拡張も同じ挙動だった&#xA;公開鍵を作る場合 2048bitを指定しておく方がいい&#xA;(最近のopendkimはデフォルトで2048bit)&#xA;opendkim-genkey -D /etc/postfix/dkim/ -b 2048 -d example.jp -s mail unboundに入れるときは長いので分割する&#xA;local-data: &#39;mail._domainkey.example.jp. IN TXT &amp;quot;v=DKIM1; k=rsa; &amp;quot; &amp;quot;p=xxxxxxxx...&amp;quot; &amp;quot;xxxxxxx...&amp;quot;&#39; ローカルでの検証 opendkim-testmsg &amp;lt; mail.eml </description>
     </item>
-    
     <item>
       <title>windowsでファイルリスト作成</title>
       <link>https://yaasita.github.io/2024/06/11/windows-dir/</link>
       <pubDate>Tue, 11 Jun 2024 01:28:19 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/06/11/windows-dir/</guid>
-      <description>こんな感じのbatファイルでOK
-dir /S /A:d /B &amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir /S /B *.pdf &amp;gt;&amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir.bat</description>
+      <description>こんな感じのbatファイルでOK&#xA;dir /S /A:d /B &amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir /S /B *.pdf &amp;gt;&amp;gt; %date:~0,4%%date:~5,2%%date:~8,2%-file-list.txt dir.bat</description>
     </item>
-    
     <item>
       <title>nftablesでDNSサーバーのレート制限</title>
       <link>https://yaasita.github.io/2024/05/21/nftables-dns/</link>
       <pubDate>Tue, 21 May 2024 03:42:37 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/05/21/nftables-dns/</guid>
-      <description>/etc/nftables.conf に書くやつ
-まずはこんな感じで、どれくらいの流量が入って来るか測定しておく
-meta l4proto {tcp, udp} th dport 53 counter accept それから以下のように制限する
-meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit1 { ip saddr timeout 1h limit rate 20/minute } counter accept meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit2 { ip6 saddr timeout 1h limit rate 20/minute } counter accept ちなみにudpの場合はいつも ct state new にマッチするっぽい</description>
+      <description>/etc/nftables.conf に書くやつ&#xA;まずはこんな感じで、どれくらいの流量が入って来るか測定しておく&#xA;meta l4proto {tcp, udp} th dport 53 counter accept それから以下のように制限する&#xA;meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit1 { ip saddr timeout 1h limit rate 20/minute } counter accept meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit2 { ip6 saddr timeout 1h limit rate 20/minute } counter accept ちなみにudpの場合はいつも ct state new にマッチするっぽい</description>
     </item>
-    
     <item>
       <title>shotcutで編集すると音ズレ</title>
       <link>https://yaasita.github.io/2024/04/21/shotcut/</link>
       <pubDate>Sun, 21 Apr 2024 04:22:59 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/04/21/shotcut/</guid>
-      <description>編集前にこれやっておくと良いかもしれない
-ffmpeg -i input.mp4 output.mp4 </description>
+      <description>編集前にこれやっておくと良いかもしれない&#xA;ffmpeg -i input.mp4 output.mp4 </description>
     </item>
-    
     <item>
       <title>ポケモン言えるかテスト</title>
       <link>https://yaasita.github.io/2024/04/21/pokemon/</link>
       <pubDate>Sun, 21 Apr 2024 04:06:53 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/04/21/pokemon/</guid>
-      <description>初代ポケモン151匹を言えるかテストするサイトを作った
-poke.html
-コーディングはgemini</description>
+      <description>初代ポケモン151匹を言えるかテストするサイトを作った&#xA;poke.html&#xA;コーディングはgemini</description>
     </item>
-    
     <item>
       <title>IPv6回りのちょっとしたこと</title>
       <link>https://yaasita.github.io/2024/03/22/ipv6-tips/</link>
       <pubDate>Fri, 22 Mar 2024 02:58:55 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/03/22/ipv6-tips/</guid>
-      <description>public NAT64サービス: https://nat64.net/
-使用するキャッシュDNSサーバーだけ変えればOKなので使いやすい
-IPv6 テストサイト: https://ipv6test.app/
-curlで手軽にチェックできる
-curl ipv6test.app curl v4.ipv6test.app curl v6.ipv6test.app tcpdumpでICMPv6を見る
-tcpdump -n -X icmp6 </description>
+      <description>public NAT64サービス: https://nat64.net/&#xA;使用するキャッシュDNSサーバーだけ変えればOKなので使いやすい&#xA;IPv6 テストサイト: https://ipv6test.app/&#xA;curlで手軽にチェックできる&#xA;curl ipv6test.app curl v4.ipv6test.app curl v6.ipv6test.app tcpdumpでICMPv6を見る&#xA;tcpdump -n -X icmp6 </description>
     </item>
-    
     <item>
       <title>ipv6のICMPリダイレクト</title>
       <link>https://yaasita.github.io/2024/02/17/ipv6-icmp/</link>
       <pubDate>Sat, 17 Feb 2024 05:35:13 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/02/17/ipv6-icmp/</guid>
-      <description>ipv4ならカーネルパラメータ net.ipv4.conf.all.send_redirectsでICMPリダイレクトの送信を抑止できるが
-ipv6はそういうオプションが無いらしい
-https://askubuntu.com/questions/1164239/how-to-disable-ipv6-redirect
-/etc/nftables.conf に以下追加してとりあえず ipv6-icmpを抑止する
-chain output { type filter hook output priority filter; meta l4proto ipv6-icmp icmpv6 type nd-redirect counter drop } リダイレクトで曲がったルーティングの確認はこんな感じ
-ip -6 route show cache </description>
+      <description>ipv4ならカーネルパラメータ net.ipv4.conf.all.send_redirectsでICMPリダイレクトの送信を抑止できるが&#xA;ipv6はそういうオプションが無いらしい&#xA;https://askubuntu.com/questions/1164239/how-to-disable-ipv6-redirect&#xA;/etc/nftables.conf に以下追加してとりあえず ipv6-icmpを抑止する&#xA;chain output { type filter hook output priority filter; meta l4proto ipv6-icmp icmpv6 type nd-redirect counter drop } リダイレクトで曲がったルーティングの確認はこんな感じ&#xA;ip -6 route show cache </description>
     </item>
-    
     <item>
       <title>Linuxネットワークの設定</title>
       <link>https://yaasita.github.io/2024/01/07/network/</link>
       <pubDate>Sun, 07 Jan 2024 06:22:21 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/01/07/network/</guid>
-      <description>たまに忘れるのでメモ
-Linuxで通信を見たいときに、あるホストをルーターにする場合
-/etc/sysctl.conf に以下のような設定を入れる
-net.ipv4.ip_forward = 1 net.ipv4.conf.all.accept_redirects = 0 net.ipv4.conf.all.send_redirects = 0 が、ICMMP redirectの送信はallじゃなくてインターフェイス名をちゃんと指定する必要があるぽい
-net.ipv4.conf.eth0.send_redirects = 0 ちなみにICMP redirectで曲がってしまったルーティングは
-以下のコマンドで参照とクリアができる
-ip route show cache ip route flush cache あとIPv6をsystemd-networkdで無効化する場合こんな感じ
-[Match] Name=host0 [Network] DHCP=no LinkLocalAddressing=no Address=192.168.0.100/24 Gateway=192.168.0.10 IPv6PrivacyExtensions=no [IPv6] Address= Gateway= AddressGenerator=none 一時アドレス消す場合は以下のコマンド
-ip -6 addr flush dev eth0 scope global dynamic </description>
+      <description>たまに忘れるのでメモ&#xA;Linuxで通信を見たいときに、あるホストをルーターにする場合&#xA;/etc/sysctl.conf に以下のような設定を入れる&#xA;net.ipv4.ip_forward = 1 net.ipv4.conf.all.accept_redirects = 0 net.ipv4.conf.all.send_redirects = 0 が、ICMMP redirectの送信はallじゃなくてインターフェイス名をちゃんと指定する必要があるぽい&#xA;net.ipv4.conf.eth0.send_redirects = 0 ちなみにICMP redirectで曲がってしまったルーティングは&#xA;以下のコマンドで参照とクリアができる&#xA;ip route show cache ip route flush cache あとIPv6をsystemd-networkdで無効化する場合こんな感じ&#xA;[Match] Name=host0 [Network] DHCP=no LinkLocalAddressing=no Address=192.168.0.100/24 Gateway=192.168.0.10 IPv6PrivacyExtensions=no [IPv6] Address= Gateway= AddressGenerator=none 一時アドレス消す場合は以下のコマンド&#xA;ip -6 addr flush dev eth0 scope global dynamic </description>
     </item>
-    
   </channel>
 </rss>

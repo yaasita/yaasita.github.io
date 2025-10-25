@@ -6,31 +6,20 @@
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>NTPで時刻あわせ　Linux | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.111.3">
+    <meta name="generator" content="Hugo 0.131.0">
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
 
-    <meta property="og:title" content="NTPで時刻あわせ　Linux" />
-<meta property="og:description" content=" こんな感じでcronに登録しておくといいです
-#!/bin/bash
-ntpdate ntp.jst.mfeed.ad.jp
-またハードウェアクロックとの同期も取る必要があります
-ハードウェアクロックがずれていると再起動した時におかしな時間になってしまいます。
-hwclock --systohc
-と打てばおｋです。
-hwclock
-と打てば現在のハードウェアクロックを見れます
-hwclock --adjust
-と打てば前回の差分から進む（または遅れる）時間を計測していい感じに調整してくれます
-cronとかには↓のように登録しておくといいかも
-#!/bin/bash
-ntpdate ntp.jst.mfeed.ad.jp &gt; /dev/null
-hwclock --adjust
-hwclock --systohc " />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://yaasita.github.io/2008/04/20/12571/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2008-04-20T00:00:00+09:00" />
-<meta property="article:modified_time" content="2008-04-20T00:00:00+09:00" />
+    <meta property="og:url" content="https://yaasita.github.io/2008/04/20/12571/">
+  <meta property="og:site_name" content="# cd ~yaasita">
+  <meta property="og:title" content="NTPで時刻あわせ　Linux">
+  <meta property="og:description" content=" こんな感じでcronに登録しておくといいです #!/bin/bash ntpdate ntp.jst.mfeed.ad.jp またハードウェアクロックとの同期も取る必要があります ハードウェアクロックがずれていると再起動した時におかしな時間になってしまいます。 hwclock --systohc と打てばおｋです。 hwclock と打てば現在のハードウェアクロックを見れます hwclock --adjust と打てば前回の差分から進む（または遅れる）時間を計測していい感じに調整してくれます cronとかには↓のように登録しておくといいかも #!/bin/bash ntpdate ntp.jst.mfeed.ad.jp &gt; /dev/null hwclock --adjust hwclock --systohc ">
+  <meta property="og:locale" content="ja">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2008-04-20T00:00:00+09:00">
+    <meta property="article:modified_time" content="2008-04-20T00:00:00+09:00">
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&amp;v=4">
 
     <script id="dsq-count-scr" src="https://yaasita.disqus.com/count.js" async></script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="36937576-b2d5-4494-aba8-d0b70a153691"></script>
@@ -82,7 +71,7 @@ hwclock --systohc " />
 
       
       <div id="disqus_thread"></div>
-<script type="application/javascript">
+<script>
     window.disqus_config = function () {
     
     
@@ -181,7 +170,7 @@ hwclock --systohc " />
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (355)</a>
+          <a href="/categories/linux"><span></span>linux (356)</a>
         </li>
         
         <li>
@@ -197,7 +186,7 @@ hwclock --systohc " />
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (430)</a>
+          <a href="/categories/soft"><span></span>soft (431)</a>
         </li>
         
         <li>
@@ -288,7 +277,7 @@ hwclock --systohc " />
         </li>
         
         <li>
-          <a href="/archives/2025"><span></span>2025 (13)</a>
+          <a href="/archives/2025"><span></span>2025 (14)</a>
         </li>
         
       </ul>

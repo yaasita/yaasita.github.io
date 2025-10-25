@@ -1,293 +1,152 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>net on # cd ~yaasita</title>
+    <title>Net on # cd ~yaasita</title>
     <link>https://yaasita.github.io/categories/net/</link>
-    <description>Recent content in net on # cd ~yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Net on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 20 Jul 2025 00:48:32 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 20 Jul 2025 00:48:32 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>TVerをLinuxで見る</title>
       <link>https://yaasita.github.io/2025/07/20/tver-with-linux/</link>
       <pubDate>Sun, 20 Jul 2025 00:48:32 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/07/20/tver-with-linux/</guid>
-      <description>firefox(esr)ならそのまま見れるけど、chromeだとPC判定されなくて&amp;quot;アプリで視聴する&amp;quot;ボタンになってしまう
-User-Agentとか、クライアントヒントを以下のように設定すればOK
-header value Sec-Ch-Ua &amp;ldquo;Not)A;Brand&amp;rdquo;;v=&amp;ldquo;8&amp;rdquo;, &amp;ldquo;Chromium&amp;rdquo;;v=&amp;ldquo;138&amp;rdquo;, &amp;ldquo;Google Chrome&amp;rdquo;;v=&amp;ldquo;138&amp;rdquo; Sec-Ch-Ua-Mobile ?0 Sec-Ch-Ua-Platform &amp;ldquo;Windows&amp;rdquo; User-Agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 chrome dev tool -&amp;gt; 設定 -&amp;gt; デバイスで設定</description>
+      <description>firefox(esr)ならそのまま見れるけど、chromeだとPC判定されなくて&amp;quot;アプリで視聴する&amp;quot;ボタンになってしまう&#xA;User-Agentとか、クライアントヒントを以下のように設定すればOK&#xA;header value Sec-Ch-Ua &amp;ldquo;Not)A;Brand&amp;rdquo;;v=&amp;ldquo;8&amp;rdquo;, &amp;ldquo;Chromium&amp;rdquo;;v=&amp;ldquo;138&amp;rdquo;, &amp;ldquo;Google Chrome&amp;rdquo;;v=&amp;ldquo;138&amp;rdquo; Sec-Ch-Ua-Mobile ?0 Sec-Ch-Ua-Platform &amp;ldquo;Windows&amp;rdquo; User-Agent Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36 chrome dev tool -&amp;gt; 設定 -&amp;gt; デバイスで設定</description>
     </item>
-    
     <item>
       <title>glacierで取り出し期間は後から変更できる</title>
       <link>https://yaasita.github.io/2025/07/12/aws-s3-glacier/</link>
       <pubDate>Sat, 12 Jul 2025 14:10:30 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/07/12/aws-s3-glacier/</guid>
-      <description>aws s3 glacier で取り出しするときに
-こんなコマンドを打つ
-これはdeep archiveにあったファイルをstandardクラスのストレージに7日移してダウンロードできるようにするというもの
-aws s3api restore-object \ --bucket $s3bucket \ --key $s3key \ --restore-request &#39;{&amp;quot;Days&amp;quot;:7,&amp;quot;GlacierJobParameters&amp;quot;:{&amp;quot;Tier&amp;quot;:&amp;quot;Bulk&amp;quot;}}&#39; Bulkでリクエストすると大体48時間後ぐらいに取り出せるようになる
-でこれ7日間はstandardクラスの料金がかかるのでダウンロードしたらすぐにこんなコマンドを打って、残存期間を短くした方がいい
-aws s3api restore-object \ --bucket $s3bucket \ --key $s3key \ --restore-request &#39;{&amp;quot;Days&amp;quot;:1,&amp;quot;GlacierJobParameters&amp;quot;:{&amp;quot;Tier&amp;quot;:&amp;quot;Bulk&amp;quot;}}&#39; ちなみに Days: 0 はエラーになる</description>
+      <description>aws s3 glacier で取り出しするときに&#xA;こんなコマンドを打つ&#xA;これはdeep archiveにあったファイルをstandardクラスのストレージに7日移してダウンロードできるようにするというもの&#xA;aws s3api restore-object \ --bucket $s3bucket \ --key $s3key \ --restore-request &#39;{&amp;quot;Days&amp;quot;:7,&amp;quot;GlacierJobParameters&amp;quot;:{&amp;quot;Tier&amp;quot;:&amp;quot;Bulk&amp;quot;}}&#39; Bulkでリクエストすると大体48時間後ぐらいに取り出せるようになる&#xA;でこれ7日間はstandardクラスの料金がかかるのでダウンロードしたらすぐにこんなコマンドを打って、残存期間を短くした方がいい&#xA;aws s3api restore-object \ --bucket $s3bucket \ --key $s3key \ --restore-request &#39;{&amp;quot;Days&amp;quot;:1,&amp;quot;GlacierJobParameters&amp;quot;:{&amp;quot;Tier&amp;quot;:&amp;quot;Bulk&amp;quot;}}&#39; ちなみに Days: 0 はエラーになる</description>
     </item>
-    
     <item>
       <title>s3のマルチパートアップロード料金</title>
       <link>https://yaasita.github.io/2025/06/21/aws-s3-multipart/</link>
       <pubDate>Sat, 21 Jun 2025 15:30:58 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/06/21/aws-s3-multipart/</guid>
-      <description>こんな感じで始めるマルチパートアップロードを開始
-aws s3api create-multipart-upload --bucket $BUCKET --key $UPLOAD_KEY --storage-class DEEP_ARCHIVE glacierを指定しても
-アップロード途中の料金はs3のスタンダード料金よりはちょっと安いくらいのお金がかかる
-バージニア北部(us-east-1)リージョンでこんな感じ
-請求書にStagingって書いてあるので気づけるはず
-$0.021 per GB-Month of storage used in GlacierStagingStorage マルチパートアップロードの途中がないか定期的に確認したほうがよい
-aws s3api list-multipart-uploads --bucket バケット名 </description>
+      <description>こんな感じで始めるマルチパートアップロードを開始&#xA;aws s3api create-multipart-upload --bucket $BUCKET --key $UPLOAD_KEY --storage-class DEEP_ARCHIVE glacierを指定しても&#xA;アップロード途中の料金はs3のスタンダード料金よりはちょっと安いくらいのお金がかかる&#xA;バージニア北部(us-east-1)リージョンでこんな感じ&#xA;請求書にStagingって書いてあるので気づけるはず&#xA;$0.021 per GB-Month of storage used in GlacierStagingStorage マルチパートアップロードの途中がないか定期的に確認したほうがよい&#xA;aws s3api list-multipart-uploads --bucket バケット名 </description>
     </item>
-    
     <item>
       <title>sysstatのデータをbigqueryに入れる</title>
       <link>https://yaasita.github.io/2025/05/17/sysstat/</link>
       <pubDate>Sat, 17 May 2025 13:23:08 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/05/17/sysstat/</guid>
-      <description>こんな感じでレポート出して
-sadf -T -j /var/log/sysstat/sa\$(date -d yesterday +%d) -- -ruq -n DEV &amp;gt; /tmp/sadf.json bigquery用のフォーマットに変更
-あとは Looker Studio で見るとか</description>
+      <description>こんな感じでレポート出して&#xA;sadf -T -j /var/log/sysstat/sa\$(date -d yesterday +%d) -- -ruq -n DEV &amp;gt; /tmp/sadf.json bigquery用のフォーマットに変更&#xA;あとは Looker Studio で見るとか</description>
     </item>
-    
     <item>
       <title>DoHを使う</title>
       <link>https://yaasita.github.io/2025/01/02/doh/</link>
       <pubDate>Thu, 02 Jan 2025 13:33:58 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/01/02/doh/</guid>
-      <description>DNS over HTTPSを使ってpi-holeに接続する設定
-出先で広告ブロック使いたくなったのでやってみる
-こんな構成
-apache -&amp;gt; doh-proxy -&amp;gt; pi-hole -&amp;gt; unbound サーバーはこれ
-https://github.com/DNSCrypt/doh-server
-/etc/systemd/system/doh-proxy.service って名前で保存
-[Unit] Description=DoH Proxy After=network.target [Service] ExecStart=/usr/local/bin/doh-proxy -u 127.0.0.1:53 -l 0.0.0.0:3000 User=root Group=root Restart=always RestartSec=5 [Install] WantedBy=multi-user.target TLS部分はapacheがやる
-こんな感じでproxy
-&amp;lt;VirtualHost *:443&amp;gt; ServerName dns.example.net ProxyRequests Off ProxyPreserveHost On ProxyPass / http://192.168.0.123:3000/ retry=2 ProxyPassReverse / http://192.168.0.123:3000/ SSLEngine on SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem SSLCertificateKeyFile /etc/letsencrypt/live/example.net/privkey.pem &amp;lt;/VirtualHost&amp;gt; テストはこんな感じ
-curl --doh-url https://dns.example.net/dns-query https://example.jp dnslookup コマンドでもOK
-dnslookup example.jp https://dns.example.net/dns-query chromebookの場合は&amp;quot;確認済みアクセスを有効にする&amp;quot;のチェックを外しておいた方が良い
-このチェックの挙動がよく分からないけど、DoHサーバーの名前解決後のIPアドレスがLAN内のプライベートIPなら通るけど、グローバルIPだと通さないみたいな挙動になってた
-あと設定直後はちゃんとHTTPのリクエストを発行するにもかかわらず1～2分後にエラーになるみたいな動きもする
-まあ広告ブロックしたいだけなら</description>
+      <description>DNS over HTTPSを使ってpi-holeに接続する設定&#xA;出先で広告ブロック使いたくなったのでやってみる&#xA;こんな構成&#xA;apache -&amp;gt; doh-proxy -&amp;gt; pi-hole -&amp;gt; unbound サーバーはこれ&#xA;https://github.com/DNSCrypt/doh-server&#xA;/etc/systemd/system/doh-proxy.service って名前で保存&#xA;[Unit] Description=DoH Proxy After=network.target [Service] ExecStart=/usr/local/bin/doh-proxy -u 127.0.0.1:53 -l 0.0.0.0:3000 User=root Group=root Restart=always RestartSec=5 [Install] WantedBy=multi-user.target TLS部分はapacheがやる&#xA;こんな感じでproxy&#xA;&amp;lt;VirtualHost *:443&amp;gt; ServerName dns.example.net ProxyRequests Off ProxyPreserveHost On ProxyPass / http://192.168.0.123:3000/ retry=2 ProxyPassReverse / http://192.168.0.123:3000/ SSLEngine on SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem SSLCertificateKeyFile /etc/letsencrypt/live/example.net/privkey.pem &amp;lt;/VirtualHost&amp;gt; テストはこんな感じ&#xA;curl --doh-url https://dns.example.net/dns-query https://example.jp dnslookup コマンドでもOK&#xA;dnslookup example.jp https://dns.example.net/dns-query chromebookの場合は&amp;quot;確認済みアクセスを有効にする&amp;quot;のチェックを外しておいた方が良い&#xA;このチェックの挙動がよく分からないけど、DoHサーバーの名前解決後のIPアドレスがLAN内のプライベートIPなら通るけど、グローバルIPだと通さないみたいな挙動になってた&#xA;あと設定直後はちゃんとHTTPのリクエストを発行するにもかかわらず1～2分後にエラーになるみたいな動きもする&#xA;まあ広告ブロックしたいだけなら</description>
     </item>
-    
     <item>
       <title>cody使ってみる</title>
       <link>https://yaasita.github.io/2025/01/01/cody/</link>
       <pubDate>Wed, 01 Jan 2025 15:59:47 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/01/01/cody/</guid>
-      <description>cody が良いという評判を聞いたので使ってみる
-コーディングAI課金するならCodyが断トツ良い話
-https://zenn.dev/sanami/articles/7c24ce973b7e7c
-vimには codeium と github copilot を設定しているので補完AIはもう要らない
-CLIを設定してみる
-マニュアル
-https://sourcegraph.com/docs/cody/clients/install-cli
-ここからアクセストークンを発行
-https://sourcegraph.com/users/gitlab-etjbc/settings/tokens
-環境変数に設定
-export SRC_ACCESS_TOKEN=sgp_xxxxxxxxxxxxxxxxxxxxxx インストール
-npm install -g @sourcegraph/cody cody auth whoami こんな感じで使える
-cody chat -m &#39;Explain React hooks&#39; git diff | cody chat --stdin -m &#39;Write a commit message for this diff&#39; cody chat --context-file src/controller.ts -m &#39;Are there code smells in this file?&#39; ターミナルから使えて良いかもしれない</description>
+      <description>cody が良いという評判を聞いたので使ってみる&#xA;コーディングAI課金するならCodyが断トツ良い話&#xA;https://zenn.dev/sanami/articles/7c24ce973b7e7c&#xA;vimには codeium と github copilot を設定しているので補完AIはもう要らない&#xA;CLIを設定してみる&#xA;マニュアル&#xA;https://sourcegraph.com/docs/cody/clients/install-cli&#xA;ここからアクセストークンを発行&#xA;https://sourcegraph.com/users/gitlab-etjbc/settings/tokens&#xA;環境変数に設定&#xA;export SRC_ACCESS_TOKEN=sgp_xxxxxxxxxxxxxxxxxxxxxx インストール&#xA;npm install -g @sourcegraph/cody cody auth whoami こんな感じで使える&#xA;cody chat -m &#39;Explain React hooks&#39; git diff | cody chat --stdin -m &#39;Write a commit message for this diff&#39; cody chat --context-file src/controller.ts -m &#39;Are there code smells in this file?&#39; ターミナルから使えて良いかもしれない</description>
     </item>
-    
     <item>
       <title>fontawesome止めた</title>
       <link>https://yaasita.github.io/2024/12/08/fontawesome/</link>
       <pubDate>Sun, 08 Dec 2024 21:11:39 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/12/08/fontawesome/</guid>
-      <description>アイコン表示に使ってたFont Awesome
-アップデートしようとしたらメールアドレス要求されたのでこの機会に乗り換え
-というかアイコンほぼ使ってなかったので不要だった
-ここからRSSのアイコンだけ落として設定
-https://feathericons.com/
-右サイドバーのAuthor部分のGithub, Tumblrとかのアイコンは文字に変更</description>
+      <description>アイコン表示に使ってたFont Awesome&#xA;アップデートしようとしたらメールアドレス要求されたのでこの機会に乗り換え&#xA;というかアイコンほぼ使ってなかったので不要だった&#xA;ここからRSSのアイコンだけ落として設定&#xA;https://feathericons.com/&#xA;右サイドバーのAuthor部分のGithub, Tumblrとかのアイコンは文字に変更</description>
     </item>
-    
     <item>
       <title>nftablesでDNSサーバーのレート制限</title>
       <link>https://yaasita.github.io/2024/05/21/nftables-dns/</link>
       <pubDate>Tue, 21 May 2024 03:42:37 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/05/21/nftables-dns/</guid>
-      <description>/etc/nftables.conf に書くやつ
-まずはこんな感じで、どれくらいの流量が入って来るか測定しておく
-meta l4proto {tcp, udp} th dport 53 counter accept それから以下のように制限する
-meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit1 { ip saddr timeout 1h limit rate 20/minute } counter accept meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit2 { ip6 saddr timeout 1h limit rate 20/minute } counter accept ちなみにudpの場合はいつも ct state new にマッチするっぽい</description>
+      <description>/etc/nftables.conf に書くやつ&#xA;まずはこんな感じで、どれくらいの流量が入って来るか測定しておく&#xA;meta l4proto {tcp, udp} th dport 53 counter accept それから以下のように制限する&#xA;meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit1 { ip saddr timeout 1h limit rate 20/minute } counter accept meta l4proto {tcp, udp} th dport 53 ct state new meter dns_limit2 { ip6 saddr timeout 1h limit rate 20/minute } counter accept ちなみにudpの場合はいつも ct state new にマッチするっぽい</description>
     </item>
-    
     <item>
       <title>IPv6回りのちょっとしたこと</title>
       <link>https://yaasita.github.io/2024/03/22/ipv6-tips/</link>
       <pubDate>Fri, 22 Mar 2024 02:58:55 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/03/22/ipv6-tips/</guid>
-      <description>public NAT64サービス: https://nat64.net/
-使用するキャッシュDNSサーバーだけ変えればOKなので使いやすい
-IPv6 テストサイト: https://ipv6test.app/
-curlで手軽にチェックできる
-curl ipv6test.app curl v4.ipv6test.app curl v6.ipv6test.app tcpdumpでICMPv6を見る
-tcpdump -n -X icmp6 </description>
+      <description>public NAT64サービス: https://nat64.net/&#xA;使用するキャッシュDNSサーバーだけ変えればOKなので使いやすい&#xA;IPv6 テストサイト: https://ipv6test.app/&#xA;curlで手軽にチェックできる&#xA;curl ipv6test.app curl v4.ipv6test.app curl v6.ipv6test.app tcpdumpでICMPv6を見る&#xA;tcpdump -n -X icmp6 </description>
     </item>
-    
     <item>
       <title>ipv6のICMPリダイレクト</title>
       <link>https://yaasita.github.io/2024/02/17/ipv6-icmp/</link>
       <pubDate>Sat, 17 Feb 2024 05:35:13 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/02/17/ipv6-icmp/</guid>
-      <description>ipv4ならカーネルパラメータ net.ipv4.conf.all.send_redirectsでICMPリダイレクトの送信を抑止できるが
-ipv6はそういうオプションが無いらしい
-https://askubuntu.com/questions/1164239/how-to-disable-ipv6-redirect
-/etc/nftables.conf に以下追加してとりあえず ipv6-icmpを抑止する
-chain output { type filter hook output priority filter; meta l4proto ipv6-icmp icmpv6 type nd-redirect counter drop } リダイレクトで曲がったルーティングの確認はこんな感じ
-ip -6 route show cache </description>
+      <description>ipv4ならカーネルパラメータ net.ipv4.conf.all.send_redirectsでICMPリダイレクトの送信を抑止できるが&#xA;ipv6はそういうオプションが無いらしい&#xA;https://askubuntu.com/questions/1164239/how-to-disable-ipv6-redirect&#xA;/etc/nftables.conf に以下追加してとりあえず ipv6-icmpを抑止する&#xA;chain output { type filter hook output priority filter; meta l4proto ipv6-icmp icmpv6 type nd-redirect counter drop } リダイレクトで曲がったルーティングの確認はこんな感じ&#xA;ip -6 route show cache </description>
     </item>
-    
     <item>
       <title>Linuxネットワークの設定</title>
       <link>https://yaasita.github.io/2024/01/07/network/</link>
       <pubDate>Sun, 07 Jan 2024 06:22:21 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2024/01/07/network/</guid>
-      <description>たまに忘れるのでメモ
-Linuxで通信を見たいときに、あるホストをルーターにする場合
-/etc/sysctl.conf に以下のような設定を入れる
-net.ipv4.ip_forward = 1 net.ipv4.conf.all.accept_redirects = 0 net.ipv4.conf.all.send_redirects = 0 が、ICMMP redirectの送信はallじゃなくてインターフェイス名をちゃんと指定する必要があるぽい
-net.ipv4.conf.eth0.send_redirects = 0 ちなみにICMP redirectで曲がってしまったルーティングは
-以下のコマンドで参照とクリアができる
-ip route show cache ip route flush cache あとIPv6をsystemd-networkdで無効化する場合こんな感じ
-[Match] Name=host0 [Network] DHCP=no LinkLocalAddressing=no Address=192.168.0.100/24 Gateway=192.168.0.10 IPv6PrivacyExtensions=no [IPv6] Address= Gateway= AddressGenerator=none 一時アドレス消す場合は以下のコマンド
-ip -6 addr flush dev eth0 scope global dynamic </description>
+      <description>たまに忘れるのでメモ&#xA;Linuxで通信を見たいときに、あるホストをルーターにする場合&#xA;/etc/sysctl.conf に以下のような設定を入れる&#xA;net.ipv4.ip_forward = 1 net.ipv4.conf.all.accept_redirects = 0 net.ipv4.conf.all.send_redirects = 0 が、ICMMP redirectの送信はallじゃなくてインターフェイス名をちゃんと指定する必要があるぽい&#xA;net.ipv4.conf.eth0.send_redirects = 0 ちなみにICMP redirectで曲がってしまったルーティングは&#xA;以下のコマンドで参照とクリアができる&#xA;ip route show cache ip route flush cache あとIPv6をsystemd-networkdで無効化する場合こんな感じ&#xA;[Match] Name=host0 [Network] DHCP=no LinkLocalAddressing=no Address=192.168.0.100/24 Gateway=192.168.0.10 IPv6PrivacyExtensions=no [IPv6] Address= Gateway= AddressGenerator=none 一時アドレス消す場合は以下のコマンド&#xA;ip -6 addr flush dev eth0 scope global dynamic </description>
     </item>
-    
     <item>
       <title>tumblrの投稿は消えることがある</title>
       <link>https://yaasita.github.io/2023/12/23/tumblr/</link>
       <pubDate>Sat, 23 Dec 2023 01:11:41 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/12/23/tumblr/</guid>
-      <description>tumblrの投稿は突然消える場合があるので注意
-例えば以下の投稿は/posts APIで取得できるが
-https://gist.github.com/yaasita/c1c8dcfda063305f3db70bfedee9e0cb
-blogページからは消えている
-https://yaasita.tumblr.com/post/165399040492/asagaonosakukisetu-mklater-xmixkox
-なぜ発生するかは不明</description>
+      <description>tumblrの投稿は突然消える場合があるので注意&#xA;例えば以下の投稿は/posts APIで取得できるが&#xA;https://gist.github.com/yaasita/c1c8dcfda063305f3db70bfedee9e0cb&#xA;blogページからは消えている&#xA;https://yaasita.tumblr.com/post/165399040492/asagaonosakukisetu-mklater-xmixkox&#xA;なぜ発生するかは不明</description>
     </item>
-    
     <item>
       <title>rana8を試す</title>
       <link>https://yaasita.github.io/2023/12/22/rana8/</link>
       <pubDate>Fri, 22 Dec 2023 02:20:37 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/12/22/rana8/</guid>
-      <description>これ
-https://web.arena.ne.jp/service/rana8poc.html
-なんかほぼGoogleCloudのcloud runだった
-サービスはサービスアカウントの鍵をもらって gcloudでdeployするみたいな奴
-マニュアル通りやっても以下のようになって使えなかった
-ERROR: (gcloud.run.deploy) User [xxxxxxxxxx@rana8-poc.iam.gserviceaccount.com] does not have permission to access projects instance [rana8-poc] (or it may not exist): Permission &#39;cloudbuild.locations.list&#39; denied on &#39;projects/rana8-poc/lo cations/global&#39; cloud runを素で使うより何が良いのかは分からない</description>
+      <description>これ&#xA;https://web.arena.ne.jp/service/rana8poc.html&#xA;なんかほぼGoogleCloudのcloud runだった&#xA;サービスはサービスアカウントの鍵をもらって gcloudでdeployするみたいな奴&#xA;マニュアル通りやっても以下のようになって使えなかった&#xA;ERROR: (gcloud.run.deploy) User [xxxxxxxxxx@rana8-poc.iam.gserviceaccount.com] does not have permission to access projects instance [rana8-poc] (or it may not exist): Permission &#39;cloudbuild.locations.list&#39; denied on &#39;projects/rana8-poc/lo cations/global&#39; cloud runを素で使うより何が良いのかは分からない</description>
     </item>
-    
     <item>
       <title>codeiumがとても良い</title>
       <link>https://yaasita.github.io/2023/11/21/codeium/</link>
       <pubDate>Tue, 21 Nov 2023 02:41:29 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/11/21/codeium/</guid>
-      <description>codeium がとても良い
-個人利用なら無料 vimにも対応 対応言語が豊富 など
-競合との比較はこちら
-https://codeium.com/compare
-とりあえず自分がVimに入れてる設定
-if v:version &amp;gt;= 900 let g:codeium_disable_bindings = 1 let g:codeium_manual = v:true let g:codeium_enabled = v:false imap &amp;lt;script&amp;gt;&amp;lt;silent&amp;gt;&amp;lt;nowait&amp;gt;&amp;lt;expr&amp;gt; &amp;lt;Right&amp;gt; codeium#Accept() imap &amp;lt;Down&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#CycleCompletions(1)&amp;lt;CR&amp;gt; imap &amp;lt;Up&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#CycleCompletions(-1)&amp;lt;CR&amp;gt; imap &amp;lt;Left&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#Clear()&amp;lt;CR&amp;gt; imap &amp;lt;C-A&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#Complete()&amp;lt;CR&amp;gt; set statusline=%&amp;lt;%f\ %2*%{&amp;amp;mod&amp;amp;&amp;amp;&amp;amp;bt!=#&#39;terminal&#39;?&#39;[+]&#39;:&#39;&#39;}%0*%{&amp;amp;ro?&#39;[RO]&#39;:&#39;&#39;}%h%w%=codeium:%3{codeium#GetStatusString()}\ %{&#39;[&#39;.(&amp;amp;fenc!=&#39;&#39;?&amp;amp;fenc:&amp;amp;enc).&#39;][&#39;.&amp;amp;ff.&#39;]&#39;}\ %2*%y%0*%6l,%c%V%1*%8P endif 手動で有効にする設定を入れて
-Ctrl-Aで保管候補出す
-矢印で保管候補の決定</description>
+      <description>codeium がとても良い&#xA;個人利用なら無料 vimにも対応 対応言語が豊富 など&#xA;競合との比較はこちら&#xA;https://codeium.com/compare&#xA;とりあえず自分がVimに入れてる設定&#xA;if v:version &amp;gt;= 900 let g:codeium_disable_bindings = 1 let g:codeium_manual = v:true let g:codeium_enabled = v:false imap &amp;lt;script&amp;gt;&amp;lt;silent&amp;gt;&amp;lt;nowait&amp;gt;&amp;lt;expr&amp;gt; &amp;lt;Right&amp;gt; codeium#Accept() imap &amp;lt;Down&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#CycleCompletions(1)&amp;lt;CR&amp;gt; imap &amp;lt;Up&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#CycleCompletions(-1)&amp;lt;CR&amp;gt; imap &amp;lt;Left&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#Clear()&amp;lt;CR&amp;gt; imap &amp;lt;C-A&amp;gt; &amp;lt;Cmd&amp;gt;call codeium#Complete()&amp;lt;CR&amp;gt; set statusline=%&amp;lt;%f\ %2*%{&amp;amp;mod&amp;amp;&amp;amp;&amp;amp;bt!=#&#39;terminal&#39;?&#39;[+]&#39;:&#39;&#39;}%0*%{&amp;amp;ro?&#39;[RO]&#39;:&#39;&#39;}%h%w%=codeium:%3{codeium#GetStatusString()}\ %{&#39;[&#39;.(&amp;amp;fenc!=&#39;&#39;?&amp;amp;fenc:&amp;amp;enc).&#39;][&#39;.&amp;amp;ff.&#39;]&#39;}\ %2*%y%0*%6l,%c%V%1*%8P endif 手動で有効にする設定を入れて&#xA;Ctrl-Aで保管候補出す&#xA;矢印で保管候補の決定</description>
     </item>
-    
     <item>
       <title>NURO光のIPアドレスはほぼ変わらない</title>
       <link>https://yaasita.github.io/2023/06/22/nuro-ip/</link>
       <pubDate>Thu, 22 Jun 2023 01:33:41 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/06/22/nuro-ip/</guid>
-      <description>タイトルの通り
-WAN側IPは一年以上変わってない</description>
+      <description>タイトルの通り&#xA;WAN側IPは一年以上変わってない</description>
     </item>
-    
     <item>
       <title>webページの存在証明</title>
       <link>https://yaasita.github.io/2022/10/02/exists/</link>
       <pubDate>Sun, 02 Oct 2022 22:06:36 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/10/02/exists/</guid>
-      <description>このgpg鍵でwebページをpdfにしたやつに署名するという
-まったく意味のないサービスを作った
-https://exists.cloud.yaasita.net/</description>
+      <description>このgpg鍵でwebページをpdfにしたやつに署名するという&#xA;まったく意味のないサービスを作った&#xA;https://exists.cloud.yaasita.net/</description>
     </item>
-    
     <item>
       <title>WebARENA Indigoを使ってみた</title>
       <link>https://yaasita.github.io/2022/09/25/webarena/</link>
       <pubDate>Sun, 25 Sep 2022 22:41:18 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/09/25/webarena/</guid>
-      <description>円安でAWSが高いのでこっちにサーバーを移行した
-https://web.arena.ne.jp/indigo/
-以下気づいたこと箇条書きで
-めっちゃ安い 機能は仮想サーバーの起動(kvm),スナップショット,ファイヤーウォールくらい 追加オプションで権威DNSサーバーが使える(500円) 管理画面は少し重い ipv6の設定は手動でやる 1vCPU/1GB memory(Uubuntu 22.04)の場合はnetplanの設定がコメントアウトされてた ファイヤーウォールはipv6非対応 なので、やる場合はnftablesを自分で設定する 管理画面でコンソール開く場合は広告ブロックをOFFにしないとダメ 最初はsshでのアクセスのみコンソール画面に入る場合 はsshで入ってから、パスワード設定が必要 API での操作も可能 OP25Bはされていない 対応OS 転送料金に課金なし 圧倒的に安いのでlightsailみたいなサービスから移行するには良いんじゃないかな</description>
+      <description>円安でAWSが高いのでこっちにサーバーを移行した&#xA;https://web.arena.ne.jp/indigo/&#xA;以下気づいたこと箇条書きで&#xA;めっちゃ安い 機能は仮想サーバーの起動(kvm),スナップショット,ファイヤーウォールくらい 追加オプションで権威DNSサーバーが使える(500円) 管理画面は少し重い ipv6の設定は手動でやる 1vCPU/1GB memory(Uubuntu 22.04)の場合はnetplanの設定がコメントアウトされてた ファイヤーウォールはipv6非対応 なので、やる場合はnftablesを自分で設定する 管理画面でコンソール開く場合は広告ブロックをOFFにしないとダメ 最初はsshでのアクセスのみコンソール画面に入る場合 はsshで入ってから、パスワード設定が必要 API での操作も可能 OP25Bはされていない 対応OS 転送料金に課金なし 圧倒的に安いのでlightsailみたいなサービスから移行するには良いんじゃないかな</description>
     </item>
-    
     <item>
       <title>tumblrのアカウントが消されたけど復旧してもらった</title>
       <link>https://yaasita.github.io/2022/06/22/tumblr-account/</link>
       <pubDate>Wed, 22 Jun 2022 01:43:12 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/06/22/tumblr-account/</guid>
-      <description>経緯はこんな感じ
-2022/06/08 tumblrで消されたの確認
-ログインして、「アカウント消えました」って表示される
-その下に問題あったらサポートに連絡してねと書いてあったので、サポートに連絡
-2022/06/13 反応がないので、もう一回サポートに連絡
-2022/06/14 このお問い合わせフォームバグってないか？
-と思ったので、yaasita2アカウント作成して、その中のお問い合わせフォームから連絡
-数分で連絡が来て、yaasitaのアカウントでメールしてこいと言われる
-yaasitaアカウントのメールで再度問い合わせ
-2022/06/15 Hello, Thank you for writing back! We&amp;#39;ve restored your account. Thank you for bringing this problem to our attention. We&amp;#39;re sorry that it occurred, and we&amp;#39;ll do our best to make sure that it doesn&amp;#39;t happen again. You should now be able to log in just fine with your email address and password. Please let me know if there&amp;#39;s anything else I can help you with!</description>
+      <description>経緯はこんな感じ&#xA;2022/06/08 tumblrで消されたの確認&#xA;ログインして、「アカウント消えました」って表示される&#xA;その下に問題あったらサポートに連絡してねと書いてあったので、サポートに連絡&#xA;2022/06/13 反応がないので、もう一回サポートに連絡&#xA;2022/06/14 このお問い合わせフォームバグってないか？&#xA;と思ったので、yaasita2アカウント作成して、その中のお問い合わせフォームから連絡&#xA;数分で連絡が来て、yaasitaのアカウントでメールしてこいと言われる&#xA;yaasitaアカウントのメールで再度問い合わせ&#xA;2022/06/15 Hello, Thank you for writing back! We&amp;#39;ve restored your account. Thank you for bringing this problem to our attention. We&amp;#39;re sorry that it occurred, and we&amp;#39;ll do our best to make sure that it doesn&amp;#39;t happen again. You should now be able to log in just fine with your email address and password. Please let me know if there&amp;#39;s anything else I can help you with!</description>
     </item>
-    
     <item>
       <title>NURO光のF660AルーターでSPIを有効にする</title>
       <link>https://yaasita.github.io/2022/04/02/nuro-ipv6-spi/</link>
       <pubDate>Sat, 02 Apr 2022 04:11:55 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/04/02/nuro-ipv6-spi/</guid>
       <description>これを有効にしてもpingには反応してしまうので注意</description>
     </item>
-    
     <item>
       <title>ipv4とipv6 Happy Eyeballs</title>
       <link>https://yaasita.github.io/2022/03/18/ipv4-ipv6-happy-eyeballs.md/</link>
       <pubDate>Fri, 18 Mar 2022 03:38:37 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/03/18/ipv4-ipv6-happy-eyeballs.md/</guid>
-      <description>Happy EyeballsはTCPコネクションを先に確立させた方が勝つのでnginxのechoモジュールでsleepとかは意味ない
-初回はどちらか一方でも繋がれば遅延は感じないが
-一回接続に成功した場合はipv4を使うのかipv6を使うのかキャッシュしている状態なので切り替えに時間がかかる
-例えばipv6で繋がっていたサイト側でipv6をドロップさせると
-ip6tables -A INPUT -p tcp --dport 443 -j DROP 数秒遅延した後にipv4で接続する</description>
+      <description>Happy EyeballsはTCPコネクションを先に確立させた方が勝つのでnginxのechoモジュールでsleepとかは意味ない&#xA;初回はどちらか一方でも繋がれば遅延は感じないが&#xA;一回接続に成功した場合はipv4を使うのかipv6を使うのかキャッシュしている状態なので切り替えに時間がかかる&#xA;例えばipv6で繋がっていたサイト側でipv6をドロップさせると&#xA;ip6tables -A INPUT -p tcp --dport 443 -j DROP 数秒遅延した後にipv4で接続する</description>
     </item>
-    
   </channel>
 </rss>

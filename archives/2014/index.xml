@@ -4,224 +4,149 @@
     <title>2014 on # cd ~yaasita</title>
     <link>https://yaasita.github.io/archives/2014/</link>
     <description>Recent content in 2014 on # cd ~yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 21 Dec 2014 04:50:00 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/archives/2014/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 21 Dec 2014 04:50:00 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/archives/2014/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>vim-adventures</title>
       <link>https://yaasita.github.io/2014/12/21/vim-adventures/</link>
       <pubDate>Sun, 21 Dec 2014 04:50:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/12/21/vim-adventures/</guid>
-      <description>vim-adventures 攻略情報 level1 海のところはカーソルを右端に置いてjで下に行けば越えられる j,k移動は現在行の位置と同じ縦位置に移動しようとするということがわかればOKそう level2 w,bとかとって適当に宝箱取る 30秒以内に島を渡ってxキーとる スタート地点付近の宝箱をBキーで取る level3 なんか間違った英文をxキーを使って削除して鍵GET その後スタート地点付近にある宝箱取って終わり https://github.com/yaasita/bpsvim/wiki/vim-adventures
-http://vim-adventures.com/</description>
+      <description>vim-adventures 攻略情報 level1 海のところはカーソルを右端に置いてjで下に行けば越えられる j,k移動は現在行の位置と同じ縦位置に移動しようとするということがわかればOKそう level2 w,bとかとって適当に宝箱取る 30秒以内に島を渡ってxキーとる スタート地点付近の宝箱をBキーで取る level3 なんか間違った英文をxキーを使って削除して鍵GET その後スタート地点付近にある宝箱取って終わり https://github.com/yaasita/bpsvim/wiki/vim-adventures&#xA;http://vim-adventures.com/</description>
     </item>
-    
     <item>
       <title>ユニコード文字の顔文字一覧</title>
       <link>https://yaasita.github.io/2014/12/20/kaomoji/</link>
       <pubDate>Sat, 20 Dec 2014 14:47:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/12/20/kaomoji/</guid>
       <description>http://matome.naver.jp/odai/2139210846915545101</description>
     </item>
-    
     <item>
       <title>picasaウェブアルバム </title>
       <link>https://yaasita.github.io/2014/11/15/picasa-web/</link>
       <pubDate>Sat, 15 Nov 2014 23:57:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/11/15/picasa-web/</guid>
-      <description>こっから入れる
-https://picasaweb.google.com/home?hl=ja</description>
+      <description>こっから入れる&#xA;https://picasaweb.google.com/home?hl=ja</description>
     </item>
-    
     <item>
       <title>chromeのキャッシュから画像引っ張って保存する</title>
       <link>https://yaasita.github.io/2014/11/15/chrome-chache-jpg/</link>
       <pubDate>Sat, 15 Nov 2014 22:00:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/11/15/chrome-chache-jpg/</guid>
-      <description>キャッシュはC:\Users\hogeuser\AppData\Local\Google\Chrome\User Data\Default\Cacheに保存されている
-そっから引っ張ってきてLinuxとかで以下のコマンドで変換する
-file f_000* | grep JPEG | perl -F: -nlae &#39;print $F[0]&#39; | xargs -i mv {} {}.jpg Twitterの画像引っ張って来るためにやった
-本当はキャッシュを削除して該当のページだけを見てから保存する方法がいいのかも</description>
+      <description>キャッシュはC:\Users\hogeuser\AppData\Local\Google\Chrome\User Data\Default\Cacheに保存されている&#xA;そっから引っ張ってきてLinuxとかで以下のコマンドで変換する&#xA;file f_000* | grep JPEG | perl -F: -nlae &#39;print $F[0]&#39; | xargs -i mv {} {}.jpg Twitterの画像引っ張って来るためにやった&#xA;本当はキャッシュを削除して該当のページだけを見てから保存する方法がいいのかも</description>
     </item>
-    
     <item>
       <title>Onenoteでオートコレクトの設定</title>
       <link>https://yaasita.github.io/2014/10/30/onenote-autocorrect/</link>
       <pubDate>Thu, 30 Oct 2014 00:19:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/10/30/onenote-autocorrect/</guid>
-      <description>ファイル⇒オプション開いて
-文章校正⇒オートコレクトのオプション</description>
+      <description>ファイル⇒オプション開いて&#xA;文章校正⇒オートコレクトのオプション</description>
     </item>
-    
     <item>
       <title>フリーのPDF編集ソフト</title>
       <link>https://yaasita.github.io/2014/10/26/master-pdf-editor/</link>
       <pubDate>Sun, 26 Oct 2014 05:49:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/10/26/master-pdf-editor/</guid>
-      <description>Master PDF Editor
-http://code-industry.net/get.pdfeditor.php
-Linux版もあっていい感じ</description>
+      <description>Master PDF Editor&#xA;http://code-industry.net/get.pdfeditor.php&#xA;Linux版もあっていい感じ</description>
     </item>
-    
     <item>
       <title>MySQL Workbench入りのDockerイメージ</title>
       <link>https://yaasita.github.io/2014/10/22/mysql-workbench/</link>
       <pubDate>Wed, 22 Oct 2014 23:56:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/10/22/mysql-workbench/</guid>
-      <description>https://registry.hub.docker.com/u/yaasita/docker-mysql/
-使い方
-docker run -d -p 22 -v /tmp:/tmp mysql /usr/bin/supervisord ssh localhost -p49153 export DISPLAY=192.168.0.2:0 mysql-workbench </description>
+      <description>https://registry.hub.docker.com/u/yaasita/docker-mysql/&#xA;使い方&#xA;docker run -d -p 22 -v /tmp:/tmp mysql /usr/bin/supervisord ssh localhost -p49153 export DISPLAY=192.168.0.2:0 mysql-workbench </description>
     </item>
-    
     <item>
       <title>jQuery File Uploadをリバースプロキシ下で使う</title>
       <link>https://yaasita.github.io/2014/10/21/jquery-file-upload-patch/</link>
       <pubDate>Tue, 21 Oct 2014 01:08:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/10/21/jquery-file-upload-patch/</guid>
-      <description>デフォルトだとHTTP_X_FORWARDED_HOST等のヘッダは解釈してくれないので、
-以下のような設定にしてHOSTヘッダも化かす(apacheの場合)
-ProxyPreserveHost On ProxyPass / http://hoge.example.com/ ProxyPassReverse / http://hoge.example.com/ HTTP_X_FORWARDED_HOSTも解釈して欲しかったら以下のようなパッチを当てる
-パッチの当て方
-patch -p0 &amp;lt; rproxy.patch </description>
+      <description>デフォルトだとHTTP_X_FORWARDED_HOST等のヘッダは解釈してくれないので、&#xA;以下のような設定にしてHOSTヘッダも化かす(apacheの場合)&#xA;ProxyPreserveHost On ProxyPass / http://hoge.example.com/ ProxyPassReverse / http://hoge.example.com/ HTTP_X_FORWARDED_HOSTも解釈して欲しかったら以下のようなパッチを当てる&#xA;パッチの当て方&#xA;patch -p0 &amp;lt; rproxy.patch </description>
     </item>
-    
     <item>
       <title>ワークツリー付きのgit共有リポジトリ</title>
       <link>https://yaasita.github.io/2014/10/20/work-tree-git/</link>
       <pubDate>Mon, 20 Oct 2014 01:21:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/10/20/work-tree-git/</guid>
-      <description>作ったリポジトリを横断的に検索したいときbareリポジトリだと
-検索しにくいので、Work Tree付きの共有リポジトリ作った
-ついでに、bitbucketのリポジトリもローカルに持ってきたときのメモ
-関連
-gitでbareじゃない共有リポジトリを作る</description>
+      <description>作ったリポジトリを横断的に検索したいときbareリポジトリだと&#xA;検索しにくいので、Work Tree付きの共有リポジトリ作った&#xA;ついでに、bitbucketのリポジトリもローカルに持ってきたときのメモ&#xA;関連&#xA;gitでbareじゃない共有リポジトリを作る</description>
     </item>
-    
     <item>
       <title>dockerでpukiwiki</title>
       <link>https://yaasita.github.io/2014/10/14/docker-pukiwiki/</link>
       <pubDate>Tue, 14 Oct 2014 00:25:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/10/14/docker-pukiwiki/</guid>
-      <description>dockerでpukiwiki
-https://registry.hub.docker.com/u/yaasita/docker-pukiwiki/</description>
+      <description>dockerでpukiwiki&#xA;https://registry.hub.docker.com/u/yaasita/docker-pukiwiki/</description>
     </item>
-    
     <item>
       <title>CGI(perl)でメール送る</title>
       <link>https://yaasita.github.io/2014/10/13/mail-cgi/</link>
       <pubDate>Mon, 13 Oct 2014 22:42:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/10/13/mail-cgi/</guid>
-      <description>CGIでメール送るときの例
-POSTされる文字コードがよくわからない場合は
-nkf通してヨロシクやってもらう
-CSRF対策は前の画面でセッション作っておけば良いです</description>
+      <description>CGIでメール送るときの例&#xA;POSTされる文字コードがよくわからない場合は&#xA;nkf通してヨロシクやってもらう&#xA;CSRF対策は前の画面でセッション作っておけば良いです</description>
     </item>
-    
     <item>
       <title>Dockerでrep2を動かす</title>
       <link>https://yaasita.github.io/2014/10/13/docker_rep2/</link>
       <pubDate>Mon, 13 Oct 2014 22:08:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/10/13/docker_rep2/</guid>
       <description>https://registry.hub.docker.com/u/yaasita/docker-rep2/</description>
     </item>
-    
     <item>
       <title>itunesで購入済みアプリを見る</title>
       <link>https://yaasita.github.io/2014/10/05/itunes-purchase/</link>
       <pubDate>Sun, 05 Oct 2014 03:50:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/10/05/itunes-purchase/</guid>
       <description>itunes開いてiTunes Storeからナビリンクの購入済み</description>
     </item>
-    
     <item>
       <title>マウスでなぞってASCIIアート書ける</title>
       <link>https://yaasita.github.io/2014/09/28/asciiflow/</link>
       <pubDate>Sun, 28 Sep 2014 02:05:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/09/28/asciiflow/</guid>
-      <description>アスキーフローというらしい
-http://asciiflow.com/</description>
+      <description>アスキーフローというらしい&#xA;http://asciiflow.com/</description>
     </item>
-    
     <item>
       <title>modern.ieのVMファイルの解凍</title>
       <link>https://yaasita.github.io/2014/09/23/modern-ie/</link>
       <pubDate>Tue, 23 Sep 2014 22:18:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/09/23/modern-ie/</guid>
-      <description>モダンIEというIEテスト用のVM配ってるサイト
-sfxの解凍はunrarでできた
-unrar e IE11.Win7.ForLinuxVirtualBox.part1.sfx https://www.modern.ie/ja-jp
-Windows7の日本語化について
-WindowsUpdateでオプション選択してLanguage Pack入れる コントロールパネルの Clock, Language, and Regionを選択 TimeZone変更 http://qiita.com/hnakamur/items/5f2f9e817dd0de60abb2</description>
+      <description>モダンIEというIEテスト用のVM配ってるサイト&#xA;sfxの解凍はunrarでできた&#xA;unrar e IE11.Win7.ForLinuxVirtualBox.part1.sfx https://www.modern.ie/ja-jp&#xA;Windows7の日本語化について&#xA;WindowsUpdateでオプション選択してLanguage Pack入れる コントロールパネルの Clock, Language, and Regionを選択 TimeZone変更 http://qiita.com/hnakamur/items/5f2f9e817dd0de60abb2</description>
     </item>
-    
     <item>
       <title>squirrelmailっていうWebメールクライアント</title>
       <link>https://yaasita.github.io/2014/09/21/squirrelmail/</link>
       <pubDate>Sun, 21 Sep 2014 01:56:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/09/21/squirrelmail/</guid>
-      <description>いわゆるweb mailソフト
-IMAPしか対応してないけど、localhost以外のメールも読める
-Dockerイメージにしてみた
-https://registry.hub.docker.com/u/yaasita/docker-squirrelmail/
-sshで入って以下のコマンドで設定できる
-/etc/squirrelmail/conf.pl 設定箇所 IMAPの接続情報 IMAPのTLS接続の有無 2. Server Settings =&amp;gt; A. Update IMAP Settings 言語 10. Languages 1. Default Language =&amp;gt; ja_JP 2. Default Charset =&amp;gt; iso-2022-jp 参考リンク http://centossrv.com/squirrelmail.shtml </description>
+      <description>いわゆるweb mailソフト&#xA;IMAPしか対応してないけど、localhost以外のメールも読める&#xA;Dockerイメージにしてみた&#xA;https://registry.hub.docker.com/u/yaasita/docker-squirrelmail/&#xA;sshで入って以下のコマンドで設定できる&#xA;/etc/squirrelmail/conf.pl 設定箇所 IMAPの接続情報 IMAPのTLS接続の有無 2. Server Settings =&amp;gt; A. Update IMAP Settings 言語 10. Languages 1. Default Language =&amp;gt; ja_JP 2. Default Charset =&amp;gt; iso-2022-jp 参考リンク http://centossrv.com/squirrelmail.shtml </description>
     </item>
-    
     <item>
       <title>闇SIer</title>
       <link>https://yaasita.github.io/2014/09/11/yami_sier/</link>
       <pubDate>Thu, 11 Sep 2014 02:53:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/09/11/yami_sier/</guid>
       <description> 闇SIer 元ファイル </description>
     </item>
-    
     <item>
       <title>自分の声を遅れて聞こえさせて話し難くなる</title>
       <link>https://yaasita.github.io/2014/08/31/speech-jammer/</link>
       <pubDate>Sun, 31 Aug 2014 02:22:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/08/31/speech-jammer/</guid>
-      <description>SpeechJammerLiteというらしい
-https://sites.google.com/site/qurihara/home/speechjammer/lt</description>
+      <description>SpeechJammerLiteというらしい&#xA;https://sites.google.com/site/qurihara/home/speechjammer/lt</description>
     </item>
-    
     <item>
       <title>3Dのパズルゲーム？</title>
       <link>https://yaasita.github.io/2014/08/31/blueprint3d/</link>
       <pubDate>Sun, 31 Aug 2014 00:42:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/08/31/blueprint3d/</guid>
-      <description>3Dのパーツを重ねて絵にするゲーム
-Blueprint3D
-http://armorgames.com/play/12557/blueprint3d</description>
+      <description>3Dのパーツを重ねて絵にするゲーム&#xA;Blueprint3D&#xA;http://armorgames.com/play/12557/blueprint3d</description>
     </item>
-    
     <item>
       <title>簡易Radiko録音スクリプトらしい</title>
       <link>https://yaasita.github.io/2014/08/27/radiko-recording/</link>
       <pubDate>Wed, 27 Aug 2014 00:49:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2014/08/27/radiko-recording/</guid>
-      <description>らしい
-https://gist.github.com/matchy2/3956266</description>
+      <description>らしい&#xA;https://gist.github.com/matchy2/3956266</description>
     </item>
-    
   </channel>
 </rss>

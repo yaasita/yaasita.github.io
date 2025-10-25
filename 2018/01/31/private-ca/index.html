@@ -6,12 +6,14 @@
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <title>プライベートCA作るまで | # cd ~yaasita</title>
-    <meta name="generator" content="Hugo 0.111.3">
+    <meta name="generator" content="Hugo 0.131.0">
 
     <link rel="alternate" type="application/rss+xml" href="/index.xml" title="# cd ~yaasita" />
 
-    <meta property="og:title" content="プライベートCA作るまで" />
-<meta property="og:description" content="Debian9でやってみた
+    <meta property="og:url" content="https://yaasita.github.io/2018/01/31/private-ca/">
+  <meta property="og:site_name" content="# cd ~yaasita">
+  <meta property="og:title" content="プライベートCA作るまで">
+  <meta property="og:description" content="Debian9でやってみた
 cd /etc/ssl /usr/lib/ssl/misc/CA.pl -newca /usr/lib/ssl/misc/CA.pl -newreq /usr/lib/ssl/misc/CA.pl -sign # /tmp/ca.pemを入れてもらう openssl x509 -outform PEM -in demoCA/cacert.pem -out /tmp/ca.pem # 変換 openssl x509 -outform PEM -in newcert.pem -out /etc/nginx/ssl/hogehoge.crt # パスフレーズ解除 openssl rsa -in newkey.pem -out /etc/nginx/ssl/hogehoge.key データベースおかしくなったら
 index.txt空っぽすればOK
 rm demoCA/index.txt touch demoCA/index.txt /etc/ssl/openssl.cnf は こんな感じ
@@ -19,11 +21,13 @@ rm demoCA/index.txt touch demoCA/index.txt /etc/ssl/openssl.cnf は こんな感
 chromeなら設定 =&gt; 詳細設定 =&gt; SSLの管理からやる
 windowsの場合はファイル名を指定して実行 =&gt; certlm.msc と同じこと
 あと注意点として、chromeはsubjectAltNameを見るので注意
-(EnableCommonNameFallbackForLocalAnchorsってやつを設定するとできるようだけど)" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://yaasita.github.io/2018/01/31/private-ca/" /><meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&v=4"/><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2018-01-31T18:04:22+09:00" />
-<meta property="article:modified_time" content="2018-01-31T18:04:22+09:00" />
+(EnableCommonNameFallbackForLocalAnchorsってやつを設定するとできるようだけど)">
+  <meta property="og:locale" content="ja">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2018-01-31T18:04:22+09:00">
+    <meta property="article:modified_time" content="2018-01-31T18:04:22+09:00">
+    <meta property="og:image" content="https://avatars3.githubusercontent.com/u/1515338?s=100&amp;v=4">
 
     <script id="dsq-count-scr" src="https://yaasita.disqus.com/count.js" async></script>
     <script defer src="https://cloud.umami.is/script.js" data-website-id="36937576-b2d5-4494-aba8-d0b70a153691"></script>
@@ -101,7 +105,7 @@ chromeなら設定 =&gt; 詳細設定 =&gt; SSLの管理からやる</p>
 
       
       <div id="disqus_thread"></div>
-<script type="application/javascript">
+<script>
     window.disqus_config = function () {
     
     
@@ -200,7 +204,7 @@ chromeなら設定 =&gt; 詳細設定 =&gt; SSLの管理からやる</p>
         </li>
         
         <li>
-          <a href="/categories/linux"><span></span>linux (355)</a>
+          <a href="/categories/linux"><span></span>linux (356)</a>
         </li>
         
         <li>
@@ -216,7 +220,7 @@ chromeなら設定 =&gt; 詳細設定 =&gt; SSLの管理からやる</p>
         </li>
         
         <li>
-          <a href="/categories/soft"><span></span>soft (430)</a>
+          <a href="/categories/soft"><span></span>soft (431)</a>
         </li>
         
         <li>
@@ -307,7 +311,7 @@ chromeなら設定 =&gt; 詳細設定 =&gt; SSLの管理からやる</p>
         </li>
         
         <li>
-          <a href="/archives/2025"><span></span>2025 (13)</a>
+          <a href="/archives/2025"><span></span>2025 (14)</a>
         </li>
         
       </ul>

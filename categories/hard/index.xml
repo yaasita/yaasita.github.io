@@ -1,269 +1,152 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>hard on # cd ~yaasita</title>
+    <title>Hard on # cd ~yaasita</title>
     <link>https://yaasita.github.io/categories/hard/</link>
-    <description>Recent content in hard on # cd ~yaasita</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <description>Recent content in Hard on # cd ~yaasita</description>
+    <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 03 Mar 2025 01:28:35 +0900</lastBuildDate><atom:link href="https://yaasita.github.io/categories/hard/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 03 Mar 2025 01:28:35 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/categories/hard/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>スマホ変えて楽天モバイルにした</title>
       <link>https://yaasita.github.io/2025/03/03/rakuten-mobile/</link>
       <pubDate>Mon, 03 Mar 2025 01:28:35 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2025/03/03/rakuten-mobile/</guid>
-      <description>スマホ変えました
-Sharp AQUOS wish4 (15680円) の Docomo版にしました
-androidは14
-Docomo版なので、Docomo用のプリインアプリが沢山あって無効化が面倒
-ただ画面がでかくて良いかもしれない
-あとMNPで楽天モバイルにしました
-イオンモバイルからワンストップMNPでやろうとしたんだけどなんか申請途中でエラー
-イオン側は申請受付状態、楽天側は未申請状態になって詰んだと思ったけど
-1日くらい待つと、イオンモバイル側にMNP予約番号が表示見されるようになってたのでそれを楽天モバイル側に手動で入力して申請
-何とかなった
-あとAPN設定しないとつながらない
-https://network.mobile.rakuten.co.jp/faq/detail/00001495/
-今回からeSIMにしてみたけど便利
-ただ、eSIMでも楽天モバイルからの郵便物(楽天モバイルの取説)は届くし受け取り必要でした</description>
+      <description>スマホ変えました&#xA;Sharp AQUOS wish4 (15680円) の Docomo版にしました&#xA;androidは14&#xA;Docomo版なので、Docomo用のプリインアプリが沢山あって無効化が面倒&#xA;ただ画面がでかくて良いかもしれない&#xA;あとMNPで楽天モバイルにしました&#xA;イオンモバイルからワンストップMNPでやろうとしたんだけどなんか申請途中でエラー&#xA;イオン側は申請受付状態、楽天側は未申請状態になって詰んだと思ったけど&#xA;1日くらい待つと、イオンモバイル側にMNP予約番号が表示見されるようになってたのでそれを楽天モバイル側に手動で入力して申請&#xA;何とかなった&#xA;あとAPN設定しないとつながらない&#xA;https://network.mobile.rakuten.co.jp/faq/detail/00001495/&#xA;今回からeSIMにしてみたけど便利&#xA;ただ、eSIMでも楽天モバイルからの郵便物(楽天モバイルの取説)は届くし受け取り必要でした</description>
     </item>
-    
     <item>
       <title>ゲームパッド使用感ANS-PF069</title>
       <link>https://yaasita.github.io/2023/05/28/gamepad-ans-pf069/</link>
       <pubDate>Sun, 28 May 2023 02:16:54 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2023/05/28/gamepad-ans-pf069/</guid>
-      <description>PS4/PS3/PC用 シンプルターボコントローラ 零～ZERO～
-このゲームパッド使ってたけど、なんかUSBを指しっぱなしで起動するとランプの部分が青くなって識別不能になる
-抜き差しすれば直るけどなんかめんどくさい
-それ以外の使用感は不満なかったんだけど・・・
-結局、F310rに戻した</description>
+      <description>PS4/PS3/PC用 シンプルターボコントローラ 零～ZERO～&#xA;このゲームパッド使ってたけど、なんかUSBを指しっぱなしで起動するとランプの部分が青くなって識別不能になる&#xA;抜き差しすれば直るけどなんかめんどくさい&#xA;それ以外の使用感は不満なかったんだけど・・・&#xA;結局、F310rに戻した</description>
     </item>
-    
     <item>
       <title>androidのdevice protection</title>
       <link>https://yaasita.github.io/2022/12/24/android-device-protection/</link>
       <pubDate>Sat, 24 Dec 2022 04:35:15 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2022/12/24/android-device-protection/</guid>
-      <description>説明
-https://spdic.biz/termdic/deviceprotection/
-デバイスプロテクション解除
-https://spdic.biz/category/services/dp-unlock/
-AQUOS Sense3解除
-https://spdic.biz/services/dp-unlock/frp-aquoss-se3-v10/
-Unlock FRP(Factory reset protection)
-https://www.youtube.com/watch?v=3ECcn7tXWDs</description>
+      <description>説明&#xA;https://spdic.biz/termdic/deviceprotection/&#xA;デバイスプロテクション解除&#xA;https://spdic.biz/category/services/dp-unlock/&#xA;AQUOS Sense3解除&#xA;https://spdic.biz/services/dp-unlock/frp-aquoss-se3-v10/&#xA;Unlock FRP(Factory reset protection)&#xA;https://www.youtube.com/watch?v=3ECcn7tXWDs</description>
     </item>
-    
     <item>
       <title>長年使ったマウスコンピューターのPC</title>
       <link>https://yaasita.github.io/2021/10/13/mouse-pc/</link>
       <pubDate>Wed, 13 Oct 2021 04:43:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/10/13/mouse-pc/</guid>
-      <description>長年使ったmouse computerのPCを廃棄した
-めっちゃくちゃな長くもったし、まだHDDも壊れてなかったすごい
-捨てたやつのスペック
-商品型名： LB-C110B [Windows 8.1搭載]
-商品単価： \44,940
-OS: Windows 8.1 64ビット CPU: インテル(R) Celeron(R) プロセッサー 1037U (2コア/1.80GHz/2Mキャッシュ) メモリ: \5,250 8GB メモリ [ 8GB×1 (DDR3 SO-DIMM PC3-12800) ] HDD1:【キャンペーン】500GB 5400rpm [ Western Digital製 ] VGA:インテル(R) HD グラフィックス 3.5ドライブベイ :SDカードリーダー マザーボード :インテル(R) NM70 Express チップセット ※SSD搭載時は SATAII 接続になります。( mSATA SSDを除く ) ベアボーン :LuvBook C シリーズ 液晶 :11.6型ワイド (1366x768) マルチタッチ対応光沢HD液晶パネル LAN :[ オンボード ] 10/100/1000BASE-T GigaBit-Ethernet LAN 無線LAN :無線LAN ( IEEE802.</description>
+      <description>長年使ったmouse computerのPCを廃棄した&#xA;めっちゃくちゃな長くもったし、まだHDDも壊れてなかったすごい&#xA;捨てたやつのスペック&#xA;商品型名： LB-C110B [Windows 8.1搭載]&#xA;商品単価： \44,940&#xA;OS: Windows 8.1 64ビット CPU: インテル(R) Celeron(R) プロセッサー 1037U (2コア/1.80GHz/2Mキャッシュ) メモリ: \5,250 8GB メモリ [ 8GB×1 (DDR3 SO-DIMM PC3-12800) ] HDD1:【キャンペーン】500GB 5400rpm [ Western Digital製 ] VGA:インテル(R) HD グラフィックス 3.5ドライブベイ :SDカードリーダー マザーボード :インテル(R) NM70 Express チップセット ※SSD搭載時は SATAII 接続になります。( mSATA SSDを除く ) ベアボーン :LuvBook C シリーズ 液晶 :11.6型ワイド (1366x768) マルチタッチ対応光沢HD液晶パネル LAN :[ オンボード ] 10/100/1000BASE-T GigaBit-Ethernet LAN 無線LAN :無線LAN ( IEEE802.</description>
     </item>
-    
     <item>
       <title>スマホ変えた</title>
       <link>https://yaasita.github.io/2021/04/17/sumaho/</link>
       <pubDate>Sat, 17 Apr 2021 22:56:59 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2021/04/17/sumaho/</guid>
-      <description>SH-M12S AQUOS sense3
-ってやつに変えました
-https://jp.sharp/products/shm12/
-おサイフケータイ対応なので、モバイルPASMOにもしました
-androidは10まで上がりました</description>
+      <description>SH-M12S AQUOS sense3&#xA;ってやつに変えました&#xA;https://jp.sharp/products/shm12/&#xA;おサイフケータイ対応なので、モバイルPASMOにもしました&#xA;androidは10まで上がりました</description>
     </item>
-    
     <item>
       <title>AWSのt4gインスタンスを試す</title>
       <link>https://yaasita.github.io/2020/11/05/t4g-instance/</link>
       <pubDate>Thu, 05 Nov 2020 02:58:38 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/11/05/t4g-instance/</guid>
-      <description>新しくt4gインスタンスが出たみたいなので試してみた
-cpuminer アルゴリズム=lyra2rev2 で測定
-name cpu memory hashrate(kH/s) 自宅PC Core i5-4460 3.20GHz 4コア 16G 384 ノートPC LB-C110B Celeron 1037U 1.80GHz 2コア 8G 79 t4g.micro (CPUクレジットあり) ARM CPU 2コア 1G 233 t4g.micro (CPUクレジットなし) ARM CPU 2コア 1G 24 aws lightsail (t2.nano, CPUクレジットあり) Xeon E5-2676 v3 2.40GHz 1コア 512M 81 aws lightsail (t2.nano, CPUクレジットなし) Xeon E5-2676 v3 2.40GHz 1コア 512M 6 前回記事
-まとめ t4g良いかもしれない</description>
+      <description>新しくt4gインスタンスが出たみたいなので試してみた&#xA;cpuminer アルゴリズム=lyra2rev2 で測定&#xA;name cpu memory hashrate(kH/s) 自宅PC Core i5-4460 3.20GHz 4コア 16G 384 ノートPC LB-C110B Celeron 1037U 1.80GHz 2コア 8G 79 t4g.micro (CPUクレジットあり) ARM CPU 2コア 1G 233 t4g.micro (CPUクレジットなし) ARM CPU 2コア 1G 24 aws lightsail (t2.nano, CPUクレジットあり) Xeon E5-2676 v3 2.40GHz 1コア 512M 81 aws lightsail (t2.nano, CPUクレジットなし) Xeon E5-2676 v3 2.40GHz 1コア 512M 6 前回記事&#xA;まとめ t4g良いかもしれない</description>
     </item>
-    
     <item>
       <title>chromebookのLinuxが新しくなってた</title>
       <link>https://yaasita.github.io/2020/08/30/new-linux-in-chromebook/</link>
       <pubDate>Sun, 30 Aug 2020 04:28:55 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/08/30/new-linux-in-chromebook/</guid>
-      <description>Linuxを消して、また入れたら良くなってた
-Debianが10になった 日本語が打てる(ただ表示はバグる) 絵文字が見れる ターミナルがタブに対応した </description>
+      <description>Linuxを消して、また入れたら良くなってた&#xA;Debianが10になった 日本語が打てる(ただ表示はバグる) 絵文字が見れる ターミナルがタブに対応した </description>
     </item>
-    
     <item>
       <title>続 chromebookでbackslashを入力</title>
       <link>https://yaasita.github.io/2020/01/17/backslash-with-vim/</link>
       <pubDate>Fri, 17 Jan 2020 17:22:02 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/01/17/backslash-with-vim/</guid>
-      <description>前回 の続き
-以下をvimrcに追記して事なきを得た
-inoremapって非ASCII文字でも行けるみたい
-inoremap ¥ \ cnoremap ¥ \ </description>
+      <description>前回 の続き&#xA;以下をvimrcに追記して事なきを得た&#xA;inoremapって非ASCII文字でも行けるみたい&#xA;inoremap ¥ \ cnoremap ¥ \ </description>
     </item>
-    
     <item>
       <title>chromebookでbackslashを入力</title>
       <link>https://yaasita.github.io/2020/01/11/chromebook-backslash/</link>
       <pubDate>Sat, 11 Jan 2020 15:47:07 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/01/11/chromebook-backslash/</guid>
-      <description>今持ってるchromebookだとバックスラッシュ(0x5C)が入らない
-半角モードにして￥キーを押すとU+00A5が入力されてしまう
-入力には全角モードにして、￥キー押した後に変換して、バックスラッシュを選択する必要がある
-もしくは、Linux内なら、fcitx経由で入力すれば半角￥キーでバックスラッシュになった
-WindowsとかMacなら一発だけど、これは不便かも・・・プログラミングの時にも困るし・・・</description>
+      <description>今持ってるchromebookだとバックスラッシュ(0x5C)が入らない&#xA;半角モードにして￥キーを押すとU+00A5が入力されてしまう&#xA;入力には全角モードにして、￥キー押した後に変換して、バックスラッシュを選択する必要がある&#xA;もしくは、Linux内なら、fcitx経由で入力すれば半角￥キーでバックスラッシュになった&#xA;WindowsとかMacなら一発だけど、これは不便かも・・・プログラミングの時にも困るし・・・</description>
     </item>
-    
     <item>
       <title>chromebookの日本語入力</title>
       <link>https://yaasita.github.io/2020/01/01/chromebook-japanese/</link>
       <pubDate>Wed, 01 Jan 2020 13:27:50 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2020/01/01/chromebook-japanese/</guid>
-      <description>明けましておめでとうございます。
-chromebookで日本語入力する場合はローカルの場合はfcitx-mozcを使って入力
-リモートに接続する場合は、一旦踏み台サーバーを経由して、X転送したqterminalを使っている
-ssh humidai-server -XC export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx fcitx qterminal 自分の環境では-Cオプションを付けない場合は800kbpsくらい通信するが、つけると100kbpsになるので外でやる時にはつけた方が良さそう
-回線が細いテザリング環境では ttyd を立てて、ポートフォワーディングでつないだ方が良いかも
-Ctrl-wがchromeのタブ閉じになってしまうので微妙かなと思ったんだけど、「その他のツール(L)」 =&amp;gt; 「ショートカットを作成」からアプリとして作れば、Ctrl-wも使えた
-こっちなら日本語入力も出来るのでこっちの方が良いかもしれない
-通信量も1kbps位だし</description>
+      <description>明けましておめでとうございます。&#xA;chromebookで日本語入力する場合はローカルの場合はfcitx-mozcを使って入力&#xA;リモートに接続する場合は、一旦踏み台サーバーを経由して、X転送したqterminalを使っている&#xA;ssh humidai-server -XC export GTK_IM_MODULE=fcitx export QT_IM_MODULE=fcitx export XMODIFIERS=@im=fcitx fcitx qterminal 自分の環境では-Cオプションを付けない場合は800kbpsくらい通信するが、つけると100kbpsになるので外でやる時にはつけた方が良さそう&#xA;回線が細いテザリング環境では ttyd を立てて、ポートフォワーディングでつないだ方が良いかも&#xA;Ctrl-wがchromeのタブ閉じになってしまうので微妙かなと思ったんだけど、「その他のツール(L)」 =&amp;gt; 「ショートカットを作成」からアプリとして作れば、Ctrl-wも使えた&#xA;こっちなら日本語入力も出来るのでこっちの方が良いかもしれない&#xA;通信量も1kbps位だし</description>
     </item>
-    
     <item>
       <title>chromebookが最高だった</title>
       <link>https://yaasita.github.io/2019/12/23/chromebook/</link>
       <pubDate>Mon, 23 Dec 2019 05:58:32 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2019/12/23/chromebook/</guid>
-      <description>ASUS の C434TA-AI0084 を買ったのでレビュー
-chromeOS 起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある 解除がちょっと遅い10秒くらい待たされる chromeの複数ユーザー機能が使えない 多重ログイン機能はあるけどちょっと微妙 別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能 ディスプレイ タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 起動毎にバックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗 テザリング Moto E5 とbluetoothでのテザリングが出来なかった とりあえずUSBテザリングは刺すだけで使えたので良しとしてます キーボード Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない ←Alt + 明るさキーで消せました Androidアプリ ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない Linux環境 OS Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい USB共有機能あり /opt/google/cros-containers/bin/.. というプロセスが動いてる以外は普通のLinux, systemdも問題なし ファイル共有 右クリックから簡単に共有可能 Linux環境側では/mnt/chromeos に現れる /mnt/chromeos以下はパーミッションやownerが狂わないように制限されてるのでトラブルになることは無いと思う デフォルトでファイルアプリを使ってchromeOS側からLinux側のhomeディレクトリは自由に読み書き可能 なので共有ファイル追加しなくても特段問題なし ネットワーク こんなスクリプト だと chromeOS側から 127.0.0.1:3000 にアクセスできる でも、なぜかDockerで docker run -p 3000:80 nginx とかやって 127.</description>
+      <description>ASUS の C434TA-AI0084 を買ったのでレビュー&#xA;chromeOS 起動もアプリの動作も全体的に速くてとても良い smartlockが失敗する時がある 解除がちょっと遅い10秒くらい待たされる chromeの複数ユーザー機能が使えない 多重ログイン機能はあるけどちょっと微妙 別ユーザーへスイッチする場合はsmartlockで解除できない 別ユーザー側のAndroidアプリ、Linux環境は使えない(chromeだけ) 後述のLinux環境でchromium入れてそこでアカウント切り替えする手もある 同時にログインできないだけなので、別ユーザを追加してスイッチすることは可能 ディスプレイ タブレットには少し重い 解像度は 2194x1234 ～ 1182x665の範囲で調整可能 起動毎にバックライトの明るさがリセットされてしまう(音量は記憶してるのに。。。) グレア液晶は問題なし綺麗 テザリング Moto E5 とbluetoothでのテザリングが出来なかった とりあえずUSBテザリングは刺すだけで使えたので良しとしてます キーボード Deleteキーが無いけど、Alt + Backspaceで問題なし かな/英語キーと, 半角全角切り替えキーがあるのでMac派でもWindows派でも大丈夫かも キーボードのバックライトは消せない ←Alt + 明るさキーで消せました Androidアプリ ほとんどのアプリは問題なかった 大画面でAndroidアプリ使うのは割と快適(例 tumblr) Android版Excelでとりあえず見るのはOKそう タウンWifiみたいなWifiを制御するアプリは上手く動かないかもしれない(要検証) パズドラは動かない Linux環境 OS Debian9なのでDebian10にアップデートされるのを期待 使い始めるのはすごく簡単、設定から有効ボタンを押すだけ 丸ごとLinux環境バックアップ機能あり バックアップは丸ごとtarで固めて1ファイルにしてくれるのでハンドリングはしやすい USB共有機能あり /opt/google/cros-containers/bin/.. というプロセスが動いてる以外は普通のLinux, systemdも問題なし ファイル共有 右クリックから簡単に共有可能 Linux環境側では/mnt/chromeos に現れる /mnt/chromeos以下はパーミッションやownerが狂わないように制限されてるのでトラブルになることは無いと思う デフォルトでファイルアプリを使ってchromeOS側からLinux側のhomeディレクトリは自由に読み書き可能 なので共有ファイル追加しなくても特段問題なし ネットワーク こんなスクリプト だと chromeOS側から 127.0.0.1:3000 にアクセスできる でも、なぜかDockerで docker run -p 3000:80 nginx とかやって 127.</description>
     </item>
-    
     <item>
       <title>スマホ変えた</title>
       <link>https://yaasita.github.io/2018/12/19/sumaho/</link>
       <pubDate>Wed, 19 Dec 2018 01:06:14 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/12/19/sumaho/</guid>
-      <description>Moto E5 2GB/16GBってやつに変更した
-Android8まで上がった
-ついでにSIMもIIJ mioからLINEモバイルに変えた</description>
+      <description>Moto E5 2GB/16GBってやつに変更した&#xA;Android8まで上がった&#xA;ついでにSIMもIIJ mioからLINEモバイルに変えた</description>
     </item>
-    
     <item>
       <title>電源を変えた</title>
       <link>https://yaasita.github.io/2018/12/17/power-supply/</link>
       <pubDate>Mon, 17 Dec 2018 00:02:37 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2018/12/17/power-supply/</guid>
-      <description>寒いせいでPCの調子が悪くなった
-ANTEC(アンテック) NeoECO Classicシリーズ 650Wモデル NE650C
-って3年くらい使った電源が、寒い日にうまくついてくれない。
-（電源つけて2,3秒で再起動を繰り返す)
-なので
-KRPW-AK750W/88+ という玄人志向のやつに変更した
-8000円くらいのやつ</description>
+      <description>寒いせいでPCの調子が悪くなった&#xA;ANTEC(アンテック) NeoECO Classicシリーズ 650Wモデル NE650C&#xA;って3年くらい使った電源が、寒い日にうまくついてくれない。&#xA;（電源つけて2,3秒で再起動を繰り返す)&#xA;なので&#xA;KRPW-AK750W/88+ という玄人志向のやつに変更した&#xA;8000円くらいのやつ</description>
     </item>
-    
     <item>
       <title>PS Vita 3.67アップデートでTLS1.2対応</title>
       <link>https://yaasita.github.io/2017/11/29/vita-new-version/</link>
       <pubDate>Wed, 29 Nov 2017 23:20:37 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2017/11/29/vita-new-version/</guid>
-      <description>3.65時点だと対応してなかったけど、3.67でTLS1.2対応したようです🎉
-公式には
-システムソフトウェアにおいて、動作の安定性を改善しました。
-としか書いてないけど</description>
+      <description>3.65時点だと対応してなかったけど、3.67でTLS1.2対応したようです🎉&#xA;公式には&#xA;システムソフトウェアにおいて、動作の安定性を改善しました。&#xA;としか書いてないけど</description>
     </item>
-    
     <item>
       <title>PS vita向けSSL設定</title>
       <link>https://yaasita.github.io/2017/06/13/vita-ssl/</link>
       <pubDate>Tue, 13 Jun 2017 01:57:49 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2017/06/13/vita-ssl/</guid>
-      <description>PlayStation Vitaの内蔵ブラウザは
-TLSv1.1, TLSv1.2
-が使えないので、 TLSv1 を使うこと
-システムソフトウェア 3.65 時点</description>
+      <description>PlayStation Vitaの内蔵ブラウザは&#xA;TLSv1.1, TLSv1.2&#xA;が使えないので、 TLSv1 を使うこと&#xA;システムソフトウェア 3.65 時点</description>
     </item>
-    
     <item>
       <title>MacBook買ったのでサポートお願いした</title>
       <link>https://yaasita.github.io/2017/01/09/mac-personal-setup/</link>
       <pubDate>Mon, 09 Jan 2017 16:27:40 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2017/01/09/mac-personal-setup/</guid>
-      <description>13インチ MacBook Air 1.6GHzデュアルコアIntel Core i5 整備済製品 (\84,000)で買ったのでパーソナルセットアップをお願いしてみた
-時間は30分だったけど、電話でいろいろ質問できて良い
-http://www.apple.com/jp/retail/personalsetup/</description>
+      <description>13インチ MacBook Air 1.6GHzデュアルコアIntel Core i5 整備済製品 (\84,000)で買ったのでパーソナルセットアップをお願いしてみた&#xA;時間は30分だったけど、電話でいろいろ質問できて良い&#xA;http://www.apple.com/jp/retail/personalsetup/</description>
     </item>
-    
     <item>
       <title>最近買ったスマホ</title>
       <link>https://yaasita.github.io/2016/10/22/smart-phone/</link>
       <pubDate>Sat, 22 Oct 2016 22:54:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/10/22/smart-phone/</guid>
-      <description>エイスース SIMフリースマートフォン ASUS ZenFone 2 Laser（Qualcomm Snapdragon 410/メモリ 2GB） 16GB ブラック ZE500KL-BK16 18,672円だった
-Androidは6.0.1まで上がった</description>
+      <description>エイスース SIMフリースマートフォン ASUS ZenFone 2 Laser（Qualcomm Snapdragon 410/メモリ 2GB） 16GB ブラック ZE500KL-BK16 18,672円だった&#xA;Androidは6.0.1まで上がった</description>
     </item>
-    
     <item>
       <title>HDDの不良セクタ埋める</title>
       <link>https://yaasita.github.io/2016/03/26/hdd_bad_sector/</link>
       <pubDate>Sat, 26 Mar 2016 00:43:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/03/26/hdd_bad_sector/</guid>
-      <description>HDDの不良セクタ代替処理を自動化
-Reallocated_Sector_Ctが残ってれば使える手法
-https://github.com/yaasita/hdd_badsector
-使い方
-smartctl -a /dev/sdc | ./hdd_check.pl /dev/sdc </description>
+      <description>HDDの不良セクタ代替処理を自動化&#xA;Reallocated_Sector_Ctが残ってれば使える手法&#xA;https://github.com/yaasita/hdd_badsector&#xA;使い方&#xA;smartctl -a /dev/sdc | ./hdd_check.pl /dev/sdc </description>
     </item>
-    
     <item>
       <title>systemdでの電源管理</title>
       <link>https://yaasita.github.io/2016/01/06/acpi/</link>
       <pubDate>Wed, 06 Jan 2016 00:47:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2016/01/06/acpi/</guid>
-      <description>Arch Linuxのwikiが詳しかった
-/etc/systemd/logind.conf
-あたりを直す
-ノートPC閉じたときのSuspendを止めたかったから↓みたいにした
-HandleSuspendKey=ignore HandleLidSwitch=ignore </description>
+      <description>Arch Linuxのwikiが詳しかった&#xA;/etc/systemd/logind.conf&#xA;あたりを直す&#xA;ノートPC閉じたときのSuspendを止めたかったから↓みたいにした&#xA;HandleSuspendKey=ignore HandleLidSwitch=ignore </description>
     </item>
-    
     <item>
       <title>RAID5のリビルド中にもう一個壊れるってやつ</title>
       <link>https://yaasita.github.io/2015/10/17/raid5_fail/</link>
       <pubDate>Sat, 17 Oct 2015 16:52:00 +0900</pubDate>
-      
       <guid>https://yaasita.github.io/2015/10/17/raid5_fail/</guid>
-      <description>リビルド中にもう一個壊れてRAID5が終わった話
-/dev/md0: Version : 1.2 Creation Time : Fri Jan 6 12:24:44 2012 Raid Level : raid5 Array Size : 5860535808 (5589.04 GiB 6001.19 GB) Used Dev Size : 1953511936 (1863.01 GiB 2000.40 GB) Raid Devices : 4 Total Devices : 4 Persistence : Superblock is persistent Update Time : Sat Oct 17 16:59:57 2015 State : clean, FAILED Active Devices : 2 Working Devices : 3 Failed Devices : 1 Spare Devices : 1 Layout : left-symmetric Chunk Size : 512K Name : hoge:0 UUID : 55b9d6ea:4627c873:a0bcab05:a4f0c25d Events : 6755 Number Major Minor RaidDevice State 5 8 49 0 active sync /dev/sdd1 2 0 0 2 removed 2 8 33 2 active sync /dev/sdc1 6 0 0 6 removed 4 8 1 - faulty /dev/sda1 6 8 17 - spare /dev/sdb1 HDD一台が壊れたので /dev/sdb1を追加中にアレイの構成Diskがもう一個壊れた</description>
+      <description>リビルド中にもう一個壊れてRAID5が終わった話&#xA;/dev/md0: Version : 1.2 Creation Time : Fri Jan 6 12:24:44 2012 Raid Level : raid5 Array Size : 5860535808 (5589.04 GiB 6001.19 GB) Used Dev Size : 1953511936 (1863.01 GiB 2000.40 GB) Raid Devices : 4 Total Devices : 4 Persistence : Superblock is persistent Update Time : Sat Oct 17 16:59:57 2015 State : clean, FAILED Active Devices : 2 Working Devices : 3 Failed Devices : 1 Spare Devices : 1 Layout : left-symmetric Chunk Size : 512K Name : hoge:0 UUID : 55b9d6ea:4627c873:a0bcab05:a4f0c25d Events : 6755 Number Major Minor RaidDevice State 5 8 49 0 active sync /dev/sdd1 2 0 0 2 removed 2 8 33 2 active sync /dev/sdc1 6 0 0 6 removed 4 8 1 - faulty /dev/sda1 6 8 17 - spare /dev/sdb1 HDD一台が壊れたので /dev/sdb1を追加中にアレイの構成Diskがもう一個壊れた</description>
     </item>
-    
   </channel>
 </rss>
