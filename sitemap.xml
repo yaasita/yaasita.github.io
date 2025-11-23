@@ -3,24 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2025-10-26T03:24:35+09:00</lastmod>
+    <lastmod>2025-11-23T23:59:56+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/archives/2025/</loc>
-    <lastmod>2025-10-26T03:24:35+09:00</lastmod>
+    <lastmod>2025-11-23T23:59:56+09:00</lastmod>
+  </url><url>
+    <loc>https://yaasita.github.io/archives/</loc>
+    <lastmod>2025-11-23T23:59:56+09:00</lastmod>
+  </url><url>
+    <loc>https://yaasita.github.io/2025/11/23/azure-storage/</loc>
+    <lastmod>2025-11-23T23:59:56+09:00</lastmod>
+  </url><url>
+    <loc>https://yaasita.github.io/categories/</loc>
+    <lastmod>2025-11-23T23:59:56+09:00</lastmod>
+  </url><url>
+    <loc>https://yaasita.github.io/categories/net/</loc>
+    <lastmod>2025-11-23T23:59:56+09:00</lastmod>
+  </url><url>
+    <loc>https://yaasita.github.io/post/</loc>
+    <lastmod>2025-11-23T23:59:56+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/2025/10/26/amazon-q-developer-cli/</loc>
     <lastmod>2025-10-26T03:24:35+09:00</lastmod>
   </url><url>
-    <loc>https://yaasita.github.io/archives/</loc>
-    <lastmod>2025-10-26T03:24:35+09:00</lastmod>
-  </url><url>
-    <loc>https://yaasita.github.io/categories/</loc>
-    <lastmod>2025-10-26T03:24:35+09:00</lastmod>
-  </url><url>
     <loc>https://yaasita.github.io/categories/linux/</loc>
-    <lastmod>2025-10-26T03:24:35+09:00</lastmod>
-  </url><url>
-    <loc>https://yaasita.github.io/post/</loc>
     <lastmod>2025-10-26T03:24:35+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/categories/soft/</loc>
@@ -34,9 +40,6 @@
   </url><url>
     <loc>https://yaasita.github.io/2025/08/11/preload/</loc>
     <lastmod>2025-08-11T04:43:38+09:00</lastmod>
-  </url><url>
-    <loc>https://yaasita.github.io/categories/net/</loc>
-    <lastmod>2025-07-20T00:48:32+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/2025/07/20/tver-with-linux/</loc>
     <lastmod>2025-07-20T00:48:32+09:00</lastmod>

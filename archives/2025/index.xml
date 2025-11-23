@@ -6,8 +6,15 @@
     <description>Recent content in 2025 on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 26 Oct 2025 03:24:35 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 23 Nov 2025 23:59:56 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/archives/2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>azure storage使い始めるまで</title>
+      <link>https://yaasita.github.io/2025/11/23/azure-storage/</link>
+      <pubDate>Sun, 23 Nov 2025 23:59:56 +0900</pubDate>
+      <guid>https://yaasita.github.io/2025/11/23/azure-storage/</guid>
+      <description>コマンドメモ&#xA;ストレージアカウント作成&#xA;az storage account create \ --name $account \ --resource-group $resource_group \ --sku Standard_LRS \ --kind StorageV2 \ --access-tier Hot \ --allow-blob-public-access true \ --public-network-access Enabled \ --default-action Allow \ --routing-choice MicrosoftRouting \ --min-tls-version TLS1_2 削除ポリシー無効化&#xA;az storage blob service-properties delete-policy update \ --account-name $account \ --enable false \ --auth-mode login az storage account blob-service-properties update \ --account-name $account \ --resource-group $resource_group \ --enable-versioning false \ --enable-container-delete-retention false az storage account file-service-properties update \ --account-name $account \ --resource-group $resource_group \ --enable-delete-retention false ライフサイクル管理</description>
+    </item>
     <item>
       <title>Amazon Q Developer CLI使うまで</title>
       <link>https://yaasita.github.io/2025/10/26/amazon-q-developer-cli/</link>

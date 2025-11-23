@@ -6,8 +6,15 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 26 Oct 2025 03:24:35 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 23 Nov 2025 23:59:56 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>azure storage使い始めるまで</title>
+      <link>https://yaasita.github.io/2025/11/23/azure-storage/</link>
+      <pubDate>Sun, 23 Nov 2025 23:59:56 +0900</pubDate>
+      <guid>https://yaasita.github.io/2025/11/23/azure-storage/</guid>
+      <description>コマンドメモ&#xA;ストレージアカウント作成&#xA;az storage account create \ --name $account \ --resource-group $resource_group \ --sku Standard_LRS \ --kind StorageV2 \ --access-tier Hot \ --allow-blob-public-access true \ --public-network-access Enabled \ --default-action Allow \ --routing-choice MicrosoftRouting \ --min-tls-version TLS1_2 削除ポリシー無効化&#xA;az storage blob service-properties delete-policy update \ --account-name $account \ --enable false \ --auth-mode login az storage account blob-service-properties update \ --account-name $account \ --resource-group $resource_group \ --enable-versioning false \ --enable-container-delete-retention false az storage account file-service-properties update \ --account-name $account \ --resource-group $resource_group \ --enable-delete-retention false ライフサイクル管理</description>
+    </item>
     <item>
       <title>Amazon Q Developer CLI使うまで</title>
       <link>https://yaasita.github.io/2025/10/26/amazon-q-developer-cli/</link>
@@ -140,13 +147,6 @@
       <pubDate>Mon, 21 Oct 2024 02:53:36 +0900</pubDate>
       <guid>https://yaasita.github.io/2024/10/21/ff7ccr/</guid>
       <description>FF7クライシスコアリユニオンクリアした&#xA;トロコンまでした&#xA;最終的な最終装備&#xA;カッコ内は補正パラメータ&#xA;戦闘用 スカイドレイン(HP) すてみパンチ(HP) クエイク(魔力) 暗黒(力) アルテマ(精神) ケアルガ(精神)でもOK アイテム達人(体力) ザイドリッツ 源氏の盾 源氏の鎧 源氏の小手 アイテム回収用 ぶんどる(力) スカイドレイン(HP) すてみパンチ(HP) クエイク(魔力) ヘルブリザガ(精神) ステータス防御(体力) ザイドリッツ 源氏の盾 源氏の小手 モグのお守り クリア後は源氏の盾、源氏の小手はジュエルリング、ゴッドスレイヤーに変更 マテリア成長用: 運を上げて、リジェネで戦闘放置する スカイドレイン(HP) モーグリパワー 空き 成長させたいマテリアを入れる 空き 成長させたいマテリアを入れる 空き 成長させたいマテリアを入れる 空き 成長させたいマテリアを入れる 源氏の鎧 お守り お守り お守り マテリア成長は弱い敵と対峙して放置してれば勝手にスロットが揃ってマテリアのLvを上げてくれる&#xA;パラメータ+100とか+999%はライブラと星のペンダントで合成していけばすぐできる</description>
-    </item>
-    <item>
-      <title>vim-lsp設定</title>
-      <link>https://yaasita.github.io/2024/09/21/vim-lsp/</link>
-      <pubDate>Sat, 21 Sep 2024 23:43:03 +0900</pubDate>
-      <guid>https://yaasita.github.io/2024/09/21/vim-lsp/</guid>
-      <description>よく使うやつ&#xA;perl cpan i PLS&#xA;if executable(&#39;pls&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;perl&#39;, \ &#39;cmd&#39;: [&#39;pls&#39;], \ &#39;allowlist&#39;: [&#39;perl&#39;], \ }) endif bash npm i -g bash-language-server&#xA;if executable(&#39;bash-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;bash-language-server&#39;, \ &#39;cmd&#39;: [&#39;bash-language-server&#39;, &#39;start&#39;], \ &#39;allowlist&#39;: [&#39;sh&#39;, &#39;bash&#39;], \ }) endif vim npm i -g vim-language-server&#xA;if executable(&#39;vim-language-server&#39;) au User lsp_setup call lsp#register_server({ \ &#39;name&#39;: &#39;vm-ls&#39;, \ &#39;cmd&#39;: [&#39;vim-language-server&#39;, &#39;--stdio&#39;], \ &#39;allowlist&#39;: [&#39;vim&#39;], \ }) endif terraform https://www.</description>
     </item>
   </channel>
 </rss>
