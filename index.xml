@@ -6,8 +6,15 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 23 Nov 2025 23:59:56 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 22 Dec 2025 01:04:53 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>awsのEIPを自身のインスタンスから</title>
+      <link>https://yaasita.github.io/2025/12/22/eip/</link>
+      <pubDate>Mon, 22 Dec 2025 01:04:53 +0900</pubDate>
+      <guid>https://yaasita.github.io/2025/12/22/eip/</guid>
+      <description>EIPは使うときだけアタッチしたいのでこんな感じにやってます&#xA;/etc/profile.d/aws-ec2-eip.sh において&#xA;eip on 2&#xA;みたいに打つと2時間だけEIPをアタッチしておく&#xA;release-eip についてはcronとかで１時間毎に定期実行&#xA;解放時間になったら自動でEIPを外す</description>
+    </item>
     <item>
       <title>azure storage使い始めるまで</title>
       <link>https://yaasita.github.io/2025/11/23/azure-storage/</link>
@@ -140,13 +147,6 @@
       <pubDate>Sun, 24 Nov 2024 04:55:50 +0900</pubDate>
       <guid>https://yaasita.github.io/2024/11/24/sakunahime/</guid>
       <description>トロコンまでやった&#xA;天返宮 第300層まではやってない</description>
-    </item>
-    <item>
-      <title>FF7クライシスコアリユニオン</title>
-      <link>https://yaasita.github.io/2024/10/21/ff7ccr/</link>
-      <pubDate>Mon, 21 Oct 2024 02:53:36 +0900</pubDate>
-      <guid>https://yaasita.github.io/2024/10/21/ff7ccr/</guid>
-      <description>FF7クライシスコアリユニオンクリアした&#xA;トロコンまでした&#xA;最終的な最終装備&#xA;カッコ内は補正パラメータ&#xA;戦闘用 スカイドレイン(HP) すてみパンチ(HP) クエイク(魔力) 暗黒(力) アルテマ(精神) ケアルガ(精神)でもOK アイテム達人(体力) ザイドリッツ 源氏の盾 源氏の鎧 源氏の小手 アイテム回収用 ぶんどる(力) スカイドレイン(HP) すてみパンチ(HP) クエイク(魔力) ヘルブリザガ(精神) ステータス防御(体力) ザイドリッツ 源氏の盾 源氏の小手 モグのお守り クリア後は源氏の盾、源氏の小手はジュエルリング、ゴッドスレイヤーに変更 マテリア成長用: 運を上げて、リジェネで戦闘放置する スカイドレイン(HP) モーグリパワー 空き 成長させたいマテリアを入れる 空き 成長させたいマテリアを入れる 空き 成長させたいマテリアを入れる 空き 成長させたいマテリアを入れる 源氏の鎧 お守り お守り お守り マテリア成長は弱い敵と対峙して放置してれば勝手にスロットが揃ってマテリアのLvを上げてくれる&#xA;パラメータ+100とか+999%はライブラと星のペンダントで合成していけばすぐできる</description>
     </item>
   </channel>
 </rss>

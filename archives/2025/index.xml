@@ -6,8 +6,15 @@
     <description>Recent content in 2025 on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 23 Nov 2025 23:59:56 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 22 Dec 2025 01:04:53 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/archives/2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>awsのEIPを自身のインスタンスから</title>
+      <link>https://yaasita.github.io/2025/12/22/eip/</link>
+      <pubDate>Mon, 22 Dec 2025 01:04:53 +0900</pubDate>
+      <guid>https://yaasita.github.io/2025/12/22/eip/</guid>
+      <description>EIPは使うときだけアタッチしたいのでこんな感じにやってます&#xA;/etc/profile.d/aws-ec2-eip.sh において&#xA;eip on 2&#xA;みたいに打つと2時間だけEIPをアタッチしておく&#xA;release-eip についてはcronとかで１時間毎に定期実行&#xA;解放時間になったら自動でEIPを外す</description>
+    </item>
     <item>
       <title>azure storage使い始めるまで</title>
       <link>https://yaasita.github.io/2025/11/23/azure-storage/</link>

@@ -6,8 +6,15 @@
     <description>Recent content in Program on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 17 May 2025 13:23:08 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 22 Dec 2025 01:04:53 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>awsのEIPを自身のインスタンスから</title>
+      <link>https://yaasita.github.io/2025/12/22/eip/</link>
+      <pubDate>Mon, 22 Dec 2025 01:04:53 +0900</pubDate>
+      <guid>https://yaasita.github.io/2025/12/22/eip/</guid>
+      <description>EIPは使うときだけアタッチしたいのでこんな感じにやってます&#xA;/etc/profile.d/aws-ec2-eip.sh において&#xA;eip on 2&#xA;みたいに打つと2時間だけEIPをアタッチしておく&#xA;release-eip についてはcronとかで１時間毎に定期実行&#xA;解放時間になったら自動でEIPを外す</description>
+    </item>
     <item>
       <title>sysstatのデータをbigqueryに入れる</title>
       <link>https://yaasita.github.io/2025/05/17/sysstat/</link>
@@ -140,13 +147,6 @@
       <pubDate>Wed, 26 Jan 2022 02:50:46 +0900</pubDate>
       <guid>https://yaasita.github.io/2022/01/26/normal_distribution/</guid>
       <description>シャピロ-ウィルク(Shapiro-Wilk)の正規性の検定をやる流れ&#xA;まず以下のようなデータを用意する&#xA;ある音ゲーのスコア&#xA;これは音ゲーのスコアを表していてタイミングよく押せた場合はPERFECT, 早すぎたり遅すぎたりした場合はFAST, SLOWに計上される&#xA;この内ミスの割合が正規分布と見なせるか検定する&#xA;まず、CSVを右上のEnvironmentタブ =&amp;gt; Import Datasetから読み込む&#xA;データをMISSの割合をデータフレームに追加&#xA;library(dplyr) bandori &amp;lt;- bandori %&amp;gt;% mutate(MISS = (FAST + SLOW) / (PERFECT + FAST + SLOW) * 100) ヒストグラムと近似曲線を出す&#xA;hist(bandori$MISS, breaks = seq(0, 20, 1)) dens &amp;lt;- density(bandori$MISS) lines(dens, lwd = 3, col = &amp;#34;blue&amp;#34;) 検定&#xA;shapiro.test(bandori$MISS) 検定統計量とp値&#xA;data: bandori$MISS W = 0.98162, p-value = 0.724 ここで注意なのはこの検定は帰無仮説が「正規分布している」なので&#xA;棄却出来た場合は正規分布ではないと言えるが、&#xA;今回のように棄却できない（受容域）の場合は正規分布していてもおかしくない程度なので何とも言えないです&#xA;ヒストグラム見る限り正規分布としても良さそうですが&#xA;使ったRスクリプト&#xA;https://gist.github.com/yaasita/7c431d0493c9703c91d0a013d03349af</description>
-    </item>
-    <item>
-      <title>bashでディレクトリのbookmark</title>
-      <link>https://yaasita.github.io/2021/09/06/bash-bookmarks/</link>
-      <pubDate>Mon, 06 Sep 2021 02:00:02 +0900</pubDate>
-      <guid>https://yaasita.github.io/2021/09/06/bash-bookmarks/</guid>
-      <description>これすごい便利だった&#xA;https://threkk.medium.com/how-to-use-bookmarks-in-bash-zsh-6b8074e40774&#xA;CDPATHを使うとこんな便利なことができるのね&#xA;ただ以下の方が指摘されているようにbashだと補完が効かないので, compgenで補完候補を作る方が良さそう&#xA;https://mobile.twitter.com/mattn_jp/status/1434205359573405696&#xA;自分の場合は、gotoっていうコマンドよりcdで通常通り使えた方が良いので&#xA;こんな感じの設定を追加しておいた&#xA;cdコマンドを上書きして、@で始まってたら cd -P でsymlinkを辿るようにして、他は通常通り&#xA;(これなら補完候補も足さなくてOK)&#xA;export CDPATH=&amp;quot;.:$HOME/.bookmarks&amp;quot; function cd { if [[ ${1} =~ ^@ ]];then cd -P $1 || return 1 return fi builtin cd &amp;quot;$@&amp;quot; || return 1 } あと、bookmarkへの追加もコマンドにしておく&#xA;bookmarkしたいディレクトリに移動してbookmarkコマンドでsymlink作るようにしておく&#xA;function bookmark { local current_dir=$(pwd) ln -s $current_dir ~/.bookmarks/@$(basename $current_dir) } </description>
     </item>
   </channel>
 </rss>

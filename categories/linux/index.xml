@@ -6,8 +6,15 @@
     <description>Recent content in Linux on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 26 Oct 2025 03:24:35 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 22 Dec 2025 01:04:53 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>awsのEIPを自身のインスタンスから</title>
+      <link>https://yaasita.github.io/2025/12/22/eip/</link>
+      <pubDate>Mon, 22 Dec 2025 01:04:53 +0900</pubDate>
+      <guid>https://yaasita.github.io/2025/12/22/eip/</guid>
+      <description>EIPは使うときだけアタッチしたいのでこんな感じにやってます&#xA;/etc/profile.d/aws-ec2-eip.sh において&#xA;eip on 2&#xA;みたいに打つと2時間だけEIPをアタッチしておく&#xA;release-eip についてはcronとかで１時間毎に定期実行&#xA;解放時間になったら自動でEIPを外す</description>
+    </item>
     <item>
       <title>Amazon Q Developer CLI使うまで</title>
       <link>https://yaasita.github.io/2025/10/26/amazon-q-developer-cli/</link>
@@ -140,13 +147,6 @@
       <pubDate>Sun, 10 Oct 2021 05:52:16 +0900</pubDate>
       <guid>https://yaasita.github.io/2021/10/10/machine-id/</guid>
       <description>KVMを使ったVM内でブリッジインターフェイス作ってそのVMをコピーしたらMACアドレスが重複して通信不能になった&#xA;(/etc/systemd/network/にはこんな感じでbridge作る)&#xA;https://gist.github.com/yaasita/d527b48f54b0e23c3097a9c69239d534&#xA;どうやらこれ、machine-idから作られてるみたいで、VMコピーしたらmachine-id変えた方が良いぽいね&#xA;rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machine-id-setup </description>
-    </item>
-    <item>
-      <title>dircolorsの設定</title>
-      <link>https://yaasita.github.io/2021/09/20/dircolors/</link>
-      <pubDate>Mon, 20 Sep 2021 17:40:54 +0900</pubDate>
-      <guid>https://yaasita.github.io/2021/09/20/dircolors/</guid>
-      <description>dircolorsは&#xA;ls --color=auto したときの色を設定するコマンド&#xA;以下のコマンドで設定を書き出して&#xA;dircolors -p &amp;gt; ~/.dir_colors 好きな設定に編集する&#xA;vi ~/.dircolors .bashrcに以下のように書いておいた&#xA;if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^screen ]];then alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto&#39; eval &amp;quot;$(dircolors -b ~/.dircolors)&amp;quot; fi 参考&#xA;lsコマンドで表示されるファイルの色を変更するには </description>
     </item>
   </channel>
 </rss>

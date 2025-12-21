@@ -6,8 +6,15 @@
     <description>Recent content in Net on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 23 Nov 2025 23:59:56 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 22 Dec 2025 01:04:53 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>awsのEIPを自身のインスタンスから</title>
+      <link>https://yaasita.github.io/2025/12/22/eip/</link>
+      <pubDate>Mon, 22 Dec 2025 01:04:53 +0900</pubDate>
+      <guid>https://yaasita.github.io/2025/12/22/eip/</guid>
+      <description>EIPは使うときだけアタッチしたいのでこんな感じにやってます&#xA;/etc/profile.d/aws-ec2-eip.sh において&#xA;eip on 2&#xA;みたいに打つと2時間だけEIPをアタッチしておく&#xA;release-eip についてはcronとかで１時間毎に定期実行&#xA;解放時間になったら自動でEIPを外す</description>
+    </item>
     <item>
       <title>azure storage使い始めるまで</title>
       <link>https://yaasita.github.io/2025/11/23/azure-storage/</link>
@@ -140,13 +147,6 @@
       <pubDate>Wed, 22 Jun 2022 01:43:12 +0900</pubDate>
       <guid>https://yaasita.github.io/2022/06/22/tumblr-account/</guid>
       <description>経緯はこんな感じ&#xA;2022/06/08 tumblrで消されたの確認&#xA;ログインして、「アカウント消えました」って表示される&#xA;その下に問題あったらサポートに連絡してねと書いてあったので、サポートに連絡&#xA;2022/06/13 反応がないので、もう一回サポートに連絡&#xA;2022/06/14 このお問い合わせフォームバグってないか？&#xA;と思ったので、yaasita2アカウント作成して、その中のお問い合わせフォームから連絡&#xA;数分で連絡が来て、yaasitaのアカウントでメールしてこいと言われる&#xA;yaasitaアカウントのメールで再度問い合わせ&#xA;2022/06/15 Hello, Thank you for writing back! We&amp;#39;ve restored your account. Thank you for bringing this problem to our attention. We&amp;#39;re sorry that it occurred, and we&amp;#39;ll do our best to make sure that it doesn&amp;#39;t happen again. You should now be able to log in just fine with your email address and password. Please let me know if there&amp;#39;s anything else I can help you with!</description>
-    </item>
-    <item>
-      <title>NURO光のF660AルーターでSPIを有効にする</title>
-      <link>https://yaasita.github.io/2022/04/02/nuro-ipv6-spi/</link>
-      <pubDate>Sat, 02 Apr 2022 04:11:55 +0900</pubDate>
-      <guid>https://yaasita.github.io/2022/04/02/nuro-ipv6-spi/</guid>
-      <description>これを有効にしてもpingには反応してしまうので注意</description>
     </item>
   </channel>
 </rss>
