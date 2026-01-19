@@ -6,8 +6,15 @@
     <description>Recent content in 2025 on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 22 Dec 2025 01:04:53 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 20 Jan 2026 03:10:50 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/archives/2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>kiro-cliでStreamable httpのMCP追加</title>
+      <link>https://yaasita.github.io/2026/01/20/kiro-cli-mcp/</link>
+      <pubDate>Tue, 20 Jan 2026 03:10:50 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/01/20/kiro-cli-mcp/</guid>
+      <description>例えばこういうMCPサーバー&#xA;https://learn.microsoft.com/ja-jp/training/support/mcp&#xA;追加するときはこんな感じで&#xA;&amp;quot;mcpServers&amp;quot;: { &amp;quot;msdocs&amp;quot;: { &amp;quot;command&amp;quot;: &amp;quot;npx&amp;quot;, &amp;quot;args&amp;quot;: [ &amp;quot;mcp-remote&amp;quot;, &amp;quot;https://learn.microsoft.com/api/mcp&amp;quot; ] } }, こんな感じで追加してもうまく行かない&#xA;kiro-cli mcp add --url &amp;quot;https://learn.microsoft.com/api/mcp&amp;quot;&#xA;kiro-cli 1.24.0&#xA;で確認しました</description>
+    </item>
     <item>
       <title>awsのEIPを自身のインスタンスから</title>
       <link>https://yaasita.github.io/2025/12/22/eip/</link>

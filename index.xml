@@ -6,8 +6,15 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 22 Dec 2025 01:04:53 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 20 Jan 2026 03:10:50 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>kiro-cliでStreamable httpのMCP追加</title>
+      <link>https://yaasita.github.io/2026/01/20/kiro-cli-mcp/</link>
+      <pubDate>Tue, 20 Jan 2026 03:10:50 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/01/20/kiro-cli-mcp/</guid>
+      <description>例えばこういうMCPサーバー&#xA;https://learn.microsoft.com/ja-jp/training/support/mcp&#xA;追加するときはこんな感じで&#xA;&amp;quot;mcpServers&amp;quot;: { &amp;quot;msdocs&amp;quot;: { &amp;quot;command&amp;quot;: &amp;quot;npx&amp;quot;, &amp;quot;args&amp;quot;: [ &amp;quot;mcp-remote&amp;quot;, &amp;quot;https://learn.microsoft.com/api/mcp&amp;quot; ] } }, こんな感じで追加してもうまく行かない&#xA;kiro-cli mcp add --url &amp;quot;https://learn.microsoft.com/api/mcp&amp;quot;&#xA;kiro-cli 1.24.0&#xA;で確認しました</description>
+    </item>
     <item>
       <title>awsのEIPを自身のインスタンスから</title>
       <link>https://yaasita.github.io/2025/12/22/eip/</link>
@@ -140,13 +147,6 @@
       <pubDate>Sun, 08 Dec 2024 19:03:33 +0900</pubDate>
       <guid>https://yaasita.github.io/2024/12/08/pulseaudio/</guid>
       <description>概要 サウンドデバイスを持たない端末でもネットワーク経由でオーディオストリームを流せる&#xA;インストール apt install pulseaudio pavucontrol-qt スタート/ストップ pulseaudio --start pactl stat paplay -v hoge.wav pulseaudio --kill 設定 設定ファイル場所: /etc/pulse/&#xA;pavucontrol-qt 起動&#xA;プロファイルタブ選択 -&amp;gt; ミュートになってる箇所外す&#xA;再生タブと出力デバイスタブ両方確認&#xA;自動起動しないように以下を消しておく&#xA;ちなみにfirefoxとかpaplayすると勝手に立ち上がる&#xA;/etc/systemd/user/default.target.wants/pulseaudio.service /etc/systemd/user/sockets.target.wants/pulseaudio.socket 参考リンク&#xA;https://zenn.dev/noraworld/articles/disable-pulseaudio-autospawn&#xA;リモート接続 https://wiki.archlinux.jp/index.php/PulseAudio/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB&#xA;server側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-default-pa load-module module-native-protocol-tcp auth-anonymous=1 を追加 client側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-client-conf default-server = 192.168.0.10 を指定する サーバー本体とclientが同一サーバーの場合は変更の必要なし 上記設定したら server側はpulseaudio &amp;ndash;start&#xA;client側は特に起動する必要なし(pulseaudioデーモンすら不要)&#xA;あとはclient側で paplay hoge.wav でテスト</description>
-    </item>
-    <item>
-      <title>天穂のサクナヒメ</title>
-      <link>https://yaasita.github.io/2024/11/24/sakunahime/</link>
-      <pubDate>Sun, 24 Nov 2024 04:55:50 +0900</pubDate>
-      <guid>https://yaasita.github.io/2024/11/24/sakunahime/</guid>
-      <description>トロコンまでやった&#xA;天返宮 第300層まではやってない</description>
     </item>
   </channel>
 </rss>

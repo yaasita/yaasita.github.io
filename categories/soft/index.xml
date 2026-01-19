@@ -6,8 +6,15 @@
     <description>Recent content in Soft on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sun, 26 Oct 2025 03:24:35 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 20 Jan 2026 03:10:50 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>kiro-cliでStreamable httpのMCP追加</title>
+      <link>https://yaasita.github.io/2026/01/20/kiro-cli-mcp/</link>
+      <pubDate>Tue, 20 Jan 2026 03:10:50 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/01/20/kiro-cli-mcp/</guid>
+      <description>例えばこういうMCPサーバー&#xA;https://learn.microsoft.com/ja-jp/training/support/mcp&#xA;追加するときはこんな感じで&#xA;&amp;quot;mcpServers&amp;quot;: { &amp;quot;msdocs&amp;quot;: { &amp;quot;command&amp;quot;: &amp;quot;npx&amp;quot;, &amp;quot;args&amp;quot;: [ &amp;quot;mcp-remote&amp;quot;, &amp;quot;https://learn.microsoft.com/api/mcp&amp;quot; ] } }, こんな感じで追加してもうまく行かない&#xA;kiro-cli mcp add --url &amp;quot;https://learn.microsoft.com/api/mcp&amp;quot;&#xA;kiro-cli 1.24.0&#xA;で確認しました</description>
+    </item>
     <item>
       <title>Amazon Q Developer CLI使うまで</title>
       <link>https://yaasita.github.io/2025/10/26/amazon-q-developer-cli/</link>
@@ -140,13 +147,6 @@
       <pubDate>Wed, 08 Jun 2022 02:37:21 +0900</pubDate>
       <guid>https://yaasita.github.io/2022/06/08/budibase/</guid>
       <description>budibaseをローカルのmicrok8sで動かしたときのメモ&#xA;# 必要なプラグインをON microk8s.enable dns:192.168.0.10 microk8s.enable ingress microk8s.enable metallb # 192.168.0.150-192.168.0.180 みたいに指定 microk8s.enable storage # kubectlで動かせるように microk8s.config &amp;gt; ~/.kube/config # インストール helm show values budibase/budibase &amp;gt; config.yaml # hostを指定 vim config.yaml helm install --create-namespace --namespace budibase budibase budibase/budibase -f config.yaml あとはingress部分を作る&#xA;# 証明書を作って kubectl create secret tls &#39;cloud.yaasita.net&#39; --key=privkey.pem --cert=fullchain.pem ingressをこんな感じで作っておく</description>
-    </item>
-    <item>
-      <title>systemd-nspawnのtmpディレクトリ</title>
-      <link>https://yaasita.github.io/2021/12/12/systemd-nspawn-tmpdir/</link>
-      <pubDate>Sun, 12 Dec 2021 06:03:17 +0900</pubDate>
-      <guid>https://yaasita.github.io/2021/12/12/systemd-nspawn-tmpdir/</guid>
-      <description>systemd-nspawnで/tmpのtmpfs mountを止める方法について昔こんな記事書いた&#xA;systemd-nspawnでのtmpディレクトリの扱いについて&#xA;今は状況が変わってて、&#xA;https://github.com/systemd/systemd/pull/10294/files&#xA;こんな感じで、&amp;ldquo;SYSTEMD_NSPAWN_TMPFS_TMP&amp;rdquo; って環境変数に0を入れておけば、/tmpディレクトリをtmpfsにしない&#xA;/etc/systemd/system/systemd-nspawn@.service&#xA;にこんな感じで追加したらmachinectlからもできる&#xA;Environment=SYSTEMD_NSPAWN_TMPFS_TMP=0 </description>
     </item>
   </channel>
 </rss>
