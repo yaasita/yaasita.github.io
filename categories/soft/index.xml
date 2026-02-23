@@ -6,8 +6,15 @@
     <description>Recent content in Soft on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 20 Jan 2026 03:10:50 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 24 Feb 2026 01:56:44 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>opencodeの使い方</title>
+      <link>https://yaasita.github.io/2026/02/24/opencode/</link>
+      <pubDate>Tue, 24 Feb 2026 01:56:44 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/02/24/opencode/</guid>
+      <description>公式ドキュメント&#xA;https://opencode.ai/docs/ja&#xA;主な設定ファイル&#xA;~/.local/share/opencode ~/.local/state/opencode ~/.config/opencode Globalなコンテキスト&#xA;~/.config/opencode/AGENTS.md&#xA;設定ファイルはこんな感じ&#xA;https://gist.github.com/yaasita/859a5ab0dc09b2b1d1d4ad83c144258b&#xA;small_modelをちゃんと指定しておかないとデフォルトでClaudeの小さいモデル使ってしまい&#xA;openrouterのクレジットを使ってしまうから注意&#xA;あとmcpは手動で立ち上げたほうが良い&#xA;OpenRouterのfreeモデルはここから探す&#xA;https://openrouter.ai/models?max_price=0&amp;amp;order=most-popular</description>
+    </item>
     <item>
       <title>kiro-cliでStreamable httpのMCP追加</title>
       <link>https://yaasita.github.io/2026/01/20/kiro-cli-mcp/</link>
@@ -140,13 +147,6 @@
       <pubDate>Mon, 25 Jul 2022 00:52:55 +0900</pubDate>
       <guid>https://yaasita.github.io/2022/07/25/hugo-shortcode/</guid>
       <description>ここにあるように定型文を登録しておくと省力化できる&#xA;https://gohugo.io/content-management/shortcodes/&#xA;例えば、config.tomlにこんな感じで書いておけば&#xA;[params] imagesite = &amp;quot;img.yaasita.net&amp;quot; markdownの中で&#xA;https://{{&amp;lt; param imagesite &amp;gt;}}/hoge/hoge こう書くと&#xA;https://img.yaasita.net/hoge/hoge みたいに展開される</description>
-    </item>
-    <item>
-      <title>budibaseをmicrok8sで動かす</title>
-      <link>https://yaasita.github.io/2022/06/08/budibase/</link>
-      <pubDate>Wed, 08 Jun 2022 02:37:21 +0900</pubDate>
-      <guid>https://yaasita.github.io/2022/06/08/budibase/</guid>
-      <description>budibaseをローカルのmicrok8sで動かしたときのメモ&#xA;# 必要なプラグインをON microk8s.enable dns:192.168.0.10 microk8s.enable ingress microk8s.enable metallb # 192.168.0.150-192.168.0.180 みたいに指定 microk8s.enable storage # kubectlで動かせるように microk8s.config &amp;gt; ~/.kube/config # インストール helm show values budibase/budibase &amp;gt; config.yaml # hostを指定 vim config.yaml helm install --create-namespace --namespace budibase budibase budibase/budibase -f config.yaml あとはingress部分を作る&#xA;# 証明書を作って kubectl create secret tls &#39;cloud.yaasita.net&#39; --key=privkey.pem --cert=fullchain.pem ingressをこんな感じで作っておく</description>
     </item>
   </channel>
 </rss>

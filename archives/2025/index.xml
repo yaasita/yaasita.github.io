@@ -6,8 +6,15 @@
     <description>Recent content in 2025 on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 20 Jan 2026 03:10:50 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 24 Feb 2026 01:56:44 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/archives/2025/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>opencodeの使い方</title>
+      <link>https://yaasita.github.io/2026/02/24/opencode/</link>
+      <pubDate>Tue, 24 Feb 2026 01:56:44 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/02/24/opencode/</guid>
+      <description>公式ドキュメント&#xA;https://opencode.ai/docs/ja&#xA;主な設定ファイル&#xA;~/.local/share/opencode ~/.local/state/opencode ~/.config/opencode Globalなコンテキスト&#xA;~/.config/opencode/AGENTS.md&#xA;設定ファイルはこんな感じ&#xA;https://gist.github.com/yaasita/859a5ab0dc09b2b1d1d4ad83c144258b&#xA;small_modelをちゃんと指定しておかないとデフォルトでClaudeの小さいモデル使ってしまい&#xA;openrouterのクレジットを使ってしまうから注意&#xA;あとmcpは手動で立ち上げたほうが良い&#xA;OpenRouterのfreeモデルはここから探す&#xA;https://openrouter.ai/models?max_price=0&amp;amp;order=most-popular</description>
+    </item>
     <item>
       <title>kiro-cliでStreamable httpのMCP追加</title>
       <link>https://yaasita.github.io/2026/01/20/kiro-cli-mcp/</link>

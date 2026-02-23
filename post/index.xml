@@ -6,8 +6,15 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 20 Jan 2026 03:10:50 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 24 Feb 2026 01:56:44 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>opencodeの使い方</title>
+      <link>https://yaasita.github.io/2026/02/24/opencode/</link>
+      <pubDate>Tue, 24 Feb 2026 01:56:44 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/02/24/opencode/</guid>
+      <description>公式ドキュメント&#xA;https://opencode.ai/docs/ja&#xA;主な設定ファイル&#xA;~/.local/share/opencode ~/.local/state/opencode ~/.config/opencode Globalなコンテキスト&#xA;~/.config/opencode/AGENTS.md&#xA;設定ファイルはこんな感じ&#xA;https://gist.github.com/yaasita/859a5ab0dc09b2b1d1d4ad83c144258b&#xA;small_modelをちゃんと指定しておかないとデフォルトでClaudeの小さいモデル使ってしまい&#xA;openrouterのクレジットを使ってしまうから注意&#xA;あとmcpは手動で立ち上げたほうが良い&#xA;OpenRouterのfreeモデルはここから探す&#xA;https://openrouter.ai/models?max_price=0&amp;amp;order=most-popular</description>
+    </item>
     <item>
       <title>kiro-cliでStreamable httpのMCP追加</title>
       <link>https://yaasita.github.io/2026/01/20/kiro-cli-mcp/</link>
@@ -140,13 +147,6 @@
       <pubDate>Sun, 08 Dec 2024 21:11:39 +0900</pubDate>
       <guid>https://yaasita.github.io/2024/12/08/fontawesome/</guid>
       <description>アイコン表示に使ってたFont Awesome&#xA;アップデートしようとしたらメールアドレス要求されたのでこの機会に乗り換え&#xA;というかアイコンほぼ使ってなかったので不要だった&#xA;ここからRSSのアイコンだけ落として設定&#xA;https://feathericons.com/&#xA;右サイドバーのAuthor部分のGithub, Tumblrとかのアイコンは文字に変更</description>
-    </item>
-    <item>
-      <title>pulseaudioのリモートプレイ設定</title>
-      <link>https://yaasita.github.io/2024/12/08/pulseaudio/</link>
-      <pubDate>Sun, 08 Dec 2024 19:03:33 +0900</pubDate>
-      <guid>https://yaasita.github.io/2024/12/08/pulseaudio/</guid>
-      <description>概要 サウンドデバイスを持たない端末でもネットワーク経由でオーディオストリームを流せる&#xA;インストール apt install pulseaudio pavucontrol-qt スタート/ストップ pulseaudio --start pactl stat paplay -v hoge.wav pulseaudio --kill 設定 設定ファイル場所: /etc/pulse/&#xA;pavucontrol-qt 起動&#xA;プロファイルタブ選択 -&amp;gt; ミュートになってる箇所外す&#xA;再生タブと出力デバイスタブ両方確認&#xA;自動起動しないように以下を消しておく&#xA;ちなみにfirefoxとかpaplayすると勝手に立ち上がる&#xA;/etc/systemd/user/default.target.wants/pulseaudio.service /etc/systemd/user/sockets.target.wants/pulseaudio.socket 参考リンク&#xA;https://zenn.dev/noraworld/articles/disable-pulseaudio-autospawn&#xA;リモート接続 https://wiki.archlinux.jp/index.php/PulseAudio/%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB&#xA;server側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-default-pa load-module module-native-protocol-tcp auth-anonymous=1 を追加 client側 https://gist.github.com/yaasita/749060cb303f5f65a56e714d68bd95bf#file-client-conf default-server = 192.168.0.10 を指定する サーバー本体とclientが同一サーバーの場合は変更の必要なし 上記設定したら server側はpulseaudio &amp;ndash;start&#xA;client側は特に起動する必要なし(pulseaudioデーモンすら不要)&#xA;あとはclient側で paplay hoge.wav でテスト</description>
     </item>
   </channel>
 </rss>
