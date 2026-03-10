@@ -6,8 +6,22 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 24 Feb 2026 01:56:44 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 11 Mar 2026 03:09:14 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>opencodeの使い方2</title>
+      <link>https://yaasita.github.io/2026/03/11/opencode2/</link>
+      <pubDate>Wed, 11 Mar 2026 03:09:14 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/03/11/opencode2/</guid>
+      <description>最近知ったこと&#xA;/init でプロジェクト用のAGENTS.mdを作ってくれる github copilotもサポートしてる https://opencode.ai/docs/providers/#github-copilot ちなみに copilot cli の/modelsに出てない&#xA;grok-code-fast-1が使えたりする</description>
+    </item>
+    <item>
+      <title>opencodeの使い方2</title>
+      <link>https://yaasita.github.io/2026/03/11/opencode2.md/</link>
+      <pubDate>Wed, 11 Mar 2026 03:09:14 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/03/11/opencode2.md/</guid>
+      <description>net, life, linux, program, rule, game, soft, windows, hard, crack</description>
+    </item>
     <item>
       <title>opencodeの使い方</title>
       <link>https://yaasita.github.io/2026/02/24/opencode/</link>
@@ -133,20 +147,6 @@
       <pubDate>Wed, 01 Jan 2025 15:59:47 +0900</pubDate>
       <guid>https://yaasita.github.io/2025/01/01/cody/</guid>
       <description>cody が良いという評判を聞いたので使ってみる&#xA;コーディングAI課金するならCodyが断トツ良い話&#xA;https://zenn.dev/sanami/articles/7c24ce973b7e7c&#xA;vimには codeium と github copilot を設定しているので補完AIはもう要らない&#xA;CLIを設定してみる&#xA;マニュアル&#xA;https://sourcegraph.com/docs/cody/clients/install-cli&#xA;ここからアクセストークンを発行&#xA;https://sourcegraph.com/users/gitlab-etjbc/settings/tokens&#xA;環境変数に設定&#xA;export SRC_ACCESS_TOKEN=sgp_xxxxxxxxxxxxxxxxxxxxxx インストール&#xA;npm install -g @sourcegraph/cody cody auth whoami こんな感じで使える&#xA;cody chat -m &#39;Explain React hooks&#39; git diff | cody chat --stdin -m &#39;Write a commit message for this diff&#39; cody chat --context-file src/controller.ts -m &#39;Are there code smells in this file?&#39; ターミナルから使えて良いかもしれない</description>
-    </item>
-    <item>
-      <title>vimでGitHub Copilot</title>
-      <link>https://yaasita.github.io/2024/12/21/vim-copilot/</link>
-      <pubDate>Sat, 21 Dec 2024 02:00:01 +0900</pubDate>
-      <guid>https://yaasita.github.io/2024/12/21/vim-copilot/</guid>
-      <description>Microsoft傘下のGitHub、「GitHub Copilot」を無料に（制限あり）&#xA;https://www.itmedia.co.jp/news/articles/2412/19/news111.html&#xA;ということで使ってみる&#xA;以下インストール&#xA;https://github.com/github/copilot.vim&#xA;vimrcはこんな感じ&#xA;常に補完が効くのは嫌なので使うときだけ有効にする&#xA;候補表示はCtrl-c&#xA;let g:copilot_filetypes = { &#39;*&#39;: v:false } imap &amp;lt;C-c&amp;gt; &amp;lt;Plug&amp;gt;(copilot-next) command! -nargs=0 ToggleCopilot call ToggleCopilot() function! ToggleCopilot() if exists(&#39;g:copilot_filetypes&#39;) unlet g:copilot_filetypes else let g:copilot_filetypes = { &#39;*&#39;: v:false } endif Copilot status endfunction :Copilot setup で設定&#xA;~/.config/github-copilot/ に credentials が入る&#xA;あとチャットはここから出来る&#xA;https://github.com/copilot</description>
-    </item>
-    <item>
-      <title>fontawesome止めた</title>
-      <link>https://yaasita.github.io/2024/12/08/fontawesome/</link>
-      <pubDate>Sun, 08 Dec 2024 21:11:39 +0900</pubDate>
-      <guid>https://yaasita.github.io/2024/12/08/fontawesome/</guid>
-      <description>アイコン表示に使ってたFont Awesome&#xA;アップデートしようとしたらメールアドレス要求されたのでこの機会に乗り換え&#xA;というかアイコンほぼ使ってなかったので不要だった&#xA;ここからRSSのアイコンだけ落として設定&#xA;https://feathericons.com/&#xA;右サイドバーのAuthor部分のGithub, Tumblrとかのアイコンは文字に変更</description>
     </item>
   </channel>
 </rss>

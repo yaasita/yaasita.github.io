@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2026 on # cd ~yaasita</title>
+    <link>https://yaasita.github.io/archives/2026/</link>
+    <description>Recent content in 2026 on # cd ~yaasita</description>
+    <generator>Hugo</generator>
+    <language>ja</language>
+    <lastBuildDate>Wed, 11 Mar 2026 03:09:14 +0900</lastBuildDate>
+    <atom:link href="https://yaasita.github.io/archives/2026/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>opencodeの使い方2</title>
+      <link>https://yaasita.github.io/2026/03/11/opencode2/</link>
+      <pubDate>Wed, 11 Mar 2026 03:09:14 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/03/11/opencode2/</guid>
+      <description>最近知ったこと&#xA;/init でプロジェクト用のAGENTS.mdを作ってくれる github copilotもサポートしてる https://opencode.ai/docs/providers/#github-copilot ちなみに copilot cli の/modelsに出てない&#xA;grok-code-fast-1が使えたりする</description>
+    </item>
+    <item>
+      <title>opencodeの使い方2</title>
+      <link>https://yaasita.github.io/2026/03/11/opencode2.md/</link>
+      <pubDate>Wed, 11 Mar 2026 03:09:14 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/03/11/opencode2.md/</guid>
+      <description>net, life, linux, program, rule, game, soft, windows, hard, crack</description>
+    </item>
+    <item>
+      <title>opencodeの使い方</title>
+      <link>https://yaasita.github.io/2026/02/24/opencode/</link>
+      <pubDate>Tue, 24 Feb 2026 01:56:44 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/02/24/opencode/</guid>
+      <description>公式ドキュメント&#xA;https://opencode.ai/docs/ja&#xA;主な設定ファイル&#xA;~/.local/share/opencode ~/.local/state/opencode ~/.config/opencode Globalなコンテキスト&#xA;~/.config/opencode/AGENTS.md&#xA;設定ファイルはこんな感じ&#xA;https://gist.github.com/yaasita/859a5ab0dc09b2b1d1d4ad83c144258b&#xA;small_modelをちゃんと指定しておかないとデフォルトでClaudeの小さいモデル使ってしまい&#xA;openrouterのクレジットを使ってしまうから注意&#xA;あとmcpは手動で立ち上げたほうが良い&#xA;OpenRouterのfreeモデルはここから探す&#xA;https://openrouter.ai/models?max_price=0&amp;amp;order=most-popular</description>
+    </item>
+    <item>
+      <title>kiro-cliでStreamable httpのMCP追加</title>
+      <link>https://yaasita.github.io/2026/01/20/kiro-cli-mcp/</link>
+      <pubDate>Tue, 20 Jan 2026 03:10:50 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/01/20/kiro-cli-mcp/</guid>
+      <description>例えばこういうMCPサーバー&#xA;https://learn.microsoft.com/ja-jp/training/support/mcp&#xA;追加するときはこんな感じで&#xA;&amp;quot;mcpServers&amp;quot;: { &amp;quot;msdocs&amp;quot;: { &amp;quot;command&amp;quot;: &amp;quot;npx&amp;quot;, &amp;quot;args&amp;quot;: [ &amp;quot;mcp-remote&amp;quot;, &amp;quot;https://learn.microsoft.com/api/mcp&amp;quot; ] } }, こんな感じで追加してもうまく行かない&#xA;kiro-cli mcp add --url &amp;quot;https://learn.microsoft.com/api/mcp&amp;quot;&#xA;kiro-cli 1.24.0&#xA;で確認しました</description>
+    </item>
+  </channel>
+</rss>
