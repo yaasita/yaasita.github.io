@@ -19,7 +19,11 @@ https://learn.microsoft.com/ja-jp/training/support/mcp
 &#34;mcpServers&#34;: { &#34;msdocs&#34;: { &#34;command&#34;: &#34;npx&#34;, &#34;args&#34;: [ &#34;mcp-remote&#34;, &#34;https://learn.microsoft.com/api/mcp&#34; ] } }, こんな感じで追加してもうまく行かない
 kiro-cli mcp add --url &#34;https://learn.microsoft.com/api/mcp&#34;
 kiro-cli 1.24.0
-で確認しました">
+で確認しました
+2026/04/20 追記
+こんな感じで追加して大丈夫になった
+kiro-cli 2.0.1 で確認
+&#34;mcpServers&#34;: { &#34;msdocs&#34;: { &#34;type&#34;: &#34;http&#34;, &#34;url&#34;: &#34;https://learn.microsoft.com/api/mcp&#34; } }, ">
   <meta property="og:locale" content="ja">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
@@ -67,7 +71,17 @@ kiro-cli 1.24.0
 <p><code>kiro-cli mcp add --url &quot;https://learn.microsoft.com/api/mcp&quot;</code></p>
 <p>kiro-cli 1.24.0<br>
 で確認しました</p>
-
+<hr>
+<p>2026/04/20 追記</p>
+<p>こんな感じで追加して大丈夫になった<br>
+kiro-cli 2.0.1 で確認</p>
+<pre tabindex="0"><code>  &#34;mcpServers&#34;: {
+    &#34;msdocs&#34;: {
+      &#34;type&#34;: &#34;http&#34;,
+      &#34;url&#34;: &#34;https://learn.microsoft.com/api/mcp&#34;
+    }
+  },
+</code></pre>
   </div>
   <footer>
     <div class="article-footer">
@@ -84,7 +98,7 @@ kiro-cli 1.24.0
 
 
       
-      
+
       
       <div id="pagenavigation-next-prev">
         
