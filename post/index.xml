@@ -6,8 +6,15 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 20 Apr 2026 02:33:57 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2026 18:10:25 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microsoft Foundryをopencodeで使う</title>
+      <link>https://yaasita.github.io/2026/05/22/opencode-with-azure/</link>
+      <pubDate>Fri, 22 May 2026 18:10:25 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/05/22/opencode-with-azure/</guid>
+      <description>適当にストレージアカウントを作成する&#xA;(ストレージアカウントとFoundryプロジェクトは異なっていてもOK)&#xA;リソースグループ -&amp;gt; 作成&#xA;適当にポチポチやればprojectも一緒に作られる&#xA;リソース選択 -&amp;gt; Foundryポータルに移動 -&amp;gt; 上のメニューからビルド -&amp;gt; モデルから好きなやつをdeploy&#xA;opencodeではazureを選択&#xA;https://opencode.ai/docs/ja/providers/#azure-openai&#xA;Foundryのホーム画面に出ている&#xA;Azure OpenAI エンドポイントの xxxxxx の部分を入力して、APIキー入れればOK&#xA;エンドポイントはこんな感じ&#xA;https://xxxxxx.openai.azure.com/openai/v1</description>
+    </item>
     <item>
       <title>kiro-cliでスキルを使う</title>
       <link>https://yaasita.github.io/2026/04/20/kiro-cli-skills/</link>
@@ -140,13 +147,6 @@
       <pubDate>Thu, 02 Jan 2025 13:33:58 +0900</pubDate>
       <guid>https://yaasita.github.io/2025/01/02/doh/</guid>
       <description>DNS over HTTPSを使ってpi-holeに接続する設定&#xA;出先で広告ブロック使いたくなったのでやってみる&#xA;こんな構成&#xA;apache -&amp;gt; doh-proxy -&amp;gt; pi-hole -&amp;gt; unbound サーバーはこれ&#xA;https://github.com/DNSCrypt/doh-server&#xA;/etc/systemd/system/doh-proxy.service って名前で保存&#xA;[Unit] Description=DoH Proxy After=network.target [Service] ExecStart=/usr/local/bin/doh-proxy -u 127.0.0.1:53 -l 0.0.0.0:3000 User=root Group=root Restart=always RestartSec=5 [Install] WantedBy=multi-user.target TLS部分はapacheがやる&#xA;こんな感じでproxy&#xA;&amp;lt;VirtualHost *:443&amp;gt; ServerName dns.example.net ProxyRequests Off ProxyPreserveHost On ProxyPass / http://192.168.0.123:3000/ retry=2 ProxyPassReverse / http://192.168.0.123:3000/ SSLEngine on SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem SSLCertificateKeyFile /etc/letsencrypt/live/example.net/privkey.pem &amp;lt;/VirtualHost&amp;gt; テストはこんな感じ&#xA;curl --doh-url https://dns.example.net/dns-query https://example.jp dnslookup コマンドでもOK&#xA;dnslookup example.jp https://dns.example.net/dns-query chromebookの場合は&amp;quot;確認済みアクセスを有効にする&amp;quot;のチェックを外しておいた方が良い&#xA;このチェックの挙動がよく分からないけど、DoHサーバーの名前解決後のIPアドレスがLAN内のプライベートIPなら通るけど、グローバルIPだと通さないみたいな挙動になってた&#xA;あと設定直後はちゃんとHTTPのリクエストを発行するにもかかわらず1～2分後にエラーになるみたいな動きもする&#xA;まあ広告ブロックしたいだけなら</description>
-    </item>
-    <item>
-      <title>cody使ってみる</title>
-      <link>https://yaasita.github.io/2025/01/01/cody/</link>
-      <pubDate>Wed, 01 Jan 2025 15:59:47 +0900</pubDate>
-      <guid>https://yaasita.github.io/2025/01/01/cody/</guid>
-      <description>cody が良いという評判を聞いたので使ってみる&#xA;コーディングAI課金するならCodyが断トツ良い話&#xA;https://zenn.dev/sanami/articles/7c24ce973b7e7c&#xA;vimには codeium と github copilot を設定しているので補完AIはもう要らない&#xA;CLIを設定してみる&#xA;マニュアル&#xA;https://sourcegraph.com/docs/cody/clients/install-cli&#xA;ここからアクセストークンを発行&#xA;https://sourcegraph.com/users/gitlab-etjbc/settings/tokens&#xA;環境変数に設定&#xA;export SRC_ACCESS_TOKEN=sgp_xxxxxxxxxxxxxxxxxxxxxx インストール&#xA;npm install -g @sourcegraph/cody cody auth whoami こんな感じで使える&#xA;cody chat -m &#39;Explain React hooks&#39; git diff | cody chat --stdin -m &#39;Write a commit message for this diff&#39; cody chat --context-file src/controller.ts -m &#39;Are there code smells in this file?&#39; ターミナルから使えて良いかもしれない</description>
     </item>
   </channel>
 </rss>

@@ -6,8 +6,15 @@
     <description>Recent content in Net on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 22 Dec 2025 01:04:53 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2026 18:10:25 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microsoft Foundryをopencodeで使う</title>
+      <link>https://yaasita.github.io/2026/05/22/opencode-with-azure/</link>
+      <pubDate>Fri, 22 May 2026 18:10:25 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/05/22/opencode-with-azure/</guid>
+      <description>適当にストレージアカウントを作成する&#xA;(ストレージアカウントとFoundryプロジェクトは異なっていてもOK)&#xA;リソースグループ -&amp;gt; 作成&#xA;適当にポチポチやればprojectも一緒に作られる&#xA;リソース選択 -&amp;gt; Foundryポータルに移動 -&amp;gt; 上のメニューからビルド -&amp;gt; モデルから好きなやつをdeploy&#xA;opencodeではazureを選択&#xA;https://opencode.ai/docs/ja/providers/#azure-openai&#xA;Foundryのホーム画面に出ている&#xA;Azure OpenAI エンドポイントの xxxxxx の部分を入力して、APIキー入れればOK&#xA;エンドポイントはこんな感じ&#xA;https://xxxxxx.openai.azure.com/openai/v1</description>
+    </item>
     <item>
       <title>awsのEIPを自身のインスタンスから</title>
       <link>https://yaasita.github.io/2025/12/22/eip/</link>
@@ -140,13 +147,6 @@
       <pubDate>Sun, 25 Sep 2022 22:41:18 +0900</pubDate>
       <guid>https://yaasita.github.io/2022/09/25/webarena/</guid>
       <description>円安でAWSが高いのでこっちにサーバーを移行した&#xA;https://web.arena.ne.jp/indigo/&#xA;以下気づいたこと箇条書きで&#xA;めっちゃ安い 機能は仮想サーバーの起動(kvm),スナップショット,ファイヤーウォールくらい 追加オプションで権威DNSサーバーが使える(500円) 管理画面は少し重い ipv6の設定は手動でやる 1vCPU/1GB memory(Uubuntu 22.04)の場合はnetplanの設定がコメントアウトされてた ファイヤーウォールはipv6非対応 なので、やる場合はnftablesを自分で設定する 管理画面でコンソール開く場合は広告ブロックをOFFにしないとダメ 最初はsshでのアクセスのみコンソール画面に入る場合 はsshで入ってから、パスワード設定が必要 API での操作も可能 OP25Bはされていない 対応OS 転送料金に課金なし 圧倒的に安いのでlightsailみたいなサービスから移行するには良いんじゃないかな</description>
-    </item>
-    <item>
-      <title>tumblrのアカウントが消されたけど復旧してもらった</title>
-      <link>https://yaasita.github.io/2022/06/22/tumblr-account/</link>
-      <pubDate>Wed, 22 Jun 2022 01:43:12 +0900</pubDate>
-      <guid>https://yaasita.github.io/2022/06/22/tumblr-account/</guid>
-      <description>経緯はこんな感じ&#xA;2022/06/08 tumblrで消されたの確認&#xA;ログインして、「アカウント消えました」って表示される&#xA;その下に問題あったらサポートに連絡してねと書いてあったので、サポートに連絡&#xA;2022/06/13 反応がないので、もう一回サポートに連絡&#xA;2022/06/14 このお問い合わせフォームバグってないか？&#xA;と思ったので、yaasita2アカウント作成して、その中のお問い合わせフォームから連絡&#xA;数分で連絡が来て、yaasitaのアカウントでメールしてこいと言われる&#xA;yaasitaアカウントのメールで再度問い合わせ&#xA;2022/06/15 Hello, Thank you for writing back! We&amp;#39;ve restored your account. Thank you for bringing this problem to our attention. We&amp;#39;re sorry that it occurred, and we&amp;#39;ll do our best to make sure that it doesn&amp;#39;t happen again. You should now be able to log in just fine with your email address and password. Please let me know if there&amp;#39;s anything else I can help you with!</description>
     </item>
   </channel>
 </rss>

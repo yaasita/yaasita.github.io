@@ -6,8 +6,15 @@
     <description>Recent content in Soft on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 20 Apr 2026 02:33:57 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2026 18:10:25 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/categories/soft/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microsoft Foundryをopencodeで使う</title>
+      <link>https://yaasita.github.io/2026/05/22/opencode-with-azure/</link>
+      <pubDate>Fri, 22 May 2026 18:10:25 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/05/22/opencode-with-azure/</guid>
+      <description>適当にストレージアカウントを作成する&#xA;(ストレージアカウントとFoundryプロジェクトは異なっていてもOK)&#xA;リソースグループ -&amp;gt; 作成&#xA;適当にポチポチやればprojectも一緒に作られる&#xA;リソース選択 -&amp;gt; Foundryポータルに移動 -&amp;gt; 上のメニューからビルド -&amp;gt; モデルから好きなやつをdeploy&#xA;opencodeではazureを選択&#xA;https://opencode.ai/docs/ja/providers/#azure-openai&#xA;Foundryのホーム画面に出ている&#xA;Azure OpenAI エンドポイントの xxxxxx の部分を入力して、APIキー入れればOK&#xA;エンドポイントはこんな感じ&#xA;https://xxxxxx.openai.azure.com/openai/v1</description>
+    </item>
     <item>
       <title>kiro-cliでスキルを使う</title>
       <link>https://yaasita.github.io/2026/04/20/kiro-cli-skills/</link>
@@ -140,13 +147,6 @@
       <pubDate>Thu, 19 Oct 2023 01:16:16 +0900</pubDate>
       <guid>https://yaasita.github.io/2023/10/19/node-mysql2/</guid>
       <description>nodeのmysql2パッケージには&#xA;こんな感じで、ssl接続のオプションに&amp;quot;Amazon RDS&amp;quot;を指定できるが&#xA;RDSの証明書更新を行うと不都合があるよという話&#xA;証明書更新は以下のrds-ca-2019を置き換える話ね&#xA;https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html&#xA;これ、パッケージ内にCA証明書が入ってるんだけど更新後の証明書が入ってない&#xA;そんで、CA証明書更新のPRは出てるんだけど、これ適用するとaurora serverlessとかRDS proxy経由の検証が失敗する&#xA;なぜなら、証明書のチェーンがこんな感じになってるので&#xA;C = US, O = &amp;#34;Starfield Technologies, Inc.&amp;#34;, OU = Starfield Class 2 Certification Authority C = US, ST = Arizona, L = Scottsdale, O = &amp;#34;Starfield Technologies, Inc.&amp;#34;, CN = Starfield Services Root Certificate Authority - G2 C = US, O = Amazon, CN = Amazon Root CA 1 C = US, O = Amazon, CN = Amazon RSA 2048 M02 CN = *.</description>
-    </item>
-    <item>
-      <title>apacheのautoindex経由で画像のスライドショー</title>
-      <link>https://yaasita.github.io/2022/09/15/slideshow/</link>
-      <pubDate>Thu, 15 Sep 2022 03:58:50 +0900</pubDate>
-      <guid>https://yaasita.github.io/2022/09/15/slideshow/</guid>
-      <description>apacheのmod_autoindexが有効な状態でスライドショーを作る&#xA;こんな状態のディレクトリに&#xA;こんな感じのHTMLを置いて&#xA;スライドショー的に見る</description>
     </item>
   </channel>
 </rss>

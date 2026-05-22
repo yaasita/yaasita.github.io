@@ -6,8 +6,15 @@
     <description>Recent content in 2026 on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 20 Apr 2026 02:33:57 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 22 May 2026 18:10:25 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/archives/2026/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Microsoft Foundryをopencodeで使う</title>
+      <link>https://yaasita.github.io/2026/05/22/opencode-with-azure/</link>
+      <pubDate>Fri, 22 May 2026 18:10:25 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/05/22/opencode-with-azure/</guid>
+      <description>適当にストレージアカウントを作成する&#xA;(ストレージアカウントとFoundryプロジェクトは異なっていてもOK)&#xA;リソースグループ -&amp;gt; 作成&#xA;適当にポチポチやればprojectも一緒に作られる&#xA;リソース選択 -&amp;gt; Foundryポータルに移動 -&amp;gt; 上のメニューからビルド -&amp;gt; モデルから好きなやつをdeploy&#xA;opencodeではazureを選択&#xA;https://opencode.ai/docs/ja/providers/#azure-openai&#xA;Foundryのホーム画面に出ている&#xA;Azure OpenAI エンドポイントの xxxxxx の部分を入力して、APIキー入れればOK&#xA;エンドポイントはこんな感じ&#xA;https://xxxxxx.openai.azure.com/openai/v1</description>
+    </item>
     <item>
       <title>kiro-cliでスキルを使う</title>
       <link>https://yaasita.github.io/2026/04/20/kiro-cli-skills/</link>
