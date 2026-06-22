@@ -6,8 +6,15 @@
     <description>Recent content in Net on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 22 May 2026 18:10:25 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2026 01:54:59 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/categories/net/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EC2のIAMロールをローカルで使う</title>
+      <link>https://yaasita.github.io/2026/06/23/ec2-role/</link>
+      <pubDate>Tue, 23 Jun 2026 01:54:59 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/06/23/ec2-role/</guid>
+      <description>こんな感じのスクリプトをEC2に置いて&#xA;こんな感じに読み込めばOK&#xA;source &amp;lt;(ssh ec2-host ./ec2-cred.sh) </description>
+    </item>
     <item>
       <title>Microsoft Foundryをopencodeで使う</title>
       <link>https://yaasita.github.io/2026/05/22/opencode-with-azure/</link>
@@ -140,13 +147,6 @@
       <pubDate>Sun, 02 Oct 2022 22:06:36 +0900</pubDate>
       <guid>https://yaasita.github.io/2022/10/02/exists/</guid>
       <description>このgpg鍵でwebページをpdfにしたやつに署名するという&#xA;まったく意味のないサービスを作った&#xA;https://exists.cloud.yaasita.net/</description>
-    </item>
-    <item>
-      <title>WebARENA Indigoを使ってみた</title>
-      <link>https://yaasita.github.io/2022/09/25/webarena/</link>
-      <pubDate>Sun, 25 Sep 2022 22:41:18 +0900</pubDate>
-      <guid>https://yaasita.github.io/2022/09/25/webarena/</guid>
-      <description>円安でAWSが高いのでこっちにサーバーを移行した&#xA;https://web.arena.ne.jp/indigo/&#xA;以下気づいたこと箇条書きで&#xA;めっちゃ安い 機能は仮想サーバーの起動(kvm),スナップショット,ファイヤーウォールくらい 追加オプションで権威DNSサーバーが使える(500円) 管理画面は少し重い ipv6の設定は手動でやる 1vCPU/1GB memory(Uubuntu 22.04)の場合はnetplanの設定がコメントアウトされてた ファイヤーウォールはipv6非対応 なので、やる場合はnftablesを自分で設定する 管理画面でコンソール開く場合は広告ブロックをOFFにしないとダメ 最初はsshでのアクセスのみコンソール画面に入る場合 はsshで入ってから、パスワード設定が必要 API での操作も可能 OP25Bはされていない 対応OS 転送料金に課金なし 圧倒的に安いのでlightsailみたいなサービスから移行するには良いんじゃないかな</description>
     </item>
   </channel>
 </rss>

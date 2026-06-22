@@ -6,8 +6,15 @@
     <description>Recent content in 2026 on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 22 May 2026 18:10:25 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2026 01:54:59 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/archives/2026/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EC2のIAMロールをローカルで使う</title>
+      <link>https://yaasita.github.io/2026/06/23/ec2-role/</link>
+      <pubDate>Tue, 23 Jun 2026 01:54:59 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/06/23/ec2-role/</guid>
+      <description>こんな感じのスクリプトをEC2に置いて&#xA;こんな感じに読み込めばOK&#xA;source &amp;lt;(ssh ec2-host ./ec2-cred.sh) </description>
+    </item>
     <item>
       <title>Microsoft Foundryをopencodeで使う</title>
       <link>https://yaasita.github.io/2026/05/22/opencode-with-azure/</link>

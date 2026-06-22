@@ -6,8 +6,15 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Fri, 22 May 2026 18:10:25 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 23 Jun 2026 01:54:59 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EC2のIAMロールをローカルで使う</title>
+      <link>https://yaasita.github.io/2026/06/23/ec2-role/</link>
+      <pubDate>Tue, 23 Jun 2026 01:54:59 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/06/23/ec2-role/</guid>
+      <description>こんな感じのスクリプトをEC2に置いて&#xA;こんな感じに読み込めばOK&#xA;source &amp;lt;(ssh ec2-host ./ec2-cred.sh) </description>
+    </item>
     <item>
       <title>Microsoft Foundryをopencodeで使う</title>
       <link>https://yaasita.github.io/2026/05/22/opencode-with-azure/</link>
@@ -140,13 +147,6 @@
       <pubDate>Sat, 22 Feb 2025 03:56:22 +0900</pubDate>
       <guid>https://yaasita.github.io/2025/02/22/biore4/</guid>
       <description>感想&#xA;背景やオブジェクトの作り込みが素晴らしい オリジナル版よりなんか怖かった ホラー要素が強化されてるけど、びっくりさせるようなギミックは微妙だった(突然足場抜けるとか、急に敵出てくるとか) QTEが微妙に残ってて気になった ナイフの耐久値は微妙 ナイフによるパリィは楽しいかもしれない ステルスキル(敵に見つからないように背後を取るとナイフ一撃で倒せるやつ)は特に楽しい DLC(エイダ編)も良かった 赤い邪教徒が呪文唱えるとエイムしにくくなったり回りの敵が寄生体飛び出て強化される仕組みは良いと思った(赤い邪教徒を率先して倒す理由になる) パズルは全体的に微妙だった/そもそもパズル必要なのか？特に孤島での電気回路パズルと面倒だった 火を吹く巨大サラザールロボとか出てきてちょっとバカゲー要素ある 背景とかオブジェクトはリアリティあるのに急にそういうの出るギャップすごい 総合的には良作</description>
-    </item>
-    <item>
-      <title>DoHを使う</title>
-      <link>https://yaasita.github.io/2025/01/02/doh/</link>
-      <pubDate>Thu, 02 Jan 2025 13:33:58 +0900</pubDate>
-      <guid>https://yaasita.github.io/2025/01/02/doh/</guid>
-      <description>DNS over HTTPSを使ってpi-holeに接続する設定&#xA;出先で広告ブロック使いたくなったのでやってみる&#xA;こんな構成&#xA;apache -&amp;gt; doh-proxy -&amp;gt; pi-hole -&amp;gt; unbound サーバーはこれ&#xA;https://github.com/DNSCrypt/doh-server&#xA;/etc/systemd/system/doh-proxy.service って名前で保存&#xA;[Unit] Description=DoH Proxy After=network.target [Service] ExecStart=/usr/local/bin/doh-proxy -u 127.0.0.1:53 -l 0.0.0.0:3000 User=root Group=root Restart=always RestartSec=5 [Install] WantedBy=multi-user.target TLS部分はapacheがやる&#xA;こんな感じでproxy&#xA;&amp;lt;VirtualHost *:443&amp;gt; ServerName dns.example.net ProxyRequests Off ProxyPreserveHost On ProxyPass / http://192.168.0.123:3000/ retry=2 ProxyPassReverse / http://192.168.0.123:3000/ SSLEngine on SSLCertificateFile /etc/letsencrypt/live/example.net/fullchain.pem SSLCertificateKeyFile /etc/letsencrypt/live/example.net/privkey.pem &amp;lt;/VirtualHost&amp;gt; テストはこんな感じ&#xA;curl --doh-url https://dns.example.net/dns-query https://example.jp dnslookup コマンドでもOK&#xA;dnslookup example.jp https://dns.example.net/dns-query chromebookの場合は&amp;quot;確認済みアクセスを有効にする&amp;quot;のチェックを外しておいた方が良い&#xA;このチェックの挙動がよく分からないけど、DoHサーバーの名前解決後のIPアドレスがLAN内のプライベートIPなら通るけど、グローバルIPだと通さないみたいな挙動になってた&#xA;あと設定直後はちゃんとHTTPのリクエストを発行するにもかかわらず1～2分後にエラーになるみたいな動きもする&#xA;まあ広告ブロックしたいだけなら</description>
     </item>
   </channel>
 </rss>
