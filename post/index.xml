@@ -6,8 +6,15 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 23 Jun 2026 01:54:59 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jul 2026 22:54:04 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gcloudの再認証が必要になった</title>
+      <link>https://yaasita.github.io/2026/07/18/gcloud-re-auth/</link>
+      <pubDate>Sat, 18 Jul 2026 22:54:04 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/07/18/gcloud-re-auth/</guid>
+      <description>このアップデートにより再認証が必要になった&#xA;https://dev.classmethod.jp/articles/google-cloud-session/&#xA;AIに作ってもらったexpect&#xA;これ呼び出せばとりあえずcron処理はOK</description>
+    </item>
     <item>
       <title>EC2のIAMロールをローカルで使う</title>
       <link>https://yaasita.github.io/2026/06/23/ec2-role/</link>
@@ -140,13 +147,6 @@
       <pubDate>Mon, 03 Mar 2025 01:28:35 +0900</pubDate>
       <guid>https://yaasita.github.io/2025/03/03/rakuten-mobile/</guid>
       <description>スマホ変えました&#xA;Sharp AQUOS wish4 (15680円) の Docomo版にしました&#xA;androidは14&#xA;Docomo版なので、Docomo用のプリインアプリが沢山あって無効化が面倒&#xA;ただ画面がでかくて良いかもしれない&#xA;あとMNPで楽天モバイルにしました&#xA;イオンモバイルからワンストップMNPでやろうとしたんだけどなんか申請途中でエラー&#xA;イオン側は申請受付状態、楽天側は未申請状態になって詰んだと思ったけど&#xA;1日くらい待つと、イオンモバイル側にMNP予約番号が表示見されるようになってたのでそれを楽天モバイル側に手動で入力して申請&#xA;何とかなった&#xA;あとAPN設定しないとつながらない&#xA;https://network.mobile.rakuten.co.jp/faq/detail/00001495/&#xA;今回からeSIMにしてみたけど便利&#xA;ただ、eSIMでも楽天モバイルからの郵便物(楽天モバイルの取説)は届くし受け取り必要でした</description>
-    </item>
-    <item>
-      <title>バイオハザードRE4</title>
-      <link>https://yaasita.github.io/2025/02/22/biore4/</link>
-      <pubDate>Sat, 22 Feb 2025 03:56:22 +0900</pubDate>
-      <guid>https://yaasita.github.io/2025/02/22/biore4/</guid>
-      <description>感想&#xA;背景やオブジェクトの作り込みが素晴らしい オリジナル版よりなんか怖かった ホラー要素が強化されてるけど、びっくりさせるようなギミックは微妙だった(突然足場抜けるとか、急に敵出てくるとか) QTEが微妙に残ってて気になった ナイフの耐久値は微妙 ナイフによるパリィは楽しいかもしれない ステルスキル(敵に見つからないように背後を取るとナイフ一撃で倒せるやつ)は特に楽しい DLC(エイダ編)も良かった 赤い邪教徒が呪文唱えるとエイムしにくくなったり回りの敵が寄生体飛び出て強化される仕組みは良いと思った(赤い邪教徒を率先して倒す理由になる) パズルは全体的に微妙だった/そもそもパズル必要なのか？特に孤島での電気回路パズルと面倒だった 火を吹く巨大サラザールロボとか出てきてちょっとバカゲー要素ある 背景とかオブジェクトはリアリティあるのに急にそういうの出るギャップすごい 総合的には良作</description>
     </item>
   </channel>
 </rss>

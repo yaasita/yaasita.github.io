@@ -3,24 +3,30 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2026-06-23T01:54:59+09:00</lastmod>
+    <lastmod>2026-07-18T22:54:04+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/archives/2026/</loc>
-    <lastmod>2026-06-23T01:54:59+09:00</lastmod>
+    <lastmod>2026-07-18T22:54:04+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/archives/</loc>
-    <lastmod>2026-06-23T01:54:59+09:00</lastmod>
+    <lastmod>2026-07-18T22:54:04+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/categories/</loc>
-    <lastmod>2026-06-23T01:54:59+09:00</lastmod>
+    <lastmod>2026-07-18T22:54:04+09:00</lastmod>
   </url><url>
-    <loc>https://yaasita.github.io/2026/06/23/ec2-role/</loc>
-    <lastmod>2026-06-23T01:54:59+09:00</lastmod>
+    <loc>https://yaasita.github.io/2026/07/18/gcloud-re-auth/</loc>
+    <lastmod>2026-07-18T22:54:04+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/categories/net/</loc>
-    <lastmod>2026-06-23T01:54:59+09:00</lastmod>
+    <lastmod>2026-07-18T22:54:04+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/post/</loc>
+    <lastmod>2026-07-18T22:54:04+09:00</lastmod>
+  </url><url>
+    <loc>https://yaasita.github.io/categories/program/</loc>
+    <lastmod>2026-07-18T22:54:04+09:00</lastmod>
+  </url><url>
+    <loc>https://yaasita.github.io/2026/06/23/ec2-role/</loc>
     <lastmod>2026-06-23T01:54:59+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/2026/05/22/opencode-with-azure/</loc>
@@ -48,9 +54,6 @@
     <lastmod>2025-12-22T01:04:53+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/categories/linux/</loc>
-    <lastmod>2025-12-22T01:04:53+09:00</lastmod>
-  </url><url>
-    <loc>https://yaasita.github.io/categories/program/</loc>
     <lastmod>2025-12-22T01:04:53+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/2025/11/23/azure-storage/</loc>

@@ -6,8 +6,15 @@
     <description>Recent content in Program on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 22 Dec 2025 01:04:53 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jul 2026 22:54:04 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/categories/program/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gcloudの再認証が必要になった</title>
+      <link>https://yaasita.github.io/2026/07/18/gcloud-re-auth/</link>
+      <pubDate>Sat, 18 Jul 2026 22:54:04 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/07/18/gcloud-re-auth/</guid>
+      <description>このアップデートにより再認証が必要になった&#xA;https://dev.classmethod.jp/articles/google-cloud-session/&#xA;AIに作ってもらったexpect&#xA;これ呼び出せばとりあえずcron処理はOK</description>
+    </item>
     <item>
       <title>awsのEIPを自身のインスタンスから</title>
       <link>https://yaasita.github.io/2025/12/22/eip/</link>
@@ -140,13 +147,6 @@
       <pubDate>Sat, 12 Feb 2022 01:24:48 +0900</pubDate>
       <guid>https://yaasita.github.io/2022/02/12/tls-report-check/</guid>
       <description>SMTP-TLSRPTをチェックしてtotal-failure-session-countがゼロより大きいかチェックするスクリプト&#xA;(対象はGoogleから貰うレポート)&#xA;こんな感じでメールがあるディレクトリを指定する&#xA;./index.js ~/Maildir/cur/ </description>
-    </item>
-    <item>
-      <title>RStudioで正規性の確認</title>
-      <link>https://yaasita.github.io/2022/01/26/normal_distribution/</link>
-      <pubDate>Wed, 26 Jan 2022 02:50:46 +0900</pubDate>
-      <guid>https://yaasita.github.io/2022/01/26/normal_distribution/</guid>
-      <description>シャピロ-ウィルク(Shapiro-Wilk)の正規性の検定をやる流れ&#xA;まず以下のようなデータを用意する&#xA;ある音ゲーのスコア&#xA;これは音ゲーのスコアを表していてタイミングよく押せた場合はPERFECT, 早すぎたり遅すぎたりした場合はFAST, SLOWに計上される&#xA;この内ミスの割合が正規分布と見なせるか検定する&#xA;まず、CSVを右上のEnvironmentタブ =&amp;gt; Import Datasetから読み込む&#xA;データをMISSの割合をデータフレームに追加&#xA;library(dplyr) bandori &amp;lt;- bandori %&amp;gt;% mutate(MISS = (FAST + SLOW) / (PERFECT + FAST + SLOW) * 100) ヒストグラムと近似曲線を出す&#xA;hist(bandori$MISS, breaks = seq(0, 20, 1)) dens &amp;lt;- density(bandori$MISS) lines(dens, lwd = 3, col = &amp;#34;blue&amp;#34;) 検定&#xA;shapiro.test(bandori$MISS) 検定統計量とp値&#xA;data: bandori$MISS W = 0.98162, p-value = 0.724 ここで注意なのはこの検定は帰無仮説が「正規分布している」なので&#xA;棄却出来た場合は正規分布ではないと言えるが、&#xA;今回のように棄却できない（受容域）の場合は正規分布していてもおかしくない程度なので何とも言えないです&#xA;ヒストグラム見る限り正規分布としても良さそうですが&#xA;使ったRスクリプト&#xA;https://gist.github.com/yaasita/7c431d0493c9703c91d0a013d03349af</description>
     </item>
   </channel>
 </rss>
