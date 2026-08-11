@@ -6,8 +6,15 @@
     <description>Recent content in Posts on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 18 Jul 2026 22:54:04 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 06:19:44 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ポモドーロテクニック用タイマー</title>
+      <link>https://yaasita.github.io/2026/08/12/pomodoro/</link>
+      <pubDate>Wed, 12 Aug 2026 06:19:44 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/08/12/pomodoro/</guid>
+      <description>ポモドーロテクニックをするためのタイマー作りました&#xA;AIに丸投げ&#xA;https://pub-5023d102c14f43daa46c69bd2286d601.r2.dev/2026/pomodoro.html</description>
+    </item>
     <item>
       <title>gcloudの再認証が必要になった</title>
       <link>https://yaasita.github.io/2026/07/18/gcloud-re-auth/</link>
@@ -140,13 +147,6 @@
       <pubDate>Thu, 17 Apr 2025 03:32:19 +0900</pubDate>
       <guid>https://yaasita.github.io/2025/04/17/rockman6/</guid>
       <description>自分用メモ ナイトメアを上書きする方法&#xA;https://penpengames.blog.fc2.com/blog-entry-43.html&#xA;途中で右下に出てくるビックリマークは？&#xA;R3ボタンでオペレーターからのヒントを聞ける&#xA;強化パーツ&#xA;https://ameblo.jp/megamanblack/entry-12459899904.html&#xA;アイテム一覧&#xA;https://rockmanx6.gorillawiki.jp/entry/21&#xA;アーマー場所&#xA;https://www.youtube.com/watch?v=QtN-EFOMrEA&#xA;ライフアップ取り方&#xA;https://www.youtube.com/watch?v=qzuumF5boOk&amp;amp;t=34s&#xA;サブタンク/EXアイテム&#xA;https://www.youtube.com/watch?v=0l2LVclq804</description>
-    </item>
-    <item>
-      <title>スマホ変えて楽天モバイルにした</title>
-      <link>https://yaasita.github.io/2025/03/03/rakuten-mobile/</link>
-      <pubDate>Mon, 03 Mar 2025 01:28:35 +0900</pubDate>
-      <guid>https://yaasita.github.io/2025/03/03/rakuten-mobile/</guid>
-      <description>スマホ変えました&#xA;Sharp AQUOS wish4 (15680円) の Docomo版にしました&#xA;androidは14&#xA;Docomo版なので、Docomo用のプリインアプリが沢山あって無効化が面倒&#xA;ただ画面がでかくて良いかもしれない&#xA;あとMNPで楽天モバイルにしました&#xA;イオンモバイルからワンストップMNPでやろうとしたんだけどなんか申請途中でエラー&#xA;イオン側は申請受付状態、楽天側は未申請状態になって詰んだと思ったけど&#xA;1日くらい待つと、イオンモバイル側にMNP予約番号が表示見されるようになってたのでそれを楽天モバイル側に手動で入力して申請&#xA;何とかなった&#xA;あとAPN設定しないとつながらない&#xA;https://network.mobile.rakuten.co.jp/faq/detail/00001495/&#xA;今回からeSIMにしてみたけど便利&#xA;ただ、eSIMでも楽天モバイルからの郵便物(楽天モバイルの取説)は届くし受け取り必要でした</description>
     </item>
   </channel>
 </rss>

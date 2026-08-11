@@ -6,8 +6,15 @@
     <description>Recent content in Life on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 12 Aug 2023 04:02:09 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 06:19:44 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/categories/life/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ポモドーロテクニック用タイマー</title>
+      <link>https://yaasita.github.io/2026/08/12/pomodoro/</link>
+      <pubDate>Wed, 12 Aug 2026 06:19:44 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/08/12/pomodoro/</guid>
+      <description>ポモドーロテクニックをするためのタイマー作りました&#xA;AIに丸投げ&#xA;https://pub-5023d102c14f43daa46c69bd2286d601.r2.dev/2026/pomodoro.html</description>
+    </item>
     <item>
       <title>経済指標をチェック</title>
       <link>https://yaasita.github.io/2023/08/12/okasan-fx/</link>
@@ -140,13 +147,6 @@
       <pubDate>Thu, 11 Sep 2014 02:53:00 +0900</pubDate>
       <guid>https://yaasita.github.io/2014/09/11/yami_sier/</guid>
       <description> 闇SIer 元ファイル </description>
-    </item>
-    <item>
-      <title>itunes経由でBook同期</title>
-      <link>https://yaasita.github.io/2014/05/26/itunes_books/</link>
-      <pubDate>Mon, 26 May 2014 01:46:00 +0900</pubDate>
-      <guid>https://yaasita.github.io/2014/05/26/itunes_books/</guid>
-      <description>手元のPDFをipadに転送したくていろいろ探したら&#xA;下記画像みたいなブックという項目を出さないとダメみたい&#xA;iTunesStoreでブック押したりなんかいろいろしたら出るようになった&#xA;あとPDFを追加するときは以下のフォルダに置くと良いみたい（入れると自動的に消える）&#xA;C:\Users\hogeuser\Music\iTunes\iTunes Media\iTunes に自動的に追加 </description>
     </item>
   </channel>
 </rss>

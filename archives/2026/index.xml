@@ -6,8 +6,15 @@
     <description>Recent content in 2026 on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Sat, 18 Jul 2026 22:54:04 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 06:19:44 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/archives/2026/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ポモドーロテクニック用タイマー</title>
+      <link>https://yaasita.github.io/2026/08/12/pomodoro/</link>
+      <pubDate>Wed, 12 Aug 2026 06:19:44 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/08/12/pomodoro/</guid>
+      <description>ポモドーロテクニックをするためのタイマー作りました&#xA;AIに丸投げ&#xA;https://pub-5023d102c14f43daa46c69bd2286d601.r2.dev/2026/pomodoro.html</description>
+    </item>
     <item>
       <title>gcloudの再認証が必要になった</title>
       <link>https://yaasita.github.io/2026/07/18/gcloud-re-auth/</link>
