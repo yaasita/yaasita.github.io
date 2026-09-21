@@ -6,8 +6,15 @@
     <description>Recent content in Linux on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Mon, 22 Dec 2025 01:04:53 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 22 Sep 2026 03:09:55 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>自分のbashrcに書くPS1設定</title>
+      <link>https://yaasita.github.io/2026/09/22/ps1/</link>
+      <pubDate>Tue, 22 Sep 2026 03:09:55 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/09/22/ps1/</guid>
+      <description>こんな感じで書いてる&#xA;if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^tmux ]];then prompt_command() { local exit_status=$? if [ &amp;quot;$exit_status&amp;quot; -ne 0 ]; then PS1=&#39;\[\e[41m\]\[\e[33;04m\]\u@\h\[\e[00m\]:\[\e[32m\]\w\[\e[00m\]\$ &#39; else PS1=&#39;\[\e[00m\]\[\e[33;04m\]\u@\h\[\e[00m\]:\[\e[32m\]\w\[\e[00m\]\$ &#39; fi } PROMPT_COMMAND=prompt_command bind C-K:previous-history bind C-l:clear-screen alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto --time-style=+%Y/%m/%d_%H:%M:%S&#39; fi AIに色々聞いて改善されてる</description>
+    </item>
     <item>
       <title>awsのEIPを自身のインスタンスから</title>
       <link>https://yaasita.github.io/2025/12/22/eip/</link>
@@ -140,13 +147,6 @@
       <pubDate>Sun, 28 Nov 2021 06:09:44 +0900</pubDate>
       <guid>https://yaasita.github.io/2021/11/28/microk8s/</guid>
       <description>microk8s で ArgoCD を動かすときのメモ&#xA;まず手順通りにマニフェストを設定したら&#xA;kubectl patch svc argocd-server -n argocd -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; ClusterIP から NodePortに変更&#xA;こんな感じの表示になったら&#xA;$ kubectl get svc argocd-server -n argocd argocd-server NodePort 10.152.183.43 &amp;lt;none&amp;gt; 80:30444/TCP,443:30983/TCP 20h 以下のURLでアクセス&#xA;https:// (ホストのIP) :30983&#xA;まあkubectl port-forward でやってもいいけど&#xA;ついでに dashbord も同様にできる&#xA;kubectl patch svc kubernetes-dashboard -n kube-system -p &#39;{&amp;quot;spec&amp;quot;: {&amp;quot;type&amp;quot;: &amp;quot;NodePort&amp;quot;}}&#39; kubectl get svc kubernetes-dashboard -n kube-system $ kubectl get svc kubernetes-dashboard -n kube-system NAME TYPE CLUSTER-IP EXTERNAL-IP PORT(S) AGE kubernetes-dashboard NodePort 10.</description>
-    </item>
-    <item>
-      <title>bridgeインターフェイスのMACアドレス</title>
-      <link>https://yaasita.github.io/2021/10/10/machine-id/</link>
-      <pubDate>Sun, 10 Oct 2021 05:52:16 +0900</pubDate>
-      <guid>https://yaasita.github.io/2021/10/10/machine-id/</guid>
-      <description>KVMを使ったVM内でブリッジインターフェイス作ってそのVMをコピーしたらMACアドレスが重複して通信不能になった&#xA;(/etc/systemd/network/にはこんな感じでbridge作る)&#xA;https://gist.github.com/yaasita/d527b48f54b0e23c3097a9c69239d534&#xA;どうやらこれ、machine-idから作られてるみたいで、VMコピーしたらmachine-id変えた方が良いぽいね&#xA;rm /etc/machine-id /var/lib/dbus/machine-id dbus-uuidgen --ensure systemd-machine-id-setup </description>
     </item>
   </channel>
 </rss>
