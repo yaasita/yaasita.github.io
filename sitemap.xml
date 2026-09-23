@@ -3,21 +3,27 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://yaasita.github.io/</loc>
-    <lastmod>2026-09-22T03:09:55+09:00</lastmod>
+    <lastmod>2026-09-24T01:04:24+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/archives/2026/</loc>
-    <lastmod>2026-09-22T03:09:55+09:00</lastmod>
+    <lastmod>2026-09-24T01:04:24+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/archives/</loc>
-    <lastmod>2026-09-22T03:09:55+09:00</lastmod>
+    <lastmod>2026-09-24T01:04:24+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/categories/</loc>
-    <lastmod>2026-09-22T03:09:55+09:00</lastmod>
+    <lastmod>2026-09-24T01:04:24+09:00</lastmod>
   </url><url>
-    <loc>https://yaasita.github.io/categories/linux/</loc>
-    <lastmod>2026-09-22T03:09:55+09:00</lastmod>
+    <loc>https://yaasita.github.io/2026/09/24/colab/</loc>
+    <lastmod>2026-09-24T01:04:24+09:00</lastmod>
+  </url><url>
+    <loc>https://yaasita.github.io/categories/net/</loc>
+    <lastmod>2026-09-24T01:04:24+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/post/</loc>
+    <lastmod>2026-09-24T01:04:24+09:00</lastmod>
+  </url><url>
+    <loc>https://yaasita.github.io/categories/linux/</loc>
     <lastmod>2026-09-22T03:09:55+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/categories/soft/</loc>
@@ -33,9 +39,6 @@
     <lastmod>2026-08-12T06:19:44+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/2026/07/18/gcloud-re-auth/</loc>
-    <lastmod>2026-07-18T22:54:04+09:00</lastmod>
-  </url><url>
-    <loc>https://yaasita.github.io/categories/net/</loc>
     <lastmod>2026-07-18T22:54:04+09:00</lastmod>
   </url><url>
     <loc>https://yaasita.github.io/categories/program/</loc>

@@ -6,14 +6,21 @@
     <description>Recent content on # cd ~yaasita</description>
     <generator>Hugo</generator>
     <language>ja</language>
-    <lastBuildDate>Tue, 22 Sep 2026 03:09:55 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 24 Sep 2026 01:04:24 +0900</lastBuildDate>
     <atom:link href="https://yaasita.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>google colabを使う</title>
+      <link>https://yaasita.github.io/2026/09/24/colab/</link>
+      <pubDate>Thu, 24 Sep 2026 01:04:24 +0900</pubDate>
+      <guid>https://yaasita.github.io/2026/09/24/colab/</guid>
+      <description>Googleの AI plus でも colab がProになる&#xA;この辺のインスタンスを使えるようになるのでおすすめ&#xA;以下のようなスクリプト走らせてローカルで動画生成してみた&#xA;colab-setup</description>
+    </item>
     <item>
       <title>自分のbashrcに書くPS1設定</title>
       <link>https://yaasita.github.io/2026/09/22/ps1/</link>
       <pubDate>Tue, 22 Sep 2026 03:09:55 +0900</pubDate>
       <guid>https://yaasita.github.io/2026/09/22/ps1/</guid>
-      <description>こんな感じで書いてる&#xA;if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^tmux ]];then prompt_command() { local exit_status=$? if [ &amp;quot;$exit_status&amp;quot; -ne 0 ]; then PS1=&#39;\[\e[41m\]\[\e[33;04m\]\u@\h\[\e[00m\]:\[\e[32m\]\w\[\e[00m\]\$ &#39; else PS1=&#39;\[\e[00m\]\[\e[33;04m\]\u@\h\[\e[00m\]:\[\e[32m\]\w\[\e[00m\]\$ &#39; fi } PROMPT_COMMAND=prompt_command bind C-K:previous-history bind C-l:clear-screen alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto --time-style=+%Y/%m/%d_%H:%M:%S&#39; fi AIに色々聞いて改善されてる</description>
+      <description>こんな感じで書いてる&#xA;プロンプト設定&#xA;if [[ &amp;quot;$TERM&amp;quot; =~ ^xterm ]] || [[ &amp;quot;$TERM&amp;quot; =~ ^tmux ]];then prompt_command() { local exit_status=$? if [ &amp;quot;$exit_status&amp;quot; -ne 0 ]; then PS1=&#39;\[\e[41m\]\[\e[33;04m\]\u@\h\[\e[00m\]:\[\e[32m\]\w\[\e[00m\]\$ &#39; else PS1=&#39;\[\e[00m\]\[\e[33;04m\]\u@\h\[\e[00m\]:\[\e[32m\]\w\[\e[00m\]\$ &#39; fi } PROMPT_COMMAND=prompt_command bind C-K:previous-history bind C-l:clear-screen alias egrep=&#39;egrep --color=auto&#39; alias grep=&#39;grep --color=auto&#39; alias ls=&#39;ls --color=auto --time-style=+%Y/%m/%d_%H:%M:%S&#39; fi AIに色々聞いて改善されてる</description>
     </item>
     <item>
       <title>ポモドーロテクニック用タイマー</title>
@@ -140,13 +147,6 @@
       <pubDate>Sat, 17 May 2025 13:23:08 +0900</pubDate>
       <guid>https://yaasita.github.io/2025/05/17/sysstat/</guid>
       <description>こんな感じでレポート出して&#xA;sadf -T -j /var/log/sysstat/sa\$(date -d yesterday +%d) -- -ruq -n DEV &amp;gt; /tmp/sadf.json bigquery用のフォーマットに変更&#xA;あとは Looker Studio で見るとか</description>
-    </item>
-    <item>
-      <title>動画ファイルのダミーデータ</title>
-      <link>https://yaasita.github.io/2025/05/16/download-stream-png-dummy/</link>
-      <pubDate>Fri, 16 May 2025 16:45:58 +0900</pubDate>
-      <guid>https://yaasita.github.io/2025/05/16/download-stream-png-dummy/</guid>
-      <description>m3uから動画をダウンロードすると&#xA;PNG image data, 1 x 1, 8-bit/color RGBA, non-interlacedのデータになることがある&#xA;こんな感じで先頭8byteを飛ばして&#xA;ffmpegで再エンコードするとよい&#xA;とりあえずffmpeg通せばヘッダは復活する&#xA;ffmpeg -i merged_output.ts -c copy out.mp4 参考リンク&#xA;https://github.com/yt-dlp/yt-dlp/issues/4381</description>
     </item>
   </channel>
 </rss>
